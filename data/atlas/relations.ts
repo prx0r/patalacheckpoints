@@ -117,4 +117,64 @@ export const relations: AtlasRelation[] = [
   // ---- The Dyczkowski effect (the curation edge) ----
   { source: "dyczkowski", target: "kubjika", type: "influence", confidence: "strong", evidence: ["his Muktabodha selection concentrated the Kubjikā corpus"] },
   { source: "dyczkowski", target: "krama", type: "influence", confidence: "possible" },
+
+// ---- The 2026-08-09 additions: new T3'd texts + the 24-lemma dossiers ----
+
+// Texts ←→ Traditions
+{ source: "jnanakarika", target: "kaula", type: "contains", confidence: "established" },
+{ source: "ajadapramatrsiddhi", target: "pratyabhijna", type: "contains", confidence: "established" },
+{ source: "kaularahasya", target: "kaula", type: "contains", confidence: "established" },
+{ source: "kulapradipa", target: "kaula", type: "contains", confidence: "established" },
+{ source: "kubjikatantra", target: "kubjika", type: "contains", confidence: "established" },
+{ source: "sivasutra", target: "trika", type: "contains", confidence: "established" },
+
+// Texts ←→ People
+{ source: "ajadapramatrsiddhi", target: "utpaladeva", type: "develops-from", confidence: "established" },
+{ source: "jnanakarika", target: "jnananetra", type: "develops-from", confidence: "possible" },
+
+// Texts ←→ Concepts (the dossier-loci)
+{ source: "ajadapramatrsiddhi", target: "recognition", type: "contains", confidence: "established" },
+{ source: "ajadapramatrsiddhi", target: "vimarśa", type: "contains", confidence: "established" },
+{ source: "jnanakarika", target: "śūnya", type: "contains", confidence: "strong" },
+{ source: "jnanakarika", target: "kula", type: "contains", confidence: "strong" },
+{ source: "kaularahasya", target: "cakra", type: "contains", confidence: "strong" },
+{ source: "kaularahasya", target: "mantra", type: "contains", confidence: "strong" },
+{ source: "kulapradipa", target: "kula", type: "contains", confidence: "strong" },
+{ source: "kubjikatantra", target: "mālinī", type: "contains", confidence: "strong" },
+{ source: "sivasutra", target: "mātṛkā", type: "contains", confidence: "established" },
+{ source: "sivasutra", target: "śakti", type: "contains", confidence: "established" },
+
+// Concepts ←→ Traditions (the 24-lemma dossiers)
+{ source: "saṃvit", target: "krama", type: "conceptual-parallel", confidence: "established" },
+{ source: "saṃvit", target: "spanda", type: "conceptual-parallel", confidence: "strong" },
+{ source: "akula", target: "trika", type: "conceptual-parallel", confidence: "established" },
+{ source: "akula", target: "kubjika", type: "conceptual-parallel", confidence: "strong" },
+{ source: "parāmarśa", target: "pratyabhijna", type: "conceptual-parallel", confidence: "established" },
+{ source: "prakāśa", target: "trika", type: "conceptual-parallel", confidence: "established" },
+{ source: "prakāśa", target: "pratyabhijna", type: "conceptual-parallel", confidence: "established" },
+{ source: "visarga", target: "trika", type: "conceptual-parallel", confidence: "established" },
+{ source: "visarga", target: "kaula", type: "conceptual-parallel", confidence: "strong" },
+{ source: "anuttara", target: "trika", type: "conceptual-parallel", confidence: "established" },
+{ source: "mātṛkā", target: "kubjika", type: "conceptual-parallel", confidence: "established" },
+{ source: "mātṛkā", target: "trika", type: "conceptual-parallel", confidence: "established" },
+{ source: "svātantrya", target: "pratyabhijna", type: "conceptual-parallel", confidence: "established" },
+{ source: "svātantrya", target: "spanda", type: "conceptual-parallel", confidence: "strong" },
+{ source: "āveśa", target: "trika", type: "conceptual-parallel", confidence: "strong" },
+{ source: "uccāra", target: "trika", type: "conceptual-parallel", confidence: "strong" },
+{ source: "vyāpti", target: "trika", type: "conceptual-parallel", confidence: "strong" },
+{ source: "śūnya", target: "krama", type: "conceptual-parallel", confidence: "strong" },
+{ source: "śūnya", target: "trika", type: "conceptual-parallel", confidence: "strong" },
+{ source: "saṃhāra", target: "spanda", type: "conceptual-parallel", confidence: "established" },
+{ source: "cakra", target: "trika", type: "conceptual-parallel", confidence: "established" },
+{ source: "cakra", target: "kaula", type: "conceptual-parallel", confidence: "strong" },
+{ source: "mantra", target: "kubjika", type: "conceptual-parallel", confidence: "established" },
+{ source: "mantra", target: "trika", type: "conceptual-parallel", confidence: "established" },
+
+// Concept ↔ concept (the internal links)
+{ source: "prakāśa", target: "vimarśa", type: "conceptual-parallel", confidence: "established" },
+{ source: "saṃvit", target: "vimarśa", type: "conceptual-parallel", confidence: "strong" },
+{ source: "akula", target: "kula", type: "conceptual-parallel", confidence: "established" },
+{ source: "anuttara", target: "akula", type: "conceptual-parallel", confidence: "established" },
+{ source: "mālinī", target: "mātṛkā", type: "conceptual-parallel", confidence: "established" },
+{ source: "mantra", target: "uccāra", type: "conceptual-parallel", confidence: "strong" },
 ];

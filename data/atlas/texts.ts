@@ -134,3 +134,133 @@ export const texts: AtlasEntity[] = [
     },
   },
 ];
+// The T3'd / T1'd additions from the translation project (2026-08-09)
+export const textsAdditional: import("@/lib/atlas").AtlasEntity[] = [
+  {
+    id: "jnanakarika",
+    type: "text",
+    title: "Jñānakārikā",
+    sanskrit: "ज्ञानकारिका",
+    period: { start: 950, end: 1100, approximate: true },
+    summary:
+      "The Verses of Knowledge — the Matsyendra-bundle's third text, fully T3'd. The kārikā-register: the dvandva-doctrine, the dharmādharma-discrimination, and the caryā's interiorized body-geography (the body as śmaśāna, liṅga, vṛkṣa-mūla).",
+    concepts: ["kula", "śūnya", "krama"],
+    resources: [
+      { title: "The full T3 (paṭalas 1–3)", href: "/texts/jnanakarika", type: "translation" },
+    ],
+    dossier: {
+      systemicFunction: "The bundle's knowledge-path: 'by mere knowledge alone, liberation arises for the yogins' (1/11).",
+      doctrinalCore: [
+        "The both/neither apophasis — neither the mind nor its absence",
+        "The dharmādharma-pair as the two bonds, cut by the sword of knowledge",
+        "The interiorized geography: the body as the rite's locus",
+      ],
+      outputs: ["the T3-FINAL (3 paṭalas)", "the dvandva-dossier"],
+    },
+  },
+  {
+    id: "ajadapramatrsiddhi",
+    type: "text",
+    title: "Ajaḍapramātṛsiddhi",
+    sanskrit: "अजडप्रमातृसिद्धि",
+    period: { start: 925, end: 975, approximate: true },
+    summary:
+      "Utpaladeva's 'Establishment of the Non-Inert Knower' — the Siddhitrayī's core, key-verses T3'd. The anti-inert-light argument: the non-reflexive consciousness is crystal-like, hence inert.",
+    concepts: ["recognition", "vimarśa", "prakāśa"],
+    resources: [
+      { title: "The key-verses T3", href: "/texts/ajadapramatrsiddhi", type: "translation" },
+      { title: "The 1921 Kashmir Series", href: "/texts/ajadapramatrsiddhi", type: "scholarship" },
+    ],
+    dossier: {
+      systemicFunction: "The report's A+ Pratyabhijñā control — the A-thesis (reflexive presence) established, the universalization (C) honestly OPEN.",
+      doctrinalCore: [
+        "Existence as manifestation (prakhyā-upākhyā)",
+        "The 'I am this' — the segmented this grounded in the I",
+        "The non-reflexive light is like a sky-flower: unable to establish anything",
+      ],
+      outputs: ["the key-verses T3", "the A/B/C stratification"],
+    },
+  },
+  {
+    id: "kaularahasya",
+    type: "text",
+    title: "Kaularahasya",
+    sanskrit: "कौलरहस्य",
+    period: { start: 1000, end: 1300, approximate: true },
+    summary:
+      "The Secret of the Kaula [path] — the vāma-mārga's self-defense and the dīkṣā-theology. Paṭalas 1–5 T1'd: the makāra-rites, the āmnāya-geography, the sāmrājya-dīkṣā's culmination.",
+    concepts: ["kula", "cakra", "mantra", "vāma"],
+    resources: [
+      { title: "Paṭalas 1–5 (T1)", href: "/texts/kaularahasya", type: "translation" },
+    ],
+    dossier: {
+      systemicFunction: "The rahasya-genre's defense of the left-hand path — the dīkṣā as absolutely required, the paśu's exclusion.",
+      doctrinalCore: [
+        "The vāma/dakṣiṇa path-discrimination across the āmnāyas",
+        "The dīkṣā's ten saṃskāras and the sāmrājya-hierarchy",
+        "The eclipse-dīkṣā (the sun = Śiva, the moon = śakti)",
+      ],
+      outputs: ["the paṭalas 1–5 T1", "the dīkṣā-theology map"],
+    },
+  },
+  {
+    id: "kulapradipa",
+    type: "text",
+    title: "Kulapradīpa",
+    sanskrit: "कुलप्रदीप",
+    period: { start: 1500, end: 1800, approximate: true },
+    summary:
+      "Śivānandācārya's Lamp of the Kula — the consolidated kula-orthodoxy's self-praise, 7 prakāśas. Prakāśas 1–2 T1'd: the path-hierarchy, the Kaulika's encomium, the bhoga-yoga.",
+    concepts: ["kula", "krama", "cakra"],
+    resources: [
+      { title: "Prakāśas 1–2 (T1)", href: "/texts/kulapradipa", type: "translation" },
+    ],
+    dossier: {
+      systemicFunction: "The kula-dharma's encomium — the Kaulika as the vessel, the Kulārṇava-quoted authority.",
+      doctrinalCore: [
+        "The path-hierarchy ending in the Kaula",
+        "The bhoga-yoga: enjoyment becomes yoga directly",
+        "The Kaulika's presence purifies the land",
+      ],
+      outputs: ["the prakāśas 1–2 T1", "the kula-dharma dossier"],
+    },
+  },
+  {
+    id: "kubjikatantra",
+    type: "text",
+    title: "Kubjikātantra",
+    sanskrit: "कुब्जिकातन्त्र",
+    period: { start: 950, end: 1200, approximate: true },
+    summary:
+      "The Kubjikā tradition's own tantra (17 paṭalas, T1'd) — distinct from the Kubjikāmata. The vidyā-śravaṇa (liberation by hearing), the Daśamahāvidyā-list, the yonimudrā.",
+    concepts: ["mālinī", "kula", "yoginī"],
+    dossier: {
+      systemicFunction: "The Kubjikā's independent tantra — the hearing-liberation and the goddess-lists.",
+      doctrinalCore: ["the vidyā-śravaṇa: liberation by hearing alone", "the yonimudrā", "the Daśamahāvidyā"],
+      outputs: ["the 17-paṭala T1"],
+    },
+  },
+  {
+    id: "sivasutra",
+    type: "text",
+    title: "Śivasūtra",
+    sanskrit: "शिवसूत्र",
+    period: { start: 850, end: 950, approximate: true },
+    summary:
+      "The 78 sūtras of the Trika's foundation with Bhāskara's Vārttika — T3'd (the anchored text). The ŚS 1.3's yoni-varga, the mātṛkā-cakra, the icchā-as-Umā. Anchored by Dyczkowski's Aphorisms of Śiva.",
+    concepts: ["mātṛkā", "śakti", "kula"],
+    resources: [
+      { title: "The ŚS + Vārttika T3", href: "/texts/sivasutra", type: "translation" },
+      { title: "Dyczkowski's Aphorisms", href: "/texts/sivasutra", type: "scholarship" },
+    ],
+    dossier: {
+      systemicFunction: "The Trika's foundational scripture — the error-measurement's anchored test-case (0% error vs Dyczkowski).",
+      doctrinalCore: [
+        "The yoni-varga as the body of the kalās (1.3)",
+        "Mātṛkā as the ground of knowledge (1.4)",
+        "The perceiver's unswerving nature",
+      ],
+      outputs: ["the T3 (78 sūtras)", "the error-measurement", "the anchored R2"],
+    },
+  },
+];

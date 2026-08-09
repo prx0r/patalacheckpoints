@@ -1,5 +1,6 @@
 import { traditions } from "./traditions";
 import { texts } from "./texts";
+import { textsAdditional } from "./texts";
 import { people } from "./people";
 import { concepts } from "./concepts";
 import { relations } from "./relations";
@@ -8,6 +9,7 @@ import { AtlasEntity, AtlasRelation } from "@/lib/atlas";
 export const atlasEntities: AtlasEntity[] = [
   ...traditions,
   ...texts,
+  ...textsAdditional,
   ...people,
   ...concepts,
 ];

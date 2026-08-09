@@ -126,4 +126,267 @@ export const concepts: AtlasEntity[] = [
       outputs: ["the phonemic dossiers", "the Kubjikā-emergence", "the mātṛkā-map"],
     },
   },
+  {
+    id: "saṃvit",
+    type: "concept",
+    title: "Saṃvit",
+    sanskrit: "सम्वित्",
+    period: { start: 800, end: 1200, approximate: true },
+    summary:
+      "Conscious awareness considered in dynamic sequence — the Krama's saṃvit-krama. The perceptible order of worship reflects the imperceptible sequence of cognition. The engine of the Kālīs-as-moments.",
+    concepts: ["krama", "spanda", "vimarśa"],
+    dossier: {
+      systemicFunction: "The Krama's engine — cognition as sequence, not a static witness.",
+      doctrinalCore: [
+        "The cognition's outflow (saṃvit-prasara) in the Mahānayaprakāśa",
+        "The one-vs-many cognition question (MNP:598)",
+        "The awareness-yoginīs (Mahārthamañjarī m.11)",
+      ],
+      outputs: ["the saṃvit dossier", "the Krama's engine-map"],
+    },
+  },
+  {
+    id: "akula",
+    type: "concept",
+    title: "Akula",
+    sanskrit: "अकुल",
+    period: { start: 900, end: 1100, approximate: true },
+    summary:
+      "The transcendent pole, explicitly identified with anuttara in Abhinava's synthesis. Best understood relationally with kula — the manifest pole is kula, its ground is akula.",
+    concepts: ["kula", "anuttara"],
+    dossier: {
+      systemicFunction: "The akula/kula polarity — the compressed cosmology of the Kubjikāmata maṅgala, made metaphysical by Abhinava.",
+      doctrinalCore: [
+        "KMT 1.1: the five gone into akula-and-kula",
+        "TĀ 3.143: the supreme abode is akula; its visarga is the kaulikī śakti",
+      ],
+      outputs: ["the akula dossier", "the polarity-map"],
+    },
+  },
+  {
+    id: "parāmarśa",
+    type: "concept",
+    title: "Parāmarśa",
+    sanskrit: "परामर्श",
+    period: { start: 900, end: 1025, approximate: true },
+    summary:
+      "Apprehension/self-apprehension — the act by which experience is gathered into unified awareness. Related to but not always interchangeable with vimarśa.",
+    concepts: ["vimarśa", "recognition"],
+    dossier: {
+      systemicFunction: "The gathering-act of the Pratyabhijñā — distinct from vimarśa's self-grasping.",
+      doctrinalCore: ["TĀ 33.20–29: the gathering into unified awareness"],
+      outputs: ["the parāmarśa dossier"],
+    },
+  },
+  {
+    id: "prakāśa",
+    type: "concept",
+    title: "Prakāśa",
+    sanskrit: "प्रकाश",
+    period: { start: 900, end: 1025, approximate: true },
+    summary:
+      "Manifest luminosity — awareness as that in virtue of which things appear. 'Light' is suggestive but misleads if treated as physical luminosity.",
+    concepts: ["vimarśa", "recognition"],
+    dossier: {
+      systemicFunction: "The luminosity-pole of the prakāśa/vimarśa pair — the A-thesis's engine.",
+      doctrinalCore: [
+        "Mahārthamañjarī g.2: the unmoving upsurge suffused with reflexion",
+        "The heart as the unsurpassed-nectar-kula (TĀ 1.1)",
+      ],
+      outputs: ["the prakāśa dossier", "the engine-pair"],
+    },
+  },
+  {
+    id: "visarga",
+    type: "concept",
+    title: "Visarga",
+    sanskrit: "विसर्ग",
+    period: { start: 900, end: 1025, approximate: true },
+    summary:
+      "Emission, release, manifestation — the power by which the supreme projects itself. Carries phonemic, cosmological, and in some contexts erotic/ritual resonances.",
+    concepts: ["kula", "prakāśa"],
+    dossier: {
+      systemicFunction: "The emission-pole of the cosmology — the world's seed (TĀ: visargaprasara).",
+      doctrinalCore: [
+        "TĀ 1.1: the heart made of the emission of the being",
+        "The visarga's outflow as the world's variegation (M00092:76)",
+      ],
+      outputs: ["the visarga dossier", "the emission-map"],
+    },
+  },
+  {
+    id: "anuttara",
+    type: "concept",
+    title: "Anuttara",
+    sanskrit: "अनुत्तर",
+    period: { start: 975, end: 1025, approximate: true },
+    summary:
+      "The Unsurpassed — the concentrated Parā/Ekavīrā and the supreme state. Not merely the adjective 'highest' but a heavily loaded technical designation.",
+    concepts: ["kula", "akula"],
+    dossier: {
+      systemicFunction: "The Trika's ground-term — the heart as the unsurpassed-nectar-kula (TĀ 1.1).",
+      doctrinalCore: [
+        "TĀ 1.5: the Unsurpassed as the ground of the three powers",
+        "The anuttara/akula identification (TĀ 3.143)",
+      ],
+      outputs: ["the anuttara dossier", "the ground-map"],
+    },
+  },
+  {
+    id: "mātṛkā",
+    type: "concept",
+    title: "Mātṛkā",
+    sanskrit: "मातृका",
+    period: { start: 850, end: 1100, approximate: true },
+    summary:
+      "The Mother/phonemic matrix — the power embodied in the letters. Śakti is identified with Mātṛkā, Mātṛkā as Śiva-natured. Never 'alphabet' — the goddess-load is essential.",
+    concepts: ["mālinī", "khecarī"],
+    dossier: {
+      systemicFunction: "The phonemic matrix — the alphabet as goddess.",
+      doctrinalCore: [
+        "ŚS 1.4: the ground of knowledge is Mātṛkā",
+        "ŚS 2.7: the Mātṛkā-wheel's awakening",
+      ],
+      outputs: ["the mātṛkā dossier"],
+    },
+  },
+  {
+    id: "svātantrya",
+    type: "concept",
+    title: "Svātantrya",
+    sanskrit: "स्वातन्त्र्य",
+    period: { start: 900, end: 1025, approximate: true },
+    summary:
+      "The inherent freedom of conscious agency — ontological efficacy as well as volition. 'Free will' is too narrow.",
+    concepts: ["spanda", "recognition", "śakti"],
+    dossier: {
+      systemicFunction: "The first power — the freedom that produces the world as mere appearance (TĀ 1.5).",
+      doctrinalCore: [
+        "TĀ 1.5: the power of freedom as the Lord's majesty",
+        "The world as the essence of mere appearance by its freedom (M00092:59)",
+      ],
+      outputs: ["the svātantrya dossier"],
+    },
+  },
+  {
+    id: "āveśa",
+    type: "concept",
+    title: "Āveśa / Samāveśa",
+    sanskrit: "आवेश",
+    period: { start: 900, end: 1025, approximate: true },
+    summary:
+      "Entry / possession — the state of being entered by the divine. The practice's goal in the Trika's uccāra-complex.",
+    concepts: ["spanda", "recognition"],
+    dossier: {
+      systemicFunction: "The possession-state — the entry into the supreme Lord.",
+      doctrinalCore: [
+        "The surge of the state of entry (TĀ M00092:32)",
+        "The entry-into-Śiva-Śakti (TĀ M00092:172)",
+      ],
+      outputs: ["the āveśa dossier"],
+    },
+  },
+  {
+    id: "uccāra",
+    type: "concept",
+    title: "Uccāra",
+    sanskrit: "उच्चार",
+    period: { start: 900, end: 1025, approximate: true },
+    summary:
+      "The mantra's articulation/emission — the inner sound-rise, distinguished from the external rites (the kuṇḍa, the maṇḍala).",
+    concepts: ["mantra", "āveśa"],
+    dossier: {
+      systemicFunction: "The inner articulation of the mantra — the Trika's uccāra-system.",
+      doctrinalCore: ["The uccāra-and-the-rest as internal; the external rites (TĀ M00092:2611)"],
+      outputs: ["the uccāra dossier"],
+    },
+  },
+  {
+    id: "vyāpti",
+    type: "concept",
+    title: "Vyāpti",
+    sanskrit: "व्याप्ति",
+    period: { start: 900, end: 1300, approximate: true },
+    summary:
+      "Pervasion — ontological in the Trika (the Lord's all-ness), logical in the Nyāya (the inference's pervasion-relation).",
+    concepts: ["prakāśa"],
+    dossier: {
+      systemicFunction: "The cross-tradition fork: the Trika's ontological pervasion vs the Nyāya's logical relation.",
+      doctrinalCore: ["the Lord's all-pervading nature", "the Tarkasaṃgraha's vyāpti (Hop 10)"],
+      outputs: ["the vyāpti dossier", "the cross-tradition fork"],
+    },
+  },
+  {
+    id: "śūnya",
+    type: "concept",
+    title: "Śūnya",
+    sanskrit: "शून्य",
+    period: { start: 900, end: 1200, approximate: true },
+    summary:
+      "The void as the apophatic terminus — the pure consciousness-form, NOT mere absence. The Mahānayaprakāśa's śūnyāśūnya: 'the void-and-non-void.'",
+    concepts: ["prakāśa", "kula"],
+    dossier: {
+      systemicFunction: "The apophatic terminus — the void that is the pure consciousness-form.",
+      doctrinalCore: [
+        "MNP: the void-and-non-void, the pure form not the absence",
+        "JKK 3/13: knowing the void, the Stainless",
+      ],
+      outputs: ["the śūnya dossier", "the apophatic-map"],
+    },
+  },
+  {
+    id: "saṃhāra",
+    type: "concept",
+    title: "Saṃhāra / Sṛṣṭi",
+    sanskrit: "संहार",
+    period: { start: 850, end: 1100, approximate: true },
+    summary:
+      "Retraction / creation — the cosmic pair by whose opening and closing the universe is destroyed and created. The Lord's blink (SPK 1.1).",
+    concepts: ["spanda", "prakāśa"],
+    dossier: {
+      systemicFunction: "The cosmic operations — creation, maintenance, withdrawal as the powers' rhythm.",
+      doctrinalCore: [
+        "SPK 1.1: by whose opening and closing the universe is destroyed and created",
+        "SPK 1.6: the inner wheel drives the triad",
+      ],
+      outputs: ["the saṃhāra/sṛṣṭi dossier", "the cosmic-pair map"],
+    },
+  },
+  {
+    id: "cakra",
+    type: "concept",
+    title: "Cakra",
+    sanskrit: "चक्र",
+    period: { start: 850, end: 1200, approximate: true },
+    summary:
+      "The wheel — the power-aggregate in the Trika/Spanda (the Wheel of Energies), the ritual circle in the Kaula (the Bhairavī-cakra).",
+    concepts: ["śakti", "kula"],
+    dossier: {
+      systemicFunction: "The wheel of powers vs the ritual circle — the register-fork.",
+      doctrinalCore: [
+        "SPK 1.1: the Wheel of Energies",
+        "ŚS 2.7: the Mātṛkā-wheel",
+        "KRH: the Bhairavī-cakra's equality",
+      ],
+      outputs: ["the cakra dossier", "the register-fork"],
+    },
+  },
+  {
+    id: "mantra",
+    type: "concept",
+    title: "Mantra",
+    sanskrit: "मन्त्र",
+    period: { start: 850, end: 1200, approximate: true },
+    summary:
+      "The corpus's most frequent technical term (58,842 occurrences — the Dyczkowski-selection caveat applies). The mantra as phonemic power, divine utterance, and the dīkṣā's vehicle.",
+    concepts: ["mālinī", "uccāra", "kula"],
+    dossier: {
+      systemicFunction: "The mantra's phonemic origin and ritual vehicle.",
+      doctrinalCore: [
+        "KMT 1.75: the seed-letters born of the limbs",
+        "KRH: the book-mantra's sin (the secrecy-discipline)",
+      ],
+      outputs: ["the mantra dossier", "the phonemic-map"],
+    },
+  },
 ];
