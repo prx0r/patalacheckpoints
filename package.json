@@ -1,12 +1,13 @@
 {
-  "name": "essays-tantrafiles",
+  "name": "patala",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "python3 tests/api_suite.py"
   },
   "dependencies": {
     "next": "16.1.1",

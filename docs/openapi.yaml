@@ -1,0 +1,289 @@
+openapi: 3.0.3
+info:
+  title: Pāṭala — Tantra Hub API
+  version: "1.0"
+  description: >
+    Open research API for tantric textual data, provenance and evidence.
+    The authority/provenance/expert-validation layer between manuscript repositories
+    and AI. Every object carries provenance; machine proposals are NEVER accepted
+    knowledge ("AI proposes ≠ Pāṭala asserts").
+
+    EPISTEMIC MODEL
+    - SOURCE      what upstream material says
+    - PROPOSAL    what a machine/human suggests (never auto-accepted)
+    - ASSERTION   a structured, reviewable claim
+    - REVIEW      a recorded judgment (who/what/decision/why/when)
+    - ACCEPTED    Pāṭala's current editorial position
+
+    Rules: Proposal ≠ assertion. Assertion ≠ consensus. Accepted ≠ certain.
+    Machine score ≠ scholarly confidence. 'No complete English translation
+    located', never 'Untranslated'.
+servers:
+  - url: http://localhost:3000
+    description: local dev
+paths:
+  /api:
+    get:
+      summary: API index & discoverability
+      responses:
+        "200":
+          description: endpoint groups + principles
+  /api/health:
+    get:
+      summary: Operational health (separate from /api/stats)
+      responses:
+        "200":
+          description: service up + dataset version + counts
+  /api/stats:
+    get:
+      summary: Corpus credibility signals (raw counts, no synthetic score)
+      responses:
+        "200":
+          description: works/passages/manuscripts/terms + primitive evidence-coverage
+  /api/texts:
+    get:
+      summary: The bibliography (the "WHAT EXISTS?" spine)
+      parameters:
+        - in: query
+          name: tradition
+          schema: { type: string }
+        - in: query
+          name: status
+          schema: { type: string, enum: [complete, partial, none] }
+        - in: query
+          name: verified
+          schema: { type: string, enum: ["true", "false"] }
+        - in: query
+          name: includeSeed
+          schema: { type: string, default: "true" }
+      responses:
+        "200":
+          description: list of BibliographyRecord + count + provenance
+  /api/texts/{id}:
+    get:
+      summary: One full bibliography record by stable id or urn
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        "200": { description: full BibliographyRecord }
+        "404": { description: not_found + hint }
+  /api/texts/{id}/translations:
+    get:
+      summary: Our working (T1) translations for a work, verse-anchored
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: passages with close_translation, stage T1, provisional note
+  /api/works:
+    get:
+      summary: The corpus work registry
+      parameters:
+        - in: query
+          name: tradition
+          schema: { type: string }
+        - in: query
+          name: status
+          schema: { type: string, enum: [complete, partial, none] }
+        - in: query
+          name: verified
+          schema: { type: string, enum: ["true", "false"] }
+      responses:
+        "200":
+          description: CorpusWork[] + working_translations + manuscripts counts
+  /api/works/{id}:
+    get:
+      summary: One work's registry entry by id or urn
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        "200": { description: CorpusWork }
+        "404": { description: not_found }
+  /api/works/{id}/manuscripts:
+    get:
+      summary: OCHS manuscript witnesses of a work
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: manuscripts[] (custodian OCHS, CC BY-NC-SA 4.0)
+  /api/passages/{id}:
+    get:
+      summary: One verse-anchored passage by stable id or urn
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        "200": { description: passage (sanskrit + location + edition) }
+        "404": { description: not_found }
+  /api/context/passages/{id}:
+    get:
+      summary: The deterministic evidence bundle for a passage (NO generated interpretation)
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: passage + work + manuscripts + neighbors + tracked terms + relations + rights
+        "404": { description: not_found }
+  /api/search/passages:
+    get:
+      summary: Substring search over the passage corpus
+      parameters:
+        - in: query
+          name: q
+          required: true
+          schema: { type: string }
+        - in: query
+          name: work_id
+          schema: { type: string }
+        - in: query
+          name: limit
+          schema: { type: integer, default: 50 }
+      responses:
+        "200": { description: matching passages }
+        "400": { description: missing_query }
+  /api/manuscripts:
+    get:
+      summary: OCHS manuscript witness layer (resolved to our works)
+      parameters:
+        - in: query
+          name: work_id
+          schema: { type: string }
+        - in: query
+          name: q
+          schema: { type: string }
+      responses:
+        "200":
+          description: manuscripts[] + works resolution
+  /api/relations/{work_id}:
+    get:
+      summary: Typed + confidence + evidence edges touching a work
+      parameters:
+        - in: path
+          name: work_id
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: relations[] for context ranking
+  /api/terms:
+    get:
+      summary: Full accepted term ledger (summary with proposal counts)
+      responses:
+        "200":
+          description: accepted terms (review-promoted only)
+  /api/terms/{lemma}/senses:
+    get:
+      summary: Accepted senses for a lemma (NOT a dictionary, NOT occurrence evidence)
+      parameters:
+        - in: path
+          name: lemma
+          required: true
+          schema: { type: string }
+      responses:
+        "200": { description: senses + preferred_renderings + avoid + proposals count }
+        "404": { description: not_found }
+  /api/terms/{lemma}/occurrences:
+    get:
+      summary: Surface occurrences of a lemma (HONEST: substring, not lemmatized)
+      parameters:
+        - in: path
+          name: lemma
+          required: true
+          schema: { type: string }
+        - in: query
+          name: work_id
+          schema: { type: string }
+        - in: query
+          name: limit
+          schema: { type: integer, default: 50 }
+      responses:
+        "200":
+          description: match_method substring, lemmatized false
+  /api/term-proposals:
+    get:
+      summary: Machine/human term-sense proposals (never auto-accepted)
+      parameters:
+        - in: query
+          name: lemma
+          schema: { type: string }
+        - in: query
+          name: status
+          schema: { type: string, enum: [proposed, reviewed, accepted] }
+      responses:
+        "200":
+          description: proposals[]
+  /api/assertions:
+    get:
+      summary: Contested scholarly claims as first-class reviewable objects
+      parameters:
+        - in: query
+          name: subject
+          schema: { type: string }
+      responses:
+        "200":
+          description: assertions[] each with review_events
+  /api/crosswalks:
+    get:
+      summary: Our-object ↔ external-object mappings (federation layer)
+      parameters:
+        - in: query
+          name: our_id
+          schema: { type: string }
+      responses:
+        "200":
+          description: crosswalks[]
+  /api/concordance:
+    get:
+      summary: Raw-corpus word tracking over ~500 e-texts (NOT our translations)
+      parameters:
+        - in: query
+          name: q
+          required: true
+          schema: { type: string }
+        - in: query
+          name: texts
+          schema: { type: string }
+        - in: query
+          name: context
+          schema: { type: integer, maximum: 8, default: 1 }
+        - in: query
+          name: max
+          schema: { type: integer, maximum: 50, default: 10 }
+      responses:
+        "200":
+          description: results per file; zero-hit returns empty result (200)
+        "400": { description: missing_query }
+  /api/resolve/work:
+    post:
+      summary: Candidate work identity for a manuscript record (MACHINE PROPOSAL only)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title: { type: string }
+                incipit: { type: string }
+                alternateTitles: { type: array, items: { type: string } }
+      responses:
+        "200":
+          description: ranked candidates, status machine_proposed (never accepted)
+        "400": { description: missing_input }

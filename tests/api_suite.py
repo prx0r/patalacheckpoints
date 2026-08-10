@@ -60,6 +60,11 @@ _, index = get("/api")
 check("index has name Pāṭala", index.get("name") == "Pāṭala", str(index.get("name")))
 check("index has endpoints map", isinstance(index.get("endpoints"), dict))
 
+_, health = get("/api/health")
+check("health returns status ok", health.get("status") == "ok", str(health.get("status")))
+check("health has dataset version", bool(health.get("dataset_revision")))
+check("health has api_version", bool(health.get("api_version")))
+
 _, texts = get("/api/texts")
 ids = [t["id"] for t in texts["texts"]]
 check("texts returns list", isinstance(texts["texts"], list) and len(texts["texts"]) > 0)
