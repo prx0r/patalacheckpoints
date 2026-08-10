@@ -37,6 +37,9 @@ content, and the site renders it.*
 - [`api/mcp.md`](api/mcp.md) — the MCP setup + tool mapping.
 - [`openapi.yaml`](openapi.yaml) — the executable contract.
 
+### The data model (the durable foundation)
+- [`SCHOLARLY_GRAPH.md`](SCHOLARLY_GRAPH.md) — the canonical object/annotation model (Work/Witness/Passage/SourceSpan/Person/Term/Sense/Resource + assertions). The schema that must survive years.
+
 ### The corpus & status
 - [`PROGRESS_2026-08-10.md`](PROGRESS_2026-08-10.md) — the API/hub progress.
 - [`PIPELINE_PROGRESS_2026-08-10.md`](PIPELINE_PROGRESS_2026-08-10.md) — the pipeline/stack progress.

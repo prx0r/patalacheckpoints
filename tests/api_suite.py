@@ -213,6 +213,14 @@ try:
 except Exception as e:
     check("trajectory validation runs", False, str(e))
 
+# scholarly-graph validation
+try:
+    gval = subprocess.run([sys.executable, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "pipeline", "validate_graph.py")],
+                          capture_output=True, text=True, timeout=30)
+    check("scholarly graph validation clean", "0 problems" in gval.stdout, gval.stdout[-200:])
+except Exception as e:
+    check("scholarly graph validation runs", False, str(e))
+
 # ────────────────────────────────────────────────────────────────
 print("== 7. OpenAPI contract conformance (docs match reality) ==")
 import re

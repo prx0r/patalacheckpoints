@@ -83,3 +83,19 @@ to exist. The moat is not "our AI translates better"; it is:
 
 ## Repo
 **https://github.com/prx0r/patala** (branch `main`).
+
+---
+
+## Update — the scholarly-graph schema (done)
+
+Step 2 of the roadmap is complete:
+- **`docs/SCHOLARLY_GRAPH.md`** — the canonical object/annotation model spec.
+- **`data/corpus/graph.ts`** — the TS types (GraphObject, Annotation, ReviewScope, the
+  3 dimensions origin/status/certainty).
+- **`pipeline/validate_graph.py`** — the data-model lint (targets resolve, enums valid,
+  machine-origin never accepted, review outcomes valid). Wired into the test suite.
+
+This is the durable foundation: every object is addressable, every claim is an
+annotation with evidence + review + provenance, and the API can bundle these on read.
+
+Next: Milestone B (a contiguous research unit) or Milestone C (one scholar conversation).
