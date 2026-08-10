@@ -1,8 +1,10 @@
-"""Pāṭala gold exemplars.
+"""Pāṭala pipeline_gold exemplars.
 
 Reference passage records built from REAL on-disk material (no model calls).
-These show the exact target shape models should populate. Each is the output of
-the full flow (T1 → R1 → T2 → R2 → T3 → T3.1 → C1) for one verse.
+These are PIPELINE_GOLD — expected-output fixtures for the pipeline, NOT
+scholarly gold (they have not been reviewed by domain specialists). Distinguish
+from REVIEWED_REFERENCE (externally/human-validated). This matters when the
+corpus later claims "N gold passages."
 
 Sources:
 - Exemplar A: Kramasadbhāva 1.8 — from `docs/PROOF_T1_kramasadbhava.md` (the
@@ -120,7 +122,7 @@ def exemplar_kramasadbhava_1_8() -> dict:
                         "maṅgala: the auspicious opening of the Krama's scripture, "
                         "offered to Mahākālī, the queen of gods and the mistress of "
                         "the Krama's goddesses."),
-        may_overturn=False,
+        challenges=[],
     ), "gold-exemplar-A", derived_from="T3")
 
     return r
@@ -204,7 +206,7 @@ def exemplar_sivasutra_1_3() -> dict:
                         "structures itself into appearance. The 'sources' are the "
                         "goddesses/powers from which all manifestation flows; their "
                         "corporeal form is the layered energies themselves."),
-        may_overturn=False,
+        challenges=[],
     ), "gold-exemplar-B", derived_from="T3")
 
     return r

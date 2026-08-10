@@ -74,3 +74,42 @@ RAG, semantic search, MCP, stable IDs, knowledge graph, AI Q&A are becoming *exp
 infrastructure* — FoJin already has them at scale. Our stronger layer is the messy-
 historical-evidence one: resolve → structure → propose → expert adjudicate → preserve
 judgment. Don't obsess over a fancy RAG stack.
+
+---
+
+## Follow-up corrections (the reviewer refined several earlier recommendations)
+
+On re-review, the reviewer **retracted or softened** several points:
+
+1. **T2 should NOT be blind.** Blindness suits independent replication; Pāṭala's T2 is
+   *adversarial opposition* — it should SEE T1 + R1 and construct the strongest
+   materially-different defensible rival. It must not be told "disagree everywhere"
+   (manufactured ambiguity). Difference budget: differ only where it changes syntax /
+   referent / technical sense / doctrinal implication / textual reading / meaningful
+   interpretation; mark source-constrained readings CONSTRAINED.
+
+2. **The stage pipeline is epistemically valuable — keep it.** T1=construct,
+   R1=prosecute, T2=rival, R2=adjudicate, T3=resolve, T3.1=render, C1=interpret.
+   Just store origin + editorial_status separately (done).
+
+3. **"Hard core" stays** but defined properly: agreement + source-constrained
+   (invariant across serious analyses AND forced by the source).
+
+4. **"Gold" is fine internally** as pipeline_gold (fixtures), provided it is
+   distinguished from scholarly gold / reviewed_reference. Don't claim "N gold
+   translations" externally.
+
+5. **C1 may challenge T3 but not mutate/supersede it** — challenges become
+   RevisionProposals routed through a new adjudication → T3 v2.
+
+6. **R1 maps CRUXES** (id/type/assumption/rivals/evidence-needed), not just verdicts.
+   **R2 adjudicates DECISIONS** (CONSTRAINED/PREFERRED/OPEN/RECONSTRUCTED), not
+   sentences. **Existing translations are lower evidence** than commentary/scholarship.
+
+7. **Normalize incrementally** — add independent IDs (SourceSpan, TranslationVersion,
+   InterpretiveDecision, EvidenceLink, ReviewEvent) UNDER the existing stack, don't
+   replace the working pipeline blob before the 25-verse trial.
+
+The term-trajectory review additionally required: every trajectory node gets a stable
+id + an accepted/proposed sense_id (no parallel ontology) + addressable evidence links;
+origin/status/certainty split; a trajectory validation layer. All implemented.

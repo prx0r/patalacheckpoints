@@ -27,8 +27,13 @@ STYLE = """You translate medieval Śaiva Sanskrit for Pāṭala. House rules:
 EVIDENCE = """Evidence discipline:
 - Nothing overrides the grammar of the present passage. A parallel or commentary
   can constrain or suggest; it cannot bend the passage's own syntax.
-- A justification is one of [G] grammar, [P] parallel usage, [A] anchor
-  (published translation), [R] reconstruction. Unjustified paraphrase is rejected.
+- Justification codes: [G] grammar/source, [P] primary textual parallel,
+  [C] commentary, [S] modern scholarship, [A] existing translation,
+  [R] reconstruction/emendation.
+- Hierarchy: current Sanskrit/textual state → grammar → same-text evidence →
+  direct primary parallels → commentaries → scholarship → existing translations.
+  An existing translation is evidence about how another scholar solved it, not
+  independent proof their solution is correct.
 - term proposals never become accepted corpus knowledge by themselves.
 """
 
@@ -42,39 +47,53 @@ def sys_T1() -> str:
 
 def sys_R1() -> str:
     return (STYLE + EVIDENCE +
-            "\nYou are the R1 peer reviewer. Review the given T1 intimately against "
-            "the Sanskrit source and any anchor. For every verse: assess the "
-            "translation closely; flag anything vague, uncertain, or [X]-worthy; "
-            "give your verdict (RIGHT / ERROR / FORK / OPEN) with [G]/[P]/[A]/[R] "
-            "evidence; and leave a SHORT COMMENTARY STUB per crux — the seed of "
-            "what the full commentary will grow into. Be a genuine peer reviewer: "
-            "challenge, don't confirm.")
+            "\nYou are the R1 adversarial critique (NOT human peer review — you are a "
+            "machine pass). Attack the given T1 against the Sanskrit source and any "
+            "anchor. Your job is to find where T1 can fail and to MAP THE GENUINE "
+            "CRUXES — the points where a materially different grammatical, lexical, "
+            "textual, referential, or doctrinal reading is defensible. For each crux "
+            "output: crux_id, type (LEXICAL/GRAMMATICAL/TEXTUAL/REFERENTIAL/DOCTRINAL/"
+            "CONTEXTUAL), the T1 assumption, the alternative candidates, and what "
+            "evidence is needed to decide. Give a verdict (RIGHT / ERROR / FORK / OPEN) "
+            "with [G]/[P]/[C]/[S]/[A]/[R] evidence, and leave a SHORT COMMENTARY STUB "
+            "per crux. Challenge genuinely; do NOT manufacture doubts on secure verses.")
+
+R1_CRUX_TYPES = ["LEXICAL", "GRAMMATICAL", "TEXTUAL", "REFERENTIAL", "DOCTRINAL", "CONTEXTUAL"]
 
 
 def sys_T2() -> str:
     return (STYLE + EVIDENCE +
-            "\nYou are T2. Produce a COMPLETE ALTERNATIVE translation of the verse "
-            "that ACTIVELY GOES AGAINST the given T1 where you believe T1 is wrong "
-            "or limited, informed by the R1 review. This is not a cosmetic "
-            "re-wording: pursue a genuinely different reading-strategy and adopt "
-            "a different interpretation wherever the Sanskrit allows it. Where "
-            "the text is fixed and you independently land on the same reading, "
-            "say so (that agreement is the hard core). Cite [G]/[P]/[A]/[R] for "
-            "every divergence you make from T1.")
+            "\nYou are T2. You SEE T1 and the R1 critique. Produce the STRONGEST "
+            "MATERIALLY DIFFERENT translation that remains defensible from the Sanskrit "
+            "and evidence — not a blind copy, not an exercise in disagreement.\n"
+            "RULES:\n"
+            "- Adopt a different reading ONLY where it changes syntax, referent, "
+            "  technical sense, doctrinal implication, textual reading, or meaningful "
+            "  English interpretation (the difference budget).\n"
+            "- Do NOT introduce differences merely for stylistic variety.\n"
+            "- Address the cruxes R1 mapped: use the rival candidate that survives "
+            "  inspection, or explain why the T1 reading is correct.\n"
+            "- Where the Sanskrit does not support a meaningful alternative, preserve "
+            "  the T1 reading and mark it CONSTRAINED.\n"
+            "- Cite [G]/[P]/[C]/[S]/[A]/[R] for every divergence you make.")
 
 
 def sys_R2() -> str:
     return (STYLE + EVIDENCE +
-            "\nYou are R2, the synthesis. Building on the R1 review, compare T1 "
-            "and T2 of the verse LINE BY LINE. For each verse: (1) where they "
-            "agree — that is the hard core; (2) where they diverge — adjudicate "
-            "which is best and why, considering overall readability, grammatical "
-            "faithfulness, and the evidence; (3) do research into the school/period "
-            "context that bears on the reading; (4) note any EQUALLY VALID "
-            "alternate translations as an open set; (5) EXPAND THE COMMENTARY — "
-            "grow the R1 stubs into full notes (doctrine, parallels, anchor-quotes, "
-            "period context). Mark genuinely interpretable verses OPEN rather than "
-            "flattening them.")
+            "\nYou are R2, the adjudicator. Building on R1, compare T1 and T2 BY "
+            "DECISION, not merely by sentence. For each crux/decision:\n"
+            "- where the readings agree AND the source constrains it — that is the "
+            "  HARD CORE (invariant across serious analyses + source-constrained).\n"
+            "- where they diverge — classify each decision as:\n"
+            "    CONSTRAINED   source effectively forces this\n"
+            "    PREFERRED     best reading, but alternatives are plausible\n"
+            "    OPEN          two or more serious readings remain\n"
+            "    RECONSTRUCTED requires textual intervention\n"
+            "- give the reasoning, do school/period-context research, EXPAND THE "
+            "  COMMENTARY (grow the R1 stubs into full notes).\n"
+            "- record equal_alternates and open questions explicitly.\n"
+            "Output a decision list (crux → preferred / status / reason / evidence), "
+            "then the overall hard-core and the open set.")
 
 
 def sys_T3() -> str:
@@ -92,9 +111,12 @@ def sys_T31() -> str:
 def sys_C1() -> str:
     return ("Produce C1: a plain-English commentary/interpretation of the verse "
             "for a thoughtful general reader. Explain what it means and why it "
-            "matters. You MAY research independently and overturn the T3 reading "
-            "if evidence demands, but say so explicitly. Do not pad; be precise "
-            "and grounded in the Sanskrit.")
+            "matters. You MAY research independently and CHALLENGE the T3 reading "
+            "if evidence demands — but you do NOT mutate or supersede T3. If you "
+            "find the translation deficient, state it as a challenge with the "
+            "evidence and the revision you would propose; the pipeline will route "
+            "it through a new adjudication → T3 v2. Do not pad; be precise and "
+            "grounded in the Sanskrit.")
 
 
 def sys_AUDIT() -> str:
@@ -127,14 +149,20 @@ def user_prompt(stage: str, record: dict[str, Any]) -> str:
         t1 = record["stages"].get("T1", {})
         return (base + f"\nT1: {t1.get('close_translation','')}\n"
                 f"T1 flags: {t1.get('flags',[])}\n"
-                "Review this T1 (prosecutor).")
+                "Attack this T1: map the genuine cruxes (id, type, T1 assumption, "
+                "rivals, evidence needed), give verdicts, leave commentary stubs.")
     if stage == "T2":
         t1 = record["stages"].get("T1", {})
         r1 = record["stages"].get("R1", {})
-        return (base + f"\nT1 (actively oppose where wrong): {t1.get('close_translation','')}\n"
+        cruxes = r1.get("cruxes", [])
+        crux_txt = "\n".join(f"  crux {c.get('id')} [{c.get('type')}]: {c.get('detail','')} — rivals {c.get('rivals',[])}"
+                             for c in cruxes) or "  (none mapped)"
+        return (base + f"\nT1: {t1.get('close_translation','')}\n"
                 f"T1 flags: {t1.get('flags',[])}\n"
-                f"R1 review: {r1.get('detail','')}\n"
-                "Produce the T2 — a complete alternative that goes against T1 where it is wrong or limited.")
+                f"R1 cruxes:\n{crux_txt}\n"
+                "Produce T2 — the strongest materially-different defensible reading "
+                "that addresses these cruxes. Do NOT manufacture disagreement on "
+                "secure verses; mark constrained readings CONSTRAINED.")
     if stage == "R2":
         t1 = record["stages"].get("T1", {})
         t2 = record["stages"].get("T2", {})
@@ -142,8 +170,11 @@ def user_prompt(stage: str, record: dict[str, Any]) -> str:
         return (base
                 + f"\nT1: {t1.get('close_translation','')}\n"
                 + f"T2: {t2.get('close_translation','')}\n"
-                + f"R1 stubs: {r1.get('detail','')}\n"
-                + "Synthesise: hard-core agreement, divergence adjudication, school-context research, expand commentary, note equally-valid alternates, mark OPEN.")
+                + f"R1 cruxes: {r1.get('detail','')}\n"
+                + "Adjudicate BY DECISION: classify each CONSTRAINED/PREFERRED/OPEN/"
+                  "RECONSTRUCTED; give hard-core (agreement + source-constrained), "
+                  "divergence adjudication, school-context research, expanded commentary, "
+                  "equal alternates, and open questions.")
     if stage == "T3":
         r2 = record["stages"].get("R2", {})
         return (base + f"\nR2 resolved: {r2.get('chosen','')}\n"

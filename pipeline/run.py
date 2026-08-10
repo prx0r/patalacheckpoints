@@ -70,7 +70,7 @@ def run_stage(record: dict[str, Any], stage: str, model: str,
         raise ValueError(f"unknown stage {stage}")
 
     set_stage(record, payload, created_by=created_by,
-              derived_from=record["review_status"] if record["stages"] else None)
+              derived_from=record["pipeline_stage"] if record["stages"] else None)
 
     # audit the record after this stage
     findings = audit_record(record)

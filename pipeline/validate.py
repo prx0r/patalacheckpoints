@@ -65,7 +65,8 @@ def validate_record(record: dict[str, Any]) -> dict[str, Any]:
         "errors": [f for f in findings if f["level"] == "error"],
         "warnings": [f for f in findings if f["level"] == "warn"],
         "stages": list(rec.get("stages", {}).keys()),
-        "review_status": rec.get("review_status"),
+        "pipeline_stage": rec.get("pipeline_stage"),
+        "editorial_status": rec.get("editorial_status"),
         "audit": rec.get("audit", {}),
     }
 
@@ -117,32 +118,74 @@ def _source_text(r: dict) -> str:
     return src.get("source_text") or r.get("sanskrit") or ""
 
 
+def canonical_work_ids() -> set[str]:
+    """The canonical work registry: the bibliography ids (data/atlas/*.ts) UNION
+    the works that have a corpus/passage presence. This is the authoritative set a
+    passage's work_id must resolve against. (A work can have passage data before it
+    gets a full bibliography record — e.g. Tārārahasya.)"""
+    import re as _re
+    ids = set()
+    base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    for ts in ("data/atlas/bibliographySeed.ts", "data/atlas/audited.ts",
+               "data/corpus/works.ts"):
+        p = os.path.join(base, ts)
+        if os.path.exists(p):
+            txt = open(p, encoding="utf-8").read()
+            ids |= set(_re.findall(r'id:\s*"([a-z0-9_]+)"', txt))
+    # works with a passage corpus presence (data/corpus/passages/*.jsonl)
+    pp = os.path.join(base, "data", "corpus", "passages")
+    if os.path.isdir(pp):
+        for f in os.listdir(pp):
+            if f.endswith(".jsonl"):
+                stem = f[: -len(".jsonl")]
+                ids.add(stem)
+    return ids
+
+
 def referential_integrity(records: list[dict[str, Any]],
-                          work_ids: Optional[set[str]] = None) -> dict[str, Any]:
-    """Check: unique ids, work_id present, source present, neighbors resolve."""
+                          canonical_works: Optional[set[str]] = None) -> dict[str, Any]:
+    """Check referential integrity.
+
+    - unique ids, work_id present, source present
+    - every passage's work_id resolves against the CANONICAL WORK REGISTRY
+      (not the set of work_ids that happen to appear in passages)
+    - neighbors resolve (prev/next ids exist in the record set)
+    """
     ids = [_pid(r) for r in records]
-    seen = {}
-    dup = []
-    for i in ids:
-        seen[i] = seen.get(i, 0) + 1
-    dup = [i for i, c in seen.items() if c > 1]
+    id_set = set(ids)
+    dup = [i for i, c in __import__("collections").Counter(ids).items() if c > 1]
 
     missing_work = [_pid(r) for r in records if not _work(r)]
     missing_source = [_pid(r) for r in records if not _source_text(r).strip()]
-    dangling = []
+
+    # resolve work_id against the CANONICAL registry
+    dangling_work = []
+    if canonical_works is not None:
+        for r in records:
+            w = _work(r)
+            if w and w not in canonical_works:
+                dangling_work.append(w)  # record the offending WORK ID
+
+    # neighbor resolution: prev/next ids (as recorded in the record's location)
+    dangling_neighbors = []
     for r in records:
-        pid = _pid(r)
-        if work_ids is not None and _work(r) not in work_ids:
-            dangling.append(pid)
+        src = r.get("source") or {}
+        nxt = src.get("next") or r.get("next")
+        prv = src.get("previous") or r.get("previous")
+        for n in (nxt, prv):
+            if n and n not in id_set:
+                dangling_neighbors.append((_pid(r), n))
 
     return {
         "total": len(records),
-        "unique_ids": len(set(ids)),
+        "unique_ids": len(id_set),
         "duplicate_ids": dup,
         "missing_work": missing_work,
         "missing_source": missing_source,
-        "dangling_work": dangling,
-        "ok": not dup and not missing_work and not missing_source,
+        "dangling_work": dangling_work,
+        "dangling_neighbors": dangling_neighbors,
+        "ok": not dup and not missing_work and not missing_source
+              and not dangling_work and not dangling_neighbors,
     }
 
 
@@ -150,7 +193,7 @@ def run_corpus_audit() -> dict[str, Any]:
     """Validate + track every corpus passage and every gold record."""
     corpus = load_corpus()
     gold = load_gold_records()
-    work_ids = {r.get("work_id") for r in corpus}
+    canonical = canonical_work_ids()
 
     corp_rows = [validate_record(r) for r in corpus]
     gold_rows = [validate_record(r) for r in gold]
@@ -162,13 +205,13 @@ def run_corpus_audit() -> dict[str, Any]:
     return {
         "corpus": {
             "passages": len(corpus),
-            "integrity": referential_integrity(corpus),
+            "integrity": referential_integrity(corpus, canonical),
             "tracked": corp_rows,
             "tally": tally(corp_rows),
         },
         "gold_records": {
             "passages": len(gold),
-            "integrity": referential_integrity(gold, work_ids),
+            "integrity": referential_integrity(gold, canonical),
             "tracked": gold_rows,
             "tally": tally(gold_rows),
         },

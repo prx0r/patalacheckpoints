@@ -1,12 +1,25 @@
 """Pāṭala audit checker.
 
-Validates a passage record at every pipeline stage. Two jobs:
-1. **Schema validity** — is the record well-formed (ids, locations, enums)?
-2. **Epistemic honesty** — does it carry the evidence it claims? No [X] laundered,
-   no unsupported additions, no term drift, no machine output presented as reviewed.
+Validates a passage record at every pipeline stage. Audits are split into THREE
+tiers so the docs never over-promise what's enforced:
 
-Returns a list of {level, stage, code, message} findings. level ∈ {error, warn, info}.
-An `error` fails the stage; a `warn` is flagged for human review.
+STRUCTURAL (deterministic, implemented here):
+  - schema validity (ids, locations, enums)
+  - stage ordering (contiguous T1→…→C1), T3 requires a prior R2
+  - empty close/resolved/reading detection
+  - [X] / typed flags are valid; a T1 [X] must be resolved OR carried into T3
+
+SEMANTIC (model-assisted, NOT yet enforced — flagged NOT_CHECKED):
+  - unsupported additions (English without Sanskrit support)
+  - term drift (same sense rendered inconsistently)
+  - [X] laundering (an [X] silently resolved without evidence)
+  - machine output masquerading as human review
+
+PLANNED (documented intent, not yet implemented):
+  - parallel-conflict, negation, number preservation
+
+Each finding is {level: error|warn, stage, code, message}. error fails the stage;
+warn is flagged for human review.
 """
 from __future__ import annotations
 from typing import Any, Optional
@@ -66,6 +79,24 @@ def audit_record(record: dict[str, Any]) -> list[dict[str, str]]:
     if t3 and stages.get("R2") is None:
         findings.append({"level": "error", "stage": "T3", "code": "NO_ADJUDICATION",
                          "message": "T3 present without a prior R2 adjudication"})
+
+    # 4. [X]-carried-to-T3: every T1 [X] flag must be resolved (R2) OR carried
+    # into T3's open_flags. A T1 [X] that vanishes by T3 is laundering (warn).
+    t1 = stages.get("T1", {})
+    t1_flags = set(t1.get("flags", []))
+    if t1_flags & {"X", "TXT", "GRAM", "LEX", "DOCT", "WIT"}:
+        resolved_or_carried = False
+        if t3:
+            open_flags = [f.get("flag") if isinstance(f, dict) else f
+                          for f in t3.get("open_flags", [])]
+            if set(open_flags) & {"X", "TXT", "GRAM", "LEX", "DOCT", "WIT"}:
+                resolved_or_carried = True
+        # an R2 that explicitly resolves is treated as carried (chosen set)
+        if stages.get("R2") and stages["R2"].get("chosen"):
+            resolved_or_carried = True
+        if not resolved_or_carried:
+            findings.append({"level": "warn", "stage": "T3", "code": "X_NOT_CARRIED",
+                             "message": f"T1 flags {sorted(t1_flags)} not carried into T3.open_flags and no R2 resolution — possible laundering"})
 
     return findings
 

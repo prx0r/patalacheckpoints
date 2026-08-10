@@ -166,14 +166,21 @@ def assemble(work_id: str) -> str:
     return stack_dir
 
 
+def _status_word(ok: bool | None, label: str) -> str:
+    if ok is True:
+        return f"{label}: PASS"
+    if ok is False:
+        return f"{label}: FAIL"
+    return f"{label}: NOT_CHECKED"
+
+
 def write_audit(work_id: str) -> None:
-    """Write AUDIT.md for a work from the validated passage records."""
+    """Write AUDIT.md for a work. Every PASS/FAIL is DERIVED from an actual check —
+    never hard-coded. Anything not computed is reported NOT_CHECKED."""
     stack_dir = os.path.join(STACK_ROOT, work_id)
     res = run_corpus_audit()
-    # work-level view
     rows = [r for r in res["gold_records"]["tracked"] if r["work_id"] == work_id]
     rows += [r for r in res["corpus"]["tracked"] if r["work_id"] == work_id]
-    # dedupe by passage_id
     seen = {}
     for r in rows:
         seen[r["passage_id"]] = r
@@ -187,22 +194,37 @@ def write_audit(work_id: str) -> None:
     for flat_dir, (floor_file, stage) in FLAT_DIRS.items():
         if flat_dir in floor_files:
             floor_state[floor_file.replace(".md", "")] = "present"
+
+    # ── derived integrity checks (per work, computed — not literals) ──
+    ids = [r["passage_id"] for r in rows]
+    dup = len(ids) - len(set(ids))
+    missing_work = sum(1 for r in rows if not r.get("work_id"))
+    missing_source = sum(1 for r in rows if not (r.get("source") or {}).get("source_text", "").strip())
+    invalid = tally.get("invalid", 0)
+
+    # epistemic: any passage presented as 'valid' while a machine-only record?
+    # 'valid' here means the record passed audit with no errors; it does NOT claim
+    # human review. So machine-authority-leakage is a *semantic* check not yet
+    # computed from the record alone → NOT_CHECKED (honest), until a real review
+    # event is recorded.
     lines = [
         f"# {work_id} — audit record",
         "",
         "## Status",
         f"- floors: {', '.join(f'{k}={v}' for k, v in floor_state.items())}",
         f"- passages_total: {len(rows)}",
-        f"- passages: valid={tally.get('valid',0)} · needs_review={tally.get('needs_review',0)} · invalid={tally.get('invalid',0)}",
+        f"- passages: valid={tally.get('valid',0)} · needs_review={tally.get('needs_review',0)} · invalid={invalid}",
         "",
-        "## Integrity",
-        "- duplicate ids: 0",
-        "- missing work: 0",
-        "- missing source: 0",
+        "## Integrity (derived)",
+        f"- duplicate ids: {dup} ({_status_word(dup == 0, 'check')})",
+        f"- missing work: {missing_work} ({_status_word(missing_work == 0, 'check')})",
+        f"- missing source: {missing_source} ({_status_word(missing_source == 0, 'check')})",
+        f"- invalid passages: {invalid} ({_status_word(invalid == 0, 'check')})",
         "",
         "## Epistemic",
-        "- machine output never presented as reviewed: PASS",
-        "- [X] flags not laundered: PASS",
+        f"- machine output never presented as reviewed: NOT_CHECKED (no review event recorded for this work)",
+        f"- [X] flags not laundered: NOT_CHECKED (semantic audit — model-assisted, not yet enforced)",
+        f"- T3 has a prior R2: NOT_CHECKED (requires full pipeline records)",
         "",
         "## Passage manifest",
         "",
