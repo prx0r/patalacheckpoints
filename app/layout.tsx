@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Śaiva Tantra Atlas",
-  description: "A research workstation for medieval Śaiva texts — traditions, texts, people, and concepts in a navigable graph.",
+  title: "Pāṭala — Tantra Hub",
+  description: "The authority, provenance, and expert-validation layer for tantric textual heritage. Read translations where every interpretive decision is inspectable.",
 };
 
 export default function RootLayout({
@@ -8,6 +8,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+      <head />
       <body className="antialiased">{children}</body>
     </html>
   );

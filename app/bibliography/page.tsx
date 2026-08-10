@@ -138,11 +138,14 @@ export default function BibliographyPage() {
     <main className="min-h-screen bg-zinc-950 px-6 py-12 text-zinc-200">
       <div className="mx-auto max-w-3xl">
         <header className="mb-2">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-[color:var(--saffron)]">essays.tantrafiles.xyz</p>
+          <p className="text-[10px] uppercase tracking-[0.3em] text-[color:var(--saffron)]">patala — tantra hub</p>
           <h1 className="mt-1 font-serif text-3xl text-[color:var(--bone)]">The Tantra Hub — Bibliography</h1>
           <p className="mt-2 text-sm text-zinc-400">
             A living register of the Śaiva textual landscape: what exists, where to read it, what has been translated, how scholars understand it.
           </p>
+          <a href="/read/kramasadbhava/1.8" className="mt-3 inline-block rounded border border-[color:var(--saffron)] px-3 py-1.5 text-[12px] text-[color:var(--saffron)] hover:bg-[color:var(--saffron)] hover:text-zinc-950">
+            → Read Kramasadbhāva 1.8 (auditable reader)
+          </a>
         </header>
 
         <div className="mb-6 flex flex-wrap gap-4 text-[12px] text-zinc-400">
