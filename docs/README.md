@@ -45,8 +45,19 @@ content, and the site renders it.*
 
 ### The strategy
 - [`NORTHSTAR.md`](NORTHSTAR.md) · [`nextdev.md`](nextdev.md) · [`endgame1..5year.md`](endgame2.md) — the vision.
+- [`../PROCESS_NOTES.md`](../PROCESS_NOTES.md) · [`../HANDOVER.md`](../HANDOVER.md) — current state + handover.
+
+### The strategy — corpus-side (in `sanskritree/corpus/targets/`)
+These are the authoritative strategic/analytic docs (they live in the source repo):
+- [`canonical_reference_map.md`](../../sanskritree/corpus/targets/canonical_reference_map.md) — the historical map + glossary dossiers (the atlas source of truth)
+- [`markguidance.md`](../../sanskritree/corpus/targets/markguidance.md) — the Recognition Enquiry (Pratyabhijñā)
+- [`leapfrog_map.md`](../../sanskritree/corpus/targets/leapfrog_map.md) + [`leapfrog_guide.md`](../../sanskritree/corpus/targets/leapfrog_guide.md) — the corpus-ladder strategy
+- [`translation_flow_spec.md`](../../sanskritree/corpus/targets/translation_flow_spec.md) — the T1→C1 flow spec
+- [`targetacquired.md`](../../sanskritree/corpus/targets/targetacquired.md) + [`translation_status_audit.md`](../../sanskritree/corpus/targets/translation_status_audit.md) — the acquisitions + translation-status registers
 
 ### The skills (how to interact)
+- `skills/translate-work/SKILL.md` (the T1→T3.1 state-machine workflow)
+- `skills/write-commentary/SKILL.md` (the C1 capstone)
 - `skills/translate-passage/SKILL.md` · `skills/validate-passage/SKILL.md` · `skills/assemble-stack/SKILL.md` · `skills/use-api/SKILL.md`
 
 ---
