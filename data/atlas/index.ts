@@ -7,6 +7,9 @@ import { relations } from "./relations";
 import { audited } from "./audited";
 import { seed } from "./bibliographySeed";
 import { BibliographyRecord } from "./bibliographyTypes";
+import { resources } from "./resources";
+import type { Resource, ResourceType, Tradition } from "./resourcesTypes";
+import { TYPE_LABEL } from "./resourcesTypes";
 import { AtlasEntity, AtlasRelation } from "@/lib/atlas";
 
 export const atlasEntities: AtlasEntity[] = [
@@ -21,6 +24,9 @@ export { relations };
 export { audited };
 export { seed };
 export type { BibliographyRecord, BibTranslation, BibSource, BibScholarship, ResourceTier } from "./bibliographyTypes";
+export { resources };
+export type { Resource, ResourceType, Tradition };
+export { TYPE_LABEL };
 
 export const relationTypes = relations as AtlasRelation[];
 
