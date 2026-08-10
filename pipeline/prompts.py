@@ -39,10 +39,13 @@ EVIDENCE = """Evidence discipline:
 
 
 def sys_T1() -> str:
-    return (STYLE + "\n" + EVIDENCE +
-            "\nProduce the T1 working translation for the verse given. "
-            "Output the close translation, then notes ([G]/[P]/[A]/[R] where "
-            "relevant), and any [X] flags.")
+    # CONCISE system prompt — the full house style is too long for the model in
+    # strict-JSON mode and produces empty output (an empirical 1.8 finding).
+    return ("You translate medieval Śaiva Sanskrit for Pāṭala. Rules: use IAST; "
+            "retain technical terms (śakti, kula, krama, spanda, vimarśa, prakāśa, "
+            "visarga, khecarī, mātṛkā, saṃvit, svātantrya) where English would obscure "
+            "the sense; be structurally faithful; flag genuine ambiguity with [X]; "
+            "do NOT invent doctrine or copy published translations. Return ONLY valid JSON.")
 
 
 def sys_R1() -> str:
@@ -152,7 +155,8 @@ def user_prompt(stage: str, record: dict[str, Any], evidence_packet: dict | None
     """Build the user message for a stage from the current record + the evidence packet."""
     src = record["source"]
     loc = record["location"]
-    base = (f"Work: {record['work_id']} · {loc.get('locator', loc['chapter'])}.{loc.get('verse', loc.get('chapter',''))}\n"
+    locator_str = loc.get("locator") or f"{loc['chapter']}.{loc.get('verse', '')}"
+    base = (f"Work: {record['work_id']} · {locator_str}\n"
             f"Edition: {src['source_edition']}\n"
             f"Sanskrit: {src['source_text']}\n")
 
@@ -173,9 +177,10 @@ def user_prompt(stage: str, record: dict[str, Any], evidence_packet: dict | None
     base = evidence_blk + base
 
     if stage == "T1":
-        return base + "\nProduce the T1 working translation as STRICT JSON:\n" \
-               '{"close_translation":"...","reader_draft":"...","flags":[],"notes":[],' \
-               '"lexical_decisions":[],"grammatical_notes":[],"time_place_context":{}}'
+        # LEAN schema — the full multi-field JSON makes the model return empty
+        # (an empirical 1.8 finding); the pipeline fills defaults for the rest.
+        return base + "\nProduce the T1 working translation as STRICT JSON (lean):\n" \
+               '{"close_translation":"...","reader_draft":"...","flags":[]}'
     if stage == "R1":
         t1 = record["stages"].get("T1", {})
         return (base + f"\nT1: {t1.get('close_translation','')}\n"

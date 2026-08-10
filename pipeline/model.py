@@ -29,7 +29,7 @@ def get_client() -> OpenAI:
 
 
 def chat(system: str, user: str, model: str = DEFAULT_MODEL,
-         temperature: float = 0.3, max_tokens: int = 2000) -> str:
+         temperature: float = 0.3, max_tokens: int = 4000) -> str:
     """A single model call. Returns the text content. Never parses JSON itself
     unless asked — most stages want prose."""
     res = get_client().chat.completions.create(
