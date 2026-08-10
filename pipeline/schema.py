@@ -163,11 +163,37 @@ def stage_T31(reading: str) -> dict[str, Any]:
     return {"reading": reading, "stage": "T3.1"}
 
 
-def stage_C1(interpretation: str, challenges: Optional[list] = None) -> dict[str, Any]:
-    """C1: the plain-English commentary. May CHALLENGE T3 (with evidence + a
-    proposed revision) but must NOT mutate or supersede T3 — the challenge is
-    routed through a new adjudication → T3 v2."""
-    return {"interpretation": interpretation, "challenges": challenges or [],
+C1_EVIDENCE_STATES = ("C1_EVIDENCE_COMPLETE", "C1_EVIDENCE_PARTIAL")
+
+
+def stage_C1(interpretation: str, challenges: Optional[list] = None,
+             c1_id: str = "", derived_from_t3: str = "",
+             evidence_state: str = "C1_EVIDENCE_PARTIAL",
+             evidence: Optional[list] = None,
+             open_questions: Optional[list] = None,
+             proposals: Optional[list] = None,
+             cruxes: Optional[list] = None) -> dict[str, Any]:
+    """C1: the capstone scholarly commentary (per skills/write-commentary).
+
+    - interpretation  the commentary prose
+    - challenges      TranslationChallenges (C1 may challenge T3 but never mutate it)
+    - evidence_state  C1_EVIDENCE_COMPLETE | C1_EVIDENCE_PARTIAL
+    - evidence        [{id, what_it_supports}] — stable passage/resource ids
+    - open_questions  explicit unresolved points
+    - proposals       structured PROPOSALS (TermHistoryAssertion, ParallelAssertion,
+                      TranslationChallenge, ...) — origin machine, status proposed
+    """
+    if evidence_state not in C1_EVIDENCE_STATES:
+        raise ValueError(f"evidence_state must be one of {C1_EVIDENCE_STATES}, got {evidence_state!r}")
+    return {"interpretation": interpretation,
+            "challenges": challenges or [],
+            "c1_id": c1_id,
+            "derived_from_t3": derived_from_t3,
+            "evidence_state": evidence_state,
+            "evidence": evidence or [],
+            "open_questions": open_questions or [],
+            "proposals": proposals or [],
+            "cruxes": cruxes or [],
             "stage": "C1"}
 
 

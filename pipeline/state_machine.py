@@ -289,7 +289,22 @@ def _make_payload(stage: str, text: str, require_structured: bool = True) -> dic
     if stage == "T3.1":
         return schema.stage_T31(reading=text)
     if stage == "C1":
-        return schema.stage_C1(interpretation=text)
+        # C1 is structured: interpretation + evidence_state + proposals + challenges
+        try:
+            obj = model_mod.parse_json(text)
+            return schema.stage_C1(
+                interpretation=obj.get("interpretation", text),
+                c1_id=obj.get("c1_id", ""),
+                derived_from_t3=obj.get("derived_from_t3", ""),
+                evidence_state=obj.get("evidence_state", "C1_EVIDENCE_PARTIAL"),
+                evidence=obj.get("evidence", []),
+                open_questions=obj.get("open_questions", []),
+                proposals=obj.get("proposals", []),
+                challenges=obj.get("challenges", []),
+                cruxes=obj.get("cruxes", []),
+            )
+        except Exception:
+            return schema.stage_C1(interpretation=text)
     raise ValueError(f"unknown stage {stage}")
 
 

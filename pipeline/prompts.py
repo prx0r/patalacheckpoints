@@ -109,14 +109,27 @@ def sys_T31() -> str:
 
 
 def sys_C1() -> str:
-    return ("Produce C1: a plain-English commentary/interpretation of the verse "
-            "for a thoughtful general reader. Explain what it means and why it "
-            "matters. You MAY research independently and CHALLENGE the T3 reading "
-            "if evidence demands — but you do NOT mutate or supersede T3. If you "
-            "find the translation deficient, state it as a challenge with the "
-            "evidence and the revision you would propose; the pipeline will route "
-            "it through a new adjudication → T3 v2. Do not pad; be precise and "
-            "grounded in the Sanskrit.")
+    return ("You are producing C1, the capstone scholarly commentary for a passage. "
+            "Follow skills/write-commentary. It is NOT a free-form essay or a "
+            "paraphrase of T3 — it is concise, source-aware, explicit about "
+            "uncertainty. Adjudicate from the supplied EVIDENCE PACKET + the "
+            "translation stack (T1/R1/T2/R2/T3/T3.1), not model memory.\n"
+            "Structure: A) core sense (what is being said), B) why this reading "
+            "(the decisive evidence chain), C) the crux/uncertainty (only if real), "
+            "D) larger significance (evidence-tied).\n"
+            "Every nontrivial claim is one of TEXTUAL/GRAMMATICAL/INTERPRETIVE/"
+            "HISTORICAL/ATTRIBUTED/SYNTHESIS — say which. No vague 'scholars say' "
+            "or 'traditionally understood as'.\n"
+            "You may CHALLENGE T3 (emit a TranslationChallenge with evidence + a "
+            "proposed revision) but must NEVER mutate or supersede T3.\n"
+            "Emit structured PROPOSALS (TermSenseAssignment, TermHistoryAssertion, "
+            "ParallelAssertion, DoctrinalAssertion, CommentaryClaim, ResearchQuestion) "
+            "as origin=machine, status=proposed.\n"
+            "Set evidence_state to C1_EVIDENCE_COMPLETE only if every required item "
+            "is met; otherwise C1_EVIDENCE_PARTIAL with the missing items listed.\n"
+            "Return STRICT JSON: {\"interpretation\":\"...\",\"evidence_state\":"
+            "\"C1_EVIDENCE_PARTIAL\",\"cruxes\":[],\"evidence\":[],"
+            "\"open_questions\":[],\"proposals\":[],\"challenges\":[]}")
 
 
 def sys_AUDIT() -> str:
@@ -219,9 +232,20 @@ def user_prompt(stage: str, record: dict[str, Any], evidence_packet: dict | None
                 "Produce the T3.1 reading layer (natural English, in lock-step with T3).")
     if stage == "C1":
         t3 = record["stages"].get("T3", {})
+        t31 = record["stages"].get("T3.1", {})
+        r1 = record["stages"].get("R1", {})
         r2 = record["stages"].get("R2", {})
-        return (base + f"\nT3: {t3.get('resolved','')}\n"
-                f"R2 decisions: {r2.get('decisions',[])}\n"
-                "Produce the C1 commentary. You may CHALLENGE T3 with evidence + a "
-                "proposed revision, but do not mutate T3.")
+        t2 = record["stages"].get("T2", {})
+        return (base
+                + f"\nT3: {t3.get('resolved','')}\n"
+                + f"T3.1: {t31.get('reading','')}\n"
+                + f"R1 cruxes: {r1.get('cruxes',[])}\n"
+                + f"T2 rival decisions: {t2.get('rival_decisions',[])}\n"
+                + f"R2 decisions: {r2.get('decisions',[])}\n"
+                + f"R2 hard core: {r2.get('hard_core','')}\n"
+                + "Produce the C1 capstone commentary as STRICT JSON (see skills/write-commentary): "
+                  '{"interpretation":"...","evidence_state":"C1_EVIDENCE_PARTIAL",'
+                  '"cruxes":[],"evidence":[{"id":"stable-id","supports":"..."}],'
+                  '"open_questions":[],"proposals":[],"challenges":[]}. '
+                  "You may CHALLENGE T3 but must never mutate it.")
     return base
