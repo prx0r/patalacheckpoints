@@ -61,18 +61,33 @@ curl "http://localhost:3000/api/terms/kula/history"
 {
   "lemma": "kula",
   "trajectory": [
-    { "period": "early Yoginī/Kaula", "tradition": "Yoginī cult", "sense": "family / lineage of Yoginīs or Mothers", "translation_policy": "translate 'family/lineage'..." },
-    { "period": "developed Kaula", "tradition": "Kaula", "sense": "body; totality of power and phenomena" },
-    { "period": "Kubjikā", "tradition": "Kubjikā", "sense": "the mantra-body / structured Kula", "evidence": ["KMT 17.80–82"] },
-    { "period": "Abhinava/Trika", "tradition": "Trika", "sense": "the manifest pole vs the transcendent akula", "evidence": ["TĀ 3.143"] }
+    {
+      "id": "kula.yogini.lineage",
+      "scope": { "period": { "label": "early Yoginī/Kaula" }, "traditions": ["kaula"] },
+      "sense_id": "kula.lineage",
+      "claim": "within early Yoginī/Vidyāpīṭha material, kula carries socio-mythic lineage classification",
+      "evidence_links": [ { "target_id": "resource:sanderson-vidyapitha", "type": "resource", "role": "historical_argument" } ],
+      "origin": "reference_map",
+      "status": "accepted",
+      "certainty": "secure"
+    },
+    { "id": "kula.kaula.body-power", "sense_id": "kula.body.power", "claim": "the Kaula homonym-extension: lineage → body → power → totality", "status": "accepted" },
+    { "id": "kula.kubjika.mantra-body", "sense_id": "kula.body.power", "claim": "the body/power sense articulated through the mantra-body (mantradeha)", "evidence_links": [{ "target_id": "tantra:text:kubjikamata:17.80", "type": "passage", "role": "supports" }], "status": "reviewed" },
+    { "id": "kula.abhinava.akula-pole", "sense_id": "kula.body.power", "claim": "the kula-pole set against the transcendent akula", "evidence_links": [{ "target_id": "tantra:text:tantraloka:3.143", "type": "passage", "role": "supports" }], "status": "accepted", "certainty": "secure" }
   ],
-  "accepted_senses": [ ... ]
+  "warnings": [],
+  "accepted_senses": [ ... ],
+  "proposals": 1
 }
 ```
 
-These are **evidence-backed hypotheses** (the reference map + dossiers), not settled
-facts. The trajectory is why a lemma should be rendered *by context*, not by a
-dictionary's first gloss — **semantic consistency is the goal, not lexical uniformity.**
+These are **curated historical-sense assertions** — each node references an accepted
+(`sense_id`) or proposed (`proposed_sense_id`) sense from the ledger (no parallel
+sense ontology), carries stable IDs + addressable evidence links, and separates
+`origin` (where the claim came from), `status` (epistemic maturity) and `certainty`.
+The trajectory is a *projection over curated claims*, not mechanically derived from
+corpus occurrences — the diachronic shift is scholarly synthesis, not raw data.
+`warnings[]` surfaces unresolved evidence or proposed nodes.
 
 ## 5. Machine/human proposals (separate)
 

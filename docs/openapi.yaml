@@ -223,7 +223,10 @@ paths:
       description: >
         How a lemma's meaning shifts across traditions and periods (e.g. kula:
         lineage → body/totality → Kubjikā mantra-body → Abhinava's akula-pole).
-        Evidence-backed hypotheses (the reference map + dossiers), NOT settled facts.
+        Each node is a curated historical-sense assertion: stable id, an accepted
+        sense_id (or proposed_sense_id), addressable evidence_links, and separate
+        origin/status/certainty. A projection over curated claims — NOT mechanically
+        derived from corpus occurrences.
       parameters:
         - in: path
           name: lemma

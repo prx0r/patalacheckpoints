@@ -10,6 +10,8 @@ Exit code 0 = all pass. Prints a PASS/FAIL report per check.
 """
 import json
 import sys
+import os
+import subprocess
 import urllib.request
 import urllib.error
 
@@ -196,11 +198,24 @@ check("missing resolve body → 400", post_status("/api/resolve/work", {}) == 40
 check("unknown term sense → 404", status_of("/api/terms/zzznolemma/senses") == 404)
 check("term history returns trajectory", status_of("/api/terms/kula/history") == 200)
 check("unknown term history → 404", status_of("/api/terms/zzznolemma/history") == 404)
+# trajectory node shape: id + sense ref present
+_, traj = get("/api/terms/kula/history")
+n0 = traj["trajectory"][0] if traj.get("trajectory") else {}
+check("trajectory node has stable id", bool(n0.get("id")))
+check("trajectory node references a sense", bool(n0.get("sense_id") or n0.get("proposed_sense_id")))
+check("trajectory node has evidence_links", isinstance(n0.get("evidence_links"), list))
+check("trajectory node has origin+status+certainty", bool(n0.get("origin")) and bool(n0.get("status")))
+# trajectory validation (epistemic grounding, not just the software contract)
+try:
+    tval = subprocess.run([sys.executable, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "pipeline", "validate_trajectories.py")],
+                          capture_output=True, text=True, timeout=30)
+    check("trajectory validation 0 errors", "0 errors" in tval.stdout, tval.stdout[-200:])
+except Exception as e:
+    check("trajectory validation runs", False, str(e))
 
 # ────────────────────────────────────────────────────────────────
 print("== 7. OpenAPI contract conformance (docs match reality) ==")
 import re
-import os
 spec_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "docs", "openapi.yaml")
 if os.path.exists(spec_path):
     spec = open(spec_path, encoding="utf-8").read()
@@ -218,7 +233,6 @@ else:
     print("  WARN  docs/openapi.yaml not found — skipping conformance")
 
 print("== 8. Corpus integrity + epistemic (pipeline/validate.py) ==")
-import subprocess, sys
 try:
     vres = subprocess.run([sys.executable, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "pipeline", "validate.py"), "--report"],
                           capture_output=True, text=True, timeout=60)
