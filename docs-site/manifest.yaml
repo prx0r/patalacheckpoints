@@ -1,0 +1,86 @@
+# Pāṭala Docs — Navigation Manifest
+
+*This manifest is the canonical structure for **docs.patala.org**. It defines the
+sections, the order, and which source file each page renders from. A docs-site
+generator (Docusaurus / VitePress / MkDocs, decided later) consumes this to build
+the site. Content lives in the markdown files; this file is the skeleton.*
+
+## Overview
+
+```
+docs.patala.org
+├── /                    home (from README.md)
+├── /guides              the "5-minute start" + research recipes
+├── /concepts            the epistemic model + data model
+├── /pipeline            the translation pipeline + stacked artifact
+├── /api                 the API reference + recipes
+├── /reference           the strategy + endgame specs
+└── /status              checkpoints, changelog, progress
+```
+
+## Nav (ordered)
+
+### Guides — `/guides`
+| Page | Source |
+|---|---|
+| 5-minute start | `docs/api/README.md` |
+| Find a work | `docs/api/recipes/find-a-work.md` |
+| Resolve an uncertain title | `docs/api/recipes/resolve-a-title.md` |
+| Read a passage + evidence bundle | `docs/api/recipes/read-a-passage.md` |
+| Trace manuscript witnesses | `docs/api/recipes/manuscript-witnesses.md` |
+| Explore terminology (incl. term history) | `docs/api/recipes/terminology.md` |
+| Build an AI research agent | `docs/api/recipes/ai-research-agent.md` |
+
+### Concepts — `/concepts`
+| Page | Source |
+|---|---|
+| The epistemic model | `docs/api/concepts/epistemic-model.md` |
+| Work vs witness vs passage | `docs/api/concepts/work-witness-passage.md` |
+| Assertions and proposals | `docs/api/concepts/assertions-proposals.md` |
+| Rights | `docs/api/concepts/rights.md` |
+| Stable IDs & the seven invariants | `docs/STACKED_ARTIFACT_SPEC.md` (§6) |
+
+### Pipeline — `/pipeline`
+| Page | Source |
+|---|---|
+| The translation flow | `docs/STACKED_ARTIFACT_SPEC.md` |
+| The per-work stacked artifact | `docs/STACKED_ARTIFACT_SPEC.md` |
+| Pipeline source manual | `docs/PIPELINE_SOURCE_MANUAL.md` |
+| The translation contract (skill/style/evidence/schema/review) | `docs/TRANSLATION_SKILL.md` + `STYLE_GUIDE.md` + `EVIDENCE_POLICY.md` + `TRANSLATION_SCHEMA.md` + `REVIEW_PROTOCOL.md` |
+| The proof chapter | `docs/PROOF_T1_kramasadbhava.md` |
+| Red-team response (invariants) | `docs/PEER_REVIEW_REDTEAM.md` |
+
+### API — `/api`
+| Page | Source |
+|---|---|
+| API overview | `docs/api/README.md` |
+| MCP | `docs/api/mcp.md` |
+| OpenAPI | `docs/openapi.yaml` |
+
+### Reference — `/reference`
+| Page | Source |
+|---|---|
+| NORTHSTAR (the strategy) | `docs/NORTHSTAR.md` |
+| The six primitives | `docs/nextdev.md` |
+| Endgame 1–5 | `docs/endgame1.md` … `docs/endgame5year.md` |
+| Canonical reference map | `../sanskritree/corpus/targets/canonical_reference_map.md` |
+| Resources | `docs/RESOURCES_SEED.md` |
+
+### Status — `/status`
+| Page | Source |
+|---|---|
+| Checkpoints | `docs/CHECKPOINTS.md` |
+| Changelog | `docs/CHANGELOG.md` |
+| Progress (API) | `docs/PROGRESS_2026-08-10.md` |
+| Progress (pipeline) | `docs/PIPELINE_PROGRESS_2026-08-10.md` |
+| DEV plan | `docs/DEV_PLAN.md` |
+
+---
+
+## How to use this
+
+1. **Content** stays in the markdown files (canonical). This manifest only defines
+   structure + order.
+2. When the docs framework is chosen, a script reads this manifest → generates the
+   site's `sidebar`/`nav` config → points each page at its source file.
+3. New pages: add a row here + the source markdown, in the right section.
