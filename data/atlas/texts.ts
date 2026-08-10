@@ -263,4 +263,100 @@ export const textsAdditional: import("@/lib/atlas").AtlasEntity[] = [
       outputs: ["the T3 (78 sūtras)", "the error-measurement", "the anchored R2"],
     },
   },
+  {
+    id: "cidgaganacandrika",
+    type: "text",
+    title: "Cidgaganacandrikā",
+    sanskrit: "चिद्गगनचन्द्रिका",
+    period: { start: 1100, end: 1300, approximate: true },
+    summary:
+      "The 'Moonbeam of the Sky of Consciousness' — the Krama's cosmology-stotra in 312 verses, attributed to Kālidāsa (the 'Śrīvatsa' of the closing), a eulogy of Parāśakti that is also a commentary on Siddhanātha's Kramastuti. Our T1-FULL is a likely first English verse-translation (the Trivikrama 1937 volume is an edition + study, not a translation).",
+    concepts: ["prakāśa", "vimarśa", "khecarī", "śūnya", "krama"],
+    resources: [
+      { title: "Cidgaganacandrikā (our T1-FULL, 312 vv)", href: "/texts/cidgaganacandrika", type: "translation" },
+      { title: "Trivikrama Tirtha 1937 (edition + study)", href: "/texts/cidgaganacandrika", type: "scholarship" },
+    ],
+    dossier: {
+      systemicFunction:
+        "The Cidgaganacandrikā is the Krama's cosmology in praise-form: the four goers (khecarī, bhūcarī, dikcarī, gocarī), the Kālasaṃkarṣiṇī, and the whole manifestation-order (dhāma/varṇa/saṃvit) sung as the Goddess.",
+      doctrinalCore: [
+        "The consciousness-sky (cidgagana) and its moonbeam (the Goddess)",
+        "The four goers as the senses' powers",
+        "The Kālasaṃkarṣiṇī (the time-drawer) as the devouring terminus",
+        "The attribution: Kālidāsa/Śrīvatsa, a Kramastuti-commentary",
+      ],
+      outputs: ["the T1-FULL (312 vv)", "the four-goers dossier", "the khecaratā-verse's cross-text"],
+    },
+  },
+  {
+    id: "kakacandeshvarimata",
+    type: "text",
+    title: "Kākacaṇḍeśvarīmata",
+    sanskrit: "काकचण्डेश्वरीमत",
+    period: { start: 1000, end: 1200, approximate: true },
+    summary:
+      "The 'Doctrine of Kākacaṇḍeśvarī' (the Crow-goddess) — the Krama's practical/alchemical layer in 57 paṭalas: the jīva-doctrine opening, then the rasa-śāstra (the mercury's eighteen operations, the guṭikās, the amaratva-kalpas, the kāyacikitsā). Diglossic — Sanskrit doctrine + Hindavi recipes. A genuine first-translation.",
+    concepts: ["krama", "śakti", "cakra", "khecarī", "mantra"],
+    resources: [
+      { title: "Kākacaṇḍeśvarīmata (our T1-FULL, 57 paṭalas)", href: "/texts/kakacandeshvarimata", type: "translation" },
+    ],
+    dossier: {
+      systemicFunction:
+        "The Kākacaṇḍeśvarīmata is the Krama's practical pole: where the MNP gives the philosophy, this gives the sādhana — the substance-means (dravya-upāya) to the immortal body, from the jīva's bondage to the siddha's vajra-body.",
+      doctrinalCore: [
+        "The jīva's bondage and the dravya-upāya (the substance-means)",
+        "The aṣṭādaśa-karma (the mercury's eighteen operations)",
+        "The khecaratva and the amaratva (the sky-going, the deathlessness)",
+        "The diglossia: Sanskrit doctrine + Hindavi recipes",
+      ],
+      outputs: ["the T1-FULL (57 paṭalas)", "the alchemical operations", "the Hindavi-recipe register"],
+    },
+  },
+  {
+    id: "nitya_shodasikarnava",
+    type: "text",
+    title: "Nityāṣoḍaśikārṇava",
+    sanskrit: "नित्याषोडशिकार्णव",
+    period: { start: 900, end: 1100, approximate: true },
+    summary:
+      "The 'Ocean of the Sixteen Nityās' — the Śrīvidyā's first part (the Yoginīhṛdaya the second, per the Cambridge MS-OR-00156, Kathmandu 1346 CE). The cakra-worship of Tripurasundarī, with Bhāskararāya's Setubandha commentary. Our T1-FULL covers the pūrva's 8 paṭalas (212 vv) — a genuine first English translation.",
+    concepts: ["cakra", "krama", "mantra", "śakti"],
+    resources: [
+      { title: "Nityāṣoḍaśikārṇava pūrva (our T1-FULL, 212 vv)", href: "/texts/nitya_shodasikarnava", type: "translation" },
+    ],
+    dossier: {
+      systemicFunction:
+        "The Nityāṣoḍaśikārṇava is the Śrīvidyā's ritual-theology: the śrīcakra's geometric construction (the 43 triangles), the vāgdevatā-octad, the pañcadaśī's kūṭas, and the āvaraṇas' worship — the text the Yoginīhṛdaya presupposes.",
+      doctrinalCore: [
+        "The śrīcakra's construction (the five-śakti × four-fire)",
+        "The vāgdevatā-octad and the pañcadaśī's kūṭas",
+        "The dhyāna of the red Tripurasundarī",
+        "The commentary-dependency: the Setubandha's numbers are required",
+      ],
+      outputs: ["the T1-FULL (212 vv)", "the cakra-arithmetic", "the vāgdevatā-octad dossier"],
+    },
+  },
+  {
+    id: "yoginihrdaya",
+    type: "text",
+    title: "Yoginīhṛdaya",
+    sanskrit: "योगिनीहृदय",
+    period: { start: 1100, end: 1200, approximate: true },
+    summary:
+      "The 'Heart of the Yoginī' — the Śrīvidyā's second part (the Nityāṣoḍaśikārṇava the first, per the Cambridge MS-OR-00156). The Vāmakeśvara's inner text, with Amṛtānanda's Dīpikā. Anchored, not translated by us: Padoux's *The Heart of the Yoginī* (OUP 2013) is the full translation.",
+    concepts: ["cakra", "kula", "prakāśa", "vimarśa"],
+    resources: [
+      { title: "Padoux, The Heart of the Yoginī (OUP 2013)", href: "/texts/yoginihrdaya", type: "translation" },
+    ],
+    dossier: {
+      systemicFunction:
+        "The Yoginīhṛdaya is the Śrīvidyā's heart-text — the cakra-saṃketa, mantra-saṃketa, and pūjā-saṃketa of Tripurasundarī. Its Dīpikā (Amṛtānanda) cites the Cidgaganacandrikā by name, linking the Krama and the Śrīvidyā.",
+      doctrinalCore: [
+        "The three saṃketas (cakra, mantra, pūjā)",
+        "The kāmakalā and the baindava-cakra",
+        "The Dīpikā's Cidgaganacandrikā-citations",
+      ],
+      outputs: ["the anchored reference (Padoux)", "the three-saṃketa map"],
+    },
+  },
 ];

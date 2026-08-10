@@ -1,0 +1,151 @@
+{
+  "terms": [
+    {
+      "lemma": "krama",
+      "senses": [
+        { "id": "krama.general.sequence", "label": "sequence / succession", "traditions": [], "evidence": ["the ordinary sense of a progression or order"] },
+        { "id": "krama.school.technical", "label": "Krama technical usage / cognition-as-sequence", "traditions": ["krama"], "evidence": ["Sanderson: the pūjā-krama as a reflection of the saṃvit-krama"] }
+      ],
+      "preferred_renderings": ["sequence", "order", "succession"],
+      "avoid": ["automatic capitalisation as a school where only the structure is meant"],
+      "notes": ["Capitalise Krama ONLY where the school/doctrine is demonstrable (style guide §6)."]
+    },
+    {
+      "lemma": "kula",
+      "senses": [
+        { "id": "kula.lineage", "label": "lineage / family", "traditions": [], "evidence": ["ordinary genealogical sense"] },
+        { "id": "kula.body.power", "label": "body / power / totality", "traditions": ["kaula", "krama", "kubjika"], "evidence": ["the kaula development: lineage → body → power → totality; KMT mantradeha; TĀ 3.143 akula/kula polarity"] }
+      ],
+      "preferred_renderings": ["totality", "lineage", "body of powers", "the Kula (school)"],
+      "avoid": ["rendering kula as 'family' where it means the totality/lineage-body"],
+      "notes": ["kaula = the Kaula school; kula (structure) stays lowercase per style guide §6."]
+    },
+    {
+      "lemma": "śakti",
+      "senses": [
+        { "id": "sakti.goddess", "label": "the Goddess / consort", "traditions": ["sakta", "trika", "krama"], "evidence": ["hypostasised divine power"] },
+        { "id": "sakti.mantric", "label": "mantric power", "traditions": ["trika", "kubjika"], "evidence": ["the power of the mantra"] },
+        { "id": "sakti.causal", "label": "causal power / capacity", "traditions": [], "evidence": ["a power or faculty generally"] }
+      ],
+      "preferred_renderings": ["power", "the Goddess", "Śakti"],
+      "avoid": ["flattening distinct senses into one gloss"],
+      "notes": ["Capitalise Power only when hypostasised (style guide §3)."]
+    },
+    {
+      "lemma": "khecarī",
+      "senses": [
+        { "id": "khecari.goddess", "label": "a sky-going goddess / yoginī", "traditions": ["krama", "kaula"], "evidence": [] },
+        { "id": "khecari.mantra.body", "label": "mantra-body / mudrā", "traditions": ["trika", "kubjika"], "evidence": ["the khecarī-mudrā, the body-of-the-mantra"] }
+      ],
+      "preferred_renderings": ["khecarī", "sky-goer"],
+      "avoid": ["translating away the technical mudrā sense"],
+      "notes": []
+    },
+    {
+      "lemma": "vimarśa",
+      "senses": [
+        { "id": "vimarsa.general", "label": "consideration / reflection", "traditions": [], "evidence": ["ordinary sense"] },
+        { "id": "vimarsa.pratyabhijna.technical", "label": "reflexive awareness / self-grasping", "traditions": ["pratyabhijna"], "evidence": ["ĪPK 1.5.11–13; the reflexive self-articulation of consciousness, without which appearance is crystal-like"] }
+      ],
+      "preferred_renderings": ["reflexive awareness", "reflexive grasp", "self-awareness"],
+      "avoid": ["reducing the Pratyabhijñā technical sense to mere 'reflection'"],
+      "notes": []
+    },
+    {
+      "lemma": "prakāśa",
+      "senses": [
+        { "id": "prakasa.general", "label": "light / brightness", "traditions": [], "evidence": [] },
+        { "id": "prakasa.technical", "label": "manifestation / luminous self-revealing", "traditions": ["pratyabhijna", "trika"], "evidence": ["the prakāśa–vimarśa pair; the self-revealing light of consciousness"] }
+      ],
+      "preferred_renderings": ["manifestation", "luminous awareness", "light"],
+      "avoid": [],
+      "notes": []
+    },
+    {
+      "lemma": "spanda",
+      "senses": [
+        { "id": "spanda.general", "label": "pulse / throb", "traditions": [], "evidence": [] },
+        { "id": "spanda.technical", "label": "vibration / self-motion of consciousness", "traditions": ["spanda", "trika"], "evidence": ["the Spanda-current; interior dynamism as the real power"] }
+      ],
+      "preferred_renderings": ["vibration", "pulse", "spanda"],
+      "avoid": ["mechanising as mere physical vibration"],
+      "notes": []
+    },
+    {
+      "lemma": "saṃvit",
+      "senses": [
+        { "id": "samvit.general", "label": "knowledge / awareness", "traditions": [], "evidence": [] },
+        { "id": "samvit.absolute", "label": "consciousness (the ultimate)", "traditions": ["trika", "pratyabhijna"], "evidence": ["consciousness as the supreme reality"] }
+      ],
+      "preferred_renderings": ["consciousness", "awareness"],
+      "avoid": ["capitalising Consciousness unless it is the doctrinal absolute (style guide §3)"],
+      "notes": []
+    },
+    {
+      "lemma": "parāmarśa",
+      "senses": [
+        { "id": "paramarsa.technical", "label": "reflexive grasp / assuming into oneself", "traditions": ["pratyabhijna", "trika"], "evidence": ["the self-grasping of consciousness that constitutes objects"] }
+      ],
+      "preferred_renderings": ["reflexive grasp", "assumption", "grasping-into-self"],
+      "avoid": [],
+      "notes": []
+    },
+    {
+      "lemma": "svātantrya",
+      "senses": [
+        { "id": "svatantrya.technical", "label": "freedom / spontaneity of the absolute", "traditions": ["pratyabhijna", "trika"], "evidence": ["the unconditional freedom of consciousness"] }
+      ],
+      "preferred_renderings": ["freedom", "spontaneous freedom", "self-will"],
+      "avoid": [],
+      "notes": []
+    },
+    {
+      "lemma": "visarga",
+      "senses": [
+        { "id": "visarga.general", "label": "emission / discharge", "traditions": [], "evidence": [] },
+        { "id": "visarga.kaula", "label": "emission, the kaulikī śakti", "traditions": ["kaula"], "evidence": ["visarga = kaulikī śakti (TĀ 3.143)"] }
+      ],
+      "preferred_renderings": ["emission", "visarga"],
+      "avoid": [],
+      "notes": []
+    },
+    {
+      "lemma": "mātṛkā",
+      "senses": [
+        { "id": "matrka.phonemes", "label": "the mother-of-phonemes / the fifty letters", "traditions": ["trika", "kubjika"], "evidence": ["the fifty-varṇa power; the mālinī; TĀ 3–4"] },
+        { "id": "matrka.mothers", "label": "the Mothers (the goddesses)", "traditions": [], "evidence": ["the mātṛkā as a class of goddesses"] }
+      ],
+      "preferred_renderings": ["mātṛkā", "mother-of-phonemes", "the Mothers"],
+      "avoid": ["confusing the phonemic matrix with the goddesses"],
+      "notes": []
+    },
+    {
+      "lemma": "uccāra",
+      "senses": [
+        { "id": "uccara.raising", "label": "raising / articulation (of the breath-mantra)", "traditions": ["trika", "krama"], "evidence": ["the uccāra as a meditational raising; cross-checked with the Spanda uccāra/āveśa"] }
+      ],
+      "preferred_renderings": ["raising", "articulation", "uccāra"],
+      "avoid": [],
+      "notes": []
+    },
+    {
+      "lemma": "āveśa",
+      "senses": [
+        { "id": "avesa.possession", "label": "entry / possession", "traditions": ["kaula", "trika"], "evidence": ["rudraśaktisamāveśa in the Timirodghāṭana; possession by the Power of Rudra"] }
+      ],
+      "preferred_renderings": ["possession", "entry", "āveśa"],
+      "avoid": [],
+      "notes": []
+    },
+    {
+      "lemma": "śūnya",
+      "senses": [
+        { "id": "sunya.void", "label": "void / emptiness", "traditions": [], "evidence": [] },
+        { "id": "sunya.technical", "label": "the void (as a station / realization)", "traditions": ["trika", "krama", "kaula"], "evidence": ["śūnya as a meditational-cosmological station"] }
+      ],
+      "preferred_renderings": ["void", "emptiness"],
+      "avoid": ["over-importing Buddhist śūnyatā into Śaiva usage without evidence"],
+      "notes": []
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "epistemic_states": ["machine_proposed", "human_proposed", "checked", "expert_reviewed", "editorially_accepted", "disputed", "rejected"],
+  "certainty_levels": ["certain", "probable", "possible", "uncertain"],
+  "origins": ["machine", "editor", "scholar", "institution"],
+
+  "assertions": [
+    {
+      "id": "pt:assertion:kramasadbhava:date:01",
+      "subject": "pt:work:kramasadbhava",
+      "predicate": "date",
+      "value": "900-1050",
+      "certainty": "probable",
+      "status": "machine_proposed",
+      "origin": "machine",
+      "evidence": [
+        { "resource": "Dyczkowski ed., Muktabodha", "locator": "NGMPP A 209/23", "role": "dates", "note": "provisional edition; Krama prototype" }
+      ],
+      "review_events": [],
+      "created_at": "2026-08-10"
+    },
+    {
+      "id": "pt:assertion:kubjikamata:tradition:01",
+      "subject": "pt:work:kubjikamata",
+      "predicate": "belongs_to",
+      "value": "Kubjikā; Kaula",
+      "certainty": "certain",
+      "status": "expert_reviewed",
+      "origin": "scholar",
+      "evidence": [
+        { "resource": "canonical_reference_map", "locator": "Kubjikā section", "role": "defines", "note": "Paścimāmnāya, reworks Trika material" }
+      ],
+      "review_events": ["pt:review:kubjikamata:tradition:01"],
+      "created_at": "2026-08-10"
+    },
+    {
+      "id": "pt:assertion:kula:sense:01",
+      "subject": "pt:term:kula",
+      "predicate": "has_sense_in_scope",
+      "value": "body / power / totality (kula.body.power)",
+      "certainty": "probable",
+      "status": "human_proposed",
+      "origin": "machine",
+      "evidence": [
+        { "resource": "Kubjikāmata", "locator": "1.1", "role": "parallel", "note": "akula/kula cosmology" },
+        { "resource": "Tantrāloka", "locator": "3.143", "role": "commentary", "note": "akula/kula polarity" }
+      ],
+      "review_events": [],
+      "created_at": "2026-08-10"
+    }
+  ],
+
+  "reviews": [
+    {
+      "id": "pt:review:kubjikamata:tradition:01",
+      "target": "pt:assertion:kubjikamata:tradition:01",
+      "scope": "tradition_classification",
+      "reviewer": { "kind": "scholar", "id": "person:example-scholar" },
+      "decision": "accept",
+      "reason": "consistent with Sanderson's placement of Kubjikā as Paścimāmnāya",
+      "created_at": "2026-08-10"
+    }
+  ],
+
+  "crosswalks": [
+    { "our_id": "pt:work:kubjikamata", "external_system": "OCHS", "external_id": "ochs_000_000_039_kubjikamatatantra", "relationship": "witness_of", "confidence": "established", "status": "confirmed_match" },
+    { "our_id": "pt:work:netratantra", "external_system": "OCHS", "external_id": "ochs_000_000_002_amrtesatantram", "relationship": "witness_of", "confidence": "established", "status": "confirmed_match" }
+  ]
+}

@@ -389,4 +389,25 @@ export const concepts: AtlasEntity[] = [
       outputs: ["the mantra dossier", "the phonemic-map"],
     },
   },
+  {
+    id: "khecarī",
+    type: "concept",
+    title: "Khecarī",
+    sanskrit: "खेचरी",
+    period: { start: 800, end: 1300, approximate: true },
+    summary:
+      "The 'sky-going' power — in the Krama, the goddess/power of the sky and the siddhi-fruit of moving through it (khecaratva); not the later haṭhayogic tongue-gesture. One of the four goers (khecarī, bhūcarī, dikcarī, gocarī) — the senses' powers as the Goddess's modes.",
+    concepts: ["śakti", "spanda", "saṃvit"],
+    dossier: {
+      systemicFunction:
+        "Khecarī is the polysemy-test-case: the sky-goer goddess, the khecaratva-fruit (the siddha's sky-motion), and the phoneme-name (in the mantra-compositions) — the register must be tagged, never flattened to the haṭha-gesture.",
+      doctrinalCore: [
+        "The sky-goer as the power (never the tongue-gesture)",
+        "The khecaratva-fruit: the siddha's sky-motion",
+        "The four goers: khecarī, bhūcarī, dikcarī, gocarī",
+        "The phoneme-name in the bīja-compositions",
+      ],
+      outputs: ["the khecarī dossier", "the four-goers map", "the khecaratva cross-text"],
+    },
+  },
 ];

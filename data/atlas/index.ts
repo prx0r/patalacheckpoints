@@ -4,6 +4,9 @@ import { textsAdditional } from "./texts";
 import { people } from "./people";
 import { concepts } from "./concepts";
 import { relations } from "./relations";
+import { audited } from "./audited";
+import { seed } from "./bibliographySeed";
+import { BibliographyRecord } from "./bibliographyTypes";
 import { AtlasEntity, AtlasRelation } from "@/lib/atlas";
 
 export const atlasEntities: AtlasEntity[] = [
@@ -15,6 +18,9 @@ export const atlasEntities: AtlasEntity[] = [
 ];
 
 export { relations };
+export { audited };
+export { seed };
+export type { BibliographyRecord, BibTranslation, BibSource, BibScholarship, ResourceTier } from "./bibliographyTypes";
 
 export const relationTypes = relations as AtlasRelation[];
 

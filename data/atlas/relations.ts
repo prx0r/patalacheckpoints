@@ -177,4 +177,19 @@ export const relations: AtlasRelation[] = [
 { source: "anuttara", target: "akula", type: "conceptual-parallel", confidence: "established" },
 { source: "mālinī", target: "mātṛkā", type: "conceptual-parallel", confidence: "established" },
 { source: "mantra", target: "uccāra", type: "conceptual-parallel", confidence: "strong" },
+
+// The newly-translated Krama texts (2026-08-09)
+{ source: "cidgaganacandrika", target: "krama", type: "contains", confidence: "established" },
+{ source: "cidgaganacandrika", target: "khecarī", type: "contains", confidence: "established" },
+{ source: "cidgaganacandrika", target: "prakāśa", type: "conceptual-parallel", confidence: "established" },
+{ source: "cidgaganacandrika", target: "śūnya", type: "conceptual-parallel", confidence: "strong" },
+{ source: "kakacandeshvarimata", target: "krama", type: "contains", confidence: "established" },
+{ source: "kakacandeshvarimata", target: "khecarī", type: "conceptual-parallel", confidence: "strong" },
+{ source: "kakacandeshvarimata", target: "cakra", type: "conceptual-parallel", confidence: "strong" },
+{ source: "nitya_shodasikarnava", target: "krama", type: "contains", confidence: "established" },
+{ source: "nitya_shodasikarnava", target: "cakra", type: "conceptual-parallel", confidence: "established" },
+{ source: "nitya_shodasikarnava", target: "mantra", type: "conceptual-parallel", confidence: "established" },
+{ source: "nitya_shodasikarnava", target: "yoginīhṛdaya", type: "commentary", confidence: "established", evidence: ["the Cambridge MS-OR-00156: the Nityāṣoḍaśikārṇava is the Vāmakeśvara's first part, the Yoginīhṛdaya the second"] },
+{ source: "khecarī", target: "śakti", type: "conceptual-parallel", confidence: "established" },
+{ source: "khecarī", target: "spanda", type: "conceptual-parallel", confidence: "strong" },
 ];
