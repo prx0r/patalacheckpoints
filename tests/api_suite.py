@@ -238,7 +238,8 @@ try:
                           capture_output=True, text=True, timeout=60)
     out = vres.stdout
     check("corpus referential integrity clean", "Referential integrity    PASS" in out, out[-200:])
-    check("epistemic invariants pass", "Epistemic invariants     PASS" in out, out[-200:])
+    check("structural invariants pass", "Structural invariants     PASS" in out, out[-200:])
+    check("semantic audit honestly NOT_CHECKED", "Semantic translation audit NOT_CHECKED" in out, out[-200:])
 except Exception as e:
     check("corpus validate runs", False, str(e))
 

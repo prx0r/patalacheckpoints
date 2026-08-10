@@ -20,6 +20,7 @@ export interface BibTranslation {
 }
 
 export interface BibSource {
+  id?: string; // stable addressable id, e.g. "pt:src:kramasadbhava:dyczkowski-ed"
   type: "critical_edition" | "edition" | "etext" | "scan";
   coverage?: string;
   editor?: string;
@@ -27,6 +28,7 @@ export interface BibSource {
   url?: string;
   provider?: string;
   tier?: ResourceTier;
+  rights?: { status: "open" | "public_domain" | "permission" | "restricted" | "unknown" };
   note?: string;
 }
 

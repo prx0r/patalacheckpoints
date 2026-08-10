@@ -135,22 +135,41 @@ STAGE_SYSTEM = {
 }
 
 
-def user_prompt(stage: str, record: dict[str, Any]) -> str:
-    """Build the user message for a stage from the current record."""
+def user_prompt(stage: str, record: dict[str, Any], evidence_packet: dict | None = None) -> str:
+    """Build the user message for a stage from the current record + the evidence packet."""
     src = record["source"]
     loc = record["location"]
-    base = (f"Work: {record['work_id']} · {loc['chapter']}.{loc['verse']}\n"
+    base = (f"Work: {record['work_id']} · {loc.get('locator', loc['chapter'])}.{loc.get('verse', loc.get('chapter',''))}\n"
             f"Edition: {src['source_edition']}\n"
             f"Sanskrit: {src['source_text']}\n")
 
+    # prepend the evidence packet (deterministic context) for every stage
+    evidence_blk = ""
+    if evidence_packet:
+        e = evidence_packet
+        parts = [f"EVIDENCE PACKET (deterministic — adjudicate using THIS, not model memory):"]
+        if e.get("neighbors"):
+            parts.append("  neighbors: " + "; ".join(f"{n['locator']}: {n['sanskrit'][:60]}" for n in e["neighbors"]))
+        if e.get("terms"):
+            parts.append("  tracked terms: " + "; ".join(
+                f"{t['lemma']} ({'|'.join(t['senses'])})" for t in e["terms"]))
+        if e.get("work"):
+            parts.append(f"  work: {e['work'].get('id')}")
+        evidence_blk = "\n".join(parts) + "\n"
+
+    base = evidence_blk + base
+
     if stage == "T1":
-        return base + "\nProduce the T1 working translation."
+        return base + "\nProduce the T1 working translation as STRICT JSON:\n" \
+               '{"close_translation":"...","reader_draft":"...","flags":[],"notes":[],' \
+               '"lexical_decisions":[],"grammatical_notes":[],"time_place_context":{}}'
     if stage == "R1":
         t1 = record["stages"].get("T1", {})
         return (base + f"\nT1: {t1.get('close_translation','')}\n"
                 f"T1 flags: {t1.get('flags',[])}\n"
-                "Attack this T1: map the genuine cruxes (id, type, T1 assumption, "
-                "rivals, evidence needed), give verdicts, leave commentary stubs.")
+                "Attack this T1 and map the genuine cruxes as STRICT JSON: "
+                '{"detail":"...","cruxes":[{"id":"...","type":"LEXICAL","assumption":"...",'
+                '"rivals":[],"evidence_needed":[]}],"verdicts":[{"verdict":"FORK","crux":"..."}]}')
     if stage == "T2":
         t1 = record["stages"].get("T1", {})
         r1 = record["stages"].get("R1", {})
@@ -160,9 +179,11 @@ def user_prompt(stage: str, record: dict[str, Any]) -> str:
         return (base + f"\nT1: {t1.get('close_translation','')}\n"
                 f"T1 flags: {t1.get('flags',[])}\n"
                 f"R1 cruxes:\n{crux_txt}\n"
-                "Produce T2 — the strongest materially-different defensible reading "
-                "that addresses these cruxes. Do NOT manufacture disagreement on "
-                "secure verses; mark constrained readings CONSTRAINED.")
+                "Produce T2 — the strongest materially-different defensible reading that "
+                "addresses these cruxes — as STRICT JSON: "
+                '{"close_translation":"...","strategy":"...","rival_decisions":'
+                '[{"crux_id":"...","adopted":"...","differs_from_t1":true,"reason":"...","evidence":[]}],'
+                '"constrained":[]}. Do NOT manufacture disagreement on secure verses.')
     if stage == "R2":
         t1 = record["stages"].get("T1", {})
         t2 = record["stages"].get("T2", {})
@@ -170,21 +191,37 @@ def user_prompt(stage: str, record: dict[str, Any]) -> str:
         return (base
                 + f"\nT1: {t1.get('close_translation','')}\n"
                 + f"T2: {t2.get('close_translation','')}\n"
+                + f"T2 rival decisions: {t2.get('rival_decisions',[])}\n"
                 + f"R1 cruxes: {r1.get('detail','')}\n"
-                + "Adjudicate BY DECISION: classify each CONSTRAINED/PREFERRED/OPEN/"
-                  "RECONSTRUCTED; give hard-core (agreement + source-constrained), "
-                  "divergence adjudication, school-context research, expanded commentary, "
-                  "equal alternates, and open questions.")
+                + "Adjudicate BY DECISION as STRICT JSON: "
+                  '{"chosen":"...","reasoning":"...","decisions":[{"crux_id":"...",'
+                  '"preferred":"...","status":"CONSTRAINED|PREFERRED|OPEN|RECONSTRUCTED",'
+                  '"reason":"...","evidence":[]}],"hard_core":"...","equal_alternates":[],'
+                  '"commentary":"..."}')
     if stage == "T3":
         r2 = record["stages"].get("R2", {})
-        return (base + f"\nR2 resolved: {r2.get('chosen','')}\n"
-                "Produce the final T3.")
+        decisions = r2.get("decisions", [])
+        open_dec = [d for d in decisions if d.get("status") == "OPEN"]
+        recons = [d for d in decisions if d.get("status") == "RECONSTRUCTED"]
+        return (base
+                + f"\nR2 chosen: {r2.get('chosen','')}\n"
+                + f"R2 decisions: {decisions}\n"
+                + f"OPEN decisions (must appear in open_flags): {open_dec}\n"
+                + f"RECONSTRUCTED (must carry editorial note): {recons}\n"
+                + "Produce the final T3. Respect the R2 decision statuses mechanically:\n"
+                  "  OPEN → carry in open_flags; RECONSTRUCTED → carry an editorial note; "
+                  "CONSTRAINED → ordinary resolved text. Return as STRICT JSON: "
+                  '{"resolved":"...","open_flags":[{"flag":"LEX","detail":"..."}],'
+                  '"editorial_notes":[]}')
     if stage == "T3.1":
         t3 = record["stages"].get("T3", {})
         return (base + f"\nT3 resolved: {t3.get('resolved','')}\n"
-                "Produce the T3.1 reading layer.")
+                "Produce the T3.1 reading layer (natural English, in lock-step with T3).")
     if stage == "C1":
         t3 = record["stages"].get("T3", {})
+        r2 = record["stages"].get("R2", {})
         return (base + f"\nT3: {t3.get('resolved','')}\n"
-                "Produce the C1 commentary.")
+                f"R2 decisions: {r2.get('decisions',[])}\n"
+                "Produce the C1 commentary. You may CHALLENGE T3 with evidence + a "
+                "proposed revision, but do not mutate T3.")
     return base

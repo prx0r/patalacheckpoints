@@ -35,27 +35,31 @@ PARALLEL_KINDS = (
 
 
 def new_passage(work_id: str, chapter: int, verse: int, sanskrit: str,
-                edition: str, source_file: str) -> dict[str, Any]:
+                edition: str, source_file: str, source_id: str = "",
+                locator: str | None = None) -> dict[str, Any]:
     """A blank, schema-valid passage record.
 
-    Separates the three dimensions the review flagged:
-      pipeline_stage    where in the flow (T1 → R1 → ... → C1)
-      origin            who produced it (machine / human / scholar / editor)
-      editorial_status  proposed / reviewed / accepted / disputed (set only by
-                        an actual review event — never by a machine stage)
+    Separates the three dimensions the review flagged (scoped to versions):
+      pipeline_stage    where in the flow (T1 → R1 → ... → C1) — null until a stage runs
+      origin            who produced it (machine / human) — on each version
+      editorial_status  proposed / reviewed / accepted — on each version, set only
+                        by a scoped ReviewEvent
     """
+    locator = locator or f"{chapter}.{verse}"
+    src_id = source_id or edition
     return {
         "passage_id": f"tantra:text:{work_id}:{chapter}.{verse}",
         "work_id": work_id,
-        "location": {"chapter": chapter, "verse": verse},
+        "location": {"chapter": chapter, "verse": verse, "locator": locator},
         "source": {
+            "source_id": src_id,
             "source_edition": edition,
             "source_file": source_file,
             "source_text": sanskrit,
         },
         # first-class source spans (the passage may appear differently across witnesses)
         "source_spans": [
-            {"source_id": edition, "locator": f"{chapter}.{verse}", "text": sanskrit,
+            {"source_id": src_id, "locator": locator, "text": sanskrit,
              "relationship": "canonical"}
         ],
         "stages": {},          # stage -> CURRENT version's payload
@@ -67,10 +71,10 @@ def new_passage(work_id: str, chapter: int, verse: int, sanskrit: str,
             "style_guide": "1.0.0",
             "schema": "1.1.0",
         },
-        "pipeline_stage": "T1",
+        "pipeline_stage": None,   # null until a stage has run (not "T1" before T1 exists)
         "origin": "machine",
         "editorial_status": "proposed",
-        "review_events": [],   # standalone ReviewEvents (added by set_review)
+        "review_events": [],   # scoped ReviewEvents (added by set_review)
     }
 
 
@@ -116,11 +120,16 @@ def stage_R1(detail: str, anchor_quote: str = "",
             "stage": "R1"}
 
 
-def stage_T2(close: str, strategy: str = "") -> dict[str, Any]:
+def stage_T2(close: str, strategy: str = "", rival_decisions: Optional[list] = None,
+             constrained: Optional[list] = None) -> dict[str, Any]:
     """T2: the strongest materially-different defensible rival. SEES T1 + R1.
     Differs only where it changes syntax/referent/technical sense/doctrine/text/
-    meaningful interpretation; marks source-constrained readings CONSTRAINED."""
-    return {"close_translation": close, "strategy": strategy, "stage": "T2"}
+    meaningful interpretation; marks source-constrained readings CONSTRAINED.
+    `rival_decisions` = [{crux_id, adopted, differs_from_t1, reason, evidence}]
+    `constrained` = [crux_id] that had no defensible alternative (kept T1)."""
+    return {"close_translation": close, "strategy": strategy,
+            "rival_decisions": rival_decisions or [], "constrained": constrained or [],
+            "stage": "T2"}
 
 
 def stage_R2(chosen: str, reasoning: str, rejected: Optional[list] = None,
@@ -195,16 +204,55 @@ def set_stage(record: dict[str, Any], payload: dict[str, Any],
     return record
 
 
+REVIEW_TYPES = ("TEXTUAL", "GRAMMATICAL", "LEXICAL", "TRANSLATIONAL",
+                "HISTORICAL", "DOCTRINAL", "READABILITY", "MANUSCRIPT")
+
+
 def set_review(record: dict[str, Any], review: dict[str, Any]) -> dict[str, Any]:
-    """Record a real human/specialist ReviewEvent (scoped). Only this promotes
-    editorial_status to 'reviewed'/'accepted'. Machine stages NEVER set it."""
-    review.setdefault("id", f"review:{record.get('passage_id','?')}:{len(record['review_events'])+1}")
+    """Record a SCOPED ReviewEvent on a specific target/version. Only this promotes
+    a version's editorial_status to 'reviewed'. Machine stages NEVER set it.
+
+    Required: target_stage, target_version, reviewer, review_type, scope, outcome, reason.
+    An 'accept' → that target/version is reviewed (not the whole passage). 'accepted'
+    is an editorial promotion issued separately (promote_version)."""
+    n = len(record["review_events"]) + 1
+    review.setdefault("id", f"review:{record.get('passage_id','?')}:{n}")
+    review.setdefault("target_id", record.get("passage_id"))
+    if not review.get("target_stage") or not review.get("target_version"):
+        raise ValueError("a ReviewEvent must target a specific version (target_stage + target_version)")
+    if review.get("review_type") not in REVIEW_TYPES:
+        raise ValueError(f"review_type must be one of {REVIEW_TYPES}, got {review.get('review_type')!r}")
     record["review_events"].append(review)
-    if review.get("outcome") == "accept":
-        record["editorial_status"] = "reviewed"
-    elif review.get("outcome") == "reject":
-        record["editorial_status"] = "disputed"
+
+    # mark the targeted version reviewed
+    for v in record["versions"].get(review["target_stage"], []):
+        if v.get("version") == review.get("target_version"):
+            v["editorial_status"] = "reviewed"
+    record["editorial_status"] = _aggregate_review_state(record)
     return record
+
+
+def promote_version(record: dict[str, Any], stage: str, version: int,
+                    reviewer: dict, reason: str = "") -> dict[str, Any]:
+    """Editorial promotion: reviewed → accepted (a separate, explicit editor action)."""
+    for v in record["versions"].get(stage, []):
+        if v.get("version") == version:
+            v["editorial_status"] = "accepted"
+            v.setdefault("promoted_by", reviewer)
+            v.setdefault("promotion_reason", reason)
+    record["editorial_status"] = _aggregate_review_state(record)
+    return record
+
+
+def _aggregate_review_state(record) -> str:
+    states = {v.get("editorial_status") for versions in record.get("versions", {}).values() for v in versions}
+    if not states or states == {"proposed"}:
+        return "proposed"
+    if "accepted" in states:
+        return "mixed" if len(states) > 1 else "accepted"
+    if "reviewed" in states:
+        return "mixed" if len(states) > 1 else "reviewed"
+    return "proposed"
 
 
 def get_stage(record: dict[str, Any], stage: str) -> Optional[dict[str, Any]]:

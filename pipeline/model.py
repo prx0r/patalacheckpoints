@@ -63,6 +63,11 @@ def chat_json(system: str, user: str, model: str = DEFAULT_MODEL,
         raise
 
 
+class StageOutputError(Exception):
+    """Raised when a core stage returns non-structured (prose) output that was
+    required to be JSON. NOT a silent fallback — the state machine must surface it."""
+
+
 def parse_json(raw: str) -> dict[str, Any]:
     """Parse a model output as JSON, stripping fences and finding the object block.
     Raises ValueError if no object is found."""

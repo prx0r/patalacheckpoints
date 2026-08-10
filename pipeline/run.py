@@ -110,8 +110,8 @@ def main() -> None:
     ap.add_argument("--chapter", type=int, default=1)
     ap.add_argument("--verse", type=int, required=True, help="line number (verse) to translate")
     ap.add_argument("--model", default=model_mod.DEFAULT_MODEL)
-    ap.add_argument("--stages", default="T1,R1,T2,R2,T3,T3.1,C1",
-                    help="comma-separated stages")
+    ap.add_argument("--stages", default="T1,R1,T2,R2,T3,T3.1",
+                    help="comma-separated stages (default T1→T3.1; add C1 to run the commentary — it is a separate workflow)")
     ap.add_argument("--out", required=True, help="output json path")
     ap.add_argument("--created-by", default="patala-pipeline")
     args = ap.parse_args()

@@ -249,7 +249,9 @@ def conformance_report() -> str:
         f"  valid                  {g['tally'].get('valid', 0)}",
         f"  needs_review           {g['tally'].get('needs_review', 0)}",
         f"  invalid                {g['tally'].get('invalid', 0)}",
-        f"Epistemic invariants     PASS" if c["tally"].get("invalid", 0) == 0 and g["tally"].get("invalid", 0) == 0 else "Epistemic invariants     FAIL",
+        f"Structural invariants     PASS" if c["tally"].get("invalid", 0) == 0 and g["tally"].get("invalid", 0) == 0 else "Structural invariants     FAIL",
+        f"Semantic translation audit NOT_CHECKED (model-assisted, not yet enforced)",
+        f"Human authority invariant NOT_CHECKED (no review events in the corpus)",
         f"Referential integrity    PASS" if ci["ok"] and gi["ok"] else "Referential integrity    FAIL",
     ]
     return "\n".join(lines)

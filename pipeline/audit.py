@@ -66,31 +66,37 @@ def audit_record(record: dict[str, Any]) -> list[dict[str, str]]:
         if stage in stages:
             findings += _audit_stage(stage, stages[stage])
 
-    # 3. ordering / lineage
-    lineage = record.get("lineage", [])
-    present = [l["stage"] for l in lineage]
-    # stages must be in order and contiguous from T1
-    for i, s in enumerate(present):
-        if s != STAGES[i]:
-            findings.append({"level": "error", "stage": "lineage", "code": "STAGE_ORDER",
-                             "message": f"expected {STAGES[i]}, found {s} at position {i}"})
+    # 3. dependency ordering (revision-safe): a stage may only be present if its
+    #    prerequisites have at least one version. This permits T1 v1 → ... → T1 v2
+    #    without treating the second T1 as a positional error.
+    prereqs = {
+        "T1": (), "R1": ("T1",), "T2": ("T1", "R1"), "R2": ("T1", "R1", "T2"),
+        "T3": ("R2",), "T3.1": ("T3",), "C1": ("T3",),
+    }
+    for s in STAGES:
+        if s in stages:
+            for prereq in prereqs.get(s, ()):
+                if prereq not in stages:
+                    findings.append({"level": "error", "stage": "lineage", "code": "MISSING_PREREQ",
+                                     "message": f"{s} present without required {prereq}"})
     # no machine output presented as reviewed
     t3 = stages.get("T3", {})
     if t3 and stages.get("R2") is None:
         findings.append({"level": "error", "stage": "T3", "code": "NO_ADJUDICATION",
                          "message": "T3 present without a prior R2 adjudication"})
 
-    # 4. [X]-carried-to-T3: every T1 [X] flag must be resolved (R2) OR carried
-    # into T3's open_flags. A T1 [X] that vanishes by T3 is laundering (warn).
+    # 4. [X]-carried-to-T3: only once T3 EXISTS, every T1 [X] flag must be
+    # resolved (R2) OR carried into T3's open_flags. A T1 [X] that vanishes by T3
+    # is laundering (warn). Not checked at T1-only stage (that's premature).
+    t3 = stages.get("T3", {})
     t1 = stages.get("T1", {})
     t1_flags = set(t1.get("flags", []))
-    if t1_flags & {"X", "TXT", "GRAM", "LEX", "DOCT", "WIT"}:
+    if t3 and (t1_flags & {"X", "TXT", "GRAM", "LEX", "DOCT", "WIT"}):
         resolved_or_carried = False
-        if t3:
-            open_flags = [f.get("flag") if isinstance(f, dict) else f
-                          for f in t3.get("open_flags", [])]
-            if set(open_flags) & {"X", "TXT", "GRAM", "LEX", "DOCT", "WIT"}:
-                resolved_or_carried = True
+        open_flags = [f.get("flag") if isinstance(f, dict) else f
+                      for f in t3.get("open_flags", [])]
+        if set(open_flags) & {"X", "TXT", "GRAM", "LEX", "DOCT", "WIT"}:
+            resolved_or_carried = True
         # an R2 that explicitly resolves is treated as carried (chosen set)
         if stages.get("R2") and stages["R2"].get("chosen"):
             resolved_or_carried = True
@@ -163,6 +169,13 @@ def _audit_stage(stage: str, p: dict[str, Any]) -> list[dict[str, str]]:
 def audit_ok(findings: list[dict[str, str]]) -> bool:
     """True if there are no error-level findings."""
     return not any(x["level"] == "error" for x in findings)
+
+
+def audit_record_stage(record: dict[str, Any], stage: str) -> list[dict[str, str]]:
+    """Audit a single stage's payload (used by the state machine for the just-run
+    stage, distinct from the whole-record audit)."""
+    payload = (record.get("stages") or {}).get(stage, {})
+    return _audit_stage(stage, payload)
 
 
 def summary(findings: list[dict[str, str]]) -> str:
