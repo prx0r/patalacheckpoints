@@ -241,8 +241,9 @@ spans = {s["id"] for s in tr.get("source_spans", [])} | {t["id"] for t in tr.get
 dec_ids = {d["id"] for d in tr.get("decisions", [])}
 align_ok = all(a["source_span_ids"][0] in spans and a["target_span_ids"][0] in spans for a in tr.get("alignments", []))
 check("alignments resolve to real spans", align_ok)
-# decisions carry evidence + status
-check("decisions carry evidence + status", all(d.get("evidence") and d.get("status") for d in tr.get("decisions", [])))
+# decisions carry evidence + status (evidence_missing decisions are honest gaps, not failures)
+check("decisions carry status + honest evidence_state", all(d.get("status") and d.get("evidence_state") for d in tr.get("decisions", [])))
+check("1.8 decisions have resolved evidence (hand-authored)", all(d.get("evidence") for d in tr.get("decisions", []) if d.get("evidence_state") != "evidence_missing"))
 # /api/decisions/:id
 dcode, dec = get("/api/decisions/pt:decision:krs:1.8:LEX:2")
 check("decision detail 200", dcode == 200)
@@ -253,6 +254,14 @@ check("nirānande stays OPEN (not falsely settled)", dec.get("status") == "OPEN"
 check("no unresolved evidence on nirānande", dec.get("unresolved_evidence") == [], str(dec.get("unresolved_evidence")))
 check("decision 404 on miss", status_of("/api/decisions/doesnotexist") == 404)
 check("translation 404 on miss", status_of("/api/passages/doesnotexist/translation") == 404)
+
+# the 25-verse unit + the C1-target queue
+_, ov = get("/api/passages/kramasadbhava:1.3/translation")
+check("1.3 compiled with devadeveśi OPEN decision", ov.get("decisions") and ov["decisions"][0].get("status") == "OPEN")
+_, q = get("/api/texts/kramasadbhava/decisions?open=true")
+check("OPEN-decision queue returns the cruxes", q.get("count", 0) >= 1 and all(x["status"] == "OPEN" for x in q.get("decisions", [])))
+_, gaps = get("/api/texts/kramasadbhava/decisions?evidence_gap=true")
+check("evidence-gap queue returns ungrounded decisions", gaps.get("count", 0) >= 1)
 
 # ────────────────────────────────────────────────────────────────
 print("== 8. OpenAPI contract conformance (docs match reality) ==")

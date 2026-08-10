@@ -143,9 +143,14 @@ export default function BibliographyPage() {
           <p className="mt-2 text-sm text-zinc-400">
             A living register of the Śaiva textual landscape: what exists, where to read it, what has been translated, how scholars understand it.
           </p>
-          <a href="/read/kramasadbhava/1.8" className="mt-3 inline-block rounded border border-[color:var(--saffron)] px-3 py-1.5 text-[12px] text-[color:var(--saffron)] hover:bg-[color:var(--saffron)] hover:text-zinc-950">
-            → Read Kramasadbhāva 1.8 (auditable reader)
-          </a>
+          <div className="mt-3 flex flex-wrap items-center gap-2">
+            <a href="/read/kramasadbhava/1.8" className="inline-block rounded border border-[color:var(--saffron)] px-3 py-1.5 text-[12px] text-[color:var(--saffron)] hover:bg-[color:var(--saffron)] hover:text-zinc-950">
+              → Read Kramasadbhāva 1.8 (auditable reader)
+            </a>
+            <a href="/texts/kramasadbhava" className="inline-block rounded border border-zinc-600 px-3 py-1.5 text-[12px] text-zinc-300 hover:border-[color:var(--saffron)] hover:text-[color:var(--saffron)]">
+              Kramasadbhāva overview →
+            </a>
+          </div>
         </header>
 
         <div className="mb-6 flex flex-wrap gap-4 text-[12px] text-zinc-400">

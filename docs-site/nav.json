@@ -1,0 +1,162 @@
+[
+  {
+    "section": "Guides",
+    "path": "`/guides`",
+    "pages": [
+      {
+        "title": "5-minute start",
+        "source": "`docs/api/README.md`"
+      },
+      {
+        "title": "Find a work",
+        "source": "`docs/api/recipes/find-a-work.md`"
+      },
+      {
+        "title": "Resolve an uncertain title",
+        "source": "`docs/api/recipes/resolve-a-title.md`"
+      },
+      {
+        "title": "Read a passage + evidence bundle",
+        "source": "`docs/api/recipes/read-a-passage.md`"
+      },
+      {
+        "title": "Trace manuscript witnesses",
+        "source": "`docs/api/recipes/manuscript-witnesses.md`"
+      },
+      {
+        "title": "Explore terminology (incl. term history)",
+        "source": "`docs/api/recipes/terminology.md`"
+      },
+      {
+        "title": "Build an AI research agent",
+        "source": "`docs/api/recipes/ai-research-agent.md`"
+      }
+    ]
+  },
+  {
+    "section": "Concepts",
+    "path": "`/concepts`",
+    "pages": [
+      {
+        "title": "The epistemic model",
+        "source": "`docs/api/concepts/epistemic-model.md`"
+      },
+      {
+        "title": "Work vs witness vs passage",
+        "source": "`docs/api/concepts/work-witness-passage.md`"
+      },
+      {
+        "title": "Assertions and proposals",
+        "source": "`docs/api/concepts/assertions-proposals.md`"
+      },
+      {
+        "title": "Rights",
+        "source": "`docs/api/concepts/rights.md`"
+      },
+      {
+        "title": "Stable IDs & the seven invariants",
+        "source": "`docs/STACKED_ARTIFACT_SPEC.md` (§6)"
+      }
+    ]
+  },
+  {
+    "section": "Pipeline",
+    "path": "`/pipeline`",
+    "pages": [
+      {
+        "title": "The translation flow",
+        "source": "`docs/STACKED_ARTIFACT_SPEC.md`"
+      },
+      {
+        "title": "The per-work stacked artifact",
+        "source": "`docs/STACKED_ARTIFACT_SPEC.md`"
+      },
+      {
+        "title": "Pipeline source manual",
+        "source": "`docs/PIPELINE_SOURCE_MANUAL.md`"
+      },
+      {
+        "title": "The translation contract (skill/style/evidence/schema/review)",
+        "source": "`docs/TRANSLATION_SKILL.md` + `STYLE_GUIDE.md` + `EVIDENCE_POLICY.md` + `TRANSLATION_SCHEMA.md` + `REVIEW_PROTOCOL.md`"
+      },
+      {
+        "title": "The proof chapter",
+        "source": "`docs/PROOF_T1_kramasadbhava.md`"
+      },
+      {
+        "title": "Red-team response (invariants)",
+        "source": "`docs/PEER_REVIEW_REDTEAM.md`"
+      }
+    ]
+  },
+  {
+    "section": "API",
+    "path": "`/api`",
+    "pages": [
+      {
+        "title": "API overview",
+        "source": "`docs/api/README.md`"
+      },
+      {
+        "title": "MCP",
+        "source": "`docs/api/mcp.md`"
+      },
+      {
+        "title": "OpenAPI",
+        "source": "`docs/openapi.yaml`"
+      }
+    ]
+  },
+  {
+    "section": "Reference",
+    "path": "`/reference`",
+    "pages": [
+      {
+        "title": "NORTHSTAR (the strategy)",
+        "source": "`docs/NORTHSTAR.md`"
+      },
+      {
+        "title": "The six primitives",
+        "source": "`docs/nextdev.md`"
+      },
+      {
+        "title": "Endgame 1–5",
+        "source": "`docs/endgame1.md` … `docs/endgame5year.md`"
+      },
+      {
+        "title": "Canonical reference map",
+        "source": "`../sanskritree/corpus/targets/canonical_reference_map.md`"
+      },
+      {
+        "title": "Resources",
+        "source": "`docs/RESOURCES_SEED.md`"
+      }
+    ]
+  },
+  {
+    "section": "Status",
+    "path": "`/status`",
+    "pages": [
+      {
+        "title": "Checkpoints",
+        "source": "`docs/CHECKPOINTS.md`"
+      },
+      {
+        "title": "Changelog",
+        "source": "`docs/CHANGELOG.md`"
+      },
+      {
+        "title": "Progress (API)",
+        "source": "`docs/PROGRESS_2026-08-10.md`"
+      },
+      {
+        "title": "Progress (pipeline)",
+        "source": "`docs/PIPELINE_PROGRESS_2026-08-10.md`"
+      },
+      {
+        "title": "DEV plan",
+        "source": "`docs/DEV_PLAN.md`"
+      }
+    ]
+  }
+]

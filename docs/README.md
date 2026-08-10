@@ -40,6 +40,10 @@ content, and the site renders it.*
 ### The data model (the durable foundation)
 - [`SCHOLARLY_GRAPH.md`](SCHOLARLY_GRAPH.md) — the canonical object/annotation model (Work/Witness/Passage/SourceSpan/Person/Term/Sense/Resource + assertions). The schema that must survive years.
 
+### The learning / content strategy
+- [`LEARNING_STRATEGY.md`](LEARNING_STRATEGY.md) — research-once/distill-repeatedly: the ConceptLesson knowledge packet, question-driven pathways, and the derived video/shorts/quiz layer.
+- [`nextdev2.md`](nextdev2.md) — the forward plan (reader-is-the-product, school pages, C1 engine, scaling the corpus).
+
 ### The corpus & status
 - [`PROGRESS_2026-08-10.md`](PROGRESS_2026-08-10.md) — the API/hub progress.
 - [`PIPELINE_PROGRESS_2026-08-10.md`](PIPELINE_PROGRESS_2026-08-10.md) — the pipeline/stack progress.

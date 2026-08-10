@@ -9,7 +9,7 @@ export async function GET(_req: NextRequest) {
     tagline: "The authority, provenance, relationship, expert-validation and workflow layer for tantric textual heritage.",
     api_version: "1.0",
     endpoints: {
-      texts: ["GET /api/texts", "GET /api/texts/:id", "GET /api/texts/:id/translations"],
+      texts: ["GET /api/texts", "GET /api/texts/:id", "GET /api/texts/:id/translations", "GET /api/texts/kramasadbhava/decisions"],
       works: ["GET /api/works", "GET /api/works/:id", "GET /api/works/:id/manuscripts"],
       relations: ["GET /api/relations/:work_id"],
       passages: ["GET /api/passages/:id", "GET /api/search/passages", "GET /api/context/passages/:id", "GET /api/passages/:id/translation"],

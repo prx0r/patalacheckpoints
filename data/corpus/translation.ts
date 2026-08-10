@@ -75,7 +75,7 @@ export type DecisionStatus =
 // How a claim/alignment was derived (provenance at the assertion level).
 export type DerivationMethod =
   | "human" | "llm" | "embedding" | "exact_match" | "lexical_rule"
-  | "imported_scholarship" | "commentary_gloss" | "pipeline_adjudication";
+  | "imported_scholarship" | "commentary_gloss" | "pipeline_adjudication" | "pipeline";
 
 // What the EVIDENCE says (≠ what adjudication was reached ≠ what was reviewed).
 export type EvidenceState =
