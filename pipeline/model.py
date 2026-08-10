@@ -61,3 +61,16 @@ def chat_json(system: str, user: str, model: str = DEFAULT_MODEL,
         if start >= 0 and end > start:
             return json.loads(raw[start:end + 1])
         raise
+
+
+def parse_json(raw: str) -> dict[str, Any]:
+    """Parse a model output as JSON, stripping fences and finding the object block.
+    Raises ValueError if no object is found."""
+    raw = (raw or "").strip()
+    if raw.startswith("```"):
+        raw = raw.split("\n", 1)[-1]
+        raw = raw.rsplit("```", 1)[0]
+    start, end = raw.find("{"), raw.rfind("}")
+    if start >= 0 and end > start:
+        return json.loads(raw[start:end + 1])
+    raise ValueError("no JSON object found in model output")

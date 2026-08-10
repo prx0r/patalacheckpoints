@@ -44,7 +44,11 @@ export interface BibliographyRecord {
   work: string;
   traditions: string[];
   period?: { start?: number; end?: number; approximate?: boolean };
-  verified: boolean; // false = seed, not yet audited
+  verified: boolean; // false = seed, not yet audited (legacy)
+  // The bibliography gate (the reviewer's contract): how far this record has been
+  // brought toward translation-readiness. unknown ≠ missing. Optional for backward
+  // compat with existing records; derived as `seed` when absent.
+  state?: "seed" | "translation_ready" | "audited";
   textSources: BibSource[];
   translations: BibTranslation[];
   translationStatus: "complete" | "partial" | "none";
@@ -55,4 +59,6 @@ export interface BibliographyRecord {
   related?: string[];
   manuscripts?: { siglum?: string; note?: string }[];
   notes?: string[];
+  // explicit unknowns (unknown ≠ missing — the contract)
+  rights?: { status: "open" | "public_domain" | "permission" | "restricted" | "unknown" };
 }

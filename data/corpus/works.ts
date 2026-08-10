@@ -18,6 +18,7 @@ export interface CorpusWork {
   languages: string[];
   source_editions: string[];
   translation_status: "complete" | "partial" | "none";
+  bibliography_state: "seed" | "translation_ready" | "audited"; // the gate
   research_roles?: string[];
   rights?: {
     status: "open" | "public_domain" | "permission" | "restricted" | "unknown";
@@ -75,6 +76,7 @@ function toWork(b: BibliographyRecord): CorpusWork {
     languages: ["sa"],
     source_editions: [...new Set(b.textSources.map((s) => s.provider ?? s.url).filter((x): x is string => Boolean(x)))],
     translation_status: b.translationStatus,
+    bibliography_state: b.state ?? (b.verified ? ("audited" as const) : ("seed" as const)),
     research_roles: RESEARCH_ROLES[b.id],
     rights: { status: "unknown", notes: "Source-specific rights must be resolved before full-text redistribution/API/training. Our own working translations are ours." },
     related: b.related ?? [],
