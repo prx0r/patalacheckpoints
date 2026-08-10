@@ -32,17 +32,30 @@ def main():
         print(f"  {k}: {v}", flush=True)
     print(flush=True)
     start = time.time()
+    retries = {}
     while True:
         res = sm.advance_passage(WORK, LOC, SANSKRIT, EDITION, SOURCE_ID, 1, 8,
                                  flow=FLOW, created_by="patala-agent", model=MODEL)
         txn = res.get("next_transition") or {}
         elapsed = time.time() - start
         print(f"[{elapsed:.0f}s] ran={res.get('stage')} ok={res['ok']} "
-              f"action={txn.get('action')} reason={res.get('reason','')[:50]}", flush=True)
-        if not res["ok"]:
+              f"action={txn.get('action')} reason={res.get('reason','')[:60]}", flush=True)
+        # RETRY / RUN / COMPLETE all allow the loop to continue; only a hard
+        # BLOCKED (missing prerequisite) or too many retries stops it.
+        if res.get("stage") is None:
+            print("FLOW COMPLETE", flush=True)
+            break
+        if txn.get("action") == "BLOCKED":
             print("BLOCKED:", res.get("reason"), flush=True)
             break
-        if res.get("stage") is None:
+        # bound retries on a single stage (5 attempts) to avoid an infinite loop
+        current_stage = res.get("stage")
+        if current_stage in retries:
+            retries[current_stage] += 1
+        else:
+            retries[current_stage] = 1
+        if retries[current_stage] > 5:
+            print(f"TOO MANY RETRIES on {current_stage}", flush=True)
             break
 
     rec = sm.load_record(WORK, LOC)
