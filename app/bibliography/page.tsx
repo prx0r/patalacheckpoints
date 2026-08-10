@@ -153,6 +153,9 @@ export default function BibliographyPage() {
             <a href="/resources" className="inline-block rounded border border-zinc-600 px-3 py-1.5 text-[12px] text-zinc-300 hover:border-[color:var(--saffron)] hover:text-[color:var(--saffron)]">
               External resources →
             </a>
+            <a href="/concepts" className="inline-block rounded border border-zinc-600 px-3 py-1.5 text-[12px] text-zinc-300 hover:border-[color:var(--saffron)] hover:text-[color:var(--saffron)]">
+              Concepts →
+            </a>
           </div>
         </header>
 
