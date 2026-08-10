@@ -36,14 +36,16 @@ class StageOutputError(Exception):
     required to be JSON. NOT a silent fallback — the state machine must surface it."""
 
 
-def _hermes_call(prompt: str, model: str = DEFAULT_MODEL) -> str:
-    """Run hermes -z with the given prompt; return its stdout (the model response)."""
+def _hermes_call(prompt: str, model: str = DEFAULT_MODEL, timeout: int = 420) -> str:
+    """Run hermes -z with the given prompt; return its stdout (the model response).
+    timeout: research tasks (C1, file-reading) legitimately take minutes; the default
+    is generous. A trivial reply is fast; a full C1 research call may take several minutes."""
     env = dict(os.environ)
     env.setdefault("HERMES_MODEL", model)
     proc = subprocess.run(
         [HERMES_BIN, "-z", prompt],
         capture_output=True, text=True, env=env,
-        timeout=180, cwd="/root/projects/patala",
+        timeout=timeout, cwd="/root/projects/patala",
     )
     out = (proc.stdout or "").strip()
     return out
