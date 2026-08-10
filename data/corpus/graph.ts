@@ -16,7 +16,8 @@ import type { Certainty, Origin, Evidence, ReviewEvent } from "./primitives";
 
 export type GraphObjectType =
   | "work" | "witness" | "digital_representation" | "canonical_passage"
-  | "source_span" | "person" | "organization" | "term" | "sense" | "resource";
+  | "source_span" | "person" | "organization" | "term" | "sense" | "resource"
+  | "unit";   // a contiguous research unit (e.g. Kramasadbhāva 1.1–1.28)
 
 export interface GraphObject {
   id: string;          // pt:work:kramasadbhava, pt:person:abhinavagupta, ...
@@ -32,7 +33,19 @@ export type AnnotationType =
   | "translation" | "lexical_decision" | "grammar" | "ambiguity" | "parallel"
   | "textual_variant" | "term_occurrence" | "sense_assignment" | "dating"
   | "tradition" | "authorship" | "manuscript_identification" | "commentary"
-  | "term_history_assertion" | "bibliographic_claim";
+  | "term_history_assertion" | "bibliographic_claim" | "research_question";
+
+// A research unit — a contiguous block studied as one object (the Milestone B unit).
+export interface UnitObject extends GraphObject {
+  type: "unit";
+  work: string;                 // pt:work:{slug}
+  range: { chapter: number; verses: string };   // e.g. "1.1–1.28"
+  genre?: string;
+  structure?: string;           // e.g. "vocative-chain stuti; body-locus sequence"
+  term_families?: string[];
+  known_cruxes?: string[];
+  passages: string[];           // passage ids in the unit
+}
 
 export type EpistemicState =
   | "machine_proposed" | "human_proposed" | "checked" | "expert_reviewed"

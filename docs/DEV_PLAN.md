@@ -1,5 +1,12 @@
 # Pāṭala — Development Plan (API-first, bibliography-first)
 
+> **ARCHIVED IMPLEMENTATION PLAN.** Superseded for sequencing by `PROCESS_NOTES.md` and
+> the current milestones (Milestone A2 / B1 / B2 / C). Its enduring principles stand —
+> API-first, provenance non-negotiable, bibliography as spine, UI last — but its literal
+> phase order no longer drives development (much of it is already built). Read
+> `PROCESS_NOTES.md`, `STATE_OF_PLAY.md`, and `experiments/advice-response.md` for the
+> current plan.
+
 > **Status note (2026-08-10):** The project is now named **Pāṭala** (was Tantrakośa). This document is the original plan; the *current* validated state and milestones live in `CHECKPOINTS.md` and `PROCESS_NOTES.md`, and the strategy in `NORTHSTAR.md`. Checkpoints 1–9 are done: AI-readable bibliography (69 works), corpus manifest, 4k+ stable verse passages, translation contract (4 separated policies), MCP evidence engine (12 tools), our T1 corpus + OCHS manuscript witnesses (1,542, resolved to 18 works), term senses/occurrences, `get_passage_context`, a `resolve/work` proposer, the six formal primitives (assertion/evidence/provenance/review/rights/crosswalk), the raw-corpus concordance, `/api/health` + `/api/stats` + `/api`, and an OpenAPI spec + 72-check verification suite + 7 executable doc examples.
 
 *2026-08-10. The build order for Pāṭala. **The governing decision: the API/MCP contract is the product.** The bibliography is the source of truth; the OpenAPI spec is the contract; the site is a render of the API. Anything we build — reader, workshop, audit, TTS, resources, commentary — is a new endpoint + MCP tool added to that one contract, never a separate silo. This is the machine-facing layer made primary (per `HANDOVER_MCP_API.md`).*

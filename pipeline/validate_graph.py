@@ -79,6 +79,28 @@ def validate() -> list[str]:
         if out not in OUTCOMES:
             problems.append(f"review {r.get('id')}: bad outcome/decision {out!r}")
 
+    # ── the real annotation instances (data/corpus/annotations.ts + units) ──
+    # These are TS literals; we do a light static check on the seed values we can
+    # read. The core invariants:
+    #   - machine origin never implies accepted status
+    #   - an annotation targets an existing object/annotation (by id pattern)
+    ann_files = [os.path.join(BASE, "data", "corpus", "annotations.ts"),
+                 os.path.join(BASE, "data", "corpus", "units", "kramasadbhava-stuti-1.ts")]
+    txt = "\n".join(open(p, encoding="utf-8").read() for p in ann_files if os.path.exists(p))
+    # machine origin must not claim accepted/reviewed status
+    for m in re.finditer(r'origin:\s*"([^"]+)"[^}]*?status:\s*"([^"]+)"', txt):
+        origin, status = m.group(1), m.group(2)
+        if origin == "machine" and status in ("expert_reviewed", "editorially_accepted"):
+            problems.append(f"annotation: machine origin claims {status}")
+    # every annotation target that looks like an id must start with pt:
+    for m in re.finditer(r'target:\s*"([^"]+)"', txt):
+        t = m.group(1)
+        if t and not (t.startswith("pt:") or t.startswith("tantra:")):
+            problems.append(f"annotation target not a stable id: {t!r}")
+    # the unit must declare a work and a range
+    if "type: \"unit\"" in txt and "work:" not in txt:
+        problems.append("unit object missing work")
+
     # Schema-level: origin/status/certainty enums are distinct (checked by TS types).
     return problems
 
