@@ -132,6 +132,16 @@ export interface PublishedTranslation {
   decisions: TranslationDecision[];
   evidence: EvidenceItem[];         // the resolved evidence pool
   review_state: ReviewState;        // DERIVED from decision review events
+  // C1 — the commentary, toggled on/off on the reader. Verse-by-verse, razor-sharp
+  // (Dyczkowski-like), extracting the doctrinal depth beneath the audited T3.
+  // Optional (not all passages have a C1 yet).
+  c1?: {
+    body: string;
+    // verse_commentary: one entry per verse/locator, in order — each a sharp
+    // verse-by-verse analysis that breathes, tied to the T3 verse it comments on.
+    verse_commentary?: { locator: string; commentary: string }[];
+    claim_links: { claim: string; target_span_id: string }[];
+  };
   provenance: {
     base_source: string;
     edition: string;

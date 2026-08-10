@@ -152,6 +152,22 @@ export const published18: PublishedTranslation = {
   decisions,
   evidence,
   review_state: deriveReviewState(decisions) as ReviewState,   // DERIVED, not manual
+  c1: {
+    body: "Kramasadbhāva 1.8 — the maṅgala's vocative-chain crux.",
+    verse_commentary: [
+      {
+        locator: "1.8",
+        commentary: `The verse opens the homage with four vocatives, each naming the goddess in a different register. "Mistress of the god of gods" (devadeveśī): the doubled deva makes the superlative — she governs the source of the gods, the power of the Lord, not a deity among deities. "Great Kālī": the all-devouring, not a destroyer but the power of consciousness that absorbs the world back into the light that witnesses it.
+
+The centre is the pair paramānande / nirānande — "O supreme bliss" and "O bliss-less." The privative (nir-) most directly gives "the bliss-less one," and R2's LEX:2 marked that CONSTRAINED. But the hymn's logic points elsewhere: everywhere it addresses the goddess across a pair (eternal/non-eternal at 1.9, being/non-being at 1.14) to say she is beyond both, not one pole. On that reading nirānande is the "bliss at rest" — the stillness beyond joy and its loss, the anākhya of the Krama's own cycle. The morphology and the doctrine pull apart; LEX:2 is genuinely OPEN. This commentary does not resolve it — it preserves the contest and lets the reader weigh the two.`,
+      },
+    ],
+    claim_links: [
+      { claim: "mistress of the god of gods", target_span_id: "pt:tgtspan:krs:1.8:3" },
+      { claim: "O supreme bliss", target_span_id: "pt:tgtspan:krs:1.8:7" },
+      { claim: "O bliss-less one / O bliss at rest", target_span_id: "pt:tgtspan:krs:1.8:8" },
+    ],
+  },
   provenance: {
     base_source: "pt:src:kramasadbhava:dyczkowski-ed",
     edition: "Dyczkowski ed., Muktabodha (NGMPP A 209/23)",

@@ -64,16 +64,40 @@ Keep these technical terms untranslated (transliterated, italicised) where Engli
 - **reading_translation**: natural, flowing, defensible; still accurate — never prettier at the cost of meaning.
 - Avoid archaisms and pseudo-scriptural "thee/thou" register unless the source genuinely warrants it. Avoid modern slang. Prefer plain, precise, dignified English.
 
-## 10. Do
+## 10. The C1 commentary voice (distinct from the translation voice)
+
+The C1 is NOT a fifth translation of the verse. It is a **commentary** — the voice of
+Dyczkowski's Tantrāloka with Jayaratha's Viveka: dense, reasoned, flowing prose that
+*thinks with* the text and draws out the doctrine beneath it.
+
+- **Reason, don't report.** Develop the argument — how the premise forces the conclusion,
+  how the image works, why the rival reading fails — rather than restating the verse.
+- **Continuous prose, not a gloss.** Prefer a developed paragraph that moves, over the
+  mechanical "this verse says X; the reason is Y."
+- **Layer the sentences.** Let clauses subordinate and qualify; build one sustained thought.
+  Vary length — a long sentence carries the argument, a short one lands it.
+- **Ground every claim.** Carry the evidence with the prose (the Vṛtti, the parallel, the
+  history, the grammar). Nothing floats free of the text.
+- **Weigh the rival.** Let the opposing reading state itself fully before being set aside —
+  or honored as genuinely open. The reader should feel the force of what was rejected.
+- **Draw out the esoteric underneath.** The surface image is the entry; open the doctrine
+  it holds — but tie it back to the specific wording.
+- **Keep the argument's motion.** Comment on the sequence, not just the verse; a text is an
+  argument moving from challenge to resolution.
+
+Full discipline: `skills/write-commentary/SKILL.md` §5.
+
+## 11. Do
 
 - Be consistent, honest, and precise.
 - Flag what you don't know.
 - Record every retained term and every parse decision.
 - Let evidence decide; say when you're unsure.
 
-## 11. Don't
+## 12. Don't
 
 - Don't copy published translations or our earlier T-versions verbatim.
 - Don't silently repair corrupt/lacunose text.
 - Don't add unsupported doctrine or supplied clauses without a note.
 - Don't mark anything "complete" until T3.
+- Don't write C1 as a verse-summary gloss ("this verse says X"). Reason and develop instead.

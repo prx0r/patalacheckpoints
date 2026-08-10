@@ -31,6 +31,7 @@ export async function GET(
     alignments: pub.alignments,
     decisions: pub.decisions,
     evidence: pub.evidence,
+    c1: pub.c1,       // the commentary (when present), toggled on/off, verse-by-verse
     provenance_note: {
       note: "The published auditable translation: every phrase is addressable. Click a source or target span → its decision → evidence → review. Machine decisions are proposals until a review event promotes them.",
       api_version: "1.0",

@@ -14,10 +14,16 @@ interface TranslationDecision {
   method: string; reason: string; evidence: EvidenceUse[]; review_events: string[];
   source_span_ids: string[]; target_span_ids: string[];
 }
+interface C1Block {
+  body: string;
+  verse_commentary?: { locator: string; commentary: string }[];
+  claim_links?: { claim: string; target_span_id: string }[];
+}
 interface PublishedTranslation {
   text: string; source_spans: SourceSpan[]; target_spans: TargetSpan[];
   alignments: Alignment[]; decisions: TranslationDecision[]; evidence: EvidenceItem[];
   review_state: string; provenance: { edition: string; base_source: string };
+  c1?: C1Block;
 }
 interface DecisionDetail {
   id: string; claim: string; surface_rendering: string; adjudicated_reading: string | null;
@@ -70,6 +76,7 @@ export default function PassageReaderPage({ params }: { params: Promise<{ work: 
   const [selectedDecision, setSelectedDecision] = useState<string | null>(null);
   const [decision, setDecision] = useState<DecisionDetail | null>(null);
   const [auditMode, setAuditMode] = useState(false);
+  const [showCommentary, setShowCommentary] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -145,12 +152,20 @@ export default function PassageReaderPage({ params }: { params: Promise<{ work: 
             <div className="mt-2 flex items-center gap-3 text-[11px] text-zinc-500">
               <span>ed. {pub.provenance.edition}</span>
               <span>· review: {pub.review_state}</span>
-              <button
-                onClick={() => setAuditMode(!auditMode)}
-                className="ml-auto rounded border border-zinc-700 px-2 py-0.5 text-[10px] uppercase tracking-wider text-zinc-400 hover:border-[color:var(--saffron)] hover:text-[color:var(--saffron)]"
-              >
-                {auditMode ? "AUDIT" : "READ"} mode
-              </button>
+              <div className="ml-auto flex items-center gap-2">
+                <button
+                  onClick={() => setAuditMode(!auditMode)}
+                  className="rounded border border-zinc-700 px-2 py-0.5 text-[10px] uppercase tracking-wider text-zinc-400 hover:border-[color:var(--saffron)] hover:text-[color:var(--saffron)]"
+                >
+                  {auditMode ? "AUDIT" : "READ"} mode
+                </button>
+                <button
+                  onClick={() => setShowCommentary(!showCommentary)}
+                  className={`rounded border px-2 py-0.5 text-[10px] uppercase tracking-wider ${showCommentary ? "border-[color:var(--saffron)] bg-[color:var(--saffron)]/10 text-[color:var(--saffron)]" : "border-zinc-700 text-zinc-400 hover:border-[color:var(--saffron)] hover:text-[color:var(--saffron)]"}`}
+                >
+                  {showCommentary ? "Commentary: ON" : "Commentary: OFF"}
+                </button>
+              </div>
             </div>
           </header>
 
@@ -215,11 +230,26 @@ export default function PassageReaderPage({ params }: { params: Promise<{ work: 
             )}
           </div>
 
-          {/* Commentary placeholder */}
-          <div className="rounded border border-zinc-800/50 p-5 text-[13px] leading-relaxed text-zinc-400">
-            <p className="mb-1 text-[10px] uppercase tracking-[0.2em] text-zinc-600">Commentary</p>
-            <p>Commentary (C1) for this passage to appear here — written by the editorial model with anchored evidence, not auto-generated prose.</p>
-          </div>
+          {/* Commentary (C1) — toggled on/off */}
+          {showCommentary && (
+            <div className="rounded border border-zinc-800/50 bg-zinc-900/30 p-5">
+              <p className="mb-2 text-[10px] uppercase tracking-[0.2em] text-[color:var(--saffron)]">Commentary</p>
+              {pub.c1 && pub.c1.verse_commentary && pub.c1.verse_commentary.length > 0 ? (
+                <div className="space-y-4">
+                  {pub.c1.verse_commentary.map((vc) => (
+                    <div key={vc.locator} className="text-[13px] leading-relaxed text-zinc-300">
+                      <p className="mb-1 font-mono text-[10px] uppercase tracking-wider text-zinc-500">{vc.locator}</p>
+                      <p className="whitespace-pre-line">{vc.commentary}</p>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-[13px] text-zinc-400">
+                  Commentary (C1) for this passage to appear here — written by the editorial model with anchored evidence, not auto-generated prose.
+                </p>
+              )}
+            </div>
+          )}
         </div>
 
         {/* right: the decision panel */}

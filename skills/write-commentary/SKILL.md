@@ -15,6 +15,12 @@ metadata:
 
 C1 is the capstone scholarly commentary layer for a passage or work.
 
+**Two registers (C1 = academic, C2 = plain English).** Both are written from the SAME
+evidence packet (never separately researched). C1 is the scholarly commentary (dense,
+Dyczkowski-like, source-aware). C2 is the plain-English rendering of the same conclusion
+for a non-specialist reader (the master-note / explainer voice). C2 is derived from C1, not
+a second research effort.
+
 It is not:
 
 a free-form essay,
@@ -235,25 +241,52 @@ Only after the packet is assembled should C1 prose be written.
 
 5. C1 writing style
 
-Target style:
+### C1 (academic) — the scholarly register
 
-Dyczkowski-like explanatory density, but shorter, clearer, and more explicit about evidence and uncertainty.
+The model is the Dyczkowski translation of the Tantrāloka with Jayaratha's Viveka: prose
+that is **dense, reasoned, and flowing** — an argument developed in long, layered sentences
+that cite the sources, weigh rival readings, and let the doctrine unfold. It is NOT a
+verse-by-verse gloss of the form "this verse says X, and the reason is Y." It is a
+continuous commentary that *thinks with* the text.
 
-C1 should be:
+The model text to consult before writing a C1: Dyczkowski's *Tantrāloka* vol. 1 (the
+translation of TĀ 1.1 with Jayaratha's Viveka), the discussion of vimarśa in particular —
+see `/root/projects/tantraloka/texts-original/tantraloka-vol1-dyczkowski.txt` and the
+structured `site/out/texts-structured/vol1.txt` (the long, reasoned note on vimarśa as
+"reflective awareness" is the register to emulate).
 
-concise,
+The governing quality is **development**. Each paragraph should move: open on a problem or
+claim, unfold it through evidence and contrast, and land on a point that the reader could
+not have reached at the paragraph's start. The commentary explains *why* a reading is the
+reading — not by announcing the reason, but by building it.
 
-technically precise,
+Concrete habits, drawn from the model:
 
-readable,
+1. **Reason, don't report.** Do not restate the verse and add "this is the point." Show
+   the verse's logic in motion — how the premise forces the conclusion, how the image does
+   its work, why the alternative fails.
+2. **Layer the sentences.** Let clauses subordinate and qualify, so a paragraph builds one
+   sustained thought rather than a list of short statements. Vary length; let a long
+   sentence carry the argument and a short one land it.
+3. **Ground every claim.** Where the prose asserts, it carries the evidence with it —
+   the Vṛtti, the parallel, the history, the grammar. Nothing floats free of the text.
+4. **Weigh the rival.** The sharp commentary lets the opposing reading state itself fully
+   before it is set aside — or before it is honored as genuinely open. The reader should
+   feel the force of what was rejected.
+5. **Draw out the esoteric underneath.** The verse's surface (a crystal, a sky-flower, a
+   garland) is the entry; the commentary opens the doctrine it holds — reflexivity,
+   ownership, recognition. But tie the doctrine back to the specific wording; do not
+   float into generic system-summary.
+6. **Keep the flow of the argument.** Comment on the sequence, not just the verse. The
+   C1 is a commentary on a *text*, and the text is an argument moving from challenge to
+   resolution. Preserve that motion across verses.
+7. **Be dense but clear.** Dense means every sentence earns its place and carries weight;
+   it does not mean opaque. The prose should read as one sustained, intelligible thought
+   — accessible to a serious reader who is willing to follow.
 
-minimally rhetorical,
-
-direct about what each sentence contributes.
-
-Prefer 150–500 words per ordinary verse/passage.
-
-Use more only when the passage genuinely contains multiple cruxes.
+Write in continuous prose. Prefer a developed paragraph per movement (or per verse, when
+the verse is dense enough to warrant it), not a labeled list. A good C1 passage of 200–400
+words that reasons and develops is worth more than a page of verse-summary.
 
 Avoid:
 
@@ -265,9 +298,84 @@ repetition of the translation,
 
 "this profound verse teaches...",
 
+the mechanical "this verse says X; the reason is Y" gloss,
+
+a flat list of "point after point" with no connective development,
+
 long histories unrelated to the specific wording,
 
 pretending every term activates the entire later system.
+
+### C2 (plain English) — the derived reader's register
+
+C2 is the SAME conclusion as C1, written for a non-specialist. Derive it from the finished
+C1 evidence packet; do not re-research. It is the voice of the master-note / 3-minute
+explainer / learning layer (`docs/LEARNING_STRATEGY.md`).
+
+C2 rules:
+
+one idea per sentence,
+
+short sentences,
+
+no untranslated Sanskrit unless immediately glossed,
+
+no named-scholar apparatus unless it matters to the point,
+
+always explain WHY the reading was chosen in plain terms,
+
+state uncertainty plainly ("we are not certain whether...").
+
+Prefer 60–150 words per ordinary verse.
+
+Structure: HOOK/PROBLEM → INTUITION → the point → COMPLICATION → LANDING (what it
+prepares). (The explainer structure of `LEARNING_STRATEGY.md` §13.)
+
+Example register (contrast with the C1 of the same passage):
+
+> C1: "The pair paramānande / nirānande stands at the center, mirroring the polar
+> nitye / tvanitye at 1.9 — the goddess transcends both poles of a pair."
+>
+> C2: "The hymn calls her 'supreme bliss' and 'bliss-less' in the same breath. The
+> tradition is telling you she is beyond both sides of every pair — not one of them."
+
+C2 never contradicts C1; it translates C1's conclusion into plainer words.
+
+## The triage (three C1 outcomes — not everything is a research project)
+
+Before writing, classify the passage:
+
+```text
+C1-CLEAN       local meaning clear; concise commentary (150–250 words)
+C1-RESEARCHED  an important lexical/doctrinal issue; external evidence added (400–700)
+C1-BLOCKED     a textual/translation problem cannot be responsibly resolved yet
+               → emit TranslationChallenge / ResearchQuestion, explain the problem,
+               do NOT manufacture closure
+```
+
+A genuine C1 is: *what this passage says, how we know, and what remains uncertain.* If you
+can answer that rigorously in 200 words, stop at 200. Do not inflate a clean verse into a
+philology project.
+
+## The demand-driven audit (C1 drives the audit, not the reverse)
+
+Do NOT audit every verse blindly. Write the C1 first; it brings in the evidence the
+translation pipeline lacked (same-work context, parallels, terminology, scholarship,
+commentary, historical usage). If the commentary depends on a translation decision the
+evidence does not adequately support, C1 emits a TranslationChallenge → inspect only that
+decision → gather targeted evidence → revise T3 if warranted → update C1. Else move on.
+
+```text
+existing T1–T3
+  → C1 research (brings the missing evidence)
+  → C1 exposes a weak translation decision?
+      no  → next passage
+      yes → TranslationChallenge → targeted audit of THAT decision → revise → update C1
+```
+
+The deterministic mechanical audit (alignment/negation/number/omission/dangling-evidence/
+OPEN-rendered-as-resolved/graph validation) is CI, run separately and automatically — not a
+scholarly re-review.
 
 6. Required C1 structure
 
@@ -630,9 +738,13 @@ origin: machine
 editorial_status: proposed
 ---
 
-# C1 Commentary
+# C1 Commentary (academic)
 
-[razor-sharp commentary]
+[razor-sharp scholarly commentary]
+
+# C2 (plain English — derived from C1, not separately researched)
+
+[the same conclusion in the non-specialist voice]
 
 ## Cruxes
 [only if needed]
@@ -647,7 +759,7 @@ editorial_status: proposed
 ## Structured proposals
 - [...]
 
-For a work-level C1, group passage commentaries by section and add only a short work-level synthesis where repeated evidence warrants it.
+For a work-level C1, group passage commentaries by section and add only a short work-level synthesis where repeated evidence warrants it. C2 may be a single block per passage or per section; it must never contradict C1.
 
 17. Stop condition
 
