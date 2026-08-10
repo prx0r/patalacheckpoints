@@ -1,0 +1,26 @@
+{
+  "schema": "patala-passage-manifest-1.0",
+  "generated_at": "2026-08-10",
+  "corpus": {
+    "total": 4395,
+    "tally": {
+      "needs_review": 3832,
+      "valid": 563
+    },
+    "integrity": {
+      "total": 4395,
+      "unique_ids": 4395,
+      "duplicate_ids": [],
+      "missing_work": [],
+      "missing_source": [],
+      "dangling_work": [],
+      "ok": true
+    }
+  },
+  "gold_records": {
+    "total": 23,
+    "tally": {
+      "needs_review": 23
+    }
+  }
+}
