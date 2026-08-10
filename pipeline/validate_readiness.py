@@ -35,8 +35,9 @@ def load_bibliography() -> list[dict]:
         if not os.path.exists(p):
             continue
         txt = open(p, encoding="utf-8").read()
-        # split into per-record blocks by top-level `{` after `id:`
-        for m in re.finditer(r'\{\s*id:\s*"([^"]+)"', txt):
+        # split into per-record blocks: an object whose `id` is immediately followed
+        # by a `work:` (a top-level BibliographyRecord, not a nested source id)
+        for m in re.finditer(r'\{\s*id:\s*"([a-z0-9_]+)",\s*\n?\s*work:', txt):
             rec = {"id": m.group(1)}
             start = m.start()
             # find the object block end (balanced braces from the `{` at start)

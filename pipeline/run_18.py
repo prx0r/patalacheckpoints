@@ -3,10 +3,11 @@
 The vertical slice that proves the compounding unit: source → audited decisions → C1.
 Writes the persisted record to the work stack. Needs OPENCODE_GO_API_KEY."""
 from __future__ import annotations
-import json, os, sys, time
+import json, os, sys, time, datetime
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import pipeline.state_machine as sm
+from pipeline import model as model_mod
 
 WORK = "kramasadbhava"
 LOC = "1.8"
@@ -14,13 +15,26 @@ SANSKRIT = "ooṃ namaste devadeveśi mahākāli namo'stu te | namo'stu paramān
 EDITION = "Dyczkowski ed., Muktabodha (NGMPP A 209/23)"
 SOURCE_ID = "pt:src:kramasadbhava:dyczkowski-ed"
 FLOW = ("T1", "R1", "T2", "R2", "T3", "T3.1")
+MODEL = "deepseek-v4-flash"
+
+EXPERIMENT = {
+    "experiment_id": "kramasadbhava-1.8-v1",
+    "pipeline_version": "translation-pipeline-v1.0",
+    "model": MODEL,
+    "base_source": SOURCE_ID,
+    "passage": f"tantra:text:{WORK}:{LOC}",
+    "date": datetime.date.today().isoformat(),
+}
 
 def main():
+    print("=== EXPERIMENT CONFIG ===", flush=True)
+    for k, v in EXPERIMENT.items():
+        print(f"  {k}: {v}", flush=True)
+    print(flush=True)
     start = time.time()
-    ran = 0
     while True:
         res = sm.advance_passage(WORK, LOC, SANSKRIT, EDITION, SOURCE_ID, 1, 8,
-                                 flow=FLOW, created_by="patala-agent")
+                                 flow=FLOW, created_by="patala-agent", model=MODEL)
         txn = res.get("next_transition") or {}
         elapsed = time.time() - start
         print(f"[{elapsed:.0f}s] ran={res.get('stage')} ok={res['ok']} "
@@ -30,7 +44,6 @@ def main():
             break
         if res.get("stage") is None:
             break
-        ran += 1
 
     rec = sm.load_record(WORK, LOC)
     if rec:

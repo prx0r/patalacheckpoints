@@ -62,5 +62,5 @@ export interface BibliographyRecord {
   manuscripts?: { siglum?: string; note?: string }[];
   notes?: string[];
   // explicit unknowns (unknown ≠ missing — the contract)
-  rights?: { status: "open" | "public_domain" | "permission" | "restricted" | "unknown" };
+  rights?: { status: "open" | "public_domain" | "permission" | "restricted" | "unknown"; notes?: string };
 }

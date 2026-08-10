@@ -416,9 +416,11 @@ export const seed: BibliographyRecord[] = [
     work: "Kramasadbhāva",
     traditions: ["Krama"],
     verified: false,
+    state: "translation_ready", // enough for T1 (see pipeline/validate_readiness.py)
     textSources: [
-      { type: "etext", coverage: "complete", provider: "Muktabodha (Dyczkowski ed.)", url: "https://groups.google.com/g/bvparishat/c/pnWqDqYprQ4", tier: "B", note: "kramasadbhava_DEV.pdf + Velthuis text in the public thread." },
+      { id: "pt:src:kramasadbhava:dyczkowski-ed", type: "etext", coverage: "complete", provider: "Muktabodha (Dyczkowski ed.)", url: "https://groups.google.com/g/bvparishat/c/pnWqDqYprQ4", tier: "B", note: "kramasadbhava_DEV.pdf + Velthuis text in the public thread; our segmented corpus derives from this.", rights: { status: "open" } },
     ],
+    rights: { status: "open", notes: "Muktabodha e-text under CC BY-NC 4.0; our working translation is ours." },
     translations: [{ language: "en", coverage: "line-by-line working", complete: false, type: "independent", url: "https://mahanaya.org/en/scriptures/kramasadbhavah/", tier: "C", note: "Ongoing online working translation (Mahānaya)." }],
     translationStatus: "partial",
     statusLabel: "Online English working translation; no major published critical English edition located",

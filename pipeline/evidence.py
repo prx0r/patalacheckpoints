@@ -80,7 +80,7 @@ def _lemma_matches(text: str, lemma: str) -> int:
 
 
 def build_evidence_packet(record: dict, work_id: str = "",
-                          max_neighbors: int = 2,
+                          max_neighbors: int = 6,
                           max_occurrences: int = 20) -> dict[str, Any]:
     """Assemble the deterministic evidence packet for a passage record."""
     work_id = work_id or record.get("work_id", "")
@@ -112,6 +112,13 @@ def build_evidence_packet(record: dict, work_id: str = "",
                 "preferred_renderings": t.get("preferred_renderings", []),
             })
 
+    # local surface terms: word-forms actually present in this passage's Sanskrit
+    # that may be crux terms even if not (yet) in the global ledger (e.g. the 1.8
+    # vocatives mahākālī / paramānanda / nirānanda). Flagged as local, unledgered.
+    surface_words = [w for w in san_norm.split() if len(w) > 3]
+    local_terms = [w for w in surface_words if not any(_norm(t["lemma"]) in w for t in tracked)]
+    local_terms = local_terms[:10]
+
     # occurrences (coarse substring, honest)
     occurrences = {
         "method": "substring",
@@ -127,6 +134,7 @@ def build_evidence_packet(record: dict, work_id: str = "",
         "work": {"id": work_id, "locator": loc_str},
         "neighbors": neighbors[:max_neighbors],
         "terms": tracked,
+        "local_surface_terms": local_terms,  # unledgered words present here (potential cruxes)
         "occurrences": occurrences,
         "evidence_needed": [],   # populated by the stage if insufficient
         "provenance": "deterministic evidence packet — no generated interpretation",
