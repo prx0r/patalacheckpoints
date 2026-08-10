@@ -49,54 +49,25 @@ def sys_T1() -> str:
 
 
 def sys_R1() -> str:
-    return (STYLE + EVIDENCE +
-            "\nYou are the R1 adversarial critique (NOT human peer review — you are a "
-            "machine pass). Attack the given T1 against the Sanskrit source and any "
-            "anchor. Your job is to find where T1 can fail and to MAP THE GENUINE "
-            "CRUXES — the points where a materially different grammatical, lexical, "
-            "textual, referential, or doctrinal reading is defensible. For each crux "
-            "output: crux_id, type (LEXICAL/GRAMMATICAL/TEXTUAL/REFERENTIAL/DOCTRINAL/"
-            "CONTEXTUAL), the T1 assumption, the alternative candidates, and what "
-            "evidence is needed to decide. Give a verdict (RIGHT / ERROR / FORK / OPEN) "
-            "with [G]/[P]/[C]/[S]/[A]/[R] evidence, and leave a SHORT COMMENTARY STUB "
-            "per crux. Challenge genuinely; do NOT manufacture doubts on secure verses.")
+    return ("You are an adversarial Sanskrit translation critic. Find only materially "
+            "defensible alternative readings. Do NOT manufacture ambiguity. Use only "
+            "the supplied Sanskrit and evidence — doctrine and existing translations "
+            "do not outrank them. Return ONLY valid JSON.")
 
 R1_CRUX_TYPES = ["LEXICAL", "GRAMMATICAL", "TEXTUAL", "REFERENTIAL", "DOCTRINAL", "CONTEXTUAL"]
 
 
 def sys_T2() -> str:
-    return (STYLE + EVIDENCE +
-            "\nYou are T2. You SEE T1 and the R1 critique. Produce the STRONGEST "
-            "MATERIALLY DIFFERENT translation that remains defensible from the Sanskrit "
-            "and evidence — not a blind copy, not an exercise in disagreement.\n"
-            "RULES:\n"
-            "- Adopt a different reading ONLY where it changes syntax, referent, "
-            "  technical sense, doctrinal implication, textual reading, or meaningful "
-            "  English interpretation (the difference budget).\n"
-            "- Do NOT introduce differences merely for stylistic variety.\n"
-            "- Address the cruxes R1 mapped: use the rival candidate that survives "
-            "  inspection, or explain why the T1 reading is correct.\n"
-            "- Where the Sanskrit does not support a meaningful alternative, preserve "
-            "  the T1 reading and mark it CONSTRAINED.\n"
-            "- Cite [G]/[P]/[C]/[S]/[A]/[R] for every divergence you make.")
+    return ("Construct the strongest coherent rival to T1 using R1's genuine cruxes. "
+            "Change only interpretation, syntax, referent, technical sense, or textual "
+            "reading — never wording merely for variety. Use only the supplied Sanskrit "
+            "and evidence. Return ONLY valid JSON.")
 
 
 def sys_R2() -> str:
-    return (STYLE + EVIDENCE +
-            "\nYou are R2, the adjudicator. Building on R1, compare T1 and T2 BY "
-            "DECISION, not merely by sentence. For each crux/decision:\n"
-            "- where the readings agree AND the source constrains it — that is the "
-            "  HARD CORE (invariant across serious analyses + source-constrained).\n"
-            "- where they diverge — classify each decision as:\n"
-            "    CONSTRAINED   source effectively forces this\n"
-            "    PREFERRED     best reading, but alternatives are plausible\n"
-            "    OPEN          two or more serious readings remain\n"
-            "    RECONSTRUCTED requires textual intervention\n"
-            "- give the reasoning, do school/period-context research, EXPAND THE "
-            "  COMMENTARY (grow the R1 stubs into full notes).\n"
-            "- record equal_alternates and open questions explicitly.\n"
-            "Output a decision list (crux → preferred / status / reason / evidence), "
-            "then the overall hard-core and the open set.")
+    return ("Adjudicate T1 and T2 from the supplied Sanskrit and evidence. For each crux "
+            "classify the chosen reading as CONSTRAINED / PREFERRED / OPEN / RECONSTRUCTED. "
+            "Do not remove unresolved ambiguity. Return ONLY valid JSON.")
 
 
 def sys_T3() -> str:
@@ -185,23 +156,20 @@ def user_prompt(stage: str, record: dict[str, Any], evidence_packet: dict | None
         t1 = record["stages"].get("T1", {})
         return (base + f"\nT1: {t1.get('close_translation','')}\n"
                 f"T1 flags: {t1.get('flags',[])}\n"
-                "Attack this T1 and map the genuine cruxes as STRICT JSON: "
-                '{"detail":"...","cruxes":[{"id":"...","type":"LEXICAL","assumption":"...",'
-                '"rivals":[],"evidence_needed":[]}],"verdicts":[{"verdict":"FORK","crux":"..."}]}')
+                "Find genuinely defensible alternative readings. Return STRICT JSON (lean):\n"
+                '{"assessment":"...","cruxes":[{"id":"c1","type":"LEXICAL","assumption":"...",'
+                '"rivals":[],"need":"..."}]}. If none: {"assessment":"...","cruxes":[]}')
     if stage == "T2":
         t1 = record["stages"].get("T1", {})
         r1 = record["stages"].get("R1", {})
         cruxes = r1.get("cruxes", [])
-        crux_txt = "\n".join(f"  crux {c.get('id')} [{c.get('type')}]: {c.get('detail','')} — rivals {c.get('rivals',[])}"
+        crux_txt = "\n".join(f"  crux {c.get('id')} [{c.get('type')}]: {c.get('assumption','')} — rivals {c.get('rivals',[])}"
                              for c in cruxes) or "  (none mapped)"
         return (base + f"\nT1: {t1.get('close_translation','')}\n"
-                f"T1 flags: {t1.get('flags',[])}\n"
                 f"R1 cruxes:\n{crux_txt}\n"
-                "Produce T2 — the strongest materially-different defensible reading that "
-                "addresses these cruxes — as STRICT JSON: "
-                '{"close_translation":"...","strategy":"...","rival_decisions":'
-                '[{"crux_id":"...","adopted":"...","differs_from_t1":true,"reason":"...","evidence":[]}],'
-                '"constrained":[]}. Do NOT manufacture disagreement on secure verses.')
+                "Produce the strongest coherent rival. Return STRICT JSON (lean):\n"
+                '{"translation":"...","decisions":[{"crux":"c1","reading":"...","reason":"..."}],'
+                '"constrained":[]}')
     if stage == "R2":
         t1 = record["stages"].get("T1", {})
         t2 = record["stages"].get("T2", {})
@@ -209,13 +177,10 @@ def user_prompt(stage: str, record: dict[str, Any], evidence_packet: dict | None
         return (base
                 + f"\nT1: {t1.get('close_translation','')}\n"
                 + f"T2: {t2.get('close_translation','')}\n"
-                + f"T2 rival decisions: {t2.get('rival_decisions',[])}\n"
                 + f"R1 cruxes: {r1.get('detail','')}\n"
-                + "Adjudicate BY DECISION as STRICT JSON: "
-                  '{"chosen":"...","reasoning":"...","decisions":[{"crux_id":"...",'
-                  '"preferred":"...","status":"CONSTRAINED|PREFERRED|OPEN|RECONSTRUCTED",'
-                  '"reason":"...","evidence":[]}],"hard_core":"...","equal_alternates":[],'
-                  '"commentary":"..."}')
+                + "Adjudicate by crux. Return STRICT JSON (lean):\n"
+                  '{"translation":"...","decisions":[{"crux":"c1","reading":"...",'
+                  '"status":"PREFERRED","reason":"..."}],"hard_core":"..."}')
     if stage == "T3":
         r2 = record["stages"].get("R2", {})
         decisions = r2.get("decisions", [])

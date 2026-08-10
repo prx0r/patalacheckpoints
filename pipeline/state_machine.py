@@ -287,11 +287,15 @@ def _TEMP(stage: str) -> float:
 
 def _make_payload(stage: str, text: str, require_structured: bool = True,
                   model: str = model_mod.DEFAULT_MODEL) -> dict:
-    """Build the stage payload. For core stages, parse JSON; if the model returns
-    prose and structured output is required, raise StageOutputError (after one
-    bounded JSON-repair retry via the model)."""
+    """Build the stage payload. FORMAT vs CONTRACT are distinct failures:
+
+      FORMAT   — not parseable JSON            → one repair, else StageOutputError
+      CONTRACT — parseable JSON but missing    → StageOutputError (rerun stage)
+                 required substantive fields
+    """
+    from .contracts import validate_stage_contract, normalize_lean
     def repair(raw):
-        # bounded: ask the model to re-emit ONLY the JSON object
+        # bounded: ask the model to re-emit ONLY the JSON object (format-only repair)
         return model_mod.chat(
             "You produce ONLY a valid JSON object. Return the JSON with no prose, "
             "no markdown fences, no commentary.",
@@ -304,6 +308,13 @@ def _make_payload(stage: str, text: str, require_structured: bool = True,
             if require_structured:
                 raise model_mod.StageOutputError(f"{stage} must emit JSON: {e}")
             obj = {"_prose": text}
+        # CONTRACT check: empty/{} output is INVALID, not silently accepted.
+        # Map lean model fields to canonical schema fields FIRST so the contract
+        # validates against canonical names (close_translation etc.), then check.
+        obj = normalize_lean(stage, obj)
+        problems = validate_stage_contract(stage, obj)
+        if problems and require_structured:
+            raise model_mod.StageOutputError(f"{stage} contract not met: {'; '.join(problems)}")
         return _payload_from_json(stage, obj, text)
     if stage == "T3.1":
         return schema.stage_T31(reading=text)
