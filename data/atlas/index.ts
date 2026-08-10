@@ -24,6 +24,7 @@ export { relations };
 export { audited };
 export { seed };
 export { concepts };
+export { traditions };
 export type { BibliographyRecord, BibTranslation, BibSource, BibScholarship, ResourceTier } from "./bibliographyTypes";
 export { resources };
 export type { Resource, ResourceType, Tradition };
