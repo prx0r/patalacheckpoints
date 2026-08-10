@@ -141,6 +141,10 @@ sanskritree (passages.jsonl + gold_records)
 1. **Write 5 C1s** for the strongest passages (use the decisions queue to pick them),
    per `LEARNING_STRATEGY.md` + `skills/write-commentary`. Each C1 → reader Commentary block
    + feeds the concept pages.
+   - **Resources are done** — the federation register lives at `data/atlas/resources.ts`,
+     surfaced on `/resources` and served by `GET /api/resources` (typed + tradition-tagged,
+     29 sources). The next step is the **contextual join layer**: surface resources on text
+     pages ("READ / STUDY / RELATED" blocks) via each resource's `works?` field.
 2. **Turn the Tantrāloka workbook** (`sanskritree/corpus/learning/REFERENCE_TANTRALOKA_WORKBOOK.txt`)
    into 20–30 questions in prerequisite order; write 5 master notes + explainers.
 3. **Per-school pages** (`/traditions/krama`, then trika/kubjika/kaula) from `saivamap/` +
@@ -187,6 +191,7 @@ Hermes key: `OPENCODE_GO_API_KEY` in `~/.hermes/.env`. Hermes config: `~/.hermes
 | `app/read/[work]/[locator]/page.tsx` | the reader (the product surface) |
 | `pipeline/compile_published.py` | how published objects are made |
 | `skills/write-commentary/SKILL.md` | how to write a C1 |
+| `data/atlas/resources.ts` | the external-resource federation register (typed + tagged) |
 | `sanskritree/saivamap/` | the per-school content tree |
 | `sanskritree/corpus/learning/REFERENCE_TANTRALOKA_WORKBOOK.txt` | the Learn-Trika seed |
 

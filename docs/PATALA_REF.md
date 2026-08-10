@@ -117,7 +117,7 @@ Wire a real agent (Hermes/opencode/Claude/ChatGPT) to the Pāṭala MCP and tran
 3. **The 25-verse closed-loop proof at scale** (the NORTHSTAR 3-month milestone) — 25 contiguous Kramasadbhāva verses.
 4. **Build `data/occurrences.json`** if missing (the coarse per-lemma index).
 5. **The review/decision graph** — scholar identities + review events (the first step up the moat stack; the primitives exist, need the workflow on top).
-6. **Resources endpoint** (`/api/resources` from `RESOURCES_SEED.md`) — typed, tradition-tagged, tiered objects.
+6. ~~**Resources endpoint** (`/api/resources` from `RESOURCES_SEED.md`) — typed, tradition-tagged, tiered objects~~ **DONE** — the register is `data/atlas/resources.ts` + `/resources` page + `GET /api/resources` (type/tradition/access/essential/status filters).
 
 ### Deferred (don't build yet — avoid overengineering)
 - Full-text/vector concordance (concordance.py grep-based is fine now).
@@ -134,7 +134,7 @@ Wire a real agent (Hermes/opencode/Claude/ChatGPT) to the Pāṭala MCP and tran
 3. **Sync the newest T3'd texts + 24 dossiers into `data/atlas/`** — the SITE_STATUS sync-gap (Jñānakārikā, Ajaḍapramātṛsiddhi, Kaularahasya, Kulapradīpa, Kubjikātantra, Śivasūtra, + the dossier lemmas already partially in `relations.ts`). Data-is-king; components are dumb.
 4. **Segment Devīpañcaśataka / Kramastotra / Mahānayaprakāśa** into the passage corpus (they're the Kramasadbhāva neighborhood — the anchor set the translation loop needs).
 5. **Fix the site housekeeping:** import `globals.css` in `layout.tsx` (or add a Tailwind `@theme` block) so utility colors work; fill the empty `[slug]` route scaffolds with minimal renderers reading `data/atlas/`.
-6. **Add `/api/resources`** from `RESOURCES_SEED.md` — it's the natural next surface item, typed/tagged/tiered, small.
+6. ~~**Add `/api/resources`**~~ **DONE** (`data/atlas/resources.ts`, `/resources`, `GET /api/resources`). Next: surface resources contextually on text pages (the `works?` join layer on each resource) and add an MCP tool (`get_resources`).
 
 ---
 

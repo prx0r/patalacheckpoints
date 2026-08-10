@@ -59,6 +59,31 @@ paths:
       responses:
         "200":
           description: list of BibliographyRecord + count + provenance
+  /api/resources:
+    get:
+      summary: The external-resource federation register (typed + tradition-tagged)
+      parameters:
+        - in: query
+          name: type
+          schema: { type: string, enum: [primary_text, manuscript, manuscript_catalogue, translation, scholarship, traditional_teaching, lecture, oral_transmission, legacy_archive, sanskrit_tool, electronic_text, mirror, reference, discovery, critical_edition, bibliography, academic_project, mailing_list, manuscript_locator, text_reader, commentary] }
+        - in: query
+          name: tradition
+          schema: { type: string, enum: [Trika, Krama, Kubjikā, Kaula, Siddhānta, Śrīvidyā, Śākta, Pratyabhijñā, Spanda, Vidyāpīṭha, Sarvāmnāya, Kālīkula, general] }
+        - in: query
+          name: access
+          schema: { type: string, enum: [free, free_donation, mixed, paid] }
+        - in: query
+          name: essential
+          schema: { type: string, enum: ["true", "false"] }
+        - in: query
+          name: status
+          schema: { type: string, enum: [public, discovery] }
+        - in: query
+          name: includeNotes
+          schema: { type: string, default: "true" }
+      responses:
+        "200":
+          description: list of Resource + count + provenance
   /api/texts/{id}:
     get:
       summary: One full bibliography record by stable id or urn

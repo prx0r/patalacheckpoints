@@ -204,3 +204,138 @@ the major scholarly interpretations, and where simplification becomes misleading
 | C1s (the scholarly material to draw from) | `sanskritree/translations/06_c1_interpretation/` |
 | Dossiers | `sanskritree/saivamap/dossiers/` |
 | The reader (the SOURCE depth) | `app/read/[work]/[locator]/` |
+
+---
+
+## 11. The first five lessons — a recognition chain (not random topics)
+
+Do NOT start with five random Tantrāloka topics. Make the first five form a **logical
+chain** where each answer creates the next question:
+
+```
+1. What is actually supposed to be recognized?
+   Start with the destination. What does Pratyabhijñā mean by recognizing oneself as
+   Śiva? What changes, and what does not change?
+
+2. If consciousness is already Śiva, why don't we experience that?
+   Introduces contraction, limitation, misidentification, mala, and the central problem
+   — without dumping the 36 tattvas on someone immediately.
+
+3. What are prakāśa and vimarśa?
+   Why consciousness is not merely passive illumination: it manifests and reflexively
+   apprehends itself. The metaphysical engine.
+
+4. How does unlimited consciousness become a limited subject?
+   Introduces māyā, the kañcukas, subject/object partitioning, and the tattva system as
+   an explanatory model rather than a giant memorization chart.
+
+5. If the problem is contraction, how does practice undo it?
+   Introduces śaktipāta and the upāyas. Naturally opens the door to mantra,
+   Vijñānabhairava, initiation, Krama, kula, etc.
+```
+
+That is a genuine miniature course:
+
+```text
+WHAT AM I?
+  → WHY DOESN'T IT SEEM SO?
+  → WHAT IS CONSCIOUSNESS DOING?
+  → HOW DOES LIMITATION ARISE?
+  → HOW IS LIMITATION UNDONE?
+```
+
+This is a far better entrance into Tantrāloka than starting with "here are the 36 tattvas."
+
+## 12. The canonical master-note format (one object per lesson)
+
+Each topic gets ONE master packet:
+
+```text
+QUESTION
+ONE-SENTENCE ANSWER
+CORE EXPLANATION        ~1,500–2,500 words
+PRIMARY ANCHORS         3–8 passages
+SCHOLARLY ANCHORS       only what materially matters
+KEY TERMS               3–6
+COMMON MISREADINGS      2–4
+WHAT REMAINS CONTESTED
+3–4 MIN EXPLAINER       ~450–650 words
+RECALL                  3 questions
+NEXT                    one next lesson
+```
+
+The **master note is canonical**. Everything else is derived:
+
+```text
+MASTER NOTE
+├── website deep dive
+├── 3–4 min explainer
+├── narrated video
+├── short clips
+├── flashcards/questions
+└── eventually long-form essay/video
+```
+
+Do NOT separately research the YouTube script.
+
+## 13. The 3–4 minute explainer structure (genuinely explanatory)
+
+The short version is NOT an academic abstract. Its structure:
+
+```text
+HOOK / PROBLEM   "Śaivism makes a bizarre claim: you're already Śiva. So why don't you know it?"
+INTUITION        give the simplest model
+TECHNICAL CONCEPT  introduce the Sanskrit term
+EXAMPLE          show what it explains
+COMPLICATION     prevent the obvious misunderstanding
+LANDING          connect to next question
+```
+
+## 14. The elegant downward hierarchy (Pāṭala's advantage)
+
+Every educational object points downward into the scholarly layer:
+
+```text
+3-MIN EXPLAINER
+  → MASTER NOTE
+  → CLAIMS / CONCEPTS
+  → PASSAGES
+  → TRANSLATION DECISIONS
+  → EVIDENCE
+```
+
+For example, the explainer says "consciousness is reflexively self-aware" — a reader hits
+**Why? / Sources** and sees: primary passages, the vimarśa concept, the research note, and
+the relevant phrase-level translation decisions (the audited records).
+
+Architecturally the learning layer points downward into the scholarly layer. Pāṭala can
+serve a beginner AND a Sanskritist without pretending they need the same interface.
+
+## 15. "Research essays," not journal-paper ceremony
+
+The upstream objects are **research essays / master notes** — a 2,000-word research-grade
+explanation with real primary anchors is far more useful than an 8,000-word faux-academic
+paper. Several master notes compose into one long-form essay:
+
+```text
+Recognition + prakāśa-vimarśa + contraction + tattvas + upāyas
+  → "How Abhinavagupta explains the structure of bondage and liberation"
+  → a 20-minute YouTube essay
+```
+
+The content flywheel: research once, structure once, distill repeatedly.
+
+## 16. The immediate next action — curriculum extraction ONLY
+
+Do NOT write lessons yet. Do the extraction first:
+
+> Read the existing Tantrāloka workbook and extract **20–30 prerequisite-ordered
+> questions**. Each question must represent ONE genuine conceptual obstacle and specify
+> which existing workbook sections, dossiers, primary passages, and C1s support it.
+
+Then review that list. Then write/research **Lesson 1** properly. Once its
+master-note → 3-minute-explainers transformation feels right, freeze the lesson format and
+generate the next four.
+
+That avoids generating 30 mediocre lessons before establishing what a really good Pāṭala
+lesson feels like.

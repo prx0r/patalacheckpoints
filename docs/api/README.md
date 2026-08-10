@@ -69,6 +69,7 @@ That's the whole philosophy: **find a thing → read it → pull its evidence.**
 | `GET /api/health` | Operational status + dataset version |
 | `GET /api/stats` | Corpus credibility signals (raw counts) |
 | `GET /api/texts` | The bibliography (the "WHAT EXISTS?" spine) |
+| `GET /api/resources` | The external-resource federation register (typed + tradition-tagged) |
 | `GET /api/texts/{id}` | One full bibliography record |
 | `GET /api/texts/{id}/translations` | Our working (T1) translations |
 | `GET /api/works` | The work registry |

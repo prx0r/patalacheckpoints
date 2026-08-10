@@ -31,7 +31,7 @@ content, and the site renders it.*
 - [`TRANSLATION_PROTOCOL.md`](TRANSLATION_PROTOCOL.md) · [`TRANSLATION_SKILL_SPEC.md`](TRANSLATION_SKILL_SPEC.md) — the fuller vision + buildable slice.
 
 ### The API
-- [`api/README.md`](api/README.md) — 5-minute quickstart + endpoint index.
+- [`api/README.md`](api/README.md) — 5-minute quickstart + endpoint index (incl. `GET /api/resources`).
 - [`api/recipes/`](api/recipes/) — 6 research recipes.
 - [`api/concepts/`](api/concepts/) — the epistemic model, work-vs-witness-passage, assertions/proposals, rights.
 - [`api/mcp.md`](api/mcp.md) — the MCP setup + tool mapping.
@@ -39,6 +39,7 @@ content, and the site renders it.*
 
 ### The data model (the durable foundation)
 - [`SCHOLARLY_GRAPH.md`](SCHOLARLY_GRAPH.md) — the canonical object/annotation model (Work/Witness/Passage/SourceSpan/Person/Term/Sense/Resource + assertions). The schema that must survive years.
+- The **external-resource register** — `../data/atlas/resources.ts` (types + data): the federation of external sources, surfaced on `/resources` + `GET /api/resources`. Source spec: [`RESOURCES_SEED.md`](RESOURCES_SEED.md).
 
 ### The learning / content strategy
 - [`LEARNING_STRATEGY.md`](LEARNING_STRATEGY.md) — research-once/distill-repeatedly: the ConceptLesson knowledge packet, question-driven pathways, and the derived video/shorts/quiz layer.

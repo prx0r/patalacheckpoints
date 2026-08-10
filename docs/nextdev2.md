@@ -85,6 +85,9 @@ passages, then scale. The Śivasūtra C1s prove the format.
 ### C. Surface existing content
 - The **Tantrāloka workbook** → `/learning/tantraloka-workbook` (the "Learn Trika" pathway)
 - The **dossiers** → `/concepts/{lemma}` interactive pages
+- **The external resources** — DONE: `data/atlas/resources.ts` (29 typed + tradition-tagged
+  sources) surfaced on `/resources` + `GET /api/resources`. Next: the contextual join layer
+  (resource blocks on text pages via each resource's `works?` field) + an MCP `get_resources` tool.
 
 ### D. Scale the reader to the 25-verse unit
 Generate `PublishedTranslation` candidates for Kramasadbhāva 1.1–1.28 (Hermes emits
