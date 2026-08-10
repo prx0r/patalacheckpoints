@@ -222,7 +222,28 @@ except Exception as e:
     check("scholarly graph validation runs", False, str(e))
 
 # ────────────────────────────────────────────────────────────────
-print("== 7. OpenAPI contract conformance (docs match reality) ==")
+print("== 7. Published translation (phrase-click auditable object) ==")
+code, tr = get("/api/passages/kramasadbhava:1.8/translation")
+check("passage translation 200", code == 200)
+check("translation has source+target spans+alignments", tr.get("source_spans") and tr.get("target_spans") and tr.get("alignments"))
+check("translation has decisions", len(tr.get("decisions", [])) >= 1)
+check("translation review_state honest (proposed)", tr.get("review_state") == "proposed", str(tr.get("review_state")))
+# alignments reference real spans + decisions
+spans = {s["id"] for s in tr.get("source_spans", [])} | {t["id"] for t in tr.get("target_spans", [])}
+dec_ids = {d["id"] for d in tr.get("decisions", [])}
+align_ok = all(a["source_span_ids"][0] in spans and a["target_span_ids"][0] in spans for a in tr.get("alignments", []))
+check("alignments resolve to real spans", align_ok)
+# decisions carry evidence + status
+check("decisions carry evidence + status", all(d.get("evidence") and d.get("status") for d in tr.get("decisions", [])))
+# /api/decisions/:id
+dcode, dec = get("/api/decisions/pt:decision:krs:1.8:LEX:2")
+check("decision detail 200", dcode == 200)
+check("decision has alternatives + evidence", dec.get("alternatives") and dec.get("evidence"))
+check("decision 404 on miss", status_of("/api/decisions/doesnotexist") == 404)
+check("translation 404 on miss", status_of("/api/passages/doesnotexist/translation") == 404)
+
+# ────────────────────────────────────────────────────────────────
+print("== 8. OpenAPI contract conformance (docs match reality) ==")
 import re
 spec_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "docs", "openapi.yaml")
 if os.path.exists(spec_path):

@@ -101,6 +101,32 @@ def validate() -> list[str]:
     if "type: \"unit\"" in txt and "work:" not in txt:
         problems.append("unit object missing work")
 
+    # ── the published translation object (data/corpus/units/*-published.ts) ──
+    pub = os.path.join(BASE, "data", "corpus", "units", "kramasadbhava-1.8-published.ts")
+    if os.path.exists(pub):
+        pt = open(pub, encoding="utf-8").read()
+        src_span_ids = set(re.findall(r'id:\s*"(pt:srcspan:[^"]+)"', pt))
+        tgt_span_ids = set(re.findall(r'id:\s*"(pt:tgtspan:[^"]+)"', pt))
+        dec_ids = set(re.findall(r'id:\s*"(pt:decision:[^"]+)"', pt))
+        # alignments must reference real source+target span ids
+        for m in re.finditer(r'source_span_ids:\s*\["([^"]+)"\][^{}]*?target_span_ids:\s*\["([^"]+)"\]', pt):
+            s, t = m.group(1), m.group(2)
+            if s not in src_span_ids:
+                problems.append(f"alignment references unknown source span {s}")
+            if t not in tgt_span_ids:
+                problems.append(f"alignment references unknown target span {t}")
+        # every decision has evidence + a status
+        dec_blocks = re.findall(r'\{\s*id:\s*"(pt:decision:[^"]+)"', pt)
+        if not dec_blocks:
+            problems.append("published translation has no decisions")
+        if "review_state:" not in pt:
+            problems.append("published translation missing review_state")
+        # a decision's span ids must exist
+        for m in re.finditer(r'id:\s*"(pt:decision:[^"]+)"[^{}]*?source_span_ids:\s*\["([^"]+)"\]', pt):
+            sid = m.group(2)
+            if sid not in src_span_ids:
+                problems.append(f"decision {m.group(1)} references unknown source span {sid}")
+
     # Schema-level: origin/status/certainty enums are distinct (checked by TS types).
     return problems
 

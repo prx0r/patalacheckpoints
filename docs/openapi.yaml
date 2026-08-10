@@ -130,6 +130,37 @@ paths:
       responses:
         "200": { description: passage (sanskrit + location + edition) }
         "404": { description: not_found }
+  /api/passages/{id}/translation:
+    get:
+      summary: The published auditable translation object (phrase-clickable)
+      description: >
+        Returns the translation as source spans + target spans + alignments +
+        decisions, so a reader can click a phrase and see WHY it was rendered
+        (the decision, its alternatives, evidence, review state). Machine
+        decisions are proposals until a review event promotes them.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: text + source_spans + target_spans + alignments + decisions + review_state
+        "404": { description: no published auditable translation for this passage }
+  /api/decisions/{id}:
+    get:
+      summary: The full audit trail for one translation decision
+      description: >
+        Resolves a decision's spans, evidence, review events, and version lineage.
+        status (CONSTRAINED/PREFERRED/OPEN) is separate from certainty and review state.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        "200": { description: the decision + evidence + reviews }
+        "404": { description: not_found }
   /api/context/passages/{id}:
     get:
       summary: The deterministic evidence bundle for a passage (NO generated interpretation)
