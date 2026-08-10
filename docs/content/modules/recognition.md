@@ -60,33 +60,81 @@ Level A is established; level B is plausible; level C is the live frontier — w
 argument must work hardest and where the open questions remain. This stratification is the
 honest form of the teaching: it does not pretend every step is equally secure.
 
-### 3. Recognition vs. inference (Ratié's point)
+### 3. Recognition is not a new knowledge (Ratié, quoted)
 
-Ratié's *On reason and scripture in the Pratyabhijñā* draws a sharp line: **recognition is
-not an inference.** An inference concludes a *new* relation from premises; recognition
-returns an identity already known. When the memory-based structure is at work, the mind is
-not building an argument — it is *recognising* a form.
+Ratié's *On reason and scripture in the Pratyabhijñā* draws the line sharply, quoting
+Abhinavagupta's own gloss on the name:
 
-This matters because it blocks a common misreading: that the Pratyabhijñā is a *proof* that
-we are Śiva, in the sense of a syllogism that produces a new belief. It is not. It is a
-removal of the occlusion that hides an already-present identity. The arguments are
-**therapeutic and de-occluding**, not productive of a new fact. They show that the identity
-was never absent.
+> "The aim of the treatise is a recognition, which is not a new knowledge, but the
+> realization that one already possesses a knowledge."
+> — Ratié, *On reason and scripture*, p. 121 (citing IPVV)
 
-### 4. Memory, the creative freedom, and *dṛḍhavimarśa*
+And on the force of the prefix *prati-* (the "re-" of re-cognition):
+
+> "Abhinavagupta explains that the goal of the treatise is not a cognition but a
+> *re*-cognition (*praty-abhijñā*), where *praty*- stands for *pratīpam*, again, for the
+> following reason: *pratīpam iti svātmāvabhāso hi nābhūtapūrvo 'vicchinnaprakāśatvāt tasya*.
+> It is a re-cognition because the Self's manifestation is not something that did not exist
+> before, because its manifestation is never interrupted."
+> — Ratié, p. 122 (quoting IPVV; the Sanskrit is in the source)
+
+This blocks the common misreading: the Pratyabhijñā is **not** a syllogism that produces a
+new belief that "I am Śiva." It establishes **no new knowledge, but a mere usage** — it
+*points out* (*pradarśana*) what the subject already knows but does not attend to:
+
+> "[The inference] merely leads the subject who hears it to pay attention to his or her own
+> experience... it is equivalent to the act of showing that consists in making [someone] pay
+> attention (*avadhānadāpanā*) [to something by saying] See! See!"
+> — Ratié, pp. 121–122 (quoting IPVV)
+
+The arguments are **de-occluding and therapeutic**, not productive of a new fact. They do not
+add to the self; they redirect attention to the self's never-interrupted self-manifestation.
+
+### 4. Memory, creative freedom (*svātantrya*), and *dṛḍhavimarśa*
 
 Recognition leans on memory: to recognise X as Y you must hold a prior form. Utpaladeva's
 elaborate analyses of memory and imagination are therefore not digressions — they are the
-engine. Ratié reads them as pointing to **svātantrya**: the boundless creative freedom of the
-individual consciousness, which can hold, combine, and re-present forms at will. The same
-freedom that lets the mind remember is the freedom by which consciousness manifests a world.
+engine. Ratié ties this directly to the school's metaphysics of freedom:
+
+> "Utpaladeva's elaborate phenomenological analyses of memory, imagination, perception,
+> intentionality, etc., all point out the boundless creative freedom (*svātantrya*) of the
+> individual's consciousness – a freedom which is the essence of the Lord described by the
+> Śaiva scriptures – so as to enable the deluded individual, who no longer pays attention to
+> his or her own experience and therefore sees him- or herself as limited and passive, to
+> recognize him- or herself in this all-powerful Lord."
+> — Ratié, p. 122
 
 The goal is not a flickering glimpse but **dṛḍhavimarśa** — a firm, stable reflective
-awareness (*sthairya* that is un-cancelled, *abādhita*). Recognition is complete only when it
-*holds*, when it is not undone by the next impression. This stability is the difference
-between a passing insight and the recognition that constitutes liberation.
+awareness. Ratié uses the term in the context of what reason is *for*:
 
-### 5. The key distinction: recognition is not illusion, and not a new attainment
+> "Although Utpaladeva and Abhinavagupta present āgama as a means of knowledge superior to
+> reason, they also assign to reason the task of transforming scriptures, understood as a mere
+> mass of words (*śabdarāśi*), into a means of knowledge expressing a strong realization
+> (*dṛḍhavimarśa*)."
+> — Ratié, pp. 132–133
+
+Recognition is complete only when it *holds* — when it is not undone by the next impression.
+This stability is the difference between a passing insight and the recognition that
+constitutes liberation.
+
+### 5. The honest caveat: recognition is not guaranteed (Ratié)
+
+This is the nuance that keeps the teaching honest and razor-sharp. Because consciousness is
+*absolute freedom*, no proof can force recognition:
+
+> "Reason's power is ultimately limited by the fact that Recognition is in no way guaranteed
+> by its use: the most elaborate demonstrations do not necessarily produce the realization of
+> one's identity with Śiva, because in a system that defines consciousness as an absolute
+> freedom (*svātantrya*), reason's necessity can only be compelling if consciousness agrees to
+> be compelled."
+> — Ratié, p. 133
+
+This is not a failure of the argument — it is a consequence of the system's own premise.
+Recognition can be offered, shown, pointed to; it cannot be coerced. The freedom that makes
+the self divine is the very freedom that lets it refuse to recognise itself. Any teaching of
+recognition must keep this caveat, or it will misrepresent the system as a mechanical proof.
+
+### 6. The key distinction: recognition is not illusion, and not a new attainment
 
 Two errors bracket the teaching:
 

@@ -85,6 +85,17 @@ Liberation as recognition is not a single leap. It stratifies:
 The school's honesty lives here: it does not pretend all three levels are equally easy to
 secure. The module's teaching keeps them distinct so the difficulty is visible.
 
+The key point of the whole stratification is captured by Torella in the edition's
+introduction: recognition is not the acquisition of something absent, but the noticing of
+what was always already manifest —
+
+> "Recognition... concerns an entity which, invested from the outset with a valid means of
+> knowledge, is already manifest."
+> — Torella, *IPK* (critical ed.), introduction
+
+This is why the school can treat liberation as *recognition* rather than *attainment*: the
+entity to be recognised never ceased to be present and known.
+
 ### 5. The key distinction: a control corpus, not a sect
 
 The Pratyabhijñā is best modeled as a **philosophical/exegetical current that intersects the

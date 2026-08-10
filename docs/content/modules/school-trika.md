@@ -58,6 +58,25 @@ Each answer creates the next question. This is why the Tantrāloka needs philoso
 *and* mantra *and* initiation *and* ritual *and* aesthetics — each is a means (upāya) suited to
 a different configuration of the contraction.
 
+The *Recognition-First Workbook* adds a truth-condition that keeps the whole teaching honest:
+
+> "Ordinary recognition has the form 'this is that.' A person seen now is identified with
+> someone previously known. The act succeeds only when the identity is true. Confidence,
+> intensity, or transformation cannot replace veridicality. Recognition = transformation +
+> reidentification + veridicality + stabilization. This yields a strict distinction: an
+> experience can be psychologically transformative and phenomenologically convincing without
+> being recognition of Śiva."
+> — *Tantrāloka Recognition-First Workbook*, §1.1
+
+And its sharp distinction:
+
+> "A nondual experience is evidence that a self–world organization can change. It is not, by
+> itself, proof that one universal consciousness is the ontology of reality."
+> — *Workbook*, §1.1
+
+This is the anti-slop spine of the module: a transformative *feeling* is not, by itself,
+*recognition*. The Trika's claims are the tradition's own — examined, not assumed.
+
 ### 3. The doctrinal core (the Trika's three pillars)
 
 - **Consciousness is intrinsically reflexive** (*prakāśa-vimarśa*). It does not merely appear;
