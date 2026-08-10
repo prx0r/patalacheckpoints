@@ -43,14 +43,14 @@ bibliography (`data/atlas/audited.ts` / `bibliographySeed.ts`).
 | Floor | File | Content | Audits |
 |---|---|---|---|
 | Source | `00_source/` | the Sanskrit text + edition + anchor(s) + manuscript notes | the ground truth, immutable |
-| T1 | `01_t1.md` | working translation + notes ([G]/[P]/[A]/[R]) + [X] flags + time-place-context | whether the Sanskrit was translated faithfully |
-| R1 | `02_r1.md` | the peer review: per-crux verdicts (RIGHT/ERROR/FORK/OPEN) + commentary stubs | whether T1 is sound; flags what is unsure |
-| T2 | `03_t2.md` | a complete alternative that actively opposes T1 (informed by R1) | whether a second reading changes anything |
-| R2 | `04_r2.md` | the synthesis: hard-core / divergence / adjudication / readability / school-context / expanded commentary / OPEN | which reading is best and why; the evidence |
-| T3 | `05_t3.md` | the final resolved text | the settled scholarly reading |
+| T1 | `01_t1.md` | constructive working translation + notes ([G]/[P]/[C]/[S]/[A]/[R]) + [X] flags + time-place-context | whether the Sanskrit was translated faithfully |
+| R1 | `02_r1.md` | the adversarial critique (machine pass): maps genuine CRUXES (id/type/assumption/rivals/evidence-needed) + verdicts + commentary stubs | whether T1 can fail; where a materially different reading is defensible |
+| T2 | `03_t2.md` | the strongest materially-different defensible rival (SEES T1+R1; difference budget; no manufactured disagreement; CONSTRAINED markers) | whether a serious rival reading changes anything |
+| R2 | `04_r2.md` | the adjudication BY DECISION: hard-core (agreement + source-constrained) + per-decision status (CONSTRAINED/PREFERRED/OPEN/RECONSTRUCTED) + expanded commentary | which reading is best and why; the evidence |
+| T3 | `05_t3.md` | the current resolved scholarly candidate (not "truth forever" — T3 v2 possible) | the settled reading under this review state |
 | T3.1 | `06_t3_1.md` | the reader's edition (natural English) | a defensible reading a non-specialist can read |
-| C1 | `07_c1.md` | the full-length commentary — reviews the whole stack, does its own research (author, context, cross-references), and is itself a referenceable document | the whole stack; may overturn T3 |
-| Audit | `AUDIT.md` | the conformance/tracking record (see §4) | the whole work's validation state |
+| C1 | `07_c1.md` | the full-length commentary — reviews the whole stack, does its own research, and is itself a referenceable document. May CHALLENGE T3 (→ RevisionProposal → T3 v2) but never mutates it | the whole stack; may challenge the translation |
+| Audit | `AUDIT.md` | the conformance/tracking record (see §4) | the whole work's validation state — every PASS derived from a check, never hard-coded |
 
 ## 4. The audit record (AUDIT.md)
 

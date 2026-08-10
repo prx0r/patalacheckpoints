@@ -58,15 +58,25 @@ One record per verse. See `docs/TRANSLATION_SCHEMA.md` for the full field notes.
 
 ### The stages (constructors in `schema.py`)
 - `stage_T1(close, reader_draft, flags, notes, lexical_decisions, grammatical_notes, parallels, time_place_context)` — the working translation + evidence + required header.
-- `stage_R1(detail, verdicts, anchor_quote, source)` — the peer review (per-crux RIGHT/ERROR/FORK/OPEN).
-- `stage_T2(close, strategy)` — the alternative that opposes T1.
-- `stage_R2(chosen, reasoning, hard_core, divergence, readability, school_context, commentary, equal_alternates, rejected, is_open)` — the synthesis.
-- `stage_T3(resolved, open_flags, editorial_notes)` — the final resolved text.
+- `stage_R1(detail, verdicts, cruxes, anchor_quote, source)` — the adversarial critique: maps genuine CRUXES (id/type/assumption/rivals/evidence-needed) + verdicts + commentary stubs.
+- `stage_T2(close, strategy)` — the strongest materially-different defensible rival (SEES T1+R1; difference budget; no manufactured disagreement).
+- `stage_R2(chosen, reasoning, hard_core, divergence, readability, school_context, commentary, equal_alternates, rejected, is_open, decisions)` — the adjudication BY DECISION (CONSTRAINED/PREFERRED/OPEN/RECONSTRUCTED).
+- `stage_T3(resolved, open_flags, editorial_notes)` — the current resolved scholarly candidate.
 - `stage_T31(reading)` — the reader's edition (derived from T3).
-- `stage_C1(interpretation, may_overturn, overturns)` — the commentary.
+- `stage_C1(interpretation, challenges)` — the commentary; may CHALLENGE T3 (→ RevisionProposal → T3 v2) but never mutates it.
 
-`set_stage(record, payload, created_by, derived_from)` appends a stage + updates the lineage.
-`get_stage(record, stage)` reads one floor.
+`set_stage(record, payload, created_by, derived_from)` appends a VERSION (never overwrites)
+and updates `pipeline_stage` + `origin`. `set_review(record, review)` records a scoped
+ReviewEvent and is the ONLY thing that promotes `editorial_status`. `get_stage(record, stage)`
+reads the current version; `record["versions"][stage]` holds all versions.
+
+**Three independent dimensions (never conflated):**
+```
+pipeline_stage    where in the flow (T1 → ... → C1)   — set by set_stage
+origin            who produced it (machine / human)   — set by set_stage
+editorial_status  proposed / reviewed / accepted / disputed — set ONLY by set_review
+```
+So `pipeline_stage = R2, origin = machine, editorial_status = proposed` is honest.
 
 ---
 
