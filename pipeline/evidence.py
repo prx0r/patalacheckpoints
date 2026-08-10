@@ -65,8 +65,18 @@ def _trajectories() -> list[dict]:
     return out
 
 
+def _norm(s: str) -> str:
+    """Normalize a string by stripping diacritics, so śakti matches sakti etc."""
+    table = str.maketrans({
+        "ā": "a", "ī": "i", "ū": "u", "ṛ": "r", "ṝ": "r", "ḷ": "l", "ḹ": "l",
+        "ṅ": "n", "ñ": "n", "ṭ": "t", "ḍ": "d", "ṇ": "n", "ś": "s", "ṣ": "s",
+        "ḥ": "h", "Ā": "a", "Ī": "i", "Ū": "u", "Ś": "s", "Ṣ": "s", "Ṭ": "t",
+    })
+    return s.translate(table).lower()
+
+
 def _lemma_matches(text: str, lemma: str) -> int:
-    return text.lower().count(lemma.lower())
+    return _norm(text).count(_norm(lemma))
 
 
 def build_evidence_packet(record: dict, work_id: str = "",
@@ -89,16 +99,13 @@ def build_evidence_packet(record: dict, work_id: str = "",
             neighbors.append({"id": p["id"], "sanskrit": p["sanskrit"][:160],
                               "locator": f"{pc}.{pv}"})
 
-    # term data: find lemmas present in this passage's Sanskrit
+    # term data: find lemmas present in this passage's Sanskrit (both normalized)
     san = passage.get("source_text", "")
+    san_norm = _norm(san)
     terms = _terms()
     tracked = []
     for t in terms:
-        norm = t["lemma"].replace("ā", "a").replace("ī", "i").replace("ū", "u") \
-                         .replace("ś", "s").replace("ṣ", "s").replace("ṛ", "r") \
-                         .replace("ḥ", "h").replace("ṅ", "n").replace("ñ", "n") \
-                         .replace("ṭ", "t").replace("ḍ", "d").replace("ṇ", "n")
-        if norm and norm.lower() in san.lower():
+        if _norm(t["lemma"]) and _norm(t["lemma"]) in san_norm:
             tracked.append({
                 "lemma": t["lemma"],
                 "senses": [s["label"] for s in t.get("senses", [])],

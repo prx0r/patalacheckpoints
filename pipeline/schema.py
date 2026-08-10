@@ -214,6 +214,10 @@ def set_stage(record: dict[str, Any], payload: dict[str, Any],
     v_payload = dict(payload)
     v_payload["version"] = version
     v_payload["supersedes"] = supersedes
+    # every version is born with the three dimensions version-local
+    v_payload["origin"] = payload.get("origin", "machine")
+    v_payload["editorial_status"] = "proposed"
+    v_payload["pipeline_stage"] = stage
     versions.append(v_payload)
     record["stages"][stage] = v_payload  # current pointer
     record["lineage"].append({
@@ -222,11 +226,11 @@ def set_stage(record: dict[str, Any], payload: dict[str, Any],
         "created_by": created_by,
         "derived_from": derived_from,
         "supersedes": supersedes,
-        "origin": payload.get("origin", "machine"),
+        "origin": v_payload["origin"],
     })
     record["pipeline_stage"] = stage
     # origin: a machine stage writes machine origin; do NOT promote editorial_status
-    record["origin"] = payload.get("origin", record.get("origin", "machine"))
+    record["origin"] = v_payload["origin"]
     return record
 
 
@@ -234,38 +238,79 @@ REVIEW_TYPES = ("TEXTUAL", "GRAMMATICAL", "LEXICAL", "TRANSLATIONAL",
                 "HISTORICAL", "DOCTRINAL", "READABILITY", "MANUSCRIPT")
 
 
-def set_review(record: dict[str, Any], review: dict[str, Any]) -> dict[str, Any]:
-    """Record a SCOPED ReviewEvent on a specific target/version. Only this promotes
-    a version's editorial_status to 'reviewed'. Machine stages NEVER set it.
+REVIEW_OUTCOMES = ("accept", "reject", "revise", "needs_specialist", "abstain")
 
-    Required: target_stage, target_version, reviewer, review_type, scope, outcome, reason.
-    An 'accept' → that target/version is reviewed (not the whole passage). 'accepted'
-    is an editorial promotion issued separately (promote_version)."""
+
+def set_review(record: dict[str, Any], review: dict[str, Any]) -> dict[str, Any]:
+    """Record a SCOPED ReviewEvent on a specific target/version. Machine stages
+    never set this.
+
+    Required: target_stage, target_version, reviewer, review_type, scope, outcome,
+    reason, evidence[].
+
+    Semantics (per the peer review):
+      outcome=accept  → the targeted version becomes REVIEWED (not 'accepted')
+      outcome=reject/revise → the targeted version becomes DISPUTED
+      editorial acceptance is a SEPARATE action (promote_version) that requires the
+      version to already be reviewed.
+    """
     n = len(record["review_events"]) + 1
     review.setdefault("id", f"review:{record.get('passage_id','?')}:{n}")
     review.setdefault("target_id", record.get("passage_id"))
-    if not review.get("target_stage") or not review.get("target_version"):
+    # validation
+    if not review.get("target_stage") or review.get("target_version") is None:
         raise ValueError("a ReviewEvent must target a specific version (target_stage + target_version)")
+    if not review.get("reviewer"):
+        raise ValueError("a ReviewEvent requires a reviewer")
+    if not review.get("scope"):
+        raise ValueError("a ReviewEvent requires a scope")
     if review.get("review_type") not in REVIEW_TYPES:
         raise ValueError(f"review_type must be one of {REVIEW_TYPES}, got {review.get('review_type')!r}")
+    if review.get("outcome") not in REVIEW_OUTCOMES:
+        raise ValueError(f"outcome must be one of {REVIEW_OUTCOMES}, got {review.get('outcome')!r}")
+    if not review.get("reason"):
+        raise ValueError("a ReviewEvent requires a reason")
+    # verify the target version actually exists
+    target_exists = any(v.get("version") == review.get("target_version")
+                        for v in record["versions"].get(review["target_stage"], []))
+    if not target_exists:
+        raise ValueError(f"target version {review['target_stage']}:{review['target_version']} does not exist")
     record["review_events"].append(review)
 
-    # mark the targeted version reviewed
+    # apply outcome to the targeted version
     for v in record["versions"].get(review["target_stage"], []):
         if v.get("version") == review.get("target_version"):
-            v["editorial_status"] = "reviewed"
+            if review["outcome"] == "accept":
+                v["editorial_status"] = "reviewed"
+            elif review["outcome"] in ("reject", "revise"):
+                v["editorial_status"] = "disputed"
+            # abstain / needs_specialist leave it proposed
     record["editorial_status"] = _aggregate_review_state(record)
     return record
 
 
 def promote_version(record: dict[str, Any], stage: str, version: int,
-                    reviewer: dict, reason: str = "") -> dict[str, Any]:
-    """Editorial promotion: reviewed → accepted (a separate, explicit editor action)."""
+                    reviewer: dict, reason: str = "", event: Optional[dict] = None) -> dict[str, Any]:
+    """Editorial promotion: reviewed → accepted. Requires the target version to be
+    REVIEWED already, and records a promotion event (the authority trail)."""
+    target = None
     for v in record["versions"].get(stage, []):
         if v.get("version") == version:
-            v["editorial_status"] = "accepted"
-            v.setdefault("promoted_by", reviewer)
-            v.setdefault("promotion_reason", reason)
+            target = v
+            break
+    if target is None:
+        raise ValueError(f"version {stage}:{version} does not exist")
+    if target.get("editorial_status") != "reviewed":
+        raise ValueError(f"cannot promote {stage}:{version} to accepted: it is {target.get('editorial_status')}, not reviewed")
+    target["editorial_status"] = "accepted"
+    target["promoted_by"] = reviewer
+    target["promotion_reason"] = reason
+    # record the promotion event
+    if event is None:
+        event = {"id": f"promotion:{record.get('passage_id','?')}:{len(record['review_events'])+1}",
+                 "target_stage": stage, "target_version": version,
+                 "reviewer": reviewer, "reason": reason, "kind": "editorial_promotion"}
+    record["review_events"].append(event)
     record["editorial_status"] = _aggregate_review_state(record)
     return record
 

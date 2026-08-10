@@ -92,11 +92,16 @@ def save_record(record: dict) -> str:
 # ── stage state / transitions ───────────────────────────────────────────────
 
 def stage_state(stages: dict[str, Any], audit: dict[str, Any], stage: str) -> str:
-    """Classify a stage: ABSENT / PRESENT_INVALID / PRESENT_NEEDS_REVIEW / PRESENT_VALID."""
+    """Classify a stage: ABSENT / PRESENT_INVALID / PRESENT_NEEDS_REVIEW / PRESENT_VALID.
+    Uses the STAGE-LOCAL audit (audit.stage[stage]) so a warning from another stage
+    does not contaminate this stage's eligibility."""
     if stage not in stages:
         return ABSENT
-    errs = [x for x in audit.get(stage, []) if x.get("level") == "error"]
-    warns = [x for x in audit.get(stage, []) if x.get("level") == "warn"]
+    # stage-local audit takes precedence; fall back to a flat `audit[stage]` for
+    # records written before the stage/record split.
+    stage_audit = audit.get("stage", {}).get(stage) or audit.get(stage, [])
+    errs = [x for x in stage_audit if x.get("level") == "error"]
+    warns = [x for x in stage_audit if x.get("level") == "warn"]
     if errs:
         return INVALID
     if warns:
@@ -107,17 +112,19 @@ def stage_state(stages: dict[str, Any], audit: dict[str, Any], stage: str) -> st
 def next_transition(record: dict, flow: tuple[str, ...] = DEFAULT_FLOW) -> dict:
     """Return the next admissible transition for a passage record.
 
-    Returns: {stage: next-to-run-or-None, allowed: bool, reason, state: stage_state,
-              blocked_by: [...]}
+    Returns: {stage, action, allowed, reason, state, blocked_by}.
+      action: RUN (next missing stage) | RETRY (present but invalid → new version) |
+              BLOCKED | COMPLETE
     """
     stages = record["stages"]
     audit = record["audit"]
 
-    # If any present stage is INVALID, block (do not advance past a broken floor).
+    # An INVALID present stage is RETRYABLE as a new version (never a deadlock).
     for s in flow:
         st = stage_state(stages, audit, s)
         if st == INVALID:
-            return {"stage": None, "allowed": False, "reason": f"{s} is present but invalid",
+            return {"stage": s, "action": "RETRY", "allowed": True,
+                    "reason": f"current {s} version is invalid — retry as a new version",
                     "state": INVALID, "blocked_by": [s]}
         if st == ABSENT:
             # find this stage's unmet prerequisites (VALID or NEEDS_REVIEW both count
@@ -125,13 +132,14 @@ def next_transition(record: dict, flow: tuple[str, ...] = DEFAULT_FLOW) -> dict:
             missing = [p for p in PREREQS.get(s, ())
                        if stage_state(stages, audit, p) not in (VALID, NEEDS_REVIEW)]
             if missing:
-                return {"stage": s, "allowed": False,
+                return {"stage": s, "action": "BLOCKED", "allowed": False,
                         "reason": f"{s} requires valid prerequisite(s) {missing}",
                         "state": ABSENT, "blocked_by": missing}
-            return {"stage": s, "allowed": True, "reason": f"{s} is the next stage",
+            return {"stage": s, "action": "RUN", "allowed": True,
+                    "reason": f"{s} is the next stage",
                     "state": ABSENT, "blocked_by": []}
 
-    return {"stage": None, "allowed": True, "reason": "flow complete",
+    return {"stage": None, "action": "COMPLETE", "allowed": True, "reason": "flow complete",
             "state": VALID, "blocked_by": []}
 
 
@@ -140,8 +148,16 @@ def next_transition(record: dict, flow: tuple[str, ...] = DEFAULT_FLOW) -> dict:
 def new_verse(work_id: str, sanskrit: str, edition: str, source_id: str,
               locator: str, chapter: int, verse: int) -> dict:
     """Create a fresh passage record with a stable source identity."""
-    return schema.new_passage(work_id, chapter, verse, sanskrit, edition, source_id,
-                              locator=locator)
+    return schema.new_passage(
+        work_id=work_id,
+        chapter=chapter,
+        verse=verse,
+        sanskrit=sanskrit,
+        edition=edition,
+        source_file=source_id,      # the provenance path/pointer
+        source_id=source_id,        # the STABLE addressable source identity
+        locator=locator,
+    )
 
 
 def _ensure_locator(rec: dict) -> dict:
@@ -192,12 +208,15 @@ def advance_passage(work_id: str, locator: str,
         return {"ok": False, "locator": locator, "stage": stage,
                 "reason": f"invalid stage output: {e}", "blocked_by": [stage], "record": rec}
 
-    # VALIDATE
-    findings = audit_record(rec)
-    rec["audit"][stage] = findings
-    if not audit_ok(findings):
+    # VALIDATE — stage-local audit (for this stage only) + whole-record audit,
+    # stored separately so transition eligibility uses stage-local state.
+    stage_findings = audit_record_stage(rec, stage)
+    record_findings = audit_record(rec)
+    rec["audit"].setdefault("stage", {})[stage] = stage_findings
+    rec["audit"]["record"] = record_findings
+    if not audit_ok(stage_findings):
         rec["_stage_error"] = {"stage": stage,
-                               "errors": [x for x in findings if x["level"] == "error"]}
+                               "errors": [x for x in stage_findings if x["level"] == "error"]}
 
     # PERSIST
     path = save_record(rec)
@@ -212,7 +231,7 @@ def advance_passage(work_id: str, locator: str,
         "stage": stage,
         "path": path,
         "persisted_version": len(rec["versions"].get(stage, [])),
-        "audit_ok": audit_ok(findings),
+        "audit_ok": audit_ok(stage_findings),
         "next_transition": next_after,
         "record": reloaded or rec,
     }
@@ -269,7 +288,7 @@ def _TEMP(stage: str) -> float:
 def _make_payload(stage: str, text: str, require_structured: bool = True) -> dict:
     """Build the stage payload. For core stages, parse JSON; if the model returns
     prose and structured output is required, raise StageOutputError."""
-    if stage in ("T1", "R1", "T2", "R2"):
+    if stage in ("T1", "R1", "T2", "R2", "T3"):
         try:
             obj = model_mod.parse_json(text)
         except Exception as e:
@@ -277,15 +296,6 @@ def _make_payload(stage: str, text: str, require_structured: bool = True) -> dic
                 raise model_mod.StageOutputError(f"{stage} must emit JSON: {e}")
             obj = {"_prose": text}
         return _payload_from_json(stage, obj, text)
-    if stage == "T3":
-        # T3 can be prose but should carry editorial_notes; try JSON, fall back
-        try:
-            obj = model_mod.parse_json(text)
-            return schema.stage_T3(resolved=obj.get("resolved", text),
-                                   open_flags=obj.get("open_flags", []),
-                                   editorial_notes=obj.get("editorial_notes", []))
-        except Exception:
-            return schema.stage_T3(resolved=text)
     if stage == "T3.1":
         return schema.stage_T31(reading=text)
     if stage == "C1":
@@ -335,6 +345,10 @@ def _payload_from_json(stage: str, obj: dict, prose: str) -> dict:
                                commentary=obj.get("commentary", ""),
                                hard_core=obj.get("hard_core", ""),
                                equal_alternates=obj.get("equal_alternates", []))
+    if stage == "T3":
+        return schema.stage_T3(resolved=obj.get("resolved", prose),
+                               open_flags=obj.get("open_flags", []),
+                               editorial_notes=obj.get("editorial_notes", []))
     raise ValueError(stage)
 
 
