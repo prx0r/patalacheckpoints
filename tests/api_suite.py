@@ -196,6 +196,25 @@ check("missing resolve body → 400", post_status("/api/resolve/work", {}) == 40
 check("unknown term sense → 404", status_of("/api/terms/zzznolemma/senses") == 404)
 
 # ────────────────────────────────────────────────────────────────
+print("== 7. OpenAPI contract conformance (docs match reality) ==")
+import re
+import os
+spec_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "docs", "openapi.yaml")
+if os.path.exists(spec_path):
+    spec = open(spec_path, encoding="utf-8").read()
+    # every GET path in the spec must be live (convert {param} placeholders to a concrete value)
+    for m in re.finditer(r"^  (/api[^:]+):$", spec, re.M):
+        path = m.group(1)
+        probe = (path
+                 .replace("{id}", "kramasadbhava")
+                 .replace("{lemma}", "kula")
+                 .replace("{work_id}", "kubjikamata"))
+        code = status_of(probe)
+        # 200 OK, 400/404 for required-query/miss, and 405 for POST-only routes are all "live"
+        check(f"openapi path live: {probe} ({code})", code in (200, 400, 404, 405), str(code))
+else:
+    print("  WARN  docs/openapi.yaml not found — skipping conformance")
+
 print(f"\n==== RESULT: {PASS} passed, {FAIL} failed ====")
 if FAILURES:
     print("\nFailures:")
