@@ -33,6 +33,29 @@ export interface AtlasEntity {
     dependencies?: string[];
     outputs?: string[];
   };
+  // bibliography — the spec-2 "WHAT EXISTS?" record (the atlas/bibliography spine).
+  // Every translation-status assertion carries its evidence (statusChecked + statusEvidence),
+  // and the public phrase is deliberately "No complete English translation located", not
+  // "Untranslated", unless scholarship explicitly establishes otherwise.
+  bibliography?: {
+    status?: {
+      sanskritEtext?: boolean;
+      criticalEdition?: boolean;
+      completeEnglish?: boolean;
+      partialEnglish?: boolean;
+      siteWorkingTranslation?: boolean;
+      communityReviewed?: boolean;
+      statusChecked?: string;
+      statusEvidence?: string;
+      statusPhrase?: string;
+    };
+    manuscripts?: {
+      siglum?: string;
+      note?: string;
+    }[];
+    scholarship?: string[];
+    related?: string[];
+  };
 }
 
 export type RelationType =
