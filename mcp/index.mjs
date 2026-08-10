@@ -150,6 +150,17 @@ server.tool(
   },
 );
 
+// ————————————————— get_term_history —————————————————
+server.tool(
+  "get_term_history",
+  "The diachronic sense-trajectory of a lemma: how its meaning shifts across traditions and periods (the reference map's signature feature). Evidence-backed hypotheses, not settled facts.",
+  { lemma: z.string() },
+  async ({ lemma }) => {
+    const d = await api(`/api/terms/${encodeURIComponent(lemma)}/history`);
+    return { content: [{ type: "text", text: JSON.stringify(d, null, 2) }] };
+  },
+);
+
 // ————————————————— concordance —————————————————
 server.tool(
   "concordance",

@@ -13,7 +13,7 @@ export async function GET(_req: NextRequest) {
       works: ["GET /api/works", "GET /api/works/:id", "GET /api/works/:id/manuscripts"],
       relations: ["GET /api/relations/:work_id"],
       passages: ["GET /api/passages/:id", "GET /api/search/passages", "GET /api/context/passages/:id"],
-      terms: ["GET /api/terms", "GET /api/terms/:lemma/senses", "GET /api/terms/:lemma/occurrences", "GET /api/term-proposals"],
+      terms: ["GET /api/terms", "GET /api/terms/:lemma/senses", "GET /api/terms/:lemma/occurrences", "GET /api/terms/:lemma/history", "GET /api/term-proposals"],
       manuscripts: ["GET /api/manuscripts", "GET /api/works/:id/manuscripts"],
       resolve: ["POST /api/resolve/work"],
       stats: ["GET /api/stats"],

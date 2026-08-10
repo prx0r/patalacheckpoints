@@ -194,6 +194,8 @@ def post_status(path, body=None):
 
 check("missing resolve body → 400", post_status("/api/resolve/work", {}) == 400)
 check("unknown term sense → 404", status_of("/api/terms/zzznolemma/senses") == 404)
+check("term history returns trajectory", status_of("/api/terms/kula/history") == 200)
+check("unknown term history → 404", status_of("/api/terms/zzznolemma/history") == 404)
 
 # ────────────────────────────────────────────────────────────────
 print("== 7. OpenAPI contract conformance (docs match reality) ==")

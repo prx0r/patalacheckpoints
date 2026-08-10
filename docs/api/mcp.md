@@ -32,6 +32,7 @@ Hermes is already configured: `~/.hermes/config.yaml` has a `tantrakosa` MCP ser
 | `get_related_works` | `GET /api/relations/{work_id}` | typed edges for ranking |
 | `get_term_senses` | `GET /api/terms/{lemma}/senses` | accepted senses |
 | `find_term_occurrences` | `GET /api/terms/{lemma}/occurrences` | surface occurrences (substring) |
+| `get_term_history` | `GET /api/terms/{lemma}/history` | the diachronic sense-trajectory |
 | `search_surface_occurrences` | `GET /api/search/passages` | substring, honest about method |
 | `get_working_translations` | `GET /api/texts/{id}/translations` | our T1s (provisional) |
 | `get_manuscripts` | `GET /api/manuscripts` | OCHS witnesses |

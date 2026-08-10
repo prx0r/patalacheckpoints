@@ -217,6 +217,23 @@ paths:
       responses:
         "200":
           description: match_method substring, lemmatized false
+  /api/terms/{lemma}/history:
+    get:
+      summary: The diachronic sense-trajectory of a lemma (reference map's signature feature)
+      description: >
+        How a lemma's meaning shifts across traditions and periods (e.g. kula:
+        lineage → body/totality → Kubjikā mantra-body → Abhinava's akula-pole).
+        Evidence-backed hypotheses (the reference map + dossiers), NOT settled facts.
+      parameters:
+        - in: path
+          name: lemma
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: trajectory[] + accepted_senses + proposals
+        "404":
+          description: trajectory not yet seeded for this lemma
   /api/term-proposals:
     get:
       summary: Machine/human term-sense proposals (never auto-accepted)
