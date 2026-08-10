@@ -68,9 +68,8 @@ class StageOutputError(Exception):
     required to be JSON. NOT a silent fallback — the state machine must surface it."""
 
 
-def parse_json(raw: str) -> dict[str, Any]:
-    """Parse a model output as JSON, stripping fences and finding the object block.
-    Raises ValueError if no object is found."""
+def _extract_json(raw: str) -> dict[str, Any]:
+    """Strip fences and parse. Raises ValueError if no object is found."""
     raw = (raw or "").strip()
     if raw.startswith("```"):
         raw = raw.split("\n", 1)[-1]
@@ -79,3 +78,19 @@ def parse_json(raw: str) -> dict[str, Any]:
     if start >= 0 and end > start:
         return json.loads(raw[start:end + 1])
     raise ValueError("no JSON object found in model output")
+
+
+def parse_json(raw: str, repair_fn=None) -> dict[str, Any]:
+    """Parse a model output as JSON, stripping fences and finding the object block.
+    If it fails and a repair_fn is given, it runs ONE bounded repair retry (the
+    repair must itself return JSON — it never accepts prose)."""
+    try:
+        return _extract_json(raw)
+    except Exception as first_err:
+        if repair_fn is not None:
+            repaired = repair_fn(raw)
+            try:
+                return _extract_json(repaired)
+            except Exception as repair_err:
+                raise ValueError(f"JSON repair failed: {repair_err} (original: {first_err})") from repair_err
+        raise ValueError(str(first_err))

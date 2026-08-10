@@ -274,7 +274,7 @@ def run_floor(record: dict, stage: str, model: str = model_mod.DEFAULT_MODEL,
     user = prompts.user_prompt(stage, record, evidence_packet=packet)
 
     text = model_mod.chat(system, user, model=model, temperature=_TEMP(stage))
-    payload = _make_payload(stage, text, require_structured=require_structured)
+    payload = _make_payload(stage, text, require_structured=require_structured, model=model)
     schema.set_stage(record, payload, created_by=created_by,
                      derived_from=record["pipeline_stage"] if record["stages"] else None)
     return record
@@ -285,12 +285,21 @@ def _TEMP(stage: str) -> float:
             "T3": 0.3, "T3.1": 0.5, "C1": 0.5}.get(stage, 0.3)
 
 
-def _make_payload(stage: str, text: str, require_structured: bool = True) -> dict:
+def _make_payload(stage: str, text: str, require_structured: bool = True,
+                  model: str = model_mod.DEFAULT_MODEL) -> dict:
     """Build the stage payload. For core stages, parse JSON; if the model returns
-    prose and structured output is required, raise StageOutputError."""
+    prose and structured output is required, raise StageOutputError (after one
+    bounded JSON-repair retry via the model)."""
+    def repair(raw):
+        # bounded: ask the model to re-emit ONLY the JSON object
+        return model_mod.chat(
+            "You produce ONLY a valid JSON object. Return the JSON with no prose, "
+            "no markdown fences, no commentary.",
+            f"Here is malformed output. Re-emit it as a single valid JSON object:\n{raw}",
+            model=model, temperature=0.0)
     if stage in ("T1", "R1", "T2", "R2", "T3"):
         try:
-            obj = model_mod.parse_json(text)
+            obj = model_mod.parse_json(text, repair_fn=repair if require_structured else None)
         except Exception as e:
             if require_structured:
                 raise model_mod.StageOutputError(f"{stage} must emit JSON: {e}")
@@ -299,9 +308,9 @@ def _make_payload(stage: str, text: str, require_structured: bool = True) -> dic
     if stage == "T3.1":
         return schema.stage_T31(reading=text)
     if stage == "C1":
-        # C1 is structured: interpretation + evidence_state + proposals + challenges
+        # C1 is STRICT: interpretation + evidence_state + evidence + proposals + challenges
         try:
-            obj = model_mod.parse_json(text)
+            obj = model_mod.parse_json(text, repair_fn=repair)
             return schema.stage_C1(
                 interpretation=obj.get("interpretation", text),
                 c1_id=obj.get("c1_id", ""),
@@ -313,8 +322,8 @@ def _make_payload(stage: str, text: str, require_structured: bool = True) -> dic
                 challenges=obj.get("challenges", []),
                 cruxes=obj.get("cruxes", []),
             )
-        except Exception:
-            return schema.stage_C1(interpretation=text)
+        except Exception as e:
+            raise model_mod.StageOutputError(f"C1 must emit JSON: {e}")
     raise ValueError(f"unknown stage {stage}")
 
 
