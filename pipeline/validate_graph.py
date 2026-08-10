@@ -127,6 +127,29 @@ def validate() -> list[str]:
             if sid not in src_span_ids:
                 problems.append(f"decision {m.group(1)} references unknown source span {sid}")
 
+        # ── FIRST-CLASS EVIDENCE: every decision's evidence_id must resolve to an
+        #    EvidenceItem in the pool (no dangling evidence edges).
+        evidence_ids = set(re.findall(r'id:\s*"(pt:evidence:[^"]+)"', pt))
+        if not evidence_ids:
+            problems.append("published translation has no EvidenceItems")
+        # every EvidenceUse.evidence_id must exist in the pool
+        for m in re.finditer(r'evidence_id:\s*"(pt:evidence:[^"]+)"', pt):
+            eid = m.group(1)
+            if eid not in evidence_ids:
+                problems.append(f"decision references unknown evidence item {eid}")
+        # every EvidenceItem must declare a resource_id + verification
+        for eid in evidence_ids:
+            if eid not in pt:
+                continue
+            block_start = pt.find(f'id: "{eid}"')
+            if block_start < 0:
+                continue
+            block = pt[block_start:block_start + 400]
+            if "resource_id:" not in block:
+                problems.append(f"evidence {eid} missing resource_id")
+            if "verification:" not in block:
+                problems.append(f"evidence {eid} missing verification")
+
     # Schema-level: origin/status/certainty enums are distinct (checked by TS types).
     return problems
 

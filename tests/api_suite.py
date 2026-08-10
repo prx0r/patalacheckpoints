@@ -221,6 +221,14 @@ try:
 except Exception as e:
     check("scholarly graph validation runs", False, str(e))
 
+# gold-fixture regression (the scholarly eval gate)
+try:
+    gold = subprocess.run([sys.executable, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "pipeline", "check_gold.py")],
+                          capture_output=True, text=True, timeout=30)
+    check("gold-fixture regression passes", "0 failures" in gold.stdout, gold.stdout[-200:])
+except Exception as e:
+    check("gold-fixture regression runs", False, str(e))
+
 # ────────────────────────────────────────────────────────────────
 print("== 7. Published translation (phrase-click auditable object) ==")
 code, tr = get("/api/passages/kramasadbhava:1.8/translation")
@@ -239,6 +247,10 @@ check("decisions carry evidence + status", all(d.get("evidence") and d.get("stat
 dcode, dec = get("/api/decisions/pt:decision:krs:1.8:LEX:2")
 check("decision detail 200", dcode == 200)
 check("decision has alternatives + evidence", dec.get("alternatives") and dec.get("evidence"))
+check("decision evidence resolves to items", all(x.get("item") for x in dec.get("evidence", [])))
+check("decision has 3 dimensions (status/evidence/editorial)", dec.get("status") and dec.get("evidence_state") and dec.get("editorial_status"))
+check("nirānande stays OPEN (not falsely settled)", dec.get("status") == "OPEN", str(dec.get("status")))
+check("no unresolved evidence on nirānande", dec.get("unresolved_evidence") == [], str(dec.get("unresolved_evidence")))
 check("decision 404 on miss", status_of("/api/decisions/doesnotexist") == 404)
 check("translation 404 on miss", status_of("/api/passages/doesnotexist/translation") == 404)
 

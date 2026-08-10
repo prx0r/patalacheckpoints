@@ -30,6 +30,7 @@ export async function GET(
     target_spans: pub.target_spans,
     alignments: pub.alignments,
     decisions: pub.decisions,
+    evidence: pub.evidence,
     provenance_note: {
       note: "The published auditable translation: every phrase is addressable. Click a source or target span → its decision → evidence → review. Machine decisions are proposals until a review event promotes them.",
       api_version: "1.0",

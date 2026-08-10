@@ -152,3 +152,36 @@ python3 pipeline/validate_graph.py
 - **Milestone A1 stopped at T3** (T3.1 + C1 pending); done via Hermes, slow backend.
 - `data/manuscripts.json` (5.5MB) + `kubjikamata.jsonl` (1.5MB) are gitignored.
 - The docs live in two repos (`patala/docs/` + `sanskritree/corpus/targets/`); keep in sync.
+
+---
+
+## Update — the publishable auditable translation object (built)
+
+The core product is now built and proven on Kramasadbhāva 1.8:
+
+- **`data/corpus/translation.ts`** — the canonical schema: SourceSpan / TargetSpan /
+  Alignment (many-to-many, with method) / **TranslationDecision** / **EvidenceItem**
+  (first-class) / EvidenceUse. Three dimensions on every decision:
+  `status` (CONSTRAINED/PREFERRED/OPEN) ≠ `evidence_state` (grounded/partially_grounded/...) ≠
+  `editorial_status` (proposed/reviewed/accepted — derived from ReviewEvents, never manual).
+  `surface_rendering` vs `adjudicated_reading` (OPEN keeps a surface text without falsely
+  resolving the crux).
+- **`units/kramasadbhava-1.8-published.ts`** — the real instance: 9 source spans, 9 target
+  spans, 9 alignments, 3 decisions (devadeveśi PREFERRED/grounded, nirānande OPEN/
+  partially_grounded + technical alternative, paramānande CONSTRAINED), 6 resolvable
+  EvidenceItems. `review_state` is DERIVED.
+- **APIs**: `GET /api/passages/:id/translation` (phrase-clickable: spans + alignments +
+  decisions + evidence) and `GET /api/decisions/:id` (full audit trail, evidence resolved
+  to items, unresolved flagged). **101/101 tests.**
+- **Evidence is first-class and validated**: every decision→evidence edge resolves
+  (fixed the dangling nirānanda technical link); `validate_graph.py` + `check_gold.py`
+  (gold-fixture regression — nirānanda must stay OPEN, not falsely settled).
+
+This is the product: click a phrase → see the decision, its evidence cards, review state,
+and version lineage.
+
+## The clear next build (scale, don't redesign)
+Generate `PublishedTranslation` candidates for the 25-verse unit (Hermes emits spans +
+alignments + decision proposals; the pattern is proven on 1.8). Fail loudly where
+evidence/decision generation is incomplete. Then the phrase-click reader (a tiny drawer,
+not a full UI) once a handful exist.
