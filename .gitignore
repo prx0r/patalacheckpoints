@@ -3,3 +3,7 @@ node_modules/
 out/
 *.tsbuildinfo
 next-env.d.ts
+
+# large generated data files (regenerate, don't commit)
+data/manuscripts.json
+data/corpus/passages/kubjikamata.jsonl
