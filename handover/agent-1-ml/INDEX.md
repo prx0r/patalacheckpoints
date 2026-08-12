@@ -126,12 +126,14 @@ Built this session (cont.) — the CP3 / theme layer + retrieval readiness:
                    REPRESENTATIONAL_FIDELITY=PARTIAL, SEMANTIC=PROXY_SUPPORTED, BET=OPEN
   Vertical object  proof edge now reference_resolution=EXACT + semantic_support=MACHINE_PROPOSED    ✅
   Doctrine         Axiom 11 (git worktree discipline) + GIT-INCIDENTS.md (4cc78d1 recorded)        ✅
-Next in order: (1) **CP3 theme acceptance** — run the model review of the theme map, cross the
-kind/sense adjudication into `ACCEPTED_THEME`; (2) **semantic alignment** (the foundational symbolic
-layer; the theme reviews surfaced the exact relations to model, e.g. vimarśa NEAR_SAME but sphurattā
-AMBIGUOUS); (3) **independent gold review** → the FIRST auditable argument (ARG-002 v2) → unlocks real
-py-aspic + crux; (4) **CP2 retrieval over Pāṭala objects** (index lemmas + C1 + argument objects;
-BM25/dense/late-interaction — the "neural layer" of the microscope vision). See `NEXT-STEPS.md`.
+Next (REVISED PLAN — see `NEXT-STEPS.md`): **the bottleneck is epistemic, not engineering.** In order:
+(0) fix worktrees + reconcile commits; (1) **get ≥ 1 argument independently reviewed** — the CP4
+critical path, success metric `count(INDEPENDENT_REVIEWED) > 0`; (2) build the **PĀṬALA-FIDELITY
+synthetic corruption suite** (construction-verifiable: verifier sensitivity to injected errors);
+(3) establish a **deterministic graph baseline** (k-core); (4) support/wait for human gold review; and
+only AFTER review — extractor, external argument evaluator, semantic-alignment and retrieval
+experiments (all currently PARKED). Doctrine: *when the missing oracle is human judgment, don't
+substitute another model — obtain the judgment, or work only on claims verifiable mechanically.*
 
 **The source of this task:** `handover/agent-1-ml/ORIENTATION.md` Phase 4 + `NEXT-STEPS.md` + the vision
 (`docs/vision/CORE-BIBLE.md` Layer 3 / `handover/CHECKPOINTS.md` CP4).
