@@ -490,7 +490,8 @@
             "completed": 9,
             "total": 10
           }
-        }
+        },
+        "version": "v3"
       },
       "proof": {
         "status": "NONE"

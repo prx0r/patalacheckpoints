@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "works": {
+    "kramasadbhava": {
+      "versions": [
+        {
+          "version": "v1",
+          "sha256": "f45f04b9b14cc731",
+          "committed_by": "agent3",
+          "committed_at": "2026-08-12T15:43:20.877256+00:00",
+          "status": "REVIEWED",
+          "supersedes": null,
+          "n_records": 3,
+          "n_verses": 1,
+          "reviewed_by": "scholar-x",
+          "reviewed_at": "2026-08-12T15:43:36.310381+00:00"
+        },
+        {
+          "version": "v2",
+          "sha256": "efe90120fc58b13f",
+          "committed_by": "agent3",
+          "committed_at": "2026-08-12T15:43:20.878290+00:00",
+          "status": "MACHINE_PROPOSED",
+          "supersedes": "v1",
+          "n_records": 1,
+          "n_verses": 1
+        },
+        {
+          "version": "v3",
+          "sha256": "d698e58deb1f158b",
+          "committed_by": "agent3",
+          "committed_at": "2026-08-12T15:43:20.880446+00:00",
+          "status": "MACHINE_PROPOSED",
+          "supersedes": "v2",
+          "n_records": 4,
+          "n_verses": 1
+        }
+      ],
+      "current": "v3"
+    }
+  }
+}

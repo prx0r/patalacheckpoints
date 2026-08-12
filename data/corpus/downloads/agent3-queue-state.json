@@ -1,0 +1,46 @@
+{
+  "by_work": {
+    "kramasadbhava": {
+      "done_verses": [
+        0,
+        1,
+        2
+      ],
+      "commits": [
+        {
+          "passage_id": "kramasadbhava:v1",
+          "commit": {
+            "work_id": "kramasadbhava",
+            "version": "v1",
+            "sha256": "f45f04b9b14cc731",
+            "supersedes": null,
+            "n_records": 3
+          },
+          "proof_pass": true
+        },
+        {
+          "passage_id": "kramasadbhava:v2",
+          "commit": {
+            "work_id": "kramasadbhava",
+            "version": "v2",
+            "sha256": "efe90120fc58b13f",
+            "supersedes": "v1",
+            "n_records": 1
+          },
+          "proof_pass": false
+        },
+        {
+          "passage_id": "kramasadbhava:v3",
+          "commit": {
+            "work_id": "kramasadbhava",
+            "version": "v3",
+            "sha256": "d698e58deb1f158b",
+            "supersedes": "v2",
+            "n_records": 4
+          },
+          "proof_pass": true
+        }
+      ]
+    }
+  }
+}
