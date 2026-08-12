@@ -63,6 +63,17 @@ server.tool(
   },
 );
 
+// ————————————————— resolve_ref —————————————————
+server.tool(
+  "resolve_ref",
+  "The citation backbone. Resolve a reference (ipvv:V2-S:14, IPVV 1.5.11, a pt:pid immutable id, or a tantra:text urn) through the chain: work → passage → source spans → translations → decisions → evidence → C1 → related. Returns the immutable passage id.",
+  { ref: z.string() },
+  async ({ ref }) => {
+    const d = await api(`/api/resolve?ref=${encodeURIComponent(ref)}`);
+    return { content: [{ type: "text", text: JSON.stringify(d, null, 2) }] };
+  },
+);
+
 // ————————————————— search_passages —————————————————
 server.tool(
   "search_passages",
@@ -76,6 +87,59 @@ server.tool(
   },
 );
 
+// ————————————————— verification floor (deterministic EXPOSE services) ———————
+server.tool(
+  "verify_quote",
+  "Deterministic verbatim-quote verification: is this quote present in the passage's source (Sanskrit) or published L2? Never hallucinated.",
+  { q: z.string(), ref: z.string() },
+  async ({ q, ref }) => {
+    const d = await api(`/api/verify/quote?q=${encodeURIComponent(q)}&ref=${encodeURIComponent(ref)}`);
+    return { content: [{ type: "text", text: JSON.stringify(d, null, 2) }] };
+  },
+);
+server.tool(
+  "verify_claim_structure",
+  "Deterministic claim-structure check: does the passage resolve and carry source + L2 + C1? The structural floor below any semantic verification.",
+  { ref: z.string(), claim: z.string().optional() },
+  async ({ ref, claim }) => {
+    const p = new URLSearchParams({ ref });
+    if (claim) p.set("claim", claim);
+    const d = await api(`/api/verify/claim-structure?${p.toString()}`);
+    return { content: [{ type: "text", text: JSON.stringify(d, null, 2) }] };
+  },
+);
+server.tool(
+  "trace_dependency",
+  "Deterministic backward walk of the derivation DAG (source ← L2 ← C1): reports where support breaks. The provenance floor for any generated claim.",
+  { ref: z.string() },
+  async ({ ref }) => {
+    const d = await api(`/api/verify/trace-dependency?ref=${encodeURIComponent(ref)}`);
+    return { content: [{ type: "text", text: JSON.stringify(d, null, 2) }] };
+  },
+);
+server.tool(
+  "find_counterevidence",
+  "Deterministic counterevidence: surfaces the curated contradicts/qualifies edges in the passage's C1. Honest about what is not yet recorded.",
+  { ref: z.string() },
+  async ({ ref }) => {
+    const d = await api(`/api/verify/counterevidence?ref=${encodeURIComponent(ref)}`);
+    return { content: [{ type: "text", text: JSON.stringify(d, null, 2) }] };
+  },
+);
+
+// ————————————————— get_themes —————————————————
+server.tool(
+  "get_themes",
+  "Deterministic theme structure over the IPVV C1s (MACHINE_PROPOSED). Themes group passages sharing a technical lemma. Query by passage or list all.",
+  { passage: z.string().optional() },
+  async ({ passage }) => {
+    const p = new URLSearchParams();
+    if (passage) p.set("passage", passage);
+    const d = await api(`/api/themes?${p.toString()}`);
+    return { content: [{ type: "text", text: JSON.stringify(d, null, 2) }] };
+  },
+);
+
 // ————————————————— get_related_works —————————————————
 server.tool(
   "get_related_works",
@@ -83,6 +147,20 @@ server.tool(
   { work_id: z.string() },
   async ({ work_id }) => {
     const d = await api(`/api/relations/${encodeURIComponent(work_id)}`);
+    return { content: [{ type: "text", text: JSON.stringify(d, null, 2) }] };
+  },
+);
+
+// ————————————————— get_school_spine —————————————————
+server.tool(
+  "get_school_spine",
+  "The canonical reading spine for a school, tied to the bibliography. Research the 'related N works' of a tradition as one ordered object (root scripture -> commentary -> synthesis -> our target).",
+  { tradition: z.string().optional(), work: z.string().optional() },
+  async ({ tradition, work }) => {
+    const p = new URLSearchParams();
+    if (tradition) p.set("tradition", tradition);
+    if (work) p.set("work", work);
+    const d = await api(`/api/spines?${p.toString()}`);
     return { content: [{ type: "text", text: JSON.stringify(d, null, 2) }] };
   },
 );

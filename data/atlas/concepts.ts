@@ -107,6 +107,26 @@ export const concepts: AtlasEntity[] = [
     },
   },
   {
+    id: "camatkara",
+    type: "concept",
+    title: "Camatkāra",
+    sanskrit: "चमत्कार",
+    period: { start: 900, end: 1025, approximate: true },
+    summary:
+      "The 'savouring' — the felt register of recognition. The Vṛtti on IPK 1.5.11 ties vimarśa to camatkṛti ('since there is no savouring'): the essence of light is not a formal showing but a felt self-presence. Camatkāra is Utpaladeva's own concept (the entrance of aesthetics into philosophy), and the IPVV identifies it with the parā-vāk, the sphurattā, and the māheśvarya.",
+    concepts: ["recognition", "vimarśa", "prakāśa", "svātantrya"],
+    dossier: {
+      systemicFunction:
+        "Camatkāra is the felt register that ties the recognition-thesis to rasa — the re-cognition is experienced as the turning of un-known nearness into the joy of union (V3P), the felt re-cognition of the self.",
+      doctrinalCore: [
+        "The felt is the essence of consciousness (IPK 1.5.11, 'since there is no savouring')",
+        "Utpaladeva's concept: the entrance of aesthetics into philosophy",
+        "The lover-union (V3P): recognition turns nearness into enjoyed joy",
+      ],
+      outputs: ["the felt-register dossier", "the rasa link", "the σ-flip in aesthetic form"],
+    },
+  },
+  {
     id: "mālinī",
     type: "concept",
     title: "Mālinī",

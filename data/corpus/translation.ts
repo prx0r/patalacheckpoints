@@ -141,7 +141,12 @@ export interface PublishedTranslation {
     // verse-by-verse analysis that breathes, tied to the T3 verse it comments on.
     verse_commentary?: { locator: string; commentary: string }[];
     claim_links: { claim: string; target_span_id: string }[];
+    // from the IPVV c1/read renderings (terms / see-also), optional
+    terms?: string;
+    see_also?: string;
   };
+  // the structured c1/source record (SUMMARY/FUNCTION/KEY TERMS/...) when present
+  c1_source?: Record<string, string>;
   provenance: {
     base_source: string;
     edition: string;

@@ -2,6 +2,12 @@
 
 import React, { useState, useCallback, useEffect } from "react";
 
+// Work titles shown in the reader header.
+const WORK_TITLES: Record<string, string> = {
+  kramasadbhava: "Kramasadbhāva",
+  isvarapratyabhijnavivrtivimarsini: "Īśvarapratyabhijñāvivṛtivimarśinī",
+};
+
 // ── types (mirror of the API shape) ─────────────────────────────────────────
 interface SourceSpan { id: string; passage_id: string; text: string; start?: number; end?: number; }
 interface TargetSpan { id: string; translation_version_id: string; text: string; }
@@ -147,7 +153,7 @@ export default function PassageReaderPage({ params }: { params: Promise<{ work: 
               </div>
             </div>
             <h1 className="mt-1 font-serif text-2xl text-[color:var(--bone)]">
-              Kramasadbhāva {locator.replace(".", ".")}
+              {WORK_TITLES[work] ?? work} {locator.replace(".", ".")}
             </h1>
             <div className="mt-2 flex items-center gap-3 text-[11px] text-zinc-500">
               <span>ed. {pub.provenance.edition}</span>

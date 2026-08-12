@@ -58,6 +58,14 @@ T1 → R1 → T2 → R2 → T3 → T3.1 → C1
 - You MAY research independently and overturn T3, but say so explicitly.
 - Keep it grounded in the Sanskrit.
 
+### The MEGA-CHUNK rule (for long commentaries like the IPVV)
+For a long running-commentary (the IPVV's ~34,000 lines), do NOT translate per-kārikā slivers.
+Translate in **500+ line continuous swathes** — one file per chunk, the whole block rendered as
+one continuous piece. Pass 1 = volume (get the paint on the wall); pass 2 = register polish.
+The adversarial work (rival readings + evidence + decisions) is embedded inline in an
+`## apparatus` block, not separate files (unless a genuine crux). Track each chunk in the
+work's TRANSLATION_PROGRESS.md. See `sanskritree/corpus/abhinava/READ_FIRST.md` §6a.
+
 ## The output shape
 A passage record (see `pipeline/schema.py`). Populate the `stages` dict floor by floor,
 keep the `lineage`, and confirm the record passes `pipeline/audit.py`.

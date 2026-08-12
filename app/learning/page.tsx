@@ -30,6 +30,11 @@ const SHARED_FOUNDATIONS = [
     body: "Awakening is not the disappearance of the self or the world. It is the recognition that this apparently finite center was never ontologically separate from the consciousness through which the entire field manifests. The schools differ on how this is achieved (knowledge, devotion, the Goddess, the pulse), but the destination is shared.",
     concepts: ["recognition", "svātantrya"],
   },
+  {
+    title: "Recognition is felt, and it adds nothing",
+    body: "In the Pratyabhijñā — the school of Utpaladeva and Abhinavagupta — recognition (pratyabhijñā) is the felt re-cognition of the self: the self, already established, re-cognizes itself as the Lord. It is a change in where the self stands (from a thing lost in the world to the primary thing seen), not an addition of new content. The essence of light is vimarśa, the felt reflexive-awareness; its re-cognition is camatkāra, the savouring. Abhinavagupta's great commentary, the Īśvarapratyabhijñāvivṛtivimarśinī, is the deepest source of this thesis.",
+    concepts: ["recognition", "vimarśa", "camatkara", "prakāśa"],
+  },
 ];
 
 // The compact timeline, from the canonical reference map. The dates distinguish

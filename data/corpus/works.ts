@@ -46,6 +46,8 @@ function slug(t: string): string {
 // retrieval — a later commentary, root Tantra, anthology and philosophical
 // synthesis should not be weighted equally. research_roles captures function.
 const RESEARCH_ROLES: Record<string, string[]> = {
+  isvarapratyabhijnavivrtivimarsini: ["translation_target", "commentary", "synthesis"],
+  isvarapratyabhijnakarika: ["primary_scripture", "terminology_anchor", "citation_source"],
   tantraloka: ["synthesis", "citation_source", "commentarial_bridge"],
   tantrasadbhava: ["primary_scripture", "terminology_anchor"],
   malinivijayottara: ["primary_scripture", "terminology_anchor"],

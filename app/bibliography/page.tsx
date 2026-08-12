@@ -147,6 +147,9 @@ export default function BibliographyPage() {
             <a href="/read/kramasadbhava/1.8" className="inline-block rounded border border-[color:var(--saffron)] px-3 py-1.5 text-[12px] text-[color:var(--saffron)] hover:bg-[color:var(--saffron)] hover:text-zinc-950">
               → Read Kramasadbhāva 1.8 (auditable reader)
             </a>
+            <a href="/texts/isvarapratyabhijnavivrtivimarsini" className="inline-block rounded border border-[color:var(--saffron)] px-3 py-1.5 text-[12px] text-[color:var(--saffron)] hover:bg-[color:var(--saffron)] hover:text-zinc-950">
+              → Read IPVV 1.5.11 (recognition)
+            </a>
             <a href="/texts/kramasadbhava" className="inline-block rounded border border-zinc-600 px-3 py-1.5 text-[12px] text-zinc-300 hover:border-[color:var(--saffron)] hover:text-[color:var(--saffron)]">
               Kramasadbhāva overview →
             </a>

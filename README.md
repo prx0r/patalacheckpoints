@@ -4,10 +4,16 @@
 
 ## For a new agent — read these first (in order)
 
-1. **`HANDOVER_SITE.md`** — the site-builder handover: the vision, the current state, the bibliography migration, the next steps (audit the school-passes, the reader, the per-entity routes).
-2. **`HANDOVER_MCP_API.md`** — the **machine-facing layer** (the highest-priority build): the retrieval/audit API + the MCP server + the TTS + the formal translation-flow + the provenance hierarchy.
-3. **`SITE_STATUS.md`** — the site's growth-rules + the sync-gap discipline.
-4. **`../docs/endgame2.md`** — the spec (the Tantra Hub vision, the machine-facing plan, the FoJin-comparison). Also `../docs/endgame1.md` and `../corpus/learning/ENDGAME_SITE_SPEC.md`.
+1. **`docs/INDEX.md`** — the canonical docs index (the ONE source of truth per concern; archived
+   stale handovers are in `docs/_archive/`).
+2. **`HANDOVER_FINAL.md`** — the current site handover.
+3. **`machinelearning/MLUSEINPATALA.md`** — the frozen ML strategy.
+4. **`SITE_STATUS.md`** — the site's growth-rules + the sync-gap discipline.
+5. **`../docs/endgame2.md`** — the spec (the Tantra Hub vision, the machine-facing plan, the
+   FoJin-comparison). Also `../docs/endgame1.md` and `../corpus/learning/ENDGAME_SITE_SPEC.md`.
+
+> The full-system onboarding (how the whole scholarly factory works) is `THE_COMPANION.md` in
+> `sanskritree/translations/_stack/ipvv/specs/`.
 
 ## The stack
 

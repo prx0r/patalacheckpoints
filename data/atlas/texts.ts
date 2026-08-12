@@ -137,6 +137,30 @@ export const texts: AtlasEntity[] = [
 // The T3'd / T1'd additions from the translation project (2026-08-09)
 export const textsAdditional: import("@/lib/atlas").AtlasEntity[] = [
   {
+    id: "isvarapratyabhijnavivrtivimarsini",
+    type: "text",
+    title: "Īśvarapratyabhijñāvivṛtivimarśinī",
+    sanskrit: "ईश्वरप्रत्यभिज्ञाविवृतिविमर्शिनी",
+    period: { start: 975, end: 1025, approximate: true },
+    summary:
+      "Abhinavagupta's enormous commentary on Utpaladeva's (mostly lost) Vivṛti — the deepest primary source of the recognition philosophy, now translated in full. ~34,000 lines across three volumes, organized as the nanu→āha dialectic: the powers of knowledge, memory, and exclusion; the vimarśa as the parā-vāk and the māheśvarya; the epistemology of action; the tattva-ontology; and the soteriology of the jīvanmukta. The authority by which Ratié's reconstruction is checked.",
+    concepts: ["recognition", "vimarśa", "prakāśa", "svātantrya", "camatkara"],
+    resources: [
+      { title: "Read IPVV 1.5.11 (auditable reader)", href: "/read/isvarapratyabhijnavivrtivimarsini/1.5.11", type: "translation" },
+      { title: "IPVV overview", href: "/texts/isvarapratyabhijnavivrtivimarsini", type: "translation" },
+    ],
+    dossier: {
+      systemicFunction:
+        "The IPVV is the recognition-thesis argued from the deepest primary source: it states the thesis at three registers (foregrounding, 'I was never not', the lover-union), proves the non-constructed 'I', and expands the IPK into a complete system — action, ontology, soteriology.",
+      doctrinalCore: [
+        "vimarśa = the essence of light = the parā-vāk = the māheśvarya (IPK 1.5.11)",
+        "The 'I' is not a construction — it is the self-grasp every construction presupposes (V2L)",
+        "Recognition changes positioning, not content — nothing added (V1E/V1D/V3P)",
+      ],
+      outputs: ["the complete translation (V1A–N, V2A–S, V3A–P)", "the L2 READ layer", "the authority comparison (vs Ratié, IPK)"],
+    },
+  },
+  {
     id: "jnanakarika",
     type: "text",
     title: "Jñānakārikā",

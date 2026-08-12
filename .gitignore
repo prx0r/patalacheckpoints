@@ -9,3 +9,6 @@ data/manuscripts.json
 data/corpus/passages/kubjikamata.jsonl
 __pycache__/
 *.pyc
+
+# local ML virtualenv (5GB torch/nvidia) — the research environment, NOT part of the app
+machinelearning/research/.venv/
