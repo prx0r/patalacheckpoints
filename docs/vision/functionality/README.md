@@ -26,6 +26,7 @@ map of those projections and the machinery that powers them.
 | **The ML layer** | `handover/agent-1-ml/ML-MECHANICS-REFERENCE.md` | benchmark, retrieval, extraction, the Nyāya gate |
 | **The skills (workflows)** | `skills/*/SKILL.md` (7) | translate-work, write-commentary, push-text, validate-passage, ... |
 | **The agent system** | `handover/SYSTEM.md` + `AGENTS.yaml` | who does it + tracked progress (template→instances) |
+| **The execution kernel (Hermes)** | `docs/vision/functionality/hermes-execution.md` + `handover/hermes/` | the replaceable execution fabric (kanban, cron, worktree, skills, sessions) that operationalizes every projection |
 
 ### The interfaces (the product projections)
 | Projection | Canonical doc | What it is |

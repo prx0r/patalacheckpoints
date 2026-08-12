@@ -106,6 +106,7 @@ assigns the existing docs (content untouched) + the relationships:
 | Lens | Folder | The vision viewed as… | The loop |
 |---|---|---|---|
 | **FUNCTIONALITY** | `docs/vision/functionality/README.md` | the tools + machinery + interfaces | gives scholars the workbench |
+| **EXECUTION (Hermes)** | `docs/vision/functionality/hermes-execution.md` + `handover/hermes/` | the replaceable execution kernel (kanban, cron, worktree, skills, sessions) that operationalizes every projection | runs the factory + review + projections |
 | **SCHOLARS** | `docs/vision/scholars/README.md` | the human layer — the contributors whose judgment is the moat | produces the expert data |
 | **ECONOMICS** | `docs/vision/economics/README.md` | the sustainability — scarce assets + the flywheel | turns the data into revenue + fellowships |
 

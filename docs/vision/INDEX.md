@@ -49,6 +49,7 @@ here and in `docs/INDEX.md`.*
 | Lens | Folder | The vision viewed as… |
 |---|---|---|
 | **Functionality** | `docs/vision/functionality/README.md` | the tools + machinery + interfaces (the projections of one core) |
+| **Functionality — Hermes execution** | `docs/vision/functionality/hermes-execution.md` | **the vision × Hermes map** — which vision files the execution kernel operationalizes, and where other tech (Pāṭala-owned + external interop) is needed. The bridge from strategy to execution. |
 | **Scholars** | `docs/vision/scholars/README.md` | the human layer — the contributors whose judgment is the moat, and their new role |
 | **Economics** | `docs/vision/economics/README.md` | the sustainability — scarce assets, funding channels, the flywheel |
 
