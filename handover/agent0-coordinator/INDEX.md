@@ -11,15 +11,26 @@
 - `handover/ORIENTATION-AGENT0.md` — this lane's orientation
 - `handover/CHECKPOINTS.md` — the shared execution map (governs the CP0–CP4 gates)
 - `VISION_AND_NAVIGATION.md` — the canonical vision (lives once, never duplicated)
+- `handover/agent0-coordinator/AGENT-ARCHITECTURE-VISION.md` — **the mature multi-agent architecture** (A0–A8: the production loop; only A0–A3 now). The canonical strategic reference for how the agent system grows.
+
+## The architecture (from AGENT-ARCHITECTURE-VISION.md)
+```
+A0 governance ──┬── A2 CORPUS COMPILER ──┬── A4 REVIEW ──┐
+                ├── A3 TRANSLATION FACTORY              │
+                └── A1 PHILOSOPHY ENGINE  ── A5 SYNTHESIS ── A6 PROJECTION
+                                                                   │
+                                                          A7 SCHOLAR NETWORK
+(+ A8 ACQUISITION later)
+```
+**Instantiate order:** A0–A3 now (A3 planned); A4 review next; A5/A6/A7/A8 when the substrate demands.
+**The loop:** A8 acquire → A2 normalize/prove → A3 produce drafts → A1 model scholarship → A4 review/adjudicate → A5 synthesize → A6 project → world; A7 injects humans; A0 governs.
+**Key principle:** "AI proposes ≠ Pāṭala asserts" becomes operational at A4 (epistemic separation — A1 must not review its own work).
 
 ## Current system state (2026-08-12)
-- **Registry:** 3 agents defined (agent0 coordinator, agent1 ML, agent2 L0).
-- **Orientations:** agent1 ✅ (process workflow w/ gates) · agent2 ✅ (just built, same template) · agent0 ✅ (this).
-- **Staleness checker:** `handover/check_staleness.py` — detects registry↔files, vision-copy, INDEX, gold resolution. **Target: 0 failures.**
-- **Agent 1 (CP4):** ARG-001 ✅ + ARG-002 ✅ consistent; ARG-003/004/005 not yet built. **Now to be built
-  with the philosophical-IR shape** (`ARGUMENT-IR-VISION.md`): Commitment (speaker/force), derivational
-  Proposition, ResearchQuestion, Attack/Defeat split, three-level SemanticAlignment for ARG-005.
-- **Agent 2 (CP1):** P0 35/35 PASS; P1–P5 Vidyut/Heritage witnesses in progress.
+- **Registry:** agents defined: agent0 (coordinator) · agent1 (philosophy/ML) · agent2 (CORPUS COMPILER — reframed from "L0 agent", 2026-08-12) · **agent3 (translation factory) — planned, scaffold when the auto_run supervisor is built.**
+- **Agent 2 (corpus compiler):** IPVV L0 63/63 FROZEN; P2 calibrated, P3 ranker rejected, P4 witness frozen; **translation-state ledger built** (`pipeline/corpus_state.py` + `/api/corpus/state`) — the control plane Agent 3 consumes.
+- **Agent 1 (CP4):** ARG-001..005 + vertical object v0; independent review of the 5 golds is the central gate.
+- **Worktrees:** per-agent worktree paths registered in AGENTS.yaml (`patala-agent1`, `patala-agent2`) — root-cause fix for INCIDENT-2026-08-12-01 (`handover/GIT-INCIDENTS.md`).
 
 ## The checkpoint ladder (real state)
 ```

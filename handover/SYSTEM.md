@@ -6,6 +6,12 @@ future agents) consistently, keeps the vision doc live, derives each agent's flo
 source of truth, and **detects stale docs automatically**. If you are an agent reading this: it tells
 you where your orientation comes from and how to keep the system honest.*
 
+> **THE ARCHITECTURE VISION:** `handover/agent0-coordinator/AGENT-ARCHITECTURE-VISION.md` — the mature
+> multi-agent stack (A0 governance → A2 corpus compiler · A3 translation factory · A1 philosophy engine
+> → A4 review · A5 synthesis · A6 projection · A7 scholar network · A8 acquisition). This SYSTEM.md is
+> the current implementation of A0; the vision is the destination. Only A0–A3 exist now; A4+ instantiate
+> when the substrate demands them.
+
 ---
 
 ## 0. WHY THIS EXISTS (the failure it fixes)
