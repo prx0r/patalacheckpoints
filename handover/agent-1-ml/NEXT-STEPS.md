@@ -70,7 +70,11 @@ Steps 1–3 can proceed concurrently where operationally possible. Step 0 is a h
 
 ---
 
-## 0. P0 — RESTORE A LEGITIMATE EXECUTION ENVIRONMENT
+## STEP 0 — RESTORE A LEGITIMATE EXECUTION ENVIRONMENT
+
+> **Naming note:** this step is called **STEP 0**, NOT "P0". "P0" in this repo is already the frozen
+> **L0 source-integrity proof** (`verify_l0.py` P0, 63/63 lossless — Agent 2's, finished). Do not let the
+> two collide; the worktree step is operational, the L0-P0 proof is epistemic.
 
 First resolve the worktree/branch problem (Axiom 11 / INCIDENT-2026-08-12-02) and reconcile the Agent 1
 commits (`62cf778`, `263b1ec`, `44c2bd2`, `eb095ae`) onto the `agent1` branch in the Agent 1 worktree.
