@@ -412,3 +412,23 @@ separate. Reviewer file: `/tmp/p2review_v2_blind.csv`; SECRET key `/tmp/p2review
 
 The result is stable across sample sizes (500 → 4600), so P2's calibration is solid. The blind review is
 the remaining human gate to VALIDATED_AGAINST_HUMAN_GOLD.
+
+## Agent L0 — alignment + dedup check vs Agent 1 (2026-08-12)
+
+Reviewed Agent 1's INDEX/NEXT-STEPS/SESSION + the ML docs for duplication + alignment.
+
+**Claim-numbering collision FIXED:** Agent 1's NEXT-STEPS reserves P-009 (Argument Gold) + P-010
+(DebateFrame). My L0 claims had taken P-009 (P2 morphology) + P-010 (P3 ranker). Renumbered mine to
+**P-011 (P2 calibrated witness)** + **P-012 (P3 ranker rejected)** so Agent 1's reserved numbers are free.
+⚠ Agent 1: use P-009/P-010 for Argument Gold/DebateFrame per NEXT-STEPS.
+
+**Stale path (for Agent 1):** your INDEX references `machinelearning/CLAIMS.md` but the canonical ledger
+is now `machinelearning/_ACTIVE/CLAIMS.md`. Fix the INDEX line 69.
+
+**No duplication found:** Agent 1 is on CP4 (Argument Gold, viruddha-via-graph) using C1/L2/L200 on the
+sanskritree mount; I'm on the L0 proof floor (P0/P2/P3/P4). They join at Passage ID / Proof ID / C1 ID.
+My `philproof.py` semantics fix (extraction_coverage ≠ lexical_sense) is intact (Agent 1's gold chain
+consumes it). No overlapping build targets.
+
+**Alignment confirmed:** Agent 1's `build_goldchain.py` consumes my `verify_l0` proofs (the handshake).
+Agent 1's argument gold grounds on `pt:passage:ipvv:chunk...` — the same passage IDs my L0 work keys on.

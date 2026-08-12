@@ -17,7 +17,7 @@ the honest state after the anti-theatre cleanup. Governed by `AGENTS-DOCTRINE.md
 |---|---|---|
 | **`benchmarks/v0/`** | frozen (MANIFEST/SCHEMA/SPLITS/METRICS) + ARG-GOLD-001 | ✅ REAL (the measurement substrate) |
 | **The Nyāya gate** (truth-engine, 680 LOC) | `NYAYA_GATE_CANDIDATE_v1`, deterministic | ✅ REAL, **UNWIRED** — the next build |
-| **L0 proofs** (`verify_l0.py`) | P0 harness, 11/35 pass, honest | ✅ REAL (surfaces real bugs) |
+| **L0 proofs** (`verify_l0.py`) | P0 harness, **V2/V3 35/35 PASS** (lossless, frozen), + Vidyut P2 witness + Heritage ensemble | ✅ REAL (see `docs/BUILD_NOTES_L0_P0.md` + `docs/P2-ENSEMBLE.md`) |
 | **L0 floor in gold-chain** | SOURCE_INTEGRITY PROVED, OPEN cruxes propagate | ✅ REAL |
 | **`cluster.py`** | real graph topology | 🔶 machine proposals, not accepted themes |
 | **`strength.py`** | BayesianEvidencePrimitive | 🔶 math; uncalibrated (no epistemic role yet) |

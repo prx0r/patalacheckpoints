@@ -87,14 +87,14 @@ task, human-grounded gold, and a reproducible evaluation show that it does what 
 
 ---
 
-## CLAIM P-009 — "Pāṭala can use two independent Sanskrit analyzers to identify high-risk morphological L0 records."
+## CLAIM P-011 — "Pāṭala can use two independent Sanskrit analyzers to identify high-risk morphological L0 records."
 - **STATUS:** SUPPORTED (calibrated machine witness) — NOT VALIDATED_AGAINST_HUMAN_GOLD (blind review pending)
-- **EVIDENCE:** 500-record stratified ensemble (Vidyut × Heritage): **control agreement 85%**, Vidyut
-  CONFLICT resolution 72% (most conflict is representation mismatch, not L0 error), double-conflict
-  ~8% (42 cases, the genuinely-review-worthy set), double-unanalyzed 0.2%, tool-error 0.2%.
+- **EVIDENCE:** 500/4600-record stratified ensemble (Vidyut × Heritage): **control agreement 84–85%**,
+  Vidyut CONFLICT resolution 72% (most conflict is representation mismatch, not L0 error), double-conflict
+  ~9% (the genuinely-review-worthy set), double-unanalyzed 0.2%, tool-error 0.2%.
   Reproducible: `verify_l0_p2.py` → `verify_l0_ensemble.py` → `build_p2_review.py`.
 - **CAVEAT:** "double-conflict" means both tools fail to support L0 — it does NOT mean the L0 analysis is
-  wrong. The blind human review (150 cases, built) will disaggregate REAL_L0_ERROR / GENUINE_AMBIGUITY /
+  wrong. The blind human review (160 cases, built) will disaggregate REAL_L0_ERROR / GENUINE_AMBIGUITY /
   COMPOUND_ISSUE / BOTH_TOOLS_LIMITED / EDITORIAL_ARTIFACT. That review is logged as non-blocking follow-up.
 - **DOES NOT CLAIM:** morphological correctness is proven; double-conflict implies L0 error.
 - **ADOPTION GATE:** frozen as a calibrated witness; the blind review (when a reviewer is available) is
@@ -102,7 +102,7 @@ task, human-grounded gold, and a reproducible evaluation show that it does what 
 
 ---
 
-## CLAIM P-010 — "The old lexical ranker (ranker.py) improves P3 lexical-sense selection."
+## CLAIM P-012 — "The old lexical ranker (ranker.py) improves P3 lexical-sense selection."
 - **STATUS:** NOT_ESTABLISHED (rejected as a witness on the current gold)
 - **EVIDENCE:** 21-fixture P3 gold eval: ranker.py top1=0.76, abstention=0.0, false-certainty=1.0. It
   does NOT beat the embedding/lexical-overlap baseline (top1=0.81, abstention=1.0, false-certainty=0.0),
