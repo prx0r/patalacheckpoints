@@ -54,6 +54,21 @@ Then, for context depth:
 
 Run the gate: `python3 machinelearning/theatre_check.py --status` — know every component's honest status.
 
+### ⚠️ WHERE THE SOURCES LIVE (crucial — verified 2026-08-12)
+The gold files reference `c1/`, `pilot/pilot_<chunk>_L2_read.md`, and `l200/` — but these are **NOT in the
+patala repo**. They live on the **sanskritree mount**:
+```
+C1 files:   /mnt/HC_Volume_106427611/sanskritree/translations/_stack/ipvv/c1/read/
+L2 reads:   /mnt/HC_Volume_106427611/sanskritree/translations/_stack/ipvv/pilot/   (pilot_V*_L2_read.md)
+L200:       /mnt/HC_Volume_106427611/sanskritree/translations/_stack/ipvv/l200/
+```
+Verified real files for the gold series (all passage_ids in `data/published/ipvv/index.json` resolve):
+- V2-O `c1_V2O-orderless-support.md` + `pilot_V2O_L2_read.md` → ARG-001/003
+- V2-L `c1_V2L-nonconstructed-I.md` + `pilot_V2L_L2_read.md` → ARG-002 (done)
+- V2-H `c1_V2H-vimarsa-paravak.md` + `pilot_V2H_L2_read.md` → ARG-004
+- V3-I `c1_V3I-difference-real.md` + `pilot_V3I_L2_read.md` → ARG-005
+**Do not waste time searching the repo for C1/L2 — they are only on the mount.**
+
 ---
 
 ## 4. WHERE YOU ARE NOW (verified 2026-08-12)
@@ -73,6 +88,14 @@ Run the gate: `python3 machinelearning/theatre_check.py --status` — know every
 - **`goldutil.py`** — `wrap_fixture` + `validate_gold` (the consistency validator).
 - **`emit_gold_fixtures.py`** — the `GOLDS` registry: add a builder → auto wrap+validate+write.
 - **`test_goldutil.py`** (26/26) — validator works, catches real defects.
+
+### Argument Gold status (verified 2026-08-12)
+- **ARG-001** (V2-O transcendental) ✅ · **ARG-002** (V2-L objection-reply) ✅ — both validate consistent.
+- **ARG-003/004/005 NOT yet built.** The real source content has been READ (see §3 mount paths):
+  - ARG-003 reductio = V2-O's ordered-support regress (if the support were ordered → infinite regress → ¬ordered).
+  - ARG-004 conceptual distinction = V2-H vimarśa (reflexive awareness) vs prakāśa (bare showing), the crystal contrast.
+  - ARG-005 ambiguous = V3-I difference-real (anirvācya "un-explainable" rejected; two defensible readings → the semantic-alignment case).
+- Passage ids resolve; the exact V2-O/V2-H/V3-I C1 + L2 content is now located and read.
 
 ### Test totals: 366 passing across 11 test files.
 
@@ -145,3 +168,52 @@ graph, before they can be sound. Build the gold first (the tooling is ready), va
 consistent, then test extraction against it blind — and only then does viruddha become a graph operation.
 Route everything through the frozen benchmark, never claim a result without a BenchmarkRun, and keep the
 honest vocabulary.**
+
+---
+
+## 9. THE GLOBAL VISION & THE TWO LANES (the north star — read before working)
+
+### The master object (the whole project is one derivation graph)
+```
+SOURCE → L0 → TRANSLATION → COMMENTARY(C1) → THEMES → ARGUMENT → SYNTHESIS(essay) → WORKBENCH → API/MCP
+```
+Every node points downward. Every node's status is honest: `DETERMINISTIC_FACT | MACHINE_PROPOSED |
+HUMAN_REVIEWED | ACCEPTED` — never blur them. See `machinelearning/_ACTIVE/dualagentvision.md` (the full
+endgame) + `dualagentvision-ADAPTED.md` (mapped to our real infra + the checkpoint-state map).
+
+### The checkpoint ladder (the north star's coordinate system)
+```
+CP0 BENCHMARK  CP1 SOURCE PROOF  CP2 RETRIEVAL  CP3 THEMES  CP4 ARGUMENT  CP5 VERIFICATION
+CP6 SYNTHESIS  CP7 WORKBENCH  CP8 ADVERSARIAL REVIEW  CP9 API/MCP  CP10 COLLAB  CP11 ECONOMIC  CP12 CROSS-CORPUS
+```
+**Current real state:** CP0 DONE · CP1 PARTIAL (L0 owns) · CP2 PARTIAL (not re-baselined) · CP3 PARTIAL
+(machine clusters, not accepted) · CP4 PARTIAL (gold being grown) · CP5–CP6 PARTIAL · CP7+ NOT STARTED.
+The vision gate per checkpoint is the missing piece everywhere — machinery exists, the *proof it works*
+often does not. Your Argument Gold work is the **CP4 gate**.
+
+### The two-agent division (your lane vs Agent 2 — do not drift)
+| | **Agent 2 — L0 / integration** | **YOU — Agent 1 / ML** |
+|---|---|---|
+| Direction | **vertical truth** | **horizontal + upward derivation** |
+| Lane | SOURCE → segmentation → morphology → syntax → alignment → translation proof | C1 → themes → arguments → claims → synthesis → review |
+| Question | *Is this reading licensed by the source?* | *Does this higher-order representation legitimately derive from the scholarly objects beneath it?* |
+| Checkpoint | **CP1** (PhilologicalProof) | **CP0, CP2, CP3, CP4** |
+| Output | `PhilologicalProof` objects | benchmark fixtures, gold, derivations |
+| Now doing | P0 35/35 PASS; P1–P5 Vidyut/Heritage witnesses | **Argument Gold (CP4)** — this is you |
+
+### The shared boundary (contractual — never fuzzy)
+They join ONLY at **Passage ID / TranslationDecision ID / PhilologicalProof ID / C1 ID**. Never filename,
+guessed locator, title, or fuzzy match (that fabricated-ID failure is exactly why this is contractual).
+Agent 2 certifies the source floor; you derive upward from it. You consume Agent 2's output via the
+shared `Ref` contract — you do NOT touch `data/corpus/`, `app/`, `lib/`, `pipeline/verify_l0.py`, or
+`philproof.py` internals.
+
+### The anti-weeds rule (from the vision — the standing test for ANY task)
+> **Every engineering task must name: (1) the checkpoint it advances, (2) the scholarly object it makes
+> more trustworthy, (3) the benchmark/proof that demonstrates success. If it can't answer all three,
+> don't build it.**
+
+### Agent 2's current focus (so you know what's theirs, not yours)
+Agent 2 owns CP1: `PhilologicalProof` v1 — finishing P0→P5 (P0 done, 35/35; P1 segmentation, P2 morphology
+via Vidyut + Heritage ensemble, P3 lexical sense, P4 alignment). Their handover:
+`handover/agent-2-integration/CHECKPOINTS-INTEGRATION.md`. **Stay out of CP1; they stay out of CP4.**

@@ -67,13 +67,22 @@ the case that trains viruddha to NOT manufacture a contradiction.
 
 ## 2. THE SOURCES TO DRAW FROM (real passages, already on disk)
 
-| Argument | Source C1 | Passage |
-|---|---|---|
-| ARG-001 transcendental | `c1_V2O-orderless-support.md` | `chunkV2-O-saptamo-vimarsa.md` |
-| ARG-002 objection-reply | `c1_V2L-nonconstructed-I.md` | `chunkV2-L-sastho-vimarsa-smrti-apohana.md` |
-| ARG-003 reductio | `c1_V2O-...` (the ordered-support regress) | `chunkV2-O-...` |
-| ARG-004 conceptual distinction | `c1_V2H-vimarsa-paravak.md` | `chunkV2-H-pancamo-vimarsa-k11-13.md` |
-| ARG-005 ambiguous | `c1_V3I-difference-real.md` | `chunkV3-I-kriya-caturtho-close-k20-21.md` |
+**IMPORTANT (verified 2026-08-12):** these C1 + L2 files are NOT in the patala repo. They live on the
+**sanskritree mount**. Absolute paths:
+```
+C1:   /mnt/HC_Volume_106427611/sanskritree/translations/_stack/ipvv/c1/read/
+L2:   /mnt/HC_Volume_106427611/sanskritree/translations/_stack/ipvv/pilot/   (pilot_V*_L2_read.md)
+L200: /mnt/HC_Volume_106427611/sanskritree/translations/_stack/ipvv/l200/
+```
+The passage_ids (`pt:passage:ipvv:chunk...`) resolve against `data/published/ipvv/index.json`.
+
+| Argument | Source C1 (on mount) | L2 read (on mount) | Passage id (resolves) |
+|---|---|---|---|
+| ARG-001 transcendental | `c1/read/c1_V2O-orderless-support.md` | `pilot/pilot_V2O_L2_read.md` | `chunkV2-O-saptamo-vimarsa.md` |
+| ARG-002 objection-reply | `c1/read/c1_V2L-nonconstructed-I.md` | `pilot/pilot_V2L_L2_read.md` | `chunkV2-L-sastho-vimarsa-smrti-apohana.md` |
+| ARG-003 reductio | `c1/read/c1_V2O-orderless-support.md` | `pilot/pilot_V2O_L2_read.md` | `chunkV2-O-saptamo-vimarsa.md` |
+| ARG-004 conceptual distinction | `c1/read/c1_V2H-vimarsa-paravak.md` | `pilot/pilot_V2H_L2_read.md` | `chunkV2-H-pancamo-vimarsa-k11-13.md` |
+| ARG-005 ambiguous | `c1/read/c1_V3I-difference-real.md` | `pilot/pilot_V3I_L2_read.md` | `chunkV3-I-kriya-caturtho-close-k20-21.md` |
 
 **Pattern for each:** read the C1 (the `> ` body), read the L2 (`pilot/pilot_<chunk>_L2_read.md`), extract
 the actual propositions, then hand-construct the gold object. **Do NOT automate extraction yet** — these
