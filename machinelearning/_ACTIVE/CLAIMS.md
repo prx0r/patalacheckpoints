@@ -211,6 +211,18 @@ EDITOR APPROVED · BEST · WINS.
 **The allowed words:** SUPPORTED BY · PASSED CHECK X · BENCHMARKED ON · MACHINE-PROPOSED · REVIEWED BY ·
 NO CONFLICT DETECTED.
 
+### The two validation labels (never blurred — applies project-wide)
+
+```
+ENGINEERING_VALIDATED  =  implementation / fixture behavior verified against a specified machine target
+SCHOLARLY_VALIDATED    =  the substantive target itself crossed independent scholarly review
+```
+
+**Invariant:** `ENGINEERING_VALIDATED ≠ SCHOLARLY_VALIDATED`. A synthetic fidelity suite that detects
+injected corruptions is `ENGINEERING_VALIDATED`; it does NOT make any argument `SCHOLARLY_VALIDATED`.
+Thread this vocabulary into `theatre_check.py`, benchmark/run reporting, and any status surface that uses
+ambiguous "validated" language. (Source: `handover/agent-1-ml/NEXT-STEPS.md`, `machinelearning/_ACTIVE/DEVPLAN.md` §4.)
+
 ---
 
 ## The three kinds of validity (a permanent principle)

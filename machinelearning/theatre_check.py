@@ -27,6 +27,13 @@ BANNED = ["PROVED", "TRUTH", "VERIFIED SEMANTICALLY", "CORRECT", "EDITOR APPROVE
 FIELDS = ["name", "input", "output", "authority", "gold", "baseline", "metric",
           "failure_mode", "adoption_gate"]
 
+# The two validation labels must never be blurred (NEXT-STEPS.md / DEVPLAN.md §4):
+#   ENGINEERING_VALIDATED = implementation/fixture behavior verified against a specified machine target
+#   SCHOLARLY_VALIDATED   = the substantive target itself crossed independent scholarly review
+VALIDATION_INVARIANT = ("ENGINEERING_VALIDATED = implementation/fixture behavior verified; "
+                        "SCHOLARLY_VALIDATED = substantive target independently reviewed. "
+                        "Never treat ENGINEERING_VALIDATED as SCHOLARLY_VALIDATED.")
+
 
 def banned_words_in(text: str) -> list[str]:
     hits = [w for w in BANNED if re.search(rf"\b{re.escape(w)}\b", text, re.IGNORECASE)]
@@ -117,7 +124,10 @@ def main():
         for name, contract in KNOWN_COMPONENTS.items():
             r = check_component(name, contract)
             print(f"{name:12} {r['status']:26} {r['missing_fields']}")
-        print("\nNote: CAPABILITY_CANDIDATE still needs gold+baseline+blind eval to promote to VALIDATED.")
+        print("\nNote: CAPABILITY_CANDIDATE still needs gold+baseline+blind eval to promote.")
+        print("Validation labels are distinct: "
+              "ENGINEERING_VALIDATED (behavior verified vs machine target) != "
+              "SCHOLARLY_VALIDATED (target independently reviewed).")
         return
 
     target = None
