@@ -45,6 +45,7 @@ here and in `docs/INDEX.md`.*
 |---|---|
 | **`docs/vision/CORE-BIBLE.md`** | **THE CORE BIBLE** — one vision chunked into 6 zoomable layers (sentence → paragraph → graph → checkpoints → domain lenses → specs/gold/data). The top-level gate: read this, then zoom into any numbered vision below. |
 | `machinelearning/_ACTIVE/PATALA-ENGINE-ROADMAP-12MO.md` | The 12-month philosophy-engine roadmap (the strategic reference; gold-first build order + 8 benchmark tasks + crux algorithm). |
+| **`docs/vision/functionality/research/2026-08-12/`** | **Product research-and-build pack (2026-08-12)** — 5 projects (Factory · Benchmarks · Audit · Review · Workbench) + the shared reuse/build doctrine + architecture + source index. The research-under-the-vision for the functionality lens: what Pāṭala owns vs reuses, the build order, and the error taxonomy. Anchor: `prx0r/patala` commit `619b7c8`. Maps: 03→Vision 06, 04→Vision 07, 02→Vision 13, 00→Vision 01/Hermes A3, 01→DEVPLAN §5. |
 
 ## The three lenses (the human/tool/value folders)
 

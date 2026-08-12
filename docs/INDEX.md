@@ -67,6 +67,7 @@ stale ones as `[ARCHIVED]` so a new agent is never confused. If it's not here, i
 | **API reference (OpenAPI)** | `docs/openapi.yaml` | repo `docs/` |
 | **API docs (guide + endpoint index)** | `docs/api/README.md` | repo `docs/api/` |
 | **MCP tool mapping** | `docs/api/mcp.md` | repo `docs/api/` |
+| **Product research & build pack (2026-08-12)** | `docs/vision/functionality/research/2026-08-12/README.md` (Factory · Benchmarks · Audit · Review · Workbench + reuse/build doctrine) | repo `docs/vision/functionality/research/` |
 
 ---
 

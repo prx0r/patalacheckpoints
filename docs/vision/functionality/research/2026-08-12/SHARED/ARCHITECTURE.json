@@ -1,0 +1,46 @@
+{
+  "date": "2026-08-12",
+  "doctrine_commit": "619b7c8ff2a94e2d09b7cd0c63f24cce3230e950",
+  "build_order": [
+    "factory",
+    "benchmarks+audit",
+    "review",
+    "workbench"
+  ],
+  "invariants": [
+    "substrate_readiness != semantic_capability_readiness",
+    "machine_proposal != accepted_scholarship",
+    "calibrated_claim_requires_held_out_expert_gold",
+    "every_canonical_ref_resolves",
+    "review_is_event_history_not_overwrite"
+  ],
+  "recommended_reuse": {
+    "factory": [
+      "Vidyut",
+      "Heritage",
+      "SanskritShala"
+    ],
+    "benchmarks": [
+      "Inspect AI",
+      "mt-metrics-eval",
+      "COMET/xCOMET"
+    ],
+    "audit": [
+      "xCOMET",
+      "MetricX",
+      "MQM patterns"
+    ],
+    "review": [
+      "OpenReview",
+      "CLAIMCHECK",
+      "CLAIM-BENCH",
+      "xAIF/oAMF"
+    ],
+    "workbench": [
+      "INCEpTION",
+      "Hypothesis",
+      "ORKG",
+      "Recogito"
+    ]
+  }
+}

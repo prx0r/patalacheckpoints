@@ -64,6 +64,27 @@ polished. Functionality serves the scholarly core; it never replaces it.
 
 ---
 
+## THE RESEARCH-AND-BUILD PACK (how to build these projections)
+
+`docs/vision/functionality/research/2026-08-12/` — the product research under the functionality lens:
+**5 projects (Factory · Benchmarks · Audit · Review · Workbench)** + the shared **reuse/build doctrine**
+(what Pāṭala owns vs reuses, the build order, the error taxonomy, run provenance, fail-closed policy)
++ `SHARED/ARCHITECTURE.json` + the full source index.
+
+Each project's `RESEARCH_AND_BUILD.md` gives the concrete, honest build path for one projection above:
+- **00 Factory** → the translation lab (Vision 01 / Hermes A3): `RAW_SANSKRIT → auditable L0`.
+- **01 Benchmarks** → the T1–T4 measurement layer (CP0): the Pāṭala error taxonomy + Inspect adapter + split policy.
+- **02 Audit** → the translation/comparison/term audit surface (Vision 13): deterministic → proposed → calibrated `AuditFinding`.
+- **03 Review** → **Pāṭala Review** (Vision 06): the research compiler + executable corrections.
+- **04 Workbench** → **The New Scholar** (Vision 07): research created inside the evidence graph.
+
+The doctrine mirrors `docs/vision/functionality/hermes-execution.md`: **Pāṭala owns the epistemic graph,
+source/proof floor, review engine, workbench UI, MCP layer, and executable-corrections dataset; it
+reuses (not rebuilds) morphology, MT metrics, eval execution, annotation, review workflow, and argument
+interchange.** Read the pack before building any of these projections.
+
+---
+
 ## THE ONE-SENTENCE CARRY-FORWARD
 
 **Pāṭala's functionality is one scholarly core rendered as many projections — the machinery (factory,
