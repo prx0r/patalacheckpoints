@@ -26,13 +26,22 @@ read **every** doc in **order**, each leaving a real trace (a key-point), before
 There is no "skim." There is no partial. The gate does not pass until the chain is complete.
 
 ```
+# 0. START a fresh agent-instance session (REQUIRED for a new agent — otherwise NO read counts):
+#    If --begin refuses because an old session exists, run --reset agent1 first.
+python3 handover/context_gate.py --begin agent1
 # 1. See your full chain and what remains:
 python3 handover/context_gate.py --status agent1
-# 2. For EACH doc, in order: read it, then leave a trace of what you actually learned:
+# 2. For EACH doc, in order: actually OPEN and read it, then leave a trace of what you learned:
 python3 handover/context_gate.py --confirm <id> --by agent1 -k "<the key point you learned>"
 # 3. You may only build once:
-python3 handover/context_gate.py --status agent1    # must print CONTEXT GATE: PASS
+python3 handover/context_gate.py --status agent1    # must print CONTEXT GATE: PASS (THIS session)
 ```
+
+**A `--status` that shows `✓` on every doc is NOT PASS.** Because the read-record is session-bound, traces
+left by a previous agent instance render as `⬒ INHERITED` and do NOT count. The only thing that passes the
+gate is re-reading each doc NOW and re-confirming it in THIS instance's session. If you see 45 `✓` without
+running `--begin`, you are looking at inherited traces — you have read nothing. This is the anti-hallucination
+gate: *a context you can't demonstrate you read in this session is a context you don't have.*
 
 The gate is **ordered** (you can only confirm a doc after all the ones before it) and **mechanical** (a
 doc counts as read only when it leaves a real key-point, ≥20 chars — not a checkmark). This is the
