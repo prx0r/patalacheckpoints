@@ -252,3 +252,81 @@ updated to SUPPORTED(V2/V3)/PARTIAL(full).
    technical terms + NO-UNIQUE-SENSE abstention cases), then baseline evaluation (most-common gloss /
    local L0 gloss / embedding) before ranker.py becomes a non-authoritative witness.
 3. P4 alignment — same discipline: held-out benchmark from manually checked L0 pairs before promotion.
+
+## Agent L0 — P2 ensemble validation in progress (2026-08-12)
+
+Built `pipeline/verify_l0_ensemble.py` — the Vidyut×Heritage independent-witness calibration.
+Design (per the cross-layer review): run Heritage over all Vidyut CONFLICT + UNANALYZED + a stratified
+control (~500 CONFIRMED, ~500 AMBIGUOUS_SUPPORTED), producing a normalized disagreement taxonomy
+(V+/H+, V-/H+, V+/H-, V-/H-, V?/H?), relation classes (EXACT_LEMMA_AGREEMENT / STEM_EQUIVALENT /
+COMPOUND_SEGMENTATION_DIFFERENCE / NO_ANALYSIS / TOOL_ERROR), and a review queue.
+
+Artifacts: `p2_ensemble_report.json`, `p2_ensemble_confusion.csv`, `p2_disagreements.jsonl` (streamed),
+`p2_review_queue.jsonl`, `docs/P2-ENSEMBLE.md` (design + interpretation framework).
+
+**Key learning (tooling):** Heritage web API is rate-limited (~1-2s/call) → a full 42k-record run is
+hours. The script now streams output incrementally and supports `--limit` for sampling. Sampled run in
+progress. Honest status labels only (SUPPORTED_BY_ENSEMBLE / SUPPORTED_BY_SINGLE_WITNESS /
+CONFLICTING_WITNESSES / UNANALYZED) — never PROVED.
+
+**Files:** `pipeline/verify_l0_ensemble.py`, `docs/P2-ENSEMBLE.md`.
+
+**Next:** blind manual review of 25-50 cases per major cell once the sample completes.
+
+## Agent L0 — P2 ENSEMBLE COMPLETE (sampled, 500 records) (2026-08-12)
+
+**Result (Vidyut × Heritage, 500 records: 150 CONFLICT + 150 UNANALYZED + 100 CONFIRMED + 100 AMBIGUOUS_SUPPORTED):**
+- **CONTROL AGREEMENT RATE 85%** (170/200) — instruments validated.
+- **CONFLICT RESOLUTION RATE 72%** — most Vidyut CONFLICT resolves to Heritage support (representation mismatch, NOT L0 error).
+- **DOUBLE-CONFLICT RATE 28%** — the genuinely contested ~8.4% of all records.
+- **DOUBLE-UNANALYZED 0.2%**, **TOOL ERROR 0.2%**.
+
+**Conclusion:** the Vidyut 29.5% CONFLICT is heavily inflated by representation mismatch (72% resolves). Real philological dispute signal ≈ 8.4% (double-conflict). Vidyut's coverage gap is tiny. **P2 is a useful witness.**
+
+**Artifacts:** `pipeline/verify_l0_ensemble.py`, `pipeline/analyze_ensemble.py`, `docs/P2-ENSEMBLE.md`,
+`/tmp/ens_s2/{p2_ensemble_report.json, p2_ensemble_confusion.csv, p2_disagreements.jsonl, p2_review_queue.jsonl}`.
+
+**Tooling lesson:** Heritage web API is rate-limited (~1-2s/call). The ensemble streams incrementally and
+samples; a full 42k-record run is hours (not worth it — the sampled 500 already gives the signal).
+
+**Next:** blind manual review of 25-50 cases per major cell (DOUBLE_CONFLICT, V+/H-, V-/H+) to confirm
+"agreement ≈ correctness." Then, per the review: P3 lexical (build gold + baselines first, audit
+ranker.py as non-authoritative witness), then P4 alignment benchmark. Do NOT promote MORPHOLOGY to PROVED.
+
+## Agent L0 — blind P2 manual review workflow built (2026-08-12)
+
+**Built the blind review pipeline** (the methodological lock-down before P2 promotion):
+- `pipeline/build_p2_review.py` — samples the major ensemble cells, enriches with L0 source context +
+  gloss + locator, emits a review file with **machine verdicts concealed** (reviewer sees only evidence).
+- 150 blind cases: DOUBLE_CONFLICT 40, VIDYUT_MISMATCH 40, HERITAGE_MISMATCH 30, BOTH_SUPPORT 40 (control).
+- Reviewer CSV: `/tmp/p2review_blind.csv` — reviewer fills `human_analysis` (SUPPORTED |
+  PLAUSIBLE_ALTERNATIVE | CONFLICT | CANNOT_DECIDE) + preferred_lemma + material_to_translation + reason.
+- `pipeline/score_p2_review.py` — joins completed reviews against concealed machine verdicts → the
+  machine×human validation matrix (correct/wrong/unclear per cell).
+
+**Status labels held:** P2 = CALIBRATED_MACHINE_WITNESS (NOT VALIDATED_AGAINST_HUMAN_GOLD until review
+done). The "8.4% dispute" is an ESTIMATED candidate-dispute rate, not "L0 is wrong."
+
+**Next:** fill the 150 review cases (human), compute the matrix, then freeze P2 as CLAIM P-002, then P3
+lexical gold. Background ensemble (larger) running to enrich the rare V+/H- cell.
+
+## Agent L0 — P3 lexical-sense gold v0 built (2026-08-12)
+
+Built `docs/p3_lexical_gold_v0.json` (21 fixtures, SINGLE_EDITOR_REVIEW pending) via
+`pipeline/build_p3_lexical_gold.py`:
+- 12 technical lemmas: saṃvid, vimarśa, māyā, prakāśa, pratibhā, svātantrya, pramātṛ, krama, bheda,
+  tattva, kāla, ābhāsa.
+- 4 NO_UNIQUE_SENSE abstain fixtures (the correct answer is OPEN).
+- Preferred sense is derived from the actual L0 gloss (`sense_for_gloss`) so fixtures are coherent
+  (no preferred/gloss mismatch).
+
+**Honest finding on stratification:** the target (20/20/15/5) is NOT met — the real L0 gloss layer is
+dominated by single dominant senses per term. True polysemy lives at the L2/semantic layer, not L0.
+So the gold undershoots to 21 (12/4/1/4). This is recorded honestly rather than padding with invented
+contexts. The ranker benchmark will note this as a coverage caveat.
+
+**Status:** ranker.py remains a CANDIDATE RANKER (NOT a P3 verifier). Next: SINGLE_EDITOR review of the
+21 fixtures → then baselines (most-common gloss / local L0 gloss / embedding) → then evaluate ranker.py
+(top-1, top-k, MRR, abstention quality, technical-term accuracy, false-certainty rate).
+
+Background ensemble (larger, to enrich V+/H- cell) still running.

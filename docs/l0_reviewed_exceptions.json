@@ -1,0 +1,128 @@
+[
+  {
+    "chunk": "chunkV2-B-sahajavimarsa-prakasavimarsa",
+    "start": 30375,
+    "end": 30432,
+    "class": "REVIEWED_IRREGULAR",
+    "reason": "irregular editorial/gloss structure (reviewed; not a token)"
+  },
+  {
+    "chunk": "chunkV2-B-sahajavimarsa-prakasavimarsa",
+    "start": 76367,
+    "end": 76397,
+    "class": "REVIEWED_IRREGULAR",
+    "reason": "irregular editorial/gloss structure (reviewed; not a token)"
+  },
+  {
+    "chunk": "chunkV2-C-vistanti-ajadapramatrsiddhi",
+    "start": 81434,
+    "end": 81453,
+    "class": "REVIEWED_IRREGULAR",
+    "reason": "irregular editorial/gloss structure (reviewed; not a token)"
+  },
+  {
+    "chunk": "chunkV2-D-pancamo-vimarsa-jnanasakti",
+    "start": 51666,
+    "end": 51728,
+    "class": "REVIEWED_IRREGULAR",
+    "reason": "irregular editorial/gloss structure (reviewed; not a token)"
+  },
+  {
+    "chunk": "chunkV2-E-pancamo-jnanasakti-k5",
+    "start": 1151,
+    "end": 1162,
+    "class": "REVIEWED_IRREGULAR",
+    "reason": "irregular editorial/gloss structure (reviewed; not a token)"
+  },
+  {
+    "chunk": "chunkV2-E-pancamo-jnanasakti-k5",
+    "start": 105145,
+    "end": 105205,
+    "class": "REVIEWED_IRREGULAR",
+    "reason": "irregular editorial/gloss structure (reviewed; not a token)"
+  },
+  {
+    "chunk": "chunkV2-G-pancamo-vimarsa-k7-10",
+    "start": 81833,
+    "end": 81867,
+    "class": "REVIEWED_IRREGULAR",
+    "reason": "irregular editorial/gloss structure (reviewed; not a token)"
+  },
+  {
+    "chunk": "chunkV2-H-pancamo-vimarsa-k11-13",
+    "start": 69721,
+    "end": 69765,
+    "class": "REVIEWED_IRREGULAR",
+    "reason": "irregular editorial/gloss structure (reviewed; not a token)"
+  },
+  {
+    "chunk": "chunkV2-J-pancamo-vimarsa-k19-20",
+    "start": 91491,
+    "end": 91558,
+    "class": "REVIEWED_IRREGULAR",
+    "reason": "irregular editorial/gloss structure (reviewed; not a token)"
+  },
+  {
+    "chunk": "chunkV2-K-pancamo-vimarsa-k20-21",
+    "start": 79186,
+    "end": 79213,
+    "class": "REVIEWED_IRREGULAR",
+    "reason": "irregular editorial/gloss structure (reviewed; not a token)"
+  },
+  {
+    "chunk": "chunkV2-K-pancamo-vimarsa-k20-21",
+    "start": 119840,
+    "end": 120112,
+    "class": "REVIEWED_IRREGULAR",
+    "reason": "irregular editorial/gloss structure (reviewed; not a token)"
+  },
+  {
+    "chunk": "chunkV2-M-sastho-vimarsa-k6-7",
+    "start": 6217,
+    "end": 6235,
+    "class": "REVIEWED_IRREGULAR",
+    "reason": "irregular editorial/gloss structure (reviewed; not a token)"
+  },
+  {
+    "chunk": "chunkV2-M-sastho-vimarsa-k6-7",
+    "start": 55538,
+    "end": 55557,
+    "class": "REVIEWED_IRREGULAR",
+    "reason": "irregular editorial/gloss structure (reviewed; not a token)"
+  },
+  {
+    "chunk": "chunkV3-B-kriya-dvitiyo-k1-7",
+    "start": 136299,
+    "end": 136325,
+    "class": "REVIEWED_IRREGULAR",
+    "reason": "irregular editorial/gloss structure (reviewed; not a token)"
+  },
+  {
+    "chunk": "chunkV3-B-kriya-dvitiyo-k1-7",
+    "start": 167936,
+    "end": 167955,
+    "class": "REVIEWED_IRREGULAR",
+    "reason": "irregular editorial/gloss structure (reviewed; not a token)"
+  },
+  {
+    "chunk": "chunkV3-B-kriya-dvitiyo-k1-7",
+    "start": 184826,
+    "end": 184844,
+    "class": "REVIEWED_IRREGULAR",
+    "reason": "irregular editorial/gloss structure (reviewed; not a token)"
+  },
+  {
+    "chunk": "chunkV3-C-kriya-trtiyo-k1-2",
+    "start": 149978,
+    "end": 150058,
+    "class": "REVIEWED_IRREGULAR",
+    "reason": "irregular editorial/gloss structure (reviewed; not a token)"
+  },
+  {
+    "chunk": "chunkV3-O-tattva-trtiyo-k9-15",
+    "start": 94279,
+    "end": 94300,
+    "class": "REVIEWED_IRREGULAR",
+    "reason": "irregular editorial/gloss structure (reviewed; not a token)"
+  }
+]

@@ -1,0 +1,437 @@
+{
+  "benchmark": "P3-LEXICAL-SENSE-v0",
+  "description": "lexical-sense gold: does the ranker identify the accepted sense + abstain when OPEN?",
+  "stratification": {
+    "easy": 12,
+    "technical_stable": 4,
+    "polysemous": 1,
+    "no_unique_sense": 4
+  },
+  "fixtures": [
+    {
+      "surface": "'the-consciousness",
+      "lemma": "saṃvid",
+      "passage_locator": "chunkV2-G-pancamo-vimarsa-k7-10:L66",
+      "candidate_senses": [
+        "consciousness",
+        "awareness",
+        "knowledge"
+      ],
+      "preferred": "consciousness",
+      "evidence": {
+        "local_context": [
+          "'the-consciousness"
+        ],
+        "same_work_parallels": [],
+        "lexical_sources": [],
+        "commentary": []
+      },
+      "review_state": "MACHINE_DRAFT"
+    },
+    {
+      "surface": "the-reflexive-awareness",
+      "lemma": "vimarśa",
+      "passage_locator": "chunkV2-J-pancamo-vimarsa-k19-20:L26",
+      "candidate_senses": [
+        "reflexive-awareness",
+        "rehearsal/reconsideration",
+        "conceptual-apprehension"
+      ],
+      "preferred": "reflexive-awareness",
+      "evidence": {
+        "local_context": [
+          "the-reflexive-awareness"
+        ],
+        "same_work_parallels": [],
+        "lexical_sources": [],
+        "commentary": []
+      },
+      "review_state": "MACHINE_DRAFT"
+    },
+    {
+      "surface": "the-māyā",
+      "lemma": "māyā",
+      "passage_locator": "chunkV3-K-agama-prathamo-k8-11-close:L16",
+      "candidate_senses": [
+        "māyā-power",
+        "illusion",
+        "creative-power"
+      ],
+      "preferred": "māyā-power",
+      "evidence": {
+        "local_context": [
+          "the-māyā"
+        ],
+        "same_work_parallels": [],
+        "lexical_sources": [],
+        "commentary": []
+      },
+      "review_state": "MACHINE_DRAFT"
+    },
+    {
+      "surface": "the-manifestation",
+      "lemma": "prakāśa",
+      "passage_locator": "chunkV2-D-pancamo-vimarsa-jnanasakti:L182",
+      "candidate_senses": [
+        "manifestation",
+        "light",
+        "consciousness-luminosity",
+        "revealing"
+      ],
+      "preferred": "manifestation",
+      "evidence": {
+        "local_context": [
+          "the-manifestation"
+        ],
+        "same_work_parallels": [],
+        "lexical_sources": [],
+        "commentary": []
+      },
+      "review_state": "MACHINE_DRAFT"
+    },
+    {
+      "surface": "the-pratibhā",
+      "lemma": "pratibhā",
+      "passage_locator": "chunkV2-O-saptamo-vimarsa:L42",
+      "candidate_senses": [
+        "flashing-intuition",
+        "inspiration",
+        "appearance"
+      ],
+      "preferred": "flashing-intuition",
+      "evidence": {
+        "local_context": [
+          "the-pratibhā"
+        ],
+        "same_work_parallels": [],
+        "lexical_sources": [],
+        "commentary": []
+      },
+      "review_state": "MACHINE_DRAFT"
+    },
+    {
+      "surface": "the-distinction",
+      "lemma": "bheda",
+      "passage_locator": "chunkV3-H-kriya-caturtho-k12-19:L23",
+      "candidate_senses": [
+        "distinction",
+        "difference",
+        "split"
+      ],
+      "preferred": "distinction",
+      "evidence": {
+        "local_context": [
+          "the-distinction"
+        ],
+        "same_work_parallels": [],
+        "lexical_sources": [],
+        "commentary": []
+      },
+      "review_state": "MACHINE_DRAFT"
+    },
+    {
+      "surface": "the-freedom",
+      "lemma": "svātantrya",
+      "passage_locator": "chunkV3-C-kriya-trtiyo-k1-2:L80",
+      "candidate_senses": [
+        "sovereign-freedom",
+        "independence",
+        "self-dependence"
+      ],
+      "preferred": "sovereign-freedom",
+      "evidence": {
+        "local_context": [
+          "the-freedom"
+        ],
+        "same_work_parallels": [],
+        "lexical_sources": [],
+        "commentary": []
+      },
+      "review_state": "MACHINE_DRAFT"
+    },
+    {
+      "surface": "the-time",
+      "lemma": "kāla",
+      "passage_locator": "chunkV2-I-pancamo-vimarsa-k14-19:L259",
+      "candidate_senses": [
+        "time",
+        "period",
+        "Kāla-principle"
+      ],
+      "preferred": "time",
+      "evidence": {
+        "local_context": [
+          "the-time"
+        ],
+        "same_work_parallels": [],
+        "lexical_sources": [],
+        "commentary": []
+      },
+      "review_state": "MACHINE_DRAFT"
+    },
+    {
+      "surface": "the-order",
+      "lemma": "krama",
+      "passage_locator": "chunkV2-M-sastho-vimarsa-k6-7:L40",
+      "candidate_senses": [
+        "order",
+        "sequence",
+        "succession"
+      ],
+      "preferred": "order",
+      "evidence": {
+        "local_context": [
+          "the-order"
+        ],
+        "same_work_parallels": [],
+        "lexical_sources": [],
+        "commentary": []
+      },
+      "review_state": "MACHINE_DRAFT"
+    },
+    {
+      "surface": "the-appearance",
+      "lemma": "ābhāsa",
+      "passage_locator": "chunkV2-R-astamo-vimarsa:L138",
+      "candidate_senses": [
+        "appearance",
+        "manifestation",
+        "image-reflection"
+      ],
+      "preferred": "appearance",
+      "evidence": {
+        "local_context": [
+          "the-appearance"
+        ],
+        "same_work_parallels": [],
+        "lexical_sources": [],
+        "commentary": []
+      },
+      "review_state": "MACHINE_DRAFT"
+    },
+    {
+      "surface": "the-knower",
+      "lemma": "pramātṛ",
+      "passage_locator": "chunkV2-L-sastho-vimarsa-smrti-apohana:L112",
+      "candidate_senses": [
+        "the-knower",
+        "subject-of-cognition",
+        "agent"
+      ],
+      "preferred": "the-knower",
+      "evidence": {
+        "local_context": [
+          "the-knower"
+        ],
+        "same_work_parallels": [],
+        "lexical_sources": [],
+        "commentary": []
+      },
+      "review_state": "MACHINE_DRAFT"
+    },
+    {
+      "surface": "that",
+      "lemma": "tattva",
+      "passage_locator": "chunkV2-A-caturtho-vimarsa-aham:L568",
+      "candidate_senses": [
+        "reality",
+        "principle",
+        "category",
+        "essence"
+      ],
+      "preferred": "reality",
+      "evidence": {
+        "local_context": [
+          "that"
+        ],
+        "same_work_parallels": [],
+        "lexical_sources": [],
+        "commentary": []
+      },
+      "review_state": "MACHINE_DRAFT"
+    },
+    {
+      "surface": "the-rehearsal",
+      "lemma": "vimarśa",
+      "passage_locator": "chunkV2-A-caturtho-vimarsa-aham:L878",
+      "candidate_senses": [
+        "rehearsal/reconsideration",
+        "reflexive-awareness",
+        "conceptual-apprehension"
+      ],
+      "preferred": "rehearsal/reconsideration",
+      "evidence": {
+        "local_context": [
+          "the-rehearsal"
+        ],
+        "same_work_parallels": [],
+        "lexical_sources": [],
+        "commentary": []
+      },
+      "review_state": "MACHINE_DRAFT"
+    },
+    {
+      "surface": "the-manifestation",
+      "lemma": "pratibhā",
+      "passage_locator": "chunkV2-I-pancamo-vimarsa-k14-19:L91",
+      "candidate_senses": [
+        "manifestation",
+        "flashing-intuition",
+        "inspiration",
+        "appearance"
+      ],
+      "preferred": "manifestation",
+      "evidence": {
+        "local_context": [
+          "the-manifestation"
+        ],
+        "same_work_parallels": [],
+        "lexical_sources": [],
+        "commentary": []
+      },
+      "review_state": "MACHINE_DRAFT"
+    },
+    {
+      "surface": "the-cognition",
+      "lemma": "saṃvid",
+      "passage_locator": "chunkV2-B-sahajavimarsa-prakasavimarsa:L71",
+      "candidate_senses": [
+        "cognition",
+        "consciousness",
+        "awareness",
+        "knowledge"
+      ],
+      "preferred": "cognition",
+      "evidence": {
+        "local_context": [
+          "the-cognition"
+        ],
+        "same_work_parallels": [],
+        "lexical_sources": [],
+        "commentary": []
+      },
+      "review_state": "MACHINE_DRAFT"
+    },
+    {
+      "surface": "the-difference",
+      "lemma": "bheda",
+      "passage_locator": "chunkV2-I-pancamo-vimarsa-k14-19:L262",
+      "candidate_senses": [
+        "difference",
+        "distinction",
+        "split"
+      ],
+      "preferred": "difference",
+      "evidence": {
+        "local_context": [
+          "the-difference"
+        ],
+        "same_work_parallels": [],
+        "lexical_sources": [],
+        "commentary": []
+      },
+      "review_state": "MACHINE_DRAFT"
+    },
+    {
+      "surface": "that",
+      "lemma": "tattva",
+      "passage_locator": "chunkV2-A-caturtho-vimarsa-aham:L568",
+      "candidate_senses": [
+        "principle",
+        "reality",
+        "category",
+        "essence"
+      ],
+      "preferred": "principle",
+      "evidence": {
+        "local_context": [
+          "that"
+        ],
+        "same_work_parallels": [],
+        "lexical_sources": [],
+        "commentary": []
+      },
+      "review_state": "MACHINE_DRAFT"
+    },
+    {
+      "surface": "the-rehearsal",
+      "lemma": "vimarśa",
+      "passage_locator": "chunkV2-A-caturtho-vimarsa-aham:L878",
+      "candidate_senses": [
+        "reflexive-awareness",
+        "rehearsal/reconsideration",
+        "conceptual-apprehension"
+      ],
+      "preferred": null,
+      "evidence": {
+        "local_context": [
+          "the-rehearsal"
+        ],
+        "same_work_parallels": [],
+        "lexical_sources": [],
+        "commentary": []
+      },
+      "review_state": "MACHINE_DRAFT"
+    },
+    {
+      "surface": "the-pratibhā",
+      "lemma": "pratibhā",
+      "passage_locator": "chunkV2-O-saptamo-vimarsa:L32",
+      "candidate_senses": [
+        "flashing-intuition",
+        "inspiration",
+        "appearance"
+      ],
+      "preferred": null,
+      "evidence": {
+        "local_context": [
+          "the-pratibhā"
+        ],
+        "same_work_parallels": [],
+        "lexical_sources": [],
+        "commentary": []
+      },
+      "review_state": "MACHINE_DRAFT"
+    },
+    {
+      "surface": "the-māyā",
+      "lemma": "māyā",
+      "passage_locator": "chunkV3-K-agama-prathamo-k8-11-close:L16",
+      "candidate_senses": [
+        "māyā-power",
+        "illusion",
+        "creative-power"
+      ],
+      "preferred": null,
+      "evidence": {
+        "local_context": [
+          "the-māyā"
+        ],
+        "same_work_parallels": [],
+        "lexical_sources": [],
+        "commentary": []
+      },
+      "review_state": "MACHINE_DRAFT"
+    },
+    {
+      "surface": "the-order",
+      "lemma": "krama",
+      "passage_locator": "chunkV2-M-sastho-vimarsa-k6-7:L40",
+      "candidate_senses": [
+        "order",
+        "sequence",
+        "succession"
+      ],
+      "preferred": null,
+      "evidence": {
+        "local_context": [
+          "the-order"
+        ],
+        "same_work_parallels": [],
+        "lexical_sources": [],
+        "commentary": []
+      },
+      "review_state": "MACHINE_DRAFT"
+    }
+  ]
+}

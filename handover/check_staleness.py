@@ -55,6 +55,26 @@ def check_path(p: str, what: str) -> None:
         fail(f"{what} missing: {os.path.relpath(p, ROOT)}")
 
 
+def _axiom_essence(axiom: str) -> str:
+    """A short distinctive phrase per tone axiom that an orientation must echo to count as adopted.
+
+    Map each axiom to its load-bearing phrase (the anti-theatre core). This lets orientations
+    phrase it in their own words while still proving they adopted the substance.
+    """
+    mappings = {
+        "BE BRUTALLY HONEST": "honest about what is real",
+        "RETRACT OVERCLAIMS": "retract",
+        "NAME THE FAILURE MODE": "failure mode",
+        "SEPARATE REAL FROM THEATER": "real from theater",
+        "NO HYPE": "not scholarship",
+        "PRECISION OVER COVERAGE": "abstain",
+    }
+    for label, phrase in mappings.items():
+        if label in axiom:
+            return phrase.lower()
+    return axiom.replace("—", " ").lower()
+
+
 def main() -> int:
     print("PĀṬALA AGENT-SYSTEM STALENESS CHECK\n")
 
@@ -86,6 +106,9 @@ def main() -> int:
 
     # 4+5. each orientation mentions its own question/checkpoints, does not copy the vision
     print("\n== orientations (derived, not copied) ==")
+    # the doctrine axioms every orientation must adopt
+    doctrine = reg.get("doctrine", {})
+    tone_axioms = doctrine.get("tone_axioms", [])
     for aid, a in agents.items():
         ori = os.path.join(ROOT, a["orientation"])
         if not os.path.exists(ori):
@@ -107,6 +130,13 @@ def main() -> int:
         # 5. does not copy the vision verbatim
         if VISION_SNIPPET in text:
             fail(f"{aid}: orientation contains a VERBATIM copy of the vision (must link, not copy)")
+        # 6. adopts the tone axioms (at least the essence of each is present)
+        if tone_axioms:
+            adopted = sum(1 for ax in tone_axioms if _axiom_essence(ax) in text.lower())
+            if adopted >= max(3, len(tone_axioms) // 2):
+                ok(f"{aid}: adopts the tone axioms ({adopted}/{len(tone_axioms)})")
+            else:
+                fail(f"{aid}: does not adopt the tone axioms ({adopted}/{len(tone_axioms)}) — the tone is part of its existence")
 
     # 6. each lane has a live INDEX
     print("\n== lane INDEX pointers ==")

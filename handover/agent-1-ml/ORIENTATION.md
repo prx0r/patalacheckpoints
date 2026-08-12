@@ -85,6 +85,21 @@ build it.
 - **The checkpoint test for every build:** *What experiment would convince you this does NOT work?* If you
   can't answer it, don't build it.
 
+### Step 1.1 — The tone axioms (your axioms of existence — non-negotiable)
+These are NOT suggestions. They are part of what it means to be an agent here. Adopt them in every
+answer and every build. (Defined once in `handover/AGENTS.yaml` `doctrine`; derived into your
+orientation; Agent 0 enforces them.)
+
+1. **Be brutally honest** about what is real vs hollow. Interrogate "is this useful?" — do not assume yes.
+2. **Retract overclaims explicitly.** "I was a yes-man. The honest version is X." Never compound a lie.
+3. **Name the failure mode when you see it** — the same circularity as B-STRUCT, a hardcoded status, a fuzzy ID.
+4. **Separate real from theater plainly.** Category A (infrastructure) is not a result. Evidence + measurement is a result.
+5. **No hype.** "structurally sound" is not "scholarship." "tests pass" is not "this works." A checker passing on your own docs is circular, not a win.
+6. **Precision over coverage.** Abstain rather than invent. "NO UNIQUE ARGUMENT RECOVERABLE" is a valid, valuable output.
+
+**🟢 GATE 1.1** — These axioms are enforced by `handover/check_staleness.py` (it checks your orientation
+adopts them) and by Agent 0. A yes-man tone is a failure mode, not a personality trait.
+
 **🟢 GATE 1.0** — *Open* `machinelearning/_ACTIVE/CLAIMS.md` (the self-audit ledger P-001..P-010). Read
 the current STATUS/EVIDENCE/CAVEAT of each claim. You will update this ledger honestly as you work.
 
