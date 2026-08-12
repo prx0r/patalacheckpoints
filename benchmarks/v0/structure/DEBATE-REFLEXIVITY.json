@@ -1,0 +1,116 @@
+{
+  "gold_id": "DEBATE-REFLEXIVITY",
+  "gold_kind": "DebateArgument",
+  "title": "The Reflexivity Debate (live dialectic that resolves)",
+  "source": "research-library/LOGICAL-ARGUMENT-1-reflexivity-debate.md",
+  "question": "Is reflexive awareness intrinsic to experience or a constructed higher-order operation?",
+  "candidates": [
+    {
+      "id": "abh-vimarsa-intrinsic",
+      "tradition": "\u015aaiva",
+      "author": "Abhinavagupta",
+      "position": "self-awareness is the NATURE (svabh\u0101va) of consciousness"
+    },
+    {
+      "id": "dharmakirti-conditioned",
+      "tradition": "Buddhist",
+      "author": "Dharmak\u012brti",
+      "position": "cognition is reflexively structured without an enduring self"
+    },
+    {
+      "id": "nanavira-structural",
+      "tradition": "Therav\u0101da",
+      "author": "\u00d1\u0101\u1e47av\u012bra",
+      "position": "experience folds back on itself; identity through transformation"
+    }
+  ],
+  "rounds": [
+    {
+      "round": 1,
+      "title": "THE CLAIM: Dharmak\u012brti's svasa\u1e43vitti leads the reflexivity debate.",
+      "pratijna": "Dharmak\u012brti's svasa\u1e43vitti leads the reflexivity debate.",
+      "hetu": "the Buddhist tradition already has a robust self-awareness doctrine (svasa\u1e43vitti)",
+      "udaharana": "cognition has two appearances (gr\u0101hy\u0101k\u0101ra + gr\u0101hak\u0101k\u0101ra) \u2014 it is self-aware",
+      "upanaya": "",
+      "nigamana": "",
+      "support": "`dharmakirti-pv3-reflexivity-claims.json` \u2014 net score 13.13, support 13.82,",
+      "falsifier": "show that Dharmak\u012brti's kalpanapodha definition entails intrinsic",
+      "verdict": "accepted"
+    },
+    {
+      "round": 2,
+      "title": "THE CLAIM: Abhinavagupta and Dign\u0101ga are compatible at different levels (vyavah\u0101ra vs",
+      "pratijna": "Abhinavagupta and Dign\u0101ga are compatible at different levels (vyavah\u0101ra vs",
+      "hetu": "the crystal argument refutes the view that consciousness could be WITHOUT",
+      "udaharana": "Dign\u0101ga describes self-awareness as the *result* (phala) of cognition",
+      "upanaya": "",
+      "nigamana": "",
+      "support": "`eo-reflexivity-levels-distinction-v2`. Gate: philological.",
+      "falsifier": "new textual evidence that Abhinavagupta explicitly rejected svasa\u1e43vitti, or",
+      "verdict": "accepted"
+    },
+    {
+      "round": 3,
+      "title": "THE CLAIM: Abhinavagupta makes ORIGINAL arguments for svasa\u1e43vedana (T\u0100 4.8-9, 4.181cd-",
+      "pratijna": "Abhinavagupta makes ORIGINAL arguments for svasa\u1e43vedana (T\u0100 4.8-9, 4.181cd-",
+      "hetu": "the two-aspect structure (objective ni\u015bcaya + subjective pratipatti) is grounded",
+      "udaharana": "",
+      "upanaya": "",
+      "nigamana": "",
+      "support": "`eo-reflexivity-original-arguments-v3`.",
+      "falsifier": "",
+      "verdict": "accepted"
+    },
+    {
+      "round": 4,
+      "title": "THE CLAIM: Abhinavagupta and Dign\u0101ga both distinguish two aspects of cognition \u2014 they",
+      "pratijna": "Abhinavagupta and Dign\u0101ga both distinguish two aspects of cognition \u2014 they",
+      "hetu": "T\u0100 1/181-182 and PS(V) 1.9ab both distinguish objective and subjective aspects.",
+      "udaharana": "",
+      "upanaya": "",
+      "nigamana": "after four probes, the debate has distilled to ONE question: **what grounds",
+      "support": "`eo-reflexivity-two-aspects-v4`. Scope: phenomenology convergence established;",
+      "falsifier": "",
+      "verdict": "accepted"
+    },
+    {
+      "round": 5,
+      "title": "THE CLAIM: both agree the two-aspect structure is self-grounding \u2014 they disagree on WHAT",
+      "pratijna": "both agree the two-aspect structure is self-grounding \u2014 they disagree on WHAT",
+      "hetu": "Dign\u0101ga: the structure is self-grounding (no ground posited). Abhinavagupta:",
+      "udaharana": "",
+      "upanaya": "",
+      "nigamana": "",
+      "support": "`eo-reflexivity-self-grounding-v5`.",
+      "falsifier": "",
+      "verdict": "accepted"
+    },
+    {
+      "round": 6,
+      "title": "THE CLAIM: \u00d1\u0101\u1e47av\u012bra rejects BOTH options \u2014 the self-grounding question itself is a",
+      "pratijna": "\u00d1\u0101\u1e47av\u012bra rejects BOTH options \u2014 the self-grounding question itself is a",
+      "hetu": "consciousness (vi\u00f1\u00f1\u0101\u1e47a) is \"negative as regards essence\" \u2014 it is *anidassana*,",
+      "udaharana": "the arahant has \"this is present\" without \"I am\" \u2014 the conceit that a ground",
+      "upanaya": "",
+      "nigamana": "",
+      "support": "`eo-reflexivity-groundless-v6`; `nanavira-groundless-claims.json`.",
+      "falsifier": "show the ground question arises from the nature of experience itself, not",
+      "verdict": "accepted"
+    },
+    {
+      "round": 7,
+      "title": "THE CLAIM: the Anup\u0101ya perspective dissolves the ground question \u2014 the two aspects were",
+      "pratijna": "the Anup\u0101ya perspective dissolves the ground question \u2014 the two aspects were",
+      "hetu": "from the highest standpoint (Anup\u0101ya), there is no duality to ground \u2014 the",
+      "udaharana": "",
+      "upanaya": "",
+      "nigamana": "Reflexivity is established as a real feature of experience (all four",
+      "support": "`eo-reflexivity-anupaya-v7`.",
+      "falsifier": "",
+      "verdict": "open"
+    }
+  ],
+  "resolution": "Reflexivity is established as a real feature of experience (all four\n candidates agree on the phenomenon). Its nature is contested across three live\n positions: self-grounding structure (Dign\u0101ga/Dharmak\u012brti), vimar\u015ba as ground\n (Abhinavagupta), and groundless reflexivity (\u00d1\u0101\u1e47av\u012bra). None is defeated. The differences\n may be irreducible \u2014 each tradition asks a different question in a different domain.",
+  "review_state": "CANDIDATE",
+  "status": "MACHINE_PROPOSED"
+}
