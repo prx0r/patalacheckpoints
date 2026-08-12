@@ -201,21 +201,36 @@ P4 alignment           ✅ frozen witness (P-013)
 Corpus state machine   ✅ corpus_state.py + /api/corpus/state (NEXT_VALID_ACTION control plane)
 RAW-L0 factory core    ✅ raw_l0.py → canonical L0, P0-validated; agent3_batch / agent3_queue / l0_registry
 Executable corrections ✅ review_engine.py (Phase 3A+3D) — the validation gate for Agent 3's output
+Autonomy controller    ✅ pipeline/autonomy.py + object_registry.py (eligibility DAG, flock, idempotency,
+                        supersession, run reports) — the ONE controller for L0..L200..C1
+ModelAdapter           ✅ pipeline/model_adapter.py (DirectModelAdapter ~1-2s + HermesAdapter + strict batch)
+Certificates           ✅ L0 (deterministic floor) + L200 validator-torture; L200 live quality NOT bounded
 ```
 The `PhilologicalProof` contract: proof_id · passage_id · source_span_ids · source_integrity ·
 extraction_coverage · segmentation · morphology · syntax · alignment · lexical_sense · open_issues ·
 tool_witnesses · review_events. Every `ProofDimension` has an honest status, never a collapsed number.
 
-### Step 4.1 — THE CURRENT PRIORITY: the autonomous RAW-L0 factory
-Per `handover/hermes/AUTOTRANSLATE-NORTHSTAR.md`, in order:
+> **CURRENT STATE (READ FIRST):** `handover/agent-2-integration/PROGRESS-AUTONOMOUS-2026-08-12.md` —
+> VERIFIED / CLOSE-unverified / STILL-NEEDED + file map + the agent-1 scholarly-oracle handover +
+> the background-run working practice.
+
+### Step 4.1 — THE CURRENT PRIORITY: autonomous RAW-L0 v1 (re-anchored)
+Agent 2 is re-anchored on **autonomous RAW-L0** (the original goal). L200 is secondary until RAW-L0 v1
+is proven. In order:
 ```
-1. GLOSS/MODEL TRANSPORT  wire a reliable model call for literal_gloss (hermes is unreliable; the
-                          deterministic core works WITHOUT it, but L0 isn't complete without the gloss)
-2. SANSKRIT-ONLY REPLAY   hide IPVV gold English, run RAW-L0, compare vs gold → measures segmentation/
-                          lemma/morphology/gloss/abstention/false-certainty (the Pāṭala-Evals embryo)
-3. INGEST PRIMARY TEXTS   the not-yet-ingested texts from docs/corpus/SANSKRITREE-IMPORT-MANIFEST.md
-4. CROSS-WORK L0          Kramasadbhāva first (RAW_SANSKRIT, priority #1 in the queue)
+1. CLOSE THE GLOSS RELIABILITY GAP  prove a real unattended RAW-L0 batch on the Direct adapter
+                                   (background run), bounding the previous hermes nondeterminism
+2. AUTONOMOUS RAW-L0 v1             leave a bounded corpus to the controller unattended: only correctly
+                                   bound, validator-passing canonical L0 commits; malformed/model-failed/
+                                   source-corrupt never silently commit; reruns don't duplicate
+3. FREEZE RAW-L0 v1                 wire into the controller for unattended scale
+4. THEN L200                        candidate→classifier redesign (deterministic L1↔L2/L0 candidates,
+                                   default IGNORE, L0 evidence into the input, IA as a separate pass)
+5. THEN C1                          passage-local commentary (skill + validator + certificate + canary)
+6. THEN the unattended SOURCE→L0/L1→L2→L200→C1 vertical
 ```
+Working practice: **run long model calls in the background** — never block the session on a hermes/direct
+call (8–48s or hang).
 
 ### Step 4.2 — The queue + versioned L0 (already built, use it)
 ```

@@ -33,6 +33,16 @@ stale ones as `[ARCHIVED]` so a new agent is never confused. If it's not here, i
 | **The project's self-audit ledger** | `machinelearning/_ACTIVE/CLAIMS.md` | repo `machinelearning/` |
 | **Anti-theatre component contracts** | `machinelearning/_ACTIVE/COMPONENT-CONTRACTS.md` | repo `machinelearning/` |
 | **Agent 1 — ML lane (current state)** | `handover/agent-1-ml/INDEX.md` | repo `handover/` |
+| **External standards alignment (SEPIO/xAIF/nanopub/SPARE/SCL — deferred roadmap)** | `docs/integrations/ARGUMENT-EVIDENCE-STANDARDS-ALIGNMENT.md` | repo `docs/integrations/` |
+| **Global state checkpoint (2026-08-13, ELAD handover — timestamped, stale by design)** | `docs/global/GLOBAL-STATE-2026-08-13.md` | repo `docs/global/` |
+| **Pāṭala Global Architecture v0.1 (THE definitive architecture — the one answer to "what are we building?")** | `docs/global/PATALA-GLOBAL-ARCHITECTURE.md` | repo `docs/global/` |
+| **Global architectural files home (both agents read at orientation)** | `docs/global/README.md` | repo `docs/global/` |
+| **Pāṭala Review vertical (synthesis → EO → essay → SentenceEvidenceAudit — Agent 1, frozen)** | `machinelearning/_ACTIVE/CURRENT-STATE-ARGUMENT-LAYER.md` + `handover/agent-1-ml/NEXT-STEPS.md` (rev 6) | repo `machinelearning/` |
+| **P-019 v2 deterministic structural clustering (k-core) + Louvain stability ablation** | `benchmarks/v0/structural/{kcore-ipvv-c1-v0,louvain-stability-ipvv-c1-v0}.json` | repo `benchmarks/v0/structural/` |
+| **Agent 1 closeout checkpoint (red-team review of the vertical — 2026-08-13)** | `handover/agent-1-ml/AGENT1-CHECKPOINT-2026-08-13.md` | repo `handover/` |
+| **Source-Evidence substrate (S0) — the scholar corpus as the corroboration oracle** | `source-evidence/` (`schema/source_evidence_profile.py`, `registry.py`, `ro_crate.py`, `pilot.py`) | repo `source-evidence/` |
+| **Source-Evidence guiding docs (schema-stack + evaluation/IDs + reuse-first)** | `source-evidence/docs/{scholar-layer-schema-stack,scholar-layer-evaluation-and-ids,reuse-first-stack}.md` | repo `source-evidence/docs/` |
+| **External-tool integration docs (GROBID/Zotero/OpenAlex/Crossref/OpenCitations/RO-Crate/ORKG/OpenReview)** | `source-evidence/docs/tools/` | repo `source-evidence/docs/tools/` |
 | **Agent 2 — integration lane (current state)** | `handover/agent-2-integration/INDEX.md` | repo `handover/` |
 | **L0 standardization (NEXT WORK — verifiable substrate)** | `machinelearning/_ARCHIVE/SPEC_L0_STANDARDIZATION.md` | repo `machinelearning/` |
 | **ML strategy (frozen)** | `machinelearning/_ACTIVE/MLUSEINPATALA.md` | repo `machinelearning/` |
@@ -47,6 +57,9 @@ stale ones as `[ARCHIVED]` so a new agent is never confused. If it's not here, i
 | **Logicvid source files** | `research-library/pushing/_source/` | research-library |
 | **Corpus build (Phase 1)** | `docs/PHASE1_IPVV_CORPUS_PROCESS_NOTES.md` | repo `docs/` |
 | **Corpus targets (master index)** | `docs/corpus/TARGETS-INDEX.md` | the consolidated translation-target/lead/source goldmine (DB + links) |
+| **Autonomous factory — current state** | `handover/agent-2-integration/PROGRESS-AUTONOMOUS-2026-08-12.md` | VERIFIED / CLOSE-unverified / STILL-NEEDED + file map + agent-1 scholarly-oracle handover (the autonomous RAW-L0 → L200 → C1 build) |
+| **Autonomy build record** | `handover/agent-2-integration/BUILD-RECORD-2026-08-12-AUTONOMY.md` | full inventory + results of the controller / registry / certificates / live benchmark |
+| **Autonomy architecture (canonical)** | `handover/hermes/hermespatalalayers.md` + `hermespatala-architecture-review.md` | the frozen end-state (one controller + one scheduler + per-layer skills; Hermes manages work, Pāṭala manages knowledge) |
 | **Sanskritree import manifest** | `docs/corpus/SANSKRITREE-IMPORT-MANIFEST.md` | the full sanskritree audit: what's directly useful + where it imports + what's excluded |
 | **Scholarly graph / data model** | `data/corpus/graph.ts` + `docs/SCHOLARLY_GRAPH.md` | repo |
 | **Translation protocol** | `docs/TRANSLATION_PROTOCOL.md` | repo `docs/` |

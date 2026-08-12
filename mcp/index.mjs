@@ -395,5 +395,35 @@ server.tool(
   },
 );
 
+// ————————————————— get_factory_status —————————————————
+server.tool(
+  "patala_get_factory_status",
+  "The autonomous translation factory status: per-layer registry counts (source/l0/l1/l2/l200/c1/theme/essay/assertion/corroboration/witness/span) + the L0 and L200 certificate results. Registry = canonical state; certificates = the A-H / A-L gates. Backed by /api/factory/status.",
+  {},
+  async () => {
+    const d = await api(`/api/factory/status`);
+    return { content: [{ type: "text", text: JSON.stringify(d, null, 2) }] };
+  },
+);
+
+// ————————————————— get_certificate —————————————————
+server.tool(
+  "patala_get_certificate",
+  "Read a factory certificate result (e.g. 'L0-v1' or 'L200-v1'): the measured dimensions (lossless/binding/gloss/false-certainty/abstention/source-failure/replay/cross-work for L0; the A-L dims for L200).",
+  { name: z.string().describe("certificate dir name, e.g. L0-v1 or L200-v1") },
+  async ({ name }) => {
+    const { readFile } = await import("fs/promises");
+    const path = await import("path");
+    const ROOT = path.dirname(path.dirname(new URL(import.meta.url).pathname));
+    const p = path.join(ROOT, "factory-certificates", name, "results.json");
+    try {
+      const txt = await readFile(p, "utf-8");
+      return { content: [{ type: "text", text: txt }] };
+    } catch {
+      return { content: [{ type: "text", text: `no certificate ${name}` }] };
+    }
+  },
+);
+
 const transport = new StdioServerTransport();
 await server.connect(transport);
