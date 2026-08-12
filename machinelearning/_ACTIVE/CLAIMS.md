@@ -270,6 +270,24 @@ capability. See `AGENT1-HANDOVER.md` §4 + the component contracts below.
 
 ---
 
+## CLAIM P-019 — "Pāṭala has a deterministic canonical structural graph baseline."
+- **STATUS:** SUPPORTED (as `ENGINEERING_VALIDATED`) — construction-verifiable, NOT scholarly
+- **EVIDENCE:** `machinelearning/research/experiments/benchmark_graph_determinism.py` +
+  `tests/test_graph_determinism.py`. Deterministic k-core + connected-components decomposition over the
+  theme-map co-occurrence graph (63 nodes / 1780 edges). Canonical hash (`bea595f4…`) is stable under:
+  **D1** same-process repeat, **D2** cross-process (fresh subprocess), **D3** input-order permutation
+  (node/edge insertion reorder), **D4** canonical serialization (endpoint-sorted undirected edges).
+  Run: `benchmarks/v0/runs/determinism-DETERMINISM-20260812T154931Z.json`.
+- **CAVEAT:** `DETERMINISM ≠ SEMANTIC_VALIDITY`. The hash being stable proves reproducibility, NOT that
+  the clusters correspond to real scholarly themes. The canonical endpoint-sorting of undirected edges
+  was required — without it the same graph hashed differently purely from insertion order.
+- **DOES NOT CLAIM:** that clusters correspond to real themes; that the decomposition is superior to
+  Louvain/Leiden; that graph topology captures philosophical similarity.
+- **REQUIRED to promote:** nothing further (this is the reproducible-baseline claim). Louvain is retained
+  separately as `EXPERIMENTAL_NONDETERMINISTIC_CLUSTERER`.
+
+---
+
 ## CLAIM P-017 — "Pāṭala can propose coarse semantic alignment between contextualized occurrences (Stage A)."
 - **STATUS:** INFRASTRUCTURE / harness built; **the generic English encoder baseline is 0/8 (falsified)**
 - **EVIDENCE:** `patala_ml/semantic_alignment.py` (6-label vocabulary: SAME/NEAR/PARTIAL/DIFFERENT/AMBIGUOUS/

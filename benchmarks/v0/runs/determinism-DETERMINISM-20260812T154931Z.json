@@ -1,0 +1,22 @@
+{
+  "run_id": "DETERMINISM-20260812T154931Z",
+  "benchmark_version": "v0",
+  "family": "PATALA-DETERMINISM",
+  "execution_base_sha": "c7d1e21334ef30733a6a4d34fbfeab4ae48c9f55",
+  "artifact_commit_sha": null,
+  "working_tree_dirty": true,
+  "detector": "PATALA.GRAPH.DETERMINISTIC_BASELINE.v1",
+  "verifier_version": "determinism-v0",
+  "date": "2026-08-12T15:49:31+00:00",
+  "graph": {
+    "n_nodes": 63,
+    "n_edges": 1780,
+    "source": "theme-map co-occurrence"
+  },
+  "canonical_hash": "bea595f4258ea994d6ce49c3e13e6fe021a87ee52cb708c3592647f24dda8366",
+  "results": {
+    "D1_same_process": true,
+    "D3_input_order_invariant": true,
+    "D4_canonical_serialization": true
+  }
+}
