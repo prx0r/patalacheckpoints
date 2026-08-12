@@ -59,9 +59,34 @@ different senses by tradition/period. This is the *exact* substrate the semantic
 — it provides gold sense-distinctions (vimarśa-as-reflexive vs vimarśa-as-reflection) that map onto my
 `SAME_SENSE / NEAR_SAME / AMBIGUOUS` labels.
 
-### E. What Agent 1 should NOT mine (keep the lane clean)
+### E. Reusable QA engine (do NOT rebuild — it already overlaps my vocabulary)
+`translations/tools/` holds a mature, evaluated translation-QA engine that Agent 1 should **reuse, not
+reinvent**. Its Task-2 scholarly-fidelity taxonomy maps almost 1:1 onto my argument-verification needs:
+
+| QA engine (existing, sanskritree) | Agent 1 need |
+|---|---|
+| `POLARITY_CHANGE`, `SPEAKER_CHANGE` | contrast-set `NEGATE`, `SWAP_SPEAKER` |
+| `UNLICENSED_INFERENCE`, `MISSING_PREMISE` | gold inference-integrity |
+| `UNRESOLVED_SOURCE_DEPENDENCY` | provenance `BROKEN_REF` |
+| `TERM_SENSE_DRIFT` | contrast-set `REPLACE_TERM_SENSE` |
+
+Key files: `qa_scaler.py` (flagger, deterministic+heuristic detectors), `qa_v1_harness.py` /
+`qa_v1_gold.py` / `qa_v1_eval.py` (three-condition eval; decisive finding: the human stall-log was
+over-logged), `qa_v2_fidelity.py` (the Task-2 licensing checker with the 10-decision taxonomy),
+`qa_fixtures.py` (the stall-log gold). The `V1_THREE_CONDITION_FINDINGS.md` result (prose-only 2/17
+recall; dominant bucket B = over-logged, not evaluator failure) is a model of honest falsification.
+
+**Reuse decision for Agent 1:** the QA engine already encodes polarity/speaker/inference/source-
+dependency detection. My contrast-set benchmark should align its corruption types to the engine's
+taxonomy (or consume the engine) rather than duplicate it. This is a genuine cross-lane asset.
+
+### F. What Agent 1 should NOT mine (keep the lane clean)
 - `data/atlas/concepts.ts` (the atlas) — Agent 2's translation-facing surface.
-- `lean/`, `proof_engine/` — the Lean bridge is AVOID per my guardrails (proves FOL, not Abhinavagupta).
+- `lean/`, `proof_engine/`, `proof_engine_lean/` — **the Lean bridge is NOT useful: it contains only
+  opaque axiom scaffolds (`axiom Perceives : Cognition → Svalaksana → Prop`) and **zero completed
+  theorems**; `lean_test/` is empty and `proof/phase*.log` are empty. It proves FOL-structure only if
+  someone fills the axioms, which is downstream of reviewed gold anyway. Keep archived; do not spend
+  lane time on it.**
 - `frontend/`, `syntheses/` — media/essay, not the argument graph.
 
 ---
@@ -92,9 +117,14 @@ apprehension', NEVER merely 'reflection'"). Directly usable as the term-ledger f
 `benchmarks/`, `benchmarks_archive/`, `evaluations/`, `ground_truth/`, `qa_*.json`, `v1_verdicts*.jsonl`,
 `protocols/` — prior adjudication runs Agent 2 can reconcile against (avoid re-doing).
 
-### F. Agent 2 should NOT mine
-- `proof_engine/`, `lean/` (Agent 1's formalization frontier; not translation).
-- `truth/` scholarly essays (those are evidence for Agent 1's argument layer, not translation sources).
+### F. The QA/scaler engine (Agent 2's own completed work — reference it, don't lose it)
+`translations/tools/` is Agent 2's translation-QA engine (see §1.E for the taxonomy). It is already
+evaluated against gold fixtures. Reference it as the translation-factory's QA layer; the fidelity
+taxonomy (`qa_v2_fidelity.py`) is the licensing contract the factory's L2 outputs must satisfy.
+
+### G. Agent 2 should NOT mine
+- `proof_engine/`, `lean/` — no completed output (opaque scaffolds); not translation.
+- `truth/` scholarly essays (evidence for Agent 1's argument layer, not translation sources).
 
 ---
 
@@ -107,6 +137,7 @@ apprehension', NEVER merely 'reflection'"). Directly usable as the term-ledger f
 | `corpus/targets/markguidance.md` | Recognition argument layer | passage priorities |
 | `truth/torella_book/` | Ratié corroboration (ARG-004) | primary-text apparatus |
 | `.concordance_index.json` | parallel-usage retrieval | difficult-case lexical retrieval |
+| `translations/tools/` (QA scaler, v1/v2 fidelity) | contrast-set corruption taxonomy reuse (§1.E) | translation-QA licensing contract |
 
 ---
 

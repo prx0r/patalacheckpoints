@@ -216,12 +216,66 @@ only makes the (low) status explicit.
 | 001 | SCHOLARLY_UNREVIEWED · CANDIDATE | strong (all → L0) | supported | not collected | not run | present (orderless≠ordered) | high (siddhānta) | local (V2-O) |
 | 002 | SCHOLARLY_UNREVIEWED · CANDIDATE | strong (kārikā 1) | supported | not collected | not run | present (no universal subject) | high (siddhānta/pūrvapakṣa) | local (V2-L) |
 | 003 | SCHOLARLY_UNREVIEWED · CANDIDATE | strong on āśraya/akrama; regress RECONSTRUCTED_NECESSARY | supported | not collected | not run | present (regress vs literal text) | disputed (regress is reconstruction) | local (V2-O) |
-| 004 | SCHOLARLY_UNREVIEWED · CANDIDATE | strong (prakāśa/vimarśa) | supported | not collected | not run | present (vimarśa-as-essence vs inferred) | high (siddhānta) | local (V2-H) |
+| 004 | **SCHOLARLY_CORROBORATED_PRELIMINARY** (one proposition) · CANDIDATE | strong (prakāśa/vimarśa) | supported | **PRELIMINARY (G4-CRYSTAL only)** | not run | present (vimarśa-as-essence vs inferred) | high (siddhānta) | local (V2-H) |
 | 005 | SCHOLARLY_UNREVIEWED · CANDIDATE | strong (bheda/action) | supported | not collected | not run | present (local vs systematic) | high (siddhānta) | local→systematic (open) |
 
 **To promote these:** (1) published-scholar corroboration (exact passages, Ratié/Torella/etc.);
 (2) blind multi-model reconstruction agreement (Sanskrit+L0 only); (3) contrast-set semantic
 discrimination; and only then (4) independent human review — the real gate.
+
+### ARG-004 — proposition-level corroboration (SCHOLARLY_CORROBORATED_PRELIMINARY)
+
+**Status transition (narrow):** `MACHINE_PROPOSED → SCHOLARLY_CORROBORATED_PRELIMINARY` — **NOT**
+`SCHOLARLY_VALIDATED`. Only the *crystal / inert-manifestation* component is corroborated; the rest of
+the reconstruction stays open.
+
+```
+ARG-004
+
+primary_text_grounding:
+  status: VERIFIED
+  ref: ĪPK 1.5.11
+  Sanskrit: prakāśo'rthoparakto'pi sphaṭikādijaḍopamaḥ
+
+edition_addressability:
+  status: VERIFIED
+  (GRETIL gretil_ipv_clean.txt Ipk_1,5.11)
+
+published_scholar_corroboration:
+  status: PRELIMINARY
+  sources:
+    - vimarśa dossier (saivamap/dossiers/vimarsa.md, via markguidance)
+    - Ratié treatment (truth/torella_book/ch7_ratie_isvarasiddhi.txt)
+  relation:
+    supports G4-CRYSTAL (manifestation without vimarśa is inert / crystal-like)
+  boundary:
+    Ratié corroborates the broader vimarśa-reflexivity reading; the crystal image
+    itself is directly attested in ĪPK 1.5.11 and the dossier. No source claims the
+    whole ARG-004 reconstruction is complete.
+
+machine_review:
+  MODEL-1: REVISE-MODERATE
+
+independent_direct_review:
+  status: NONE
+```
+
+**Proposition-level corroboration (prevents "one verified verse" laundering the whole argument):**
+
+```
+G4-CRYSTAL   ← primary Sanskrit (ĪPK 1.5.11) + dossier + Ratié(vimarśa-reflexivity)   [CORROBORATED]
+G4-TC1       ← primary Sanskrit (prakāśo ...)                                        [textually supported]
+G4-DIST      ← primary Sanskrit (bhedena hi parāmarśe) + dossier                      [supported]
+G4-CONC      ← still RECONSTRUCTED_NECESSARY; not independently corroborated          [OPEN]
+I4-1         ← still RECONSTRUCTED; the inference link is not independently reviewed   [OPEN]
+C4 (G4-IC1)  ← still INTERPRETIVE_EXTENSION; not independently reviewed               [OPEN]
+```
+
+**Explicit claim boundary:**
+
+> The primary text and independent published scholarship corroborate the **crystal / inert
+> manifestation** component of ARG-004. This does **not** yet establish the entire reconstructed
+> argument or all inferential links. Corroborating one proposition does not upgrade the rest.
 
 ---
 
