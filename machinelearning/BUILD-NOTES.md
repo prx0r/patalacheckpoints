@@ -109,3 +109,20 @@ upward — NOT collapsed to a single number.**
 5. Move ArgumentProposal/AIF/EssayPlan into canonical Pāṭala schema.
 6. Freeze the reusable `contracts/`.
 7. Run across the whole IPVV, then a second work.
+
+## 10. ADJUDICATION (built 2026-08-12) — the human-in-the-loop step
+
+The step that turns the gold chain from AUTOMATION into SCHOLARSHIP: a human must ACCEPT the theme +
+argument. Built the mechanism:
+
+- **`experiments/adjudicate_cl3.py`** — assembles the CL-3 adjudication package: proposed theme
+  (Order-less Support, 9 members), the B-STRUCT argument, the EssayPlan thesis, the certificate, member
+  cards, and 3 decisions (D-THEME-ACCEPT / D-ARG-ACCEPT / D-LEXICAL-OPEN). Output
+  `data/published/ipvv/adjudication-cl3.json`.
+- **`patala_ml/adjudicate.py`** — the sign/promote loop: a reviewer's all-accepted → `EDITORIALLY_ACCEPTED`
+  (records reviewer + decisions + accepted_theme/argument); a rejection → `MODIFIED`; missing decision → error.
+- **test_adjudicate.py 8/8**.
+- **Total ML suite: 132/132 passing.**
+
+**This closes the zoom-out review's biggest gap:** the mechanism for a human to accept CL-3 now exists.
+The remaining step is the actual human review (signing `adjudication-cl3.json`) + rendering the essay.
