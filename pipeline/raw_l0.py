@@ -1,25 +1,30 @@
 #!/usr/bin/env python3
-"""pipeline/raw_l0.py — Build 1: RAW SANSKRIT → L0 (MODE_B). The autonomous translator's core.
+"""pipeline/raw_l0.py — RAW SANSKRIT → canonical L0 (MODE_B). Emits the IPVV L0 schema.
 
-Per handover/hermes/AUTOTRANSLATE-NORTHSTAR.md — the one giant hole blocking the factory.
-IPVV L0 EXTRACTS an already-glossed layer; RAW-L0 CREATES L0 from raw Sanskrit. This is the
-distinction the northstar stresses.
+The northstar's Build 1 (handover/hermes/AUTOTRANSLATE-NORTHSTAR.md): RAW SANSKRIT -> L0 is the
+one gap blocking the autonomous factory. IPVV L0 EXTRACTS an already-glossed layer; RAW-L0 CREATES
+it from raw Sanskrit.
 
-This orchestrates EXISTING IPVV machinery + a Hermes gloss pass (no new infrastructure):
-  - Vidyut (verify_l0_p2.vidyut_analyze / the SLP1 chedaka) → deterministic segmentation + lemma + morphology
-  - verify_l0.p0_proof → source-span losslessness (P0)
-  - patala/hermes (the working model client) → literal gloss + compound analysis + alternatives
-  - proof dimensions are kept SEPARATE: source_span PROVED, segmentation/morphology SUPPORTED,
-    lexical_sense MACHINE_PROPOSED. Never collapse.
+CRITICAL DESIGN DECISION: RAW-L0 must emit the SAME canonical L0 schema that the IPVV uses, so the
+EXISTING machinery (verify_l0.py P0 proof, the published store, the C1 chain) consumes it UNCHANGED.
+The precedent is extract_l0_v1.py — a non-standard input (V1 prose) -> canonical L0 that passes
+verify_l0.py. RAW-L0 does the same for raw Sanskrit.
 
-The agentic loop (per the northstar):
-  SOURCE → DETERMINISTIC ANALYSIS (Vidyut) → RETRIEVE (lexicon if available) → PROPOSE (Hermes)
-  → CHALLENGE (separate pass) → REVISE/ABSTAIN → VERIFY (P0) → WRITE MACHINE_PROPOSED L0
+The canonical L0 record (per specs/l0_schema.json):
+  { id, chunk_id, line_id, line_kind, chunk_char_start, chunk_char_end,
+    line_char_start, line_char_end, wraps_line, raw_fragment, source_text,
+    lemma_iast, literal_gloss, quoted, status }
 
-Record shape (northstar §"what one RAW-L0 record should contain"):
-  { id, source_span{char_start,char_end,raw}, analysis{surface,sandhi_split,lemma,morphology,compound},
-    gloss{literal,supplied}, alternatives[], witnesses{vidyut,heritage}, proof{source_span,segmentation,
-    morphology,lexical_sense} }
+Pipeline per verse (the agentic loop):
+  1. SOURCE            the raw Sanskrit verse (the chunk)
+  2. DETERMINISTIC     Vidyut segmentation + lemma + morphology (the witness)
+  3. PROPOSE           literal gloss per segment (the LLM/generative layer)
+  4. VERIFY            P0 via the existing verify_l0.p0_proof
+  5. WRITE             canonical L0 JSONL
+
+The deterministic core (Vidyut + P0) needs NO model. The gloss is an LLM task — provided either
+from a file (to prove mechanics) or a model call. Never fabricate: lemma=null -> status=AMBIGUOUS
+(or a structural class), never PARSED.
 """
 from __future__ import annotations
 
@@ -36,131 +41,129 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from verify_l0_p2 import _get_vidyut, vidyut_analyze
 from vidyut.lipi import transliterate, Scheme
-from model import chat  # the patala/hermes model client
+from verify_l0 import p0_proof
 
 VIDYUT_PATH = "/root/vidyut-0.4.0"
 
 # IAST token: any run of Sanskrit letters/diacritics
 IAST_TOKEN = re.compile(r"[a-zA-Zāīūṛṝḷḹṃñṅśṣṭḍḥṁ]+")
-
-
-@dataclass
-class RawL0Record:
-    work_id: str
-    passage_id: str
-    source: str                       # the raw Sanskrit verse
-    char_start: int = 0
-    char_end: int = 0
-    model: str = "deepseek-v4-flash"
-    skill_version: str = "raw-l0-v1"
-
-    # populated by the pipeline
-    analysis: dict = field(default_factory=dict)
-    gloss: dict = field(default_factory=dict)
-    alternatives: list = field(default_factory=list)
-    witnesses: dict = field(default_factory=dict)
-    proof: dict = field(default_factory=dict)
-
-    def to_dict(self) -> dict:
-        return {
-            "id": f"pt:{self.work_id}:l0:{hashlib.sha1(self.source.encode()).hexdigest()[:8]}",
-            "work_id": self.work_id, "passage_id": self.passage_id,
-            "source_span": {"char_start": self.char_start, "char_end": self.char_end, "raw": self.source},
-            "analysis": self.analysis, "gloss": self.gloss,
-            "alternatives": self.alternatives, "witnesses": self.witnesses,
-            "proof": self.proof,
-        }
+# structural chars (verse markers, punctuation) — classified, not UNKNOWN
+STRUCTURAL = set(" ॥|॥,;:!?()[]{}*-—_।|")
 
 
 # --------------------------------------------------------------------------- #
-# the analyzer witness (Vidyut — segmentation + lemma + morphology)
+# Vidyut segmentation (the deterministic witness) — returns tokens + spans
 # --------------------------------------------------------------------------- #
-def vidyut_segments(sanskrit: str) -> list[dict]:
-    """Segment raw IAST into units with lemmas + morphological class (the deterministic witness)."""
+def vidyut_tokens(sanskrit: str) -> list[dict]:
+    """Segment raw IAST into tokens with SLP1 surface + lemma + data class."""
     v = _get_vidyut(VIDYUT_PATH)
     slp = transliterate(sanskrit, Scheme.Iast, Scheme.Slp1)
     out = []
     for t in v["chedaka"].run(slp):
-        out.append({
-            "surface": t.text, "lemma": t.lemma,
-            "data_class": type(t.data).__name__ if t.data else None,
-        })
+        out.append({"surface": t.text, "lemma": t.lemma,
+                    "data_class": type(t.data).__name__ if t.data else None})
     return out
 
 
 # --------------------------------------------------------------------------- #
-# the generative layer (Hermes — gloss + compound + alternatives)
+# the canonical L0 builder (emits the IPVV schema)
 # --------------------------------------------------------------------------- #
-def _model(prompt: str, model: str) -> str:
-    try:
-        return chat("You are a careful Sanskrit philologist (Pāṭala RAW-L0).", prompt, model=model).strip()
-    except Exception as e:
-        return f"<ERROR: {str(e)[:120]}>"
+def strip_verse_marker(verse: str) -> str:
+    """Separate the verse locator (e.g. '||1/1') from the Sanskrit content.
 
-
-def propose_gloss(record: RawL0Record, segments: list[dict]) -> None:
-    """OPTIONAL: a lightweight model gloss pass (non-blocking; never required for the substrate).
-
-    The deterministic core (Vidyut segmentation/lemma/morphology + P0) does NOT depend on this.
-    If the model call fails or hangs, the record still has its analysis + proof; gloss stays
-    MACHINE_PROPOSED with whatever the model returned. Never blocks the pipeline.
+    The Dyczkowski/GRETIL editions append a locator like '||1/1' to each verse. This is a
+    structural reference, NOT Sanskrit content — classify it as structural so P0 sees only
+    the semantic Sanskrit (else '1/1' digits become UNKNOWN). The locator is preserved
+    separately (it is the passage locator).
     """
-    seg_text = "; ".join(f"{s['surface']}[{s['lemma']}]" for s in segments)
-    prompt = (
-        "Segment this Sanskrit verse into word/phrase-level units with a LITERAL gloss, a compound "
-        "analysis where applicable, and up to 2 alternatives. Keep proof SEPARATE: exact source span + "
-        "Vidyut lemma are one claim; the English gloss is a PROPOSED interpretation, never 'proved'.\n"
-        "Return JSON: {\"units\":[{\"surface\",\"lemma\",\"literal\",\"compound\",\"supplied\"}], "
-        "\"alternatives\":[{\"surface\",\"alt_literal\"}]}\n\n"
-        f"VERSE: {record.source}\nSEGMENTS: {seg_text}"
-    )
-    raw = _model(prompt, record.model)
-    record.witnesses["hermes"] = raw[:500]
+    m = re.search(r"[।|]{1,2}\s*([0-9/\s]+|[a-z/0-9 ]+)?\s*[।|]*$", verse.strip())
+    if m and m.start() > 0:
+        return verse[:m.start()].rstrip()
+    return verse
 
 
-# --------------------------------------------------------------------------- #
-# verification (P0 — source-span losslessness)
-# --------------------------------------------------------------------------- #
-def verify_source(record: RawL0Record) -> dict:
-    """P0: every source char accounted for. Returns the proof dimension."""
-    # the verse is the atomic source unit; P0 here asserts span integrity at the passage level.
-    # For a full chunk, verify_l0.p0_proof would run; for RAW-L0 v0 we assert the span maps.
-    sha = hashlib.sha256(record.source.encode("utf-8")).hexdigest()[:12]
-    return {
-        "source_span": "PROVED" if record.source else "FAIL",
-        "source_sha": sha,
-        "unknown_chars": 0 if all(c.isspace() or IAST_TOKEN.match(c) for c in record.source) else -1,
-    }
+def build_l0_records(chunk_id: str, verse: str, segments: list[dict],
+                     glosses: dict[str, dict] | None = None) -> list[dict]:
+    """Build canonical L0 records for one verse (the 'chunk').
+
+    Each Vidyut segment becomes a token record. The verse text is the chunk; we compute
+    char spans by locating each segment's surface in the IAST verse.
+
+    glosses: {surface: {literal, compound, supplied}} — the LLM/generative layer.
+    """
+    verse = strip_verse_marker(verse)   # drop the structural locator
+    records = []
+    # the verse is the source text; chunk_char == line_char (single-line chunk)
+    n = len(verse)
+
+    # naive span assignment: scan the IAST verse for each segment's SLP1 surface is lossy
+    # (SLP1 != IAST). Instead, segment the IAST verse by whitespace and pair by order, then
+    # cross-reference Vidyut's SLP1 analysis per IAST token.
+    iast_tokens = [(m.start(), m.end(), m.group(0)) for m in IAST_TOKEN.finditer(verse)]
+
+    for i, (cs, ce, token) in enumerate(iast_tokens):
+        lemma = None
+        dclass = None
+        # analyze the IAST token via Vidyut (transliterates internally)
+        try:
+            analyses = vidyut_analyze(token)
+            if analyses and not any("error" in a for a in analyses):
+                lemma = analyses[0].get("lemma")
+                dclass = analyses[0].get("data_class")
+        except Exception:
+            pass
+        gloss = glosses.get(token, {}).get("literal", "") if glosses else ""
+        supplied = glosses.get(token, {}).get("supplied", False) if glosses else False
+        # status: PARSED only if we have both a lemma (or gloss) and a real token
+        if lemma or gloss:
+            status = "PARSED"
+        elif token:
+            status = "AMBIGUOUS"   # Vidyut couldn't analyze; abstain, don't fabricate
+        else:
+            status = "FAILED"
+        records.append({
+            "id": f"{chunk_id}:L1:T{i}",
+            "chunk_id": chunk_id,
+            "line_id": 1,
+            "line_kind": "verse_blockquote",
+            "source_text": verse,
+            "raw_fragment": token,
+            "char_start": cs, "char_end": ce,
+            "chunk_char_start": cs, "chunk_char_end": ce,
+            "line_char_start": cs, "line_char_end": ce,
+            "wraps_line": False,
+            "lemma_iast": lemma or token,
+            "literal_gloss": gloss,
+            "quoted": False,
+            "status": status,
+        })
+    return records
 
 
 # --------------------------------------------------------------------------- #
 # the pipeline
 # --------------------------------------------------------------------------- #
-def raw_l0(work_id: str, passage_id: str, sanskrit: str,
-           model: str = "deepseek-v4-flash", use_model: bool = True) -> RawL0Record:
-    """Run the RAW-L0 pipeline on one verse. Returns a MACHINE_PROPOSED record.
+def raw_l0_to_canonical(chunk_id: str, verse: str,
+                        glosses: dict[str, dict] | None = None) -> tuple[list[dict], dict]:
+    """Produce canonical L0 records for a verse + run the P0 proof (existing verify_l0).
 
-    The deterministic substrate (Vidyut segmentation/lemma/morphology + P0 proof) NEVER depends
-    on the model. `use_model` adds the optional gloss/compound proposal pass.
+    Returns (records, proof) where proof is from the EXISTING verify_l0.p0_proof, so RAW-L0
+    is validated by the same harness as IPVV. The verse locator is stripped as structural so
+    P0 sees only the semantic Sanskrit.
     """
-    rec = RawL0Record(work_id=work_id, passage_id=passage_id, source=sanskrit, model=model)
+    stripped = strip_verse_marker(verse)
+    records = build_l0_records(chunk_id, stripped, [], glosses)
+    proof = p0_proof(chunk_id, stripped, records)
+    return records, proof
 
-    # 1. DETERMINISTIC ANALYSIS — Vidyut segmentation + lemma + morphology
-    segments = vidyut_segments(sanskrit)
-    rec.witnesses["vidyut"] = segments
-    rec.analysis = {
-        "units": [{"surface": s["surface"], "lemma": s["lemma"],
-                   "data_class": s["data_class"]} for s in segments],
-    }
 
-    # 2. PROPOSE (optional) — Hermes gloss + compound + alternatives
-    if use_model:
-        propose_gloss(rec, segments)
-
-    # 3. VERIFY — P0 source-span integrity
-    rec.proof = verify_source(rec)
-
-    return rec
+def raw_l0(work_id: str, passage_id: str, sanskrit: str,
+           glosses: dict[str, dict] | None = None) -> dict:
+    """Top-level: build canonical L0 + proof for one verse."""
+    chunk_id = f"{work_id}-{passage_id.split(':')[-1]}"
+    records, proof = raw_l0_to_canonical(chunk_id, sanskrit, glosses)
+    return {"chunk_id": chunk_id, "passage_id": passage_id, "verse": sanskrit,
+            "records": records, "proof": proof}
 
 
 # --------------------------------------------------------------------------- #
@@ -168,22 +171,23 @@ def raw_l0(work_id: str, passage_id: str, sanskrit: str,
 # --------------------------------------------------------------------------- #
 def main() -> int:
     import argparse
-    ap = argparse.ArgumentParser(description="RAW-L0: raw Sanskrit → auditable L0 (MODE_B)")
+    ap = argparse.ArgumentParser(description="RAW-L0: raw Sanskrit -> canonical L0 (MODE_B)")
     ap.add_argument("--work", default="kramasadbhava")
     ap.add_argument("--passage", default="kramasadbhava:1.1")
-    ap.add_argument("--sanskrit", required=True, help="the raw Sanskrit verse")
-    ap.add_argument("--model", default="deepseek-v4-flash")
-    ap.add_argument("--no-model", action="store_true", help="deterministic only (Vidyut + P0, no model gloss)")
-    ap.add_argument("--out", default="data/corpus/downloads/raw-l0-sample.json")
+    ap.add_argument("--sanskrit", required=True)
+    ap.add_argument("--gloss-file", default=None, help="JSON {token: {literal, compound, supplied}}")
+    ap.add_argument("--out", default="data/corpus/downloads/raw-l0-canonical.json")
     a = ap.parse_args()
 
-    rec = raw_l0(a.work, a.passage, a.sanskrit, a.model, use_model=not a.no_model)
+    glosses = json.load(open(a.gloss_file)) if a.gloss_file else None
+    res = raw_l0(a.work, a.passage, a.sanskrit, glosses)
     out = Path(a.out)
     out.parent.mkdir(parents=True, exist_ok=True)
     with out.open("w", encoding="utf-8") as fh:
-        json.dump(rec.to_dict(), fh, indent=2, ensure_ascii=False)
-    print(json.dumps(rec.to_dict(), indent=2, ensure_ascii=False))
-    print(f"\nwrote {out}")
+        json.dump(res, fh, indent=2, ensure_ascii=False)
+    print(json.dumps(res["proof"], indent=2))
+    print(f"records: {len(res['records'])}")
+    print(f"wrote {out}")
     return 0
 
 

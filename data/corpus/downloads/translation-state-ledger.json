@@ -483,8 +483,14 @@
         "c1": "LEGACY_PRESENT"
       },
       "l0": {
-        "status": "NOT_STARTED",
-        "reason": null
+        "status": "ELIGIBLE",
+        "reason": "RAW-L0 batch generated canonical MACHINE_PROPOSED L0 (agent3_batch)",
+        "progress": {
+          "kramasadbhava": {
+            "completed": 9,
+            "total": 10
+          }
+        }
       },
       "proof": {
         "status": "NONE"
