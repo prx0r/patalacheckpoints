@@ -49,13 +49,14 @@ stale ones as `[ARCHIVED]` so a new agent is never confused. If it's not here, i
 | **Scholarly graph / data model** | `data/corpus/graph.ts` + `docs/SCHOLARLY_GRAPH.md` | repo |
 | **Translation protocol** | `docs/TRANSLATION_PROTOCOL.md` | repo `docs/` |
 | **Northstar / vision spec** | `docs/NORTHSTAR.md` | repo `docs/` |
-| **Vision index (full arc, Vision 01–11)** | `docs/vision/INDEX.md` | repo `docs/vision/` |
+| **Vision index (full arc, Vision 01–12)** | `docs/vision/INDEX.md` | repo `docs/vision/` |
 | **Vision 06 — Pāṭala Review (adversarial)** | `docs/vision/vision-06-adversarial-review.md` | repo `docs/vision/` |
 | **Vision 07 — The New Scholar** | `docs/vision/vision-07-new-scholar.md` | repo `docs/vision/` |
 | **Vision 08 — Scholar Economics** | `docs/vision/vision-08-scholar-economics.md` | repo `docs/vision/` |
 | **Vision 09 — Media & Cross-Tradition Engine** | `docs/vision/vision-09-media-and-cross-tradition.md` | repo `docs/vision/` |
 | **Vision 10 — Market Entry & Partnerships** | `docs/vision/vision-10-market-entry-and-partnerships.md` | repo `docs/vision/` |
-| **Vision 11 — Śiva Before Abhinava (genealogy corpus)** | `docs/vision/vision-11-siva-before-abhinava.md` | repo `docs/vision/` |
+| **Vision 11 — Śiva Before Abhinava (genealogy corpus)** | `docs/vision/expansion/vision-11-siva-before-abhinava.md` | repo `docs/vision/expansion/` |
+| **Vision 12 — Multi-Surface Platform** | `docs/vision/vision-12-multi-surface-platform.md` | repo `docs/vision/` |
 | **Dual-agent track** | `machinelearning/DUAL_AGENT_TRACK.md` | repo `machinelearning/` |
 | **Context engineering** | `machinelearning/CONTEXT_ENGINEERING.md` | repo `machinelearning/` |
 | **Education layer (vision)** | `machinelearning/EDUCATION_VISION.md` | repo `machinelearning/` |
