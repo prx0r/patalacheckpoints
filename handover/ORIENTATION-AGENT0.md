@@ -82,7 +82,7 @@ category-A work as results; you keep the distinction enforced.
 
 ## PHASE 2 — YOUR CORE FUNCTION: KEEP THE SYSTEM HONEST
 
-### Step 2.0 — Run and enforce the staleness checker
+### Step 2.0 — Run and enforce the staleness checker + the live flow
 **`handover/check_staleness.py`** is your primary instrument. It detects drift across:
 1. Registry ↔ files (every agent's orientation/handover_dir/owns exist)
 2. Canonical vision + checkpoints exist
@@ -90,11 +90,22 @@ category-A work as results; you keep the distinction enforced.
 4. No orientation contains a verbatim copy of the vision (must link, not copy)
 5. Each lane has a live INDEX
 6. Benchmark passage ids resolve; golds are consistent
+7. **Live state (`STATE.yaml`) matches the registry + has the shared CP ladder**
+
+**`handover/flow.py`** is the live orchestration interface (the versioned flow):
+- `flow.py status` — the current live state of every agent + the shared CP ladder.
+- `flow.py update <agent> <cp> <status> -n "<note>" --by <agent>` — change a checkpoint's status;
+  it bumps `state_version` and appends an attributed, timestamped entry to `history.log`.
+- `flow.py add-agent <agent>` — scaffold a new agent's state block (then add the `AGENTS.yaml` entry +
+  generate its orientation).
+- `flow.py history` — the immutable versioned change log.
 
 **🟢 GATE 2.0** — When the checker fails, fix the DOC (not the checker). Common fixes:
-- a new agent added → add its `AGENTS.yaml` entry + generate its orientation from the template;
+- a new agent added → add its `AGENTS.yaml` entry + generate its orientation from the template +
+  `flow.py add-agent <id>`;
 - a vision change → update `VISION_AND_NAVIGATION.md` once, re-derive/verify each orientation;
-- a lane finished a checkpoint → update that lane's `INDEX.md` + the shared `CHECKPOINTS.md` state.
+- a lane finished a checkpoint → `flow.py update <agent> <cp> <status>` + update that lane's `INDEX.md`
+  + the shared `CHECKPOINTS.md` state.
 
 ### Step 2.1 — Coordinate cross-lane handoffs
 Every handoff between Agent 1 and Agent 2 goes in `handover/LOG.md`: what · why · file · date ·

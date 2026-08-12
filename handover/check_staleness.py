@@ -28,6 +28,7 @@ import yaml
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 YAML_PATH = os.path.join(ROOT, "handover", "AGENTS.yaml")
+STATE_PATH = os.path.join(ROOT, "handover", "STATE.yaml")
 VISION = os.path.join(ROOT, "VISION_AND_NAVIGATION.md")
 CHECKPOINTS = os.path.join(ROOT, "handover", "CHECKPOINTS.md")
 STRUCTURE_DIR = os.path.join(ROOT, "benchmarks", "v0", "structure")
@@ -177,6 +178,32 @@ def main() -> int:
     # 9. system paths
     print("\n== system ==")
     check_path(os.path.join(ROOT, "handover", "SYSTEM.md"), "agent-system meta-doc")
+    check_path(os.path.join(ROOT, "handover", "flow.py"), "live flow command")
+    check_path(STATE_PATH, "live state")
+
+    # 10. live state consistency: STATE.yaml matches the registry + has the shared CP ladder
+    print("\n== live state (STATE.yaml) ==")
+    if os.path.exists(STATE_PATH):
+        try:
+            state = yaml.safe_load(open(STATE_PATH))
+        except Exception as e:
+            state = None
+            fail(f"STATE.yaml does not parse: {e}")
+        if state:
+            if "state_version" not in state:
+                fail("STATE.yaml has no state_version")
+            # every registry agent has a state block
+            for aid in agents:
+                if aid not in state:
+                    fail(f"STATE.yaml missing block for agent '{aid}'")
+                else:
+                    ok(f"state block for '{aid}' present")
+            # shared CP ladder present
+            shared = state.get("shared", {})
+            if not shared:
+                fail("STATE.yaml has no 'shared' CP ladder")
+            else:
+                ok(f"shared CP ladder present ({len(shared)} entries)")
 
     print(f"\n=== {'SYSTEM CLEAN (0 failures)' if not failures else f'STALE: {len(failures)} failure(s)'} ===")
     return 0 if not failures else 1

@@ -1,0 +1,46 @@
+state_version: 2
+last_update: '2026-08-12T10:31:17'
+agent0:
+  checkpoints:
+    all:
+      status: IN_PROGRESS
+      note: Agent-system machinery built (registry, staleness checker, orientations).
+        Live STATE.yaml + flow.py added. The system is infrastructure; its proof =
+        gold in the lanes.
+agent1:
+  checkpoints:
+    CP0:
+      status: DONE
+      note: benchmarks/v0 frozen (MANIFEST/SCHEMA/SPLITS/METRICS).
+    CP2:
+      status: PARTIAL
+      note: retrieval baselines (BM25/dense/hybrid) + eval harness exist; not re-baselined
+        on v0 fixtures.
+    CP3:
+      status: PARTIAL
+      note: cluster.py proposals exist (machine); no AcceptedTheme yet.
+    CP4:
+      status: IN_PROGRESS
+      note: building ARG-003 with the IR shape
+      updated_by: agent1
+      ts: '2026-08-12 10:31:17'
+agent2:
+  checkpoints:
+    CP1:
+      status: PARTIAL
+      note: P0 35/35 PASS (frozen). P1-P5 (Vidyut/Heritage witnesses) in progress.
+        PhilologicalProof v1 target.
+shared:
+  CP0: DONE
+  CP1: PARTIAL
+  CP2: PARTIAL
+  CP3: PARTIAL
+  CP4: IN_PROGRESS
+  CP5: PARTIAL
+  CP6: PARTIAL
+  CP7: NOT_STARTED
+  CP8: NOT_STARTED
+  CP9: NOT_STARTED
+  CP10: NOT_STARTED
+  CP11: NOT_STARTED
+  CP12: NOT_STARTED

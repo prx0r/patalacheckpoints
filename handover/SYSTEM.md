@@ -125,14 +125,33 @@ whole system:
 
 ## 5. HOW AGENTS KEEP THE VISION LIVE (the workflow)
 
-1. **Session start:** run `check_staleness.py`. Fix any drift. Read your ORIENTATION → the vision →
+**The versioned live flow (the orchestration layer):**
+```
+VISION (VISION_AND_NAVIGATION.md)             the canonical north star
+   ↓
+CHECKPOINTS (handover/CHECKPOINTS.md)         the shared execution map (CP0–CP12)
+   ↓
+STATE (handover/STATE.yaml)                   the LIVE per-agent + shared checkpoint statuses
+   ↓
+flow.py (handover/flow.py)                    the single interface agents use to update state
+   ↓
+history.log                                   the immutable versioned change log (who/what/when)
+```
+**`flow.py` is the ONLY way to change live state.** Every `flow update` bumps `state_version` and appends
+an attributed, timestamped entry to `history.log`. New agents slot in via `flow add-agent` (scaffolds a
+state block) + an `AGENTS.yaml` entry + a generated orientation.
+
+1. **Session start:** run `python3 handover/check_staleness.py` (must be clean). Run
+   `python3 handover/flow.py status` (know the live state). Read your ORIENTATION → the vision →
    CHECKPOINTS.
-2. **Work:** update your lane's `INDEX.md` (the "current state" pointer) as you go. Append to your
-   `SESSION-<date>.md`, never overwrite.
-3. **Cross-lane:** one `LOG.md` entry per handoff (what · why · file · date · direction · schema snippet).
-4. **When the vision/checkpoints change:** update `VISION_AND_NAVIGATION.md` + `CHECKPOINTS.md` ONCE,
-   then re-derive/verify each agent's orientation against the registry (the checker flags any drift).
-5. **Session end:** update `CLAIMS.md` + `theatre_check.py` honestly, run `check_staleness.py` again
+2. **Work:** update your lane's `INDEX.md` as you go. Append to your `SESSION-<date>.md`, never overwrite.
+3. **Progress:** when a checkpoint changes status, run
+   `python3 handover/flow.py update <agent> <cp> <status> -n "<note>" --by <agent>` — this versions the
+   change. Keep `CHECKPOINTS.md` + your `INDEX.md` consistent with it.
+4. **Cross-lane:** one `LOG.md` entry per handoff (what · why · file · date · direction · schema snippet).
+5. **When the vision/checkpoints change:** update `VISION_AND_NAVIGATION.md` + `CHECKPOINTS.md` ONCE,
+   then re-derive/verify each agent's orientation against the registry.
+6. **Session end:** update `CLAIMS.md` + `theatre_check.py` honestly, run `check_staleness.py` again
    (must pass), drop a `SESSION-<date>.md`, archive superseded snapshots.
 
 ---
