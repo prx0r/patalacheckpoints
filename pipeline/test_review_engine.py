@@ -84,6 +84,34 @@ def main():
     check("REJECT keeps v1 resolvable (not deleted)", len(ledger2.versions["G2-TC2"]) == 1)
     check("REJECT propagates to inference NEED_REVIEW", ds.get("G2-INF1") == "NEED_REVIEW")
 
+    print("\n== Phase 3D — the MCP capability surface (proposal / authorization / simulation) ==")
+    l3 = ReviewLedger()
+    l3.add_version("G2-TC2", "v1")
+    l3.add_version("G2-TC2", "v2")
+    # propose: machine-safe, no state change
+    p = l3.propose_review("G2-TC2", "v1", "REVISE", "narrow", "proposition")
+    check("propose_review returns PROPOSED/MACHINE", p["status"] == "PROPOSED" and p["origin"] == "MACHINE")
+    check("propose_review does not change state", l3.reduce().get("G2-TC2") == "CANDIDATE")
+    # submit: machine forbidden (the executable constitution)
+    try:
+        l3.submit_review("hermes", "machine", "*", "G2-TC2", "v1", "REVISE", "proposition", "x")
+        check("machine submit blocked", False)
+    except PermissionError:
+        check("machine submit blocked (authorization policy)", True)
+    # submit: scholar allowed
+    ev = l3.submit_review("scholar-x", "scholar", "proposition", "G2-TC2", "v1", "REVISE",
+                          "proposition", "narrow", replacement_ref="G2-TC2")
+    check("scholar submit creates a ReviewEvent", ev.review_id.startswith("REV-"))
+    # simulate: zero-write hypothetical
+    before = len(l3.events)
+    sim = l3.simulate_review("G2-TC2", "REJECT")
+    check("simulate_review is zero-write", len(l3.events) == before)
+    check("simulate_review computes hypothetical impact", sim["derived_state"].get("G2-INF1") == "NEED_REVIEW")
+    # get_state
+    s = l3.get_state("G2-TC2")
+    check("get_state returns effective state + version", s["effective_state"] == "SUPERSEDED" and s["version"] == "v2")
+    check("get_state lists dependencies", "USES_AS_PREMISE" in [d["type"] for d in s["dependencies"]["direct"]])
+
     print(f"\n=== RESULT: {PASS} pass / {FAIL} fail ===")
     sys.exit(1 if FAIL else 0)
 

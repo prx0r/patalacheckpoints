@@ -326,3 +326,33 @@ The first **executable scholarly correction** is implemented and proven:
 (the 4 edge types); Phase 3C ImpactReport done; Phase 3D MCP tools
 (`patala_get_review_state` / `patala_propose_review` / `patala_submit_review` / `patala_get_impact`)
 and Phase 3E (tiny Workbench review screen) remain. Hermes A4 scheduling (Phase 3F) comes LAST.
+
+---
+
+## 15. PHASE 3D — BUILT: the review capability surface (MCP tools, 2026-08-12)
+
+The executable-corrections review engine is now exposed as object-centric MCP tools (thin layer over
+`pipeline/review_engine.py` — the ONLY place review-state logic lives). `mcp/index.mjs` + `review_engine.py`
+(23/23 tests pass):
+
+```
+patala_get_review_state   → what the graph currently says about an object (state, reviews, supersession, deps)
+patala_propose_review     → machine-safe: creates a ReviewProposal (origin=MACHINE, status=PROPOSED), NO state change
+patala_submit_review      → the strongest boundary: requires actor_id + actor_kind + authorization_scope;
+                            Pāṭala POLICY decides legality (machine actors cannot promote; scholars submit scoped)
+patala_get_impact         → what a correction changes (directly + transitively affected, with reason path)
+patala_simulate_review    → ZERO-WRITE hypothetical: 'what happens if G2-TC2 is rejected?' (counterfactual precursor)
+```
+
+**The executable constitution (tested):** MCP exposes the request; Pāṭala policy decides whether it is
+legal. `submit_review` with actor_kind=machine is FORBIDDEN from creating a state-changing ReviewEvent; a
+scholar may submit a scoped one. This is where "AI proposes ≠ Pāṭala asserts" becomes operational at the
+tool boundary.
+
+**Acceptance loop proven:** get_review_state(G2-TC2:v1) → propose_review(REVISE) → submit_review (machine
+blocked, scholar allowed) → reducer computes new state → get_review_state → get_impact. Old version
+resolves, review immutable, unrelated ARG-004 unaffected, reads deterministic.
+
+**Next:** Phase 3E (tiny Workbench review screen — a human inspects one object, submits one correction,
+sees downstream impact) then Phase 3F (Hermes A4 scheduling, LAST). Keep the MCP thin; do not let
+scholarly-state logic leak into the tool layer.

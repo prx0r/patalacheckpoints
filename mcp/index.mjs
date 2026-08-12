@@ -14,6 +14,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 import { readFileSync, readdirSync } from "fs";
+import { spawnSync } from "child_process";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -309,5 +310,79 @@ server.tool(
   },
 );
 
+// ————————————————— Phase 3D: executable-corrections review tools —————————————————
+// Thin layer over pipeline/review_engine.py (the ONLY place review-state logic lives).
+// Object-centric: agents speak Pāṭala object language, never read/write review files.
+// Boundary: agents PROPOSE; authorized reviewers SUBMIT; Pāṭala ALONE computes consequences.
+const REVIEW_ENGINE = path.resolve(__dirname, "../pipeline/review_engine.py");
+
+function review(verb, args = {}) {
+  const r = spawnSync("python3", [REVIEW_ENGINE, verb, JSON.stringify(args)], {
+    encoding: "utf8", timeout: 30000,
+  });
+  if (r.status !== 0) throw new Error((r.stderr || r.stdout || "review engine error").slice(0, 500));
+  return JSON.parse(r.stdout);
+}
+
+server.tool(
+  "patala_get_review_state",
+  "What the scholarly graph currently says about an object: effective state, reviews, supersession, dependencies. Read-only, deterministic.",
+  { target_ref: z.string().describe("object id, e.g. G2-TC2"), target_version: z.string().optional() },
+  async ({ target_ref, target_version }) => {
+    const s = review("get_state", { target_ref, target_version });
+    return { content: [{ type: "text", text: JSON.stringify(s, null, 2) }] };
+  },
+);
+
+server.tool(
+  "patala_propose_review",
+  "The machine-safe path: create a ReviewProposal that does NOT change scholarly state. Returns origin=MACHINE, status=PROPOSED. Hermes/copilots call THIS.",
+  {
+    target_ref: z.string(), target_version: z.string().optional(),
+    proposed_decision: z.enum(["ACCEPT", "REVISE", "REJECT", "ABSTAIN"]),
+    rationale: z.string().optional(), scope: z.string().optional(),
+    evidence_refs: z.array(z.string()).optional(), replacement_proposal: z.string().optional(),
+  },
+  async (a) => {
+    const p = review("propose", a);
+    return { content: [{ type: "text", text: JSON.stringify(p, null, 2) }] };
+  },
+);
+
+server.tool(
+  "patala_submit_review",
+  "The strongest boundary: creates a state-changing ReviewEvent ONLY if the actor is authorized. Requires actor_id + actor_kind + authorization_scope. Pāṭala policy decides legality — a machine actor is forbidden from promotion.",
+  {
+    actor_id: z.string(), actor_kind: z.string(), authorization_scope: z.string().optional(),
+    target_ref: z.string(), target_version: z.string().optional(),
+    decision: z.enum(["ACCEPT", "REVISE", "REJECT", "ABSTAIN"]),
+    scope: z.string().optional(), rationale: z.string().optional(),
+    evidence_refs: z.array(z.string()).optional(), replacement_ref: z.string().optional(),
+  },
+  async (a) => {
+    const r = review("submit", a);
+    return { content: [{ type: "text", text: JSON.stringify(r, null, 2) }] };
+  },
+);
+
+server.tool(
+  "patala_get_impact",
+  "The product-facing tool: what a review/correction changes (directly + transitively affected, with the reason path). Also supports hypothetical simulation via patala_simulate_review.",
+  { target_ref: z.string() },
+  async ({ target_ref }) => {
+    const r = review("impact", { target_ref });
+    return { content: [{ type: "text", text: JSON.stringify(r, null, 2) }] };
+  },
+);
+
+server.tool(
+  "patala_simulate_review",
+  "ZERO-WRITE hypothetical: 'what happens if I reject G2-TC2?' Returns the hypothetical impact WITHOUT mutating any state. The precursor to the counterfactual scholar interface.",
+  { target_ref: z.string(), decision: z.enum(["ACCEPT", "REVISE", "REJECT", "ABSTAIN"]), replacement_ref: z.string().optional() },
+  async (a) => {
+    const s = review("simulate", a);
+    return { content: [{ type: "text", text: JSON.stringify(s, null, 2) }] };
+  },
+);
 const transport = new StdioServerTransport();
 await server.connect(transport);

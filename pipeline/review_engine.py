@@ -164,6 +164,89 @@ class ReviewLedger:
         self.events.append(ev)
         return ev
 
+    # ── Phase 3D: proposals, authorization policy, simulation (MCP-backed) ─────
+    def propose_review(self, target_ref: str, target_version: str, proposed_decision: str,
+                       rationale: str, scope: str, evidence_refs: list[str] | None = None,
+                       replacement_proposal: str | None = None) -> dict:
+        """The machine-safe path: create a ReviewProposal that does NOT change state.
+
+        Hermes agents / copilots / external agents call THIS — it returns origin=MACHINE,
+        status=PROPOSED. It never creates a ReviewEvent and never alters the derived state.
+        """
+        if proposed_decision not in DECISIONS:
+            raise ValueError(f"invalid decision {proposed_decision}")
+        self._seq += 1
+        return {
+            "proposal_id": f"PROP-{self._seq:04d}",
+            "target_ref": target_ref, "target_version": target_version,
+            "proposed_decision": proposed_decision, "rationale": rationale,
+            "scope": scope, "evidence_refs": evidence_refs or [],
+            "replacement_proposal": replacement_proposal,
+            "origin": "MACHINE", "status": "PROPOSED",
+        }
+
+    @staticmethod
+    def _actor_can(actor_kind: str, decision: str, scope: str) -> tuple[bool, str]:
+        """The authorization policy — the executable constitution.
+
+        - machine: may PROPOSE only; never creates a ReviewEvent that promotes.
+        - scholar: may submit scoped ACCEPT/REVISE/REJECT/ABSTAIN on their own scope.
+        - editor/adjudicator: may perform whatever promotion policy permits.
+        """
+        if actor_kind == "machine":
+            return False, "machine actors may propose, never submit a state-changing review"
+        if actor_kind == "scholar":
+            return True, "scholar may submit a scoped review"
+        if actor_kind in ("editor", "adjudicator"):
+            return True, "editor/adjudicator may perform promotion-policy actions"
+        return False, f"unknown actor_kind {actor_kind}"
+
+    def submit_review(self, actor_id: str, actor_kind: str, authorization_scope: str,
+                      target_ref: str, target_version: str, decision: str, scope: str,
+                      rationale: str, evidence_refs: list[str] | None = None,
+                      replacement_ref: str | None = None) -> ReviewEvent:
+        """The strongest boundary: requires an authenticated actor + explicit authority.
+
+        MCP exposes the request; PĀṬALA POLICY decides whether it is legal. A machine actor
+        is forbidden from creating a state-changing ReviewEvent. A scholar may submit a scoped
+        review (scope must be within their authorization_scope). An editor/adjudicator may
+        promote. This is where the constitution becomes executable.
+        """
+        ok, why = self._actor_can(actor_kind, decision, scope)
+        if not ok:
+            raise PermissionError(f"forbidden: {why}")
+        if authorization_scope and not (scope == authorization_scope or authorization_scope == "*"):
+            raise PermissionError(f"authorization_scope '{authorization_scope}' does not cover scope '{scope}'")
+        return self.record_review(target_ref, target_version, decision, actor_id, actor_kind,
+                                  scope, rationale, evidence_refs, replacement_ref)
+
+    def simulate_review(self, target_ref: str, decision: str, replacement_ref: str | None = None) -> dict:
+        """ZERO-WRITE hypothetical impact: 'what happens if G2-TC2 is rejected?'
+
+        Clones the ledger, applies the hypothetical review, and returns the resulting
+        DerivedState + ImpactReport WITHOUT mutating the real ledger. This proves the
+        separation of STATE TRANSITION from STATE COMPUTATION (deterministic + side-effect-free).
+        """
+        clone = ReviewLedger(dependencies=[
+            {"from": e.source, "to": e.target, "type": e.type} for e in self.edges
+        ])
+        clone.events = list(self.events)
+        clone.versions = {r: list(vs) for r, vs in self.versions.items()}
+        clone._seq = self._seq
+        clone.add_version(target_ref, "SIMULATED")
+        sim_version = clone.versions[target_ref][-1].version
+        clone.record_review(target_ref, sim_version, decision, "simulation", "machine",
+                            "simulation", "hypothetical", replacement_ref=replacement_ref)
+        ds = clone.reduce()
+        report = clone.impact_report(target_ref)
+        return {
+            "simulation": {"target_ref": target_ref, "decision": decision,
+                           "replacement_ref": replacement_ref},
+            "derived_state": ds.states,
+            "impact": report,
+        }
+
+
     # ── deterministic reducer ────────────────────────────────────────────────
     def reduce(self) -> DerivedState:
         """Compute the effective state of every object from the review ledger + dependency edges.
@@ -287,6 +370,35 @@ class ReviewLedger:
             "historical_version_retained": True,
         }
 
+    def get_state(self, target_ref: str, target_version: str | None = None) -> dict:
+        """What the graph CURRENTLY says about an object (patala_get_review_state).
+
+        Answers the object's effective state, its reviews, supersession, and dependencies —
+        without interpreting it.
+        """
+        ds = self.reduce()
+        versions = self.versions.get(target_ref, [])
+        version = target_version or (versions[-1].version if versions else None)
+        # the version that a specific target_version supersedes
+        supersedes = None
+        for v in versions:
+            if v.version == version and v.supersedes:
+                supersedes = f"{target_ref}:{v.supersedes}"
+        direct = [{"from": e.source, "to": e.target, "type": e.type}
+                  for e in self.edges if e.source == target_ref or e.target == target_ref]
+        downstream = [{"to": e.target, "type": e.type}
+                      for e in self.edges if e.source == target_ref]
+        reviews = [ev.to_dict() for ev in self.events if ev.target_ref == target_ref]
+        return {
+            "target_ref": target_ref,
+            "version": version,
+            "effective_state": ds.get(target_ref),
+            "origin": "MACHINE" if ds.get(target_ref) in ("CANDIDATE", "NEED_REVIEW") else "REVIEWED",
+            "reviews": reviews,
+            "supersedes": supersedes,
+            "dependencies": {"direct": direct, "downstream": downstream},
+        }
+
 
 # --------------------------------------------------------------------------- #
 # CLI: the synthetic executable-corrections demonstration (ARG-002)
@@ -318,9 +430,50 @@ def run_demo() -> dict:
 
 if __name__ == "__main__":
     import sys
-    out = "/root/projects/patala/data/corpus/downloads/review-demo-arg002.json"
-    res = run_demo()
-    with open(out, "w", encoding="utf-8") as fh:
-        json.dump(res, fh, indent=2, ensure_ascii=False)
-    print(json.dumps(res["impact"], indent=2, ensure_ascii=False))
-    print(f"\nwrote {out}")
+    # CLI: `python3 review_engine.py <verb> [json-args]` — the thin bridge the MCP shells to.
+    # Verbs: demo | get_state | propose | submit | simulate | impact
+    verb = sys.argv[1] if len(sys.argv) > 1 else "demo"
+    import json as _json
+    from pathlib import Path
+
+    # a fresh ledger for each call (deterministic demo fixture); in production this would be
+    # hydrated from Pāṭala's persisted ledger. The demo seeds ARG-002 + G2-TC2 v1/v2.
+    ledger = ReviewLedger()
+    ledger.add_version("G2-TC2",
+        "The awareness expressed as 'I' is not treated as one more relation constructed between independently given elements.")
+    ledger.add_version("G2-TC2",
+        "The awareness expressed as 'I' is not a conceptual construction of the elements it unifies (narrower formulation).")
+
+    try:
+        if verb == "demo":
+            res = run_demo()
+        elif verb == "get_state":
+            a = _json.loads(sys.argv[2]) if len(sys.argv) > 2 else {}
+            res = ledger.get_state(a.get("target_ref", "G2-TC2"), a.get("target_version"))
+        elif verb == "propose":
+            a = _json.loads(sys.argv[2])
+            res = ledger.propose_review(
+                a["target_ref"], a.get("target_version", "v1"), a["proposed_decision"],
+                a.get("rationale", ""), a.get("scope", "proposition"),
+                a.get("evidence_refs"), a.get("replacement_proposal"))
+        elif verb == "submit":
+            a = _json.loads(sys.argv[2])
+            ev = ledger.submit_review(
+                a["actor_id"], a["actor_kind"], a.get("authorization_scope", "*"),
+                a["target_ref"], a.get("target_version", "v1"), a["decision"],
+                a.get("scope", "proposition"), a.get("rationale", ""),
+                a.get("evidence_refs"), a.get("replacement_ref"))
+            res = {"review": ev.to_dict(), "derived_state": ledger.reduce().states}
+        elif verb == "simulate":
+            a = _json.loads(sys.argv[2])
+            res = ledger.simulate_review(a["target_ref"], a["decision"], a.get("replacement_ref"))
+        elif verb == "impact":
+            a = _json.loads(sys.argv[2])
+            res = ledger.impact_report(a.get("target_ref", "G2-TC2"))
+        else:
+            res = {"error": f"unknown verb {verb}"}
+        print(_json.dumps(res, indent=2, ensure_ascii=False))
+    except Exception as e:
+        print(_json.dumps({"error": str(e)}, ensure_ascii=False))
+        sys.exit(1)
+

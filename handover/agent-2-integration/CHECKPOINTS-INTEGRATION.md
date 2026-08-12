@@ -91,8 +91,8 @@ CP1 floor ✅ (63/63)  →  corpus state ✅ (ledger)  →  review engine ✅ (P
    ↓
 PHASE 3B  typed dependency propagation        (the 4 edge types — partially proven in 3A)
 PHASE 3C  ImpactReport                         (✅ done in 3A)
-PHASE 3D  MCP tools: patala_get_review_state · patala_propose_review · patala_submit_review ·
-          patala_get_impact                    (expose the graph as verbs, PROPOSE-not-ACCEPT)
+PHASE 3D  MCP review tools                     (✅ BUILT: patala_get_review_state · patala_propose_review ·
+          patala_submit_review · patala_get_impact · patala_simulate_review; the executable constitution)
 PHASE 3E  tiny Scholar Workbench review screen
 PHASE 3F  Hermes A4 scheduling                (LAST — Hermes orchestrates, it doesn't define semantics)
    ↓
