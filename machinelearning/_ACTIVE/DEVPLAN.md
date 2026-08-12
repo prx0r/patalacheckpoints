@@ -122,16 +122,26 @@ reviewers (no closed-loop self-confirmation).
 
 ## 4. THE PRIORITY ORDER (what to do, and why)
 
-> **Order corrected (2026-08-12).** The Nyāya gate cannot be wired onto arbitrary claims — it needs real
-> `Proposition`/`Inference` objects (per `handover/CHECKPOINTS.md` + `CLAIMS.md` P-003/P-004). So the gate is
-> NOT first. Gold review and a real extractor come first; the gate plugs in at CP4 afterward.
+> **Order corrected (2026-08-12, revision 2).** The bottleneck is **epistemic, not engineering** — more
+> machine evaluation against machine-created gold (`M1 → G_machine → M2 → metric`) does not advance the
+> epistemic state. The governing doctrine (see `handover/agent-1-ml/NEXT-STEPS.md`): *when the missing
+> oracle is human scholarly judgment, do not substitute another model — either obtain the judgment, or
+> work only on claims verifiable mechanically.* So the extractor, gate wiring, and neural retrieval are
+> **PARKED** until the human review crosses the gate. What advances now is either **human-reviewed**
+> progress or **construction-verifiable** progress.
 
-| # | Build | CP | Why |
-|---|---|---|---|
-| **1** | **Independent review of ARG-GOLD-001..005** | CP4 | the gold is the target a real extractor must hit; CANDIDATE until a reviewer signs it. Protocol: `experiments/ARG-GOLD-REVIEW-PROTOCOL.md` |
-| **2** | **A real extractor** (blind, beats the primitive baseline) | CP4 | proposition F1 + inference recovery > 0, low false-assertion, vs a frozen held-out split |
-| **3** | **Gate gold fixtures + wire `verify-claim-semantic`** | CP4/CP6 | only now — an audit of real `Inference` objects (not arbitrary claims) |
-| **4** | **Retrieval re-baseline on S2** | CP2 | convert S1-nonleak to the honest split |
+| # | Build | CP | Kind | Why / status |
+|---|---|---|---|---|
+| **0** | **Fix worktrees + reconcile commits** | — | operational | Agent 0 action; hard precondition (Axiom 11). No experimental work, benchmark mutation, gold edit, or canonical model run until done. |
+| **1** | **Independent review of ARG-GOLD-001..005** (target: ≥1 argument, ARG-002 v2) | CP4 | human-reviewed | the CP4 critical path. Success metric `count(INDEPENDENT_REVIEWED) > 0`. Packet: `benchmarks/v0/ARG-GOLD-REVIEW-PACKET.md`. Also instrument the review → first prototype of the Workbench/Review product. |
+| **2** | **PĀṬALA-FIDELITY synthetic corruption suite** | CP4/CP0 | construction-verifiable | inject deterministic mutations (drop/duplicate/shift span, reorder, unknown-region; flip lemma/case/number/gender/replace surface; shift/remove/wrong/swapped anchor; delete grounding edge, nonexistent ref, stale proof, source-hash change) → assert the verifier fails. Metric `Sensitivity(V,E)`. **`SYNTHETIC_SENSITIVITY ≠ REAL_WORLD_RECALL`.** |
+| **3** | **Deterministic graph baseline (k-core)** | CP3 | construction-verifiable | at least one deterministic canonical baseline (not "replace Louvain forever"). Test: `assert hash(run(graph)) == hash(run(graph))` across processes. |
+| **4** | **Support / wait for human gold review** | CP4 | — | the gate that unlocks everything downstream. |
+
+**PARKED until review (P4 of NEXT-STEPS):** the real extractor · gate gold fixtures + wiring
+`verify-claim-semantic` · retrieval re-baseline on S2 · DSPy · HippoRAG/PPR · cross-encoder semantic
+alignment · semantic microscope B–E · crux ML · argument ranking. Their evaluation reduces to the closed
+machine loop and does not establish philosophical correctness.
 
 **Do NOT:** build more essay layers, add graph abstractions, or port the Bayesian ontology (rejected in
 `TRUTHENGINE_TO_PATALA_MAPPING.md`).
@@ -150,17 +160,21 @@ SEMANTIC ALIGNMENT v0 → HYBRID RETRIEVAL → SEMANTIC ATLAS → ARGUMENT-AWARE
 → GRAPH MEMORY / MULTI-HOP → COUNTERFACTUAL → SCHOLAR PRODUCT
 ```
 
-**Concrete next builds (use what we already have — no heavy new deps):**
+**Current status (revision 2):** D1 (semantic alignment), D3 (multi-hop/PPR), and D4 (hybrid retrieval)
+are **PARKED** until the human gold review crosses the gate — their evaluation is the closed machine
+loop `M1 → G_machine → M2 → metric`, which does not establish philosophical correctness. Only **D2** is
+now, reframed as a construction-verifiable baseline:
+
 | # | Build | What | Why / status |
 |---|---|---|---|
-| D1 | **Semantic Alignment v0** | occurrence-pair candidates from the theme reviews (vimarśa NEAR_SAME, sphurattā AMBIGUOUS, pramāṇa NEAR_SAME); score with `sentence_transformers` (dense) + sparse + cross-encoder rerank; benchmark the coarse SAME/NEAR/PARTIAL/DIFFERENT judgment | the symbolic layer; deps already installed |
-| D2 | **Deterministic theme clustering** | replace `cluster.py`'s Louvain with k-core (reproducible communities; rerun-today = rerun-tomorrow) | fixes a real reproducibility risk (k-core paper, 2603.05207) |
-| D3 | **Multi-hop over the curated graph** | Personalized PageRank traversal (HippoRAG idea) over Pāṭala's own senses/claims/arguments/themes — NOT an OpenIE graph | associative retrieval: walk vikalpa→ARG-002→objection→reply→Bhartṛhari |
-| D4 | **Hybrid scholarly retrieval** | lexical + dense + multi-vector + graph neighbourhood, over Pāṭala objects (lemmas + C1 + arguments), not English chunks | the "neural layer" of the microscope; CP2 |
+| D2 | **Deterministic graph baseline (k-core)** | at least one deterministic canonical baseline (rerun-today = rerun-tomorrow) — can be compared later against Louvain/Leiden/semantic clustering once real theme gold exists | fixes a real reproducibility risk (k-core paper, 2603.05207); do NOT assume determinism = better semantics. Test: `assert hash(run(graph)) == hash(run(graph))` across processes |
 
-**Pilot later (once gold matures):** DSPy for extraction/alignment optimization (gold = objective).
+**PARKED until review:** D1 semantic alignment (Stage A harness already exists; baseline 0/8 falsified) ·
+D3 multi-hop PPR over the curated graph (HippoRAG idea, NOT OpenIE) · D4 hybrid scholarly retrieval
+(lemmas + C1 + arguments). **Pilot later (once gold matures):** DSPy for extraction/alignment
+optimization.
 **Avoid:** Kùzu (ARCHIVED), GraphRAG/LightRAG as dependencies (pattern libraries only). Benchmark each
-neural layer on Pāṭala's own gold; never claim a neural output as validated.
+neural layer on Pāṭala's own (reviewed) gold; never claim a neural output as validated.
 
 ---
 
@@ -176,8 +190,10 @@ If you can't answer it, the capability isn't ready for evaluation. And every res
 ## 7. The sequence
 
 ```
-A (gate gold + wire gate)  →  B (argument gold)  →  C (evaluate against frozen benchmark)
-        →  D (neural/retrieval layer, Phase D above)
+0 (fix worktrees) → 1 (independent gold review, CP4 critical path)
+   → 2 (PĀṬALA-FIDELITY corruption suite, concurrent) → 3 (deterministic baseline, concurrent)
+   → 4 (human gold review crosses the gate)
+   → ONLY THEN: extractor → external evaluator → semantic alignment → neural retrieval
 ```
 Each gated on the checkpoint-test + the anti-theatre protocol. Nothing promotes to `VALIDATED` without
 independent gold + blind eval + metric + human adjudication.
