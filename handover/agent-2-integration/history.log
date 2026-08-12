@@ -74,3 +74,15 @@ machinery (`verify_l0.py` → /tmp/p0_authoritative, source_sha 78f72e74..., PAS
 Result: proof resolution STALE → **REFERENCE_RESOLVED / EXACT**, on_disk_PASS=True, roundtrip PASS,
 resolved_resolutions=[EXACT, SPAN_LEVEL], unresolved=[] . The auditable Sanskrit→C1 chain now closes
 end-to-end: Proposition G-TC2 → C1/L2 spans → 4 exact L0 tokens → source spans → authoritative proof.
+
+## 2026-08-12 — git formalized; autonomous-run plan recorded (deferred)
+Formalized the per-agent git convention in the agnostic foundational docs:
+- SYSTEM.md §6 "The Git Layer — per-agent branches, one shared trunk"
+- AGENTS.yaml template.git contract + git_branch per instance (agent1/agent2)
+- ORIENTATION-AGENT0.md §2.3 (agent0 enforces the git layer, merges coordination state to main)
+Operating model: translate texts autonomously at night (content production), harder intellectual work
+when awake. DEFERRED (per decision): the auto-run supervisor. Plan for later: a bounded
+pipeline/auto_run.py that drives T1->L2->C1 per passage via the existing run.py/skills, auto-runs
+validate-passage+verify after each, stamps provenance (origin=machine, MACHINE_PROPOSED, never
+auto-accepted), stops on any validation failure, writes a batch report. Do NOT build until the git +
+vision formalization is committed.

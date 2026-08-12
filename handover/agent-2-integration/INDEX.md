@@ -83,6 +83,10 @@ substrate (`resolve`, `hub`, `spines`, `themes`, 4 `verify_*`, `recommend`). Doc
 8. **Schema-version pin** — `data/published/ipvv/version.json`.
 9. **Cross-work ingestion demo** (later) — ingest a second real work's T1 to demonstrate/confirm the
    L0 adapter generalizes (do NOT build a generic ingestion framework now).
+10. **Autonomous-run supervisor** (deferred) — `pipeline/auto_run.py`: batch T1→L2→C1 per passage via
+    existing run.py/skills, auto validate-passage+verify after each, stamp provenance (origin=machine,
+    MACHINE_PROPOSED, never auto-accepted), stop on validation failure, batch report. Enables
+    "translate while I sleep." Build AFTER git/vision formalization is committed.
 
 Full thread list: `WHAT_NEXT_PATALA.md`.
 

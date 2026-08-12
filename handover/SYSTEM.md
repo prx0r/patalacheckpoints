@@ -166,7 +166,39 @@ state block) + an `AGENTS.yaml` entry + a generated orientation.
 
 ---
 
-## 6. THE AGENT-0 ROLE — THE ARCHETYPE + ITS GOVERNANCE FUNCTION
+## 6. THE GIT LAYER — PER-AGENT BRANCHES, ONE SHARED TRUNK
+
+Each live agent commits its **own deliverables to its own branch**; the shared trunk carries what is
+canonical and the coordination state. This prevents the failure this project hit: two agents working in
+one working tree, so one lane's uncommitted work is invisible and unpushed.
+
+```
+main     shared trunk   — the vision, the doctrine, canonical checkpoint-crossing objects,
+                          and the shared coordination state (handover/LOG.md, STATE.yaml,
+                          flow.py, check_staleness.py, AGENTS.yaml, SYSTEM.md)
+agent1   working branch — Agent 1's deliverables (benchmarks/v0/, machinelearning/research/patala_ml/)
+agent2   working branch — Agent 2's deliverables (pipeline/, data/, lib/, docs/)
+```
+
+**Rules (agnostic, apply to every agent):**
+1. **Commit your own lane's files to your own branch** (`agent1` / `agent2` / ...). Never sweep
+   another agent's uncommitted work or the pre-existing build into a commit you claim.
+2. **The shared coordination state lives on `main`** — `handover/LOG.md`, `handover/STATE.yaml`,
+   `flow.py`, `check_staleness.py`, `AGENTS.yaml`, `SYSTEM.md`. Both agents write it, so a coordinator
+   (agent0) merges it onto `main` to avoid conflicts; do not fight over it on your branch.
+3. **Merge to `main` when a checkpoint crosses its gate** (or a canonical object is frozen) — not on
+   every commit. A checkpoint crossing is a `flow.py update <agent> <cp> <status>` + the agent's
+   branch merged to `main`.
+4. **Push your branch** at session end so your work is durable and attributable (`git push -u origin
+   <your-branch>`).
+5. **Never force-push, never rewrite shared history.** Append-only on `main`.
+
+**The per-agent convention is recorded in `AGENTS.yaml` (`git.branch` per instance) and enforced by
+Agent 0 (see `ORIENTATION-AGENT0.md` § git).**
+
+---
+
+## 7. THE AGENT-0 ROLE — THE ARCHETYPE + ITS GOVERNANCE FUNCTION
 
 Agent 0 is **not a lane and not a competing coordinator.** It is the **agnostic template** every live
 agent (`instance_of: agent0`) instantiates — the schema, the doctrine + tone axioms, the lifecycle, and
@@ -178,7 +210,7 @@ applied to its lane.
 
 ---
 
-## 7. THE AGNOSTIC PRINCIPLE (why this works for ANY agent)
+## 8. THE AGNOSTIC PRINCIPLE (why this works for ANY agent)
 
 The system does not assume an agent is "ML" or "L0." It assumes only that:
 1. There is a **registry entry** describing the agent (lane, checkpoints, owns, question).
@@ -191,7 +223,7 @@ Nothing else changes. That is the agnostic design.
 
 ---
 
-## 8. THE ONE-SENTENCE CARRY-FORWARD
+## 9. THE ONE-SENTENCE CARRY-FORWARD
 
 **Pāṭala is one evidence graph, and its agent system is one self-maintaining onboarding: a single
 canonical vision doc + a machine-readable agent registry + per-agent orientations derived from it (with

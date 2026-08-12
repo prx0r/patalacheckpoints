@@ -128,6 +128,21 @@ The vision is **`VISION_AND_NAVIGATION.md`**, updated in ONE place when it chang
 doc carries a stale copy (the checker flags verbatim copies). You keep `handover/CHECKPOINTS.md` (the
 shared execution map) current with each lane's real state.
 
+### Step 2.3 — Enforce the git layer (per-agent branches)
+The **git contract** (see `handover/SYSTEM.md` §6 + `AGENTS.yaml` `template.git` + each instance's
+`git_branch`) is part of the system you govern:
+- Each agent commits **its own lane's files to its own branch** (`agent1` / `agent2` / ...). You
+  ensure no agent sweeps another's uncommitted work or the pre-existing build into a commit it claims.
+- The **coordination state** (`handover/LOG.md`, `STATE.yaml`, `flow.py`, `check_staleness.py`,
+  `AGENTS.yaml`, `SYSTEM.md`) lives on **`main`**; when an agent's `flow.py update` changes it, you
+  (as coordinator) merge that onto `main` so both lanes stay in sync without conflict.
+- **Merge to `main` when a checkpoint crosses its gate** or a canonical object is frozen — not on
+  every commit. This is the natural unit for a `main` push.
+- Enforce: no force-push, no shared-history rewrite; each agent pushes its branch at session end.
+
+**🟢 GATE 2.3** — Before the final `main` push, confirm each agent's work is on its own branch and the
+coordination state is current. A clean `git status` on `main` after the merge is the target.
+
 ---
 
 ## PHASE 3 — THE EXACT NEXT ACTIONS (your immediate work)

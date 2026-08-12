@@ -51,6 +51,24 @@ template:
     update: "python3 handover/flow.py update <id> <cp> <status> -n '<note>' --by <id>"
     history: "python3 handover/flow.py history"
     add_instance: "python3 handover/flow.py add-agent <id>"
+  # ── THE GIT CONTRACT (agnostic — every live instance follows it) ──────────
+  # Each live instance commits ITS OWN deliverables to ITS OWN branch; the shared trunk
+  # (main) carries the canonical objects + the coordination state. See SYSTEM.md §6.
+  git:
+    convention: "per-agent branches, one shared trunk"
+    own_branch: "<instance_id>"            # each agent commits to origin/<id>
+    shared_trunk: "main"                   # canonical + coordination state lives here
+    commit_rule: "commit your own lane's files to your own branch; never sweep another agent's uncommitted work"
+    coordination_state:                    # files BOTH agents write -> live on main, merged by agent0
+      - "handover/LOG.md"
+      - "handover/STATE.yaml"
+      - "handover/flow.py"
+      - "handover/check_staleness.py"
+      - "handover/AGENTS.yaml"
+      - "handover/SYSTEM.md"
+    merge_gate: "merge own branch -> main when a checkpoint crosses its gate or a canonical object is frozen"
+    push: "git push -u origin <instance_id> at session end (durable, attributable)"
+    forbid: "force-push / rewrite shared history"
   owns:
     - "handover/SYSTEM.md"
     - "handover/AGENTS.yaml"
@@ -88,6 +106,7 @@ instances:
     orientation: "handover/agent-1-ml/ORIENTATION.md"
     handover_dir: "handover/agent-1-ml/"
     history: "handover/agent-1-ml/history.log"   # tracked, per-instance
+    git_branch: "agent1"
     must_not_touch:
       - "data/corpus/"
       - "app/"
@@ -115,6 +134,7 @@ instances:
     orientation: "handover/agent-2-integration/ORIENTATION.md"
     handover_dir: "handover/agent-2-integration/"
     history: "handover/agent-2-integration/history.log"
+    git_branch: "agent2"
     must_not_touch:
       - "benchmarks/v0/"
       - "machinelearning/research/patala_ml/"
