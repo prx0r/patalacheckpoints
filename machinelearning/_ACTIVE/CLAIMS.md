@@ -342,18 +342,25 @@ capability. See `AGENT1-HANDOVER.md` §4 + the component contracts below.
 
 ---
 
-## CLAIM P-020 — "The Nyāya gate is wired into the argument layer, and viruddha is a graph operation."
-- **STATUS:** SUPPORTED (as `ENGINEERING_VALIDATED`) — the gate audits real Inference objects that now exist
-- **EVIDENCE:** after the CP4 IR gate crossed (all 5 golds IR-complete, real Proposition/Inference objects),
-  the wiring deferred in `WIRE-NYAYA-GATE.md` became valid (not theater — it no longer gates arbitrary
-  claims). `patala_ml/nyayagate.check_viruddha_graph` makes viruddha a REAL graph operation: it checks the
-  gold's ESTABLISHED propositions (commitment ASSERTS/DERIVES, not ATTRIBUTES_TO_OPPONENT) for an
-  opposite-polarity overlap → `VIRUDDHA` candidate (the semantic layer decides; it nominates, never settles
-  alone). `argument.build_argument` fills its empty `gate` slot by running the real gate on the conclusion.
-  Integration test `tests/test_ipvv_integration.py`: cross-gold scan + real reflexion-core IPVV passage
-  (chunkM) + ResearchPack resolution all pass. The detector is *selective enough to nominate a small set
-  of cross-argument tension candidates for inspection* — it does NOT establish precision or real
-  philosophical disagreement.
+## CLAIM P-020 — "The graph-aware Nyāya audit is a real, separate operation on IR-complete arguments."
+- **STATUS:** SUPPORTED (as `ENGINEERING_VALIDATED`) — construction and contextual validation are separate
+- **EVIDENCE:** after the CP4 IR gate crossed (all 5 golds IR-complete), `argument.audit_argument(arg,
+  comparison_graph)` is the graph-aware Nyāya audit: it runs the structural gate + `check_viruddha_graph`
+  (graph viruddha) against a comparison graph, and records an `audit_ref` on the argument. Construction
+  (`build_argument`) does NOT claim to do graph audit — it is construction-only. viruddha is a graph
+  operation: it checks ESTABLISHED propositions (ASSERTS/DERIVES/SIDDHANTA; RECONSTRUCTED +
+  ATTRIBUTES_TO_OPPONENT excluded) for opposite polarity → `VIRUDDHA` candidate with defeater metadata
+  (NON_EQUIVALENT_PREDICATE, scope/modality/speaker/...), `semantic_status: UNRESOLVED` — it nominates,
+  never settles. Detector is `graph-viruddha-v2` (Unicode-aware tokens, commitment-eligible pool).
+- **CAVEAT (honest, learned by inspection + peer review):** the graph viruddha NOMINATES candidates; it
+  does not adjudicate them. Manual inspection showed earlier cross-gold "findings" were artifacts
+  (akrama polarity-encoding flip, function-word overlap). Fixed: function words dropped, privative terms
+  (akrama) treated as absorbing negation (abstention on same-claim), Unicode tokenization. Remaining
+  candidates carry NON_EQUIVALENT_PREDICATE + UNRESOLVED, never settled. Original gate benchmark unchanged.
+- **DOES NOT CLAIM:** that the gate is a semantic verifier, that any viruddha finding is a settled
+  contradiction, that cross-gold hits reflect IPVV disagreement (they may be only our reconstructions),
+  or that build_argument performs graph audit.
+- **REQUIRED to promote:** the T3/T4 eligibility gate + semantic review of candidates.
 - **CAVEAT (honest, learned by inspection):** the graph viruddha NOMINATES candidates; it does not
   adjudicate them. Manual inspection of the 3 initial cross-gold hits showed **all 3 were artifacts**
   (an akrama/order-less polarity-encoding flip on the SAME claim, and a function-word-only overlap) —

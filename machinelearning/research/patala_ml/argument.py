@@ -19,7 +19,7 @@ from dataclasses import dataclass, field
 from typing import Optional
 
 from .strength import score_argument_premises
-from .nyayagate import gate_claim
+from .nyayagate import validate
 
 
 @dataclass
@@ -89,6 +89,7 @@ class ArgumentProposal:
     gate: Optional[dict] = None                 # the Nyāya gate result (must exist to update posterior)
     status: str = "machine_proposed"
     aggregate_strength: Optional[dict] = None
+    audit_refs: list[str] = field(default_factory=list)   # ids of ContextualArgumentAudits run on this arg
 
     def to_dict(self) -> dict:
         return {
@@ -101,6 +102,7 @@ class ArgumentProposal:
             "gate": self.gate,
             "status": self.status,
             "aggregate_strength": self.aggregate_strength,
+            "audit_refs": self.audit_refs,
         }
 
 
@@ -119,12 +121,10 @@ def build_argument(
 ) -> ArgumentProposal:
     """Assemble an ArgumentProposal and derive its aggregate strength via the Bayesian scorer.
 
-    premise_weights: per-premise [{premise_id, log_bayes_factor, w_rel, w_map, w_aux, paradigm}]
-      — the inputs to strength.score_argument_premises (posterior_targets).
-    gate: the Nyāya gate result; per Claim v3, required before any posterior update. If None, the
-    gate is RUN on the argument's conclusion (the NIGAMANA member) to fill the slot — this is the
-    wiring of the real Nyāya gate into the empty gate slot (per WIRE-NYAYA-GATE.md, now valid because
-    real Inference objects exist).
+    CONSTRUCTION ONLY. This does NOT do graph-aware Nyāya audit — that is a separate operation
+    (`audit_argument`). Construction and contextual validation are different concerns. If a gate
+    result is supplied, it is attached as-is (e.g. a structural gate result); graph-aware viruddha
+    is NOT run here (the argument does not know its comparison context).
     """
     # build ClaimV3 for each premise (with its weights) if weights given
     premise_claims = []
@@ -148,27 +148,43 @@ def build_argument(
     # the conclusion = the NIGAMANA member (the explicit conclusion)
     conclusion = next((m for m in members if m.role == "NIGAMANA"), None)
 
-    # WIRE THE GATE: if no gate result was supplied, run the real Nyāya gate on the conclusion and
-    # fill the empty slot. This makes can_update_posterior deterministic and backed by a gate result
-    # (per Claim v3: every posterior update must be backed by a gate result).
-    if gate is None and conclusion is not None:
-        # extract the numeric LBF from the aggregate audit-trace (a dict), defaulting to 0.0
-        agg_trace = agg.get("aggregate") or {}
-        lbf = float(agg_trace.get("log_bayes_factor", 0.0) or agg_trace.get("weighted_lbf", 0.0) or 0.0)
-        gate = gate_claim({
-            "claim_id": argument_id,
-            "claim_text": conclusion.text,
-            "pramana": "anumana",
-            "falsifier": {"type": "structural"} if agg_trace else None,
-            "log_bayes_factor": lbf,
-        }).to_dict()
-
     return ArgumentProposal(
         argument_id=argument_id, work_id=work_id, title=title,
         kind=kind, inference_scheme=inference_scheme, members=members,
         conclusion=conclusion, tension_id=tension_id,
         premise_claims=premise_claims, gate=gate, aggregate_strength=agg["aggregate"],
     )
+
+
+def audit_argument(argument: ArgumentProposal, comparison_graph: list[dict],
+                   audit_id: str | None = None) -> dict:
+    """Run the GRAPH-AWARE Nyāya audit on an argument against a comparison graph.
+
+    This is the ContextualArgumentAudit: it runs the structural gate on the argument's conclusion
+    AND the graph-aware viruddha check against the comparison graph (other golds' established
+    propositions). It returns a GateAudit and records its id on the argument's audit_refs.
+
+    Construction (`build_argument`) and contextual validation (`audit_argument`) are separate —
+    this is the seam the graph-aware gate actually lives on.
+    """
+    if argument.conclusion is None:
+        raise ValueError("argument has no NIGAMANA conclusion to audit")
+    if audit_id is None:
+        audit_id = f"{argument.argument_id}:audit:{len(argument.audit_refs) + 1}"
+    claim = {
+        "claim_id": argument.argument_id,
+        "claim_text": argument.conclusion.text,
+        "pramana": "anumana",
+        "falsifier": {"type": "structural"} if argument.aggregate_strength else None,
+        "log_bayes_factor": float((argument.aggregate_strength or {}).get("log_bayes_factor", 0.0) or 0.0),
+    }
+    result = validate(claim, gold_propositions=comparison_graph)  # structural gate + graph viruddha
+    result["audit_id"] = audit_id
+    result["argument_id"] = argument.argument_id
+    result["graph_viruddha"] = result.get("graph_viruddha", False)
+    if audit_id not in argument.audit_refs:
+        argument.audit_refs.append(audit_id)
+    return result
 
 
 def from_logical_argument_file(path: str, work_id: str, argument_id: str) -> ArgumentProposal:

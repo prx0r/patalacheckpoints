@@ -111,21 +111,18 @@ if os.path.exists(passage_path):
           res.get("outcome") in ("accepted", "accepted_with_penalty", "needs_review", "hollow"),
           res.get("outcome"))
 
-print("\n== 2b. Detector discipline: no false positives on the akrama same-claim / junk overlap ==")
+print("\n== 2b. Detector discipline: akrama same-claim abstains; junk overlap does not fire ==")
 g2 = build_gold_002()
 g3 = build_gold_003()
-# akrama = a-krama = not-order = 'order-less'. 'X is order-less' and 'X is not constituted by order
-# (akrama)' are the SAME claim in different polarity ENCODING. The detector may NOMINATE it (handoff)
-# but must NOT settle it, and its defeater metadata must include NON_EQUIVALENT_PREDICATE.
+# PRECISION-FIRST invariant: akrama = a-krama = not-order = 'order-less'. 'X is order-less' and
+# 'X is not constituted by order (akrama)' are the SAME claim in different polarity ENCODING, so
+# the detector must ABSTAIN (0 hits) — not nominate it as a contradiction. This is the honest
+# precision-first behavior (the akrama same-claim is not a real disagreement).
 same_claim = {"claim_id": "c:akrama", "claim_text": "pratibhā is order-less (akrama)",
               "pramana": "anumana"}
-hits = check_viruddha_graph(same_claim, g3["nodes"])
-for h in hits:
-    md = h.defeater_metadata or {}
-    check("akrama same-claim carries NON_EQUIVALENT_PREDICATE defeater (not settled)",
-          "NON_EQUIVALENT_PREDICATE" in md.get("possible_defeaters", []))
-    check("akrama same-claim is marked semantic_status UNRESOLVED (not a settled contradiction)",
-          md.get("semantic_status") == "UNRESOLVED")
+check("akrama same-claim ABSTAINS (0 hits — same claim in different encoding)",
+      len(check_viruddha_graph(same_claim, g3["nodes"])) == 0,
+      str(len(check_viruddha_graph(same_claim, g3["nodes"]))))
 # function-word junk: 'a/one/the' overlap must NOT fire
 junk = {"claim_id": "c:junk", "claim_text": "one a the awareness self", "pramana": "anumana"}
 check("function-word-only claim does not fire viruddha", len(check_viruddha_graph(junk, g2["nodes"])) == 0)
@@ -136,6 +133,32 @@ check("opponent-attributed proposition excluded from established (no viruddha)",
       len(check_viruddha_graph(
           {"claim_id": "x", "claim_text": "reflexive awareness IS a conceptual construction"},
           obj)) == 0)
+
+print("\n== 2c. GENUINE dataflow: ArgumentProposal -> graph audit -> audit_ref on the argument ==")
+from patala_ml.argument import build_argument, audit_argument, NyayaMember
+arg = build_argument(
+    "pt:argument:ipvv:reflexion-core", "ipvv", "The reflexion-core argument", "ENTAILMENT",
+    members=[NyayaMember(role="PRATIJNA", text="The determination cannot establish externality."),
+             NyayaMember(role="HETU", text="The object-form is inert."),
+             NyayaMember(role="UDAHARANA", text="An inert thing cannot establish."),
+             NyayaMember(role="UPANAYA", text="The determination is error-form."),
+             NyayaMember(role="NIGAMANA", text="Self-experience is self-luminous, not reaching out.")],
+)
+# build_argument is construction-only (gate is None); audit is separate
+check("build_argument is construction-only (no graph audit at construction)",
+      arg.gate is None and arg.audit_refs == [])
+# run the graph-aware audit against a REAL gold (ARG-004: consciousness/reflexivity)
+g4 = build_gold_004()
+audit = audit_argument(arg, comparison_graph=g4["nodes"])
+check("audit_argument runs the graph-aware gate (returns audit_id + outcome)",
+      "audit_id" in audit and audit.get("outcome") in ("accepted", "accepted_with_penalty", "needs_review", "hollow"))
+check("the audit_id is recorded on the ArgumentProposal.audit_refs",
+      audit["audit_id"] in arg.audit_refs)
+check("the audited argument serializes with its audit_ref",
+      arg.to_dict()["audit_refs"] == arg.audit_refs)
+# the argument (via its conclusion) is now an auditable object that a ResearchPack can reference
+check("audited argument carries a conclusion the pack layer can bind to",
+      arg.conclusion is not None and bool(arg.conclusion.text))
 
 print("\n== 3. RESEARCHPACK resolves against real IPVV objects ==")
 pack_path = os.path.join(ROOT, "benchmarks/v0/packs/PACK-IPVV-NONCONSTRUCTED-I.json")

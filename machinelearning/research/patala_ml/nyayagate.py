@@ -27,6 +27,10 @@ from dataclasses import dataclass, field
 PRAMANAS = ["pratyaksa", "anumana", "upamana", "sabda", "formal_proof"]
 FALLACIES = ["asiddha", "viruddha", "savyabhicara", "satpratipaksa", "badhita"]
 
+# the graph-aware viruddha detector version. Bumped when the algorithm materially changes
+# (commitment-eligibility, token filtering, normalization, defeater metadata, unicode-aware tokens).
+VIRUDDHA_GRAPH_VERSION = "graph-viruddha-v2"
+
 # pramāṇa reliability hierarchy (Nyāya): perception strongest → testimony weakest
 PRAMANA_RANK = {"pratyaksa": 4, "anumana": 3, "upamana": 2, "sabda": 1, "formal_proof": 3}
 
@@ -212,16 +216,30 @@ def check_viruddha_graph(claim: dict, gold_propositions: list[dict]) -> list[Gat
                        "itself", "more", "their", "there", "between", "from", "with", "into",
                        "through", "upon", "over", "under", "only", "very", "such", "same"}
 
+    # privative concepts that already absorb negation into the term (a-krama = not-order,
+    # non-constructed, akrama). When present, a trailing 'not ... (privative)' is redundant —
+    # it is the SAME polarity encoding, not a separate negation. Prevents the akrama same-claim
+    # from firing as a false viruddha.
+    _PRIVATIVE_TERMS = ("akrama", "non-constructed", "orderless", "order-less")
+
     def _neg_polarity(s: str) -> bool:
-        return bool(re.search(r"\b(not|no|never|is not|does not|isn't|doesn't)\b", s.lower()))
+        low = s.lower()
+        if any(p in low for p in _PRIVATIVE_TERMS):
+            # the privative term carries the negation; a surrounding 'not' is redundant with it
+            return False
+        return bool(re.search(r"\b(not|no|never|is not|does not|isn't|doesn't)\b", low))
 
     def _core(s: str) -> set:
         # drop negation/particles via WORD-BOUNDARY regex (not naive replace, which corrupts
         # word boundaries, e.g. 'linguistic' -> 'inguistic'). Keep CONTENT words only.
-        s = s.lower()
+        # Unicode-aware: preserve transliterated Sanskrit diacritics (pratibhā, vimarśa, āśraya)
+        # instead of ASCII-stripping them into fragments.
+        s = s.casefold()
         s = re.sub(r"\b(is not|does not|is|are|was|were)\b", " ", s)
-        toks = set(re.findall(r"[a-z]{4,}", s))
-        return {t for t in toks if t not in _FUNCTION_WORDS}
+        # match Unicode letters (incl. diacritics) as word chars; require >=4 letters total
+        toks = set(re.findall(r"[a-zā-īūṛṝḷḹṃṁñṅśṣṭḍḥ]+", s))
+        return {t for t in toks if len(re.sub(r"[ā-īūṛṝḷḹṃṁñṅśṣṭḍḥ]", "", t)) + sum(
+            c in "āīūṛṝḷḹṃṁñṅśṣṭḍḥ" for c in t) >= 4 and t not in _FUNCTION_WORDS}
 
     # normalize hyphenated privative terms: 'order-less'/'orderless' == 'akrama' == 'not-order'.
     # They are the SAME proposition in different polarity ENCODING — must not flip polarity.

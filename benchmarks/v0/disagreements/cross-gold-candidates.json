@@ -1,34 +1,33 @@
 {
   "candidates": [
     {
-      "fixture_id": "T3-DISAGREE-001",
+      "candidate_id": "VIR-CAND-001",
       "status": "MACHINE_DISCOVERED_CANDIDATE",
       "left": {
         "argument_id": "ARG-GOLD-001",
-        "proposition_id": "G-CONC",
+        "proposition_id": "G-BRIDGE",
         "commitment": "RECONSTRUCTED",
         "pool": "RECONSTRUCTED",
-        "text": "The pratibh\u0101 that bears ordered presentation is itself characterized as akrama (order-less); the passage characterizes the relevant support/knower accordingly as order-less.",
-        "source_refs": []
+        "text": "In this k\u0101rik\u0101, pratibh\u0101 characterizes / is the form of the support (\u0101\u015braya) under discussion."
       },
       "right": {
         "argument_id": "ARG-GOLD-003",
-        "proposition_id": "G3-TC2",
+        "proposition_id": "G3-TC3",
         "commitment": "ASSERTS",
         "pool": "TEXTUALLY_COMMITTED",
-        "text": "pratibh\u0101 is not itself constituted by that order (akrama \u2014 order-less).",
-        "source_refs": []
+        "text": "The support (\u0101\u015braya) of the powers is not itself a member of the ordered sequence."
       },
       "detected_relation": "VIRUDDHA_CANDIDATE",
       "candidate_class": "RECONSTRUCTION_TENSION_CANDIDATE",
       "detector": {
-        "name": "check_viruddha_graph",
-        "version": "graph-v1"
+        "id": "PATALA.VIRUDDHA.GRAPH.v2",
+        "name": "graph-viruddha-v2",
+        "implementation_sha": "43b2c53e977412df67a72dbded4b129db8d3152b"
       },
       "semantic_status": "UNRESOLVED",
       "overlap_basis": [
-        "akrama",
-        "pratibh"
+        "support",
+        "\u0101\u015braya"
       ],
       "possible_defeaters": [
         "SCOPE_DIFFERENCE",
@@ -39,32 +38,71 @@
         "LEVEL_DIFFERENCE",
         "NON_EQUIVALENT_PREDICATE"
       ],
-      "note": "machine-discovered tension CANDIDATE, not a settled disagreement; requires semantic review + the T3/T4 eligibility gate before it can become a benchmark fixture"
+      "note": "machine-discovered tension CANDIDATE, not a settled disagreement; requires semantic review + the T3/T4 eligibility gate before it can become a fixture"
     },
     {
-      "fixture_id": "T3-DISAGREE-002",
+      "candidate_id": "VIR-CAND-002",
+      "status": "MACHINE_DISCOVERED_CANDIDATE",
+      "left": {
+        "argument_id": "ARG-GOLD-001",
+        "proposition_id": "G-DIST",
+        "commitment": "ASSERTS",
+        "pool": "TEXTUALLY_COMMITTED",
+        "text": "Bearing / presenting an order is not the same as being constituted by that order."
+      },
+      "right": {
+        "argument_id": "ARG-GOLD-003",
+        "proposition_id": "G3-TC2",
+        "commitment": "ASSERTS",
+        "pool": "TEXTUALLY_COMMITTED",
+        "text": "pratibh\u0101 is not itself constituted by that order (akrama \u2014 order-less)."
+      },
+      "detected_relation": "VIRUDDHA_CANDIDATE",
+      "candidate_class": "STRONG_DISAGREEMENT_CANDIDATE",
+      "detector": {
+        "id": "PATALA.VIRUDDHA.GRAPH.v2",
+        "name": "graph-viruddha-v2",
+        "implementation_sha": "43b2c53e977412df67a72dbded4b129db8d3152b"
+      },
+      "semantic_status": "UNRESOLVED",
+      "overlap_basis": [
+        "constituted",
+        "order"
+      ],
+      "possible_defeaters": [
+        "SCOPE_DIFFERENCE",
+        "MODALITY_DIFFERENCE",
+        "SPEAKER_DIFFERENCE",
+        "TEMPORAL_DIFFERENCE",
+        "QUALIFICATION",
+        "LEVEL_DIFFERENCE",
+        "NON_EQUIVALENT_PREDICATE"
+      ],
+      "note": "machine-discovered tension CANDIDATE, not a settled disagreement; requires semantic review + the T3/T4 eligibility gate before it can become a fixture"
+    },
+    {
+      "candidate_id": "VIR-CAND-003",
       "status": "MACHINE_DISCOVERED_CANDIDATE",
       "left": {
         "argument_id": "ARG-GOLD-001",
         "proposition_id": "G-CONC",
         "commitment": "RECONSTRUCTED",
         "pool": "RECONSTRUCTED",
-        "text": "The pratibh\u0101 that bears ordered presentation is itself characterized as akrama (order-less); the passage characterizes the relevant support/knower accordingly as order-less.",
-        "source_refs": []
+        "text": "The pratibh\u0101 that bears ordered presentation is itself characterized as akrama (order-less); the passage characterizes the relevant support/knower accordingly as order-less."
       },
       "right": {
         "argument_id": "ARG-GOLD-003",
         "proposition_id": "G3-TC3",
         "commitment": "ASSERTS",
         "pool": "TEXTUALLY_COMMITTED",
-        "text": "The support (\u0101\u015braya) of the powers is not itself a member of the ordered sequence.",
-        "source_refs": []
+        "text": "The support (\u0101\u015braya) of the powers is not itself a member of the ordered sequence."
       },
       "detected_relation": "VIRUDDHA_CANDIDATE",
       "candidate_class": "RECONSTRUCTION_TENSION_CANDIDATE",
       "detector": {
-        "name": "check_viruddha_graph",
-        "version": "graph-v1"
+        "id": "PATALA.VIRUDDHA.GRAPH.v2",
+        "name": "graph-viruddha-v2",
+        "implementation_sha": "43b2c53e977412df67a72dbded4b129db8d3152b"
       },
       "semantic_status": "UNRESOLVED",
       "overlap_basis": [
@@ -80,32 +118,31 @@
         "LEVEL_DIFFERENCE",
         "NON_EQUIVALENT_PREDICATE"
       ],
-      "note": "machine-discovered tension CANDIDATE, not a settled disagreement; requires semantic review + the T3/T4 eligibility gate before it can become a benchmark fixture"
+      "note": "machine-discovered tension CANDIDATE, not a settled disagreement; requires semantic review + the T3/T4 eligibility gate before it can become a fixture"
     },
     {
-      "fixture_id": "T3-DISAGREE-003",
+      "candidate_id": "VIR-CAND-004",
       "status": "MACHINE_DISCOVERED_CANDIDATE",
       "left": {
         "argument_id": "ARG-GOLD-002",
         "proposition_id": "G2-CONC",
         "commitment": "RECONSTRUCTED",
         "pool": "RECONSTRUCTED",
-        "text": "Linguistic articulation does not show that the underlying self-awareness is itself produced by conceptual determination.",
-        "source_refs": []
+        "text": "Linguistic articulation does not show that the underlying self-awareness is itself produced by conceptual determination."
       },
       "right": {
         "argument_id": "ARG-GOLD-004",
         "proposition_id": "G4-DIST",
         "commitment": "ASSERTS",
         "pool": "TEXTUALLY_COMMITTED",
-        "text": "Bare showing (prak\u0101\u015ba alone) is distinct from self-aware manifesting; the distinguishing mark is self-awareness in the act (vimar\u015ba).",
-        "source_refs": []
+        "text": "Bare showing (prak\u0101\u015ba alone) is distinct from self-aware manifesting; the distinguishing mark is self-awareness in the act (vimar\u015ba)."
       },
       "detected_relation": "VIRUDDHA_CANDIDATE",
       "candidate_class": "RECONSTRUCTION_TENSION_CANDIDATE",
       "detector": {
-        "name": "check_viruddha_graph",
-        "version": "graph-v1"
+        "id": "PATALA.VIRUDDHA.GRAPH.v2",
+        "name": "graph-viruddha-v2",
+        "implementation_sha": "43b2c53e977412df67a72dbded4b129db8d3152b"
       },
       "semantic_status": "UNRESOLVED",
       "overlap_basis": [
@@ -121,7 +158,7 @@
         "LEVEL_DIFFERENCE",
         "NON_EQUIVALENT_PREDICATE"
       ],
-      "note": "machine-discovered tension CANDIDATE, not a settled disagreement; requires semantic review + the T3/T4 eligibility gate before it can become a benchmark fixture"
+      "note": "machine-discovered tension CANDIDATE, not a settled disagreement; requires semantic review + the T3/T4 eligibility gate before it can become a fixture"
     }
   ]
 }
