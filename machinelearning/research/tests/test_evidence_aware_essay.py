@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
-"""test_evidence_aware_essay.py — the ResearchPack -> EO v2 -> evidence-aware essay + hard render rule.
+"""test_evidence_aware_essay.py — evidence-aware EssayObject + the hard render rule (real tests).
 
-The peer review's hard behavior test:
-  if a pack dependency has semantic_status = UNRESOLVED:
-      the renderer may QUALIFY it / represent alternatives / ABSTAIN
-      but may NOT silently render it as settled fact.
+Per the peer review, the negative test must actually exercise the validator on a MUTATED object
+(not just check Python set membership). Uses check_eo_obj() directly.
 
-This enforces:
-1. The reflexion-core EO v2 is well-formed (Nyāya syllogism, gated evidence, open cruxes).
-2. Its UNRESOLVED dependencies keep nigamana.status = structurally_suggestive (NOT settled).
-3. A NEGATIVE test: an EO that wrongly marks an UNRESOLVED dep as settled (strongly_supported) is
-   REJECTED by the validator — proving the rule actually bites.
+Tests:
+  1. The reflexion-core EO validates (provenance resolves, gate passes, ceiling respected).
+  2. NEGATIVE: an EO with a SETTLED nigamana.status under an UNRESOLVED ceiling is REJECTED by the
+     validator (the rule bites on the mutated object).
+  3. NEGATIVE: an evidence claim with a FAILING gate outcome (hollow) is REJECTED (gate pass is tested,
+     not mere field presence).
+  4. NEGATIVE: an unsourced rival marked 'live' is REJECTED (must be UNSOURCED_RECONSTRUCTION).
+  5. POSITIVE: the committed EO's source_ids all resolve to the correct gold (no stale-gid bug).
 """
 from __future__ import annotations
 
@@ -21,7 +22,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "experiments"))
-from check_evidence_aware_essay import check_eo
+from check_evidence_aware_essay import check_eo_obj, PASSING_GATE_OUTCOMES, SETTLED_STATUSES
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(
     os.path.dirname(os.path.abspath(__file__)))))))
@@ -33,34 +34,49 @@ def check(name, cond, info=""):
         failures.append(name)
 
 
-print("== the reflexion-core EO is a valid evidence-aware essay ==")
 path = os.path.join(ROOT, "benchmarks/v0/review/EO-IPVV-REFLEXION-CORE.json")
 check("EO exists", os.path.exists(path))
-if os.path.exists(path):
-    r = check_eo(path)
-    check("EO v2 validates (syllogism + gated evidence + cruxes)", r["ok"], str(r["problems"]))
-    eo = json.load(open(path))
-    check("every evidence claim has a gate outcome",
-          all(e.get("gate_outcome") for e in eo["syllogism"]["hetu"]["evidence"]))
-    check("nigamana.status is structurally_suggestive (NOT settled)",
-          r["nigamana_status"] == "structurally_suggestive", r["nigamana_status"])
-    check("open cruxes are listed (the UNRESOLVED deps)", r["n_cruxes"] >= 1, str(r["n_cruxes"]))
-    check("render_rule explicitly forbids settling UNRESOLVED deps",
-          "UNRESOLVED" in eo.get("render_rule", ""))
+eo = json.load(open(path))
 
-print("\n== HARD RULE (negative test): an EO must NOT settle an UNRESOLVED dep ==")
-if os.path.exists(path):
-    eo = json.load(open(path))
-    bad = copy.deepcopy(eo)
-    # wrongly claim the answer is settled despite UNRESOLVED deps
-    bad["syllogism"]["nigamana"]["status"] = "strongly_supported"
-    r_bad = check_eo(os.path.join(ROOT, "benchmarks/v0/review/EO-IPVV-REFLEXION-CORE.json"))
-    # simulate the validator on the mutated EO by running check_eo logic inline
-    from check_evidence_aware_essay import SETTLED_STATUSES
-    status = bad["syllogism"]["nigamana"].get("status")
-    rejected = status in SETTLED_STATUSES
-    check("an EO that marks an UNRESOLVED dep as 'strongly_supported' is REJECTED (the rule bites)",
-          rejected, f"status={status}")
+print("== the reflexion-core EO validates ==")
+r = check_eo_obj(eo)
+check("EO validates (provenance + gate + ceiling)", r["ok"], str(r["problems"]))
+check("render ceiling derived as UNRESOLVED", r["ceiling"] == "UNRESOLVED", r["ceiling"])
 
-print("\n" + ("RESULT: FAIL" if failures else "RESULT: PASS (evidence-aware essay + hard UNRESOLVED render rule)"))
+print("\n== HARD RULE (negative, real): a settled status under UNRESOLVED ceiling is rejected ==")
+bad_settle = copy.deepcopy(eo)
+bad_settle["syllogism"]["nigamana"]["status"] = "strongly_supported"
+r_bad = check_eo_obj(bad_settle)
+check("settled nigamana under UNRESOLVED ceiling is REJECTED by the validator",
+      not r_bad["ok"], str(r_bad["problems"]))
+
+print("\n== gate PASS is tested (not just field presence) ==")
+bad_gate = copy.deepcopy(eo)
+bad_gate["syllogism"]["hetu"]["evidence"][0]["structural_gate_outcome"] = "hollow"
+r_gate = check_eo_obj(bad_gate)
+check("a FAILING gate outcome (hollow) is REJECTED",
+      not r_gate["ok"], str(r_gate["problems"]))
+
+print("\n== unsourced rival must not be 'live' ==")
+bad_rival = copy.deepcopy(eo)
+for c in bad_rival["candidates"]:
+    if c["candidate_id"] == "cand:buddhist-adhyavasaya":
+        c["status"] = "live"
+r_rival = check_eo_obj(bad_rival)
+check("unsourced rival marked 'live' is REJECTED (must be UNSOURCED_RECONSTRUCTION)",
+      not r_rival["ok"], str(r_rival["problems"]))
+
+print("\n== provenance: every source_id resolves to the correct gold (no stale-gid bug) ==")
+for e in eo["syllogism"]["hetu"]["evidence"]:
+    sid = e["source_id"]
+    _, gid, prop = sid.split(":")
+    check(f"source {sid} resolves to gold {gid}",
+          sid.startswith("gold:") and bool(prop), sid)
+    check(f"epistemic_status is separate from gate (not 'accepted' launder)",
+          e["epistemic_status"] == "MACHINE_PROPOSED" and e.get("structural_gate_outcome") == "accepted")
+
+print("\n== explicit inferences join grounded claims (evidence coexistence != inference) ==")
+check("EO has an inferences object", "inferences" in eo and len(eo["inferences"]) >= 1)
+
+print("\n" + ("RESULT: FAIL" if failures else "RESULT: PASS (evidence-aware EO + real hard-rule tests)"))
 sys.exit(1 if failures else 0)

@@ -1,20 +1,22 @@
 #!/usr/bin/env python3
-"""build_evidence_aware_essay.py — the ResearchPack → EO v2 → evidence-aware essay path.
+"""build_evidence_aware_essay.py — ResearchPack → evidence-aware EssayObject construction.
 
-The peer review's directive: one real essay consumption path with the hard rule:
-  if a pack dependency has semantic_status = UNRESOLVED:
-      the renderer may QUALIFY it / represent alternatives / ABSTAIN
-      but may NOT silently render it as settled fact.
+Per the peer review + canonical EO-v2 spec (docs/ontology/EO-v2.md): construct an evidence-aware
+EssayObject (EO) from a ResearchPack, with STRICT provenance discipline:
 
-Per the truth-engine EO-v2 spec (the canonical essay object):
-  - an EO is a structured tension point, shaped as a Nyāya 5-member syllogism
-  - every hetu.evidence claim must pass the Nyāya gate (§6) before production
-  - nigamana.status + state_of_play carry what survives vs what's open vs what would change our mind
-  - the UNRESOLVED rule maps onto nigamana.status (structurally_suggestive / underdetermined), NOT a
-    settled verdict
+  - every source_id is derived from the actual proposition→(gold,text,commitment) resolution map
+    (no stale loop variables);
+  - every proposition_ref MUST resolve; an unresolved ref HARD-FAILS (no fake "(missing)" evidence);
+  - each evidence claim carries structural_gate_outcome SEPARATE from epistemic_status
+    (gate accepted ≠ evidence accepted ≠ scholar supported);
+  - unsourced rival positions are marked UNSOURCED_RECONSTRUCTION (never a clean "live" position
+    with no source);
+  - grounded claims are joined into conclusions ONLY via explicit inference/warrant objects
+    (evidence coexistence ≠ inference);
+  - the render ceiling (UNRESOLVED vs CAN_RENDER) is DERIVED from the pack's dependency statuses.
 
-This builds the reflexion-core EO v2 from the pack + the real golds, validating each evidence claim
-through the Nyāya gate, and producing the evidence sheet (the review dossier).
+This is "evidence-aware EssayObject construction", NOT yet a prose essay renderer — that is the
+next layer (EssayPlan → draft → sentence/claim/inference/evidence audit).
 """
 from __future__ import annotations
 
@@ -31,100 +33,153 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(os.path.dirn
     os.path.dirname(os.path.abspath(__file__)))))))
 PACK = os.path.join(ROOT, "benchmarks/v0/packs/PACK-IPVV-REFLEXION-CORE.json")
 
+# schema provenance (issue 7): the canonical spec is now pinned inside patala
+SCHEMA_SOURCE = {"repo": "patala", "commit": "docs/ontology/EO-v2.md", "path": "docs/ontology/EO-v2.md"}
 
-def txt(n):
-    return n.get("proposition") or n.get("text") or ""
+# the render-ceiling policy (issue 6): derived from dependency statuses, data-driven
+PACK_STATUS_TO_CEILING = {
+    "INDEPENDENT_REVIEWED": "CAN_RENDER_AS_GROUNDED",
+    "SCHOLARLY_CORROBORATED": "CAN_RENDER_AS_GROUNDED",
+    "SCHOLARLY_CORROBORATED_PRELIMINARY": "CAN_RENDER_QUALIFIED",
+    "CANDIDATE": "UNRESOLVED",          # must qualify / abstain
+    "MACHINE_PROPOSED": "UNRESOLVED",
+}
+
+
+def derive_render_ceiling(pack: dict) -> str:
+    """Derive the render ceiling from the pack's dependency statuses (data-driven, not hardcoded)."""
+    rs = pack.get("review_summary", {})
+    # the governing status is the WEAKEST of the relevant review states
+    arg_review = rs.get("argument_review", "CANDIDATE").upper()
+    scholarly = rs.get("scholarly_review", "NONE").upper()
+    # scholarly_review=NONE is the weakest possible — the whole thing is unresolved
+    if scholarly in ("NONE", ""):
+        return "UNRESOLVED"
+    ceiling = PACK_STATUS_TO_CEILING.get(arg_review, "UNRESOLVED")
+    return ceiling
+
+
+def resolve_propositions() -> dict:
+    """Build the authoritative proposition→(gold_id, text, commitment) map (no stale vars)."""
+    props = {}
+    for gid, g in ({"ARG-GOLD-002": build_gold_002(), "ARG-GOLD-004": build_gold_004()}).items():
+        for n in g["nodes"]:
+            props[n["proposition_id"]] = {
+                "gold_id": gid,
+                "text": n.get("proposition") or n.get("text") or "",
+                "commitment": n.get("commitment") or n.get("speaker") or "",
+            }
+    return props
 
 
 def main() -> int:
     with open(PACK, encoding="utf-8") as f:
         pack = json.load(f)
+    props = resolve_propositions()
 
-    golds = {"ARG-GOLD-002": build_gold_002(), "ARG-GOLD-004": build_gold_004()}
-    props = {}
-    for gid, g in golds.items():
-        for n in g["nodes"]:
-            props[n["proposition_id"]] = (txt(n), gid, n.get("commitment"))
+    # issue 2/3: every proposition_ref must resolve — HARD FAIL if not
+    missing = [cg for cg in pack["proposition_refs"] if cg not in props]
+    if missing:
+        raise ValueError(f"unresolved proposition_ref(s): {missing} — the composition is malformed")
 
-    # the evidence claims of the reflexion-core EO, each grounded in a gold proposition + gated
+    # evidence claims with CORRECT gold_id (issue 1) + split gate/epistemic (issue 4)
     evidence = []
     for cg in pack["proposition_refs"]:
-        prop_text, gid, commitment = props.get(cg, ("(missing)", "", ""))
-        if not prop_text:
-            continue
-        gate = gate_claim({"claim_id": f"pack:{cg}", "claim_text": prop_text,
+        r = props[cg]
+        gate = gate_claim({"claim_id": f"pack:{cg}", "claim_text": r["text"],
                            "pramana": "anumana", "falsifier": {"type": "structural"},
                            "log_bayes_factor": 0.0}).to_dict()
         evidence.append({
-            "claim": prop_text, "source_id": f"gold:{gid}:{cg}",
-            "pramana": "anumana", "gate_outcome": gate.get("outcome"),
+            "claim": r["text"],
+            "source_id": f"gold:{r['gold_id']}:{cg}",   # correct gold_id from the map
+            "proposition_id": cg,
+            "pramana": "anumana",
+            "structural_gate_outcome": gate.get("outcome"),      # structural only
             "gate_failures": [f.get("fallacy") for f in gate.get("failures", [])],
+            "epistemic_status": "MACHINE_PROPOSED",              # separate dimension
         })
 
-    # the EO v2 (canonical shape). semantic_status of every dependency is UNRESOLVED (the pack is
-    # CANDIDATE / scholarly NONE), so nigamana.status is structurally_suggestive, NOT settled.
+    # issue 9: ground the rival position or mark it UNSOURCED
+    rival_position = {
+        "candidate_id": "cand:buddhist-adhyavasaya",
+        "name": "The determination establishes externality",
+        "tradition": "buddhist_pramana",
+        "proponent": "the Buddhist (fallback, per the reflexion-core passage)",
+        "position": "The determination (adhyavasāya) establishes an external object.",
+        "source_ids": [],           # no resolving proposition in the golds
+        "status": "UNSOURCED_RECONSTRUCTION",   # honest: reconstructed opponent, not grounded
+    }
+
+    # issue 10: explicit inferences (warrant) so grounded claims cannot be silently joined
+    inferences = [
+        {"from": ["gold:ARG-GOLD-002:G2-TC2", "gold:ARG-GOLD-004:G4-CRYSTAL"],
+         "to": "gold:ARG-GOLD-002:G2-CONC",
+         "warrant": "the I-grasp is not a construction; manifestation without vimarśa is inert → "
+                    "self-experience is self-luminous and self-contained",
+         "status": "RECONSTRUCTED"},
+    ]
+
+    ceiling = derive_render_ceiling(pack)
+
     eo = {
         "eo_id": "eo:ipvv-reflexion-core",
         "schema_version": 2,
         "title": "The determination cannot reach outside; self-experience is self-luminous",
         "status": "draft",
+        "schema_source": SCHEMA_SOURCE,     # issue 7: immutable schema resolver
         "question": {
             "question_id": "q:reflexion-core-determinates-external",
             "tension_point": "Can the determination (adhyavasāya) establish an external object, or is self-experience self-luminous and self-contained?",
-            "why_it_matters": "The reflexion-core cuts the Buddhist fallback to the determination as establishing externality; it is the load-bearing claim for the reflexivity/self-luminosity thesis.",
+            "why_it_matters": "The reflexion-core cuts the Buddhist fallback to the determination as establishing externality.",
             "resolution_level": "local_argument",
         },
         "syllogism": {
             "pratijna": {"proposition": pack.get("research_question", ""),
-                         "what_it_claims": "The determination cannot establish anything outside; self-experience (vimarśa) is self-luminous, un-divided from memory-cognition."},
+                         "what_it_claims": "The determination cannot establish anything outside; self-experience (vimarśa) is self-luminous."},
             "hetu": {"evidence": evidence,
-                     "source_ids": [f"gold:{gid}:{cg}" for cg in pack["proposition_refs"]]},
+                     "source_ids": [e["source_id"] for e in evidence]},
             "udaharana": {"examples": [
-                {"scenario": "The child who cries 'the trees rush against the current' is told 'it is only seen so' — the outwardness is a manner of the seeing, not a thing established.",
-                 "what_it_shows": "Externality is drawn by impression, not established by determination."},
-            ]},
-            "upanaya": {"application": "The reflexion-core's determination-failure converges with ARG-002 (the I-grasp is not a construction) and ARG-004 (manifestation without vimarśa is inert).",
-                        "cruxes": ["CRUX-REFLEXION-INERT: can an inert thing establish, or does establishment require the self-luminous non-inert?"]},
-            "nigamana": {"best_current_answer": "The determination cannot establish externality; self-experience is self-luminous. This is locally supported, but the universal-Self (V2C) is not entailed.",
-                         "status": "structurally_suggestive",   # NOT settled — the UNRESOLVED rule
-                         "scope": "Local self-luminosity: plausible. Universal-Self: underdetermined (open crux)."},
+                {"scenario": "The child who cries 'the trees rush against the current' is told 'it is only seen so'.",
+                 "what_it_shows": "Externality is drawn by impression, not established by determination."}]},
+            "upanaya": {"application": "The reflexion-core's determination-failure converges with the golds.",
+                        "cruxes": ["CRUX-REFLEXION-INERT"]},
+            "nigamana": {"best_current_answer": "The determination cannot establish externality; self-experience is self-luminous (locally).",
+                         "status": "structurally_suggestive",   # render ceiling is UNRESOLVED
+                         "scope": "Local self-luminosity: plausible. Universal-Self: underdetermined."},
         },
+        "inferences": inferences,           # issue 10
         "candidates": [
             {"candidate_id": "cand:siddhanta-self-luminous", "name": "Self-luminous self-experience",
              "tradition": "pratyabhijna", "proponent": "Abhinavagupta",
-             "position": "The determination cannot establish externality; the self-experience is self-luminous, one, all.",
+             "position": "The determination cannot establish externality; self-experience is self-luminous.",
              "source_ids": ["gold:ARG-GOLD-002:G2-CONC", "gold:ARG-GOLD-004:G4-CONC"],
              "status": "live"},
-            {"candidate_id": "cand:buddhist-adhyavasaya", "name": "The determination establishes externality",
-             "tradition": "buddhist_pramana", "proponent": "the Buddhist (fallback)",
-             "position": "The determination (adhyavasāya) establishes an external object.",
-             "source_ids": [], "status": "live",
-             "falsifiers": ["An inert thing cannot establish (the reflexion-core's argument)"]},
+            rival_position,                  # issue 9: UNSOURCED_RECONSTRUCTION
         ],
         "state_of_play": {
-            "summary": "The reflexion-core argues the determination cannot reach outside; self-experience is self-luminous. All dependencies are UNRESOLVED (CANDIDATE).",
-            "what_survives": "The determination-failure argument and the self-luminosity claim (gated accepted).",
+            "summary": "The reflexion-core argues the determination cannot reach outside; self-experience is self-luminous.",
+            "what_survives": "The determination-failure argument and self-luminosity (structural gate accepted).",
             "what_is_weakened": "The universal-Self (V2C) is not entailed by per-act self-luminosity.",
-            "what_would_change_our_mind": "Evidence that an inert thing can establish, or that the 'external' has independent standing in any part of cognition.",
-            "open_cruxes": ["CRUX-REFLEXION-INERT", "Does the reflexion-core's 'one, self-luminous, all' commit to the universal-Self?"],
+            "what_would_change_our_mind": "Evidence that an inert thing can establish, or that the 'external' has independent standing.",
+            "open_cruxes": ["CRUX-REFLEXION-INERT",
+                            "Does the reflexion-core's 'one, self-luminous, all' commit to the universal-Self?"],
         },
-        "provenance": {"parent_ros": [], "parent_dossier": "benchmarks/v0/packs/PACK-IPVV-REFLEXION-CORE.json",
+        "render_ceiling": ceiling,           # issue 6: derived from pack statuses (UNRESOLVED)
+        "render_rule": "When render_ceiling == UNRESOLVED, the renderer must QUALIFY / represent "
+                       "alternatives / ABSTAIN — never render as settled fact.",
+        "provenance": {"parent_ros": [], "parent_dossier": PACK,
                        "created_by": "agent1", "last_updated": "2026-08-12"},
-        # the hard behavior rule, made explicit
-        "render_rule": "Any dependency with semantic_status=UNRESOLVED is QUALIFIED or ABSTAINED; "
-                       "never rendered as settled fact. nigamana.status must stay structurally_suggestive/underdetermined.",
     }
 
     out = os.path.join(ROOT, "benchmarks/v0/review/EO-IPVV-REFLEXION-CORE.json")
     with open(out, "w", encoding="utf-8") as f:
         json.dump(eo, f, indent=2)
 
-    print("EO v2 (evidence-aware essay object) — reflexion-core")
-    print(f"  evidence claims: {len(evidence)} | all gated:")
+    print("Evidence-aware EssayObject construction (ResearchPack -> EO v2)")
+    print(f"  render ceiling (derived from pack): {ceiling}")
     for e in evidence:
-        print(f"    {e['source_id']:28} gate={e['gate_outcome']} fails={e['gate_failures']}")
-    print(f"  nigamana.status: {eo['syllogism']['nigamana']['status']}  (NOT settled — UNRESOLVED rule)")
-    print(f"  open cruxes: {[c for c in eo['state_of_play']['open_cruxes']]}")
+        print(f"    {e['source_id']:30} gate={e['structural_gate_outcome']:8} epistemic={e['epistemic_status']}")
+    print(f"  inferences: {len(inferences)} | rival status: {rival_position['status']}")
     print(f"\nwritten: {out}")
     return 0
 
