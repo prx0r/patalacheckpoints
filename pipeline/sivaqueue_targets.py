@@ -69,14 +69,20 @@ def translation_neighbourhood(work_id: str) -> list[str]:
 def access(work_id: str) -> dict:
     """The quick-access record for a target: on_disk path (if any) + download_url + gateway.
 
-    From data/corpus/sivaqueue-access-manifest.json (built by build_sivaqueue_manifest.py).
+    From data/corpus/sivaqueue-access-manifest.json (built by build_sivaqueue_manifest.py) +
+    the acquired-texts directory (data/corpus/sources/<work_id>/<work_id>.txt, written by
+    acquire_sivaqueue_targets.py).
     """
     a = _load(ACCESS_PATH, {"targets": {}}).get("targets", {}).get(work_id, {})
+    acquired = os.path.exists(os.path.join(ROOT, "data/corpus/sources", work_id, f"{work_id}.txt"))
     return {
-        "on_disk": a.get("on_disk", False),
+        "on_disk": a.get("on_disk", False) or acquired,
         "disk_path": a.get("disk_path"),
         "source_gateway": a.get("source_gateway"),
         "download_url": a.get("download_url"),
+        "acquired_text": acquired,
+        "acquired_path": (os.path.join(ROOT, "data/corpus/sources", work_id, f"{work_id}.txt")
+                          if acquired else None),
     }
 
 
