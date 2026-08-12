@@ -87,16 +87,16 @@ mode (kramasadbhava etc.) remains a known seam. See `CHECKPOINTS-INTEGRATION.md`
   holds: ACCEPT≠truth, REJECT≠delete, REVISE≠overwrite. Test: `pipeline/test_review_engine.py` (15/15).
 
 ### In progress / next (in order — the updated plan)
-1. **Phase 3D MCP review tools** — `patala_get_review_state` · `patala_propose_review` ·
-   `patala_submit_review` · `patala_get_impact` (expose the review engine as graph verbs; PROPOSE-not-ACCEPT).
-2. **Phase 3E tiny Scholar Workbench review screen** — the product-facing ImpactReport UI.
-3. **Phase 3F Hermes A4 scheduling** — LAST: kanban+cron orchestrates review, Hermes doesn't define semantics.
+1. **🔴 AGENT 3 TRANSLATION FACTORY — THE PRIORITY.** The closed-loop factory: A2 `NEXT_VALID_ACTION`
+   → A3 production (Hermes kanban + cron + `model.py`, T1→L2→C1) → MACHINE_PROPOSED artifacts → A2
+   validate + state update → review/correction (the Phase-3 engine). Milestone: one legacy work through
+   the full factory, producing L0-linked translation/C1 proposals with provenance, then one output
+   through the review protocol. Measure cost / failure / review burden.
+2. **Phase 3E tiny Workbench screen** — deferred until a real reviewer is ready; minimal only.
+3. **Phase 3F Hermes A4 scheduling** — LAST, after the human workflow is proven.
 4. **P2 blind review** (160 cases) → VALIDATED_AGAINST_HUMAN_GOLD (P-011 promotion) — non-blocking.
 5. **Cross-work L0 generalization** (later) — ingest a second real work to demonstrate the adapter generalizes.
-6. **Deterministic related-rail** — `/api/recommend` + `recommend_related` MCP.
-7. **Agent 3 translation factory** (cross-lane) — on kanban+cron, consuming `NEXT_VALID_ACTION`.
-8. **Context alignment** — wire GRETIL IPK+Vṛtti+IPV into `/api/context`.
-9. **Schema-version pin** — `data/published/ipvv/version.json`.
+6. **Schema-version pin** — `data/published/ipvv/version.json`.
 
 Full thread list: `WHAT_NEXT_PATALA.md`. Canonical plan: `CHECKPOINTS-INTEGRATION.md`.
 **Priority re-anchor:** autonomous translation is the headline; the review-engine work is the validation

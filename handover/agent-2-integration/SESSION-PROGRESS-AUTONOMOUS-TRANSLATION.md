@@ -108,3 +108,45 @@ stamp MACHINE_PROPOSED provenance → write back to the ledger → next eligible
 are exactly what make it safe; the next build is the Agent 3 translation factory (kanban + cron +
 `model.py` + auto-validate) — and the review engine built this session is the validation gate for it,
 not a distraction to keep building.**
+
+---
+
+## UPDATE (2026-08-12, later) — Phase 3D done; priority resets to Agent 3 factory
+
+**Phase 3D is complete** (`0ca6173`): the review layer crossed from architecture into a usable protocol
+surface. The core invariant is now enforceable outside the repo:
+```
+machine → propose (patala_propose_review, origin=MACHINE, status=PROPOSED, NO state change)
+authorized scholar → review (patala_submit_review, actor_kind + scope)
+Pāṭala → compute consequences (the deterministic reducer + ImpactReport)
+```
+Plus `patala_get_review_state` + `patala_simulate_review` (zero-write counterfactual). 23/23 tests.
+
+**Priority RESET — the headline is the Agent 3 translation factory.** The review layer gives the factory
+the validation gate it was missing. The first real closed-loop Pāṭala factory:
+```
+A2 source + corpus state → NEXT_VALID_ACTION
+A3 translation production → MACHINE_PROPOSED artifacts
+A2 validation + state update
+A4/Phase3 review proposals + corrections → executable downstream impact
+```
+
+**The concrete next milestone:**
+> Take one legacy work through the full autonomous factory on Hermes, producing modern L0-linked
+> translation/C1 proposals with provenance, then pass one output through the new review protocol.
+
+**That proves:** source → autonomous production → validated machine proposal → review → executable
+correction.
+
+**Priority order (per the coordinator):**
+```
+1. Agent 3 factory calibration run
+2. one genuine untranslated target
+3. measure cost / failure / review burden
+4. tiny 3E screen when a real reviewer is ready
+5. Hermes A4 scheduling after the human workflow is proven
+```
+
+**Do NOT add more primitives** unless a real factory/review run forces them — the risk is now architecture
+drift. 3E stays minimal (object · evidence · current state · proposal/review controls · impact preview ·
+submit) — no dashboards/profiles/queues/social/reviewer-discovery.

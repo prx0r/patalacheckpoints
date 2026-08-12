@@ -1,5 +1,5 @@
-state_version: 18
-last_update: '2026-08-12T14:40:05'
+state_version: 19
+last_update: '2026-08-12T14:41:10'
 agent1:
   checkpoints:
     CP0:
@@ -7,8 +7,12 @@ agent1:
       note: benchmarks/v0 frozen (MANIFEST/SCHEMA/SPLITS/METRICS).
     CP2:
       status: PARTIAL
-      note: retrieval baselines (BM25/dense/hybrid) + eval harness exist; not re-baselined
-        on v0 fixtures.
+      note: 'Retrieval baselines (BM25/dense/hybrid) exist, not re-baselined. Neural
+        ''semantic microscope'' layer planned (DEVPLAN Phase D + RETRIEVAL-NEUROSYNTHETIC-VISION):
+        Stage A semantic alignment (dense+sparse+cross-encoder, deps installed), k-core
+        determinism, multi-hop PPR over curated graph.'
+      updated_by: agent1
+      ts: '2026-08-12 14:41:10'
     CP3:
       status: PARTIAL
       note: 'Theme map 100% coverage over C1s; THEME-REVIEW-001..003 (model): 3 candidates

@@ -87,17 +87,20 @@ USES_AS_PREMISE / USES_AS_WARRANT / ORGANIZES) · `DerivedState` · `ImpactRepor
 ## THE CONCRETE SEQUENCE (where we're headed — updated)
 
 ```
-CP1 floor ✅ (63/63)  →  corpus state ✅ (ledger)  →  review engine ✅ (Phase 3A)
+CP1 floor ✅ (63/63)  →  corpus state ✅ (ledger)  →  review engine ✅ (Phase 3A+3D)
    ↓
-PHASE 3B  typed dependency propagation        (the 4 edge types — partially proven in 3A)
-PHASE 3C  ImpactReport                         (✅ done in 3A)
-PHASE 3D  MCP review tools                     (✅ BUILT: patala_get_review_state · patala_propose_review ·
-          patala_submit_review · patala_get_impact · patala_simulate_review; the executable constitution)
-PHASE 3E  tiny Scholar Workbench review screen
-PHASE 3F  Hermes A4 scheduling                (LAST — Hermes orchestrates, it doesn't define semantics)
+PRIORITY: AGENT 3 TRANSLATION FACTORY  (the headline — the closed-loop factory)
+   A2 NEXT_VALID_ACTION → A3 production → MACHINE_PROPOSED → A2 validate → review/correction
+   milestone: one legacy work through the full factory on Hermes, producing L0-linked
+   translation/C1 proposals with provenance, then one output through the review protocol.
    ↓
-(cross-lane) Agent 3 translation factory on kanban+cron  →  (later) BYOA over mcp.patala.org
+PHASE 3E  tiny Scholar Workbench screen   (deferred — only when a real reviewer is ready;
+           minimal: object · evidence · current state · proposal/review · impact · submit)
+PHASE 3F  Hermes A4 scheduling            (LAST — after the human workflow is proven)
 ```
+
+**DO NOT add more primitives** unless a real factory/review run forces them (the risk is architecture
+drift). 3E stays minimal — no dashboards/profiles/queues/social/reviewer-discovery.
 
 **Do NOT:** build a generic ingestion framework · rebuild review workflow infra (OpenReview/Hypothesis/
 Crossref exist) · let Hermes determine what Pāṭala knows · promote machine output without a scoped policy.
