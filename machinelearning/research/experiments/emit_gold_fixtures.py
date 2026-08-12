@@ -19,6 +19,9 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from patala_ml.gold import build_gold_v0
 from patala_ml.gold002 import build_gold_002
+from patala_ml.gold003 import build_gold_003
+from patala_ml.gold004 import build_gold_004
+from patala_ml.gold005 import build_gold_005
 from patala_ml.goldutil import wrap_fixture, validate_gold, validate_all_gold
 
 OUT = "/root/projects/patala/benchmarks/v0/structure"
@@ -27,6 +30,9 @@ OUT = "/root/projects/patala/benchmarks/v0/structure"
 GOLDS = {
     "ARG-GOLD-001": build_gold_v0,
     "ARG-GOLD-002": build_gold_002,
+    "ARG-GOLD-003": build_gold_003,
+    "ARG-GOLD-004": build_gold_004,
+    "ARG-GOLD-005": build_gold_005,
 }
 
 

@@ -228,8 +228,40 @@ def main() -> int:
             else:
                 ok(f"shared CP ladder present ({len(shared)} entries)")
 
+    # 11. full-context read: every live agent must have read its whole context chain
+    print("\n== full-context read (CONTEXT-CHAIN + context_gate) ==")
+    _check_context_read(agents)
+
     print(f"\n=== {'SYSTEM CLEAN (0 failures)' if not failures else f'STALE: {len(failures)} failure(s)'} ===")
     return 0 if not failures else 1
+
+
+def _check_context_read(agents: dict) -> None:
+    """Each live agent must have confirmed reading every doc in its context chain (in order).
+
+    The chain is defined in handover/CONTEXT-CHAIN.yaml; the read-record per agent lives in
+    handover/context-read/<agent>.yaml. A doc counts as read only with a real key-point. If any live
+    agent has not read its full chain, the system is stale — the agent has not acquired full context.
+    """
+    chain_path = os.path.join(ROOT, "handover", "CONTEXT-CHAIN.yaml")
+    if not os.path.exists(chain_path):
+        fail("handover/CONTEXT-CHAIN.yaml missing (the full-context manifest)")
+        return
+    chain = yaml.safe_load(open(chain_path))
+    for aid in agents:
+        items = list(chain.get("shared", [])) + list(chain.get("agents", {}).get(aid, []))
+        if not items:
+            fail(f"{aid}: no context chain defined")
+            continue
+        rec_path = os.path.join(ROOT, "handover", "context-read", f"{aid}.yaml")
+        rec = {}
+        if os.path.exists(rec_path):
+            rec = yaml.safe_load(open(rec_path)) or {}
+        missing = [it["id"] for it in items if it["id"] not in rec]
+        if missing:
+            fail(f"{aid}: context chain INCOMPLETE ({len(rec)}/{len(items)} read; unread: {', '.join(missing[:5])}{'…' if len(missing) > 5 else ''})")
+        else:
+            ok(f"{aid}: full context chain read ({len(items)}/{len(items)})")
 
 
 def _gold_problems(gold: dict, known_ids: set) -> list[str]:

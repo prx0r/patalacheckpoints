@@ -31,16 +31,19 @@ the ML lane.*
 > CP4 work is the ACTIVE item there; update it via `handover/flow.py` at session end.
 
 ### 🔴 THE ACTIVE WORK RIGHT NOW (this is the live task)
-**CP4 — build ARG-003/004/005** (the remaining gold arguments), with the philosophical-IR shape:
+**CP4 — the gold gate is MET (ARG-001..005 all built + `validate_gold`-consistent). Next: Build 4 extraction.**
 ```
-ARG-003  reductio                (V2-O ordered-support regress)
-ARG-004  conceptual-distinction  (vimarśa vs prakāśa, V2-H)
-ARG-005  ambiguous               (two defensible reconstructions, V3-I)
+Built this session:
+  ARG-003  reductio                (V2-O ordered-support regress, 8 nodes/4 infs)   ✅
+  ARG-004  conceptual-distinction  (vimarśa vs prakāśa, V2-H, 6/4)                 ✅
+  ARG-005  ambiguous               (two readings of "difference is real", V3-I,     ✅
+            5/3, 2 Positions + 3-level SemanticAlignment)
+  Build 4  primitive extractor run BLIND against all 5 golds → BenchmarkRun        ✅
+            (proposition F1 0.36, inference recovery 0.0 = the baseline to beat)
+Honest status: golds are MACHINE_PROPOSED/CANDIDATE — NOT yet independently reviewed.
 ```
-Each: read the C1 + L2 → extract propositions → build the Proposition/Inference/Defeater shape +
-Commitment (who asserts) + ResearchQuestion + DebateFrame + SemanticAlignment. Add to the `GOLDS`
-registry in `emit_gold_fixtures.py`, run it, confirm `validate_gold` passes. Then all 5 golds are
-consistent = the CP4 gold gate.
+Next in order: (1) independent review of the 5 golds, (2) a real extractor that beats the
+baseline, (3) THEN viruddha as a graph op. See `NEXT-STEPS.md`.
 
 **The source of this task:** `handover/agent-1-ml/ORIENTATION.md` Phase 4 + `NEXT-STEPS.md` + the vision
 (`docs/vision/CORE-BIBLE.md` Layer 3 / `handover/CHECKPOINTS.md` CP4).

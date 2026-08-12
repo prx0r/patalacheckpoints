@@ -67,8 +67,8 @@ def main():
         check("task = argument_extraction", g["task"] == "argument_extraction")
         check("EVALUATION_ONLY split", g["split_class"] == "EVALUATION_ONLY")
         check("allowed_training_use = false", g["allowed_training_use"] is False)
-        check("SINGLE_EDITOR_GOLD", g["review_state"] == "SINGLE_EDITOR_GOLD")
-        check("hand-adjudicated", g["authoring_method"] == "HAND_ADJUDICATED")
+        check("CANDIDATE (honest, unreviewed)", g["review_state"] == "CANDIDATE")
+        check("MACHINE_PROPOSED authoring (honest)", g["authoring_method"] == "MACHINE_PROPOSED")
         exp = g["expected"]
         check("gold has nodes + inferences + boundary",
               "nodes" in exp and "inferences" in exp and "boundary" in exp)

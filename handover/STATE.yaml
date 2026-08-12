@@ -1,5 +1,5 @@
-state_version: 3
-last_update: '2026-08-12T10:35:24'
+state_version: 6
+last_update: '2026-08-12T12:34:58'
 agent1:
   checkpoints:
     CP0:
@@ -14,15 +14,20 @@ agent1:
       note: cluster.py proposals exist (machine); no AcceptedTheme yet.
     CP4:
       status: IN_PROGRESS
-      note: test
+      note: 'ARG-GOLD-001..005 built + consistent (CANDIDATE, unreviewed). Build 4
+        primitive baseline run blind: prop F1 0.36, inference 0.0. P-003 stays NOT_ESTABLISHED.'
       updated_by: agent1
-      ts: '2026-08-12 10:35:24'
+      ts: '2026-08-12 12:33:06'
 agent2:
   checkpoints:
     CP1:
       status: PARTIAL
-      note: P0 35/35 PASS (frozen). P1-P5 (Vidyut/Heritage witnesses) in progress.
-        PhilologicalProof v1 target.
+      note: 'P4 L0↔L2 term-anchor alignment benchmark + baseline live (floor: resolution
+        recall 0.93, precision 0.89, abstain 1.0; 35 passages / 105 anchors). P0 35/35
+        FROZEN, P2 calibrated (P-011), P3 ranker rejected (P-012). P4 spec + pipeline/l0_align.py
+        + tests 22/22.'
+      updated_by: agent2
+      ts: '2026-08-12 12:34:58'
 shared:
   CP0: DONE
   CP1: PARTIAL

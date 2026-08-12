@@ -1,3 +1,10 @@
+# SUPERSEDED AS WORKING DOC — External infrastructure review (input, not current)
+
+> **⚠️ Reference input only.** This external review's "delegate to py-aspic/xAIF/oAMF/ALIAS, own the thin IR" is
+> the *direction*, but its full Phase0–10 build order describes a finished engine and is aspirational. It is
+> **reconciled into `machinelearning/_ACTIVE/ARGUMENT-IR-VISION.md`** (gold-first: build ARG-001..005, let the gold
+> force the ontology). Superseded as the working doc by `ARGUMENT-IR-VISION.md` + `BRAINSTORM-PHILOSOPHY-ENGINE-VS-PATALA.md`.
+
 I checked the current repositories and papers against the architecture we just designed. The main conclusion is: **Pāṭala should own the philosophical intermediate representation and provenance layer, while delegating standard argumentation computation, interchange, and much of argument mining to existing infrastructure.** ASPIC+, Dung-style semantics, xAIF, and LLM argument-mining already have usable implementations. ([GitHub][1])
 
 ## 1. Repositories and papers worth using

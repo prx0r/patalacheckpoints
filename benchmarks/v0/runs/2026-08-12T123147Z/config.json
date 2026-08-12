@@ -1,0 +1,12 @@
+{
+  "method": "extractor.py sentence-split + surface-marker roles",
+  "match": "token-Jaccard>=0.5",
+  "roles": [
+    "CONCLUSION",
+    "IMPLICIT_PREMISE",
+    "INTERPRETIVE_CLAIM",
+    "OBJECTION",
+    "QUALIFICATION",
+    "TEXTUAL_CLAIM"
+  ]
+}

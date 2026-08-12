@@ -1,0 +1,5 @@
+{
+  "split": "EVALUATION_ONLY",
+  "train_use": false,
+  "note": "all fixtures EVALUATION_ONLY; single-passage, no held-out split yet"
+}

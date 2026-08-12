@@ -11,7 +11,7 @@ the load-bearing lifecycle; the concrete lane details are substituted per instan
 
 ---
 
-## PHASE 0 — IDENTITY & VISION (why you exist)
+## PHASE 0 — IDENTITY & FULL CONTEXT (why you exist, then read EVERYTHING)
 
 ### Step 0.0 — Who you are
 - **Name / id:** _(from your instance entry)_
@@ -20,19 +20,42 @@ the load-bearing lifecycle; the concrete lane details are substituted per instan
 - **Your question, always:** _(from your instance entry)_
 - **You OWN:** _(from your instance entry: `owns`)_ — **You do NOT touch:** _(`must_not_touch`)_
 
-### Step 0.1 — Read the integrated vision (the north star)
-**Read `VISION_AND_NAVIGATION.md`** (the canonical vision) + `handover/SYSTEM.md` (the agent-system
-architecture you are part of).
+### Step 0.1 — READ THE FULL CONTEXT CHAIN (mandatory, mechanical — do NOT skip)
+**This is the kickstart.** Your full context is defined once in `handover/CONTEXT-CHAIN.yaml` and
+**enforced by `handover/context_gate.py`**. It is the whole system — the vision, the map, the
+doctrine, your lane's handover + session, the benchmark contract, AND the actual code files you own.
+You must read **every** doc in **order**, each leaving a real trace (a key-point), before you may build
+anything. There is no "skim." There is no partial. The gate does not pass until the chain is complete.
 
-**🟢 GATE 0.1** — Run `python3 handover/check_staleness.py` (must be clean) + `python3
-handover/flow.py status` (know the live state). This tells you the honest state of everything.
+```
+# 1. See your full chain and what remains:
+python3 handover/context_gate.py --status <id>
+# 2. For EACH doc, in order: read it, then leave a trace of what you actually learned:
+python3 handover/context_gate.py --confirm <id> --by <you> -k "<the key point you learned>"
+# 3. You may only build once:
+python3 handover/context_gate.py --status <id>    # must print CONTEXT GATE: PASS
+```
 
-### Step 0.2 — Know the other lanes (never drift)
+The gate is **ordered**: you can only confirm a doc after all the ones before it. It is **mechanical**:
+a doc counts as read only when it leaves a real key-point (≥20 chars), not a checkmark. This is the
+anti-theatre rule applied to your own onboarding — a context you can't demonstrate you read is a
+context you don't have.
+
+**🟢 GATE 0.1** — Run `python3 handover/context_gate.py --status <id>` and drive it to **PASS**. Also run
+`python3 handover/check_staleness.py` (must be clean) + `python3 handover/flow.py status` (know the
+live state). The context gate is the FIRST gate and it gates everything after it.
+
+### Step 0.2 — Read the integrated vision (the north star)
+Now that you hold the full shared context (`vision`, `vision_map`, `vision_map_adapted` in the chain),
+re-read the canonical vision so the map is live in front of you: `VISION_AND_NAVIGATION.md` +
+`handover/SYSTEM.md` (the agent-system architecture you are part of).
+
+### Step 0.3 — Know the other lanes (never drift)
 **Read the other instances' ORIENTATIONs** (from `handover/agent-<n>/ORIENTATION.md`). Know each lane's
 question + checkpoints so you never drift into their `owns`. The shared boundary is contractual: join
 only on the agreed reference IDs, never fuzzy.
 
-### Step 0.3 — The checkpoint ladder (your coordinate system)
+### Step 0.4 — The checkpoint ladder (your coordinate system)
 ```
 CP0 BENCHMARK · CP1 SOURCE PROOF · CP2 RETRIEVAL · CP3 THEMES · CP4 ARGUMENT · CP5 VERIFICATION
 CP6 SYNTHESIS · CP7 WORKBENCH · CP8 ADVERSARIAL REVIEW · CP9 API/MCP · CP10 COLLAB · CP11 ECONOMIC · CP12 CROSS-CORPUS

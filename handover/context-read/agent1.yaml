@@ -1,0 +1,294 @@
+agents_md:
+  by: agent1
+  at: '2026-08-12T11:57:36+00:00'
+  key_point: 'THE ONE RULE: nothing is real because code exists; it becomes real only
+    via independent gold + blind eval + metric + human adjudication. Agent ML = upward
+    derivation (C1->synthesis); join on Ref IDs never fuzzy; read CLAIMS/COMPONENT-CONTRACTS/doctrine/theatre_check
+    before claiming done.'
+system:
+  by: agent1
+  at: '2026-08-12T11:57:36+00:00'
+  key_point: One template agent0 instantiated as live agents (agent1 ML, agent2 L0).
+    Orientation derived from AGENTS.yaml registry + CHECKPOINTS; check_staleness.py
+    fails on drift; flow.py is the only way to change live STATE. The checker is the
+    enforcement mechanism applied to the agent system itself.
+vision:
+  by: agent1
+  at: '2026-08-12T11:57:36+00:00'
+  key_point: 'Computable scholarly tradition: one evidence graph over Sanskrit sources,
+    IPVV flagship, agnostic. Two engines: PUSHING (discovery) + logical-arguments-as-gold
+    (formalization). 9-step progression; one trustworthy core rendered as many media
+    projections.'
+checkpoints:
+  by: agent1
+  at: '2026-08-12T11:57:42+00:00'
+  key_point: 'Five CPs: CP0 benchmark, CP1 philological proof (L0), CP2 retrieval,
+    CP3 themes, CP4 arguments (both converge). No higher layer until lower object
+    crosses its gate. 8 canonical contracts incl Ref (universal) + DebateFrame/SemanticAlignment.
+    Nyaya gate plugs in only at CP4 once real Inference objects exist.'
+doctrine:
+  by: agent1
+  at: '2026-08-12T11:57:42+00:00'
+  key_point: Master anti-theatre rule. 3 categories A infra / B evidence / C results,
+    never call A->C. 9-field contract, epistemic labels, banned words PROVED/TRUTH/CORRECT,
+    abstention principle, human adjudication, result lineage, falsification-before-promotion,
+    adversarial tests not written by builder.
+claims:
+  by: agent1
+  at: '2026-08-12T11:57:42+00:00'
+  key_point: 'Audit ledger: P-001 L0 35/35 SUPPORTED; P-002 benchmark SUPPORTED-as-infra;
+    P-003 auto-reconstruction NOT_ESTABLISHED; P-004 Nyaya FROZEN (defect recall .80,
+    FP .00, abstain .50, viruddha miss); P-005 strength unvalidated; P-012 ranker
+    rejected. Tests != benchmarks != expert review.'
+contracts:
+  by: agent1
+  at: '2026-08-12T11:57:42+00:00'
+  key_point: 9-field contract per component; empty field = EXPERIMENTAL_INFRASTRUCTURE.
+    argument.py schema/container gate slot empty; nyayagate CANDIDATE no gold. Promotion
+    = independent gold + blind pred + metric + error analysis + human adjudication.
+vision_map:
+  by: agent1
+  at: '2026-08-12T11:57:42+00:00'
+  key_point: Patala is ONE derivation graph SOURCE->L0->TRANSLATION->COMMENTARY->THEMES->ARGUMENT->SYNTHESIS->WORKBENCH->API,
+    every node points downward, status honest. 14-phase roadmap; two agents join contractually
+    on Passage/TranslationDecision/PhilologicalProof/C1 IDs. ~10 primitives composed,
+    not 30 apps.
+vision_map_adapted:
+  by: agent1
+  at: '2026-08-12T11:57:43+00:00'
+  key_point: 'Vision mapped to real infra: CP0 DONE, CP1-CP6 PARTIAL, CP7+ NOT STARTED.
+    Two clear next moves passing the checkpoint-test: re-baseline retrieval on v0
+    (CP2) + grow argument gold to 5-10 (CP4). Remaining work is proofs, not features.'
+orientation:
+  by: agent1
+  at: '2026-08-12T11:57:51+00:00'
+  key_point: 'This is the process workflow I am executing: 6 phases (identity+full-context,
+    doctrine, handover, explore codebase, exact next steps=build ARG-003/004/005,
+    guardrails+falsification). Phase 0 Step 0.1 is the NEW mechanical full-context
+    gate. CP4 is my live checkpoint.'
+handover_doc:
+  by: agent1
+  at: '2026-08-12T11:57:51+00:00'
+  key_point: 'The 10 axioms: schema-valid != source-grounded != justified != valid
+    != true; tested schema is not a result; benchmark makes results; AI proposes !=
+    Patala asserts; every task names CP+object+benchmark; don''t propagate certainty
+    blindly; Nyaya gate (680 LOC) is best external asset and UNWIRED. Master failure
+    = structurally-elegant-but-hollow objects.'
+index:
+  by: agent1
+  at: '2026-08-12T11:57:51+00:00'
+  key_point: 'Living current-state pointer. Active: CP4 build ARG-003/004/005. REAL:
+    frozen benchmark, Nyaya gate (.80/.00/.50), L0 proofs, clusterer. HOLLOW: strength,
+    argument schema, essay layer, aifgraph, c1metrics. Next: complete golds, validate,
+    blind extraction, then viruddha as graph op.'
+session:
+  by: agent1
+  at: '2026-08-12T11:57:51+00:00'
+  key_point: 'Full session record: built ML spine then audit exposed mostly-hollow
+    theater; pivoted to epistemic hardening. 26 modules inventoried honestly. Nyaya
+    gate measured .80/.00/.50; the 1 miss viruddha needs a real argument graph. 339
+    tests passing. Immediate hard work: viruddha-via-graph.'
+next_steps:
+  by: agent1
+  at: '2026-08-12T11:57:51+00:00'
+  key_point: 'Exact how-to: grow ARG-GOLD-001 to 5 (transcendental/objection-reply/reductio/conceptual-distinction/ambiguous),
+    each a BenchmarkFixture with full Proposition/Inference/Grounding/Defeater shape
+    + DebateFrame/SemanticAlignment. Build order: extend schema, golds 002-005, consistency
+    validator, blind extraction, viruddha-as-graph-op. Sources on sanskritree mount.'
+checkpoints_ml:
+  by: agent1
+  at: '2026-08-12T11:57:51+00:00'
+  key_point: This lane owns CP0/CP2/CP3/CP4. CP0 benchmark genuinely real; CP2 retrieval
+    beats trivial baseline; CP3 adjudicate 3 themes (Order-less Support, Vimarsa,
+    Pramana) into AcceptedTheme; CP4 grow Argument Gold 001-010 + test extraction
+    blind. Do NOT build essay layer / Bayesian / more clustering.
+arg_vision:
+  by: agent1
+  at: '2026-08-12T11:57:51+00:00'
+  key_point: 'Strategic why: grow ARG-GOLD-001 to 5 real hand-reconstructed arguments
+    with DebateFrame/SemanticAlignment. viruddha (gate''s 1 miss) needs a real argument
+    graph. Sequence: schema, golds, consistency validator, blind extraction, viruddha-as-graph-op.
+    Do NOT hack viruddha into nyayagate.py.'
+arg_ir:
+  by: agent1
+  at: '2026-08-12T11:57:51+00:00'
+  key_point: "CP4 target is a philosophical IR built gold-first. ADDS: Commitment\
+    \ (fixes p\u016Brvapak\u1E63a error), derivational Proposition (derived_from+explicitness),\
+    \ ResearchQuestion, Attack vs Defeat split, three-level SemanticAlignment. Ontology\
+    \ anticipates, implementation follows evidence. Build ARG-003/004/005 WITH these;\
+    \ do NOT build EpistemicRegime/EvaluationProfile/Crux yet."
+mechanics:
+  by: agent1
+  at: '2026-08-12T11:57:52+00:00'
+  key_point: 'Code map: corpus/c1corpus loaders, cluster.py (Louvain -> 9 proposals),
+    retrieval.py (BM25/dense/hybrid to beat), argument.py (schema gate EMPTY), nyayagate.py
+    (frozen v1 .80/.00/.50), strength.py (uncalibrated ordinal), gold/gold002/goldutil/emit
+    (the gold pipeline). Data flow: loaders -> cluster/retrieval -> gold -> argument/graph
+    -> gate.'
+playbook:
+  by: agent1
+  at: '2026-08-12T11:57:52+00:00'
+  key_point: 'Living agentic-infra ledger. ADOPTED: persistent identity, git-backed
+    durable state, versioned progress, review states, template->instances. PILOTING:
+    typed handoff, searchable memory (flow.py search). OVERKILL: Temporal, LangGraph
+    executor, CrewAI, Mastra, vector memory, debate. Function real only if it earns
+    its keep in practice.'
+bench_manifest:
+  by: agent1
+  at: '2026-08-12T11:58:01+00:00'
+  key_point: 'Frozen evaluation substrate PATALA-BENCH-v0. Four families: RETRIEVAL,
+    EVIDENCE, STRUCTURE, FIDELITY. A fixture produced by method X can''t be independent
+    gold for X; every run immutable; per-metric not one aggregate. Targets: 30-50
+    retrieval, 20-30 evidence, 5 structure, ~20 fidelity.'
+bench_schema:
+  by: agent1
+  at: '2026-08-12T11:58:01+00:00'
+  key_point: 'Fixture envelope: fixture_id, task_family, task, source_ids, authoring_method,
+    review_state, split_class, input, expected. allowed_training_use:false = EVALUATION_ONLY.
+    Structure gold = nodes (proposition, kind, explicitness, source_support) + inferences
+    (premise_ids, conclusion_id, scheme) + boundary. Acceptance: schema->resolution->leakage->human
+    review.'
+bench_splits:
+  by: agent1
+  at: '2026-08-12T11:58:01+00:00'
+  key_point: "Leakage policy: S0 same-passage, S1 passage held-out, S2 argument-family\
+    \ held-out (THE meaningful v0 test), S3 section, S4 work. Split by scholarly unit\
+    \ (vimar\u015Ba/family), not random. ARG-GOLD-001 is EVALUATION_ONLY, tests the\
+    \ harness not model selection."
+bench_metrics:
+  by: agent1
+  at: '2026-08-12T11:58:01+00:00'
+  key_point: 'Metric contract, no aggregate. Structure: proposition recovery P/R/F1,
+    role macro-F1, explicitness macro-F1, grounding exact-source precision, relation
+    F1, inference scheme macro-F1, scope-fidelity error, boundary error. 4-layer epistemic
+    declaration never collapsed to tests=scholarship. Baselines required; runs immutable.'
+code_gold:
+  by: agent1
+  at: '2026-08-12T11:58:02+00:00'
+  key_point: gold.py builds ARG-GOLD-001 (V2-O transcendental). Nodes G-TC1/TC2/TC3/IC1/CONC/IMPLICIT;
+    inferences G-INF1 CONCEPTUAL_DISTINCTION, G-INF2 TRANSCENDENTAL, G-INF3 INTERPRETIVE_CLAIM;
+    honest boundary not_claiming numerical unity. Status MACHINE_PROPOSED.
+code_gold002:
+  by: agent1
+  at: '2026-08-12T11:58:02+00:00'
+  key_point: "gold002.py builds ARG-GOLD-002 (V2-L objection->reply). Full Proposition/Inference/Defeater\
+    \ + DebateFrame/SemanticAlignment (SAME_SENSE vikalpa, aha\u1E43-pratyavamar\u015B\
+    a). 6 nodes incl OBJECTION G2-OBJ + IMPLICIT G2-IMPL; 2 inferences OBJECTION_REPLY\
+    \ + CONCEPTUAL_DISTINCTION; defeater G2-DEF1. Exact template for ARG-003/004/005."
+code_goldutil:
+  by: agent1
+  at: '2026-08-12T11:58:02+00:00'
+  key_point: 'goldutil.py: wrap_fixture() wraps gold into BenchmarkFixture envelope
+    (PAT-STRUCT-N, argument_extraction, EVALUATION_ONLY, training false); validate_gold()
+    consistency validator (passage resolves, inference integrity, no orphan textual
+    claims, boundary, valid kinds/schemes); validate_all_gold() over structure dir.
+    The tooling for ARG-003/004/005.'
+code_nyayagate:
+  by: agent1
+  at: '2026-08-12T11:58:02+00:00'
+  key_point: "nyayagate.py: P\u0101\u1E6Dala-adapted 5-hetv\u0101bh\u0101sa gate,\
+    \ reuses truth-engine MECHANISM rejects ontology. Fallacies asiddha/viruddha/savyabhicara/satpratipaksa/badhita\
+    \ via markers. Outcome ladder accepted/penalty/needs_review/hollow/refuted + can_update_posterior.\
+    \ FROZEN v1 measured .80/.00/.50, viruddha miss needs graph. Do NOT hack."
+code_emit:
+  by: agent1
+  at: '2026-08-12T11:58:02+00:00'
+  key_point: 'emit_gold_fixtures.py: the GOLDS registry {ARG-GOLD-001: build_gold_v0,
+    ARG-GOLD-002: build_gold_002}. For each: validate_gold then wrap_fixture then
+    write PAT-STRUCT-N.json, then validate_all_gold; exit 0 only if consistent. THIS
+    is where I add ARG-003/004/005 builders (the CP4 gate).'
+fixture_001:
+  by: agent1
+  at: '2026-08-12T11:58:02+00:00'
+  key_point: 'PAT-STRUCT-001.json: wrapped BenchmarkFixture for ARG-GOLD-001, argument_extraction,
+    EVALUATION_ONLY, training false, HAND_ADJUDICATED, SINGLE_EDITOR_GOLD. expected
+    = V2-O transcendental gold. Resolves chunkV2-O-saptamo-vimarsa.md.'
+fixture_002:
+  by: agent1
+  at: '2026-08-12T11:58:02+00:00'
+  key_point: 'PAT-STRUCT-002.json: wrapped BenchmarkFixture for ARG-GOLD-002, argument_extraction,
+    EVALUATION_ONLY, training false, SINGLE_EDITOR_GOLD. expected = V2-L objection->reply
+    gold with nodes/inferences/boundary/debate_frame/semantic_alignments. EXACT output
+    format ARG-003/004/005 must produce.'
+core_bible:
+  by: agent1
+  at: '2026-08-12T12:03:18+00:00'
+  key_point: 'THE CORE BIBLE: ONE vision, 6 zoomable layers - sentence(0), paragraph(1),
+    derivation graph(2), checkpoints(3), domain lenses(4), specs/gold/data(5). Every
+    vision doc is one zoom-level of the same vision, not a separate product. Layer
+    3 ACTIVE: CP4 ARG-003/004/005. Register every new doc in vision/INDEX + this bible.'
+vision_index:
+  by: agent1
+  at: '2026-08-12T12:03:18+00:00'
+  key_point: docs/vision/INDEX.md maps the full Vision 01-09 arc + 3 lenses (functionality/scholars/economics)
+    + foundational strategy (NORTHSTAR, foundationalideas, positioningpartners). Vision
+    03 = one scholarly infrastructure, several interfaces. Maps vision->checkpoints
+    (01/02->CP1-CP6, 06->CP5/CP8, 07->CP7-CP9). Start at CORE-BIBLE then zoom.
+docs_index:
+  by: agent1
+  at: '2026-08-12T12:03:18+00:00'
+  key_point: 'docs/INDEX.md is the flat canonical single-source-of-truth: one canonical
+    doc per concern, stale ones marked [ARCHIVED]. Confirms: CORE-BIBLE = top-level
+    vision map; AGENT1-INDEX / AGENT2-INDEX = current state; MLUSEINPATALA = frozen
+    ML strategy; DEVPLAN = ML dev plan. THE_COMPANION = full-system onboarding (sanskritree).'
+handover_readme:
+  by: agent1
+  at: '2026-08-12T12:03:18+00:00'
+  key_point: 'handover/README.md: the coordination rules. Each lane keeps ONE living
+    INDEX.md (current state, not snapshot); everything else append-only; cross-lane
+    handoffs in LOG.md; drop SESSION-<date>.md at session end; archive superseded.
+    Single source of truth: vision root, docs/INDEX, lane INDEXs, LOG.md.'
+docs_readme:
+  by: agent1
+  at: '2026-08-12T12:03:19+00:00'
+  key_point: 'docs/README.md: the machine-first docs home. System: RAW SANSKRIT ->
+    pipeline -> hub -> /api + MCP. Documentation tree: pipeline/translation, API,
+    data model (SCHOLARLY_GRAPH), corpus. 7 locked invariants: stable IDs, work!=witness!=canonical
+    passage, machine output always proposal, annotations independent + addressable.'
+phase1:
+  by: agent1
+  at: '2026-08-12T12:03:19+00:00'
+  key_point: 'PHASE1 notes: how the IPVV corpus was built agnostically. Read the layered
+    stack, emit machine records, zero-loss + provenance. 52 chunks parsed, 49 passages
+    OK, 3 NEEDS_MAPPING (legacy V1, no L2). Published as lazy-JSON store (index.json
+    + per-passage), getPublishedTranslation serves /read + /api/resolve. Never guess
+    unresolved - flag them.'
+scholarly_graph:
+  by: agent1
+  at: '2026-08-12T12:03:28+00:00'
+  key_point: 'SCHOLARLY_GRAPH.md: the durable data model. OBJECTS (Work/Witness/Passage/SourceSpan/Person/Term/Sense/Resource,
+    immutable IDs) vs ANNOTATIONS (target/type/payload/origin/status/certainty/evidence/review_events)
+    vs EVENTS (ReviewEvent). Machine output is origin=machine, NEVER sets status=accepted
+    by itself. status != certainty. Evidence makes a claim traceable, not true.'
+translation_protocol:
+  by: agent1
+  at: '2026-08-12T12:03:28+00:00'
+  key_point: 'TRANSLATION_PROTOCOL: translation is a versioned set of passage-level
+    claims linked to Sanskrit evidence, never one blob. 3 layers (close/reading/commentary).
+    Lemma vs sense distinguished. Every decision can carry evidence; peer review is
+    part of the data model; version everything. MCP returns evidence primitives, not
+    ''translate for me''.'
+ml_readme:
+  by: agent1
+  at: '2026-08-12T12:03:28+00:00'
+  key_point: 'machinelearning/README.md: the ML workspace home. ACTIVE = the living
+    doctrine + current work; ARCHIVE = superseded, kept. READ FIRST: AGENTS-DOCTRINE,
+    CLAIMS, COMPONENT-CONTRACTS, AGENT1-HANDOVER, MLUSEINPATALA. enforcement tool
+    = theatre_check.py. Current work: ARGUMENT-GOLD-VISION + DEVPLAN (Argument Gold
+    = next build).'
+mluse:
+  by: agent1
+  at: '2026-08-12T12:03:28+00:00'
+  key_point: 'MLUSEINPATALA.md: FROZEN ML strategy. Use ML to EXPOSE the already-built
+    scholarly structure as deterministic services, then INFER over it - only after
+    a fixed benchmark, never without human review. No new ML idea unless it names
+    the benchmark task + baseline it beats. North-star: every task names CP + object
+    + proof. EXPOSE before INFER; benchmark before model.'
+devplan:
+  by: agent1
+  at: '2026-08-12T12:03:29+00:00'
+  key_point: 'DEVPLAN.md: the consolidated execution plan. Honest state: benchmark
+    REAL, Nyaya gate REAL-but-unwired (highest-value build), L0 proofs REAL, cluster/strength/argument/essay
+    infra. Phases: A wire the Nyaya gate (needs per-fallacy gold first), B grow Argument
+    Gold 001-010, C evaluate blind. Priority: gate gold, wire gate, argument gold,
+    retrieval re-baseline.'

@@ -35,18 +35,28 @@ task, human-grounded gold, and a reproducible evaluation show that it does what 
 
 ## CLAIM P-002 — "Pāṭala's benchmark is a real evaluation substrate."
 - **STATUS:** SUPPORTED (as infrastructure) / PARTIAL (as evidence)
-- **EVIDENCE:** `benchmarks/v0/` frozen (MANIFEST/SCHEMA/SPLITS/METRICS); 1 retrieval fixture file,
-  1 structure gold (ARG-GOLD-001).
-- **CAVEAT:** EVIDENCE and FIDELITY families have **0 fixtures**. ARG-GOLD-001 is a SEED, not proof.
-  Fixtures are CANDIDATE, not independently DOUBLE_REVIEWED.
+- **EVIDENCE:** `benchmarks/v0/` frozen (MANIFEST/SCHEMA/SPLITS/METRICS); retrieval fixture files;
+  **5 structure golds** (ARG-GOLD-001..005, `validate_gold`-consistent, `review_state=CANDIDATE`);
+  evidence = 12-fixture Nyāya-gate gold.
+- **CAVEAT:** EVIDENCE and FIDELITY families still have **0 fixtures** in the frozen families (the
+  12 gate fixtures are evidence-family, SINGLE_REVIEWED by one author). All fixtures are **CANDIDATE**,
+  machine-authored, NOT independently DOUBLE_REVIEWED.
 - **REQUIRED to promote:** targets (50 retrieval / 30 evidence / 10 structure / 30 fidelity); every
-  fixture real-ID + review-status + provenance + no-leakage.
+  fixture real-ID + review-status + provenance + no-leakage; independent reviewer sign-off.
 
 ## CLAIM P-003 — "Pāṭala can automatically reconstruct IPVV arguments."
 - **STATUS:** NOT_ESTABLISHED
-- **EVIDENCE:** none — no automatic extractor has been evaluated against hand-gold.
-- **REQUIRED:** ARG-GOLD-001..010 hand-adjudicated; extractor evaluated blind; proposition F1,
-  grounding precision, relation F1, abstention performance; simple baseline included.
+- **EVIDENCE (2026-08-12):** 5 real hand-gold arguments now exist (ARG-GOLD-001..005, `benchmarks/v0/structure/`,
+  all `validate_gold`-consistent, `review_state=CANDIDATE`). A **primitive baseline extractor** was run BLIND
+  against them (the CP4 Build-4 gate): **macro proposition P/R/F1 = 0.32/0.42/0.36 · role macro-F1 0.58 ·
+  explicitness macro-F1 0.63 · grounding precision 1.0 · inference recovery 0.0 · inference-scheme F1 0.0**.
+  Immutable run: `benchmarks/v0/runs/2026-08-12T123147Z/`. This is the BASELINE, not a capability.
+- **CAVEAT:** a sentence-level baseline cannot recover abstract/reconstructed gold propositions (ARG-001 F1 = 0.0)
+  and produces NO inference graph. The golds are `CANDIDATE` — machine-authored, **not yet reviewed by an
+  independent editor**.
+- **REQUIRED to promote:** (a) ARG-GOLD-001..010 hand-adjudicated; (b) a real extractor that beats this baseline
+  (proposition F1 + inference recovery > 0, low false-assertion) on a frozen held-out split; (c) independent
+  review of the gold; (d) abstention on a genuine NO-SAFE-RECONSTRUCTION case (no such gold fixture exists yet).
 
 ## CLAIM P-004 — "The Nyāya gate validates claims."
 - **STATUS:** FROZEN — `NYAYA_GATE_CANDIDATE_v1` (BENCHMARKED_PRELIMINARY, NOT independently validated,

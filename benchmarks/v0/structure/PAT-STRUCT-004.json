@@ -1,0 +1,247 @@
+{
+  "fixture_id": "PAT-STRUCT-004",
+  "task_family": "PATALA-STRUCTURE",
+  "task": "argument_extraction",
+  "source_ids": [
+    "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md",
+    "C1:V2H-vimarsa-paravak",
+    "C1:V2H-vimarsa-paravak",
+    "C1:V2H-vimarsa-paravak",
+    "C1:V2H-vimarsa-paravak",
+    "C1:V2H-vimarsa-paravak",
+    "C1:V2H-vimarsa-paravak"
+  ],
+  "gold_version": "1",
+  "authoring_method": "MACHINE_PROPOSED",
+  "review_state": "CANDIDATE",
+  "created_from": [
+    "C1:pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md"
+  ],
+  "allowed_training_use": false,
+  "split_class": "EVALUATION_ONLY",
+  "input": {
+    "source": "the C1 read + L2 of pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md"
+  },
+  "expected": {
+    "gold_id": "ARG-GOLD-004",
+    "work_id": "ipvv",
+    "passage": "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md",
+    "title": "The Essence of Light: prakāśa vs vimarśa (V2-H)",
+    "structure": "CONCEPTUAL_DISTINCTION",
+    "research_question": "Is the essence of light bare showing (prakāśa) or reflexive awareness (vimarśa)?",
+    "nodes": [
+      {
+        "proposition_id": "G4-TC1",
+        "text": "Manifestation (prakāśa) is not a passive, inert light; it shows the world.",
+        "kind": "TEXTUAL_CLAIM",
+        "explicitness": "EXPLICIT",
+        "commitment": "ASSERTS",
+        "derived_from": "L2/C1 (the manifestation is not inert)",
+        "grounding": {
+          "passage_id": "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md",
+          "c1_id": "V2H-vimarsa-paravak",
+          "l200_assertion_id": "l200/V2H-pancamo-vimarsa-k11-13.md"
+        },
+        "boundary": "",
+        "status": "MACHINE_PROPOSED"
+      },
+      {
+        "proposition_id": "G4-CRYSTAL",
+        "text": "A light that merely showed the world without knowing that it showed it would be no different from crystal — it would reflect, but be inert.",
+        "kind": "TEXTUAL_CLAIM",
+        "explicitness": "EXPLICIT",
+        "commitment": "ASSERTS",
+        "derived_from": "C1 (the crystal contrast)",
+        "grounding": {
+          "passage_id": "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md",
+          "c1_id": "V2H-vimarsa-paravak",
+          "l200_assertion_id": "l200/V2H-pancamo-vimarsa-k11-13.md"
+        },
+        "boundary": "the crystal is the inert contrast, not the subject of the doctrine",
+        "status": "MACHINE_PROPOSED"
+      },
+      {
+        "proposition_id": "G4-DIST",
+        "text": "Bare showing (prakāśa alone) is distinct from self-aware manifesting; the distinguishing mark is self-awareness in the act (vimarśa).",
+        "kind": "TEXTUAL_CLAIM",
+        "explicitness": "RECONSTRUCTED",
+        "commitment": "ASSERTS",
+        "derived_from": "L2 (showing ≠ knowing-it-shows)",
+        "grounding": {
+          "passage_id": "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md",
+          "c1_id": "V2H-vimarsa-paravak",
+          "l200_assertion_id": "l200/V2H-pancamo-vimarsa-k11-13.md"
+        },
+        "boundary": "",
+        "status": "MACHINE_PROPOSED"
+      },
+      {
+        "proposition_id": "G4-TC2",
+        "text": "The essence of light is the reflexive-awareness (vimarśa) — the light's own grasp of itself in the act of manifesting.",
+        "kind": "TEXTUAL_CLAIM",
+        "explicitness": "EXPLICIT",
+        "commitment": "ASSERTS",
+        "derived_from": "C1/L2 (vimarśa as the essence)",
+        "grounding": {
+          "passage_id": "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md",
+          "c1_id": "V2H-vimarsa-paravak",
+          "l200_assertion_id": "l200/V2H-pancamo-vimarsa-k11-13.md"
+        },
+        "boundary": "the reflexivity claim is established; the full powers/lordship account is developed in later vimarśas",
+        "status": "MACHINE_PROPOSED"
+      },
+      {
+        "proposition_id": "G4-CONC",
+        "text": "What makes the light conscious (rather than a thing) is that it is aware of itself in the very act of manifesting.",
+        "kind": "CONCLUSION",
+        "explicitness": "RECONSTRUCTED",
+        "commitment": "ASSERTS",
+        "derived_from": "CONCEPTUAL_DISTINCTION over G4-DIST + G4-TC2",
+        "grounding": {
+          "passage_id": "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md",
+          "c1_id": "V2H-vimarsa-paravak",
+          "l200_assertion_id": "l200/V2H-pancamo-vimarsa-k11-13.md"
+        },
+        "boundary": "",
+        "status": "MACHINE_PROPOSED"
+      },
+      {
+        "proposition_id": "G4-IC1",
+        "text": "Abhinavagupta identifies this self-knowing with the supreme speech (parā-vāk) and with the Lord's freedom (svātantrya) and lordship (aiśvarya).",
+        "kind": "INTERPRETIVE_CLAIM",
+        "explicitness": "RECONSTRUCTED",
+        "commitment": "ASSERTS",
+        "derived_from": "C1 (the identification with the Word)",
+        "grounding": {
+          "passage_id": "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md",
+          "c1_id": "V2H-vimarsa-paravak",
+          "l200_assertion_id": "l200/V2H-pancamo-vimarsa-k11-13.md"
+        },
+        "boundary": "the identification with parā-vāk is the C1's extension, not a bare textual assertion",
+        "status": "MACHINE_PROPOSED"
+      }
+    ],
+    "inferences": [
+      {
+        "inference_id": "G4-INF-DIST",
+        "premise_ids": [
+          "G4-TC1",
+          "G4-CRYSTAL"
+        ],
+        "conclusion_ids": [
+          "G4-DIST"
+        ],
+        "scheme": "CONCEPTUAL_DISTINCTION",
+        "rationale": "If manifestation were only bare showing (G4-TC1), it would be like crystal — it would reflect but not know it reflected (G4-CRYSTAL). Hence bare showing is distinct from self-aware manifesting (G4-DIST).",
+        "defeaters": [],
+        "status": "MACHINE_PROPOSED"
+      },
+      {
+        "inference_id": "G4-INF-ESS",
+        "premise_ids": [
+          "G4-DIST",
+          "G4-TC1"
+        ],
+        "conclusion_ids": [
+          "G4-TC2"
+        ],
+        "scheme": "CONCEPTUAL_DISTINCTION",
+        "rationale": "Since the essence of light is not the bare showing (G4-DIST), and manifestation is not inert (G4-TC1), the essence is the reflexive-awareness itself (G4-TC2).",
+        "defeaters": [],
+        "status": "MACHINE_PROPOSED"
+      },
+      {
+        "inference_id": "G4-INF-CONC",
+        "premise_ids": [
+          "G4-TC2",
+          "G4-DIST"
+        ],
+        "conclusion_ids": [
+          "G4-CONC"
+        ],
+        "scheme": "CONCEPTUAL_DISTINCTION",
+        "rationale": "The distinguishing mark of consciousness is self-awareness in manifesting (G4-TC2 + G4-DIST); that is what makes the light conscious rather than a thing (G4-CONC).",
+        "defeaters": [],
+        "status": "MACHINE_PROPOSED"
+      },
+      {
+        "inference_id": "G4-INF-IC",
+        "premise_ids": [
+          "G4-CONC"
+        ],
+        "conclusion_ids": [
+          "G4-IC1"
+        ],
+        "scheme": "INTERPRETIVE_CLAIM",
+        "rationale": "The C1 identifies the self-knowing light with the parā-vāk and the Lord's freedom/lordship — an interpretive identification, not a bare textual assertion.",
+        "defeaters": [],
+        "status": "MACHINE_PROPOSED"
+      }
+    ],
+    "boundary": {
+      "text": "The passage establishes that the essence of light is reflexive-awareness (vimarśa), not the bare showing of objects. It does NOT by itself establish the full account of the powers and the Lordship (developed in the following vimarśas, V2-I / V2-S), nor that language produces the self-grasp.",
+      "not_claiming": [
+        "the full account of the powers and the Lordship",
+        "that language produces the self (language is its form, not its producer)"
+      ],
+      "philological": {
+        "proof_id": "pp:ipvv:v2h:p0",
+        "status": "P0"
+      }
+    },
+    "debate_frame": {
+      "question": "Is the essence of light bare showing (prakāśa) or reflexive awareness (vimarśa)?",
+      "object_of_dispute": "the nature of light: bare manifestation (prakāśa) vs reflexive awareness (vimarśa)",
+      "concept_refs": [
+        "prakāśa",
+        "vimarśa",
+        "parā-vāk",
+        "svātantrya",
+        "aiśvarya"
+      ],
+      "shared_ground": [
+        "the light manifests the world",
+        "a merely-inert showing would be unconscious"
+      ],
+      "disputed_ground": [
+        "whether the essence of light is the bare showing or the self-awareness"
+      ],
+      "semantic_alignments": [
+        {
+          "left_term": "prakāśa",
+          "right_term": "manifestation / bare showing",
+          "relation": "SAME_SENSE",
+          "level": "CONCEPTUAL",
+          "context": [
+            "V2H-vimarsa-paravak"
+          ],
+          "rationale": "prakāśa = the light's showing of objects",
+          "status": "MACHINE_PROPOSED"
+        },
+        {
+          "left_term": "vimarśa",
+          "right_term": "reflexive awareness / self-grasping",
+          "relation": "SAME_SENSE",
+          "level": "CONCEPTUAL",
+          "context": [
+            "V2H-vimarsa-paravak"
+          ],
+          "rationale": "vimarśa = the light's self-awareness in manifesting (the heart of the doctrine)",
+          "status": "MACHINE_PROPOSED"
+        },
+        {
+          "left_term": "prakāśa",
+          "right_term": "vimarśa",
+          "relation": "DIFFERENT",
+          "level": "CONCEPTUAL",
+          "context": [
+            "V2H-vimarsa-paravak"
+          ],
+          "rationale": "the whole distinction: showing ≠ self-aware showing; vimarśa is the essence, not an added quality",
+          "status": "MACHINE_PROPOSED"
+        }
+      ]
+    },
+    "status": "MACHINE_PROPOSED"
+  }
+}

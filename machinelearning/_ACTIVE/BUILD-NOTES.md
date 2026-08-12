@@ -1,3 +1,11 @@
+# STALE — BUILD NOTES (historical progress log; some claims RETIRED)
+
+> **⚠️ STALE.** This is a running log frozen at 2026-08-12. Parts of it are **retired / no longer true**:
+> §3 "B-STRUCT is the best argument-builder" and "coverage Spearman +0.94 is a real metric" were **retired as
+> CIRCULAR** (the "premises" were C1 titles — see `AGENT1-HANDOVER.md` §2 + `COMPONENT-CONTRACTS.md`).
+> The canonical current state is `handover/agent-1-ml/SESSION-2026-08-12.md` + `_ACTIVE/CLAIMS.md` (P-001..P-012).
+> Do NOT cite this file's experimental "results" as findings.
+
 # BUILD NOTES — ML lane progress log
 
 *2026-08-12. A running log of what's been built in the ML research lane, in order, so nothing is lost

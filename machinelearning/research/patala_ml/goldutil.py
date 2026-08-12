@@ -21,8 +21,17 @@ VALID_SCHEMES = {"NYAYA_ANUMANA", "REDUCTIO", "TRANSCENDENTAL", "CONCEPTUAL_DIST
 VALID_EXPLICITNESS = {"EXPLICIT", "RECONSTRUCTED", "IMPLICIT"}
 
 
-def wrap_fixture(gold: dict, gold_version: str = "1", review_state: str = "SINGLE_EDITOR_GOLD") -> dict:
-    """Wrap a gold-argument dict into the CP0 BenchmarkFixture envelope."""
+def wrap_fixture(gold: dict, gold_version: str = "1",
+                 review_state: str = "CANDIDATE",
+                 authoring_method: str = "MACHINE_PROPOSED") -> dict:
+    """Wrap a gold-argument dict into the CP0 BenchmarkFixture envelope.
+
+    Honest defaults: a gold produced by a machine (the agent hand-reconstructing from source) is
+    `authoring_method=MACHINE_PROPOSED`, `review_state=CANDIDATE` — NOT `SINGLE_EDITOR_GOLD`/`HAND_ADJUDICATED`,
+    which would fabricate a review that never happened. Promotion to `SINGLE_EDITOR_GOLD`/`ADJUDICATED_GOLD`
+    must come from an actual reviewer signing the fixture (per the doctrine: statuses come from review events,
+    never from code defaults).
+    """
     # derive the source ids from the gold's nodes' grounding
     source_ids = []
     for n in gold.get("nodes", []):
@@ -41,7 +50,7 @@ def wrap_fixture(gold: dict, gold_version: str = "1", review_state: str = "SINGL
         "task": "argument_extraction",
         "source_ids": source_ids,
         "gold_version": gold_version,
-        "authoring_method": "HAND_ADJUDICATED",
+        "authoring_method": authoring_method,
         "review_state": review_state,
         "created_from": [f"C1:{gold.get('passage', '')}"],
         "allowed_training_use": False,

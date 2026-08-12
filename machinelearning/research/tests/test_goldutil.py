@@ -61,7 +61,8 @@ def main():
     check("task = argument_extraction", fx["task"] == "argument_extraction")
     check("EVALUATION_ONLY split", fx["split_class"] == "EVALUATION_ONLY")
     check("allowed_training_use = false", fx["allowed_training_use"] is False)
-    check("SINGLE_EDITOR_GOLD", fx["review_state"] == "SINGLE_EDITOR_GOLD")
+    check("CANDIDATE (honest, unreviewed)", fx["review_state"] == "CANDIDATE")
+    check("MACHINE_PROPOSED authoring (honest)", fx["authoring_method"] == "MACHINE_PROPOSED")
     check("source_ids has a real passage", any(s.startswith("pt:passage:ipvv:chunk") for s in fx["source_ids"]))
 
     # 4. the validator CATCHES a real defect

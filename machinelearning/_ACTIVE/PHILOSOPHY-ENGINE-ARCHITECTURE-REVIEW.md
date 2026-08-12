@@ -1,3 +1,11 @@
+# SUPERSEDED AS WORKING DOC — External architecture review (input, not current)
+
+> **⚠️ Reference input only.** This external review proposes an aspirational 13-object ontology + profile-relative
+> evaluation for the *finished* engine. Its working conclusions are **reconciled into
+> `machinelearning/_ACTIVE/ARGUMENT-IR-VISION.md`** (the CP4 target, gold-first — ontology forced by evidence,
+> not designed empty). It predates the doctrine: nothing is real without gold + blind eval + human adjudication.
+> Read `ARGUMENT-IR-VISION.md` + `BRAINSTORM-PHILOSOPHY-ENGINE-VS-PATALA.md` for the current synthesis.
+
 Yes. I went much deeper into the methodological material behind those three sites and then checked your architecture against formal computational argumentation rather than merely agreeing with it.
 
 The result is stronger than the version you sent.

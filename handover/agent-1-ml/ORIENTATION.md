@@ -8,7 +8,7 @@ project repeatedly fell into.*
 
 ---
 
-## PHASE 0 — IDENTITY & VISION (why you exist)
+## PHASE 0 — IDENTITY & FULL CONTEXT (why you exist, then read EVERYTHING)
 
 ### Step 0.0 — Who you are
 - **Role:** ML + eval + retrieval + the argument/research story.
@@ -18,7 +18,35 @@ project repeatedly fell into.*
   verification). **You do NOT own:** `data/corpus/`, `app/`, `lib/`, `pipeline/verify_l0.py`, `philproof.py`
   internals (Agent 2's).
 
-### Step 0.1 — Read the integrated vision (the north star)
+### Step 0.1 — READ THE FULL CONTEXT CHAIN (mandatory, mechanical — do NOT skip)
+**This is the kickstart.** Your full context is defined once in `handover/CONTEXT-CHAIN.yaml` and
+**enforced by `handover/context_gate.py`**. It is the whole system — the shared vision + map + doctrine
+(9 docs), then your ML lane's docs + the benchmark contract + the actual code you own (21 more). You must
+read **every** doc in **order**, each leaving a real trace (a key-point), before you may build anything.
+There is no "skim." There is no partial. The gate does not pass until the chain is complete.
+
+```
+# 1. See your full chain and what remains:
+python3 handover/context_gate.py --status agent1
+# 2. For EACH doc, in order: read it, then leave a trace of what you actually learned:
+python3 handover/context_gate.py --confirm <id> --by agent1 -k "<the key point you learned>"
+# 3. You may only build once:
+python3 handover/context_gate.py --status agent1    # must print CONTEXT GATE: PASS
+```
+
+The gate is **ordered** (you can only confirm a doc after all the ones before it) and **mechanical** (a
+doc counts as read only when it leaves a real key-point, ≥20 chars — not a checkmark). This is the
+anti-theatre rule applied to your own onboarding: a context you can't demonstrate you read is a context
+you don't have.
+
+**🟢 GATE 0.1** — Run `python3 handover/context_gate.py --status agent1` and drive it to **PASS**. Also
+run `python3 handover/check_staleness.py` (must be clean) + `python3 handover/flow.py status` (know the
+live state). The context gate is the FIRST gate and it gates everything after it.
+
+### Step 0.2 — Read the integrated vision (the north star)
+Now that you hold the full shared context (`vision`, `vision_map`, `vision_map_adapted` in the chain),
+re-read the canonical vision so the map is live in front of you: `VISION_AND_NAVIGATION.md` +
+`handover/SYSTEM.md` (the agent-system architecture you are part of).
 **Read `machinelearning/_ACTIVE/dualagentvision.md` + `dualagentvision-ADAPTED.md`.** These are the master
 object and the checkpoint map.
 - The master derivation graph: `SOURCE → L0 → TRANSLATION → C1 → THEMES → ARGUMENT → SYNTHESIS → WORKBENCH → API`.
@@ -49,7 +77,7 @@ functions: ADOPTED / TRIED / SKIPPED / OVERKILL, updated with what actually work
 persistent identity + git durability are ADOPTED; the typed handoff is PILOTING; Temporal/LangGraph/
 CrewAI are OVERKILL). `machinelearning/_ACTIVE/AGENTIC-INFRA-COMPARISON.md` is the one-time survey behind it.
 
-### Step 0.2 — Know the two lanes (never drift)
+### Step 0.3 — Know the two lanes (never drift)
 | | **Agent 2 — L0 / integration** | **YOU — Agent 1 / ML** |
 |---|---|---|
 | Direction | **vertical truth** | **horizontal + upward derivation** |
@@ -63,7 +91,7 @@ focus). You must be able to state in one sentence what Agent 2 owns and is doing
 The shared boundary is contractual: join only on **Passage ID / TranslationDecision ID / PhilologicalProof
 ID / C1 ID**, never fuzzy.
 
-### Step 0.3 — The checkpoint ladder (your coordinate system)
+### Step 0.4 — The checkpoint ladder (your coordinate system)
 ```
 CP0 BENCHMARK · CP1 SOURCE PROOF · CP2 RETRIEVAL · CP3 THEMES · CP4 ARGUMENT · CP5 VERIFICATION
 CP6 SYNTHESIS · CP7 WORKBENCH · CP8 ADVERSARIAL REVIEW · CP9 API/MCP · CP10 COLLAB · CP11 ECONOMIC · CP12 CROSS-CORPUS

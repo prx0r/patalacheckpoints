@@ -1,3 +1,11 @@
+# HONEST AUDIT — OUR OWN STRUCTURES (historical no-BS snapshot)
+
+> **⚠️ Partially STALE — one finding now FIXED.** §2's headline ("the gold-chain certificate STILL hardcodes
+> `EDITOR_APPROVED`") referred to `experiments/build_goldchain.py` at that time; the statuses are **now honest**
+> (`MACHINE_PROPOSED`/`SUPPORTED` — see `CLAIMS.md` P-006 + `AGENT1-HANDOVER.md` §2). The rest of the audit
+> (strength/argument/essay/aifgraph/c1metrics = hollow or infra) still holds. Keep this as the historical record;
+> the current real-vs-hollow inventory is `handover/agent-1-ml/SESSION-2026-08-12.md` + `COMPONENT-CONTRACTS.md`.
+
 # HONEST AUDIT — OUR OWN STRUCTURES (the no-BS version)
 
 *2026-08-12. The same brutal standard applied to the Lean work, now applied to EVERYTHING we built.

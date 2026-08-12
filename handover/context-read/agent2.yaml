@@ -1,0 +1,190 @@
+agents_md:
+  by: agent2
+  at: '2026-08-12T11:59:49+00:00'
+  key_point: 'THE ONE RULE: nothing is real because code exists; it becomes real only
+    via independent gold + blind eval + metric + human adjudication. Agent L0 = vertical
+    truth, question ''is this reading licensed by the source''; join on Ref IDs never
+    fuzzy.'
+system:
+  by: agent2
+  at: '2026-08-12T11:59:50+00:00'
+  key_point: One template agent0 instantiated as live agents (agent1 ML, agent2 L0).
+    Orientation derived from AGENTS.yaml registry + CHECKPOINTS; check_staleness.py
+    fails on drift; flow.py is the only way to change live STATE.
+vision:
+  by: agent2
+  at: '2026-08-12T11:59:50+00:00'
+  key_point: 'Computable scholarly tradition: one evidence graph over Sanskrit sources,
+    IPVV flagship, agnostic. Two engines PUSHING + logical-arguments-as-gold. I certify
+    the SOURCE floor; Agent ML derives upward.'
+checkpoints:
+  by: agent2
+  at: '2026-08-12T11:59:50+00:00'
+  key_point: 'Five CPs: benchmark, philological proof (MINE = CP1), retrieval, themes,
+    arguments (both converge at CP4). No higher layer until lower object crosses its
+    gate. 8 contracts incl Ref. Nyaya gate plugs in at CP4.'
+doctrine:
+  by: agent2
+  at: '2026-08-12T11:59:50+00:00'
+  key_point: Master anti-theatre rule. 3 categories A infra / B evidence / C results,
+    never A->C. 9-field contract, epistemic labels, banned words, abstention, human
+    adjudication, result lineage, falsification-before-promotion.
+claims:
+  by: agent2
+  at: '2026-08-12T11:59:50+00:00'
+  key_point: 'Audit ledger. P-001 MY L0 claim: V2/V3 35/35 SUPPORTED, V1 legacy MIGRATION_PENDING
+    PARTIAL. P-011 calibrated ensemble witness (Vidyut x Heritage, control agreement
+    84-85%). P-012 ranker rejected (doesn''t beat baseline). Tests != benchmarks !=
+    expert review.'
+contracts:
+  by: agent2
+  at: '2026-08-12T11:59:50+00:00'
+  key_point: 9-field contract per component; empty field = EXPERIMENTAL_INFRASTRUCTURE.
+    The PhilologicalProof contract is evidence (B), not infrastructure. Promotion
+    requires gold + blind pred + metric + error analysis + human adjudication.
+vision_map:
+  by: agent2
+  at: '2026-08-12T11:59:50+00:00'
+  key_point: Patala is ONE derivation graph SOURCE->L0->TRANSLATION->COMMENTARY->THEMES->ARGUMENT->SYNTHESIS->WORKBENCH->API,
+    every node points downward, status honest. Two agents join contractually on Passage/TranslationDecision/PhilologicalProof/C1
+    IDs.
+vision_map_adapted:
+  by: agent2
+  at: '2026-08-12T11:59:50+00:00'
+  key_point: 'Vision mapped to real infra: CP0 DONE, CP1-CP6 PARTIAL, CP7+ NOT STARTED.
+    CP1 is the closest to done (P0 35/35 real). My next work: Heritage ensemble P2,
+    lexical gold P3, alignment gold P4.'
+orientation:
+  by: agent2
+  at: '2026-08-12T11:59:57+00:00'
+  key_point: 'This is the process workflow I am executing: 6 phases (identity+full-context,
+    doctrine, handover, explore corpus+code, exact next steps=finish PhilologicalProof
+    v1 P0-P4, guardrails+falsification). Phase 0 Step 0.1 is the NEW mechanical full-context
+    gate. CP1 is my live checkpoint.'
+index:
+  by: agent2
+  at: '2026-08-12T11:59:57+00:00'
+  key_point: 'Living current-state pointer. Done: 49 passages published, deterministic
+    substrate, P0 FROZEN+VERIFIED 35/35 (103,917 tokens, 0 unknown chars). In progress
+    CP1: Heritage ensemble P2, lexical gold P3 (50-100 fixtures), alignment gold P4.
+    Join on Ref IDs never fuzzy.'
+checkpoints_int:
+  by: agent2
+  at: '2026-08-12T11:59:57+00:00'
+  key_point: 'CP1 PhilologicalProof v1. Finish in order: P0 coverage DONE, P1 segmentation,
+    P2 morphology (Vidyut+Heritage ensemble), P3 lexical sense (gold->ranker benchmark),
+    P4 alignment (gold->baseline). PhilologicalProof object with ProofDimensions (PROVED/SUPPORTED/CONFLICT/OPEN/UNCHECKED/REVIEWED),
+    no collapsed confidence.'
+code_verify:
+  by: agent2
+  at: '2026-08-12T11:59:57+00:00'
+  key_point: 'verify_l0.py is my P0 proof harness: staged levels P0_SOURCE (chunk
+    hash, span integrity, ordering, coverage, roundtrip, no NLP deps), P1_SEGMENT,
+    P2_MORPH, P3_ENSEMBLE, P4_ALIGNMENT. lossless = every semantic source char token-covered
+    OR explicitly classified (STRUCTURAL/IGNORED_WITH_REASON); any UNKNOWN = coverage
+    failure. Proof harness, never fabricates.'
+code_verify_p2:
+  by: agent2
+  at: '2026-08-12T11:59:57+00:00'
+  key_point: verify_l0_p2.py is my standalone Vidyut P2 morphology witness. P2 asks
+    'is the extracted Sanskrit lemma morphologically licensed?' independent of P0
+    coverage. States CONFIRMED/AMBIGUOUS_SUPPORTED/CONFLICT/UNANALYZED/TOOL_ERROR/NO_SANSKRIT.
+    Frozen normalization v1; witness not editor (never overwrites L0).
+core_bible:
+  by: agent2
+  at: '2026-08-12T12:03:41+00:00'
+  key_point: 'THE CORE BIBLE: ONE vision in 6 zoomable layers (sentence->paragraph->derivation
+    graph->checkpoints->domain lenses->specs/gold/data). Layer 2 spine SANSKRIT->L0
+    PROOF->TRANSLATION->...->API/MEDIA; Layer 3 CP ladder with CP1 SOURCE PROOF =
+    MY checkpoint. Every vision doc is one zoom-level of one vision.'
+vision_index:
+  by: agent2
+  at: '2026-08-12T12:03:41+00:00'
+  key_point: 'docs/vision/INDEX.md: full Vision 01-09 arc + 3 lenses + foundational
+    docs. Vision 01/02 (translation-lab, Tantra Hub) land on CP1-CP6 - MY source proof
+    feeds them. The whole vision is one scholarly infrastructure, several interfaces.'
+docs_index:
+  by: agent2
+  at: '2026-08-12T12:03:41+00:00'
+  key_point: 'docs/INDEX.md: canonical single-source-of-truth per concern. AGENT2-INDEX
+    = my current state; L0 standardization = verifiable substrate; SCHOLARLY_GRAPH
+    + TRANSLATION_PROTOCOL = the data model + translation claims I build the source
+    floor on. THE_COMPANION (sanskritree) = full-system onboarding.'
+handover_readme:
+  by: agent2
+  at: '2026-08-12T12:03:41+00:00'
+  key_point: 'handover/README.md: coordination rules. Each lane keeps ONE living INDEX.md
+    (current state); everything else append-only; cross-lane handoffs logged in LOG.md
+    with schema snippet; SESSION-<date>.md at session end; archive superseded. My
+    lane owns data/app/lib/pipeline.'
+docs_readme:
+  by: agent2
+  at: '2026-08-12T12:03:41+00:00'
+  key_point: 'docs/README.md: machine-first docs. System RAW SANSKRIT -> pipeline
+    -> hub -> /api + MCP. My lane builds the pipeline (T1->T3.1->C1->passages) + verification
+    floor (/api/verify) + the scholarly substrate. Invariants: stable IDs, machine
+    output always proposal, annotations independent + addressable.'
+phase1:
+  by: agent2
+  at: '2026-08-12T12:03:41+00:00'
+  key_point: 'PHASE1 notes: how the IPVV corpus was built agnostically (source->passage->L2->provenance,
+    zero-loss). 49 passages published as lazy-JSON; getPublishedTranslation is the
+    single loader for /read + /api/resolve. This is the substrate MY L0 proof certifies.
+    Never guess unresolved - flag NEEDS_MAPPING.'
+scholarly_graph:
+  by: agent2
+  at: '2026-08-12T12:03:41+00:00'
+  key_point: 'SCHOLARLY_GRAPH: objects (Work/Witness/Passage/SourceSpan...) vs annotations
+    vs ReviewEvents. My PhilologicalProof + source spans are annotations/objects in
+    this graph; every claim carries evidence + review history. Machine never self-promotes
+    to accepted; only a scoped ReviewEvent does.'
+translation_protocol:
+  by: agent2
+  at: '2026-08-12T12:03:41+00:00'
+  key_point: 'TRANSLATION_PROTOCOL: translation = versioned passage-level claims linked
+    to Sanskrit evidence, never one blob. 3 layers (close/reading/commentary). This
+    is the substrate the L0 floor certifies - my source proof licenses the reading
+    the translation claims.'
+build_notes_p0:
+  by: agent2
+  at: '2026-08-12T12:05:40+00:00'
+  key_point: 'BUILD_NOTES_L0_P0: built verify_l0.py P0 harness (source_sha256, span_integrity,
+    ordering, coverage, roundtrip), fixed coordinate-model bug (dual chunk_char +
+    line_char), fixed 4 tokenizer content-loss bugs (overlap, blockquote-wrap, [And]-case,
+    comma/quote-in-gloss) recovering ~1900 V2/V3 + ~1700 V1 tokens. Final milestone:
+    V2/V3 35/35 P0 lossless (0 unknown), V1 legacy separate MIGRATION_PENDING.'
+build_notes_p2:
+  by: agent2
+  at: '2026-08-12T12:05:40+00:00'
+  key_point: 'BUILD_NOTES_L0_P2: standalone Vidyut P2 witness (verify_l0_p2.py). P0/P2
+    separation frozen (coverage vs morphology). Full-corpus result 103,906 records:
+    55.1% supported (CONFIRMED 28.2 + AMBIGUOUS 26.9), 29.5% CONFLICT (mostly compounds
+    Vidyut segments - real signal not error), 11.8% UNANALYZED. Matching rule: match
+    stem-as-prefix + surface (else ~50% false CONFLICT). philproof.py fix: extraction_coverage
+    OPEN != lexical_sense.'
+p2_ensemble:
+  by: agent2
+  at: '2026-08-12T12:05:40+00:00'
+  key_point: 'P2-ENSEMBLE: Vidyut x Heritage independent calibration. 4600 records:
+    CONTROL AGREEMENT 84.1%, CONFLICT RESOLUTION 71.6% (most Vidyut CONFLICT = representation
+    mismatch, NOT L0 error), DOUBLE-CONFLICT 9.2% (genuine review set, ~424), Heritage-disagrees
+    5.5%. Honest statuses SUPPORTED_BY_ENSEMBLE/SINGLE/CONFLICTING/UNANALYZED, never
+    PROVED. P2 is a useful witness. Blind manual review required for agreement=correctness.'
+p2_review_protocol:
+  by: agent2
+  at: '2026-08-12T12:05:40+00:00'
+  key_point: 'P2_REVIEW_PROTOCOL (corrected after external review): build_p2_review
+    emits reviewer file with opaque IDs + secret key file, reviewer sees ONLY the
+    blind CSV. Labels SUPPORTED/PLAUSIBLE_ALTERNATIVE/CONFLICT/CANNOT_DECIDE + preferred
+    lemma + material_to_translation + reason. score_p2_review joins only via the secret
+    key, per-witness. Don''t tune normalization after seeing human labels without
+    versioning.'
+p3_editorial:
+  by: agent2
+  at: '2026-08-12T12:05:40+00:00'
+  key_point: "P3_EDITORIAL_REVIEW: 0/21 lexical-gold fixtures promoted - intentional,\
+    \ circular (gloss embodies the label). Needs: passage_id, source_span_id, Sanskrit\
+    \ token+clause, candidate senses independent of label, parallels, refs. Red flags:\
+    \ duplicate incompatible labels (tattva reality/principle), m\u0101y\u0101/krama\
+    \ double-labeled. Keep as MACHINE_DRAFT -> SINGLE_EDITOR_GOLD -> DOUBLE -> ADJUDICATED.\
+    \ These are adversarial/abstention tests after human review."

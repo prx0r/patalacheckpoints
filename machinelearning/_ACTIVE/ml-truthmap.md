@@ -1,3 +1,12 @@
+# STALE — ML TRUTH-ENGINE / NYĀYA / BAYESIAN (historical review; superseded)
+
+> **⚠️ STALE.** This early review treats the truth-engine's Bayesian runtime + Nyāya gate as **mature,
+> adoptable machinery**. It predates the epistemic hardening. The current honest state (see
+> `TRUTHENGINE-FULL-AUDIT.md`, `TRUTHENGINE_TO_PATALA_MAPPING.md`, `NYAYA-GATE-CANDIDATE-V1.md`,
+> `COMPONENT-CONTRACTS.md`): **nothing is real because code exists** — the gate is `NYAYA_GATE_CANDIDATE_v1`
+> (measured, NOT validated), `strength.py` is an uncalibrated `BayesianEvidencePrimitive`, and no claim is a
+> result without gold + blind eval. Read the superseding docs, not this one, for current direction.
+
 # ML — THE TRUTH ENGINE / NYĀYA / BAYESIAN SYSTEM (what's reusable for Pāṭala)
 
 *2026-08-12. **Agent 1's (ML) review of the existing truth-engine system** — the Bayesian propagation

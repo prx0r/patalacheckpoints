@@ -12,8 +12,8 @@
     "C1:V2L-nonconstructed-I"
   ],
   "gold_version": "1",
-  "authoring_method": "HAND_ADJUDICATED",
-  "review_state": "SINGLE_EDITOR_GOLD",
+  "authoring_method": "MACHINE_PROPOSED",
+  "review_state": "CANDIDATE",
   "created_from": [
     "C1:pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md"
   ],

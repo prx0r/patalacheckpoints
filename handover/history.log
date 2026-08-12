@@ -1,1 +1,5 @@
 2026-08-12 10:31:17 | agent1 | agent1 CP4 -> IN_PROGRESS | building ARG-003 with the IR shape | v2
+2026-08-12 10:35:24 | agent1 | agent1 CP4 -> IN_PROGRESS | test | v3
+2026-08-12 12:23:44 | agent1 | agent1 CP4 -> IN_PROGRESS | ARG-GOLD-001..005 all built + validate_gold consistent (CP4 gold gate met). Next: blind extraction. | v4
+2026-08-12 12:33:06 | agent1 | agent1 CP4 -> IN_PROGRESS | ARG-GOLD-001..005 built + consistent (CANDIDATE, unreviewed). Build 4 primitive baseline run blind: prop F1 0.36, inference 0.0. P-003 stays NOT_ESTABLISHED. | v5
+2026-08-12 12:34:58 | agent2 | agent2 CP1 -> PARTIAL | P4 L0↔L2 term-anchor alignment benchmark + baseline live (floor: resolution recall 0.93, precision 0.89, abstain 1.0; 35 passages / 105 anchors). P0 35/35 FROZEN, P2 calibrated (P-011), P3 ranker rejected (P-012). P4 spec + pipeline/l0_align.py + tests 22/22. | v6

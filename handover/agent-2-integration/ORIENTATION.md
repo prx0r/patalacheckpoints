@@ -8,7 +8,7 @@ agent system you are part of.*
 
 ---
 
-## PHASE 0 — IDENTITY & VISION (why you exist)
+## PHASE 0 — IDENTITY & FULL CONTEXT (why you exist, then read EVERYTHING)
 
 ### Step 0.0 — Who you are
 - **Direction:** **vertical truth.** You own the source→translation floor.
@@ -17,29 +17,56 @@ agent system you are part of.*
 - **You OWN:** `data/corpus/`, `app/`, `lib/`, `pipeline/verify_l0.py`, `philproof.py`. **You do NOT
   touch:** `benchmarks/v0/`, `machinelearning/research/patala_ml/` (Agent 1's).
 
-### Step 0.1 — Read the integrated vision (the north star)
-**Read `VISION_AND_NAVIGATION.md`** (the canonical vision) + `machinelearning/_ACTIVE/dualagentvision.md`
-+ `dualagentvision-ADAPTED.md`. The master object:
+### Step 0.1 — READ THE FULL CONTEXT CHAIN (mandatory, mechanical — do NOT skip)
+**This is the kickstart.** Your full context is defined once in `handover/CONTEXT-CHAIN.yaml` and
+**enforced by `handover/context_gate.py`** — the same mechanical gate Agent 1 runs. It is the whole
+system — the shared vision + map + doctrine (9 docs), then your L0 lane's docs + the proof machinery you
+own (5 more). You must read **every** doc in **order**, each leaving a real trace (a key-point), before
+you may build anything. There is no "skim." There is no partial. The gate does not pass until the chain
+is complete.
+
+```
+# 1. See your full chain and what remains:
+python3 handover/context_gate.py --status agent2
+# 2. For EACH doc, in order: read it, then leave a trace of what you actually learned:
+python3 handover/context_gate.py --confirm <id> --by agent2 -k "<the key point you learned>"
+# 3. You may only build once:
+python3 handover/context_gate.py --status agent2    # must print CONTEXT GATE: PASS
+```
+
+The gate is **ordered** (you can only confirm a doc after all the ones before it) and **mechanical** (a
+doc counts as read only when it leaves a real key-point, ≥20 chars — not a checkmark). This is the
+anti-theatre rule applied to your own onboarding: a context you can't demonstrate you read is a context
+you don't have.
+
+**🟢 GATE 0.1** — Run `python3 handover/context_gate.py --status agent2` and drive it to **PASS**. Also
+run `python3 handover/check_staleness.py` (must be clean) + `python3 handover/flow.py status` (know the
+live state). The context gate is the FIRST gate and it gates everything after it.
+
+### Step 0.2 — Read the integrated vision (the north star)
+Now that you hold the full shared context (`vision`, `vision_map`, `vision_map_adapted` in the chain),
+re-read the canonical vision so the map is live in front of you: `VISION_AND_NAVIGATION.md` +
+`machinelearning/_ACTIVE/dualagentvision.md` + `dualagentvision-ADAPTED.md`. The master object:
 `SOURCE → L0 → TRANSLATION → C1 → THEMES → ARGUMENT → SYNTHESIS → WORKBENCH → API`.
 
-**🟢 GATE 0.1** — *Run* `python3 pipeline/verify_l0.py --t1 .../02_t1 --l0 .../l0 --level p0 --exceptions
+**🟢 GATE 0.2** — *Run* `python3 pipeline/verify_l0.py --t1 .../02_t1 --l0 .../l0 --level p0 --exceptions
 docs/l0_reviewed_exceptions.json`. You must see **35/35 P0 PASS** (the flagship V2/V3 corpus). This is the
 floor you certify.
 
-### Step 0.2 — Know the two lanes (never drift)
+### Step 0.3 — Know the two lanes (never drift)
 | | **YOU — Agent 2 / L0** | **Agent 1 — ML** |
 |---|---|---|
 | Direction | **vertical truth** | **horizontal + upward derivation** |
 | Lane | SOURCE → segmentation → morphology → syntax → alignment → translation proof | C1 → themes → arguments → claims → synthesis → review |
 | Question | *Is this reading licensed by the source?* | *Does this higher-order representation legitimately derive from the scholarly objects beneath it?* |
 | Checkpoint | **CP1** (PhilologicalProof) | **CP0, CP2, CP3, CP4** |
-| Now doing | P0 35/35 PASS; P1–P5 Vidyut/Heritage witnesses | Argument Gold (CP4) |
+| Now doing | P0 35/35 PASS; P2 calibrated (P-011); P3 ranker rejected (P-012); **P4 L0↔L2 alignment live (0.93 floor)** | Argument Gold (CP4) |
 
-**🟢 GATE 0.2** — *Read* `handover/agent-1-ml/ORIENTATION.md` (Agent 1's current focus) so you know what
+**🟢 GATE 0.3** — *Read* `handover/agent-1-ml/ORIENTATION.md` (Agent 1's current focus) so you know what
 they derive from your floor. The shared boundary is contractual: join only on **Passage ID /
 TranslationDecision ID / PhilologicalProof ID / C1 ID**, never fuzzy.
 
-### Step 0.3 — The checkpoint ladder (your coordinate system)
+### Step 0.4 — The checkpoint ladder (your coordinate system)
 ```
 CP0 BENCHMARK · CP1 SOURCE PROOF ← YOU · CP2 RETRIEVAL · CP3 THEMES · CP4 ARGUMENT · CP5 VERIFICATION
 CP6 SYNTHESIS · CP7 WORKBENCH · CP8 ADVERSARIAL REVIEW · CP9 API/MCP · CP10 COLLAB · CP11 ECONOMIC · CP12 CROSS-CORPUS
@@ -128,8 +155,8 @@ Per `CHECKPOINTS-INTEGRATION.md`, in order:
 P0 exact source coverage       ✅ done (35/35)
 P1 segmentation/sandhi         Vidyut
 P2 morphology                  Vidyut + Heritage ensemble
-P3 lexical sense               gold fixtures → ranker benchmark
-P4 alignment                   gold alignment → baseline/model benchmark
+P3 lexical sense               gold fixtures → ranker benchmark (⚠️ ranker REJECTED, P-012)
+P4 alignment                   gold alignment → baseline/model benchmark (⬜ baseline live: 0.93)
 ```
 The `PhilologicalProof` contract: proof_id · passage_id · source_span_ids · source_integrity ·
 extraction_coverage · segmentation · morphology · syntax · alignment · lexical_sense · open_issues ·

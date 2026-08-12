@@ -36,8 +36,8 @@
 | `_ACTIVE/DEVPLAN.md` | the consolidated execution plan (Argument Gold = the next build) |
 | `_ACTIVE/SPEC_EPISTEMIC_PROPAGATION.md` | the epistemic-evidence-propagation contract |
 | `_ACTIVE/ML-ALIGNMENT.md` | every ML artifact maps onto Pāṭala types |
-| `_ACTIVE/BUILD-NOTES.md` | the running progress log |
-| `_ACTIVE/HONEST-AUDIT-OWN-STRUCTURES.md` | the no-BS inventory of what we built (real vs hollow) |
+| `_ACTIVE/BUILD-NOTES.md` | **STALE** — historical log; contains RETIRED claims (B-STRUCT, coverage-Spearman). See `SESSION-2026-08-12.md` + `CLAIMS.md`. |
+| `_ACTIVE/HONEST-AUDIT-OWN-STRUCTURES.md` | **STALE (partially)** — historical no-BS snapshot; gold-chain finding now FIXED (see `CLAIMS.md` P-006). |
 
 ## 4. The reference material (active, but reference-only)
 
@@ -47,7 +47,7 @@
 | `_ACTIVE/TRUTHENGINE_TO_PATALA_MAPPING.md` | reuse mechanisms, reject the ontology |
 | `_ACTIVE/SANSKRITREE-LEAN-REVIEW.md` | the honest Lean verdict (don't build on it) |
 | `_ACTIVE/mlcurriculum.md` | the verified 26-paper arxiv curriculum (context seeding) |
-| `_ACTIVE/ml-truthmap.md` | the truth-engine review |
+| `_ACTIVE/ml-truthmap.md` | **STALE** — early truth-engine review treating the gate/Bayesian as mature; superseded by `TRUTHENGINE-FULL-AUDIT.md` + `NYAYA-GATE-CANDIDATE-V1.md` |
 | `_ACTIVE/PLATFORM_PROVENANCE_PRESERVING_GENERATION.md` | the provenance principle |
 
 ## 5. ARCHIVED (superseded / historical — kept, never deleted)

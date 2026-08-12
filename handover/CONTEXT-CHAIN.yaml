@@ -1,0 +1,197 @@
+# CONTEXT-CHAIN.yaml — the FULL ordered context chain every agent must read before any build.
+#
+# WHY THIS EXISTS: the orientation used to be a passive reading list. Nothing forced an agent to read
+# ALL of it, so agents stopped early and never built full-context understanding. This file is the
+# SOURCE OF TRUTH for "what is full context," and `handover/context_gate.py` mechanically enforces it.
+#
+# THE ORDER (context engineering — this ordering IS the design):
+#   A. WHO YOU ARE + HOW YOU OPERATE   (identity, the operating rule, the agent system, the doctrine)
+#   B. THE PROJECT — VISION            (highest level first: north star → core bible → vision index →
+#                                       derivation graph → mapped to real infra)
+#   C. THE MAP                         (where everything lives: doc index + handover + docs homes)
+#   D. THE EXECUTION MAP + CONTRACTS   (checkpoints + the 9-field anti-theatre contracts)
+#   E. THE SCHOLARLY SYSTEM            (how the corpus + objects are actually built)
+#   → per-agent lane, granular, ENDING at that lane's MOST RECENT HANDOVER.
+#
+# RULES:
+#   - `shared` is read FIRST by every agent, in order (the whole-system context).
+#   - each agent's `agents.<id>` chain is read AFTER `shared`, in order, and ends at its latest handover.
+#   - confirmation is ORDERED: you can only confirm entry N after entries 1..N-1 are confirmed.
+#   - paths are repo-root-relative and must exist — `context_gate.py --validate` fails on a missing file.
+#   - keep IDs stable once a doc is in the chain (read-records are keyed by id); add new docs with a
+#     new id rather than renaming an existing one.
+
+version: "1.1"
+updated: "2026-08-12"
+
+# ── A. WHO YOU ARE + HOW YOU OPERATE (every agent, in order) ──────────────────
+shared:
+  - id: agents_md
+    path: AGENTS.md
+    why: "THE ONE RULE + the read order + the enforcement gate. Who you are and the operating rule."
+  - id: system
+    path: handover/SYSTEM.md
+    why: "the agent-system architecture you are part of (template + instances + the staleness checker)"
+  - id: doctrine
+    path: machinelearning/_ACTIVE/AGENTS-DOCTRINE.md
+    why: "the master anti-theatre rule: how the project validates every claim (3 categories, 9-field contract, epistemic labels, banned words, abstention, adjudication, lineage)"
+
+# ── THE LEDGER you operate against ─────────────────────────────────────────────
+  - id: claims
+    path: machinelearning/_ACTIVE/CLAIMS.md
+    why: "the project's own audit ledger (P-001..P-012) - check before you claim anything works"
+
+# ── B. THE PROJECT — VISION, HIGHEST LEVEL FIRST ───────────────────────────────
+  - id: vision
+    path: VISION_AND_NAVIGATION.md
+    why: "the canonical north star: the ONE vision + the logical progression + the navigation (highest level)"
+  - id: core_bible
+    path: docs/vision/CORE-BIBLE.md
+    why: "THE CORE BIBLE - the same vision chunked into 6 zoomable layers (0 sentence -> 5 specs/gold/data); every vision doc is one zoom-level of this"
+  - id: vision_index
+    path: docs/vision/INDEX.md
+    why: "the canonical map of the full Vision 01-09 arc + the three lenses + the foundational strategy docs"
+  - id: vision_map
+    path: machinelearning/_ACTIVE/dualagentvision.md
+    why: "the master derivation graph + the 13-phase roadmap + the CP0-CP12 ladder"
+  - id: vision_map_adapted
+    path: machinelearning/_ACTIVE/dualagentvision-ADAPTED.md
+    why: "the vision mapped onto our ACTUAL infra (per-checkpoint real state)"
+
+# ── C. THE MAP — WHERE EVERYTHING LIVES ────────────────────────────────────────
+  - id: docs_index
+    path: docs/INDEX.md
+    why: "the flat canonical index - the single source of truth per concern (what is current vs [ARCHIVED])"
+  - id: handover_readme
+    path: handover/README.md
+    why: "how the two lanes coordinate + which doc is authoritative for what (the anti-staleness rules)"
+  - id: docs_readme
+    path: docs/README.md
+    why: "the docs home: the pipeline, the API, the data model, the corpus, the skills"
+
+# ── D. THE EXECUTION MAP + CONTRACTS ───────────────────────────────────────────
+  - id: checkpoints
+    path: handover/CHECKPOINTS.md
+    why: "the shared execution map: CP0-CP12, the canonical contracts, the gates, the two-agent responsibilities"
+  - id: contracts
+    path: machinelearning/_ACTIVE/COMPONENT-CONTRACTS.md
+    why: "the 9-field anti-theatre contract applied to every current component"
+
+# ── E. THE SCHOLARLY SYSTEM — HOW THE CORPUS + OBJECTS ARE BUILT ───────────────
+  - id: phase1
+    path: docs/PHASE1_IPVV_CORPUS_PROCESS_NOTES.md
+    why: "how the IPVV passage corpus was built (source -> passage -> L2 -> provenance, zero-loss), agnostic + reproducible"
+  - id: scholarly_graph
+    path: docs/SCHOLARLY_GRAPH.md
+    why: "the durable data model: objects / annotations / review events - the schema every claim resolves to"
+  - id: translation_protocol
+    path: docs/TRANSLATION_PROTOCOL.md
+    why: "the translation as versioned, passage-linked claims (never one blob) - the substrate both lanes derive from"
+
+# ── THE LANE CONTEXTS (per agent, after `shared`, ENDING at the most recent handover) ──
+agents:
+  agent1:   # ML / research - horizontal + upward derivation (C1 -> ... -> synthesis)
+    - id: orientation
+      path: handover/agent-1-ml/ORIENTATION.md
+      why: "THIS process workflow you are executing right now"
+    - id: ml_readme
+      path: machinelearning/README.md
+      why: "the ML workspace home: ACTIVE vs ARCHIVED, the doctrine order, the enforcement tool"
+    - id: mluse
+      path: machinelearning/_ACTIVE/MLUSEINPATALA.md
+      why: "the FROZEN ML strategy: what to build, in what order, and why (EXPOSE then INFER, benchmark-gated)"
+    - id: devplan
+      path: machinelearning/_ACTIVE/DEVPLAN.md
+      why: "the consolidated execution plan + honest state (the single authoritative build order)"
+    - id: handover_doc
+      path: machinelearning/_ACTIVE/AGENT1-HANDOVER.md
+      why: "the working doctrine: the 10 AXIOMS (gospel) + the recurring errors + the tone"
+    - id: checkpoints_ml
+      path: handover/agent-1-ml/CHECKPOINTS-ML.md
+      why: "this lane's goals: CP0/CP2/CP3/CP4 + the next-four-builds queue + guardrails"
+    - id: arg_vision
+      path: machinelearning/_ACTIVE/ARGUMENT-GOLD-VISION.md
+      why: "the strategic why: Argument Gold unblocks the gate; viruddha becomes a graph op"
+    - id: arg_ir
+      path: machinelearning/_ACTIVE/ARGUMENT-IR-VISION.md
+      why: "the CP4 target shape: Commitment, derivational Proposition, ResearchQuestion, Attack/Defeat, three-level SemanticAlignment"
+    - id: mechanics
+      path: handover/agent-1-ml/ML-MECHANICS-REFERENCE.md
+      why: "code-level inventory of every module + honest status + how they connect + next tasks"
+    - id: playbook
+      path: handover/agent-1-ml/AGENTIC-INFRA-PLAYBOOK.md
+      why: "the living agentic-infrastructure playbook (ADOPTED / TRIED / SKIPPED / OVERKILL)"
+    - id: bench_manifest
+      path: benchmarks/v0/MANIFEST.json
+      why: "the frozen benchmark contract (what counts as a result)"
+    - id: bench_schema
+      path: benchmarks/v0/SCHEMA.md
+      why: "the frozen gold fixture schema (BenchmarkFixture)"
+    - id: bench_splits
+      path: benchmarks/v0/SPLITS.md
+      why: "split + leakage rules (S0-S4, EVALUATION_ONLY)"
+    - id: bench_metrics
+      path: benchmarks/v0/METRICS.md
+      why: "the metric contract (proposition P/R, role F1, grounding, abstention, no aggregate)"
+    - id: code_gold
+      path: machinelearning/research/patala_ml/gold.py
+      why: "ARG-GOLD-001 builder (V2-O transcendental)"
+    - id: code_gold002
+      path: machinelearning/research/patala_ml/gold002.py
+      why: "ARG-GOLD-002 (V2-L objection-reply) - the exact template for ARG-003/004/005"
+    - id: code_goldutil
+      path: machinelearning/research/patala_ml/goldutil.py
+      why: "wrap_fixture + validate_gold - the consistency validator you will run on all 5 golds"
+    - id: code_nyayagate
+      path: machinelearning/research/patala_ml/nyayagate.py
+      why: "the frozen 5-hetvabhasha gate (measured, honest - do NOT hack)"
+    - id: code_emit
+      path: machinelearning/research/experiments/emit_gold_fixtures.py
+      why: "the GOLDS registry + the emit script you extend + run (the CP4 gate)"
+    - id: fixture_001
+      path: benchmarks/v0/structure/PAT-STRUCT-001.json
+      why: "ARG-GOLD-001 as a wrapped BenchmarkFixture (task argument_extraction)"
+    - id: fixture_002
+      path: benchmarks/v0/structure/PAT-STRUCT-002.json
+      why: "ARG-GOLD-002 - the exact output format your new golds must produce"
+    - id: index
+      path: handover/agent-1-ml/INDEX.md
+      why: "the living current-state pointer for the ML lane"
+    - id: session
+      path: handover/agent-1-ml/SESSION-2026-08-12.md
+      why: "the full session record (module inventory: real vs hollow, key decisions)"
+    - id: next_steps
+      path: handover/agent-1-ml/NEXT-STEPS.md
+      why: "THE MOST RECENT HANDOVER - the exact build how-to (ARG-001..005) with gates + falsification self-checks"
+
+  agent2:   # L0 / integration - vertical truth (SOURCE -> ... -> proof)
+    - id: orientation
+      path: handover/agent-2-integration/ORIENTATION.md
+      why: "THIS process workflow you are executing right now"
+    - id: checkpoints_int
+      path: handover/agent-2-integration/CHECKPOINTS-INTEGRATION.md
+      why: "this lane's goals: CP1 (PhilologicalProof) P0-P5"
+    - id: code_verify
+      path: pipeline/verify_l0.py
+      why: "the P0 proof harness (source coverage, lossless) - your own mechanic"
+    - id: code_verify_p2
+      path: pipeline/verify_l0_p2.py
+      why: "the Vidyut P2 morphology witness"
+    - id: build_notes_p0
+      path: docs/BUILD_NOTES_L0_P0.md
+      why: "the P0 build record: coordinate-model fix, 4 tokenizer content-loss fixes, V2/V3 35/35 lossless milestone + the reviewed-exception file"
+    - id: build_notes_p2
+      path: docs/BUILD_NOTES_L0_P2.md
+      why: "the P2 build record: Vidyut witness result (55% supported, 29.5% CONFLICT) + the proof-semantics fix (extraction_coverage != lexical_sense)"
+    - id: p2_ensemble
+      path: docs/P2-ENSEMBLE.md
+      why: "the Vidyut x Heritage calibration: control agreement 84-85%, CONFLICT resolution 72%, double-conflict ~8-9% - P2 is a useful witness, never PROVED"
+    - id: p2_review_protocol
+      path: docs/P2_REVIEW_PROTOCOL.md
+      why: "the corrected blind-review protocol: opaque IDs, secret unblinding key, per-witness scoring - the remaining human gate for P2"
+    - id: p3_editorial
+      path: docs/P3_EDITORIAL_REVIEW.md
+      why: "the P3 lexical-gold editorial review: 0/21 promoted (circular without real Sanskrit context); red flags + review states - the honesty record"
+    - id: index
+      path: handover/agent-2-integration/INDEX.md
+      why: "THE MOST RECENT HANDOVER - the living current-state pointer for the L0 lane (P0 done, P2 calibrated, P3 gold v0, P4 alignment next)"
