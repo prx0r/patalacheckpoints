@@ -43,6 +43,12 @@ synthesis). They validate our DebateFrame/SemanticAlignment direction and add `C
 **later than the CP4 gold**, except `Commitment` (who asserts vs attributes-to-opponent) which is worth
 adopting into the gold shape now.
 
+**🔁 LIVING PLAYBOOK (agentic infra — update as functions prove out):**
+`handover/agent-1-ml/AGENTIC-INFRA-PLAYBOOK.md` — the living reference for agentic-infrastructure
+functions: ADOPTED / TRIED / SKIPPED / OVERKILL, updated with what actually works in practice (Gas Town
+persistent identity + git durability are ADOPTED; the typed handoff is PILOTING; Temporal/LangGraph/
+CrewAI are OVERKILL). `machinelearning/_ACTIVE/AGENTIC-INFRA-COMPARISON.md` is the one-time survey behind it.
+
 ### Step 0.2 — Know the two lanes (never drift)
 | | **Agent 2 — L0 / integration** | **YOU — Agent 1 / ML** |
 |---|---|---|
