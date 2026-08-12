@@ -13,26 +13,40 @@ the honest state after the anti-theatre cleanup. Governed by `AGENTS-DOCTRINE.md
 
 ## 0. THE HONEST STATE (what's real vs. hollow — from CLAIMS.md)
 
+> **Where we are (2026-08-12):** CP4 (Phase 3 — machine-readable philosophy) has entered empirical
+> development. The 5 Argument Gold fixtures exist and are internally consistent; a blind primitive baseline
+> is recorded; and a vertical object resolves one proposition all the way down. The blocker is now
+> **independent review of the gold** — the argument layer is structurally real but scholarly CANDIDATE.
+
 | Asset | Status | Real? |
 |---|---|---|
-| **`benchmarks/v0/`** | frozen (MANIFEST/SCHEMA/SPLITS/METRICS) + ARG-GOLD-001 | ✅ REAL (the measurement substrate) |
-| **The Nyāya gate** (truth-engine, 680 LOC) | `NYAYA_GATE_CANDIDATE_v1`, deterministic | ✅ REAL, **UNWIRED** — the next build |
-| **L0 proofs** (`verify_l0.py`) | P0 harness, **V2/V3 35/35 PASS** (lossless, frozen), + Vidyut P2 witness + Heritage ensemble | ✅ REAL (see `docs/BUILD_NOTES_L0_P0.md` + `docs/P2-ENSEMBLE.md`) |
-| **L0 floor in gold-chain** | SOURCE_INTEGRITY PROVED, OPEN cruxes propagate | ✅ REAL |
+| **`benchmarks/v0/`** | frozen (MANIFEST/SCHEMA/SPLITS/METRICS) + **ARG-GOLD-001..005** | ✅ REAL (the measurement substrate) |
+| **Argument Gold** | ARG-001..005, `validate_gold`-consistent, **task_level A/B/C + commitment + support_scope** | 🔶 **CANDIDATE** — machine-authored, **NOT independently reviewed** (the current gate) |
+| **Baseline extractor** | run BLIND vs the 5 golds; **lexical-overlap F1 0.36, inference recovery 0.0** | 🔶 baseline (the floor to beat); P-003 NOT_ESTABLISHED |
+| **Vertical object** | one proposition resolves downward (exact refs, typed `GroundingLink`s, honest proof status) | ✅ infrastructure/serialization (v0 frozen); P-014 |
+| **Review packet** | `benchmarks/v0/ARG-GOLD-REVIEW-PACKET.md` — self-contained, reviewer-facing | ✅ the tool to get independent review |
+| **The Nyāya gate** (truth-engine, 680 LOC) | `NYAYA_GATE_CANDIDATE_v1`, deterministic | ✅ REAL, **UNWIRED — deferred until gold reviewed + real `Inference` objects exist** |
+| **L0 proofs** (`verify_l0.py`) | P0 harness, **V2/V3 35/35 PASS** (lossless, frozen), + Vidyut P2 witness + Heritage ensemble | ✅ REAL |
 | **`cluster.py`** | real graph topology | 🔶 machine proposals, not accepted themes |
 | **`strength.py`** | BayesianEvidencePrimitive | 🔶 math; uncalibrated (no epistemic role yet) |
 | **`argument.py`** | schema; `gate` slot empty | 🔶 container, not argument |
 | **essay/AIF/c1metrics** | representations/diagnostics | 🔶 infrastructure, no validated content |
 
-**The single highest-value real build (now): REVIEW the Argument Gold first, then build a real extractor,
-then wire the Nyāya gate over real `Inference` objects.** The gate is real but unwired; it must NOT be
-wired onto arbitrary claims — it plugs in at CP4 once real `Proposition`/`Inference` objects exist (per
-`handover/CHECKPOINTS.md`). The sequence that makes that possible is: review ARG-GOLD-001..005 → extractor
-(blind, beats baseline) → argument graph → then the gate as an audit of the `Inference`.
+**The single highest-value real build (now): REVIEW the Argument Gold first (via the review packet), then
+build a real extractor, then wire the Nyāya gate over real `Inference` objects.** The gate is real but
+unwired; it must NOT be wired onto arbitrary claims — it plugs in at CP4 once real `Proposition`/`Inference`
+objects exist (per `handover/CHECKPOINTS.md`). Sequence: independent review of ARG-001..005 → (one clean
+reviewed argument enables the py-aspic pilot) → a real extractor (blind, beats baseline) → argument graph →
+then the gate as an audit of the `Inference`.
 
 ---
 
-## 1. PHASE A — WIRE THE NYĀYA GATE (the immediate build) — CP6 semantic verification
+## 1. PHASE A — WIRE THE NYĀYA GATE — CP4/CP6 semantic verification (DEFERRED, not immediate)
+
+> **Order correction (2026-08-12):** this is NOT the immediate build. The gate must wait for a
+> *reviewed* argument with real `Proposition`/`Inference` objects (per `handover/CHECKPOINTS.md` +
+> `CLAIMS.md` P-003/P-004). Immediate = independent gold review, then a real extractor, then the gate.
+> This section is the gate's *eventual* wiring, kept for when the argument graph is real.
 
 **The best use of the truth-engine's gate:** implement `verify-claim-semantic` — the deterministic gate
 deciding whether a claim is *logically admissible* (pramāṇa + hetvābhāsa + falsifier) and whether it may

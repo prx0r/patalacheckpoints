@@ -432,3 +432,50 @@ consumes it). No overlapping build targets.
 
 **Alignment confirmed:** Agent 1's `build_goldchain.py` consumes my `verify_l0` proofs (the handshake).
 Agent 1's argument gold grounds on `pt:passage:ipvv:chunk...` — the same passage IDs my L0 work keys on.
+
+## Agent L0 — P4 alignment benchmark baseline (2026-08-12)
+
+**What:** Built + ran `pipeline/benchmark_p4_alignment.py` — the P4 alignment benchmark (benchmark-first). P4 asks "which Sanskrit ↔ which English?". The gold = L0 token pairs (each token carries `literal_gloss` EN + `lemma_iast` SKT).
+
+**Scoping correction (important):** the L0 gloss↔iast pairs are aligned *by construction* — so the trivial P4 is a non-result. The **meaningful P4 is L0↔L2 (published prose) alignment**: recover the EN↔SKT mapping from the raw parallel text (source Sanskrit + L2 prose alone) WITHOUT the L0 labels.
+
+**Baseline floor (held-out 300 pairs, seed 42, ~66k clean pairs available):**
+```json
+{ "deterministic_position_recall": 0.19, "lexical_overlap_recall": 0.4333 }
+```
+Any real aligner (e.g. awesome-align) must beat **lexical_overlap_recall 0.43**. Report: `docs/p4_alignment_eval_report.json`.
+
+**Files:** `pipeline/benchmark_p4_alignment.py`, `docs/p4_alignment_eval_report.json`, `docs/L0_PROGRESS_AND_PLAN.md` (plain-language map).
+**Commit:** `7c28065` "P4 alignment baseline: 66k gold EN-SKT pairs; lexical-overlap floor 0.43".
+**Status:** P4 = BASELINE FLOOR ONLY (no claim alignment is solved). Next: a real aligner (awesome-align) tested against 0.43, or the L0↔L2 scoped benchmark.
+**Hands to Agent 1:** none directly (P4 is CP1/Agent 2); the alignment objects it produces are the future `SemanticAlignment` substrate at CP4.
+
+## Agent L0 — P4 independent witness (Vidyut) + non-human independence (2026-08-12)
+
+**What:** Since no fresh human gold/adjudication is available, established independence for P4 the same
+way P2 was (ensemble of independent methods), per AGENTS-DOCTRINE (independence, not literally "human").
+
+**Decision:** rejected awesome-align as the 2nd witness — it is a *sentence-level bilingual MT aligner*
+(bitext EN|||FR), the wrong granularity for our anchor↔lemma L0↔L2 task (L2 is freestyle paraphrase;
+L0 side is surface lemmas with no sentence structure). Would have been a 700MB download producing
+ill-typed noise. Honest pivot (checked with the user): **Vidyut** (already our P2 engine, CPU) as the
+independent morphological witness — it confirms an anchor↔L0-lemma link by assigning both a common stem.
+
+**Result (`pipeline/l0_align.py --witness`, 99 resolved links):**
+- AGREE 38 / DISAGREE 9 / UNABLE 52
+- **agree_rate_analyzed_only 0.81** (of links Vidyut could analyze); analyzed_share 0.47
+- UNABLE = inflected/compound L0 surfaces Vidyut can't parse = honest abstention, never fabricated.
+- The 9 DISAGREE are mostly Vidyut compound-analysis errors (e.g. prāa for prāṇa), not genuine
+  anchor mismatches — a Vidyut limitation, recorded not hidden.
+
+**Files:** `pipeline/l0_align.py` (+ `--witness`), `pipeline/test_l0_align.py` (26/26 pass),
+`docs/p4_alignment_eval_report.json`, `docs/P4_ALIGNMENT_SPEC.md` (§5/§6/§7 updated).
+**Honest status:** P4 = benchmark + baseline (0.93 recall / 0.89 precision / 1.0 abstain) + independent
+Vidyut witness (0.81 analyzed-only agreement). Not "solved": the 0.93 is a single deterministic method;
+Vidyut adds independence but analyzes only ~47% of links.
+
+## Handoff (2026-08-12) — agent1 → TO agent2
+
+- **What:** vertical object consumes your L0 floor (chunkV2-O-saptamo-vimarsa); 5 golds ready for independent review; authoritative frozen P0 artifact needed to upgrade the proof edge from STALE
+- **File:** benchmarks/v0/vertical/vertical-v2o-g-tc2.json
+- **Schema:** GroundingLink{from,to,relation,resolution,review_state}

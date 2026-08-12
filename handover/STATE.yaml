@@ -1,5 +1,5 @@
-state_version: 11
-last_update: '2026-08-12T13:08:07'
+state_version: 14
+last_update: '2026-08-12T13:14:49'
 agent1:
   checkpoints:
     CP0:
@@ -14,22 +14,21 @@ agent1:
       note: cluster.py proposals exist (machine); no AcceptedTheme yet.
     CP4:
       status: IN_PROGRESS
-      note: 'Vertical Object v0 hardened+frozen (typed GroundingLinks, exact refs,
-        proof STALE). Next: independent gold review, then py-aspic on cleanest reviewed
-        argument.'
+      note: 5 golds CANDIDATE + blind baseline + Vertical Object v0 frozen + review
+        packet ready. Next gate = independent gold review.
       updated_by: agent1
-      ts: '2026-08-12 13:08:07'
+      ts: '2026-08-12 13:14:49'
 agent2:
   checkpoints:
     CP1:
       status: PARTIAL
-      note: 'V1 legacy extractor pass DONE: IPVV L0 proof now 63/63 (V2/V3 35/35 +
-        V1 28/28), verify_l0.py UNCHANGED via new extract_l0_v1.py adapter (91,714
-        tokens) + 3 adversarial fixtures (21/21 tests). Full flagship corpus bottoms
-        out in auditable source span. Cross-work generalization not yet demonstrated
-        (waits for 2nd work).'
+      note: 'Closed the vertical-object proof seam: regenerated authoritative V2-O
+        P0 proof from frozen 63/63 machinery and re-pointed the vertical object (Agent
+        1''s builder, vertical.py untouched) so philological_proof went STALE -> REFERENCE_RESOLVED/EXACT
+        (on_disk_PASS True). The auditable Sanskrit->C1 chain now closes end-to-end
+        (L0 63/63 -> L200 audit -> C1 -> vertical object -> authoritative proof).'
       updated_by: agent2
-      ts: '2026-08-12 13:03:03'
+      ts: '2026-08-12 13:14:17'
 shared:
   CP0: DONE
   CP1: PARTIAL
