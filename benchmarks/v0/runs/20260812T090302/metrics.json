@@ -1,0 +1,184 @@
+{
+  "run_id": "20260812T090302",
+  "benchmark_version": "v0",
+  "split_policy": {
+    "held_out_family": "V1A",
+    "class": "S1-nonleak"
+  },
+  "config": {
+    "embedding": "all-MiniLM-L6-v2",
+    "fields": [
+      "l2"
+    ]
+  },
+  "git_commit": "40d1707f62e1fde91966bc40c46a2a3698d1128e",
+  "results": {
+    "baseline": "BM25-l2",
+    "k": 10,
+    "n_items": 48,
+    "retrievers": {
+      "BM25-l2": {
+        "recall@5": {
+          "metric": "metric",
+          "mean": 0.6875,
+          "ci_low": 0.5625,
+          "ci_high": 0.8125,
+          "n": 48
+        },
+        "recall@10": {
+          "metric": "metric",
+          "mean": 0.7292,
+          "ci_low": 0.6042,
+          "ci_high": 0.8443,
+          "n": 48
+        },
+        "mrr@10": {
+          "metric": "metric",
+          "mean": 0.6179,
+          "ci_low": 0.4912,
+          "ci_high": 0.7493,
+          "n": 48
+        },
+        "ndcg@10": {
+          "metric": "metric",
+          "mean": 0.6447,
+          "ci_low": 0.5283,
+          "ci_high": 0.7595,
+          "n": 48
+        }
+      },
+      "dense-l2": {
+        "recall@5": {
+          "metric": "metric",
+          "mean": 0.6458,
+          "ci_low": 0.5,
+          "ci_high": 0.7708,
+          "n": 48,
+          "delta_vs_BM25-l2": {
+            "metric": "delta",
+            "mean": -0.0417,
+            "ci_low": -0.1875,
+            "ci_high": 0.1042,
+            "n": 48,
+            "delta_vs_baseline": -0.0417,
+            "paired_p": 0.7967
+          }
+        },
+        "recall@10": {
+          "metric": "metric",
+          "mean": 0.7083,
+          "ci_low": 0.5833,
+          "ci_high": 0.8333,
+          "n": 48,
+          "delta_vs_BM25-l2": {
+            "metric": "delta",
+            "mean": -0.0208,
+            "ci_low": -0.1667,
+            "ci_high": 0.125,
+            "n": 48,
+            "delta_vs_baseline": -0.0208,
+            "paired_p": 1.0
+          }
+        },
+        "mrr@10": {
+          "metric": "metric",
+          "mean": 0.4911,
+          "ci_low": 0.3787,
+          "ci_high": 0.5996,
+          "n": 48,
+          "delta_vs_BM25-l2": {
+            "metric": "delta",
+            "mean": -0.1269,
+            "ci_low": -0.2408,
+            "ci_high": -0.0106,
+            "n": 48,
+            "delta_vs_baseline": -0.1269,
+            "paired_p": 0.0567
+          }
+        },
+        "ndcg@10": {
+          "metric": "metric",
+          "mean": 0.544,
+          "ci_low": 0.4221,
+          "ci_high": 0.6484,
+          "n": 48,
+          "delta_vs_BM25-l2": {
+            "metric": "delta",
+            "mean": -0.1007,
+            "ci_low": -0.2069,
+            "ci_high": 0.0153,
+            "n": 48,
+            "delta_vs_baseline": -0.1007,
+            "paired_p": 0.1233
+          }
+        }
+      },
+      "hybrid-l2": {
+        "recall@5": {
+          "metric": "metric",
+          "mean": 0.7292,
+          "ci_low": 0.6042,
+          "ci_high": 0.8333,
+          "n": 48,
+          "delta_vs_BM25-l2": {
+            "metric": "delta",
+            "mean": 0.0417,
+            "ci_low": -0.0833,
+            "ci_high": 0.1458,
+            "n": 48,
+            "delta_vs_baseline": 0.0417,
+            "paired_p": 0.7533
+          }
+        },
+        "recall@10": {
+          "metric": "metric",
+          "mean": 0.7917,
+          "ci_low": 0.6667,
+          "ci_high": 0.9068,
+          "n": 48,
+          "delta_vs_BM25-l2": {
+            "metric": "delta",
+            "mean": 0.0625,
+            "ci_low": -0.0417,
+            "ci_high": 0.1667,
+            "n": 48,
+            "delta_vs_baseline": 0.0625,
+            "paired_p": 0.4433
+          }
+        },
+        "mrr@10": {
+          "metric": "metric",
+          "mean": 0.6046,
+          "ci_low": 0.4643,
+          "ci_high": 0.7218,
+          "n": 48,
+          "delta_vs_BM25-l2": {
+            "metric": "delta",
+            "mean": -0.0133,
+            "ci_low": -0.0758,
+            "ci_high": 0.0522,
+            "n": 48,
+            "delta_vs_baseline": -0.0133,
+            "paired_p": 0.67
+          }
+        },
+        "ndcg@10": {
+          "metric": "metric",
+          "mean": 0.6496,
+          "ci_low": 0.548,
+          "ci_high": 0.7459,
+          "n": 48,
+          "delta_vs_BM25-l2": {
+            "metric": "delta",
+            "mean": 0.0049,
+            "ci_low": -0.0617,
+            "ci_high": 0.0664,
+            "n": 48,
+            "delta_vs_baseline": 0.0049,
+            "paired_p": 0.8967
+          }
+        }
+      }
+    }
+  }
+}
