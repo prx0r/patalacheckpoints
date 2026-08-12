@@ -34,14 +34,27 @@ Load the relevant ones into context FIRST; never propose a gloss from memory alo
   semantic-shift atlas — the translation policy per tradition/text/period) +
   `docs/corpus/TARGETS-INDEX.md` (which work + its priority/tradition) +
   `docs/corpus/SANSKRITREE-IMPORT-MANIFEST.md` (what's ingested vs not).
-- **The goldmine:** `docs/corpus/` + `data/corpus/targets/` (sources/targets/leads/anchors/index).
+- **The work's COMPANION / translation-neighbourhood packet (READ THIS BEFORE TRANSLATING — do not skip):**
+  `pipeline/sivaqueue_targets.py` → `--sivaqueue-work <work_id>` gives this target's **school
+  (tradition), period, genre, translation_status, companion translation-memory guides (G1–G14),
+  translation_neighbourhood (the specific companion works to consult), and the semantic-shift
+  term-senses** that apply to THIS school/period. Also `data/corpus/sivaqueue-guides.json` (the
+  companion-guide definitions) + `data/corpus/sivaqueue-targets.json` (all 100 targets).
+- **The goldmine:** `docs/corpus/` + `data/corpus/targets/` (sources/targets/leads/anchors/sivaqueue/index).
 - **The doctrine:** `machinelearning/_ACTIVE/AGENTS-DOCTRINE.md` (validation first; proof
   dimensions separate; never a collapsed confidence).
 
-**Context engineering rule:** before glossing a token, look up its lemma in the reference map's
-glossary (tradition + period + working sense + semantic warning). E.g. `vimarśa` in Pratyabhijñā
-= "reflexive awareness", NOT "reflection"; `krama` capitalized only when sectarian identity is
-demonstrable. **Semantic consistency is the goal, not lexical uniformity.**
+**Context engineering rule (MANDATORY — review the companions BEFORE translating, and WHY):**
+Do NOT translate a token from the dictionary or from memory. First pull the target's
+`--sivaqueue-work` packet: its **school + period** and its **companion translation-memory guides +
+translation neighbourhood**. Read the relevant companion guides (the critical-Sanskrit-with-
+specialist-English editions) so you translate in the historically-correct register. **WHY:** the same
+lemma means different things in different schools/periods — `vimarśa` in Pratyabhijñā = "reflexive
+awareness", NOT "reflection"; `pāśa` in early Śaiva Siddhānta ≠ `pāśa` in late Kaula; `kula` in a
+Kubjikā text = mantra-body, NOT "family". A companion guide tells you which sense the target's own
+tradition actually licenses. **Semantic consistency is the goal, not lexical uniformity.** If a
+target's companion guide is not yet downloaded to disk, say so honestly and translate conservatively
+(mark uncertain terms `AMBIGUOUS`) rather than guessing a sense from the wrong school.
 
 ## The flow (per verse — the atomic unit)
 
@@ -63,10 +76,23 @@ ledger update (RAW_SANSKRIT/BLOCKED → ELIGIBLE) + batch manifest (progress)
 The corpus-state ledger knows each work's `source_ref` (e.g. the Dyczkowski Kramasadbhāva
 edition). Load it, or take the verse directly. Use a small text first (e.g. Kramasadbhāva).
 
+## Step 1.5 — REVIEW THE COMPANIONS FIRST (mandatory, do not skip)
+Before translating a target, pull its companion/translation-neighbourhood packet:
+```bash
+python3 pipeline/agent3_queue.py --sivaqueue-work <work_id>
+# -> school, period, genre, status, companion_guides (G1-G14), translation_neighbourhood,
+#    semantic-shift term-senses for this school/period
+```
+Then **read the named companion guides** (the critical-Sanskrit + specialist-English editions) so you
+translate in the historically-correct register. **WHY:** a companion guide licenses the sense the
+target's own tradition actually uses — it stops you rendering `pāśa = "bondage"` or `vimarśa =
+"reflection"` from the dictionary alone. **Same lemma ≠ same concept.** If the companion text is not
+on disk, say so and mark uncertain terms `AMBIGUOUS` rather than guessing a wrong-school sense.
+
 ## Step 2 — context engineering (READ, don't prompt)
 Load the files above. For the work's key terms, pull the sense + translation policy from
-`docs/corpus/canonical_reference_map.md` (the glossary table). Build the **term-context packet**
-for this verse before you gloss anything.
+`docs/corpus/canonical_reference_map.md` (the glossary table) + the `--sivaqueue-work` semantic-shift
+term-context. Build the **term-context packet** for this verse before you gloss anything.
 
 ## Step 3 — run the deterministic core (no model needed)
 ```bash
