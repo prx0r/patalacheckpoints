@@ -1,0 +1,9 @@
+{
+  "benchmark": "P4-ALIGNMENT-v0",
+  "held_out_pairs": 300,
+  "baselines": {
+    "deterministic_position_recall": 0.19,
+    "lexical_overlap_recall": 0.4333
+  },
+  "note": "baseline floor only. Any real aligner (awesome-align) must beat lexical_overlap_recall."
+}
