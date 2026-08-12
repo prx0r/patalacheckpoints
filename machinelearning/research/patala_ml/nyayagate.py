@@ -36,6 +36,17 @@ STRONG_WORDS = ["proves", "settles", "demonstrates", "decisive", "therefore real
 UNFALSIFIABLE = ["cannot be measured", "cannot be verified", "transcends all evidence", "no possible disproof"]
 # words signalling the claim has no empirical check → needs falsifier
 NO_FALSIFIER = ["is fundamental", "is the ultimate", "is absolutely true", "is the one and only"]
+# words signalling an un-established reason/hetu (asiddha): the reason itself is dubious
+UNESTABLISHED_HETU = ["subtle body", "astral plane", "past lives", "invisible power", "secret energy",
+                      "cannot be detected", "unseen"]
+# words signalling a universal/always claim that overreaches (savyabhicara: counterexamples exist)
+UNIVERSAL_OVERRECH = ["always", "invariably", "everywhere", "in all cases", "never fails", "universally"]
+# words signalling the conclusion is contradicted by established evidence (badhita)
+CONTRADICTED_BY_EVIDENCE = ["no neural correlate", "no neural correlates", "brain is irrelevant",
+                            "brain irrelevant", "has no physical basis", "cannot be real"]
+# negation/inversion signals for viruddha (the claim runs against its own evidence)
+VIRUDDHA_MARKERS = ["therefore the opposite", "proves it is not", "shows it cannot be",
+                    "refutes the claim that"]
 
 
 @dataclass
@@ -102,12 +113,22 @@ def gate_claim(claim: dict, peer_claims: list[dict] | None = None) -> GateResult
     falsifier = claim.get("falsifier")
     falsifier_status = "PRESENT" if falsifier else "MISSING"
 
-    # ── asiddha: strong conclusion from weak pramāṇa (testimony/analogy) ──
+    # ── asiddha: the reason/hetu itself is not established ──
+    if any(u in text for u in UNESTABLISHED_HETU):
+        failures.append(GateFailure("asiddha", "strong",
+                                    f"the hetu is not independently established (marker: {[u for u in UNESTABLISHED_HETU if u in text][0]})"))
     if any(w in text for w in STRONG_WORDS) and pramana in ("sabda", "upamana") and abs(lbf) > 0.8:
         failures.append(GateFailure("asiddha", "moderate",
                                     "strong conclusion from testimony/analogy; independent establishment required"))
 
-    # ── savyabhicara: weak vyāpti (the reason is not invariable) ──
+    # ── savyabhicara: a universal/always claim WITHOUT strong vyāpti backing ──
+    # (a universal claim backed by high vyāpti confidence + no violations is a VALID vyāpti, not a defect)
+    if any(w in text for w in UNIVERSAL_OVERRECH):
+        vc = claim.get("vyapti_confidence")
+        # a universal claim is a defect UNLESS backed by high vyāpti confidence (≥0.8) and no violations
+        if vc is None or vc < 0.8 or claim.get("vyapti_violations"):
+            failures.append(GateFailure("savyabhicara", "moderate",
+                                        f"universal claim '{[w for w in UNIVERSAL_OVERRECH if w in text][0]}' without strong vyāpti backing (confidence={vc}) — counterexamples likely"))
     vc = claim.get("vyapti_confidence")
     if vc is not None and vc < 0.6:
         failures.append(GateFailure("savyabhicara", "moderate",
@@ -115,6 +136,17 @@ def gate_claim(claim: dict, peer_claims: list[dict] | None = None) -> GateResult
     if claim.get("vyapti_violations"):
         failures.append(GateFailure("savyabhicara", "moderate",
                                     "claim lists vyāpti violations/counterexamples"))
+
+    # ── viruddha: the evidence supports the opposite of the claim ──
+    # heuristic: the claim itself signals it's deriving the opposite/negation of its hetu
+    if any(m in text for m in VIRUDDHA_MARKERS):
+        failures.append(GateFailure("viruddha", "strong",
+                                    "the claim derives the opposite of its own reason/evidence (self-inverting)"))
+
+    # ── badhita: the conclusion is contradicted by stronger established evidence ──
+    if any(c in text for c in CONTRADICTED_BY_EVIDENCE):
+        failures.append(GateFailure("badhita", "strong",
+                                    "the conclusion is contradicted by stronger established evidence (marker present)"))
 
     # ── satpratipaksa: an equally strong counter-inference on the same target ──
     my_targets = {str(t.get("target_id")) for t in (claim.get("targets") or [])}

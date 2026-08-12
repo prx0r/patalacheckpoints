@@ -49,12 +49,17 @@ task, human-grounded gold, and a reproducible evaluation show that it does what 
   grounding precision, relation F1, abstention performance; simple baseline included.
 
 ## CLAIM P-004 — "The Nyāya gate validates claims."
-- **STATUS:** CANDIDATE (NYAYA_GATE_CANDIDATE_v1)
-- **EVIDENCE:** 680-LOC gate exists (deterministic); NO gold examples test it.
-- **CAVEAT:** deterministic ≠ correct. No positive/negative/borderline fixtures exist for
-  asiddha/viruddha/savyabhicara/satpratipaksa/badhita.
-- **REQUIRED to promote to `verify-claim-semantic`:** hand-adjudicated gold for each fallacy; run blind;
-  measure false-positive fallacy rate; compare vs regex + LLM + hybrid baselines.
+- **STATUS:** CANDIDATE (NYAYA_GATE_CANDIDATE_v1) — **gold now exists, mechanism partially validated**
+- **EVIDENCE (2026-08-12):** 12 hand-made gold fixtures (`benchmarks/v0/evidence/nyaya-gate-gold.jsonl`);
+  the Pāṭala-adapted gate (`nyayagate.py`) run BLIND achieves **defect-detection 0.80 (4/5)**, **false-
+  positive 0.00 (5/5)**, **abstention 0.50 (1/2)** on `eval_gate_gold.py`.
+- **CAVEAT:** (1) the 1 miss is **viruddha**, which genuinely needs domain knowledge (knowing the IPVV
+  argues memory proves a persistent self) — a keyword rule cannot detect it; needs the argument graph.
+  (2) gold is 12 fixtures, all SINGLE_REVIEWED by one author — not independent. (3) abstention 0.50 — the
+  gate still forces verdicts on some borderlines.
+- **REQUIRED to promote to `verify-claim-semantic`:** viruddha detection via the argument graph (not
+  keywords); independently reviewed gold (≥2 reviewers); abstention gap closed; blind eval against a
+  held-out adversarial set.
 
 ## CLAIM P-005 — "The Bayesian primitive (strength.py) scores claim support."
 - **STATUS:** UNVALIDATED_HEURISTIC (BayesianEvidencePrimitive)
