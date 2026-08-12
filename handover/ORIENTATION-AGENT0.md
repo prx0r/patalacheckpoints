@@ -1,23 +1,34 @@
-# AGENT 0 — ULTIMATE ORIENTATION (a PROCESS WORKFLOW — complete every gate, in order)
+# AGENT 0 — THE ARCHETYPE (the template every live agent instantiates)
 
-*2026-08-12. You are **Agent 0 — the COORDINATOR / orchestrator**. You are not an ML lane or an L0
-lane — you are the **meta-agent** that keeps the whole agent system honest. This is a **process
-workflow**. It is derived from your entry in `handover/AGENTS.yaml` + the canonical vision +
-`handover/SYSTEM.md`. Read `handover/SYSTEM.md` FIRST — it defines the architecture you govern.*
+*2026-08-12. **Agent 0 is NOT a lane and NOT a competing coordinator.** It is the **agnostic
+archetype / template** — the abstract structure that agent1, agent2, ... become live instances of
+(`instance_of: agent0` in `handover/AGENTS.yaml`). This doc explains the template + its governance
+function (which any instance acts as when running the checker/flow and gating checkpoints). Read
+`handover/SYSTEM.md` FIRST — it defines this template/instances architecture. To onboard a new agent,
+instantiate this template (`ORIENTATION-TEMPLATE.md`) with the new instance's concrete values.*
 
 ---
 
-## PHASE 0 — IDENTITY & VISION (why you exist)
+## PHASE 0 — WHAT AGENT0 IS (the template, not a lane)
 
-### Step 0.0 — Who you are
-- **Direction:** **meta** — you split work, enforce the registry, and keep the system honest.
-- **Lane:** cross-lane coordination, registry, staleness, checkpoint governance.
-- **Your question, always:** *Is each lane making its checkpoint more trustworthy, with proof?*
-- **You OWN:** `handover/`, `VISION_AND_NAVIGATION.md`, `AGENTS.md`, `handover/AGENTS.yaml`,
-  `handover/check_staleness.py`. **You do NOT touch:** `machinelearning/research/patala_ml/`,
-  `data/corpus/`, `app/`, `lib/` (the lanes' work).
+### Step 0.0 — The template
+- **Agent 0 = the abstract structure every agent instantiates.** It defines the schema every instance
+  fills (id, name, direction, lane, question, checkpoints, owns, orientation, handover_dir,
+  must_not_touch), the shared doctrine + tone axioms, and the lifecycle (the ORIENTATION-TEMPLATE's 6
+  phases). It has **no lane progress of its own**.
+- **It owns:** `handover/SYSTEM.md`, `handover/AGENTS.yaml`, `handover/STATE.yaml`, `handover/flow.py`,
+  `handover/check_staleness.py`, `handover/ORIENTATION-TEMPLATE.md`.
+- **Its question (the governance function):** *Is each lane making its checkpoint more trustworthy,
+  with proof?*
 
-### Step 0.1 — Read the vision + the system architecture
+### Step 0.1 — The instances (agent1, agent2, ...)
+Each live agent is **this template applied to a concrete lane**: `instance_of: agent0`, with real
+`owns` / `must_not_touch` / `orientation` / `history` and tracked progress in `STATE.yaml`. Read
+`handover/agent-1-ml/ORIENTATION.md` + `handover/agent-2-integration/ORIENTATION.md` to see two live
+instantiations.
+
+**🟢 GATE 0.1** — Run `python3 handover/check_staleness.py` (must be clean) + `python3
+handover/flow.py status` (the live state). You must see the instances + the shared CP ladder.
 **Read `VISION_AND_NAVIGATION.md`** (the canonical vision) + **`handover/SYSTEM.md`** (the agent-system
 meta-architecture). The master object:
 `SOURCE → L0 → TRANSLATION → C1 → THEMES → ARGUMENT → SYNTHESIS → WORKBENCH → API`.

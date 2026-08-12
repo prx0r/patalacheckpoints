@@ -87,8 +87,31 @@ def main() -> int:
         return 1
     with open(YAML_PATH) as f:
         reg = yaml.safe_load(f)
-    agents = reg.get("agents", {})
-    ok(f"parsed {len(agents)} agents: {', '.join(agents.keys())}")
+    agents = reg.get("instances", {})
+    template = reg.get("template", {})
+    ok(f"parsed {len(agents)} live instances: {', '.join(agents.keys())}")
+    if template:
+        ok("agent0 template present (the archetype all instances instantiate)")
+        for fld in ["id", "name", "schema", "orientation_template", "live_flow"]:
+            if fld not in template:
+                fail(f"template missing field '{fld}'")
+        # the template's orientation + governance docs exist
+        ot = template.get("orientation_template")
+        if ot:
+            check_path(os.path.join(ROOT, ot), "agent0 orientation template")
+        check_path(os.path.join(ROOT, "handover", "ORIENTATION-AGENT0.md"), "agent0 governance doc")
+        # each instance must declare instance_of: agent0
+        for aid, a in agents.items():
+            if a.get("instance_of") != "agent0":
+                fail(f"instance '{aid}' is not declared instance_of: agent0")
+            # each instance has a tracked history log
+            hist = a.get("history")
+            if hist:
+                check_path(os.path.join(ROOT, hist), f"{aid} history log")
+            else:
+                fail(f"instance '{aid}' has no tracked 'history' file")
+    else:
+        fail("AGENTS.yaml has no 'template' block (agent0 archetype)")
     for aid, a in agents.items():
         for field in ["id", "name", "question", "checkpoints", "orientation", "handover_dir", "owns"]:
             if field not in a:

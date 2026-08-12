@@ -53,7 +53,7 @@ def _history(msg: str) -> None:
 
 def cmd_status(args) -> int:
     reg, state = _load()
-    agents = reg.get("agents", {})
+    agents = reg.get("instances", {})
     if args.agent:
         agents = {args.agent: agents.get(args.agent, {})}
     print(f"state_version: {state.get('state_version', 0)}   last_update: {state.get('last_update', '')}\n")
@@ -80,10 +80,10 @@ def cmd_update(args) -> int:
         print(f"invalid status '{args.status}'. valid: {sorted(STATUSES)}")
         return 1
     reg, state = _load()
-    if args.agent not in reg.get("agents", {}):
+    if args.agent not in reg.get("instances", {}):
         print(f"unknown agent '{args.agent}'. known: {', '.join(reg.get('agents', {}))}")
         return 1
-    agent_cps = reg["agents"][args.agent].get("checkpoints", [])
+    agent_cps = reg["instances"][args.agent].get("checkpoints", [])
     if args.cp not in (agent_cps if isinstance(agent_cps, list) else [agent_cps]):
         print(f"agent '{args.agent}' has no checkpoint '{args.cp}'. its checkpoints: {agent_cps}")
         return 1
@@ -101,9 +101,9 @@ def cmd_update(args) -> int:
 
 def cmd_add_agent(args) -> int:
     reg, state = _load()
-    agents = reg.setdefault("agents", {})
+    agents = reg.setdefault("instances", {})
     if args.agent in agents:
-        print(f"agent '{args.agent}' already exists in AGENTS.yaml — edit the registry to modify it.")
+        print(f"instance '{args.agent}' already exists in AGENTS.yaml — edit the registry to modify it.")
         return 1
     # scaffold: user is expected to complete AGENTS.yaml entry; add an empty state block
     state.setdefault(args.agent, {"checkpoints": {}})

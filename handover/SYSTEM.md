@@ -33,36 +33,46 @@ execution map: CP0–CP4, the contracts, the gate definitions).
 
 ---
 
-## 2. THE AGENT REGISTRY (the machine-readable source of truth)
+## 2. THE AGENT REGISTRY — ONE TEMPLATE (agent0), N LIVE INSTANCES
 
-**`handover/AGENTS.yaml`** — a YAML registry describing every agent. This is the single place each
-agent's identity, lane, checkpoints, question, orientation path, and ownership is declared. Example:
+**`handover/AGENTS.yaml`** — the single source of truth. The model is:
+
+> **agent0 is the AGNOSTIC TEMPLATE / archetype — the abstract structure every live agent is an
+> instantiation of.** agent1, agent2, ... are `instance_of: agent0`: live agents with concrete file
+> references (`owns`, `orientation`, `history`) and tracked progress (`STATE.yaml` + a per-instance
+> `history.log`). Add a new agent = instantiate the template (a new `instances` entry + an orientation
+> generated from `ORIENTATION-TEMPLATE.md` + a handover dir + a history log). Nothing else changes.
 
 ```yaml
-agents:
-  agent0:
-    id: agent0
-    name: "Coordinator / orchestrator"
-    direction: "meta — splits work, keeps the system honest"
-    checkpoints: [ all ]            # governs CP0–CP12
-    question: "Is each lane making its checkpoint more trustworthy, with proof?"
-    owns: [ "handover/", "VISION_AND_NAVIGATION.md", "AGENTS.md" ]
-    orientation: "handover/ORIENTATION-AGENT0.md"
-    handover_dir: "handover/agent0-coordinator/"
-    must_not_touch: [ "machinelearning/research/patala_ml/", "data/corpus/", "app/", "lib/" ]
-  agent1:
-    id: agent1
-    name: "Agent 1 — ML / research"
-    direction: "horizontal + upward derivation"
-    lane: "C1 → themes → arguments → claims → synthesis → review"
-    question: "Does this higher-order representation legitimately derive from the scholarly objects beneath it?"
-    checkpoints: [ CP0, CP2, CP3, CP4 ]
-    owns: [ "benchmarks/v0/", "machinelearning/research/patala_ml/", "handover/agent-1-ml/" ]
-    orientation: "handover/agent-1-ml/ORIENTATION.md"
-    handover_dir: "handover/agent-1-ml/"
-    must_not_touch: [ "data/corpus/", "app/", "lib/", "pipeline/verify_l0.py", "philproof.py" ]
-  agent2:
-    id: agent2
+version: "2.0"
+template:                    # agent0 — the archetype (NOT a live lane)
+  id: agent0
+  name: "The Agent Archetype (agnostic template)"
+  schema: [ id, name, direction, lane, question, checkpoints, owns, orientation, handover_dir, must_not_touch ]
+  lifecycle_phases: [ PHASE 0..6 ]       # the process-workflow orientation template
+  orientation_template: "handover/ORIENTATION-TEMPLATE.md"
+  live_flow: { status, update, history, add_instance }   # flow.py
+doctrine:                    # adopted by EVERY live instance
+  one_rule: "..."
+  tone_axioms: [ ...6... ]
+instances:                   # agent1, agent2 = 'agent0' applied to a lane
+  agent1: { instance_of: agent0, lane: "C1→themes→arguments→claims→synthesis→review",
+            checkpoints: [CP0,CP2,CP3,CP4], owns: [...], history: "handover/agent-1-ml/history.log" }
+  agent2: { instance_of: agent0, lane: "SOURCE→segmentation→morphology→syntax→alignment→proof",
+            checkpoints: [CP1], owns: [...], history: "handover/agent-2-integration/history.log" }
+```
+
+**The template vs. the instances:**
+- **agent0 (template)** — the shape every agent fills: the schema, the doctrine + tone axioms, the
+  lifecycle (the ORIENTATION-TEMPLATE's 6 phases), and the live flow. It owns `SYSTEM.md`, `AGENTS.yaml`,
+  `STATE.yaml`, `flow.py`, `check_staleness.py`. It has **no lane progress of its own** — it is what the
+  lanes are made of.
+- **agent1 / agent2 (instances)** — the template applied to a concrete lane, with real `owns` /
+  `must_not_touch` / `orientation` / `history`, and tracked checkpoint progress in `STATE.yaml`.
+
+**The coordinator function is NOT a competing "agent0 lane."** It is the template's own governance
+function — any instance acting as coordinator runs the staleness checker + flow, enforces the registry
+and the tone axioms, and gates checkpoints. (See `handover/ORIENTATION-AGENT0.md`.)
     name: "Agent 2 — L0 / integration"
     direction: "vertical truth"
     lane: "SOURCE → segmentation → morphology → syntax → alignment → translation proof"
@@ -156,12 +166,15 @@ state block) + an `AGENTS.yaml` entry + a generated orientation.
 
 ---
 
-## 6. THE AGENT-0 ROLE (the coordinator — keeps the system honest)
+## 6. THE AGENT-0 ROLE — THE ARCHETYPE + ITS GOVERNANCE FUNCTION
 
-Agent 0 is not an ML lane or an L0 lane — it is the **meta-agent** whose job is to keep the system
-honest: run the staleness checker, enforce the registry, split work between lanes, and make sure every
-lane's checkpoint is advancing with proof. Its orientation (`handover/ORIENTATION-AGENT0.md`) is
-derived the same way as every other agent's, from its registry entry.
+Agent 0 is **not a lane and not a competing coordinator.** It is the **agnostic template** every live
+agent (`instance_of: agent0`) instantiates — the schema, the doctrine + tone axioms, the lifecycle, and
+the live flow (see §2). The **governance function** (running the staleness checker, enforcing the
+registry + tone axioms, gating each checkpoint's proof) is part of the template and can be performed by
+any instance acting as coordinator — see `handover/ORIENTATION-AGENT0.md`. Its orientation
+(`ORIENTATION-TEMPLATE.md`) is the generic shape; each live instance's `ORIENTATION.md` is that template
+applied to its lane.
 
 ---
 

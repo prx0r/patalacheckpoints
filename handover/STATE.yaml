@@ -1,12 +1,5 @@
-state_version: 2
-last_update: '2026-08-12T10:31:17'
-agent0:
-  checkpoints:
-    all:
-      status: IN_PROGRESS
-      note: Agent-system machinery built (registry, staleness checker, orientations).
-        Live STATE.yaml + flow.py added. The system is infrastructure; its proof =
-        gold in the lanes.
+state_version: 3
+last_update: '2026-08-12T10:35:24'
 agent1:
   checkpoints:
     CP0:
@@ -21,9 +14,9 @@ agent1:
       note: cluster.py proposals exist (machine); no AcceptedTheme yet.
     CP4:
       status: IN_PROGRESS
-      note: building ARG-003 with the IR shape
+      note: test
       updated_by: agent1
-      ts: '2026-08-12 10:31:17'
+      ts: '2026-08-12 10:35:24'
 agent2:
   checkpoints:
     CP1:

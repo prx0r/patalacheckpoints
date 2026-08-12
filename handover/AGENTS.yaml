@@ -1,19 +1,66 @@
-# AGENTS.yaml — the machine-readable agent registry (the single source of truth for agents)
+# AGENTS.yaml — the agent registry: ONE template (agent0), N live instances
 #
-# This is the CONTRACT. Every agent's orientation is derived from its entry here. The staleness
-# checker (handover/check_staleness.py) validates that each agent's actual files match this registry.
-# Add a new agent = add an entry here + generate its orientation from the template.
+# ARCHITECTURE (the model):
+#   agent0 is the AGNOSTIC TEMPLATE / archetype — the abstract structure every agent is an
+#   instantiation of. It defines:
+#     - the schema every agent must fill (id, name, direction, lane, question, checkpoints,
+#       owns, orientation, handover_dir, must_not_touch)
+#     - the shared doctrine + tone axioms (adopted by every instance)
+#     - the lifecycle (the process-workflow orientation template + the live flow)
+#   agent1, agent2, ... are LIVE INSTANCES of that template — each is "agent0" applied to a specific
+#   lane, with concrete file references and a tracked history (handover/<id>/history.log + STATE.yaml).
 #
-# Schema per agent:
-#   id, name, direction, lane, question, checkpoints[], owns[], orientation,
-#   handover_dir, must_not_touch[], status, updated
+# This is the agnostic design: add a new agent = instantiate the template (a new `instances` entry +
+# a handover dir + an orientation generated from the template). Nothing else changes.
+#
+# The registry is the CONTRACT. The staleness checker (handover/check_staleness.py) validates that
+# each instance's actual files match its entry. flow.py manages the live state (STATE.yaml).
 
-version: "1.1"
+version: "2.0"
 updated: "2026-08-12"
 
-# ── SHARED DOCTRINE (the axioms of existence for EVERY agent) ─────────────────
-# These are the non-negotiable axioms. Every agent's orientation MUST adopt them.
-# The staleness checker validates that each orientation states them. Agent 0 enforces them.
+# ── THE TEMPLATE (agent0 — the archetype every agent instantiates) ─────────────
+# agent0 is NOT a live lane. It is the abstract shape. Its "checkpoints" = the lifecycle phases a
+# live instance goes through. Its "orientation" = the TEMPLATE, not a lane-specific doc.
+template:
+  id: agent0
+  name: "The Agent Archetype (agnostic template)"
+  role: "agent0 is not a lane. It is the abstract structure that agent1, agent2, ... become live instances of."
+  schema:
+    - id
+    - name
+    - direction
+    - lane
+    - question
+    - checkpoints
+    - owns
+    - orientation
+    - handover_dir
+    - must_not_touch
+  lifecycle_phases:   # every live instance passes through these (the orientation template's phases)
+    - "PHASE 0 — identity + vision + the two-lane awareness"
+    - "PHASE 1 — the doctrine + tone axioms"
+    - "PHASE 2 — the agent-specific handover + session"
+    - "PHASE 3 — explore the actual codebase"
+    - "PHASE 4 — the exact next steps"
+    - "PHASE 5 — guardrails + falsification self-check"
+    - "PHASE 6 — carry-forward"
+  orientation_template: "handover/ORIENTATION-TEMPLATE.md"
+  live_flow:
+    status: "python3 handover/flow.py status"
+    update: "python3 handover/flow.py update <id> <cp> <status> -n '<note>' --by <id>"
+    history: "python3 handover/flow.py history"
+    add_instance: "python3 handover/flow.py add-agent <id>"
+  owns:
+    - "handover/SYSTEM.md"
+    - "handover/AGENTS.yaml"
+    - "handover/STATE.yaml"
+    - "handover/flow.py"
+    - "handover/check_staleness.py"
+  status: "TEMPLATE"
+  updated: "2026-08-12"
+
+# ── SHARED DOCTRINE (adopted by EVERY live instance) ──────────────────────────
 doctrine:
   one_rule: "Nothing is 'real' because code exists. It becomes real only when independent gold + blind eval + metric + human adjudication show it does what its name claims."
   tone_axioms:
@@ -24,32 +71,11 @@ doctrine:
     - "NO HYPE. 'structurally sound' is not 'scholarship'. 'tests pass' is not 'this works'. A checker passing on your own docs is circular, not a win."
     - "PRECISION OVER COVERAGE. Abstain rather than invent. 'NO UNIQUE ARGUMENT RECOVERABLE' is a valid, valuable output."
 
-agents:
-  agent0:
-    id: agent0
-    name: "Coordinator / orchestrator"
-    direction: "meta — splits work, keeps the system honest"
-    lane: "cross-lane coordination, registry, staleness, checkpoint governance"
-    question: "Is each lane making its checkpoint more trustworthy, with proof?"
-    checkpoints: [ all ]
-    owns:
-      - "handover/"
-      - "VISION_AND_NAVIGATION.md"
-      - "AGENTS.md"
-      - "handover/AGENTS.yaml"
-      - "handover/check_staleness.py"
-    orientation: "handover/ORIENTATION-AGENT0.md"
-    handover_dir: "handover/agent0-coordinator/"
-    must_not_touch:
-      - "machinelearning/research/patala_ml/"
-      - "data/corpus/"
-      - "app/"
-      - "lib/"
-    status: "DEFINED"
-    updated: "2026-08-12"
-
+# ── THE LIVE INSTANCES (agent1, agent2, ... are 'agent0' applied to a lane) ─────
+instances:
   agent1:
     id: agent1
+    instance_of: agent0        # this is an instantiation of the archetype
     name: "Agent 1 — ML / research"
     direction: "horizontal + upward derivation"
     lane: "C1 → themes → arguments → claims → synthesis → review"
@@ -61,6 +87,7 @@ agents:
       - "handover/agent-1-ml/"
     orientation: "handover/agent-1-ml/ORIENTATION.md"
     handover_dir: "handover/agent-1-ml/"
+    history: "handover/agent-1-ml/history.log"   # tracked, per-instance
     must_not_touch:
       - "data/corpus/"
       - "app/"
@@ -72,6 +99,7 @@ agents:
 
   agent2:
     id: agent2
+    instance_of: agent0
     name: "Agent 2 — L0 / integration"
     direction: "vertical truth"
     lane: "SOURCE → segmentation → morphology → syntax → alignment → translation proof"
@@ -86,6 +114,7 @@ agents:
       - "handover/agent-2-integration/"
     orientation: "handover/agent-2-integration/ORIENTATION.md"
     handover_dir: "handover/agent-2-integration/"
+    history: "handover/agent-2-integration/history.log"
     must_not_touch:
       - "benchmarks/v0/"
       - "machinelearning/research/patala_ml/"
