@@ -91,7 +91,7 @@ comparative matrix + argument truth-packets with passage anchors, keep docs cano
 | "Exposed X" (themes, comparative, hub) → Agent 1 builds retrieval/eval over it | "Needs X" (paired data, L200-as-annotations, themes-with-evidence) → Agent 2 produces it |
 | The comparative matrix + argument truth-packets are the shared outputs both consume | The benchmark + retrieval results feed back into what's worth pushing |
 
-Both log to `machinelearning/HANDOFF-LOG.md` (one entry per handoff: what, why, file, date).
+Both log to `handover/LOG.md` (one entry per handoff: what, why, file, date).
 
 ---
 
@@ -108,7 +108,8 @@ To brief a new agent, hand it this exact bundle:
    own the hub, comparative, essays, and the argument truth-packets."
 4. **Tell it the contract:** Agent 1 = benchmark-first, honest verdicts. Agent 2 = expose structure,
    keep docs canonical, anchor everything to passages.
-5. **Point it at the handoff log:** check `HANDOFF-LOG.md` for the last state, and log any new
+5. **Point it at the handoff log:** check `handover/LOG.md` + the lane INDEXs
+   (`handover/agent-1-ml/`, `handover/agent-2-integration/`) for the last state, and log any new
    handoff.
 
 ---

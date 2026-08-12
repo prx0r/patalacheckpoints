@@ -52,7 +52,7 @@ handoff note in `machinelearning/` or `docs/`.
   then builds retrieval/eval over it.
 - **Agent 1 → Agent 2:** "Needs X" — when a model needs data that isn't exposed (e.g. "vertical
   fidelity needs paired L2→C1→Guide examples; where are they?"). Agent 2 exposes/provides it.
-- Both log to a `HANDOFF-LOG.md` (one entry per handoff: what, why, file, date).
+- Both log to `handover/LOG.md` (one entry per handoff: what, why, file, date).
 
 > **Schema handshake (recommended).** A prose handoff ("themes-with-evidence") is ambiguous for Agent 1's
 > code. Every handoff that carries data should include a **minimal JSON schema snippet** of the exposed
@@ -98,7 +98,7 @@ needs "which theme is this passage in," Agent 1's benchmark/retrieval gives it b
   on integration changes).
 - `docs/PHASE1_IPVV_CORPUS_PROCESS_NOTES.md` — the corpus build (Agent 2 owns; Agent 1 reads).
 - `machinelearning/BENCHMARK_HANDOVER.md` — the benchmark seed (Agent 1 owns; Agent 2 contributed).
-- `HANDOFF-LOG.md` — the coordination record.
+- `handover/LOG.md` — the coordination record.
 
 ---
 
@@ -215,7 +215,7 @@ is ever published, unmeasured gold is a liability.
 
 ### 8.11 The current concrete queue (Agent 1, in order)
 
-1. Create `HANDOFF-LOG.md`; log the E1-fidelity result (BM25 ≥ dense; needs Agent 2's structured edges
+1. Create `handover/LOG.md` (if absent); log the E1-fidelity result (BM25 ≥ dense; needs Agent 2's structured edges
    for the flagship test).
 2. **Sanskrit-aware tokenizer** (honest — pick a/(b)/(c), label it).
 3. **Formalize Benchmark v0** from `BENCHMARK_HANDOVER.md` (gold.ts + qa_v1_gold 34 + stall-log 60) into

@@ -34,7 +34,7 @@ then we build. It is the single map; the detailed docs below are the chapters.*
 ### My lane (MachineLearning, committed + working)
 - `machinelearning/` docs: `MLUSEINPATALA.md` (frozen strategy), `MLVISION.md`, `DEVPLAN.md`,
   `VISION-COMPUTABLE-TRADITION.md`, `IPVV-STACK-INTEGRATION.md`, `mlreview.md`, `mlcurriculum.md`,
-  `mllogical.md`, `GAPS.md`, `DUAL_AGENT_TRACK.md`, `HANDOFF-LOG.md`, plus the PATALAML mirrors.
+  `mllogical.md`, `GAPS.md`, `DUAL_AGENT_TRACK.md`, `handover/LOG.md`, plus the PATALAML mirrors.
 - `machinelearning/research/` — a working, committed, CPU-only ML package:
   `patala_ml/` (corpus, retrieval, metrics, eval, generate_tasks), task files, and **two real
   experiment results** with statistical rigor.
