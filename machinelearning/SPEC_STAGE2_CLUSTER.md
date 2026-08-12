@@ -93,3 +93,32 @@ Given the 63 C1s, the clusterer produces overlapping communities such that:
 - NOT building the THEMES editorial layer (that's the human-adjudication step, later).
 - NOT touching the Pāṭala app (`data/corpus/`, `app/`). This is pure ML research in my lane.
 - NOT optimizing beyond Louvain for now — graph-ML embeddings are a later, benchmark-gated experiment.
+
+---
+
+## 10. BUILD RESULT (verified 2026-08-12) — the V2/V3-vs-V1 finding
+
+Building and inspecting the actual output revealed a **genuine, useful structural finding**:
+
+**The V2/V3 C1s cluster cleanly into the recognized IPVV themes** (V2/V3-only scope):
+| Cluster | Members | Theme |
+|---|---|---|
+| CL-0 | V2A, V2B, V2C | Memory / self-cognition |
+| CL-1 | V2D, V2E, V2F, V2G | Jñānaśakti / external-cognition / the Buddhist |
+| CL-2 | V2H, V2I, V2J, V2K | Vimarśa / language |
+| CL-3 | V2L, V2O, V2P, V2R, V2S + V3F, V3I | Order-less support / unity |
+| CL-4 | V3C, V3D, V3E, V3I, V3J, V3K, V3L, V3M | Pramāṇa / cosmology |
+| CL-7 | V3F, V3N, V3O, V3P | Grace / liberation |
+| CL-8 | V3G, V3H | Causality |
+
+**The V1 block (28 C1s, the upoddhata/purvapaksa dialectic) does NOT cluster usefully** — it's a
+dense commentary cross-reference block where the shared see_also graph mega-clusters (13–16 member
+noisy groups). Tuning the shared-term threshold doesn't help (it only adds generic-V1 connections).
+**The honest fix:** the emitter (`experiments/emit_clusters.py`) clusters V2/V3 for themes and flags
+V1 for **editorial partitioning** — over-tuning the graph to force V1 would produce fake structure.
+
+**Deliverables:** `data/published/ipvv/clusters.json` (the V2/V3 proposals, mapped, with coherence +
+overlap + edge evidence) + `clusters.report.txt` (the editorial report). 14/14 cluster tests pass.
+
+**This is the "actually useful" output** — clean V2/V3 themes an editor can accept/merge, with the
+V1 block honestly deferred rather than force-clustered.
