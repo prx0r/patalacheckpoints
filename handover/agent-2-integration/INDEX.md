@@ -99,6 +99,8 @@ mode (kramasadbhava etc.) remains a known seam. See `CHECKPOINTS-INTEGRATION.md`
 9. **Schema-version pin** — `data/published/ipvv/version.json`.
 
 Full thread list: `WHAT_NEXT_PATALA.md`. Canonical plan: `CHECKPOINTS-INTEGRATION.md`.
+**Priority re-anchor:** autonomous translation is the headline; the review-engine work is the validation
+substrate, not the goal. See `SESSION-PROGRESS-AUTONOMOUS-TRANSLATION.md`.
 
 ---
 
