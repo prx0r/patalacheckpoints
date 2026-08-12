@@ -139,16 +139,52 @@ cross P1–P4 gates.
 
 ## PHASE 3 — EXPLORE THE ACTUAL CORPUS & CODE (the files, not just the docs)
 
-### Step 3.0 — Explore the source stack
+### Step 3.0 — Read the FULL system (docs/INDEX first, then the site/API/MCP/hermes/vision)
+Start at **`docs/INDEX.md`** — the canonical flat index of every doc (corpus, translation, vision,
+API, ML, the governing rule). Then read the whole surface you build on:
+
+**The governing + corpus docs**
+- `docs/INDEX.md` (the map), `docs/CORPUS_MANIFEST.md`, `docs/corpus/TARGETS-INDEX.md`,
+  `docs/corpus/SANSKRITREE-IMPORT-MANIFEST.md`, `docs/SCHOLARLY_GRAPH.md` (the data model),
+  `docs/TRANSLATION_PROTOCOL.md` (translation as versioned passage-claims).
+
+**The site (what renders your data)**
+- `app/` — the Next.js surface: `page.tsx` (the atlas graph), `bibliography/`, `read/`, `concepts/`,
+  `learning/`, `texts/`, `traditions/`, `resources/`.
+- `data/atlas/` (concepts.ts, traditions.ts, texts.ts, relations.ts, bibliographySeed.ts) — the
+  scholar-facing layer your corpus feeds.
+
+**The API (the deterministic substrate)**
+- `docs/api/README.md` (34 routes: resolve, hub, spines, themes, verify/*, recommend, analyst, journey)
+  + `docs/openapi.yaml` (the contract). `app/api/` is the code.
+
+**The MCP (the agent access layer)**
+- `docs/api/mcp.md` (21 tools + the review tools) + `mcp/index.mjs` (the server) + `handover/hermes/`.
+
+**The vision (why it all exists)**
+- `docs/vision/INDEX.md` (Vision 01-13) + `docs/vision/CORE-BIBLE.md` (the top-level map) + the lens
+  folders (`functionality/`, `scholars/`, `economics/`, `expansion/`) + `docs/vision/functionality/hermes-execution.md`
+  (the vision×Hermes map).
+
+**The Hermes execution layer**
+- `handover/hermes/` — CANONICAL.md (the thesis), AUTOTRANSLATE-NORTHSTAR.md (the immediate objective),
+  TRANSLATION-APPROACH-AND-VALIDATION.md (the production doctrine), DEV-PLAN.md, PEER-REVIEW.md,
+  PATALA-SETUP.md, HERMES-BACKEND-MODEL.md.
+
+**🟢 GATE 3.0** — You must be able to name: the ONE route that resolves any passage id; the ONE tool
+that verifies a quote; the ONE vision doc that says "one scholarly core, many surfaces"; and the ONE
+doc that is the autonomous-translator northstar. If you can't, re-read before building.
+
+### Step 3.1 — Explore the source stack
 **Run:** `ls /mnt/HC_Volume_106427611/sanskritree/translations/_stack/ipvv/`. You must see the layers:
 `00_source` (the IPK base), `01_t1` + `02_t1` (chunked T1), `l0` (tokenized), `l200` (translation audit),
 `pilot` (L2 reads), `c1` (commentary).
 
-**🟢 GATE 3.0** — *Open* `pipeline/verify_l0.py` and `philproof.py` in the patala repo. Understand the
+**🟢 GATE 3.1** — *Open* `pipeline/verify_l0.py` and `philproof.py` in the patala repo. Understand the
 P0 proof + the `pp:` proof IDs you produce. Then *open* one chunk of source
 (`/mnt/.../02_t1/chunkV2-H-pancamo-vimarsa-k11-13.md`) — this is the Sanskrit you certify.
 
-### Step 3.1 — Locate your witnesses
+### Step 3.2 — Locate your witnesses
 **Run:** `find /mnt/HC_Volume_106427611/sanskritree/sources/muktabodha-lib -name "*M0002*.txt" 2>/dev/null`.
 These are the IPVV Sanskrit volumes (M00020/21/22) — the actual source you certify.
 
