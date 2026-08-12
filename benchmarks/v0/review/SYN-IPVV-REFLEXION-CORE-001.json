@@ -3,71 +3,134 @@
   "object_kind": "ArgumentSynthesis",
   "research_question": "Can the determination (adhyavas\u0101ya) establish an external object, or is the self-experience self-luminous and self-contained?",
   "thesis": {
-    "proposition": "Reflexivity (vimar\u015ba) belongs intrinsically to manifestation: the self-grasp is not a construction, and manifestation without reflexive awareness is inert.",
+    "proposition_id": "SYN-CONC-001",
+    "text": "Reflexivity (vimar\u015ba) belongs intrinsically to manifestation: the 'I'-reflexive awareness is not a conceptual construction, and what makes the light conscious is its self-awareness in the act of manifesting.",
     "status": "MACHINE_RECONSTRUCTED"
   },
-  "theme_refs": [
-    "cand_reflexive",
-    "cand_construction",
-    "cand_aham"
-  ],
   "inputs": [
     {
-      "type": "ARGUMENT",
-      "ref": "ARG-GOLD-002",
+      "argument_ref": "ARG-GOLD-002",
       "proposition_refs": [
         "G2-TC2",
         "G2-CONC"
-      ]
+      ],
+      "structural_audit": {
+        "state": "NOT_AUDITED",
+        "outcome": null,
+        "audit_refs": []
+      }
     },
     {
-      "type": "ARGUMENT",
-      "ref": "ARG-GOLD-004",
+      "argument_ref": "ARG-GOLD-004",
       "proposition_refs": [
         "G4-CRYSTAL",
         "G4-CONC"
-      ]
+      ],
+      "structural_audit": {
+        "state": "NOT_AUDITED",
+        "outcome": null,
+        "audit_refs": []
+      }
     }
   ],
   "inferences": [
     {
       "inference_id": "SYN-INF-001",
       "premises": [
-        "gold:ARG-GOLD-002:G2-CONC",
-        "gold:ARG-GOLD-004:G4-CRYSTAL"
+        "G2-CONC",
+        "G4-CONC"
       ],
       "conclusion": "SYN-CONC-001",
-      "warrant": "if reflexive unity (the 'I'-grasp) is not conceptual construction [G2-CONC], and manifestation requires reflexive self-awareness to be non-inert [G4-CRYSTAL], then reflexivity belongs intrinsically to manifestation",
-      "status": "MACHINE_RECONSTRUCTED"
+      "warrant": "If the 'I'-reflexive awareness is not a conceptual construction [G2-CONC], and what makes the light conscious (rather than a thing) is its self-awareness in the act of manifesting [G4-CONC], then reflexivity belongs intrinsically to manifestation [SYN-CONC-001] \u2014 the reconstruction's bridge, not an entailed result.",
+      "origin": "RECONSTRUCTED",
+      "support_state": "UNRESOLVED",
+      "assessment": {
+        "inference_id": "SYN-INF-001",
+        "origin": "RECONSTRUCTED",
+        "support_state": "UNRESOLVED",
+        "warrant": "the reconstructed bridge (articulation/construction \u2260 intrinsic reflexivity)",
+        "defeaters": [
+          {
+            "defeater_id": "SYN-DEF-UNIVERSAL",
+            "type": "SCOPE_PROBLEM",
+            "description": "per-act intrinsic reflexivity does not by itself entail one universal Self"
+          }
+        ],
+        "crux_refs": [
+          "CRUX-REFLEXION-INERT",
+          "CRUX-SYNTHESIS-UNIVERSAL"
+        ]
+      }
     }
   ],
-  "dependency_audits": [
-    "AUDIT-ARG-GOLD-002:G2-CONC",
-    "AUDIT-ARG-GOLD-002:G2-TC2",
-    "AUDIT-ARG-GOLD-004:G4-CRYSTAL",
-    "AUDIT-ARG-GOLD-004:G4-CONC"
+  "theme_refs": [
+    "cand_reflexive",
+    "cand_construction",
+    "cand_aham"
   ],
-  "synthesis_audit": {
-    "input_ceiling": "MACHINE_PROPOSED",
-    "dependency_statuses": {
-      "gold:ARG-GOLD-002:G2-TC2": "MACHINE_PROPOSED",
-      "gold:ARG-GOLD-002:G2-CONC": "MACHINE_PROPOSED",
-      "gold:ARG-GOLD-004:G4-CRYSTAL": "SCHOLARLY_CORROBORATED_PRELIMINARY",
-      "gold:ARG-GOLD-004:G4-CONC": "MACHINE_PROPOSED",
-      "SYN-INF-001": "MACHINE_RECONSTRUCTED"
-    },
-    "internal_consistency": "PASS",
-    "unsupported_bridges": [
+  "dependency_state": {
+    "dependencies": [
+      {
+        "ref": "ARG-GOLD-002:G2-CONC",
+        "gold_id": "ARG-GOLD-002",
+        "proposition_id": "G2-CONC",
+        "epistemic_status": "SCHOLARLY_CORROBORATED_PRELIMINARY",
+        "provenance": {
+          "passage_id": "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md",
+          "c1_id": "V2L-nonconstructed-I",
+          "l200_assertion_id": "l200/V2L-sastho-vimarsa-smrti-apohana.md",
+          "span_id": "chunkV2-L-sastho-vimarsa-smrti-apohana:L28:T88"
+        },
+        "structural_audit": {
+          "state": "NOT_AUDITED",
+          "outcome": null,
+          "audit_refs": []
+        },
+        "role": "LOAD_BEARING_PREMISE"
+      },
+      {
+        "ref": "ARG-GOLD-004:G4-CONC",
+        "gold_id": "ARG-GOLD-004",
+        "proposition_id": "G4-CONC",
+        "epistemic_status": "MACHINE_PROPOSED",
+        "provenance": {
+          "passage_id": "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md",
+          "c1_id": "V2H-vimarsa-paravak",
+          "l200_assertion_id": "l200/V2H-pancamo-vimarsa-k11-13.md"
+        },
+        "structural_audit": {
+          "state": "NOT_AUDITED",
+          "outcome": null,
+          "audit_refs": []
+        },
+        "role": "LOAD_BEARING_PREMISE"
+      },
+      {
+        "ref": "SYN-INF-001",
+        "gold_id": "SYNTHESIS",
+        "proposition_id": "SYN-INF-001",
+        "role": "LOAD_BEARING_INFERENCE",
+        "epistemic_status": "UNRESOLVED",
+        "provenance": {},
+        "structural_audit": {
+          "state": "NOT_APPLICABLE",
+          "outcome": null,
+          "audit_refs": []
+        }
+      }
+    ],
+    "load_bearing": [
+      "ARG-GOLD-002:G2-CONC",
+      "ARG-GOLD-004:G4-CONC",
       "SYN-INF-001"
     ],
-    "unresolved_dependencies": [
-      "AUDIT-ARG-GOLD-002:G2-CONC",
-      "AUDIT-ARG-GOLD-002:G2-TC2",
-      "AUDIT-ARG-GOLD-004:G4-CRYSTAL",
-      "AUDIT-ARG-GOLD-004:G4-CONC"
+    "unresolved": [
+      "ARG-GOLD-004:G4-CONC",
+      "SYN-INF-001"
     ],
-    "epistemic_ceiling": "UNRESOLVED",
-    "audit_merge_note": "audits are NOT merged; accepted + accepted != strongly supported"
+    "corroborated": [
+      "ARG-GOLD-002:G2-CONC"
+    ]
   },
   "cruxes": [
     {
@@ -83,8 +146,42 @@
       "affects": [
         "SYN-CONC-001"
       ],
-      "question": "Does per-act intrinsic reflexivity commit to the universal-Self (V2C), or only to per-act self-luminosity?"
+      "question": "Does per-act intrinsic reflexivity commit to the universal Self, or only to per-act self-luminosity?"
     }
   ],
-  "status": "MACHINE_PROPOSED"
+  "synthesis_audit": {
+    "epistemic_ceiling": "UNRESOLVED",
+    "structural_audit_state": "INCOMPLETE",
+    "ceiling_basis": {
+      "load_bearing": [
+        "ARG-GOLD-002:G2-CONC",
+        "ARG-GOLD-004:G4-CONC",
+        "SYN-INF-001"
+      ],
+      "statuses": {
+        "ARG-GOLD-002:G2-CONC": "SCHOLARLY_CORROBORATED_PRELIMINARY",
+        "ARG-GOLD-004:G4-CONC": "MACHINE_PROPOSED",
+        "SYN-INF-001": "UNRESOLVED"
+      },
+      "rule": "WEAKEST_GOVERNS over LOAD_BEARING dependencies only (non-load-bearing never caps)",
+      "result": "UNRESOLVED"
+    },
+    "internal_consistency": "NOT_EVALUATED",
+    "audit_merge_note": "audits are NOT merged; accepted + accepted != strongly supported",
+    "themes_not_premises": true
+  },
+  "status": "MACHINE_PROPOSED",
+  "boundary": {
+    "currently_supports": [
+      {
+        "claim": "reflexivity belongs intrinsically to manifestation (per-act, reconstructed)",
+        "status": "UNRESOLVED_RECONSTRUCTION"
+      }
+    ],
+    "does_not_establish": [
+      "the universal Self (one Lord)",
+      "all manifestation is one consciousness",
+      "consciousness is fundamental simpliciter"
+    ]
+  }
 }

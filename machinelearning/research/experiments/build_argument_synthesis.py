@@ -1,19 +1,21 @@
 #!/usr/bin/env python3
-"""build_argument_synthesis.py — the ArgumentSynthesis, Pāṭala's canonical reasoning product.
+"""build_argument_synthesis.py — the CANONICAL ArgumentSynthesis (Pāṭala-native higher-order reasoning).
 
-ArgumentSynthesis answers: given a ResearchPack's material, what LARGER argument can defensibly be
-reconstructed, exactly how does it derive (every bridge/warrant explicit), and where does it remain
-open? It is NOT a container (ResearchPack) and NOT an essay (prose). It is a NEW higher-order argument
-constructed from multiple lower-order arguments/evidence objects.
+THIS IS A CANONICAL REBUILD, not a generalization of the earlier prototype. The prototype hardcoded a
+PROP_EPISTEMIC_STATUS dict and invented audit IDs; that is NOT a real system. This version:
 
-Crucial audit semantics: audits are NOT merged into stronger support.
-  accepted + accepted != strongly_supported.
-Dependencies propagate their CEILING (the weakest governs). An UNRESOLVED input keeps the synthesis
-ceiling UNRESOLVED.
+  * resolves each dependency's epistemic state FROM THE ACTUAL proposition objects (the gold dicts),
+    via resolve_dependency(ref) -> {epistemic_status, provenance, structural_audit};
+  * uses ONLY real, persisted audit refs — with no persisted ContextualArgumentAudit registry, every
+    argument reports structural_audit.state="NOT_AUDITED" / outcome=null rather than inventing an ID;
+  * gives the thesis a STABLE proposition id (SYN-CONC-001) equal to the conclusion of the bridge;
+  * separates the bridge's ORIGIN (RECONSTRUCTED) from its EVIDENTIAL support_state (UNRESOLVED);
+  * marks each dependency's ROLE (LOAD_BEARING_PREMISE / CONTEXT / ...) and computes the epistemic ceiling
+    by WEAKEST-GOVERNS over the LOAD_BEARING dependencies only;
+  * keeps themes as metadata, never inferential premises;
+  * keeps the STRUCTURAL audit axis SEPARATE from the EPISTEMIC axis (two axes, not one scalar).
 
-Themes are metadata (selection/context), NEVER inferential premises.
-
-EO / EssayPlan / ArgumentMap are PROJECTIONS of this object, not its schema.
+Audits are NEVER merged into stronger support. Dependency propagation (weakest-governs) is the core mechanism.
 """
 from __future__ import annotations
 
@@ -28,203 +30,235 @@ from patala_ml.gold004 import build_gold_004
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(
     os.path.dirname(os.path.abspath(__file__)))))))
 PACK = os.path.join(ROOT, "benchmarks/v0/packs/PACK-IPVV-REFLEXION-CORE.json")
+OUT = os.path.join(ROOT, "benchmarks/v0/review/SYN-IPVV-REFLEXION-CORE-001.json")
 
-# render ceilings, weakest-governs ordering
-CEILING_RANK = {"INDEPENDENT_REVIEWED": 4, "SCHOLARLY_CORROBORATED": 3,
-                "SCHOLARLY_CORROBORATED_PRELIMINARY": 2, "CANDIDATE": 1, "MACHINE_PROPOSED": 1}
-
-# per-proposition epistemic status (the REAL dependency set — not a coarse pack-level summary).
-# Each input proposition's load-bearing epistemic status drives the synthesis ceiling.
-# G4-CRYSTAL is SCHOLARLY_CORROBORATED_PRELIMINARY (folded earlier); the rest are MACHINE_PROPOSED.
-PROP_EPISTEMIC_STATUS = {
-    "gold:ARG-GOLD-002:G2-TC2": "MACHINE_PROPOSED",
-    "gold:ARG-GOLD-002:G2-CONC": "MACHINE_PROPOSED",
-    "gold:ARG-GOLD-004:G4-CRYSTAL": "SCHOLARLY_CORROBORATED_PRELIMINARY",
-    "gold:ARG-GOLD-004:G4-CONC": "MACHINE_PROPOSED",
-    "SYN-INF-001": "MACHINE_RECONSTRUCTED",   # the synthesis bridge itself
-    "SYN-CONC-001": "MACHINE_RECONSTRUCTED",
+# ── epistemic ceiling rank (weakest-governs ordering) ─────────────────────────
+CEILING_RANK = {
+    "UNRESOLVED": 0,
+    "MACHINE_PROPOSED": 1,
+    "ENGINEERING_VALIDATED": 2,
+    "SCHOLARLY_CORROBORATED_PRELIMINARY": 3,
+    "SCHOLARLY_CORROBORATED": 4,
+    "INDEPENDENT_REVIEWED": 5,
 }
 
+ROLE_LOAD_BEARING = {"LOAD_BEARING_PREMISE", "LOAD_BEARING_INFERENCE"}
 
-def dependency_ceiling(deps: list[str]) -> str:
-    """Derive the synthesis ceiling from the ACTUAL dependency set (weakest-governs).
 
-    Returns the canonical weakest status. MACHINE_RECONSTRUCTED is treated as MACHINE_PROPOSED
-    (both are pre-review machine states); it must never inflate to CANDIDATE.
+# ── the real dependency resolver (no hardcoded status map) ────────────────────
+def _gold_registry() -> dict:
+    """gold_id -> {proposition_id: node} — the ACTUAL source of epistemic state."""
+    golds = {"ARG-GOLD-002": build_gold_002(), "ARG-GOLD-004": build_gold_004()}
+    return {gid: {n["proposition_id"]: n for n in g["nodes"]} for gid, g in golds.items()}
+
+
+def _proposition_index(registry: dict) -> dict:
+    """bare proposition_id -> {gold_id, node} (union across input arguments)."""
+    index = {}
+    for gid, nodes in registry.items():
+        for pid, node in nodes.items():
+            index[pid] = {"gold_id": gid, "node": node}
+    return index
+
+
+def resolve_dependency(ref: str, registry: dict, prop_index: dict,
+                       audits: dict | None = None) -> dict:
+    """Resolve a dependency reference to its ACTUAL object state.
+
+    ref forms: "ARG-GOLD-002:G2-CONC" (qualified) or "G2-CONC" (bare, resolved via the index).
+    Returns {ref, gold_id, proposition_id, epistemic_status, provenance, structural_audit}.
+
+    epistemic_status comes from the proposition node (its `scholarly_corroboration.promotes_to` if a
+    DOSSIER_CORROBORATED block exists, else its `status`). structural_audit comes ONLY from the real
+    (persisted) audits registry; if none exist, state="NOT_AUDITED", outcome=null (never invented).
     """
-    if not deps:
-        return "UNRESOLVED"
-    # map reconstruction to its epistemic peer (MACHINE_PROPOSED) for ceiling purposes
-    def _rank(d):
-        st = PROP_EPISTEMIC_STATUS.get(d, "MACHINE_PROPOSED")
-        if st == "MACHINE_RECONSTRUCTED":
-            st = "MACHINE_PROPOSED"
-        return CEILING_RANK.get(st, 1), st
-    weakest = min((_rank(d) for d in deps), key=lambda x: x[0])
-    return weakest[1]
+    gold_id, _, pid = ref.partition(":")
+    if gold_id not in registry or not pid:
+        if ref not in prop_index:
+            raise KeyError(f"unresolvable dependency ref: {ref!r}")
+        entry = prop_index[ref]
+        gold_id, pid = entry["gold_id"], ref
+        node = entry["node"]
+    else:
+        node = registry[gold_id].get(pid)
+        if node is None:
+            raise KeyError(f"no proposition {pid!r} in {gold_id}")
+    corrob = node.get("scholarly_corroboration") or {}
+    promotes = corrob.get("promotes_to")
+    epistemic_status = promotes if promotes and corrob.get("level") == "DOSSIER_CORROBORATED" \
+        else node.get("status", "MACHINE_PROPOSED")
+    audit_refs = list((audits or {}).get(gold_id, {}).get("audit_refs", []))
+    audit_state = "AUDITED" if audit_refs else "NOT_AUDITED"
+    return {
+        "ref": f"{gold_id}:{pid}",
+        "gold_id": gold_id,
+        "proposition_id": pid,
+        "epistemic_status": epistemic_status,
+        "provenance": node.get("grounding", {}),
+        "structural_audit": {
+            "state": audit_state,        # NOT_AUDITED until a persisted registry exists
+            "outcome": None,             # never a fabricated structural outcome
+            "audit_refs": audit_refs,
+        },
+    }
 
 
-def build_synthesis() -> dict:
+def build_synthesis(audits: dict | None = None) -> dict:
+    """Build the canonical SYN-IPVV-REFLEXION-CORE-001 from actual objects.
+
+    `audits` is an OPTIONAL real-audit registry: {gold_id: {"audit_refs": [...]}}. With no persisted
+    registry, every dependency reports structural_audit.state="NOT_AUDITED" — never an invented audit ID.
+    """
     with open(PACK, encoding="utf-8") as f:
         pack = json.load(f)
 
-    # exact input propositions
-    inputs = [
-        {"type": "ARGUMENT", "ref": "ARG-GOLD-002",
-         "proposition_refs": ["G2-TC2", "G2-CONC"]},
-        {"type": "ARGUMENT", "ref": "ARG-GOLD-004",
-         "proposition_refs": ["G4-CRYSTAL", "G4-CONC"]},
+    registry = _gold_registry()
+    prop_index = _proposition_index(registry)
+
+    input_args = [
+        {"argument_ref": "ARG-GOLD-002",
+         "proposition_refs": ["G2-TC2", "G2-CONC"],
+         "structural_audit": {
+             "state": "AUDITED" if (audits or {}).get("ARG-GOLD-002", {}).get("audit_refs") else "NOT_AUDITED",
+             "outcome": None,
+             "audit_refs": list((audits or {}).get("ARG-GOLD-002", {}).get("audit_refs", [])),
+         }},
+        {"argument_ref": "ARG-GOLD-004",
+         "proposition_refs": ["G4-CRYSTAL", "G4-CONC"],
+         "structural_audit": {
+             "state": "AUDITED" if (audits or {}).get("ARG-GOLD-004", {}).get("audit_refs") else "NOT_AUDITED",
+             "outcome": None,
+             "audit_refs": list((audits or {}).get("ARG-GOLD-004", {}).get("audit_refs", [])),
+         }},
     ]
 
-    # the synthesis-level inference (the NEW bridge — must be explicit, its own object)
-    # Thesis: self-experience belongs intrinsically to manifestation (not externally constructed).
-    # Premises: (P1) the I-grasp is not a conceptual construction [G2-CONC];
-    #           (P2) manifestation without reflexive awareness would be inert [G4-CRYSTAL].
-    # Bridge (the new inference): P1 + P2 => reflexivity belongs intrinsically to manifestation.
-    inferences = [{
+    # ── the bridge inference (first-class, explicit, warrant-carrying) ─────────
+    bridge = {
         "inference_id": "SYN-INF-001",
-        "premises": ["gold:ARG-GOLD-002:G2-CONC", "gold:ARG-GOLD-004:G4-CRYSTAL"],
+        "premises": ["G2-CONC", "G4-CONC"],
         "conclusion": "SYN-CONC-001",
-        "warrant": ("if reflexive unity (the 'I'-grasp) is not conceptual construction "
-                    "[G2-CONC], and manifestation requires reflexive self-awareness to be "
-                    "non-inert [G4-CRYSTAL], then reflexivity belongs intrinsically to "
-                    "manifestation"),
-        "status": "MACHINE_RECONSTRUCTED",
-    }]
+        "warrant": ("If the 'I'-reflexive awareness is not a conceptual construction [G2-CONC], and "
+                    "what makes the light conscious (rather than a thing) is its self-awareness in the "
+                    "act of manifesting [G4-CONC], then reflexivity belongs intrinsically to "
+                    "manifestation [SYN-CONC-001] — the reconstruction's bridge, not an entailed result."),
+        # ORIGIN (how the object came to exist) and EVIDENTIAL state (how supported) are SEPARATE.
+        "origin": "RECONSTRUCTED",
+        "support_state": "UNRESOLVED",
+        "assessment": {
+            "inference_id": "SYN-INF-001",
+            "origin": "RECONSTRUCTED",
+            "support_state": "UNRESOLVED",
+            "warrant": "the reconstructed bridge (articulation/construction ≠ intrinsic reflexivity)",
+            "defeaters": [
+                {"defeater_id": "SYN-DEF-UNIVERSAL",
+                 "type": "SCOPE_PROBLEM",
+                 "description": "per-act intrinsic reflexivity does not by itself entail one universal Self"},
+            ],
+            "crux_refs": ["CRUX-REFLEXION-INERT", "CRUX-SYNTHESIS-UNIVERSAL"],
+        },
+    }
 
-    # dependency audits: the synthesis depends on the source arguments' audits
-    dependency_audits = [
-        "AUDIT-ARG-GOLD-002:G2-CONC", "AUDIT-ARG-GOLD-002:G2-TC2",
-        "AUDIT-ARG-GOLD-004:G4-CRYSTAL", "AUDIT-ARG-GOLD-004:G4-CONC",
+    # ── resolve the LOAD-BEARING dependency states from actual objects ────────
+    deps = []
+    for ref in ["G2-CONC", "G4-CONC"]:
+        d = resolve_dependency(ref, registry, prop_index, audits)
+        d["role"] = "LOAD_BEARING_PREMISE"
+        deps.append(d)
+    deps.append({
+        "ref": "SYN-INF-001", "gold_id": "SYNTHESIS", "proposition_id": "SYN-INF-001",
+        "role": "LOAD_BEARING_INFERENCE",
+        "epistemic_status": bridge["support_state"],
+        "provenance": {},
+        "structural_audit": {"state": "NOT_APPLICABLE", "outcome": None, "audit_refs": []},
+    })
+
+    # ── epistemic ceiling: WEAKEST-GOVERNS over LOAD-BEARING deps only ─────────
+    lb = [d for d in deps if d["role"] in ROLE_LOAD_BEARING]
+    ceiling = min((CEILING_RANK.get(d["epistemic_status"], 1) for d in lb),
+                  default=CEILING_RANK["UNRESOLVED"])
+    ceiling_status = next((s for s, r in sorted(CEILING_RANK.items(), key=lambda kv: kv[1])
+                           if r == ceiling), "UNRESOLVED")
+
+    unresolved = [d["ref"] for d in lb if d["epistemic_status"] in ("UNRESOLVED", "MACHINE_PROPOSED")]
+    corroborated = [d["ref"] for d in lb
+                    if d["epistemic_status"] in ("SCHOLARLY_CORROBORATED", "SCHOLARLY_CORROBORATED_PRELIMINARY")]
+    # structural axis: INCOMPLETE until the arguments have real persisted contextual audits
+    structural_audit_state = "COMPLETE" if all(
+        a["structural_audit"]["state"] == "AUDITED" for a in input_args) else "INCOMPLETE"
+
+    cruxes = [
+        {"crux_id": "CRUX-REFLEXION-INERT",
+         "affects": ["SYN-INF-001", "SYN-CONC-001"],
+         "question": "Can an inert thing establish, or does establishment require the self-luminous non-inert?"},
+        {"crux_id": "CRUX-SYNTHESIS-UNIVERSAL",
+         "affects": ["SYN-CONC-001"],
+         "question": "Does per-act intrinsic reflexivity commit to the universal Self, or only to per-act self-luminosity?"},
     ]
-
-    # the synthesis-level audit — does NOT merge audits into stronger support
-    # The ceiling derives from the ACTUAL dependency set: every load-bearing premise + the bridge.
-    load_bearing = ["gold:ARG-GOLD-002:G2-TC2", "gold:ARG-GOLD-002:G2-CONC",
-                    "gold:ARG-GOLD-004:G4-CRYSTAL", "gold:ARG-GOLD-004:G4-CONC", "SYN-INF-001"]
-    weakest = dependency_ceiling(load_bearing)
-    # if the weakest input is below SCHOLARLY_CORROBORATED, the synthesis cannot render as settled
-    epistemic_ceiling = ("UNRESOLVED" if CEILING_RANK.get(weakest, 0) < CEILING_RANK["SCHOLARLY_CORROBORATED"]
-                         else "CAN_RENDER")
-
-    # THE VALUE PROBE: does the synthesis overclaim? P1+P2 do NOT entail "self-experience is
-    # intrinsically fundamental". G2-CONC is about the I-grasp not being a construction; G4-CRYSTAL
-    # is about inertness-without-vimarsa. The synthesis thesis (reflexivity belongs intrinsically to
-    # manifestation) is a REASONABLE bridge but NOT entailed — it must be flagged as an unsupported
-    # bridge (a reconstruction), not a settled conclusion.
-    unsupported_bridges = ["SYN-INF-001"]
 
     synthesis = {
         "synthesis_id": "SYN-IPVV-REFLEXION-CORE-001",
         "object_kind": "ArgumentSynthesis",
         "research_question": pack.get("research_question", ""),
         "thesis": {
-            "proposition": ("Reflexivity (vimarśa) belongs intrinsically to manifestation: the "
-                            "self-grasp is not a construction, and manifestation without reflexive "
-                            "awareness is inert."),
+            "proposition_id": "SYN-CONC-001",  # stable id == conclusion of SYN-INF-001
+            "text": ("Reflexivity (vimarśa) belongs intrinsically to manifestation: the 'I'-reflexive "
+                     "awareness is not a conceptual construction, and what makes the light conscious is "
+                     "its self-awareness in the act of manifesting."),
             "status": "MACHINE_RECONSTRUCTED",
         },
-        "theme_refs": pack.get("theme_refs", []),   # metadata only — NEVER premises
-        "inputs": inputs,
-        "inferences": inferences,
-        "dependency_audits": dependency_audits,
-        "synthesis_audit": {
-            "input_ceiling": weakest,                 # weakest-governs, over the real dependency set
-            "dependency_statuses": {d: PROP_EPISTEMIC_STATUS.get(d, "MACHINE_PROPOSED")
-                                    for d in load_bearing},
-            "internal_consistency": "PASS",           # no internal contradictions detected
-            "unsupported_bridges": unsupported_bridges,   # the reconstructed bridge, not entailed
-            "unresolved_dependencies": dependency_audits,  # all CANDIDATE/MACHINE_PROPOSED
-            "epistemic_ceiling": epistemic_ceiling,   # derived from the dependency set
-            "audit_merge_note": "audits are NOT merged; accepted + accepted != strongly supported",
+        "inputs": input_args,
+        "inferences": [bridge],
+        "theme_refs": pack.get("theme_refs", []),   # metadata ONLY — never inferential premises
+        "dependency_state": {
+            "dependencies": deps,
+            "load_bearing": [d["ref"] for d in lb],
+            "unresolved": unresolved,
+            "corroborated": corroborated,
         },
-        "cruxes": [
-            {"crux_id": "CRUX-REFLEXION-INERT",
-             "affects": ["SYN-INF-001", "SYN-CONC-001"],
-             "question": "Can an inert thing establish, or does establishment require the self-luminous non-inert?"},
-            {"crux_id": "CRUX-SYNTHESIS-UNIVERSAL",
-             "affects": ["SYN-CONC-001"],
-             "question": "Does per-act intrinsic reflexivity commit to the universal-Self (V2C), or only to per-act self-luminosity?"},
-        ],
+        "cruxes": cruxes,
+        "synthesis_audit": {
+            # two SEPARATE axes: epistemic (what the evidence supports) vs structural (audit readiness)
+            "epistemic_ceiling": ceiling_status,
+            "structural_audit_state": structural_audit_state,
+            "ceiling_basis": {
+                "load_bearing": [d["ref"] for d in lb],
+                "statuses": {d["ref"]: d["epistemic_status"] for d in lb},
+                "rule": "WEAKEST_GOVERNS over LOAD_BEARING dependencies only (non-load-bearing never caps)",
+                "result": ceiling_status,
+            },
+            # NOT_EVALUATED — no cross-inference contradiction / warrant-consistency / Nyāya check has run
+            "internal_consistency": "NOT_EVALUATED",
+            "audit_merge_note": "audits are NOT merged; accepted + accepted != strongly supported",
+            "themes_not_premises": True,
+        },
         "status": "MACHINE_PROPOSED",
+        "boundary": {
+            "currently_supports": [
+                {"claim": "reflexivity belongs intrinsically to manifestation (per-act, reconstructed)",
+                 "status": "UNRESOLVED_RECONSTRUCTION"},
+            ],
+            "does_not_establish": ["the universal Self (one Lord)", "all manifestation is one consciousness",
+                                   "consciousness is fundamental simpliciter"],
+        },
     }
     return synthesis
 
 
-def synthesis_to_eo(syn: dict) -> dict:
-    """PROJECTION: ArgumentSynthesis -> EO v2 (a derived view, NOT the canonical schema).
-
-    EO is one serialization of the synthesis. If EO's five-member Nyāya shape ever proves too
-    restrictive, the synthesis (the actual intellectual graph) survives unchanged. This is an
-    adapter, deliberately: it maps the synthesis's reasoning onto the EO's syllogism shape.
-    """
-    inputs_by_ref = {i["ref"]: i for i in syn["inputs"]}
-    # gather evidence claims from the synthesis inputs' propositions
-    evidence = []
-    props = {}
-    sys.path.insert(0, os.path.join(ROOT, "machinelearning/research"))
-    for gid, g in {"ARG-GOLD-002": build_gold_002(), "ARG-GOLD-004": build_gold_004()}.items():
-        for n in g["nodes"]:
-            props[n["proposition_id"]] = n.get("proposition") or n.get("text") or ""
-    for i in syn["inputs"]:
-        for p in i["proposition_refs"]:
-            evidence.append({"claim": props.get(p, ""), "source_id": f"gold:{i['ref']}:{p}",
-                             "pramana": "anumana"})
-    # the nigamana inherits the synthesis ceiling (UNRESOLVED -> structurally_suggestive, not settled)
-    ceiling = syn["synthesis_audit"]["epistemic_ceiling"]
-    nigamana_status = "structurally_suggestive" if ceiling == "UNRESOLVED" else "strongly_supported"
-    return {
-        "eo_id": "eo:ipvv-reflexion-core",
-        "schema_version": 2,
-        "title": syn["thesis"]["proposition"],
-        "status": "draft",
-        "projection_of": syn["synthesis_id"],          # the canonical object
-        "schema_source": {"repo": "prx0r/patala",
-                          "commit": "4e097a46d6d6228030fb6244aa9ddb5e64cd50b2",
-                          "path": "docs/ontology/EO-v2.md"},
-        "question": {"question_id": "q:reflexion-core", "tension_point": syn["research_question"],
-                     "why_it_matters": "the reflexion-core synthesis", "resolution_level": "local_argument"},
-        "syllogism": {
-            "pratijna": {"proposition": syn["thesis"]["proposition"], "what_it_claims": "synthesis thesis"},
-            "hetu": {"evidence": evidence, "source_ids": [e["source_id"] for e in evidence]},
-            "udaharana": {"examples": []},
-            "upanaya": {"application": "synthesis of ARG-002 + ARG-004", "cruxes": [c["crux_id"] for c in syn["cruxes"]]},
-            "nigamana": {"best_current_answer": syn["thesis"]["proposition"],
-                         "status": nigamana_status, "scope": "local"},
-        },
-        "state_of_play": {"summary": syn["thesis"]["proposition"],
-                          "what_survives": "synthesis thesis (reconstructed)",
-                          "what_is_weakened": "unsupported bridge",
-                          "what_would_change_our_mind": "independent review",
-                          "open_cruxes": [c["crux_id"] for c in syn["cruxes"]]},
-        "render_ceiling": ceiling,
-        "provenance": {"parent_ros": [], "parent_dossier": syn["synthesis_id"],
-                       "created_by": "agent1", "last_updated": "2026-08-12"},
-    }
-
-
 def main() -> int:
     syn = build_synthesis()
-    out = os.path.join(ROOT, "benchmarks/v0/review/SYN-IPVV-REFLEXION-CORE-001.json")
-    with open(out, "w", encoding="utf-8") as f:
+    with open(OUT, "w", encoding="utf-8") as f:
         json.dump(syn, f, indent=2)
 
-    print("ArgumentSynthesis — SYN-IPVV-REFLEXION-CORE-001")
-    print(f"  inputs: {[i['ref'] for i in syn['inputs']]}")
-    print(f"  inferences (bridges): {[i['inference_id'] for i in syn['inferences']]}")
-    a = syn["synthesis_audit"]
-    print(f"  input_ceiling: {a['input_ceiling']} | epistemic_ceiling: {a['epistemic_ceiling']}")
-    print(f"  unsupported_bridges: {a['unsupported_bridges']}  (the leap is EXPOSED, not hidden)")
+    audit = syn["synthesis_audit"]
+    print("SYN-IPVV-REFLEXION-CORE-001 (canonical ArgumentSynthesis)")
+    print(f"  thesis: {syn['thesis']['proposition_id']} == conclusion of SYN-INF-001")
+    print(f"  bridge: origin={syn['inferences'][0]['origin']} | support_state={syn['inferences'][0]['support_state']}")
+    print(f"  epistemic_ceiling: {audit['epistemic_ceiling']} (weakest-governs over load-bearing only)")
+    print(f"  structural_audit_state: {audit['structural_audit_state']} (separate axis)")
+    print(f"  internal_consistency: {audit['internal_consistency']}")
+    print(f"  boundary.currently_supports: {[c['claim'] for c in syn['boundary']['currently_supports']]}")
     print(f"  cruxes: {[c['crux_id'] for c in syn['cruxes']]}")
-    print(f"\nwritten: {out}")
-
-    # also write the EO projection (derived, not canonical)
-    eo = synthesis_to_eo(syn)
-    eo_out = os.path.join(ROOT, "benchmarks/v0/review/EO-IPVV-REFLEXION-CORE.json")
-    with open(eo_out, "w", encoding="utf-8") as f:
-        json.dump(eo, f, indent=2)
-    print(f"EO projection (derived from synthesis) written: {eo_out}")
-    print(f"  nigamana.status={eo['syllogism']['nigamana']['status']} (from ceiling {eo['render_ceiling']})")
+    print(f"\nwritten: {OUT}")
     return 0
 
 

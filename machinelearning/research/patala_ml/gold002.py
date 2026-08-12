@@ -33,7 +33,18 @@ def build_gold_002() -> dict:
                        "l200_assertion_id": V2L_L200_ID,
                        "span_id": "chunkV2-L-sastho-vimarsa-smrti-apohana:L31:T112"},
          "boundary": "the objection presupposes that linguistic articulation implies conceptual construction",
-         "status": "MACHINE_PROPOSED"},
+         "status": "MACHINE_PROPOSED",
+         "scholarly_corroboration": {
+             "primary": {"span_id": "chunkV2-L-sastho-vimarsa-smrti-apohana:L31:T112", "edition_ref": "Ipk_1.6.1"},
+             "scholarship": [
+                 {"origin": "scholar",
+                  "addresses": "the Pratyabhijñā frames the doubt that word-joined reflexive awareness (vāgvapuḥ) is a vikalpa — an āśaṅkā the IPVV answers",
+                  "relation": "SUPPORTS",
+                  "publication": "Torella, Īśvarapratyabhijñākārikā of Utpaladeva with the Author's Vṛtti: Critical Edition and Annotated Translation (Delhi: Motilal, 2002), kārikā 1.6.1",
+                  "passage": "IPK 1.6.1 + Vṛtti + nn. 2, 45 (the kalpanā-definition objection, NB 1.5)"}
+             ],
+             "promotes_to": "SCHOLARLY_CORROBORATED_PRELIMINARY", "level": "DOSSIER_CORROBORATED",
+         }},
         # the reply's first step: what construction does
         {"proposition_id": "G2-TC1",
          "text": "Conceptual construction (vikalpa) operates by combining, differentiating, or determining contents.",
@@ -43,7 +54,18 @@ def build_gold_002() -> dict:
          "grounding": {"passage_id": V2L_PASSAGE_ID, "c1_id": V2L_C1_ID,
                        "l200_assertion_id": V2L_L200_ID,
                        "span_id": "chunkV2-L-sastho-vimarsa-smrti-apohana:L29:T93"},
-         "boundary": "", "status": "MACHINE_PROPOSED"},
+         "boundary": "", "status": "MACHINE_PROPOSED",
+         "scholarly_corroboration": {
+             "primary": {"span_id": "chunkV2-L-sastho-vimarsa-smrti-apohana:L29:T93", "edition_ref": "Ipk_1.6.1"},
+             "scholarship": [
+                 {"origin": "scholar",
+                  "addresses": "the analysis of vikalpa as putting together (yojana), conceiving the one as many, and cutting off (vicchedana) a doubted other",
+                  "relation": "SUPPORTS",
+                  "publication": "Torella, Īśvarapratyabhijñākārikā ... Critical Edition and Annotated Translation (Delhi: Motilal, 2002), kārikā 1.6.1 nn. 1, 3",
+                  "passage": "Torella's notes on IPK 1.6.1, citing IPVV II pp. 274, 280 (vividhā kalpanā / vicchedana / niścetavya–apohitavya)"}
+             ],
+             "promotes_to": "SCHOLARLY_CORROBORATED_PRELIMINARY", "level": "DOSSIER_CORROBORATED",
+         }},
         # the key move: the I-awareness is not one of those relations
         {"proposition_id": "G2-TC2",
          "text": "The awareness expressed as 'I' (ahaṃ-pratyavamarśa) is not treated as one more relation constructed between independently given elements.",
@@ -53,7 +75,18 @@ def build_gold_002() -> dict:
          "grounding": {"passage_id": V2L_PASSAGE_ID, "c1_id": V2L_C1_ID,
                        "l200_assertion_id": V2L_L200_ID,
                        "span_id": "chunkV2-L-sastho-vimarsa-smrti-apohana:L28:T87"},
-         "boundary": "", "status": "MACHINE_PROPOSED"},
+         "boundary": "", "status": "MACHINE_PROPOSED",
+         "scholarly_corroboration": {
+             "primary": {"span_id": "chunkV2-L-sastho-vimarsa-smrti-apohana:L28:T87", "edition_ref": "Ipk_1.6.1"},
+             "scholarship": [
+                 {"origin": "scholar",
+                  "addresses": "the 'I'-grasp (ahaṃ-pratyavamarśa) is not a mere concept, for when one says 'I' one is not eliminating from consciousness whatever is not one's consciousness",
+                  "relation": "SUPPORTS",
+                  "publication": "Ratié, 'Otherness in the Pratyabhijñā Philosophy', Journal of Indian Philosophy 35 (2007)",
+                  "page": "p. 342", "passage": "p. 342 fn. 63, on IPK I.6 ('the grasping of the I is not a mere concept ... when I say \"I\", I am not eliminating from my consciousness whatever is not my consciousness')"}
+             ],
+             "promotes_to": "SCHOLARLY_CORROBORATED_PRELIMINARY", "level": "DOSSIER_CORROBORATED",
+         }},
         # the conclusion of the reply
         {"proposition_id": "G2-CONC",
          "text": "Linguistic articulation does not show that the underlying self-awareness is itself produced by conceptual determination.",
@@ -65,7 +98,18 @@ def build_gold_002() -> dict:
                        "span_id": "chunkV2-L-sastho-vimarsa-smrti-apohana:L28:T88"},
          "boundary": "this passage preserves reflexive awareness DISTINCT from conceptual construction; it does NOT by itself establish a universal subject",
          "dialectical_role": "REPLY", "responds_to": ["G2-OBJ"],
-         "status": "MACHINE_PROPOSED"},
+         "status": "MACHINE_PROPOSED",
+         "scholarly_corroboration": {
+             "primary": {"span_id": "chunkV2-L-sastho-vimarsa-smrti-apohana:L28:T88", "edition_ref": "Ipk_1.6.1"},
+             "scholarship": [
+                 {"origin": "scholar",
+                  "addresses": "vimarśa is word-related (śabdanarūpatva) yet prediscursive and of the nature of consciousness — so linguistic articulation does not make the underlying self-awareness a construction",
+                  "relation": "SUPPORTS",
+                  "publication": "Ratié, 'On Reason and Scripture in the Pratyabhijñā', in Eltschinger & Krasser (eds.), Scriptural Authority, Reason and Action (Vienna: ÖAW, 2013)",
+                  "page": "p. 22", "passage": "p. 22 (prasiddhi as a prediscursive vimarśa essentially related to language); cf. pp. 19-20 (śabdanarūpatvaṃ vimarśanaṃ ... citsvabhāvasyāntaraṅgaṃ rūpaṃ)"}
+             ],
+             "promotes_to": "SCHOLARLY_CORROBORATED_PRELIMINARY", "level": "DOSSIER_CORROBORATED",
+         }},
          # (G2-IMPL node REMOVED per REVIEW-2026-08-12-MODEL-1: the reconstructed warrant 'articulation !=
          #  construction' belongs on the InferenceRule, not as an ordinary Proposition. It is carried by
          #  G2-INF1.warrant and projected into ASPIC as the reply rule r_reply.)
@@ -73,12 +117,23 @@ def build_gold_002() -> dict:
         {"proposition_id": "G2-IC1",
          "text": "Abhinavagupta preserves a distinction between reflexive self-awareness and the conceptual operations that articulate it.",
          "kind": "INTERPRETIVE_CLAIM", "explicitness": "RECONSTRUCTED",
-         "commitment": "INTERPRETIVE_EXTENSION",
+         "commitment": "EDITORIAL_RATIONAL_RECONSTRUCTION",
          "derived_from": "C1_INTERPRETIVE",
          "grounding": {"passage_id": V2L_PASSAGE_ID, "c1_id": V2L_C1_ID,
                        "l200_assertion_id": V2L_L200_ID,
                        "span_id": "chunkV2-L-sastho-vimarsa-smrti-apohana:L29:T93"},
-         "boundary": "", "status": "MACHINE_PROPOSED"},
+         "boundary": "", "status": "MACHINE_PROPOSED",
+         "scholarly_corroboration": {
+             "primary": {"span_id": "chunkV2-L-sastho-vimarsa-smrti-apohana:L29:T93", "edition_ref": "Ipk_1.6.1"},
+             "scholarship": [
+                 {"origin": "scholar",
+                  "addresses": "vikalpa is only a variety of vimarśa, a partial aspect of it; vimarśa is not exhausted by the definition of vikalpa, for it is consciousness's essential dynamism",
+                  "relation": "SUPPORTS",
+                  "publication": "Ratié, 'Otherness in the Pratyabhijñā Philosophy', Journal of Indian Philosophy 35 (2007)",
+                  "page": "p. 342", "passage": "p. 342 main text ('vimarśa is not exhausted by the definition of vikalpa')"}
+             ],
+             "promotes_to": "SCHOLARLY_CORROBORATED_PRELIMINARY", "level": "DOSSIER_CORROBORATED",
+         }},
     ]
 
     # ── inference nodes (the reply's moves) ────────────────────────────────────

@@ -135,8 +135,8 @@ def build_gold_v0() -> dict:
                    "span_id": "chunkV2-O-saptamo-vimarsa:L44:T168"},
         "G-CONC": {"commitment": "RECONSTRUCTED", "derived_from": "INTERPRETIVE_RECONSTRUCTION",
                    "span_id": "chunkV2-O-saptamo-vimarsa:L44:T168"},
-        "G-IC1": {"commitment": "INTERPRETIVE_EXTENSION", "derived_from": "C1_INTERPRETIVE",
-                  "span_id": "chunkV2-O-saptamo-vimarsa:L30:T108"},
+         "G-IC1": {"commitment": "EDITORIAL_RATIONAL_RECONSTRUCTION", "derived_from": "C1_INTERPRETIVE",
+                   "span_id": "chunkV2-O-saptamo-vimarsa:L30:T108"},
     }
     node_dicts = []
     for n in nodes:
