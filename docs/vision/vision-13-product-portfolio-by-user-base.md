@@ -4,6 +4,9 @@
 Reads the whole vision (Vision 01–12 + the endgames + the lens folders) and organizes it as **who buys/uses
 what**, completing Vision 12 (Multi-Surface Platform). For each surface: the products, the vision docs they
 come from, and the concrete feature. This is the product catalog — the "what do we actually build for whom".*
+**This is the CURRENT PRODUCT DOCTRINE for Pāṭala.** The most important distinction: **substrate readiness
+(the 63/63 floor) vs semantic capability readiness (what is actually measured)**. Never overstate what the
+floor proves.
 
 ---
 
@@ -302,6 +305,98 @@ where E = the degree to which the outside world accepts Pāṭala as the standar
 If a lab says "our Sanskrit model improved 47 → 63 on Pāṭala," if a translator says "this received Pāṭala
 Verified," if a project says "machine translations must pass Pāṭala's attribution + source-fidelity checks" —
 Pāṭala owns part of the **measurement layer**, far harder to displace than a corpus.
+
+---
+
+## THE THREE KINDS OF CHECKS (keep them separated — critical for Translation Audit)
+
+Inside Translation Audit there are three distinct check classes. Never conflate them:
+
+**1. Deterministic checks — available earliest (strong statements allowed, mechanically verifiable):**
+```
+source coverage · span resolution · missing material · extra-material candidates · token/segment alignment
+term consistency · citation resolution · provenance completeness
+```
+
+**2. Model-proposed scholarly checks — MUST remain MACHINE_PROPOSED until reviewed:**
+```
+possible scope shift · possible mistranslation · possible wrong attachment
+possible pūrvapakṣa attribution error · possible term-sense mismatch · possible rival parse
+```
+
+**3. Calibrated judgments — possible only once PĀṬALA-IPVV has enough reviewed gold:**
+```
+"On held-out expert-reviewed cases, this detector identifies polarity errors at X precision / Y recall."
+```
+That is when Translation Audit becomes substantially different from "an LLM commenting on your translation."
+
+**Roadmap (exactly right):** Audit v0 = deterministic · Audit v1 = proposed interpretation · Audit v2 =
+benchmark-calibrated. The benchmark answers the product's uncomfortable question — *"why should I trust
+Pāṭala's criticism?"* — not with "because our model is good" but with **"because this specific class of
+check has been evaluated blind against independently reviewed Sanskrit-philosophy cases, and here is the
+evidence."** That changes the product from AI advice to **measured scholarly tooling**.
+
+---
+
+## THE BENCHMARK AS THE EVALUATION SUBSTRATE FOR THE WHOLE ENGINE (not just translation)
+
+Design PĀṬALA-IPVV so it becomes the evaluation substrate for the whole philosophy engine, not "translation
+gold." It mirrors the evidence graph (Sanskrit → translation → interpretation → argument) and measures where
+a model stops being reliable:
+```
+PĀṬALA-IPVV
+├── T1 SOURCE        segmentation · morphology · syntax · alignment
+├── T2 TRANSLATION   omission · unsupported addition · polarity · modality · agency · terminology
+├── T3 INTERPRETATION speaker attribution · scope · rival reading · conceptual distinction · abstention
+└── T4 ARGUMENT      proposition extraction · commitment · inference recovery · support/attack
+                     · semantic alignment · crux
+```
+**One increasingly deep benchmark family** — no separate unrelated benchmarks for the philosophy engine later.
+
+---
+
+## THE REDUCED SCHOLAR CATALOG (one surface per job, modes/engines underneath)
+
+Resist turning every useful interaction into a separate product. The catalog collapses to four surfaces:
+```
+PĀṬALA AUDIT        translation · comparison · terminology      (comparison + term = surfaces built from
+                                                               Audit primitives, not separate cores)
+PĀṬALA REVIEW       argument · paper · thesis                  (the compiler is the engine, not a product)
+PĀṬALA WORKBENCH    research creation                          (the moat, not the wedge)
+PĀṬALA BENCHMARKS   evaluation / certification                 (the strategic asset)
+```
+Everything else (proof certificate, thesis stress test, impact analysis) is a mode, artifact, or underlying
+engine. **Translation Comparison** = two+ TranslationAudit objects + semantic diff + interpretive-consequence
+analysis (a surface). **Term Audit** = all aligned occurrences + sense evidence + translation choices +
+consistency analysis (a surface).
+
+---
+
+## THE TRUE FLYWHEEL (the most valuable loop in the project)
+
+Not "more texts → more users → more texts." The real flywheel:
+```
+hard scholarly case → machine attempts → expert adjudication → structured correction
+→ benchmark fixture → evaluation → better system → harder scholarly cases
+```
+This creates something increasingly scarce: **a growing record of where intelligent systems fail on
+historically situated reasoning, together with expert judgments explaining why** — far more valuable than a
+corpus of translations alone.
+
+---
+
+## THE FINAL BUILD ORDER (with the coupled-program nuance)
+
+```
+1. Factory
+2. PĀṬALA benchmark      ┐
+3. Translation Audit     ┘  ← develop #2 and #3 as ONE COUPLED PROGRAM
+4. Comparison + Term Audit
+5. Pāṭala Review
+6. Workbench
+```
+The benchmark without the product risks becoming an academic dataset; the product without the benchmark
+risks becoming generic AI criticism. **Together they are the wedge and the moat.**
 
 ---
 
