@@ -205,6 +205,24 @@ RECONSTRUCTED_NECESSARY — a reviewer should judge whether the reductio is *def
 passage literally states it. This is exactly the case where a scholar may accept the Sanskrit grounding
 but reject the reconstruction — the two must not collapse into one verdict.
 
+## Evidence vectors (honest current state — not binary gold labels)
+
+Each argument carries an evidence vector, not a forced ACCEPT/REJECT. `state` reflects the
+evidence-hierarchy ladder (CLAIMS.md). Everything here is `MACHINE_PROPOSED → CANDIDATE`; the vector
+only makes the (low) status explicit.
+
+| Arg | state | primary grounding | morphology | scholar corrob | model agree | rival | attribution | scope |
+|---|---|---|---|---|---|---|---|---|
+| 001 | SCHOLARLY_UNREVIEWED · CANDIDATE | strong (all → L0) | supported | not collected | not run | present (orderless≠ordered) | high (siddhānta) | local (V2-O) |
+| 002 | SCHOLARLY_UNREVIEWED · CANDIDATE | strong (kārikā 1) | supported | not collected | not run | present (no universal subject) | high (siddhānta/pūrvapakṣa) | local (V2-L) |
+| 003 | SCHOLARLY_UNREVIEWED · CANDIDATE | strong on āśraya/akrama; regress RECONSTRUCTED_NECESSARY | supported | not collected | not run | present (regress vs literal text) | disputed (regress is reconstruction) | local (V2-O) |
+| 004 | SCHOLARLY_UNREVIEWED · CANDIDATE | strong (prakāśa/vimarśa) | supported | not collected | not run | present (vimarśa-as-essence vs inferred) | high (siddhānta) | local (V2-H) |
+| 005 | SCHOLARLY_UNREVIEWED · CANDIDATE | strong (bheda/action) | supported | not collected | not run | present (local vs systematic) | high (siddhānta) | local→systematic (open) |
+
+**To promote these:** (1) published-scholar corroboration (exact passages, Ratié/Torella/etc.);
+(2) blind multi-model reconstruction agreement (Sanskrit+L0 only); (3) contrast-set semantic
+discrimination; and only then (4) independent human review — the real gate.
+
 ---
 
 *Reviewer's output should name, for each of the four questions, the decision + the primary evidence (or
