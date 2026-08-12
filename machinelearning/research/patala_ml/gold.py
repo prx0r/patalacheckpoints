@@ -121,12 +121,60 @@ def build_gold_v0() -> dict:
         "philological": {"proof_id": V2O_PROOF_ID, "status": "P0"},
     }
 
+    # ── IR enrichment (ARGUMENT-IR-VISION.md): derivational + commitment per node ──
+    # Per-proposition commitment / derivation (Sanskrit span in V2-O): the derivational provenance
+    # that makes the gold representable in the 14-object IR without loss.
+    node_ir = {
+        "G-TC1": {"commitment": "ASSERTS", "derived_from": "SANSKRIT_EXPLICIT",
+                  "span_id": "chunkV2-O-saptamo-vimarsa:L32:T115"},
+        "G-TC2": {"commitment": "ASSERTS", "derived_from": "SANSKRIT_SUPPORTED",
+                  "span_id": "chunkV2-O-saptamo-vimarsa:L44:T168"},
+        "G-BRIDGE": {"commitment": "RECONSTRUCTED", "derived_from": "INTERPRETIVE_RECONSTRUCTION",
+                     "span_id": "chunkV2-O-saptamo-vimarsa:L26:T52"},
+        "G-DIST": {"commitment": "ASSERTS", "derived_from": "SANSKRIT_SUPPORTED",
+                   "span_id": "chunkV2-O-saptamo-vimarsa:L44:T168"},
+        "G-CONC": {"commitment": "RECONSTRUCTED", "derived_from": "INTERPRETIVE_RECONSTRUCTION",
+                   "span_id": "chunkV2-O-saptamo-vimarsa:L44:T168"},
+        "G-IC1": {"commitment": "INTERPRETIVE_EXTENSION", "derived_from": "C1_INTERPRETIVE",
+                  "span_id": "chunkV2-O-saptamo-vimarsa:L30:T108"},
+    }
+    node_dicts = []
+    for n in nodes:
+        d = n.to_dict()
+        ir = node_ir.get(n.id, {})
+        d["commitment"] = ir.get("commitment", "RECONSTRUCTED")
+        d["derived_from"] = ir.get("derived_from", "RECONSTRUCTED")
+        d["grounding"] = {"passage_id": V2O_PASSAGE_ID, "c1_id": V2O_C1_ID,
+                          "l200_assertion_id": V2O_L200_ID,
+                          "span_id": ir.get("span_id", "")}
+        node_dicts.append(d)
+
     return {
         "gold_id": "ARG-GOLD-001",
         "work_id": "ipvv",
         "passage": V2O_PASSAGE_ID,
         "title": "The Order-less Support of the Powers (V2-O)",
-        "nodes": [n.to_dict() for n in nodes],
+        "research_question": "Is the support (āśraya) of ordered presentation itself ordered, or order-less (akrama)?",
+        "debate_frame": {
+            "question": "Is the support of ordered presentation itself ordered, or order-less (akrama)?",
+            "object_of_dispute": "whether the support/background that bears ordered presentation is itself ordered",
+            "concept_refs": ["pratibhā", "krama", "akrama", "āśraya"],
+            "positions": [
+                {"position_id": "P-ordered", "holder": "opponent",
+                 "commitment_ids": ["G-BRIDGE-as-ordered"], "argument_ids": []},
+                {"position_id": "P-akrama", "holder": "siddhānta",
+                 "commitment_ids": ["G-TC2", "G-CONC"], "argument_ids": ["G-INF1", "G-INF2"]},
+            ],
+            "semantic_alignments": [
+                {"left_term": "pratibhā", "right_term": "the support (āśraya) of the powers",
+                 "relation": "SAME_SENSE", "level": "CONCEPTUAL",
+                 "context": [V2O_C1_ID], "status": "MACHINE_PROPOSED"},
+                {"left_term": "akrama", "right_term": "order-less / not constituted by order",
+                 "relation": "SAME_SENSE", "level": "LEXICAL",
+                 "context": [V2O_C1_ID], "status": "MACHINE_PROPOSED"},
+            ],
+        },
+        "nodes": node_dicts,
         "inferences": [i.to_dict() for i in inferences],
         "boundary": boundary,
         "status": "MACHINE_PROPOSED",   # the hand-construction is a gold candidate, not yet editor-accepted

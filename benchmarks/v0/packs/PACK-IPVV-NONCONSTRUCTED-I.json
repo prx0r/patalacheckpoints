@@ -1,0 +1,83 @@
+{
+  "pack_id": "PACK-IPVV-NONCONSTRUCTED-I",
+  "pack_kind": "ResearchPack",
+  "title": "The Non-constructed I (ahaṃ-pratyavamarśa is not a vikalpa)",
+  "research_question": "If reflexive awareness is joined to linguistic form (vāgvaputvam), is it therefore a conceptual construction (vikalpa)?",
+  "thesis": {
+    "text": "The 'I'-reflexive-awareness is not a construction: it is the self-presence that every construction presupposes.",
+    "status": "MACHINE_PROPOSED"
+  },
+
+  "scope": {
+    "works": ["IPVV"],
+    "passages": ["pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md"]
+  },
+
+  "theme_refs": [
+    "cand_construction",
+    "cand_vikalpa",
+    "cand_reflexive"
+  ],
+
+  "argument_refs": [
+    "ARG-GOLD-002"
+  ],
+
+  "proposition_refs": [
+    "G2-OBJ", "G2-TC1", "G2-TC2", "G2-CONC", "G2-IC1"
+  ],
+
+  "evidence_refs": [
+    {"kind": "PRIMARY_SANSKRIT", "ref": "Ipk_1,6.1", "span": "chunkV2-L-sastho-vimarsa-smrti-apohana:L28:T87"},
+    {"kind": "PRIMARY_SANSKRIT", "ref": "Ipk_1,6.1", "span": "chunkV2-L-sastho-vimarsa-smrti-apohana:L29:T93"},
+    {"kind": "SCHOLAR", "ref": "Ratié, How free is imagination (p.356)", "relation": "QUALIFIES", "target": "G2-TC1"},
+    {"kind": "SCHOLAR", "ref": "GRETIL Vṛtti ad 1.6.1 (asau vikalpo na bhavati)", "relation": "SUPPORTS", "target": "G2-TC2"},
+    {"kind": "ESSAY", "ref": "research-library/recognition/ESSAY-NONCONSTRUCTED-I.md"}
+  ],
+
+  "rival_readings": [
+    {"reading": "The 'I' is a higher-order self-model (a construction)", "held_by": "contemporary self-model theory", "relation": "CONTRADICTS", "target": "G2-TC2"},
+    {"reading": "Reflexive identity of a conditioned structure (not an intrinsic Self)", "held_by": "Ñāṇavīra", "relation": "QUALIFIES", "target": "G2-IC1"},
+    {"reading": "The one-universal-Self", "held_by": "siddhānta (V2C)", "relation": "EXTENDS_BEYOND", "target": "G2-CONC", "note": "not closed by this argument"}
+  ],
+
+  "cruxes": [
+    {"crux_id": "CRUX-G2-UNIVERSAL", "question": "Does proving the 'I'-grasp is intrinsic-per-act entail one numerically universal Self?", "status": "OPEN"}
+  ],
+
+  "open_questions": [
+    "Does the self-model theory's account of content exhaust the self-grasp, or does the self-grasp outrun representation?",
+    "Is the warrant 'articulation ≠ construction' (G2-INF1) a defensible reconstruction or an imported premise?"
+  ],
+
+  "dependency_graph": [
+    {"child": "PACK-IPVV-NONCONSTRUCTED-I", "edge": "depends_on", "parent": "ARG-GOLD-002"},
+    {"child": "ARG-GOLD-002", "edge": "depends_on", "parent": "G2-CONC"},
+    {"child": "ARG-GOLD-002", "edge": "depends_on", "parent": "G2-TC2"},
+    {"child": "G2-CONC", "edge": "grounded_in", "parent": "Ipk_1,6.1 (span L28:T88)"},
+    {"child": "G2-TC2", "edge": "grounded_in", "parent": "Ipk_1,6.1 (spans L28:T87, L29:T93)"},
+    {"child": "G2-TC1", "edge": "grounded_in", "parent": "Ipk_1,6.1 (span L29:T93)"},
+    {"child": "G2-TC1", "edge": "qualified_by", "parent": "Ratié, How free is imagination (p.356)"}
+  ],
+
+  "review_summary": {
+    "composition": "COMPLETE",
+    "source_grounding": "COMPLETE",
+    "argument_review": "CANDIDATE",
+    "themes": "MACHINE_PROPOSED",
+    "scholarly_review": "NONE",
+    "engineering_validated": true,
+    "scholarly_validated": false
+  },
+
+  "renderings": {
+    "essay": "research-library/recognition/ESSAY-NONCONSTRUCTED-I.md",
+    "argument_map": "benchmarks/v0/structure/PAT-STRUCT-002.json"
+  },
+
+  "provenance": {
+    "created_by": "agent1",
+    "created_at": "2026-08-12",
+    "note": "Composition/projection layer only. Does NOT invent truth, promote claims, or replace the underlying objects. All refs point to existing objects."
+  }
+}

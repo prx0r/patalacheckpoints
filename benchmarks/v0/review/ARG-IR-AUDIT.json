@@ -1,0 +1,47 @@
+{
+  "ARG-GOLD-001": {
+    "has_debate_frame": true,
+    "has_research_question": true,
+    "n_nodes": 6,
+    "n_inferences": 2,
+    "node_with_commitment": 6,
+    "node_with_derived_from": 6,
+    "missing_IR_objects": []
+  },
+  "ARG-GOLD-002": {
+    "has_debate_frame": true,
+    "has_research_question": false,
+    "n_nodes": 5,
+    "n_inferences": 1,
+    "node_with_commitment": 5,
+    "node_with_derived_from": 5,
+    "missing_IR_objects": []
+  },
+  "ARG-GOLD-003": {
+    "has_debate_frame": true,
+    "has_research_question": true,
+    "n_nodes": 8,
+    "n_inferences": 4,
+    "node_with_commitment": 8,
+    "node_with_derived_from": 8,
+    "missing_IR_objects": []
+  },
+  "ARG-GOLD-004": {
+    "has_debate_frame": true,
+    "has_research_question": true,
+    "n_nodes": 6,
+    "n_inferences": 2,
+    "node_with_commitment": 6,
+    "node_with_derived_from": 6,
+    "missing_IR_objects": []
+  },
+  "ARG-GOLD-005": {
+    "has_debate_frame": true,
+    "has_research_question": true,
+    "n_nodes": 5,
+    "n_inferences": 1,
+    "node_with_commitment": 5,
+    "node_with_derived_from": 5,
+    "missing_IR_objects": []
+  }
+}
