@@ -1,0 +1,83 @@
+{
+  "synthesis_id": "SYN-IPVV-REFLEXION-CORE-001",
+  "object_kind": "ArgumentSynthesis",
+  "research_question": "Can the determination (adhyavas\u0101ya) establish an external object, or is the self-experience self-luminous and self-contained?",
+  "thesis": {
+    "proposition": "Reflexivity (vimar\u015ba) belongs intrinsically to manifestation: the self-grasp is not a construction, and manifestation without reflexive awareness is inert.",
+    "status": "MACHINE_RECONSTRUCTED"
+  },
+  "theme_refs": [
+    "cand_reflexive",
+    "cand_construction",
+    "cand_aham"
+  ],
+  "inputs": [
+    {
+      "type": "ARGUMENT",
+      "ref": "ARG-GOLD-002",
+      "proposition_refs": [
+        "G2-TC2",
+        "G2-CONC"
+      ]
+    },
+    {
+      "type": "ARGUMENT",
+      "ref": "ARG-GOLD-004",
+      "proposition_refs": [
+        "G4-CRYSTAL",
+        "G4-CONC"
+      ]
+    }
+  ],
+  "inferences": [
+    {
+      "inference_id": "SYN-INF-001",
+      "premises": [
+        "gold:ARG-GOLD-002:G2-CONC",
+        "gold:ARG-GOLD-004:G4-CRYSTAL"
+      ],
+      "conclusion": "SYN-CONC-001",
+      "warrant": "if reflexive unity (the 'I'-grasp) is not conceptual construction [G2-CONC], and manifestation requires reflexive self-awareness to be non-inert [G4-CRYSTAL], then reflexivity belongs intrinsically to manifestation",
+      "status": "MACHINE_RECONSTRUCTED"
+    }
+  ],
+  "dependency_audits": [
+    "AUDIT-ARG-GOLD-002:G2-CONC",
+    "AUDIT-ARG-GOLD-002:G2-TC2",
+    "AUDIT-ARG-GOLD-004:G4-CRYSTAL",
+    "AUDIT-ARG-GOLD-004:G4-CONC"
+  ],
+  "synthesis_audit": {
+    "input_ceiling": "MACHINE_PROPOSED",
+    "internal_consistency": "PASS",
+    "unsupported_bridges": [
+      "SYN-INF-001"
+    ],
+    "unresolved_dependencies": [
+      "AUDIT-ARG-GOLD-002:G2-CONC",
+      "AUDIT-ARG-GOLD-002:G2-TC2",
+      "AUDIT-ARG-GOLD-004:G4-CRYSTAL",
+      "AUDIT-ARG-GOLD-004:G4-CONC"
+    ],
+    "epistemic_ceiling": "UNRESOLVED",
+    "audit_merge_note": "audits are NOT merged; accepted + accepted != strongly supported"
+  },
+  "cruxes": [
+    {
+      "crux_id": "CRUX-REFLEXION-INERT",
+      "affects": [
+        "SYN-INF-001",
+        "SYN-CONC-001"
+      ],
+      "question": "Can an inert thing establish, or does establishment require the self-luminous non-inert?"
+    },
+    {
+      "crux_id": "CRUX-SYNTHESIS-UNIVERSAL",
+      "affects": [
+        "SYN-CONC-001"
+      ],
+      "question": "Does per-act intrinsic reflexivity commit to the universal-Self (V2C), or only to per-act self-luminosity?"
+    }
+  ],
+  "status": "MACHINE_PROPOSED"
+}

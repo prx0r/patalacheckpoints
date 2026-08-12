@@ -1,61 +1,45 @@
 {
   "eo_id": "eo:ipvv-reflexion-core",
   "schema_version": 2,
-  "title": "The determination cannot reach outside; self-experience is self-luminous",
+  "title": "Reflexivity (vimar\u015ba) belongs intrinsically to manifestation: the self-grasp is not a construction, and manifestation without reflexive awareness is inert.",
   "status": "draft",
+  "projection_of": "SYN-IPVV-REFLEXION-CORE-001",
   "schema_source": {
     "repo": "patala",
-    "commit": "docs/ontology/EO-v2.md",
     "path": "docs/ontology/EO-v2.md"
   },
   "question": {
-    "question_id": "q:reflexion-core-determinates-external",
-    "tension_point": "Can the determination (adhyavas\u0101ya) establish an external object, or is self-experience self-luminous and self-contained?",
-    "why_it_matters": "The reflexion-core cuts the Buddhist fallback to the determination as establishing externality.",
+    "question_id": "q:reflexion-core",
+    "tension_point": "Can the determination (adhyavas\u0101ya) establish an external object, or is the self-experience self-luminous and self-contained?",
+    "why_it_matters": "the reflexion-core synthesis",
     "resolution_level": "local_argument"
   },
   "syllogism": {
     "pratijna": {
-      "proposition": "Can the determination (adhyavas\u0101ya) establish an external object, or is the self-experience self-luminous and self-contained?",
-      "what_it_claims": "The determination cannot establish anything outside; self-experience (vimar\u015ba) is self-luminous."
+      "proposition": "Reflexivity (vimar\u015ba) belongs intrinsically to manifestation: the self-grasp is not a construction, and manifestation without reflexive awareness is inert.",
+      "what_it_claims": "synthesis thesis"
     },
     "hetu": {
       "evidence": [
         {
           "claim": "The awareness expressed as 'I' (aha\u1e43-pratyavamar\u015ba) is not treated as one more relation constructed between independently given elements.",
           "source_id": "gold:ARG-GOLD-002:G2-TC2",
-          "proposition_id": "G2-TC2",
-          "pramana": "anumana",
-          "structural_gate_outcome": "accepted",
-          "gate_failures": [],
-          "epistemic_status": "MACHINE_PROPOSED"
+          "pramana": "anumana"
         },
         {
           "claim": "Linguistic articulation does not show that the underlying self-awareness is itself produced by conceptual determination.",
           "source_id": "gold:ARG-GOLD-002:G2-CONC",
-          "proposition_id": "G2-CONC",
-          "pramana": "anumana",
-          "structural_gate_outcome": "accepted",
-          "gate_failures": [],
-          "epistemic_status": "MACHINE_PROPOSED"
+          "pramana": "anumana"
         },
         {
           "claim": "A light that merely showed the world without knowing that it showed it would be no different from crystal \u2014 it would reflect, but be inert.",
           "source_id": "gold:ARG-GOLD-004:G4-CRYSTAL",
-          "proposition_id": "G4-CRYSTAL",
-          "pramana": "anumana",
-          "structural_gate_outcome": "accepted",
-          "gate_failures": [],
-          "epistemic_status": "MACHINE_PROPOSED"
+          "pramana": "anumana"
         },
         {
           "claim": "What makes the light conscious (rather than a thing) is that it is aware of itself in the very act of manifesting.",
           "source_id": "gold:ARG-GOLD-004:G4-CONC",
-          "proposition_id": "G4-CONC",
-          "pramana": "anumana",
-          "structural_gate_outcome": "accepted",
-          "gate_failures": [],
-          "epistemic_status": "MACHINE_PROPOSED"
+          "pramana": "anumana"
         }
       ],
       "source_ids": [
@@ -66,74 +50,35 @@
       ]
     },
     "udaharana": {
-      "examples": [
-        {
-          "scenario": "The child who cries 'the trees rush against the current' is told 'it is only seen so'.",
-          "what_it_shows": "Externality is drawn by impression, not established by determination."
-        }
-      ]
+      "examples": []
     },
     "upanaya": {
-      "application": "The reflexion-core's determination-failure converges with the golds.",
+      "application": "synthesis of ARG-002 + ARG-004",
       "cruxes": [
-        "CRUX-REFLEXION-INERT"
+        "CRUX-REFLEXION-INERT",
+        "CRUX-SYNTHESIS-UNIVERSAL"
       ]
     },
     "nigamana": {
-      "best_current_answer": "The determination cannot establish externality; self-experience is self-luminous (locally).",
+      "best_current_answer": "Reflexivity (vimar\u015ba) belongs intrinsically to manifestation: the self-grasp is not a construction, and manifestation without reflexive awareness is inert.",
       "status": "structurally_suggestive",
-      "scope": "Local self-luminosity: plausible. Universal-Self: underdetermined."
+      "scope": "local"
     }
   },
-  "inferences": [
-    {
-      "from": [
-        "gold:ARG-GOLD-002:G2-TC2",
-        "gold:ARG-GOLD-004:G4-CRYSTAL"
-      ],
-      "to": "gold:ARG-GOLD-002:G2-CONC",
-      "warrant": "the I-grasp is not a construction; manifestation without vimar\u015ba is inert \u2192 self-experience is self-luminous and self-contained",
-      "status": "RECONSTRUCTED"
-    }
-  ],
-  "candidates": [
-    {
-      "candidate_id": "cand:siddhanta-self-luminous",
-      "name": "Self-luminous self-experience",
-      "tradition": "pratyabhijna",
-      "proponent": "Abhinavagupta",
-      "position": "The determination cannot establish externality; self-experience is self-luminous.",
-      "source_ids": [
-        "gold:ARG-GOLD-002:G2-CONC",
-        "gold:ARG-GOLD-004:G4-CONC"
-      ],
-      "status": "live"
-    },
-    {
-      "candidate_id": "cand:buddhist-adhyavasaya",
-      "name": "The determination establishes externality",
-      "tradition": "buddhist_pramana",
-      "proponent": "the Buddhist (fallback, per the reflexion-core passage)",
-      "position": "The determination (adhyavas\u0101ya) establishes an external object.",
-      "source_ids": [],
-      "status": "UNSOURCED_RECONSTRUCTION"
-    }
-  ],
   "state_of_play": {
-    "summary": "The reflexion-core argues the determination cannot reach outside; self-experience is self-luminous.",
-    "what_survives": "The determination-failure argument and self-luminosity (structural gate accepted).",
-    "what_is_weakened": "The universal-Self (V2C) is not entailed by per-act self-luminosity.",
-    "what_would_change_our_mind": "Evidence that an inert thing can establish, or that the 'external' has independent standing.",
+    "summary": "Reflexivity (vimar\u015ba) belongs intrinsically to manifestation: the self-grasp is not a construction, and manifestation without reflexive awareness is inert.",
+    "what_survives": "synthesis thesis (reconstructed)",
+    "what_is_weakened": "unsupported bridge",
+    "what_would_change_our_mind": "independent review",
     "open_cruxes": [
       "CRUX-REFLEXION-INERT",
-      "Does the reflexion-core's 'one, self-luminous, all' commit to the universal-Self?"
+      "CRUX-SYNTHESIS-UNIVERSAL"
     ]
   },
   "render_ceiling": "UNRESOLVED",
-  "render_rule": "When render_ceiling == UNRESOLVED, the renderer must QUALIFY / represent alternatives / ABSTAIN \u2014 never render as settled fact.",
   "provenance": {
     "parent_ros": [],
-    "parent_dossier": "/root/projects/patala/benchmarks/v0/packs/PACK-IPVV-REFLEXION-CORE.json",
+    "parent_dossier": "SYN-IPVV-REFLEXION-CORE-001",
     "created_by": "agent1",
     "last_updated": "2026-08-12"
   }
