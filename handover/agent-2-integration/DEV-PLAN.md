@@ -42,9 +42,12 @@ those first.*
 The autonomous factory is the headline; validation is the substrate. In order:
 
 ```
-1. GLOSS/MODEL TRANSPORT   wire a reliable model call for literal_gloss (hermes is unreliable; the
-                           deterministic core works WITHOUT it, but L0 isn't complete without the gloss)
-2. SANSKRIT-ONLY REPLAY    hide IPVV gold English, run RAW-L0, compare vs gold → measures segmentation/
+1. ✅ GLOSS/MODEL TRANSPORT   DONE (2026-08-12) — Hermes (-z) is functional; the gloss is generated per
+                           token through pipeline/model.py, anchored to the deterministic RAW-L0
+                           segmentation, and populated into literal_gloss. Verified on a real
+                           Kramasadbhāva verse (P0 PASS, 0 unknown, 4/4 non-empty glosses). Also fixed
+                           the gloss-map shape inconsistency (flat vs nested both accepted).
+2. ▶ SANSKRIT-ONLY REPLAY   hide IPVV gold English, run RAW-L0, compare vs gold → measures segmentation/
                            lemma/morphology/gloss/abstention/false-certainty (the Pāṭala-Evals embryo)
 3. INGEST PRIMARY TEXTS    the not-yet-ingested texts from docs/corpus/SANSKRITREE-IMPORT-MANIFEST.md
                            → data/corpus/passages/
@@ -69,10 +72,10 @@ hard failure rate        known
 
 | Build | What | Status |
 |---|---|---|
-| **1. `raw_l0.py`** | raw Sanskrit → canonical L0 JSONL (Vidyut + Heritage + Hermes/A3); no downstream translation | ✅ DONE (deterministic core) |
+| **1. `raw_l0.py`** | raw Sanskrit → canonical L0 JSONL (Vidyut + Heritage + Hermes/A3); no downstream translation | ✅ DONE (deterministic core + gloss transport) |
 | **2. RAW-L0 audit** | extend `verify_l0.py`: P0 lossless + P1 segmentation + P2 morphology + P3 gloss + P4 alignment | 🔶 P0 done; P1–P5 extensions partial |
-| **3. IPVV Sanskrit-only replay** | hide English, regenerate L0, compare vs gold → immutable `BenchmarkRun` | ⬜ **NEXT** (after gloss transport) |
-| **4. human review 50–100 difficult cases** | sandhi / bahuvrīhi-tatpuruṣa / verbal morphology / technical terms; every correction = benchmark data | ⬜ |
+| **3. IPVV Sanskrit-only replay** | hide English, regenerate L0, compare vs gold → immutable `BenchmarkRun` | ▶ **NEXT** (gloss transport now DONE) |
+| **4. human review 50–100 difficult cases** | sandhi / bahuvrīhi-tatpuruṣa / verbal morphology / technical terms; every correction = benchmark data | ⬜ (after 3) |
 | **5. Kramasadbhāva first cross-work run** | `RAW_SANSKRIT → GENERATE_L0 → VERIFIED P0 → MACHINE_PROPOSED → GENERATE_TRANSLATION` | ⬜ (after 3–4) |
 | **6. batch mode** | passages/chunks independently, bounded retries, halt-on-failure (never whole works) | ⬜ LAST |
 
