@@ -24,7 +24,7 @@ the honest state after the anti-theatre cleanup. Governed by `AGENTS-DOCTRINE.md
 | **Argument Gold** | ARG-001..005, `validate_gold`-consistent, **task_level A/B/C + commitment + support_scope** | 🔶 **CANDIDATE** — machine-authored, **NOT independently reviewed** (the current gate) |
 | **Baseline extractor** | run BLIND vs the 5 golds; **lexical-overlap F1 0.36, inference recovery 0.0** | 🔶 baseline (the floor to beat); P-003 NOT_ESTABLISHED |
 | **Vertical object** | one proposition resolves downward (exact refs, typed `GroundingLink`s, honest proof status) | ✅ infrastructure/serialization (v0 frozen); P-014 |
-| **Review packet** | `benchmarks/v0/ARG-GOLD-REVIEW-PACKET.md` — self-contained, reviewer-facing | ✅ the tool to get independent review |
+| **Review packet (v2, primary-Sanskrit)** | `benchmarks/v0/ARG-GOLD-REVIEW-PACKET-v2.md` + machine-checkable `benchmarks/v0/review/ARG-GOLD-REVIEW-PACKET-v2.json` — self-contained, reviewer-facing, grounded directly to primary Sanskrit (L2 never required) | ✅ the tool to get independent review |
 | **The Nyāya gate** (truth-engine, 680 LOC) | `NYAYA_GATE_CANDIDATE_v1`, deterministic | ✅ REAL, **UNWIRED — deferred until gold reviewed + real `Inference` objects exist** |
 | **L0 proofs** (`verify_l0.py`) | P0 harness, **V2/V3 35/35 PASS** (lossless, frozen), + Vidyut P2 witness + Heritage ensemble | ✅ REAL |
 | **`cluster.py`** | real graph topology | 🔶 machine proposals, not accepted themes |
@@ -133,7 +133,7 @@ reviewers (no closed-loop self-confirmation).
 | # | Build | CP | Kind | Why / status |
 |---|---|---|---|---|
 | **0** | **Fix worktrees + reconcile commits** | — | operational | Agent 0 action; hard precondition (Axiom 11). No experimental work, benchmark mutation, gold edit, or canonical model run until done. |
-| **1** | **Independent review of ARG-GOLD-001..005** (target: ≥1 argument, ARG-002 v2) | CP4 | human-reviewed | the CP4 critical path. Success metric `count(INDEPENDENT_REVIEWED) > 0`. Packet: `benchmarks/v0/ARG-GOLD-REVIEW-PACKET.md`. Also instrument the review → first prototype of the Workbench/Review product. |
+| **1** | **Independent review of ARG-GOLD-001..005** (target: ≥1 argument, ARG-002 v2) | CP4 | human-reviewed | the CP4 critical path. Success metric `count(INDEPENDENT_REVIEWED) > 0`. Packet: `benchmarks/v0/ARG-GOLD-REVIEW-PACKET-v2.md` (primary-Sanskrit grounded; gate: `check_review_packet.py`). Also instrument the review → first prototype of the Workbench/Review product. |
 | **2** | **PĀṬALA-FIDELITY synthetic corruption suite** | CP4/CP0 | construction-verifiable | inject deterministic mutations (drop/duplicate/shift span, reorder, unknown-region; flip lemma/case/number/gender/replace surface; shift/remove/wrong/swapped anchor; delete grounding edge, nonexistent ref, stale proof, source-hash change) → assert the verifier fails. Metric `Sensitivity(V,E)`. **`SYNTHETIC_SENSITIVITY ≠ REAL_WORLD_RECALL`.** |
 | **3** | **Deterministic graph baseline (k-core)** | CP3 | construction-verifiable | at least one deterministic canonical baseline (not "replace Louvain forever"). Test: `assert hash(run(graph)) == hash(run(graph))` across processes. |
 | **4** | **Support / wait for human gold review** | CP4 | — | the gate that unlocks everything downstream. |

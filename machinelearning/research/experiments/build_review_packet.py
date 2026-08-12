@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 """build_review_packet.py — render the 5 ARG-GOLD fixtures as a SELF-CONTAINED reviewer packet.
 
+NOTE (2026-08-12): this generator produces the LEGACY v1 packet whose review basis is the L2. The v1
+basis is derivational-circular (the L2 was produced from the argument maps being reviewed) — the defect
+MODEL-1 flagged. The canonical reviewer packet is now the PRIMARY-SANSKRIT grounded v2:
+  benchmarks/v0/ARG-GOLD-REVIEW-PACKET-v2.md + review/ARG-GOLD-REVIEW-PACKET-v2.json,
+validated by experiments/check_review_packet.py. Prefer v2 for any review.
+
 The deliverable is a Markdown document an INDEPENDENT reader can judge WITHOUT knowing Pāṭala or
 editing JSON. For each argument it shows: the SOURCE material, the PROPOSED argument, the FOUR review
 questions, and an ACCEPT/REVISE/REJECT/ABSTAIN output template. Risk areas are called out explicitly.

@@ -108,9 +108,12 @@ at least one INDEPENDENT_REVIEWED argument
 only now does downstream model evaluation become meaningful
 ```
 
-The review packet (`benchmarks/v0/ARG-GOLD-REVIEW-PACKET.md`) already exists. So the job is to **stop
-engineering around the dependency and optimize the review transaction.** The deliverable is not another
-review-architecture document. It is:
+The review packet is rebuilt on a **primary-Sanskrit** basis (`benchmarks/v0/ARG-GOLD-REVIEW-PACKET-v2.md`
++ machine packet `benchmarks/v0/review/ARG-GOLD-REVIEW-PACKET-v2.json`): every proposition now grounds
+directly to resolvable primary Sanskrit L0 spans, and L2 is never required for a decision — removing the
+derivational circularity MODEL-1 flagged. Acceptance gate: `experiments/check_review_packet.py`. So the
+job is to **stop engineering around the dependency and optimize the review transaction.** The deliverable
+is not another review-architecture document. It is:
 
 ```
 1 reviewer

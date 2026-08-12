@@ -24,7 +24,8 @@ evaluator pilot**, while the doctrine forced the ontology corrections gold is su
 | `patala_ml/gold005.py` (ARG-005) | `INTERPRETIVE_SCOPE` (local vs systematic) | CANDIDATE |
 | `benchmarks/v0/structure/PAT-STRUCT-001..005.json` | emitted fixtures | validate_gold-consistent |
 | `benchmarks/v0/review/REVIEW-2026-08-12-MODEL-1.json` | model review (REVISE ×4, REJECT ×1) | MODEL_INDEPENDENT_REVIEWED |
-| `benchmarks/v0/ARG-GOLD-REVIEW-PACKET.md` | self-contained reviewer-facing packet | ready for a human |
+| `benchmarks/v0/ARG-GOLD-REVIEW-PACKET-v2.md` + `review/ARG-GOLD-REVIEW-PACKET-v2.json` | **rebuilt packet (primary-Sanskrit grounded)** — every proposition resolves to primary L0 spans; L2 never required (removes the circularity MODEL-1 flagged). Gate: `experiments/check_review_packet.py`. | ready for a human |
+| `benchmarks/v0/ARG-GOLD-REVIEW-PACKET.md` | v1 packet (L2-based basis) — superseded by v2 | legacy |
 
 **Ontology forced by gold (do not re-litigate):** inference-vs-dialectical, grounding-vs-inference,
 `support_scope`, reconstruction commitment, warrant-on-InferenceRule → captured in

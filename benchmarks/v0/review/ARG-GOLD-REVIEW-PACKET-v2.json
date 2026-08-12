@@ -1,0 +1,714 @@
+{
+  "packet_id": "ARG-GOLD-REVIEW-PACKET-v2",
+  "date": "2026-08-12",
+  "basis_note": "REBUILT: each proposed proposition now grounds DIRECTLY to primary Sanskrit (T1) + L0 analysis floor. L2 appears only as labeled secondary interpretive context and is NEVER required for a review decision. This removes the derivational circularity MODEL-1 flagged (L2 was derived from the argument maps being reviewed).",
+  "arguments": [
+    {
+      "gold_id": "ARG-GOLD-002",
+      "title": "The Non-constructed I (objection \u2192 reply, V2-L)",
+      "passage_id": "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md",
+      "chunk": "chunkV2-L-sastho-vimarsa-smrti-apohana",
+      "propositions": [
+        {
+          "proposition_id": "G2-OBJ",
+          "text": "If reflexive awareness is joined to linguistic form, why is it not simply a conceptual construction (vikalpa)?",
+          "kind": "OBJECTION",
+          "explicitness": "TEXTUALLY_EXPLICIT",
+          "speaker": "p\u016brvapak\u1e63a (objector)",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md",
+              "span_id": "chunkV2-L-sastho-vimarsa-smrti-apohana:L31:T112",
+              "lemma": "vikalpatv\u0101\u015ba\u1e45k\u0101",
+              "role": "the vikalpa-construction OBJECTION is raised (\u0101\u015ba\u1e45k\u0101)"
+            }
+          ]
+        },
+        {
+          "proposition_id": "G2-TC1",
+          "text": "Conceptual construction (vikalpa) operates by combining, differentiating, or determining contents.",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_SUPPORTED",
+          "speaker": "siddh\u0101nta (Abhinavagupta)",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md",
+              "span_id": "chunkV2-L-sastho-vimarsa-smrti-apohana:L29:T93",
+              "lemma": "vikalpa\u1e25",
+              "role": "vikalpa as the two-invoking determination (dvay\u0101k\u1e63ep\u012b)"
+            }
+          ]
+        },
+        {
+          "proposition_id": "G2-TC2",
+          "text": "The awareness expressed as 'I' (aha\u1e43-pratyavamar\u015ba) is not treated as one more relation constructed between independently given elements.",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_EXPLICIT",
+          "speaker": "siddh\u0101nta",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md",
+              "span_id": "chunkV2-L-sastho-vimarsa-smrti-apohana:L28:T87",
+              "lemma": "aha\u1e43",
+              "role": "'I'"
+            },
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md",
+              "span_id": "chunkV2-L-sastho-vimarsa-smrti-apohana:L28:T88",
+              "lemma": "pratyavamar\u015bo",
+              "role": "reflexive awareness"
+            },
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md",
+              "span_id": "chunkV2-L-sastho-vimarsa-smrti-apohana:L29:T93",
+              "lemma": "vikalpa\u1e25",
+              "role": "negated: n\u0101sau vikalpa\u1e25 = 'that is not vikalpa'"
+            }
+          ]
+        },
+        {
+          "proposition_id": "G2-CONC",
+          "text": "Linguistic articulation does not show that the underlying self-awareness is itself produced by conceptual determination.",
+          "kind": "CONCLUSION",
+          "explicitness": "RECONSTRUCTED_NECESSARY",
+          "speaker": "siddh\u0101nta",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md",
+              "span_id": "chunkV2-L-sastho-vimarsa-smrti-apohana:L28:T88",
+              "lemma": "pratyavamar\u015bo",
+              "role": "reflexive awareness that is v\u0101gvapu\u1e25 (word-body) yet n\u0101sau vikalpa\u1e25"
+            },
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md",
+              "span_id": "chunkV2-L-sastho-vimarsa-smrti-apohana:L29:T93",
+              "lemma": "vikalpa\u1e25",
+              "role": "explicitly negated"
+            }
+          ]
+        },
+        {
+          "proposition_id": "G2-IC1",
+          "text": "Abhinavagupta preserves a distinction between reflexive self-awareness and the conceptual operations that articulate it.",
+          "kind": "INTERPRETIVE_CLAIM",
+          "explicitness": "INTERPRETIVE_EXTENSION",
+          "speaker": "reviewer's reconstruction",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md",
+              "span_id": "chunkV2-L-sastho-vimarsa-smrti-apohana:L28:T87",
+              "lemma": "aha\u1e43"
+            },
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md",
+              "span_id": "chunkV2-L-sastho-vimarsa-smrti-apohana:L29:T93",
+              "lemma": "vikalpa\u1e25"
+            }
+          ]
+        }
+      ],
+      "inferences": [
+        {
+          "inference_id": "G2-INF1",
+          "scheme": "CONCEPTUAL_DISTINCTION",
+          "premise_ids": [
+            "G2-TC1",
+            "G2-TC2"
+          ],
+          "conclusion_ids": [
+            "G2-CONC"
+          ],
+          "warrant": "being expressible in language does not entail being a product of conceptual determination (articulation \u2260 construction)"
+        }
+      ],
+      "sanskrit_citations": [
+        {
+          "passage_id": "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md",
+          "span_id": "chunkV2-L-sastho-vimarsa-smrti-apohana:L31:T112",
+          "lemma": "vikalpatv\u0101\u015ba\u1e45k\u0101"
+        },
+        {
+          "passage_id": "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md",
+          "span_id": "chunkV2-L-sastho-vimarsa-smrti-apohana:L28:T87",
+          "lemma": "aha\u1e43"
+        },
+        {
+          "passage_id": "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md",
+          "span_id": "chunkV2-L-sastho-vimarsa-smrti-apohana:L28:T88",
+          "lemma": "pratyavamar\u015bo"
+        },
+        {
+          "passage_id": "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md",
+          "span_id": "chunkV2-L-sastho-vimarsa-smrti-apohana:L29:T93",
+          "lemma": "vikalpa\u1e25"
+        }
+      ],
+      "l2_required_for_judgment": false
+    },
+    {
+      "gold_id": "ARG-GOLD-001",
+      "title": "The Order-less Support of the Powers (V2-O)",
+      "passage_id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+      "chunk": "chunkV2-O-saptamo-vimarsa",
+      "propositions": [
+        {
+          "proposition_id": "G-TC1",
+          "text": "pratibh\u0101 (the flashing) runs through / bears the order of the word-objects (tattatpad\u0101rthakramar\u016b\u1e63it\u0101).",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_EXPLICIT",
+          "speaker": "siddh\u0101nta",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+              "span_id": "chunkV2-O-saptamo-vimarsa:L32:T115",
+              "lemma": "tattatpad\u0101rthakramar\u016b\u1e63it\u0101",
+              "role": "pratibh\u0101 bears the order of word-objects"
+            }
+          ]
+        },
+        {
+          "proposition_id": "G-TC2",
+          "text": "pratibh\u0101 is not itself constituted by that order (akrama \u2014 order-less).",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_SUPPORTED",
+          "speaker": "siddh\u0101nta",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+              "span_id": "chunkV2-O-saptamo-vimarsa:L44:T168",
+              "lemma": "sakramatv\u0101didharm\u0101dh\u0101rat\u0101\u1e43",
+              "role": "pratibh\u0101 as the substratum of orderedness, not ordered itself"
+            }
+          ]
+        },
+        {
+          "proposition_id": "G-BRIDGE",
+          "text": "In this k\u0101rik\u0101, pratibh\u0101 characterizes / is the form of the support (\u0101\u015braya) of the powers.",
+          "kind": "IMPLICIT_PREMISE",
+          "explicitness": "RECONSTRUCTED_NECESSARY",
+          "speaker": "siddh\u0101nta",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+              "span_id": "chunkV2-O-saptamo-vimarsa:L26:T52",
+              "lemma": "\u0101\u015brayasya",
+              "role": "the support of the powers"
+            }
+          ]
+        },
+        {
+          "proposition_id": "G-DIST",
+          "text": "Bearing / presenting an order is not the same as being constituted by order.",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_SUPPORTED",
+          "speaker": "siddh\u0101nta",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+              "span_id": "chunkV2-O-saptamo-vimarsa:L44:T168",
+              "lemma": "sakramatv\u0101didharm\u0101dh\u0101rat\u0101\u1e43",
+              "role": "substratum of orderedness vs ordered itself"
+            }
+          ]
+        },
+        {
+          "proposition_id": "G-CONC",
+          "text": "The pratibh\u0101 that bears ordered presentation is itself characterized as order-less.",
+          "kind": "CONCLUSION",
+          "explicitness": "RECONSTRUCTED_NECESSARY",
+          "speaker": "siddh\u0101nta",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+              "span_id": "chunkV2-O-saptamo-vimarsa:L44:T168",
+              "lemma": "sakramatv\u0101didharm\u0101dh\u0101rat\u0101\u1e43",
+              "role": "order-less support"
+            }
+          ]
+        },
+        {
+          "proposition_id": "G-IC1",
+          "text": "Abhinavagupta identifies this order-less support with the knower (pram\u0101t\u1e5b), the great Lord.",
+          "kind": "INTERPRETIVE_CLAIM",
+          "explicitness": "INTERPRETIVE_EXTENSION",
+          "speaker": "reviewer's reconstruction",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+              "span_id": "chunkV2-O-saptamo-vimarsa:L30:T108",
+              "lemma": "tam ekam \u0101\u015brayam",
+              "role": "the one support (the knower)"
+            }
+          ]
+        }
+      ],
+      "inferences": [
+        {
+          "inference_id": "G-INF1",
+          "scheme": "CONCEPTUAL_DISTINCTION",
+          "premise_ids": [
+            "G-TC1",
+            "G-TC2"
+          ],
+          "conclusion_ids": [
+            "G-CONC"
+          ],
+          "warrant": "bearing an order \u2260 being constituted by it"
+        },
+        {
+          "inference_id": "G-INF2",
+          "scheme": "INTERPRETIVE_CLAIM",
+          "premise_ids": [
+            "G-CONC"
+          ],
+          "conclusion_ids": [
+            "G-IC1"
+          ],
+          "warrant": "identifying order-less support with the knower is interpretive"
+        }
+      ],
+      "sanskrit_citations": [
+        {
+          "passage_id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+          "span_id": "chunkV2-O-saptamo-vimarsa:L32:T115",
+          "lemma": "tattatpad\u0101rthakramar\u016b\u1e63it\u0101",
+          "role": ""
+        },
+        {
+          "passage_id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+          "span_id": "chunkV2-O-saptamo-vimarsa:L44:T168",
+          "lemma": "sakramatv\u0101didharm\u0101dh\u0101rat\u0101\u1e43",
+          "role": ""
+        },
+        {
+          "passage_id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+          "span_id": "chunkV2-O-saptamo-vimarsa:L30:T108",
+          "lemma": "tam ekam \u0101\u015brayam",
+          "role": ""
+        }
+      ],
+      "l2_required_for_judgment": false
+    },
+    {
+      "gold_id": "ARG-GOLD-003",
+      "title": "The Order-less Support by Reductio (V2-O)",
+      "passage_id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+      "chunk": "chunkV2-O-saptamo-vimarsa",
+      "propositions": [
+        {
+          "proposition_id": "G3-ASSUM",
+          "text": "The support (\u0101\u015braya) of the powers is itself a member of the ordered sequence \u2014 it is ordered.",
+          "kind": "IMPLICIT_PREMISE",
+          "explicitness": "RECONSTRUCTED_NECESSARY",
+          "speaker": "(reductio assumption)",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+              "span_id": "chunkV2-O-saptamo-vimarsa:L26:T52",
+              "lemma": "\u0101\u015brayasya",
+              "role": "support of the powers (as ordered, for reductio)"
+            }
+          ]
+        },
+        {
+          "proposition_id": "G3-TC1",
+          "text": "pratibh\u0101 (the flashing) runs through / bears the order of the word-objects.",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_EXPLICIT",
+          "speaker": "siddh\u0101nta",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+              "span_id": "chunkV2-O-saptamo-vimarsa:L32:T115",
+              "lemma": "tattatpad\u0101rthakramar\u016b\u1e63it\u0101",
+              "role": ""
+            }
+          ]
+        },
+        {
+          "proposition_id": "G3-TC2",
+          "text": "pratibh\u0101 is not itself constituted by that order (akrama).",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_SUPPORTED",
+          "speaker": "siddh\u0101nta",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+              "span_id": "chunkV2-O-saptamo-vimarsa:L44:T168",
+              "lemma": "sakramatv\u0101didharm\u0101dh\u0101rat\u0101\u1e43",
+              "role": ""
+            }
+          ]
+        },
+        {
+          "proposition_id": "G3-REG",
+          "text": "If a support of order were itself ordered, it would require a further support of its own ordering \u2014 an infinite regress.",
+          "kind": "IMPLICIT_PREMISE",
+          "explicitness": "RECONSTRUCTED_NECESSARY",
+          "speaker": "(reductio move)",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+              "span_id": "chunkV2-O-saptamo-vimarsa:L74:T616",
+              "lemma": "kramavattvalak\u1e63a\u1e47\u0101t",
+              "role": "orderedness as a further need"
+            }
+          ]
+        },
+        {
+          "proposition_id": "G3-ABS",
+          "text": "If the support were ordered, an infinite regress of ordered supports would follow \u2014 which is absurd.",
+          "kind": "CONCLUSION",
+          "explicitness": "RECONSTRUCTED_NECESSARY",
+          "speaker": "(reductio)",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+              "span_id": "chunkV2-O-saptamo-vimarsa:L74:T616",
+              "lemma": "kramavattvalak\u1e63a\u1e47\u0101t",
+              "role": ""
+            }
+          ]
+        },
+        {
+          "proposition_id": "G3-TC3",
+          "text": "The support (\u0101\u015braya) of the powers is not itself a member of the ordered sequence.",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_SUPPORTED",
+          "speaker": "siddh\u0101nta",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+              "span_id": "chunkV2-O-saptamo-vimarsa:L26:T52",
+              "lemma": "\u0101\u015brayasya",
+              "role": "support not itself ordered"
+            }
+          ]
+        },
+        {
+          "proposition_id": "G3-CONC",
+          "text": "The support of ordered presentation is itself order-less (akrama) \u2014 the knower.",
+          "kind": "CONCLUSION",
+          "explicitness": "RECONSTRUCTED_NECESSARY",
+          "speaker": "siddh\u0101nta",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+              "span_id": "chunkV2-O-saptamo-vimarsa:L44:T168",
+              "lemma": "sakramatv\u0101didharm\u0101dh\u0101rat\u0101\u1e43",
+              "role": ""
+            }
+          ]
+        },
+        {
+          "proposition_id": "G3-IC1",
+          "text": "Abhinavagupta identifies this order-less support with the knower (pram\u0101t\u1e5b), the great Lord.",
+          "kind": "INTERPRETIVE_CLAIM",
+          "explicitness": "INTERPRETIVE_EXTENSION",
+          "speaker": "reviewer's reconstruction",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+              "span_id": "chunkV2-O-saptamo-vimarsa:L30:T108",
+              "lemma": "tam ekam \u0101\u015brayam",
+              "role": ""
+            }
+          ]
+        }
+      ],
+      "inferences": [
+        {
+          "inference_id": "G3-INF-RED",
+          "scheme": "REDUCTIO",
+          "premise_ids": [
+            "G3-ASSUM",
+            "G3-REG"
+          ],
+          "conclusion_ids": [
+            "G3-ABS"
+          ],
+          "warrant": "assuming an ordered support entails infinite regress (absurd)"
+        },
+        {
+          "inference_id": "G3-INF-CONC",
+          "scheme": "REDUCTIO",
+          "premise_ids": [
+            "G3-TC1",
+            "G3-TC2",
+            "G3-ABS"
+          ],
+          "conclusion_ids": [
+            "G3-CONC"
+          ],
+          "warrant": "not ordered -> order-less"
+        }
+      ],
+      "sanskrit_citations": [
+        {
+          "passage_id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+          "span_id": "chunkV2-O-saptamo-vimarsa:L26:T52",
+          "lemma": "\u0101\u015brayasya",
+          "role": ""
+        },
+        {
+          "passage_id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+          "span_id": "chunkV2-O-saptamo-vimarsa:L32:T115",
+          "lemma": "tattatpad\u0101rthakramar\u016b\u1e63it\u0101",
+          "role": ""
+        },
+        {
+          "passage_id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+          "span_id": "chunkV2-O-saptamo-vimarsa:L74:T616",
+          "lemma": "kramavattvalak\u1e63a\u1e47\u0101t",
+          "role": ""
+        }
+      ],
+      "l2_required_for_judgment": false
+    },
+    {
+      "gold_id": "ARG-GOLD-004",
+      "title": "The Essence of Light: prak\u0101\u015ba vs vimar\u015ba (V2-H)",
+      "passage_id": "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md",
+      "chunk": "chunkV2-H-pancamo-vimarsa-k11-13",
+      "propositions": [
+        {
+          "proposition_id": "G4-TC1",
+          "text": "Manifestation (prak\u0101\u015ba) is not a passive, inert light; it shows the world.",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_SUPPORTED",
+          "speaker": "siddh\u0101nta",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md",
+              "span_id": "chunkV2-H-pancamo-vimarsa-k11-13:L9:T23",
+              "lemma": "prak\u0101\u015bo",
+              "role": "manifestation"
+            }
+          ]
+        },
+        {
+          "proposition_id": "G4-CRYSTAL",
+          "text": "A light that merely showed the world without knowing it would be no different from crystal \u2014 inert.",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_SUPPORTED",
+          "speaker": "siddh\u0101nta",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md",
+              "span_id": "chunkV2-H-pancamo-vimarsa-k11-13:L9:T63",
+              "lemma": "bhedenaiva",
+              "role": "distinctness in manifestation"
+            }
+          ]
+        },
+        {
+          "proposition_id": "G4-DIST",
+          "text": "Bare showing is distinct from self-aware manifesting; the mark is vimar\u015ba.",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_SUPPORTED",
+          "speaker": "siddh\u0101nta",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md",
+              "span_id": "chunkV2-H-pancamo-vimarsa-k11-13:L9:T66",
+              "lemma": "bhedena hi par\u0101mar\u015be",
+              "role": "self-aware reflection (vimar\u015ba)"
+            }
+          ]
+        },
+        {
+          "proposition_id": "G4-TC2",
+          "text": "The essence of light is the reflexive-awareness (vimar\u015ba) \u2014 light's own grasp of itself.",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_SUPPORTED",
+          "speaker": "siddh\u0101nta",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md",
+              "span_id": "chunkV2-H-pancamo-vimarsa-k11-13:L9:T66",
+              "lemma": "bhedena hi par\u0101mar\u015be",
+              "role": "self-aware grasp"
+            }
+          ]
+        },
+        {
+          "proposition_id": "G4-CONC",
+          "text": "What makes the light conscious is that it is aware of itself in the act of manifesting.",
+          "kind": "CONCLUSION",
+          "explicitness": "RECONSTRUCTED_NECESSARY",
+          "speaker": "siddh\u0101nta",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md",
+              "span_id": "chunkV2-H-pancamo-vimarsa-k11-13:L9:T66",
+              "lemma": "bhedena hi par\u0101mar\u015be",
+              "role": ""
+            }
+          ]
+        },
+        {
+          "proposition_id": "G4-IC1",
+          "text": "Abhinavagupta identifies this self-knowing with supreme speech (par\u0101-v\u0101k), freedom (sv\u0101tantrya), lordship (ai\u015bvarya).",
+          "kind": "INTERPRETIVE_CLAIM",
+          "explicitness": "INTERPRETIVE_EXTENSION",
+          "speaker": "reviewer's reconstruction",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md",
+              "span_id": "chunkV2-H-pancamo-vimarsa-k11-13:L142:T2396",
+              "lemma": "sphurad api",
+              "role": "shining/self-manifesting"
+            }
+          ]
+        }
+      ],
+      "inferences": [
+        {
+          "inference_id": "G4-INF-IC",
+          "scheme": "CONCEPTUAL_DISTINCTION",
+          "premise_ids": [
+            "G4-TC1",
+            "G4-DIST"
+          ],
+          "conclusion_ids": [
+            "G4-CONC"
+          ],
+          "warrant": "showing vs self-aware showing; the mark is vimar\u015ba"
+        }
+      ],
+      "sanskrit_citations": [
+        {
+          "passage_id": "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md",
+          "span_id": "chunkV2-H-pancamo-vimarsa-k11-13:L9:T23",
+          "lemma": "prak\u0101\u015bo",
+          "role": ""
+        },
+        {
+          "passage_id": "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md",
+          "span_id": "chunkV2-H-pancamo-vimarsa-k11-13:L9:T66",
+          "lemma": "bhedena hi par\u0101mar\u015be",
+          "role": ""
+        }
+      ],
+      "l2_required_for_judgment": false
+    },
+    {
+      "gold_id": "ARG-GOLD-005",
+      "title": "The Difference is Real: local vs systematic scope (V3-I)",
+      "passage_id": "pt:passage:ipvv:chunkV3-I-kriya-caturtho-close-k20-21.md",
+      "chunk": "chunkV3-I-kriya-caturtho-close-k20-21",
+      "propositions": [
+        {
+          "proposition_id": "G5-OBJ",
+          "text": "If consciousness is one and difference is mere ignorance, how is action possible \u2014 action needs a distinct agent and object?",
+          "kind": "OBJECTION",
+          "explicitness": "TEXTUALLY_SUPPORTED",
+          "speaker": "objector (p\u016brvapak\u1e63a)",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV3-I-kriya-caturtho-close-k20-21.md",
+              "span_id": "chunkV3-I-kriya-caturtho-close-k20-21:L9:T5",
+              "lemma": "sattvam",
+              "role": "being/reality of the one"
+            }
+          ]
+        },
+        {
+          "proposition_id": "G5-TC1",
+          "text": "The single re-recollection marked by the will-to-do (cik\u012br\u1e63\u0101lak\u1e63a\u1e47a par\u0101mar\u015ba) joins agent and object; action is possible in the one consciousness.",
+          "kind": "CONCLUSION",
+          "explicitness": "TEXTUALLY_SUPPORTED",
+          "speaker": "siddh\u0101nta",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV3-I-kriya-caturtho-close-k20-21.md",
+              "span_id": "chunkV3-I-kriya-caturtho-close-k20-21:L9:T93",
+              "lemma": "vastuto",
+              "role": "in reality"
+            }
+          ]
+        },
+        {
+          "proposition_id": "G5-TC2",
+          "text": "The difference cannot be an 'un-explainable' (anirv\u0101cya) ignorance: of whom would it be?",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_SUPPORTED",
+          "speaker": "siddh\u0101nta",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV3-I-kriya-caturtho-close-k20-21.md",
+              "span_id": "chunkV3-I-kriya-caturtho-close-k20-21:L9:T840",
+              "lemma": "yo bheda\u1e25",
+              "role": "the difference"
+            }
+          ]
+        },
+        {
+          "proposition_id": "G5-CONC-A",
+          "text": "The difference is real \u2014 cognition rests in difference as it does not rest in non-difference.",
+          "kind": "CONCLUSION",
+          "explicitness": "RECONSTRUCTED_NECESSARY",
+          "speaker": "siddh\u0101nta",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV3-I-kriya-caturtho-close-k20-21.md",
+              "span_id": "chunkV3-I-kriya-caturtho-close-k20-21:L18:T1083",
+              "lemma": "bhedas tu",
+              "role": "difference is real"
+            }
+          ]
+        },
+        {
+          "proposition_id": "G5-CONC-B",
+          "text": "The difference is real as the self's own manifestation.",
+          "kind": "CONCLUSION",
+          "explicitness": "INTERPRETIVE_EXTENSION",
+          "speaker": "siddh\u0101nta (systematic)",
+          "primary_evidence": [
+            {
+              "passage_id": "pt:passage:ipvv:chunkV3-I-kriya-caturtho-close-k20-21.md",
+              "span_id": "chunkV3-I-kriya-caturtho-close-k20-21:L9:T872",
+              "lemma": "bhedadh\u012br eva",
+              "role": "the difference-cognition"
+            }
+          ]
+        }
+      ],
+      "inferences": [
+        {
+          "inference_id": "G5-INF1",
+          "scheme": "COUNTEREXAMPLE",
+          "premise_ids": [
+            "G5-TC1",
+            "G5-TC2"
+          ],
+          "conclusion_ids": [
+            "G5-CONC-A"
+          ],
+          "warrant": "action possible in one consciousness; difference not anirv\u0101cya"
+        }
+      ],
+      "sanskrit_citations": [
+        {
+          "passage_id": "pt:passage:ipvv:chunkV3-I-kriya-caturtho-close-k20-21.md",
+          "span_id": "chunkV3-I-kriya-caturtho-close-k20-21:L9:T5",
+          "lemma": "sattvam",
+          "role": ""
+        },
+        {
+          "passage_id": "pt:passage:ipvv:chunkV3-I-kriya-caturtho-close-k20-21.md",
+          "span_id": "chunkV3-I-kriya-caturtho-close-k20-21:L9:T840",
+          "lemma": "yo bheda\u1e25",
+          "role": ""
+        },
+        {
+          "passage_id": "pt:passage:ipvv:chunkV3-I-kriya-caturtho-close-k20-21.md",
+          "span_id": "chunkV3-I-kriya-caturtho-close-k20-21:L18:T1083",
+          "lemma": "bhedas tu",
+          "role": ""
+        }
+      ],
+      "l2_required_for_judgment": false
+    }
+  ]
+}
