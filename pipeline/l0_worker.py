@@ -42,8 +42,12 @@ def l0_generator(layer: str, batch: list[dict]) -> list[dict]:
     gloss_lookup = {}
     glossable = [e for e in entries if e["tokens"]]
     if glossable:
-        for g in run_batch(glossable, layer):
-            gloss_lookup[g["idx"]] = g["gloss_map"]
+        # bound each model call: chunk the gloss into sub-batches (default 8) so one
+        # giant batch does not overload/stall the model (the autonomous-run lesson)
+        CHUNK = int(os.environ.get("PATALA_GLOSS_CHUNK", "8"))
+        for start in range(0, len(glossable), CHUNK):
+            for g in run_batch(glossable[start:start + CHUNK], layer):
+                gloss_lookup[g["idx"]] = g["gloss_map"]
     proposals = []
     for i, e in enumerate(entries):
         gloss_map = gloss_lookup.get(i) or {t: {"literal": "", "compound": "", "supplied": False}
