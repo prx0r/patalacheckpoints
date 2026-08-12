@@ -120,7 +120,8 @@ if __name__ == "__main__":
     a = ap.parse_args()
 
     if a.sivaqueue_work:
-        from sivaqueue_targets import all_targets, term_context, translation_neighbourhood, guide_descriptions
+        from sivaqueue_targets import (all_targets, term_context, translation_neighbourhood,
+                                       guide_descriptions, access)
         t = all_targets().get(a.sivaqueue_work, {})
         if not t:
             print(json.dumps({"error": f"no sivaqueue work {a.sivaqueue_work}"})); sys.exit(1)
@@ -129,6 +130,7 @@ if __name__ == "__main__":
             "companion_guides": guide_descriptions(t.get("companion_guides", [])).split("\n"),
             "translation_neighbourhood": translation_neighbourhood(a.sivaqueue_work),
             "term_context": term_context(a.sivaqueue_work).split("\n"),
+            "access": access(a.sivaqueue_work),
         }, indent=2, ensure_ascii=False))
         sys.exit(0)
 

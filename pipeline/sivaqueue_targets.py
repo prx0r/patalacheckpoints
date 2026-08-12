@@ -24,6 +24,7 @@ ROOT = "/root/projects/patala"
 TARGETS_PATH = os.path.join(ROOT, "data/corpus/sivaqueue-targets.json")
 GUIDES_PATH = os.path.join(ROOT, "data/corpus/sivaqueue-guides.json")
 ATLAS_PATH = os.path.join(ROOT, "benchmarks/v0/semantic-shift-atlas.json")
+ACCESS_PATH = os.path.join(ROOT, "data/corpus/sivaqueue-access-manifest.json")
 
 _CACHE = {}
 
@@ -63,6 +64,20 @@ def translation_neighbourhood(work_id: str) -> list[str]:
     """The specific companion works Hermes should consult for a target (its translation neighbourhood)."""
     t = all_targets().get(work_id, {})
     return t.get("translation_neighbourhood", [])
+
+
+def access(work_id: str) -> dict:
+    """The quick-access record for a target: on_disk path (if any) + download_url + gateway.
+
+    From data/corpus/sivaqueue-access-manifest.json (built by build_sivaqueue_manifest.py).
+    """
+    a = _load(ACCESS_PATH, {"targets": {}}).get("targets", {}).get(work_id, {})
+    return {
+        "on_disk": a.get("on_disk", False),
+        "disk_path": a.get("disk_path"),
+        "source_gateway": a.get("source_gateway"),
+        "download_url": a.get("download_url"),
+    }
 
 
 def _atlas() -> dict:

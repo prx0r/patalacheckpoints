@@ -1,0 +1,1667 @@
+{
+  "$schema": "patala:corpus:sivaqueue:access:v1",
+  "note": "Quick-access map for the 100 'Śiva before Abhinava' targets. on_disk=true means a Sanskrit text is already on the sanskritree mount (go straight to RAW-L0); download_url is the acquisition link from the original sivaqueue guide. Companion guides G1-G14 are IFP/edition translation-memory references, not raw downloads.",
+  "gateways": {
+    "muktabodha": "https://muktabodha-digital-library.org",
+    "gretil": "https://gretil.sub.uni-goettingen.de",
+    "ifpindia": "https://ifpindia.org/bookstore",
+    "digitalcollections.ifpindia": "https://digitalcollections.ifpindia.org/s/manuscripts",
+    "vishvasa": "https://vishvasa.github.io/AgamaH_shaivaH",
+    "shivadharmaproject": "https://shivadharmaproject.com",
+    "springer": "https://link.springer.com",
+    "shaivism.net": "https://shaivism.net",
+    "sarit": "https://sarit.indology.info",
+    "wisdomlib": "https://www.wisdomlib.org"
+  },
+  "n_targets": 100,
+  "n_on_disk": 26,
+  "targets": {
+    "pancarthabhasya_kaundinya": {
+      "work_id": "pancarthabhasya_kaundinya",
+      "name": "Pañcārthabhāṣya — Kauṇḍinya",
+      "num": 1,
+      "section": "I",
+      "tradition": "Pāśupata",
+      "period": "c. 4th–5th/6th c.",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "gretil",
+      "download_url": "https://gretil.sub.uni-goettingen.de/gretil/corpustei/transformations/html/sa_pAzupatasUtra-comm.htm",
+      "companion_guides": [
+        "G4",
+        "G14"
+      ]
+    },
+    "ganakarika": {
+      "work_id": "ganakarika",
+      "name": "Gaṇakārikā",
+      "num": 2,
+      "section": "I",
+      "tradition": "Pāśupata",
+      "period": "early Pāśupata",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G4",
+        "G14"
+      ]
+    },
+    "ratnatika_ganakarika": {
+      "work_id": "ratnatika_ganakarika",
+      "name": "Ratnaṭīkā on Gaṇakārikā",
+      "num": 3,
+      "section": "I",
+      "tradition": "Pāśupata",
+      "period": "early-medieval Pāśupata",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G4",
+        "G14"
+      ]
+    },
+    "samskaravidhi": {
+      "work_id": "samskaravidhi",
+      "name": "Saṃskāravidhi — Lākula/Pāśupata transformative rite",
+      "num": 4,
+      "section": "I",
+      "tradition": "Pāśupata",
+      "period": "early medieval",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G1",
+        "G4"
+      ]
+    },
+    "sivadharmasastra": {
+      "work_id": "sivadharmasastra",
+      "name": "Śivadharmaśāstra — untranslated remainder",
+      "num": 5,
+      "section": "I",
+      "tradition": "Śivadharma",
+      "period": "c. 5th–7th",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "shivadharmaproject",
+      "download_url": "https://shivadharmaproject.com/",
+      "companion_guides": [
+        "G3"
+      ]
+    },
+    "sivadharmottara": {
+      "work_id": "sivadharmottara",
+      "name": "Śivadharmottara",
+      "num": 6,
+      "section": "I",
+      "tradition": "Śivadharma",
+      "period": "early medieval",
+      "translation_status": "U",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "shivadharmaproject",
+      "download_url": "https://shivadharmaproject.com/output/",
+      "companion_guides": [
+        "G3",
+        "G1"
+      ]
+    },
+    "sivadharmasamgraha": {
+      "work_id": "sivadharmasamgraha",
+      "name": "Śivadharmasaṃgraha — remainder outside chs. 5–9",
+      "num": 7,
+      "section": "I",
+      "tradition": "Śivadharma",
+      "period": "early medieval",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "shivadharmaproject",
+      "download_url": "https://shivadharmaproject.com/",
+      "companion_guides": [
+        "G1"
+      ]
+    },
+    "umamahesvarasamvada": {
+      "work_id": "umamahesvarasamvada",
+      "name": "Umāmaheśvarasaṃvāda",
+      "num": 8,
+      "section": "I",
+      "tradition": "Śivadharma",
+      "period": "early medieval",
+      "translation_status": "U",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "shivadharmaproject",
+      "download_url": "https://shivadharmaproject.com/output/",
+      "companion_guides": [
+        "G3"
+      ]
+    },
+    "umottarasamvada": {
+      "work_id": "umottarasamvada",
+      "name": "Umottarasaṃvāda",
+      "num": 9,
+      "section": "I",
+      "tradition": "Śivadharma",
+      "period": "early medieval",
+      "translation_status": "U",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "shivadharmaproject",
+      "download_url": "https://shivadharmaproject.com/output/",
+      "companion_guides": [
+        "G3"
+      ]
+    },
+    "dharmaputrika": {
+      "work_id": "dharmaputrika",
+      "name": "Dharmaputrikā",
+      "num": 10,
+      "section": "I",
+      "tradition": "Śivadharma",
+      "period": "early medieval",
+      "translation_status": "U",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "shivadharmaproject",
+      "download_url": "https://shivadharmaproject.com/output/",
+      "companion_guides": [
+        "G3"
+      ]
+    },
+    "lalitavistara_sivadharma": {
+      "work_id": "lalitavistara_sivadharma",
+      "name": "Lalitavistara of the Śivadharma corpus",
+      "num": 11,
+      "section": "I",
+      "tradition": "Śivadharma",
+      "period": "early medieval",
+      "translation_status": "U",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "shivadharmaproject",
+      "download_url": "https://shivadharmaproject.com/output/",
+      "companion_guides": [
+        "G3"
+      ]
+    },
+    "vrsasarasamgraha": {
+      "work_id": "vrsasarasamgraha",
+      "name": "Vṛṣasārasaṃgraha",
+      "num": 12,
+      "section": "I",
+      "tradition": "Śivadharma",
+      "period": "early medieval",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "shivadharmaproject",
+      "download_url": "https://shivadharmaproject.com/time-for-collation-and-emendation-2/",
+      "companion_guides": [
+        "G3",
+        "G1"
+      ]
+    },
+    "sivadharmasastravivarana": {
+      "work_id": "sivadharmasastravivarana",
+      "name": "Śivadharmaśāstravivaraṇa",
+      "num": 13,
+      "section": "I",
+      "tradition": "Śivadharma",
+      "period": "medieval, commenting early corpus",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "shivadharmaproject",
+      "download_url": "https://shivadharmaproject.com/",
+      "companion_guides": [
+        "G3"
+      ]
+    },
+    "sivadharmottaravivarana": {
+      "work_id": "sivadharmottaravivarana",
+      "name": "Śivadharmottaravivaraṇa",
+      "num": 14,
+      "section": "I",
+      "tradition": "Śivadharma",
+      "period": "medieval",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "shivadharmaproject",
+      "download_url": "https://shivadharmaproject.com/",
+      "companion_guides": [
+        "G3"
+      ]
+    },
+    "skandapurana_early": {
+      "work_id": "skandapurana_early",
+      "name": "Early Skandapurāṇa critical recension",
+      "num": 15,
+      "section": "I",
+      "tradition": "Purāṇic Śaiva",
+      "period": "c. 6th–7th",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "sarit",
+      "download_url": "https://sarit.indology.info/skandapurana.xml?view=div",
+      "companion_guides": [
+        "G3",
+        "G1"
+      ]
+    },
+    "ekamrapurana": {
+      "work_id": "ekamrapurana",
+      "name": "Ekāmrapurāṇa — relevant early Śaiva strata",
+      "num": 16,
+      "section": "I",
+      "tradition": "Purāṇic Śaiva",
+      "period": "early-medieval Purāṇic",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "shivadharmaproject",
+      "download_url": "https://shivadharmaproject.com/output/",
+      "companion_guides": [
+        "G3"
+      ]
+    },
+    "haracaritacintamani": {
+      "work_id": "haracaritacintamani",
+      "name": "Haracaritacintāmaṇi — selected un-English portions",
+      "num": 17,
+      "section": "I",
+      "tradition": "Purāṇic Śaiva",
+      "period": "12th c., earlier traditions preserved",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "shivadharmaproject",
+      "download_url": "https://shivadharmaproject.com/output/",
+      "companion_guides": [
+        "G3"
+      ]
+    },
+    "devipurana": {
+      "work_id": "devipurana",
+      "name": "Devīpurāṇa — uncritically/partially translated relevant chapters",
+      "num": 18,
+      "section": "I",
+      "tradition": "Purāṇic Śaiva",
+      "period": "early-medieval",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "shivadharmaproject",
+      "download_url": "https://shivadharmaproject.com/output/",
+      "companion_guides": [
+        "G3"
+      ]
+    },
+    "brhaddharmapurana": {
+      "work_id": "brhaddharmapurana",
+      "name": "Bṛhaddharmapurāṇa — selected Śaiva material",
+      "num": 19,
+      "section": "I",
+      "tradition": "Purāṇic Śaiva",
+      "period": "later Purāṇic",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "shivadharmaproject",
+      "download_url": "https://shivadharmaproject.com/output/",
+      "companion_guides": [
+        "G3"
+      ]
+    },
+    "kalikapurana": {
+      "work_id": "kalikapurana",
+      "name": "Kālikāpurāṇa — critically untranslated portions",
+      "num": 20,
+      "section": "I",
+      "tradition": "Purāṇic Śaiva",
+      "period": "c. 10th–11th",
+      "translation_status": "P",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/kAlikApurANam-M04002-IAST.txt",
+      "source_gateway": "shivadharmaproject",
+      "download_url": "https://shivadharmaproject.com/output/",
+      "companion_guides": [
+        "G3",
+        "G11"
+      ]
+    },
+    "nisvasaguhyasutra": {
+      "work_id": "nisvasaguhyasutra",
+      "name": "Niśvāsaguhyasūtra",
+      "num": 21,
+      "section": "II",
+      "tradition": "early Mantramārga",
+      "period": "early Mantramārga",
+      "translation_status": "U",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "ifpindia",
+      "download_url": "https://ifpindia.org/bookstore/ci128/",
+      "companion_guides": [
+        "G2"
+      ]
+    },
+    "pauskaraparamesvara": {
+      "work_id": "pauskaraparamesvara",
+      "name": "Pauṣkarapārameśvara / Pauṣkara",
+      "num": 22,
+      "section": "II",
+      "tradition": "early Siddhānta",
+      "period": "early Siddhānta",
+      "translation_status": "U?",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/pauSkara saMhitA-M00259-IAST.txt",
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G2",
+        "G5"
+      ]
+    },
+    "matangaparamesvara": {
+      "work_id": "matangaparamesvara",
+      "name": "Mataṅgapārameśvara",
+      "num": 23,
+      "section": "II",
+      "tradition": "early Siddhānta",
+      "period": "early Siddhānta",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G5",
+        "G2"
+      ]
+    },
+    "yaksiniparamesvara": {
+      "work_id": "yaksiniparamesvara",
+      "name": "Yakṣiṇīpārameśvara",
+      "num": 24,
+      "section": "II",
+      "tradition": "early Siddhānta",
+      "period": "early Siddhānta",
+      "translation_status": "U",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G2",
+        "G5"
+      ]
+    },
+    "hamsaparamesvara": {
+      "work_id": "hamsaparamesvara",
+      "name": "Haṃsapārameśvara",
+      "num": 25,
+      "section": "II",
+      "tradition": "early Siddhānta",
+      "period": "early Siddhānta",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G2",
+        "G5"
+      ]
+    },
+    "mukuta_makutagama": {
+      "work_id": "mukuta_makutagama",
+      "name": "Mukuṭa / Makuṭāgama early recension",
+      "num": 26,
+      "section": "II",
+      "tradition": "early Siddhānta",
+      "period": "early Siddhānta",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G2",
+        "G5"
+      ]
+    },
+    "svayambhuvasutrasamgraha": {
+      "work_id": "svayambhuvasutrasamgraha",
+      "name": "Svāyambhuvasūtrasaṃgraha — untranslated bulk",
+      "num": 27,
+      "section": "II",
+      "tradition": "early Siddhānta",
+      "period": "early Siddhānta",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G2",
+        "G5"
+      ]
+    },
+    "suksmasvayambhuva": {
+      "work_id": "suksmasvayambhuva",
+      "name": "Sūkṣmasvāyambhuva",
+      "num": 28,
+      "section": "II",
+      "tradition": "early Siddhānta",
+      "period": "early Siddhānta",
+      "translation_status": "U",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G2",
+        "G5"
+      ]
+    },
+    "rauravasutrasamgraha": {
+      "work_id": "rauravasutrasamgraha",
+      "name": "Rauravasūtrasaṃgraha",
+      "num": 29,
+      "section": "II",
+      "tradition": "early Siddhānta",
+      "period": "early Siddhānta",
+      "translation_status": "U",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G2",
+        "G5"
+      ]
+    },
+    "dvisatikalottara": {
+      "work_id": "dvisatikalottara",
+      "name": "Dviśatikālottara",
+      "num": 30,
+      "section": "II",
+      "tradition": "early Siddhānta",
+      "period": "early Kālottara family",
+      "translation_status": "U",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G2",
+        "G5"
+      ]
+    },
+    "sardhatrisatikalottara": {
+      "work_id": "sardhatrisatikalottara",
+      "name": "Sārdhatriśatikālottara",
+      "num": 31,
+      "section": "II",
+      "tradition": "early Siddhānta",
+      "period": "early medieval",
+      "translation_status": "U",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G2",
+        "G5"
+      ]
+    },
+    "saptasatikalottara": {
+      "work_id": "saptasatikalottara",
+      "name": "Saptaśatikālottara",
+      "num": 32,
+      "section": "II",
+      "tradition": "early Siddhānta",
+      "period": "early medieval",
+      "translation_status": "U",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G2",
+        "G5"
+      ]
+    },
+    "brhatkalottara": {
+      "work_id": "brhatkalottara",
+      "name": "Bṛhatkālottara — outside published translated portions",
+      "num": 33,
+      "section": "II",
+      "tradition": "early Siddhānta",
+      "period": "early medieval",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "ifpindia",
+      "download_url": "https://www.ifpindia.org/bookstore/ci138/",
+      "companion_guides": [
+        "G8"
+      ]
+    },
+    "sarvajnanottara": {
+      "work_id": "sarvajnanottara",
+      "name": "Sarvajñānottara — non-Yogapāda bulk",
+      "num": 34,
+      "section": "II",
+      "tradition": "early Siddhānta",
+      "period": "early Siddhānta",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G2",
+        "G5"
+      ]
+    },
+    "mayasamgraha": {
+      "work_id": "mayasamgraha",
+      "name": "Mayasaṃgraha — outside temple-design section",
+      "num": 35,
+      "section": "II",
+      "tradition": "early Siddhānta",
+      "period": "early Siddhānta",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "ifpindia",
+      "download_url": "https://www.ifpindia.org/bookstore/ci138/",
+      "companion_guides": [
+        "G8"
+      ]
+    },
+    "devyamata": {
+      "work_id": "devyamata",
+      "name": "Devyāmata — outside temple-design section",
+      "num": 36,
+      "section": "II",
+      "tradition": "early Siddhānta",
+      "period": "early Siddhānta",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "ifpindia",
+      "download_url": "https://www.ifpindia.org/bookstore/ci138/",
+      "companion_guides": [
+        "G8"
+      ]
+    },
+    "mohacudottara": {
+      "work_id": "mohacudottara",
+      "name": "Mohacūḍottara — outside temple-design section",
+      "num": 37,
+      "section": "II",
+      "tradition": "early Siddhānta",
+      "period": "early Siddhānta",
+      "translation_status": "P",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/mohacUDottara-M00304-IAST.txt",
+      "source_gateway": "ifpindia",
+      "download_url": "https://www.ifpindia.org/bookstore/ci138/",
+      "companion_guides": [
+        "G8"
+      ]
+    },
+    "pratisthaparamesvara": {
+      "work_id": "pratisthaparamesvara",
+      "name": "Pratiṣṭhāpārameśvara",
+      "num": 38,
+      "section": "II",
+      "tradition": "early Siddhānta",
+      "period": "early Siddhānta",
+      "translation_status": "U?",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/pratiSThAlakSaNasArasamuccaya-M00065-IAST.txt",
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G8"
+      ]
+    },
+    "pingalamata": {
+      "work_id": "pingalamata",
+      "name": "Piṅgalāmata — outside translated architectural portions",
+      "num": 39,
+      "section": "II",
+      "tradition": "early Mantramārga",
+      "period": "early Mantramārga adjacency",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "ifpindia",
+      "download_url": "https://www.ifpindia.org/bookstore/ci138/",
+      "companion_guides": [
+        "G8"
+      ]
+    },
+    "kiranatantra": {
+      "work_id": "kiranatantra",
+      "name": "Kiraṇatantra — untranslated bulk of root text",
+      "num": 40,
+      "section": "II",
+      "tradition": "early Siddhānta",
+      "period": "early Siddhānta",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "vishvasa",
+      "download_url": "https://vishvasa.github.io/AgamaH_shaivaH/sampradAyaH/28-Agama-sampradAyaH/",
+      "companion_guides": [
+        "G6",
+        "G5"
+      ]
+    },
+    "rauragama": {
+      "work_id": "rauragama",
+      "name": "Rauravāgama — complete scholarly English",
+      "num": 41,
+      "section": "III",
+      "tradition": "Śaiva Siddhānta",
+      "period": "early Siddhānta",
+      "translation_status": "EN_GAP",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "ifpindia",
+      "download_url": "https://www.ifpindia.org/bookstore/pdi89/",
+      "companion_guides": [
+        "G5",
+        "G8"
+      ]
+    },
+    "mrgendratantra": {
+      "work_id": "mrgendratantra",
+      "name": "Mṛgendratantra — complete modern English",
+      "num": 42,
+      "section": "III",
+      "tradition": "Śaiva Siddhānta",
+      "period": "early Siddhānta",
+      "translation_status": "P",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/mRgendrAgama-M00037-IAST.txt",
+      "source_gateway": "ifpindia",
+      "download_url": "https://www.ifpindia.org/bookstore/",
+      "companion_guides": [
+        "G5"
+      ]
+    },
+    "sahasragama": {
+      "work_id": "sahasragama",
+      "name": "Sāhasra/Sahasrāgama ancient material",
+      "num": 43,
+      "section": "III",
+      "tradition": "early Siddhānta",
+      "period": "early Siddhānta",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G2"
+      ]
+    },
+    "paramesvaragama": {
+      "work_id": "paramesvaragama",
+      "name": "Pārameśvarāgama / Pārameśvara corpus",
+      "num": 44,
+      "section": "III",
+      "tradition": "Śaiva Siddhānta",
+      "period": "early Siddhānta",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G5"
+      ]
+    },
+    "makutottara": {
+      "work_id": "makutottara",
+      "name": "Makuṭottara",
+      "num": 45,
+      "section": "III",
+      "tradition": "Śaiva Siddhānta",
+      "period": "early Siddhānta",
+      "translation_status": "U?",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/makuTottararahasya-M00525-IAST.txt",
+      "source_gateway": "vishvasa",
+      "download_url": "https://vishvasa.github.io/AgamaH_shaivaH/sampradAyaH/28-Agama-sampradAyaH/",
+      "companion_guides": [
+        "G5"
+      ]
+    },
+    "satsahasrakalottara": {
+      "work_id": "satsahasrakalottara",
+      "name": "Ṣaṭsahasrakālottara",
+      "num": 46,
+      "section": "III",
+      "tradition": "early Siddhānta",
+      "period": "early medieval",
+      "translation_status": "U?",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/SatSahasrakAlottarAgama-M00249-IAST.txt",
+      "source_gateway": "vishvasa",
+      "download_url": "https://vishvasa.github.io/AgamaH_shaivaH/",
+      "companion_guides": [
+        "G5"
+      ]
+    },
+    "naresvarapariksa": {
+      "work_id": "naresvarapariksa",
+      "name": "Nareśvaraparīkṣā — Sadyojyotis + Rāmakaṇṭha's Prakāśa",
+      "num": 47,
+      "section": "III",
+      "tradition": "Śaiva Siddhānta",
+      "period": "early Siddhānta",
+      "translation_status": "U",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "vishvasa",
+      "download_url": "https://vishvasa.github.io/AgamaH_shaivaH/sampradAyaH/28-Agama-sampradAyaH/tattvam/sampradAyaH/aShTa-prakaraNa-shAkhA/mukta-bodha-mUlam/",
+      "companion_guides": [
+        "G6",
+        "G7"
+      ]
+    },
+    "tattvasamgraha_sadyojyotis": {
+      "work_id": "tattvasamgraha_sadyojyotis",
+      "name": "Tattvasaṃgraha — Sadyojyotis + Aghoraśiva commentary",
+      "num": 48,
+      "section": "III",
+      "tradition": "Śaiva Siddhānta",
+      "period": "early Siddhānta",
+      "translation_status": "EN_GAP",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/ASTaprakaraNa tattvasaMgraha-M00011-IAST.txt",
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G6",
+        "G7"
+      ]
+    },
+    "tattvatrayanirnaya": {
+      "work_id": "tattvatrayanirnaya",
+      "name": "Tattvatrayanirṇaya — Aghoraśiva commentary",
+      "num": 49,
+      "section": "III",
+      "tradition": "Śaiva Siddhānta",
+      "period": "early Siddhānta",
+      "translation_status": "EN_GAP",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/ASTaprakaraNa tattvatrayanirNaya-M00012-IAST.txt",
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G6"
+      ]
+    },
+    "ratnatrayapariksa_srikantha": {
+      "work_id": "ratnatrayapariksa_srikantha",
+      "name": "Ratnatrayaparīkṣā — Śrīkaṇṭha, untranslated remainder",
+      "num": 50,
+      "section": "III",
+      "tradition": "Śaiva Siddhānta",
+      "period": "medieval Siddhānta",
+      "translation_status": "P",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/ASTaprakaraNa ratnatrayaparIkSA-M00009-IAST.txt",
+      "source_gateway": "springer",
+      "download_url": "https://link.springer.com/article/10.1007/s10781-024-09579-3",
+      "companion_guides": [
+        "G6",
+        "G7"
+      ]
+    },
+    "ratnatrayapariksa_vyakhya": {
+      "work_id": "ratnatrayapariksa_vyakhya",
+      "name": "Anonymous Ratnatrayaparīkṣā-vyākhyā",
+      "num": 51,
+      "section": "III",
+      "tradition": "Śaiva Siddhānta",
+      "period": "medieval Siddhānta",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "springer",
+      "download_url": "https://link.springer.com/article/10.1007/s10781-024-09579-3",
+      "companion_guides": [
+        "G6"
+      ]
+    },
+    "ullekhini_ratnatrayapariksa": {
+      "work_id": "ullekhini_ratnatrayapariksa",
+      "name": "Aghoraśiva's Ullekhinī on Ratnatrayaparīkṣā",
+      "num": 52,
+      "section": "III",
+      "tradition": "Śaiva Siddhānta",
+      "period": "medieval Siddhānta",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "springer",
+      "download_url": "https://link.springer.com/article/10.1007/s10781-024-09579-3",
+      "companion_guides": [
+        "G6"
+      ]
+    },
+    "nadakarika": {
+      "work_id": "nadakarika",
+      "name": "Nādakārikā + commentary",
+      "num": 53,
+      "section": "III",
+      "tradition": "Śaiva Siddhānta",
+      "period": "early Siddhānta",
+      "translation_status": "EN_GAP",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/ASTaprakaraNa nAdakArikA-M00007-IAST.txt",
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G6",
+        "G7"
+      ]
+    },
+    "ramakantha_kiravavrtti_7_12": {
+      "work_id": "ramakantha_kiravavrtti_7_12",
+      "name": "Rāmakaṇṭha's Kiraṇavṛtti, chapters 7–12",
+      "num": 54,
+      "section": "III",
+      "tradition": "Kashmirian Śaiva Siddhānta",
+      "period": "c. 10th c. (Kashmir)",
+      "translation_status": "U",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "ifpindia",
+      "download_url": "https://www.ifpindia.org/bookstore/pdi86/",
+      "companion_guides": [
+        "G6"
+      ]
+    },
+    "ramakantha_matangavrtti": {
+      "work_id": "ramakantha_matangavrtti",
+      "name": "Rāmakaṇṭha's Mataṅgavṛtti — untranslated sections",
+      "num": 55,
+      "section": "III",
+      "tradition": "Kashmirian Śaiva Siddhānta",
+      "period": "c. 10th c. (Kashmir)",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G6"
+      ]
+    },
+    "ramakantha_sardhatrisatikalottaravrtti": {
+      "work_id": "ramakantha_sardhatrisatikalottaravrtti",
+      "name": "Rāmakaṇṭha's Sārdhatriśatikālottaravṛtti",
+      "num": 56,
+      "section": "III",
+      "tradition": "Kashmirian Śaiva Siddhānta",
+      "period": "c. 10th c. (Kashmir)",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G6"
+      ]
+    },
+    "sarvagamapramanyopanyasa": {
+      "work_id": "sarvagamapramanyopanyasa",
+      "name": "Sarvāgamaprāmāṇyopanyāsa — Rāmakaṇṭha",
+      "num": 57,
+      "section": "III",
+      "tradition": "Kashmirian Śaiva Siddhānta",
+      "period": "c. 10th c. (Kashmir)",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G6",
+        "G7"
+      ]
+    },
+    "saivasiddhantadipika": {
+      "work_id": "saivasiddhantadipika",
+      "name": "Śaivasiddhāntadīpikā — Sarvātmaśambhu",
+      "num": 58,
+      "section": "III",
+      "tradition": "Śaiva Siddhānta",
+      "period": "medieval Siddhānta",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G6",
+        "G7"
+      ]
+    },
+    "sarvamatopanyasa": {
+      "work_id": "sarvamatopanyasa",
+      "name": "Sarvamatopanyāsa — Sarvātmaśambhu",
+      "num": 59,
+      "section": "III",
+      "tradition": "Śaiva Siddhānta",
+      "period": "medieval Siddhānta",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G7",
+        "G13"
+      ]
+    },
+    "tattvaprakasa_bhojadeva": {
+      "work_id": "tattvaprakasa_bhojadeva",
+      "name": "Tattvaprakāśa — Bhojadeva",
+      "num": 60,
+      "section": "III",
+      "tradition": "Śaiva Siddhānta",
+      "period": "11th c.",
+      "translation_status": "EN_GAP",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/kriyAsAratattvaprakAzinIvyAkhyA-M00232-IAST.txt",
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G6",
+        "G7"
+      ]
+    },
+    "aghorasiva_tattvaprakasika": {
+      "work_id": "aghorasiva_tattvaprakasika",
+      "name": "Aghoraśiva's Tattvaprakāśikā",
+      "num": 61,
+      "section": "IV",
+      "tradition": "Aṣṭaprakaraṇa",
+      "period": "12th c.",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G6"
+      ]
+    },
+    "aghorasiva_tattvasamgrahalaghutika": {
+      "work_id": "aghorasiva_tattvasamgrahalaghutika",
+      "name": "Aghoraśiva's Tattvasaṃgrahalaghuṭīkā",
+      "num": 62,
+      "section": "IV",
+      "tradition": "Aṣṭaprakaraṇa",
+      "period": "12th c.",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G6",
+        "G7"
+      ]
+    },
+    "moksakarika": {
+      "work_id": "moksakarika",
+      "name": "Mokṣakārikā — Sadyojyotis, untranslated/commentarial portions",
+      "num": 63,
+      "section": "IV",
+      "tradition": "Aṣṭaprakaraṇa",
+      "period": "early Siddhānta",
+      "translation_status": "P",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/ASTaprakaraNa mokSakArikA-M00006-IAST.txt",
+      "source_gateway": "vishvasa",
+      "download_url": "https://vishvasa.github.io/AgamaH_shaivaH/sampradAyaH/28-Agama-sampradAyaH/tattvam/sampradAyaH/aShTa-prakaraNa-shAkhA/",
+      "companion_guides": [
+        "G7"
+      ]
+    },
+    "ramakantha_moksakarikavrtti": {
+      "work_id": "ramakantha_moksakarikavrtti",
+      "name": "Rāmakaṇṭha's Mokṣakārikāvṛtti",
+      "num": 64,
+      "section": "IV",
+      "tradition": "Aṣṭaprakaraṇa",
+      "period": "c. 10th c. (Kashmir)",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "vishvasa",
+      "download_url": "https://vishvasa.github.io/AgamaH_shaivaH/sampradAyaH/28-Agama-sampradAyaH/tattvam/sampradAyaH/aShTa-prakaraNa-shAkhA/",
+      "companion_guides": [
+        "G7"
+      ]
+    },
+    "aghorasiva_ashtaprakarana_corpus": {
+      "work_id": "aghorasiva_ashtaprakarana_corpus",
+      "name": "Aghoraśiva's doctrinal commentarial corpus surrounding the Aṣṭaprakaraṇa",
+      "num": 65,
+      "section": "IV",
+      "tradition": "Aṣṭaprakaraṇa",
+      "period": "12th c.",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "vishvasa",
+      "download_url": "https://vishvasa.github.io/AgamaH_shaivaH/sampradAyaH/28-Agama-sampradAyaH/tattvam/sampradAyaH/aShTa-prakaraNa-shAkhA/",
+      "companion_guides": [
+        "G6",
+        "G7"
+      ]
+    },
+    "nityakriyanusandhana": {
+      "work_id": "nityakriyanusandhana",
+      "name": "Nityakriyānusandhāna — Brahmaśambhu",
+      "num": 66,
+      "section": "V",
+      "tradition": "Śaiva Siddhānta",
+      "period": "before/completed c. 937/8",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G8",
+        "G9"
+      ]
+    },
+    "naimittikakriyanusandhana": {
+      "work_id": "naimittikakriyanusandhana",
+      "name": "Naimittikakriyānusandhāna — Brahmaśambhu",
+      "num": 67,
+      "section": "V",
+      "tradition": "Śaiva Siddhānta",
+      "period": "c. 10th",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G8",
+        "G9"
+      ]
+    },
+    "siddhantasarapaddhati": {
+      "work_id": "siddhantasarapaddhati",
+      "name": "Siddhāntasārapaddhati — Bhojadeva",
+      "num": 68,
+      "section": "V",
+      "tradition": "Śaiva Siddhānta",
+      "period": "early 11th",
+      "translation_status": "U?",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/vIrazaivasiddhAntottarakaumudI-M00604-IAST.txt",
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G8",
+        "G9"
+      ]
+    },
+    "natarajapaddhati": {
+      "work_id": "natarajapaddhati",
+      "name": "Naṭarājapaddhati — Rāmanātha",
+      "num": 69,
+      "section": "V",
+      "tradition": "Śaiva Siddhānta",
+      "period": "1058",
+      "translation_status": "U",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G8",
+        "G9"
+      ]
+    },
+    "siddhantadipika_ramanatha": {
+      "work_id": "siddhantadipika_ramanatha",
+      "name": "Siddhāntadīpikā — Rāmanātha",
+      "num": 70,
+      "section": "V",
+      "tradition": "Śaiva Siddhānta",
+      "period": "11th c.",
+      "translation_status": "U?",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/vIrazaivasiddhAntottarakaumudI-M00604-IAST.txt",
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G9"
+      ]
+    },
+    "kriyasamgrahapaddhati": {
+      "work_id": "kriyasamgrahapaddhati",
+      "name": "Kriyāsaṃgrahapaddhati — Valadharin",
+      "num": 71,
+      "section": "V",
+      "tradition": "Śaiva Siddhānta",
+      "period": "before 1091/92 witness",
+      "translation_status": "U",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G8",
+        "G9"
+      ]
+    },
+    "jnanaratnavali": {
+      "work_id": "jnanaratnavali",
+      "name": "Jñānaratnāvalī — Jñānaśiva",
+      "num": 72,
+      "section": "V",
+      "tradition": "Śaiva Siddhānta",
+      "period": "c. 12th",
+      "translation_status": "U",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G9"
+      ]
+    },
+    "kriyakramadyotika": {
+      "work_id": "kriyakramadyotika",
+      "name": "Kriyākramadyotikā — Aghoraśiva",
+      "num": 73,
+      "section": "V",
+      "tradition": "Śaiva Siddhānta",
+      "period": "12th",
+      "translation_status": "U",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/kriyakramadyotikavyAkhyA-M00324-IAST.txt",
+      "source_gateway": "vishvasa",
+      "download_url": "https://vishvasa.github.io/AgamaH_shaivaH/",
+      "companion_guides": [
+        "G9"
+      ]
+    },
+    "isanasivagurudevapaddhati": {
+      "work_id": "isanasivagurudevapaddhati",
+      "name": "Īśānaśivagurudevapaddhati — Śaiva sections",
+      "num": 74,
+      "section": "V",
+      "tradition": "Śaiva Siddhānta",
+      "period": "c. 12th",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G8",
+        "G9"
+      ]
+    },
+    "isanasivacaryapaddhati": {
+      "work_id": "isanasivacaryapaddhati",
+      "name": "Īśānaśivācāryapaddhati / Śivārcanavidhi",
+      "num": 75,
+      "section": "V",
+      "tradition": "Śaiva Siddhānta",
+      "period": "medieval",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G9"
+      ]
+    },
+    "pararthanityapujavidhi": {
+      "work_id": "pararthanityapujavidhi",
+      "name": "Parārthanityapūjāvidhi",
+      "num": 76,
+      "section": "V",
+      "tradition": "Śaiva Siddhānta",
+      "period": "medieval",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G9"
+      ]
+    },
+    "pratisthakriyadipika": {
+      "work_id": "pratisthakriyadipika",
+      "name": "Pratiṣṭhākriyādīpikā",
+      "num": 77,
+      "section": "V",
+      "tradition": "Śaiva Siddhānta",
+      "period": "medieval",
+      "translation_status": "U?",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/pratiSThAlakSaNasArasamuccaya-M00065-IAST.txt",
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G8",
+        "G9"
+      ]
+    },
+    "kriyadipika_jnanasivacarya": {
+      "work_id": "kriyadipika_jnanasivacarya",
+      "name": "Kriyādīpikā — Jñānaśivācārya",
+      "num": 78,
+      "section": "V",
+      "tradition": "Śaiva Siddhānta",
+      "period": "medieval Siddhānta",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G9"
+      ]
+    },
+    "siddhantasaravali": {
+      "work_id": "siddhantasaravali",
+      "name": "Siddhāntasārāvalī — Trilocanaśiva + Anantaśiva commentary",
+      "num": 79,
+      "section": "V",
+      "tradition": "Śaiva Siddhānta",
+      "period": "12th",
+      "translation_status": "U",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/vIrazaivasiddhAntottarakaumudI-M00604-IAST.txt",
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G9"
+      ]
+    },
+    "prayascittasamuccaya_hridayasiva": {
+      "work_id": "prayascittasamuccaya_hridayasiva",
+      "name": "Prāyaścittasamuccaya — Hṛdayaśiva",
+      "num": 80,
+      "section": "V",
+      "tradition": "Śaiva Siddhānta",
+      "period": "before 1157 MS",
+      "translation_status": "U",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "ifpindia",
+      "download_url": "https://www.ifpindia.org/bookstore/ci127/",
+      "companion_guides": [
+        "G9"
+      ]
+    },
+    "pratisthalaksanasarasamuccaya": {
+      "work_id": "pratisthalaksanasarasamuccaya",
+      "name": "Pratiṣṭhālakṣaṇasārasamuccaya",
+      "num": 81,
+      "section": "VI",
+      "tradition": "Śaiva Siddhānta",
+      "period": "medieval",
+      "translation_status": "U?",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/pratiSThAlakSaNasArasamuccaya-M00065-IAST.txt",
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G8",
+        "G9"
+      ]
+    },
+    "vimalavati": {
+      "work_id": "vimalavati",
+      "name": "Vimalāvatī — Vimalaśiva",
+      "num": 82,
+      "section": "VI",
+      "tradition": "Śaiva Siddhānta",
+      "period": "medieval",
+      "translation_status": "U?",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/vimalAvatItantra-M00295-IAST.txt",
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G8"
+      ]
+    },
+    "nityadisangrahapaddhati": {
+      "work_id": "nityadisangrahapaddhati",
+      "name": "Nityādisaṅgrahapaddhati — Rājānaka Takṣakavarta",
+      "num": 83,
+      "section": "VI",
+      "tradition": "Śaiva Siddhānta",
+      "period": "medieval",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G9"
+      ]
+    },
+    "aghorasivacaryapujanukramani": {
+      "work_id": "aghorasivacaryapujanukramani",
+      "name": "Aghoraśivācāryapūjānukramaṇī",
+      "num": 84,
+      "section": "VI",
+      "tradition": "Śaiva Siddhānta",
+      "period": "medieval",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G9"
+      ]
+    },
+    "sivotsavapaddhati": {
+      "work_id": "sivotsavapaddhati",
+      "name": "Śivotsavapaddhati",
+      "num": 85,
+      "section": "VI",
+      "tradition": "Śaiva Siddhānta",
+      "period": "medieval",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G9"
+      ]
+    },
+    "saivasiddhanta_pujapaddhati": {
+      "work_id": "saivasiddhanta_pujapaddhati",
+      "name": "anonymous Śaivasiddhānta Pūjāpaddhati corpus",
+      "num": 86,
+      "section": "VI",
+      "tradition": "Śaiva Siddhānta",
+      "period": "medieval",
+      "translation_status": "U",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G9"
+      ]
+    },
+    "sthapanadipika": {
+      "work_id": "sthapanadipika",
+      "name": "Sthāpanadīpikā",
+      "num": 87,
+      "section": "VI",
+      "tradition": "Śaiva Siddhānta",
+      "period": "medieval",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G8"
+      ]
+    },
+    "balalayavidhi": {
+      "work_id": "balalayavidhi",
+      "name": "Bālālayavidhi",
+      "num": 88,
+      "section": "VI",
+      "tradition": "Śaiva Siddhānta",
+      "period": "medieval",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G8"
+      ]
+    },
+    "sripratisthavidhi": {
+      "work_id": "sripratisthavidhi",
+      "name": "Śrīpratiṣṭhāvidhi",
+      "num": 89,
+      "section": "VI",
+      "tradition": "Śaiva Siddhānta",
+      "period": "medieval",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G8"
+      ]
+    },
+    "sivalingapratisthavidhi": {
+      "work_id": "sivalingapratisthavidhi",
+      "name": "Śivaliṅgapratiṣṭhāvidhi",
+      "num": 90,
+      "section": "VI",
+      "tradition": "Śaiva Siddhānta",
+      "period": "medieval",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "digitalcollections.ifpindia",
+      "download_url": "https://digitalcollections.ifpindia.org/s/manuscripts",
+      "companion_guides": [
+        "G8",
+        "G9"
+      ]
+    },
+    "sivadrsti": {
+      "work_id": "sivadrsti",
+      "name": "Śivadṛṣṭi — Somānanda, untranslated remainder",
+      "num": 91,
+      "section": "VII",
+      "tradition": "Pratyabhijñā",
+      "period": "c. 9th c.",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G7",
+        "G10"
+      ]
+    },
+    "utpaladeva_sivadrstivrtti": {
+      "work_id": "utpaladeva_sivadrstivrtti",
+      "name": "Utpaladeva's Śivadṛṣṭivṛtti — untranslated remainder",
+      "num": 92,
+      "section": "VII",
+      "tradition": "Pratyabhijñā",
+      "period": "c. 9th–10th c.",
+      "translation_status": "P",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G7",
+        "G10"
+      ]
+    },
+    "spandapradipika": {
+      "work_id": "spandapradipika",
+      "name": "Spandapradīpikā — Bhagavadutpala",
+      "num": 93,
+      "section": "VII",
+      "tradition": "Spanda",
+      "period": "early medieval",
+      "translation_status": "U?",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/spandapradIpikA-M00532-IAST.txt",
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G10"
+      ]
+    },
+    "svacchandodyota": {
+      "work_id": "svacchandodyota",
+      "name": "Svacchandodyota — Kṣemarāja, untranslated bulk",
+      "num": 94,
+      "section": "VII",
+      "tradition": "Kashmirian Śaiva Siddhānta",
+      "period": "c. 11th c.",
+      "translation_status": "P",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/svacchandapaddhati-M00194-IAST.txt",
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G10"
+      ]
+    },
+    "netratantroddyota": {
+      "work_id": "netratantroddyota",
+      "name": "Netratantroddyota — Kṣemarāja, untranslated bulk",
+      "num": 95,
+      "section": "VII",
+      "tradition": "Kashmirian Śaiva Siddhānta",
+      "period": "c. 11th c.",
+      "translation_status": "P",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/netratantra-M00038-IAST.txt",
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G10"
+      ]
+    },
+    "bhavopahara": {
+      "work_id": "bhavopahara",
+      "name": "Bhāvopahāra — Cakrapāṇinātha + Ramyadeva commentary",
+      "num": 96,
+      "section": "VII",
+      "tradition": "Kaula/Nātha",
+      "period": "medieval",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "shaivism.net",
+      "download_url": "https://shaivism.net/articles/references.html",
+      "companion_guides": [
+        "G10"
+      ]
+    },
+    "bhagavadgita_sarvatobhadra": {
+      "work_id": "bhagavadgita_sarvatobhadra",
+      "name": "Bhagavadgītā-Sarvatobhadra — Rāmakaṇṭha",
+      "num": 97,
+      "section": "VII",
+      "tradition": "Kashmirian Śaiva Siddhānta",
+      "period": "c. 10th c. (Kashmir)",
+      "translation_status": "U?",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/bhagavadgItA-M00167-IAST.txt",
+      "source_gateway": "shaivism.net",
+      "download_url": "https://shaivism.net/articles/references.html",
+      "companion_guides": [
+        "G6",
+        "G7"
+      ]
+    },
+    "janmamaranavicara": {
+      "work_id": "janmamaranavicara",
+      "name": "Janmamaraṇavicāra — Bhaṭṭa Vāmadeva",
+      "num": 98,
+      "section": "VII",
+      "tradition": "Kashmirian Śaiva Siddhānta",
+      "period": "medieval",
+      "translation_status": "U",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/janmamaRanavicAra-M00155-IAST.txt",
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha.org/translation-series/",
+      "companion_guides": [
+        "G6",
+        "G10"
+      ]
+    },
+    "vatulanathasutra": {
+      "work_id": "vatulanathasutra",
+      "name": "Vātūlanāthasūtra + Anantaśaktipādavivaraṇa",
+      "num": 99,
+      "section": "VII",
+      "tradition": "Kaula/Nātha",
+      "period": "medieval",
+      "translation_status": "U?",
+      "on_disk": true,
+      "disk_path": "muktabodha-lib/vAtUlanAthasUtra-M00099-IAST.txt",
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G10",
+        "G12"
+      ]
+    },
+    "kaulasutra": {
+      "work_id": "kaulasutra",
+      "name": "Kaulasūtra — Bhaṭṭa Śitikaṇṭha",
+      "num": 100,
+      "section": "VII",
+      "tradition": "Kaula",
+      "period": "medieval",
+      "translation_status": "U?",
+      "on_disk": false,
+      "disk_path": null,
+      "source_gateway": "muktabodha",
+      "download_url": "https://muktabodha-digital-library.org",
+      "companion_guides": [
+        "G10",
+        "G12"
+      ]
+    }
+  }
+}
