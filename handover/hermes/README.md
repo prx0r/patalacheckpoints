@@ -28,6 +28,7 @@ Kramasadbhāva.** Then autonomous batch translation becomes a queue-processing p
 |---|---|
 | **`CANONICAL.md`** | THE integration reference: corrected thesis, the 4 corrections, verified feature map, realized architecture, 16 advanced recipes, the scholar & API surface (Workbench, BYOA/MCP, A2A, peer review, executable-corrections moat, minimal architecture). |
 | **`AUTOTRANSLATE-NORTHSTAR.md`** | **The immediate engineering objective** — RAW-L0 (MODE_B): the one gap blocking the autonomous translator. Target, terminology correction, the record shape, the agentic reasoning loop, the Sanskrit-only replay experiment, the build sequence (raw_l0.py → audit → replay → human review → Kramasadbhāva → batch). |
+| **`TRANSLATION-APPROACH-AND-VALIDATION.md`** | **The production doctrine** — how to translate huge texts (the IPVV chunk + context-engineer + review method), the validation-first principle (a wrong translation is worse than none), Dyczkowski's Tantrāloka as the gold-standard reference, and the per-work term-context packet to stop Sanskrit terms being misread across traditions. |
 | **`DEV-PLAN.md`** | The build sequence (Phase 1 execution kernel → Phase 2 A3 factory → Phase 3 ReviewEvent-as-graph-mutation → Phase 4 Scholar Workbench → Phase 5 BYOA + corrections dataset). |
 | **`PATALA-SETUP.md`** | The fresh hermes profile/project + the Pāṭala "soul" plan (do NOT run the mutation commands until approved). |
 | **`BACKEND-MODEL.md`** | The verified feature→vision map (superseded thesis — see CANONICAL). |

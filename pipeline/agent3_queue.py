@@ -24,29 +24,26 @@ from agent3_batch import load_raw_source, split_verses
 from raw_l0 import raw_l0
 from l0_registry import commit_l0, l0_versions, summary as registry_summary
 from corpus_state import next_valid_action, WorkState
+from translation_targets import order_queue, priority_label
 
 LEDGER_PATH = "/root/projects/patala/data/corpus/downloads/translation-state-ledger.json"
 QUEUE_STATE_PATH = "/root/projects/patala/data/corpus/downloads/agent3-queue-state.json"
 
 
 def eligible_works() -> list[str]:
-    """Works in the ledger whose next action is RAW-L0-eligible (a queue candidate)."""
+    """Works in the ledger whose next action is RAW-L0-eligible (a queue candidate).
+
+    Ordered by the translation-target priority (expansion docs): the Krama packet first,
+    then tier-1 complete-Sanskrit corpora, then tier-0/2, then tier-3 flagships.
+    """
     ledger = json.load(open(LEDGER_PATH))
-    # reconstruct a WorkState-like view to call next_valid_action
     eligible = []
     for wid, w in ledger["works"].items():
         src = w.get("source") or {}
         fmt = src.get("format", "UNKNOWN")
-        l0 = w.get("l0") or {}
-        s = WorkState(work_id=wid, source_available=src.get("available", False),
-                      source_format=fmt, l0_status=l0.get("status", "NOT_STARTED"),
-                      t1=w.get("translation", {}).get("t1", "NOT_STARTED"),
-                      c1=w.get("translation", {}).get("c1", "NOT_STARTED"))
-        na = next_valid_action(s)
-        # RAW-L0 works: RAW_SANSKRIT source (MODE_B) is the queue's target
         if fmt == "RAW_SANSKRIT":
             eligible.append(wid)
-    return eligible
+    return order_queue(eligible)
 
 
 def load_queue_state() -> dict:
@@ -73,9 +70,9 @@ def next_passage(work_id: str, state: dict) -> tuple[str, int] | None:
 def process_next(work_id: str, committed_by: str = "agent3", max_verses: int = 5) -> dict:
     """Process the next untranslated passage(s) for a work, committing each L0 version."""
     state = load_queue_state()
-    work_state = state.setdefault("by_work", {}).setdefault(work_id, {"done_verses": set(), "commits": []})
+    work_state = state.setdefault("by_work", {}).setdefault(work_id, {"done_verses": [], "commits": []})
     verses = split_verses(load_raw_source(work_id))
-    done = work_state["done_verses"]
+    done = set(work_state["done_verses"])   # JSON round-trips sets -> lists; coerce back
 
     processed = []
     count = 0

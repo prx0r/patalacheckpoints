@@ -4,7 +4,8 @@
       "done_verses": [
         0,
         1,
-        2
+        2,
+        3
       ],
       "commits": [
         {
@@ -37,6 +38,16 @@
             "sha256": "d698e58deb1f158b",
             "supersedes": "v2",
             "n_records": 4
+          },
+          "proof_pass": true
+        },
+        {
+          "passage_id": "kramasadbhava:v4",
+          "commit": {
+            "duplicate": true,
+            "work_id": "kramasadbhava",
+            "version": "v4",
+            "sha256": "c12056bd413e4094"
           },
           "proof_pass": true
         }

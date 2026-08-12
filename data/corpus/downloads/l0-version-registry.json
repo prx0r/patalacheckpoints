@@ -34,9 +34,19 @@
           "supersedes": "v2",
           "n_records": 4,
           "n_verses": 1
+        },
+        {
+          "version": "v4",
+          "sha256": "c12056bd413e4094",
+          "committed_by": "agent3",
+          "committed_at": "2026-08-12T15:48:17.782168+00:00",
+          "status": "MACHINE_PROPOSED",
+          "supersedes": "v3",
+          "n_records": 6,
+          "n_verses": 1
         }
       ],
-      "current": "v3"
+      "current": "v4"
     }
   }
 }
