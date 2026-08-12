@@ -68,6 +68,7 @@ That's the whole philosophy: **find a thing → read it → pull its evidence.**
 | `GET /api` | Discoverability: endpoint groups + principles |
 | `GET /api/health` | Operational status + dataset version |
 | `GET /api/stats` | Corpus credibility signals (raw counts) |
+| `GET /api/corpus/state` | **The translation-state ledger** — per-work source/translation/L0/proof/review state + NEXT_VALID_ACTION + agent3 eligibility (the corpus control plane; Agent 2's core object) |
 | `GET /api/texts` | The bibliography (the "WHAT EXISTS?" spine) |
 | `GET /api/resources` | The external-resource federation register (typed + tradition-tagged) |
 | `GET /api/texts/{id}` | One full bibliography record |

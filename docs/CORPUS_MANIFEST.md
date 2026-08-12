@@ -167,3 +167,15 @@ passage validity, and L0-readiness. This is the ref-able map for translation aut
 **Highlights:** kramasadbhava is the most L0-ready non-IPVV stack (563 valid passages, `[and]-` gloss
 format, runs through `verify_l0.py`); the untranslated registers (`corpus/targets/`) give the ranked
 translation roadmap; the source libraries already contain most of the śiva-corpus Sanskrit.
+
+### The translation-state ledger + API (the corpus control plane)
+
+- **`pipeline/corpus_state.py`** — Agent 2's core object: computes per-work state (source/translation/
+  L0/proof/review) from ACTUAL disk truth + bibliography + manifest, and exposes
+  `NEXT_VALID_ACTION(work)` + `eligible_for_agent3` (the transition contract / control plane for Agent 3).
+- **`data/corpus/downloads/translation-state-ledger.json`** — the generated ledger.
+- **`GET /api/corpus/state`** — serves the ledger read-only (`?work=<id>` for one work). The site +
+  any agent can query corpus state without Agent 2 regenerating it.
+
+**The clean division:** Agent 2 = corpus compiler / state truth. Agent 3 = translation factory
+(consumes NEXT_VALID_ACTION). Agent 1 = philosophical intelligence. See `handover/agent-2-integration/INDEX.md`.
