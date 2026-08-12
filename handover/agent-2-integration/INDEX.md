@@ -34,13 +34,16 @@ substrate (`resolve`, `hub`, `spines`, `themes`, 4 `verify_*`, `recommend`). Doc
 
 ## Lane
 
-- **Role:** integration + scholarly content + docs + Sanskrit substrate (the L0 philological floor).
-- **Owns:** `data/`, `app/`, `lib/`, `pipeline/`, the reader/API/MCP, the factory,
+- **Role:** **CORPUS COMPILER + INTEGRITY LAYER** (not just "the L0 agent") — maintains the canonical
+  machine-readable corpus state that Agent 3 (translation factory) safely operates on.
+- **Owns:** `data/corpus/`, `app/`, `lib/`, `pipeline/` (incl. `verify_l0.py`, `corpus_state.py`),
   `translations/_stack/ipvv/specs/` + process notes.
-- **Rule:** "AI proposes ≠ Pāṭala asserts." Expose scholarly structure as addressable data (schema
-  snippets), keep the L200/C1 discipline, preserve provenance.
-- **Do NOT:** build ML models or claim results (that's Agent 1); over-engineer the reader before the
-  data/API is complete; wander into essay logic.
+- **Questions:** "What do we have, where is it, what state is it in, and can every artifact resolve?"
+- **Does NOT:** generate translations (Agent 3), write C1 / choose interpretive readings (Agent 3/1),
+  promote machine output to accepted scholarship, do argument extraction / themes / synthesis (Agent 1).
+- **Rule:** "AI proposes ≠ Pāṭala asserts." Agent 2 is the build system / state truth; Agent 3 is the
+  worker producing candidate artifacts; Agent 1 is the philosophical intelligence.
+- **Do NOT:** build ML models or claim results; over-engineer the reader; wander into essay logic.
 
 ---
 

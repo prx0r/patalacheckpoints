@@ -102,3 +102,21 @@ work), but full P0 on a legacy T1 needs a small editorial-classification extensi
 cross-work seam P-001 flagged — recorded, NOT papered over. Do NOT redesign L0; extend classification
 only if/when a legacy work is actually adopted. See also the new download manifest
 (data/corpus/downloads/siva-corpus-download-manifest.json).
+
+## 2026-08-12 — Agent 2's new identity + the translation-state ledger (the corpus-compiler core)
+Agent 2's role is reframed (per the coordinator) from "the L0 agent" to the CORPUS COMPILER / integrity
+layer: maintain the canonical machine-readable corpus state that Agent 3 (translation factory) safely
+operates on. Clean division: Agent 2 = corpus/translation infrastructure + state truth; Agent 3 =
+translation factory (consumes NEXT_VALID_ACTION); Agent 1 = philosophical intelligence.
+Built pipeline/corpus_state.py — the core object:
+- per-work state from ACTUAL disk truth: source availability+format (AND_GLOSS/RAW_SANSKRIT),
+  translation stage (T1/L2/C1), L0 status, proof, review, provenance
+- NEXT_VALID_ACTION(work) = the transition contract / control plane for Agent 3
+  (MISSING_SOURCE->ACQUIRE; RAW_SANSKRIT->BUILD_L0_SOURCE_MODE [blocked]; L0_VERIFIED->
+  GENERATE_TRANSLATION; TRANSLATION_PROPOSED->RUN_QA; QA_PASS->GENERATE_C1; C1->WAIT_FOR_REVIEW)
+- eligible_for_agent3 safety gate
+Output: data/corpus/downloads/translation-state-ledger.json (11/11 tests pass).
+Key honest findings: IPVV L0 VERIFIED; kramasadbhava/kubjikamata/kulasara/mahanayaprakasha/
+brahmayamala/svacchanda/netra RAW_SANSKRIT -> BUILD_L0_SOURCE_MODE (the real unlock seam); MANY works
+have on-disk Sanskrit (Muktabodha lib) but no L0 built. Do NOT build the raw-Sanskrit mode until a
+high-value work hits that state.
