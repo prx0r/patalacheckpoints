@@ -16,7 +16,8 @@
         "kriyakandakramavali/kriyakandakramavali.txt",
         "kriyakandakramavali/kriyakandakramavali.pdf"
       ],
-      "on_disk": true
+      "on_disk": true,
+      "acquisition_status": "acquired"
     },
     "somashambhupaddhativyakhya": {
       "work_id": "somashambhupaddhativyakhya",
@@ -28,7 +29,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "siddhantasamuccaya": {
       "work_id": "siddhantasamuccaya",
@@ -40,7 +42,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "siddhantarahasyasara": {
       "work_id": "siddhantarahasyasara",
@@ -52,7 +55,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "sataratnasamgraha": {
       "work_id": "sataratnasamgraha",
@@ -64,7 +68,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "sataratnollekhanii": {
       "work_id": "sataratnollekhanii",
@@ -76,7 +81,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "siddhantaprakasika": {
       "work_id": "siddhantaprakasika",
@@ -88,7 +94,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "tattvaratnavali": {
       "work_id": "tattvaratnavali",
@@ -100,7 +107,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "siddhantasekhara": {
       "work_id": "siddhantasekhara",
@@ -114,7 +122,8 @@
       "acquired_files": [
         "siddhantasekhara/siddhantasekhara.pdf"
       ],
-      "on_disk": true
+      "on_disk": true,
+      "acquisition_status": "acquired"
     },
     "mrgendrapaddhati": {
       "work_id": "mrgendrapaddhati",
@@ -126,7 +135,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "mrgendrapaddhatitika": {
       "work_id": "mrgendrapaddhatitika",
@@ -138,7 +148,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "prasadapaddhati": {
       "work_id": "prasadapaddhati",
@@ -150,7 +161,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "pratisthasarapaddhati": {
       "work_id": "pratisthasarapaddhati",
@@ -162,7 +174,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "sisyasamskarapaddhati": {
       "work_id": "sisyasamskarapaddhati",
@@ -174,7 +187,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "kaladiksapaddhati": {
       "work_id": "kaladiksapaddhati",
@@ -186,7 +200,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "agnikaryapaddhati": {
       "work_id": "agnikaryapaddhati",
@@ -198,7 +213,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "sivanirvanapaddhati": {
       "work_id": "sivanirvanapaddhati",
@@ -213,7 +229,8 @@
         "sivanirvanapaddhati/sivanirvanapaddhati.txt",
         "sivanirvanapaddhati/sivanirvanapaddhati.pdf"
       ],
-      "on_disk": true
+      "on_disk": true,
+      "acquisition_status": "acquired"
     },
     "gurupustika": {
       "work_id": "gurupustika",
@@ -225,7 +242,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "svacchandabhairavapujapaddhati": {
       "work_id": "svacchandabhairavapujapaddhati",
@@ -237,7 +255,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "svacchandadevarcanavidhi": {
       "work_id": "svacchandadevarcanavidhi",
@@ -249,7 +268,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "apratihatamahadiksasutippanaka": {
       "work_id": "apratihatamahadiksasutippanaka",
@@ -261,7 +281,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "amrtevarapujana": {
       "work_id": "amrtevarapujana",
@@ -273,7 +294,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "amrtevarapujagnikaryavidhana": {
       "work_id": "amrtevarapujagnikaryavidhana",
@@ -285,7 +307,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "amrtasuryapujavidhi": {
       "work_id": "amrtasuryapujavidhi",
@@ -297,7 +320,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "amrtabhairavarcanavidhi": {
       "work_id": "amrtabhairavarcanavidhi",
@@ -309,7 +333,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "amrtisabhairavabhattarakahnikavidhi": {
       "work_id": "amrtisabhairavabhattarakahnikavidhi",
@@ -321,7 +346,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "amrtasuryarcanavidhi": {
       "work_id": "amrtasuryarcanavidhi",
@@ -333,7 +359,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "devitantrasadbhavasara": {
       "work_id": "devitantrasadbhavasara",
@@ -345,7 +372,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "matrsadbhava": {
       "work_id": "matrsadbhava",
@@ -357,7 +385,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "tantrarajatantravatarastotra": {
       "work_id": "tantrarajatantravatarastotra",
@@ -369,7 +398,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "urdhvamnayapavitrarohanadamanarohanapaddhati": {
       "work_id": "urdhvamnayapavitrarohanadamanarohanapaddhati",
@@ -381,7 +411,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "paratrisikalaghuvrttivimarsini": {
       "work_id": "paratrisikalaghuvrttivimarsini",
@@ -393,7 +424,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "paratrisikatatparyadipika": {
       "work_id": "paratrisikatatparyadipika",
@@ -405,7 +437,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "anuttarasamvidarcanacarca": {
       "work_id": "anuttarasamvidarcanacarca",
@@ -417,7 +450,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "pararcanakrama": {
       "work_id": "pararcanakrama",
@@ -429,7 +463,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "parakramavasana": {
       "work_id": "parakramavasana",
@@ -441,7 +476,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "paramasivadvaitakalpalatika": {
       "work_id": "paramasivadvaitakalpalatika",
@@ -453,7 +489,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "anandakalpavalli": {
       "work_id": "anandakalpavalli",
@@ -465,7 +502,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "parapujaprayoga": {
       "work_id": "parapujaprayoga",
@@ -477,7 +515,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "maharthamulasamketasutra": {
       "work_id": "maharthamulasamketasutra",
@@ -489,7 +528,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "anuttaraprakasapancasika": {
       "work_id": "anuttaraprakasapancasika",
@@ -501,7 +541,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "parapravesika": {
       "work_id": "parapravesika",
@@ -513,7 +554,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "svarupavimarsini": {
       "work_id": "svarupavimarsini",
@@ -525,7 +567,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "naganandasutravivarana": {
       "work_id": "naganandasutravivarana",
@@ -537,7 +580,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "anuttarapaddhati": {
       "work_id": "anuttarapaddhati",
@@ -549,7 +593,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "padyavahini": {
       "work_id": "padyavahini",
@@ -561,7 +606,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "saivakalpadruma": {
       "work_id": "saivakalpadruma",
@@ -573,7 +619,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "sivavakyavali": {
       "work_id": "sivavakyavali",
@@ -585,7 +632,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "saivamanasollasa": {
       "work_id": "saivamanasollasa",
@@ -597,7 +645,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "saivasarvasvasara": {
       "work_id": "saivasarvasvasara",
@@ -609,7 +658,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "kamikagama": {
       "work_id": "kamikagama",
@@ -623,7 +673,8 @@
       "acquired_files": [
         "kamikagama/kamikagama.pdf"
       ],
-      "on_disk": true
+      "on_disk": true,
+      "acquisition_status": "acquired"
     },
     "yogajagama": {
       "work_id": "yogajagama",
@@ -635,7 +686,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "cintyagama": {
       "work_id": "cintyagama",
@@ -647,7 +699,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "ajitagama": {
       "work_id": "ajitagama",
@@ -663,7 +716,8 @@
         "ajitagama/ajitagama_vol1_text.pdf",
         "ajitagama/ajitagama_vol2_text.pdf"
       ],
-      "on_disk": true
+      "on_disk": true,
+      "acquisition_status": "acquired"
     },
     "diptagama": {
       "work_id": "diptagama",
@@ -675,7 +729,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "suksmagama": {
       "work_id": "suksmagama",
@@ -687,7 +742,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "amsumadagama": {
       "work_id": "amsumadagama",
@@ -699,7 +755,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "suprabhedagama": {
       "work_id": "suprabhedagama",
@@ -711,7 +768,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "vijayagama": {
       "work_id": "vijayagama",
@@ -723,7 +781,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "analagama": {
       "work_id": "analagama",
@@ -735,7 +794,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "viraagama": {
       "work_id": "viraagama",
@@ -747,7 +807,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "vimalagama": {
       "work_id": "vimalagama",
@@ -759,7 +820,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "bimbagama": {
       "work_id": "bimbagama",
@@ -771,7 +833,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "prodigitagama": {
       "work_id": "prodigitagama",
@@ -783,7 +846,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "lalitagama": {
       "work_id": "lalitagama",
@@ -795,7 +859,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "siddhagama": {
       "work_id": "siddhagama",
@@ -807,7 +872,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "santanagama": {
       "work_id": "santanagama",
@@ -819,7 +885,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "sarvoktagama": {
       "work_id": "sarvoktagama",
@@ -831,7 +898,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "karanagama": {
       "work_id": "karanagama",
@@ -843,7 +911,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "makutagama": {
       "work_id": "makutagama",
@@ -855,7 +924,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "candrajnanagama": {
       "work_id": "candrajnanagama",
@@ -867,7 +937,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "sarvajnanottara2": {
       "work_id": "sarvajnanottara2",
@@ -879,7 +950,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "mrgendratantra2": {
       "work_id": "mrgendratantra2",
@@ -891,7 +963,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "kiranatantra2": {
       "work_id": "kiranatantra2",
@@ -903,7 +976,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "brhatkalottara2": {
       "work_id": "brhatkalottara2",
@@ -915,7 +989,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "jnanassiddhyagama": {
       "work_id": "jnanassiddhyagama",
@@ -927,7 +1002,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "cidambaresvaranityapujasutra": {
       "work_id": "cidambaresvaranityapujasutra",
@@ -939,7 +1015,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "citsabhesotsavasutra": {
       "work_id": "citsabhesotsavasutra",
@@ -951,7 +1028,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "pauskarabhasya": {
       "work_id": "pauskarabhasya",
@@ -963,7 +1041,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "kriyasara": {
       "work_id": "kriyasara",
@@ -975,7 +1054,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "anubhavasutra": {
       "work_id": "anubhavasutra",
@@ -987,7 +1067,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "maritontadarya_siddhantashikhamani": {
       "work_id": "maritontadarya_siddhantashikhamani",
@@ -999,7 +1080,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "lingadharanacandrika": {
       "work_id": "lingadharanacandrika",
@@ -1011,7 +1093,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "pancaratna": {
       "work_id": "pancaratna",
@@ -1023,7 +1106,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "pancaratna_commentary": {
       "work_id": "pancaratna_commentary",
@@ -1035,7 +1119,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "pramathaganapaddhati": {
       "work_id": "pramathaganapaddhati",
@@ -1047,7 +1132,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "anadivirasaivacarasamgraha": {
       "work_id": "anadivirasaivacarasamgraha",
@@ -1059,7 +1145,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "virasaivacarasroddharabhasya": {
       "work_id": "virasaivacarasroddharabhasya",
@@ -1071,7 +1158,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "viramaheswaracarasamgraha": {
       "work_id": "viramaheswaracarasamgraha",
@@ -1083,7 +1171,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "virasaivasiddhantottarakaumudi": {
       "work_id": "virasaivasiddhantottarakaumudi",
@@ -1095,7 +1184,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "vivekacintamani": {
       "work_id": "vivekacintamani",
@@ -1107,7 +1197,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "sivadvaitanirnaya": {
       "work_id": "sivadvaitanirnaya",
@@ -1119,7 +1210,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "vedantasarvasvasivadarpana": {
       "work_id": "vedantasarvasvasivadarpana",
@@ -1131,7 +1223,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "sivarcanacandrika": {
       "work_id": "sivarcanacandrika",
@@ -1143,7 +1236,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "saivagamaparibhasamanjari": {
       "work_id": "saivagamaparibhasamanjari",
@@ -1155,7 +1249,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "atmarthapujapaddhati": {
       "work_id": "atmarthapujapaddhati",
@@ -1167,7 +1262,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "diksadarsa": {
       "work_id": "diksadarsa",
@@ -1179,7 +1275,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "asaucadipika": {
       "work_id": "asaucadipika",
@@ -1191,7 +1288,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "sivanityapujapaddhati": {
       "work_id": "sivanityapujapaddhati",
@@ -1203,7 +1301,8 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     },
     "sivatandavatantratika": {
       "work_id": "sivatandavatantratika",
@@ -1215,9 +1314,14 @@
       "source": null,
       "acquired": false,
       "acquired_files": [],
-      "on_disk": false
+      "on_disk": false,
+      "acquisition_status": "missing"
     }
   },
   "on_disk": {},
-  "n_on_disk": 5
+  "n_on_disk": 5,
+  "acquisition_summary": {
+    "acquired": 5,
+    "missing": 95
+  }
 }

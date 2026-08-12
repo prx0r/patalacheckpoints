@@ -1,192 +1,267 @@
-# PĀṬALA ACQUISITION STATUS — 2026-08-12
+# PĀṬALA ACQUISITION & TRACKING REGISTER — 2026-08-12
 
-Honest register of corpus-source acquisition: what is on disk, what is broken, what could not be obtained, and where it was looked. Per the doctrine: a text is 'acquired' only when a real witness file exists on disk; a catalogue URL is a lead, not an acquisition.
+Single audit of every corpus-translation target and scholar source, with per-item status, so it can be reviewed and resumed later. Statuses are the honest, doctrine-compliant labels.
 
-## 0. Summary
+## 0. Headline
 
-- **sivaqueue1 (#1–100):** 48 on disk (incl. 15 broken/needs-fix), **44 cleanly acquired+registered**, **52 not acquired**.
-- **sivaqueue2 (#101–200):** **13 acquired files** (6 targets), **94+ not acquired**.
+- **Queue 1 (Śiva before Abhinava, #1–100):** 38 acquired · 10 on-disk-but-broken · 52 missing.
+- **Queue 2 (#101–200):** 5 acquired · 95 missing.
+- **Sanderson scholar corpus:** 53 catalogued · 43 downloaded · 8 manual-only.
 
-## 1. sivaqueue1 — acquired (clean, registered) — 44
+## Queue 1 — acquired (38)
 
-- **#? aghorasivas_ullekhini_on_ratnatraya** — gretil · GRETIL Ratnatrayaparīkṣā (Ullekhinī)
-- **#? anonymous_ratnatrayapariksavyakhya** — gretil · GRETIL Ratnatrayaparīkṣā (anonymous commentary)
-- **#97 bhagavadgita_sarvatobhadra** — muktabodha · copied from muktabodha-lib/bhagavadgItA-M00167-IAST.txt
-- **#96 bhavopahara** — gretil · GRETIL Bhāvopahārastotra + Vivaraṇa (Ramyadeva)
-- **#30 dvisatikalottara** — muktabodha · muktabodha-lib copy dvizatikAlottara-M00200-IAST.txt
-- **#2 ganakarika** — muktabodha · muktabodha-lib copy gaNakArikA-M00508-IAST.txt
-- **#74 isanasivagurudevapaddhati** — muktabodha · muktabodha-lib concatenation of IzAnazivagurudevapaddhati Volume 1-4 (M00016/M00017/M00018/M00233)
-- **#98 janmamaranavicara** — muktabodha · copied from muktabodha-lib/janmamaRanavicAra-M00155-IAST.txt
-- **#72 jnanaratnavali** — muktabodha · muktabodha-lib copy jJAnaratnAvalI-M0222-IAST.txt
-- **#20 kalikapurana** — muktabodha · copied from muktabodha-lib/kAlikApurANam-M04002-IAST.txt
-- **#40 kiranatantra** — gretil · GRETIL Kiraṇatantra 1-6 (Rāmakaṇṭha)
-- **#73 kriyakramadyotika** — muktabodha · copied from muktabodha-lib/kriyakramadyotikavyAkhyA-M00324-IAST.txt
-- **#45 makutottara** — muktabodha · copied from muktabodha-lib/makuTottararahasya-M00525-IAST.txt
-- **#37 mohacudottara** — muktabodha · copied from muktabodha-lib/mohacUDottara-M00304-IAST.txt
-- **#63 moksakarika** — muktabodha · copied from muktabodha-lib/ASTaprakaraNa mokSakArikA-M00006-IAST.txt
-- **#42 mrgendratantra** — muktabodha · copied from muktabodha-lib/mRgendrAgama-M00037-IAST.txt
-- **#53 nadakarika** — muktabodha · copied from muktabodha-lib/ASTaprakaraNa nAdakArikA-M00007-IAST.txt
-- **#95 netratantroddyota** — muktabodha · copied from muktabodha-lib/netratantra-M00038-IAST.txt
-- **#1 pancarthabhasya_kaundinya** — gretil · GRETIL Pāśupatasūtra + Kauṇḍinya Pañcārthabhāṣya
-- **#22 pauskaraparamesvara** — muktabodha · copied from muktabodha-lib/pauSkara saMhitA-M00259-IAST.txt
-- **#39 pingalamata** — muktabodha · muktabodha-lib copy piGgalAmata-M00305-IAST.txt
-- **#? pratisThakriyadipika** — muktabodha · copied from muktabodha-lib/pratiSThAlakSaNasArasamuccaya-M00065-IAST.txt
-- **#? pratisThalaksanasara** — muktabodha · copied from muktabodha-lib/pratiSThAlakSaNasArasamuccaya-M00065-IAST.txt
-- **#? pratisThaparamesvara** — muktabodha · copied from muktabodha-lib/pratiSThAlakSaNasArasamuccaya-M00065-IAST.txt
-- **#81 pratisthalaksanasarasamuccaya** — muktabodha · muktabodha-lib copy pratiSThAlakSaNasArasamuccaya-M00065-IAST.txt
-- **#80 prayascittasamuccaya_hridayasiva** — muktabodha · muktabodha-lib copy prAyazcittasamuccaya-M00303-IAST.txt
-- **#50 ratnatrayapariksa_srikantha** — muktabodha · copied from muktabodha-lib/ASTaprakaraNa ratnatrayaparIkSA-M00009-IAST.txt
-- **#31 sardhatrisatikalottara** — gretil · GRETIL Sārdhatriśatikālottara
-- **#34 sarvajnanottara** — muktabodha · muktabodha-lib copy sarvajJAnottara-M00327-IAST.txt
-- **#46 satsahasrakalottara** — muktabodha · copied from muktabodha-lib/SatSahasrakAlottarAgama-M00249-IAST.txt
-- **#70 siddhantadipika_ramanatha** — muktabodha · copied from muktabodha-lib/vIrazaivasiddhAntottarakaumudI-M00604-IAST.txt
-- **#? siddhantasara** — muktabodha · copied from muktabodha-lib/vIrazaivasiddhAntottarakaumudI-M00604-IAST.txt
-- **#68 siddhantasarapaddhati** — muktabodha · muktabodha-lib copy siddhAntasArapaddhati-M00531-IAST.txt
-- **#79 siddhantasaravali** — muktabodha · copied from muktabodha-lib/vIrazaivasiddhAntottarakaumudI-M00604-IAST.txt
-- **#5 sivadharmasastra** — muktabodha · muktabodha-lib copy zivadharma-M00209-IAST.txt
-- **#6 sivadharmottara** — muktabodha · muktabodha-lib copy zivadharmottara-M00211-IAST.txt
-- **#93 spandapradipika** — muktabodha · copied from muktabodha-lib/spandapradIpikA-M00532-IAST.txt
-- **#28 suksmasvayambhuva** — muktabodha · muktabodha-lib copy sUkSmAgama-M00329-IAST.txt
-- **#94 svacchandodyota** — muktabodha · copied from muktabodha-lib/svacchandapaddhati-M00194-IAST.txt
-- **#60 tattvaprakasa_bhojadeva** — muktabodha · copied from muktabodha-lib/kriyAsAratattvaprakAzinIvyAkhyA-M00232-IAST.txt
-- **#48 tattvasamgraha_sadyojyotis** — muktabodha · copied from muktabodha-lib/ASTaprakaraNa tattvasaMgraha-M00011-IAST.txt
-- **#49 tattvatrayanirnaya** — muktabodha · copied from muktabodha-lib/ASTaprakaraNa tattvatrayanirNaya-M00012-IAST.txt
-- **#99 vatulanathasutra** — muktabodha · copied from muktabodha-lib/vAtUlanAthasUtra-M00099-IAST.txt
-- **#82 vimalavati** — muktabodha · copied from muktabodha-lib/vimalAvatItantra-M00295-IAST.txt
+| # | work_id | work | status | tradition |
+|---|---|---|---|---|
+| 1 | `pancarthabhasya_kaundinya` | Pañcārthabhāṣya — Kauṇḍinya | acquired | Pāśupata |
+| 2 | `ganakarika` | Gaṇakārikā | acquired | Pāśupata |
+| 5 | `sivadharmasastra` | Śivadharmaśāstra — untranslated remainder | acquired | Śivadharma |
+| 6 | `sivadharmottara` | Śivadharmottara | acquired | Śivadharma |
+| 20 | `kalikapurana` | Kālikāpurāṇa — critically untranslated portions | acquired | Purāṇic Śaiva |
+| 22 | `pauskaraparamesvara` | Pauṣkarapārameśvara / Pauṣkara | acquired | early Siddhānta |
+| 28 | `suksmasvayambhuva` | Sūkṣmasvāyambhuva | acquired | early Siddhānta |
+| 30 | `dvisatikalottara` | Dviśatikālottara | acquired | early Siddhānta |
+| 31 | `sardhatrisatikalottara` | Sārdhatriśatikālottara | acquired | early Siddhānta |
+| 34 | `sarvajnanottara` | Sarvajñānottara — non-Yogapāda bulk | acquired | early Siddhānta |
+| 37 | `mohacudottara` | Mohacūḍottara — outside temple-design section | acquired | early Siddhānta |
+| 39 | `pingalamata` | Piṅgalāmata — outside translated architectural portions | acquired | early Mantramārga |
+| 40 | `kiranatantra` | Kiraṇatantra — untranslated bulk of root text | acquired | early Siddhānta |
+| 42 | `mrgendratantra` | Mṛgendratantra — complete modern English | acquired | Śaiva Siddhānta |
+| 45 | `makutottara` | Makuṭottara | acquired | Śaiva Siddhānta |
+| 46 | `satsahasrakalottara` | Ṣaṭsahasrakālottara | acquired | early Siddhānta |
+| 48 | `tattvasamgraha_sadyojyotis` | Tattvasaṃgraha — Sadyojyotis + Aghoraśiva commentary | acquired | Śaiva Siddhānta |
+| 49 | `tattvatrayanirnaya` | Tattvatrayanirṇaya — Aghoraśiva commentary | acquired | Śaiva Siddhānta |
+| 50 | `ratnatrayapariksa_srikantha` | Ratnatrayaparīkṣā — Śrīkaṇṭha, untranslated remainder | acquired | Śaiva Siddhānta |
+| 53 | `nadakarika` | Nādakārikā + commentary | acquired | Śaiva Siddhānta |
+| 60 | `tattvaprakasa_bhojadeva` | Tattvaprakāśa — Bhojadeva | acquired | Śaiva Siddhānta |
+| 63 | `moksakarika` | Mokṣakārikā — Sadyojyotis, untranslated/commentarial portions | acquired | Aṣṭaprakaraṇa |
+| 68 | `siddhantasarapaddhati` | Siddhāntasārapaddhati — Bhojadeva | acquired | Śaiva Siddhānta |
+| 70 | `siddhantadipika_ramanatha` | Siddhāntadīpikā — Rāmanātha | acquired | Śaiva Siddhānta |
+| 72 | `jnanaratnavali` | Jñānaratnāvalī — Jñānaśiva | acquired | Śaiva Siddhānta |
+| 73 | `kriyakramadyotika` | Kriyākramadyotikā — Aghoraśiva | acquired | Śaiva Siddhānta |
+| 74 | `isanasivagurudevapaddhati` | Īśānaśivagurudevapaddhati — Śaiva sections | acquired | Śaiva Siddhānta |
+| 79 | `siddhantasaravali` | Siddhāntasārāvalī — Trilocanaśiva + Anantaśiva commentary | acquired | Śaiva Siddhānta |
+| 80 | `prayascittasamuccaya_hridayasiva` | Prāyaścittasamuccaya — Hṛdayaśiva | acquired | Śaiva Siddhānta |
+| 81 | `pratisthalaksanasarasamuccaya` | Pratiṣṭhālakṣaṇasārasamuccaya | acquired | Śaiva Siddhānta |
+| 82 | `vimalavati` | Vimalāvatī — Vimalaśiva | acquired | Śaiva Siddhānta |
+| 93 | `spandapradipika` | Spandapradīpikā — Bhagavadutpala | acquired | Spanda |
+| 94 | `svacchandodyota` | Svacchandodyota — Kṣemarāja, untranslated bulk | acquired | Kashmirian Śaiva Siddhānta |
+| 95 | `netratantroddyota` | Netratantroddyota — Kṣemarāja, untranslated bulk | acquired | Kashmirian Śaiva Siddhānta |
+| 96 | `bhavopahara` | Bhāvopahāra — Cakrapāṇinātha + Ramyadeva commentary | acquired | Kaula/Nātha |
+| 97 | `bhagavadgita_sarvatobhadra` | Bhagavadgītā-Sarvatobhadra — Rāmakaṇṭha | acquired | Kashmirian Śaiva Siddhānta |
+| 98 | `janmamaranavicara` | Janmamaraṇavicāra — Bhaṭṭa Vāmadeva | acquired | Kashmirian Śaiva Siddhānta |
+| 99 | `vatulanathasutra` | Vātūlanāthasūtra + Anantaśaktipādavivaraṇa | acquired | Kaula/Nātha |
 
-## 2. sivaqueue1 — on disk but BROKEN (interrupted OCR download, not registered)
+## Queue 1 — on_disk_unregistered (10)
 
-These were written by the interrupted download pass. They are noisy OCR of scanned books (Devanagari mixed with Latin garbage) and several are byte-identical (wrong content). They need to be re-acquired from the clean IAST that is on the sanskritree mount:
+| # | work_id | work | status | tradition |
+|---|---|---|---|---|
+| 23 | `matangaparamesvara` | Mataṅgapārameśvara | on_disk_unregistered | early Siddhānta |
+| 26 | `mukuta_makutagama` | Mukuṭa / Makuṭāgama early recension | on_disk_unregistered | early Siddhānta |
+| 47 | `naresvarapariksa` | Nareśvaraparīkṣā — Sadyojyotis + Rāmakaṇṭha's Prakāśa | on_disk_unregistered | Śaiva Siddhānta |
+| 51 | `ratnatrayapariksa_vyakhya` | Anonymous Ratnatrayaparīkṣā-vyākhyā | on_disk_unregistered | Śaiva Siddhānta |
+| 55 | `ramakantha_matangavrtti` | Rāmakaṇṭha's Mataṅgavṛtti — untranslated sections | on_disk_unregistered | Kashmirian Śaiva Siddhānta |
+| 61 | `aghorasiva_tattvaprakasika` | Aghoraśiva's Tattvaprakāśikā | on_disk_unregistered | Aṣṭaprakaraṇa |
+| 62 | `aghorasiva_tattvasamgrahalaghutika` | Aghoraśiva's Tattvasaṃgrahalaghuṭīkā | on_disk_unregistered | Aṣṭaprakaraṇa |
+| 64 | `ramakantha_moksakarikavrtti` | Rāmakaṇṭha's Mokṣakārikāvṛtti | on_disk_unregistered | Aṣṭaprakaraṇa |
+| 65 | `aghorasiva_ashtaprakarana_corpus` | Aghoraśiva's doctrinal commentarial corpus surrounding the Aṣṭaprakaraṇa | on_disk_unregistered | Aṣṭaprakaraṇa |
+| 91 | `sivadrsti` | Śivadṛṣṭi — Somānanda, untranslated remainder | on_disk_unregistered | Pratyabhijñā |
 
-- **#65 aghorasiva_ashtaprakarana_corpus** — needs re-acquire (clean source on mount, see below)
-- **#61 aghorasiva_tattvaprakasika** — needs re-acquire (clean source on mount, see below)
-- **#62 aghorasiva_tattvasamgrahalaghutika** — needs re-acquire (clean source on mount, see below)
-- **#? devikalottaragama** — needs re-acquire (clean source on mount, see below)
-- **#? malinivijayottara** — needs re-acquire (clean source on mount, see below)
-- **#23 matangaparamesvara** — needs re-acquire (clean source on mount, see below)
-- **#? matrkabhedatantra** — needs re-acquire (clean source on mount, see below)
-- **#26 mukuta_makutagama** — needs re-acquire (clean source on mount, see below)
-- **#47 naresvarapariksa** — needs re-acquire (clean source on mount, see below)
-- **#55 ramakantha_matangavrtti** — needs re-acquire (clean source on mount, see below)
-- **#64 ramakantha_moksakarikavrtti** — needs re-acquire (clean source on mount, see below)
-- **#51 ratnatrayapariksa_vyakhya** — needs re-acquire (clean source on mount, see below)
-- **#91 sivadrsti** — needs re-acquire (clean source on mount, see below)
-- **#? sivasutra** — needs re-acquire (clean source on mount, see below)
-- **#? visvaksenasamhita** — needs re-acquire (clean source on mount, see below)
+## Queue 1 — missing (52)
 
-| Broken dir | Clean IAST source on mount (Muktabodha lib) |
-|---|---|
-| aghorasiva_tattvaprakasika | `ASTaprakaraNa tattvaprakAza-M00010-IAST.txt` |
-| aghorasiva_tattvasamgrahalaghutika | `ASTaprakaraNa tattvasaMgraha-M00011-IAST.txt` |
-| ramakantha_moksakarikavrtti | `ASTaprakaraNa mokSakArikA-M00006-IAST.txt` |
-| naresvarapariksa | `narezvaraparIkSA-M00039-IAST.txt` |
-| ratnatrayapariksa_vyakhya | `ASTaprakaraNa ratnatrayaparIkSA-M00009-IAST.txt` (also held as ratnatrayapariksa_srikantha) |
+| # | work_id | work | status | tradition |
+|---|---|---|---|---|
+| 3 | `ratnatika_ganakarika` | Ratnaṭīkā on Gaṇakārikā | missing | Pāśupata |
+| 4 | `samskaravidhi` | Saṃskāravidhi — Lākula/Pāśupata transformative rite | missing | Pāśupata |
+| 7 | `sivadharmasamgraha` | Śivadharmasaṃgraha — remainder outside chs. 5–9 | missing | Śivadharma |
+| 8 | `umamahesvarasamvada` | Umāmaheśvarasaṃvāda | missing | Śivadharma |
+| 9 | `umottarasamvada` | Umottarasaṃvāda | missing | Śivadharma |
+| 10 | `dharmaputrika` | Dharmaputrikā | missing | Śivadharma |
+| 11 | `lalitavistara_sivadharma` | Lalitavistara of the Śivadharma corpus | missing | Śivadharma |
+| 12 | `vrsasarasamgraha` | Vṛṣasārasaṃgraha | missing | Śivadharma |
+| 13 | `sivadharmasastravivarana` | Śivadharmaśāstravivaraṇa | missing | Śivadharma |
+| 14 | `sivadharmottaravivarana` | Śivadharmottaravivaraṇa | missing | Śivadharma |
+| 15 | `skandapurana_early` | Early Skandapurāṇa critical recension | missing | Purāṇic Śaiva |
+| 16 | `ekamrapurana` | Ekāmrapurāṇa — relevant early Śaiva strata | missing | Purāṇic Śaiva |
+| 17 | `haracaritacintamani` | Haracaritacintāmaṇi — selected un-English portions | missing | Purāṇic Śaiva |
+| 18 | `devipurana` | Devīpurāṇa — uncritically/partially translated relevant chapters | missing | Purāṇic Śaiva |
+| 19 | `brhaddharmapurana` | Bṛhaddharmapurāṇa — selected Śaiva material | missing | Purāṇic Śaiva |
+| 21 | `nisvasaguhyasutra` | Niśvāsaguhyasūtra | missing | early Mantramārga |
+| 24 | `yaksiniparamesvara` | Yakṣiṇīpārameśvara | missing | early Siddhānta |
+| 25 | `hamsaparamesvara` | Haṃsapārameśvara | missing | early Siddhānta |
+| 27 | `svayambhuvasutrasamgraha` | Svāyambhuvasūtrasaṃgraha — untranslated bulk | missing | early Siddhānta |
+| 29 | `rauravasutrasamgraha` | Rauravasūtrasaṃgraha | missing | early Siddhānta |
+| 32 | `saptasatikalottara` | Saptaśatikālottara | missing | early Siddhānta |
+| 33 | `brhatkalottara` | Bṛhatkālottara — outside published translated portions | missing | early Siddhānta |
+| 35 | `mayasamgraha` | Mayasaṃgraha — outside temple-design section | missing | early Siddhānta |
+| 36 | `devyamata` | Devyāmata — outside temple-design section | missing | early Siddhānta |
+| 38 | `pratisthaparamesvara` | Pratiṣṭhāpārameśvara | missing | early Siddhānta |
+| 41 | `rauragama` | Rauravāgama — complete scholarly English | missing | Śaiva Siddhānta |
+| 43 | `sahasragama` | Sāhasra/Sahasrāgama ancient material | missing | early Siddhānta |
+| 44 | `paramesvaragama` | Pārameśvarāgama / Pārameśvara corpus | missing | Śaiva Siddhānta |
+| 52 | `ullekhini_ratnatrayapariksa` | Aghoraśiva's Ullekhinī on Ratnatrayaparīkṣā | missing | Śaiva Siddhānta |
+| 54 | `ramakantha_kiravavrtti_7_12` | Rāmakaṇṭha's Kiraṇavṛtti, chapters 7–12 | missing | Kashmirian Śaiva Siddhānta |
+| 56 | `ramakantha_sardhatrisatikalottaravrtti` | Rāmakaṇṭha's Sārdhatriśatikālottaravṛtti | missing | Kashmirian Śaiva Siddhānta |
+| 57 | `sarvagamapramanyopanyasa` | Sarvāgamaprāmāṇyopanyāsa — Rāmakaṇṭha | missing | Kashmirian Śaiva Siddhānta |
+| 58 | `saivasiddhantadipika` | Śaivasiddhāntadīpikā — Sarvātmaśambhu | missing | Śaiva Siddhānta |
+| 59 | `sarvamatopanyasa` | Sarvamatopanyāsa — Sarvātmaśambhu | missing | Śaiva Siddhānta |
+| 66 | `nityakriyanusandhana` | Nityakriyānusandhāna — Brahmaśambhu | missing | Śaiva Siddhānta |
+| 67 | `naimittikakriyanusandhana` | Naimittikakriyānusandhāna — Brahmaśambhu | missing | Śaiva Siddhānta |
+| 69 | `natarajapaddhati` | Naṭarājapaddhati — Rāmanātha | missing | Śaiva Siddhānta |
+| 71 | `kriyasamgrahapaddhati` | Kriyāsaṃgrahapaddhati — Valadharin | missing | Śaiva Siddhānta |
+| 75 | `isanasivacaryapaddhati` | Īśānaśivācāryapaddhati / Śivārcanavidhi | missing | Śaiva Siddhānta |
+| 76 | `pararthanityapujavidhi` | Parārthanityapūjāvidhi | missing | Śaiva Siddhānta |
+| 77 | `pratisthakriyadipika` | Pratiṣṭhākriyādīpikā | missing | Śaiva Siddhānta |
+| 78 | `kriyadipika_jnanasivacarya` | Kriyādīpikā — Jñānaśivācārya | missing | Śaiva Siddhānta |
+| 83 | `nityadisangrahapaddhati` | Nityādisaṅgrahapaddhati — Rājānaka Takṣakavarta | missing | Śaiva Siddhānta |
+| 84 | `aghorasivacaryapujanukramani` | Aghoraśivācāryapūjānukramaṇī | missing | Śaiva Siddhānta |
+| 85 | `sivotsavapaddhati` | Śivotsavapaddhati | missing | Śaiva Siddhānta |
+| 86 | `saivasiddhanta_pujapaddhati` | anonymous Śaivasiddhānta Pūjāpaddhati corpus | missing | Śaiva Siddhānta |
+| 87 | `sthapanadipika` | Sthāpanadīpikā | missing | Śaiva Siddhānta |
+| 88 | `balalayavidhi` | Bālālayavidhi | missing | Śaiva Siddhānta |
+| 89 | `sripratisthavidhi` | Śrīpratiṣṭhāvidhi | missing | Śaiva Siddhānta |
+| 90 | `sivalingapratisthavidhi` | Śivaliṅgapratiṣṭhāvidhi | missing | Śaiva Siddhānta |
+| 92 | `utpaladeva_sivadrstivrtti` | Utpaladeva's Śivadṛṣṭivṛtti — untranslated remainder | missing | Pratyabhijñā |
+| 100 | `kaulasutra` | Kaulasūtra — Bhaṭṭa Śitikaṇṭha | missing | Kaula |
 
-## 3. sivaqueue1 — NOT acquired (52) and where looked
+## Queue 2 — all (100)
 
-Genuinely not available as free raw text. Grouped by why:
+| # | work_id | work | status |
+|---|---|---|---|
+| 101 | `kriyakandakramavali` | Kriyākāṇḍakramāvalī / Somaśambhupaddhati — Somaśambhu | acquired |
+| 102 | `somashambhupaddhativyakhya` | Somaśambhupaddhativyākhyā — Trilocanaśiva | missing |
+| 103 | `siddhantasamuccaya` | Siddhāntasamuccaya / Siddhāntārthasamuccaya — Trilocanaśiva | missing |
+| 104 | `siddhantarahasyasara` | Siddhāntarahasyasāra — Trilocanaśiva | missing |
+| 105 | `sataratnasamgraha` | Śataratnasaṃgraha | missing |
+| 106 | `sataratnollekhanii` | Śataratnollekhanī | missing |
+| 107 | `siddhantaprakasika` | Siddhāntaprakāśikā — Sarvātmaśambhu | missing |
+| 108 | `tattvaratnavali` | Tattvaratnāvalī / Atyantanirmalatattvaratnāvalī — Vimalaśiva | missing |
+| 109 | `siddhantasekhara` | Siddhāntaśekhara — Viśvanātha | acquired |
+| 110 | `mrgendrapaddhati` | Mṛgendrapaddhati — Aghoraśiva | missing |
+| 111 | `mrgendrapaddhatitika` | Mṛgendrapaddhatiṭīkā — Vaktraśambhu | missing |
+| 112 | `prasadapaddhati` | Prāsādapaddhati — Prāsādaśiva | missing |
+| 113 | `pratisthasarapaddhati` | Pratiṣṭhāsārapaddhati | missing |
+| 114 | `sisyasamskarapaddhati` | Śiṣyasaṃskārapaddhati | missing |
+| 115 | `kaladiksapaddhati` | Kalādīkṣāpaddhati — Manodadatta | missing |
+| 116 | `agnikaryapaddhati` | Agnikāryapaddhati | missing |
+| 117 | `sivanirvanapaddhati` | Śivanirvāṇapaddhati | acquired |
+| 118 | `gurupustika` | Gurupustikā / Gurupustaka — Śitikaṇṭha | missing |
+| 119 | `svacchandabhairavapujapaddhati` | Svacchandabhairavapūjāpaddhati | missing |
+| 120 | `svacchandadevarcanavidhi` | Svacchandadevārcanavidhi | missing |
+| 121 | `apratihatamahadiksasutippanaka` | Apratihatamahādīkṣāsuṭippaṇaka / Netroddyota — Viśveśvara | missing |
+| 122 | `amrtevarapujana` | Amṛteśvarapūjana — Abhayamalla | missing |
+| 123 | `amrtevarapujagnikaryavidhana` | Amṛteśvarapūjāgnikāryavidhāna | missing |
+| 124 | `amrtasuryapujavidhi` | Amṛtasūryapūjāvidhi | missing |
+| 125 | `amrtabhairavarcanavidhi` | Amṛtabhairavārcanavidhi | missing |
+| 126 | `amrtisabhairavabhattarakahnikavidhi` | Amṛtīśabhairavabhaṭṭārakāhnikavidhi | missing |
+| 127 | `amrtasuryarcanavidhi` | Amṛtasūryārcanavidhi | missing |
+| 128 | `devitantrasadbhavasara` | Devītantrasadbhāvasāra | missing |
+| 129 | `matrsadbhava` | Mātṛsadbhāva | missing |
+| 130 | `tantrarajatantravatarastotra` | Tantrarājatantrāvatārastotra — Viśvāvarta | missing |
+| 131 | `urdhvamnayapavitrarohanadamanarohanapaddhati` | Ūrdhvāmnāyapavitrārohaṇadamanārohaṇapaddhati | missing |
+| 132 | `paratrisikalaghuvrttivimarsini` | Parātrīśikālaghuvṛttivimarśinī — Kṛṣṇadāsa | missing |
+| 133 | `paratrisikatatparyadipika` | Parātrīśikātātparyadīpikā | missing |
+| 134 | `anuttarasamvidarcanacarca` | Anuttarasaṃvidarcanācarcā | missing |
+| 135 | `pararcanakrama` | Parārcanakrama | missing |
+| 136 | `parakramavasana` | Parākramavāsanā | missing |
+| 137 | `paramasivadvaitakalpalatika` | Paramaśivādvaitakalpalatikā — Śāmbhavānanda | missing |
+| 138 | `anandakalpavalli` | Ānandakalpavallī — Maheśvaratejānanda | missing |
+| 139 | `parapujaprayoga` | Parāpūjāprayoga | missing |
+| 140 | `maharthamulasamketasutra` | Mahārthamūlasaṃketasūtra — Paraśambhudeva | missing |
+| 141 | `anuttaraprakasapancasika` | Anuttaraprakāśapañcāśikā / Parāpañcāśikā — Ādyanātha | missing |
+| 142 | `parapravesika` | Parāprāveśikā / Svarūpaprakāśikā — Nāgānanda | missing |
+| 143 | `svarupavimarsini` | Svarūpavimarśinī — Cidānanda | missing |
+| 144 | `naganandasutravivarana` | Nāgānandasūtravivaraṇa — Heddase Hariharaśarman | missing |
+| 145 | `anuttarapaddhati` | Anuttarapaddhati | missing |
+| 146 | `padyavahini` | Padyavāhinī — Śaṅkara | missing |
+| 147 | `saivakalpadruma` | Śaivakalpadruma — Lakṣmīdhara | missing |
+| 148 | `sivavakyavali` | Śivavākyāvalī — Caṇḍeśvara | missing |
+| 149 | `saivamanasollasa` | Śaivamānasollāsa — Caṇḍeśvara | missing |
+| 150 | `saivasarvasvasara` | Śaivasarvasvasāra — Vidyāpati | missing |
+| 151 | `kamikagama` | Kāmikāgama | acquired |
+| 152 | `yogajagama` | Yogajāgama | missing |
+| 153 | `cintyagama` | Cintyāgama | missing |
+| 154 | `ajitagama` | Ajitāgama | acquired |
+| 155 | `diptagama` | Dīptāgama | missing |
+| 156 | `suksmagama` | Sūkṣmāgama | missing |
+| 157 | `amsumadagama` | Aṃśumad / Aṃśumadbhedāgama | missing |
+| 158 | `suprabhedagama` | Suprabhedāgama | missing |
+| 159 | `vijayagama` | Vijayāgama | missing |
+| 160 | `analagama` | Analāgama | missing |
+| 161 | `viraagama` | Vīrāgama / Vīrottara recension | missing |
+| 162 | `vimalagama` | Vimalāgama | missing |
+| 163 | `bimbagama` | Bimbāgama | missing |
+| 164 | `prodigitagama` | Prodgītāgama | missing |
+| 165 | `lalitagama` | Lalitāgama | missing |
+| 166 | `siddhagama` | Siddhāgama | missing |
+| 167 | `santanagama` | Santānāgama | missing |
+| 168 | `sarvoktagama` | Sarvoktāgama | missing |
+| 169 | `karanagama` | Kāraṇāgama — untranslated remainder only | missing |
+| 170 | `makutagama` | Makuṭāgama — untranslated remainder only | missing |
+| 171 | `candrajnanagama` | Candrajñānāgama — untranslated remainder only | missing |
+| 172 | `sarvajnanottara2` | Sarvajñānottara — non-Yoga / non-translated portions | missing |
+| 173 | `mrgendratantra2` | Mṛgendratantra — portions without scholarly English | missing |
+| 174 | `kiranatantra2` | Kiraṇatantra — root-text remainder | missing |
+| 175 | `brhatkalottara2` | Bṛhatkālottara — non-edited/non-translated sections | missing |
+| 176 | `jnanassiddhyagama` | Jñānasiddhyāgama | missing |
+| 177 | `cidambaresvaranityapujasutra` | Cidambareśvaranityapūjāsūtra | missing |
+| 178 | `citsabhesotsavasutra` | Citsabheśotsavasūtra | missing |
+| 179 | `pauskarabhasya` | Pauṣkarabhāṣya — Umāpatiśiva | missing |
+| 180 | `kriyasara` | Kriyāsāra — Nīlakaṇṭhaśivācārya | missing |
+| 181 | `anubhavasutra` | Anubhavasūtra — Māyideva | missing |
+| 182 | `maritontadarya_siddhantashikhamani` | Maritōṇṭadārya's commentary on Siddhāntaśikhāmaṇi | missing |
+| 183 | `lingadharanacandrika` | Liṅgadhāraṇacandrikā — Nandikeśvara | missing |
+| 184 | `pancaratna` | Pañcaratna — Vīraṇārādhya | missing |
+| 185 | `pancaratna_commentary` | Pañcaratna commentary — Sosale Revaṇārādhya | missing |
+| 186 | `pramathaganapaddhati` | Pramathagaṇapaddhati — Sosale Revaṇārādhya | missing |
+| 187 | `anadivirasaivacarasamgraha` | Anādivīraśaivācārasaṃgraha — Sampādanasiddha-Vīraṇaśivayogin | missing |
+| 188 | `virasaivacarasroddharabhasya` | Vīraśaivācārasāroddhārabhāṣya — Somanātha | missing |
+| 189 | `viramaheswaracarasamgraha` | Vīramāheśvarācārasaṃgraha — Nīlakaṇṭhagaṇanātha | missing |
+| 190 | `virasaivasiddhantottarakaumudi` | Vīraśaivasiddhāntottarakaumudī — Vīrabhadrārādhya | missing |
+| 191 | `vivekacintamani` | Vivekacintāmaṇi — Liṅgarāja | missing |
+| 192 | `sivadvaitanirnaya` | Śivādvaitanirṇaya — Appayyadīkṣita | missing |
+| 193 | `vedantasarvasvasivadarpana` | Vedāntasarvasvaśivadarpaṇa — Brahmavidyādhvarīndra | missing |
+| 194 | `sivarcanacandrika` | Śivārcanacandrikā — Appayyadīkṣita | missing |
+| 195 | `saivagamaparibhasamanjari` | Śaivāgamaparibhāṣāmañjarī — Nigamajñāna II | missing |
+| 196 | `atmarthapujapaddhati` | Ātmārthapūjāpaddhati — Nigamajñāna II | missing |
+| 197 | `diksadarsa` | Dīkṣādarśa — Nigamajñāna II | missing |
+| 198 | `asaucadipika` | Āśaucadīpikā — Nigamajñāna II | missing |
+| 199 | `sivanityapujapaddhati` | Śivanityapūjāpaddhati | missing |
+| 200 | `sivatandavatantratika` | Śivatāṇḍavatantraṭīkā | missing |
 
-### shivadharmaproject — Shivadharma Project — publication PDFs/translation output, no raw text file
+## Sanderson scholar corpus (53 catalogued, 43 downloaded)
 
-- **#7 Śivadharmasaṃgraha — remainder outside chs. 5–9** (work_id `sivadharmasamgraha`)
-- **#8 Umāmaheśvarasaṃvāda** (work_id `umamahesvarasamvada`)
-- **#9 Umottarasaṃvāda** (work_id `umottarasamvada`)
-- **#10 Dharmaputrikā** (work_id `dharmaputrika`)
-- **#11 Lalitavistara of the Śivadharma corpus** (work_id `lalitavistara_sivadharma`)
-- **#12 Vṛṣasārasaṃgraha** (work_id `vrsasarasamgraha`)
-- **#13 Śivadharmaśāstravivaraṇa** (work_id `sivadharmasastravivarana`)
-- **#14 Śivadharmottaravivaraṇa** (work_id `sivadharmottaravivarana`)
-- **#16 Ekāmrapurāṇa — relevant early Śaiva strata** (work_id `ekamrapurana`)
-- **#17 Haracaritacintāmaṇi — selected un-English portions** (work_id `haracaritacintamani`)
-- **#18 Devīpurāṇa — uncritically/partially translated relevant chapters** (work_id `devipurana`)
-- **#19 Bṛhaddharmapurāṇa — selected Śaiva material** (work_id `brhaddharmapurana`)
+**CANONICAL LOCATION (2026-08-12): `source-library/acquisitions/sanderson/`** (`/root/projects/source-library/acquisitions/sanderson/`). Full manifest: `source-library/acquisitions/sanderson/sanderson_manifest.json`. Downloaded files: standalone PDFs/text at the root, `academia_bundles/consolidated/` (207 unique PDFs after dedup), `volumes/`. A deduped mirror copy also remains in `patala/data/corpus/sources/sanderson/` (git-tracked).
 
-### ifpindia — IFP bookstore — sold critical editions, not free text
+Still manual-only (8): impact_inscriptions, vajrayana_origin, sarvastivada_critics, tantric_rebirth_buddhism, progress_since_1988, trairupyam, sakta_weather_nagas, history_hinduism_kashmir_hamburg.
 
-- **#21 Niśvāsaguhyasūtra** (work_id `nisvasaguhyasutra`)
-- **#33 Bṛhatkālottara — outside published translated portions** (work_id `brhatkalottara`)
-- **#35 Mayasaṃgraha — outside temple-design section** (work_id `mayasamgraha`)
-- **#36 Devyāmata — outside temple-design section** (work_id `devyamata`)
-- **#41 Rauravāgama — complete scholarly English** (work_id `rauragama`)
-- **#54 Rāmakaṇṭha's Kiraṇavṛtti, chapters 7–12** (work_id `ramakantha_kiravavrtti_7_12`)
+## Where everything is tracked
 
-### digitalcollections.ifpindia — IFP manuscript collections — manuscript scans, need transcription
+- **Queue 1 targets:** `data/corpus/sivaqueue-targets.json` (each target has `acquisition_status` + `on_disk` + `registered`).
+- **Queue 1 acquisitions:** `data/corpus/sivaqueue-acquired.json`.
+- **Queue 2 targets:** `data/corpus/sivaqueue2-targets.json` (each target has `acquisition_status` + `acquired_files`).
+- **Queue 2 acquisitions:** `data/corpus/sivaqueue2-acquired.json`.
+- **Translation corpus (sivaqueue + sivaqueue2 + L0 IAST texts):** lives in `patala/data/corpus/sources/` — Pāṭala's working translation corpus. **NOT** in source-library (source-library holds only reference/scholarship).
+- **Sanderson / reference corpora:** canonical at `source-library/acquisitions/` (`sanderson/`, `philosophy-encyclopedia/`, `vedic-reference/`); downloader `pipeline/download_sanderson.py`.
+- **Bibliography:** `data/atlas/sivaqueueSeed.ts` (135 records) + `data/atlas/bibliographySeed.ts` + `data/atlas/audited.ts`; Sanderson node in `data/atlas/resources.ts`.
+- **Vision/corpus strategy:** `docs/vision/expansion/vision-11-siva-before-abhinava-prehistory.md`, `docs/corpus/sivaqueue-translation-guide.md`, `sivaqueue2-translation-guide.md`.
 
-- **#24 Yakṣiṇīpārameśvara** (work_id `yaksiniparamesvara`)
-- **#25 Haṃsapārameśvara** (work_id `hamsaparamesvara`)
-- **#38 Pratiṣṭhāpārameśvara** (work_id `pratisthaparamesvara`)
-- **#58 Śaivasiddhāntadīpikā — Sarvātmaśambhu** (work_id `saivasiddhantadipika`)
-- **#59 Sarvamatopanyāsa — Sarvātmaśambhu** (work_id `sarvamatopanyasa`)
-- **#66 Nityakriyānusandhāna — Brahmaśambhu** (work_id `nityakriyanusandhana`)
-- **#67 Naimittikakriyānusandhāna — Brahmaśambhu** (work_id `naimittikakriyanusandhana`)
-- **#69 Naṭarājapaddhati — Rāmanātha** (work_id `natarajapaddhati`)
-- **#71 Kriyāsaṃgrahapaddhati — Valadharin** (work_id `kriyasamgrahapaddhati`)
-- **#75 Īśānaśivācāryapaddhati / Śivārcanavidhi** (work_id `isanasivacaryapaddhati`)
-- **#76 Parārthanityapūjāvidhi** (work_id `pararthanityapujavidhi`)
-- **#77 Pratiṣṭhākriyādīpikā** (work_id `pratisthakriyadipika`)
-- **#78 Kriyādīpikā — Jñānaśivācārya** (work_id `kriyadipika_jnanasivacarya`)
-- **#83 Nityādisaṅgrahapaddhati — Rājānaka Takṣakavarta** (work_id `nityadisangrahapaddhati`)
-- **#84 Aghoraśivācāryapūjānukramaṇī** (work_id `aghorasivacaryapujanukramani`)
-- **#85 Śivotsavapaddhati** (work_id `sivotsavapaddhati`)
-- **#86 anonymous Śaivasiddhānta Pūjāpaddhati corpus** (work_id `saivasiddhanta_pujapaddhati`)
-- **#87 Sthāpanadīpikā** (work_id `sthapanadipika`)
-- **#88 Bālālayavidhi** (work_id `balalayavidhi`)
-- **#89 Śrīpratiṣṭhāvidhi** (work_id `sripratisthavidhi`)
-- **#90 Śivaliṅgapratiṣṭhāvidhi** (work_id `sivalingapratisthavidhi`)
+*Regenerated 2026-08-12 from the live manifests. Re-run the audit by reading the manifests; statuses are computed, not hand-maintained.*
 
-### muktabodha — Muktabodha — not present in the on-disk 500-file extracted library
+---
 
-- **#3 Ratnaṭīkā on Gaṇakārikā** (work_id `ratnatika_ganakarika`)
-- **#4 Saṃskāravidhi — Lākula/Pāśupata transformative rite** (work_id `samskaravidhi`)
-- **#27 Svāyambhuvasūtrasaṃgraha — untranslated bulk** (work_id `svayambhuvasutrasamgraha`)
-- **#29 Rauravasūtrasaṃgraha** (work_id `rauravasutrasamgraha`)
-- **#32 Saptaśatikālottara** (work_id `saptasatikalottara`)
-- **#43 Sāhasra/Sahasrāgama ancient material** (work_id `sahasragama`)
-- **#44 Pārameśvarāgama / Pārameśvara corpus** (work_id `paramesvaragama`)
-- **#56 Rāmakaṇṭha's Sārdhatriśatikālottaravṛtti** (work_id `ramakantha_sardhatrisatikalottaravrtti`)
-- **#57 Sarvāgamaprāmāṇyopanyāsa — Rāmakaṇṭha** (work_id `sarvagamapramanyopanyasa`)
-- **#92 Utpaladeva's Śivadṛṣṭivṛtti — untranslated remainder** (work_id `utpaladeva_sivadrstivrtti`)
-- **#100 Kaulasūtra — Bhaṭṭa Śitikaṇṭha** (work_id `kaulasutra`)
+## Reference corpora (2026-08-12) — philosophy + Vedic history
 
-### springer — Springer journal article — paywalled
+**Canonical location: `source-library/acquisitions/`** (`/root/projects/source-library/acquisitions/`). Mirrors remain in `patala/data/corpus/sources/` (git-tracked).
 
-- **#52 Aghoraśiva's Ullekhinī on Ratnatrayaparīkṣā** (work_id `ullekhini_ratnatrayapariksa`)
+### Encyclopedia of Indian Philosophies (Potter) — `source-library/acquisitions/philosophy-encyclopedia/` (11 texts, 24MB)
+Text-OCR (`_djvu.txt`) of the EIP volumes. Source: archive.org jackpot `the-encyclopedia-of-indian-philosophies` (vols 1–5,7–10) + standalone Vols I–IV.
+- Vol 1 Bibliography · Vol 2 Nyāya-Vaiśeṣika · Vol 3 Advaita to Śaṃkara · Vol 4 Sāṃkhya · Vol 5 Grammarians · Vol 7 Abhidharma to 150 AD · Vol 8 Buddhist 100–350 · Vol 9 Buddhist 350–600 · Vol 10 Jain · Standalone Vols I, III (biblio).
+- ⚠ Restricted/not acquired: **EIP Vol XI (Advaita 800–1200)** — 401/lending-only.
 
-### sarit — SARIT — downloadable XML (Skandapurāṇa), needs XML→IAST extraction
+### Vedic reference corpus — `source-library/acquisitions/vedic-reference/` (9 texts, 9.8MB)
+Text-OCR (`_djvu.txt`) of the standard history-of-Sanskrit-literature shelf:
+- Gonda, *Vedic Literature (Saṃhitās and Brāhmaṇas)* 1975 · Macdonell, *A History of Sanskrit Literature* · Winternitz, *A History of Indian Literature* Vol I · Keith, *A History of Sanskrit Literature* · Macdonell, *Vedic Mythology* (1897) · Macdonell, *Vedic Religion* (ERE) · Macdonell, *Bṛhaddevatā* Pt II · *Vedic Bibliography* + *Vedic Bibliography Third Volume*.
+- ⚠ Restricted/not acquired: Gonda, *The Vedic God Mitra* — 401/lending-only.
 
-- **#15 Early Skandapurāṇa critical recension** (work_id `skandapurana_early`)
-
-## 4. sivaqueue2 — acquired (13 files)
-
-- **#101 kriyakandakramavali** — archive.org · `kriyakandakramavali/kriyakandakramavali.txt` (DjVuTXT (english front-matter only; Sanskrit body is in the PDF))
-- **#101 kriyakandakramavali** — archive.org · `kriyakandakramavali/kriyakandakramavali.pdf` (Text PDF (full Sanskrit body))
-- **#109 siddhantasekhara** — ifpindia · `siddhantasekhara/siddhantasekhara.pdf` (PDF transcript T0969)
-- **#117 sivanirvanapaddhati** — archive.org · `sivanirvanapaddhati/sivanirvanapaddhati.txt` (DjVuTXT (Devanagari OCR))
-- **#117 sivanirvanapaddhati** — archive.org · `sivanirvanapaddhati/sivanirvanapaddhati.pdf` (Text PDF (full))
-- **#151 kamikagama** — archive.org · `kamikagama/kamikagama.pdf` (PDF (English intro; Sanskrit/Grantha+Tamil body))
-- **#154 ajitagama** — archive.org · `ajitagama/ajitagama_vol1.txt` (DjVuTXT vol1 (Devanagari OCR))
-- **#154 ajitagama_vol2** — archive.org · `ajitagama/ajitagama_vol2.txt` (DjVuTXT vol2 (Devanagari OCR))
-- **#154 ajitagama** — archive.org · `ajitagama/ajitagama_vol1_text.pdf` (Text PDF vol1)
-- **#154 ajitagama** — archive.org · `ajitagama/ajitagama_vol2_text.pdf` (Text PDF vol2)
-- **#? REF_Tantrasara** — archive.org · `reference/Tantrasara_Abhinavagupta_Chakravarti.pdf` (PDF translation)
-- **#? REF_DoctrineOfVibration** — archive.org · `reference/Doctrine_of_Vibration_Dyczkowski.pdf` (PDF)
-- **#? REF_Malinishlokavarttika** — archive.org · `reference/Malinishlokavarttika_Hanneder.pdf` (PDF)
-
-## 5. sivaqueue2 — NOT acquired (no direct witness) and where looked
-
-**95 of 100** sivaqueue2 targets have **no direct download URL** — they are catalogue/manuscript references (IFP digital collections, IGNCA PDF catalogues, Sanderson's *The Śaiva Literature* academia survey). Sources checked:
-
-- **IFP Digital Collections** (`digitalcollections.ifpindia.org` / `ifp.inist.fr/s/manuscripts`) — manuscript scans, need transcription
-- **IGNCA** (`ignca.gov.in/PDF_data/Tantra-Mantra-Yantra-Vol-3_Part-5.pdf`) — manuscript catalogue only
-- **Sanderson, *The Śaiva Literature*** (academia.edu) — survey identifying surviving manuscripts, not text
-- **archive.org** title-search (2026-08-12) — no scan for the Amṛteśvara, Anuttara, or paddhati corpora
-
-**Bot-blocked:** Śivayogapradīpikā (Powell, Harvard DASH) — returned HTTP 405 human-verification page.
-
-## 6. Where these are tracked
-
-- **Bibliography:** `data/atlas/sivaqueueSeed.ts` (135 records, incl. all sivaqueue2 + 35 newly-acquired sivaqueue1). Existing: `bibliographySeed.ts` (57) + `audited.ts` (11).
-- **Targets/queue:** `data/corpus/sivaqueue-targets.json` (100), `data/corpus/sivaqueue2-targets.json` (100), `data/corpus/sivaqueue-access-manifest.json`, `data/corpus/sivaqueue2-acquired.json`, `data/corpus/sivaqueue-acquired.json`.
-- **Acquisition manifests:** `data/corpus/sivaqueue-acquired.json` (44), `data/corpus/sivaqueue2-acquired.json` (13).
-
-*Generated 2026-08-12. See also `docs/corpus/sivaqueue-translation-guide.md` + `sivaqueue2-translation-guide.md`.*
+### Disk
+Root freed from 97% → 93% (2.2G → 5.3G) by removing redundant bundle zips/extractions + a 2.1G temp log. `consolidated/` (207 PDFs after dedup) retained as the deduped Sanderson corpus. sivaqueue2 was **removed** from source-library (translation corpus — does not belong there).

@@ -1,0 +1,655 @@
+{
+  "schema": "patala:history-timeline:v1",
+  "date": "2026-08-12",
+  "note": "Chronological school/tradition map from the Śiva-before-Abhinava genealogy (vision-11 + prehistory), linked to bibliography records, anchor texts, concepts, and epistemic layers. eras: textual|comparative|archaeological.",
+  "schools": [
+    {
+      "id": "proto_indoeuropean",
+      "name": "Proto-Indo-European (reconstructed)",
+      "period": [
+        -4500,
+        -2500
+      ],
+      "era": "comparative",
+      "parent": null,
+      "influences": [
+        "proto_indo_iranian"
+      ],
+      "concepts": [
+        "sky-father *Dyēus"
+      ],
+      "note": "Comparative reconstruction only.",
+      "hop": null,
+      "hop_note": null
+    },
+    {
+      "id": "proto_indo_iranian",
+      "name": "Proto-Indo-Iranian (reconstructed)",
+      "period": [
+        -2500,
+        -1500
+      ],
+      "era": "comparative",
+      "parent": "proto_indoeuropean",
+      "influences": [
+        "vedic_rudra"
+      ],
+      "concepts": [
+        "asura/ahura",
+        "ṛta/aša",
+        "soma/haoma"
+      ],
+      "note": "Reconstructed from Vedic+Avestan.",
+      "hop": null,
+      "hop_note": null
+    },
+    {
+      "id": "indus",
+      "name": "Indus / Harappan (parallel branch)",
+      "period": [
+        -2600,
+        -1900
+      ],
+      "era": "archaeological",
+      "parent": null,
+      "influences": [],
+      "concepts": [
+        "(script unread)"
+      ],
+      "note": "Hypothetical parallel branch — never asserted descent.",
+      "hop": null,
+      "hop_note": null
+    },
+    {
+      "id": "vedic_rudra",
+      "name": "Vedic Rudra",
+      "period": [
+        -1200,
+        -500
+      ],
+      "era": "textual",
+      "parent": "proto_indo_iranian",
+      "influences": [
+        "svetasvatara"
+      ],
+      "concepts": [
+        "rudra",
+        "healer",
+        "lord of animals",
+        "archer"
+      ],
+      "anchors": [
+        "Ṛgveda",
+        "Śatarudrīya"
+      ],
+      "hop": null,
+      "hop_note": null
+    },
+    {
+      "id": "sakta_svetasvatara",
+      "name": "Śvetāśvatara / Rudra-Īśvara",
+      "period": [
+        -400,
+        200
+      ],
+      "era": "textual",
+      "parent": "vedic_rudra",
+      "influences": [
+        "pasupata",
+        "epic_siva"
+      ],
+      "concepts": [
+        "īśvara",
+        "supreme Lord",
+        "cosmic causality"
+      ],
+      "anchors": [
+        "Śvetāśvatara Upaniṣad"
+      ],
+      "hop": null,
+      "hop_note": null
+    },
+    {
+      "id": "epic_siva",
+      "name": "Epic / Purāṇic Śiva (Mahādeva)",
+      "period": [
+        -300,
+        300
+      ],
+      "era": "textual",
+      "parent": "sakta_svetasvatara",
+      "influences": [
+        "pasupata",
+        "sivadharma"
+      ],
+      "concepts": [
+        "mahādeva",
+        "pāśupati",
+        "ascetic",
+        "boon-giver"
+      ],
+      "anchors": [
+        "Mahābhārata"
+      ],
+      "hop": null,
+      "hop_note": null
+    },
+    {
+      "id": "pasupata",
+      "name": "Pāśupata",
+      "period": [
+        200,
+        700
+      ],
+      "era": "textual",
+      "parent": "epic_siva",
+      "influences": [
+        "mantramarga",
+        "sivadharma"
+      ],
+      "concepts": [
+        "pāśupata observance",
+        "lord/soul/bondage"
+      ],
+      "anchors": [
+        "Pāśupatasūtra + Kauṇḍinya Pañcārthabhāṣya",
+        "Pāśupatavratam"
+      ],
+      "bibliography": [
+        "pancarthabhasya_kaundinya"
+      ],
+      "hop": null,
+      "hop_note": null
+    },
+    {
+      "id": "lakula",
+      "name": "Lākula",
+      "period": [
+        300,
+        700
+      ],
+      "era": "textual",
+      "parent": "pasupata",
+      "influences": [
+        "kapalika",
+        "mantramarga"
+      ],
+      "concepts": [
+        "Lakulīśa"
+      ],
+      "anchors": [
+        "Lakulīśa traditions"
+      ],
+      "bibliography": [
+        "lakulas"
+      ],
+      "hop": null,
+      "hop_note": null
+    },
+    {
+      "id": "kapalika",
+      "name": "Kāpālika (proto)",
+      "period": [
+        300,
+        700
+      ],
+      "era": "textual",
+      "parent": "lakula",
+      "influences": [
+        "bhairava"
+      ],
+      "concepts": [
+        "skull-bearing ascetic"
+      ],
+      "anchors": [],
+      "hop": null,
+      "hop_note": null
+    },
+    {
+      "id": "sivadharma",
+      "name": "Śivadharma",
+      "period": [
+        400,
+        800
+      ],
+      "era": "textual",
+      "parent": "epic_siva",
+      "influences": [
+        "mantramarga"
+      ],
+      "concepts": [
+        "lay Śaivism",
+        "devotion",
+        "cosmology"
+      ],
+      "anchors": [
+        "Śivadharmaśāstra",
+        "Skandapurāṇa"
+      ],
+      "bibliography": [
+        "sivadharmasastra",
+        "sivadharmottara"
+      ],
+      "hop": null,
+      "hop_note": null
+    },
+    {
+      "id": "mantramarga",
+      "name": "Mantramārga",
+      "period": [
+        450,
+        900
+      ],
+      "era": "textual",
+      "parent": "pasupata",
+      "influences": [
+        "saiva_siddhanta",
+        "bhairava"
+      ],
+      "concepts": [
+        "mantra",
+        "dīkṣā",
+        "initiation",
+        "adhvan"
+      ],
+      "anchors": [
+        "Niśvāsatattvasaṃhitā"
+      ],
+      "bibliography": [
+        "nisvasaguhyasutra"
+      ],
+      "hop": null,
+      "hop_note": null
+    },
+    {
+      "id": "saiva_siddhanta",
+      "name": "Śaiva Siddhānta",
+      "period": [
+        500,
+        1200
+      ],
+      "era": "textual",
+      "parent": "mantramarga",
+      "influences": [
+        "bhairava",
+        "trika"
+      ],
+      "concepts": [
+        "pati/paśu/pāśa",
+        "Sadyojyotis",
+        "Rāmakaṇṭha"
+      ],
+      "anchors": [
+        "Parākhyatantra",
+        "Kiraṇatantra",
+        "Mṛgendratantra",
+        "Mataṅgapārameśvara"
+      ],
+      "bibliography": [
+        "parakhyatantra",
+        "kiranatantra",
+        "mrgendragama",
+        "matangaparmesvaragama",
+        "sarvajnanottara"
+      ],
+      "hop": 7,
+      "hop_note": null
+    },
+    {
+      "id": "bhairava",
+      "name": "Bhairava / non-Saiddhāntika Tantra",
+      "period": [
+        600,
+        900
+      ],
+      "era": "textual",
+      "parent": "mantramarga",
+      "influences": [
+        "kaula",
+        "vidyapitha"
+      ],
+      "concepts": [
+        "Bhairava",
+        "Yoginīs"
+      ],
+      "anchors": [
+        "Brahmayāmala",
+        "Svacchanda",
+        "Mālinīvijayottara",
+        "Netra"
+      ],
+      "bibliography": [
+        "brahmayamala",
+        "svacchandatantra",
+        "malinivijayottara"
+      ],
+      "hop": 6,
+      "hop_note": null
+    },
+    {
+      "id": "vidyapitha",
+      "name": "Vidyāpīṭha",
+      "period": [
+        600,
+        1000
+      ],
+      "era": "textual",
+      "parent": "bhairava",
+      "influences": [
+        "kaula",
+        "sakta_traditions"
+      ],
+      "concepts": [
+        "goddess cults"
+      ],
+      "anchors": [
+        "Brahmayāmala",
+        "Jayadrathayāmala"
+      ],
+      "bibliography": [
+        "jayadrathayamala"
+      ],
+      "hop": null,
+      "hop_note": null
+    },
+    {
+      "id": "kaula",
+      "name": "Kaula",
+      "period": [
+        700,
+        1100
+      ],
+      "era": "textual",
+      "parent": "vidyapitha",
+      "influences": [
+        "krama",
+        "trika"
+      ],
+      "concepts": [
+        "kula",
+        "yoginī",
+        "body"
+      ],
+      "anchors": [
+        "Kaulajñānanirṇaya",
+        "Akulavīratantra",
+        "Kulārṇavatantra"
+      ],
+      "bibliography": [
+        "kaulajnananirnaya",
+        "akulaviratantra",
+        "kularnavatantra",
+        "kulasara"
+      ],
+      "hop": 1,
+      "hop_note": null
+    },
+    {
+      "id": "kalikula_krama",
+      "name": "Kālīkula / Krama",
+      "period": [
+        800,
+        1200
+      ],
+      "era": "textual",
+      "parent": "kaula",
+      "influences": [
+        "trika"
+      ],
+      "concepts": [
+        "krama",
+        "kālī",
+        "saṃvit"
+      ],
+      "anchors": [
+        "Mahānayaprakāśa",
+        "Mahārthamañjarī",
+        "Kramasadbhāva"
+      ],
+      "bibliography": [
+        "mahanayaprakasha",
+        "maharthamanjari",
+        "kramasadbhava"
+      ],
+      "hop": 3,
+      "hop_note": null
+    },
+    {
+      "id": "kubjika",
+      "name": "Kubjikā / Paścimāmnāya",
+      "period": [
+        950,
+        1300
+      ],
+      "era": "textual",
+      "parent": "vidyapitha",
+      "influences": [
+        "trika"
+      ],
+      "concepts": [
+        "mālinī",
+        "khecarī",
+        "mantra"
+      ],
+      "anchors": [
+        "Kubjikāmata",
+        "Ṣaṭsāhasrasaṃhitā"
+      ],
+      "bibliography": [
+        "kubjikamata",
+        "satsahasrasamhita"
+      ],
+      "hop": 2,
+      "hop_note": null
+    },
+    {
+      "id": "spanda",
+      "name": "Spanda",
+      "period": [
+        850,
+        1000
+      ],
+      "era": "textual",
+      "parent": null,
+      "influences": [
+        "trika"
+      ],
+      "concepts": [
+        "spanda",
+        "vibration"
+      ],
+      "anchors": [
+        "Spandakārikā"
+      ],
+      "bibliography": [
+        "spandakarika"
+      ],
+      "hop": null,
+      "hop_note": null
+    },
+    {
+      "id": "pratyabhijna",
+      "name": "Pratyabhijñā",
+      "period": [
+        900,
+        1000
+      ],
+      "era": "textual",
+      "parent": null,
+      "influences": [
+        "trika"
+      ],
+      "concepts": [
+        "recognition",
+        "prakāśa",
+        "vimarśa"
+      ],
+      "anchors": [
+        "Īśvarapratyabhijñākārikā"
+      ],
+      "bibliography": [
+        "isvarapratyabhijnakarika",
+        "sivadrsti"
+      ],
+      "hop": 4,
+      "hop_note": null
+    },
+    {
+      "id": "trika",
+      "name": "Trika (Abhinavagupta)",
+      "period": [
+        850,
+        1050
+      ],
+      "era": "textual",
+      "parent": "kaula",
+      "influences": [
+        "spanda",
+        "pratyabhijna",
+        "krama",
+        "kubjika"
+      ],
+      "concepts": [
+        "prakāśa",
+        "vimarśa",
+        "anuttara",
+        "kula"
+      ],
+      "anchors": [
+        "Tantrāloka",
+        "Mālinīvijayottara",
+        "Vijñānabhairava"
+      ],
+      "bibliography": [
+        "tantraloka",
+        "malinivijayottara",
+        "paratrisika"
+      ],
+      "hop": 4,
+      "hop_note": null
+    },
+    {
+      "id": "nyaya",
+      "name": "Nyāya (interlocutor)",
+      "period": [
+        200,
+        1300
+      ],
+      "era": "textual",
+      "parent": null,
+      "influences": [
+        "pratyabhijna"
+      ],
+      "concepts": [
+        "pramāṇa",
+        "inference",
+        "NS-Bhāṣya→Vārttika→navya"
+      ],
+      "anchors": [
+        "Nyāyasūtra",
+        "Tattvacintāmaṇi"
+      ],
+      "note": "The philosophical conversation-partner — the parīkṣā-genealogy (leapfrog Hops 8–10).",
+      "hop": 9,
+      "hop_note": null
+    },
+    {
+      "id": "buddhist_pramana",
+      "name": "Buddhist pramāṇa (Dharmakīrti, interlocutor)",
+      "period": [
+        400,
+        800
+      ],
+      "era": "textual",
+      "parent": null,
+      "influences": [
+        "pratyabhijna"
+      ],
+      "concepts": [
+        "pramāṇa",
+        "trairūpya"
+      ],
+      "anchors": [
+        "Pramāṇavārttika"
+      ],
+      "note": "Buddhist interlocutor for Pratyabhijñā; Dharmakīrti scholarship now acquired (Sanderson corpus).",
+      "hop": null,
+      "hop_note": null
+    },
+    {
+      "id": "pancharatra",
+      "name": "Pāñcarātra (parallel Vaiṣṇava)",
+      "period": [
+        300,
+        900
+      ],
+      "era": "textual",
+      "parent": null,
+      "influences": [],
+      "concepts": [
+        "vyūha",
+        "tantra-adjacent"
+      ],
+      "note": "Parallel āgamic tradition (Sanderson: History through Textual Criticism treats it alongside Śaiva).",
+      "hop": null,
+      "hop_note": null
+    }
+  ],
+  "chains": [
+    {
+      "title": "Sacrifice → inner worship",
+      "steps": [
+        "yajña",
+        "internalized sacrifice",
+        "yogic/mental ritual",
+        "tantric internal worship"
+      ]
+    },
+    {
+      "title": "Mantra ontology",
+      "steps": [
+        "Vedic mantra",
+        "sacred utterance",
+        "mantra ontology",
+        "Śaiva mantra-body / mantra-deity"
+      ]
+    },
+    {
+      "title": "Rudra → Śiva → consciousness",
+      "steps": [
+        "Rudra",
+        "omnipresent Rudra",
+        "supreme Rudra/Īśa",
+        "Śiva as liberating Lord",
+        "Śiva as consciousness"
+      ]
+    }
+  ],
+  "era_labels": {
+    "textual": "directly readable text",
+    "comparative": "comparative reconstruction",
+    "archaeological": "archaeological correlate",
+    "speculative": "hypothesis"
+  },
+  "sources": {
+    "genealogy": "docs/vision/expansion/vision-11-siva-before-abhinava.md",
+    "prehistory": "docs/vision/expansion/vision-11-siva-before-abhinava-prehistory.md",
+    "leapfrog_map": "docs/corpus/leapfrog_map.md",
+    "leapfrog_guide": "docs/corpus/leapfrog_guide.md",
+    "markguidance": "docs/corpus/markguidance.md",
+    "canonical_reference_map": "docs/corpus/canonical_reference_map.md",
+    "tradition_anchors": "docs/corpus/tradition_anchors.md"
+  },
+  "hop_roadmap": [
+    "HOP 1 Complete the Kaula",
+    "HOP 2 The Kubjikā complex",
+    "HOP 3 The Krama (crown)",
+    "HOP 4 The Trika scholasticization",
+    "HOP 5 Late Kālīkula",
+    "HOP 6 Early Bhairava substrate",
+    "HOP 7 Śaiva Siddhānta (comparison-pole)",
+    "HOP 8 Enter Nyāya",
+    "HOP 9 Classical Nyāya",
+    "HOP 10 Navya-Nyāya"
+  ]
+}

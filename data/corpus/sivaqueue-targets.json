@@ -32,7 +32,8 @@
       "source": "gretil",
       "note": "Kauṇḍinya's prose on Pāśupatasūtra; lord/soul/bondage/observance vocabulary.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "ganakarika": {
       "work_id": "ganakarika",
@@ -55,7 +56,8 @@
       "source": "muktabodha",
       "note": "Early Pāśupata verse summary; paired with Ratnaṭīkā.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "ratnatika_ganakarika": {
       "work_id": "ratnatika_ganakarika",
@@ -78,7 +80,8 @@
       "source": "muktabodha",
       "note": "Commentary on Gaṇakārikā; early Pāśupata observance doctrine.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "samskaravidhi": {
       "work_id": "samskaravidhi",
@@ -101,7 +104,8 @@
       "source": "muktabodha",
       "note": "Lākula/Pāśupata transformative rite; Pāñcārthika environment.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "sivadharmasastra": {
       "work_id": "sivadharmasastra",
@@ -123,7 +127,8 @@
       "source": "shivadharmaproject",
       "note": "Core lay Śaiva śāstra; only ch. 11 translated, remainder open.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "sivadharmottara": {
       "work_id": "sivadharmottara",
@@ -146,7 +151,8 @@
       "source": "shivadharmaproject",
       "note": "Lay Śaiva continuation; English critical translation underway.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "sivadharmasamgraha": {
       "work_id": "sivadharmasamgraha",
@@ -168,7 +174,8 @@
       "source": "shivadharmaproject",
       "note": "Only chs. 5–9 translated; bulk of the saṃgraha still untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "umamahesvarasamvada": {
       "work_id": "umamahesvarasamvada",
@@ -190,7 +197,8 @@
       "source": "shivadharmaproject",
       "note": "Śiva-Śakti dialogue; English critical translation underway.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "umottarasamvada": {
       "work_id": "umottarasamvada",
@@ -212,7 +220,8 @@
       "source": "shivadharmaproject",
       "note": "Companion Śaiva dialogue; English project underway.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "dharmaputrika": {
       "work_id": "dharmaputrika",
@@ -234,7 +243,8 @@
       "source": "shivadharmaproject",
       "note": "Lay Śaiva Dharma treatise; English project underway.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "lalitavistara_sivadharma": {
       "work_id": "lalitavistara_sivadharma",
@@ -256,7 +266,8 @@
       "source": "shivadharmaproject",
       "note": "Śivadharma-corpus narrative text; English project underway.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "vrsasarasamgraha": {
       "work_id": "vrsasarasamgraha",
@@ -279,7 +290,8 @@
       "source": "shivadharmaproject",
       "note": "Under collation; only provisional chapter-level translation.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "sivadharmasastravivarana": {
       "work_id": "sivadharmasastravivarana",
@@ -301,7 +313,8 @@
       "source": "shivadharmaproject",
       "note": "Commentary on the early Śivadharmaśāstra; needs verification.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "sivadharmottaravivarana": {
       "work_id": "sivadharmottaravivarana",
@@ -323,7 +336,8 @@
       "source": "shivadharmaproject",
       "note": "Commentary on Śivadharmottara; probably untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "skandapurana_early": {
       "work_id": "skandapurana_early",
@@ -346,7 +360,8 @@
       "source": "sarit",
       "note": "Critical recension has English synopses, not a full translation.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "ekamrapurana": {
       "work_id": "ekamrapurana",
@@ -368,7 +383,8 @@
       "source": "shivadharmaproject",
       "note": "Early Śaiva strata only partially/critically translated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "haracaritacintamani": {
       "work_id": "haracaritacintamani",
@@ -390,7 +406,8 @@
       "source": "shivadharmaproject",
       "note": "12th-c. compilation preserving earlier traditions; selected portions open.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "devipurana": {
       "work_id": "devipurana",
@@ -412,7 +429,8 @@
       "source": "shivadharmaproject",
       "note": "Relevant chapters only partially/uncritically translated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "brhaddharmapurana": {
       "work_id": "brhaddharmapurana",
@@ -434,7 +452,8 @@
       "source": "shivadharmaproject",
       "note": "Selected Śaiva material; critical gap for full translation.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "kalikapurana": {
       "work_id": "kalikapurana",
@@ -457,7 +476,8 @@
       "source": "shivadharmaproject",
       "note": "Critically untranslated portions remain a significant gap.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "nisvasaguhyasutra": {
       "work_id": "nisvasaguhyasutra",
@@ -479,7 +499,8 @@
       "source": "ifpindia",
       "note": "Deepest layer of the Niśvāsa corpus; not fully translated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "pauskaraparamesvara": {
       "work_id": "pauskaraparamesvara",
@@ -502,7 +523,8 @@
       "source": "muktabodha",
       "note": "Central pre-10th-c. Siddhānta scripture; needs verification.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "matangaparamesvara": {
       "work_id": "matangaparamesvara",
@@ -525,7 +547,8 @@
       "source": "muktabodha",
       "note": "Early Siddhānta Āgama; only portions translated.",
       "on_disk": true,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "on_disk_unregistered"
     },
     "yaksiniparamesvara": {
       "work_id": "yaksiniparamesvara",
@@ -548,7 +571,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Manuscript frontier; untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "hamsaparamesvara": {
       "work_id": "hamsaparamesvara",
@@ -571,7 +595,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Early Siddhānta Āgama; probably untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "mukuta_makutagama": {
       "work_id": "mukuta_makutagama",
@@ -594,7 +619,8 @@
       "source": "muktabodha",
       "note": "Early recension of the Makuṭa/Makuṭāgama; untranslated.",
       "on_disk": true,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "on_disk_unregistered"
     },
     "svayambhuvasutrasamgraha": {
       "work_id": "svayambhuvasutrasamgraha",
@@ -617,7 +643,8 @@
       "source": "muktabodha",
       "note": "Central Siddhānta scripture; only the bulk untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "suksmasvayambhuva": {
       "work_id": "suksmasvayambhuva",
@@ -640,7 +667,8 @@
       "source": "muktabodha",
       "note": "Compact early Siddhānta scripture; fully untranslated.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "rauravasutrasamgraha": {
       "work_id": "rauravasutrasamgraha",
@@ -663,7 +691,8 @@
       "source": "muktabodha",
       "note": "Distinct early textual state of the Raurava tradition.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "dvisatikalottara": {
       "work_id": "dvisatikalottara",
@@ -686,7 +715,8 @@
       "source": "muktabodha",
       "note": "Earliest Kālottara recension; untranslated.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "sardhatrisatikalottara": {
       "work_id": "sardhatrisatikalottara",
@@ -709,7 +739,8 @@
       "source": "muktabodha",
       "note": "Kālottara family recension; untranslated.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "saptasatikalottara": {
       "work_id": "saptasatikalottara",
@@ -732,7 +763,8 @@
       "source": "muktabodha",
       "note": "Kālottara family recension; untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "brhatkalottara": {
       "work_id": "brhatkalottara",
@@ -754,7 +786,8 @@
       "source": "ifpindia",
       "note": "Only temple-design portion translated; surrounding text open.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "sarvajnanottara": {
       "work_id": "sarvajnanottara",
@@ -777,7 +810,8 @@
       "source": "muktabodha",
       "note": "Only Yogapāda known; bulk of the Āgama untranslated.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "mayasamgraha": {
       "work_id": "mayasamgraha",
@@ -799,7 +833,8 @@
       "source": "ifpindia",
       "note": "Only temple-design portion translated; rest untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "devyamata": {
       "work_id": "devyamata",
@@ -821,7 +856,8 @@
       "source": "ifpindia",
       "note": "Only temple-design portion translated; rest untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "mohacudottara": {
       "work_id": "mohacudottara",
@@ -843,7 +879,8 @@
       "source": "ifpindia",
       "note": "Only temple-design portion translated; rest untranslated.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "pratisthaparamesvara": {
       "work_id": "pratisthaparamesvara",
@@ -865,7 +902,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Installation-focused Āgama; probably untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "pingalamata": {
       "work_id": "pingalamata",
@@ -887,7 +925,8 @@
       "source": "ifpindia",
       "note": "Only architectural portion translated; rest untranslated.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "kiranatantra": {
       "work_id": "kiranatantra",
@@ -910,7 +949,8 @@
       "source": "vishvasa",
       "note": "Root text only partially translated beyond the vṛtti.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "rauragama": {
       "work_id": "rauragama",
@@ -933,7 +973,8 @@
       "source": "ifpindia",
       "note": "Entire work exists in French; no comparable complete English.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "mrgendratantra": {
       "work_id": "mrgendratantra",
@@ -955,7 +996,8 @@
       "source": "ifpindia",
       "note": "Full French and partial English; complete modern English lacking.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "sahasragama": {
       "work_id": "sahasragama",
@@ -977,7 +1019,8 @@
       "source": "muktabodha",
       "note": "Ancient material of the Sāhasra Āgama; probably untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "paramesvaragama": {
       "work_id": "paramesvaragama",
@@ -999,7 +1042,8 @@
       "source": "muktabodha",
       "note": "Pārameśvara corpus; probably untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "makutottara": {
       "work_id": "makutottara",
@@ -1021,7 +1065,8 @@
       "source": "vishvasa",
       "note": "Late Makuṭa recension; probably untranslated.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "satsahasrakalottara": {
       "work_id": "satsahasrakalottara",
@@ -1043,7 +1088,8 @@
       "source": "vishvasa",
       "note": "Kālottara recension; probably untranslated.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "naresvarapariksa": {
       "work_id": "naresvarapariksa",
@@ -1066,7 +1112,8 @@
       "source": "vishvasa",
       "note": "Systematic Siddhānta philosopher for the philosophy engine; very high value.",
       "on_disk": true,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "on_disk_unregistered"
     },
     "tattvasamgraha_sadyojyotis": {
       "work_id": "tattvasamgraha_sadyojyotis",
@@ -1089,7 +1136,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Sadyojyotis kārikā with Aghoraśiva's commentary; EN gap.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "tattvatrayanirnaya": {
       "work_id": "tattvatrayanirnaya",
@@ -1111,7 +1159,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Sadyojyotis with Aghoraśiva's commentary; EN gap.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "ratnatrayapariksa_srikantha": {
       "work_id": "ratnatrayapariksa_srikantha",
@@ -1134,7 +1183,8 @@
       "source": "springer",
       "note": "Śrīkaṇṭha's three-gems treatise; only portions translated.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "ratnatrayapariksa_vyakhya": {
       "work_id": "ratnatrayapariksa_vyakhya",
@@ -1156,7 +1206,8 @@
       "source": "springer",
       "note": "Anonymous commentary on Ratnatrayaparīkṣā; partially translated.",
       "on_disk": true,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "on_disk_unregistered"
     },
     "ullekhini_ratnatrayapariksa": {
       "work_id": "ullekhini_ratnatrayapariksa",
@@ -1178,7 +1229,8 @@
       "source": "springer",
       "note": "Aghoraśiva's Ullekhinī; translation project active.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "nadakarika": {
       "work_id": "nadakarika",
@@ -1201,7 +1253,8 @@
       "source": "muktabodha",
       "note": "Kārikā with commentary; EN gap.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "ramakantha_kiravavrtti_7_12": {
       "work_id": "ramakantha_kiravavrtti_7_12",
@@ -1223,7 +1276,8 @@
       "source": "ifpindia",
       "note": "Continuation of Goodall's English Kiraṇavṛtti 1–6; extremely attractive.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "ramakantha_matangavrtti": {
       "work_id": "ramakantha_matangavrtti",
@@ -1245,7 +1299,8 @@
       "source": "muktabodha",
       "note": "Rāmakaṇṭha's vṛtti on Mataṅga; untranslated sections remain.",
       "on_disk": true,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "on_disk_unregistered"
     },
     "ramakantha_sardhatrisatikalottaravrtti": {
       "work_id": "ramakantha_sardhatrisatikalottaravrtti",
@@ -1267,7 +1322,8 @@
       "source": "muktabodha",
       "note": "Rāmakaṇṭha's vṛtti on the Kālottara; probably untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "sarvagamapramanyopanyasa": {
       "work_id": "sarvagamapramanyopanyasa",
@@ -1290,7 +1346,8 @@
       "source": "muktabodha",
       "note": "Rāmakaṇṭha's scriptural-authority treatise; only fragmentary translation.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "saivasiddhantadipika": {
       "work_id": "saivasiddhantadipika",
@@ -1313,7 +1370,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Sarvātmaśambhu's Siddhānta compendium; probably untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "sarvamatopanyasa": {
       "work_id": "sarvamatopanyasa",
@@ -1336,7 +1394,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Sarvātmaśambhu's survey of rival systems; probably untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "tattvaprakasa_bhojadeva": {
       "work_id": "tattvaprakasa_bhojadeva",
@@ -1359,7 +1418,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Bhojadeva's Tattvaprakāśa; EN gap.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "aghorasiva_tattvaprakasika": {
       "work_id": "aghorasiva_tattvaprakasika",
@@ -1381,7 +1441,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Aghoraśiva's commentary; probably untranslated.",
       "on_disk": true,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "on_disk_unregistered"
     },
     "aghorasiva_tattvasamgrahalaghutika": {
       "work_id": "aghorasiva_tattvasamgrahalaghutika",
@@ -1404,7 +1465,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Aghoraśiva's short ṭīkā; probably untranslated.",
       "on_disk": true,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "on_disk_unregistered"
     },
     "moksakarika": {
       "work_id": "moksakarika",
@@ -1426,7 +1488,8 @@
       "source": "vishvasa",
       "note": "Sadyojyotis kārikā; only commentarial portions open.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "ramakantha_moksakarikavrtti": {
       "work_id": "ramakantha_moksakarikavrtti",
@@ -1448,7 +1511,8 @@
       "source": "vishvasa",
       "note": "Rāmakaṇṭha's vṛtti on Mokṣakārikā; probably untranslated.",
       "on_disk": true,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "on_disk_unregistered"
     },
     "aghorasiva_ashtaprakarana_corpus": {
       "work_id": "aghorasiva_ashtaprakarana_corpus",
@@ -1471,7 +1535,8 @@
       "source": "vishvasa",
       "note": "Aghoraśiva's surrounding commentarial corpus; partially translated.",
       "on_disk": true,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "on_disk_unregistered"
     },
     "nityakriyanusandhana": {
       "work_id": "nityakriyanusandhana",
@@ -1494,7 +1559,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Brahmaśambhu's daily-rites manual; probably untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "naimittikakriyanusandhana": {
       "work_id": "naimittikakriyanusandhana",
@@ -1517,7 +1583,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Brahmaśambhu's occasional-rites manual; probably untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "siddhantasarapaddhati": {
       "work_id": "siddhantasarapaddhati",
@@ -1540,7 +1607,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Bhojadeva's Siddhānta ritual compendium; probably untranslated.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "natarajapaddhati": {
       "work_id": "natarajapaddhati",
@@ -1563,7 +1631,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Rāmanātha's dated ritual paddhati; high value, untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "siddhantadipika_ramanatha": {
       "work_id": "siddhantadipika_ramanatha",
@@ -1585,7 +1654,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Rāmanātha's Siddhānta compendium; probably untranslated.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "kriyasamgrahapaddhati": {
       "work_id": "kriyasamgrahapaddhati",
@@ -1608,7 +1678,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Valadharin's ritual compendium; unpublished.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "jnanaratnavali": {
       "work_id": "jnanaratnavali",
@@ -1630,7 +1701,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Jñānaśiva's ritual manual; largely unpublished.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "kriyakramadyotika": {
       "work_id": "kriyakramadyotika",
@@ -1652,7 +1724,8 @@
       "source": "vishvasa",
       "note": "Aghoraśiva's great ritual compendium; only portions translated.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "isanasivagurudevapaddhati": {
       "work_id": "isanasivagurudevapaddhati",
@@ -1675,7 +1748,8 @@
       "source": "muktabodha",
       "note": "Īśānaśivagurudeva's paddhati; only Śaiva sections translated.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "isanasivacaryapaddhati": {
       "work_id": "isanasivacaryapaddhati",
@@ -1697,7 +1771,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Śiva worship manual; probably untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "pararthanityapujavidhi": {
       "work_id": "pararthanityapujavidhi",
@@ -1719,7 +1794,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Temple pūjā manual; probably untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "pratisthakriyadipika": {
       "work_id": "pratisthakriyadipika",
@@ -1742,7 +1818,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Installation ritual manual; probably untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "kriyadipika_jnanasivacarya": {
       "work_id": "kriyadipika_jnanasivacarya",
@@ -1764,7 +1841,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Jñānaśiva's ritual manual; probably untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "siddhantasaravali": {
       "work_id": "siddhantasaravali",
@@ -1786,7 +1864,8 @@
       "source": "muktabodha",
       "note": "Trilocanaśiva with Anantaśiva's commentary; partially translated.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "prayascittasamuccaya_hridayasiva": {
       "work_id": "prayascittasamuccaya_hridayasiva",
@@ -1806,7 +1885,8 @@
       "source": "ifpindia",
       "note": "Complete Sanskrit transcription only; perfect Pāṭala experiment.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "pratisthalaksanasarasamuccaya": {
       "work_id": "pratisthalaksanasarasamuccaya",
@@ -1829,7 +1909,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Installation manual; probably untranslated.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "vimalavati": {
       "work_id": "vimalavati",
@@ -1851,7 +1932,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Vimalaśiva's installation manual; probably untranslated.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "nityadisangrahapaddhati": {
       "work_id": "nityadisangrahapaddhati",
@@ -1873,7 +1955,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Daily-rites collection; probably untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "aghorasivacaryapujanukramani": {
       "work_id": "aghorasivacaryapujanukramani",
@@ -1895,7 +1978,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Aghoraśiva's pūjā index/manual; probably untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "sivotsavapaddhati": {
       "work_id": "sivotsavapaddhati",
@@ -1917,7 +2001,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Festival-rite manual; probably untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "saivasiddhanta_pujapaddhati": {
       "work_id": "saivasiddhanta_pujapaddhati",
@@ -1939,7 +2024,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Anonymous manuscript corpus; untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "sthapanadipika": {
       "work_id": "sthapanadipika",
@@ -1961,7 +2047,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Installation manual; probably untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "balalayavidhi": {
       "work_id": "balalayavidhi",
@@ -1983,7 +2070,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Image-establishment manual; probably untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "sripratisthavidhi": {
       "work_id": "sripratisthavidhi",
@@ -2005,7 +2093,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Installation rite manual; probably untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "sivalingapratisthavidhi": {
       "work_id": "sivalingapratisthavidhi",
@@ -2028,7 +2117,8 @@
       "source": "digitalcollections.ifpindia",
       "note": "Liṅga-installation manual; probably untranslated.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "sivadrsti": {
       "work_id": "sivadrsti",
@@ -2051,7 +2141,8 @@
       "source": "muktabodha",
       "note": "Somānanda's foundational Pratyabhijñā text; substantial sections untranslated.",
       "on_disk": true,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "on_disk_unregistered"
     },
     "utpaladeva_sivadrstivrtti": {
       "work_id": "utpaladeva_sivadrstivrtti",
@@ -2074,7 +2165,8 @@
       "source": "muktabodha",
       "note": "Utpaladeva's auto-commentary; untranslated remainder.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     },
     "spandapradipika": {
       "work_id": "spandapradipika",
@@ -2096,7 +2188,8 @@
       "source": "muktabodha",
       "note": "Commentary on the Spandakārikā; probably untranslated.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "svacchandodyota": {
       "work_id": "svacchandodyota",
@@ -2118,7 +2211,8 @@
       "source": "muktabodha",
       "note": "Kṣemarāja's massive commentary; bulk untranslated.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "netratantroddyota": {
       "work_id": "netratantroddyota",
@@ -2140,7 +2234,8 @@
       "source": "muktabodha",
       "note": "Kṣemarāja's commentary on the Netra; bulk untranslated.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "bhavopahara": {
       "work_id": "bhavopahara",
@@ -2162,7 +2257,8 @@
       "source": "shaivism.net",
       "note": "Devotional kārikā with Ramyadeva's commentary; probably untranslated.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "bhagavadgita_sarvatobhadra": {
       "work_id": "bhagavadgita_sarvatobhadra",
@@ -2185,7 +2281,8 @@
       "source": "shaivism.net",
       "note": "Rāmakaṇṭha's Śaiva Gītā commentary; probably untranslated.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "janmamaranavicara": {
       "work_id": "janmamaranavicara",
@@ -2208,7 +2305,8 @@
       "source": "muktabodha",
       "note": "First English now being prepared by Muktabodha series.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "vatulanathasutra": {
       "work_id": "vatulanathasutra",
@@ -2231,7 +2329,8 @@
       "source": "muktabodha",
       "note": "Verify before claiming first translation.",
       "on_disk": true,
-      "registered": true
+      "registered": true,
+      "acquisition_status": "acquired"
     },
     "kaulasutra": {
       "work_id": "kaulasutra",
@@ -2254,8 +2353,14 @@
       "source": "muktabodha",
       "note": "Final status check needed before claiming first translation.",
       "on_disk": false,
-      "registered": false
+      "registered": false,
+      "acquisition_status": "missing"
     }
   },
-  "n_on_disk": 48
+  "n_on_disk": 48,
+  "acquisition_summary": {
+    "acquired": 38,
+    "missing": 52,
+    "on_disk_unregistered": 10
+  }
 }

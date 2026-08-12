@@ -126,12 +126,15 @@ function FlowContent() {
                   </h1>
                   <div className="h-1 w-16 bg-[#c58b36] mb-3" />
                 </div>
-                <div className="text-[9px] text-[#71695b] font-black uppercase tracking-[0.2em] leading-relaxed">
-                  <div>A research workstation for medieval Śaiva texts</div>
-                  <div className="mt-1 flex items-center gap-2">
-                    <span className="bindu" /> traditions · texts · ācāryas · concepts
-                  </div>
-                </div>
+            <div className="text-[9px] text-[#71695b] font-black uppercase tracking-[0.2em] leading-relaxed">
+              <div>A research workstation for medieval Śaiva texts</div>
+              <div className="mt-1 flex items-center gap-2">
+                <span className="bindu" /> traditions · texts · ācāryas · concepts
+              </div>
+              <a href="/history" className="mt-2 inline-block text-[#8b3528] hover:underline">
+                ◆ the Śiva source tree (diachronic map) →
+              </a>
+            </div>
               </div>
             </div>
             <div className="text-[8px] text-[#71695b] font-mono uppercase tracking-[0.4em] pl-1">

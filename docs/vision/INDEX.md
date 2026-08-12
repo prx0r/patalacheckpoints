@@ -19,6 +19,33 @@ here and in `docs/INDEX.md`.*
 
 ---
 
+## Recommended reading order (open these in this order)
+
+New here? Do not read the whole surface top-down. Follow the arc:
+
+1. **`docs/vision/CORE-BIBLE.md`** — the whole vision in one zoomable map (start + return point).
+2. **`docs/endgame1.md` → `docs/endgame5year.md`** (Vision 01–05) — the origin arc: the translation
+   laboratory, the Tantra Hub reframe, one infrastructure/many surfaces, the economics, the window.
+3. **`docs/vision/vision-06-adversarial-review.md` → `docs/vision/vision-10-market-entry-and-partnerships.md`**
+   (Vision 06–10) — the scholar-facing product: review, workbench, incentives, media, market entry.
+4. **`docs/vision/vision-12-multi-surface-platform.md`** + **`docs/vision/vision-13-product-portfolio-by-user-base.md`**
+   (Vision 12–13) — how it all re-renders as one core into role-based surfaces and a product catalog.
+5. **`docs/vision/vision-11-siva-before-abhinava.md`** (Vision 11, but read here) — the *next* corpus
+   expansion: the Śaiva genealogy. It connects forward into the IPVV work you're already doing.
+   Its **deep-prehistory companion** (`docs/vision/expansion/vision-11-siva-before-abhinava-prehistory.md`)
+   walks the source tree further back (Vedic Rudra → Proto-Indo-Iranian → PIE → Indus).
+6. **`docs/vision/functionality/hermes-execution.md`** — the bridge from strategy to *execution*: which
+   vision files the Hermes kernel operationalizes.
+7. **The lenses** — `docs/vision/functionality/README.md`, `docs/vision/scholars/README.md`,
+   `docs/vision/economics/README.md` — the same vision at Layer 4 (tools / people / value), to taste.
+8. **Foundational deep-dives** — `docs/NORTHSTAR.md` (deepest strategy), `docs/foundationalideas.md`
+   (the passage-identity idea), `docs/positioningpartners.md` (positioning).
+
+> Why step 4 before step 5? Vision 12/13 are the *current* product frame; Vision 11 is the *next*
+> corpus. Read the current frame first, then the expansion you will actually build toward.
+
+---
+
 ## The numbered vision sequence
 
 | # | Doc | Focus (one line) |
@@ -34,6 +61,7 @@ here and in `docs/INDEX.md`.*
 | **09** | `docs/vision/vision-09-media-and-cross-tradition.md` | **The Media Layer & Cross-Tradition Engine** — the scholarly core rendered as shorts/video/essays/AI-teacher (Workengestation = written voice, Renderio = video), then reproduced across traditions (Tantra → Yogic → Vedānta → Greek). |
 | **10** | `docs/vision/vision-10-market-entry-and-partnerships.md` | **Market Entry & Partnerships** — academic partners (BHU + global scholars), funding/fellowship sources, institutional models, outreach, low-cost pilots, legal/IP, metrics. *(new, from R2)* |
 | **11** | `docs/vision/expansion/vision-11-siva-before-abhinava.md` | **Śiva Before Abhinava** — the genealogy of Śaiva ideas as the next major corpus: six chronological corpora (Rudra→Śiva→Pāśupata→Early Tantra→Bhairava/Kaula→Kashmir) + three cross-cutting graphs (concept, cosmology, argument), ending at Abhinavagupta and connecting into IPVV. *(new, from R2)* |
+| **11b** | `docs/vision/expansion/vision-11-siva-before-abhinava-prehistory.md` | **Śiva Before Abhinava — deep source tree**: extends the Śaiva genealogy backward from the Ṛgveda through Proto-Indo-Iranian → Proto-Indo-European → Indus/prehistoric South Asia (~4500 BCE). Defines the evidence ladder (textual → comparative reconstruction → archaeological correlate → speculative), the parallel Indus branch (typed hypotheses only), and proposes Ṛgveda + Avesta as the deepest corpus inputs. *(new, from R2 `sivahistorical`)* |
 | **12** | `docs/vision/vision-12-multi-surface-platform.md` | **The Multi-Surface Platform** — one scholarly core (graph + MCP/API + executable-corrections engine) rendered through five permission-scoped surfaces: consumer (educational, read-only) · scholar (Workbench, propose + scoped submit) · contributor (manuscript ingestion) · developer (MCP/API) · reviewer (adjudication, strongest boundary). Grounded in the review-engine authorization policy. *(new)* |
 | **13** | `docs/vision/vision-13-product-portfolio-by-user-base.md` | **The Product Portfolio by User Base** — the cohesive product catalog aligning every vision doc to a surface: scholar (translation audit/rating, adversarial review, comparison, term audit, the PĀṬALA-IPVV benchmark, research compiler, workbench, bounties/credit) · consumer (Tantra Hub, atlas, learning, media) · contributor (manuscript, critical editions) · developer (API/MCP/protocol) · reviewer (queue, adjudication, credit). *(new)* |
 
