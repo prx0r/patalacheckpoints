@@ -12,6 +12,14 @@ many register-projections" idea to the whole Library (Pāṭala as the engine ev
 > **FROZEN. No new ML idea enters unless it answers:** *"Which benchmark task does it improve, and what
 > existing baseline must it beat?"* — if there is no answer, it does not get built.
 
+> **NORTH STAR (from `dualagentvision.md`):** every engineering task must name **(1) the checkpoint it
+> advances (CP0–CP12), (2) the scholarly object it makes more trustworthy, (3) the benchmark/proof that
+> demonstrates success.** If it can't answer all three, don't build it. The master object is one
+> derivation graph — SOURCE → L0 → TRANSLATION → COMMENTARY → THEMES → ARGUMENT → SYNTHESIS → WORKBENCH →
+> API — each node pointing downward, each status honest
+> (DETERMINISTIC_FACT | MACHINE_PROPOSED | HUMAN_REVIEWED | ACCEPTED). See `dualagentvision-ADAPTED.md`
+> for the map of which checkpoints our infra already covers.
+
 > **Retain the full vision while building the foundation:** the data foundation built now (the typed
 > ArgumentProposal, the provenance 4-level contract, the register-aware C1/themes) is what makes the
 > Library-engine vision possible. Build the spine (passage → claim → theme, resolvable + auditable)
