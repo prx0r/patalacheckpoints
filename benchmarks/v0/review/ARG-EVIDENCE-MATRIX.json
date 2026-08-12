@@ -1,0 +1,276 @@
+{
+  "arguments": [
+    {
+      "gold_id": "ARG-GOLD-002",
+      "propositions": [
+        {
+          "id": "G2-OBJ",
+          "kind": "OBJECTION",
+          "explicitness": "TEXTUALLY_EXPLICIT",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "PRIMARY_GROUNDED"
+        },
+        {
+          "id": "G2-TC1",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_SUPPORTED",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "PRIMARY_GROUNDED"
+        },
+        {
+          "id": "G2-TC2",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_EXPLICIT",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "PRIMARY_GROUNDED"
+        },
+        {
+          "id": "G2-CONC",
+          "kind": "CONCLUSION",
+          "explicitness": "RECONSTRUCTED_NECESSARY",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "RECONSTRUCTED"
+        },
+        {
+          "id": "G2-IC1",
+          "kind": "INTERPRETIVE_CLAIM",
+          "explicitness": "INTERPRETIVE_EXTENSION",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "RECONSTRUCTED"
+        }
+      ]
+    },
+    {
+      "gold_id": "ARG-GOLD-001",
+      "propositions": [
+        {
+          "id": "G-TC1",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_EXPLICIT",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "PRIMARY_GROUNDED"
+        },
+        {
+          "id": "G-TC2",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_SUPPORTED",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "PRIMARY_GROUNDED"
+        },
+        {
+          "id": "G-BRIDGE",
+          "kind": "IMPLICIT_PREMISE",
+          "explicitness": "RECONSTRUCTED_NECESSARY",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "RECONSTRUCTED"
+        },
+        {
+          "id": "G-DIST",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_SUPPORTED",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "PRIMARY_GROUNDED"
+        },
+        {
+          "id": "G-CONC",
+          "kind": "CONCLUSION",
+          "explicitness": "RECONSTRUCTED_NECESSARY",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "RECONSTRUCTED"
+        },
+        {
+          "id": "G-IC1",
+          "kind": "INTERPRETIVE_CLAIM",
+          "explicitness": "INTERPRETIVE_EXTENSION",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "RECONSTRUCTED"
+        }
+      ]
+    },
+    {
+      "gold_id": "ARG-GOLD-003",
+      "propositions": [
+        {
+          "id": "G3-ASSUM",
+          "kind": "IMPLICIT_PREMISE",
+          "explicitness": "RECONSTRUCTED_NECESSARY",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "RECONSTRUCTED"
+        },
+        {
+          "id": "G3-TC1",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_EXPLICIT",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "PRIMARY_GROUNDED"
+        },
+        {
+          "id": "G3-TC2",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_SUPPORTED",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "PRIMARY_GROUNDED"
+        },
+        {
+          "id": "G3-REG",
+          "kind": "IMPLICIT_PREMISE",
+          "explicitness": "RECONSTRUCTED_NECESSARY",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "RECONSTRUCTED"
+        },
+        {
+          "id": "G3-ABS",
+          "kind": "CONCLUSION",
+          "explicitness": "RECONSTRUCTED_NECESSARY",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "RECONSTRUCTED"
+        },
+        {
+          "id": "G3-TC3",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_SUPPORTED",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "PRIMARY_GROUNDED"
+        },
+        {
+          "id": "G3-CONC",
+          "kind": "CONCLUSION",
+          "explicitness": "RECONSTRUCTED_NECESSARY",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "RECONSTRUCTED"
+        },
+        {
+          "id": "G3-IC1",
+          "kind": "INTERPRETIVE_CLAIM",
+          "explicitness": "INTERPRETIVE_EXTENSION",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "RECONSTRUCTED"
+        }
+      ]
+    },
+    {
+      "gold_id": "ARG-GOLD-004",
+      "propositions": [
+        {
+          "id": "G4-TC1",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_SUPPORTED",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "PRIMARY_GROUNDED"
+        },
+        {
+          "id": "G4-CRYSTAL",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_SUPPORTED",
+          "primary": "\u2713",
+          "scholar": "\u2713",
+          "state": "CORROBORATED"
+        },
+        {
+          "id": "G4-DIST",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_SUPPORTED",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "PRIMARY_GROUNDED"
+        },
+        {
+          "id": "G4-TC2",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_SUPPORTED",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "PRIMARY_GROUNDED"
+        },
+        {
+          "id": "G4-CONC",
+          "kind": "CONCLUSION",
+          "explicitness": "RECONSTRUCTED_NECESSARY",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "RECONSTRUCTED"
+        },
+        {
+          "id": "G4-IC1",
+          "kind": "INTERPRETIVE_CLAIM",
+          "explicitness": "INTERPRETIVE_EXTENSION",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "RECONSTRUCTED"
+        }
+      ]
+    },
+    {
+      "gold_id": "ARG-GOLD-005",
+      "propositions": [
+        {
+          "id": "G5-OBJ",
+          "kind": "OBJECTION",
+          "explicitness": "TEXTUALLY_SUPPORTED",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "PRIMARY_GROUNDED"
+        },
+        {
+          "id": "G5-TC1",
+          "kind": "CONCLUSION",
+          "explicitness": "TEXTUALLY_SUPPORTED",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "RECONSTRUCTED"
+        },
+        {
+          "id": "G5-TC2",
+          "kind": "TEXTUAL_CLAIM",
+          "explicitness": "TEXTUALLY_SUPPORTED",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "PRIMARY_GROUNDED"
+        },
+        {
+          "id": "G5-CONC-A",
+          "kind": "CONCLUSION",
+          "explicitness": "RECONSTRUCTED_NECESSARY",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "RECONSTRUCTED"
+        },
+        {
+          "id": "G5-CONC-B",
+          "kind": "CONCLUSION",
+          "explicitness": "INTERPRETIVE_EXTENSION",
+          "primary": "\u2713",
+          "scholar": "?",
+          "state": "RECONSTRUCTED"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "primary_grounded": 14,
+    "corroborated": 1,
+    "reconstructed": 15,
+    "open": 0,
+    "total": 30
+  }
+}

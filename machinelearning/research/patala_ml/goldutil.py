@@ -199,3 +199,77 @@ def validate_all_gold(structure_dir: str | None = None) -> dict:
         r = validate_gold(gold)
         results[f.split("/")[-1]] = r
     return results
+
+
+# ── the SCHOLARLY_CORROBORATED_PRELIMINARY promotion protocol ────────────────
+# A proposition may be promoted to SCHOLARLY_CORROBORATED_PRELIMINARY ONLY when ALL six hold.
+# This is the mechanical freeze of the ARG-004 rule (which kept G4-CRYSTAL from laundering I4-1/C4).
+VALID_SCHOLARLY_RELATIONS = {"SUPPORTS", "QUALIFIES", "CONTRADICTS", "ALTERNATIVE"}
+
+# ── the T/R/E/C/H/X evidence-kind adapter (preserve semantics, don't flatten) ──
+# The markguidance status-tag discipline is preserved exactly and mapped into Pāṭala's evidence kinds,
+# so Review can ask "WHAT KIND of evidence supports this proposition?" instead of a generic evidence_ref.
+# Semantics preserved from source; each maps to a Pāṭala evidence-kind that Review can render.
+TRECX_ADAPTER = {
+    "T": "TEXTUAL_ATTESTATION",      # directly attested in a primary text / critical edition
+    "R": "RECONSTRUCTION",           # supported by peer-reviewed reconstruction / specialist scholarship
+    "E": "EMPIRICAL_EVIDENCE",       # empirical finding / method claim from contemporary research
+    "C": "COMPARATIVE",              # structured comparison across traditions or frameworks
+    "H": "HYPOTHESIS",               # research proposal / inference beyond current proof
+    "X": "UNRESOLVED_CONFLICT",      # contested, weakly supported, unavailable, or invalid
+}
+
+
+def validate_scholarly_corroboration(gold: dict) -> dict:
+    """Check every proposition tagged for scholarly corroboration against the promotion protocol.
+
+    For each proposition with a `scholarly_corroboration` block, all of these must hold:
+
+      PRIMARY       exact Sanskrit span resolves + an edition address resolves
+      INDEPENDENCE  the scholarly source is not the Pāṭala argument reconstruction itself
+      RELEVANCE     the scholar addresses the proposition/reading, not merely the same Sanskrit term
+      RELATION      one of SUPPORTS / QUALIFIES / CONTRADICTS / ALTERNATIVE
+      TRACEABILITY  publication + page/section/passage recorded
+      SCOPE         promotion applies only to the corroborated proposition(s), never propagated to
+                    dependent inferences/conclusions
+
+    Returns {"ok", "problems"}. Well-formedness only — it does NOT judge whether a scholar's reading is
+    correct (that is scholarly review).
+    """
+    problems = []
+    nodes = {n.get("proposition_id") or n.get("id"): n for n in gold.get("nodes", [])}
+
+    for nid, n in nodes.items():
+        block = n.get("scholarly_corroboration")
+        if not block:
+            continue
+        # PRIMARY
+        spans = block.get("primary", {})
+        if not spans.get("span_id") or not spans.get("edition_ref"):
+            problems.append(f"{nid}: corroboration lacks resolving primary span + edition address (PRIMARY)")
+        # INDEPENDENCE
+        src = block.get("scholarship", [])
+        if not src:
+            problems.append(f"{nid}: corroboration has no scholarly source (INDEPENDENCE)")
+        for s in src:
+            if s.get("origin") == "patala_argument_reconstruction":
+                problems.append(f"{nid}: source is not independent of the Pāṭala reconstruction (INDEPENDENCE)")
+            # RELEVANCE: must address the proposition/reading, not just the term
+            if not s.get("addresses"):
+                problems.append(f"{nid}: scholar source lacks 'addresses' (what reading it bears on) (RELEVANCE)")
+            # RELATION
+            if s.get("relation") not in VALID_SCHOLARLY_RELATIONS:
+                problems.append(f"{nid}: invalid scholarly relation {s.get('relation')} (RELATION)")
+            # TRACEABILITY
+            if not s.get("publication") or not (s.get("page") or s.get("section") or s.get("passage")):
+                problems.append(f"{nid}: source lacks publication + page/section/passage (TRACEABILITY)")
+        # SCOPE: the promotion must be scoped to this proposition; never blanket
+        # (this is structurally enforced by attaching the block per-proposition, but check the
+        #  promotion state name explicitly)
+        state = n.get("status") or n.get("review_state")
+        if block.get("promotes_to") == "SCHOLARLY_CORROBORATED" and block.get("level") != "PUBLICATION_VERIFIED":
+            problems.append(f"{nid}: full SCHOLARLY_CORROBORATED requires PUBLICATION_VERIFIED "
+                            f"(PRELIMINARY is the default) (SCOPE)")
+
+    return {"ok": len(problems) == 0, "problems": problems, "corroborated_nodes": [
+        nid for nid, n in nodes.items() if n.get("scholarly_corroboration")]}

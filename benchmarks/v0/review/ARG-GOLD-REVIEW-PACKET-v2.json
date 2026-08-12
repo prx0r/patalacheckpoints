@@ -499,7 +499,31 @@
               "lemma": "bhedenaiva",
               "role": "distinctness in manifestation"
             }
-          ]
+          ],
+          "scholarly_corroboration": {
+            "primary": {
+              "span_id": "chunkV2-H-pancamo-vimarsa-k11-13:L9:T23",
+              "edition_ref": "Ipk_1,5.11"
+            },
+            "scholarship": [
+              {
+                "origin": "scholar",
+                "addresses": "manifestation without vimar\u015ba is inert (crystal-like)",
+                "relation": "SUPPORTS",
+                "publication": "vimarsa dossier (saivamap)",
+                "passage": "IPK 1.5.11"
+              },
+              {
+                "origin": "scholar",
+                "addresses": "reflexivity of consciousness / vimar\u015ba reading",
+                "relation": "SUPPORTS",
+                "publication": "Rati\u00e9, \u012a\u015bvarasiddhi chapter (torella_book)",
+                "passage": "isvarasiddhi"
+              }
+            ],
+            "promotes_to": "SCHOLARLY_CORROBORATED_PRELIMINARY",
+            "level": "DOSSIER_CORROBORATED"
+          }
         },
         {
           "proposition_id": "G4-DIST",

@@ -80,6 +80,23 @@ recall; dominant bucket B = over-logged, not evaluator failure) is a model of ho
 dependency detection. My contrast-set benchmark should align its corruption types to the engine's
 taxonomy (or consume the engine) rather than duplicate it. This is a genuine cross-lane asset.
 
+**Strategic unification (planned, not yet built):** route the argument contrast-set through the existing
+QA engine via an adapter, so Factory → Audit → Review → Benchmark share one error language:
+```
+Argument / Proposition
+        ↓
+contrast mutation        (NEGATE, SWAP_SPEAKER, ...)
+        ↓
+existing QA taxonomy     (POLARITY_CHANGE, SPEAKER_CHANGE, ...)
+        ↓
+existing QA engine       (translations/tools)
+        ↓
+expected detection
+```
+Eventually `PĀṬALA-FIDELITY` + `translations/tools QA` → one shared corruption ontology. Recorded as a
+design intent; the adapter is built when the contrast-set moves from the structural floor to the
+semantic discrimination step.
+
 ### F. What Agent 1 should NOT mine (keep the lane clean)
 - `data/atlas/concepts.ts` (the atlas) — Agent 2's translation-facing surface.
 - `lean/`, `proof_engine/`, `proof_engine_lean/` — **the Lean bridge is NOT useful: it contains only
