@@ -384,5 +384,16 @@ server.tool(
     return { content: [{ type: "text", text: JSON.stringify(s, null, 2) }] };
   },
 );
+// ————————————————— get_history_timeline —————————————————
+server.tool(
+  "get_history_timeline",
+  "The diachronic Śiva source tree: schools/traditions laid across time (genealogy + prehistory + philosophical interlocutors), each with period, epistemic era (textual/comparative/archaeological), influences, anchors, bibliography ids, hop; plus the diachronic transformation chains and the leapfrog translation-roadmap. Returns /api/history/timeline.",
+  {},
+  async () => {
+    const d = await api(`/api/history/timeline`);
+    return { content: [{ type: "text", text: JSON.stringify(d, null, 2) }] };
+  },
+);
+
 const transport = new StdioServerTransport();
 await server.connect(transport);

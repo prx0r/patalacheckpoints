@@ -36,44 +36,60 @@ class StageOutputError(Exception):
     required to be JSON. NOT a silent fallback — the state machine must surface it."""
 
 
-def _hermes_call(prompt: str, model: str = DEFAULT_MODEL, timeout: int = 420) -> str:
+def _hermes_call(prompt: str, model: str = DEFAULT_MODEL, timeout: int = 120, _retries: int = 1) -> str:
     """Run hermes -z with the given prompt; return its stdout (the model response).
-    timeout: research tasks (C1, file-reading) legitimately take minutes; the default
-    is generous. A trivial reply is fast; a full C1 research call may take several minutes."""
+
+    timeout: batch calls (many verses in one context) legitimately take minutes — pass a large
+    timeout (600+). Default 120 is for short calls. timeout=0 disables the cap. Overridable via
+    HERMES_TIMEOUT. One bounded retry on a timeout (a transient hermes hang may succeed on retry);
+    fail-closed beyond that — never block the whole queue."""
+    if timeout == 0:
+        timeout = int(os.environ.get("HERMES_TIMEOUT", "0"))
     env = dict(os.environ)
     env.setdefault("HERMES_MODEL", model)
-    proc = subprocess.run(
-        [HERMES_BIN, "-z", prompt],
-        capture_output=True, text=True, env=env,
-        timeout=timeout, cwd="/root/projects/patala",
-    )
-    out = (proc.stdout or "").strip()
+    last = None
+    for attempt in range(_retries + 1):
+        try:
+            proc = subprocess.run(
+                [HERMES_BIN, "-z", prompt],
+                capture_output=True, text=True, env=env,
+                timeout=(timeout if timeout else None), cwd="/root/projects/patala",
+            )
+            return (proc.stdout or "").strip()
+        except subprocess.TimeoutExpired as e:
+            last = e
+            if attempt < _retries:
+                time.sleep(5)
+                continue
+            raise
+    raise last  # pragma: no cover
     return out
 
 
 def chat(system: str, user: str, model: str = DEFAULT_MODEL,
-         temperature: float = 0.3, max_tokens: int = 4000,
+         temperature: float = 0.3, max_tokens=None, timeout: int = 120,
          response_format: Optional[dict] = None,
          seed: Optional[int] = None) -> str:
     """A single model call via hermes -z. Returns just the text content.
 
-    The full instruction (system + user) is passed to hermes as one prompt;
-    hermes's own skill layer handles the house style. We ask it to return ONLY
-    the requested artifact (JSON for structured stages)."""
+    max_tokens is deliberately UNENFORCED: _hermes_call passes only the prompt +
+    model to `hermes -z`, so there is NO token cap on the call. This lets one
+    batch carry as many L0 records as possible in a single context. The param is
+    kept for API compatibility only. timeout: pass a large value for batch calls."""
     prompt = f"{system}\n\n{user}"
     if response_format is not None:
         prompt += "\n\nReturn ONLY the requested JSON object. No prose, no markdown fences, no commentary."
-    return _hermes_call(prompt, model=model)
+    return _hermes_call(prompt, model=model, timeout=timeout)
 
 
 def chat_result(system: str, user: str, model: str = DEFAULT_MODEL,
-                temperature: float = 0.3, max_tokens: int = 4000,
+                temperature: float = 0.3, max_tokens=None, timeout: int = 120,
                 response_format: Optional[dict] = None,
                 seed: Optional[int] = None) -> ModelResult:
     """A single model call via hermes -z returning a ModelResult with metadata."""
     t0 = time.time()
     content = chat(system, user, model=model, temperature=temperature,
-                   max_tokens=max_tokens, response_format=response_format, seed=seed)
+                   max_tokens=max_tokens, timeout=timeout, response_format=response_format, seed=seed)
     latency = int((time.time() - t0) * 1000)
     return ModelResult(content=content, finish_reason="stop", latency_ms=latency, model=model)
 

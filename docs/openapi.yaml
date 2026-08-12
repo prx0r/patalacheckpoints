@@ -363,3 +363,17 @@ paths:
         "200":
           description: ranked candidates, status machine_proposed (never accepted)
         "400": { description: missing_input }
+  /api/history/timeline:
+    get:
+      summary: The diachronic Śiva source tree — schools/traditions laid across time
+      description: >
+        The chronological map of the Śaiva genealogy + prehistory + philosophical
+        interlocutors. Each school carries period (BCE/CE), epistemic era
+        (textual | comparative | archaeological), influences, anchors, bibliography
+        ids, and leapfrog hop. Also returns the diachronic transformation chains and
+        the 10-hop translation roadmap. Source data: data/atlas/historyTimeline.json
+        (schema is OPEN/provisional — extendable to scholarly works, translations,
+        argument links; not canonical).
+      responses:
+        "200":
+          description: the history timeline (schools[], chains[], hop_roadmap[], sources)

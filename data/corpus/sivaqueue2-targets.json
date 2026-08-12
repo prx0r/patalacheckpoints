@@ -17,7 +17,15 @@
         "kriyakandakramavali/kriyakandakramavali.pdf"
       ],
       "on_disk": true,
-      "acquisition_status": "acquired"
+      "acquisition_status": "acquired",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 1000,
+        "end": 1200,
+        "approximate": true
+      }
     },
     "somashambhupaddhativyakhya": {
       "work_id": "somashambhupaddhativyakhya",
@@ -30,7 +38,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 1000,
+        "end": 1200,
+        "approximate": true
+      }
     },
     "siddhantasamuccaya": {
       "work_id": "siddhantasamuccaya",
@@ -43,7 +59,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 1000,
+        "end": 1200,
+        "approximate": true
+      }
     },
     "siddhantarahasyasara": {
       "work_id": "siddhantarahasyasara",
@@ -56,7 +80,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 1000,
+        "end": 1200,
+        "approximate": true
+      }
     },
     "sataratnasamgraha": {
       "work_id": "sataratnasamgraha",
@@ -69,7 +101,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 1000,
+        "end": 1200,
+        "approximate": true
+      }
     },
     "sataratnollekhanii": {
       "work_id": "sataratnollekhanii",
@@ -82,7 +122,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 1000,
+        "end": 1200,
+        "approximate": true
+      }
     },
     "siddhantaprakasika": {
       "work_id": "siddhantaprakasika",
@@ -95,7 +143,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 1000,
+        "end": 1200,
+        "approximate": true
+      }
     },
     "tattvaratnavali": {
       "work_id": "tattvaratnavali",
@@ -108,7 +164,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 1000,
+        "end": 1200,
+        "approximate": true
+      }
     },
     "siddhantasekhara": {
       "work_id": "siddhantasekhara",
@@ -123,7 +187,15 @@
         "siddhantasekhara/siddhantasekhara.pdf"
       ],
       "on_disk": true,
-      "acquisition_status": "acquired"
+      "acquisition_status": "acquired",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 1000,
+        "end": 1200,
+        "approximate": true
+      }
     },
     "mrgendrapaddhati": {
       "work_id": "mrgendrapaddhati",
@@ -136,7 +208,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 1000,
+        "end": 1200,
+        "approximate": true
+      }
     },
     "mrgendrapaddhatitika": {
       "work_id": "mrgendrapaddhatitika",
@@ -149,7 +229,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 1000,
+        "end": 1200,
+        "approximate": true
+      }
     },
     "prasadapaddhati": {
       "work_id": "prasadapaddhati",
@@ -162,7 +250,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 1000,
+        "end": 1200,
+        "approximate": true
+      }
     },
     "pratisthasarapaddhati": {
       "work_id": "pratisthasarapaddhati",
@@ -175,7 +271,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 1000,
+        "end": 1200,
+        "approximate": true
+      }
     },
     "sisyasamskarapaddhati": {
       "work_id": "sisyasamskarapaddhati",
@@ -188,7 +292,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Kashmirian Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 950,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "kaladiksapaddhati": {
       "work_id": "kaladiksapaddhati",
@@ -201,7 +313,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Kashmirian Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 950,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "agnikaryapaddhati": {
       "work_id": "agnikaryapaddhati",
@@ -214,7 +334,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Kashmirian Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 950,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "sivanirvanapaddhati": {
       "work_id": "sivanirvanapaddhati",
@@ -230,7 +358,15 @@
         "sivanirvanapaddhati/sivanirvanapaddhati.pdf"
       ],
       "on_disk": true,
-      "acquisition_status": "acquired"
+      "acquisition_status": "acquired",
+      "tradition": [
+        "Kashmirian Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 950,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "gurupustika": {
       "work_id": "gurupustika",
@@ -243,7 +379,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Kashmirian Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 1000,
+        "end": 1150,
+        "approximate": true
+      }
     },
     "svacchandabhairavapujapaddhati": {
       "work_id": "svacchandabhairavapujapaddhati",
@@ -256,7 +400,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Kashmirian Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 1000,
+        "end": 1150,
+        "approximate": true
+      }
     },
     "svacchandadevarcanavidhi": {
       "work_id": "svacchandadevarcanavidhi",
@@ -269,7 +421,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Kashmirian Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 1000,
+        "end": 1150,
+        "approximate": true
+      }
     },
     "apratihatamahadiksasutippanaka": {
       "work_id": "apratihatamahadiksasutippanaka",
@@ -282,7 +442,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Kashmirian Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 1200,
+        "end": 1300,
+        "approximate": true
+      }
     },
     "amrtevarapujana": {
       "work_id": "amrtevarapujana",
@@ -295,7 +463,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Kashmirian Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 1200,
+        "end": 1300,
+        "approximate": true
+      }
     },
     "amrtevarapujagnikaryavidhana": {
       "work_id": "amrtevarapujagnikaryavidhana",
@@ -308,7 +484,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Kashmirian Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 1200,
+        "end": 1300,
+        "approximate": true
+      }
     },
     "amrtasuryapujavidhi": {
       "work_id": "amrtasuryapujavidhi",
@@ -321,7 +505,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Kashmirian Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 1200,
+        "end": 1300,
+        "approximate": true
+      }
     },
     "amrtabhairavarcanavidhi": {
       "work_id": "amrtabhairavarcanavidhi",
@@ -334,7 +526,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Kashmirian Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 1200,
+        "end": 1300,
+        "approximate": true
+      }
     },
     "amrtisabhairavabhattarakahnikavidhi": {
       "work_id": "amrtisabhairavabhattarakahnikavidhi",
@@ -347,7 +547,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Kashmirian Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 1200,
+        "end": 1300,
+        "approximate": true
+      }
     },
     "amrtasuryarcanavidhi": {
       "work_id": "amrtasuryarcanavidhi",
@@ -360,7 +568,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Kashmirian Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 1200,
+        "end": 1300,
+        "approximate": true
+      }
     },
     "devitantrasadbhavasara": {
       "work_id": "devitantrasadbhavasara",
@@ -373,7 +589,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Kaula",
+        "Śākta"
+      ],
+      "period": {
+        "start": 700,
+        "end": 1000,
+        "approximate": true
+      }
     },
     "matrsadbhava": {
       "work_id": "matrsadbhava",
@@ -386,7 +611,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Kaula",
+        "Śākta"
+      ],
+      "period": {
+        "start": 700,
+        "end": 1000,
+        "approximate": true
+      }
     },
     "tantrarajatantravatarastotra": {
       "work_id": "tantrarajatantravatarastotra",
@@ -399,7 +633,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Krama"
+      ],
+      "period": {
+        "start": 800,
+        "end": 1200,
+        "approximate": true
+      }
     },
     "urdhvamnayapavitrarohanadamanarohanapaddhati": {
       "work_id": "urdhvamnayapavitrarohanadamanarohanapaddhati",
@@ -412,7 +654,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Krama"
+      ],
+      "period": {
+        "start": 800,
+        "end": 1200,
+        "approximate": true
+      }
     },
     "paratrisikalaghuvrttivimarsini": {
       "work_id": "paratrisikalaghuvrttivimarsini",
@@ -425,7 +675,17 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Trika",
+        "Anuttara",
+        "Pratyabhijñā"
+      ],
+      "period": {
+        "start": 1400,
+        "end": 1700,
+        "approximate": true
+      }
     },
     "paratrisikatatparyadipika": {
       "work_id": "paratrisikatatparyadipika",
@@ -438,7 +698,17 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Trika",
+        "Anuttara",
+        "Pratyabhijñā"
+      ],
+      "period": {
+        "start": 1400,
+        "end": 1700,
+        "approximate": true
+      }
     },
     "anuttarasamvidarcanacarca": {
       "work_id": "anuttarasamvidarcanacarca",
@@ -451,7 +721,17 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Trika",
+        "Anuttara",
+        "Pratyabhijñā"
+      ],
+      "period": {
+        "start": 1400,
+        "end": 1700,
+        "approximate": true
+      }
     },
     "pararcanakrama": {
       "work_id": "pararcanakrama",
@@ -464,7 +744,17 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Trika",
+        "Anuttara",
+        "Pratyabhijñā"
+      ],
+      "period": {
+        "start": 1400,
+        "end": 1700,
+        "approximate": true
+      }
     },
     "parakramavasana": {
       "work_id": "parakramavasana",
@@ -477,7 +767,17 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Trika",
+        "Anuttara",
+        "Pratyabhijñā"
+      ],
+      "period": {
+        "start": 1400,
+        "end": 1700,
+        "approximate": true
+      }
     },
     "paramasivadvaitakalpalatika": {
       "work_id": "paramasivadvaitakalpalatika",
@@ -490,7 +790,17 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Trika",
+        "Anuttara",
+        "Pratyabhijñā"
+      ],
+      "period": {
+        "start": 1400,
+        "end": 1700,
+        "approximate": true
+      }
     },
     "anandakalpavalli": {
       "work_id": "anandakalpavalli",
@@ -503,7 +813,17 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Trika",
+        "Anuttara",
+        "Pratyabhijñā"
+      ],
+      "period": {
+        "start": 1400,
+        "end": 1700,
+        "approximate": true
+      }
     },
     "parapujaprayoga": {
       "work_id": "parapujaprayoga",
@@ -516,7 +836,17 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Trika",
+        "Anuttara",
+        "Pratyabhijñā"
+      ],
+      "period": {
+        "start": 1400,
+        "end": 1700,
+        "approximate": true
+      }
     },
     "maharthamulasamketasutra": {
       "work_id": "maharthamulasamketasutra",
@@ -529,7 +859,17 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Trika",
+        "Anuttara",
+        "Pratyabhijñā"
+      ],
+      "period": {
+        "start": 1400,
+        "end": 1700,
+        "approximate": true
+      }
     },
     "anuttaraprakasapancasika": {
       "work_id": "anuttaraprakasapancasika",
@@ -542,7 +882,17 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Trika",
+        "Anuttara",
+        "Pratyabhijñā"
+      ],
+      "period": {
+        "start": 1400,
+        "end": 1700,
+        "approximate": true
+      }
     },
     "parapravesika": {
       "work_id": "parapravesika",
@@ -555,7 +905,17 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Trika",
+        "Anuttara",
+        "Pratyabhijñā"
+      ],
+      "period": {
+        "start": 1400,
+        "end": 1700,
+        "approximate": true
+      }
     },
     "svarupavimarsini": {
       "work_id": "svarupavimarsini",
@@ -568,7 +928,17 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Trika",
+        "Anuttara",
+        "Pratyabhijñā"
+      ],
+      "period": {
+        "start": 1400,
+        "end": 1700,
+        "approximate": true
+      }
     },
     "naganandasutravivarana": {
       "work_id": "naganandasutravivarana",
@@ -581,7 +951,17 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Trika",
+        "Anuttara",
+        "Pratyabhijñā"
+      ],
+      "period": {
+        "start": 1400,
+        "end": 1700,
+        "approximate": true
+      }
     },
     "anuttarapaddhati": {
       "work_id": "anuttarapaddhati",
@@ -594,7 +974,17 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Trika",
+        "Anuttara",
+        "Pratyabhijñā"
+      ],
+      "period": {
+        "start": 1400,
+        "end": 1700,
+        "approximate": true
+      }
     },
     "padyavahini": {
       "work_id": "padyavahini",
@@ -607,7 +997,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 1300,
+        "end": 1400,
+        "approximate": true
+      }
     },
     "saivakalpadruma": {
       "work_id": "saivakalpadruma",
@@ -620,7 +1018,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1500,
+        "approximate": true
+      }
     },
     "sivavakyavali": {
       "work_id": "sivavakyavali",
@@ -633,7 +1040,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1500,
+        "approximate": true
+      }
     },
     "saivamanasollasa": {
       "work_id": "saivamanasollasa",
@@ -646,7 +1062,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1500,
+        "approximate": true
+      }
     },
     "saivasarvasvasara": {
       "work_id": "saivasarvasvasara",
@@ -659,7 +1084,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1500,
+        "approximate": true
+      }
     },
     "kamikagama": {
       "work_id": "kamikagama",
@@ -674,7 +1108,15 @@
         "kamikagama/kamikagama.pdf"
       ],
       "on_disk": true,
-      "acquisition_status": "acquired"
+      "acquisition_status": "acquired",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 600,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "yogajagama": {
       "work_id": "yogajagama",
@@ -687,7 +1129,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 600,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "cintyagama": {
       "work_id": "cintyagama",
@@ -700,7 +1150,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 600,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "ajitagama": {
       "work_id": "ajitagama",
@@ -717,7 +1175,15 @@
         "ajitagama/ajitagama_vol2_text.pdf"
       ],
       "on_disk": true,
-      "acquisition_status": "acquired"
+      "acquisition_status": "acquired",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 600,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "diptagama": {
       "work_id": "diptagama",
@@ -730,7 +1196,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 600,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "suksmagama": {
       "work_id": "suksmagama",
@@ -743,7 +1217,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 600,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "amsumadagama": {
       "work_id": "amsumadagama",
@@ -756,7 +1238,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 600,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "suprabhedagama": {
       "work_id": "suprabhedagama",
@@ -769,7 +1259,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 600,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "vijayagama": {
       "work_id": "vijayagama",
@@ -782,7 +1280,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 600,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "analagama": {
       "work_id": "analagama",
@@ -795,7 +1301,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 600,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "viraagama": {
       "work_id": "viraagama",
@@ -808,7 +1322,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 600,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "vimalagama": {
       "work_id": "vimalagama",
@@ -821,7 +1343,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 600,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "bimbagama": {
       "work_id": "bimbagama",
@@ -834,7 +1364,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 600,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "prodigitagama": {
       "work_id": "prodigitagama",
@@ -847,7 +1385,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 600,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "lalitagama": {
       "work_id": "lalitagama",
@@ -860,7 +1406,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 600,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "siddhagama": {
       "work_id": "siddhagama",
@@ -873,7 +1427,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 600,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "santanagama": {
       "work_id": "santanagama",
@@ -886,7 +1448,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 600,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "sarvoktagama": {
       "work_id": "sarvoktagama",
@@ -899,7 +1469,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 600,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "karanagama": {
       "work_id": "karanagama",
@@ -912,7 +1490,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 600,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "makutagama": {
       "work_id": "makutagama",
@@ -925,7 +1511,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 600,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "candrajnanagama": {
       "work_id": "candrajnanagama",
@@ -938,7 +1532,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 600,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "sarvajnanottara2": {
       "work_id": "sarvajnanottara2",
@@ -951,7 +1553,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 600,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "mrgendratantra2": {
       "work_id": "mrgendratantra2",
@@ -964,7 +1574,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 600,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "kiranatantra2": {
       "work_id": "kiranatantra2",
@@ -977,7 +1595,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 600,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "brhatkalottara2": {
       "work_id": "brhatkalottara2",
@@ -990,7 +1616,15 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "period": {
+        "start": 600,
+        "end": 1100,
+        "approximate": true
+      }
     },
     "jnanassiddhyagama": {
       "work_id": "jnanassiddhyagama",
@@ -1003,7 +1637,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1600,
+        "approximate": true
+      }
     },
     "cidambaresvaranityapujasutra": {
       "work_id": "cidambaresvaranityapujasutra",
@@ -1016,7 +1659,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1600,
+        "approximate": true
+      }
     },
     "citsabhesotsavasutra": {
       "work_id": "citsabhesotsavasutra",
@@ -1029,7 +1681,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1600,
+        "approximate": true
+      }
     },
     "pauskarabhasya": {
       "work_id": "pauskarabhasya",
@@ -1042,7 +1703,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1600,
+        "approximate": true
+      }
     },
     "kriyasara": {
       "work_id": "kriyasara",
@@ -1055,7 +1725,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1600,
+        "approximate": true
+      }
     },
     "anubhavasutra": {
       "work_id": "anubhavasutra",
@@ -1068,7 +1747,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1600,
+        "approximate": true
+      }
     },
     "maritontadarya_siddhantashikhamani": {
       "work_id": "maritontadarya_siddhantashikhamani",
@@ -1081,7 +1769,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1600,
+        "approximate": true
+      }
     },
     "lingadharanacandrika": {
       "work_id": "lingadharanacandrika",
@@ -1094,7 +1791,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1600,
+        "approximate": true
+      }
     },
     "pancaratna": {
       "work_id": "pancaratna",
@@ -1107,7 +1813,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1600,
+        "approximate": true
+      }
     },
     "pancaratna_commentary": {
       "work_id": "pancaratna_commentary",
@@ -1120,7 +1835,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1600,
+        "approximate": true
+      }
     },
     "pramathaganapaddhati": {
       "work_id": "pramathaganapaddhati",
@@ -1133,7 +1857,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1600,
+        "approximate": true
+      }
     },
     "anadivirasaivacarasamgraha": {
       "work_id": "anadivirasaivacarasamgraha",
@@ -1146,7 +1879,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1600,
+        "approximate": true
+      }
     },
     "virasaivacarasroddharabhasya": {
       "work_id": "virasaivacarasroddharabhasya",
@@ -1159,7 +1901,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1600,
+        "approximate": true
+      }
     },
     "viramaheswaracarasamgraha": {
       "work_id": "viramaheswaracarasamgraha",
@@ -1172,7 +1923,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1600,
+        "approximate": true
+      }
     },
     "virasaivasiddhantottarakaumudi": {
       "work_id": "virasaivasiddhantottarakaumudi",
@@ -1185,7 +1945,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1600,
+        "approximate": true
+      }
     },
     "vivekacintamani": {
       "work_id": "vivekacintamani",
@@ -1198,7 +1967,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1600,
+        "approximate": true
+      }
     },
     "sivadvaitanirnaya": {
       "work_id": "sivadvaitanirnaya",
@@ -1211,7 +1989,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1600,
+        "approximate": true
+      }
     },
     "vedantasarvasvasivadarpana": {
       "work_id": "vedantasarvasvasivadarpana",
@@ -1224,7 +2011,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1600,
+        "approximate": true
+      }
     },
     "sivarcanacandrika": {
       "work_id": "sivarcanacandrika",
@@ -1237,7 +2033,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1600,
+        "approximate": true
+      }
     },
     "saivagamaparibhasamanjari": {
       "work_id": "saivagamaparibhasamanjari",
@@ -1250,7 +2055,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1600,
+        "approximate": true
+      }
     },
     "atmarthapujapaddhati": {
       "work_id": "atmarthapujapaddhati",
@@ -1263,7 +2077,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1600,
+        "approximate": true
+      }
     },
     "diksadarsa": {
       "work_id": "diksadarsa",
@@ -1276,7 +2099,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1600,
+        "approximate": true
+      }
     },
     "asaucadipika": {
       "work_id": "asaucadipika",
@@ -1289,7 +2121,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1600,
+        "approximate": true
+      }
     },
     "sivanityapujapaddhati": {
       "work_id": "sivanityapujapaddhati",
@@ -1302,7 +2143,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1600,
+        "approximate": true
+      }
     },
     "sivatandavatantratika": {
       "work_id": "sivatandavatantratika",
@@ -1315,7 +2165,16 @@
       "acquired": false,
       "acquired_files": [],
       "on_disk": false,
-      "acquisition_status": "missing"
+      "acquisition_status": "missing",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Vīraśaiva"
+      ],
+      "period": {
+        "start": 1100,
+        "end": 1600,
+        "approximate": true
+      }
     }
   },
   "on_disk": {},

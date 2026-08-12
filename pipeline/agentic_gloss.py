@@ -138,6 +138,111 @@ def challenge_glosses(verse: str, glosses: dict, work_id: str) -> dict:
         return dict(glosses)
 
 
+# ───────────────────────────────────────────────────────────────────────────── #
+# BATCH MODE — many verses in ONE context/API call (as many L0 as possible per
+# call). The batch prompt carries the work's term-context packet once, then all
+# verses + their Vidyut token lists; the model returns glosses for every token.
+# No max-token cap is passed to hermes (model.py's _hermes_call passes only the
+# prompt + model to `hermes -z`), so the batch is bounded only by hermes's own
+# handling of a single prompt — the "as many L0 as possible in one call" goal.
+# ───────────────────────────────────────────────────────────────────────────── #
+
+def _parse_batch_gloss(raw: str, entries: list) -> dict:
+    """Parse a batch gloss JSON {\"<idx>\": {\"<token>\": \"<gloss>\"}} and map back per entry.
+    Honest on failure: empty glosses (never fabricate)."""
+    try:
+        data = json.loads(raw)
+        if not isinstance(data, dict):
+            raise ValueError("batch gloss not an object")
+    except Exception:
+        return {e["idx"]: {t: "" for t in e["tokens"]} for e in entries}
+    out = {}
+    for e in entries:
+        got = data.get(str(e["idx"])) or data.get(e["idx"]) or {}
+        if not isinstance(got, dict):
+            got = {}
+        out[e["idx"]] = {t: got.get(t, "") for t in e["tokens"]}
+    return out
+
+
+def propose_glosses_batch(entries: list, work_id: str, max_tokens=None) -> dict:
+    """Pass 1 (PROPOSE) for a BATCH of verses in one call. entries: [{idx, verse, tokens}]."""
+    packet = _term_packet_for(work_id)
+    blocks = []
+    for e in entries:
+        blocks.append(
+            f"--- VERSE {e['idx']} ---\n"
+            f"VERSE: {e['verse']}\n"
+            f"TOKENS: {json.dumps(e['tokens'], ensure_ascii=False)}\n"
+        )
+    prompt = (
+        "You are the Pāṭala RAW-L0 generative layer (the raw-l0 skill). Produce a literal, "
+        "word/phrase-level English gloss for EACH Sanskrit token of EACH verse below (the whole batch "
+        "in ONE response). Anchoring:\n"
+        "- Each token has already been segmented + lemmatized by Vidyut (the deterministic witness).\n"
+        "- Use the term-context packet for the technical senses (never a flat dictionary lookup).\n"
+        "- A gloss is the literal meaning of the token, not a whole-verse translation.\n"
+        "- Return JSON ONLY: {\"<idx>\": {\"<token>\": \"<literal gloss>\"}} covering EVERY verse and EVERY token.\n"
+        "- If a token is genuinely unanalyzable in context, use \"\" (empty) — do NOT fabricate.\n\n"
+        f"{packet}\n\n"
+        + "\n".join(blocks)
+    )
+    raw = chat("You are a careful Sanskrit L0 gloss generator.", prompt, max_tokens=max_tokens, timeout=600)
+    return _parse_batch_gloss(raw, entries)
+
+
+def challenge_glosses_batch(entries: list, proposed: dict, work_id: str, max_tokens=None) -> dict:
+    """Pass 2 (SELF-CHALLENGE) for a BATCH in one call. proposed: {idx: {token: gloss}}."""
+    packet = _term_packet_for(work_id)
+    blocks = []
+    for e in entries:
+        blocks.append(
+            f"--- VERSE {e['idx']} ---\n"
+            f"VERSE: {e['verse']}\n"
+            f"PROPOSED: {json.dumps(proposed.get(e['idx'], {}), ensure_ascii=False)}\n"
+        )
+    prompt = (
+        "You are a SECOND, adversarial Sanskrit philologist (the self-challenge pass). The first pass "
+        "proposed literal glosses for a BATCH of verses. Challenge each gloss of EACH verse:\n"
+        "- wrong lemma or wrong tradition sense (imported from another school)?\n"
+        "- gloss too interpretive (reading more than the token says)?\n"
+        "- lost negation / polarity / case contribution?\n"
+        "- should it be ABSTAIN (AMBIGUOUS) rather than a confident gloss?\n"
+        "Return JSON ONLY: {\"<idx>\": {\"<token>\": \"<REVISED literal gloss or ABSTAIN>\"}} covering EVERY "
+        "verse and EVERY token. Only change a gloss if the challenge finds a real problem.\n\n"
+        f"{packet}\n\n"
+        + "\n".join(blocks)
+    )
+    raw = chat("You are a skeptical Sanskrit philologist (adversarial check).", prompt, max_tokens=max_tokens, timeout=600)
+    try:
+        challenged = _parse_batch_gloss(raw, entries)
+    except Exception:
+        challenged = proposed
+    return challenged
+
+
+def run_batch(entries: list, work_id: str) -> list:
+    """Run the full agentic gloss (propose → self-challenge) for a batch of verses in ONE propose
+    call + ONE challenge call. entries: [{idx, verse, tokens}]. Returns list of
+    {idx, proposed, challenged, gloss_map}."""
+    if not entries:
+        return []
+    proposed = propose_glosses_batch(entries, work_id)
+    challenged = challenge_glosses_batch(entries, proposed, work_id)
+    out = []
+    for e in entries:
+        p = proposed.get(e["idx"], {})
+        c = challenged.get(e["idx"], p)
+        gloss_map = {}
+        for t in e["tokens"]:
+            g = c.get(t, p.get(t, ""))
+            if g == "ABSTAIN":
+                g = ""
+            gloss_map[t] = {"literal": g, "compound": "", "supplied": False}
+        out.append({"idx": e["idx"], "proposed": p, "challenged": c, "gloss_map": gloss_map})
+    return out
+
+
 def run(work_id: str, verse_idx: int, max_tokens: int = 800) -> dict:
     verses = split_verses(load_raw_source(work_id))
     verse = verses[verse_idx]
