@@ -72,14 +72,19 @@ def _propose_mt_ia(object_id: str, l1_text: str, l2_text: str) -> tuple[str, lis
     any model failure — so an empty result is only ever 'nothing found', never 'worker failed'."""
     prompt = (
         "You are the Pāṭala L200 audit compiler. Compare the GROUNDED (L1) controlled reading with the "
-        "published L2 reading and identify what materially changed between them:\n"
+        "published L2 reading and identify what materially changed between them. BE CONSERVATIVE: "
+        "precision over coverage, abstain rather than over-propose. Rules:\n"
         "1. material_translation_decisions: [] of {\"label\":\"...\",\"type\":\"<one of " +
-        ",".join(MT_TYPES) + ">\",\"basis\":\"...\"} — only genuine translation interventions "
-        "(supplied referent, connective, lexical/grammatical choice); a paraphrase of meaning is NOT a "
-        "translation decision.\n"
-        "2. interpretive_assertions: [] of {\"label\":\"IA-001\",\"text\":\"...\"}.\n"
-        "3. open_items: [] of {\"text\":\"...\",\"status\":\"OPEN|NEEDS_REVIEW\"}.\n"
-        "If nothing materially changed, return empty lists (that is a valid COMPLETE result).\n"
+        ",".join(MT_TYPES) + ">\",\"basis\":\"...\"} — ONLY genuine translation interventions: a word/"
+        "referent explicitly supplied for an implicit Sanskrit element, a connective that exposes an "
+        "inference, a lexical or grammatical choice. A paraphrase of the meaning is NOT a translation "
+        "decision and must NOT be listed here.\n"
+        "2. interpretive_assertions: [] of {\"label\":\"IA-001\",\"text\":\"...\"} — ONLY if L2 adds a "
+        "genuinely interpretive claim beyond what the grounded reading asserts. If L2 merely restates "
+        "L1 in clearer English, list NOTHING here (do not invent IAs).\n"
+        "3. open_items: [] of {\"text\":\"...\",\"status\":\"OPEN|NEEDS_REVIEW\"} — only genuine "
+        "unresolved items.\n"
+        "If nothing materially changed, return empty lists (a valid COMPLETE result).\n"
         "Return JSON ONLY.\n\nGROUNDED (L1):\n" + (l1_text or "")[:1200] +
         "\n\nPUBLISHED (L2):\n" + (l2_text or "")[:1200]
     )

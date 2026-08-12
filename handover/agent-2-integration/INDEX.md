@@ -11,6 +11,9 @@ source for the integration lane.*
 > state + the RAW-L0 priority sequence + build order + guardrails). Read it before building.
 > **SESSION HANDOVER: `handover/agent-2-integration/SESSION-2026-08-12.md`** — the complete record of this
 > session's work + the honest current state + the highest-value next work. Read it first.
+> **AUTONOMY BUILD RECORD: `handover/agent-2-integration/BUILD-RECORD-2026-08-12-AUTONOMY.md`** — the full
+> inventory + results of the autonomous translation factory build (controller, registry, certificates,
+> live L200 benchmark). **Read this for the current autonomous-factory state.**
 >
 > **THE CANONICAL LAYER STACK (the authoritative layer definitions — NOT in app/api or mcp, they live on
 > the mount `…/sanskritree/translations/_stack/ipvv/`):**

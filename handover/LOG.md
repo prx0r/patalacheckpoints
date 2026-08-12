@@ -542,3 +542,22 @@ THEME → ESSAY.
 
 **Files:** `handover/hermes/hermespatalalayers.md` · `hermespatala-architecture-review.md` ·
 `handover/agent-2-integration/PROBLEMS-AUTONOMOUS-TRANSLATION.md` §9.
+
+## Agent 2 — autonomous factory: certificates + live L200 benchmark (2026-08-12)
+
+**What:** Completed the L0 certificate (deterministic floor certified, cross-work kramasadbhava) and the
+L200-v1 certificate (10 phenomena, dims A-L, adversarial mutations, invalidation — all pass). Built the
+**LIVE L200 semantic benchmark** (real model vs typed reference fixtures) and iterated the proposer:
+IA precision 0.333→0.80, MT recall 0.667→0.70, MT precision 0.95, generation-failure 0.1→0.0. Remaining
+gate: MT recall 0.70 + 1 laundering case — **do not scale L200 until bounded**.
+
+**Lane re-anchor:** Agent 2 = autonomous translation factory (`SOURCE→L0/L1→L2→L200→C1`, certificates,
+controller, reliability, unattended scaling). The **scholar-oracle (S0.1) proof was handed to the
+evidence lane** (Agent 1) — Agent 2 does NOT continue SourceAssertion/Corroboration/CorroborationBench/
+GROBID/scholar products.
+
+**Files:** `handover/agent-2-integration/BUILD-RECORD-2026-08-12-AUTONOMY.md` (full inventory + results) ·
+`pipeline/certificate_l0.py`, `certificate_l200.py`, `benchmark_l200_live.py`, `l0_worker.py`,
+`l200_worker.py`, `object_registry.py`, `autonomy.py` · `factory-certificates/L0-v1/`, `L200-v1/`.
+
+**Next:** bounded real IPVV batch → freeze L200 → C1 autonomous production → unattended vertical.

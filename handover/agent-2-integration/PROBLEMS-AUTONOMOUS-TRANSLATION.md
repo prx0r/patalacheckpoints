@@ -148,3 +148,27 @@ The controller/registries/validators/skills are Pāṭala-owned; Hermes is the r
 cron wakes a deterministic `patala-controller tick` (no LLM orchestrator); review is a Pāṭala ReviewEvent
 graph mutation. Build order: harden controller at L0 → canary → certificate → L2 → **L200** → C1 →
 supersession propagation → THEME → connect Argument/Synthesis → ESSAY → EDUCATION.
+
+---
+
+## 10. LIVE L200 SEMANTIC BENCHMARK + LANE RE-ANCHOR (2026-08-12)
+
+`pipeline/benchmark_l200_live.py` evaluates the REAL model (not stubbed) against the typed L200 reference
+fixtures. Iterated the proposer (conservative prompt: precision over coverage, abstain on paraphrase):
+
+| metric | v1 | after iterate |
+|---|---|---|
+| MT precision | 0.926 | 0.95 |
+| MT recall | 0.667 | 0.70 |
+| IA precision | 0.333 | **0.80** |
+| IA recall | 1.0 | 1.0 |
+| generation failure | 0.1 | **0.0** |
+| laundering / false-certainty | 1 / 1 | 1 / 1 |
+
+**Remaining gate (do NOT scale L200):** MT recall 0.70 (required MTs missed on F1/F2/F5) + 1
+laundering/false-certainty case. Iterate until bounded.
+
+**Lane re-anchor:** Agent 2 = the **autonomous translation factory** (`SOURCE→L0/L1→L2→L200→C1`,
+certificates, controller, reliability, unattended scaling). The **scholar-oracle (S0.1) proof was handed
+to the evidence lane** (Agent 1 / dedicated scholar-evidence agent) — Agent 2 does NOT continue
+SourceAssertion / CorroborationEvent / CorroborationBench / TantraFact / GROBID / scholar products.
