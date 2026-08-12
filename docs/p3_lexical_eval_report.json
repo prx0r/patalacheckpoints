@@ -1,0 +1,49 @@
+{
+  "benchmark": "P3-LEXICAL-SENSE-v0",
+  "methods": {
+    "baseline_most_common": {
+      "n": 21,
+      "top1_accuracy": 0.6667,
+      "top3_recall": 0.6667,
+      "mrr": 0.6667,
+      "abstention_quality": 0.0,
+      "abstain_cases": 4,
+      "technical_term_accuracy": 0.6429,
+      "tech_cases": 14,
+      "false_certainty_rate": 1.0
+    },
+    "baseline_local_l0": {
+      "n": 21,
+      "top1_accuracy": 0.8095,
+      "top3_recall": 0.8095,
+      "mrr": 0.8095,
+      "abstention_quality": 0.0,
+      "abstain_cases": 4,
+      "technical_term_accuracy": 0.7857,
+      "tech_cases": 14,
+      "false_certainty_rate": 1.0
+    },
+    "baseline_embedding": {
+      "n": 21,
+      "top1_accuracy": 0.8095,
+      "top3_recall": 0.8095,
+      "mrr": 0.8095,
+      "abstention_quality": 1.0,
+      "abstain_cases": 4,
+      "technical_term_accuracy": 0.7857,
+      "tech_cases": 14,
+      "false_certainty_rate": 0.0
+    },
+    "ranker_candidate": {
+      "n": 21,
+      "top1_accuracy": 0.7619,
+      "top3_recall": 0.7619,
+      "mrr": 0.7619,
+      "abstention_quality": 0.0,
+      "abstain_cases": 4,
+      "technical_term_accuracy": 0.7857,
+      "tech_cases": 14,
+      "false_certainty_rate": 1.0
+    }
+  }
+}

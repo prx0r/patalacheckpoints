@@ -330,3 +330,24 @@ contexts. The ranker benchmark will note this as a coverage caveat.
 (top-1, top-k, MRR, abstention quality, technical-term accuracy, false-certainty rate).
 
 Background ensemble (larger, to enrich V+/H- cell) still running.
+
+## Agent L0 — P3 lexical baseline evaluation (2026-08-12)
+
+Built `pipeline/eval_p3_lexical.py` — benchmark-first evaluation of P3 lexical methods against the
+21-fixture gold. Results:
+
+| method | top1 | abstain | false-cert |
+|---|---|---|---|
+| baseline_most_common | 0.67 | 0.0 | 1.0 |
+| baseline_local_l0 (leak) | 0.81 | 0.0 | 1.0 |
+| baseline_embedding (lexical overlap) | 0.81 | 1.0 | 0.0 |
+| **ranker_candidate (old engine)** | **0.76** | **0.0** | **1.0** |
+
+**Finding (anti-theatre):** the old `ranker.py` does NOT beat the baselines. It is 0.76 top1 (below the
+0.81 embedding baseline) and has 0 abstention quality / 100% false-certainty — it never abstains on the
+NO_UNIQUE_SENSE fixtures, where the embedding baseline abstains perfectly. **ranker.py is NOT promoted
+to P3 lexical witness.** It remains a candidate that would need to beat top1≥0.81 AND abstain≥1.0 to
+earn promotion.
+
+The embedding/lexical-overlap baseline is the current best (0.81 top1, 1.0 abstain) — the floor ranker.py
+(and any real model) must beat. Report: `docs/p3_lexical_eval_report.json`.
