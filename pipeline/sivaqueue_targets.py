@@ -50,6 +50,25 @@ def guides() -> dict:
     return {x["code"]: x for x in g.get("guides", [])}
 
 
+# companion-guide files on disk (data/corpus/companion-guides/), mapped to G-codes
+GUIDE_FILES = {
+    "G2": "nisvasatattvasamhita-vol1-goodall.txt",
+    "G5": "parakhyatantra-goodall-2004.txt",
+    "G3": "sivadharmasastra-a-saiva-utopia.txt",
+}
+
+
+def companion_guide_files(codes: list[str]) -> list[str]:
+    """The on-disk paths (if any) of the given companion-guide G-codes, for prompt injection."""
+    base = os.path.join(ROOT, "data/corpus/companion-guides")
+    out = []
+    for c in codes:
+        f = GUIDE_FILES.get(c)
+        if f and os.path.exists(os.path.join(base, f)):
+            out.append(os.path.join(base, f))
+    return out
+
+
 def guide_descriptions(codes: list[str]) -> str:
     """Human-readable companion-guide descriptions for a set of G-codes (for prompt injection)."""
     g = guides()

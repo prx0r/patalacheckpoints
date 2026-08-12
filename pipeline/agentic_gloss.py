@@ -54,7 +54,8 @@ def _term_packet_for(work_id: str) -> str:
         lines.append(f"- {term}: {pol}")
     # merge the semantic-shift term-context for this work's school/period (if it's a sivaqueue target)
     try:
-        from sivaqueue_targets import term_context, translation_neighbourhood, guide_descriptions, all_targets
+        from sivaqueue_targets import (term_context, translation_neighbourhood, guide_descriptions,
+                                       all_targets, companion_guide_files)
         sq = all_targets().get(work_id)
         if sq:
             lines.append(f"\nWORK: {sq.get('name')} | school: {sq.get('tradition')} | "
@@ -62,6 +63,11 @@ def _term_packet_for(work_id: str) -> str:
                          f"status: {sq.get('translation_status')}")
             lines.append("\nCOMPANION TRANSLATION-MEMORY GUIDES to consult for correct terminology:")
             lines.append(guide_descriptions(sq.get("companion_guides", [])))
+            # on-disk companion guide files (read these for the period-correct register)
+            cg = companion_guide_files(sq.get("companion_guides", []))
+            if cg:
+                lines.append("\nCOMPANION GUIDE FILES NOW ON DISK (READ these before translating):")
+                lines.append("- " + "\n- ".join(cg))
             nh = translation_neighbourhood(work_id)
             if nh:
                 lines.append("\nTRANSLATION NEIGHBOURHOOD (consult these specific works for period-correct senses):")
