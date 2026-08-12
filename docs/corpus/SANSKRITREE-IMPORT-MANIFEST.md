@@ -81,9 +81,38 @@ in `truth/`, (3) Lean design lessons only.*
 
 ---
 
+## IMPORT — reusable ENGINE (do NOT rebuild): the translation-QA scaler + fidelity taxonomy
+
+`translations/tools/` is a mature, evaluated engine whose Task-2 scholarly-fidelity taxonomy maps ~1:1
+onto Agent 1's contrast-set/verification vocabulary. Reuse, not duplicate:
+- `qa_scaler.py` — deterministic+heuristic flagger (INFERENCE_TOO_COMPRESSED, MISSING_PREMISE,
+  LOGIC_INVERSION, TERM_POLICY_DRIFT, ...). Task 1 = READER QA; Task 2 = SCHOLARLY FIDELITY QA
+  (`POLARITY_CHANGE / SPEAKER_CHANGE / UNLICENSED_INFERENCE / TERM_SENSE_DRIFT /
+  UNRESOLVED_SOURCE_DEPENDENCY / ...`).
+- `qa_v1_harness/gold/eval/compare.py` + `V1_THREE_CONDITION_FINDINGS.md` — the honest falsification
+  result (prose-only 2/17 recall; dominant bucket B = over-logged human stall, not evaluator failure).
+- `qa_v2_fidelity.py` — the Task-2 licensing checker over the L2→L200→map→L1→L0→Sanskrit stack.
+- **Alignment decision:** Agent 1's contrast-set corruption types should align to this taxonomy
+  (POLARITY_CHANGE→NEGATE, SPEAKER_CHANGE→SWAP_SPEAKER, UNLICENSED_INFERENCE→inference-integrity,
+  UNRESOLVED_SOURCE_DEPENDENCY→BROKEN_REF, TERM_SENSE_DRIFT→REPLACE_TERM_SENSE). Where: reference in
+  `handover/SANSKRITREE-AUDIT.md`; consume in the contrast-set work.
+
+## IMPORT — corroboration already consumed by ARG-004 (proposition-level)
+
+`saivamap/dossiers/vimarsa.md` + GRETIL `gretil_ipv_clean.txt` `Ipk_1,5.11` + `truth/torella_book/`
+(Ratié) were used to fold ARG-004 → `SCHOLARLY_CORROBORATED_PRELIMINARY` (the crystal/inert component
+only). See `benchmarks/v0/ARG-GOLD-REVIEW-PACKET-v2.md`. Template for mining ARG-001/002/003/005.
+
+## IMPORT — concordance index (132 MB, 505 texts) as retrieval evidence
+
+`.concordance_index.json` — lemma→passage/token across 505 texts. Agent 1: parallel-usage retrieval
+for semantic-alignment. Agent 2: difficult-case lexical retrieval for the factory.
+
+---
+
 ## ALREADY CAPTURED (no re-import — cross-check only)
 
-- `saivamap/dossiers/` (11 term dossiers) — already the source of `data/atlas/concepts.ts` + `data/terms.json`
+- `saivamap/dossiers/` (11 term dossiers) — already the source of `data/atlas/concepts.ts` + `data/terms.json`; NOW ALSO consumed as corroboration for ARG-004 (§ above).
 - `corpus/targets/*` — already consolidated in `data/corpus/targets/` + `docs/corpus/TARGETS-INDEX.md`
 - `corpus/ipvv-anchor/` chunk maps + IPVV passages — already in `data/published/ipvv/`
 
