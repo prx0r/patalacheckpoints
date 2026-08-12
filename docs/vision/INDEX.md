@@ -12,7 +12,7 @@ here and in `docs/INDEX.md`.*
 - **THE CORE BIBLE (`docs/vision/CORE-BIBLE.md`) = the top-level map** — one vision chunked into 6
   zoomable layers (sentence → paragraph → graph → checkpoints → domain lenses → specs/gold/data). Start
   there for the whole picture, then zoom into any layer here.
-- The vision unfolds as a **sequence (Vision 01 → 12)**. Read in order for the full arc.
+- The vision unfolds as a **sequence (Vision 01 → 13)**. Read in order for the full arc.
 - Each doc is its own file; none is superseded — they are complementary layers of one vision.
 - Original, un-numbered strategy docs (NORTHSTAR, foundationalideas, positioningpartners) are
   canonical but sit outside the numbered sequence; they are cross-referenced below.
@@ -35,6 +35,7 @@ here and in `docs/INDEX.md`.*
 | **10** | `docs/vision/vision-10-market-entry-and-partnerships.md` | **Market Entry & Partnerships** — academic partners (BHU + global scholars), funding/fellowship sources, institutional models, outreach, low-cost pilots, legal/IP, metrics. *(new, from R2)* |
 | **11** | `docs/vision/expansion/vision-11-siva-before-abhinava.md` | **Śiva Before Abhinava** — the genealogy of Śaiva ideas as the next major corpus: six chronological corpora (Rudra→Śiva→Pāśupata→Early Tantra→Bhairava/Kaula→Kashmir) + three cross-cutting graphs (concept, cosmology, argument), ending at Abhinavagupta and connecting into IPVV. *(new, from R2)* |
 | **12** | `docs/vision/vision-12-multi-surface-platform.md` | **The Multi-Surface Platform** — one scholarly core (graph + MCP/API + executable-corrections engine) rendered through five permission-scoped surfaces: consumer (educational, read-only) · scholar (Workbench, propose + scoped submit) · contributor (manuscript ingestion) · developer (MCP/API) · reviewer (adjudication, strongest boundary). Grounded in the review-engine authorization policy. *(new)* |
+| **13** | `docs/vision/vision-13-product-portfolio-by-user-base.md` | **The Product Portfolio by User Base** — the cohesive product catalog aligning every vision doc to a surface: scholar (translation audit/rating, adversarial review, comparison, term audit, the PĀṬALA-IPVV benchmark, research compiler, workbench, bounties/credit) · consumer (Tantra Hub, atlas, learning, media) · contributor (manuscript, critical editions) · developer (API/MCP/protocol) · reviewer (queue, adjudication, credit). *(new)* |
 
 ---
 
@@ -74,6 +75,7 @@ The vision arc (above) is the *product/strategic* view; the checkpoint ladder
 | 07 New Scholar (workbench) | CP7 (workbench) → CP9 (API/MCP) |
 | 11 Śiva Before Abhinava (cross-corpus genealogy) | CP1 (per-corpus source proof, reused) → CP12 (cross-corpus) |
 | 12 Multi-Surface Platform (consumer/scholar/contributor/developer/reviewer) | CP9 (API/MCP) → CP10 (collaborative) → CP12 (cross-corpus) |
+| 13 Product Portfolio (per user base) | CP9 (API/MCP) + CP5/CP8 (review) + CP7 (workbench) |
 
 **Where the live agent system tracks this:** `handover/SYSTEM.md` (template → instances) +
 `handover/STATE.yaml` via `python3 handover/flow.py status`.
