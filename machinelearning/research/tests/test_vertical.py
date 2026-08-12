@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
-"""test_vertical.py — validation of the vertical-object serializer (the CP4 gate #3 demo)."""
+"""test_vertical.py — RESOLUTION / INTEGRITY tests for the vertical object v0.
+
+These prove IDs/links resolve and are TYPED. They do NOT prove scholarly validity (that a span entails
+the proposition, that the reconstruction is defensible, etc.) — that is review, not resolution.
+"""
 from __future__ import annotations
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from patala_ml.gold import build_gold_v0, V2O_PROOF_ID
-from patala_ml.vertical import build_vertical, load_l0, resolve_terms, extract_sanskrit, norm
+from patala_ml.vertical import build_vertical, load_l0, resolve_exact_refs, extract_sanskrit, norm
 
 failures = []
 def check(name, cond, info=""):
@@ -13,30 +17,51 @@ def check(name, cond, info=""):
     if not cond:
         failures.append(name)
 
-print("== term matching primitives ==")
-check("norm strips diacritics", norm("pratibhā") == "pratibha", norm("pratibhā"))
-check("extract_sanskrit from fragment", extract_sanskrit("[and]-the-pratibhā (pratibhā)") == "pratibhā")
+CHUNK = "chunkV2-O-saptamo-vimarsa"
+GROUNDING_REFS = [f"{CHUNK}:L32:T114", f"{CHUNK}:L32:T115", f"{CHUNK}:L33:T116", f"{CHUNK}:L44:T181"]
 
-print("\n== L0 loading ==")
-recs = load_l0("chunkV2-O-saptamo-vimarsa")
-check("L0 records load for V2-O", len(recs) > 0, f"n={len(recs)}")
-anchors = resolve_terms(recs, ["pratibhā", "akrama"])
-check("'pratibhā' resolves to L0 anchors", len(anchors["pratibhā"]) > 0)
-check("'akrama' resolves (via compound akramānantacidrūpaḥ)", len(anchors["akrama"]) > 0)
-check("anchors carry source_span + sanskrit",
-      all(a.get("source_span") and a.get("sanskrit") for a in anchors["pratibhā"][:1]))
+print("== primitives ==")
+check("norm strips diacritics", norm("pratibhā") == "pratibha")
+check("extract_sanskrit handles trailing quote", extract_sanskrit('(pratibhā ...)"') == "pratibhā ...")
 
-print("\n== the vertical object resolves all the way down ==")
+print("\n== exact ref resolution (GOLD grounding, no search) ==")
+recs = load_l0(CHUNK)
+found, missing = resolve_exact_refs(recs, GROUNDING_REFS)
+check("all exact grounding refs resolve", not missing, str(missing))
+check("exact refs return the requested records", len(found) == len(GROUNDING_REFS))
+check("L32:T114 is pratibhā", any(r["id"].endswith("L32:T114") and r.get("lemma_iast") == "pratibhā" for r in found))
+check("an unknown ref is reported unresolved",
+      resolve_exact_refs(recs, [f"{CHUNK}:L999:T999"])[1] != [])
+
+print("\n== the vertical object (typed edges + honest resolution) ==")
 gold = build_gold_v0()
-v = build_vertical(gold, "G-TC2", ["pratibhā", "rūṣitā", "akrama"], "pilot_V2O_L2_read.md", V2O_PROOF_ID)
-for arrow in ["passage", "c1", "l2", "l0_anchor", "source_span", "sanskrit"]:
-    check(f"arrow resolved: {arrow}", arrow in v["resolved_arrows"], v["unresolved_arrows"])
+v = build_vertical(gold, "G-TC2", GROUNDING_REFS, "pilot_V2O_L2_read.md", V2O_PROOF_ID,
+                   key_terms=["pratibhā", "rūṣitā", "akrama"],
+                   c1_span="the flashing ... but itself not ordered.",
+                   l2_span="The flashing itself is not ordered.",
+                   authoritative_proof_version="P0 35/35 (frozen)")
 check("proposition carried through", v["proposition"]["proposition_id"] == "G-TC2")
-check("G-TC2 used by an inference (G-INF1)", any(i["inference_id"] == "G-INF1" for i in v["inferences_using_proposition"]))
-check("sanskrit spans extracted", len(v["sanskrit_spans"]) > 0)
-check("C1 excerpt present", bool(v["c1"]["excerpt"]))
-check("L2 excerpt present", bool(v["l2"]["excerpt"]))
-check("philological_proof attached (proof_id)", v["philological_proof"]["proof_id"] == V2O_PROOF_ID)
+check("G-TC2 is a PREMISE of G-INF1", any(i["inference_id"] == "G-INF1" and i["proposition_role"] == "PREMISE"
+                                          for i in v["inferences_using_proposition"]))
+check("direct grounding = the exact refs only", len(v["direct_grounding"]) == len(GROUNDING_REFS))
+check("candidate_context is separate (discovery, not evidence)", "candidate_context" in v
+      and sum(len(a) for a in v["candidate_context"].values()) >= len(GROUNDING_REFS))
+check("C1 edge is SPAN_LEVEL (exact span given)", v["c1"]["resolution"] == "SPAN_LEVEL")
+check("L2 edge is SPAN_LEVEL (exact span given)", v["l2"]["resolution"] == "SPAN_LEVEL")
+check("every link has a typed relation + resolution",
+      all(l.get("relation") and l.get("resolution") for l in v["links"]))
+check("grounding links are EXACT", any(l["relation"] == "TEXTUALLY_GROUNDED_BY" and l["resolution"] == "EXACT"
+                                       for l in v["links"]))
+# proof must NOT be treated as resolved when only a stale on-disk artifact exists
+pp = v["philological_proof"]
+check("proof resolution is STALE, not EXACT (honest)", pp["resolution"] == "STALE", pp["resolution"])
+check("proof status labels the stale artifact", pp["status"] == "STALE_LOCAL_ARTIFACT")
+check("proof carries the authoritative version ref", pp["authoritative_version"] == "P0 35/35 (frozen)")
+# missing IR fields surfaced, NOT retrofitted
+check("research_question surfaced as null (ARG-001 predates it)", v["research_question"] is None)
+check("commitment surfaced as null (not retrofitted)", v["proposition"]["commitment"] is None)
+# no UNRESOLVED arrows remain (all layers located)
+check("no UNRESOLVED resolutions", "UNRESOLVED" not in v["unresolved_resolutions"], str(v["unresolved_resolutions"]))
 
 print(f"\n=== RESULT: {len(failures)} fail ===")
 sys.exit(1 if failures else 0)

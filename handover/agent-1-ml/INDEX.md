@@ -41,17 +41,18 @@ Built this session:
   Build 4  primitive extractor run BLIND vs all 5 golds → BenchmarkRun             ✅
             (baseline lexical-overlap F1 0.36, inference recovery 0.0; Task-A bound,
              metric BOUNDED as baseline-v0)
-  Gate #3  VERTICAL OBJECT built — one proposition (ARG-001 G-TC2) resolves          ✅
-            ResearchQuestion→Argument→Inference→Proposition→C1→L2→L0 anchor→
-            SourceSpan→Sanskrit→PhilologicalProof, every arrow to real data
-            (patala_ml/vertical.py + benchmarks/v0/vertical/vertical-v2o-g-tc2.json)
+  Gate #3  VERTICAL OBJECT v0 (HARDENED) — one proposition (ARG-001 G-TC2) with EVERY edge  ✅
+            TYPED + honest resolution: exact L0 grounding_refs (no fuzzy search for gold),
+            GroundingLink{relation,resolution,review_state} per edge, proof marked STALE (not
+            resolved), C1/L2 at SPAN_LEVEL, missing IR fields surfaced (not retrofitted).
+            patala_ml/vertical.py + benchmarks/v0/vertical/vertical-v2o-g-tc2.json. FROZEN v0.
   Review-driven: golds now carry task_level A/B/C + candidate_reconstruction +
              support_scope; validator expanded (structural well-formedness only).
 Honest status: golds are MACHINE_PROPOSED/CANDIDATE — NOT yet independently reviewed.
 ```
 Next in order: (1) **independent review of the 5 golds** (ARG-GOLD-REVIEW-PROTOCOL — the central gate),
-(2) compile one vertical object to py-aspic (first external evaluator test), (3) a real extractor that
-beats the baseline, (4) THEN viruddha as a graph op. See `NEXT-STEPS.md`.
+(2) **then** py-aspic over the CLEANEST reviewed argument (adapter/semantics test, provenance stays in
+Pāṭala), (3) a real extractor that beats the baseline, (4) THEN viruddha as a graph op. See `NEXT-STEPS.md`.
 
 **The source of this task:** `handover/agent-1-ml/ORIENTATION.md` Phase 4 + `NEXT-STEPS.md` + the vision
 (`docs/vision/CORE-BIBLE.md` Layer 3 / `handover/CHECKPOINTS.md` CP4).

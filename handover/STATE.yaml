@@ -1,5 +1,5 @@
-state_version: 10
-last_update: '2026-08-12T13:05:32'
+state_version: 11
+last_update: '2026-08-12T13:08:07'
 agent1:
   checkpoints:
     CP0:
@@ -14,11 +14,11 @@ agent1:
       note: cluster.py proposals exist (machine); no AcceptedTheme yet.
     CP4:
       status: IN_PROGRESS
-      note: 'ARG-001..005 CANDIDATE + baseline + vertical object resolves downward
-        (gate #3). Next: independent gold review, then py-aspic over the vertical
-        object.'
+      note: 'Vertical Object v0 hardened+frozen (typed GroundingLinks, exact refs,
+        proof STALE). Next: independent gold review, then py-aspic on cleanest reviewed
+        argument.'
       updated_by: agent1
-      ts: '2026-08-12 13:05:32'
+      ts: '2026-08-12 13:08:07'
 agent2:
   checkpoints:
     CP1:

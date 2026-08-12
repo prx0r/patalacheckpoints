@@ -150,19 +150,19 @@ task, human-grounded gold, and a reproducible evaluation show that it does what 
 
 ---
 
-## CLAIM P-014 — "A proposition can be serialized as a VERTICAL OBJECT resolving to its source + proof."
-- **STATUS:** SUPPORTED (as infrastructure/serialization) — NOT a validated scholarly result
-- **EVIDENCE:** `patala_ml/vertical.py` resolves one proposition (ARG-001 G-TC2) all the way down:
-  ResearchQuestion → Argument → Inference → Proposition → C1 → L2 → L0 anchor → SourceSpan → Sanskrit →
-  PhilologicalProof, every arrow to real data. Artifact: `benchmarks/v0/vertical/vertical-v2o-g-tc2.json` +
-  `tests/test_vertical.py` (0 fail).
-- **CAVEAT:** the term→L0-anchor mapping is an explicit `key_terms` judgment (machine-proposed, NOT
-  reviewed). The on-disk proof for this chunk predates the frozen 35/35 P0 (the authoritative `proof_id`
-  is referenced, not substituted). ARG-001 lacks a first-class `research_question`/`commitment` (older
-  schema). The vertical object is a consumer of Agent 2's L0 floor, not an independent result.
-- **DOES NOT CLAIM:** that the proposition is editorially valid, or that the mapping is unique.
+## CLAIM P-014 — "A proposition can be serialized as a VERTICAL OBJECT with typed, honestly-resolved evidence links."
+- **STATUS:** SUPPORTED (as infrastructure/serialization, v0 FROZEN) — NOT a validated scholarly result
+- **EVIDENCE:** `patala_ml/vertical.py` v0 serializes one proposition (ARG-001 G-TC2) with every edge
+  TYPED as a `GroundingLink` (relation + resolution + review_state). GOLD grounding uses EXACT L0 refs
+  (4 refs resolve; no fuzzy search). C1/L2 at SPAN_LEVEL with exact spans. Proof resolution is REAL:
+  the on-disk artifact is marked **STALE** (predates the frozen 35/35 P0), not treated as resolved.
+  Artifact: `benchmarks/v0/vertical/vertical-v2o-g-tc2.json` + `tests/test_vertical.py` (0 fail).
+- **CAVEAT:** resolution/integrity only — the test does NOT establish that a span entails the
+  proposition, that the reconstruction is defensible, or that the proof is authoritative. Missing IR
+  fields (research_question, commitment, task_level on ARG-001) are surfaced, not retrofitted.
+- **DOES NOT CLAIM:** editorial validity; uniqueness of the grounding; that the proof is current.
 - **REQUIRED to promote (toward the convergence object):** the golds are independently reviewed; a
-  reviewed term→anchor mapping; the frozen 35/35 P0 proof attached; a real evaluator (py-aspic/Nyāya)
+  reviewed term→anchor mapping; the frozen 35/35 P0 artifact attached; a real evaluator (py-aspic/Nyāya)
   run over the object.
 
 ---
