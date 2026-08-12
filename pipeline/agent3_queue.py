@@ -24,7 +24,7 @@ from agent3_batch import load_raw_source, split_verses
 from raw_l0 import raw_l0
 from l0_registry import commit_l0, l0_versions, summary as registry_summary
 from corpus_state import next_valid_action, WorkState
-from translation_targets import order_queue, priority_label, all_targets, priority, tier, status
+from translation_targets import order_queue, priority_label, all_targets, priority, tier, status, all_leads
 
 LEDGER_PATH = "/root/projects/patala/data/corpus/downloads/translation-state-ledger.json"
 QUEUE_STATE_PATH = "/root/projects/patala/data/corpus/downloads/agent3-queue-state.json"
@@ -114,7 +114,14 @@ if __name__ == "__main__":
     ap.add_argument("--by", default="agent3")
     ap.add_argument("--list", action="store_true", help="list eligible works")
     ap.add_argument("--registry", action="store_true", help="show the full prioritized target registry (the huge queue)")
+    ap.add_argument("--leads", action="store_true", help="show the full tracked leads (registers I-III + acquisition board)")
     a = ap.parse_args()
+
+    if a.leads:
+        leads = all_leads()
+        rows = [{"work_id": wid, **meta} for wid, meta in leads.items()]
+        print(json.dumps({"leads_size": len(rows), "leads": rows}, indent=2))
+        sys.exit(0)
 
     if a.registry:
         reg = all_targets()

@@ -1,0 +1,436 @@
+{
+  "note": "existing T1/R1/T2/R2/T3/C1 pipeline files — EASY WINS, tracked not queued",
+  "works": {
+    "kubjikamata": {
+      "work": "kubjikamata",
+      "n_files": 28,
+      "stages": {
+        "T1": 26,
+        "R1": 2
+      },
+      "deepest_stage": "R1",
+      "track": true
+    },
+    "kulasara": {
+      "work": "kulasara",
+      "n_files": 20,
+      "stages": {
+        "T1": 10,
+        "R1": 9,
+        "C1": 1
+      },
+      "deepest_stage": "C1",
+      "track": true
+    },
+    "kakacandeshvarimata": {
+      "work": "kakacandeshvarimata",
+      "n_files": 20,
+      "stages": {
+        "T1": 17,
+        "R1": 1,
+        "R2": 1,
+        "C1": 1
+      },
+      "deepest_stage": "C1",
+      "track": true
+    },
+    "mahanayaprakasha": {
+      "work": "mahanayaprakasha",
+      "n_files": 17,
+      "stages": {
+        "T1": 14,
+        "R1": 1,
+        "R2": 1,
+        "C1": 1
+      },
+      "deepest_stage": "C1",
+      "track": true
+    },
+    "cidgaganacandrika": {
+      "work": "cidgaganacandrika",
+      "n_files": 15,
+      "stages": {
+        "T1": 12,
+        "R1": 1,
+        "R2": 1,
+        "C1": 1
+      },
+      "deepest_stage": "C1",
+      "track": true
+    },
+    "nitya": {
+      "work": "nitya",
+      "n_files": 12,
+      "stages": {
+        "T1": 9,
+        "R1": 1,
+        "R2": 1,
+        "C1": 1
+      },
+      "deepest_stage": "C1",
+      "track": true
+    },
+    "kubjika": {
+      "work": "kubjika",
+      "n_files": 11,
+      "stages": {
+        "T1": 6,
+        "R1": 1,
+        "T2": 1,
+        "R2": 1,
+        "T3": 1,
+        "C1": 1
+      },
+      "deepest_stage": "C1",
+      "track": true
+    },
+    "maharthamanjari": {
+      "work": "maharthamanjari",
+      "n_files": 11,
+      "stages": {
+        "T1": 3,
+        "R1": 2,
+        "R2": 2,
+        "T3": 2,
+        "C1": 2
+      },
+      "deepest_stage": "C1",
+      "track": true
+    },
+    "sivasutra": {
+      "work": "sivasutra",
+      "n_files": 9,
+      "stages": {
+        "T1": 4,
+        "R1": 1,
+        "T2": 1,
+        "R2": 1,
+        "T3": 1,
+        "C1": 1
+      },
+      "deepest_stage": "C1",
+      "track": true
+    },
+    "akulavira": {
+      "work": "akulavira",
+      "n_files": 9,
+      "stages": {
+        "T1": 1,
+        "R1": 1,
+        "T2": 2,
+        "R2": 2,
+        "T3": 2,
+        "C1": 1
+      },
+      "deepest_stage": "C1",
+      "track": true
+    },
+    "t2": {
+      "work": "t2",
+      "n_files": 8,
+      "stages": {
+        "T2": 8
+      },
+      "deepest_stage": "T2",
+      "track": true
+    },
+    "ten": {
+      "work": "ten",
+      "n_files": 7,
+      "stages": {
+        "T1": 2,
+        "R1": 1,
+        "T2": 1,
+        "R2": 1,
+        "T3": 1,
+        "C1": 1
+      },
+      "deepest_stage": "C1",
+      "track": true
+    },
+    "kulananda": {
+      "work": "kulananda",
+      "n_files": 6,
+      "stages": {
+        "T1": 1,
+        "R1": 1,
+        "T2": 1,
+        "R2": 1,
+        "T3": 1,
+        "C1": 1
+      },
+      "deepest_stage": "C1",
+      "track": true
+    },
+    "tararahasya": {
+      "work": "tararahasya",
+      "n_files": 6,
+      "stages": {
+        "T1": 4,
+        "R1": 1,
+        "C1": 1
+      },
+      "deepest_stage": "C1",
+      "track": true
+    },
+    "kjn": {
+      "work": "kjn",
+      "n_files": 6,
+      "stages": {
+        "T1": 1,
+        "R1": 1,
+        "T2": 1,
+        "R2": 1,
+        "T3": 1,
+        "C1": 1
+      },
+      "deepest_stage": "C1",
+      "track": true
+    },
+    "jnanakarika": {
+      "work": "jnanakarika",
+      "n_files": 6,
+      "stages": {
+        "T1": 2,
+        "R1": 1,
+        "R2": 1,
+        "T3": 1,
+        "C1": 1
+      },
+      "deepest_stage": "C1",
+      "track": true
+    },
+    "kramasadbhava": {
+      "work": "kramasadbhava",
+      "n_files": 5,
+      "stages": {
+        "T1": 4,
+        "C1": 1
+      },
+      "deepest_stage": "C1",
+      "track": true
+    },
+    "ajadapramatrsiddhi": {
+      "work": "ajadapramatrsiddhi",
+      "n_files": 4,
+      "stages": {
+        "R1": 1,
+        "R2": 1,
+        "T3": 1,
+        "C1": 1
+      },
+      "deepest_stage": "C1",
+      "track": true
+    },
+    "kalikarahasya": {
+      "work": "kalikarahasya",
+      "n_files": 3,
+      "stages": {
+        "T1": 1,
+        "R1": 1,
+        "C1": 1
+      },
+      "deepest_stage": "C1",
+      "track": true
+    },
+    "kaula": {
+      "work": "kaula",
+      "n_files": 3,
+      "stages": {
+        "T1": 3
+      },
+      "deepest_stage": "T1",
+      "track": true
+    },
+    "mahaguhyakalividhana": {
+      "work": "mahaguhyakalividhana",
+      "n_files": 3,
+      "stages": {
+        "T1": 1,
+        "R1": 1,
+        "C1": 1
+      },
+      "deepest_stage": "C1",
+      "track": true
+    },
+    "timirodghatana": {
+      "work": "timirodghatana",
+      "n_files": 3,
+      "stages": {
+        "T1": 1,
+        "R1": 1,
+        "C1": 1
+      },
+      "deepest_stage": "C1",
+      "track": true
+    },
+    "yogini": {
+      "work": "yogini",
+      "n_files": 2,
+      "stages": {
+        "T1": 2
+      },
+      "deepest_stage": "T1",
+      "track": true
+    },
+    "kulapradipa": {
+      "work": "kulapradipa",
+      "n_files": 2,
+      "stages": {
+        "T1": 2
+      },
+      "deepest_stage": "T1",
+      "track": true
+    },
+    "maharahasyasampradaya": {
+      "work": "maharahasyasampradaya",
+      "n_files": 2,
+      "stages": {
+        "T1": 1,
+        "R1": 1
+      },
+      "deepest_stage": "R1",
+      "track": true
+    },
+    "kubjikagurumandalapuja": {
+      "work": "kubjikagurumandalapuja",
+      "n_files": 2,
+      "stages": {
+        "T1": 1,
+        "R1": 1
+      },
+      "deepest_stage": "R1",
+      "track": true
+    },
+    "spanda": {
+      "work": "spanda",
+      "n_files": 2,
+      "stages": {
+        "T1": 1,
+        "R1": 1
+      },
+      "deepest_stage": "R1",
+      "track": true
+    },
+    "kubjikapuja": {
+      "work": "kubjikapuja",
+      "n_files": 2,
+      "stages": {
+        "T1": 1,
+        "R1": 1
+      },
+      "deepest_stage": "R1",
+      "track": true
+    },
+    "pascimamnaya": {
+      "work": "pascimamnaya",
+      "n_files": 2,
+      "stages": {
+        "T1": 1,
+        "R1": 1
+      },
+      "deepest_stage": "R1",
+      "track": true
+    },
+    "kaularahasya": {
+      "work": "kaularahasya",
+      "n_files": 2,
+      "stages": {
+        "T1": 2
+      },
+      "deepest_stage": "T1",
+      "track": true
+    },
+    "kubjikaguhyesvaripuja": {
+      "work": "kubjikaguhyesvaripuja",
+      "n_files": 1,
+      "stages": {
+        "T1": 1
+      },
+      "deepest_stage": "T1",
+      "track": true
+    },
+    "kalanalatantra": {
+      "work": "kalanalatantra",
+      "n_files": 1,
+      "stages": {
+        "T1": 1
+      },
+      "deepest_stage": "T1",
+      "track": true
+    },
+    "nityakaulatantra": {
+      "work": "nityakaulatantra",
+      "n_files": 1,
+      "stages": {
+        "T1": 1
+      },
+      "deepest_stage": "T1",
+      "track": true
+    },
+    "kulalashastra": {
+      "work": "kulalashastra",
+      "n_files": 1,
+      "stages": {
+        "T1": 1
+      },
+      "deepest_stage": "T1",
+      "track": true
+    },
+    "tarkasamgraha": {
+      "work": "tarkasamgraha",
+      "n_files": 1,
+      "stages": {
+        "T1": 1
+      },
+      "deepest_stage": "T1",
+      "track": true
+    },
+    "tantraloka": {
+      "work": "tantraloka",
+      "n_files": 1,
+      "stages": {
+        "T1": 1
+      },
+      "deepest_stage": "T1",
+      "track": true
+    },
+    "kaularcanadipika": {
+      "work": "kaularcanadipika",
+      "n_files": 1,
+      "stages": {
+        "T1": 1
+      },
+      "deepest_stage": "T1",
+      "track": true
+    },
+    "kuladipika": {
+      "work": "kuladipika",
+      "n_files": 1,
+      "stages": {
+        "T1": 1
+      },
+      "deepest_stage": "T1",
+      "track": true
+    },
+    "batch9": {
+      "work": "batch9",
+      "n_files": 1,
+      "stages": {
+        "R1": 1
+      },
+      "deepest_stage": "R1",
+      "track": true
+    },
+    "spandakarika": {
+      "work": "spandakarika",
+      "n_files": 1,
+      "stages": {
+        "R1": 1
+      },
+      "deepest_stage": "R1",
+      "track": true
+    }
+  },
+  "n_works": 40
+}
