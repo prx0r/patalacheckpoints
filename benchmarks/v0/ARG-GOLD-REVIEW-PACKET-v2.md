@@ -168,6 +168,23 @@ G2-INF1  ←  G2-TC1 + G2-TC2 + warrant (articulation ≠ construction)
 
 **DECISION:** ACCEPT / REVISE / REJECT / ABSTAIN (circle one, per question)
 
+### CURRENT EVIDENCE VECTOR (honest, not a binary gold label)
+
+```
+state                        SCHOLARLY_UNREVIEWED · HIGH_CORROBORATION pending
+primary_text_grounding       strong (all props → resolvable L0 spans)
+morphology                   supported (L0 floor P0-clean)
+published_scholar_corrob     not yet collected (step 2, requires source care)
+model_reconstruction_agree   not yet run blind (step 3)
+rival_reading                present (see G. scope note: no universal-subject claim)
+attribution_confidence       high for siddhānta/pūrvapakṣa split on this passage
+scope                        local (V2-L), not systematic
+```
+
+This object is `MACHINE_PROPOSED → CANDIDATE`. It is NOT yet `MULTI_MODEL_CORROBORATED`,
+`SCHOLARLY_CORROBORATED`, or `INDEPENDENT_REVIEWED`. The gate remains real; the evidence vector only
+makes the current (low) status explicit rather than hiding it behind a binary label.
+
 ---
 
 ## ARG-001 / ARG-003 / ARG-004 / ARG-005

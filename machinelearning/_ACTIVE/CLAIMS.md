@@ -223,6 +223,48 @@ injected corruptions is `ENGINEERING_VALIDATED`; it does NOT make any argument `
 Thread this vocabulary into `theatre_check.py`, benchmark/run reporting, and any status surface that uses
 ambiguous "validated" language. (Source: `handover/agent-1-ml/NEXT-STEPS.md`, `machinelearning/_ACTIVE/DEVPLAN.md` §4.)
 
+### The evidence-hierarchy state machine (from MACHINE_PROPOSED to INDEPENDENT_REVIEWED)
+
+Because live human review may be unavailable, the gate is NOT replaced by pretending it vanished — it is
+given a hierarchy of weaker-but-still-useful evidence sources, each with a lower epistemic status. The
+state machine:
+
+```
+MACHINE_PROPOSED          code / a machine authored it; nothing established
+ENGINEERING_VALIDATED     behavior verified against a specified machine target (fidelity, determinism)
+MULTI_MODEL_CORROBORATED  several independent machine reconstructions converge when denied the
+                          circular derivation path (Sanskrit + L0 only). ≠ human validation.
+SCHOLARLY_CORROBORATED    agrees with independent published scholarship (Ratié/Torella/etc. on the
+                          exact passage). ≠ direct review of this exact Pāṭala object.
+INDEPENDENT_REVIEWED      a qualified human actually reviewed the object. (the real gate)
+```
+
+**Distinctions that must never blur:**
+```
+MULTI_MODEL_CORROBORATED  = machines converge; ≠ human validation
+SCHOLARLY_CORROBORATED    = agrees with independent published scholarship; ≠ direct review of this object
+INDEPENDENT_REVIEWED      = a qualified human actually reviewed the object
+HISTORICALLY_ATTESTED     = a later Sanskrit commentary recognized this reading; ≠ "correct"
+STRUCTURALLY_COHERENT     = conclusion follows from encoded premises; ≠ "textually licensed"
+```
+
+### The evidence-vector model (instead of a fake binary gold label)
+
+Do not force ACCEPT/REJECT when there is no human. Maintain an evidence vector per object:
+
+```text
+primary_text_grounding       strong / supported / weak / absent
+morphology                   supported / unresolved
+published_scholar_corrob     n/k with exact passages
+model_reconstruction_agree   n/k
+rival_reading                present / none
+attribution_confidence       high / disputed / unknown
+scope                        local / systematic / open
+```
+
+An object can remain `SCHOLARLY_UNREVIEWED` but be `HIGH_CORROBORATION`. This is more honest than
+pretending the benchmark must be binary. (Source: Agent 1 review-packet rebuild, 2026-08-12.)
+
 ---
 
 ## The three kinds of validity (a permanent principle)

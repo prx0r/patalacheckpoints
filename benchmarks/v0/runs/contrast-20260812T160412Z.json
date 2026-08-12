@@ -1,0 +1,84 @@
+{
+  "run_id": "CONTRAST-20260812T160412Z",
+  "benchmark_version": "v0",
+  "family": "PATALA-CONTRAST-SET",
+  "detector": "PATALA.ARGUMENT.CONTRAST_SET.v1",
+  "verifier_version": "contrast-v0",
+  "execution_base_sha": "044b5038e1764c4cbd06a6d088d8c206c23ebd28",
+  "artifact_commit_sha": null,
+  "working_tree_dirty": true,
+  "target": "ARG-GOLD-002",
+  "date": "2026-08-12T16:04:12+00:00",
+  "corruptions": [
+    "SWAP_SPEAKER",
+    "REVERSE_SUPPORT",
+    "NEGATE_PROPOSITION",
+    "WIDEN_SCOPE",
+    "NARROW_SCOPE",
+    "DELETE_PREMISE",
+    "REPLACE_TERM_SENSE",
+    "PURVAPAKSA_AS_SIDDHANTA"
+  ],
+  "results": [
+    {
+      "corruption": "SWAP_SPEAKER",
+      "detected": true,
+      "flags": [
+        "G2-TC2: speaker siddh\u0101nta -> p\u016brvapak\u1e63a (objector)"
+      ]
+    },
+    {
+      "corruption": "REVERSE_SUPPORT",
+      "detected": true,
+      "flags": [
+        "G2-TC1: kind TEXTUAL_CLAIM -> CONCLUSION",
+        "G2-CONC: kind CONCLUSION -> TEXTUAL_CLAIM"
+      ]
+    },
+    {
+      "corruption": "NEGATE_PROPOSITION",
+      "detected": true,
+      "flags": [
+        "G2-TC2: polarity changed"
+      ]
+    },
+    {
+      "corruption": "WIDEN_SCOPE",
+      "detected": true,
+      "flags": [
+        "G2-CONC: scope  -> SYSTEMATIC"
+      ]
+    },
+    {
+      "corruption": "NARROW_SCOPE",
+      "detected": false,
+      "flags": []
+    },
+    {
+      "corruption": "DELETE_PREMISE",
+      "detected": true,
+      "flags": [
+        "proposition G2-TC1 deleted",
+        "inference G2-INF1 references missing G2-TC1"
+      ]
+    },
+    {
+      "corruption": "REPLACE_TERM_SENSE",
+      "detected": false,
+      "flags": []
+    },
+    {
+      "corruption": "PURVAPAKSA_AS_SIDDHANTA",
+      "detected": true,
+      "flags": [
+        "G2-OBJ: speaker p\u016brvapak\u1e63a (objector) -> siddh\u0101nta (author's own commitment)"
+      ]
+    }
+  ],
+  "summary": {
+    "n_types": 8,
+    "structurally_detected": 6,
+    "structural_sensitivity": 0.75,
+    "note": "deterministic structural floor; semantic discrimination measured separately (blind multi-model)"
+  }
+}
