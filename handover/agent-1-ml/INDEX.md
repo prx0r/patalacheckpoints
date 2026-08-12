@@ -46,6 +46,9 @@ Built this session:
             GroundingLink{relation,resolution,review_state} per edge, proof marked STALE (not
             resolved), C1/L2 at SPAN_LEVEL, missing IR fields surfaced (not retrofitted).
             patala_ml/vertical.py + benchmarks/v0/vertical/vertical-v2o-g-tc2.json. FROZEN v0.
+            ✅ NOW FULLY RESOLVED: Agent 2 regenerated the authoritative P0 proof → proof edge
+               STALE → EXACT / REFERENCE_RESOLVED (on_disk_PASS True, roundtrip PASS, 0 unresolved).
+               The auditable Sanskrit→C1 chain closes end-to-end. Cross-lane handoff logged.
   Review-driven: golds now carry task_level A/B/C + candidate_reconstruction +
              support_scope; validator expanded (structural well-formedness only).
 Honest status: golds are MACHINE_PROPOSED/CANDIDATE — NOT yet independently reviewed.

@@ -383,12 +383,12 @@
   "unresolved_grounding_refs": [],
   "philological_proof": {
     "proof_id": "pp:ipvv:v2o:p0",
-    "resolution": "STALE",
-    "status": "STALE_LOCAL_ARTIFACT",
+    "resolution": "EXACT",
+    "status": "REFERENCE_RESOLVED",
     "authoritative_version": "P0 35/35 (frozen)",
     "on_disk_source_sha256": "78f72e74f59e35c7d6124f4ceb76f7744d36a0624580f14d8f2fce330ce2c363",
-    "on_disk_PASS": false,
-    "on_disk_roundtrip": "FAIL"
+    "on_disk_PASS": true,
+    "on_disk_roundtrip": "PASS"
   },
   "passage_id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
   "links": [
@@ -466,15 +466,14 @@
       "from": "SourceSpan",
       "to": "pp:ipvv:v2o:p0",
       "relation": "VALIDATED_BY",
-      "resolution": "STALE",
+      "resolution": "EXACT",
       "review_state": "CANDIDATE",
-      "status": "STALE_LOCAL_ARTIFACT"
+      "status": "REFERENCE_RESOLVED"
     }
   ],
   "resolved_resolutions": [
     "EXACT",
-    "SPAN_LEVEL",
-    "STALE"
+    "SPAN_LEVEL"
   ],
   "unresolved_resolutions": []
 }

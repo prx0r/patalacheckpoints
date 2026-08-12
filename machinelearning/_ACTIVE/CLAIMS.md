@@ -160,7 +160,10 @@ task, human-grounded gold, and a reproducible evaluation show that it does what 
 - **CAVEAT:** resolution/integrity only — the test does NOT establish that a span entails the
   proposition, that the reconstruction is defensible, or that the proof is authoritative. Missing IR
   fields (research_question, commitment, task_level on ARG-001) are surfaced, not retrofitted.
-- **DOES NOT CLAIM:** editorial validity; uniqueness of the grounding; that the proof is current.
+  **UPDATE (proof seam closed):** Agent 2 regenerated the authoritative V2-O P0 proof; the proof edge
+  is now **EXACT / REFERENCE_RESOLVED** (on_disk_PASS True, roundtrip PASS, 0 unresolved) — the vertical
+  object fully resolves end-to-end. The remaining gate is independent gold review.
+- **DOES NOT CLAIM:** editorial validity; uniqueness of the grounding.
 - **REQUIRED to promote (toward the convergence object):** the golds are independently reviewed; a
   reviewed term→anchor mapping; the frozen 35/35 P0 artifact attached; a real evaluator (py-aspic/Nyāya)
   run over the object.

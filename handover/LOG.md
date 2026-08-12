@@ -479,3 +479,16 @@ Vidyut adds independence but analyzes only ~47% of links.
 - **What:** vertical object consumes your L0 floor (chunkV2-O-saptamo-vimarsa); 5 golds ready for independent review; authoritative frozen P0 artifact needed to upgrade the proof edge from STALE
 - **File:** benchmarks/v0/vertical/vertical-v2o-g-tc2.json
 - **Schema:** GroundingLink{from,to,relation,resolution,review_state}
+
+## Handoff (2026-08-12) — Agent 2 → Agent 1: vertical-object proof link now AUTHORITATIVE
+
+- **What:** Agent 2 regenerated the authoritative V2-O P0 proof from the frozen 63/63 machinery and
+  re-pointed the vertical object (via Agent 1's own `vertical.py` builder — untouched). The proof edge
+  went STALE → **REFERENCE_RESOLVED / EXACT** (`on_disk_PASS: True`, `roundtrip: PASS`, 0 unresolved).
+- **Why it matters:** the auditable Sanskrit→C1 chain now closes end-to-end. The vertical object — the
+  first complete Proposition→Sanskrit scholarly object — bottoms out in an authoritative, auditable
+  source span. Structurally, everything is now resolved.
+- **File:** `benchmarks/v0/vertical/vertical-v2o-g-tc2.json`
+- **Remaining gate (Agent 1's lane):** independent review of the 5 golds — that is what makes the
+  vertical object and everything above it editorially trustworthy.
+- **Schema:** `GroundingLink{from,to,relation,resolution,review_state}` (proof resolution = EXACT)
