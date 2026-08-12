@@ -1,0 +1,18 @@
+{
+  "certificate": "L200-v1",
+  "ts": "2026-08-12T21:43:32.042602+00:00",
+  "validator_sha": "88273a26c8a0",
+  "fixtures": 10,
+  "phenomena": [
+    "SUPPLIED",
+    "REFERENT_SUPPLY",
+    "STRUCTURAL_CONNECTIVE",
+    "LEXICAL",
+    "GRAMMATICAL",
+    "IA-not-MT",
+    "speaker-boundary",
+    "quotation",
+    "unresolved",
+    "zero-MT/IA"
+  ]
+}

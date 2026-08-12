@@ -1,0 +1,95 @@
+{
+  "certificate": "L200-v1",
+  "ts": "2026-08-12T21:43:32.042602+00:00",
+  "fixtures": 10,
+  "dims": {
+    "A_derivation_binding": [
+      {
+        "l2_par": "The blue and the rest shine forth as one with the manifestation itself.",
+        "refs": [
+          [
+            "pt:l1:1",
+            "pt:l0:2",
+            "src:3"
+          ]
+        ]
+      }
+    ],
+    "A_wrong_l2_ref_flagged": true,
+    "B_completeness": true,
+    "CDE_reference_checks": true,
+    "F_mtia_laundering_flagged": true,
+    "G_source_layer_required": true,
+    "G_source_layer_attribution": true,
+    "H_open_item_honesty": true,
+    "I_failure_semantics": true,
+    "J_empty_success": true,
+    "CD_invalid_mt_type_rejected": true,
+    "K_replay_idempotent": true,
+    "L_invalidation_superseded": true,
+    "L_no_stale_masquerade": true
+  },
+  "per_fixture": {
+    "F1": {
+      "phenom": "SUPPLIED",
+      "validator": true,
+      "violations": [],
+      "pass": true
+    },
+    "F2": {
+      "phenom": "REFERENT_SUPPLY",
+      "validator": true,
+      "violations": [],
+      "pass": true
+    },
+    "F3": {
+      "phenom": "STRUCTURAL_CONNECTIVE",
+      "validator": true,
+      "violations": [],
+      "pass": true
+    },
+    "F4": {
+      "phenom": "LEXICAL",
+      "validator": true,
+      "violations": [],
+      "pass": true
+    },
+    "F5": {
+      "phenom": "GRAMMATICAL",
+      "validator": true,
+      "violations": [],
+      "pass": true
+    },
+    "F6": {
+      "phenom": "IA-not-MT",
+      "validator": true,
+      "violations": [],
+      "pass": true
+    },
+    "F7": {
+      "phenom": "speaker-boundary",
+      "validator": true,
+      "violations": [],
+      "pass": true
+    },
+    "F8": {
+      "phenom": "quotation",
+      "validator": true,
+      "violations": [],
+      "pass": true
+    },
+    "F9": {
+      "phenom": "unresolved",
+      "validator": true,
+      "violations": [],
+      "pass": true
+    },
+    "F10": {
+      "phenom": "zero-MT/IA",
+      "validator": true,
+      "violations": [],
+      "pass": true
+    }
+  },
+  "PASS": true
+}
