@@ -56,6 +56,31 @@ log_odds update:  posterior += weighted_lbf
 
 ---
 
+## 1b. The philosophy-IR → scholarly-graph mapping (the two-ontology guard)
+
+The argument/IR objects (`ARGUMENT-IR-VISION.md`) must be a **specialization/projection of the existing
+scholarly graph** (`SCHOLARLY_GRAPH.md`, `data/corpus/graph.ts`) — NOT a second parallel ontology. The
+scholarly graph is: `Object` (durable identity) vs `Annotation` (contestable, carries origin/status/
+certainty/evidence/review) vs `ReviewEvent`. The IR maps onto it as:
+
+| IR object | Maps to (scholarly graph) |
+|---|---|
+| **Proposition** | an `Annotation` (type `proposition`) over a `Passage`/`SourceSpan` — it is an interpretive object, NOT a durable `Object`. |
+| **Commitment** | an `Annotation` relating a `Person`/`Position` → a `Proposition` (who asserts/denies/quotes). |
+| **ResearchQuestion** | an `Annotation` (or a typed `Object`) that organizes a `DebateFrame`. |
+| **Position** | a bundle: an `Annotation` grouping `Commitment`s + `Argument`s under a frame. |
+| **DebateFrame** | an `Annotation` specifying question + scope + `SemanticAlignment`s for comparing positions. |
+| **SemanticAlignment** | a **reviewed `Annotation`** relating `Sense`/`Proposition` objects (a claim about meaning → carries review). |
+| **InferenceRule / InferenceApplication** | structured `Annotation`s over `Proposition` refs (the warrant + its use). |
+| **Argument** | a derived/structured `Annotation` over `Proposition` + `InferenceApplication` refs. |
+| **Attack / Preference / Crux** | derived scholarly objects/annotations supported by argument state (+ review). |
+| **ReviewEvent** | the SAME `ReviewEvent` (applies to IR annotations exactly as to any annotation). |
+
+**Rule:** before IR v1 freezes, each IR object MUST have a row here (or in `SCHOLARLY_GRAPH.md`). This is
+what prevents a months-long reconciliation between "graph.ts worldview" and "argument-IR worldview".
+
+---
+
 ## 2. The Bayesian claim-strength mapping (the key alignment)
 
 The truth engine gives a **derived number**; Pāṭala has `Certainty` as a **label**. The bridge:

@@ -6,6 +6,41 @@ layer is built until the lower scholarly object it consumes has crossed its vali
 
 ---
 
+## THE PHASE LADDER (higher-order goals → checkpoints as their children)
+
+The CP0–CP12 checkpoints are not a flat list. They are the *children* of seven higher-order goals.
+A phase is "done" only when its child checkpoints have real (gold + blind eval + adjudicated) results,
+not just machinery. This is the structured pathway; the checkpoints below it remain the working map.
+
+```
+PHASE 1 — MACHINE-READABLE SOURCE TRADITION      (mostly achieved for the IPVV pilot)
+           CP1 SOURCE PROOF · CP9 API/MCP  (+ corpus / IDs / provenance / verification substrate)
+PHASE 2 — MACHINE-VERIFIABLE SCHOLARSHIP         (ACTIVE)
+           CP0 BENCHMARK · CP2 RETRIEVAL · CP3 THEMES
+PHASE 3 — MACHINE-READABLE PHILOSOPHY            (just beginning — CP4 is the frontier)
+           CP4 ARGUMENT
+PHASE 4 — MACHINE-ASSISTED SCHOLARLY REASONING   (experiments/vision)
+           CP5 VERIFICATION · CP8 ADVERSARIAL REVIEW
+PHASE 5 — SCHOLAR OPERATING SYSTEM               (vision)
+           CP6 SYNTHESIS · CP7 WORKBENCH
+PHASE 6 — INSTITUTION / NETWORK                  (vision)
+           CP10 COLLABORATIVE · CP11 ECONOMIC
+PHASE 7 — BROADER CULTURAL PLATFORM              (long-term optionality)
+           CP12 CROSS-CORPUS  (+ media / education projections)
+```
+
+**Reading it:** the substrate (Phase 1) and the measurement + scholarship layer (Phase 2) are the
+foundation. **Phase 3 is where the project is now** — CP4 (argument) is the first genuinely experimental
+layer. Media, education, Review, essays, AI-teacher are all **projections** of the graph, not separate
+products: *the graph is the product factory.*
+
+**The current gate (Phase 3):** the 5 gold arguments (ARG-001..005) exist as `CANDIDATE`. The gate to
+CP4-real is **independent review of those golds** (the 4-question review protocol) → then a real
+extractor (blind, beats the baseline) → THEN the Nyāya/evaluator machinery over real `Inference`
+objects. Do NOT build the evaluators before the gold is reviewed and the argument graph is real.
+
+---
+
 ## THE FIVE CHECKPOINTS (the whole plan)
 
 ```text

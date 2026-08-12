@@ -24,8 +24,11 @@ the honest state after the anti-theatre cleanup. Governed by `AGENTS-DOCTRINE.md
 | **`argument.py`** | schema; `gate` slot empty | 🔶 container, not argument |
 | **essay/AIF/c1metrics** | representations/diagnostics | 🔶 infrastructure, no validated content |
 
-**The single highest-value real build: wire the Nyāya gate.** Everything else is either done (benchmark)
-or infrastructure awaiting validated content.
+**The single highest-value real build (now): REVIEW the Argument Gold first, then build a real extractor,
+then wire the Nyāya gate over real `Inference` objects.** The gate is real but unwired; it must NOT be
+wired onto arbitrary claims — it plugs in at CP4 once real `Proposition`/`Inference` objects exist (per
+`handover/CHECKPOINTS.md`). The sequence that makes that possible is: review ARG-GOLD-001..005 → extractor
+(blind, beats baseline) → argument graph → then the gate as an audit of the `Inference`.
 
 ---
 
@@ -105,11 +108,15 @@ reviewers (no closed-loop self-confirmation).
 
 ## 4. THE PRIORITY ORDER (what to do, and why)
 
+> **Order corrected (2026-08-12).** The Nyāya gate cannot be wired onto arbitrary claims — it needs real
+> `Proposition`/`Inference` objects (per `handover/CHECKPOINTS.md` + `CLAIMS.md` P-003/P-004). So the gate is
+> NOT first. Gold review and a real extractor come first; the gate plugs in at CP4 afterward.
+
 | # | Build | CP | Why |
 |---|---|---|---|
-| **1** | **Gate gold fixtures** (evidence/ family) | CP6 | the gate is real but untested; gold makes it promotable |
-| **2** | **Wire `verify-claim-semantic`** | CP6 | the best real asset, currently unused |
-| **3** | **Argument gold 001–010** | CP4 | the scarce artifact; makes extraction scientific |
+| **1** | **Independent review of ARG-GOLD-001..005** | CP4 | the gold is the target a real extractor must hit; CANDIDATE until a reviewer signs it. Protocol: `experiments/ARG-GOLD-REVIEW-PROTOCOL.md` |
+| **2** | **A real extractor** (blind, beats the primitive baseline) | CP4 | proposition F1 + inference recovery > 0, low false-assertion, vs a frozen held-out split |
+| **3** | **Gate gold fixtures + wire `verify-claim-semantic`** | CP4/CP6 | only now — an audit of real `Inference` objects (not arbitrary claims) |
 | **4** | **Retrieval re-baseline on S2** | CP2 | convert S1-nonleak to the honest split |
 
 **Do NOT:** build more essay layers, add graph abstractions, or port the Bayesian ontology (rejected in
