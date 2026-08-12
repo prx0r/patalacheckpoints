@@ -171,3 +171,31 @@ The doctrine is enforced, not just documented:
 
 A new agent cannot miss this: AGENTS.md is the first file loaded, README item #0 points to it, and
 docs/INDEX lists it as "THE GOVERNING RULE — read first."
+
+---
+
+## 8. GIT DISCIPLINE — THE SHARED-TREE RULE (applies to EVERY agent)
+
+The working tree and index are **shared by all agents**. One agent's git mistake contaminates every
+other agent's branch. These rules are binding on agent1, agent2, and any future agent:
+
+1. **Stage only your own explicit paths.** Never `git add -A` / `git add .` on a dirty shared tree —
+   that sweeps another agent's staged files into your commit (this happened: Agent 2's `4cc78d1`
+   absorbed Agent 1's staged ML files, then invasive surgery entangled both lanes).
+2. **Commit immediately after staging your own paths.** Do not leave staged work sitting in the shared
+   index — another agent's commit will collect it.
+3. **Verify the branch before committing.** `git branch --show-current` — work on your own branch
+   (`agent1` / `agent2` / ...), never commit to another lane's branch or `main` by accident.
+4. **Never do invasive branch surgery on a dirty shared tree.** No `stash`, `cherry-pick`, `reset
+   --hard`, `branch -D`, or force operations while there are uncommitted/staged changes from another
+   agent. If a commit is misplaced, **flag it to Agent 0** (the coordinator) rather than attempting
+   surgery yourself.
+5. **Never force-push, never rewrite another lane's commit.** Append-only.
+6. **If you discover a crossing, stop and report it** — do not try to untangle it alone; a coordinator
+   merge is the safe fix.
+
+> **The rule in one line: treat the shared tree as a public space — stage your own files, commit
+> immediately, verify your branch, and never run surgery on it. A misplaced commit is a flag to Agent 0,
+> not an invitation to `reset --hard`.**
+
+---
