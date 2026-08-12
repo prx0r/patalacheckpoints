@@ -195,6 +195,22 @@ build the full Proposition/Inference/Defeater shape + the DebateFrame/SemanticAl
 for ARG-005 — record the alignment between the two readings). Add the builder to the `GOLDS` registry in
 `emit_gold_fixtures.py`, run it, and confirm `validate_gold` passes. Do NOT automate extraction yet.
 
+**Build them WITH the philosophical-IR shape** (see `machinelearning/_ACTIVE/ARGUMENT-IR-VISION.md` — the
+CP4 target). Do not defer these; they are part of the gold:
+- **`Commitment` (speaker/force) on every node** — ASSERTS / DENIES / PRESUPPOSES /
+  ASSUMES_FOR_ARGUMENT / ATTRIBUTES_TO_OPPONENT / QUOTES / RECONSTRUCTED. This fixes the
+  pūrvapakṣa error (the Buddhist objection read as Abhinava's own view — critical for ARG-003 reductio
+  and ARG-005 ambiguous).
+- **derivational `Proposition`** — each node records `derived_from` (Sanskrit / L2 / C1 / implicit) +
+  `explicitness` (already have).
+- **a `ResearchQuestion`** at the top of each argument (the question it answers).
+- **split `Defeater` into `Attack` (data) + `Defeat` (derived)**.
+- **three-level `SemanticAlignment`** (LEXICAL/CONCEPTUAL/PROPOSITIONAL) for ARG-005's two readings.
+
+Let the gold force the ontology — expand the schema only where the scholarship demands it. Do NOT build
+EpistemicRegime/EvaluationProfile/Crux yet; the gold must come first. An argument whose honest output is
+`NO SAFE RECONSTRUCTION` is a valid gold case, not a failure.
+
 ### Step 4.1 — Validate all 5 golds are internally consistent
 **🟢 GATE 4.1** — *Run*: `cd machinelearning/research && . .venv/bin/activate && python
 experiments/emit_gold_fixtures.py`. You must see **ALL 5** PAT-STRUCT fixtures pass `validate_gold`

@@ -120,7 +120,10 @@ Agent 0's own dir is being created). Your first job:
 **🟢 GATE 3.0** — *Run* `python3 handover/check_staleness.py` — **must reach 0 failures.**
 
 ### Step 3.1 — Gate each lane's checkpoint
-- **Agent 1 (CP4):** require all 5 golds (ARG-001..005) pass `validate_gold` before extraction.
+- **Agent 1 (CP4):** require all 5 golds (ARG-001..005) pass `validate_gold` before extraction, AND each
+  be representable in the **philosophical IR** (`machinelearning/_ACTIVE/ARGUMENT-IR-VISION.md`): every
+  proposition has a Commitment + derivational `derived_from`, a ResearchQuestion per argument, Attack vs
+  Defeat split. If a gold forces the schema to grow, that is SUCCESS (the gold is working), not failure.
 - **Agent 2 (CP1):** require `PhilologicalProof` v1 with honest per-dimension statuses before promotion.
 
 ### Step 3.2 — Verify each lane's progress has proof

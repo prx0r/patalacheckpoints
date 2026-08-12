@@ -16,7 +16,9 @@
 - **Registry:** 3 agents defined (agent0 coordinator, agent1 ML, agent2 L0).
 - **Orientations:** agent1 ✅ (process workflow w/ gates) · agent2 ✅ (just built, same template) · agent0 ✅ (this).
 - **Staleness checker:** `handover/check_staleness.py` — detects registry↔files, vision-copy, INDEX, gold resolution. **Target: 0 failures.**
-- **Agent 1 (CP4):** ARG-001 ✅ + ARG-002 ✅ consistent; ARG-003/004/005 not yet built (sources located + read).
+- **Agent 1 (CP4):** ARG-001 ✅ + ARG-002 ✅ consistent; ARG-003/004/005 not yet built. **Now to be built
+  with the philosophical-IR shape** (`ARGUMENT-IR-VISION.md`): Commitment (speaker/force), derivational
+  Proposition, ResearchQuestion, Attack/Defeat split, three-level SemanticAlignment for ARG-005.
 - **Agent 2 (CP1):** P0 35/35 PASS; P1–P5 Vidyut/Heritage witnesses in progress.
 
 ## The checkpoint ladder (real state)

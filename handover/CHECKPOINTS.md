@@ -86,7 +86,7 @@ interface BenchmarkRun {
 | **CP1 PHILOLOGICAL** | every source→L0 decision exposes PROVED/SUPPORTED/CONFLICT/OPEN/REVIEWED per dimension; P0✅, P1–P4 via Vidyut+Heritage+gold | L0 |
 | **CP2 RETRIEVAL** | BM25 vs dense vs hybrid beats trivial baseline on frozen retrieval fixtures; returns `EvidenceCandidate` objects | ML |
 | **CP3 THEMES** | 3 of the 9 proposals genuinely adjudicated into `AcceptedTheme` (membership inspected, not clustering-asserted) | ML |
-| **CP4 ARGUMENT** | ARG-GOLD-001..010 real propositions; extractor tested blind against them; the vertical object "I claim X because C1 says / L2 renders / span is / proof says" | **both converge** |
+| **CP4 ARGUMENT** | ARG-GOLD-001..010 real propositions; extractor tested blind against them; the vertical object "I claim X because C1 says / L2 renders / span is / proof says". **Target shape = the philosophical IR** (`machinelearning/_ACTIVE/ARGUMENT-IR-VISION.md`): every proposition carries a Commitment (who asserts) + derivational `derived_from`; a ResearchQuestion per argument; Attack vs Defeat split; three-level SemanticAlignment for comparative cases. **Built gold-first — the ontology is forced by the gold, not designed empty.** | **both converge** |
 
 ---
 
