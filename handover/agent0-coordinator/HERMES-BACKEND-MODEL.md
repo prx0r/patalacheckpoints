@@ -1,5 +1,12 @@
 # HERMES AS PĀṬALA'S BACKEND INFRASTRUCTURE — the full model
 
+> **⚠ SUPERSEDED THESIS — see the CANONICAL doc `hermespatala.md`.** This file's feature map (verified
+> 2026-08-12) is retained as reference, but its original thesis ("Hermes IS the kernel/A0 runtime") was
+> **corrected** by `hermespatala3.md`: **Hermes is Pāṭala's REPLACEABLE execution kernel, NOT its epistemic
+> backend.** The feature inventory below (kanban/worktree/cron/hooks/memory/checkpoints/mcp/fallback/
+> skills/sessions) is accurate; the epistemic-authority framing is not. Read `hermespatala.md` for the
+> corrected, canonical architecture.
+
 *2026-08-12. How Hermes (the agentic framework already configured on this machine) realizes the ENTIRE
 Pāṭala vision — not just the translation factory, but the Agent 0 governance layer, the git/worktree
 discipline, the corpus state machine, the review loop, and the multi-agent architecture. Every feature

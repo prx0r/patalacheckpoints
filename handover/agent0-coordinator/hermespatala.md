@@ -1,9 +1,31 @@
-# HERMES × PĀṬALA — THE INTEGRATION (backend infra + advanced recipes)
+# HERMES × PĀṬALA — THE INTEGRATION (execution kernel + epistemic state)
 
-*2026-08-12. The single canonical reference for how Hermes becomes Pāṭala's agentic backend. Merges the
-backend-infrastructure model (verified feature→vision mapping, 2026-08-12) with the advanced integration
-recipes (`hermespatala2.md`, from R2). **Thesis: Hermes is the cognitive execution fabric; Pāṭala is the
-epistemic state machine. Hermes does not replace the agent architecture — it operationalizes it.***
+*2026-08-12. The single canonical reference for how Hermes integrates with Pāṭala. Merges the
+backend-infrastructure model (verified feature→vision mapping, 2026-08-12) with the advanced recipes
+(`hermespatala2.md`) and the foundational correction (`hermespatala3.md`). **Thesis (SHARPENED): Hermes
+is Pāṭala's replaceable execution kernel. Pāṭala itself is the durable epistemic protocol and scholarly
+state. Hermes schedules and executes epistemically permitted transformations; it never determines what
+Pāṭala knows.***
+
+---
+
+## THE FOUNDATIONAL THESIS (corrected)
+
+> **Hermes is Pāṭala's execution kernel, NOT Pāṭala's epistemic backend.**
+
+Hermes must be **replaceable**. If Hermes vanished in three years, Pāṭala must retain every source,
+claim, review, disagreement, contributor identity, provenance chain, and scholarly status. Hermes gives
+excellent *execution primitives* (kanban, worktrees, cron, hooks, profiles, delegation, MCP, checkpoints)
+— but those are **workflow state, not scholarly truth**.
+
+**External positioning (the bet):**
+> Humans use Pāṭala Workbench. Agents use Pāṭala MCP/API. Pāṭala internally uses Hermes. Future external
+> agent systems may invoke Pāṭala agents over A2A.
+
+**The moat:** model/runtime independence. Models improve, agent runtimes come and go, chat interfaces
+change — but outside scholars/AIs increasingly rely on **Pāṭala IDs, source spans, ReviewEvents,
+alignments, argument objects, correction history**. Hermes does its job perfectly when it *disappears
+underneath the institution*.
 
 ---
 
@@ -11,18 +33,40 @@ epistemic state machine. Hermes does not replace the agent architecture — it o
 
 ```text
 PĀṬALA
-= epistemic state machine
+= epistemic state machine (the durable protocol + scholarly memory of record)
   objects / provenance / review / status /
-  dependencies / claims / transitions
+  dependencies / claims / transitions / contributor IDs / rights / versions
 
 HERMES
-= cognitive execution fabric
+= cognitive execution fabric (replaceable)
   sessions / skills / delegation / tools /
   scheduling / hooks / messaging / trajectories
 ```
 
 Pāṭala tells Hermes *what kinds of transformations are epistemically legal*. Hermes gives Pāṭala the
 machinery to perform those transformations repeatedly, concurrently, persistently, and increasingly well.
+**But Hermes never determines what Pāṭala knows.**
+
+---
+
+## THE FOUR CORRECTIONS (from hermespatala3.md — do not encode these as Hermes conventions)
+
+1. **Kanban = scheduler, not constitution.** Hermes kanban handles task/ready/running/blocked/review/done/
+   dependencies/attempt-history/worker-assignment. But Pāṭala owns the constitution: `MACHINE_PROPOSED ≠
+   ACCEPTED automatically`, `source integrity ≠ interpretive grounding`, `review scope matters`,
+   `reviewer identity matters`, `supersession is immutable`, `UNDERDETERMINED is permitted`. These live in
+   Pāṭala schemas + write APIs, not kanban conventions.
+   `Hermes: "should A4 run this review task?"` · `Pāṭala: "what constitutes a valid ReviewEvent?"`
+2. **Hermes memory ≠ epistemic state.** Hermes MEMORY.md is tiny (~2,200 chars) + sessions (SQLite/FTS5).
+   It holds *procedural/operator memory* (gold-first ontology, fail-closed, machine-proposed only) and
+   *execution history* — NOT `ARG-002 is accepted`, `Ratié reviewed X`. Those resolve through Pāṭala.
+   Triad: `Hermes MEMORY = operator memory` · `Hermes sessions = execution history` · `Pāṭala graph = scholarly memory of record`.
+3. **Hermes checkpoints ≠ epistemic rollback.** Checkpoints = "undo a malformed file Agent 3 wrote"
+   (filesystem). Pāṭala supersession = "preserve the history of changing scholarship" (`P:v1 ACCEPTED by A`
+   → `P:v2 REVISED by B, supersedes P:v1`). Completely different.
+4. **Hooks trigger integrity machinery; they don't determine integrity.** A source change fires a Hermes
+   hook → Pāṭala's dependency engine calculates what's stale/affected/downstream. The dependency logic
+   belongs in Pāṭala; Hermes just wakes it up.
 
 ---
 
@@ -44,44 +88,51 @@ provides the A0 governance primitives the agent-architecture vision specced as b
 | **`skills`** | The doctrine as executable procedure. |
 | **`sessions`** | Persistent, searchable work (SQLite + FTS5; list/export/archive). |
 
-**The thesis:** Hermes IS the kernel/A0 runtime. Pāṭala layers its epistemic state (the corpus ledger +
-gold) and doctrine-carrying skills on top. It does NOT rebuild the agent runtime.
+**The corrected thesis:** Hermes is Pāṭala's **replaceable execution kernel** — it provides the runtime
+primitives (kanban scheduler, worktrees, cron, hooks, skills, sessions, resilience). Pāṭala layers its
+epistemic state (the corpus ledger + gold) and doctrine-carrying skills on top. Hermes does NOT rebuild
+the agent runtime, and it is NOT the epistemic authority. If Hermes vanished, Pāṭala retains all scholarly truth.
 
 ---
 
 ## PART II — THE REALIZED ARCHITECTURE
 
+**The sober architecture (from hermespatala3.md) — Pāṭala's epistemic core sits ABOVE the Hermes kernel:**
 ```
-                HERMES (the kernel / A0 runtime)
-   kanban(board+atomic claims+dep) · cron · hooks/webhook
-   worktree(isolation) · memory · checkpoints · mcp · fallback/moa
-                        │
-   ┌────────────────────┼────────────────────┐
-   ▼                    ▼                    ▼
- A2 patala profile   A3 patala profile    A1 patala profile
- (corpus compiler)  (translation factory) (philosophy)
- owns corpus_state   consumes NEXT_       owns gold/ARG/
- ledger + /api/corpus VALID_ACTION from    vertical objects
- + skills: prove      A2; cron executes    + skills: analyze
-   │                    the eligible work    │
-   └─────────┬──────────┴─────────┬─────────┘
-             ▼                    ▼
-         A4 review          A5 synthesis
-         (skills: review)   (skills: research)
-             └────────┬────────┘
+PĀṬALA
+  EPISTEMIC CORE (Works · Passages · Assertions · Propositions · Arguments ·
+                  Alignments · Reviews · Provenance · Versions · Rights ·
+                  Contributor IDs · Dependency graph · Corpus state)
+        │  event/jobs
+        ▼
+  HERMES (execution kernel)
+  Kanban · Profiles · Worktrees · Cron · Delegation · Skills · Hooks ·
+  Checkpoints · Models/fallback
+        │
+  A1 / A2 / A3 / A4 ...
+```
+
+```
+                HERMES (the replaceable execution kernel)
+   kanban(scheduler, NOT constitution) · cron · hooks/webhook
+   worktree(isolation) · skills · sessions · mcp · fallback/moa
+                         │
+   ┌─────────────────────┼─────────────────────┐
+   ▼                     ▼                     ▼
+ A2 patala profile    A3 patala profile    A1 patala profile
+ (corpus compiler)   (translation factory) (philosophy)
+   │                     │                     │
+   └─────────┬───────────┴──────────┬──────────┘
+             ▼                      ▼
+         A4 review             A5 synthesis
+             └────────┬────────────┘
                       ▼
-                 A6 projection (skills: publish)
-                 A7 scholar network (later)
+                  A6 projection · A7 scholar network (later)
 ```
 
-And the end-state (from the architecture vision):
-
-```
-HUMAN / TELEGRAM → HERMES GATEWAY → Agent 0 → A1/A2/A3 → PĀṬALA MCP/API → EPISTEMIC GRAPH
-                                                                    (review state · crux graph · corpus state)
-Hermes = execution/reasoning/isolation/scheduling/tool-routing/procedural-learning/communication/trajectory
-Pāṭala = identity/truth/status/provenance/dependencies/review/scholarly-ontology
-```
+**End-state:** humans use the **Pāṭala Scholar Workbench**; agents use **Pāṭala MCP/API**; Pāṭala
+internally uses **Hermes**; future external agents invoke Pāṭala over **A2A**. Hermes is invisible
+infrastructure — it disappears underneath the institution.
 
 ---
 
@@ -209,11 +260,102 @@ improves theme/argument/translation/semantic-alignment review.
 
 ---
 
+## PART V — THE SCHOLAR & API SURFACE (the product vision, from hermespatala3.md)
+
+**The guiding rule: scholars should almost never know Hermes exists.** Don't ask a Sanskritist to
+"install Hermes, configure a profile, connect MCP, select a model" — that kills adoption. A scholar
+experiences **Pāṭala**, not its runtime. Three ways to interact, in priority order:
+
+### 1. The primary surface: Pāṭala Scholar Workbench (browser)
+Agent 1 creates a `REVIEW TASK` (e.g. ARG-002: does V2-L license this reconstruction?) with exact
+Sanskrit, source/literal layer, translation, C1, proposed propositions + warrant, competing
+reconstruction, machine critique, and **impact** (this judgment affects 2 arguments / 1 theme / 4 claims).
+The scholar sees the evidence and can `ACCEPT / REVISE / REJECT / ABSTAIN / PROPOSE ALTERNATIVE / COMMENT`.
+Underneath, submission creates an immutable `ReviewEvent` (reviewer_id, object_version, scope, decision,
+rationale, evidence_refs, timestamp). Then Hermes wakes Agent 1 to recompute affected objects.
+
+**The AI copilot inside the Workbench:** a constrained "Scholar Copilot" Hermes profile that queries the
+Pāṭala MCP, retrieves passages, compares alignments, searches bibliography, launches blind-critic
+subagents, constructs alternatives — but **cannot ACCEPT/REJECT/PROMOTE**. The scholar signs the judgment.
+```
+Scholar → Pāṭala Workbench → Hermes Research Copilot → Pāṭala read/propose tools
+```
+
+### 2. The strategic surface: Bring Your Own Agent (MCP) — `mcp.patala.org`
+MCP is a tool-access protocol that doesn't dictate a UI. Advanced scholars could connect Claude, ChatGPT,
+Hermes, a university agent, or their own Python agent to `mcp.patala.org` and call
+`patala.search_passages · resolve · get_source · get_translation · trace_claim · get_argument ·
+compare_readings · list_open_questions · propose_translation · propose_alignment · propose_review`,
+with OAuth scopes (corpus:read, bibliography:read, review:read, proposal:write, review:submit).
+**Do not make Pāṭala dependent on the winning chat interface** — this is where adoption-of-identifiers
+becomes the moat.
+
+### 3. Later: A2A (agent-to-agent)
+```
+Pāṭala HTTP API = stable primitive data interface
+Pāṭala MCP      = agent-friendly tool/resource interface
+A2A (later)     = Pāṭala exposes long-running agent capabilities to other agents
+                  (e.g. publish an Agent Card advertising translation_audit,
+                   argument_audit, source_trace, semantic_comparison, literature_dossier)
+```
+A2A v1.0 is for opaque agent systems to discover one another + collaborate without exposing internal
+memory/tools. Don't build it today — MCP solves today's integration problem.
+
+### 4. Peer review becomes bigger than "review this translation"
+A scholar uploads a paper → Pāṭala Review runs: claim extraction → citation resolution → corpus retrieval
+→ argument extraction → terminology audit → counterevidence search → alternative reconstruction →
+source-grounding audit → Reviewer-2 attack → impact/crux analysis. Result: "17 claims extracted; 11
+strongly grounded, 3 need qualification, 2 unsupported, 1 underdetermined; LOAD-BEARING ISSUE C7 depends
+on treating vimarśa in V2L/V2O as SAME_SENSE..." Every criticism bottoms out in corpus objects and
+survives as an auditable artifact.
+
+**Human peer review, restructured:** author uploads → machine pre-review → structured open questions →
+A7 routes remaining questions to scholars → human ReviewEvents → machine recomputation → adjudicated
+review dossier. The machine doesn't replace peer review; it compresses it to "the 7 claims where expert
+judgment has maximum value."
+
+### 5. The executable-corrections moat (obsess over this)
+Normal review = prose ("I don't think this works"). Pāṭala = a graph mutation with provenance:
+```
+ReviewEvent: target=INF-182 · decision=REJECT · reason="premise P71 doesn't support rule W14"
+            · replacement=W19 · evidence=SourceSpan...
+→ graph recomputes → argument state changes → crux changes → synthesis changes → future agents inherit
+```
+A review becomes a **graph mutation with provenance** — the bridge from "AI peer-review tool" to
+"scholarly operating system."
+
+### 6. The ultimate minimal architecture (don't build a framework)
+Build only what belongs uniquely to Pāṭala:
+```
+1. EPISTEMIC GRAPH / LEDGER   IDs, sources, assertions, arguments, reviews, dependencies, versions
+2. POLICY / STATE TRANSITIONS what MACHINE_PROPOSED means, who may promote what, staleness/supersession
+3. PĀṬALA API                 stable primitives
+4. PĀṬALA MCP                 AI-native access to those primitives
+5. SCHOLAR WORKBENCH          excellent human review UX
+6. PĀṬALA SKILLS              domain procedures executed by Hermes
+7. HERMES                     run the damn jobs
+```
+No Temporal, LangGraph, custom scheduler, proprietary multi-agent protocol, vector-memory universe,
+bespoke workflow engine, or requirement for scholars to install Hermes.
+
+**Agents as roles/capability profiles, not immortal processes:** don't map "A1 = one Hermes process
+forever." Pāṭala agents are roles; kanban creates executions of those capabilities (a task claims a
+worker = patala-philosophy profile + skill + isolated workspace, produces Proposal objects + EvaluationRun
++ evidence refs, then the worker dies). Persistent identity belongs to the role + execution record.
+
+**And don't use MoA as "truth by committee":** 5 models agreeing ≠ scholarly truth. Record
+MODEL_AGREEMENT / MODEL_DISAGREEMENT and test whether disagreement predicts human revision.
+
+---
+
 ## THE CARRY-FORWARD
 
-> **Hermes should not replace the Pāṭala agent architecture. It should operationalize it.** Hermes is the
-> cognitive execution fabric (sessions, skills, delegation, tools, scheduling, hooks, trajectories, isolation,
-> resilience); Pāṭala is the epistemic state machine (identity, truth/status, provenance, dependencies,
-> review, scholarly ontology). Build the three integrations first (skill pack, MCP capability layer, blind
-> adversarial delegation); keep authoritative state in Pāṭala, doctrine in Hermes memory, history in Hermes
-> sessions; and use `--worktree`, `kanban`, `cron`, and `hooks` for the A0 governance the vision specced.
+> **Hermes is Pāṭala's replaceable execution kernel; Pāṭala itself is the durable epistemic protocol and
+> scholarly state. Hermes schedules and executes epistemically permitted transformations; it never
+> determines what Pāṭala knows.** Humans use the Pāṭala Workbench; agents use Pāṭala MCP/API; Pāṭala
+> internally uses Hermes; future external agents invoke Pāṭala over A2A. Build the three integrations
+> first (skill pack, MCP capability layer, blind adversarial review); keep authoritative state in Pāṭala
+> (epistemic core), doctrine in Hermes memory, history in Hermes sessions; use `--worktree`, `kanban`,
+> `cron`, and `hooks` as the execution layer only. Hermes succeeds when it disappears underneath the
+> institution — when outside scholars and AIs rely on Pāṭala IDs, source spans, ReviewEvents, alignments,
+> argument objects, and correction history.
