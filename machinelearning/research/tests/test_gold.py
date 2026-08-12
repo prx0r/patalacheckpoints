@@ -71,7 +71,8 @@ def main():
     exp = {n["explicitness"] for n in gold["nodes"]}
     check("EXPLICIT present", "EXPLICIT" in exp)
     check("RECONSTRUCTED present", "RECONSTRUCTED" in exp)
-    check("IMPLICIT present", "IMPLICIT" in exp)
+    # ARG-001 v2 (REVIEW-2026-08-12-MODEL-1): the implicit regress premise was removed, so no IMPLICIT
+    check("no IMPLICIT explicitness (regress removed per review)", "IMPLICIT" not in exp, exp)
 
     # 5. boundary honest
     print("\n== boundary ==")
@@ -79,7 +80,7 @@ def main():
     check("boundary has text", bool(b["text"]))
     check("boundary not_claiming present", len(b["not_claiming"]) >= 1)
     check("boundary does not overclaim",
-          "does NOT by itself establish" in b["text"])
+          ("does NOT establish" in b["text"]) or ("does NOT by itself establish" in b["text"]))
 
     # 6. honest status (not 'scholarship verified')
     print("\n== honest status ==")

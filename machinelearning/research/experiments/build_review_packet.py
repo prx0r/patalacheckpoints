@@ -42,6 +42,12 @@ RISK = {
     "ARG-GOLD-004": "**Risk area — is vimarśa-as-essence textual or reconstructed?** We treat the C1 as asserting that the essence of light is reflexive awareness. If you read it as only inferred, say so.",
     "ARG-GOLD-005": "**Risk area — is this genuine interpretive ambiguity, or local-vs-systematic scope?** We now type it as INTERPRETIVE_SCOPE (Reading A locally entailed; Reading B a contextually-supported extension). Rule on whether that is right.",
 }
+# Exact Sanskrit spans already resolved for a given gold (via the vertical machinery). Where absent,
+# the primary text still needs to be supplied before SPECIALIST_REVIEWED promotion.
+PRIMARY_TEXT = {
+    "ARG-GOLD-001": ["pratibhā (L32:T114)", "tattatpadārthakramarūṣitā (L32:T115)",
+                     "akramānantacidrūpaḥ (L33:T116)", "rūṣitā (L44:T181)"],
+}
 QUESTIONS = [
     "Is each proposition actually licensed by the supplied material (the source text / translation / context)?",
     "Are the reconstructed premises necessary and defensible — could another competent reader reconstruct differently?",
@@ -96,6 +102,14 @@ def render(gold: dict) -> str:
         out.append(f"**Research question:** {gold['research_question']}")
     out.append("")
     out.append("### SOURCE (the material a reviewer judges against)")
+    if gid in PRIMARY_TEXT:
+        out.append("**PRIMARY TEXT (exact Sanskrit spans — resolved via the vertical machinery):**")
+        out.append(", ".join(PRIMARY_TEXT[gid]))
+        out.append("")
+    else:
+        out.append("> **PRIMARY TEXT:** exact Sanskrit spans not yet attached for this gold — required before "
+                   "SPECIALIST_REVIEWED promotion (this review is against the C1/L2 packet, not the primary Sanskrit).")
+        out.append("")
     out.append("**Commentary (C1):**")
     out.append(_c1_body(c1_id))
     out.append("")
@@ -143,7 +157,9 @@ reconstruction errors. A Sanskrit / Indian-philosophy PhD, postdoc, teacher, or 
 sufficient for a first pass; the hardest disputed cases can later go to a more senior specialist.
 
 **Status ladder:** MACHINE_PROPOSED → FOUNDER_REVIEWED → INDEPENDENT_REVIEWED → SPECIALIST_REVIEWED → ADJUDICATED.
-These five are currently MACHINE_PROPOSED (CANDIDATE). After ONE clean argument crosses
+These five are currently MACHINE_PROPOSED (CANDIDATE). A MODEL review (REVIEW-2026-08-12-MODEL-1) returned
+REVISE / REJECT_AS_TEXTUAL_GOLD — it is **MODEL_INDEPENDENT_REVIEWED**, NOT INDEPENDENT_REVIEWED / SPECIALIST_REVIEWED
+(those require a human Sanskritist against the primary text). After ONE clean argument crosses
 INDEPENDENT_REVIEWED, it becomes the target for the external formal-evaluator (py-aspic) pilot.
 
 **Risk areas to watch (do not treat these as neutral):** ARG-003 (the regress), ARG-004 (vimarśa-as-essence),

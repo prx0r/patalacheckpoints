@@ -61,6 +61,9 @@ def build_gold_v0() -> dict:
     """The hand-constructed Argument Gold v0 for V2-O (the order-less support)."""
 
     # ── the propositional nodes ────────────────────────────────────────────────
+    # (ARG-001 v2 after REVIEW-2026-08-12-MODEL-1: the regress/transcendental layer is removed —
+    #  it was not licensed by the source. The identification with the knower/Lord is grounding, not
+    #  an inference. Conclusion narrowed.)
     nodes = [
         GoldNode(
             id="G-TC1",
@@ -71,57 +74,51 @@ def build_gold_v0() -> dict:
             proposition="pratibhā is not itself constituted by that order (akrama — order-less).",
             kind="TEXTUAL_CLAIM", explicitness="EXPLICIT"),
         GoldNode(
-            id="G-TC3",
-            proposition="The support (āśraya) of the powers is not itself a member of the ordered sequence.",
-            kind="TEXTUAL_CLAIM", explicitness="RECONSTRUCTED",
-            # TC3 is a reconstruction: the C1 says the support is not ordered, licensing this
-            source_support={"passage_ids": [V2O_PASSAGE_ID], "c1_ids": [V2O_C1_ID],
-                            "l200_assertion_ids": [V2O_L200_ID]}),
+            id="G-BRIDGE",
+            proposition="In this kārikā, pratibhā characterizes / is the form of the support (āśraya) under discussion.",
+            kind="IMPLICIT_PREMISE", explicitness="RECONSTRUCTED"),
         GoldNode(
-            id="G-IC1",
-            proposition="Abhinavagupta locates this order-less basis in the knower / support (pramātṛ), which is the great Lord.",
-            kind="INTERPRETIVE_CLAIM", explicitness="RECONSTRUCTED"),
+            id="G-DIST",
+            proposition="Bearing / presenting an order is not the same as being constituted by that order.",
+            kind="TEXTUAL_CLAIM", explicitness="RECONSTRUCTED"),
         GoldNode(
             id="G-CONC",
-            proposition="Ordered presentation in awareness requires a support not exhausted by that presented order.",
+            proposition="The pratibhā that bears ordered presentation is itself characterized as akrama (order-less); the passage characterizes the relevant support/knower accordingly as order-less.",
             kind="CONCLUSION", explicitness="RECONSTRUCTED"),
         GoldNode(
-            id="G-IMPLICIT",
-            proposition="A genuine support of order must be such that its own nature does not presuppose the order it grounds (else regress).",
-            kind="IMPLICIT_PREMISE", explicitness="IMPLICIT"),
+            id="G-IC1",
+            proposition="Abhinavagupta identifies this order-less support with the knower (pramātṛ), the great Lord.",
+            kind="INTERPRETIVE_CLAIM", explicitness="RECONSTRUCTED"),
     ]
 
-    # ── the inference nodes (the actual argumentative moves) ──────────────────
+    # ── the inference nodes (the actual argumentative moves — no regress) ──────
     inferences = [
         GoldInference(
             id="G-INF1",
             premise_ids=["G-TC1", "G-TC2"],
-            conclusion_id="G-TC3",
+            conclusion_id="G-DIST",
             scheme="CONCEPTUAL_DISTINCTION",
-            rationale="If X bears order but is not itself ordered, then X is not a member of the ordered series (order-bearing ≠ ordered)."),
+            rationale="If X bears an order but is itself not ordered (G-TC1 + G-TC2), then bearing/presenting an order is not the same as being constituted by that order (G-DIST)."),
         GoldInference(
             id="G-INF2",
-            premise_ids=["G-TC3", "G-IMPLICIT"],
+            premise_ids=["G-DIST", "G-BRIDGE"],
             conclusion_id="G-CONC",
-            scheme="TRANSCENDENTAL",
-            rationale="Ordered presentation presupposes a support whose nature is not itself a further ordered member — otherwise an infinite regress of ordered supports."),
-        GoldInference(
-            id="G-INF3",
-            premise_ids=["G-TC3"],
-            conclusion_id="G-IC1",
-            scheme="INTERPRETIVE_CLAIM",
-            rationale="The C1 identifies this order-less support with the knower (pramātṛ) / great Lord — an interpretive identification, not a bare textual assertion."),
+            scheme="CONCEPTUAL_DISTINCTION",
+            rationale="Since pratibhā (which characterizes the support under discussion, G-BRIDGE) is not constituted by the order it bears (G-DIST), the support is characterized as order-less (G-CONC)."),
     ]
 
     # ── the honest boundary ───────────────────────────────────────────────────
     boundary = {
-        "text": ("This passage establishes the structural requirement that the support of ordered "
-                 "presentation is itself order-less. It does NOT by itself establish the stronger "
-                 "claim that all such supports are numerically one universal Self — that unity is "
-                 "argued later (V2-S) and is a further commitment."),
-        "not_claiming": ["numerical identity of all order-less supports",
+        "text": ("This passage establishes that the pratibhā which bears ordered presentation is itself "
+                 "characterized as akrama (order-less), and that the relevant support/knower is accordingly "
+                 "order-less. It does NOT establish an infinite-regress/transcendental necessity, nor the "
+                 "stronger claim that all such order-less supports are numerically one universal Self "
+                 "(argued later, V2-S)."),
+        "not_claiming": ["an infinite-regress argument",
+                         "that any ordered presentation necessarily requires an order-transcending foundation",
+                         "numerical identity of all order-less supports",
                          "that the support is Śiva/the universal subject"],
-        "philological": {"proof_id": V2O_PROOF_ID, "status": "P0", "note": "verify_l0 proof for V2-O"},
+        "philological": {"proof_id": V2O_PROOF_ID, "status": "P0"},
     }
 
     return {

@@ -51,19 +51,22 @@ task, human-grounded gold, and a reproducible evaluation show that it does what 
 ## CLAIM P-003 — "Pāṭala can automatically reconstruct IPVV arguments."
 - **STATUS:** NOT_ESTABLISHED
 - **EVIDENCE (2026-08-12):** 5 real hand-gold arguments exist (ARG-GOLD-001..005, `benchmarks/v0/structure/`,
-  `validate_gold`-consistent, `review_state=CANDIDATE`). A **primitive baseline extractor** was run BLIND
-  against them (the CP4 Build-4 gate). Baseline metric (bounded, `baseline-v0-lexical-proposition-overlap`):
-  **macro lexical-overlap F1 0.36 · role macro-F1 0.58 · explicitness 0.63 · grounding 1.0 · inference
-  recovery 0.0**; on **Task A** (proposition extraction) nodes only, macro F1 ≈ 0.36. Immutable run:
-  `benchmarks/v0/runs/2026-08-12T124709Z/`. This is the BASELINE, not a capability.
-- **CAVEAT:** a sentence-level baseline cannot recover abstract/reconstructed gold propositions (ARG-001 F1 = 0.0)
-  and produces NO inference graph. Golds are `CANDIDATE` — machine-authored, **not yet independently reviewed**.
-  ARG-003's infinite-regress warrant is marked `candidate_reconstruction` pending specialist confirmation;
-  ARG-005 is typed `INTERPRETIVE_SCOPE` (local vs systematic), not an ambiguity. Review protocol:
-  `machinelearning/research/experiments/ARG-GOLD-REVIEW-PROTOCOL.md`.
-- **REQUIRED to promote:** (a) independent editorial review of the 5 golds (the review protocol); (b) a real
-  extractor that beats this baseline (lexical-overlap F1 + inference recovery > 0, low false-assertion) on a
-  frozen held-out split, compared mainly to Task A; (c) abstention on a genuine NO-SAFE-RECONSTRUCTION case.
+  `validate_gold`-consistent, `review_state=CANDIDATE`). **An independent MODEL review
+  (`REVIEW-2026-08-12-MODEL-1`) returned: ARG-001/002/004/005 REVISE, ARG-003 REJECT_AS_TEXTUAL_GOLD**
+  (demoted to ALT_RATIONAL_RECONSTRUCTION — the regress was not licensed). Corrections applied: the
+  regress/transcendental layer removed (ARG-001); knower/Lord + parā-vāk identifications are GROUNDING,
+  not inferences; ARG-005 objection is a dialectical RESPONDS_TO; ARG-002 v2 is the clean py-aspic target.
+  Status is **MODEL_INDEPENDENT_REVIEWED** — NOT INDEPENDENT_REVIEWED/SPECIALIST_REVIEWED (a human
+  Sanskritist against the primary text is required for those). A primitive baseline extractor was run
+  BLIND (the CP4 Build-4 gate); metric bounded as `baseline-v0-lexical-proposition-overlap` (F1 ~0.36,
+  inference recovery 0.0).
+- **CAVEAT:** a sentence-level baseline cannot recover abstract/reconstructed propositions. The golds are
+  `CANDIDATE`; ARG-003 is not a task-A extraction target (its regress must not be trained/recovered).
+  IR findings captured in `machinelearning/_ACTIVE/IR-REVIEW-FINDINGS.md` (inference-vs-dialectical,
+  grounding-vs-inference, support_scope, commitment reconstruction force) — must inform IR v1.
+- **REQUIRED to promote:** (a) a human Sanskrit-specialist review against the PRIMARY TEXT (the packet now
+  carries the primary-text requirement); (b) a real extractor that beats the baseline; (c) abstention on a
+  NO-SAFE-RECONSTRUCTION case.
 
 ## CLAIM P-004 — "The Nyāya gate validates claims."
 - **STATUS:** FROZEN — `NYAYA_GATE_CANDIDATE_v1` (BENCHMARKED_PRELIMINARY, NOT independently validated,

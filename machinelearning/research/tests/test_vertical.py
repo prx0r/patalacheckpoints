@@ -52,10 +52,10 @@ check("every link has a typed relation + resolution",
       all(l.get("relation") and l.get("resolution") for l in v["links"]))
 check("grounding links are EXACT", any(l["relation"] == "TEXTUALLY_GROUNDED_BY" and l["resolution"] == "EXACT"
                                        for l in v["links"]))
-# proof must NOT be treated as resolved when only a stale on-disk artifact exists
+# proof must be EXACT / REFERENCE_RESOLVED now that Agent 2 regenerated the authoritative proof
 pp = v["philological_proof"]
-check("proof resolution is STALE, not EXACT (honest)", pp["resolution"] == "STALE", pp["resolution"])
-check("proof status labels the stale artifact", pp["status"] == "STALE_LOCAL_ARTIFACT")
+check("proof resolution is EXACT (authoritative proof now on disk)", pp["resolution"] == "EXACT", pp["resolution"])
+check("proof status labels the reference-resolved artifact", pp["status"] == "REFERENCE_RESOLVED", pp["status"])
 check("proof carries the authoritative version ref", pp["authoritative_version"] == "P0 35/35 (frozen)")
 # missing IR fields surfaced, NOT retrofitted
 check("research_question surfaced as null (ARG-001 predates it)", v["research_question"] is None)

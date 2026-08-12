@@ -68,7 +68,7 @@ def build_gold_004() -> dict:
          "kind": "INTERPRETIVE_CLAIM", "explicitness": "RECONSTRUCTED",
          "commitment": "ASSERTS", "derived_from": "C1 (the identification with the Word)",
          "grounding": _grounding(),
-         "boundary": "the identification with parā-vāk is the C1's extension, not a bare textual assertion",
+         "boundary": "REVIEW-2026-08-12-MODEL-1: this identification is a TEXTUAL/INTERPRETIVE GROUNDING (the C1 states it), NOT an inference derived from G4-CONC. No G4-INF-IC.",
          "status": "MACHINE_PROPOSED"},
     ]
 
@@ -86,13 +86,6 @@ def build_gold_004() -> dict:
          "conclusion_ids": ["G4-CONC"],
          "scheme": "CONCEPTUAL_DISTINCTION",
          "rationale": "The distinguishing mark of consciousness is self-awareness in manifesting (G4-TC2 + G4-DIST); that is what makes the light conscious rather than a thing (G4-CONC).",
-         "defeaters": [], "status": "MACHINE_PROPOSED"},
-        # the interpretive identification
-        {"inference_id": "G4-INF-IC",
-         "premise_ids": ["G4-CONC"],
-         "conclusion_ids": ["G4-IC1"],
-         "scheme": "INTERPRETIVE_CLAIM",
-         "rationale": "The C1 identifies the self-knowing light with the parā-vāk and the Lord's freedom/lordship — an interpretive identification, not a bare textual assertion.",
          "defeaters": [], "status": "MACHINE_PROPOSED"},
     ]
 

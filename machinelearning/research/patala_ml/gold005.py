@@ -47,7 +47,8 @@ def build_gold_005() -> dict:
         {"proposition_id": "G5-TC1",
          "task_level": "A_PROPOSITION_EXTRACTION",
          "text": "The single re-recollection marked by the will-to-do (cikīrṣālakṣaṇa parāmarśa) joins the agent and the object; action is possible in the one consciousness.",
-         "kind": "TEXTUAL_CLAIM", "explicitness": "EXPLICIT",
+         "kind": "CONCLUSION", "explicitness": "EXPLICIT",
+         "dialectical_role": "REPLY", "responds_to": ["G5-OBJ"],
          "commitment": "ASSERTS", "derived_from": "L2 (the will-to-do joins agent and object)",
          "grounding": _grounding(), "boundary": "", "status": "MACHINE_PROPOSED"},
         # the reductio against the illusion thesis (shared basis for Reading A)
@@ -76,19 +77,18 @@ def build_gold_005() -> dict:
          "kind": "CONCLUSION", "explicitness": "RECONSTRUCTED",
          "commitment": "ASSERTS", "derived_from": "OTHER over G5-TC1 + G5-TC2 (positive extension)",
          "reading": "B_POSITIVE",
+         "support_scope": ["LOCAL_TEXT", "SAME_WORK"],
+         "cross_passage_grounding": ["V3-G", "V3-H", "V2-S"],
+         "derivation": "SYSTEMATIC_INTERPRETATION (NOT a local inference from G5-TC1+G5-TC2)",
          "grounding": _grounding(),
          "boundary": "Reading B: difference-real = the self's own manifestation; the full positive account is developed elsewhere (V3-G/H, V2-S)",
          "status": "MACHINE_PROPOSED"},
     ]
 
     inferences = [
-        # answering the objection with the will-to-do (both readings accept this)
-        {"inference_id": "G5-INF-ANS",
-         "premise_ids": ["G5-OBJ"],
-         "conclusion_ids": ["G5-TC1"],
-         "scheme": "OBJECTION_REPLY",
-         "rationale": "The objection (G5-OBJ) is answered by the one will-recollection that joins agent and object (G5-TC1) — action needs no real separation, only the one will-to-do.",
-         "defeaters": [], "status": "MACHINE_PROPOSED"},
+        # (G5-INF-ANS removed per REVIEW-2026-08-12-MODEL-1: the objection is answered by G5-TC1
+        #  via a DIALECTICAL RESPONDS_TO edge, not an inference. Kept as dialectical_role on G5-TC1.)
+
         # Reading A: the reductio establishes difference-real negatively
         {"inference_id": "G5-INF-NEG",
          "premise_ids": ["G5-TC2"],
@@ -96,13 +96,8 @@ def build_gold_005() -> dict:
          "scheme": "REDUCTIO",
          "rationale": "The 'un-explainable ignorance' account collapses (G5-TC2) — so the difference is real in the sense of not being mere ignorance (G5-CONC-A).",
          "defeaters": [], "status": "MACHINE_PROPOSED"},
-        # Reading B: the positive extension (difference as the self's manifestation)
-        {"inference_id": "G5-INF-POS",
-         "premise_ids": ["G5-TC1", "G5-TC2"],
-         "conclusion_ids": ["G5-CONC-B"],
-         "scheme": "OTHER",
-         "rationale": "Given action is the one will (G5-TC1) and the difference is not ignorance (G5-TC2), the difference is the self's own manifestation — the positive account (G5-CONC-B), developed fully in V3-G/H, V2-S.",
-         "defeaters": [], "status": "MACHINE_PROPOSED"},
+    # (G5-INF-POS removed per REVIEW-2026-08-12-MODEL-1: G5-CONC-B is a SYSTEMATIC interpretation
+    #  grounded in cross-passage material (V3-G/H, V2-S), NOT a local inference from G5-TC1+G5-TC2.)
     ]
 
     boundary = {

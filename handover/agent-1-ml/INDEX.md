@@ -49,8 +49,14 @@ Built this session:
             ✅ NOW FULLY RESOLVED: Agent 2 regenerated the authoritative P0 proof → proof edge
                STALE → EXACT / REFERENCE_RESOLVED (on_disk_PASS True, roundtrip PASS, 0 unresolved).
                The auditable Sanskrit→C1 chain closes end-to-end. Cross-lane handoff logged.
-  Review-driven: golds now carry task_level A/B/C + candidate_reconstruction +
-             support_scope; validator expanded (structural well-formedness only).
+  Review applied (REVIEW-2026-08-12-MODEL-1, independent model review): ARG-001/002/004/005 REVISE,      ✅
+             ARG-003 REJECT_AS_TEXTUAL_GOLD -> demoted to ALT_RATIONAL_RECONSTRUCTION (regress not
+             licensed). Corrections applied: regress/transcendental removed (ARG-001), parā-vāk/
+             knower identifications are GROUNDING not inference (ARG-001/004), ARG-005 objection is a
+             dialectical RESPONDS_TO + systematic reading needs cross-passage grounding, ARG-002 v2 is
+             the clean py-aspic target. Status = MODEL_INDEPENDENT_REVIEWED (NOT specialist-reviewed).
+             ReviewEvent: benchmarks/v0/review/REVIEW-2026-08-12-MODEL-1.json · IR findings:
+             machinelearning/_ACTIVE/IR-REVIEW-FINDINGS.md.
 Honest status: golds are MACHINE_PROPOSED/CANDIDATE — NOT yet independently reviewed.
 ```
 Next in order: (1) **independent review of the 5 golds** via `benchmarks/v0/ARG-GOLD-REVIEW-PACKET.md`

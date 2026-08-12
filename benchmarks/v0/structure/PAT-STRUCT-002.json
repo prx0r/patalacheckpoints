@@ -79,6 +79,10 @@
           "l200_assertion_id": "l200/V2L-sastho-vimarsa-smrti-apohana.md"
         },
         "boundary": "this passage preserves reflexive awareness DISTINCT from conceptual construction; it does NOT by itself establish a universal subject",
+        "dialectical_role": "REPLY",
+        "responds_to": [
+          "G2-OBJ"
+        ],
         "status": "MACHINE_PROPOSED"
       },
       {
@@ -86,12 +90,13 @@
         "text": "Being expressible in language does not entail being a product of conceptual determination (articulation ≠ construction).",
         "kind": "IMPLICIT_PREMISE",
         "explicitness": "IMPLICIT",
+        "commitment": "IMPLIES_ON_RECONSTRUCTION",
         "grounding": {
           "passage_id": "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md",
           "c1_id": "V2L-nonconstructed-I",
           "l200_assertion_id": "l200/V2L-sastho-vimarsa-smrti-apohana.md"
         },
-        "boundary": "this is the suppressed premise that makes the reply work — it must be reconstructed",
+        "boundary": "REVIEW-2026-08-12-MODEL-1: this is a reconstructed warrant (articulation != construction), not a hardcoded premise; it is derivable from the distinction G2-TC1/G2-TC2.",
         "status": "MACHINE_PROPOSED"
       },
       {
@@ -118,7 +123,7 @@
         "conclusion_ids": [
           "G2-CONC"
         ],
-        "scheme": "OBJECTION_REPLY",
+        "scheme": "CONCEPTUAL_DISTINCTION",
         "rationale": "The objection is answered by showing what construction does (G2-TC1) and that the 'I'-awareness is not one of those constructed relations (G2-TC2) — so the 'I' is not shown to be a construction.",
         "defeaters": [
           {
@@ -129,19 +134,6 @@
             "status": "PROPOSED"
           }
         ],
-        "status": "MACHINE_PROPOSED"
-      },
-      {
-        "inference_id": "G2-INF2",
-        "premise_ids": [
-          "G2-CONC"
-        ],
-        "conclusion_ids": [
-          "G2-IC1"
-        ],
-        "scheme": "CONCEPTUAL_DISTINCTION",
-        "rationale": "The conclusion preserves the distinction between reflexive self-awareness and conceptual operations.",
-        "defeaters": [],
         "status": "MACHINE_PROPOSED"
       }
     ],

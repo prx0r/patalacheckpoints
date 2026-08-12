@@ -15,7 +15,9 @@ reconstruction errors. A Sanskrit / Indian-philosophy PhD, postdoc, teacher, or 
 sufficient for a first pass; the hardest disputed cases can later go to a more senior specialist.
 
 **Status ladder:** MACHINE_PROPOSED → FOUNDER_REVIEWED → INDEPENDENT_REVIEWED → SPECIALIST_REVIEWED → ADJUDICATED.
-These five are currently MACHINE_PROPOSED (CANDIDATE). After ONE clean argument crosses
+These five are currently MACHINE_PROPOSED (CANDIDATE). A MODEL review (REVIEW-2026-08-12-MODEL-1) returned
+REVISE / REJECT_AS_TEXTUAL_GOLD — it is **MODEL_INDEPENDENT_REVIEWED**, NOT INDEPENDENT_REVIEWED / SPECIALIST_REVIEWED
+(those require a human Sanskritist against the primary text). After ONE clean argument crosses
 INDEPENDENT_REVIEWED, it becomes the target for the external formal-evaluator (py-aspic) pilot.
 
 **Risk areas to watch (do not treat these as neutral):** ARG-003 (the regress), ARG-004 (vimarśa-as-essence),
@@ -27,6 +29,9 @@ ARG-005 (ambiguity vs scope). ARG-001/002 are reviewed with the same rigor — t
 **Passage:** `pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md` · **Structure:** (not set)
 
 ### SOURCE (the material a reviewer judges against)
+**PRIMARY TEXT (exact Sanskrit spans — resolved via the vertical machinery):**
+pratibhā (L32:T114), tattatpadārthakramarūṣitā (L32:T115), akramānantacidrūpaḥ (L33:T116), rūṣitā (L44:T181)
+
 **Commentary (C1):**
 The powers — knowledge, memory, removal — have been established. But a power needs a support, and the
 question is what supports them. Kārikā 1 gives the support's own form in the image of the pratibhā:
@@ -61,15 +66,14 @@ memory (the knower-rest); eight the whole dealing (the true-and-false division);
 **Propositions:**
 - **G-TC1** [TEXTUAL_CLAIM/EXPLICIT]: pratibhā (the flashing) runs through / bears the order of the word-objects (tattatpadārthakramarūṣitā).
 - **G-TC2** [TEXTUAL_CLAIM/EXPLICIT]: pratibhā is not itself constituted by that order (akrama — order-less).
-- **G-TC3** [TEXTUAL_CLAIM/RECONSTRUCTED]: The support (āśraya) of the powers is not itself a member of the ordered sequence.
-- **G-IC1** [INTERPRETIVE_CLAIM/RECONSTRUCTED]: Abhinavagupta locates this order-less basis in the knower / support (pramātṛ), which is the great Lord.
-- **G-CONC** [CONCLUSION/RECONSTRUCTED]: Ordered presentation in awareness requires a support not exhausted by that presented order.
-- **G-IMPLICIT** [IMPLICIT_PREMISE/IMPLICIT]: A genuine support of order must be such that its own nature does not presuppose the order it grounds (else regress).
+- **G-BRIDGE** [IMPLICIT_PREMISE/RECONSTRUCTED]: In this kārikā, pratibhā characterizes / is the form of the support (āśraya) under discussion.
+- **G-DIST** [TEXTUAL_CLAIM/RECONSTRUCTED]: Bearing / presenting an order is not the same as being constituted by that order.
+- **G-CONC** [CONCLUSION/RECONSTRUCTED]: The pratibhā that bears ordered presentation is itself characterized as akrama (order-less); the passage characterizes the relevant support/knower accordingly as order-less.
+- **G-IC1** [INTERPRETIVE_CLAIM/RECONSTRUCTED]: Abhinavagupta identifies this order-less support with the knower (pramātṛ), the great Lord.
 
 **Inferences:**
-- **G-INF1** [CONCEPTUAL_DISTINCTION]: G-TC1, G-TC2 → G-TC3 — If X bears order but is not itself ordered, then X is not a member of the ordered series (order-bearing ≠ ordered).
-- **G-INF2** [TRANSCENDENTAL]: G-TC3, G-IMPLICIT → G-CONC — Ordered presentation presupposes a support whose nature is not itself a further ordered member — otherwise an infinite regress of ordered supports.
-- **G-INF3** [INTERPRETIVE_CLAIM]: G-TC3 → G-IC1 — The C1 identifies this order-less support with the knower (pramātṛ) / great Lord — an interpretive identification, not a bare textual assertion.
+- **G-INF1** [CONCEPTUAL_DISTINCTION]: G-TC1, G-TC2 → G-DIST — If X bears an order but is itself not ordered (G-TC1 + G-TC2), then bearing/presenting an order is not the same as being constituted by that order (G-DIST).
+- **G-INF2** [CONCEPTUAL_DISTINCTION]: G-DIST, G-BRIDGE → G-CONC — Since pratibhā (which characterizes the support under discussion, G-BRIDGE) is not constituted by the order it bears (G-DIST), the support is characterized as order-less (G-CONC).
 
 ### REVIEW — the four questions
 1. Is each proposition actually licensed by the supplied material (the source text / translation / context)?
@@ -87,6 +91,8 @@ memory (the knower-rest); eight the whole dealing (the true-and-false division);
 **Passage:** `pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md` · **Structure:** OBJECTION_REPLY
 
 ### SOURCE (the material a reviewer judges against)
+> **PRIMARY TEXT:** exact Sanskrit spans not yet attached for this gold — required before SPECIALIST_REVIEWED promotion (this review is against the C1/L2 packet, not the primary Sanskrit).
+
 **Commentary (C1):**
 The objection is straightforward: if reflexive awareness is joined to linguistic form, why is it not
 simply a conceptual construction (*vikalpa*)? Abhinavagupta answers by asking what construction
@@ -126,12 +132,11 @@ what a construction actually is. The construction (vikalpa, the vivida-kalpanā)
 - **G2-TC1** [TEXTUAL_CLAIM/EXPLICIT]: Conceptual construction (vikalpa) operates by combining, differentiating, or determining contents.
 - **G2-TC2** [TEXTUAL_CLAIM/EXPLICIT]: The awareness expressed as 'I' (ahaṃ-pratyavamarśa) is not treated as one more relation constructed between independently given elements.
 - **G2-CONC** [CONCLUSION/RECONSTRUCTED]: Linguistic articulation does not show that the underlying self-awareness is itself produced by conceptual determination.
-- **G2-IMPL** [IMPLICIT_PREMISE/IMPLICIT]: Being expressible in language does not entail being a product of conceptual determination (articulation ≠ construction).
+- **G2-IMPL** [IMPLICIT_PREMISE/IMPLICIT/IMPLIES_ON_RECONSTRUCTION]: Being expressible in language does not entail being a product of conceptual determination (articulation ≠ construction).
 - **G2-IC1** [INTERPRETIVE_CLAIM/RECONSTRUCTED]: Abhinavagupta preserves a distinction between reflexive self-awareness and the conceptual operations that articulate it.
 
 **Inferences:**
-- **G2-INF1** [OBJECTION_REPLY]: G2-TC1, G2-TC2 → G2-CONC — The objection is answered by showing what construction does (G2-TC1) and that the 'I'-awareness is not one of those constructed relations (G2-TC2) — so the 'I' is not shown to be a construction.
-- **G2-INF2** [CONCEPTUAL_DISTINCTION]: G2-CONC → G2-IC1 — The conclusion preserves the distinction between reflexive self-awareness and conceptual operations.
+- **G2-INF1** [CONCEPTUAL_DISTINCTION]: G2-TC1, G2-TC2 → G2-CONC — The objection is answered by showing what construction does (G2-TC1) and that the 'I'-awareness is not one of those constructed relations (G2-TC2) — so the 'I' is not shown to be a construction.
 
 ### REVIEW — the four questions
 1. Is each proposition actually licensed by the supplied material (the source text / translation / context)?
@@ -150,6 +155,8 @@ what a construction actually is. The construction (vikalpa, the vivida-kalpanā)
 **Research question:** Can the support of the ordered powers itself be ordered?
 
 ### SOURCE (the material a reviewer judges against)
+> **PRIMARY TEXT:** exact Sanskrit spans not yet attached for this gold — required before SPECIALIST_REVIEWED promotion (this review is against the C1/L2 packet, not the primary Sanskrit).
+
 **Commentary (C1):**
 The powers — knowledge, memory, removal — have been established. But a power needs a support, and the
 question is what supports them. Kārikā 1 gives the support's own form in the image of the pratibhā:
@@ -185,8 +192,8 @@ memory (the knower-rest); eight the whole dealing (the true-and-false division);
 - **G3-ASSUM** [IMPLICIT_PREMISE/RECONSTRUCTED/ASSUMES_FOR_ARGUMENT]: The support (āśraya) of the powers is itself a member of the ordered sequence — it is ordered.
 - **G3-TC1** [TEXTUAL_CLAIM/EXPLICIT/ASSERTS]: pratibhā (the flashing) runs through / bears the order of the word-objects (tattatpadārthakramarūṣitā).
 - **G3-TC2** [TEXTUAL_CLAIM/EXPLICIT/ASSERTS]: pratibhā is not itself constituted by that order (akrama — order-less).
-- **G3-REG** [IMPLICIT_PREMISE/IMPLICIT/ASSERTS]: If a support of order were itself ordered, it would require a further support of its own ordering — an infinite regress.
-- **G3-ABS** [CONCLUSION/RECONSTRUCTED/ASSERTS]: If the support were ordered, an infinite regress of ordered supports would follow — which is absurd.
+- **G3-REG** [IMPLICIT_PREMISE/IMPLICIT/EDITORIAL_RATIONAL_RECONSTRUCTION]: If a support of order were itself ordered, it would require a further support of its own ordering — an infinite regress.
+- **G3-ABS** [CONCLUSION/RECONSTRUCTED/EDITORIAL_RATIONAL_RECONSTRUCTION]: If the support were ordered, an infinite regress of ordered supports would follow — which is absurd.
 - **G3-TC3** [TEXTUAL_CLAIM/RECONSTRUCTED/ASSERTS]: The support (āśraya) of the powers is not itself a member of the ordered sequence.
 - **G3-CONC** [CONCLUSION/RECONSTRUCTED/ASSERTS]: The support of ordered presentation is itself order-less (akrama) — the order-less, infinite-consciousness-form knower.
 - **G3-IC1** [INTERPRETIVE_CLAIM/RECONSTRUCTED/ASSERTS]: Abhinavagupta identifies this order-less support with the knower (pramātṛ), the great Lord.
@@ -216,6 +223,8 @@ memory (the knower-rest); eight the whole dealing (the true-and-false division);
 **Research question:** Is the essence of light bare showing (prakāśa) or reflexive awareness (vimarśa)?
 
 ### SOURCE (the material a reviewer judges against)
+> **PRIMARY TEXT:** exact Sanskrit spans not yet attached for this gold — required before SPECIALIST_REVIEWED promotion (this review is against the C1/L2 packet, not the primary Sanskrit).
+
 **Commentary (C1):**
 The claim is that the essence of light is the reflexive awareness, not the bare showing of objects.
 The crystal supplies the contrast: a light that merely showed the world without knowing that it showed
@@ -260,7 +269,6 @@ in hurried speech, we go from line to line, from place to place, a
 **Inferences:**
 - **G4-INF-DIST** [CONCEPTUAL_DISTINCTION]: G4-TC1, G4-CRYSTAL → G4-DIST — If manifestation were only bare showing (G4-TC1), it would be like crystal — it would reflect but not know it reflected (G4-CRYSTAL). Hence bare showing is distinct from self-aware manifesting (G4-DIST).
 - **G4-INF-CONC** [CONCEPTUAL_DISTINCTION]: G4-TC2, G4-DIST → G4-CONC — The distinguishing mark of consciousness is self-awareness in manifesting (G4-TC2 + G4-DIST); that is what makes the light conscious rather than a thing (G4-CONC).
-- **G4-INF-IC** [INTERPRETIVE_CLAIM]: G4-CONC → G4-IC1 — The C1 identifies the self-knowing light with the parā-vāk and the Lord's freedom/lordship — an interpretive identification, not a bare textual assertion.
 
 > **Risk area — is vimarśa-as-essence textual or reconstructed?** We treat the C1 as asserting that the essence of light is reflexive awareness. If you read it as only inferred, say so.
 
@@ -281,6 +289,8 @@ in hurried speech, we go from line to line, from place to place, a
 **Research question:** What does 'the difference is real' mean — does the passage positively affirm difference as the self's manifestation, or negatively establish it by refuting the 'un-explainable ignorance' thesis?
 
 ### SOURCE (the material a reviewer judges against)
+> **PRIMARY TEXT:** exact Sanskrit spans not yet attached for this gold — required before SPECIALIST_REVIEWED promotion (this review is against the C1/L2 packet, not the primary Sanskrit).
+
 **Commentary (C1):**
 The sharpest objection to the unity: if consciousness is one and the difference of things is mere
 ignorance, how is action possible? For action needs an agent and an object, distinct; but if all is
@@ -319,15 +329,13 @@ consciousness is one, and the difference is ignorance, then w
 ### PROPOSED ARGUMENT
 **Propositions:**
 - **G5-OBJ** [OBJECTION/EXPLICIT/ATTRIBUTES_TO_OPPONENT]: If consciousness is one and the difference of things is mere ignorance, how is action possible — for action needs a distinct agent and object?
-- **G5-TC1** [TEXTUAL_CLAIM/EXPLICIT/ASSERTS]: The single re-recollection marked by the will-to-do (cikīrṣālakṣaṇa parāmarśa) joins the agent and the object; action is possible in the one consciousness.
+- **G5-TC1** [CONCLUSION/EXPLICIT/ASSERTS]: The single re-recollection marked by the will-to-do (cikīrṣālakṣaṇa parāmarśa) joins the agent and the object; action is possible in the one consciousness.
 - **G5-TC2** [TEXTUAL_CLAIM/EXPLICIT/ASSERTS]: The difference cannot be an 'un-explainable' (anirvācya) ignorance: of whom would it be? The one-form reality cannot have it; the separate souls cannot bear it; 'un-explainable' is a refusal to answer.
 - **G5-CONC-A** [CONCLUSION/RECONSTRUCTED/ASSERTS]: The difference is real — cognition rests in difference as it does not rest in non-difference.
 - **G5-CONC-B** [CONCLUSION/RECONSTRUCTED/ASSERTS]: The difference is real as the self's own manifestation — the positive account of difference (developed in V3-G/H, V2-S).
 
 **Inferences:**
-- **G5-INF-ANS** [OBJECTION_REPLY]: G5-OBJ → G5-TC1 — The objection (G5-OBJ) is answered by the one will-recollection that joins agent and object (G5-TC1) — action needs no real separation, only the one will-to-do.
 - **G5-INF-NEG** [REDUCTIO]: G5-TC2 → G5-CONC-A — The 'un-explainable ignorance' account collapses (G5-TC2) — so the difference is real in the sense of not being mere ignorance (G5-CONC-A).
-- **G5-INF-POS** [OTHER]: G5-TC1, G5-TC2 → G5-CONC-B — Given action is the one will (G5-TC1) and the difference is not ignorance (G5-TC2), the difference is the self's own manifestation — the positive account (G5-CONC-B), developed fully in V3-G/H, V2-S.
 
 > **Risk area — is this genuine interpretive ambiguity, or local-vs-systematic scope?** We now type it as INTERPRETIVE_SCOPE (Reading A locally entailed; Reading B a contextually-supported extension). Rule on whether that is right.
 

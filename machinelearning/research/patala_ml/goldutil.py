@@ -23,7 +23,8 @@ VALID_EXPLICITNESS = {"EXPLICIT", "RECONSTRUCTED", "IMPLICIT"}
 # well-formedness enums (type/integrity ONLY — never validate whether the label is *correct*;
 # that is scholarly review). "Validator establishes well-formedness; reviewers establish validity."
 VALID_COMMITMENTS = {"ASSERTS", "DENIES", "PRESUPPOSES", "ASSUMES_FOR_ARGUMENT",
-                     "ATTRIBUTES_TO_OPPONENT", "QUOTES", "RECONSTRUCTED", "DERIVES"}
+                     "ATTRIBUTES_TO_OPPONENT", "QUOTES", "RECONSTRUCTED", "DERIVES",
+                     "IMPLIES_ON_RECONSTRUCTION", "EDITORIAL_RATIONAL_RECONSTRUCTION"}
 VALID_STATUSES = {"MACHINE_PROPOSED", "CANDIDATE", "SINGLE_EDITOR_GOLD", "DOUBLE_REVIEWED_GOLD",
                   "ADJUDICATED_GOLD", "SUPPORTED", "PROPOSED", "REVIEWED"}
 VALID_ALIGNMENT_LEVELS = {"LEXICAL", "CONCEPTUAL", "PROPOSITIONAL"}

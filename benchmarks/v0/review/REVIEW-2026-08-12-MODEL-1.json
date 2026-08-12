@@ -1,0 +1,27 @@
+{
+  "review_id": "REVIEW-2026-08-12-MODEL-1",
+  "target": "ARG-GOLD-001..005",
+  "date": "2026-08-12",
+  "reviewer": {
+    "kind": "AI_MODEL",
+    "name": "GPT-5.6 Sol (independent reviewer agent)",
+    "independence": "EXTERNAL_TO_BUILDER_AGENT",
+    "scope": "RECONSTRUCTION_CONSISTENCY",
+    "source_basis": "C1_L2_PACKET"
+  },
+  "status_note": "This is a MODEL review of reconstruction consistency against the C1+L2 packet. It is NOT specialist philological validation of the Sanskrit (the packet does not yet present the primary Sanskrit passage as the review basis, and the L2s were produced from prior argument maps, so there is derivational circularity in treating C1/L2 alone as ultimate gold). Recorded as MODEL_INDEPENDENT_REVIEWED; it must NOT be promoted to INDEPENDENT_REVIEWED / SPECIALIST_REVIEWED without a human Sanskritist against the primary text.",
+  "outcomes": {
+    "ARG-GOLD-001": { "decision": "REVISE", "severity": "MAJOR", "summary": "order/order-less distinction good; the regress/transcendental layer is not licensed by the supplied source." },
+    "ARG-GOLD-002": { "decision": "REVISE", "severity": "MINOR", "summary": "strongest candidate; argument basically right; one structural correction (wire or deprecate the implicit warrant; objection is dialectical context, not a premise)." },
+    "ARG-GOLD-003": { "decision": "REJECT_AS_TEXTUAL_GOLD", "severity": "MAJOR", "summary": "the reductio/regress was imposed rather than recovered; demote to an explicitly-provenanced rational reconstruction (not attributed to the author without further evidence)." },
+    "ARG-GOLD-004": { "decision": "REVISE", "severity": "MINOR_MODERATE", "summary": "core claim strongly licensed; one evidential claim (parā-vāk/lordship identification) is incorrectly represented as an inference." },
+    "ARG-GOLD-005": { "decision": "REVISE", "severity": "MAJOR", "summary": "INTERPRETIVE_SCOPE is the right diagnosis, but the graph still locally infers the systematic reading; objection is a response relation, not an inference." }
+  },
+  "ir_findings": [
+    { "id": "IR-F-01", "problem": "INFERENCE vs DIALECTICAL RELATION conflated (ARG-005).", "fix": "separate the INFERENTIAL graph (P1+P2--Rule->C) from a DIALECTICAL graph (objection/reply/attack/qualification/counterexample); Attack/RESPONDS_TO are not inferential premises." },
+    { "id": "IR-F-02", "problem": "EVIDENTIAL GROUNDING represented as inference (ARG-001 G-INF3, ARG-004 G4-INF-IC): 'order-less support -> therefore Great Lord' / 'self-aware light -> therefore parā-vāk'.", "fix": "those identifications are further things the passage SAYS -> a TEXTUAL_GROUNDING edge, not a LOGICAL_DERIVATION." },
+    { "id": "IR-F-03", "problem": "support_scope is genuinely FORCED by gold (ARG-005), not speculative.", "fix": "model LOCAL_PASSAGE/LOCAL_SECTION/SAME_WORK/CROSS_WORK/SYSTEMATIC_RECONSTRUCTION — likely on a GroundingLink / proposition-support assertion, not necessarily a new top-level object." },
+    { "id": "IR-F-04", "problem": "Commitment needs a RECONSTRUCTION force (ARG-003 G3-REG had commitment=ASSERTS, too strong).", "fix": "retain IMPLIES_ON_RECONSTRUCTION / EDITORIAL_RATIONAL_RECONSTRUCTION so model reconstructions cannot silently become author commitments." }
+  ],
+  "consequence_for_build": "ARG-002 v2 (revised objection/reply with the objection kept as dialectical context) is the proposed target for the py-aspic engineering pilot, with the caveat that the pilot evaluates the IR->ASPIC adapter/semantics against an independently-critiqued reconstruction, NOT certification of the Sanskrit interpretation."
+}

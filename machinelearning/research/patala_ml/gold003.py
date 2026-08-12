@@ -57,14 +57,14 @@ def build_gold_003() -> dict:
          "task_level": "B_ARGUMENT_RECONSTRUCTION", "candidate_reconstruction": True,
          "text": "If a support of order were itself ordered, it would require a further support of its own ordering — an infinite regress.",
          "kind": "IMPLICIT_PREMISE", "explicitness": "IMPLICIT",
-         "commitment": "ASSERTS", "derived_from": "implicit (the regress argument)",
+         "commitment": "EDITORIAL_RATIONAL_RECONSTRUCTION", "derived_from": "implicit (the regress argument)",
          "grounding": _grounding(), "boundary": "", "status": "MACHINE_PROPOSED"},
         # the absurd consequence drawn from the hypothesis
         {"proposition_id": "G3-ABS",
          "task_level": "B_ARGUMENT_RECONSTRUCTION", "candidate_reconstruction": True,
          "text": "If the support were ordered, an infinite regress of ordered supports would follow — which is absurd.",
          "kind": "CONCLUSION", "explicitness": "RECONSTRUCTED",
-         "commitment": "ASSERTS", "derived_from": "REDUCTIO over G3-ASSUM + G3-REG",
+         "commitment": "EDITORIAL_RATIONAL_RECONSTRUCTION", "derived_from": "REDUCTIO over G3-ASSUM + G3-REG",
          "grounding": _grounding(), "boundary": "", "status": "MACHINE_PROPOSED"},
         # the textual conclusion the C1 states (support is not a member of the order)
         {"proposition_id": "G3-TC3",
@@ -139,11 +139,21 @@ def build_gold_003() -> dict:
 
     research_question = "Can the support of the ordered powers itself be ordered?"
 
+    category = "ALT_RATIONAL_RECONSTRUCTION"  # REVIEW-2026-08-12-MODEL-1: REJECTED as textual gold.
+    # Demoted from textual gold. The reductio/regress is an explicitly-provenanced modern/editorial
+    # reconstruction; it is NOT attributed to Abhinavagupta without further evidence, and a model
+    # should NOT be trained/evaluated to recover the regress from this passage.
+
     review_note = {
         "SAFE_GOLD": "pratibhā bears order + pratibhā is akrama -> the support is not exhausted by the order it supports. This is the extraction target (task_level A).",
         "STRONG_RECONSTRUCTION": "if the support itself belonged to the order -> a further support would be required -> regress -> therefore the support is akrama. The regress warrant (G3-REG, G3-ABS, G3-INF-RED) is marked candidate_reconstruction and is NOT a required extraction target until a specialist confirms the regress is the intended warrant.",
         "status": "MACHINE_PROPOSED",
     }
+
+    category = "ALT_RATIONAL_RECONSTRUCTION"  # REVIEW-2026-08-12-MODEL-1: REJECTED as textual gold.
+    # Demoted from textual gold. The reductio/regress is an explicitly-provenanced modern/editorial
+    # reconstruction; it is NOT attributed to Abhinavagupta without further evidence, and a model
+    # should NOT be trained/evaluated to recover the regress from this passage.
 
     review_note = {
         "SAFE_GOLD": "pratibhā bears order + pratibhā is akrama -> the support is not exhausted by the order it supports. This is the extraction target (task_level A).",
@@ -175,6 +185,7 @@ def build_gold_003() -> dict:
         "passage": V2O_PASSAGE_ID,
         "title": "The Order-less Support by Reductio (V2-O)",
         "structure": "REDUCTIO",
+        "category": category,
         "review_note": review_note,
         "research_question": research_question,
         "nodes": nodes,
