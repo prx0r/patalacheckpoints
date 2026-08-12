@@ -87,7 +87,7 @@ TECH_SENSE = {
 
 
 def load_lemma_records(l0dir: str) -> dict:
-    """lemma → list of {gloss, passage_locator, id}."""
+    """lemma → list of {gloss, passage_locator, id, source_text, raw_fragment, sanskrit_iast}."""
     d = defaultdict(list)
     for f in Path(l0dir).glob("*.l0.jsonl"):
         chunk = f.name[: -len(".l0.jsonl")]
@@ -97,18 +97,31 @@ def load_lemma_records(l0dir: str) -> dict:
             gloss = r.get("literal_gloss", "")
             if not lem or not gloss:
                 continue
+            # extract the IAST Sanskrit from the raw_fragment's parenthetical
+            import re as _re
+            m = _re.search(r"\(([^()]+)\)", r.get("raw_fragment", ""))
+            skt = m.group(1).strip() if m else ""
             d[lem].append({"gloss": gloss, "id": r.get("id"),
-                           "locator": f"{chunk}:L{r.get('line_id')}"})
+                           "locator": f"{chunk}:L{r.get('line_id')}",
+                           "source_text": r.get("source_text", ""),
+                           "raw_fragment": r.get("raw_fragment", ""),
+                           "sanskrit_iast": skt})
     return d
 
 
-def build_fixture(lemma, gloss, locator, sense, extra_senses, is_no_unique=False):
+def build_fixture(lemma, gloss, locator, sense, extra_senses, is_no_unique=False, rec=None):
     f = {
         "surface": gloss, "lemma": lemma, "passage_locator": locator,
         "candidate_senses": extra_senses if is_no_unique else [sense] + extra_senses,
         "preferred": None if is_no_unique else sense,
-        "evidence": {"local_context": [gloss], "same_work_parallels": [],
-                     "lexical_sources": [], "commentary": []},
+        # enrichment per the external review (docs/P3_EDITORIAL_REVIEW.md): real Sanskrit context,
+        # not just the English gloss that already embodies the label.
+        "passage_id": (rec or {}).get("id"),
+        "source_span_id": (rec or {}).get("locator"),
+        "sanskrit_token": (rec or {}).get("sanskrit_iast"),
+        "sanskrit_clause": (rec or {}).get("source_text", ""),
+        "evidence": {"local_context": [(rec or {}).get("source_text", gloss)],
+                     "same_work_parallels": [], "lexical_sources": [], "commentary": []},
         "review_state": "MACHINE_DRAFT",  # to be promoted to SINGLE_EDITOR_GOLD by human review
     }
     return f
@@ -138,7 +151,7 @@ def main() -> int:
                 continue
             seen.add((lem, preferred))
             fi = build_fixture(lem, r["gloss"], r["locator"], preferred,
-                               [s for s in CANONICAL.get(lem, ["?"]) if s != preferred])
+                               [s for s in CANONICAL.get(lem, ["?"]) if s != preferred], rec=r)
             fixtures.append(fi); easy += 1
             break
 
@@ -157,7 +170,7 @@ def main() -> int:
                 continue
             seen.add((lem, ts))
             alt = [s for s in CANONICAL.get(lem, []) if s != ts]
-            fi = build_fixture(lem, r["gloss"], r["locator"], ts, alt)
+            fi = build_fixture(lem, r["gloss"], r["locator"], ts, alt, rec=r)
             fixtures.append(fi); tech += 1
             break
 
@@ -178,7 +191,7 @@ def main() -> int:
                 continue
             seen.add((lem, preferred))
             fi = build_fixture(lem, r["gloss"], r["locator"], preferred,
-                               [s for s in senses if s != preferred])
+                               [s for s in senses if s != preferred], rec=r)
             fixtures.append(fi); poly += 1
             break
 
@@ -194,7 +207,7 @@ def main() -> int:
             continue
         seen.add((lem, None))
         fi = build_fixture(lem, r["gloss"], r["locator"], None, CANONICAL.get(lem, ["?", "?"]),
-                           is_no_unique=True)
+                           is_no_unique=True, rec=r)
         fixtures.append(fi); nou += 1
 
     # trim/pad to n

@@ -371,3 +371,28 @@ P-010 (ranker.py rejected as P3 witness: 0.76 vs 0.81 baseline, 0 abstention).
 
 **Next:** P4 alignment benchmark (the next proof layer, no human needed to build the held-out set from
 checked L0 pairs).
+
+## Agent L0 — incorporated external review of commit 70f237b (2026-08-12)
+
+External review (`patala_review_70f237b.zip` from R2) found real flaws; all fixed:
+
+**P2 blind review — 3 fixes:**
+1. Machine stratum leaked via `review_id`+`cell` → now opaque IDs, cell removed from reviewer-facing data.
+2. Scorer read `cell` from the review itself → now joins ONLY via the separate secret unblinding key.
+3. V-/H+ and V+/H- scored per-witness (not one generic verdict) → now Vidyut-vs-human and
+   Heritage-vs-human agreement reported separately.
+
+Regenerated the genuinely-blind set (150 cases, shuffled, key separate): `/tmp/p2review_fixed.jsonl` +
+secret `/tmp/p2review_key.jsonl`. Reviewer sees only `/tmp/p2review_fixed_blind.csv`.
+
+**P3 lexical gold — circularity fixed:**
+- Fixtures now carry real Sanskrit context (sanskrit_token, sanskrit_clause, passage_id, source_span_id),
+  not just the English gloss that embodied the label.
+- The 4 duplicate/incompatible-label fixtures are KEPT (they're adversarial/abstention tests) but now
+  have the context to adjudicate them. Review state stays MACHINE_DRAFT (not gold).
+
+**Files:** `pipeline/build_p2_review.py` (fixed), `pipeline/score_p2_review.py` (fixed),
+`docs/P2_REVIEW_PROTOCOL.md`, `docs/P3_EDITORIAL_REVIEW.md`, `pipeline/build_p3_lexical_gold.py` (enriched).
+
+Per the review: P2 not claimed human-calibrated until the 150 cases are reviewed; P3 not promoted until
+an editor re-reads the enriched context.
