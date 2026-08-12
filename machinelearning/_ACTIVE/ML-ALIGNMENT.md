@@ -58,6 +58,14 @@ log_odds update:  posterior += weighted_lbf
 
 ## 1b. The philosophy-IR → scholarly-graph mapping (the two-ontology guard)
 
+> **NOT FROZEN.** This mapping is a guard, not a contract. Two rows are deliberately left OPEN until the
+> real five golds force a decision:
+> - **`Proposition`**: needs a **stable identity** (Commitment/Inference/Attack/SemanticAlignment/ReviewEvent all
+>   target it), distinguished from **version/reconstruction** (v1 wording, v2 scope, v3 attribution). Likely
+>   shape: immutable/versioned annotations under a stable logical root (`pt:prop:ipvv:recognition-identity` → v1/v2/v3).
+> - **`ResearchQuestion`**: `Annotation` *or* a durable typed `Object` — left unresolved until use cases tell
+>   us whether questions need durable cross-corpus identity.
+
 The argument/IR objects (`ARGUMENT-IR-VISION.md`) must be a **specialization/projection of the existing
 scholarly graph** (`SCHOLARLY_GRAPH.md`, `data/corpus/graph.ts`) — NOT a second parallel ontology. The
 scholarly graph is: `Object` (durable identity) vs `Annotation` (contestable, carries origin/status/

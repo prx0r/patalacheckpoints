@@ -1,0 +1,450 @@
+{
+  "object_id": "pt:vertical:ipvv:chunkV2-O-saptamo-vimarsa:g-tc2",
+  "task": "VERTICAL_OBJECT",
+  "gold_id": "ARG-GOLD-001",
+  "research_question": null,
+  "argument": {
+    "gold_id": "ARG-GOLD-001",
+    "title": "The Order-less Support of the Powers (V2-O)",
+    "structure": null
+  },
+  "inferences_using_proposition": [
+    {
+      "inference_id": "G-INF1",
+      "scheme": "CONCEPTUAL_DISTINCTION",
+      "premise_ids": [
+        "G-TC1",
+        "G-TC2"
+      ],
+      "conclusion_ids": [
+        "G-TC3"
+      ]
+    }
+  ],
+  "proposition": {
+    "proposition_id": "G-TC2",
+    "text": "pratibhā is not itself constituted by that order (akrama — order-less).",
+    "kind": "TEXTUAL_CLAIM",
+    "explicitness": "EXPLICIT",
+    "commitment": null,
+    "task_level": null
+  },
+  "c1": {
+    "c1_id": "V2O-orderless-support",
+    "excerpt": "The powers — knowledge, memory, removal — have been established. But a power needs a support, and the\nquestion is what supports them. Kārikā 1 gives the support's own form in the image of the pratibhā:\nthe flashing that runs through the ordered word-objects, seasoned with their order, touched by it —\nbut itself not ordered. Its support is therefore not anything ordered, but the order-less,\ninfinite-consciousness-form knower. And that knower is the great Lord.\n\nThe point of kārikā 1 is to establish that the support has this form — order-less, conscious, free —\nbefore the following verses prove "
+  },
+  "l2": {
+    "l2_id": "pilot_V2O_L2_read.md",
+    "excerpt": "# IPVV — V2-O: L2 READ (freestyle, from the argument map)\n\n*2026-08-11. Readable prose for the saptamo vimarśa (the one-support of the powers), from\n`pilot_V2O_ARGUMENT_MAP.md`. Dyczkowski-mode.*\n\n---\n\n**The one support of all the powers**\n\nThe powers — knowledge, memory, removal — have been established. But a power does not float free; it\nneeds a support (āśraya). And the question now is: what supports the powers? The ordinary answer would\nmake the support inert, like the fire's relation to its powers of burning, cooking, and sweating. But\nAbhinavagupta insists this is wrong. The support of t"
+  },
+  "l0_anchors": {
+    "pratibhā": [
+      {
+        "l0_id": "chunkV2-O-saptamo-vimarsa:L20:T44",
+        "line_id": 20,
+        "lemma_iast": "pratibhā ...",
+        "gloss": "the-pratibhā",
+        "source_span": {
+          "chunk": "chunkV2-O-saptamo-vimarsa",
+          "line": 20,
+          "char_start": 3241,
+          "char_end": 3275
+        },
+        "sanskrit": "pratibhā ...",
+        "source_text": "> \"[and]-and-this (yā caiṣā), [and]-the-pratibhā (pratibhā ...)\""
+      },
+      {
+        "l0_id": "chunkV2-O-saptamo-vimarsa:L32:T114",
+        "line_id": 32,
+        "lemma_iast": "pratibhā",
+        "gloss": "the-pratibhā",
+        "source_span": {
+          "chunk": "chunkV2-O-saptamo-vimarsa",
+          "line": 32,
+          "char_start": 5720,
+          "char_end": 5749
+        },
+        "sanskrit": "pratibhā",
+        "source_text": "> \"[and]-and-this (yā caiṣā), [and]-the-pratibhā (pratibhā), [and]-with-the-that-that-word-object-order-seasoned (tattatpadārthakramarūṣitā);"
+      },
+      {
+        "l0_id": "chunkV2-O-saptamo-vimarsa:L35:T120",
+        "line_id": 35,
+        "lemma_iast": "pratibhāti ghaṭa iti",
+        "gloss": "shines-the-jar",
+        "source_span": {
+          "chunk": "chunkV2-O-saptamo-vimarsa",
+          "line": 35,
+          "char_start": 5991,
+          "char_end": 6036
+        },
+        "sanskrit": "pratibhāti ghaṭa iti",
+        "source_text": "[and]-\"shines-the-jar (pratibhāti ghaṭa iti)\", [and]-although (yady api), [and]-the-object-embracing (viṣayam upaśliṣyantī), [and]-this (iyaṃ), [and]-the-action (kriyā), [and]-is-perceived (lakṣyate); [and]-still (tathāpi), [and]-not (na), [and]-of-this (asya), [and]-that (tat), [and]-the-own-light (svajyotiḥ); [and]-but (kintu), [and]-the-consciousness-alone (saṃvedanam eva), [and]-that (tat), [and]-thus (tathā), [and]-shines (bhāti), [and]-\"to-me (māṃ prati), [and]-shines (bhātīti)\", [and]-with-the-knower-residence-ness-alone (pramātṛniṣṭhatayaiva), [and]-from-the-flashing (sphuraṇāt) | [and]-which-is-the-śruti (yac chrutiḥ):"
+      },
+      {
+        "l0_id": "chunkV2-O-saptamo-vimarsa:L42:T155",
+        "line_id": 42,
+        "lemma_iast": "pratibhā",
+        "gloss": "the-pratibhā",
+        "source_span": {
+          "chunk": "chunkV2-O-saptamo-vimarsa",
+          "line": 42,
+          "char_start": 7120,
+          "char_end": 7149
+        },
+        "sanskrit": "pratibhā",
+        "source_text": "> [and]-the-opposite-shining (pratīpabhānaṃ), [and]-the-pratibhā (pratibhā), [and]-of-the-beings (bhāvānām) ...\""
+      },
+      {
+        "l0_id": "chunkV2-O-saptamo-vimarsa:L44:T166",
+        "line_id": 44,
+        "lemma_iast": "tatpratibhānaṃ",
+        "gloss": "that-pratibhāna",
+        "source_span": {
+          "chunk": "chunkV2-O-saptamo-vimarsa",
+          "line": 44,
+          "char_start": 7579,
+          "char_end": 7617
+        },
+        "sanskrit": "tatpratibhānaṃ",
+        "source_text": "[and]-this-is (iti), [and]-with-the-beings'-dharma-ness (bhāvadharmatvena), [and]-having-stated-even (abhidhāyāpi), [and]-\"the-self-resident (ātmasaṃśrayā iti)\", [and]-the-consciousness-rest-ness-alone (saṃvidviśrāntataiva), [and]-said (uktā); [and]-merely (kevalaṃ), [and]-from-the-object-uplifting-following (viṣayollekhānuṣaṅgāt), [and]-the-consciousness-form-alone (saṃvedanarūpam eva), [and]-that-pratibhāna (tatpratibhānaṃ), [and]-without (bahiḥ), [and]-with-the-order-possessing-and-the-rest-dharma-support-ness (sakramatvādidharmādhāratāṃ), [and]-takes-on (dhatte) | [and]-thence, [and]-and (ataś ca), [and]-\"he-he (sa sa iti)\", [and]-the-order-order-less-infinite-form (kramākramādi citrarūpo), [and]-who-is-that (yaḥ), [and]-of-the-word-objects (padārthānāṃ), [and]-of-the-objects (vastūnāṃ), [and]-the-Īśvara-freedom-form-place-time-power-raised (aiśvarasvātantryarūpadeśakālaśaktyutthāpitaḥ), [and]-the-order (kramo), [and]-the-place-time-arrangement (deśakālaparipāṭī), [and]-by-him (tena), [and]-the-seasoned (rūṣitā), [and]-the-made-fitted (upahitā):"
+      },
+      {
+        "l0_id": "chunkV2-O-saptamo-vimarsa:L48:T187",
+        "line_id": 48,
+        "lemma_iast": "yā pratibhā",
+        "gloss": "which-is-the-pratibhā",
+        "source_span": {
+          "chunk": "chunkV2-O-saptamo-vimarsa",
+          "line": 48,
+          "char_start": 8404,
+          "char_end": 8445
+        },
+        "sanskrit": "yā pratibhā",
+        "source_text": "[and]-this-is (iti), [and]-in-the-stated-manner (kathitanītyā), [and]-which-is-the-pratibhā (yā pratibhā), [and]-\"this (eṣā iti)\", [and]-of-all (sarvasya), [and]-always (sadā), [and]-the-self-manifesting (svaprakāśā); [and]-in-truth, [and]-and (vastutaś ca), [and]-with-the-inner-turned-form (antarmukhena vapuṣā), [and]-from-the-place-time-measure-less-ness (deśakālakalanāvaikalyāt), [and]-the-order-less (akramā), [and]-he-alone (sa eva), [and]-the-Lord (bhagavān), [and]-the-infinite-consciousness-form (anantacidrūpaḥ), [and]-the-place-time-and-the-rest-cut-free-consciousness-own-nature (deśakālādiparicchedavirahitasaṃvitsvabhāvaḥ), [and]-of-the-valid-means-valid-result-mass (pramāṇapramitisamūhasya), [and]-with-the-as-wished-joining-and-the-rest-making-freedom-joined (yathārucisaṃyojanādikaraṇasvātantryayuktaḥ), [and]-the-pure-'I'-re-reflexive-awareness-made (śuddhāhaṃpratyavamarśamayaḥ), [and]-of-the-conceived-lords (kalpiteśvarāṇāṃ), [and]-of-the-Brahmā-Viṣṇu-and-the-rest (brahmaviṣṇvādīnāṃ), [and]-with-the-own-part-coronation-conceived-lordship (svāṃśābhiṣekopakalpitaiśvaryo), [and]-the-great-Lord (maheśvaraḥ), [and]-the-knower (pramātā) | [and]-she, [and]-and (sā ca), [and]-the-pratibhā (pratibhā), [and]-the-un-deniable (anapahnavanīyā)\", [and]-this-is (iti), [and]-with-the-inner-turned-form (antarmukhena vapuṣā), [and]-the-support (āśrayaḥ), [and]-the-established-alone (siddha eva) | [and]-not-here (na), [and]-the-other-effort (atra yatnāntaram), [and]-the-to-be-placed (āstheyam iti), [and]-with-the-'ca' (cena), [and]-he-indicates (dyotayati) | [and]-the-sūtra-meaning (sūtrārtham), [and]-he-brings-in (avatārayati), [and]-\"and-as-much (yāvacca iti)\" | [and]-the-'ca'-meaning (cārtho), [and]-explained (vyākhyātaḥ) | [and]-\"that-which-anything-manifests (yat kiñcid ābhāsate), [and]-of-that (tasya), [and]-the-inner-turned (antarmukhaṃ), [and]-which-is-the-manifestation (yad avabhāsanaṃ); [and]-he (sa), [and]-the-self (ātmā), [and]-the-knower (pramātā); [and]-he-alone, [and]-and (sa eva ca), [and]-the-own-nature (svabhāvaḥ); [and]-that-very, [and]-and (tad eva ca), [and]-the-lordship (aiśvaryam iti), [and]-the-connection (saṃbandhaḥ) | [and]-the-'ca'-meaning-alone (cārtham eva), [and]-in-the-prior-object-established-ness (pūrvavastusiddhāv), [and]-of-this (asya), [and]-the-effortless-established-ness (ayatnasiddhatvam iti), [and]-this-form-aggregation-marker (evaṃvidhasamuccayalakṣaṇaṃ), [and]-to-determine (nirūpayituṃ), [and]-the-previously-said (pūrvoktam), [and]-he-echoes (anubhāṣate), [and]-with-the-summary-conclusion (saṃkṣepanigamanena), [and]-\"thus-this (tad evam iti)\" | [and]-\"there (tatra iti)\", [and]-in-the-thus-established-being (evam upapādite sati) | [and]-with-the-'krama'-word-alone (kramapadenaiva), [and]-the-external-ness (bāhyatā), [and]-invoked (ākṣiptā) | [and]-she, [and]-and (sā ca):"
+      },
+      {
+        "l0_id": "chunkV2-O-saptamo-vimarsa:L48:T211",
+        "line_id": 48,
+        "lemma_iast": "pratibhā",
+        "gloss": "the-pratibhā",
+        "source_span": {
+          "chunk": "chunkV2-O-saptamo-vimarsa",
+          "line": 48,
+          "char_start": 9531,
+          "char_end": 9560
+        },
+        "sanskrit": "pratibhā",
+        "source_text": "[and]-this-is (iti), [and]-in-the-stated-manner (kathitanītyā), [and]-which-is-the-pratibhā (yā pratibhā), [and]-\"this (eṣā iti)\", [and]-of-all (sarvasya), [and]-always (sadā), [and]-the-self-manifesting (svaprakāśā); [and]-in-truth, [and]-and (vastutaś ca), [and]-with-the-inner-turned-form (antarmukhena vapuṣā), [and]-from-the-place-time-measure-less-ness (deśakālakalanāvaikalyāt), [and]-the-order-less (akramā), [and]-he-alone (sa eva), [and]-the-Lord (bhagavān), [and]-the-infinite-consciousness-form (anantacidrūpaḥ), [and]-the-place-time-and-the-rest-cut-free-consciousness-own-nature (deśakālādiparicchedavirahitasaṃvitsvabhāvaḥ), [and]-of-the-valid-means-valid-result-mass (pramāṇapramitisamūhasya), [and]-with-the-as-wished-joining-and-the-rest-making-freedom-joined (yathārucisaṃyojanādikaraṇasvātantryayuktaḥ), [and]-the-pure-'I'-re-reflexive-awareness-made (śuddhāhaṃpratyavamarśamayaḥ), [and]-of-the-conceived-lords (kalpiteśvarāṇāṃ), [and]-of-the-Brahmā-Viṣṇu-and-the-rest (brahmaviṣṇvādīnāṃ), [and]-with-the-own-part-coronation-conceived-lordship (svāṃśābhiṣekopakalpitaiśvaryo), [and]-the-great-Lord (maheśvaraḥ), [and]-the-knower (pramātā) | [and]-she, [and]-and (sā ca), [and]-the-pratibhā (pratibhā), [and]-the-un-deniable (anapahnavanīyā)\", [and]-this-is (iti), [and]-with-the-inner-turned-form (antarmukhena vapuṣā), [and]-the-support (āśrayaḥ), [and]-the-established-alone (siddha eva) | [and]-not-here (na), [and]-the-other-effort (atra yatnāntaram), [and]-the-to-be-placed (āstheyam iti), [and]-with-the-'ca' (cena), [and]-he-indicates (dyotayati) | [and]-the-sūtra-meaning (sūtrārtham), [and]-he-brings-in (avatārayati), [and]-\"and-as-much (yāvacca iti)\" | [and]-the-'ca'-meaning (cārtho), [and]-explained (vyākhyātaḥ) | [and]-\"that-which-anything-manifests (yat kiñcid ābhāsate), [and]-of-that (tasya), [and]-the-inner-turned (antarmukhaṃ), [and]-which-is-the-manifestation (yad avabhāsanaṃ); [and]-he (sa), [and]-the-self (ātmā), [and]-the-knower (pramātā); [and]-he-alone, [and]-and (sa eva ca), [and]-the-own-nature (svabhāvaḥ); [and]-that-very, [and]-and (tad eva ca), [and]-the-lordship (aiśvaryam iti), [and]-the-connection (saṃbandhaḥ) | [and]-the-'ca'-meaning-alone (cārtham eva), [and]-in-the-prior-object-established-ness (pūrvavastusiddhāv), [and]-of-this (asya), [and]-the-effortless-established-ness (ayatnasiddhatvam iti), [and]-this-form-aggregation-marker (evaṃvidhasamuccayalakṣaṇaṃ), [and]-to-determine (nirūpayituṃ), [and]-the-previously-said (pūrvoktam), [and]-he-echoes (anubhāṣate), [and]-with-the-summary-conclusion (saṃkṣepanigamanena), [and]-\"thus-this (tad evam iti)\" | [and]-\"there (tatra iti)\", [and]-in-the-thus-established-being (evam upapādite sati) | [and]-with-the-'krama'-word-alone (kramapadenaiva), [and]-the-external-ness (bāhyatā), [and]-invoked (ākṣiptā) | [and]-she, [and]-and (sā ca):"
+      },
+      {
+        "l0_id": "chunkV2-O-saptamo-vimarsa:L52:T293",
+        "line_id": 52,
+        "lemma_iast": "yā pratibhā iti",
+        "gloss": "which-pratibhā",
+        "source_span": {
+          "chunk": "chunkV2-O-saptamo-vimarsa",
+          "line": 52,
+          "char_start": 12557,
+          "char_end": 12597
+        },
+        "sanskrit": "yā pratibhā iti",
+        "source_text": "[and]-in-this-is (ityatra), [and]-\"the-māyā-knower-organ-range-conceit-ground-ness-alone (māyāpramātṛkaraṇagocaratvābhimānabhūmitvam eva)\", [and]-this-is (iti), [and]-will-be-said (vakṣyate) | [and]-that (tat), [and]-he-shows (darśayati), [and]-\"mind-organ (buddhyakṣa iti)\" | [and]-with-the-'buddhyakṣa'-word (buddhyakṣaśabdena), [and]-the-inner-organ-even (antaḥkaraṇam api), [and]-the-to-be-seen (draṣṭavyam); [and]-the-mind-range-even (manogocaro'pi hi), [and]-the-external-alone (bāhya eva) | [and]-\"thence-alone (ata eva iti)\", [and]-this-very (etad eva), [and]-the-external-ness (bāhyatvaṃ), [and]-with-the-to-be-established-ness (pratipādyatvena), [and]-having-intended (abhisandhāya), [and]-with-the-appearance-word (ābhāsaśabdena), [and]-said (uktam) | [and]-\"how (katham), [and]-in-that-non-statement (tadanuktau), [and]-that (tat), [and]-is-perceived (pratīyate)\" | [and]-he-says (āha), [and]-\"from-the-external-form-ness-alone (bahīrūpatvād eva), [and]-the-object-ness-primary-ness-alone (arthatāpradhānatvam eva), [and]-thence-from-the-reason (etyato hetor), [and]-the-appearance-ness-acceptance (ābhāsatāsvīkāre), [and]-that (tat), [and]-is-perceived (pratīyate iti), [and]-the-fit (yuktam) | [and]-\"which-pratibhā (yā pratibhā iti)\", [and]-in-the-beginning (upakrame), [and]-\"she (seti)\", [and]-the-to-be-said (vaktavye), [and]-of-the-masculine-reference (puṃnirdeśasya), [and]-what-is-the-intention (ka āśaya iti), [and]-\"the-external-manifestation (bāhyāvabhāsa iti)\" | [and]-of-the-consciousness-essence (cittattvasya), [and]-which-is-the-inner-order-less-appearance-ness (yā antarakramābhāsatā), [and]-she (sā), [and]-of-the-world (lokasya), [and]-from-the-māyā-power-delusion-strength (māyāśaktivimohabalāt), [and]-not (na), [and]-the-established (siddheti), [and]-prescribed (vidhīyate), [and]-the-established (siddhaṃ), [and]-the-ordered (kramikaṃ), [and]-the-external-manifestation (bāhyāvabhāsam), [and]-having-echoed (anūdya), [and]-\"which (yā ity anena)\" | [and]-not-here (naca), [and]-by-the-that-much-ness-alone (tāvamātrataiva), [and]-prescribed (vidhīyate), [and]-by-which (yena), [and]-\"she (seti)\", [and]-would-be (bhavet); [and]-but (kintu), [and]-\"the-knower (pramātā), [and]-the-great-Lord (maheśvaraḥ), [and]-she (sā), [and]-the-pratibhā (pratibhā iti)\", [and]-with-the-knower-ness-great-lordship-two (pramātṛtvamāheśvaryābhyām), [and]-the-accumulated (upacitā), [and]-the-gained-fullness (labdhaparipoṣā); [and]-thence-alone (tata eva), [and]-from-the-accumulation-strength-alone (upacayabalād eva), [and]-the-fit (ucitaḥ), [and]-the-masculine-reference (puṃstvanirdeśaḥ) | [and]-in-the-vṛtti, [and]-though (vṛttau tu iti), [and]-the-result-determination (phalanirūpaṇaṃ), [and]-in-the-vṛtti (vṛttau), [and]-made (kṛtam iti), [and]-not (na), [and]-the-'which'-word (yacchabdo), [and]-the-to-be-declared-dharma-support-indicating (vidhāsyamānadharmādhāratādyotako), [and]-with-the-echo-ness (nuvādakatvena), [and]-taken (upāttaḥ; [and]-not-here (nāpi), [and]-the-dharma-support-intention-vessel-made-prior-form-final-wished-other-dharma-support-indicating (dharmādhāratābhisandhānapātrīkṛtapūrvarūpaniṣṭhavivakṣitadharmāntarādhāratādyotako), [and]-with-the-prescribing-ness (vidhāyakatvena), [and]-that-'that'-word (tacchabdaḥ) | [and]-not-here (naca), [and]-with-all-ways (sarvathā), [and]-of-the-sūtra (sautrau), [and]-the-prescription-echo (vidhyanuvādau), [and]-the-clear (spaṣṭāv iti), [and]-he-says (āha), [and]-with-the-'eva'-word (evakāreṇa iti) | [and]-\"he-alone (sa eva), [and]-the-self (ātmā iti)\", [and]-this-is (iti), [and]-indeed (hi), [and]-said (ukte), [and]-\"the-other (anyaḥ), [and]-any (kaścid), [and]-the-self (ātmā iti)\", [and]-the-doubt (śaṅkā), [and]-as-much-as (yāvat), [and]-dissolves (galati), [and]-as-much-as (tāvat), [and]-the-prescription (vidhānaṃ), [and]-the-result-made-alone (phalakṛtam eva), [and]-becomes (bhavatīti) | [and]-\"the-appearance-alone (ābhāsa eva), [and]-the-self (ātmā iti)\", [and]-the-vṛtti-sentence (vṛttigrantham), [and]-he-connects (saṃgamayati), [and]-the-doubt-quieting (āśaṅkāṃ śamayan), [and]-\"although (yady api ityādinā)\" | **Objection (nanu):** [and]-\"from-the-inner-turned-ness (antarmukhatvāt), [and]-of-which (yasya), [and]-not (na), [and]-the-time-joining (kālayogaḥ); [and]-he (sa), [and]-how (katham), [and]-the-all-consciousness-time-pervader (sarvasaṃvitkālavyāpī), [and]-this-is (iti), [and]-said (uktaḥ)\" | [and]-here (atra), [and]-he-says (āha), [and]-\"and-yet (athaca iti)\" | [and]-\"said (uktam iti)\", [and]-in-the-vṛtti (vṛttau), [and]-in-the-sūtra, [and]-and (sūtre ca) | **Objection (nanu):** [and]-\"if (yadi), [and]-he-alone (sa eva), [and]-this-way (itthaṃ), [and]-flashes (sphurati), [and]-his-power-unfolding (tacchaktivikāso), [and]-the-world (viśvam iti), [and]-then (tarhi), [and]-enough (alam), [and]-with-that-recognition-teaching (tatpratyabhijñām upadiśya)\" | [and]-here (atra), [and]-he-says (āha), [and]-\"merely (kevalam iti)\" | [and]-this-form (evaṃbhūtaṃ), [and]-which-is-that (yad), [and]-of-the-objects (arthānāṃ), [and]-with-the-order (krameṇa):"
+      },
+      {
+        "l0_id": "chunkV2-O-saptamo-vimarsa:L52:T323",
+        "line_id": 52,
+        "lemma_iast": "pratibhā iti",
+        "gloss": "the-pratibhā",
+        "source_span": {
+          "chunk": "chunkV2-O-saptamo-vimarsa",
+          "line": 52,
+          "char_start": 13605,
+          "char_end": 13639
+        },
+        "sanskrit": "pratibhā iti",
+        "source_text": "[and]-in-this-is (ityatra), [and]-\"the-māyā-knower-organ-range-conceit-ground-ness-alone (māyāpramātṛkaraṇagocaratvābhimānabhūmitvam eva)\", [and]-this-is (iti), [and]-will-be-said (vakṣyate) | [and]-that (tat), [and]-he-shows (darśayati), [and]-\"mind-organ (buddhyakṣa iti)\" | [and]-with-the-'buddhyakṣa'-word (buddhyakṣaśabdena), [and]-the-inner-organ-even (antaḥkaraṇam api), [and]-the-to-be-seen (draṣṭavyam); [and]-the-mind-range-even (manogocaro'pi hi), [and]-the-external-alone (bāhya eva) | [and]-\"thence-alone (ata eva iti)\", [and]-this-very (etad eva), [and]-the-external-ness (bāhyatvaṃ), [and]-with-the-to-be-established-ness (pratipādyatvena), [and]-having-intended (abhisandhāya), [and]-with-the-appearance-word (ābhāsaśabdena), [and]-said (uktam) | [and]-\"how (katham), [and]-in-that-non-statement (tadanuktau), [and]-that (tat), [and]-is-perceived (pratīyate)\" | [and]-he-says (āha), [and]-\"from-the-external-form-ness-alone (bahīrūpatvād eva), [and]-the-object-ness-primary-ness-alone (arthatāpradhānatvam eva), [and]-thence-from-the-reason (etyato hetor), [and]-the-appearance-ness-acceptance (ābhāsatāsvīkāre), [and]-that (tat), [and]-is-perceived (pratīyate iti), [and]-the-fit (yuktam) | [and]-\"which-pratibhā (yā pratibhā iti)\", [and]-in-the-beginning (upakrame), [and]-\"she (seti)\", [and]-the-to-be-said (vaktavye), [and]-of-the-masculine-reference (puṃnirdeśasya), [and]-what-is-the-intention (ka āśaya iti), [and]-\"the-external-manifestation (bāhyāvabhāsa iti)\" | [and]-of-the-consciousness-essence (cittattvasya), [and]-which-is-the-inner-order-less-appearance-ness (yā antarakramābhāsatā), [and]-she (sā), [and]-of-the-world (lokasya), [and]-from-the-māyā-power-delusion-strength (māyāśaktivimohabalāt), [and]-not (na), [and]-the-established (siddheti), [and]-prescribed (vidhīyate), [and]-the-established (siddhaṃ), [and]-the-ordered (kramikaṃ), [and]-the-external-manifestation (bāhyāvabhāsam), [and]-having-echoed (anūdya), [and]-\"which (yā ity anena)\" | [and]-not-here (naca), [and]-by-the-that-much-ness-alone (tāvamātrataiva), [and]-prescribed (vidhīyate), [and]-by-which (yena), [and]-\"she (seti)\", [and]-would-be (bhavet); [and]-but (kintu), [and]-\"the-knower (pramātā), [and]-the-great-Lord (maheśvaraḥ), [and]-she (sā), [and]-the-pratibhā (pratibhā iti)\", [and]-with-the-knower-ness-great-lordship-two (pramātṛtvamāheśvaryābhyām), [and]-the-accumulated (upacitā), [and]-the-gained-fullness (labdhaparipoṣā); [and]-thence-alone (tata eva), [and]-from-the-accumulation-strength-alone (upacayabalād eva), [and]-the-fit (ucitaḥ), [and]-the-masculine-reference (puṃstvanirdeśaḥ) | [and]-in-the-vṛtti, [and]-though (vṛttau tu iti), [and]-the-result-determination (phalanirūpaṇaṃ), [and]-in-the-vṛtti (vṛttau), [and]-made (kṛtam iti), [and]-not (na), [and]-the-'which'-word (yacchabdo), [and]-the-to-be-declared-dharma-support-indicating (vidhāsyamānadharmādhāratādyotako), [and]-with-the-echo-ness (nuvādakatvena), [and]-taken (upāttaḥ; [and]-not-here (nāpi), [and]-the-dharma-support-intention-vessel-made-prior-form-final-wished-other-dharma-support-indicating (dharmādhāratābhisandhānapātrīkṛtapūrvarūpaniṣṭhavivakṣitadharmāntarādhāratādyotako), [and]-with-the-prescribing-ness (vidhāyakatvena), [and]-that-'that'-word (tacchabdaḥ) | [and]-not-here (naca), [and]-with-all-ways (sarvathā), [and]-of-the-sūtra (sautrau), [and]-the-prescription-echo (vidhyanuvādau), [and]-the-clear (spaṣṭāv iti), [and]-he-says (āha), [and]-with-the-'eva'-word (evakāreṇa iti) | [and]-\"he-alone (sa eva), [and]-the-self (ātmā iti)\", [and]-this-is (iti), [and]-indeed (hi), [and]-said (ukte), [and]-\"the-other (anyaḥ), [and]-any (kaścid), [and]-the-self (ātmā iti)\", [and]-the-doubt (śaṅkā), [and]-as-much-as (yāvat), [and]-dissolves (galati), [and]-as-much-as (tāvat), [and]-the-prescription (vidhānaṃ), [and]-the-result-made-alone (phalakṛtam eva), [and]-becomes (bhavatīti) | [and]-\"the-appearance-alone (ābhāsa eva), [and]-the-self (ātmā iti)\", [and]-the-vṛtti-sentence (vṛttigrantham), [and]-he-connects (saṃgamayati), [and]-the-doubt-quieting (āśaṅkāṃ śamayan), [and]-\"although (yady api ityādinā)\" | **Objection (nanu):** [and]-\"from-the-inner-turned-ness (antarmukhatvāt), [and]-of-which (yasya), [and]-not (na), [and]-the-time-joining (kālayogaḥ); [and]-he (sa), [and]-how (katham), [and]-the-all-consciousness-time-pervader (sarvasaṃvitkālavyāpī), [and]-this-is (iti), [and]-said (uktaḥ)\" | [and]-here (atra), [and]-he-says (āha), [and]-\"and-yet (athaca iti)\" | [and]-\"said (uktam iti)\", [and]-in-the-vṛtti (vṛttau), [and]-in-the-sūtra, [and]-and (sūtre ca) | **Objection (nanu):** [and]-\"if (yadi), [and]-he-alone (sa eva), [and]-this-way (itthaṃ), [and]-flashes (sphurati), [and]-his-power-unfolding (tacchaktivikāso), [and]-the-world (viśvam iti), [and]-then (tarhi), [and]-enough (alam), [and]-with-that-recognition-teaching (tatpratyabhijñām upadiśya)\" | [and]-here (atra), [and]-he-says (āha), [and]-\"merely (kevalam iti)\" | [and]-this-form (evaṃbhūtaṃ), [and]-which-is-that (yad), [and]-of-the-objects (arthānāṃ), [and]-with-the-order (krameṇa):"
+      },
+      {
+        "l0_id": "chunkV2-O-saptamo-vimarsa:L97:T1231",
+        "line_id": 97,
+        "lemma_iast": "pratibhāsanakāla eva",
+        "gloss": "at-the-manifestation-time-alone",
+        "source_span": {
+          "chunk": "chunkV2-O-saptamo-vimarsa",
+          "line": 97,
+          "char_start": 47685,
+          "char_end": 47745
+        },
+        "sanskrit": "pratibhāsanakāla eva",
+        "source_text": "[and]-with-the-rest (ityādi) | [and]-\"she-even (sāpi iti)\", [and]-the-being-perceived-form (lakṣyamāṇākāreti), [and]-the-to-be-joined (yojyam) | [and]-\"these (ete iti)\", [and]-the-constructions (vikalpāḥ) | [and]-\"the-cognition-mere (pratītimātraṃ), [and]-the-cognition-free-essence (pratyayaśūnyasāram)\", [and]-of-this (asyāḥ), [and]-of-the-mind (buddheḥ); [and]-thence (tataḥ), [and]-of-this (asyāḥ), [and]-the-cognition (pratyayaḥ), [and]-at-the-manifestation-time-alone (pratibhāsanakāla eva), [and]-arises (uttiṣṭhati); [and]-thence-alone (tata eva):"
+      },
+      {
+        "l0_id": "chunkV2-O-saptamo-vimarsa:L99:T1235",
+        "line_id": 99,
+        "lemma_iast": "pratibhāse",
+        "gloss": "the-manifestation",
+        "source_span": {
+          "chunk": "chunkV2-O-saptamo-vimarsa",
+          "line": 99,
+          "char_start": 47839,
+          "char_end": 47875
+        },
+        "sanskrit": "pratibhāse",
+        "source_text": "> \"[and]-in-the-being (satyeva), [and]-the-manifestation (pratibhāse), [and]-the-object (vastuni), [and]-shines (bhāsate), [and]-the-param (param)\""
+      },
+      {
+        "l0_id": "chunkV2-O-saptamo-vimarsa:L101:T1240",
+        "line_id": 101,
+        "lemma_iast": "pratibhāsadharmo'yam",
+        "gloss": "the-manifestation-dharma",
+        "source_span": {
+          "chunk": "chunkV2-O-saptamo-vimarsa",
+          "line": 101,
+          "char_start": 47976,
+          "char_end": 48029
+        },
+        "sanskrit": "pratibhāsadharmo'yam",
+        "source_text": "[and]-this-is (iti), [and]-the-manifestation-dharma (pratibhāsadharmo'yam), [and]-from-something (kutaścit iti):"
+      },
+      {
+        "l0_id": "chunkV2-O-saptamo-vimarsa:L119:T1590",
+        "line_id": 119,
+        "lemma_iast": "pratibhāvikāsagrahaṇena",
+        "gloss": "with-the-manifestation-unfolding-grasping",
+        "source_span": {
+          "chunk": "chunkV2-O-saptamo-vimarsa",
+          "line": 119,
+          "char_start": 60843,
+          "char_end": 60916
+        },
+        "sanskrit": "pratibhāvikāsagrahaṇena",
+        "source_text": "[and]-with-the-rest (ityādi iti), [and]-the-meaning (yāvat) | [and]-thus (evaṃ), [and]-the-established-view (siddhāntam), [and]-in-the-beginning (upakrame), [and]-having-stated (abhidhāya), [and]-the-prior-view (pūrvapakṣaṃ), [and]-\"although (yady api ityādinā)\", [and]-having-echoed (anubhāṣya), [and]-\"still (tathāpi ityādinā)\", [and]-he-rejects (pratikṣipati) | [and]-with-the-manifestation-unfolding-grasping (pratibhāvikāsagrahaṇena), [and]-the-inner (āntaro), [and]-that-un-distinction-manifestation (sāv abhedāvabhāso); [and]-the-māyāya (māyīyo), [and]-the-distinction-manifestation (bhedāvabhāsaḥ iti), [and]-the-different-object-two (bhinnaviṣayau), [and]-the-distinction-un-distinction (bhedābhedāv), [and]-the-non-opposed (avirodhināv iti), [and]-he-says (brūte) | [and]-\"both (ubhayam iti)\", [and]-the-smoke-fire (dhūmam agniṃ ca) | [and]-\"not-otherwise (na anyathā iti)\", [and]-with-the-connection-manifestation-unfolding-indeed (saṃbandhapratibhāvikāsena hi), [and]-without (vinā), [and]-\"that-that (tacca tacceti)\", [and]-would-be (syāt); [and]-not-in-truth (natu), [and]-the-genitive-meaning (ṣaṣṭhyarthaḥ) | [and]-the-'ca'-meaning-even (cārtho'pi vā), [and]-not (na), [and]-would-be (bhavet), [and]-in-the-one-cognition-entry-even (ekajñānāveśe'pi), [and]-separately-alone (pṛthag eva), [and]-the-mutual-removal (anyonyāpohanasya), [and]-of-the-many-branched (bahuśākhasya), [and]-from-the-unveiling (unmīlanena), [and]-from-the-determination (niścayāt) | [and]-\"manifests (avabhāti ceti)\", [and]-\"jar (ghaṭa iti)\", [and]-\"of-the-beings (bhāvānām iti)\", [and]-\"fits (upapadyate ceti)\" | [and]-he-establishes (samarthayate), [and]-\"the-knower-melted (pramātṛlīna iti)\", [and]-with-the-knower-stuck-ness (pramātṛlagnatvena), [and]-that-which-is-the-un-divided-form (yad abhinna rūpaṃ), [and]-of-that (tasya), [and]-in-the-non-manifestation (aprakāśe), [and]-the-distinction-alone (bheda eva), [and]-not (na), [and]-would-rest (pratitiṣṭhet)\", [and]-this-is (iti), [and]-\"not (na), [and]-this-un-distinction (ayam abhedo), [and]-with-the-distinction (bhedena), [and]-opposed (virudhyate iti)\", [and]-the-meaning (yāvat) | [and]-this-very (etad eva), [and]-in-the-object-absence (vastuvyatireke), [and]-with-the-primary-ness (prādhānyena), [and]-the-used (upayujyate), [and]-\"and (cetyatra)\", [and]-as-the-reason (hetūkaroti), [and]-\"as-much-as-indeed (yāvad dhi iti)\" | [and]-the-full (pūrṇo), [and]-the-being (bhāvaḥ), [and]-of-the-manifestation (prathāyāḥ); [and]-of-the-manifesting (prathamānasya), [and]-of-the-being (bhāvasya), [and]-the-knower-ending-form (pramātṛparyantaṃ rūpaṃ); [and]-of-the-manifestation, [and]-and (prathāyāś ca), [and]-the-consciousness-form (saṃvedanarūpaṃ), [and]-with-the-being-identity (bhāvatādātmyena), [and]-the-operating (vartamānaṃ), [and]-with-the-reflexive-awareness-freedom-strengthened (vimarśasvātantryabṛṃhitaṃ ca), [and]-the-full (pūrṇaṃ), [and]-the-form (rūpam); [and]-otherwise (anyathā), [and]-from-the-alone (kevalād eva), [and]-from-the-manifestation (prakāśāt), [and]-in-the-dealing-being (sati vyavahāre), [and]-enough (alam), [and]-with-the-determination (adhyavasāyena iti); [and]-the-momentariness-even (kṣaṇikatvam api), [and]-the-dealt (vyavahriyate); [and]-from-the-determination (avasāyāt), [and]-in-the-dealing (vyavahāre), [and]-from-the-manifestation-form-ness-non-being (prakāśarūpatvābhāvāt), [and]-the-inert-even (jaḍo'pi), [and]-the-dealing-reason (vyavahārahetur), [and]-would-be (bhaved iti), [and]-enough (alam), [and]-with-the-consciousness (saṃvedanena) | [and]-\"with-the-two (dvābhyāṃ), [and]-the-dealing (vyavahāraḥ iti)\", [and]-if-this (cet), [and]-not (na), [and]-of-the-two (dvayor), [and]-from-the-simultaneous-being-non-being (yugapadabhāvāt) | [and]-\"with-the-manifestation-shadow-touched (prakāśacchāyayā uparakto), [and]-the-determination (dhyavasāyas), [and]-thus-even (tathety api)\", [and]-the-untrue (asat); [and]-he-indeed (sa hi), [and]-the-manifestation-effect (prakāśakāryaṃ), [and]-if-this (cet), [and]-would-make (kuryāt), [and]-then (tarhi), [and]-the-manifestation-alone (prakāśa eva), [and]-he (asau); [and]-what (kā), [and]-the-shadow (cchāyā) | [and]-in-the-manifestation-form-ness, [and]-and (prakāśarūpatāyāṃ ca), [and]-that-very (tad eva), [and]-the-manifestation-form (prakāśarūpam), [and]-the-determination-made (adhyavasāyamayaṃ ceti), [and]-the-manifestation-alone (prakāśa eva), [and]-the-reflexive-awareness-own (vimarśātmā\", [and]-this-is (iti), [and]-the-arrived (āyātam) | [and]-\"the-manifestation (prakāśo), [and]-with-the-determination (dhyavasāyena), [and]-the-dealt (vyavahṛto), [and]-the-dealing-reason (vyavahārahetur iti)\", [and]-if-this (cet); [and]-\"the-cognition, [and]-and (jñānam), [and]-the-utterance, [and]-and (abhidhānaṃ ca), [and]-the-dealing (vyavahāraḥ)\" | [and]-not-here (naca), [and]-of-the-first-manifestation (prathamaprakāśo), [and]-of-the-determination (dhyavasāyasya), [and]-the-known (jñeyaḥ) | [and]-he-indeed (sa hi), [and]-the-self-manifesting-alone (svaprakāśa eva); [and]-in-the-other-manifestation-ness (paraprakāśatve), [and]-of-the-regress-and-the-rest (anavasthāder), [and]-from-the-said-ness (uktatvāt) | [and]-the-utterance-even (abhidhānam api), [and]-the-construction (vikalpanam) | [and]-that-even (tad api), [and]-the-manifestation-form (prakāśanarūpaṃ), [and]-if-this (cet), [and]-again-even (punar api), [and]-that-very (tad eva), [and]-the-to-be-repeated (āvartyam); [and]-in-the-non-manifestation-form-ness, [and]-and (aprakāśanarūpatāyāṃ ca), [and]-the-inert-ness (jāḍyam iti), [and]-said (uktam); [and]-the-conceit-even (abhimāno'pi), [and]-thus-alone (tathaiva), [and]-the-to-be-constructed (vikalpyaḥ\", [and]-this-is (iti), [and]-enough (alam), [and]-with-this (anena), [and]-the-momentariness-expression-mixing-conceived-self-chew-fit (kṣaṇikatvavyañjanamiśrīkaraṇakalpitasvacarvaṇayogyatākena), [and]-with-the-dry-Sāṃkhya-remnant (śuṣkasāṃkhyocchiṣṭena) | [and]-\"that-which (yat), [and]-as-much-as-indeed (yāvatā hi), [and]-the-fit (yuktam), [and]-the-object-action-doing (arthakriyākāri), [and]-that (tat), [and]-so-much-form (tāvadrūpaṃ), [and]-like-the-blue (nīlam iva), [and]-with-the-blue-ness (nīlatvena) | [and]-with-the-effect-ness-cause-ness-conceit-form (kāryatvakāraṇatābhimānarūpaṃ), [and]-with-the-knower-rest-ending-form (pramātṛviśramaparyantena vapuṣā), [and]-all (sarvam), [and]-the-object-action-doing (arthakriyākāri) | [and]-thus (evam), [and]-in-the-non-acceptance (anupagatau), [and]-not (na), [and]-of-anyone (kasyacit), [and]-anything (kiṃcid), [and]-the-form (rūpaṃ), [and]-would-be (syāt) | [and]-this, [and]-and (etac ca), [and]-step-by-step (pade pade), [and]-the-determined-even (nirūpitam api), [and]-in-brief (saṃkṣepeṇa), [and]-for-the-non-forgetting (avismaraṇāya), [and]-said (uktam) | **Objection (nanu):** [and]-\"in-that-non-determination (tadanavadhāraṇe), [and]-not (na), [and]-anything (kiṃcid), [and]-this (idaṃ), [and]-would-manifest (prakāśeteti), [and]-said (uktam)\" | [and]-the-true (satyam); [and]-not (na), [and]-the-not-determined (anavadhāritam); [and]-but (apitu), [and]-the-determined (avadhīritam), [and]-with-the-non-regard (anādareṇa), [and]-the-dismissed (apahastitaṃ), [and]-with-the-Lord-māyā-conceived-alone (bhagavanmāyopakalpitenaiva) | [and]-that-which-will-say (yad vakṣyati):"
+      },
+      {
+        "l0_id": "chunkV2-O-saptamo-vimarsa:L119:T1602",
+        "line_id": 119,
+        "lemma_iast": "saṃbandhapratibhāvikāsena hi",
+        "gloss": "with-the-connection-manifestation-unfolding-indeed",
+        "source_span": {
+          "chunk": "chunkV2-O-saptamo-vimarsa",
+          "line": 119,
+          "char_start": 61363,
+          "char_end": 61450
+        },
+        "sanskrit": "saṃbandhapratibhāvikāsena hi",
+        "source_text": "[and]-with-the-rest (ityādi iti), [and]-the-meaning (yāvat) | [and]-thus (evaṃ), [and]-the-established-view (siddhāntam), [and]-in-the-beginning (upakrame), [and]-having-stated (abhidhāya), [and]-the-prior-view (pūrvapakṣaṃ), [and]-\"although (yady api ityādinā)\", [and]-having-echoed (anubhāṣya), [and]-\"still (tathāpi ityādinā)\", [and]-he-rejects (pratikṣipati) | [and]-with-the-manifestation-unfolding-grasping (pratibhāvikāsagrahaṇena), [and]-the-inner (āntaro), [and]-that-un-distinction-manifestation (sāv abhedāvabhāso); [and]-the-māyāya (māyīyo), [and]-the-distinction-manifestation (bhedāvabhāsaḥ iti), [and]-the-different-object-two (bhinnaviṣayau), [and]-the-distinction-un-distinction (bhedābhedāv), [and]-the-non-opposed (avirodhināv iti), [and]-he-says (brūte) | [and]-\"both (ubhayam iti)\", [and]-the-smoke-fire (dhūmam agniṃ ca) | [and]-\"not-otherwise (na anyathā iti)\", [and]-with-the-connection-manifestation-unfolding-indeed (saṃbandhapratibhāvikāsena hi), [and]-without (vinā), [and]-\"that-that (tacca tacceti)\", [and]-would-be (syāt); [and]-not-in-truth (natu), [and]-the-genitive-meaning (ṣaṣṭhyarthaḥ) | [and]-the-'ca'-meaning-even (cārtho'pi vā), [and]-not (na), [and]-would-be (bhavet), [and]-in-the-one-cognition-entry-even (ekajñānāveśe'pi), [and]-separately-alone (pṛthag eva), [and]-the-mutual-removal (anyonyāpohanasya), [and]-of-the-many-branched (bahuśākhasya), [and]-from-the-unveiling (unmīlanena), [and]-from-the-determination (niścayāt) | [and]-\"manifests (avabhāti ceti)\", [and]-\"jar (ghaṭa iti)\", [and]-\"of-the-beings (bhāvānām iti)\", [and]-\"fits (upapadyate ceti)\" | [and]-he-establishes (samarthayate), [and]-\"the-knower-melted (pramātṛlīna iti)\", [and]-with-the-knower-stuck-ness (pramātṛlagnatvena), [and]-that-which-is-the-un-divided-form (yad abhinna rūpaṃ), [and]-of-that (tasya), [and]-in-the-non-manifestation (aprakāśe), [and]-the-distinction-alone (bheda eva), [and]-not (na), [and]-would-rest (pratitiṣṭhet)\", [and]-this-is (iti), [and]-\"not (na), [and]-this-un-distinction (ayam abhedo), [and]-with-the-distinction (bhedena), [and]-opposed (virudhyate iti)\", [and]-the-meaning (yāvat) | [and]-this-very (etad eva), [and]-in-the-object-absence (vastuvyatireke), [and]-with-the-primary-ness (prādhānyena), [and]-the-used (upayujyate), [and]-\"and (cetyatra)\", [and]-as-the-reason (hetūkaroti), [and]-\"as-much-as-indeed (yāvad dhi iti)\" | [and]-the-full (pūrṇo), [and]-the-being (bhāvaḥ), [and]-of-the-manifestation (prathāyāḥ); [and]-of-the-manifesting (prathamānasya), [and]-of-the-being (bhāvasya), [and]-the-knower-ending-form (pramātṛparyantaṃ rūpaṃ); [and]-of-the-manifestation, [and]-and (prathāyāś ca), [and]-the-consciousness-form (saṃvedanarūpaṃ), [and]-with-the-being-identity (bhāvatādātmyena), [and]-the-operating (vartamānaṃ), [and]-with-the-reflexive-awareness-freedom-strengthened (vimarśasvātantryabṛṃhitaṃ ca), [and]-the-full (pūrṇaṃ), [and]-the-form (rūpam); [and]-otherwise (anyathā), [and]-from-the-alone (kevalād eva), [and]-from-the-manifestation (prakāśāt), [and]-in-the-dealing-being (sati vyavahāre), [and]-enough (alam), [and]-with-the-determination (adhyavasāyena iti); [and]-the-momentariness-even (kṣaṇikatvam api), [and]-the-dealt (vyavahriyate); [and]-from-the-determination (avasāyāt), [and]-in-the-dealing (vyavahāre), [and]-from-the-manifestation-form-ness-non-being (prakāśarūpatvābhāvāt), [and]-the-inert-even (jaḍo'pi), [and]-the-dealing-reason (vyavahārahetur), [and]-would-be (bhaved iti), [and]-enough (alam), [and]-with-the-consciousness (saṃvedanena) | [and]-\"with-the-two (dvābhyāṃ), [and]-the-dealing (vyavahāraḥ iti)\", [and]-if-this (cet), [and]-not (na), [and]-of-the-two (dvayor), [and]-from-the-simultaneous-being-non-being (yugapadabhāvāt) | [and]-\"with-the-manifestation-shadow-touched (prakāśacchāyayā uparakto), [and]-the-determination (dhyavasāyas), [and]-thus-even (tathety api)\", [and]-the-untrue (asat); [and]-he-indeed (sa hi), [and]-the-manifestation-effect (prakāśakāryaṃ), [and]-if-this (cet), [and]-would-make (kuryāt), [and]-then (tarhi), [and]-the-manifestation-alone (prakāśa eva), [and]-he (asau); [and]-what (kā), [and]-the-shadow (cchāyā) | [and]-in-the-manifestation-form-ness, [and]-and (prakāśarūpatāyāṃ ca), [and]-that-very (tad eva), [and]-the-manifestation-form (prakāśarūpam), [and]-the-determination-made (adhyavasāyamayaṃ ceti), [and]-the-manifestation-alone (prakāśa eva), [and]-the-reflexive-awareness-own (vimarśātmā\", [and]-this-is (iti), [and]-the-arrived (āyātam) | [and]-\"the-manifestation (prakāśo), [and]-with-the-determination (dhyavasāyena), [and]-the-dealt (vyavahṛto), [and]-the-dealing-reason (vyavahārahetur iti)\", [and]-if-this (cet); [and]-\"the-cognition, [and]-and (jñānam), [and]-the-utterance, [and]-and (abhidhānaṃ ca), [and]-the-dealing (vyavahāraḥ)\" | [and]-not-here (naca), [and]-of-the-first-manifestation (prathamaprakāśo), [and]-of-the-determination (dhyavasāyasya), [and]-the-known (jñeyaḥ) | [and]-he-indeed (sa hi), [and]-the-self-manifesting-alone (svaprakāśa eva); [and]-in-the-other-manifestation-ness (paraprakāśatve), [and]-of-the-regress-and-the-rest (anavasthāder), [and]-from-the-said-ness (uktatvāt) | [and]-the-utterance-even (abhidhānam api), [and]-the-construction (vikalpanam) | [and]-that-even (tad api), [and]-the-manifestation-form (prakāśanarūpaṃ), [and]-if-this (cet), [and]-again-even (punar api), [and]-that-very (tad eva), [and]-the-to-be-repeated (āvartyam); [and]-in-the-non-manifestation-form-ness, [and]-and (aprakāśanarūpatāyāṃ ca), [and]-the-inert-ness (jāḍyam iti), [and]-said (uktam); [and]-the-conceit-even (abhimāno'pi), [and]-thus-alone (tathaiva), [and]-the-to-be-constructed (vikalpyaḥ\", [and]-this-is (iti), [and]-enough (alam), [and]-with-this (anena), [and]-the-momentariness-expression-mixing-conceived-self-chew-fit (kṣaṇikatvavyañjanamiśrīkaraṇakalpitasvacarvaṇayogyatākena), [and]-with-the-dry-Sāṃkhya-remnant (śuṣkasāṃkhyocchiṣṭena) | [and]-\"that-which (yat), [and]-as-much-as-indeed (yāvatā hi), [and]-the-fit (yuktam), [and]-the-object-action-doing (arthakriyākāri), [and]-that (tat), [and]-so-much-form (tāvadrūpaṃ), [and]-like-the-blue (nīlam iva), [and]-with-the-blue-ness (nīlatvena) | [and]-with-the-effect-ness-cause-ness-conceit-form (kāryatvakāraṇatābhimānarūpaṃ), [and]-with-the-knower-rest-ending-form (pramātṛviśramaparyantena vapuṣā), [and]-all (sarvam), [and]-the-object-action-doing (arthakriyākāri) | [and]-thus (evam), [and]-in-the-non-acceptance (anupagatau), [and]-not (na), [and]-of-anyone (kasyacit), [and]-anything (kiṃcid), [and]-the-form (rūpaṃ), [and]-would-be (syāt) | [and]-this, [and]-and (etac ca), [and]-step-by-step (pade pade), [and]-the-determined-even (nirūpitam api), [and]-in-brief (saṃkṣepeṇa), [and]-for-the-non-forgetting (avismaraṇāya), [and]-said (uktam) | **Objection (nanu):** [and]-\"in-that-non-determination (tadanavadhāraṇe), [and]-not (na), [and]-anything (kiṃcid), [and]-this (idaṃ), [and]-would-manifest (prakāśeteti), [and]-said (uktam)\" | [and]-the-true (satyam); [and]-not (na), [and]-the-not-determined (anavadhāritam); [and]-but (apitu), [and]-the-determined (avadhīritam), [and]-with-the-non-regard (anādareṇa), [and]-the-dismissed (apahastitaṃ), [and]-with-the-Lord-māyā-conceived-alone (bhagavanmāyopakalpitenaiva) | [and]-that-which-will-say (yad vakṣyati):"
+      },
+      {
+        "l0_id": "chunkV2-O-saptamo-vimarsa:L127:T1921",
+        "line_id": 127,
+        "lemma_iast": "pratibhānti",
+        "gloss": "they-manifest",
+        "source_span": {
+          "chunk": "chunkV2-O-saptamo-vimarsa",
+          "line": 127,
+          "char_start": 72469,
+          "char_end": 72502
+        },
+        "sanskrit": "pratibhānti",
+        "source_text": "[and]-in-the-section (iti prakaraṇe) | [and]-thus (evaṃ), [and]-with-the-knower, [and]-and (pramātrā saha), [and]-first-indeed (tāvad), [and]-the-unity (aikyaṃ), [and]-everywhere (sarvatra); [and]-in-the-smoke-fire-and-the-rest, [and]-though (dhūmāgnyādau tu), [and]-of-the-knowns-two-even (prameyayor api), [and]-is (asti)\", [and]-this-is (iti), [and]-having-established (upapādya), [and]-elsewhere-even (anyatra api), [and]-that (tad), [and]-he-establishes (upapādayati), [and]-\"mutually (paraspara iti)\" | [and]-the-un-divided (abhinnaḥ), [and]-the-word (śabdo), [and]-the-dvandva-operation-made (dvandvavṛttimayaḥ); [and]-the-cognition, [and]-and (pratyayaś ca), [and]-the-that-raised (tadutthāpitā), [and]-or (vā), [and]-the-that-raising (tadutthāpikā vā), [and]-the-cognition (pratītiḥ) | [and]-the-unity-made (aikyamayāḥ), [and]-the-unity (aikyaṃ), [and]-the-current (prakṛtaṃ), [and]-the-begun (prastutaṃ), [and]-with-the-rest-home-ness (viśrāntidhāmatvena), [and]-in-which (yeṣu), [and]-the-thus-form-alone (tathābhūtā eva), [and]-being (santaḥ), [and]-\"thus (tathā iti)\", [and]-the-divided (bhinnā iti), [and]-with-the-other-word-to-be-given (padāntarasamarpaṇīyena), [and]-with-the-distinction (bhedena), [and]-they-manifest (prathante) | **Objection (nanu):** [and]-\"of-the-dvandva-operation (dvandvavṛtter), [and]-this (ayaṃ), [and]-the-power (prabhāvaḥ)\"; [and]-\"... without (vinā), [and]-in-the-distinction-wished (bhede'bhidhitsite), [and]-what (kā), [and]-would-be (bhavet), [and]-the-un-distinction-possibility (abhedasaṃbhāvanā)\" | [and]-here-even (atrāpi), [and]-he-says (āha), [and]-\"even-when (yadāpi iti)\" | [and]-with-the-fifth (pañcamyā), [and]-first-indeed (tāvat), [and]-the-connection (saṃbandhaḥ), [and]-the-indicated-alone (sūcita eva) | [and]-in-that-non-being-even (tadabhāve'pi), [and]-with-the-dividing-marker-action-own (bhidyamānatvalakṣaṇakriyātmani), [and]-with-the-melting-ness (līnatayā), [and]-the-standing-alone (sthitam eva), [and]-the-unity (aikyaṃ) | [and]-thus (iti), [and]-\"all (sarve'rthā), [and]-the-dealt (vyavahriyamāṇā), [and]-not (na), [and]-the-connection-burden (saṃbandhadhurāṃ), [and]-not-mounted (manadhirūḍhā), [and]-the-dealing-path (vyavahāravartanīṃ), [and]-any (kām api), [and]-they-would-carry-on (nirvāhayeyuḥ) | **Objection (nanu):** [and]-\"thus (evaṃ), [and]-the-beings (bhāvāḥ), [and]-what (kiṃ), [and]-at-anytime-even (kadācid api), [and]-not (na), [and]-the-un-connected (asaṃbaddhā), [and]-they-become (bhavanti)\" | [and]-\"they-become (bhavanti)\", [and]-this-is (ityāha), [and]-\"merely (kevalam iti)\" | [and]-of-the-insane (unmattānāṃ), [and]-those-which-are-the-prattles (ye pralāpāḥ), [and]-the-words (śabdā), [and]-the-un-connected (asaṃbaddhāḥ); [and]-thus (tathā), [and]-their-minds (cetāṃsi), [and]-the-cognitions (jñānāni); [and]-thence-alone (tata eva), [and]-for-the-dealing (vyavahārāya), [and]-the-fit (sādhūni), [and]-they-become (bhavanti); [and]-of-them (teṣāṃ), [and]-with-the-denoted-ness (bhidheyatvena), [and]-with-the-known-ness, [and]-and (jñeyatvena ca), [and]-the-objects (viṣayāste), [and]-by-order (krameṇa), [and]-since (yataḥ), [and]-they-manifest (pratibhānti), [and]-thence (tataḥ), [and]-the-mutually-un-clung (parasparam ananuṣaktāḥ); [and]-with-the-cognition, [and]-though (jñānena tu), [and]-with-the-knower-form (pramātṛrūpeṇa), [and]-the-clung-alone (anuṣaktā eva); [and]-simultaneously, [and]-and (yugapacca), [and]-in-the-cognition (jñāne), [and]-with-the-one-knower-cling-route (tadekapramātranuṣaṅgamukhena), [and]-the-mutually-even (anyonyam api), [and]-the-clung-alone (anuṣaktā eva iti), [and]-the-meaning (bhāvaḥ) | **Objection (nanu):** [and]-\"thus (evam), [and]-the-clung-ness (anuṣaktatvaṃ), [and]-of-them (teṣāṃ), [and]-by-whom (kena), [and]-the-to-be-dealt (vyavaharaṇīyaṃ); [and]-if (yadi), [and]-with-that-alone (tenaiva), [and]-the-insane (unmattena), [and]-then (tarhi), [and]-in-the-non-clung-own (ananuṣaṅgātmani), [and]-in-the-one (ekatra), [and]-they-even (te'pi), [and]-the-clung (anuṣaktā), [and]-would-be (bhaveyuḥ); [and]-he, [and]-and (sa ca), [and]-not (na), [and]-the-insane (unmattaḥ), [and]-would-be (syāt)\" | [and]-here (atra), [and]-he-determines (nirūpayati), [and]-\"they-even, [and]-and (te'pi ca iti)\", [and]-the-insane-indeed (unmatto hi), [and]-not (na), [and]-the-dealer (vyavaharteti), [and]-the-meaning (bhāvaḥ) | [and]-\"not-the-other (nāpara iti)\", [and]-the-mutual-reach-alone (parasparaprāptir eva), [and]-the-dealing (vyavaharaṇam iti), [and]-this-is (iti), [and]-indeed (hi), [and]-said (uktam) | [and]-there (tatra), [and]-of-the-connection (saṃbandhasya), [and]-the-form-clinging-and-the-rest (rūpaśleṣādi), [and]-that-which-is-the-marker (yat lakṣaṇaṃ), [and]-the-refuted (dūṣitaṃ), [and]-by-the-other (pareṇa):"
+      },
+      {
+        "l0_id": "chunkV2-O-saptamo-vimarsa:L180:T3409",
+        "line_id": 180,
+        "lemma_iast": "pratibhāsau",
+        "gloss": "the-appearances",
+        "source_span": {
+          "chunk": "chunkV2-O-saptamo-vimarsa",
+          "line": 180,
+          "char_start": 124490,
+          "char_end": 124525
+        },
+        "sanskrit": "pratibhāsau",
+        "source_text": "[and]-this-is (ityatra), [and]-with-the-distinct-sphere (bhinnakakṣyeṇa), [and]-the-grasped-being-partaking (grāhyabhāvabhāginā), [and]-with-the-word (śabdena), [and]-of-the-inner-turned (antarmukhasya), [and]-of-the-consciousness-pleasure-and-the-rest-form (saṃvedanasukhādirūpasya), [and]-the-joining (yojanā), [and]-not (na), [and]-the-possible (saṃbhavati\", [and]-this-is (iti), [and]-the-shown-alone (darśitam eva) | [and]-thence, [and]-and (tataś ca), [and]-that-which (yat), [and]-from-which (yato), [and]-the-distinct-sphere (bhinnakakṣyaṃ), [and]-that (tat), [and]-with-that (tena), [and]-not (na), [and]-the-joinable (yojyate), [and]-like-the-consciousness (saṃvedanam iva), [and]-with-the-word (śabdena); [and]-thus, [and]-and (tathā ca), [and]-with-the-place-time-two (deśakālābhyāṃ), [and]-the-consciousness (saṃvedanam iti) | [and]-the-joining-indeed (yojanaṃ hi), [and]-with-the-that-adjunct-ness (tadupādhitayā), [and]-the-that-self-making (tadātmīkaraṇaṃ); [and]-that, [and]-and (tac ca), [and]-somewhere-alone (kvacid eva), [and]-the-being (bhavann), [and]-with-the-rule-ness (niyamavattayā), [and]-the-pervaded (vyāptaṃ); [and]-if, [and]-and (yadi ca), [and]-in-the-distinct-sphere-even (bhinnakakṣye'pi), [and]-would-be (bhavet), [and]-the-un-rule (aniyamas), [and]-then (tarhi), [and]-the-pervader-opposed (vyāpakaviruddhaḥ), [and]-follows (prasajati); [and]-thence (tataḥ), [and]-from-the-distinct-sphere (bhinnakṣyāt), [and]-the-withdrawn (vyāvṛttaṃ), [and]-the-joining (yojanaṃ), [and]-by-that-other (tadanyena), [and]-the-pervaded (vyāpyate); [and]-that-opposed, [and]-and (tadviruddhaṃ ca), [and]-the-distinct-sphere-ness (bhinnakakṣyatvam)\", [and]-this-is (iti), [and]-the-pervader-opposed-apprehension (vyāpakaviruddhopalabdhiḥ) | [and]-\"in-the-own-form-distinction-even (svarūpabhede'pi), [and]-the-non-manifestation-form-ness-consequence (aprakāśarūpatāprasaṅgaḥ iti)\", [and]-the-not-once-said (asakṛd uktam) | [and]-thence (tasmāt), [and]-the-own-consciousness-accepting (svasaṃvedanam aṅgīkurvadbhiḥ), [and]-the-knower-essence (pramātṛtattvam), [and]-the-accepted-alone (aṅgīkṛtam eva); [and]-of-that-alone (tasyaiva), [and]-with-the-eternal-pervading-one-form-ness-invoking (nityavyāpakaikarūpatvākṣepeṇa), [and]-from-the-establishment (siddher ity), [and]-enough (alam), [and]-with-the-much (bahunā) | [and]-the-valid-means-class (pramāṇajātaṃ), [and]-the-perception-non-apprehension-and-the-rest (pratyakṣānupalambhādi); [and]-the-known-class (prameyajātaṃ), [and]-the-effect-cause-and-the-rest (kāryakāraṇādi); [and]-of-the-effect (kāryasya), [and]-of-the-smoke-and-the-rest (dhūmādeḥ), [and]-of-the-cause (kāraṇasya), [and]-of-the-fire-and-the-rest (agnyādeḥ), [and]-the-relation-possessing (saṃbandhino), [and]-those-which-are-the-being-form-parts (ye bhāvarūpāḥ aṃśāḥ), [and]-\"in-the-fire-being (sati vahnāv), [and]-the-smoke-is (asti dhūmaḥ ityādayo)\"; [and]-the-non-being-form, [and]-and (bhāvarūpāś ca), [and]-\"in-that-non-being (asati tasmin), [and]-the-not-is (nāsti ityādayaḥ)\"; [and]-of-them (teṣāṃ), [and]-of-the-known (prameyasya), [and]-through-the-valid-means-door (pramāṇadvāreṇa), [and]-in-the-knower (pramātari), [and]-the-rest (viśrāntiḥ); [and]-not-in-truth (natu), [and]-with-the-own-face (svamukhena)\", [and]-this-is (iti), [and]-to-show (darśayituṃ), [and]-the-other-explanation (vyākhyāntaram), [and]-he-says (āha), [and]-\"or (athavā iti)\" | [and]-not-here (naca), [and]-with-all-ways (sarvathā), [and]-she (sā), [and]-not (na), [and]-is (asti), [and]-by-which (yena), [and]-the-un-utterable (avacanārhā), [and]-would-be (bhaved iti), [and]-he-manifests (prathayati), [and]-\"for-the-indication (sūcanāya iti)\", [and]-saying (vadan) | [and]-the-first-verse-half (prathamaṃ ślokārdhaṃ), [and]-to-explain (vyākhyātuṃ), [and]-\"which-is-the-vṛtti (yā vṛttiḥ), [and]-the-connected (samanvitā ityādikā)\", [and]-her (tāṃ), [and]-he-explains (vivṛṇoti), [and]-\"if-again (yadi punaḥ ityādinā)\" | **Objection (nanu):** [and]-\"the-own-form-alone (svarūpam eva), [and]-of-them (tayoḥ), [and]-the-effect-cause-being (kāryakāraṇabhāvaḥ)\", [and]-this-having-doubted (ityāśaṅkya), [and]-he-says (āha), [and]-\"not-here (naca iti)\" | [and]-the-own-form-indeed (svarūpaṃ hi), [and]-not (na), [and]-the-other-resting (anyaniṣṭhaṃ), [and]-to-be-able (bhavitum arhatīti), [and]-said (uktam), [and]-not-once (asakṛt) | **Objection (nanu):** [and]-\"not (na), [and]-the-smoke-desiring (dhūmam arthayamāno), [and]-the-fire-resting (vahniniṣṭhaṃ), [and]-the-smoke-form (dhūmarūpam), [and]-having-conceited (abhimanya), [and]-in-the-fire (vahnau), [and]-operates (pravartate), [and]-by-which (yena), [and]-the-other-resting-ness (paraniṣṭhatā), [and]-of-the-other (parasya), [and]-would-be-attained (āpadyeta); [and]-but (apitu), [and]-of-the-fire (vahner), [and]-the-immediately-after-being (anantarabhāvī), [and]-since (yato), [and]-with-the-rule (niyamena), [and]-the-smoke (dhūmo), [and]-seen (dṛṣṭo), [and]-by-this-one (munā); [and]-thence (tato), [and]-the-smoke-desiring (dhūmārthī), [and]-in-the-fire (vahnau), [and]-operates (pravartate)\", [and]-this-is (iti), [and]-what (ko), [and]-the-opposition (virodhaḥ)\" | [and]-this (etad), [and]-having-echoed (anubhāṣya), [and]-he-refutes (dūṣayati), [and]-\"in-the-fire (vahnāv ityādinā iti)\" | [and]-that-which-is-said (yat pareṇa ucyate), [and]-this (etat), [and]-then (tadā), [and]-would-be (syāt), [and]-if (yadi), [and]-the-fire (vahnir), [and]-from-the-smoke-prior-being (dhūmāt pūrvabhāvī iti), [and]-with-the-smoke-knowledge (dhūmajñānena), [and]-the-seen (dṛśyena)\", [and]-this-is (iti), [and]-the-connection (saṃbandhaḥ) | [and]-not-indeed (nahi), [and]-in-the-fire (vahnau), [and]-with-the-smoke-seeing (dhūmadarśanena), [and]-in-the-prior-being (pūrvabhāvini), [and]-in-the-un-determined (aniścite), [and]-the-fire-immediacy (vahnyanantaratā), [and]-the-name (nāma), [and]-the-smoke-form-ness-distinct (dhūmarūpatātiriktā), [and]-of-the-smoke (dhūmasya), [and]-any (kācit), [and]-the-grasped (gṛhītā), [and]-would-be (bhavet) | [and]-thus (evaṃ), [and]-of-the-fire-even (vahner api), [and]-the-smoke-prior-being-ness (dhūmapūrvabhāvitvaṃ), [and]-the-to-be-said (vācyam); [and]-thence (tataḥ), [and]-the-cause-ness (kāraṇatā), [and]-the-effect-ness, [and]-and (kāryatā ca), [and]-with-the-own-form-grasping-alone (svarūpagrāhiṇaiva), [and]-the-grasped (gṛhīteti), [and]-the-untrue (anṛtam), [and]-this (adaḥ) | [and]-of-the-own-form-alone (svarūpasyaiva ca), [and]-in-the-thus-being (tathābhāve), [and]-the-second-not-touching-even (dvitīyam aspṛṣṭavato'pi), [and]-in-the-one-cognition (ekapratyaye), [and]-the-thus-cognition-consequence (tathāpratītiprasaṅgo), [and]-the-utterly-un-conceivable-establishing-ness (atyantam asaṃbhāvanīyasamarthanatvaṃ), [and]-of-the-other-view-effect-cause-being (paradṛśikāryakāraṇabhāvasya), [and]-to-determine (nirūpayituṃ), [and]-the-heel-hit (patitapārṣṇiprahāraṃ), [and]-he-makes (karoti) | [and]-\"even-then-or (tadāpi vā iti)\", [and]-the-white-jar-yellow-cloth-appearance-two-joined-even (sitaghaṭapītapaṭābhāsadvayayukte'pi), [and]-in-the-cognition (jñāne), [and]-with-the-own-form (svarūpeṇa), [and]-the-pure-that-form-grasping-two (kevalatadrūpagrāhibhyāṃ), [and]-with-the-cognitions (jñānābhyāṃ), [and]-the-other (paraṃ), [and]-the-distinction (vailakṣaṇyam), [and]-let-it-be (astu); [and]-not-in-truth (natu), [and]-of-the-that-cognition-manifested (tajjñānābhāsyayor), [and]-of-the-objects (viṣayayoḥ), [and]-any (kācid), [and]-the-expectation (apekṣā), [and]-the-established (sidhyati); [and]-like-that (tadvat), [and]-the-prior-being-ness-unspecified (pūrvabhāvitāviśeṣaṇaṃ), [and]-the-fire (vahniṃ), [and]-the-smoke, [and]-and (dhūmaṃ ca), [and]-the-immediately-after-being-ness-unspecified (anantarabhāvitāviśiṣṭaṃ), [and]-the-same-time-even (samakālam api), [and]-grasping (gṛhṇat), [and]-the-cognition (vijñānam), [and]-with-the-one-form-grasping-two (ekatadrūpagrāhibhyāṃ), [and]-with-the-other-cognitions (jñānāntarābhyāṃ), [and]-firmly (bāḍhaṃ), [and]-the-distinct (vilakṣaṇaṃ); [and]-not-in-truth (natu), [and]-of-the-that-manifested (tadābhāsyayor), [and]-of-the-objects (viṣayayoḥ), [and]-anything (kiṃcid), [and]-the-mutual-expectation-own (anyonyāpekṣātmakaṃ), [and]-the-form (rūpaṃ), [and]-thence (tataḥ), [and]-the-established (sidhyati) | [and]-this-even (etad api ca), [and]-the-un-conceivable (asaṃbhāvanīyam iti), [and]-with-the-own-view-shadow (svadarśanacchāyayā), [and]-with-the-justification-possessing (upapattimatyā), [and]-he-shows (darśayati), [and]-\"the-cognition-even-or (jñānam api vā iti)\" | [and]-thence, [and]-and (tataś ca), [and]-the-two-appearances (dvāv ābhāsau), [and]-in-the-knower (pramātari), [and]-the-rested (viśrāntāv iti), [and]-the-cognition-two-alone (jñānadvayam eva), [and]-that (tat), [and]-would-be (syāt); [and]-not (na), [and]-the-one-cognition (ekaṃ jñānam) | [and]-thus (evaṃ), [and]-with-the-own-corset-entered-ness (svakañcukapraveśitatvena), [and]-the-refuted (dūṣitaḥ), [and]-the-Saugata (saugataḥ), [and]-by-the-established-view-holder (siddhāntavādinā), [and]-of-the-own-self (svātmanaḥ), [and]-the-knowledge-excellence (prajñāprakarṣaṃ), [and]-to-show (darśayitum), [and]-\"this-first (etat tāvad), [and]-the-unfit-said (ayuktam uktaṃ), [and]-by-you (bhavatā)\", [and]-this-is (iti), [and]-determining (nirūpayan), [and]-he-doubts (āśaṅkate), [and]-\"now (atha iti iti)\" | [and]-if (yadi), [and]-the-other-says (para āha): [and]-\"in-the-agreed-established-view-of-yours (bhavatāṃ tāvad abhimatasiddhānte), [and]-not (na), [and]-the-appearance (ābhāso), [and]-the-name (nāma), [and]-any (kaścit), [and]-the-free (svatantraḥ); [and]-but (apitu), [and]-in-the-manifestation-action (ābhāsanakriyāyām), [and]-he (asau), [and]-the-dependent (āyattaḥ); [and]-she, [and]-and (sā ca), [and]-the-knower-operation-form (pramātṛvyāpārarūpā) | [and]-thence (tato), [and]-when (yadā), [and]-the-mutual-distinct-object-two-object-manifestation (parasparaviviktavastudvayaviṣayam ābhāsanaṃ), [and]-then (tadā), [and]-the-objects-two (vastunī dve); [and]-the-manifestation-action, [and]-and (ābhāsanakriyā ca), [and]-the-one (ekā)\", [and]-this-is (iti), [and]-how (katham), [and]-by-you (tvayā), [and]-with-the-own-corset-entry (svakañcukapraveśanena), [and]-the-appearance-two-joined (ābhāsadvayayogi), [and]-not (na), [and]-the-tolerated (sahyate), [and]-the-one-cognition (ekaṃ jñānam) | [and]-\"thence-even (tato'pi iti)\", [and]-even-from-the-thus-said (evam ucyamānād api), [and]-this (idaṃ), [and]-would-be (syāt); [and]-what (kiṃ), [and]-that-cognition-specific (tajjñānaviśeṣam), [and]-the-appearance-two-joined (ābhāsadvayayuktam), [and]-desiring (arthayamānaḥ), [and]-he-would-strive (prayateta), [and]-thus (tathā), [and]-by-which (yena), [and]-like-the-one-appearance (ekaikābhāsavat), [and]-the-cognition-two (jñānadvayaṃ), [and]-having-avoided (parihṛtya), [and]-that-very (tad eva), [and]-he-would-attain (āsādayet) | [and]-since (yato), [and]-of-the-cognition-alone (jñānasyaiva), [and]-the-own-form-distinction (svarūpabhedaḥ), [and]-the-primary-become (pradhānībhūto); [and]-not (na), [and]-of-the-objects-two (viṣayayoḥ), [and]-any (kaścit); [and]-thence (tato), [and]-the-other-object (viṣayāntaraṃ), [and]-the-smoke (dhūmaṃ), [and]-desiring (prepsuḥ), [and]-why (kasmād), [and]-suddenly-alone (akasmād eva), [and]-the-fire-wood-and-the-rest-material (vahnikāṣṭhādisāmagrīṃ), [and]-he-would-bring (ḍhaukayet) | [and]-not-indeed (nahi), [and]-the-jar-desiring (ghaṭārthī), [and]-the-seed-cloth-weaver-and-the-rest-material (bījapaṭakuvindādisāmagrīṃ), [and]-with-the-jar (ghaṭena saha), [and]-at-anytime-even (kadācid), [and]-the-seen-even (avalokitām api), [and]-he-brings-together (saṃbibharti)\", [and]-this-is (iti), [and]-the-seen (dṛṣṭam) | [and]-this (tad), [and]-by-this-much (iyatā), [and]-the-standing (sthitam etat): [and]-\"the-thus-appearance-two-joined (tathābhāsadvayayuktaṃ), [and]-the-cognition-alone (jñānam eva), [and]-would-be-established (sidhyet), [and]-from-the-per-object-appearance-ending-ness (prativiṣayam ābhāsaparyavasānād iti)\" | [and]-that-even (tad api ca), [and]-the-cognition (jñānam), [and]-here (atra), [and]-the-both-appearance (ubhayābhāsaṃ), [and]-not (nāsti); [and]-with-the-fire-knowledge (vahnijñānena), [and]-of-the-smoke (dhūmasya), [and]-by-the-immediacy (anantaratayā), [and]-with-the-smoke-cognition, [and]-and (dhūmapratyayena ca), [and]-of-the-fire (vahneḥ), [and]-by-the-prior-ness (pūrvatayā), [and]-from-the-non-awakening (anavabodhanād iti), [and]-the-previously-said-alone (pūrvoktam eva), [and]-the-flaw (dūṣaṇaṃ), [and]-falls (prapatati), [and]-\"this (etat), [and]-then (tadā), [and]-would-be (syāt), [and]-if (yadi), [and]-the-fire (vahniḥ), [and]-with-the-prior-being-ness (pūrvabhāvitayā), [and]-at-the-smoke-seeing-time (dhūmadarśanakāle), [and]-the-determined (niścīyeta iti)\" | [and]-thence (tataḥ), [and]-this-known-attached-ness-alone (etatprameyalagnatayaiva), [and]-the-other-known (prameyāntaram), [and]-he-doubts (āśaṅkate), [and]-\"now-that-impression (atha tatsaṃskāra iti)\" | [and]-with-the-fire-smoke-knowledge-two (agnidhūmajñānābhyām), [and]-the-one (eko), [and]-the-construction (vikalpo), [and]-who-is-born (yaḥ jātaḥ); [and]-there (tatra), [and]-by-the-simultaneity (yaugapadyena), [and]-they-two (te dve), [and]-the-cognitions (vijñāne), [and]-flashing (sphurantī), [and]-of-the-objects-two (viṣayayoḥ), [and]-the-effect-cause-being (kāryakāraṇabhāvaṃ), [and]-the-once-manifestation-established (sakṛdābhāsasādhyaṃ), [and]-the-establishing (vyavasthāpayataḥ); [and]-then-indeed (tadā hi), [and]-with-the-simultaneous-being-possessed (yugapatsattāsamāviṣṭe), [and]-in-the-born (jāte), [and]-in-the-cognition-two (jñānadvaye), [and]-the-fire (vahniḥ), [and]-with-the-prior-being-ness (pūrvabhāvitayā), [and]-at-the-smoke-seeing-time (dhūmadarśanakāle), [and]-the-determined-alone (niścita eva), [and]-becomes (bhavatīti) | [and]-this (etat), [and]-he-refutes (dūṣayati), [and]-\"that-even (tad api iti)\" | [and]-not-indeed (nahi), [and]-then (tadānīṃ), [and]-they-two (te), [and]-the-cognitions (jñāne), [and]-any (kecit), [and]-the-construction-marker (vikalpalakṣaṇe), [and]-of-them-two (tayor), [and]-from-the-destroyed-ness (naṣṭatvāt); [and]-that (tat), [and]-how (katham), [and]-they-two (te), [and]-the-establishing (vyavasthāpayataḥ) | **Objection (nanu):** [and]-\"with-the-that-impression-birth (tatsaṃskārajanmanā), [and]-with-the-that-servant (tadbhṛtyena), [and]-with-the-construction (vikalpena), [and]-thus (tathā), [and]-the-established (vyavasthāpyate); [and]-the-that-established, [and]-and (tad vyavasthāpitaṃ ca), [and]-by-them-two (tābhyāṃ), [and]-the-established (vyavasthāpitam), [and]-said (ucyata ityāśaṅkya)\", [and]-he-says (āha), [and]-\"the-construction-indeed (vikalpo hi iti)\" | [and]-if (yadi), [and]-first (tāvat), [and]-the-that-own-form-life (tadīyarūpopajīvanam), [and]-regarding (ādriyamāṇo), [and]-the-construction (vikalpaḥ), [and]-to-establish-validly (pramāṇayitum), [and]-strives (īhate), [and]-then (tarhi), [and]-not (na), [and]-by-this-one (anena), [and]-the-prior-later-being (pūrvāparabhāvas), [and]-that-cognition-two-touched (tadvijñānadvayaspṛṣṭaḥ), [and]-the-placed (sthāpyate); [and]-now (atha), [and]-the-placed (sthāpyate), [and]-then (tarhi), [and]-by-the-un-valid (apramāṇena), [and]-that-which-is-by-this-one-placed (yad amunā sthāpitaṃ), [and]-that (tat), [and]-from-the-param-essence-path (paramārthapadāt), [and]-in-the-farthest (davīyasi), [and]-the-placed (avasthāpitaṃ), [and]-becomes (bhavati) | [and]-\"thus-indeed (evaṃ hi iti)\", [and]-we, [and]-though (vayaṃ tu), [and]-of-the-construction-even (vikalpasyāpi), [and]-the-object-touching-ness (vastuspṛktvam), [and]-we-wish (icchāmaḥ\", [and]-this-is (ity), [and]-this-is-other (anyad etat) | [and]-if (yadi), [and]-\"those-two-alone (tāv eva), [and]-the-appearances (pratibhāsau), [and]-the-constructed-become (vikalpībhūtāv), [and]-thus (evaṃ), [and]-would-do (kariṣyataḥ iti)\", [and]-said (ucyate), [and]-then (tarhi), [and]-\"the-entry-into-our-view (asmaddarśanānupraveśaḥ iti)\", [and]-he-shows (darśayati), [and]-\"now (atha iti)\" | [and]-if (yadi), [and]-this-way (evam), [and]-said (ucyate), [and]-\"will-establish (sādhayiṣyataḥ ityantam)\", [and]-\"that (tat iti)\", [and]-thence (tasmād), [and]-from-the-to-be-said-reason (ucyamānāt hetoḥ) | [and]-\"this (etat iti)\", [and]-the-immediately-to-be-said (samanantarocyamānam ityantam), [and]-the-established (siddham) | [and]-how (katham) | [and]-\"thus (evam iti)\", [and]-with-the-to-be-said (vakṣyamāṇena), [and]-\"there-even (tatrāpi hi ityādinā)\", [and]-with-the-reason-manner (nyāyaprakāreṇa iti)\", [and]-the-sentence-conjunction (vākyasamanvayaḥ) | **Objection (nanu):** [and]-\"the-appearances-two-alone (ābhāsāv eva), [and]-the-construction-ness-attained (vikalpatāpannāv evaṃ), [and]-they-do (kuruta ity ukte), [and]-re-reflexively-aware (ahaṃpratyavamṛśya), [and]-the-one (eka), [and]-the-self (ātmā), [and]-the-thus-establishing (tathāvyavasthāpaka iti), [and]-how (katham), [and]-the-established (sidhyet)\", [and]-this-doubt (ityāśaṅkāṃ):"
+      }
+    ],
+    "rūṣitā": [
+      {
+        "l0_id": "chunkV2-O-saptamo-vimarsa:L32:T115",
+        "line_id": 32,
+        "lemma_iast": "tattatpadārthakramarūṣitā",
+        "gloss": "with-the-that-that-word-object-order-seasoned",
+        "source_span": {
+          "chunk": "chunkV2-O-saptamo-vimarsa",
+          "line": 32,
+          "char_start": 5751,
+          "char_end": 5830
+        },
+        "sanskrit": "tattatpadārthakramarūṣitā",
+        "source_text": "> \"[and]-and-this (yā caiṣā), [and]-the-pratibhā (pratibhā), [and]-with-the-that-that-word-object-order-seasoned (tattatpadārthakramarūṣitā);"
+      },
+      {
+        "l0_id": "chunkV2-O-saptamo-vimarsa:L44:T181",
+        "line_id": 44,
+        "lemma_iast": "rūṣitā",
+        "gloss": "the-seasoned",
+        "source_span": {
+          "chunk": "chunkV2-O-saptamo-vimarsa",
+          "line": 44,
+          "char_start": 8192,
+          "char_end": 8219
+        },
+        "sanskrit": "rūṣitā",
+        "source_text": "[and]-this-is (iti), [and]-with-the-beings'-dharma-ness (bhāvadharmatvena), [and]-having-stated-even (abhidhāyāpi), [and]-\"the-self-resident (ātmasaṃśrayā iti)\", [and]-the-consciousness-rest-ness-alone (saṃvidviśrāntataiva), [and]-said (uktā); [and]-merely (kevalaṃ), [and]-from-the-object-uplifting-following (viṣayollekhānuṣaṅgāt), [and]-the-consciousness-form-alone (saṃvedanarūpam eva), [and]-that-pratibhāna (tatpratibhānaṃ), [and]-without (bahiḥ), [and]-with-the-order-possessing-and-the-rest-dharma-support-ness (sakramatvādidharmādhāratāṃ), [and]-takes-on (dhatte) | [and]-thence, [and]-and (ataś ca), [and]-\"he-he (sa sa iti)\", [and]-the-order-order-less-infinite-form (kramākramādi citrarūpo), [and]-who-is-that (yaḥ), [and]-of-the-word-objects (padārthānāṃ), [and]-of-the-objects (vastūnāṃ), [and]-the-Īśvara-freedom-form-place-time-power-raised (aiśvarasvātantryarūpadeśakālaśaktyutthāpitaḥ), [and]-the-order (kramo), [and]-the-place-time-arrangement (deśakālaparipāṭī), [and]-by-him (tena), [and]-the-seasoned (rūṣitā), [and]-the-made-fitted (upahitā):"
+      }
+    ],
+    "akrama": [
+      {
+        "l0_id": "chunkV2-O-saptamo-vimarsa:L32:T115",
+        "line_id": 32,
+        "lemma_iast": "tattatpadārthakramarūṣitā",
+        "gloss": "with-the-that-that-word-object-order-seasoned",
+        "source_span": {
+          "chunk": "chunkV2-O-saptamo-vimarsa",
+          "line": 32,
+          "char_start": 5751,
+          "char_end": 5830
+        },
+        "sanskrit": "tattatpadārthakramarūṣitā",
+        "source_text": "> \"[and]-and-this (yā caiṣā), [and]-the-pratibhā (pratibhā), [and]-with-the-that-that-word-object-order-seasoned (tattatpadārthakramarūṣitā);"
+      },
+      {
+        "l0_id": "chunkV2-O-saptamo-vimarsa:L33:T116",
+        "line_id": 33,
+        "lemma_iast": "akramānantacidrūpaḥ",
+        "gloss": "the-order-less-infinite-consciousness-form",
+        "source_span": {
+          "chunk": "chunkV2-O-saptamo-vimarsa",
+          "line": 33,
+          "char_start": 5834,
+          "char_end": 5904
+        },
+        "sanskrit": "akramānantacidrūpaḥ",
+        "source_text": "> [and]-the-order-less-infinite-consciousness-form (akramānantacidrūpaḥ), [and]-the-knower (pramātā), [and]-he (sa), [and]-the-great-Lord (maheśvaraḥ)\" — (1)"
+      },
+      {
+        "l0_id": "chunkV2-O-saptamo-vimarsa:L44:T168",
+        "line_id": 44,
+        "lemma_iast": "sakramatvādidharmādhāratāṃ",
+        "gloss": "with-the-order-possessing-and-the-rest-dharma-support-ness",
+        "source_span": {
+          "chunk": "chunkV2-O-saptamo-vimarsa",
+          "line": 44,
+          "char_start": 7642,
+          "char_end": 7735
+        },
+        "sanskrit": "sakramatvādidharmādhāratāṃ",
+        "source_text": "[and]-this-is (iti), [and]-with-the-beings'-dharma-ness (bhāvadharmatvena), [and]-having-stated-even (abhidhāyāpi), [and]-\"the-self-resident (ātmasaṃśrayā iti)\", [and]-the-consciousness-rest-ness-alone (saṃvidviśrāntataiva), [and]-said (uktā); [and]-merely (kevalaṃ), [and]-from-the-object-uplifting-following (viṣayollekhānuṣaṅgāt), [and]-the-consciousness-form-alone (saṃvedanarūpam eva), [and]-that-pratibhāna (tatpratibhānaṃ), [and]-without (bahiḥ), [and]-with-the-order-possessing-and-the-rest-dharma-support-ness (sakramatvādidharmādhāratāṃ), [and]-takes-on (dhatte) | [and]-thence, [and]-and (ataś ca), [and]-\"he-he (sa sa iti)\", [and]-the-order-order-less-infinite-form (kramākramādi citrarūpo), [and]-who-is-that (yaḥ), [and]-of-the-word-objects (padārthānāṃ), [and]-of-the-objects (vastūnāṃ), [and]-the-Īśvara-freedom-form-place-time-power-raised (aiśvarasvātantryarūpadeśakālaśaktyutthāpitaḥ), [and]-the-order (kramo), [and]-the-place-time-arrangement (deśakālaparipāṭī), [and]-by-him (tena), [and]-the-seasoned (rūṣitā), [and]-the-made-fitted (upahitā):"
+      },
+      {
+        "l0_id": "chunkV2-O-saptamo-vimarsa:L44:T173",
+        "line_id": 44,
+        "lemma_iast": "kramākramādi citrarūpo",
+        "gloss": "the-order-order-less-infinite-form",
+        "source_span": {
+          "chunk": "chunkV2-O-saptamo-vimarsa",
+          "line": 44,
+          "char_start": 7825,
+          "char_end": 7890
+        },
+        "sanskrit": "kramākramādi citrarūpo",
+        "source_text": "[and]-this-is (iti), [and]-with-the-beings'-dharma-ness (bhāvadharmatvena), [and]-having-stated-even (abhidhāyāpi), [and]-\"the-self-resident (ātmasaṃśrayā iti)\", [and]-the-consciousness-rest-ness-alone (saṃvidviśrāntataiva), [and]-said (uktā); [and]-merely (kevalaṃ), [and]-from-the-object-uplifting-following (viṣayollekhānuṣaṅgāt), [and]-the-consciousness-form-alone (saṃvedanarūpam eva), [and]-that-pratibhāna (tatpratibhānaṃ), [and]-without (bahiḥ), [and]-with-the-order-possessing-and-the-rest-dharma-support-ness (sakramatvādidharmādhāratāṃ), [and]-takes-on (dhatte) | [and]-thence, [and]-and (ataś ca), [and]-\"he-he (sa sa iti)\", [and]-the-order-order-less-infinite-form (kramākramādi citrarūpo), [and]-who-is-that (yaḥ), [and]-of-the-word-objects (padārthānāṃ), [and]-of-the-objects (vastūnāṃ), [and]-the-Īśvara-freedom-form-place-time-power-raised (aiśvarasvātantryarūpadeśakālaśaktyutthāpitaḥ), [and]-the-order (kramo), [and]-the-place-time-arrangement (deśakālaparipāṭī), [and]-by-him (tena), [and]-the-seasoned (rūṣitā), [and]-the-made-fitted (upahitā):"
+      },
+      {
+        "l0_id": "chunkV2-O-saptamo-vimarsa:L48:T196",
+        "line_id": 48,
+        "lemma_iast": "akramā",
+        "gloss": "the-order-less",
+        "source_span": {
+          "chunk": "chunkV2-O-saptamo-vimarsa",
+          "line": 48,
+          "char_start": 8726,
+          "char_end": 8755
+        },
+        "sanskrit": "akramā",
+        "source_text": "[and]-this-is (iti), [and]-in-the-stated-manner (kathitanītyā), [and]-which-is-the-pratibhā (yā pratibhā), [and]-\"this (eṣā iti)\", [and]-of-all (sarvasya), [and]-always (sadā), [and]-the-self-manifesting (svaprakāśā); [and]-in-truth, [and]-and (vastutaś ca), [and]-with-the-inner-turned-form (antarmukhena vapuṣā), [and]-from-the-place-time-measure-less-ness (deśakālakalanāvaikalyāt), [and]-the-order-less (akramā), [and]-he-alone (sa eva), [and]-the-Lord (bhagavān), [and]-the-infinite-consciousness-form (anantacidrūpaḥ), [and]-the-place-time-and-the-rest-cut-free-consciousness-own-nature (deśakālādiparicchedavirahitasaṃvitsvabhāvaḥ), [and]-of-the-valid-means-valid-result-mass (pramāṇapramitisamūhasya), [and]-with-the-as-wished-joining-and-the-rest-making-freedom-joined (yathārucisaṃyojanādikaraṇasvātantryayuktaḥ), [and]-the-pure-'I'-re-reflexive-awareness-made (śuddhāhaṃpratyavamarśamayaḥ), [and]-of-the-conceived-lords (kalpiteśvarāṇāṃ), [and]-of-the-Brahmā-Viṣṇu-and-the-rest (brahmaviṣṇvādīnāṃ), [and]-with-the-own-part-coronation-conceived-lordship (svāṃśābhiṣekopakalpitaiśvaryo), [and]-the-great-Lord (maheśvaraḥ), [and]-the-knower (pramātā) | [and]-she, [and]-and (sā ca), [and]-the-pratibhā (pratibhā), [and]-the-un-deniable (anapahnavanīyā)\", [and]-this-is (iti), [and]-with-the-inner-turned-form (antarmukhena vapuṣā), [and]-the-support (āśrayaḥ), [and]-the-established-alone (siddha eva) | [and]-not-here (na), [and]-the-other-effort (atra yatnāntaram), [and]-the-to-be-placed (āstheyam iti), [and]-with-the-'ca' (cena), [and]-he-indicates (dyotayati) | [and]-the-sūtra-meaning (sūtrārtham), [and]-he-brings-in (avatārayati), [and]-\"and-as-much (yāvacca iti)\" | [and]-the-'ca'-meaning (cārtho), [and]-explained (vyākhyātaḥ) | [and]-\"that-which-anything-manifests (yat kiñcid ābhāsate), [and]-of-that (tasya), [and]-the-inner-turned (antarmukhaṃ), [and]-which-is-the-manifestation (yad avabhāsanaṃ); [and]-he (sa), [and]-the-self (ātmā), [and]-the-knower (pramātā); [and]-he-alone, [and]-and (sa eva ca), [and]-the-own-nature (svabhāvaḥ); [and]-that-very, [and]-and (tad eva ca), [and]-the-lordship (aiśvaryam iti), [and]-the-connection (saṃbandhaḥ) | [and]-the-'ca'-meaning-alone (cārtham eva), [and]-in-the-prior-object-established-ness (pūrvavastusiddhāv), [and]-of-this (asya), [and]-the-effortless-established-ness (ayatnasiddhatvam iti), [and]-this-form-aggregation-marker (evaṃvidhasamuccayalakṣaṇaṃ), [and]-to-determine (nirūpayituṃ), [and]-the-previously-said (pūrvoktam), [and]-he-echoes (anubhāṣate), [and]-with-the-summary-conclusion (saṃkṣepanigamanena), [and]-\"thus-this (tad evam iti)\" | [and]-\"there (tatra iti)\", [and]-in-the-thus-established-being (evam upapādite sati) | [and]-with-the-'krama'-word-alone (kramapadenaiva), [and]-the-external-ness (bāhyatā), [and]-invoked (ākṣiptā) | [and]-she, [and]-and (sā ca):"
+      },
+      {
+        "l0_id": "chunkV2-O-saptamo-vimarsa:L52:T301",
+        "line_id": 52,
+        "lemma_iast": "yā antarakramābhāsatā",
+        "gloss": "which-is-the-inner-order-less-appearance-ness",
+        "source_span": {
+          "chunk": "chunkV2-O-saptamo-vimarsa",
+          "line": 52,
+          "char_start": 12888,
+          "char_end": 12963
+        },
+        "sanskrit": "yā antarakramābhāsatā",
+        "source_text": "[and]-in-this-is (ityatra), [and]-\"the-māyā-knower-organ-range-conceit-ground-ness-alone (māyāpramātṛkaraṇagocaratvābhimānabhūmitvam eva)\", [and]-this-is (iti), [and]-will-be-said (vakṣyate) | [and]-that (tat), [and]-he-shows (darśayati), [and]-\"mind-organ (buddhyakṣa iti)\" | [and]-with-the-'buddhyakṣa'-word (buddhyakṣaśabdena), [and]-the-inner-organ-even (antaḥkaraṇam api), [and]-the-to-be-seen (draṣṭavyam); [and]-the-mind-range-even (manogocaro'pi hi), [and]-the-external-alone (bāhya eva) | [and]-\"thence-alone (ata eva iti)\", [and]-this-very (etad eva), [and]-the-external-ness (bāhyatvaṃ), [and]-with-the-to-be-established-ness (pratipādyatvena), [and]-having-intended (abhisandhāya), [and]-with-the-appearance-word (ābhāsaśabdena), [and]-said (uktam) | [and]-\"how (katham), [and]-in-that-non-statement (tadanuktau), [and]-that (tat), [and]-is-perceived (pratīyate)\" | [and]-he-says (āha), [and]-\"from-the-external-form-ness-alone (bahīrūpatvād eva), [and]-the-object-ness-primary-ness-alone (arthatāpradhānatvam eva), [and]-thence-from-the-reason (etyato hetor), [and]-the-appearance-ness-acceptance (ābhāsatāsvīkāre), [and]-that (tat), [and]-is-perceived (pratīyate iti), [and]-the-fit (yuktam) | [and]-\"which-pratibhā (yā pratibhā iti)\", [and]-in-the-beginning (upakrame), [and]-\"she (seti)\", [and]-the-to-be-said (vaktavye), [and]-of-the-masculine-reference (puṃnirdeśasya), [and]-what-is-the-intention (ka āśaya iti), [and]-\"the-external-manifestation (bāhyāvabhāsa iti)\" | [and]-of-the-consciousness-essence (cittattvasya), [and]-which-is-the-inner-order-less-appearance-ness (yā antarakramābhāsatā), [and]-she (sā), [and]-of-the-world (lokasya), [and]-from-the-māyā-power-delusion-strength (māyāśaktivimohabalāt), [and]-not (na), [and]-the-established (siddheti), [and]-prescribed (vidhīyate), [and]-the-established (siddhaṃ), [and]-the-ordered (kramikaṃ), [and]-the-external-manifestation (bāhyāvabhāsam), [and]-having-echoed (anūdya), [and]-\"which (yā ity anena)\" | [and]-not-here (naca), [and]-by-the-that-much-ness-alone (tāvamātrataiva), [and]-prescribed (vidhīyate), [and]-by-which (yena), [and]-\"she (seti)\", [and]-would-be (bhavet); [and]-but (kintu), [and]-\"the-knower (pramātā), [and]-the-great-Lord (maheśvaraḥ), [and]-she (sā), [and]-the-pratibhā (pratibhā iti)\", [and]-with-the-knower-ness-great-lordship-two (pramātṛtvamāheśvaryābhyām), [and]-the-accumulated (upacitā), [and]-the-gained-fullness (labdhaparipoṣā); [and]-thence-alone (tata eva), [and]-from-the-accumulation-strength-alone (upacayabalād eva), [and]-the-fit (ucitaḥ), [and]-the-masculine-reference (puṃstvanirdeśaḥ) | [and]-in-the-vṛtti, [and]-though (vṛttau tu iti), [and]-the-result-determination (phalanirūpaṇaṃ), [and]-in-the-vṛtti (vṛttau), [and]-made (kṛtam iti), [and]-not (na), [and]-the-'which'-word (yacchabdo), [and]-the-to-be-declared-dharma-support-indicating (vidhāsyamānadharmādhāratādyotako), [and]-with-the-echo-ness (nuvādakatvena), [and]-taken (upāttaḥ; [and]-not-here (nāpi), [and]-the-dharma-support-intention-vessel-made-prior-form-final-wished-other-dharma-support-indicating (dharmādhāratābhisandhānapātrīkṛtapūrvarūpaniṣṭhavivakṣitadharmāntarādhāratādyotako), [and]-with-the-prescribing-ness (vidhāyakatvena), [and]-that-'that'-word (tacchabdaḥ) | [and]-not-here (naca), [and]-with-all-ways (sarvathā), [and]-of-the-sūtra (sautrau), [and]-the-prescription-echo (vidhyanuvādau), [and]-the-clear (spaṣṭāv iti), [and]-he-says (āha), [and]-with-the-'eva'-word (evakāreṇa iti) | [and]-\"he-alone (sa eva), [and]-the-self (ātmā iti)\", [and]-this-is (iti), [and]-indeed (hi), [and]-said (ukte), [and]-\"the-other (anyaḥ), [and]-any (kaścid), [and]-the-self (ātmā iti)\", [and]-the-doubt (śaṅkā), [and]-as-much-as (yāvat), [and]-dissolves (galati), [and]-as-much-as (tāvat), [and]-the-prescription (vidhānaṃ), [and]-the-result-made-alone (phalakṛtam eva), [and]-becomes (bhavatīti) | [and]-\"the-appearance-alone (ābhāsa eva), [and]-the-self (ātmā iti)\", [and]-the-vṛtti-sentence (vṛttigrantham), [and]-he-connects (saṃgamayati), [and]-the-doubt-quieting (āśaṅkāṃ śamayan), [and]-\"although (yady api ityādinā)\" | **Objection (nanu):** [and]-\"from-the-inner-turned-ness (antarmukhatvāt), [and]-of-which (yasya), [and]-not (na), [and]-the-time-joining (kālayogaḥ); [and]-he (sa), [and]-how (katham), [and]-the-all-consciousness-time-pervader (sarvasaṃvitkālavyāpī), [and]-this-is (iti), [and]-said (uktaḥ)\" | [and]-here (atra), [and]-he-says (āha), [and]-\"and-yet (athaca iti)\" | [and]-\"said (uktam iti)\", [and]-in-the-vṛtti (vṛttau), [and]-in-the-sūtra, [and]-and (sūtre ca) | **Objection (nanu):** [and]-\"if (yadi), [and]-he-alone (sa eva), [and]-this-way (itthaṃ), [and]-flashes (sphurati), [and]-his-power-unfolding (tacchaktivikāso), [and]-the-world (viśvam iti), [and]-then (tarhi), [and]-enough (alam), [and]-with-that-recognition-teaching (tatpratyabhijñām upadiśya)\" | [and]-here (atra), [and]-he-says (āha), [and]-\"merely (kevalam iti)\" | [and]-this-form (evaṃbhūtaṃ), [and]-which-is-that (yad), [and]-of-the-objects (arthānāṃ), [and]-with-the-order (krameṇa):"
+      },
+      {
+        "l0_id": "chunkV2-O-saptamo-vimarsa:L71:T563",
+        "line_id": 71,
+        "lemma_iast": "deśakālakramajuṣām",
+        "gloss": "enjoying-the-place-time-order",
+        "source_span": {
+          "chunk": "chunkV2-O-saptamo-vimarsa",
+          "line": 71,
+          "char_start": 22850,
+          "char_end": 22906
+        },
+        "sanskrit": "deśakālakramajuṣām",
+        "source_text": "> \"[and]-of-the-objects (arthānāṃ), [and]-enjoying-the-place-time-order (deśakālakramajuṣām), [and]-of-the-self-converging (svasamāpinām);"
+      }
+    ]
+  },
+  "sanskrit_spans": [
+    "akramā",
+    "akramānantacidrūpaḥ",
+    "deśakālakramajuṣām",
+    "kramākramādi citrarūpo",
+    "pratibhā",
+    "pratibhā ...",
+    "pratibhā iti",
+    "pratibhānti",
+    "pratibhāsadharmo'yam",
+    "pratibhāsanakāla eva",
+    "pratibhāsau",
+    "pratibhāse",
+    "pratibhāti ghaṭa iti",
+    "pratibhāvikāsagrahaṇena",
+    "rūṣitā",
+    "sakramatvādidharmādhāratāṃ",
+    "saṃbandhapratibhāvikāsena hi",
+    "tatpratibhānaṃ",
+    "tattatpadārthakramarūṣitā",
+    "yā antarakramābhāsatā",
+    "yā pratibhā",
+    "yā pratibhā iti"
+  ],
+  "philological_proof": {
+    "proof_id": "pp:ipvv:v2o:p0",
+    "chunk": "chunkV2-O-saptamo-vimarsa",
+    "source_sha256": "78f72e74f59e35c7d6124f4ceb76f7744d36a0624580f14d8f2fce330ce2c363",
+    "span_integrity": {
+      "exact_fragment_matches": 3444,
+      "failures": 0
+    },
+    "coverage_unknown": 16,
+    "roundtrip": "FAIL",
+    "PASS": false,
+    "note": "the authoritative frozen P0 is 35/35 PASS; this record is the on-disk proof for the chunk"
+  },
+  "passage_id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+  "resolved_arrows": [
+    "passage",
+    "c1",
+    "l2",
+    "l0_anchor",
+    "source_span",
+    "sanskrit",
+    "philological_proof"
+  ],
+  "unresolved_arrows": [],
+  "schema_gaps": [
+    "research_question not first-class on ARG-001 (only on 003/004/005)",
+    "on-disk proof for this chunk is not the frozen 35/35 P0 (older record); authoritative proof_id referenced"
+  ]
+}
