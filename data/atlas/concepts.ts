@@ -430,4 +430,44 @@ export const concepts: AtlasEntity[] = [
       outputs: ["the khecarī dossier", "the four-goers map", "the khecaratva cross-text"],
     },
   },
+  {
+    id: "śakti",
+    type: "concept",
+    title: "Śakti",
+    sanskrit: "शक्ति",
+    period: { start: 800, end: 1300, approximate: true },
+    summary:
+      "The power/dynamism — never merely 'energy'. In Spanda, the constitutive dynamism of manifestation and cognition; in Kubjikā, the goddess/mantric power with strong phonemic and triadic articulation; in Abhinava/Trika, the freedom/power of consciousness, differentiated from and reintegrated into supreme awareness. A single English 'energy' seriously impoverishes it — translate by context.",
+    concepts: ["spanda", "mālinī", "mātṛkā", "svātantrya", "pratyabhijñā"],
+    dossier: {
+      systemicFunction:
+        "Śakti is the central case for why lemma-level consistency fails: deity, language, and causal power overlap in the Kaula world rather than forming separate categories, so the sense is fixed by the tradition + register, not the dictionary.",
+      doctrinalCore: [
+        "Spanda: power/dynamism constitutive of manifestation and cognition (SPK 1, 18-19)",
+        "Kubjikā: goddess/mantric power with phonemic and triadic articulation (KMT 1.71-81, 2.1, 4.110)",
+        "Abhinava/Trika: freedom/power of consciousness, differentiated + reintegrated into supreme awareness (TĀ 1.5, 3.143-44, 33.20-29)",
+      ],
+      outputs: ["the śakti dossier", "the deity/language/causal-power overlap map"],
+    },
+  },
+  {
+    id: "pratyabhijñā",
+    type: "concept",
+    title: "Pratyabhijñā",
+    sanskrit: "प्रत्यभिज्ञा",
+    period: { start: 900, end: 1050, approximate: true },
+    summary:
+      "Recognition — Utpaladeva's and Abhinavagupta's philosophical system: recognition of one's identity/nature as the autonomous conscious principle. Sanderson explicitly identifies Pratyabhijñā concepts as the metaphysical groundwork for Abhinava's ritual. Not mere recollection — it is the recognition that re-identifies the subject across cognition.",
+    concepts: ["recognition", "vimarśa", "prakāśa", "śakti"],
+    dossier: {
+      systemicFunction:
+        "Pratyabhijñā is the philosophical/exegetical current intersecting Trika (not another directional āmnāya) — the metaphysical foundation Abhinava uses to reinterpret the scriptural traditions. Feed the Recognition Enquiry (markguidance.md): A reflexive presence / B diachronic subjectivity / C universal identity.",
+      doctrinalCore: [
+        "Recognition of one's identity as the autonomous conscious principle",
+        "Sanderson: Pratyabhijñā = the metaphysical groundwork for Abhinava's ritual",
+        "Distinct from recollection — it is recognition across cognition",
+      ],
+      outputs: ["the Pratyabhijñā argument dossier", "the A/B/C recognition thesis map"],
+    },
+  },
 ];

@@ -47,6 +47,7 @@ stale ones as `[ARCHIVED]` so a new agent is never confused. If it's not here, i
 | **Logicvid source files** | `research-library/pushing/_source/` | research-library |
 | **Corpus build (Phase 1)** | `docs/PHASE1_IPVV_CORPUS_PROCESS_NOTES.md` | repo `docs/` |
 | **Corpus targets (master index)** | `docs/corpus/TARGETS-INDEX.md` | the consolidated translation-target/lead/source goldmine (DB + links) |
+| **Sanskritree import manifest** | `docs/corpus/SANSKRITREE-IMPORT-MANIFEST.md` | the full sanskritree audit: what's directly useful + where it imports + what's excluded |
 | **Scholarly graph / data model** | `data/corpus/graph.ts` + `docs/SCHOLARLY_GRAPH.md` | repo |
 | **Translation protocol** | `docs/TRANSLATION_PROTOCOL.md` | repo `docs/` |
 | **Northstar / vision spec** | `docs/NORTHSTAR.md` | repo `docs/` |
