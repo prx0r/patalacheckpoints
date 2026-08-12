@@ -396,3 +396,19 @@ secret `/tmp/p2review_key.jsonl`. Reviewer sees only `/tmp/p2review_fixed_blind.
 
 Per the review: P2 not claimed human-calibrated until the 150 cases are reviewed; P3 not promoted until
 an editor re-reads the enriched context.
+
+## Agent L0 — P2 ensemble FINALIZED (4600 records) + balanced blind review (2026-08-12)
+
+**Enriched ensemble (4600 records: 1500 CONFLICT + 1500 UNANALYZED + 800 CONFIRMED + 800 AMBIGUOUS_SUPPORTED):**
+- **Control agreement 84.1%** (1345/1600) — instruments consistent.
+- **CONFLICT resolution 71.6%** (1074/1500) — most Vidyut CONFLICT = representation mismatch, not L0 error.
+- **Double-conflict 9.2%** (424 cases) — the genuinely-review-worthy set.
+- **Heritage-disagrees (V+/H-)** 5.5% (254 cases) — now enough for a full blind cell.
+- VIDYUT_COVERAGE_GAP 29.2%, TOOL_ERROR 0.2%.
+
+**Balanced genuinely-blind review:** rebuilt from the enriched ensemble → **160 cases, 40 per cell**
+(DOUBLE_CONFLICT / VIDYUT_MISMATCH / HERITAGE_MISMATCH / BOTH_SUPPORT), opaque IDs, shuffled, secret key
+separate. Reviewer file: `/tmp/p2review_v2_blind.csv`; SECRET key `/tmp/p2review_v2_key.jsonl`.
+
+The result is stable across sample sizes (500 → 4600), so P2's calibration is solid. The blind review is
+the remaining human gate to VALIDATED_AGAINST_HUMAN_GOLD.
