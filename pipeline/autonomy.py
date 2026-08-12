@@ -111,6 +111,20 @@ LAYER_HANDLERS = {
     for layer in LAYERS
 }
 
+# Wire the REAL L0 layer handler (deterministic RAW-L0 + batch gloss + validate).
+try:
+    from l0_worker import make_l0_handlers
+    LAYER_HANDLERS["L0"] = make_l0_handlers()
+except Exception as e:  # pragma: no cover
+    print("L0 worker not wired:", e, file=sys.stderr)
+
+# Wire the L200 audit compiler (partly deterministic + Task-2 validator).
+try:
+    from l200_worker import make_l200_handlers
+    LAYER_HANDLERS["L200"] = make_l200_handlers()
+except Exception as e:  # pragma: no cover
+    print("L200 worker not wired:", e, file=sys.stderr)
+
 
 def tick(layers: list[str] | None = None, max_batch: int = 8,
          dry_run: bool = False, inputs: dict[str, list[dict]] | None = None) -> dict:
@@ -141,7 +155,9 @@ def tick(layers: list[str] | None = None, max_batch: int = 8,
                 if dry_run:
                     report["skipped"] += 1
                     continue
-                commit(layer, p["object_id"], p.get("input_hash", ""), created_by="autonomy-controller")
+                payload = {k: v for k, v in p.items() if k not in ("object_id", "input_hash", "_layer")}
+                commit(layer, p["object_id"], p.get("input_hash", ""), created_by="autonomy-controller",
+                       payload=payload)
                 report["committed"] += 1
                 layer_report["committed"] += 1
         report["layers"][layer] = layer_report

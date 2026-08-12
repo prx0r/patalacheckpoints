@@ -67,3 +67,33 @@ Run:
 python3 pipeline/test_autonomy.py    # 16/16
 python3 pipeline/test_autonomous.py  # 7/7
 ```
+
+---
+
+## L0 CANARY + L200 WORKER (2026-08-12) — proven
+
+### L0 canary (controller drives real L0 production)
+`pipeline/l0_worker.py` wires the controller's L0 handler to the real RAW-L0 factory (deterministic
+Vidyut + agentic batch gloss → `validate_l0_spec` → commit). Ran the controller `tick` on 3
+kramasadbhāva passages:
+- **2 committed** (`v1`,`v3`) with real PARSED glossed records (e.g. aśarīrāḥ→"bodiless (ones)").
+- **1 failed** (`v2`) — the OCR-noise verse (`* * * * * * * *`), correctly rejected by validation (fail-closed).
+- Proof that the controller drives end-to-end L0 production via the layer handler.
+
+### L200 worker (the audit compiler)
+`pipeline/l200_worker.py` — partly deterministic (identification, published reading, derivation map
+from refs, source-layer, cross-refs, review state) + model-proposed MT/IA/open-items. The **Task-2
+validator** enforces: all required sections, MT classified (not IA), refs typed, source-layer tagged.
+Ran through the controller: **L200 committed** with the full 8-section audit + derivation map; **idempotent**
+(second tick skips).
+
+### Worker tests
+`pipeline/test_workers.py` — **8/8 PASS** (L0 validator fail-closed · L200 8-section generator · Task-2
+validator pass/bad-MT/missing-source-layer · controller L200 commit · persistence · idempotency).
+
+**Honest note:** the model-proposal layers (batch gloss for L0; MT/IA for L200) are stubbed in the tests
+(hermes can hang — fail-fast). The deterministic scaffolds + validators are fully exercised; real model
+calls are the generative layer, wired but exercised separately in the canary (L0 gloss) and pending for
+L200 MT/IA at scale.
+
+Run: `python3 pipeline/test_workers.py` · `test_autonomy.py` · `test_autonomous.py`.
