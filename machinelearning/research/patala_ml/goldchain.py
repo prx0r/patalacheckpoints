@@ -74,8 +74,16 @@ class GoldChainCertificate:
         cert["INTERPRETATION"] = worst(["C1", "THEME"])
         cert["INFERENCE"] = worst(["ARGUMENT", "AIF", "ESSAYPLAN"])
         cert["ESSAY_CLAIM"] = worst(["ESSAYCLAIM", "SENTENCE"])
-        # a compact but non-collapsed summary
-        cert["proof_level"] = "P2" if cert["MORPHOLOGY"] in ("PROVED", "SUPPORTED") else "P0"
+        # proof_level reflects the PHILOLOGICAL proof level (from the L0 nodes) — P0..P3,
+        # NOT derived from interpretation. If any L0 node is OPEN, cap at P1; else use the
+        # deepest L0 proof_level present.
+        l0_levels = [n.status for n in self.nodes if n.layer == "L0"]
+        phil_open = any(n.status == "OPEN" or "OPEN" in n.status for n in self.nodes if n.layer == "L0")
+        if l0_levels:
+            deepest = max(l0_levels, key=lambda s: {"P0": 0, "P1": 1, "P2": 2, "P3": 3}.get(s, 0))
+            cert["proof_level"] = "P1" if phil_open else deepest
+        else:
+            cert["proof_level"] = "P0"
         return cert
 
     def to_dict(self) -> dict:

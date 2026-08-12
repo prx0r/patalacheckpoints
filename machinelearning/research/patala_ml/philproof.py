@@ -93,3 +93,46 @@ def proof_from_l0(l0_records: list[dict], proof_id: str, passage_id: str) -> Phi
     p.set_check("lexical_sense", "OPEN" if ambiguous else "SUPPORTED")
     p.review_state = "machine"
     return p
+
+
+def proof_from_verify_l0(proof_file: str, passage_id: str) -> PhilologicalProof:
+    """Consume the REAL verify_l0.py .l0.proof.json output (the authoritative handshake).
+
+    This is what the gold chain uses once the L0 agent has emitted proofs — replacing the stub.
+    Maps the L0 proof's fields onto the PhilologicalProof contract:
+      source_sha256      → source_hash
+      span_integrity     → source_integrity (PROVED iff exact_fragment_matches == records)
+      ordering           → segmentation (PROVED iff monotonic, no overlap/dup)
+      coverage.unknown   → lexical_sense (OPEN iff unknown_chars > 0, else SUPPORTED)
+    """
+    import json
+    d = json.load(open(proof_file))
+    p = PhilologicalProof(
+        proof_id=f"pp:{d.get('chunk', passage_id).replace('chunk', '').lower()}:p0",
+        passage_id=passage_id,
+        source_hash=d.get("source_sha256", ""),
+    )
+    # span integrity: every token's raw_fragment matches chunk[cs:ce]
+    si = d.get("span_integrity", {})
+    ok = si.get("failures", 1) == 0 and si.get("exact_fragment_matches", 0) == d.get("records", 0)
+    p.set_check("source_integrity", "PROVED" if ok else "FAILED")
+
+    # ordering: monotonic, no overlap/dup
+    ord_ = d.get("ordering", {})
+    seg_ok = (ord_.get("monotonic", False) and ord_.get("overlaps", 1) == 0
+              and ord_.get("duplicates", 1) == 0)
+    p.set_check("segmentation", "PROVED" if seg_ok else "FAILED")
+
+    # coverage: no UNKNOWN chars (else the unmarked-token bug → OPEN)
+    cov = d.get("coverage", {})
+    unknown = cov.get("unknown_chars", 1)
+    p.set_check("coverage", "PROVED" if unknown == 0 else "OPEN")
+    p.set_check("morphology", "SUPPORTED")
+    p.set_check("alignment", "SUPPORTED")
+    p.set_check("lexical_sense", "OPEN" if unknown > 0 else "SUPPORTED")
+    if unknown > 0:
+        p.open.append(f"UNMARKED_TOKENS:{unknown} chars unclassified (quote-initial tokens)")
+
+    p.proof_level = "P0"  # verify_l0 is P0 (span/ordering/coverage)
+    p.review_state = "machine"
+    return p

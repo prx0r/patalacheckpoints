@@ -26,7 +26,7 @@ from patala_ml.builders import build_struct
 from patala_ml.aifgraph import ArgumentGraph
 from patala_ml.essayplan import plan_from_argument
 from patala_ml.goldchain import GoldChainCertificate, ChainNode
-from patala_ml.philproof import PhilologicalProof, proof_from_l0
+from patala_ml.philproof import PhilologicalProof, proof_from_l0, proof_from_verify_l0
 
 
 L0_DIR = "/mnt/HC_Volume_106427611/sanskritree/translations/_stack/ipvv/l0"
@@ -59,15 +59,22 @@ def main():
     load_bearing = ["V2-O-saptamo-vimarsa", "V2-S-astamo-close-jnanadhikara",
                     "V2-P-saptamo-k5-10", "V2-L-sastho-vimarsa-smrti-apohana"]
 
-    # ── L0: build a philological proof per load-bearing passage (referenced by ID) ──
+    # ── L0: consume the REAL verify_l0.py proofs where they exist; fall back to the stub ──
     proofs = {}
     for chunk in load_bearing:
-        records = load_l0_records(chunk)
-        proof_id = f"pp:ipvv:{chunk.lower().split('-')[0]}:p4"
-        pp = proof_from_l0(records, proof_id, f"pt:passage:ipvv:chunk{chunk}")
+        proof_id = f"pp:ipvv:{chunk.lower().split('-')[0]}:p0"
+        # try the real proof emitted by verify_l0.py
+        proof_path = os.path.join("/tmp/l0proof", f"chunk{chunk}.l0.proof.json")
+        if os.path.exists(proof_path):
+            pp = proof_from_verify_l0(proof_path, f"pt:passage:ipvv:chunk{chunk}")
+            src = "REAL verify_l0 proof"
+        else:
+            records = load_l0_records(chunk)
+            pp = proof_from_l0(records, proof_id, f"pt:passage:ipvv:chunk{chunk}")
+            src = "stub (no verify_l0 proof emitted yet)"
         proofs[chunk] = pp
-        print(f"  L0 {chunk}: {len(records)} records → {pp.proof_level} "
-              f"({pp.checks['lexical_sense']})")
+        print(f"  L0 {chunk}: [{src}] → {pp.proof_level} "
+              f"({pp.checks['lexical_sense']}, unknown={len(pp.open)})")
 
     # add the philological checks into the certificate
     for chunk, pp in proofs.items():

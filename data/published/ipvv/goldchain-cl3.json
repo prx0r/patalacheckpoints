@@ -6,19 +6,19 @@
     {
       "id": "V2-O-saptamo-vimarsa:l0",
       "layer": "L0",
-      "status": "P2",
-      "evidence": "L0 proof pp:ipvv:v2:p4",
+      "status": "P0",
+      "evidence": "L0 proof pp:v2-o-saptamo-vimarsa:p0",
       "depends_on": [
         "V2-O-saptamo-vimarsa:sanskrit"
       ],
-      "philological_proof": "pp:ipvv:v2:p4",
+      "philological_proof": "pp:v2-o-saptamo-vimarsa:p0",
       "review_state": "machine"
     },
     {
       "id": "V2-O-saptamo-vimarsa:sanskrit",
       "layer": "SANSKRIT",
       "status": "PROVED",
-      "evidence": "V2-O-saptamo-vimarsa source",
+      "evidence": "78f72e74f59e35c7d6124f4ceb76f7744d36a0624580f14d8f2fce330ce2c363",
       "depends_on": [],
       "philological_proof": null,
       "review_state": "machine"
@@ -26,19 +26,19 @@
     {
       "id": "V2-S-astamo-close-jnanadhikara:l0",
       "layer": "L0",
-      "status": "P2",
-      "evidence": "L0 proof pp:ipvv:v2:p4",
+      "status": "P0",
+      "evidence": "L0 proof pp:v2-s-astamo-close-jnanadhikara:p0",
       "depends_on": [
         "V2-S-astamo-close-jnanadhikara:sanskrit"
       ],
-      "philological_proof": "pp:ipvv:v2:p4",
+      "philological_proof": "pp:v2-s-astamo-close-jnanadhikara:p0",
       "review_state": "machine"
     },
     {
       "id": "V2-S-astamo-close-jnanadhikara:sanskrit",
       "layer": "SANSKRIT",
       "status": "PROVED",
-      "evidence": "V2-S-astamo-close-jnanadhikara source",
+      "evidence": "9f61af819e2b8486a6f409fed92a23c32ac1e8bd1b1c5ff5a91bf91122792271",
       "depends_on": [],
       "philological_proof": null,
       "review_state": "machine"
@@ -46,19 +46,19 @@
     {
       "id": "V2-P-saptamo-k5-10:l0",
       "layer": "L0",
-      "status": "P2",
-      "evidence": "L0 proof pp:ipvv:v2:p4",
+      "status": "P0",
+      "evidence": "L0 proof pp:v2-p-saptamo-k5-10:p0",
       "depends_on": [
         "V2-P-saptamo-k5-10:sanskrit"
       ],
-      "philological_proof": "pp:ipvv:v2:p4",
+      "philological_proof": "pp:v2-p-saptamo-k5-10:p0",
       "review_state": "machine"
     },
     {
       "id": "V2-P-saptamo-k5-10:sanskrit",
       "layer": "SANSKRIT",
       "status": "PROVED",
-      "evidence": "V2-P-saptamo-k5-10 source",
+      "evidence": "a05344694f664c38c0877cc851cb70ce837d7c3d16c79a3e6021f4aadb31a01a",
       "depends_on": [],
       "philological_proof": null,
       "review_state": "machine"
@@ -66,19 +66,19 @@
     {
       "id": "V2-L-sastho-vimarsa-smrti-apohana:l0",
       "layer": "L0",
-      "status": "P2",
-      "evidence": "L0 proof pp:ipvv:v2:p4",
+      "status": "P0",
+      "evidence": "L0 proof pp:v2-l-sastho-vimarsa-smrti-apohana:p0",
       "depends_on": [
         "V2-L-sastho-vimarsa-smrti-apohana:sanskrit"
       ],
-      "philological_proof": "pp:ipvv:v2:p4",
+      "philological_proof": "pp:v2-l-sastho-vimarsa-smrti-apohana:p0",
       "review_state": "machine"
     },
     {
       "id": "V2-L-sastho-vimarsa-smrti-apohana:sanskrit",
       "layer": "SANSKRIT",
       "status": "PROVED",
-      "evidence": "V2-L-sastho-vimarsa-smrti-apohana source",
+      "evidence": "ccbc00648fe27f79c277b24a3020806b6ce88886ac4c80cb8aac5cb974deeb6e",
       "depends_on": [],
       "philological_proof": null,
       "review_state": "machine"
@@ -91,7 +91,7 @@
       "depends_on": [
         "V2-O-saptamo-vimarsa:l0"
       ],
-      "philological_proof": "pp:ipvv:v2:p4",
+      "philological_proof": "pp:v2-o-saptamo-vimarsa:p0",
       "review_state": "machine"
     },
     {
@@ -102,7 +102,7 @@
       "depends_on": [
         "V2-O-saptamo-vimarsa:l2"
       ],
-      "philological_proof": "pp:ipvv:v2:p4",
+      "philological_proof": "pp:v2-o-saptamo-vimarsa:p0",
       "review_state": "machine"
     },
     {
@@ -113,7 +113,7 @@
       "depends_on": [
         "V2-O-saptamo-vimarsa:l200"
       ],
-      "philological_proof": "pp:ipvv:v2:p4",
+      "philological_proof": "pp:v2-o-saptamo-vimarsa:p0",
       "review_state": "machine"
     },
     {
@@ -124,7 +124,7 @@
       "depends_on": [
         "V2-S-astamo-close-jnanadhikara:l0"
       ],
-      "philological_proof": "pp:ipvv:v2:p4",
+      "philological_proof": "pp:v2-s-astamo-close-jnanadhikara:p0",
       "review_state": "machine"
     },
     {
@@ -135,7 +135,7 @@
       "depends_on": [
         "V2-S-astamo-close-jnanadhikara:l2"
       ],
-      "philological_proof": "pp:ipvv:v2:p4",
+      "philological_proof": "pp:v2-s-astamo-close-jnanadhikara:p0",
       "review_state": "machine"
     },
     {
@@ -146,7 +146,7 @@
       "depends_on": [
         "V2-S-astamo-close-jnanadhikara:l200"
       ],
-      "philological_proof": "pp:ipvv:v2:p4",
+      "philological_proof": "pp:v2-s-astamo-close-jnanadhikara:p0",
       "review_state": "machine"
     },
     {
@@ -157,7 +157,7 @@
       "depends_on": [
         "V2-P-saptamo-k5-10:l0"
       ],
-      "philological_proof": "pp:ipvv:v2:p4",
+      "philological_proof": "pp:v2-p-saptamo-k5-10:p0",
       "review_state": "machine"
     },
     {
@@ -168,7 +168,7 @@
       "depends_on": [
         "V2-P-saptamo-k5-10:l2"
       ],
-      "philological_proof": "pp:ipvv:v2:p4",
+      "philological_proof": "pp:v2-p-saptamo-k5-10:p0",
       "review_state": "machine"
     },
     {
@@ -179,7 +179,7 @@
       "depends_on": [
         "V2-P-saptamo-k5-10:l200"
       ],
-      "philological_proof": "pp:ipvv:v2:p4",
+      "philological_proof": "pp:v2-p-saptamo-k5-10:p0",
       "review_state": "machine"
     },
     {
@@ -190,7 +190,7 @@
       "depends_on": [
         "V2-L-sastho-vimarsa-smrti-apohana:l0"
       ],
-      "philological_proof": "pp:ipvv:v2:p4",
+      "philological_proof": "pp:v2-l-sastho-vimarsa-smrti-apohana:p0",
       "review_state": "machine"
     },
     {
@@ -201,7 +201,7 @@
       "depends_on": [
         "V2-L-sastho-vimarsa-smrti-apohana:l2"
       ],
-      "philological_proof": "pp:ipvv:v2:p4",
+      "philological_proof": "pp:v2-l-sastho-vimarsa-smrti-apohana:p0",
       "review_state": "machine"
     },
     {
@@ -212,7 +212,7 @@
       "depends_on": [
         "V2-L-sastho-vimarsa-smrti-apohana:l200"
       ],
-      "philological_proof": "pp:ipvv:v2:p4",
+      "philological_proof": "pp:v2-l-sastho-vimarsa-smrti-apohana:p0",
       "review_state": "machine"
     },
     {
@@ -314,6 +314,6 @@
     "INTERPRETATION": "EDITOR_APPROVED",
     "INFERENCE": "SUPPORTED",
     "ESSAY_CLAIM": "EDITOR_APPROVED",
-    "proof_level": "P2"
+    "proof_level": "P0"
   }
 }
