@@ -27,6 +27,9 @@ stale ones as `[ARCHIVED]` so a new agent is never confused. If it's not here, i
 | **ML dev plan** | `machinelearning/DEVPLAN.md` | repo `machinelearning/` |
 | **ML vision (big picture)** | `machinelearning/MLVISION.md` | repo `machinelearning/` |
 | **IPVV stack integration (verified)** | `machinelearning/IPVV-STACK-INTEGRATION.md` | repo `machinelearning/` |
+| **Source-centric hub (organizing model)** | `machinelearning/COMPOUNDING_RESEARCH_SYSTEM.md` | repo `machinelearning/` |
+| **PUSHING method (deep-dive formula)** | `machinelearning/SPEC_PUSHING_METHOD.md` | repo `machinelearning/` |
+| **Logical arguments (the gold)** | `machinelearning/SPEC_LOGICAL_ARGUMENTS_GOLD.md` | repo `machinelearning/` |
 | **Corpus build (Phase 1)** | `docs/PHASE1_IPVV_CORPUS_PROCESS_NOTES.md` | repo `docs/` |
 | **Scholarly graph / data model** | `data/corpus/graph.ts` + `docs/SCHOLARLY_GRAPH.md` | repo |
 | **Translation protocol** | `docs/TRANSLATION_PROTOCOL.md` | repo `docs/` |

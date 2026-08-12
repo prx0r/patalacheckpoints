@@ -127,6 +127,17 @@ server.tool(
   },
 );
 
+// ————————————————— get_work_hub —————————————————
+server.tool(
+  "get_work_hub",
+  "The source-centric hub: every output a primary source has spawned (translations, essays, logical arguments, pushing-enquiries, learning), all tied to the source's passages. Query by work.",
+  { work: z.string() },
+  async ({ work }) => {
+    const d = await api(`/api/hub?work=${encodeURIComponent(work)}`);
+    return { content: [{ type: "text", text: JSON.stringify(d, null, 2) }] };
+  },
+);
+
 // ————————————————— get_themes —————————————————
 server.tool(
   "get_themes",
