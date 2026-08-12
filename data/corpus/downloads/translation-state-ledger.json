@@ -1,0 +1,1412 @@
+{
+  "note": "Agent 2 translation-state ledger. The control plane for Agent 3. Next action per work = NEXT_VALID_ACTION.",
+  "works": {
+    "ajadapramatrsiddhi": {
+      "work_id": "ajadapramatrsiddhi",
+      "bibliographic_id": null,
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "LEGACY_PRESENT",
+        "c1": "LEGACY_PRESENT"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "akulavira": {
+      "work_id": "akulavira",
+      "bibliographic_id": null,
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "PARTIAL",
+        "c1": "LEGACY_PRESENT"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "brahmayamala": {
+      "work_id": "brahmayamala",
+      "bibliographic_id": "brahmayamala",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/mnt/HC_Volume_106427611/sanskritree/sources/muktabodha-lib/brahmayAmala-M00319-IAST.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "cidgagana": {
+      "work_id": "cidgagana",
+      "bibliographic_id": null,
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/mnt/HC_Volume_106427611/sanskritree/sources/muktabodha-lib/cidgaganacandrikA-M00014-IAST.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "cidgaganacandrika": {
+      "work_id": "cidgaganacandrika",
+      "bibliographic_id": "cidgaganacandrika",
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "LEGACY_PRESENT"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "ipvv": {
+      "work_id": "ipvv",
+      "bibliographic_id": null,
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "VERIFIED",
+        "reason": null
+      },
+      "proof": {
+        "status": "FROZEN"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "GENERATE_TRANSLATION",
+        "eligible_for_agent3": true,
+        "reason": "L0_VALID -> GENERATE_TRANSLATION"
+      }
+    },
+    "jnanakarika": {
+      "work_id": "jnanakarika",
+      "bibliographic_id": "jnanakarika",
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "LEGACY_PRESENT",
+        "c1": "LEGACY_PRESENT"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "kakacandeshvarimata": {
+      "work_id": "kakacandeshvarimata",
+      "bibliographic_id": null,
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "LEGACY_PRESENT"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "kalanalatantra": {
+      "work_id": "kalanalatantra",
+      "bibliographic_id": "kalanalatantra",
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "kalikarahasya": {
+      "work_id": "kalikarahasya",
+      "bibliographic_id": null,
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "LEGACY_PRESENT"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "kaula": {
+      "work_id": "kaula",
+      "bibliographic_id": null,
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "kaularahasya": {
+      "work_id": "kaularahasya",
+      "bibliographic_id": null,
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "kaularcanadipika": {
+      "work_id": "kaularcanadipika",
+      "bibliographic_id": null,
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "kiranatantra": {
+      "work_id": "kiranatantra",
+      "bibliographic_id": "kiranatantra",
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "kjn": {
+      "work_id": "kjn",
+      "bibliographic_id": null,
+      "source": {
+        "available": true,
+        "format": "UNKNOWN",
+        "source_ref": "/mnt/HC_Volume_106427611/sanskritree/sources/round2/bagchi_kjn_1934.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "LEGACY_PRESENT",
+        "c1": "LEGACY_PRESENT"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "CLASSIFY_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "UNKNOWN_SOURCE_FORMAT UNKNOWN"
+      }
+    },
+    "kramasadbhava": {
+      "work_id": "kramasadbhava",
+      "bibliographic_id": "kramasadbhava",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/mnt/HC_Volume_106427611/sanskritree/sources/round3/kramasadbhava_IAST.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "LEGACY_PRESENT"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "kubjika": {
+      "work_id": "kubjika",
+      "bibliographic_id": null,
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/mnt/HC_Volume_106427611/sanskritree/sources/muktabodha-lib/kubjikAtantra-M00030-IAST.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "LEGACY_PRESENT",
+        "c1": "LEGACY_PRESENT"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "kubjikaguhyesvaripuja": {
+      "work_id": "kubjikaguhyesvaripuja",
+      "bibliographic_id": null,
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "kubjikagurumandalapuja": {
+      "work_id": "kubjikagurumandalapuja",
+      "bibliographic_id": null,
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "kubjikamata": {
+      "work_id": "kubjikamata",
+      "bibliographic_id": "kubjikamata",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/mnt/HC_Volume_106427611/sanskritree/sources/gretil2/raw_kubjikamata.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "kubjikapuja": {
+      "work_id": "kubjikapuja",
+      "bibliographic_id": null,
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "kuladipika": {
+      "work_id": "kuladipika",
+      "bibliographic_id": null,
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "kulalashastra": {
+      "work_id": "kulalashastra",
+      "bibliographic_id": null,
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "kulananda": {
+      "work_id": "kulananda",
+      "bibliographic_id": null,
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "LEGACY_PRESENT",
+        "c1": "LEGACY_PRESENT"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "kulapradipa": {
+      "work_id": "kulapradipa",
+      "bibliographic_id": null,
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "kulasara": {
+      "work_id": "kulasara",
+      "bibliographic_id": "kulasara",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/mnt/HC_Volume_106427611/sanskritree/sources/muktabodha-lib/kulasAra-M00294-IAST.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "LEGACY_PRESENT"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "mahaguhyakalividhana": {
+      "work_id": "mahaguhyakalividhana",
+      "bibliographic_id": null,
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "LEGACY_PRESENT"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "mahanayaprakasha": {
+      "work_id": "mahanayaprakasha",
+      "bibliographic_id": "mahanayaprakasha",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/mnt/HC_Volume_106427611/sanskritree/sources/muktabodha-lib/mahAnayaprakAza-M00033-IAST.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "LEGACY_PRESENT"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "maharahasyasampradaya": {
+      "work_id": "maharahasyasampradaya",
+      "bibliographic_id": "maharahasyasampradaya",
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "maharthamanjari": {
+      "work_id": "maharthamanjari",
+      "bibliographic_id": "maharthamanjari",
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "PARTIAL",
+        "c1": "LEGACY_PRESENT"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "malinivijayottara": {
+      "work_id": "malinivijayottara",
+      "bibliographic_id": "malinivijayottara",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/mnt/HC_Volume_106427611/sanskritree/sources/muktabodha-lib/mAlinIvijayottaratantra-M00160-IAST.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "netratantra": {
+      "work_id": "netratantra",
+      "bibliographic_id": "netratantra",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/mnt/HC_Volume_106427611/sanskritree/sources/muktabodha-lib/netratantra-M00038-IAST.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "nitya": {
+      "work_id": "nitya",
+      "bibliographic_id": null,
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "LEGACY_PRESENT"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "nityakaulatantra": {
+      "work_id": "nityakaulatantra",
+      "bibliographic_id": null,
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "pascimamnaya": {
+      "work_id": "pascimamnaya",
+      "bibliographic_id": null,
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "sivasutra": {
+      "work_id": "sivasutra",
+      "bibliographic_id": "sivasutra",
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "LEGACY_PRESENT",
+        "c1": "LEGACY_PRESENT"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "spanda": {
+      "work_id": "spanda",
+      "bibliographic_id": null,
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "spandakarika": {
+      "work_id": "spandakarika",
+      "bibliographic_id": "spandakarika",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/mnt/HC_Volume_106427611/sanskritree/sources/muktabodha-lib/spandakArikA-M00067-IAST.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "svacchandatantra": {
+      "work_id": "svacchandatantra",
+      "bibliographic_id": "svacchandatantra",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/mnt/HC_Volume_106427611/sanskritree/sources/muktabodha-lib/svacchandatantra-M00091-IAST.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "tantraloka": {
+      "work_id": "tantraloka",
+      "bibliographic_id": "tantraloka",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/mnt/HC_Volume_106427611/sanskritree/sources/gretil_tantraloka.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "tararahasya": {
+      "work_id": "tararahasya",
+      "bibliographic_id": null,
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "LEGACY_PRESENT"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "tarkasamgraha": {
+      "work_id": "tarkasamgraha",
+      "bibliographic_id": null,
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "ten": {
+      "work_id": "ten",
+      "bibliographic_id": null,
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "LEGACY_PRESENT",
+        "c1": "LEGACY_PRESENT"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "timirodghatana": {
+      "work_id": "timirodghatana",
+      "bibliographic_id": "timirodghatana",
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "LEGACY_PRESENT"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    },
+    "yogini": {
+      "work_id": "yogini",
+      "bibliographic_id": null,
+      "source": {
+        "available": false,
+        "format": "UNKNOWN",
+        "source_ref": null,
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "ACQUIRE_SOURCE",
+        "eligible_for_agent3": false,
+        "reason": "MISSING_SOURCE"
+      }
+    }
+  }
+}
