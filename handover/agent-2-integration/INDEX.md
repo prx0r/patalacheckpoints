@@ -27,8 +27,9 @@ substrate (`resolve`, `hub`, `spines`, `themes`, 4 `verify_*`, `recommend`). Doc
 **Skills:** 7 (`assemble-stack`/`translate-passage`/`translate-work`/`validate-passage` → CP1;
 `push-text` → CP4; `write-commentary` → CP3; `use-api` → CP2/CP9).
 **Learning:** `docs/LEARNING_STRATEGY.md` (knowledge packets, research-once/distill-repeatedly).
-**Honest completeness:** "35/35" = the V2/V3 published corpus, NOT all 63 chunks. 28 V1 legacy chunks
-(`01_t1`) are `MIGRATION_PENDING`, 0/28, and are **this lane's known unfinished piece**.
+**Honest completeness:** the IPVV flagship is **63/63 L0 lossless** (V2/V3 35/35 + V1 legacy 28/28).
+Cross-work generalization to other Śaiva works is NOT yet demonstrated — the raw-Sanskrit source-L0
+mode (kramasadbhava etc.) remains a known seam. See `CHECKPOINTS-INTEGRATION.md`.
 
 ---
 
@@ -74,24 +75,30 @@ substrate (`resolve`, `hub`, `spines`, `themes`, 4 `verify_*`, `recommend`). Doc
   adequacy doctrine — do NOT keep tuning; revisit only on downstream failure. P4's uncertainty is
   metadata, not a blocker. Spec: `docs/P4_ALIGNMENT_SPEC.md`. Code: `pipeline/l0_align.py` +
   `pipeline/test_l0_align.py` (26/26 pass).
+- **Corpus state machine (the Agent-3 control plane)** — `pipeline/corpus_state.py` computes per-work
+  state from ACTUAL disk truth (source format, translation stage, L0 status, proof, review) + the
+  transition contract `NEXT_VALID_ACTION(work)` + `eligible_for_agent3`. Served via
+  `GET /api/corpus/state`. Ledger: `data/corpus/downloads/translation-state-ledger.json` (45 works).
+  Test: `pipeline/test_corpus_state.py` (11/11 pass).
+- **Executable-corrections review engine (Phase 3A — THE MOAT)** — `pipeline/review_engine.py`: a
+  scholar's judgment is an immutable, provenance-carrying graph mutation (append-only ReviewEvent →
+  deterministic reducer → DerivedState → ImpactReport), NOT prose. Vertical loop proven over ARG-002
+  (G2-TC2 v1→v2): v1 retained, G2-INF1/G2-CONC → NEED_REVIEW, ARG-004 untouched, idempotent. Doctrine
+  holds: ACCEPT≠truth, REJECT≠delete, REVISE≠overwrite. Test: `pipeline/test_review_engine.py` (15/15).
 
-### In progress / next (in order — CP1: PhilologicalProof)
-1. **P2 blind review** (160 cases) → VALIDATED_AGAINST_HUMAN_GOLD (P-011 promotion) — non-blocking.
-2. **Deterministic related-rail** — `/api/recommend` + `recommend_related` MCP.
-3. **Context alignment** — wire GRETIL IPK+Vṛtti+IPV into `/api/context`.
-4. **Comparative matrix** — `comparative.ts` + seed.
-5. **Argument truth-packet** — `pt:argument:` + `/verify-argument` (coordinates with Agent 1 CP4).
-6. **PARALLELS** — typed cross-text witnesses.
-7. **L200 → graph annotations** — keep the MT/IA split.
-8. **Schema-version pin** — `data/published/ipvv/version.json`.
-9. **Cross-work ingestion demo** (later) — ingest a second real work's T1 to demonstrate/confirm the
-   L0 adapter generalizes (do NOT build a generic ingestion framework now).
-10. **Autonomous-run supervisor** (deferred) — `pipeline/auto_run.py`: batch T1→L2→C1 per passage via
-    existing run.py/skills, auto validate-passage+verify after each, stamp provenance (origin=machine,
-    MACHINE_PROPOSED, never auto-accepted), stop on validation failure, batch report. Enables
-    "translate while I sleep." Build AFTER git/vision formalization is committed.
+### In progress / next (in order — the updated plan)
+1. **Phase 3D MCP review tools** — `patala_get_review_state` · `patala_propose_review` ·
+   `patala_submit_review` · `patala_get_impact` (expose the review engine as graph verbs; PROPOSE-not-ACCEPT).
+2. **Phase 3E tiny Scholar Workbench review screen** — the product-facing ImpactReport UI.
+3. **Phase 3F Hermes A4 scheduling** — LAST: kanban+cron orchestrates review, Hermes doesn't define semantics.
+4. **P2 blind review** (160 cases) → VALIDATED_AGAINST_HUMAN_GOLD (P-011 promotion) — non-blocking.
+5. **Cross-work L0 generalization** (later) — ingest a second real work to demonstrate the adapter generalizes.
+6. **Deterministic related-rail** — `/api/recommend` + `recommend_related` MCP.
+7. **Agent 3 translation factory** (cross-lane) — on kanban+cron, consuming `NEXT_VALID_ACTION`.
+8. **Context alignment** — wire GRETIL IPK+Vṛtti+IPV into `/api/context`.
+9. **Schema-version pin** — `data/published/ipvv/version.json`.
 
-Full thread list: `WHAT_NEXT_PATALA.md`.
+Full thread list: `WHAT_NEXT_PATALA.md`. Canonical plan: `CHECKPOINTS-INTEGRATION.md`.
 
 ---
 

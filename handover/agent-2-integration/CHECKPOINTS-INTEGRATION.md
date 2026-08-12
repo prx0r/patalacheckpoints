@@ -1,7 +1,9 @@
-# AGENT 2 (INTEGRATION / L0) — CHECKPOINTS & GOALS
+# AGENT 2 (CORPUS COMPILER + INTEGRITY) — CHECKPOINTS & GOALS
 
-*2026-08-12. The Agent-2 leading doc. Breaks the shared vision (`CHECKPOINTS.md`) into THIS lane's
-concrete goals. **Agent 2 owns CP1 (PhilologicalProof).** Read `AGENTS.md` + `AGENTS-DOCTRINE.md` +
+*2026-08-12. The Agent-2 leading doc. **Agent 2's identity broadened from "the L0 agent" to the CORPUS
+COMPILER + INTEGRITY LAYER** — it maintains the canonical machine-readable corpus state that Agent 3
+(translation factory) safely operates on, and the review/dependency engine that turns a scholar's
+correction into an executable graph mutation. Read `AGENTS.md` + `AGENTS-DOCTRINE.md` +
 `handover/CHECKPOINTS.md` first.*
 
 ---
@@ -9,101 +11,113 @@ concrete goals. **Agent 2 owns CP1 (PhilologicalProof).** Read `AGENTS.md` + `AG
 ## THE LANE (what Agent 2 owns)
 
 ```
-CP1 PHILOLOGICAL PROOF REAL   →  [converge with Agent ML at CP4]
+CP1 PHILOLOGICAL PROOF   →   CORPUS STATE   →   REVIEW/EXECUTABLE-CORRECTIONS
 ```
 
-**Agent 2's question, always:** *is this reading licensed by the source?* It produces `PhilologicalProof`
-objects (not logs), and joins with Agent ML on `Ref` IDs (passage / proof / C1), never fuzzy.
+**Agent 2's questions:**
+- *Is this reading licensed by the source?* (the L0 floor)
+- *What do we have, where is it, what state is it in, and can every artifact resolve?* (corpus state)
+- *How does a scholar's judgment become an executable graph mutation?* (the review engine)
+
+**The clean division (per the agent architecture):** Agent 2 = corpus compiler + integrity + state truth.
+Agent 3 = translation factory (consumes NEXT_VALID_ACTION). Agent 1 = philosophical intelligence.
+
+**Does NOT:** generate translations (Agent 3), write C1 / choose interpretive readings (Agent 1), promote
+machine output to accepted scholarship, do argument extraction / themes / synthesis (Agent 1).
 
 ---
 
-## GOAL CP1 — PhilologicalProof v1
+## GOAL 1 — THE PHILOLOGICAL PROOF FLOOR (CP1, substantially DONE)
 
-**Where you are (already the CLOSEST major checkpoint):**
-- V2/V3: **35/35 P0 PASS**, 0 unknown source chars, exact spans, complete classification.
-- P2 **CALIBRATED + FROZEN as witness** (P-011): Vidyut×Heritage ensemble, control agreement 84–85%,
-  Vidyut CONFLICT resolution 72%, true double-conflict ~9%.
-- P3 **ranker REJECTED** (P-012): ranker.py top1=0.76 < embedding baseline 0.81, 0 abstention. Not promoted.
-- P4 **benchmark + baseline live** (NEW): meaningful L0↔L2 term-anchor alignment, floor = resolution
-  recall 0.93 / precision 0.89 / abstain 1.0 (35 passages / 105 anchors). See `docs/P4_ALIGNMENT_SPEC.md`.
+**Where you are (the source floor is real and frozen):**
+- **P0 — COMPLETE IPVV 63/63 LOSSLESS, FROZEN.** V2/V3 35/35 (103,917 tokens, 0 unknown) + **V1 legacy
+  28/28** via `pipeline/extract_l0_v1.py` (`verify_l0.py` UNCHANGED). Honest caveat: 63/63 proves
+  two-format robustness, NOT cross-work generalization (that waits for a second work).
+- **P2 CALIBRATED + FROZEN witness (P-011).** Vidyut×Heritage ensemble: control 84–85%, conflict-resolve
+  72%, true double-conflict ~9%.
+- **P3 ranker REJECTED (P-012).** ranker.py 0.76 < embedding 0.81, 0 abstention.
+- **P4 alignment FROZEN witness (P-013).** L0↔L2 term-anchor: 0.93 recall / 0.89 precision / 1.0 abstain
+  + independent Vidyut witness 0.81. Frozen per the adequacy doctrine.
 
-**What CP1 means (NOT "machine proves translation correctness"):**
-> Every material source→L0 translation decision can expose what is mechanically proven, linguistically
-> supported, unresolved, or editor-dependent.
-
-**Finish in order (current honest status):**
-```
-P0 exact source coverage       ✅ done + FROZEN (35/35)
-P1 segmentation/sandhi         Vidyut
-P2 morphology                  ✅ CALIBRATED witness (P-011); human blind review pending (non-blocking)
-P3 lexical sense               ⚠️ gold+baselines done; ranker REJECTED (P-012); embedding 0.81 is the floor
-P4 alignment                   ⬜ benchmark+baseline live (0.93 floor); human gold + real aligner next
-P5 syntax/referents            later / selective high-risk
-```
-
-**The structure to freeze NOW:**
-```ts
-interface PhilologicalProof {
-  proof_id: string; passage_id: Ref; source_span_ids: Ref[];
-  source_integrity: ProofDimension; extraction_coverage: ProofDimension;
-  segmentation: ProofDimension; morphology: ProofDimension; syntax: ProofDimension;
-  alignment: ProofDimension; lexical_sense: ProofDimension;
-  open_issues: PhilologicalIssue[];
-  tool_witnesses: ToolWitness[];
-  review_events: ReviewEventId[];
-}
-interface ProofDimension {
-  status: "PROVED" | "SUPPORTED" | "CONFLICT" | "OPEN" | "UNCHECKED" | "REVIEWED";
-  evidence_ids: string[];
-}
-```
-Do NOT invent `confidence: .93`. `REVIEWED` means actual human review, not code.
-
-**Why it matters:** this immediately becomes `/verify-translation` — "upload your Sanskrit translation
-and Pāṭala shows exactly where philological judgment enters." That is already a scholar product.
+**Remaining CP1 items (non-blocking / deferred):**
+- P2 human blind review (160 cases) → VALIDATED_AGAINST_HUMAN_GOLD — logged, non-blocking.
+- P5 syntax — deferred (adequacy doctrine).
+- Cross-work L0 generalization — demonstrated only when a second real work is ingested.
 
 ---
 
-## GOAL CP1 — the concrete sequence
+## GOAL 2 — THE CORPUS STATE MACHINE (Agent 2's core object, BUILT)
+
+The control plane Agent 3 consumes:
 
 ```
-1. Heritage ensemble → P2 disagreement analysis   (run Heritage over all Vidyut CONFLICT + UNANALYZED
-                                                   + a stratified control: ~500 CONFIRMED, ~500 AMBIGUOUS_SUPPORTED)
-                                                   → a Vidyut×Heritage confusion matrix + disagreement report
-2. lexical gold (~50–100 fixtures incl. NO-UNIQUE-SENSE abstention cases) → ranker benchmark
-   (baselines: most-common gloss / local L0 gloss / embedding) before ranker.py becomes a witness
-3. alignment gold (held-out from manually checked L0 pairs) → alignment benchmark
+pipeline/corpus_state.py  →  per-work state from ACTUAL disk truth:
+                              source availability + format (AND_GLOSS / RAW_SANSKRIT)
+                              translation stage (T1/L2/C1) · L0 status · proof · review
+                              NEXT_VALID_ACTION(work) + eligible_for_agent3
+data/corpus/downloads/translation-state-ledger.json   (45 works)
+GET /api/corpus/state                                  (served read-only)
 ```
 
-**Do NOT:** wander into essay logic · promote ranker.py to P3 without a human-reviewed gold + baseline eval.
+**Status:** ✅ BUILT + served. The transition contract (MISSING_SOURCE→ACQUIRE, RAW_SANSKRIT→BUILD_L0_
+SOURCE_MODE [blocked], L0_VERIFIED→GENERATE_TRANSLATION, etc.) is the Agent-3 control plane.
 
 ---
 
-## THE SHARED BOUNDARY (how the lanes converge at CP4)
+## GOAL 3 — THE EXECUTABLE-CORRECTIONS REVIEW ENGINE (the moat, PHASE 3A BUILT)
 
-Agent 2 certifies the source floor; Agent ML derives upward. The join is contractual:
-```
-Passage ID · PhilologicalProof ID · C1 ID · TranslationDecision ID
-```
-**Never** by filename, guessed locator, title string, or fuzzy match. The fabricated-ID failure
-permanently established this.
+The thing to obsess over: a scholar's judgment is an **immutable, provenance-carrying graph mutation**,
+not prose.
 
-At CP4, the vertical object both lanes produce together:
 ```
-"I claim X"
-because:
-    C1 says ...        (Agent ML)
-    L2 renders ...     (Agent ML)
-    Sanskrit span is ... (Agent 2's source)
-    PhilologicalProof says ...  (Agent 2)
+ReviewEvent (append-only) → Review ledger → deterministic reducer → Current scholarly state
+   → dependency traversal → ImpactReport (exactly what a correction changes)
 ```
+
+**Status:** ✅ **Phase 3A BUILT + PROVEN** (`pipeline/review_engine.py`, 15/15 tests). The vertical loop
+over ARG-002 (G2-TC2 v1→v2 REVISE): v1 retained, ReviewEvent resolves, v2 created, G2-INF1/G2-CONC
+→ NEED_REVIEW, ARG-004 untouched (isolation), reducer idempotent. Doctrine holds: ACCEPT ≠ truth,
+REJECT ≠ delete, REVISE ≠ overwrite.
+
+**The five concepts are real:** `ReviewEvent` · `ObjectVersion` · `DependencyEdge` (GROUNDS /
+USES_AS_PREMISE / USES_AS_WARRANT / ORGANIZES) · `DerivedState` · `ImpactReport`.
+
+---
+
+## THE CONCRETE SEQUENCE (where we're headed — updated)
+
+```
+CP1 floor ✅ (63/63)  →  corpus state ✅ (ledger)  →  review engine ✅ (Phase 3A)
+   ↓
+PHASE 3B  typed dependency propagation        (the 4 edge types — partially proven in 3A)
+PHASE 3C  ImpactReport                         (✅ done in 3A)
+PHASE 3D  MCP tools: patala_get_review_state · patala_propose_review · patala_submit_review ·
+          patala_get_impact                    (expose the graph as verbs, PROPOSE-not-ACCEPT)
+PHASE 3E  tiny Scholar Workbench review screen
+PHASE 3F  Hermes A4 scheduling                (LAST — Hermes orchestrates, it doesn't define semantics)
+   ↓
+(cross-lane) Agent 3 translation factory on kanban+cron  →  (later) BYOA over mcp.patala.org
+```
+
+**Do NOT:** build a generic ingestion framework · rebuild review workflow infra (OpenReview/Hypothesis/
+Crossref exist) · let Hermes determine what Pāṭala knows · promote machine output without a scoped policy.
+
+---
+
+## THE SHARED BOUNDARY (the lanes converge on Ref IDs)
+
+Agent 2 certifies the floor + state; Agent 1 derives upward; Agent 3 produces drafts. The join is
+contractual: `Passage ID · PhilologicalProof ID · C1 ID · TranslationDecision ID · ReviewEvent ID` —
+never fuzzy.
 
 ---
 
 ## THE GUARDRAILS (Agent 2 specific)
 
-- Output `PhilologicalProof` objects, not logs.
-- The 5 proof dimensions each carry an honest status; no collapsed confidence number.
-- `extraction_coverage: OPEN` (unclassified source chars) is NOT `lexical_sense: OPEN` — never conflate.
+- Reviews are **immutable**; supersession preserves history, never erases it (≠ Hermes checkpoints).
+- No agent tool can **accept/promote**; only PROPOSE/RECORD; promotion is scoped human policy.
+- **Hermes hooks trigger recomputation; Pāṭala's dependency engine determines it.**
+- Every proof dimension carries an honest status; no collapsed confidence number.
+- `extraction_coverage: OPEN` ≠ `lexical_sense: OPEN` — never conflate.
 - Keep the frozen P0 extractor; only fix reproducible loss bugs.
-- Update `CLAIMS.md` (P-001) + the handover honestly as each P1–P4 sub-capability crosses its gate.
+- Update `CLAIMS.md` + the handover honestly as each phase crosses its gate.

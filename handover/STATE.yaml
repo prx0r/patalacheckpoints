@@ -1,5 +1,5 @@
-state_version: 15
-last_update: '2026-08-12T13:39:28'
+state_version: 18
+last_update: '2026-08-12T14:40:05'
 agent1:
   checkpoints:
     CP0:
@@ -11,25 +11,29 @@ agent1:
         on v0 fixtures.
     CP3:
       status: PARTIAL
-      note: cluster.py proposals exist (machine); no AcceptedTheme yet.
-    CP4:
-      status: IN_PROGRESS
-      note: 'Golds revised per model review (ARG-002 v2 clean); ASPIC pilot RUN (minimal
-        local fallback, arg.tech 503): vikalpa accepted w/o defeater, defeated with
-        G2-TC2. Next = real-engine re-run + human specialist review.'
+      note: 'Theme map 100% coverage over C1s; THEME-REVIEW-001..003 (model): 3 candidates
+        are different kinds (LOCAL_THEME / CONCEPT_TERM_FAMILY / DOCTRINAL_PROBLEM_DOMAIN).
+        Kind-taxonomy validated. Next: accept into AcceptedTheme.'
       updated_by: agent1
-      ts: '2026-08-12 13:39:28'
+      ts: '2026-08-12 14:31:43'
+    CP4:
+      status: PARTIAL
+      note: '5 golds CANDIDATE (model-critiqued), vertical object fully resolves (reference_resolution
+        EXACT), ASPIC pilot PROXY_SUPPORTED (real engine 503 = open dep), extraction
+        NOT_ESTABLISHED. Next: independent gold review -> first auditable argument.'
+      updated_by: agent1
+      ts: '2026-08-12 14:31:43'
 agent2:
   checkpoints:
     CP1:
       status: PARTIAL
-      note: 'Closed the vertical-object proof seam: regenerated authoritative V2-O
-        P0 proof from frozen 63/63 machinery and re-pointed the vertical object (Agent
-        1''s builder, vertical.py untouched) so philological_proof went STALE -> REFERENCE_RESOLVED/EXACT
-        (on_disk_PASS True). The auditable Sanskrit->C1 chain now closes end-to-end
-        (L0 63/63 -> L200 audit -> C1 -> vertical object -> authoritative proof).'
+      note: 'Agent 2 reframed as corpus compiler + integrity layer. DONE: CP1 floor
+        63/63 lossless (V1 28/28), P2/P3/P4 witnesses, corpus state machine (corpus_state.py
+        + /api/corpus/state), executable-corrections review engine Phase 3A (review_engine.py,
+        15/15). NEXT: Phase 3D MCP review tools -> 3E Workbench screen -> 3F Hermes
+        A4 (last).'
       updated_by: agent2
-      ts: '2026-08-12 13:14:17'
+      ts: '2026-08-12 14:40:05'
 shared:
   CP0: DONE
   CP1: PARTIAL
