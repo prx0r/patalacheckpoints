@@ -25,8 +25,13 @@ from dataclasses import dataclass, field
 
 
 # the per-dimension statuses (the certificate is per-dimension, never collapsed)
+# Two uncertainties are deliberately separate:
+#   extraction_coverage  — did the extractor account for every T1 source region? (P0: UNKNOWN chars)
+#   lexical_sense        — we identified the Sanskrit, but is its intended sense resolved? (P3)
+# A chunk with unclassified source characters has extraction_coverage=OPEN; that is NOT the same as
+# an unresolved lexical sense.
 DIMENSIONS = [
-    "source_integrity", "coverage", "segmentation", "morphology",
+    "source_integrity", "extraction_coverage", "segmentation", "morphology",
     "syntax", "alignment", "polarity", "agent_patient", "lexical_sense", "supplied_content",
 ]
 STATUSES = ["UNCHECKED", "PROVED", "SUPPORTED", "EDITOR_REVIEWED", "OPEN", "FAILED"]
@@ -82,8 +87,8 @@ def proof_from_l0(l0_records: list[dict], proof_id: str, passage_id: str) -> Phi
     n = len(l0_records)
     parsed = sum(1 for r in l0_records if r.get("status") == "PARSED")
     ambiguous = sum(1 for r in l0_records if r.get("status") == "AMBIGUOUS")
-    # coverage: are tokens parsed?
-    p.set_check("coverage", "PROVED" if n and parsed / n > 0.9 else "SUPPORTED")
+    # extraction_coverage: are tokens parsed / are T1 regions classified?
+    p.set_check("extraction_coverage", "PROVED" if n and parsed / n > 0.9 else "SUPPORTED")
     p.set_check("segmentation", "PROVED" if n else "UNCHECKED")
     p.set_check("source_integrity", "PROVED")  # spans present
     p.set_check("morphology", "SUPPORTED")
@@ -100,10 +105,12 @@ def proof_from_verify_l0(proof_file: str, passage_id: str) -> PhilologicalProof:
 
     This is what the gold chain uses once the L0 agent has emitted proofs — replacing the stub.
     Maps the L0 proof's fields onto the PhilologicalProof contract:
-      source_sha256      → source_hash
-      span_integrity     → source_integrity (PROVED iff exact_fragment_matches == records)
-      ordering           → segmentation (PROVED iff monotonic, no overlap/dup)
-      coverage.unknown   → lexical_sense (OPEN iff unknown_chars > 0, else SUPPORTED)
+      source_sha256           → source_hash
+      span_integrity          → source_integrity (PROVED iff exact_fragment_matches == records)
+      ordering                → segmentation (PROVED iff monotonic, no overlap/dup)
+      coverage.unknown_chars  → extraction_coverage (OPEN iff unknown_chars > 0)  [NOT lexical_sense]
+    extraction_coverage is deliberately separate from lexical_sense: unknown T1 regions mean the
+    extractor did not classify them (P0), which is NOT an unresolved lexical sense (P3).
     """
     import json
     d = json.load(open(proof_file))
@@ -123,16 +130,19 @@ def proof_from_verify_l0(proof_file: str, passage_id: str) -> PhilologicalProof:
               and ord_.get("duplicates", 1) == 0)
     p.set_check("segmentation", "PROVED" if seg_ok else "FAILED")
 
-    # coverage: no UNKNOWN chars (else the unmarked-token bug → OPEN)
+    # extraction_coverage: no UNKNOWN chars (else the unmarked-token bug → OPEN).
+    # This is P0 (source coverage), NOT lexical sense. Do NOT conflate them.
     cov = d.get("coverage", {})
     unknown = cov.get("unknown_chars", 1)
-    p.set_check("coverage", "PROVED" if unknown == 0 else "OPEN")
+    p.set_check("extraction_coverage", "PROVED" if unknown == 0 else "OPEN")
     p.set_check("morphology", "SUPPORTED")
     p.set_check("alignment", "SUPPORTED")
-    p.set_check("lexical_sense", "OPEN" if unknown > 0 else "SUPPORTED")
+    # lexical_sense is only assessable once the Sanskrit is identified; extraction-coverage gaps do
+    # NOT imply an unresolved sense, so leave lexical_sense UNCHECKED here (P3 resolves it).
+    p.set_check("lexical_sense", "UNCHECKED")
     if unknown > 0:
-        p.open.append(f"UNMARKED_TOKENS:{unknown} chars unclassified (quote-initial tokens)")
+        p.open.append(f"EXTRACTION_COVERAGE:{unknown} chars unclassified (quote-initial tokens)")
 
-    p.proof_level = "P0"  # verify_l0 is P0 (span/ordering/coverage)
+    p.proof_level = "P0"  # verify_l0 is P0 (span/ordering/extraction_coverage)
     p.review_state = "machine"
     return p

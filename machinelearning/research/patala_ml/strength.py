@@ -1,36 +1,44 @@
-"""patala_ml/strength.py — the auditable Bayesian claim-strength scorer.
+"""patala_ml/strength.py — BayesianEvidencePrimitive (a claim-evidence accumulator).
 
-Maps the truth-engine's weighted-log-Bayes-factor onto Pāṭala's `Certainty` + claim-strength,
-so a claim's strength is a DERIVED number, not a hand-label.
+SCOPE (honest):
+  This is a MATHEMATICAL PRIMITIVE, not a truth engine and not an argument scorer.
 
-Formula (port of truthengine-propagation.py):
-  weighted_lbf = w_rel × w_map × w_dep × w_aux × log_bayes_factor
-  w_dep        = 1 / (1 + alpha · n_prior)     # paradigm-dependence discount
-  posterior    = sigmoid(prior_log_odds + Σ weighted_lbf)
+  INPUT:   weighted evidence contributions expressed as log-Bayes factors
+  OUTPUT:  a posterior-style evidence-strength estimate UNDER STATED ASSUMPTIONS
+           (independent evidence, weights are meaningful, priors chosen)
 
-Alignment (ML-ALIGNMENT.md §2):
-  posterior → Certainty → claim-strength
-    0.85+  → certain        → WELL_SUPPORTED (or FORMALLY_VALID_GIVEN_ENCODING w/ Lean)
-    0.65-0.85 → probable    → WELL_SUPPORTED / PLAUSIBLE
-    0.45-0.65 → possible    → PLAUSIBLE
-    < 0.45  → uncertain     → SPECULATIVE
+  DOES NOT ESTABLISH:
+    truth · argument validity · textual correctness · historical correctness ·
+    editorial acceptance · interpretation.
+
+  The numbers here are only as meaningful as their inputs. They are NOT calibrated
+  likelihoods — the weights are hand-chosen. Until weights are empirically calibrated
+  against adjudicated benchmark data (or treated as ordinal-only), this is a *projection*
+  over an evidence ledger, never a truth claim.
+
+  The formula (weighted_lbf) is from the truth-engine's truthengine-propagation.py,
+  re-implemented here as a standalone primitive for the argument layer. It is NOT the
+  full engine (which has FeatureState F1-F8, discriminators D1-D5, branches B1-B6,
+  persistence, and branch derivation) — those are NOT ported, and should only be ported
+  after the ontology fits Pāṭala (see TRUTHENGINE_TO_PATALA_MAPPING.md).
 """
 from __future__ import annotations
 
 import math
 from dataclasses import dataclass, field
 
-# map onto Pāṭala's Certainty (primitives.ts) — calibrated so a strong multi-premise
-# argument can reach 'certain' but a single moderate claim stays 'probable'
+# map onto Pāṭala's Certainty (primitives.ts) — an ORDINAL label, not a calibrated probability.
+# Calibrated so a strong multi-premise argument can reach 'certain' but a single moderate
+# claim stays 'probable'.
 CERTAINTY = {
     "certain": (0.80, 1.01),
     "probable": (0.60, 0.80),
     "possible": (0.45, 0.60),
     "uncertain": (0.0, 0.45),
 }
-# claim-strength per certainty (ML-ALIGNMENT.md)
+# claim-strength per certainty — an ORDINAL label, not an epistemic verdict
 STRENGTH = {
-    "certain": "WELL_SUPPORTED",   # or FORMALLY_VALID_GIVEN_ENCODING with Lean
+    "certain": "WELL_SUPPORTED",   # NOT 'proved' — see scope above
     "probable": "WELL_SUPPORTED",
     "possible": "PLAUSIBLE",
     "uncertain": "SPECULATIVE",

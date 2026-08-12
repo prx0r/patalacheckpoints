@@ -12,7 +12,7 @@ and the next session knows exactly where things stand.*
 | `corpus.py` | loads the 49 published IPVV passages (L2 + C1 + terms + see_also) | — |
 | `c1corpus.py` | loads the 63 C1 read/ files as clustering nodes (V1 fine-grained preserved) | via cluster |
 | `cluster.py` | hybrid-graph clustering (See-also + shared KEY TERMS, Louvain + overlap) | test_cluster 14 |
-| `strength.py` | Bayesian claim-strength scorer (weighted_lbf → Certainty) — truth-engine port | test_strength 24 |
+| `strength.py` | **BayesianEvidencePrimitive** (relabeled) — the weighted_lbf formula + Certainty mapping. A *projection* over evidence, NOT the TruthEngine and NOT a truth/argument score. Math only; weights are hand-chosen (ordinal until calibrated) | test_strength 24 |
 | `argument.py` | Claim-v3 ArgumentProposal (5-member Nyāya, conclusion, tension_id, gate, Bayesian strength) | test_argument 29 |
 | `builders.py` | 4 ALTERNATIVE argument-builders (STRUCT/LEXICAL/GRAPH/PUSHING) for comparison | via compare |
 | `c1metrics.py` | C1 machine metrics (novelty, boundary, hedge, anachronism, terms, localness) | — |
