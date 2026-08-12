@@ -1,0 +1,184 @@
+{
+  "fixture_id": "PAT-STRUCT-001",
+  "task_family": "PATALA-STRUCTURE",
+  "task": "argument_extraction",
+  "source_ids": [
+    "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+    "C1:V2O-orderless-support"
+  ],
+  "gold_version": "1",
+  "authoring_method": "HAND_ADJUDICATED",
+  "review_state": "SINGLE_EDITOR_GOLD",
+  "created_from": [
+    "C1:V2O-orderless-support",
+    "passage:pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md"
+  ],
+  "allowed_training_use": false,
+  "split_class": "EVALUATION_ONLY",
+  "input": {
+    "source": "C1 read + L2 of V2-O"
+  },
+  "expected": {
+    "gold_id": "ARG-GOLD-001",
+    "work_id": "ipvv",
+    "passage": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+    "title": "The Order-less Support of the Powers (V2-O)",
+    "nodes": [
+      {
+        "id": "G-TC1",
+        "proposition": "pratibhā (the flashing) runs through / bears the order of the word-objects (tattatpadārthakramarūṣitā).",
+        "kind": "TEXTUAL_CLAIM",
+        "explicitness": "EXPLICIT",
+        "source_support": {
+          "passage_ids": [
+            "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md"
+          ],
+          "c1_ids": [
+            "V2O-orderless-support"
+          ],
+          "l200_assertion_ids": [
+            "l200/V2O-saptamo-vimarsa.md"
+          ]
+        },
+        "status": "MACHINE_PROPOSED"
+      },
+      {
+        "id": "G-TC2",
+        "proposition": "pratibhā is not itself constituted by that order (akrama — order-less).",
+        "kind": "TEXTUAL_CLAIM",
+        "explicitness": "EXPLICIT",
+        "source_support": {
+          "passage_ids": [
+            "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md"
+          ],
+          "c1_ids": [
+            "V2O-orderless-support"
+          ],
+          "l200_assertion_ids": [
+            "l200/V2O-saptamo-vimarsa.md"
+          ]
+        },
+        "status": "MACHINE_PROPOSED"
+      },
+      {
+        "id": "G-TC3",
+        "proposition": "The support (āśraya) of the powers is not itself a member of the ordered sequence.",
+        "kind": "TEXTUAL_CLAIM",
+        "explicitness": "RECONSTRUCTED",
+        "source_support": {
+          "passage_ids": [
+            "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md"
+          ],
+          "c1_ids": [
+            "V2O-orderless-support"
+          ],
+          "l200_assertion_ids": [
+            "l200/V2O-saptamo-vimarsa.md"
+          ]
+        },
+        "status": "MACHINE_PROPOSED"
+      },
+      {
+        "id": "G-IC1",
+        "proposition": "Abhinavagupta locates this order-less basis in the knower / support (pramātṛ), which is the great Lord.",
+        "kind": "INTERPRETIVE_CLAIM",
+        "explicitness": "RECONSTRUCTED",
+        "source_support": {
+          "passage_ids": [
+            "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md"
+          ],
+          "c1_ids": [
+            "V2O-orderless-support"
+          ],
+          "l200_assertion_ids": [
+            "l200/V2O-saptamo-vimarsa.md"
+          ]
+        },
+        "status": "MACHINE_PROPOSED"
+      },
+      {
+        "id": "G-CONC",
+        "proposition": "Ordered presentation in awareness requires a support not exhausted by that presented order.",
+        "kind": "CONCLUSION",
+        "explicitness": "RECONSTRUCTED",
+        "source_support": {
+          "passage_ids": [
+            "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md"
+          ],
+          "c1_ids": [
+            "V2O-orderless-support"
+          ],
+          "l200_assertion_ids": [
+            "l200/V2O-saptamo-vimarsa.md"
+          ]
+        },
+        "status": "MACHINE_PROPOSED"
+      },
+      {
+        "id": "G-IMPLICIT",
+        "proposition": "A genuine support of order must be such that its own nature does not presuppose the order it grounds (else regress).",
+        "kind": "IMPLICIT_PREMISE",
+        "explicitness": "IMPLICIT",
+        "source_support": {
+          "passage_ids": [
+            "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md"
+          ],
+          "c1_ids": [
+            "V2O-orderless-support"
+          ],
+          "l200_assertion_ids": [
+            "l200/V2O-saptamo-vimarsa.md"
+          ]
+        },
+        "status": "MACHINE_PROPOSED"
+      }
+    ],
+    "inferences": [
+      {
+        "id": "G-INF1",
+        "premise_ids": [
+          "G-TC1",
+          "G-TC2"
+        ],
+        "conclusion_id": "G-TC3",
+        "scheme": "CONCEPTUAL_DISTINCTION",
+        "rationale": "If X bears order but is not itself ordered, then X is not a member of the ordered series (order-bearing ≠ ordered).",
+        "status": "MACHINE_PROPOSED"
+      },
+      {
+        "id": "G-INF2",
+        "premise_ids": [
+          "G-TC3",
+          "G-IMPLICIT"
+        ],
+        "conclusion_id": "G-CONC",
+        "scheme": "TRANSCENDENTAL",
+        "rationale": "Ordered presentation presupposes a support whose nature is not itself a further ordered member — otherwise an infinite regress of ordered supports.",
+        "status": "MACHINE_PROPOSED"
+      },
+      {
+        "id": "G-INF3",
+        "premise_ids": [
+          "G-TC3"
+        ],
+        "conclusion_id": "G-IC1",
+        "scheme": "INTERPRETIVE_CLAIM",
+        "rationale": "The C1 identifies this order-less support with the knower (pramātṛ) / great Lord — an interpretive identification, not a bare textual assertion.",
+        "status": "MACHINE_PROPOSED"
+      }
+    ],
+    "boundary": {
+      "text": "This passage establishes the structural requirement that the support of ordered presentation is itself order-less. It does NOT by itself establish the stronger claim that all such supports are numerically one universal Self — that unity is argued later (V2-S) and is a further commitment.",
+      "not_claiming": [
+        "numerical identity of all order-less supports",
+        "that the support is Śiva/the universal subject"
+      ],
+      "philological": {
+        "proof_id": "pp:ipvv:v2o:p0",
+        "status": "P0",
+        "note": "verify_l0 proof for V2-O"
+      }
+    },
+    "status": "MACHINE_PROPOSED"
+  }
+}

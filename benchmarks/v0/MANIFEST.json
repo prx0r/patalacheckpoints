@@ -1,0 +1,32 @@
+{
+  "benchmark_id": "PATALA-BENCH-v0",
+  "version": "0",
+  "frozen_at": "2026-08-12",
+  "purpose": "The frozen evaluation substrate for Pāṭala. Tests MACHINES that propose scholarship. Pāṭala PRODUCT publishes scholarship; PĀṬALA BENCHMARK tests machines — do not let them collapse. Published objects may create candidate fixtures, but the benchmark has an explicit adjudication boundary.",
+  "task_families": {
+    "PATALA-RETRIEVAL": ["passage_retrieval", "term_sense_retrieval", "related_passage_retrieval", "translation_crux_retrieval"],
+    "PATALA-EVIDENCE": ["claim_to_support", "claim_to_counterevidence", "quote_source_verification"],
+    "PATALA-STRUCTURE": ["proposition_extraction", "argumentative_role", "explicitness", "support_attack_qualify", "inference_recovery", "grounding", "scope_fidelity"],
+    "PATALA-FIDELITY": ["l2_to_c1", "c1_to_theme", "theme_to_guide", "polarity_scope_attribution_boundary_preservation"]
+  },
+  "review_states": {
+    "CANDIDATE": "machine-generated, unvalidated",
+    "SINGLE_EDITOR_GOLD": "one qualified reviewer checked it",
+    "DOUBLE_REVIEWED_GOLD": "two independent reviewers agreed",
+    "ADJUDICATED_GOLD": "a formal adjudication settled disagreement"
+  },
+  "honesty_rules": [
+    "Schema-valid ≠ source-grounded ≠ interpretively justified ≠ logically valid ≠ historically true.",
+    "A fixture produced by method X cannot be independent gold for evaluating method X.",
+    "Every run is immutable and reproducible (runs/<timestamp>/ with version, split, config, predictions, metrics, commit).",
+    "No magical aggregate score: report per-metric, not one 'argument_quality' number.",
+    "Fixtures marked allowed_training_use=false are EVALUATION_ONLY (no model selection against them)."
+  ],
+  "size_targets_v0": {
+    "retrieval": "30-50 queries",
+    "evidence": "20-30 fixtures",
+    "structure": "5 hand-built arguments (ARG-GOLD-001 first)",
+    "fidelity": "~20 paired + corruptions"
+  },
+  "pre_benchmark_rule": "Any ad-hoc experimental result not rerun against this frozen suite is marked PRE-BENCHMARK and retired from claims."
+}

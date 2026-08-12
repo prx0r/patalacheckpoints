@@ -165,5 +165,7 @@
         }
       }
     }
-  }
+  },
+  "_status": "PRE-BENCHMARK",
+  "_reason": "Ran against ad-hoc task files before PATALA-BENCH-v0 was frozen. Retired unless rerun on the frozen suite (benchmarks/v0)."
 }
