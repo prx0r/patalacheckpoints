@@ -31,22 +31,27 @@ the ML lane.*
 > CP4 work is the ACTIVE item there; update it via `handover/flow.py` at session end.
 
 ### 🔴 THE ACTIVE WORK RIGHT NOW (this is the live task)
-**CP4 — the gold gate is MET (ARG-001..005 all built + `validate_gold`-consistent). Next: Build 4 extraction.**
+**CP4 — gold gate MET; vertical object resolves; next = independent review of the 5 golds.**
 ```
 Built this session:
   ARG-003  reductio                (V2-O ordered-support regress, 8 nodes/4 infs)   ✅
   ARG-004  conceptual-distinction  (vimarśa vs prakāśa, V2-H, 6/4)                 ✅
-  ARG-005  ambiguous               (two readings of "difference is real", V3-I,     ✅
-            5/3, 2 Positions + 3-level SemanticAlignment)
-  Build 4  primitive extractor run BLIND vs all 5 golds → BenchmarkRun                        ✅
-            (baseline lexical-overlap F1 0.36, inference recovery 0.0; compared mainly to Task A)
-            metric is BOUNDED as baseline-v0 (not the real benchmark definition)
-Review pass fixtures per ARG-GOLD-REVIEW-PROTOCOL (ARG-003 regress, ARG-004 essence,
-            ARG-005 scope) — golds are MACHINE_PROPOSED/CANDIDATE, NOT yet independently reviewed.
+  ARG-005  interpretive scope      (V3-I: local vs systematic, 5/3, 2 Positions,    ✅
+            3-level SemanticAlignment; retyped from AMBIGUOUS after review)
+  Build 4  primitive extractor run BLIND vs all 5 golds → BenchmarkRun             ✅
+            (baseline lexical-overlap F1 0.36, inference recovery 0.0; Task-A bound,
+             metric BOUNDED as baseline-v0)
+  Gate #3  VERTICAL OBJECT built — one proposition (ARG-001 G-TC2) resolves          ✅
+            ResearchQuestion→Argument→Inference→Proposition→C1→L2→L0 anchor→
+            SourceSpan→Sanskrit→PhilologicalProof, every arrow to real data
+            (patala_ml/vertical.py + benchmarks/v0/vertical/vertical-v2o-g-tc2.json)
+  Review-driven: golds now carry task_level A/B/C + candidate_reconstruction +
+             support_scope; validator expanded (structural well-formedness only).
 Honest status: golds are MACHINE_PROPOSED/CANDIDATE — NOT yet independently reviewed.
 ```
-Next in order: (1) independent review of the 5 golds, (2) a real extractor that beats the
-baseline, (3) THEN viruddha as a graph op. See `NEXT-STEPS.md`.
+Next in order: (1) **independent review of the 5 golds** (ARG-GOLD-REVIEW-PROTOCOL — the central gate),
+(2) compile one vertical object to py-aspic (first external evaluator test), (3) a real extractor that
+beats the baseline, (4) THEN viruddha as a graph op. See `NEXT-STEPS.md`.
 
 **The source of this task:** `handover/agent-1-ml/ORIENTATION.md` Phase 4 + `NEXT-STEPS.md` + the vision
 (`docs/vision/CORE-BIBLE.md` Layer 3 / `handover/CHECKPOINTS.md` CP4).

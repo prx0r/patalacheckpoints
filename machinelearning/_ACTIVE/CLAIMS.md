@@ -11,21 +11,25 @@ task, human-grounded gold, and a reproducible evaluation show that it does what 
 ---
 
 ## CLAIM P-001 — "Pāṭala has lossless source anchoring (L0)."
-- **STATUS:** SUPPORTED (V2/V3 flagship corpus) / PARTIAL (full corpus incl. V1 legacy)
-- **EVIDENCE:** `verify_l0.py` P0 harness — **V2/V3 (the flagship published IPVV corpus, 35 chunks):
-  35/35 PASS** — 0 unknown chars, 0 bad spans, 0 overlaps, 0 duplicates, monotonic ordering, full
-  classification (`classification_complete: true`), deterministic (identical proofs across runs).
-  Independently re-verified on a random sample (slice-equality + monotonicity + no-overlap all pass).
-  The 18 remaining irregular editorial/gloss regions are explicitly classified via
-  `docs/l0_reviewed_exceptions.json` as `IGNORED_WITH_REASON:reviewed` (visible, not silently dropped).
-  Reproduce: `python3 pipeline/verify_l0.py --t1 .../02_t1 --l0 .../l0 --level p0
-  --exceptions docs/l0_reviewed_exceptions.json`.
-- **CAVEAT:** This is the V2/V3 **supported published corpus** (CP1's "supported passages"). **V1 (28
-  chunks) is a separate legacy prose format** — 0/28, `MIGRATION_PENDING`, not part of this milestone.
-  P2 (Vidyut morphology) is characterized (55% supported) but not yet the P2 ensemble-validated proof.
-- **REQUIRED to promote (full):** V1 gets its own importer + the same output contract (→ 63/63); P2
-  ensemble validated against an independent witness (Heritage) over CONFLICT/UNANALYZED + a stratified
-  control sample; specialist review of a sample.
+- **STATUS:** SUPPORTED (complete IPVV, 63/63) — the full flagship corpus
+- **EVIDENCE:** `verify_l0.py` P0 harness — **the complete IPVV is now 63/63 P0 PASS**:
+  - **V2/V3 (35 chunks): 35/35 PASS** — 0 unknown chars, 0 bad spans, 0 overlaps, 0 duplicates,
+    monotonic ordering, full classification, deterministic.
+  - **V1 legacy (28 chunks): 28/28 PASS** (NEW, 2026-08-12) — via the new V1 adapter
+    (`pipeline/extract_l0_v1.py`, 91,714 tokens) producing canonical `l0_schema.json` records. The
+    adapter covers the V1 prose format (inline `GLOSS (IAST)`, `[bracket]` connectives, line-wraps)
+    such that the **existing `verify_l0.py` passes UNCHANGED** (byte-identical to git).
+  - The 18 irregular V2/V3 regions are classified via `docs/l0_reviewed_exceptions.json`.
+  - Reproduce: `python3 pipeline/extract_l0_v1.py <01_t1> <out> --all` then
+    `python3 pipeline/verify_l0.py --t1 <01_t1> --l0 <out> --level p0`.
+- **CAVEAT (cross-work, honest):** 63/63 proves the contract + verifier survive **two different IPVV
+  source formats** (the `[and]-` gloss format and the legacy prose format) — strong evidence of format
+  robustness. It does **NOT** yet prove generalization to IPK/Tantrāloka/Kubjikā without modification;
+  the schema/tools are designed work-agnostically, but cross-work generalization remains to be
+  demonstrated when the second real work is ingested. P2 (Vidyut morphology) is characterized (55%
+  supported) but not yet the P2 ensemble-validated proof.
+- **REQUIRED to promote (cross-work):** ingest a second real work's T1 and confirm no adapter change is
+  needed; P2 ensemble validated against an independent witness; specialist review of a sample.
 - **STATUS THIS SESSION (2026-08-12):** V2/V3 P0 **FROZEN** as the first completed CP1 sub-capability.
   Next (per the cross-layer review): Heritage as an independent P2 witness over all Vidyut CONFLICT +
   UNANALYZED records + a stratified control sample (~500 CONFIRMED, ~500 AMBIGUOUS_SUPPORTED) → an
@@ -143,6 +147,23 @@ task, human-grounded gold, and a reproducible evaluation show that it does what 
 - **FROZEN (per the adequacy doctrine):** do NOT keep tuning for a third analyzer / compound handling /
   0.81→0.88. Revisit ONLY when a real downstream consumer fails. P4's uncertainty is metadata carried
   into the proposition certificate, not a blocker.
+
+---
+
+## CLAIM P-014 — "A proposition can be serialized as a VERTICAL OBJECT resolving to its source + proof."
+- **STATUS:** SUPPORTED (as infrastructure/serialization) — NOT a validated scholarly result
+- **EVIDENCE:** `patala_ml/vertical.py` resolves one proposition (ARG-001 G-TC2) all the way down:
+  ResearchQuestion → Argument → Inference → Proposition → C1 → L2 → L0 anchor → SourceSpan → Sanskrit →
+  PhilologicalProof, every arrow to real data. Artifact: `benchmarks/v0/vertical/vertical-v2o-g-tc2.json` +
+  `tests/test_vertical.py` (0 fail).
+- **CAVEAT:** the term→L0-anchor mapping is an explicit `key_terms` judgment (machine-proposed, NOT
+  reviewed). The on-disk proof for this chunk predates the frozen 35/35 P0 (the authoritative `proof_id`
+  is referenced, not substituted). ARG-001 lacks a first-class `research_question`/`commitment` (older
+  schema). The vertical object is a consumer of Agent 2's L0 floor, not an independent result.
+- **DOES NOT CLAIM:** that the proposition is editorially valid, or that the mapping is unique.
+- **REQUIRED to promote (toward the convergence object):** the golds are independently reviewed; a
+  reviewed term→anchor mapping; the frozen 35/35 P0 proof attached; a real evaluator (py-aspic/Nyāya)
+  run over the object.
 
 ---
 
