@@ -166,7 +166,11 @@ which detector actually fired.
 
 ## 7. Status
 
-- **Prepared:** this spec + the corruption taxonomy.
-- **Not built:** no `fid_*.py`, no fixtures, no runs.
-- **Build gate:** STEP-0 worktree reconciliation complete → then implement as `experiments/build_fidelity_suite.py`
-  producing `FID-SOURCE/L0/ALIGNMENT/PROVENANCE` fixtures + a `FIDELITY-v0` run.
+- **Built (2026-08-12):** `machinelearning/research/experiments/build_fidelity_suite.py` +
+  `machinelearning/research/tests/test_fidelity.py`. Families FID-SOURCE / FID-PROVENANCE / FID-ALIGNMENT.
+- **First run:** `benchmarks/v0/runs/fidelity-20260812T154041Z.json` — **sensitivity 1.0 (9/9), clean
+  false-positive 0** for all three families. See `test_fidelity.py` for the reproducible assertions.
+- **Not yet built:** FID-L0 (needs a deterministic L0-analysis verifier) and FID-DEPENDENCY (needs
+  independently reviewed argument gold). These are deferred, not dropped.
+- **Boundary honored:** this is `ENGINEERING_VALIDATED` (synthetic sensitivity). It is NOT
+  `SCHOLARLY_VALIDATED` and does not imply `REAL_WORLD_RECALL`.

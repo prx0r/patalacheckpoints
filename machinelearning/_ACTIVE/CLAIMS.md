@@ -254,6 +254,22 @@ capability. See `AGENT1-HANDOVER.md` §4 + the component contracts below.
 
 ---
 
+## CLAIM P-018 — "The Pāṭala verifier detects known, deliberately injected corruption (FIDELITY v0)."
+- **STATUS:** SUPPORTED (as `ENGINEERING_VALIDATED`) — construction-verifiable, NOT scholarly
+- **EVIDENCE:** `machinelearning/research/experiments/build_fidelity_suite.py` +
+  `tests/test_fidelity.py`. First run `benchmarks/v0/runs/fidelity-20260812T154041Z.json`:
+  **sensitivity 1.0 (9/9) + clean false-positive 0** across FID-SOURCE / FID-PROVENANCE / FID-ALIGNMENT
+  (DROP_SPAN, SHIFT_SPAN_START, CHANGE_SOURCE_HASH, BROKEN_REF, STALE_PROOF, MISSING_PROVENANCE,
+  REMOVE_ANCHOR, SHIFT_ANCHOR, LINK_WRONG_TOKEN). Clean control (pristine object) passes.
+- **CAVEAT:** this is `SYNTHETIC_SENSITIVITY`, NOT `REAL_WORLD_RECALL` — it proves the verifier detects
+  error types we inject, not all naturally occurring errors (the latter needs human gold). FID-L0 and
+  FID-DEPENDENCY are not yet built.
+- **DOES NOT CLAIM:** that any argument is validated, or that the verifier catches real-world errors.
+- **REQUIRED to promote (to a broader engineering claim):** FID-L0 (deterministic L0 verifier),
+  FID-DEPENDENCY (needs reviewed gold), and wider corruption coverage.
+
+---
+
 ## CLAIM P-017 — "Pāṭala can propose coarse semantic alignment between contextualized occurrences (Stage A)."
 - **STATUS:** INFRASTRUCTURE / harness built; **the generic English encoder baseline is 0/8 (falsified)**
 - **EVIDENCE:** `patala_ml/semantic_alignment.py` (6-label vocabulary: SAME/NEAR/PARTIAL/DIFFERENT/AMBIGUOUS/
