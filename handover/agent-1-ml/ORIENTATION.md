@@ -35,6 +35,14 @@ STOP and note it. This tells you the honest state of every component you might t
 `c1corpus.py`, `metrics.py`, `eval.py`), their honest status, how they connect, and the next tasks. Read
 it after this orientation and before editing any mechanic.
 
+**🧭 ARCHITECTURE REVIEWS (imported — read for direction):**
+`machinelearning/_ACTIVE/PHILOSOPHY-ENGINE-ARCHITECTURE-REVIEW.md` + `PHILOSOPHY-ENGINE-INFRASTRUCTURE-REVIEW.md`
+(the two imported reviews) + `machinelearning/_ACTIVE/BRAINSTORM-PHILOSOPHY-ENGINE-VS-PATALA.md` (the
+synthesis). They validate our DebateFrame/SemanticAlignment direction and add `Commitment`,
+`Attack`/`Defeat`, `EvaluationProfile`, `Crux-as-outcome-sensitivity` — most of which is correctly
+**later than the CP4 gold**, except `Commitment` (who asserts vs attributes-to-opponent) which is worth
+adopting into the gold shape now.
+
 ### Step 0.2 — Know the two lanes (never drift)
 | | **Agent 2 — L0 / integration** | **YOU — Agent 1 / ML** |
 |---|---|---|
