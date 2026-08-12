@@ -89,18 +89,30 @@ USES_AS_PREMISE / USES_AS_WARRANT / ORGANIZES) · `DerivedState` · `ImpactRepor
 ```
 CP1 floor ✅ (63/63)  →  corpus state ✅ (ledger)  →  review engine ✅ (Phase 3A+3D)
    ↓
-PRIORITY: AGENT 3 TRANSLATION FACTORY  (the headline — the closed-loop factory)
-   A2 NEXT_VALID_ACTION → A3 production → MACHINE_PROPOSED → A2 validate → review/correction
-   milestone: one legacy work through the full factory on Hermes, producing L0-linked
-   translation/C1 proposals with provenance, then one output through the review protocol.
+🔴 THE IMMEDIATE OBJECTIVE: RAW-L0 (MODE_B) — RAW SANSKRIT → L0
+   The one giant hole blocking the autonomous translator. MODE_A (AND_GLOSS) exists;
+   MODE_B (RAW_SANSKRIT) does NOT — so raw works (Kramasadbhāva etc.) are blocked from
+   Agent 3 (BUILD_L0_SOURCE_MODE → BLOCKED in the ledger).
+   Per `handover/hermes/AUTOTRANSLATE-NORTHSTAR.md`:
+   Build 1  pipeline/raw_l0.py (Vidyut + Heritage + Hermes/A3 → canonical L0 JSONL, no downstream translation)
+   Build 2  RAW-L0 audit (extend verify_l0.py: P0 lossless + P1 segmentation + P2 morphology + P3 gloss + P4 alignment)
+   Build 3  IPVV Sanskrit-only replay (hide English; regenerate L0; compare vs gold → the embryo of Pāṭala Evals)
+   Build 4  human review 50–100 difficult RAW-L0 cases (every correction = benchmark data)
+   Build 5  Kramasadbhāva first cross-work run (RAW_SANSKRIT → GENERATE_L0 → VERIFIED P0 → MACHINE_PROPOSED)
+   Build 6  then batch mode (passages/chunks independently, bounded retries, halt-on-failure)
    ↓
-PHASE 3E  tiny Scholar Workbench screen   (deferred — only when a real reviewer is ready;
-           minimal: object · evidence · current state · proposal/review · impact · submit)
-PHASE 3F  Hermes A4 scheduling            (LAST — after the human workflow is proven)
+PRIORITY (after RAW-L0): Agent 3 translation factory — RAW-L0 → close translation → adversarial → resolved → C1
+   ↓
+PHASE 3E  tiny Scholar Workbench review screen   (deferred until a real reviewer is ready)
+PHASE 3F  Hermes A4 scheduling                   (LAST)
 ```
 
-**DO NOT add more primitives** unless a real factory/review run forces them (the risk is architecture
-drift). 3E stays minimal — no dashboards/profiles/queues/social/reviewer-discovery.
+**The threshold before "set it loose" — the factory certificate:** P0 coverage 100% · 0 bad spans ·
+segmentation/lemma/morphology measured · literal gloss human-rated · **false certainty below threshold**
+(the most important metric — the P3 ranker failed on 100% false certainty) · abstention precision measured ·
+cost + review minutes + hard failure rate known. **Agent 3 optimizes review burden, not just token cost.**
+
+**DO NOT add more primitives unless a real run forces them.**
 
 **Do NOT:** build a generic ingestion framework · rebuild review workflow infra (OpenReview/Hypothesis/
 Crossref exist) · let Hermes determine what Pāṭala knows · promote machine output without a scoped policy.

@@ -11,11 +11,23 @@ home — read `CANONICAL.md` first for the corrected thesis.*
 > **Hermes is Pāṭala's replaceable execution kernel; Pāṭala is the durable epistemic protocol + scholarly
 > state. The moat is that a scholar's correction becomes an executable graph mutation with provenance.**
 
+## THE IMMEDIATE ENGINEERING OBJECTIVE (the northstar)
+
+> **Given raw Sanskrit and a registered source, autonomously produce a lossless, word/phrase-level literal
+> analysis (RAW-L0) with every decision auditable, every uncertainty exposed, and no unsupported analysis
+> silently promoted.** See `AUTOTRANSLATE-NORTHSTAR.md`.
+
+The one giant hole blocking the autonomous translator: **RAW SANSKRIT → L0 (MODE_B) does not exist.**
+MODE_A (AND_GLOSS) ✅ exists; MODE_B (RAW_SANSKRIT) ❌ not built — so raw works (Kramasadbhāva etc.) are
+blocked from Agent 3. **Build RAW-L0, prove it blind on IPVV (Sanskrit-only replay), then unleash it on
+Kramasadbhāva.** Then autonomous batch translation becomes a queue-processing problem.
+
 ## The docs
 
 | Doc | What |
 |---|---|
 | **`CANONICAL.md`** | THE integration reference: corrected thesis, the 4 corrections, verified feature map, realized architecture, 16 advanced recipes, the scholar & API surface (Workbench, BYOA/MCP, A2A, peer review, executable-corrections moat, minimal architecture). |
+| **`AUTOTRANSLATE-NORTHSTAR.md`** | **The immediate engineering objective** — RAW-L0 (MODE_B): the one gap blocking the autonomous translator. Target, terminology correction, the record shape, the agentic reasoning loop, the Sanskrit-only replay experiment, the build sequence (raw_l0.py → audit → replay → human review → Kramasadbhāva → batch). |
 | **`DEV-PLAN.md`** | The build sequence (Phase 1 execution kernel → Phase 2 A3 factory → Phase 3 ReviewEvent-as-graph-mutation → Phase 4 Scholar Workbench → Phase 5 BYOA + corrections dataset). |
 | **`PATALA-SETUP.md`** | The fresh hermes profile/project + the Pāṭala "soul" plan (do NOT run the mutation commands until approved). |
 | **`BACKEND-MODEL.md`** | The verified feature→vision map (superseded thesis — see CANONICAL). |
