@@ -13,6 +13,7 @@
 - `VISION_AND_NAVIGATION.md` — the canonical vision (lives once, never duplicated)
 - `handover/agent0-coordinator/AGENT-ARCHITECTURE-VISION.md` — **the mature multi-agent architecture** (A0–A8: the production loop; only A0–A3 now). The canonical strategic reference for how the agent system grows.
 - `handover/agent0-coordinator/HERMES-PATALA-SETUP.md` — **the Hermes execution-engine plan** (fresh doctrine-scoped profile/project + the Pāṭala "soul"). A3 (translation factory) runs on Hermes; do NOT run the mutation commands until the coordinator approves.
+- `handover/agent0-coordinator/HERMES-BACKEND-MODEL.md` — **Hermes as Pāṭala's backend infrastructure** (verified feature→vision mapping): kanban = A0 scheduler, --worktree = git isolation fix, cron = sleep-time translator, hooks/webhook = dependency propagation, memory/checkpoints = durable state + rollback, mcp = corpus tools, fallback/moa = resilience, skills = the doctrine. The thesis: Hermes IS the kernel; Pāṭala layers epistemic state + skills on top.
 
 ## The architecture (from AGENT-ARCHITECTURE-VISION.md)
 ```
