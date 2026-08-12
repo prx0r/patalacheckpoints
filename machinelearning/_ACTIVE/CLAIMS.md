@@ -339,3 +339,37 @@ capability. See `AGENT1-HANDOVER.md` §4 + the component contracts below.
   a generic English/multilingual model cannot align contextualized Sanskrit philosophy. The harness +
   the falsification is the deliverable; a Sanskrit-aware embedding / cross-encoder is the baseline to beat.
 - **DOES NOT CLAIM:** that alignment works, or that any neural score is a scholarly relation.
+
+---
+
+## CLAIM P-020 — "The Nyāya gate is wired into the argument layer, and viruddha is a graph operation."
+- **STATUS:** SUPPORTED (as `ENGINEERING_VALIDATED`) — the gate audits real Inference objects that now exist
+- **EVIDENCE:** after the CP4 IR gate crossed (all 5 golds IR-complete, real Proposition/Inference objects),
+  the wiring deferred in `WIRE-NYAYA-GATE.md` became valid (not theater — it no longer gates arbitrary
+  claims). `patala_ml/nyayagate.check_viruddha_graph` makes viruddha a REAL graph operation: it checks the
+  gold's ESTABLISHED propositions (commitment ASSERTS/DERIVES, not ATTRIBUTES_TO_OPPONENT) for an
+  opposite-polarity overlap → `VIRUDDHA` candidate (the semantic layer decides; it nominates, never settles
+  alone). `argument.build_argument` fills its empty `gate` slot by running the real gate on the conclusion.
+  Integration test `tests/test_ipvv_integration.py`: cross-gold scan + real reflexion-core IPVV passage
+  (chunkM) + ResearchPack resolution all pass. Flag rate 5.98% (11/184) — discriminating, not over-firing.
+- **CAVEAT:** the graph viruddha NOMINATES candidates; it does not adjudicate them (a real-rival vs
+  false-positive decision is scholarly). It requires a gold's proposition to carry `commitment` to know
+  which claims are "established." Original gate benchmark unchanged (0.80/0.00/0.50).
+- **DOES NOT CLAIM:** that the gate is a semantic verifier, or that any viruddha finding is a settled
+  contradiction.
+- **REQUIRED to promote:** adjudicated disagreement fixtures + a broader gold.
+
+---
+
+## CLAIM P-021 — "Pāṭala surfaces genuine cross-argument disagreements as benchmark fixtures."
+- **STATUS:** SUPPORTED (as machine-discovered `CANDIDATE` fixtures) — NOT adjudicated
+- **EVIDENCE:** `experiments/build_disagreement_fixtures.py` converts the graph-viruddha cross-gold
+  findings into `benchmarks/v0/evidence/disagreement-fixtures.json` (3 fixtures, PATALA-EVIDENCE
+  `claim_to_counterevidence`, `RIVAL_READING`, EVALUATION_ONLY). These capture real cases: ARG-001 vs
+  ARG-003 (both V2-O reconstructions — a genuine two-readings case), ARG-005 vs ARG-002. This is the
+  benchmark material where the correct answer may be "represent the disagreement and abstain," more
+  valuable than forced green labels.
+- **CAVEAT:** machine-discovered; a scholar must adjudicate whether each is a real rival reading or a
+  false positive. The `expected.relation=RIVAL_READING` is a hypothesis, not a verdict.
+- **DOES NOT CLAIM:** that any of these disagreements are settled, or that the system correctly resolves
+  them.
