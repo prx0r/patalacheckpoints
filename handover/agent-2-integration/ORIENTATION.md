@@ -1,21 +1,26 @@
 # AGENT 2 — ULTIMATE ORIENTATION (a PROCESS WORKFLOW — complete every gate, in order)
 
-*2026-08-12. You are **Agent 2 — the L0 / INTEGRATION lane**. This is a **process workflow**, not a
-passive document. Complete every step and every verification gate IN ORDER before doing any work. It is
-derived from your entry in `handover/AGENTS.yaml` + the canonical vision (`VISION_AND_NAVIGATION.md`) +
-the shared checkpoints (`handover/CHECKPOINTS.md`). Read `handover/SYSTEM.md` first to understand the
-agent system you are part of.*
+*2026-08-12. You are **Agent 2 — the CORPUS COMPILER + INTEGRITY LANE** (formerly "the L0 agent"). This is a
+**process workflow**, not a passive document. Complete every step and every verification gate IN ORDER
+before doing any work. It is derived from your entry in `handover/AGENTS.yaml` + the canonical vision
+(`VISION_AND_NAVIGATION.md`) + the shared checkpoints (`handover/CHECKPOINTS.md`). Read `handover/SYSTEM.md`
+first to understand the agent system you are part of.*
 
 ---
 
 ## PHASE 0 — IDENTITY & FULL CONTEXT (why you exist, then read EVERYTHING)
 
 ### Step 0.0 — Who you are
-- **Direction:** **vertical truth.** You own the source→translation floor.
-- **Lane:** SOURCE → segmentation → morphology → syntax → alignment → translation proof.
-- **Your question, always:** *Is this reading licensed by the source?*
-- **You OWN:** `data/corpus/`, `app/`, `lib/`, `pipeline/verify_l0.py`, `philproof.py`. **You do NOT
-  touch:** `benchmarks/v0/`, `machinelearning/research/patala_ml/` (Agent 1's).
+- **Direction:** **vertical truth + corpus integrity.** You own the source→translation floor AND the
+  machine-readable corpus state that Agent 3 (translation factory) operates on.
+- **Lane:** SOURCE → L0 → corpus state → RAW-L0 factory → versioned L0 → review/correction.
+- **Your questions, always:** *Is this reading licensed by the source? What do we have, where, what state,
+  can every artifact resolve?*
+- **You OWN:** `data/corpus/`, `app/`, `lib/`, `pipeline/` (verify_l0, corpus_state, raw_l0, agent3_batch,
+  agent3_queue, l0_registry, review_engine, build_corpus_targets_db), `handover/agent-2-integration/`.
+  **You do NOT touch:** `benchmarks/v0/`, `machinelearning/research/patala_ml/` (Agent 1's).
+- **The current priority:** the RAW-L0 factory (raw Sanskrit → audited canonical L0) — the northstar is
+  `handover/hermes/AUTOTRANSLATE-NORTHSTAR.md`.
 
 ### Step 0.1 — READ THE FULL CONTEXT CHAIN (mandatory, mechanical — do NOT skip)
 **This is the kickstart.** Your full context is defined once in `handover/CONTEXT-CHAIN.yaml` and
@@ -50,17 +55,19 @@ re-read the canonical vision so the map is live in front of you: `VISION_AND_NAV
 `SOURCE → L0 → TRANSLATION → C1 → THEMES → ARGUMENT → SYNTHESIS → WORKBENCH → API`.
 
 **🟢 GATE 0.2** — *Run* `python3 pipeline/verify_l0.py --t1 .../02_t1 --l0 .../l0 --level p0 --exceptions
-docs/l0_reviewed_exceptions.json`. You must see **35/35 P0 PASS** (the flagship V2/V3 corpus). This is the
-floor you certify.
+docs/l0_reviewed_exceptions.json` AND `python3 pipeline/verify_l0.py --t1 .../01_t1 --l0 .../l0_v1 --level p0`.
+You must see **63/63 P0 PASS** (V2/V3 35/35 + V1 legacy 28/28 — the complete IPVV source floor you certify).
+Also run `python3 pipeline/raw_l0.py --work kramasadbhava --sanskrit "..." --no-model` to see the RAW-L0
+factory (raw Sanskrit → canonical L0, P0-validated).
 
 ### Step 0.3 — Know the two lanes (never drift)
-| | **YOU — Agent 2 / L0** | **Agent 1 — ML** |
+| | **YOU — Agent 2 / L0 + Corpus** | **Agent 1 — ML** |
 |---|---|---|
-| Direction | **vertical truth** | **horizontal + upward derivation** |
-| Lane | SOURCE → segmentation → morphology → syntax → alignment → translation proof | C1 → themes → arguments → claims → synthesis → review |
-| Question | *Is this reading licensed by the source?* | *Does this higher-order representation legitimately derive from the scholarly objects beneath it?* |
-| Checkpoint | **CP1** (PhilologicalProof) | **CP0, CP2, CP3, CP4** |
-| Now doing | P0 35/35 PASS; P2 calibrated (P-011); P3 ranker rejected (P-012); **P4 L0↔L2 alignment live (0.93 floor)** | Argument Gold (CP4) |
+| Direction | **vertical truth + corpus integrity** | **horizontal + upward derivation** |
+| Lane | SOURCE → L0 → corpus state → RAW-L0 factory → versioned L0 → review | C1 → themes → arguments → claims → synthesis → review |
+| Question | *Is this reading licensed by the source? What's the corpus state?* | *Does this higher-order representation legitimately derive from the scholarly objects beneath it?* |
+| Checkpoint | **CP1** (PhilologicalProof) + the RAW-L0 factory | **CP0, CP2, CP3, CP4** |
+| Now doing | **63/63 L0 floor; RAW-L0 factory core built (raw_l0/agent3_batch/agent3_queue/l0_registry); next = gloss transport + replay benchmark** | Argument Gold (CP4) |
 
 **🟢 GATE 0.3** — *Read* `handover/agent-1-ml/ORIENTATION.md` (Agent 1's current focus) so you know what
 they derive from your floor. The shared boundary is contractual: join only on **Passage ID /
@@ -147,33 +154,47 @@ These are the IPVV Sanskrit volumes (M00020/21/22) — the actual source you cer
 
 ---
 
-## PHASE 4 — THE EXACT NEXT STEPS (what to build — the CP1 gate)
+## PHASE 4 — THE EXACT NEXT STEPS (what to build — the RAW-L0 factory + corpus integrity)
 
-### Step 4.0 — Finish `PhilologicalProof` v1 (the CP1 gate)
-Per `CHECKPOINTS-INTEGRATION.md`, in order:
+### Step 4.0 — The state you inherit (done, verified)
 ```
-P0 exact source coverage       ✅ done (35/35)
-P1 segmentation/sandhi         Vidyut
-P2 morphology                  Vidyut + Heritage ensemble
-P3 lexical sense               gold fixtures → ranker benchmark (⚠️ ranker REJECTED, P-012)
-P4 alignment                   gold alignment → baseline/model benchmark (⬜ baseline live: 0.93)
+P0 source floor        ✅ 63/63 LOSSLESS (V2/V3 35/35 + V1 28/28), frozen
+P2 morphology          ✅ calibrated witness (P-011); human blind review pending (non-blocking)
+P3 lexical sense       ⚠️ ranker REJECTED (P-012); embedding 0.81 is the floor
+P4 alignment           ✅ frozen witness (P-013)
+Corpus state machine   ✅ corpus_state.py + /api/corpus/state (NEXT_VALID_ACTION control plane)
+RAW-L0 factory core    ✅ raw_l0.py → canonical L0, P0-validated; agent3_batch / agent3_queue / l0_registry
+Executable corrections ✅ review_engine.py (Phase 3A+3D) — the validation gate for Agent 3's output
 ```
 The `PhilologicalProof` contract: proof_id · passage_id · source_span_ids · source_integrity ·
 extraction_coverage · segmentation · morphology · syntax · alignment · lexical_sense · open_issues ·
 tool_witnesses · review_events. Every `ProofDimension` has an honest status, never a collapsed number.
 
-**🟢 GATE 4.0** — *Run* `python3 l200_validate.py` (in the ipvv stack) after any L200 change. It must pass.
+### Step 4.1 — THE CURRENT PRIORITY: the autonomous RAW-L0 factory
+Per `handover/hermes/AUTOTRANSLATE-NORTHSTAR.md`, in order:
+```
+1. GLOSS/MODEL TRANSPORT  wire a reliable model call for literal_gloss (hermes is unreliable; the
+                          deterministic core works WITHOUT it, but L0 isn't complete without the gloss)
+2. SANSKRIT-ONLY REPLAY   hide IPVV gold English, run RAW-L0, compare vs gold → measures segmentation/
+                          lemma/morphology/gloss/abstention/false-certainty (the Pāṭala-Evals embryo)
+3. INGEST PRIMARY TEXTS   the not-yet-ingested texts from docs/corpus/SANSKRITREE-IMPORT-MANIFEST.md
+4. CROSS-WORK L0          Kramasadbhāva first (RAW_SANSKRIT, priority #1 in the queue)
+```
 
-### Step 4.1 — Heritage ensemble (P2)
-Run Heritage over all Vidyut CONFLICT + UNANALYZED records + a stratified control (~500 CONFIRMED,
-~500 AMBIGUOUS_SUPPORTED) → a Vidyut×Heritage confusion matrix + disagreement report.
+### Step 4.2 — The queue + versioned L0 (already built, use it)
+```
+python3 pipeline/agent3_queue.py --registry   # 21 prioritized targets (Krama packet first)
+python3 pipeline/agent3_queue.py --leads      # 39 tracked leads (registers I-III)
+python3 pipeline/audit_translation_pipeline.py # 40 existing T1/R1/T2/R3/C1 works (the easy wins)
+python3 pipeline/l0_registry.py               # versioned L0 (immutable, commit, mark_reviewed)
+```
 
-### Step 4.2 — Lexical gold (P3) then alignment gold (P4)
-Build ~50–100 lexical fixtures (incl. NO-UNIQUE-SENSE abstention cases) → ranker benchmark (baselines:
-most-common gloss / local L0 gloss / embedding) before ranker.py becomes a witness. Then alignment gold
-→ alignment benchmark.
+### Step 4.3 — The goldmine (read before translating/acquiring)
+`docs/corpus/TARGETS-INDEX.md` (master index) + `docs/corpus/SANSKRITREE-IMPORT-MANIFEST.md` (audit) +
+`canonical_reference_map.md` (taxonomy, ingestion waves, the semantic-shift glossary) + `markguidance.md`
+(the Recognition dossiers for Agent 1).
 
-### Step 4.3 — Hand off to Agent 1
+### Step 4.4 — Hand off to Agent 1
 At CP4 the vertical object both lanes produce together:
 ```
 "I claim X" because: C1 says ... (ML) · L2 renders ... (ML) · Sanskrit span is ... (you) ·
@@ -186,19 +207,24 @@ Update `handover/LOG.md` with a cross-lane entry when you hand off the source fl
 ## PHASE 5 — GUARDRAILS & THE FINAL SELF-CHECK (before claiming anything)
 
 ### Step 5.0 — The guardrails (do not violate)
-1. **Output `PhilologicalProof` objects, not logs.**
+1. **Output `PhilologicalProof` objects + canonical L0 records, not logs.**
 2. **Every proof dimension carries an honest status; no collapsed confidence number.**
 3. **`extraction_coverage: OPEN` ≠ `lexical_sense: OPEN` — never conflate.**
-4. **Keep the frozen P0 extractor; only fix reproducible loss bugs.**
-5. **Every ID must resolve** — real `pp:` / passage IDs, never fuzzy.
-6. **Do NOT touch `benchmarks/v0/` or `machinelearning/research/patala_ml/`** (Agent 1's lane).
-7. **Update CLAIMS.md (P-001) + the handover honestly as each P1–P4 gate crosses.**
-8. **Do NOT wander into essay logic or promote ranker.py to P3 without a human-reviewed gold + baseline eval.**
+4. **A wrong translation is worse than none.** Validation is the gate — never let the factory outrun the
+   validator. P0 lossless + false-certainty + abstention + chunk review.
+5. **L0 is immutable + versioned** — a fix emits a new version (l0_registry), never edit in place.
+6. **Every ID must resolve** — real `pp:` / passage IDs, never fuzzy.
+7. **Do NOT touch `benchmarks/v0/` or `machinelearning/research/patala_ml/`** (Agent 1's lane).
+8. **Do NOT import the Lean/Pantograph code as a working capability** (aspirational) or the mystical
+   `syntheses/*`/`truth/` dirs (noise).
+9. **Do NOT build more review UX (3E/3F) until a real reviewer is ready.**
+10. **Update CLAIMS.md + the handover honestly as each capability crosses its gate.**
 
 ### Step 5.1 — The "no-BS" self-check (falsification before promotion)
 > **What experiment would convince you this does NOT work?**
 
 - P0 proof: a source span that does not resolve; an unknown char silently dropped.
+- RAW-L0: a verse that claims a PARSED lemma Vidyut never produced, or a P0 PASS with unknown_chars>0.
 - P2 morphology: Heritage CONFLICTS with Vidyut on a confirmed record and you can't explain it.
 - P3 lexical: the ranker loses to the most-common-gloss baseline on the held-out gold.
 - The boundary: an Agent 1 object references a `pp:` ID you didn't produce.
@@ -211,9 +237,12 @@ Update `handover/LOG.md` with a cross-lane entry when you hand off the source fl
 
 ## PHASE 6 — THE ONE-SENTENCE CARRY-FORWARD
 
-**You are Agent 2 (L0, vertical truth). Your lane is CP1, the closest checkpoint to done: the P0 source
-floor is 35/35 PASS and real; your job is to finish `PhilologicalProof` v1 — Heritage ensemble (P2),
-lexical gold + ranker benchmark (P3), alignment gold (P4) — so that every source→L0 decision exposes an
-honest PROVED/SUPPORTED/CONFLICT/OPEN/REVIEWED status, and to certify the floor Agent 1 derives its
-arguments from. Stay out of CP4's derivation; provide the floor it stands on. Route every result through
-the frozen proof contract, never a collapsed confidence number, and keep the honest vocabulary.**
+**You are Agent 2 (corpus compiler + integrity layer). The IPVV source floor is 63/63 lossless and real,
+and the RAW-L0 factory core (raw Sanskrit → audited canonical L0, P0-validated) + the prioritized
+21-target queue + the versioned L0 registry + the executable-corrections review engine are built. Your
+job now is to (1) wire a reliable gloss/model transport, (2) run the Sanskrit-only replay benchmark
+against IPVV gold (the Pāṭala-Evals embryo), and (3) ingest the not-yet-ingested primary texts — holding
+the hard line that a wrong translation is worse than none, L0 is immutable/versioned, proof dimensions
+stay separate (never a collapsed confidence number), and validation is the gate Agent 3's output must
+cross. Stay out of CP4's derivation (Agent 1); provide the source floor + corpus state it stands on, and
+keep the honest vocabulary.**
