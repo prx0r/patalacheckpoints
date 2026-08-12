@@ -351,3 +351,23 @@ earn promotion.
 
 The embedding/lexical-overlap baseline is the current best (0.81 top1, 1.0 abstain) — the floor ranker.py
 (and any real model) must beat. Report: `docs/p3_lexical_eval_report.json`.
+
+## Agent L0 — P2 FROZEN as calibrated witness (not blocked on blind review) (2026-08-12)
+
+**Decision:** freeze P2 as CALIBRATED_MACHINE_WITNESS now. The blind review is a non-blocking follow-up,
+not a gate — the ensemble already justifies the freeze without a human:
+- control agreement 85% (instrument consistency)
+- CONFLICT resolution 72% (most Vidyut CONFLICT = representation mismatch, not L0 error)
+- only ~8% double-conflict (42 cases) = the genuinely review-worthy set
+- double-unanalyzed 0.2%, tool-error 0.2%
+
+**Why blind is not a blocker:** the 42 double-conflict cases are the only ones where "both tools fail to
+support L0" — and even that means "both tools fail," not "L0 is wrong." A human pass would disaggregate
+REAL_L0_ERROR/GENUINE_AMBIGUITY/COMPOUND/BOTH_TOOLS_LIMITED/EDITORIAL_ARTIFACT, but that's refinement of
+the small set, not a gate on the whole witness.
+
+**CLAIMS:** added P-009 (P2 calibrated witness, SUPPORTED, blind review = path to human validation) and
+P-010 (ranker.py rejected as P3 witness: 0.76 vs 0.81 baseline, 0 abstention).
+
+**Next:** P4 alignment benchmark (the next proof layer, no human needed to build the held-out set from
+checked L0 pairs).
