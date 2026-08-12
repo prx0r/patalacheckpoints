@@ -54,9 +54,13 @@ class GateFailure:
     fallacy: str
     severity: str
     rationale: str
+    defeater_metadata: dict | None = None
 
     def to_dict(self) -> dict:
-        return {"fallacy": self.fallacy, "severity": self.severity, "rationale": self.rationale}
+        d = {"fallacy": self.fallacy, "severity": self.severity, "rationale": self.rationale}
+        if self.defeater_metadata:
+            d["defeater_metadata"] = self.defeater_metadata
+        return d
 
 
 @dataclass
@@ -191,43 +195,79 @@ def check_viruddha_graph(claim: dict, gold_propositions: list[dict]) -> list[Gat
     gold asserts X and the candidate asserts "X is not the case" / "not-X" / the direct negation of a
     gold proposition. It does NOT claim full semantic entailment — it NOMINATES a viruddha candidate
     for the semantic layer (as the doc requires), never settles it alone.
+
+    Defeater metadata: every hit carries `possible_defeaters` — the ways the apparent contradiction
+    could be a false positive (scope / modality / speaker / temporal / qualification / level
+    difference). This is the HANDSHAK contract to the semantic layer: it knows exactly what to test
+    before accepting the contradiction. A hit is a `structurally plausible contradiction candidate
+    requiring semantic review`, NOT a proven contradiction.
     """
     import re
     failures: list[GateFailure] = []
     claim_text = str(claim.get("claim_text", "")).lower()
 
-    # normalize: strip 'not'/negation so we can test opposite-polarity overlap
+    # function words never count as overlap (prevents 'a/one/the' junk firing)
+    _FUNCTION_WORDS = {"the", "a", "an", "one", "this", "that", "it", "its", "of", "in",
+                       "are", "was", "were", "be", "to", "by", "as", "and", "or", "not", "no",
+                       "itself", "more", "their", "there", "between", "from", "with", "into",
+                       "through", "upon", "over", "under", "only", "very", "such", "same"}
+
     def _neg_polarity(s: str) -> bool:
         return bool(re.search(r"\b(not|no|never|is not|does not|isn't|doesn't)\b", s.lower()))
 
-    def _core(s: str) -> str:
-        # drop common negation words + particles for overlap matching
+    def _core(s: str) -> set:
+        # drop negation/particles via WORD-BOUNDARY regex (not naive replace, which corrupts
+        # word boundaries, e.g. 'linguistic' -> 'inguistic'). Keep CONTENT words only.
         s = s.lower()
-        for w in [" not ", " no ", " never ", " is not ", " does not ", " the ", " a ", " an ",
-                  " that ", " this ", " is ", " are ", " was ", " were "]:
-            s = s.replace(w, " ")
-        return re.sub(r"[^a-z ]", " ", s)
+        s = re.sub(r"\b(is not|does not|is|are|was|were)\b", " ", s)
+        toks = set(re.findall(r"[a-z]{4,}", s))
+        return {t for t in toks if t not in _FUNCTION_WORDS}
 
-    claim_core = _core(claim_text)
-    claim_neg = _neg_polarity(claim_text)
+    # normalize hyphenated privative terms: 'order-less'/'orderless' == 'akrama' == 'not-order'.
+    # They are the SAME proposition in different polarity ENCODING — must not flip polarity.
+    _privative_normal = {"order-less": "akrama", "orderless": "akrama",
+                         "not-constructed": "non-constructed"}
+
+    def _norm(txt: str) -> str:
+        for k, v in _privative_normal.items():
+            txt = txt.replace(k, v)
+        return txt
+
+    claim_norm = _norm(claim_text)
+    claim_core = _core(claim_norm)
+    claim_neg = _neg_polarity(claim_norm)
 
     for p in gold_propositions:
         commitment = str(p.get("commitment") or p.get("speaker") or "").upper()
-        # only claims the gold actually ASSERTS/DERIVES count as 'established' (the text's position)
-        if commitment in ("ASSERTS", "DERIVES", "RECONSTRUCTED", "SIDDHANTA", "ASSERTS_FOR_ARGUMENT"):
-            p_text = str(p.get("proposition") or p.get("text") or "")
+        # only claims the gold actually ASSERTS/DERIVES count as 'established' (the text's position).
+        # RECONSTRUCTED is deliberately EXCLUDED here: a reconstruction is not independently established,
+        # so it must not nominate a viruddha against an independently-asserted claim.
+        if commitment in ("ASSERTS", "DERIVES", "SIDDHANTA"):
+            p_text = _norm(str(p.get("proposition") or p.get("text") or ""))
             p_neg = _neg_polarity(p_text)
             p_core = _core(p_text)
-            # tokens shared between the claim and the gold proposition
-            shared = set(claim_core.split()) & set(p_core.split())
-            if len(shared) >= 3:
-                # opposite polarity on an overlapping subject → the gold argues the opposite
+            shared = claim_core & p_core
+            # require a CONTENT-word overlap (>=2 content tokens), not function words
+            if len(shared) >= 2:
                 if claim_neg != p_neg:
                     failures.append(GateFailure(
                         "viruddha", "strong",
                         f"gold proposition {p.get('proposition_id', p.get('id'))} "
                         f"(commitment={commitment}) asserts the opposite: '{p_text[:80]}' "
-                        f"[GRAPH viruddha candidate — semantic layer decides]"))
+                        f"[GRAPH viruddha candidate — semantic layer decides]",
+                        defeater_metadata={
+                            "candidate_claim": str(claim.get("claim_text", "")),
+                            "conflicting_proposition": p_text,
+                            "polarity_relation": "OPPOSED",
+                            "commitment": commitment,
+                            "overlap_basis": sorted(shared),
+                            "semantic_status": "UNRESOLVED",
+                            "possible_defeaters": [
+                                "SCOPE_DIFFERENCE", "MODALITY_DIFFERENCE", "SPEAKER_DIFFERENCE",
+                                "TEMPORAL_DIFFERENCE", "QUALIFICATION", "LEVEL_DIFFERENCE",
+                                "NON_EQUIVALENT_PREDICATE",
+                            ],
+                        }))
                     break  # one decisive graph conflict is enough to flag
     return failures
 

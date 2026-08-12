@@ -49,11 +49,14 @@ for gid, fn in GOLDS.items():
     g = fn()
     for n in g["nodes"]:
         comm = str(n.get("commitment") or n.get("speaker") or "").upper()
-        if comm in ("ASSERTS", "DERIVES", "SIDDHANTA", "RECONSTRUCTED"):
+        # only TEXTUALLY-COMMITTED (ASSERTS/SIDDHANTA) or DERIVED (DERIVES) count as established;
+        # RECONSTRUCTED is EXCLUDED (a reconstruction is not independently established and must not
+        # create apparent disagreement in the IPVV).
+        if comm in ("ASSERTS", "DERIVES", "SIDDHANTA"):
             established.setdefault(gid, []).append(n)
 total_established = sum(len(v) for v in established.values())
 check("all 5 golds contribute established propositions", len(established) == 5, str(len(established)))
-check("meaningful established-proposition count across golds", total_established >= 20,
+check("established (non-reconstructed) proposition count", total_established >= 15,
       str(total_established))
 
 # for each gold's conclusion, check it against every OTHER gold's established propositions
@@ -74,10 +77,13 @@ for gid, fn in GOLDS.items():
             if hits:
                 cross_flags.append((gid, n.get("proposition_id"), other_gid, len(hits)))
 check("cross-argument scan runs without error", True)
-# NOTE: genuine cross-gold conflicts are a FINDING (good), not a failure. Log them.
+# These are TENSION CANDIDATES for inspection, NOT settled disagreements. The detector is
+# 'selective enough to nominate a small set of cross-argument tension candidates' — it does NOT
+# establish precision or real philosophical disagreement.
 for cf in cross_flags:
-    print(f"    [cross-conflict finding] {cf[0]}/{cf[1]} vs {cf[2]} → {cf[3]} viruddha hit(s)")
-print(f"    → {len(cross_flags)} cross-gold viruddha findings (these are real disagreement candidates)")
+    print(f"    [tension candidate] {cf[0]}/{cf[1]} vs {cf[2]} → {cf[3]} viruddha hit(s)")
+print(f"    → {len(cross_flags)} cross-gold tension candidates (NOT settled disagreements; "
+      f"require semantic review + the T3/T4 eligibility gate)")
 
 print("\n== 2. REAL-PASSAGE: gate + graph viruddha on the reflexion-core (chunkM) ==")
 passage_path = os.path.join(ROOT, "data/published/ipvv",
@@ -93,18 +99,43 @@ if os.path.exists(passage_path):
     contradicting = {"claim_id": "c:chunkM-contra",
                      "claim_text": "The determination (adhyavasāya) establishes an external thing outside the cognition",
                      "pramana": "anumana"}
-    # run graph viruddha against ARG-004 (reflexivity/consciousness gold) + ARG-002
+
+    # run graph viruddha against ARG-002 + ARG-004
     g2 = build_gold_002(); g4 = build_gold_004()
     hits2 = check_viruddha_graph(contradicting, g2["nodes"])
     hits4 = check_viruddha_graph(contradicting, g4["nodes"])
-    # the claim asserts a construction/externality the golds deny — expect at least one viruddha signal
     print(f"    viruddha vs ARG-002: {len(hits2)}, vs ARG-004: {len(hits4)}")
-    # at least run the gate cleanly on a real L2-derived claim (no crash, valid outcome)
     l2_claim = {"claim_id": "c:chunkM", "claim_text": l2[:300], "pramana": "anumana"}
     res = validate(l2_claim, gold_propositions=g2["nodes"])
     check("gate runs on real reflexion-core L2 without error",
           res.get("outcome") in ("accepted", "accepted_with_penalty", "needs_review", "hollow"),
           res.get("outcome"))
+
+print("\n== 2b. Detector discipline: no false positives on the akrama same-claim / junk overlap ==")
+g2 = build_gold_002()
+g3 = build_gold_003()
+# akrama = a-krama = not-order = 'order-less'. 'X is order-less' and 'X is not constituted by order
+# (akrama)' are the SAME claim in different polarity ENCODING. The detector may NOMINATE it (handoff)
+# but must NOT settle it, and its defeater metadata must include NON_EQUIVALENT_PREDICATE.
+same_claim = {"claim_id": "c:akrama", "claim_text": "pratibhā is order-less (akrama)",
+              "pramana": "anumana"}
+hits = check_viruddha_graph(same_claim, g3["nodes"])
+for h in hits:
+    md = h.defeater_metadata or {}
+    check("akrama same-claim carries NON_EQUIVALENT_PREDICATE defeater (not settled)",
+          "NON_EQUIVALENT_PREDICATE" in md.get("possible_defeaters", []))
+    check("akrama same-claim is marked semantic_status UNRESOLVED (not a settled contradiction)",
+          md.get("semantic_status") == "UNRESOLVED")
+# function-word junk: 'a/one/the' overlap must NOT fire
+junk = {"claim_id": "c:junk", "claim_text": "one a the awareness self", "pramana": "anumana"}
+check("function-word-only claim does not fire viruddha", len(check_viruddha_graph(junk, g2["nodes"])) == 0)
+# opponent-attributed propositions must NOT count as established (no viruddha from the objector)
+g_obj = build_gold_002()
+obj = [n for n in g_obj["nodes"] if n.get("proposition_id") == "G2-OBJ"]
+check("opponent-attributed proposition excluded from established (no viruddha)",
+      len(check_viruddha_graph(
+          {"claim_id": "x", "claim_text": "reflexive awareness IS a conceptual construction"},
+          obj)) == 0)
 
 print("\n== 3. RESEARCHPACK resolves against real IPVV objects ==")
 pack_path = os.path.join(ROOT, "benchmarks/v0/packs/PACK-IPVV-NONCONSTRUCTED-I.json")

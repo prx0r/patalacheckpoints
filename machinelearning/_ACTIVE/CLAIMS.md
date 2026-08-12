@@ -351,25 +351,36 @@ capability. See `AGENT1-HANDOVER.md` §4 + the component contracts below.
   opposite-polarity overlap → `VIRUDDHA` candidate (the semantic layer decides; it nominates, never settles
   alone). `argument.build_argument` fills its empty `gate` slot by running the real gate on the conclusion.
   Integration test `tests/test_ipvv_integration.py`: cross-gold scan + real reflexion-core IPVV passage
-  (chunkM) + ResearchPack resolution all pass. Flag rate 5.98% (11/184) — discriminating, not over-firing.
-- **CAVEAT:** the graph viruddha NOMINATES candidates; it does not adjudicate them (a real-rival vs
-  false-positive decision is scholarly). It requires a gold's proposition to carry `commitment` to know
-  which claims are "established." Original gate benchmark unchanged (0.80/0.00/0.50).
-- **DOES NOT CLAIM:** that the gate is a semantic verifier, or that any viruddha finding is a settled
-  contradiction.
-- **REQUIRED to promote:** adjudicated disagreement fixtures + a broader gold.
+  (chunkM) + ResearchPack resolution all pass. The detector is *selective enough to nominate a small set
+  of cross-argument tension candidates for inspection* — it does NOT establish precision or real
+  philosophical disagreement.
+- **CAVEAT (honest, learned by inspection):** the graph viruddha NOMINATES candidates; it does not
+  adjudicate them. Manual inspection of the 3 initial cross-gold hits showed **all 3 were artifacts**
+  (an akrama/order-less polarity-encoding flip on the SAME claim, and a function-word-only overlap) —
+  NOT real disagreements. The detector was fixed to (a) drop function words from overlap, (b) exclude
+  RECONSTRUCTED and ATTRIBUTES_TO_OPPONENT from the established pool, and (c) carry defeater metadata
+  (NON_EQUIVALENT_PREDICATE, scope/modality/speaker/...) so the semantic layer knows what to test.
+  A genuine contradiction of the siddhānta (e.g. "the I IS a constructed relation") fires correctly.
+- **DOES NOT CLAIM:** that the gate is a semantic verifier, that any viruddha finding is a settled
+  contradiction, or that cross-gold hits reflect disagreement in the IPVV (they may reflect disagreement
+  only in Pāṭala's own reconstructions).
+- **REQUIRED to promote:** the T3/T4 eligibility gate (source spans resolve + commitment known +
+  scope/modality/speaker compared + independent published evidence) + semantic review of candidates.
 
 ---
 
-## CLAIM P-021 — "Pāṭala surfaces genuine cross-argument disagreements as benchmark fixtures."
-- **STATUS:** SUPPORTED (as machine-discovered `CANDIDATE` fixtures) — NOT adjudicated
-- **EVIDENCE:** `experiments/build_disagreement_fixtures.py` converts the graph-viruddha cross-gold
-  findings into `benchmarks/v0/evidence/disagreement-fixtures.json` (3 fixtures, PATALA-EVIDENCE
-  `claim_to_counterevidence`, `RIVAL_READING`, EVALUATION_ONLY). These capture real cases: ARG-001 vs
-  ARG-003 (both V2-O reconstructions — a genuine two-readings case), ARG-005 vs ARG-002. This is the
-  benchmark material where the correct answer may be "represent the disagreement and abstain," more
-  valuable than forced green labels.
-- **CAVEAT:** machine-discovered; a scholar must adjudicate whether each is a real rival reading or a
-  false positive. The `expected.relation=RIVAL_READING` is a hypothesis, not a verdict.
-- **DOES NOT CLAIM:** that any of these disagreements are settled, or that the system correctly resolves
-  them.
+## CLAIM P-021 — "Pāṭala extracts commitment-sensitive cross-argument tension CANDIDATES."
+- **STATUS:** SUPPORTED (as machine-discovered tension candidates) — NOT settled disagreements, NOT fixtures
+- **EVIDENCE:** `experiments/build_disagreement_candidates.py` classifies graph-viruddha cross-gold
+  hits by commitment type and writes `benchmarks/v0/disagreements/cross-gold-candidates.json`. All 3
+  candidates are `RECONSTRUCTION_TENSION_CANDIDATE` (a RECONSTRUCTED conclusion vs a TEXTUALLY_COMMITTED
+  proposition) — correctly reflecting that the tension is between Pāṭala's own reconstructions and the
+  text's asserted propositions, NOT a settled disagreement in the IPVV. Candidate schema carries
+  left/right commitments + pools + overlap basis + possible defeaters + `semantic_status: UNRESOLVED`.
+- **CAVEAT (honest):** an earlier version wrongly emitted these as `RIVAL_READING` fixture disagreements;
+  manual inspection showed all 3 initial hits were artifacts (akrama polarity-encoding flip, function-word
+  overlap). Retracted. The candidate extractor now NEVER emits settled fact — only `_CANDIDATE` classes.
+- **DOES NOT CLAIM:** that any candidate is a real philosophical disagreement, or that the detector has
+  established precision.
+- **REQUIRED to promote to T3/T4 fixture:** the eligibility gate (source spans resolve + commitment known
+  + scope/modality/speaker compared + independent published evidence) + a surviving manual audit.
