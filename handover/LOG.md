@@ -527,3 +527,18 @@ spec + validator + commit gate.
 
 **Files:** `handover/agent-2-integration/INDEX.md` §CANONICAL LAYER STACK · `PROBLEMS-AUTONOMOUS-TRANSLATION.md`
 §8 · `skills/autonomous-layer/` (the bundle to re-map).
+
+## Agent 2 — canonical architecture frozen (hermespatala layers + review) (2026-08-12)
+
+**What:** Saved the two canonical autonomous-factory architecture docs to `handover/hermes/`:
+`hermespatalalayers.md` (skills-per-layer, one controller/scheduler, compiler-pass model) and
+`hermespatala-architecture-review.md` (20-point closeout: two constitutions, five planes, canonical skills
+in Pāṭala, API-as-constitutional-boundary, per-worker permissions, execution≠epistemic DAG, deletable-Hermes test).
+
+**Why it matters:** freezes the target so both lanes build to it. Pāṭala owns the epistemic + control +
+procedural + human planes; Hermes is the replaceable execution plane. Rule: **Hermes manages work. Pāṭala
+manages knowledge.** Build order: L0 controller → canary → certificate → L2 → L200 → C1 → supersession →
+THEME → ESSAY.
+
+**Files:** `handover/hermes/hermespatalalayers.md` · `hermespatala-architecture-review.md` ·
+`handover/agent-2-integration/PROBLEMS-AUTONOMOUS-TRANSLATION.md` §9.

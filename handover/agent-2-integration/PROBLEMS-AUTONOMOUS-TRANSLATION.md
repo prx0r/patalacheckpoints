@@ -128,3 +128,23 @@ The **actual canonical stack** is defined authoritatively in:
 (each = input / model job / hard commit gate / validator / certificate) — replacing the stale T1–T3.1 skills.
 Highest-value autonomous layers: **L200** (the audit) + **C1** (commentary), each with a certificate before
 unattended scale.
+
+---
+
+## 9. CANONICAL ARCHITECTURE — the frozen end-state
+
+Two canonical docs now define the autonomous factory target (both in `handover/hermes/`):
+- **`hermespatalalayers.md`** — skills per epistemic layer, ONE controller, ONE scheduler, layers as typed
+  compiler passes, per-layer registries/validators/certificates, cascading supersession, the build order.
+- **`hermespatala-architecture-review.md`** — the 20-point closeout: **TWO constitutions** (S_execution ⟂
+  S_epistemic; kanban.done ≠ Pāṭala.ACCEPTED; Hermes goal-judging ≠ scholarly review), **FIVE planes**
+  (Epistemic/Control/Execution/Procedural/Human), canonical skills in Pāṭala (deployed to Hermes),
+  **API = constitutional boundary** (no direct datastore access), per-worker permission sets, execution-DAG
+  ≠ epistemic-DAG (task IDs = provenance, never object identity), and the ultimate test: *delete Hermes and
+  retain every Pāṭala object/epistemic state unchanged.*
+
+**The frozen rule:** *Hermes manages work. Pāṭala manages knowledge.*
+The controller/registries/validators/skills are Pāṭala-owned; Hermes is the replaceable execution plane;
+cron wakes a deterministic `patala-controller tick` (no LLM orchestrator); review is a Pāṭala ReviewEvent
+graph mutation. Build order: harden controller at L0 → canary → certificate → L2 → **L200** → C1 →
+supersession propagation → THEME → connect Argument/Synthesis → ESSAY → EDUCATION.
