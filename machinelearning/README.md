@@ -1,50 +1,86 @@
-# machinelearning/ — Pāṭala's ML workspace
+# machinelearning/ — Pāṭala's ML workspace (organized)
 
-*2026-08-12. The consolidated home for all ML-related material that would otherwise be scattered across
-`docs/` and the IPVV translation stack's `specs/`. The authoritative decision on what to build, and why,
-is **`MLUSEINPATALA.md`** — read it first.*
+*2026-08-12. The ML workspace, organized into **ACTIVE** (the living doctrine + current work) and
+**ARCHIVE** (superseded / historical / no-longer-actionable — kept, never deleted). **Start with
+`_ACTIVE/AGENTS-DOCTRINE.md`.** The enforcement gate `theatre_check.py` lives in the root.*
+
+> **Nothing is "real" because code exists.** It becomes real only when independent gold + blind eval +
+> metric + human adjudication show it does what its name claims. See `_ACTIVE/AGENTS-DOCTRINE.md`.
 
 ---
 
-## The canon (read in this order)
+## 1. READ FIRST — the ACTIVE doctrine (in order)
 
 | File | What it is |
 |---|---|
-| **`MLUSEINPATALA.md`** | **THE canonical recommendation (FROZEN)** — what to do, in what order, with justifications. Start here. |
-| **`DEVPLAN.md`** | the comprehensive execution plan — every phase broken into granular steps, each with the files to touch and the test that proves it (test-first, with run commands) |
-| `MLVISION.md` | the big picture — how the ML strategy, the corpus, and the site vision compose; and how the whole becomes bigger than FoJin (self-improving scholarly intelligence, Vertical Fidelity, GEN-Z as the depth-conservation proof) |
-| `VISION-COMPUTABLE-TRADITION.md` | the **grounded product vision** the ML serves — the multi-resolution knowledge system (epistemic gearbox, misconception maps, semantic-distance ladders, concept journeys, self-explaining corpus), each mapped to the ML primitive that enables it |
-| `IPVV-STACK-INTEGRATION.md` | the ground-truth audit of the actual IPVV stack + the current Pāṭala wiring (verified numbers) — re-grounds the ML plan in the real data and exposes the C1-wiring gap |
-| `GAPS.md` | implementation-vs-vision gap analysis (what exists vs what the vision wants) |
-| `mlreview.md` | the ML review: the two difficulty classes (EXPOSE vs INFER), benchmark-first, FoJin/Bilara lessons |
-| `mlcurriculum.md` | the verified 26-paper reading curriculum (every arXiv ID confirmed) + required deliverables |
-| `REVIEW_PATALAML_VS_CODEBASE.md` | the honest review: ≥10 of the 20 PATALAML ideas are already built as data/ontology |
-| `PATALAML.md` | the original 20-idea ML research roadmap |
-| `PLATFORM_PROVENANCE_PRESERVING_GENERATION.md` | the verification floor: "AI proposes ≠ Pāṭala asserts" |
-| `SPEC_THEME_CLUSTERING.md` | the theme-discovery mechanism (hybrid graph, 7 edges) |
-| `SPEC_THEME.md` | the theme dossier structure |
-| `THEMES_PILOT_REPORT.md` | the proven 25-C1 pilot (hybrid graph beats embeddings-only) |
-| `themes_pilot.py` | the runnable pilot |
-| **`COMPOUNDING_RESEARCH_SYSTEM.md`** | the source-centric HUB model + the PUSHING→argument→essay→learning compounding pipeline (how every text tracks all its outputs) |
-| **`SPEC_PUSHING_METHOD.md`** | the mechanical deep-dive formula (the "Logicvid" method), reusable per source — the discovery step before formalization |
-| **`DUAL_AGENT_TRACK.md`** | the two-lane split (Agent 1 = ML/research, Agent 2 = integration/content) with the shared contract + handoff protocol |
-| **`BENCHMARK_HANDOVER.md`** | the benchmark v0 seed (gold.ts, qa_v1_gold, stall-log) the ML master builds from |
-| **`SPEC_LOGICAL_ARGUMENTS_GOLD.md`** | the compounding loop: PUSHING → formal logical argument → truth-engine proof → essay → learning, all tracked on the hub (the highest-value output) |
-| **`SPEC_ARGUMENT_TRUTH_PACKET.md`** | the light model: a logical argument as a translation-like, auditable, strength-graded truth-packet (PROVED→SPECULATIVE, derived from existing primitives) |
+| `_ACTIVE/AGENTS-DOCTRINE.md` | **the master anti-theatre rule** (both agents). The 3 categories, 9-field contract, epistemic labels, banned words, abstention, lineage, falsification |
+| `_ACTIVE/CLAIMS.md` | the project's self-audit ledger (P-001..P-010) — update honestly as you work |
+| `_ACTIVE/COMPONENT-CONTRACTS.md` | the 9-field anti-theatre contract per component |
+| `_ACTIVE/AGENT1-HANDOVER.md` | the working doctrine (axioms, recurring errors, tone) |
+| `_ACTIVE/MLUSEINPATALA.md` | the frozen ML strategy + the north-star rule |
 
-## The work-directories
+## 2. The vision (the north star)
 
-- `papers/` — per-paper technical notes (the 20-point template in `TEMPLATE.md`), one per curriculum paper
-- `proofs/` — proof notes for NBFNet / GraphGPS / hyperbolic models (`TEMPLATE.md`)
-- `decisions/` — implementation decision records (ADRs), `ADR-TEMPLATE.md`
+| File | What it is |
+|---|---|
+| `_ACTIVE/dualagentvision.md` | the full vision: one scholarly derivation graph, 13 phases, CP0–CP12 |
+| `_ACTIVE/dualagentvision-ADAPTED.md` | the checkpoint map (what our infra covers) |
+| `_ACTIVE/ARGUMENT-GOLD-VISION.md` | **the current vision**: Argument Gold + DebateFrame/SemanticAlignment unblock the gate |
 
-## Sources of these documents
+## 3. The current work (the active build)
 
-- `GAPS.md`, `mlreview.md`, `mlcurriculum.md` — produced 2026-08-12 from the patala codebase + vision docs
-- `PATALAML.md`, `REVIEW_PATALAML_VS_CODEBASE.md`, `SPEC_THEME_*`, `THEMES_PILOT_*`, `themes_pilot.py`,
-  `PLATFORM_PROVENANCE_PRESERVING_GENERATION.md` — canonical copies from
-  `/mnt/HC_Volume_106427611/sanskritree/translations/_stack/ipvv/specs/` (they live there too; this is
-  the patala-side mirror so the ML workspace is self-contained).
+| File | What it is |
+|---|---|
+| `_ACTIVE/NYAYA-GATE-CANDIDATE-V1.md` | the frozen, measured Nyāya gate result (defect 4/5, FP 0/5, abstain 1/2) |
+| `_ACTIVE/SEMANTIC-COMMENSURABILITY.md` | the anti-fake-contradiction layer (DebateFrame / SemanticAlignment) |
+| `_ACTIVE/DEVPLAN.md` | the consolidated execution plan (Argument Gold = the next build) |
+| `_ACTIVE/SPEC_EPISTEMIC_PROPAGATION.md` | the epistemic-evidence-propagation contract |
+| `_ACTIVE/ML-ALIGNMENT.md` | every ML artifact maps onto Pāṭala types |
+| `_ACTIVE/BUILD-NOTES.md` | the running progress log |
+| `_ACTIVE/HONEST-AUDIT-OWN-STRUCTURES.md` | the no-BS inventory of what we built (real vs hollow) |
 
-> **Keep in sync:** if you edit a file in `sanskritree/translations/_stack/ipvv/specs/`, mirror it here,
-> and vice-versa. The IPVV stack owns the canonical THEMES spec; this folder owns the ML decision-making.
+## 4. The reference material (active, but reference-only)
+
+| File | What it is |
+|---|---|
+| `_ACTIVE/TRUTHENGINE-FULL-AUDIT.md` | the 22-doc truth-engine inventory (Nyāya gate = best asset) |
+| `_ACTIVE/TRUTHENGINE_TO_PATALA_MAPPING.md` | reuse mechanisms, reject the ontology |
+| `_ACTIVE/SANSKRITREE-LEAN-REVIEW.md` | the honest Lean verdict (don't build on it) |
+| `_ACTIVE/mlcurriculum.md` | the verified 26-paper arxiv curriculum (context seeding) |
+| `_ACTIVE/ml-truthmap.md` | the truth-engine review |
+| `_ACTIVE/PLATFORM_PROVENANCE_PRESERVING_GENERATION.md` | the provenance principle |
+
+## 5. ARCHIVED (superseded / historical — kept, never deleted)
+
+| File | Why archived |
+|---|---|
+| `_ARCHIVE/LOGICAL-ORDER.md` · `DEVPLAN_AGNOSTIC_CONTRACT.md` · `SPEC_CONSOLIDATED_BUILD.md` | superseded by `DEVPLAN.md` |
+| `_ARCHIVE/WIRE-NYAYA-GATE.md` | superseded by the gate-freeze + ARGUMENT-GOLD-VISION |
+| `_ARCHIVE/SPEC_ALTERNATIVE_ARGUMENT_BUILDERS.md` | the builder comparison was RETIRED as circular |
+| `_ARCHIVE/HONESTY-CLEANUP.md` · `ZOOMOUT-REVIEW.md` | historical records of the cleanup |
+| `_ARCHIVE/MLVISION.md` · `VISION-COMPUTABLE-TRADITION.md` · `HOW-IT-FITS.md` · `GAPS.md` · `PATALA_AS_LIBRARY_ENGINE.md` | superseded by `dualagentvision-ADAPTED.md` + the doctrine |
+| `_ARCHIVE/PATALAML.md` · `REVIEW_PATALAML_VS_CODEBASE.md` · `mlreview.md` · `mlpipeline.md` · `mllogical.md` · `mlpushing.md` | the original exploration (historical) |
+| `_ARCHIVE/SPEC_THEME_CLUSTERING.md` · `SPEC_THEME.md` · `THEMES_PILOT_REPORT.md` · `themes_pilot.py` · `SPEC_STAGE2_CLUSTER.md` | themes piloted; CP3 not done — kept for when themes resume |
+| `_ARCHIVE/SPEC_PUSHING_METHOD.md` · `SPEC_LOGICAL_ARGUMENTS_GOLD.md` · `SPEC_ARGUMENT_TRUTH_PACKET.md` · `COMPOUNDING_RESEARCH_SYSTEM.md` · `CONTEXT_ENGINEERING.md` | the PUSHING/compounding thread (historical) |
+| `_ARCHIVE/EDUCATION_VISION.md` · `geometric.md` · `SYSTEM_GROWTH_AND_HERMES.md` | vision/other-lane |
+| `_ARCHIVE/SPEC_L0_PROOF.md` · `SPEC_L0_STANDARDIZATION.md` · `IPVV-STACK-INTEGRATION.md` | L0/other-lane (Agent 2's) |
+| `_ARCHIVE/DUAL_AGENT_TRACK.md` | superseded by `AGENTS-DOCTRINE.md` + the checkpoint docs |
+| `_ARCHIVE/SPEC_RIGID_DATA_CONTRACT.md` | superseded by `SPEC_EPISTEMIC_PROPAGATION.md` |
+| `_ARCHIVE/ML-ARGUMENT-REVIEW-CORRECTED.md` | the external review (historical; distilled into the doctrine) |
+
+---
+
+## The enforcement tool
+
+- **`theatre_check.py`** (root) — the mechanical anti-theatre gate. Run
+  `python3 machinelearning/theatre_check.py --status` before claiming any component is "done."
+
+## The handovers (in `handover/agent-1-ml/`)
+- `CHECKPOINTS-ML.md` — this lane's goals (CP0/CP2/CP3/CP4)
+- `SESSION-2026-08-12.md` — the full session record
+- `NEXT-STEPS.md` — the exact execution (Argument Gold build)
+
+## Sources / sync
+The `SPEC_THEME_*`, `PATALAML`, `PLATFORM_PROVENANCE_PRESERVING_GENERATION` docs were mirrored from
+`sanskritree/translations/_stack/ipvv/specs/`. The originals live there too (now archived here). Keep
+in sync if edited.

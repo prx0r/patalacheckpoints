@@ -18,18 +18,22 @@ audit. "N tests pass" is not "scholarship verified."
 
 ## 1. READ THESE, IN ORDER (do not skip)
 
-1. **`machinelearning/AGENTS-DOCTRINE.md`** — the global anti-theatre rule both agents operate under.
+1. **`onboarding/README.md`** — the single on-ramp: complete context (rule → vision → map → full
+   system), then the specialization gate to your lane. It organizes the existing docs below; read it
+   first, then the originals it points to.
+2. **`machinelearning/_ACTIVE/AGENTS-DOCTRINE.md`** — the global anti-theatre rule both agents operate under.
    This is the master doctrine: the 3 categories, the 9-field contract, the epistemic labels, the banned
    words, the abstention principle, human adjudication, result lineage, falsification-before-promotion.
-2. **`machinelearning/CLAIMS.md`** — the project's own audit ledger (P-001…P-008). Before you claim
+3. **`machinelearning/_ACTIVE/CLAIMS.md`** — the project's own audit ledger (P-001…P-008). Before you claim
    anything works, check: is it already claimed? What's its STATUS/EVIDENCE/CAVEAT? Update it honestly.
-3. **`machinelearning/COMPONENT-CONTRACTS.md`** — the 9-field anti-theatre contract applied to every
+4. **`machinelearning/_ACTIVE/COMPONENT-CONTRACTS.md`** — the 9-field anti-theatre contract applied to every
    current component (argument, strength, nyaya-gate, aifgraph, essay, c1metrics). Each shows its honest
    status and adoption gate.
-4. **`machinelearning/dualagentvision.md` + `dualagentvision-ADAPTED.md`** — the north star + the
+5. **`machinelearning/_ACTIVE/dualagentvision.md` + `dualagentvision-ADAPTED.md`** — the north star + the
    checkpoint map (CP0–CP12) of what our infra actually covers.
-5. **`machinelearning/AGENT1-HANDOVER.md`** (if you are the ML agent) or
-   **the L0/integration handover** (if you are the other lane) — your lane's doctrine.
+6. **`machinelearning/_ACTIVE/AGENT1-HANDOVER.md`** (if you are the ML agent) or
+   **`handover/agent-2-integration/INDEX.md`** (if you are the L0/integration lane) — your lane's
+   current state + doctrine. Cross-lane coordination: `handover/LOG.md`.
 
 ---
 
@@ -86,6 +90,6 @@ split · seed · config · date`. If "Model X achieved 0.71 F1" can't resolve to
 
 ---
 
-*This file is the enforcement mechanism for `machinelearning/AGENTS-DOCTRINE.md`. The doctrine is not
+*This file is the enforcement mechanism for `machinelearning/_ACTIVE/AGENTS-DOCTRINE.md`. The doctrine is not
 advisory — a new agent that skips it will repeat the theatre-building failure this project spent a
 session undoing.*

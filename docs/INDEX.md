@@ -21,23 +21,25 @@ stale ones as `[ARCHIVED]` so a new agent is never confused. If it's not here, i
 
 | Concern | Canonical doc | Where |
 |---|---|---|
+| **Onboarding (START HERE — single on-ramp, all agents)** | `onboarding/README.md` | repo `onboarding/` |
 | **Vision + navigation (START HERE)** | `VISION_AND_NAVIGATION.md` | repo root |
 | **Full-system onboarding** | `THE_COMPANION.md` | sanskritree `_stack/ipvv/specs/` |
 | **Handover folder (both lanes — README first)** | `handover/README.md` | repo `handover/` |
 | **Cross-lane coordination log** | `handover/LOG.md` | repo `handover/` |
-| **THE GOVERNING RULE — read first** | `AGENTS.md` + `machinelearning/AGENTS-DOCTRINE.md` | repo root |
-| **The project's self-audit ledger** | `machinelearning/CLAIMS.md` | repo `machinelearning/` |
-| **Anti-theatre component contracts** | `machinelearning/COMPONENT-CONTRACTS.md` | repo `machinelearning/` |
+| **THE GOVERNING RULE — read first** | `AGENTS.md` + `machinelearning/_ACTIVE/AGENTS-DOCTRINE.md` | repo root |
+| **Dual-agent vision + checkpoint map** | `machinelearning/_ACTIVE/dualagentvision.md` + `dualagentvision-ADAPTED.md` | repo `machinelearning/` |
+| **The project's self-audit ledger** | `machinelearning/_ACTIVE/CLAIMS.md` | repo `machinelearning/` |
+| **Anti-theatre component contracts** | `machinelearning/_ACTIVE/COMPONENT-CONTRACTS.md` | repo `machinelearning/` |
 | **Agent 1 — ML lane (current state)** | `handover/agent-1-ml/INDEX.md` | repo `handover/` |
 | **Agent 2 — integration lane (current state)** | `handover/agent-2-integration/INDEX.md` | repo `handover/` |
-| **L0 standardization (NEXT WORK — verifiable substrate)** | `machinelearning/SPEC_L0_STANDARDIZATION.md` | repo `machinelearning/` |
-| **ML strategy (frozen)** | `machinelearning/MLUSEINPATALA.md` | repo `machinelearning/` |
-| **ML dev plan** | `machinelearning/DEVPLAN.md` | repo `machinelearning/` |
-| **ML vision (big picture)** | `machinelearning/MLVISION.md` | repo `machinelearning/` |
-| **IPVV stack integration (verified)** | `machinelearning/IPVV-STACK-INTEGRATION.md` | repo `machinelearning/` |
-| **Source-centric hub (organizing model)** | `machinelearning/COMPOUNDING_RESEARCH_SYSTEM.md` | repo `machinelearning/` |
-| **PUSHING method (deep-dive formula)** | `machinelearning/SPEC_PUSHING_METHOD.md` | repo `machinelearning/` |
-| **Logical arguments (the gold)** | `machinelearning/SPEC_LOGICAL_ARGUMENTS_GOLD.md` | repo `machinelearning/` |
+| **L0 standardization (NEXT WORK — verifiable substrate)** | `machinelearning/_ARCHIVE/SPEC_L0_STANDARDIZATION.md` | repo `machinelearning/` |
+| **ML strategy (frozen)** | `machinelearning/_ACTIVE/MLUSEINPATALA.md` | repo `machinelearning/` |
+| **ML dev plan** | `machinelearning/_ACTIVE/DEVPLAN.md` | repo `machinelearning/` |
+| **ML vision (big picture)** | `machinelearning/_ARCHIVE/MLVISION.md` | repo `machinelearning/` |
+| **IPVV stack integration (verified)** | `machinelearning/_ARCHIVE/IPVV-STACK-INTEGRATION.md` | repo `machinelearning/` |
+| **Source-centric hub (organizing model)** | `machinelearning/_ARCHIVE/COMPOUNDING_RESEARCH_SYSTEM.md` | repo `machinelearning/` |
+| **PUSHING method (deep-dive formula)** | `machinelearning/_ARCHIVE/SPEC_PUSHING_METHOD.md` | repo `machinelearning/` |
+| **Logical arguments (the gold)** | `machinelearning/_ARCHIVE/SPEC_LOGICAL_ARGUMENTS_GOLD.md` | repo `machinelearning/` |
 | **Argument truth-packet (strength-graded)** | `machinelearning/SPEC_ARGUMENT_TRUTH_PACKET.md` | repo `machinelearning/` |
 | **PUSHING guide (the formal method)** | `research-library/pushing/PUSHING_GUIDE.md` | research-library |
 | **Logicvid source files** | `research-library/pushing/_source/` | research-library |
