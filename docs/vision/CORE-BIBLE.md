@@ -92,6 +92,24 @@ Each is the ONE vision viewed through one lens. All interdependent — each cons
 | **4g. The Media Layer** | the scholarly core rendered as media + cross-tradition | `docs/vision/vision-09-*.md` | consumes 4c (arguments) |
 | **4h. The Economics** | scarce assets + scholar incentives | `docs/vision/vision-08-*.md` + `endgame4.md` | sustains the whole |
 
+### The three human/tool/value lenses (the sub-folders of Layer 4)
+These three lenses carve the SAME vision by who/what/why — each is its own folder with a README that
+assigns the existing docs (content untouched) + the relationships:
+
+| Lens | Folder | The vision viewed as… | The loop |
+|---|---|---|---|
+| **FUNCTIONALITY** | `docs/vision/functionality/README.md` | the tools + machinery + interfaces | gives scholars the workbench |
+| **SCHOLARS** | `docs/vision/scholars/README.md` | the human layer — the contributors whose judgment is the moat | produces the expert data |
+| **ECONOMICS** | `docs/vision/economics/README.md` | the sustainability — scarce assets + the flywheel | turns the data into revenue + fellowships |
+
+```
+FUNCTIONALITY → SCHOLARS (the workbench) → ECONOMICS (the data capital + flywheel) → FUNCTIONALITY (better tools)
+                                          ↕
+                                    THE SCHOLARLY CORE (what every claim resolves to)
+```
+These are the three spokes around the same scholarly core — the same vision at Layer 4, seen through
+what we build, who does it, and what sustains it.
+
 ---
 
 ## LAYER 5 — THE SPECS / GOLD / DATA (the ground truth)

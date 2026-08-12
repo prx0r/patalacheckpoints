@@ -42,6 +42,17 @@ here and in `docs/INDEX.md`.*
 | **`docs/vision/CORE-BIBLE.md`** | **THE CORE BIBLE** — one vision chunked into 6 zoomable layers (sentence → paragraph → graph → checkpoints → domain lenses → specs/gold/data). The top-level gate: read this, then zoom into any numbered vision below. |
 | `machinelearning/_ACTIVE/PATALA-ENGINE-ROADMAP-12MO.md` | The 12-month philosophy-engine roadmap (the strategic reference; gold-first build order + 8 benchmark tasks + crux algorithm). |
 
+## The three lenses (the human/tool/value folders)
+
+| Lens | Folder | The vision viewed as… |
+|---|---|---|
+| **Functionality** | `docs/vision/functionality/README.md` | the tools + machinery + interfaces (the projections of one core) |
+| **Scholars** | `docs/vision/scholars/README.md` | the human layer — the contributors whose judgment is the moat, and their new role |
+| **Economics** | `docs/vision/economics/README.md` | the sustainability — scarce assets, funding channels, the flywheel |
+
+Each folder assigns the existing docs (content untouched) + the relationships. They are the same vision
+at Layer 4 of the CORE-BIBLE, seen through what we build / who does it / what sustains it.
+
 ---
 
 ## Map to the engineering checkpoint ladder (CP0–CP12)
