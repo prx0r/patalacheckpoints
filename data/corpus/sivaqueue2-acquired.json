@@ -1,0 +1,148 @@
+{
+  "schema": "patala:sivaqueue2:acquired:v1",
+  "compiled": "2026-08-12",
+  "n_acquired": 13,
+  "note": "sivaqueue2 (#101-200) direct-witness downloads, 2026-08-12. OCR text is Devanagari (not IAST) unless noted; two are PDFs. Content not yet cleaned/re-OCRed.",
+  "acquired": {
+    "kriyakandakramavali": {
+      "work_id": "kriyakandakramavali",
+      "num": 101,
+      "source": "archive.org",
+      "url": "https://archive.org/details/karmakandakramav014939mbp",
+      "file": "kriyakandakramavali/kriyakandakramavali.txt",
+      "path": "/root/projects/patala/data/corpus/sources/sivaqueue2/kriyakandakramavali/kriyakandakramavali.txt",
+      "format": "DjVuTXT (english front-matter only; Sanskrit body is in the PDF)",
+      "size": 14226,
+      "acquired": true
+    },
+    "siddhantasekhara": {
+      "work_id": "siddhantasekhara",
+      "num": 109,
+      "source": "ifpindia",
+      "url": "https://www.ifpindia.org/transcripts/pdf/T0969.pdf",
+      "file": "siddhantasekhara/siddhantasekhara.pdf",
+      "path": "/root/projects/patala/data/corpus/sources/sivaqueue2/siddhantasekhara/siddhantasekhara.pdf",
+      "format": "PDF transcript T0969",
+      "size": 58334827,
+      "acquired": true
+    },
+    "sivanirvanapaddhati": {
+      "work_id": "sivanirvanapaddhati",
+      "num": 117,
+      "source": "archive.org",
+      "url": "https://archive.org/details/karmakandam-caturthapustakam",
+      "file": "sivanirvanapaddhati/sivanirvanapaddhati.txt",
+      "path": "/root/projects/patala/data/corpus/sources/sivaqueue2/sivanirvanapaddhati/sivanirvanapaddhati.txt",
+      "format": "DjVuTXT (Devanagari OCR)",
+      "size": 1012612,
+      "acquired": true
+    },
+    "kamikagama": {
+      "work_id": "kamikagama",
+      "num": 151,
+      "source": "archive.org",
+      "url": "https://ia902806.us.archive.org/26/items/AgamaAcademyBooks/",
+      "file": "kamikagama/kamikagama.pdf",
+      "path": "/root/projects/patala/data/corpus/sources/sivaqueue2/kamikagama/kamikagama.pdf",
+      "format": "PDF (English intro; Sanskrit/Grantha+Tamil body)",
+      "size": 4080807,
+      "acquired": true
+    },
+    "ajitagama": {
+      "work_id": "ajitagama",
+      "num": 154,
+      "source": "archive.org",
+      "url": "https://archive.org/details/in.ernet.dli.2015.424435",
+      "file": "ajitagama/ajitagama_vol1.txt",
+      "path": "/root/projects/patala/data/corpus/sources/sivaqueue2/ajitagama/ajitagama_vol1.txt",
+      "format": "DjVuTXT vol1 (Devanagari OCR)",
+      "size": 2086242,
+      "acquired": true
+    },
+    "ajitagama_vol2": {
+      "work_id": "ajitagama_vol2",
+      "num": 154,
+      "source": "archive.org",
+      "url": "https://archive.org/details/in.gov.ignca.65295",
+      "file": "ajitagama/ajitagama_vol2.txt",
+      "path": "/root/projects/patala/data/corpus/sources/sivaqueue2/ajitagama/ajitagama_vol2.txt",
+      "format": "DjVuTXT vol2 (Devanagari OCR)",
+      "size": 1118174,
+      "acquired": true
+    },
+    "kriyakandakramavali_pdf": {
+      "work_id": "kriyakandakramavali",
+      "num": 101,
+      "source": "archive.org",
+      "url": "https://archive.org/details/karmakandakramav014939mbp",
+      "file": "kriyakandakramavali/kriyakandakramavali.pdf",
+      "format": "Text PDF (full Sanskrit body)",
+      "acquired": true,
+      "path": "/root/projects/patala/data/corpus/sources/sivaqueue2/kriyakandakramavali/kriyakandakramavali.pdf",
+      "size": 8433307
+    },
+    "sivanirvanapaddhati_pdf": {
+      "work_id": "sivanirvanapaddhati",
+      "num": 117,
+      "source": "archive.org",
+      "url": "https://archive.org/details/karmakandam-caturthapustakam",
+      "file": "sivanirvanapaddhati/sivanirvanapaddhati.pdf",
+      "format": "Text PDF (full)",
+      "acquired": true,
+      "path": "/root/projects/patala/data/corpus/sources/sivaqueue2/sivanirvanapaddhati/sivanirvanapaddhati.pdf",
+      "size": 36620324
+    },
+    "ajitagama_vol1_pdf": {
+      "work_id": "ajitagama",
+      "num": 154,
+      "source": "archive.org",
+      "url": "https://archive.org/details/in.ernet.dli.2015.424435",
+      "file": "ajitagama/ajitagama_vol1_text.pdf",
+      "format": "Text PDF vol1",
+      "acquired": true,
+      "path": "/root/projects/patala/data/corpus/sources/sivaqueue2/ajitagama/ajitagama_vol1_text.pdf",
+      "size": 20279479
+    },
+    "ajitagama_vol2_pdf": {
+      "work_id": "ajitagama",
+      "num": 154,
+      "source": "archive.org",
+      "url": "https://archive.org/details/in.gov.ignca.65295",
+      "file": "ajitagama/ajitagama_vol2_text.pdf",
+      "format": "Text PDF vol2",
+      "acquired": true,
+      "path": "/root/projects/patala/data/corpus/sources/sivaqueue2/ajitagama/ajitagama_vol2_text.pdf",
+      "size": 30871858
+    },
+    "ref_tantrasara": {
+      "work_id": "REF_Tantrasara",
+      "source": "archive.org",
+      "url": "https://archive.org/details/TantrasaraOfAbhinavaguptaH.N.Chakravarti",
+      "file": "reference/Tantrasara_Abhinavagupta_Chakravarti.pdf",
+      "format": "PDF translation",
+      "acquired": true,
+      "path": "/root/projects/patala/data/corpus/sources/sivaqueue2/reference/Tantrasara_Abhinavagupta_Chakravarti.pdf",
+      "size": 47273477
+    },
+    "ref_doctrine_of_vibration": {
+      "work_id": "REF_DoctrineOfVibration",
+      "source": "archive.org",
+      "url": "https://archive.org/details/TheDoctrineOfVibration-MarkDyczkowsky",
+      "file": "reference/Doctrine_of_Vibration_Dyczkowski.pdf",
+      "format": "PDF",
+      "acquired": true,
+      "path": "/root/projects/patala/data/corpus/sources/sivaqueue2/reference/Doctrine_of_Vibration_Dyczkowski.pdf",
+      "size": 8060092
+    },
+    "ref_malinishlokavarttika": {
+      "work_id": "REF_Malinishlokavarttika",
+      "source": "archive.org",
+      "url": "https://archive.org/details/AbhinavaguptasPhilosophyOfRevelationMaliniShlokaVartikaI1399JurgenHanneder_201605",
+      "file": "reference/Malinishlokavarttika_Hanneder.pdf",
+      "format": "PDF",
+      "acquired": true,
+      "path": "/root/projects/patala/data/corpus/sources/sivaqueue2/reference/Malinishlokavarttika_Hanneder.pdf",
+      "size": 48307493
+    }
+  }
+}

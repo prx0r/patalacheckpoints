@@ -6,6 +6,7 @@ import { concepts } from "./concepts";
 import { relations } from "./relations";
 import { audited } from "./audited";
 import { seed } from "./bibliographySeed";
+import { sivaqueueSeed } from "./sivaqueueSeed";
 import { BibliographyRecord } from "./bibliographyTypes";
 import { resources } from "./resources";
 import type { Resource, ResourceType, Tradition } from "./resourcesTypes";
@@ -23,6 +24,7 @@ export const atlasEntities: AtlasEntity[] = [
 export { relations };
 export { audited };
 export { seed };
+export { sivaqueueSeed };
 export { concepts };
 export { traditions };
 export type { BibliographyRecord, BibTranslation, BibSource, BibScholarship, ResourceTier } from "./bibliographyTypes";

@@ -1,45 +1,15 @@
 {
   "schema": "patala:sivaqueue:acquired:v1",
   "compiled": "2026-08-12",
-  "n_acquired": 32,
+  "n_acquired": 44,
   "acquired": {
-    "pancarthabhasya_kaundinya": {
-      "work_id": "pancarthabhasya_kaundinya",
+    "aghorasivas_ullekhini_on_ratnatraya": {
+      "work_id": "aghorasivas_ullekhini_on_ratnatraya",
       "source": "gretil",
-      "verses": 60,
+      "verses": 48,
       "acquired": true,
-      "note": "GRETIL Pāśupatasūtra + Kauṇḍinya Pañcārthabhāṣya",
-      "path": "/root/projects/patala/data/corpus/sources/pancarthabhasya_kaundinya/pancarthabhasya_kaundinya.txt"
-    },
-    "sardhatrisatikalottara": {
-      "work_id": "sardhatrisatikalottara",
-      "source": "gretil",
-      "verses": 54,
-      "acquired": true,
-      "note": "GRETIL Sārdhatriśatikālottara",
-      "path": "/root/projects/patala/data/corpus/sources/sardhatrisatikalottara/sardhatrisatikalottara.txt"
-    },
-    "kiranatantra": {
-      "work_id": "kiranatantra",
-      "source": "gretil",
-      "verses": 240,
-      "acquired": true,
-      "note": "GRETIL Kiraṇatantra 1-6 (Rāmakaṇṭha)",
-      "path": "/root/projects/patala/data/corpus/sources/kiranatantra/kiranatantra.txt"
-    },
-    "mrgendratantra": {
-      "work_id": "mrgendratantra",
-      "source": "muktabodha",
-      "acquired": true,
-      "note": "copied from muktabodha-lib/mRgendrAgama-M00037-IAST.txt",
-      "path": "/root/projects/patala/data/corpus/sources/mrgendratantra/mrgendratantra.txt"
-    },
-    "ratnatrayapariksa_srikantha": {
-      "work_id": "ratnatrayapariksa_srikantha",
-      "source": "muktabodha",
-      "acquired": true,
-      "note": "copied from muktabodha-lib/ASTaprakaraNa ratnatrayaparIkSA-M00009-IAST.txt",
-      "path": "/root/projects/patala/data/corpus/sources/ratnatrayapariksa_srikantha/ratnatrayapariksa_srikantha.txt"
+      "note": "GRETIL Ratnatrayaparīkṣā (Ullekhinī)",
+      "path": "/root/projects/patala/data/corpus/sources/aghorasivas_ullekhini_on_ratnatraya/aghorasivas_ullekhini_on_ratnatraya.txt"
     },
     "anonymous_ratnatrayapariksavyakhya": {
       "work_id": "anonymous_ratnatrayapariksavyakhya",
@@ -49,13 +19,12 @@
       "note": "GRETIL Ratnatrayaparīkṣā (anonymous commentary)",
       "path": "/root/projects/patala/data/corpus/sources/anonymous_ratnatrayapariksavyakhya/anonymous_ratnatrayapariksavyakhya.txt"
     },
-    "aghorasivas_ullekhini_on_ratnatraya": {
-      "work_id": "aghorasivas_ullekhini_on_ratnatraya",
-      "source": "gretil",
-      "verses": 48,
+    "bhagavadgita_sarvatobhadra": {
+      "work_id": "bhagavadgita_sarvatobhadra",
+      "source": "muktabodha",
       "acquired": true,
-      "note": "GRETIL Ratnatrayaparīkṣā (Ullekhinī)",
-      "path": "/root/projects/patala/data/corpus/sources/aghorasivas_ullekhini_on_ratnatraya/aghorasivas_ullekhini_on_ratnatraya.txt"
+      "note": "copied from muktabodha-lib/bhagavadgItA-M00167-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/bhagavadgita_sarvatobhadra/bhagavadgita_sarvatobhadra.txt"
     },
     "bhavopahara": {
       "work_id": "bhavopahara",
@@ -65,6 +34,45 @@
       "note": "GRETIL Bhāvopahārastotra + Vivaraṇa (Ramyadeva)",
       "path": "/root/projects/patala/data/corpus/sources/bhavopahara/bhavopahara.txt"
     },
+    "dvisatikalottara": {
+      "work_id": "dvisatikalottara",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "muktabodha-lib copy dvizatikAlottara-M00200-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/dvisatikalottara/dvisatikalottara.txt",
+      "m_number": "M00200"
+    },
+    "ganakarika": {
+      "work_id": "ganakarika",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "muktabodha-lib copy gaNakArikA-M00508-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/ganakarika/ganakarika.txt",
+      "m_number": "M00508"
+    },
+    "isanasivagurudevapaddhati": {
+      "work_id": "isanasivagurudevapaddhati",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "muktabodha-lib concatenation of IzAnazivagurudevapaddhati Volume 1-4 (M00016/M00017/M00018/M00233)",
+      "path": "/root/projects/patala/data/corpus/sources/isanasivagurudevapaddhati/isanasivagurudevapaddhati.txt",
+      "m_number": "IzAnazivagurudevapaddhati Vol 1"
+    },
+    "janmamaranavicara": {
+      "work_id": "janmamaranavicara",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "copied from muktabodha-lib/janmamaRanavicAra-M00155-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/janmamaranavicara/janmamaranavicara.txt"
+    },
+    "jnanaratnavali": {
+      "work_id": "jnanaratnavali",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "muktabodha-lib copy jJAnaratnAvalI-M0222-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/jnanaratnavali/jnanaratnavali.txt",
+      "m_number": "M0222"
+    },
     "kalikapurana": {
       "work_id": "kalikapurana",
       "source": "muktabodha",
@@ -72,26 +80,20 @@
       "note": "copied from muktabodha-lib/kAlikApurANam-M04002-IAST.txt",
       "path": "/root/projects/patala/data/corpus/sources/kalikapurana/kalikapurana.txt"
     },
-    "pauskaraparamesvara": {
-      "work_id": "pauskaraparamesvara",
-      "source": "muktabodha",
+    "kiranatantra": {
+      "work_id": "kiranatantra",
+      "source": "gretil",
+      "verses": 240,
       "acquired": true,
-      "note": "copied from muktabodha-lib/pauSkara saMhitA-M00259-IAST.txt",
-      "path": "/root/projects/patala/data/corpus/sources/pauskaraparamesvara/pauskaraparamesvara.txt"
+      "note": "GRETIL Kiraṇatantra 1-6 (Rāmakaṇṭha)",
+      "path": "/root/projects/patala/data/corpus/sources/kiranatantra/kiranatantra.txt"
     },
-    "mohacudottara": {
-      "work_id": "mohacudottara",
+    "kriyakramadyotika": {
+      "work_id": "kriyakramadyotika",
       "source": "muktabodha",
       "acquired": true,
-      "note": "copied from muktabodha-lib/mohacUDottara-M00304-IAST.txt",
-      "path": "/root/projects/patala/data/corpus/sources/mohacudottara/mohacudottara.txt"
-    },
-    "pratisThaparamesvara": {
-      "work_id": "pratisThaparamesvara",
-      "source": "muktabodha",
-      "acquired": true,
-      "note": "copied from muktabodha-lib/pratiSThAlakSaNasArasamuccaya-M00065-IAST.txt",
-      "path": "/root/projects/patala/data/corpus/sources/pratisThaparamesvara/pratisThaparamesvara.txt"
+      "note": "copied from muktabodha-lib/kriyakramadyotikavyAkhyA-M00324-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/kriyakramadyotika/kriyakramadyotika.txt"
     },
     "makutottara": {
       "work_id": "makutottara",
@@ -100,12 +102,204 @@
       "note": "copied from muktabodha-lib/makuTottararahasya-M00525-IAST.txt",
       "path": "/root/projects/patala/data/corpus/sources/makutottara/makutottara.txt"
     },
+    "mohacudottara": {
+      "work_id": "mohacudottara",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "copied from muktabodha-lib/mohacUDottara-M00304-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/mohacudottara/mohacudottara.txt"
+    },
+    "moksakarika": {
+      "work_id": "moksakarika",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "copied from muktabodha-lib/ASTaprakaraNa mokSakArikA-M00006-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/moksakarika/moksakarika.txt"
+    },
+    "mrgendratantra": {
+      "work_id": "mrgendratantra",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "copied from muktabodha-lib/mRgendrAgama-M00037-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/mrgendratantra/mrgendratantra.txt"
+    },
+    "nadakarika": {
+      "work_id": "nadakarika",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "copied from muktabodha-lib/ASTaprakaraNa nAdakArikA-M00007-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/nadakarika/nadakarika.txt"
+    },
+    "netratantroddyota": {
+      "work_id": "netratantroddyota",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "copied from muktabodha-lib/netratantra-M00038-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/netratantroddyota/netratantroddyota.txt"
+    },
+    "pancarthabhasya_kaundinya": {
+      "work_id": "pancarthabhasya_kaundinya",
+      "source": "gretil",
+      "verses": 60,
+      "acquired": true,
+      "note": "GRETIL Pāśupatasūtra + Kauṇḍinya Pañcārthabhāṣya",
+      "path": "/root/projects/patala/data/corpus/sources/pancarthabhasya_kaundinya/pancarthabhasya_kaundinya.txt"
+    },
+    "pauskaraparamesvara": {
+      "work_id": "pauskaraparamesvara",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "copied from muktabodha-lib/pauSkara saMhitA-M00259-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/pauskaraparamesvara/pauskaraparamesvara.txt"
+    },
+    "pingalamata": {
+      "work_id": "pingalamata",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "muktabodha-lib copy piGgalAmata-M00305-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/pingalamata/pingalamata.txt",
+      "m_number": "M00305"
+    },
+    "pratisThakriyadipika": {
+      "work_id": "pratisThakriyadipika",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "copied from muktabodha-lib/pratiSThAlakSaNasArasamuccaya-M00065-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/pratisThakriyadipika/pratisThakriyadipika.txt"
+    },
+    "pratisThalaksanasara": {
+      "work_id": "pratisThalaksanasara",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "copied from muktabodha-lib/pratiSThAlakSaNasArasamuccaya-M00065-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/pratisThalaksanasara/pratisThalaksanasara.txt"
+    },
+    "pratisThaparamesvara": {
+      "work_id": "pratisThaparamesvara",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "copied from muktabodha-lib/pratiSThAlakSaNasArasamuccaya-M00065-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/pratisThaparamesvara/pratisThaparamesvara.txt"
+    },
+    "pratisthalaksanasarasamuccaya": {
+      "work_id": "pratisthalaksanasarasamuccaya",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "muktabodha-lib copy pratiSThAlakSaNasArasamuccaya-M00065-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/pratisthalaksanasarasamuccaya/pratisthalaksanasarasamuccaya.txt",
+      "m_number": "M00065"
+    },
+    "prayascittasamuccaya_hridayasiva": {
+      "work_id": "prayascittasamuccaya_hridayasiva",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "muktabodha-lib copy prAyazcittasamuccaya-M00303-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/prayascittasamuccaya_hridayasiva/prayascittasamuccaya_hridayasiva.txt",
+      "m_number": "M00303"
+    },
+    "ratnatrayapariksa_srikantha": {
+      "work_id": "ratnatrayapariksa_srikantha",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "copied from muktabodha-lib/ASTaprakaraNa ratnatrayaparIkSA-M00009-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/ratnatrayapariksa_srikantha/ratnatrayapariksa_srikantha.txt"
+    },
+    "sardhatrisatikalottara": {
+      "work_id": "sardhatrisatikalottara",
+      "source": "gretil",
+      "verses": 54,
+      "acquired": true,
+      "note": "GRETIL Sārdhatriśatikālottara",
+      "path": "/root/projects/patala/data/corpus/sources/sardhatrisatikalottara/sardhatrisatikalottara.txt"
+    },
+    "sarvajnanottara": {
+      "work_id": "sarvajnanottara",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "muktabodha-lib copy sarvajJAnottara-M00327-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/sarvajnanottara/sarvajnanottara.txt",
+      "m_number": "M00327"
+    },
     "satsahasrakalottara": {
       "work_id": "satsahasrakalottara",
       "source": "muktabodha",
       "acquired": true,
       "note": "copied from muktabodha-lib/SatSahasrakAlottarAgama-M00249-IAST.txt",
       "path": "/root/projects/patala/data/corpus/sources/satsahasrakalottara/satsahasrakalottara.txt"
+    },
+    "siddhantadipika_ramanatha": {
+      "work_id": "siddhantadipika_ramanatha",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "copied from muktabodha-lib/vIrazaivasiddhAntottarakaumudI-M00604-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/siddhantadipika_ramanatha/siddhantadipika_ramanatha.txt"
+    },
+    "siddhantasara": {
+      "work_id": "siddhantasara",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "copied from muktabodha-lib/vIrazaivasiddhAntottarakaumudI-M00604-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/siddhantasara/siddhantasara.txt"
+    },
+    "siddhantasarapaddhati": {
+      "work_id": "siddhantasarapaddhati",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "muktabodha-lib copy siddhAntasArapaddhati-M00531-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/siddhantasarapaddhati/siddhantasarapaddhati.txt",
+      "m_number": "M00531"
+    },
+    "siddhantasaravali": {
+      "work_id": "siddhantasaravali",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "copied from muktabodha-lib/vIrazaivasiddhAntottarakaumudI-M00604-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/siddhantasaravali/siddhantasaravali.txt"
+    },
+    "sivadharmasastra": {
+      "work_id": "sivadharmasastra",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "muktabodha-lib copy zivadharma-M00209-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/sivadharmasastra/sivadharmasastra.txt",
+      "m_number": "M00209"
+    },
+    "sivadharmottara": {
+      "work_id": "sivadharmottara",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "muktabodha-lib copy zivadharmottara-M00211-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/sivadharmottara/sivadharmottara.txt",
+      "m_number": "M00211"
+    },
+    "spandapradipika": {
+      "work_id": "spandapradipika",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "copied from muktabodha-lib/spandapradIpikA-M00532-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/spandapradipika/spandapradipika.txt"
+    },
+    "suksmasvayambhuva": {
+      "work_id": "suksmasvayambhuva",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "muktabodha-lib copy sUkSmAgama-M00329-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/suksmasvayambhuva/suksmasvayambhuva.txt",
+      "m_number": "M00329"
+    },
+    "svacchandodyota": {
+      "work_id": "svacchandodyota",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "copied from muktabodha-lib/svacchandapaddhati-M00194-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/svacchandodyota/svacchandodyota.txt"
+    },
+    "tattvaprakasa_bhojadeva": {
+      "work_id": "tattvaprakasa_bhojadeva",
+      "source": "muktabodha",
+      "acquired": true,
+      "note": "copied from muktabodha-lib/kriyAsAratattvaprakAzinIvyAkhyA-M00232-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/tattvaprakasa_bhojadeva/tattvaprakasa_bhojadeva.txt"
     },
     "tattvasamgraha_sadyojyotis": {
       "work_id": "tattvasamgraha_sadyojyotis",
@@ -121,68 +315,12 @@
       "note": "copied from muktabodha-lib/ASTaprakaraNa tattvatrayanirNaya-M00012-IAST.txt",
       "path": "/root/projects/patala/data/corpus/sources/tattvatrayanirnaya/tattvatrayanirnaya.txt"
     },
-    "nadakarika": {
-      "work_id": "nadakarika",
+    "vatulanathasutra": {
+      "work_id": "vatulanathasutra",
       "source": "muktabodha",
       "acquired": true,
-      "note": "copied from muktabodha-lib/ASTaprakaraNa nAdakArikA-M00007-IAST.txt",
-      "path": "/root/projects/patala/data/corpus/sources/nadakarika/nadakarika.txt"
-    },
-    "tattvaprakasa_bhojadeva": {
-      "work_id": "tattvaprakasa_bhojadeva",
-      "source": "muktabodha",
-      "acquired": true,
-      "note": "copied from muktabodha-lib/kriyAsAratattvaprakAzinIvyAkhyA-M00232-IAST.txt",
-      "path": "/root/projects/patala/data/corpus/sources/tattvaprakasa_bhojadeva/tattvaprakasa_bhojadeva.txt"
-    },
-    "moksakarika": {
-      "work_id": "moksakarika",
-      "source": "muktabodha",
-      "acquired": true,
-      "note": "copied from muktabodha-lib/ASTaprakaraNa mokSakArikA-M00006-IAST.txt",
-      "path": "/root/projects/patala/data/corpus/sources/moksakarika/moksakarika.txt"
-    },
-    "siddhantasara": {
-      "work_id": "siddhantasara",
-      "source": "muktabodha",
-      "acquired": true,
-      "note": "copied from muktabodha-lib/vIrazaivasiddhAntottarakaumudI-M00604-IAST.txt",
-      "path": "/root/projects/patala/data/corpus/sources/siddhantasara/siddhantasara.txt"
-    },
-    "siddhantadipika_ramanatha": {
-      "work_id": "siddhantadipika_ramanatha",
-      "source": "muktabodha",
-      "acquired": true,
-      "note": "copied from muktabodha-lib/vIrazaivasiddhAntottarakaumudI-M00604-IAST.txt",
-      "path": "/root/projects/patala/data/corpus/sources/siddhantadipika_ramanatha/siddhantadipika_ramanatha.txt"
-    },
-    "kriyakramadyotika": {
-      "work_id": "kriyakramadyotika",
-      "source": "muktabodha",
-      "acquired": true,
-      "note": "copied from muktabodha-lib/kriyakramadyotikavyAkhyA-M00324-IAST.txt",
-      "path": "/root/projects/patala/data/corpus/sources/kriyakramadyotika/kriyakramadyotika.txt"
-    },
-    "pratisThakriyadipika": {
-      "work_id": "pratisThakriyadipika",
-      "source": "muktabodha",
-      "acquired": true,
-      "note": "copied from muktabodha-lib/pratiSThAlakSaNasArasamuccaya-M00065-IAST.txt",
-      "path": "/root/projects/patala/data/corpus/sources/pratisThakriyadipika/pratisThakriyadipika.txt"
-    },
-    "siddhantasaravali": {
-      "work_id": "siddhantasaravali",
-      "source": "muktabodha",
-      "acquired": true,
-      "note": "copied from muktabodha-lib/vIrazaivasiddhAntottarakaumudI-M00604-IAST.txt",
-      "path": "/root/projects/patala/data/corpus/sources/siddhantasaravali/siddhantasaravali.txt"
-    },
-    "pratisThalaksanasara": {
-      "work_id": "pratisThalaksanasara",
-      "source": "muktabodha",
-      "acquired": true,
-      "note": "copied from muktabodha-lib/pratiSThAlakSaNasArasamuccaya-M00065-IAST.txt",
-      "path": "/root/projects/patala/data/corpus/sources/pratisThalaksanasara/pratisThalaksanasara.txt"
+      "note": "copied from muktabodha-lib/vAtUlanAthasUtra-M00099-IAST.txt",
+      "path": "/root/projects/patala/data/corpus/sources/vatulanathasutra/vatulanathasutra.txt"
     },
     "vimalavati": {
       "work_id": "vimalavati",
@@ -190,48 +328,6 @@
       "acquired": true,
       "note": "copied from muktabodha-lib/vimalAvatItantra-M00295-IAST.txt",
       "path": "/root/projects/patala/data/corpus/sources/vimalavati/vimalavati.txt"
-    },
-    "spandapradipika": {
-      "work_id": "spandapradipika",
-      "source": "muktabodha",
-      "acquired": true,
-      "note": "copied from muktabodha-lib/spandapradIpikA-M00532-IAST.txt",
-      "path": "/root/projects/patala/data/corpus/sources/spandapradipika/spandapradipika.txt"
-    },
-    "svacchandodyota": {
-      "work_id": "svacchandodyota",
-      "source": "muktabodha",
-      "acquired": true,
-      "note": "copied from muktabodha-lib/svacchandapaddhati-M00194-IAST.txt",
-      "path": "/root/projects/patala/data/corpus/sources/svacchandodyota/svacchandodyota.txt"
-    },
-    "netratantroddyota": {
-      "work_id": "netratantroddyota",
-      "source": "muktabodha",
-      "acquired": true,
-      "note": "copied from muktabodha-lib/netratantra-M00038-IAST.txt",
-      "path": "/root/projects/patala/data/corpus/sources/netratantroddyota/netratantroddyota.txt"
-    },
-    "bhagavadgita_sarvatobhadra": {
-      "work_id": "bhagavadgita_sarvatobhadra",
-      "source": "muktabodha",
-      "acquired": true,
-      "note": "copied from muktabodha-lib/bhagavadgItA-M00167-IAST.txt",
-      "path": "/root/projects/patala/data/corpus/sources/bhagavadgita_sarvatobhadra/bhagavadgita_sarvatobhadra.txt"
-    },
-    "janmamaranavicara": {
-      "work_id": "janmamaranavicara",
-      "source": "muktabodha",
-      "acquired": true,
-      "note": "copied from muktabodha-lib/janmamaRanavicAra-M00155-IAST.txt",
-      "path": "/root/projects/patala/data/corpus/sources/janmamaranavicara/janmamaranavicara.txt"
-    },
-    "vatulanathasutra": {
-      "work_id": "vatulanathasutra",
-      "source": "muktabodha",
-      "acquired": true,
-      "note": "copied from muktabodha-lib/vAtUlanAthasUtra-M00099-IAST.txt",
-      "path": "/root/projects/patala/data/corpus/sources/vatulanathasutra/vatulanathasutra.txt"
     }
   }
 }
