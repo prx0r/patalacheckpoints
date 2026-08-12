@@ -1,0 +1,80 @@
+# AGENTS.yaml — the machine-readable agent registry (the single source of truth for agents)
+#
+# This is the CONTRACT. Every agent's orientation is derived from its entry here. The staleness
+# checker (handover/check_staleness.py) validates that each agent's actual files match this registry.
+# Add a new agent = add an entry here + generate its orientation from the template.
+#
+# Schema per agent:
+#   id, name, direction, lane, question, checkpoints[], owns[], orientation,
+#   handover_dir, must_not_touch[], status, updated
+
+version: "1.0"
+updated: "2026-08-12"
+
+agents:
+  agent0:
+    id: agent0
+    name: "Coordinator / orchestrator"
+    direction: "meta — splits work, keeps the system honest"
+    lane: "cross-lane coordination, registry, staleness, checkpoint governance"
+    question: "Is each lane making its checkpoint more trustworthy, with proof?"
+    checkpoints: [ all ]
+    owns:
+      - "handover/"
+      - "VISION_AND_NAVIGATION.md"
+      - "AGENTS.md"
+      - "handover/AGENTS.yaml"
+      - "handover/check_staleness.py"
+    orientation: "handover/ORIENTATION-AGENT0.md"
+    handover_dir: "handover/agent0-coordinator/"
+    must_not_touch:
+      - "machinelearning/research/patala_ml/"
+      - "data/corpus/"
+      - "app/"
+      - "lib/"
+    status: "DEFINED"
+    updated: "2026-08-12"
+
+  agent1:
+    id: agent1
+    name: "Agent 1 — ML / research"
+    direction: "horizontal + upward derivation"
+    lane: "C1 → themes → arguments → claims → synthesis → review"
+    question: "Does this higher-order representation legitimately derive from the scholarly objects beneath it?"
+    checkpoints: [ CP0, CP2, CP3, CP4 ]
+    owns:
+      - "benchmarks/v0/"
+      - "machinelearning/research/patala_ml/"
+      - "handover/agent-1-ml/"
+    orientation: "handover/agent-1-ml/ORIENTATION.md"
+    handover_dir: "handover/agent-1-ml/"
+    must_not_touch:
+      - "data/corpus/"
+      - "app/"
+      - "lib/"
+      - "pipeline/verify_l0.py"
+      - "philproof.py"
+    status: "ACTIVE"
+    updated: "2026-08-12"
+
+  agent2:
+    id: agent2
+    name: "Agent 2 — L0 / integration"
+    direction: "vertical truth"
+    lane: "SOURCE → segmentation → morphology → syntax → alignment → translation proof"
+    question: "Is this reading licensed by the source?"
+    checkpoints: [ CP1 ]
+    owns:
+      - "data/corpus/"
+      - "app/"
+      - "lib/"
+      - "pipeline/verify_l0.py"
+      - "philproof.py"
+      - "handover/agent-2-integration/"
+    orientation: "handover/agent-2-integration/ORIENTATION.md"
+    handover_dir: "handover/agent-2-integration/"
+    must_not_touch:
+      - "benchmarks/v0/"
+      - "machinelearning/research/patala_ml/"
+    status: "ACTIVE"
+    updated: "2026-08-12"
