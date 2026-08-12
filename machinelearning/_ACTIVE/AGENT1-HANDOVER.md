@@ -45,6 +45,22 @@ the tone expected, and how to avoid building theater.*
 10. **The Nyāya gate is the best external asset and it is UNWIRED.** `argument.py`'s `gate` field is an
     empty slot. Wiring it (`verify-claim-semantic`) is the highest-value real build.
 
+11. **GIT DISCIPLINE (hard rule — never break this).** The single shared working tree + index let another
+    agent contaminate your pending state by construction (the 2026-08-12 `4cc78d1` crossing). The ROOT-CAUSE
+    fix is a dedicated **Git worktree per agent** (Agent 0 implements): `/root/projects/patala-agent1` on
+    branch `agent1`, with its OWN working tree + index, sharing only the object DB. Until then, defensive
+    rules:
+    - **Conceptual invariant (must all agree):** `agent identity ↔ worktree path ↔ checked-out branch`.
+      Agent 1 operates ONLY inside the Agent 1 worktree, whose branch MUST be `agent1`.
+    - **Hard gate at session start:** fail hard unless
+      `git branch --show-current == agent1` AND the worktree path is the registered Agent 1 path.
+      (Branches alone do NOT isolate the index — a worktree does.)
+    - **Never stage/commit from a shared index while another agent is mid-flight.** Stage only your own,
+      explicitly-named paths, and commit immediately after staging.
+    - **Never do invasive branch surgery** (stash, cherry-pick, reset, branch -D) on a dirty shared tree.
+    - **Never force-push or rewrite another lane's commit.** If a commit is misattributed, RECORD it as a
+      provenance incident and let Agent 0 reconcile attribution — provenance errors are recorded, not erased.
+
 ---
 
 ## 2. THE RECURRING ERRORS (the failure mode — watch for it constantly)
@@ -65,6 +81,11 @@ results.** Three concrete instances this session:
    BUILDER, not just the computation. A fabricated status is the worst lie (it looks like a review).
 
 **Other recurring traps:**
+- **Shared-index commit crossing (2026-08-12, DO NOT REPEAT).** I staged ML files and Agent 2's concurrent
+  commit swept them into its own commit on the `agent2` branch; my subsequent stash/cherry-pick/reset surgery
+  then entangled the lanes further. The lesson: the working tree + index are shared — stage only your explicit
+  paths, commit immediately, verify your branch, and never do invasive branch surgery on a dirty shared tree.
+  Flag misattributed commits to Agent 0; never force-push or rewrite another lane's commit.
 - **Fuzzy ID resolution** → wrong-but-confident matches. Always exact, or honest `UNRESOLVED`.
 - **Infinite regress of "interesting" layers** → the essay layer (~440 LOC) was scope creep. Essays are
   the endpoint, not the machine. The machine is the structured audit trail.

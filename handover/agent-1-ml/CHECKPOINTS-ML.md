@@ -36,12 +36,15 @@ PATALA-FIDELITY    ~20–30 transformations + adversarial corruptions
 
 ---
 
-## GOAL CP2 — Evidence retrieval becomes trustworthy
+## GOAL CP2 — Evidence retrieval becomes trustworthy (+ the neural "semantic microscope" layer)
 
 **Now:** passages/C1/terms/relations/resolve exist. Retrieval quality is NOT yet a benchmarked capability.
 
 **Build:** run against CP0 — BM25 vs dense vs hybrid (vs late-interaction later) for questions like
-"find passages supporting X" / "find uses of vimarśa" / "find passages challenging claim C."
+"find passages supporting X" / "find uses of vimarśa" / "find passages challenging claim C." The
+neurosynthetic direction + the concrete Phase-D builds (semantic-alignment v0, deterministic k-core
+clustering, multi-hop PPR over the curated graph) are in
+`machinelearning/_ACTIVE/RETRIEVAL-NEUROSYNTHETIC-VISION.md` + `DEVPLAN.md §5`.
 
 **Freeze the `EvidenceCandidate` contract** — retrieval returns scholarly candidates, NOT strings:
 ```ts

@@ -138,7 +138,33 @@ reviewers (no closed-loop self-confirmation).
 
 ---
 
-## 5. THE CHECKPOINT-TEST (applies to every build)
+## 5. PHASE D — THE NEURAL / RETRIEVAL LAYER (the "semantic microscope" north-star)
+
+> **Speculative vision + full review vs current state:** `machinelearning/_ACTIVE/RETRIEVAL-NEUROSYNTHETIC-VISION.md`
+> (Stages A–E + the per-framework verdicts). The governing rule that keeps it non-theatre:
+> **neural models discover neighbourhoods; Pāṭala turns them into typed, reviewable relations.**
+
+The staged path (benchmark each layer before adding the next):
+```
+SEMANTIC ALIGNMENT v0 → HYBRID RETRIEVAL → SEMANTIC ATLAS → ARGUMENT-AWARE RETRIEVAL
+→ GRAPH MEMORY / MULTI-HOP → COUNTERFACTUAL → SCHOLAR PRODUCT
+```
+
+**Concrete next builds (use what we already have — no heavy new deps):**
+| # | Build | What | Why / status |
+|---|---|---|---|
+| D1 | **Semantic Alignment v0** | occurrence-pair candidates from the theme reviews (vimarśa NEAR_SAME, sphurattā AMBIGUOUS, pramāṇa NEAR_SAME); score with `sentence_transformers` (dense) + sparse + cross-encoder rerank; benchmark the coarse SAME/NEAR/PARTIAL/DIFFERENT judgment | the symbolic layer; deps already installed |
+| D2 | **Deterministic theme clustering** | replace `cluster.py`'s Louvain with k-core (reproducible communities; rerun-today = rerun-tomorrow) | fixes a real reproducibility risk (k-core paper, 2603.05207) |
+| D3 | **Multi-hop over the curated graph** | Personalized PageRank traversal (HippoRAG idea) over Pāṭala's own senses/claims/arguments/themes — NOT an OpenIE graph | associative retrieval: walk vikalpa→ARG-002→objection→reply→Bhartṛhari |
+| D4 | **Hybrid scholarly retrieval** | lexical + dense + multi-vector + graph neighbourhood, over Pāṭala objects (lemmas + C1 + arguments), not English chunks | the "neural layer" of the microscope; CP2 |
+
+**Pilot later (once gold matures):** DSPy for extraction/alignment optimization (gold = objective).
+**Avoid:** Kùzu (ARCHIVED), GraphRAG/LightRAG as dependencies (pattern libraries only). Benchmark each
+neural layer on Pāṭala's own gold; never claim a neural output as validated.
+
+---
+
+## 6. THE CHECKPOINT-TEST (applies to every build)
 
 > **What experiment would convince you this does NOT work?**
 
@@ -147,10 +173,11 @@ If you can't answer it, the capability isn't ready for evaluation. And every res
 
 ---
 
-## 6. The sequence
+## 7. The sequence
 
 ```
 A (gate gold + wire gate)  →  B (argument gold)  →  C (evaluate against frozen benchmark)
+        →  D (neural/retrieval layer, Phase D above)
 ```
 Each gated on the checkpoint-test + the anti-theatre protocol. Nothing promotes to `VALIDATED` without
 independent gold + blind eval + metric + human adjudication.

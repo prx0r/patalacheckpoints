@@ -54,15 +54,9 @@ def build_gold_002() -> dict:
          "boundary": "this passage preserves reflexive awareness DISTINCT from conceptual construction; it does NOT by itself establish a universal subject",
          "dialectical_role": "REPLY", "responds_to": ["G2-OBJ"],
          "status": "MACHINE_PROPOSED"},
-        # the implicit premise that carries the reply
-        {"proposition_id": "G2-IMPL",
-         "text": "Being expressible in language does not entail being a product of conceptual determination (articulation ≠ construction).",
-         "kind": "IMPLICIT_PREMISE", "explicitness": "IMPLICIT",
-         "commitment": "IMPLIES_ON_RECONSTRUCTION",
-         "grounding": {"passage_id": V2L_PASSAGE_ID, "c1_id": V2L_C1_ID,
-                       "l200_assertion_id": V2L_L200_ID},
-         "boundary": "REVIEW-2026-08-12-MODEL-1: this is a reconstructed warrant (articulation != construction), not a hardcoded premise; it is derivable from the distinction G2-TC1/G2-TC2.",
-         "status": "MACHINE_PROPOSED"},
+         # (G2-IMPL node REMOVED per REVIEW-2026-08-12-MODEL-1: the reconstructed warrant 'articulation !=
+         #  construction' belongs on the InferenceRule, not as an ordinary Proposition. It is carried by
+         #  G2-INF1.warrant and projected into ASPIC as the reply rule r_reply.)
         # an interpretive claim: what the distinction preserves
         {"proposition_id": "G2-IC1",
          "text": "Abhinavagupta preserves a distinction between reflexive self-awareness and the conceptual operations that articulate it.",
@@ -78,9 +72,10 @@ def build_gold_002() -> dict:
          "premise_ids": ["G2-TC1", "G2-TC2"],
          "conclusion_ids": ["G2-CONC"],
          "scheme": "CONCEPTUAL_DISTINCTION",
+         "warrant": "RECONSTRUCTED_WARRANT: being expressible in language does not entail being a product of conceptual determination (articulation ≠ construction) — carried on the InferenceRule, not a Proposition node (per REVIEW-2026-08-12-MODEL-1 / IR-F-04).",
          "rationale": "The objection is answered by showing what construction does (G2-TC1) and that the 'I'-awareness is not one of those constructed relations (G2-TC2) — so the 'I' is not shown to be a construction.",
          "defeaters": [
-             {"defeater_id": "G2-DEF1", "description": "The reply assumes articulation ≠ construction (G2-IMPL). If language-use were itself a construction, the reply would fail.",
+             {"defeater_id": "G2-DEF1", "description": "The reply relies on the reconstructed warrant (articulation ≠ construction). If language-use were itself a construction, the reply would fail.",
               "type": "FAILED_PREMISE", "candidate_evidence_ids": [], "status": "PROPOSED"},
          ],
          "status": "MACHINE_PROPOSED"},

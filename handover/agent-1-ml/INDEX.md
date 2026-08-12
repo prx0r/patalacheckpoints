@@ -10,6 +10,58 @@ the ML lane.*
 
 ---
 
+## Agent 1 = the WHOLE philosophical-intelligence lane (NOT a single experiment)
+
+Agent 1's program is the full upward derivation — from corpus/C1 to a machine-readable
+philosophical/research intelligence layer. ASPIC was one small CP4/CP5 experiment inside it (~5% of the
+endgame). The real program:
+
+```
+CORPUS / C1 → RETRIEVAL → THEME/CLUSTER → PROPOSITION EXTRACTION → ARGUMENT RECONSTRUCTION
+  → SEMANTIC ALIGNMENT → DIALECTICAL RELATIONS → FORMAL/NYĀYA/ASPIC EVALUATION
+  → CRUX EXTRACTION → SYNTHESIS → SCHOLAR WORKBENCH / REVIEW
+```
+
+**The Agent 1 thesis:** *can we transform a textual corpus into an auditable graph of claims, arguments,
+interpretations, disagreements and cruxes — while preserving exactly where interpretation entered?*
+
+## Where Agent 1 stands (honest state table)
+
+| Layer | State |
+|---|---|
+| CP0 benchmark infrastructure | **done** |
+| CP2 retrieval | **partial** |
+| CP3 clustering/themes | **partial — no accepted themes yet** |
+| CP4 argument IR | **early but real** |
+| Gold arguments | **model-critiqued, still scholarly candidates** |
+| Automatic argument extraction | **not working yet** (proposition lexical F1 ~0.36, inference recovery 0) |
+| Semantic alignment | **early / schema + fixtures** |
+| Dialectical graph | **emerging from gold review** (RESPONDS_TO / ATTACKS / UNDERCUTS / …) |
+| ASPIC adapter | **first pilot only** (proxy-supported; real-engine re-run OPEN) |
+| Nyāya evaluator | **not properly exercised on reviewed IR** |
+| Crux computation | **not built/validated** |
+| Synthesis | **mostly future** |
+| Workbench / Review | **future** |
+
+## The Agent 1 roadmap (in order)
+
+1. **Finish the five golds properly** — the model review forced real IR corrections (inference vs
+   dialectical, grounding vs inference, `support_scope`, reconstruction commitment, warrant placement,
+   ARG-003 demotion). ARG-002 v2 is the first clean case; 001/004/005 revised around the same discipline.
+2. **Build the real argument extractor** — split into A proposition extraction / B argument
+   reconstruction / C systematic interpretation (not one monolithic extractor).
+3. **Return to CP3 themes/clustering** — machine clusters exist; NO accepted themes. Establish whether
+   useful thematic structure is inducible from C1/corpus and adjudicable.
+4. **Build semantic alignment properly** — same target/sense/scope/level/modality before contradiction.
+5. **Build the dialectical graph** — RESPONDS_TO / ATTACKS / UNDERCUTS / REBUTS / UNDERMINES /
+   QUALIFIES / CONCEDES / DISTINGUISHES, separate from internal inference (pūrvapakṣa/siddhānta).
+6. **Run multiple evaluators over the same IR** (ASPIC / Nyāya / formal → EvaluationRun; no one is "truth").
+7. **Crux extraction** — the minimal disputed dependency the disagreement turns on (+ counterfactual).
+8. **Synthesis** — debate graph → strongest positions → unresolved questions → essays/briefs (CP6).
+9. **Scholar Workbench / Review** — scholar edits graph → recompute (the "philosophy OS").
+
+---
+
 ## Lane
 
 - **Role:** ML + eval + retrieval + the research story.
@@ -59,11 +111,27 @@ Built this session:
              machinelearning/_ACTIVE/IR-REVIEW-FINDINGS.md.
 Honest status: golds are MACHINE_PROPOSED/CANDIDATE — NOT yet independently reviewed.
 ```
-Next in order: (1) **independent review of the 5 golds** via `benchmarks/v0/ARG-GOLD-REVIEW-PACKET.md`,
-(2) **the ASPIC+ pilot is RUN** (ARG-002 v2 → minimal local grounded-semantics fallback because the
-arg.tech service was 503; vikalpa accepted without defeater, defeated with G2-TC2 — matches expected;
-EvaluationRun `benchmarks/v0/runs/2026-08-12T133850Z`; MUST re-run against the real engine), (3) a real
-extractor that beats the baseline, (4) THEN viruddha as a graph op. See `NEXT-STEPS.md`.
+Built this session (cont.) — the CP3 / theme layer + retrieval readiness:
+  Theme discovery  recall-first pipeline over IPVV/C1 → 100% coverage (63/63, 0 unassigned)     ✅
+                   (patala_ml/theme_discovery.py; theme-map-ipvv-v0.json; THEME-MAP-IPVV-REPORT.md)
+  Theme review     THEME-REVIEW-001..003 (model): Order-less Support=LOCAL_THEME(REVISE),          ✅
+                   Vimarśa=CONCEPT_TERM_FAMILY(RETYPE), Pramāṇa=DOCTRINAL_PROBLEM_DOMAIN(RETYPE)
+                   → the three are NOT the same kind → CP3 kind-taxonomy validated
+  Theme packet     THEME-ADJUDICATION-PACKET.md (kind taxonomy + coarse sense-tagging)            ✅
+  Stage A          Semantic-alignment harness built + baseline falsified (0/8; ablation isolates        ✅
+                   the failure to encoder/representation space, not context windows). Next: cross-
+                   encoder pair classifier / Sanskrit-aware embedding (see RETRIEVAL-NEUROSYNTHETIC-VISION.md)
+  ASPIC pilot      ARG-002 v2 → minimal local fallback (real engine 503): vikalpa accepted          ✅
+                   w/o defeater, defeated with G2-TC2; EvaluationRun recorded; converse fixed;
+                   REPRESENTATIONAL_FIDELITY=PARTIAL, SEMANTIC=PROXY_SUPPORTED, BET=OPEN
+  Vertical object  proof edge now reference_resolution=EXACT + semantic_support=MACHINE_PROPOSED    ✅
+  Doctrine         Axiom 11 (git worktree discipline) + GIT-INCIDENTS.md (4cc78d1 recorded)        ✅
+Next in order: (1) **CP3 theme acceptance** — run the model review of the theme map, cross the
+kind/sense adjudication into `ACCEPTED_THEME`; (2) **semantic alignment** (the foundational symbolic
+layer; the theme reviews surfaced the exact relations to model, e.g. vimarśa NEAR_SAME but sphurattā
+AMBIGUOUS); (3) **independent gold review** → the FIRST auditable argument (ARG-002 v2) → unlocks real
+py-aspic + crux; (4) **CP2 retrieval over Pāṭala objects** (index lemmas + C1 + argument objects;
+BM25/dense/late-interaction — the "neural layer" of the microscope vision). See `NEXT-STEPS.md`.
 
 **The source of this task:** `handover/agent-1-ml/ORIENTATION.md` Phase 4 + `NEXT-STEPS.md` + the vision
 (`docs/vision/CORE-BIBLE.md` Layer 3 / `handover/CHECKPOINTS.md` CP4).
@@ -88,16 +156,23 @@ structurally-elegant-but-hollow. We pivoted to: frozen benchmark + enforced doct
 - `builders.py` comparison — **RETIRED as CIRCULAR**
 
 ### In progress / next (in order — the real work)
-1. **🔴 Complete the Argument Gold (ARG-003/004/005)** — CP4, THE live task. All 5 golds consistent =
-   the CP4 gate (see ORIENTATION Phase 4 + `emit_gold_fixtures.py`).
-2. **Validate all 5 golds** pass `validate_gold` — the "gold is worth reviewing" gate.
-3. **Test automatic extraction blind** against the 5 golds (Build 4) — measure proposition P/R, role
-   macro-F1, grounding, explicitness, inference recovery, abstention. Record a `BenchmarkRun`.
-4. **THEN viruddha becomes a graph operation** (Build 5) over DebateFrames → `VIRUDDHA_CANDIDATE`.
-5. **Adjudicate 3 themes** (Order-less Support · Vimarśa · Pramāṇa) → `AcceptedTheme` (CP3).
+1. **🔴 CP3 theme acceptance** — run the model review of the theme map, cross the kind/sense
+   adjudication into `ACCEPTED_THEME` (Order-less Support=LOCAL_THEME, Vimarśa=CONCEPT_TERM_FAMILY,
+   Pramāṇa=DOCTRINAL_PROBLEM_DOMAIN). `THEME-REVIEW-001..003` are the model judgments; a human/model
+   confirmation promotes them.
+2. **Semantic alignment** — the foundational symbolic layer. The theme reviews surfaced the exact
+   relations to model (vimarśa NEAR_SAME, sphurattā AMBIGUOUS, pramāṇa NEAR_SAME / anumāna AMBIGUOUS).
+   Freeze SemanticAlignment v0 from those actual annotations, THEN build the alignment machinery.
+3. **Independent gold review → the FIRST auditable argument** (ARG-002 v2) — unlocks real py-aspic +
+   crux + dialectical. Do NOT block CP3/alignment on this (the reviewer: build experimentally, mark
+   ENGINEERING_VALIDATED ≠ SCHOLARLY_VALIDATED).
+4. **CP2 retrieval over Pāṭala objects** — index Sanskrit lemmas + C1 + argument objects;
+   BM25/dense/late-interaction baseline (the "neural layer" of the microscope vision).
+5. **Then** viruddha as a graph op + the extractor (split A/B/C).
 
-**Do NOT:** build new layers, add graph abstractions, pursue the Lean bridge, or hack viruddha into the
-frozen gate.
+**Do NOT:** build the essay layer / Bayesian propagation / more clustering · hack viruddha into the
+frozen gate · build extraction/crux as if the gold were already validated (mark it ENGINEERING_VALIDATED,
+not SCHOLARLY_VALIDATED) · present `reference_resolution=EXACT` as semantic entailment.
 
 ---
 
@@ -113,7 +188,8 @@ frozen gate.
 
 ### The vision + plan
 - `machinelearning/dualagentvision.md` + `-ADAPTED.md` — the north star + checkpoint map (CP0–CP12).
-- `machinelearning/DEVPLAN.md` — the consolidated execution plan (Nyāya gate is the #1 build).
+- `machinelearning/DEVPLAN.md` — the consolidated execution plan (priority: gold review → extractor → gate; **§5 = the neural/retrieval Phase D**).
+- `machinelearning/_ACTIVE/RETRIEVAL-NEUROSYNTHETIC-VISION.md` — the "semantic microscope" vision (Stages A–E) + the comprehensive review of retrieval frameworks vs current state.
 - `machinelearning/MLUSEINPATALA.md` — the frozen strategy.
 
 ### The truth-engine goldmine (external)

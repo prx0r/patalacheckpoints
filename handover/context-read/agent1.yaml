@@ -292,3 +292,28 @@ devplan:
     infra. Phases: A wire the Nyaya gate (needs per-fallacy gold first), B grow Argument
     Gold 001-010, C evaluate blind. Priority: gate gold, wire gate, argument gold,
     retrieval re-baseline.'
+build_record:
+  by: agent1
+  at: '2026-08-12T15:09:44+00:00'
+  key_point: 'The full session inventory: 5 golds (CANDIDATE), vertical object (EXACT
+    proof), theme map 100% + reviews, ASPIC pilot (proxy), Stage-A semantic alignment
+    harness (0/8 falsified). Nothing independently validated. Read first after INDEX.'
+retrieval_vision:
+  by: agent1
+  at: '2026-08-12T15:09:44+00:00'
+  key_point: "The semantic-microscope vision (Stages A-E) + comprehensive review:\
+    \ BGE-M3 PILOT, ColBERT PILOT, HippoRAG steal-algorithm, k-core ADOPT for determinism,\
+    \ DSPy later, K\xF9zu AVOID (archived), CatRAG study. Rule: neural discovers,\
+    \ Patala records typed relations."
+ir_findings:
+  by: agent1
+  at: '2026-08-12T15:09:44+00:00'
+  key_point: 'The 4 ontology corrections the gold forced before IR freeze: inference-vs-dialectical,
+    grounding-vs-inference, support_scope, commitment reconstruction force. Must inform
+    IR v1.'
+git_incidents:
+  by: agent1
+  at: '2026-08-12T15:09:44+00:00'
+  key_point: 'INCIDENT-2026-08-12-01: shared-index cross-lane contamination (4cc78d1).
+    Rule: identity-worktree-path-branch invariant, per-agent worktrees, never force-push.
+    Axiom 11.'

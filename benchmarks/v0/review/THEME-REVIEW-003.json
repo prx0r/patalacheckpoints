@@ -1,0 +1,45 @@
+{
+  "review_id": "THEME-REVIEW-003",
+  "target": "Pramāṇa",
+  "status": "MODEL_REVIEWED",
+  "membership": {
+    "confirm": [
+      "V2D-jnanasakti",
+      "V2E-external-inferred",
+      "V2F-other-minds",
+      "V3H-inference-across-knowers"
+    ],
+    "questionable": [
+      "V3H is a distinct vimarśa (inference-across-knowers), not a single pramāṇa strand"
+    ],
+    "missing": [
+      "V1L-yogipratyaksa, V2P-pramatr-vyapara (pramāṇa as the knower's operation)"
+    ]
+  },
+  "kind": {
+    "narrowest_adequate": "DOCTRINAL_PROBLEM_DOMAIN",
+    "why": "pramāṇa as a doctrinal problem-domain spans knowledge-power, inference of externals/other minds, and inference-across-knowers — cross-cutting, not a local theme."
+  },
+  "sense": [
+    {
+      "lemma": "pramāṇa (means of knowledge)",
+      "judgment": "NEAR_SAME",
+      "note": "the means of knowledge is a stable doctrinal target"
+    },
+    {
+      "lemma": "anumāna (inference)",
+      "judgment": "AMBIGUOUS",
+      "note": "inference appears in distinct sub-domains (externals, other minds, across knowers)"
+    }
+  ],
+  "decision": "RETYPE",
+  "reason": "DOCTRINAL_PROBLEM_DOMAIN, not a local theme — a RETYPE is the success here.",
+  "reviewer": {
+    "kind": "AI_MODEL",
+    "name": "GPT-5.6 Sol",
+    "independence": "EXTERNAL_TO_BUILDER_AGENT",
+    "scope": "THEME_KIND_AND_SENSE",
+    "source_basis": "C1_L2_PACKET + theme-map-ipvv-v0"
+  },
+  "status_note": "MODEL review of kind + coarse sense. NOT specialist philological adjudication."
+}

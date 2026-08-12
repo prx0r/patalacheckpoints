@@ -1,0 +1,29 @@
+{
+  "metrics": {
+    "RunA": {
+      "with_defeater": false,
+      "acceptable_conclusions": [
+        "art",
+        "constructed",
+        "vikalpa"
+      ],
+      "vikalpa_acceptable": true,
+      "n_arguments": 3
+    },
+    "RunB": {
+      "with_defeater": true,
+      "acceptable_conclusions": [
+        "art",
+        "not_constructed",
+        "not_vikalpa"
+      ],
+      "vikalpa_acceptable": false,
+      "n_arguments": 5
+    }
+  },
+  "questions": {
+    "representational_fidelity": "PARTIAL — objection/inference + provenance-exclusion + reconstructed-warrant separation work; r_vik converse fixed (vikalpa=>constructed), objection collapsed to art=>vikalpa",
+    "semantic_fidelity": "PROXY_SUPPORTED — local grounded evaluator produces expected behavior (Run A accepted, Run B defeated), but the result partly follows from a handcrafted strict>defeasible preference; NOT yet tested by the real ASPIC+ engine",
+    "architectural_fit": "PROMISING — Pāṭala IR can project into an abstract argument system with evidence/provenance kept native; DELEGATE-REASONING BET = OPEN (real py-aspic/arg.tech was 503 at run time — external dependency, re-run required)"
+  }
+}

@@ -97,7 +97,10 @@ CP0 BENCHMARK · CP1 SOURCE PROOF · CP2 RETRIEVAL · CP3 THEMES · CP4 ARGUMENT
 CP6 SYNTHESIS · CP7 WORKBENCH · CP8 ADVERSARIAL REVIEW · CP9 API/MCP · CP10 COLLAB · CP11 ECONOMIC · CP12 CROSS-CORPUS
 ```
 Honest state: **CP0 DONE · CP1 PARTIAL(L0) · CP2 PARTIAL · CP3 PARTIAL · CP4 PARTIAL · CP5–CP6 PARTIAL ·
-CP7+ NOT STARTED.** Your immediate build = **the CP4 gate: complete Argument Gold (ARG-001..005).**
+CP7+ NOT STARTED.** The 5 golds + the vertical object + the theme layer + the ASPIC pilot + the Stage-A
+semantic-alignment harness are **built (CANDIDATE / MACHINE_PROPOSED — not independently validated).** Your
+immediate frontier = **CP3 theme acceptance + semantic alignment, then independent gold review → the first
+auditable argument.** See `NEXT-STEPS.md` + `BUILD-RECORD-2026-08-12.md`.
 
 **The anti-weeds rule (every task, always):** name (1) the checkpoint it advances, (2) the scholarly
 object it makes more trustworthy, (3) the benchmark/proof of success. If it can't answer all three, don't
@@ -215,35 +218,54 @@ You must get a line count > 0 (the files exist). You are now ready to build gold
 
 ---
 
-## PHASE 4 — THE EXACT NEXT STEPS (what to build)
+## PHASE 4 — THE EXACT NEXT STEPS (what to build) — CURRENT STATE (2026-08-12)
 
-### Step 4.0 — Complete Argument Gold (the CP4 gate; judgment-heavy)
-Build the remaining 3 gold arguments, hand-constructed from the real C1/L2:
+> **Where the lane is now (read `BUILD-RECORD-2026-08-12.md` for the full inventory, `INDEX.md` for the
+> live state, `NEXT-STEPS.md` for the continuation plan).** This section is the CURRENT frontier, not the
+> session-start plan. The 5 golds, the vertical object, the theme map + reviews, the ASPIC pilot, and the
+> Stage-A semantic-alignment harness are BUILT. Nothing is independently (human-)validated.
+
+### Step 4.0 — Continue from here, in order
+1. **CP3 theme acceptance** — promote `THEME-REVIEW-001..003` (Order-less=LOCAL_THEME, Vimarśa=CONCEPT_TERM_FAMILY,
+   Pramāṇa=DOCTRINAL_PROBLEM_DOMAIN) → `ACCEPTED_THEME`. The kind-taxonomy is validated; cross the gate.
+2. **Semantic Alignment competence** — the Stage-A harness is built and the generic encoder is falsified
+   (0/8; the failure is the encoder/representation space, NOT context windows). **Beat the frozen baseline
+   with a cross-encoder pair classifier or a Sanskrit-aware embedding**, then expand the gold to ~40–100
+   heterogeneous pairs. Keep the three-space disagreement as a SEMANTIC_TENSION signal.
+   See `machinelearning/_ACTIVE/RETRIEVAL-NEUROSYNTHETIC-VISION.md`.
+3. **Independent gold review → the first AUDITABLE argument** (ARG-002 v2) — unlocks real py-aspic + crux.
+   Do NOT block CP3/alignment on it, but do NOT claim `SCHOLARLY_VALIDATED` until it happens.
+4. **CP2 retrieval over Pāṭala objects** (lemmas + C1 + arguments; BM25/dense/late-interaction) + the
+   Phase-D builds (k-core determinism, multi-hop PPR over the curated graph). Avoid Kùzu (ARCHIVED).
+
+**Warning labels (never overclaim):** `reference_resolution=EXACT` ≠ semantic entailment; `AUDITABLE
+ARGUMENT REPRESENTATION` ≠ `SCHOLARLY VALIDATED`; `ENGINEERING_VALIDATED` ≠ `SCHOLARLY_VALIDATED`; a
+neural similarity score never becomes a scholarly relation (it only nominates).
+
+---
+
+## REBUILDING CONTEXT — the exact path from this orientation to "now" (engineer your own context)
+
+A new Agent 1 rebuilds full context in this ORDER (each doc links to the next; do not skip):
+
 ```
-ARG-003  reductio       — V2-O's ordered-support regress
-ARG-004  conceptual distinction — vimarśa vs prakāśa (V2-H) or one-light (V3-C)
-ARG-005  ambiguous      — two defensible reconstructions (V3-I difference-real)
+1. AGENTS.md                       THE ONE RULE + the gate
+2. handover/SYSTEM.md              the agent system (worktrees! INCIDENT-2026-08-12-01)
+3. machinelearning/_ACTIVE/AGENTS-DOCTRINE.md   the anti-theatre doctrine + banned words
+4. handover/CONTEXT-CHAIN.yaml + context_gate.py --status agent1   (full-context read; must PASS)
+5. machinelearning/_ACTIVE/AGENT1-HANDOVER.md   the 11 axioms + the git discipline (Axiom 11)
+6. handover/CHECKPOINTS.md         the Phase 1–7 ladder + CP map
+7. handover/agent-1-ml/INDEX.md    the live current state
+8. handover/agent-1-ml/BUILD-RECORD-2026-08-12.md   the FULL session inventory (what exists)
+9. handover/agent-1-ml/NEXT-STEPS.md    what to do next (the current 4 builds)
+10. handover/agent-1-ml/SESSION-2026-08-12.md   the session arc (detail)
+11. machinelearning/_ACTIVE/IR-REVIEW-FINDINGS.md   the ontology corrections forced by gold
+12. machinelearning/_ACTIVE/RETRIEVAL-NEUROSYNTHETIC-VISION.md   the semantic-microscope vision + review
+13. handover/GIT-INCIDENTS.md      the cross-lane incident + the worktree rule
 ```
-For each: read the C1 (`> ` body) + L2 (`pilot/pilot_<chunk>_L2_read.md`), extract the actual propositions,
-build the full Proposition/Inference/Defeater shape + the DebateFrame/SemanticAlignment wrapper (critical
-for ARG-005 — record the alignment between the two readings). Add the builder to the `GOLDS` registry in
-`emit_gold_fixtures.py`, run it, and confirm `validate_gold` passes. Do NOT automate extraction yet.
 
-**Build them WITH the philosophical-IR shape** (see `machinelearning/_ACTIVE/ARGUMENT-IR-VISION.md` — the
-CP4 target). Do not defer these; they are part of the gold:
-- **`Commitment` (speaker/force) on every node** — ASSERTS / DENIES / PRESUPPOSES /
-  ASSUMES_FOR_ARGUMENT / ATTRIBUTES_TO_OPPONENT / QUOTES / RECONSTRUCTED. This fixes the
-  pūrvapakṣa error (the Buddhist objection read as Abhinava's own view — critical for ARG-003 reductio
-  and ARG-005 ambiguous).
-- **derivational `Proposition`** — each node records `derived_from` (Sanskrit / L2 / C1 / implicit) +
-  `explicitness` (already have).
-- **a `ResearchQuestion`** at the top of each argument (the question it answers).
-- **split `Defeater` into `Attack` (data) + `Defeat` (derived)**.
-- **three-level `SemanticAlignment`** (LEXICAL/CONCEPTUAL/PROPOSITIONAL) for ARG-005's two readings.
-
-Let the gold force the ontology — expand the schema only where the scholarship demands it. Do NOT build
-EpistemicRegime/EvaluationProfile/Crux yet; the gold must come first. An argument whose honest output is
-`NO SAFE RECONSTRUCTION` is a valid gold case, not a failure.
+**Then, before building:** confirm the git reconciliation is done (your work is on the `agent1` branch in
+your worktree; if not, flag to Agent 0 — never work in a shared dirty tree). Then pick up `NEXT-STEPS.md`.
 
 ### Step 4.1 — Validate all 5 golds are internally consistent
 **🟢 GATE 4.1** — *Run*: `cd machinelearning/research && . .venv/bin/activate && python
@@ -276,6 +298,13 @@ Order-less Support · Vimarśa · Pramāṇa → `AcceptedTheme` objects with re
 7. **Update CLAIMS.md** + `theatre_check.py` honestly as you go.
 8. **Do NOT edit** `data/corpus/`, `app/`, `lib/`, `pipeline/verify_l0.py`, or `philproof.py` internals
    (those are Agent 2's). Consume their output via the shared `Ref` contract.
+9. **GIT DISCIPLINE (hard rule).** The shared working tree + index let another agent contaminate your
+   staged state by construction. The invariant `agent identity ↔ worktree path ↔ checked-out branch` MUST
+   hold: Agent 1 operates only inside the Agent 1 worktree, branch MUST be `agent1`. **Hard gate at session
+   start:** fail unless `git branch --show-current == agent1` AND the path is the registered Agent 1 path.
+   Stage ONLY your own explicit paths and commit IMMEDIATELY; NEVER do invasive branch surgery on a dirty
+   shared tree; NEVER force-push or rewrite another lane's commit — record misattribution as a provenance
+   incident and let Agent 0 reconcile (the 2026-08-12 `4cc78d1` crossing is the reason).
 
 ### Step 5.1 — The "no-BS" self-check (falsification before promotion)
 For each build, answer:
@@ -309,10 +338,13 @@ STATE.yaml (live progress). Each session, these update together.
 
 ## PHASE 6 — THE ONE-SENTENCE CARRY-FORWARD
 
-**You are Agent 1 (ML, upward derivation). The Nyāya gate is frozen (measured, honest); your job is to
-complete Argument Gold (ARG-001..005) with the DebateFrame/SemanticAlignment layer — because viruddha,
-counterevidence, and all cross-argument comparison require argument-under-a-frame, and a real argument
-graph, before they can be sound. Build the gold first (the tooling is ready), validate it's internally
-consistent, then test extraction against it blind — and only then does viruddha become a graph operation.
+**You are Agent 1 (ML, upward derivation). The substrate, provenance, argument representation, theme layer,
+and a semantic-alignment harness are real — but nothing is independently validated yet. Your job now is the
+symbolic layer: accept the three themes (CP3), make semantic alignment actually work (beat the falsified
+0/8 baseline with a cross-encoder / Sanskrit-aware embedding), and cross the first argument (ARG-002 v2)
+through independent review to unlock real py-aspic and crux — while keeping the neural retrieval layer
+(CP2) as the "proposes candidates" half and never conflating reference-resolution with semantic truth or
+`ENGINEERING_VALIDATED` with `SCHOLARLY_VALIDATED`.**
+
 Route everything through the frozen benchmark, never claim a result without a BenchmarkRun, and keep the
 honest vocabulary.**

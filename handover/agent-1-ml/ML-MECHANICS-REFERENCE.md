@@ -61,7 +61,7 @@ Re-verify against the code if you change anything.*
 
 ---
 
-## The argument layer (CP4 — this is the active build)
+## The argument layer (CP4 — built; golds CANDIDATE; the frontier is semantic alignment + gold review)
 
 ### `argument.py` — the Claim-v3-shaped ArgumentProposal
 - **Adopts truth-engine Claim v3:** `posterior_targets` (move Bayesian state AFTER gate approval) vs
@@ -160,21 +160,24 @@ nyayagate.py  →  the 5-hetvābhāsa audit of the Inference (frozen at v1; viru
 philproof.py + goldchain.py  →  the verification floor (L0 real, upper MACHINE_PROPOSED)
 ```
 
-## THE NEXT TASKS (the CP4 gate — what the mechanics are FOR)
+## THE NEXT TASKS (the current frontier — what the mechanics are FOR)
 
-1. **Build ARG-003/004/005** (reductio V2-O · conceptual-distinction V2-H · ambiguous V3-I) into gold
-   builders + the `GOLDS` registry → validate all 5 consistent. [IN PROGRESS — the pending gold work]
-2. **Validate all 5** pass `validate_gold` (GATE 4.1). The "gold is worth reviewing" gate.
-3. **Build a primitive extractor** (Build 4) — the first thing that tests whether extraction is worth
-   building: measure proposition P/R · role macro-F1 · grounding precision · explicitness · inference
-   recovery · scope · **abstention**, against the 5 golds blind, recorded as a `BenchmarkRun`.
-4. **THEN wire viruddha as a graph operation** (Build 5) over DebateFrames → `VIRUDDHA_CANDIDATE`.
-5. **Adjudicate 3 themes** (CP3): Order-less Support · Vimarśa · Pramāṇa → `AcceptedTheme`.
+1. **CP3 theme acceptance** — promote `THEME-REVIEW-001..003` (Order-less=LOCAL_THEME, Vimarśa=CONCEPT_TERM_FAMILY,
+   Pramāṇa=DOCTRINAL_PROBLEM_DOMAIN) → `ACCEPTED_THEME`.
+2. **Semantic Alignment competence** — the Stage-A harness (`semantic_alignment.py`) is built and the
+   generic encoder is falsified (0/8). Beat it with a cross-encoder pair classifier / Sanskrit-aware
+   embedding; keep the three-space disagreement as a SEMANTIC_TENSION signal. See
+   `RETRIEVAL-NEUROSYNTHETIC-VISION.md`.
+3. **Independent gold review → the first AUDITABLE argument** (ARG-002 v2) → real py-aspic + crux.
+4. **Retrieval layer (CP2)** — BM25/dense/late-interaction over Pāṭala objects + k-core determinism +
+   multi-hop PPR over the curated graph.
 
 ## THE HONEST POSITION
 
-The mechanics are real and tested, but they are **A (infrastructure) + B (the gold is evidence)** — not
-**C (results)**. No claim is a result until it's measured against the gold blind and recorded as a
-`BenchmarkRun`. The gate slot in `argument.py` is empty; the Nyāya gate is frozen at v1; strength is
-uncalibrated. **The next thing that makes any of it a result is the Argument Gold (5 real arguments),
-then a blind extractor benchmark against it.**
+The mechanics are real and tested, but they are **A (infrastructure) + B (the gold/theme layer is
+evidence)** — not **C (results)**. No claim is a result until it's measured against frozen gold and
+recorded as a `BenchmarkRun`. The golds are `CANDIDATE` (model-critiqued, NOT independently reviewed);
+extraction is `NOT_ESTABLISHED`; the semantic-alignment baseline is falsified (0/8). **The next thing
+that makes any of it a result is (a) the themes accepted, (b) a semantic-alignment system that beats the
+baseline, and (c) the first argument through independent review — then everything above becomes
+measurable.**

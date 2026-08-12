@@ -1,0 +1,153 @@
+{
+  "n": 8,
+  "accuracy": 0.0,
+  "n_abstain": 0,
+  "results": [
+    {
+      "pair": "V2H-vimarsa-paravak~V2J-samskara",
+      "lemma": "vimarśa",
+      "gold": "NEAR_SAME",
+      "proposal": "DIFFERENT_SENSE",
+      "abstain": false,
+      "correct": false,
+      "evidence": {
+        "per_space_cosine": {
+          "sanskrit": 1.0,
+          "l2": 1.0,
+          "c1": 0.1842
+        },
+        "sanskrit_lexical_overlap": 0.0,
+        "mean": 0.1842,
+        "spread": 0.0
+      }
+    },
+    {
+      "pair": "V2H-vimarsa-paravak~V2O-orderless-support",
+      "lemma": "vimarśa",
+      "gold": "NEAR_SAME",
+      "proposal": "PARTIAL_OVERLAP",
+      "abstain": false,
+      "correct": false,
+      "evidence": {
+        "per_space_cosine": {
+          "sanskrit": 1.0,
+          "l2": 1.0,
+          "c1": 0.3902
+        },
+        "sanskrit_lexical_overlap": 0.0,
+        "mean": 0.3902,
+        "spread": 0.0
+      }
+    },
+    {
+      "pair": "V2H-vimarsa-paravak~V3F-grace",
+      "lemma": "vimarśa",
+      "gold": "NEAR_SAME",
+      "proposal": "PARTIAL_OVERLAP",
+      "abstain": false,
+      "correct": false,
+      "evidence": {
+        "per_space_cosine": {
+          "sanskrit": 1.0,
+          "l2": 1.0,
+          "c1": 0.5479
+        },
+        "sanskrit_lexical_overlap": 0.0,
+        "mean": 0.5479,
+        "spread": 0.0
+      }
+    },
+    {
+      "pair": "V2I-sphuratta~V2H-vimarsa-paravak",
+      "lemma": "sphurattā",
+      "gold": "AMBIGUOUS",
+      "proposal": "DIFFERENT_SENSE",
+      "abstain": false,
+      "correct": false,
+      "evidence": {
+        "per_space_cosine": {
+          "sanskrit": 0.2016,
+          "l2": 1.0,
+          "c1": 0.1898
+        },
+        "sanskrit_lexical_overlap": 0.0,
+        "mean": 0.1898,
+        "spread": 0.0
+      }
+    },
+    {
+      "pair": "V2H-vimarsa-paravak~V2L-nonconstructed-I",
+      "lemma": "parā-vāk",
+      "gold": "NOT_ENOUGH_CONTEXT",
+      "proposal": "DIFFERENT_SENSE",
+      "abstain": false,
+      "correct": false,
+      "evidence": {
+        "per_space_cosine": {
+          "sanskrit": 0.2909,
+          "l2": 1.0,
+          "c1": 0.2022
+        },
+        "sanskrit_lexical_overlap": 0.0,
+        "mean": 0.2022,
+        "spread": 0.0
+      }
+    },
+    {
+      "pair": "V2P-pramatr-vyapara~V3E-error",
+      "lemma": "pramāṇa",
+      "gold": "NEAR_SAME",
+      "proposal": "PARTIAL_OVERLAP",
+      "abstain": false,
+      "correct": false,
+      "evidence": {
+        "per_space_cosine": {
+          "sanskrit": 0.2478,
+          "l2": 1.0,
+          "c1": 0.3965
+        },
+        "sanskrit_lexical_overlap": 0.0,
+        "mean": 0.3965,
+        "spread": 0.0
+      }
+    },
+    {
+      "pair": "V2P-pramatr-vyapara~V2D-jnanasakti",
+      "lemma": "pramāṇa",
+      "gold": "NEAR_SAME",
+      "proposal": "PARTIAL_OVERLAP",
+      "abstain": false,
+      "correct": false,
+      "evidence": {
+        "per_space_cosine": {
+          "sanskrit": 0.2478,
+          "l2": 1.0,
+          "c1": 0.4209
+        },
+        "sanskrit_lexical_overlap": 0.0,
+        "mean": 0.4209,
+        "spread": 0.0
+      }
+    },
+    {
+      "pair": "V2E-external-inferred~V3H-inference-across-knowers",
+      "lemma": "anumāna",
+      "gold": "AMBIGUOUS",
+      "proposal": "PARTIAL_OVERLAP",
+      "abstain": false,
+      "correct": false,
+      "evidence": {
+        "per_space_cosine": {
+          "sanskrit": 1.0,
+          "l2": 1.0,
+          "c1": 0.5633
+        },
+        "sanskrit_lexical_overlap": 0.0,
+        "mean": 0.5633,
+        "spread": 0.0
+      }
+    }
+  ],
+  "status": "MACHINE_PROPOSED_BENCHMARK",
+  "gold_source": "THEME-REVIEW-001..003"
+}

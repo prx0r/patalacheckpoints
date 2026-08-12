@@ -1,0 +1,71 @@
+{
+  "projection": {
+    "gold_id": "ARG-GOLD-002",
+    "version": "v2-aspic-v1",
+    "propositions": [
+      "art",
+      "vikalpa",
+      "constructed",
+      "not_constructed",
+      "not_vikalpa"
+    ],
+    "facts": [
+      "art",
+      "not_constructed"
+    ],
+    "rules": [
+      {
+        "label": "r_opp",
+        "strict": false,
+        "premises": [
+          "art"
+        ],
+        "conclusion": "vikalpa"
+      },
+      {
+        "label": "r_tc1",
+        "strict": false,
+        "premises": [
+          "vikalpa"
+        ],
+        "conclusion": "constructed"
+      },
+      {
+        "label": "r_reply",
+        "strict": true,
+        "premises": [
+          "not_constructed"
+        ],
+        "conclusion": "not_vikalpa"
+      }
+    ],
+    "contraries": [
+      [
+        "constructed",
+        "not_constructed"
+      ],
+      [
+        "not_constructed",
+        "constructed"
+      ],
+      [
+        "vikalpa",
+        "not_vikalpa"
+      ],
+      [
+        "not_vikalpa",
+        "vikalpa"
+      ]
+    ],
+    "fidelity_notes": [
+      "OBJECTION collapsed to one defeasible rule r_opp: art => vikalpa (the opponent's actual claim).",
+      "G2-TC1 encoded in the CORRECT direction (vikalpa => constructed), NOT the converse.",
+      "RECONSTRUCTED warrant (G2-IMPL) is NOT a node — carried by the reply rule r_reply (modus tollens: not_constructed -> not_vikalpa). Warrant belongs on the InferenceRule.",
+      "INTERPRETIVE claim G2-IC1 is out of ASPIC scope (stays in Pāṭala as grounding)."
+    ]
+  },
+  "expected": {
+    "RunA": true,
+    "RunB": false
+  }
+}

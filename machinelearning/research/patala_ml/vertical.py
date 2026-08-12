@@ -195,7 +195,10 @@ def build_vertical(gold: dict, proposition_id: str, grounding_refs: list[str],
         proof_status = "PROOF_NOT_LOADED"
         proof_res = "UNRESOLVED"
     links.append({"from": "SourceSpan", "to": proof_id, "relation": "VALIDATED_BY",
-                  "resolution": proof_res, "review_state": "CANDIDATE", "status": proof_status})
+                  "resolution": proof_res, "review_state": "CANDIDATE", "status": proof_status,
+                  "note": "resolution=EXACT means the PROOF REFERENCE resolves exactly; it does NOT mean "
+                          "the span semantically entails any proposition (that is semantic_support, "
+                          "MACHINE_PROPOSED)."})
 
     resolved = sorted({l["resolution"] for l in links if l["resolution"] in ("EXACT", "SPAN_LEVEL", "DOCUMENT_LEVEL", "STALE")})
     unresolved = sorted({l["resolution"] for l in links if l["resolution"] in ("UNRESOLVED",)})
@@ -225,7 +228,10 @@ def build_vertical(gold: dict, proposition_id: str, grounding_refs: list[str],
         "unresolved_grounding_refs": missing_refs,
         "philological_proof": {
             "proof_id": proof_id,
-            "resolution": proof_res, "status": proof_status,
+            "reference_resolution": proof_res,     # EXACT = the proof reference resolves exactly
+            "status": proof_status,
+            "semantic_support": "MACHINE_PROPOSED",  # NOT implied by reference_resolution=EXACT
+            "review_status": "CANDIDATE",
             "authoritative_version": authoritative_proof_version,
             "on_disk_source_sha256": proof.get("source_sha256"),
             "on_disk_PASS": proof.get("PASS"),

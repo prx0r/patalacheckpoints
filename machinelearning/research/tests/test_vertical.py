@@ -54,7 +54,7 @@ check("grounding links are EXACT", any(l["relation"] == "TEXTUALLY_GROUNDED_BY" 
                                        for l in v["links"]))
 # proof must be EXACT / REFERENCE_RESOLVED now that Agent 2 regenerated the authoritative proof
 pp = v["philological_proof"]
-check("proof resolution is EXACT (authoritative proof now on disk)", pp["resolution"] == "EXACT", pp["resolution"])
+check("proof resolution is EXACT (authoritative proof now on disk)", pp["reference_resolution"] == "EXACT", pp["reference_resolution"])
 check("proof status labels the reference-resolved artifact", pp["status"] == "REFERENCE_RESOLVED", pp["status"])
 check("proof carries the authoritative version ref", pp["authoritative_version"] == "P0 35/35 (frozen)")
 # missing IR fields surfaced, NOT retrofitted

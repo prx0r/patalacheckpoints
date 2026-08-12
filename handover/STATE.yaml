@@ -1,5 +1,5 @@
-state_version: 19
-last_update: '2026-08-12T14:41:10'
+state_version: 20
+last_update: '2026-08-12T15:03:00'
 agent1:
   checkpoints:
     CP0:
@@ -22,11 +22,12 @@ agent1:
       ts: '2026-08-12 14:31:43'
     CP4:
       status: PARTIAL
-      note: '5 golds CANDIDATE (model-critiqued), vertical object fully resolves (reference_resolution
-        EXACT), ASPIC pilot PROXY_SUPPORTED (real engine 503 = open dep), extraction
-        NOT_ESTABLISHED. Next: independent gold review -> first auditable argument.'
+      note: 'Session close: golds CANDIDATE, vertical resolves, theme map + reviews,
+        ASPIC pilot proxy, semantic-alignment harness built + baseline falsified (0/8).
+        Next: reconciliation to agent1/main, CP3 acceptance, cross-encoder alignment.
+        Full inventory BUILD-RECORD-2026-08-12.'
       updated_by: agent1
-      ts: '2026-08-12 14:31:43'
+      ts: '2026-08-12 15:03:00'
 agent2:
   checkpoints:
     CP1:

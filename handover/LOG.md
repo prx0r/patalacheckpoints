@@ -498,3 +498,17 @@ Vidyut adds independence but analyzes only ~47% of links.
 - **What:** golds model-critiqued (ARG-002 v2 clean); ASPIC pilot RUN with minimal-local fallback; real py-aspic/arg.tech engine 503 at run time — coordinate re-run or a local engine
 - **File:** benchmarks/v0/runs/2026-08-12T133850Z + machinelearning/research/patala_ml/aspic_adapter.py
 - **Schema:** GroundingLink / ASPIC theory {facts,rules,contraries}
+
+## Handoff (2026-08-12) — Agent 1 → Agent 0: RECONCILIATION NEEDED (session close)
+
+- **What:** All of Agent 1's session work (this session's files) is UNCOMMITTED on the shared working
+  tree (currently on the `agent2` branch). It must be reconciled onto `agent1`/`main` per the per-agent
+  worktree convention (INCIDENT-2026-08-12-01). Count ~44 files: gold builders + fixtures, vertical
+  object, theme discovery + map + reviews, semantic-alignment harness + ablation, ASPIC adapter + pilot,
+  the doctrine/docs (Axiom 11, GIT-INCIDENTS, session_close, DEVPLAN, RETRIEVAL-NEUROSYNTHETIC-VISION,
+  CLAIMS, INDEX, NEXT-STEPS, BUILD-RECORD). See `handover/agent-1-ml/BUILD-RECORD-2026-08-12.md` for the
+  full inventory.
+- **Why:** to protect the session's progress and establish correct ownership (agent1 branch) before the
+  next agent continues.
+- **Files:** `handover/agent-1-ml/BUILD-RECORD-2026-08-12.md` (inventory) · `NEXT-STEPS.md` (continuation).
+- **Schema:** none (coordination; file-level).

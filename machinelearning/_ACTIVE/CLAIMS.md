@@ -173,6 +173,28 @@ task, human-grounded gold, and a reproducible evaluation show that it does what 
 
 ---
 
+## CLAIM P-015 — "Pāṭala can propose a reviewable map of a corpus's conceptual/theme structure (recall-first)."
+- **STATUS:** SUPPORTED (as infrastructure / MACHINE_PROPOSED) — NOT adjudicated
+- **EVIDENCE:** `patala_ml/theme_discovery.py` over the IPVV/C1 corpus: **100% segment coverage (63/63,
+  0 unassigned)**, 83 candidate objects, overlap + unassigned + unstable-sense accounting, and
+  C1 + argument integration. Artifacts: `benchmarks/v0/theme-map-ipvv-v0.json` +
+  `THEME-MAP-IPVV-REPORT.md`. Recall-first: "complete" = maximise candidate coverage while exposing
+  omissions/overlaps — NOT "found every true theme."
+- **CAVEAT:** the "themes" are **candidate concept/key-term coverage**, not a mature thematic map.
+  Many are generic tokens (`one`/`self`/`lord`); the HIGH-SIGNIFICANCE subset is the discriminative map.
+  Kind + sense are MACHINE_PROPOSED pending adjudication.
+- **REQUIRED to promote:** the kind/sense adjudication crosses to `ACCEPTED_THEME`.
+
+## CLAIM P-016 — "The CP3 kind-taxonomy distinguishes Themes from Concepts/Domains/Motifs."
+- **STATUS:** MODEL_REVIEWED (the kind taxonomy is validated by the three candidates being different kinds)
+- **EVIDENCE:** `THEME-REVIEW-001..003` (model): Order-less Support = **LOCAL_THEME** (REVISE),
+  Vimarśa = **CONCEPT_TERM_FAMILY** (RETYPE), Pramāṇa = **DOCTRINAL_PROBLEM_DOMAIN** (RETYPE). The three
+  are NOT the same kind — so the taxonomy is necessary, not decorative.
+- **CAVEAT:** a MODEL review (reconstruction-consistency), NOT specialist philological adjudication.
+- **REQUIRED to promote:** a human/specialist confirmation; then `ACCEPTED_THEME` per candidate.
+
+---
+
 ## The epistemic labels (the anti-conflation vocabulary)
 
 | Label | Means | Not the same as |
@@ -217,3 +239,15 @@ NO CONFLICT DETECTED.
 Every component must fill: **NAME · INPUT · OUTPUT · AUTHORITY · GOLD · BASELINE · METRIC · FAILURE MODE ·
 ADOPTION GATE.** If any field is empty, the component is `EXPERIMENTAL_INFRASTRUCTURE`, not a scholarly
 capability. See `AGENT1-HANDOVER.md` §4 + the component contracts below.
+
+---
+
+## CLAIM P-017 — "Pāṭala can propose coarse semantic alignment between contextualized occurrences (Stage A)."
+- **STATUS:** INFRASTRUCTURE / harness built; **the generic English encoder baseline is 0/8 (falsified)**
+- **EVIDENCE:** `patala_ml/semantic_alignment.py` (6-label vocabulary: SAME/NEAR/PARTIAL/DIFFERENT/AMBIGUOUS/
+  NOT_ENOUGH_CONTEXT; 3 representation spaces) + `experiments/benchmark_semantic_alignment.py` + the
+  controlled ablation. Gold = THEME-REVIEW-001..003 sense judgments.
+- **CAVEAT:** the ablation shows the failure is the encoder/representation space (not context windows);
+  a generic English/multilingual model cannot align contextualized Sanskrit philosophy. The harness +
+  the falsification is the deliverable; a Sanskrit-aware embedding / cross-encoder is the baseline to beat.
+- **DOES NOT CLAIM:** that alignment works, or that any neural score is a scholarly relation.

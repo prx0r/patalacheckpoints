@@ -14,18 +14,18 @@ def check(name, cond, info=""):
 
 print("== projection (representational fidelity) ==")
 proj = project_arg002()
-check("has the three atoms + not_constructed", set(proj["propositions"]) == {"art","constructed","vikalpa","not_constructed"})
+check("has the five atoms", set(proj["propositions"]) == {"art","constructed","vikalpa","not_constructed","not_vikalpa"})
 check("objection enters only as the defeasible rule r_opp (not a fact)",
       proj["rules"][0]["label"] == "r_opp" and proj["rules"][0]["strict"] is False and "art" in proj["facts"])
-check("reconstructed warrant is NOT a fact",
-      all("IMPL" not in p for p in proj["facts"]) and any("blocking" in n for n in proj["fidelity_notes"]))
+check("reconstructed warrant is NOT a fact/node",
+      all("IMPL" not in p for p in proj["facts"]) and any("carried by the reply rule" in n for n in proj["fidelity_notes"]))
 check("contraries on constructed", ("constructed","not_constructed") in proj["contraries"])
 
 print("\n== abstract AF construction (no infinite regen) ==")
 af0 = _build_af(proj, include_defeater=False)
 af1 = _build_af(proj, include_defeater=True)
-check("no-defeater AF is finite", len(af0["arguments"]) == 3, str(len(af0["arguments"])))  # art, constructed, vikalpa
-check("with-defeater AF is finite", len(af1["arguments"]) == 4, str(len(af1["arguments"])))  # + not_constructed
+check("no-defeater AF is finite", len(af0["arguments"]) == 3, str(len(af0["arguments"])))  # art, vikalpa, constructed
+check("with-defeater AF is finite", len(af1["arguments"]) == 5, str(len(af1["arguments"])))  # + not_constructed, not_vikalpa
 
 print("\n== pilot semantics match the expected result ==")
 ra = run_arg002_aspic(False)

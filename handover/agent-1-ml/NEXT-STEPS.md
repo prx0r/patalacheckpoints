@@ -1,174 +1,110 @@
-# AGENT ML — NEXT STEPS (exact execution, 2026-08-12)
+# AGENT 1 (ML) — NEXT STEPS (current execution, 2026-08-12)
 
-*The precise how-to for the next session. Read `AGENTS.md`, `AGENT1-HANDOVER.md`, `CHECKPOINTS-ML.md`,
-`SESSION-2026-08-12.md`, `NYAYA-GATE-CANDIDATE-V1.md`, `SEMANTIC-COMMENSURABILITY.md` first. This is the
-*execution* layer on top of those.*
-
----
-
-## 0. WHERE YOU ARE (one paragraph)
-
-The Nyāya gate is frozen at `NYAYA_GATE_CANDIDATE_v1` (defect recall 4/5, clean FP 0/5, abstain 1/2).
-Its 1 miss — **viruddha** — exposed the real bottleneck: you need **real argument graphs** before you can
-detect "the text argues the opposite." So the next build is **Argument Gold v0**: grow ARG-GOLD-001 into
-5 real, hand-reconstructed arguments, structured for the DebateFrame/SemanticAlignment layer that
-viruddha, counterevidence, and cross-argument comparison all require. Everything you build now must make
-viruddha a *graph operation*, not a keyword hack.
+*The exact how-to for the next session. Read `AGENTS.md`, `AGENT1-HANDOVER.md`, `INDEX.md`,
+`SESSION-2026-08-12.md`, `_ACTIVE/IR-REVIEW-FINDINGS.md` first. This is the execution layer on top of
+those. A new agent should be able to continue from here without re-deriving the session.*
 
 ---
 
-## 1. THE GOAL: ARG-GOLD-001 → ARG-GOLD-005 (then 010)
+## 0. WHERE YOU ARE (one honest paragraph)
 
-Build 5 real arguments, deliberately different structures. Each is a `BenchmarkFixture` (task
-`ARGUMENT_EXTRACTION`) with the full `Proposition`/`Inference`/`Grounding`/`Defeater` shape.
-
-### The 5 structures (from `CHECKPOINTS-ML.md`)
-```
-ARG-001  transcendental   — the order-less support (you HAVE this: ARG-GOLD-001, V2-O)
-ARG-002  objection → reply — a nanu→āha exchange (the IPVV's dialectic, e.g. V2-L the non-constructed I)
-ARG-003  reductio          — the "if X then absurdity → ¬X" move (e.g. V2-O: if the support were ordered, regress)
-ARG-004  conceptual distinction — a term-distinction (V2-H vimarśa vs prakāśa; or V3-C one-light)
-ARG-005  ambiguous / two defensible reconstructions — a genuine crux with 2 readings (e.g. V3-I difference-real)
-```
-
-### The per-argument required fields (each, no exceptions)
-```
-fixture_id, benchmark_version="v0", task="ARGUMENT_EXTRACTION", split="EVAL_ONLY",
-review_state="SINGLE_REVIEWED", allowed_training_use=false
-
-expected:
-  passage_id        (real, resolvable — pt:passage:ipvv:chunk<...>)
-  nodes[]           Proposition objects:
-                      proposition_id, text, kind (TEXTUAL_CLAIM|INTERPRETIVE_CLAIM|IMPLICIT_PREMISE|
-                                                  CONCLUSION|OBJECTION|QUALIFICATION),
-                      explicitness (EXPLICIT|RECONSTRUCTED|IMPLICIT),
-                      grounding (passage_id, source_span_ids, c1_id, l200_assertion_id),
-                      boundary, status="MACHINE_PROPOSED"
-  inferences[]      Inference objects:
-                      premise_ids, conclusion_ids, scheme
-                      (NYAYA_ANUMANA|REDUCTIO|TRANSCENDENTAL|CONCEPTUAL_DISTINCTION|OBJECTION_REPLY|COUNTEREXAMPLE),
-                      rationale, defeaters[]
-  defeaters[]       Defeater objects: type (COUNTEREVIDENCE|RIVAL_READING|COUNTEREXAMPLE|FAILED_PREMISE|SCOPE_PROBLEM)
-  boundary          what the argument does NOT claim
-```
-
-### The DebateFrame/SemanticAlignment wrapper (NEW — the anti-fake-contradiction layer)
-Each gold argument should optionally carry (or at least be *able* to carry):
-```
-debate_frame: {
-  question, object_of_dispute, concept_refs, shared_ground, disputed_ground,
-  semantic_alignments: [ { left_term, right_term, relation, rationale } ]
-}
-```
-For ARG-005 (ambiguous) especially, record the **semantic alignment** between the two readings — that's
-the case that trains viruddha to NOT manufacture a contradiction.
+Pāṭala's substrate + provenance + representation layers are real. Agent 1 has: 5 model-critiqued
+argument golds (CANDIDATE), a fully-resolving vertical object, a recall-first theme map over the IPVV/C1
+(100% coverage), model theme reviews (the three are different kinds), an ASPIC adapter + pilot
+(proxy-supported; real engine is an open external dependency), and a primitive extraction baseline
+(NOT_ESTABLISHED). The frontier is the **symbolic layer**: semantic alignment + theme acceptance + the
+first auditable argument. Do NOT build more internal machinery for its own sake — the next work is
+making the existing objects externally valuable (see the "brutal question" below).
 
 ---
 
-## 2. THE SOURCES TO DRAW FROM (real passages, already on disk)
+## 1. THE NEXT BUILD, IN ORDER
 
-**IMPORTANT (verified 2026-08-12):** these C1 + L2 files are NOT in the patala repo. They live on the
-**sanskritree mount**. Absolute paths:
-```
-C1:   /mnt/HC_Volume_106427611/sanskritree/translations/_stack/ipvv/c1/read/
-L2:   /mnt/HC_Volume_106427611/sanskritree/translations/_stack/ipvv/pilot/   (pilot_V*_L2_read.md)
-L200: /mnt/HC_Volume_106427611/sanskritree/translations/_stack/ipvv/l200/
-```
-The passage_ids (`pt:passage:ipvv:chunk...`) resolve against `data/published/ipvv/index.json`.
+### Build 1 — CP3 theme acceptance (the highest-leverage, least-gated)
+You already have the model reviews (`benchmarks/v0/review/THEME-REVIEW-001..003.json`):
+- Order-less Support → `LOCAL_THEME` (REVISE — tighten membership, add V2A)
+- Vimarśa → `CONCEPT_TERM_FAMILY` (RETYPE — a success)
+- Pramāṇa → `DOCTRINAL_PROBLEM_DOMAIN` (RETYPE — a success)
 
-| Argument | Source C1 (on mount) | L2 read (on mount) | Passage id (resolves) |
-|---|---|---|---|
-| ARG-001 transcendental | `c1/read/c1_V2O-orderless-support.md` | `pilot/pilot_V2O_L2_read.md` | `chunkV2-O-saptamo-vimarsa.md` |
-| ARG-002 objection-reply | `c1/read/c1_V2L-nonconstructed-I.md` | `pilot/pilot_V2L_L2_read.md` | `chunkV2-L-sastho-vimarsa-smrti-apohana.md` |
-| ARG-003 reductio | `c1/read/c1_V2O-orderless-support.md` | `pilot/pilot_V2O_L2_read.md` | `chunkV2-O-saptamo-vimarsa.md` |
-| ARG-004 conceptual distinction | `c1/read/c1_V2H-vimarsa-paravak.md` | `pilot/pilot_V2H_L2_read.md` | `chunkV2-H-pancamo-vimarsa-k11-13.md` |
-| ARG-005 ambiguous | `c1/read/c1_V3I-difference-real.md` | `pilot/pilot_V3I_L2_read.md` | `chunkV3-I-kriya-caturtho-close-k20-21.md` |
+**Do:** confirm these (a second model or a human), promote the three to `ACCEPTED_THEME` (or
+`MODEL_REVIEWED`), and record them in the theme map. This crosses CP3's gate ("3 themes adjudicated").
 
-**Pattern for each:** read the C1 (the `> ` body), read the L2 (`pilot/pilot_<chunk>_L2_read.md`), extract
-the actual propositions, then hand-construct the gold object. **Do NOT automate extraction yet** — these
-are the gold fixtures a machine will be tested against.
+### Build 2 — SemanticAlignment v0 (the foundational symbolic layer)
+Freeze `SemanticAlignment` v0 FROM the actual annotations the theme reviews require — do NOT design an
+alignment engine against synthetic assumptions. The reviews surfaced concrete relations to model:
+- `vimarśa` NEAR_SAME across V2H/V2J/V2O (but the term family spans sphurattā/samskāra/vākāsphoṭa)
+- `sphurattā` AMBIGUOUS, `parā-vāk` NOT_ENOUGH_CONTEXT
+- `pramāṇa` NEAR_SAME as a doctrinal target, `anumāna` AMBIGUOUS across sub-domains
 
----
+**Use what we already have:** `sentence_transformers` (installed) → build occurrence-pair candidates,
+score dense + sparse lexical + a cross-encoder reranker, benchmark the coarse SAME/NEAR/PARTIAL/DIFFERENT
+judgment against the review seeds. Then build the `CAN_CONFLICT(A,B)` gate (same target/sense/scope/level/
+modality before contradiction). This is the symbolic layer behind the "semantic microscope" vision
+(`machinelearning/_ACTIVE/RETRIEVAL-NEUROSYNTHETIC-VISION.md`, Stage A).
 
-## 3. THE EXACT NEXT BUILDS (in order, with what to touch)
+**Stage A result (2026-08-12):** the harness is built and the generic English/multilingual encoder is
+falsified (0/8). The ablation isolates the failure to the **encoder/representation space**, NOT context
+windows. **Next:** a cross-encoder pair classifier (sees A+B jointly) or a Sanskrit-aware embedding,
+beating the frozen baseline; keep the three-space disagreement as a SEMANTIC_TENSION signal. Then expand
+the gold to ~40-100 heterogeneous pairs before touching PPR/CatRAG.
 
-### Build 1 — Extend the gold schema to carry DebateFrame/SemanticAlignment
-- Touch: `patala_ml/gold.py` (add the DebateFrame/SemanticAlignment fields to `build_gold_v0` or a new
-  `build_gold_series`), `benchmarks/v0/SCHEMA.md` (add the fields).
-- Test: extend `test_gold.py` to assert the new fields are present + resolvable.
+### Build 3 — The first AUDITABLE argument (ARG-002 v2)
+Do NOT wait for a human Sanskritist to build things experimentally. But the *scholarly validation* of an
+argument is the human gate. The milestone: get ARG-002 v2 through an **independent review** → the first
+`INDEPENDENT_REVIEWED` / `ACCEPTED` argument → then real py-aspic (the 503 dependency) becomes meaningful.
+Mark progress as `ENGINEERING_VALIDATED`, never `SCHOLARLY_VALIDATED`, until that review happens.
 
-### Build 2 — Create ARG-GOLD-002..005
-- Touch: `benchmarks/v0/structure/PAT-STRUCT-002.json` ... `-005.json` (the 5 real arguments).
-- Each is a hand-built `BenchmarkFixture` with the full Proposition/Inference/Defeater shape.
-- Verify each passes `ingest_fixture.py` (schema + source resolution + leakage).
+### Build 4 — CP2 retrieval over Pāṭala objects (the "neural layer")
+Index **Sanskrit lemmas + translations + C1 + argument objects** (not English chunks) with
+BM25 / dense / late-interaction baselines, evaluated against `benchmarks/v0/retrieval/`. This is the
+neural layer of the "semantic microscope" vision (`RETRIEVAL-NEUROSYNTHETIC-VISION.md`): it PROPOSES
+candidates + why; the symbolic layer (alignment) says the relation; the scholar adjudicates.
 
-### Build 3 — A gold-consistency validator
-- Touch: a small script that walks all ARG-GOLD fixtures and checks: every passage_id resolves, every
-  inference's premises/conclusion exist as nodes, no orphan nodes, boundary present.
-- This is the "the gold is internally consistent" gate (like `test_gold.py` but across all 5).
-
-### Build 4 — THEN (and only then) attempt automatic extraction
-- Run the (still-primitive) extractor against the 5 golds blind.
-- Measure: proposition precision/recall · role macro-F1 · grounding precision · explicitness accuracy ·
-  inference recovery · scope errors · **abstention**.
-- This tells you whether extraction is worth building out — with real gold to test against.
-
-### Build 5 — THEN viruddha becomes a graph operation
-- Once proposition graphs exist, viruddha = "retrieve accepted propositions related to H/S → does H
-  support ¬S → VIRUDDHA_CANDIDATE → semantic layer decides." NOT a keyword hack.
+Also fold in the Phase-D concrete builds (DEVPLAN §5): **D2** replace `cluster.py`'s Louvain with k-core
+(deterministic, reproducible themes); **D3** multi-hop Personalized-PageRank traversal over Pāṭala's
+curated graph (NOT an OpenIE graph). Avoid Kùzu (ARCHIVED); treat GraphRAG/LightRAG as pattern libraries only.
 
 ---
 
-## 4. THE GATES (what "done" means for each build)
+## 2. THE BRUTAL QUESTION (ask every few weeks)
 
-- **Build 1 done:** DebateFrame/SemanticAlignment fields exist on the gold schema + tests pass.
-- **Build 2 done:** 5 real arguments (ARG-001..005) in `benchmarks/v0/structure/`, each passing
-  `ingest_fixture.py`, with real resolvable passage IDs + actual propositions + boundary + defeaters.
-- **Build 3 done:** the gold-consistency validator passes on all 5.
-- **Build 4 done:** blind extraction metrics recorded against the 5 golds (in a `BenchmarkRun`).
-- **Build 5 done (future):** viruddha as a graph op over DebateFrames, still returning
-  `VIRUDDHA_CANDIDATE` (not "viruddha = true").
+> **What new scholarly task can Pāṭala perform today that would have been materially harder without
+> this infrastructure?**
 
----
-
-## 5. THE GUARDRAILS (do not violate)
-
-1. **Do NOT hack viruddha into `nyayagate.py`.** It stays frozen at v1.
-2. **Do NOT rush DOUBLE_REVIEWED** on the 12 gate fixtures before broadening to 30–50 (clear pos/neg/
-   near-miss/ambiguous/insufficient-context/abstain-correct).
-3. **Do NOT build the essay layer / Bayesian propagation / more clustering.**
-4. **Every passage_id must resolve** — real `pt:passage:ipvv:chunk<...>` IDs, never fuzzy.
-5. **Route everything through `benchmarks/v0/`** + record a `BenchmarkRun` for any result.
-6. **Update CLAIMS.md** (add P-009 for Argument Gold, P-010 for DebateFrame) + `theatre_check.py` as you go.
-7. **Keep the honest vocabulary:** MACHINE_PROPOSED / BENCHMARKED_PRELIMINARY / SINGLE_REVIEWED — never
-   PROVED / CORRECT / EDITOR APPROVED without a real review event.
+Progress so far: trace one proposition to Sanskrit (done) → turn a machine-discovered theme into an
+auditable reviewed object (in progress) → extract one defensible argument automatically (next) →
+identify a real crux between two interpretations → route only that crux to a specialist.
 
 ---
 
-## 6. THE "NO-BS" SELF-CHECK (before you declare anything done)
+## 3. THE WARNING LABELS (never overclaim)
 
-Ask of each build:
-> **What experiment would convince you this does NOT work?**
-
-- Argument Gold: "a second reviewer finds a proposition that doesn't match the C1/source."
-- The gold-consistency validator: "a passage_id doesn't resolve; an inference references a missing node."
-- Extraction: "can't recover >60% of gold propositions, or false-grounding >5%."
-- viruddha-via-graph: "flags as VIRUDDHA a pair that a human says are CONCEPTUAL_MISMATCH or
-  QUESTION_MISMATCH."
-
-If you can't answer the falsification question, the capability isn't ready to claim.
+- `reference_resolution: EXACT` = the **proof reference** resolves exactly — NOT semantic entailment.
+  Always carry `semantic_support: MACHINE_PROPOSED`.
+- `AUDITABLE ARGUMENT REPRESENTATION` ✅ ≠ `SCHOLARLY VALIDATED ARGUMENT` ⏳.
+- `ENGINEERING_VALIDATED` ≠ `SCHOLARLY_VALIDATED`.
+- L0: source span = deterministic floor; lemma/morphology = machine witness, reviewed per its own status.
+- Extraction/crux built against MODEL_CRITIQUED_CANDIDATE_GOLD = ENGINEERING_VALIDATED, not validated.
 
 ---
 
-## 7. THE ONE-SENTENCE CARRY-FORWARD
+## 4. GUARDRAILS
 
-**The Nyāya gate is frozen (measured, honest); the next build is real Argument Gold (ARG-001..005)
-with the DebateFrame/SemanticAlignment layer — because viruddha, counterevidence, and all cross-argument
-comparison require argument-under-a-frame, and a real argument graph, before they can be sound. Build the
-gold first, validate it's internally consistent, then test extraction against it blind — and only then
-does viruddha become a graph operation rather than a keyword hack.**
-
+1. Route everything through `benchmarks/v0/` + record a `BenchmarkRun`.
+2. Join on `Ref` IDs (passage / proof / C1) — never fuzzy.
+3. Do NOT hack viruddha into the frozen `nyayagate.py`.
+4. Do NOT build the essay layer / Bayesian propagation / more clustering.
+5. **Git discipline:** you are agent1; work only in the agent1 worktree on branch `agent1`; stage only
+   your explicit paths + commit immediately; never force-push / rewrite another lane's commit (see
+   `GIT-INCIDENTS.md` INCIDENT-2026-08-12-01).
+6. Update `CLAIMS.md` + `theatre_check.py` honestly as you go; drop a `SESSION-<date>.md` at session end.
 
 ---
 
-**The canonical vision for this work:** `machinelearning/ARGUMENT-GOLD-VISION.md` — the strategic WHY behind these steps (Argument Gold unblocks the gate; viruddha becomes a graph op).
+## 5. THE ONE-SENTENCE CARRY-FORWARD
+
+**The substrate, provenance, argument representation, and a recall-first theme map are real; the next
+work is the symbolic layer — accept the three themes (CP3), freeze SemanticAlignment v0 from the actual
+annotations, and cross the first argument (ARG-002 v2) through independent review to unlock real
+py-aspic and crux — while keeping the neural retrieval layer (CP2) as the buildable "proposes candidates"
+half and never conflating reference-resolution with semantic truth.**

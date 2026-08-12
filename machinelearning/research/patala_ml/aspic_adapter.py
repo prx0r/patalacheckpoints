@@ -29,38 +29,46 @@ from patala_ml.gold002 import build_gold_002
 
 # ── 1. THE PROJECTION ─────────────────────────────────────────────────────────
 def project_arg002(gold: dict | None = None) -> dict:
-    """Project ARG-002 v2's inferential core into an ASPIC+ theory.
+    """Project ARG-002 v2's inferential core into an ASPIC+ theory (v1, converse fixed).
 
-    Propositions (atoms): art, constructed, vikalpa.
+    Propositions (atoms): art, vikalpa, constructed, not_constructed, not_vikalpa.
       - art         = the 'I'-awareness is linguistically articulated (shared ground)
+      - vikalpa     = the 'I'-awareness is a conceptual construction
       - constructed = the 'I'-awareness is produced by constructive/determinative operations
-      - vikalpa     = the 'I'-awareness is a conceptual construction (vikalpa)
+      - not_constructed / not_vikalpa = their negations
     Facts (strict premises):
       - art                         (shared ground: it IS linguistically expressed)
       - not_constructed             (G2-TC2: the 'I'-awareness is NOT one of those constructed relations)
     Rules:
-      - r_opp  (DEFEASIBLE): art => constructed   (the OBJECTION's assumption: articulation -> construction)
-      - r_vik  (DEFEASIBLE): constructed => vikalpa (G2-TC1: vikalpa works through constructive operations)
-    Contraries: constructed <-> not_constructed.
+      - r_opp  (DEFEASIBLE): art => vikalpa          (the OBJECTION collapsed: word-joined -> vikalpa)
+      - r_tc1  (DEFEASIBLE): vikalpa => constructed  (G2-TC1 in the CORRECT direction: vikalpa works
+                                                      through constructive operations -> if vikalpa then
+                                                      constructed; NOT the converse)
+      - r_reply (STRICT):   not_constructed -> not_vikalpa  (the reply's reconstructed modus tollens from
+                                                      G2-TC1 + G2-TC2: if not constructed then not vikalpa)
+    Contraries: constructed <-> not_constructed; vikalpa <-> not_vikalpa.
 
-    The reconstructed warrant G2-IMPL ("articulation != construction") is NOT a hardcoded fact — it is
-    the *effect* of G2-TC2 standing against r_opp (i.e., it is the preference/blocking, not a premise).
-    The objection G2-OBJ is dialectical context; it enters ONLY as the defeasible rule r_opp it implies.
+    The reconstructed warrant G2-IMPL is NOT a node/premise — it is carried by the reply rule (and belongs
+    on the InferenceRule, not as an ordinary Proposition). The objection G2-OBJ is dialectical context; it
+    enters ONLY as the defeasible rule r_opp it implies. G2-IC1 stays out of ASPIC (native grounding).
     """
     return {
         "gold_id": "ARG-GOLD-002",
-        "version": "v2",
-        "propositions": ["art", "constructed", "vikalpa", "not_constructed"],
+        "version": "v2-aspic-v1",
+        "propositions": ["art", "vikalpa", "constructed", "not_constructed", "not_vikalpa"],
         "facts": ["art", "not_constructed"],
         "rules": [
-            {"label": "r_opp", "strict": False, "premises": ["art"], "conclusion": "constructed"},
-            {"label": "r_vik", "strict": False, "premises": ["constructed"], "conclusion": "vikalpa"},
+            {"label": "r_opp", "strict": False, "premises": ["art"], "conclusion": "vikalpa"},
+            {"label": "r_tc1", "strict": False, "premises": ["vikalpa"], "conclusion": "constructed"},
+            {"label": "r_reply", "strict": True, "premises": ["not_constructed"], "conclusion": "not_vikalpa"},
         ],
-        "contraries": [("constructed", "not_constructed"), ("not_constructed", "constructed")],
+        "contraries": [("constructed", "not_constructed"), ("not_constructed", "constructed"),
+                       ("vikalpa", "not_vikalpa"), ("not_vikalpa", "vikalpa")],
         "fidelity_notes": [
-            "EXPLICIT proposition kept as a fact: art (shared ground), not_constructed (G2-TC2).",
-            "RECONSTRUCTED warrant G2-IMPL is NOT a fact — it is the blocking effect of not_constructed vs r_opp.",
-            "OBJECTION G2-OBJ is dialectical context, NOT a premise; it enters only as the defeasible rule r_opp.",
+            "OBJECTION collapsed to one defeasible rule r_opp: art => vikalpa (the opponent's actual claim).",
+            "G2-TC1 encoded in the CORRECT direction (vikalpa => constructed), NOT the converse.",
+            "RECONSTRUCTED warrant (G2-IMPL) is NOT a node — carried by the reply rule r_reply "
+            "(modus tollens: not_constructed -> not_vikalpa). Warrant belongs on the InferenceRule.",
             "INTERPRETIVE claim G2-IC1 is out of ASPIC scope (stays in Pāṭala as grounding).",
         ],
     }

@@ -154,6 +154,18 @@ agents:
     - id: fixture_002
       path: benchmarks/v0/structure/PAT-STRUCT-002.json
       why: "ARG-GOLD-002 - the exact output format your new golds must produce"
+    - id: build_record
+      path: handover/agent-1-ml/BUILD-RECORD-2026-08-12.md
+      why: "the FULL session inventory (everything built, its status, how a new agent continues)"
+    - id: retrieval_vision
+      path: machinelearning/_ACTIVE/RETRIEVAL-NEUROSYNTHETIC-VISION.md
+      why: "the semantic-microscope vision (Stages A-E) + the comprehensive review of retrieval frameworks vs current state"
+    - id: ir_findings
+      path: machinelearning/_ACTIVE/IR-REVIEW-FINDINGS.md
+      why: "the ontology corrections the gold forced (inference-vs-dialectical, grounding-vs-inference, support_scope, commitment reconstruction force)"
+    - id: git_incidents
+      path: handover/GIT-INCIDENTS.md
+      why: "the cross-lane git incident + the worktree rule (Axiom 11) - how to operate the shared repo safely"
     - id: index
       path: handover/agent-1-ml/INDEX.md
       why: "the living current-state pointer for the ML lane"

@@ -63,10 +63,10 @@ def main():
               f"vikalpa_acceptable={r['vikalpa_acceptable']}  (expected {expected})  "
               f"{'✓' if ok else '✗ MISMATCH'}")
 
-    # the three questions
-    fidelity = "can encode ARG-002 v2; explicit proposition / reconstructed warrant / objection kept separate"
-    semantic = "matches expected under grounded semantics (Run A accepted, Run B defeated)"
-    fit = "minimal LOCAL evaluator used (pilot fallback); real py-aspic (arg.tech) was 503 at run time — MUST re-run"
+    # the three questions (honest framing per REVIEW-2026-08-12-MODEL-1)
+    fidelity = "PARTIAL — objection/inference + provenance-exclusion + reconstructed-warrant separation work; r_vik converse fixed (vikalpa=>constructed), objection collapsed to art=>vikalpa"
+    semantic = "PROXY_SUPPORTED — local grounded evaluator produces expected behavior (Run A accepted, Run B defeated), but the result partly follows from a handcrafted strict>defeasible preference; NOT yet tested by the real ASPIC+ engine"
+    fit = "PROMISING — Pāṭala IR can project into an abstract argument system with evidence/provenance kept native; DELEGATE-REASONING BET = OPEN (real py-aspic/arg.tech was 503 at run time — external dependency, re-run required)"
 
     print("\nTHREE QUESTIONS:")
     print(f"  1. Representational fidelity: {fidelity}")

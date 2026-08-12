@@ -1,0 +1,9 @@
+{
+  "benchmark": "PATALA-BENCH-v0",
+  "gold": "ARG-GOLD-002-v2",
+  "task": "ASPIC_PILOT",
+  "method": "minimal-local-grounded-semantics (pilot fallback)",
+  "engine": "py-aspic/arg.tech (503 at run time)",
+  "status": "COMPLETED",
+  "generated": "2026-08-12T135103Z"
+}
