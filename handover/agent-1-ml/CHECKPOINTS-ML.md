@@ -31,8 +31,10 @@ PATALA-FIDELITY    ~20–30 transformations + adversarial corruptions
 **Freeze:** the `BenchmarkFixture` + `BenchmarkRun` contracts (see CHECKPOINTS.md §7).
 **Gate:** no model "works" without a `BenchmarkRun`.
 
-**Current state (honest):** retrieval has 1 fixture file; structure has ARG-GOLD-001; evidence has the
-12-fixture Nyāya-gate gold; fidelity has 0. → grow all toward the targets.
+**Current state (honest, 2026-08-12):** retrieval has 1 fixture file; structure has **ARG-GOLD-001..005**
+(all `validate_gold`-consistent); evidence has the 12-fixture Nyāya-gate gold; **fidelity now has the
+PĀṬALA-FIDELITY v0 family (FID-SOURCE/PROVENANCE/ALIGNMENT, sensitivity 1.0, clean-FP 0)** + the
+determinism baseline + the contrast-set benchmark. → grow toward targets (esp. FID-L0, FID-DEPENDENCY).
 
 ---
 
@@ -77,13 +79,31 @@ tensions/evidence — NOT because clustering found it.
 
 ## GOAL CP4 — Real argument reconstruction (the big one)
 
-**Now:** ArgumentProposal schema exists; automatic reconstruction does not. One gold object (ARG-GOLD-001).
+**Now (2026-08-12):** **ARG-GOLD-001..005 all exist and validate**; the review packet is rebuilt on a
+**primary-Sanskrit basis** (every proposition → resolvable L0 span; L2 never required — gate:
+`experiments/check_review_packet.py`). The CP4 critical path is now the **corroboration campaign**, not
+more reconstruction.
 
 **Grow gold** to ARG-GOLD-001..005 then 010, covering:
 ```
 clear inference · implicit inference · objection/reply · reductio ·
 ambiguous reconstruction · NO-SAFE-RECONSTRUCTION case (the abstain case)
 ```
+
+**The CP4 live gate — the evidence-hierarchy (the anti-theatre path when no human is available):**
+```
+MACHINE_PROPOSED → ENGINEERING_VALIDATED → MULTI_MODEL_CORROBORATED →
+SCHOLARLY_CORROBORATED → INDEPENDENT_REVIEWED
+```
+- A proposition reaches `SCHOLARLY_CORROBORATED_PRELIMINARY` ONLY via the mechanical protocol
+  (`goldutil.validate_scholarly_corroboration`: PRIMARY / INDEPENDENCE / RELEVANCE / RELATION /
+  TRACEABILITY / SCOPE). ARG-004's `G4-CRYSTAL` is the first such node (ĪPK 1.5.11 + vimarśa dossier + Ratié).
+- The **proposition × evidence matrix** (`benchmarks/v0/review/ARG-EVIDENCE-MATRIX.json`) exposes where
+  evidence stops / reconstruction begins (currently 14 primary-grounded · 1 corroborated · 15 reconstructed).
+- **T/R/E/C/H/X adapter** (`goldutil.TRECX_ADAPTER`) preserves evidence-kind (textual attestation vs
+  reconstruction vs hypothesis vs conflict) so Review asks WHAT KIND of evidence.
+- **The success metric is `count(INDEPENDENT_REVIEWED) > 0`, and the interim object is the provenance-rich
+  map, not five binary labels.**
 
 **Freeze the argument contracts** — proposition nodes + inference nodes, NOT one giant object:
 - `Proposition` (TEXTUAL_CLAIM / INTERPRETIVE_CLAIM / IMPLICIT_PREMISE / CONCLUSION / OBJECTION /
