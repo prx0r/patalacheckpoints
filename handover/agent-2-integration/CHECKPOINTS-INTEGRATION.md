@@ -21,19 +21,23 @@ objects (not logs), and joins with Agent ML on `Ref` IDs (passage / proof / C1),
 
 **Where you are (already the CLOSEST major checkpoint):**
 - V2/V3: **35/35 P0 PASS**, 0 unknown source chars, exact spans, complete classification.
-- P2 Vidyut witnesses already exist across ~104k records.
+- P2 **CALIBRATED + FROZEN as witness** (P-011): Vidyut×Heritage ensemble, control agreement 84–85%,
+  Vidyut CONFLICT resolution 72%, true double-conflict ~9%.
+- P3 **ranker REJECTED** (P-012): ranker.py top1=0.76 < embedding baseline 0.81, 0 abstention. Not promoted.
+- P4 **benchmark + baseline live** (NEW): meaningful L0↔L2 term-anchor alignment, floor = resolution
+  recall 0.93 / precision 0.89 / abstain 1.0 (35 passages / 105 anchors). See `docs/P4_ALIGNMENT_SPEC.md`.
 
 **What CP1 means (NOT "machine proves translation correctness"):**
 > Every material source→L0 translation decision can expose what is mechanically proven, linguistically
 > supported, unresolved, or editor-dependent.
 
-**Finish in order:**
+**Finish in order (current honest status):**
 ```
-P0 exact source coverage       ✅ done
+P0 exact source coverage       ✅ done + FROZEN (35/35)
 P1 segmentation/sandhi         Vidyut
-P2 morphology                  Vidyut + Heritage ensemble
-P3 lexical sense               gold fixtures → ranker benchmark
-P4 alignment                   gold alignment → baseline/model benchmark
+P2 morphology                  ✅ CALIBRATED witness (P-011); human blind review pending (non-blocking)
+P3 lexical sense               ⚠️ gold+baselines done; ranker REJECTED (P-012); embedding 0.81 is the floor
+P4 alignment                   ⬜ benchmark+baseline live (0.93 floor); human gold + real aligner next
 P5 syntax/referents            later / selective high-risk
 ```
 

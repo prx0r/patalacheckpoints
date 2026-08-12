@@ -1,9 +1,944 @@
 {
-  "benchmark": "P4-ALIGNMENT-v0",
-  "held_out_pairs": 300,
-  "baselines": {
-    "deterministic_position_recall": 0.19,
-    "lexical_overlap_recall": 0.4333
+  "benchmark": "P4-ALIGNMENT-v1-L0L2-ANCHOR",
+  "passages": 35,
+  "gold_anchors": 105,
+  "resolved_ok": 99,
+  "resolved_wrong": 0,
+  "abstained": 6,
+  "metrics": {
+    "anchor_recall_mean": 1.0,
+    "resolution_precision_mean": 0.8857,
+    "resolution_recall_mean": 0.9281,
+    "abstain_quality_mean": 1.0
   },
-  "note": "baseline floor only. Any real aligner (awesome-align) must beat lexical_overlap_recall."
+  "note": "term-anchor alignment (L0<->L2). Baselines: paren-extraction (anchor recall floor), token-overlap (resolution floor). awesome-align must beat resolution_recall. No 'solved' claim without frozen gold + BenchmarkRun.",
+  "per_passage": [
+    {
+      "passage_id": "pt:passage:ipvv:chunkV2-A-caturtho-vimarsa-aham.md",
+      "n_anchors": 1,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 1,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 1
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV2-B-sahajavimarsa-prakasavimarsa.md",
+      "n_anchors": 1,
+      "anchor_recall": 1.0,
+      "resolution_precision": 0.0,
+      "resolution_recall": 0.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 0,
+      "resolved_wrong": 0,
+      "abstained": 1,
+      "gold_anchors": 1
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV2-C-vistanti-ajadapramatrsiddhi.md",
+      "n_anchors": 0,
+      "anchor_recall": 1.0,
+      "resolution_precision": 0.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 0,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 0
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV2-D-pancamo-vimarsa-jnanasakti.md",
+      "n_anchors": 3,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 3,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 3
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV2-E-pancamo-jnanasakti-k5.md",
+      "n_anchors": 1,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 1,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 1
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV2-F-pancamo-vimarsa-k6.md",
+      "n_anchors": 4,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 4,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 4
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV2-G-pancamo-vimarsa-k7-10.md",
+      "n_anchors": 1,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 1,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 1
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md",
+      "n_anchors": 8,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 8,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 8
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV2-I-pancamo-vimarsa-k14-19.md",
+      "n_anchors": 10,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 0.9,
+      "abstain_quality": 1.0,
+      "resolved_ok": 9,
+      "resolved_wrong": 0,
+      "abstained": 1,
+      "gold_anchors": 10
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV2-J-pancamo-vimarsa-k19-20.md",
+      "n_anchors": 1,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 1,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 1
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV2-K-pancamo-vimarsa-k20-21.md",
+      "n_anchors": 2,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 2,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 2
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md",
+      "n_anchors": 2,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 2,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 2
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV2-M-sastho-vimarsa-k6-7.md",
+      "n_anchors": 4,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 0.75,
+      "abstain_quality": 1.0,
+      "resolved_ok": 3,
+      "resolved_wrong": 0,
+      "abstained": 1,
+      "gold_anchors": 4
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV2-N-sastho-k8-11.md",
+      "n_anchors": 6,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 6,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 6
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+      "n_anchors": 3,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 3,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 3
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV2-P-saptamo-k5-10.md",
+      "n_anchors": 3,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 3,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 3
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV2-Q-saptamo-k11-close.md",
+      "n_anchors": 2,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 2,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 2
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV2-R-astamo-vimarsa.md",
+      "n_anchors": 1,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 1,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 1
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV2-S-astamo-close-jnanadhikara.md",
+      "n_anchors": 1,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 1,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 1
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV3-A-kriya-prathamo-k1-2.md",
+      "n_anchors": 2,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 0.5,
+      "abstain_quality": 1.0,
+      "resolved_ok": 1,
+      "resolved_wrong": 0,
+      "abstained": 1,
+      "gold_anchors": 2
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV3-B-kriya-dvitiyo-k1-7.md",
+      "n_anchors": 0,
+      "anchor_recall": 1.0,
+      "resolution_precision": 0.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 0,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 0
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV3-C-kriya-trtiyo-k1-2.md",
+      "n_anchors": 4,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 4,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 4
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV3-D-kriya-trtiyo-k3-8.md",
+      "n_anchors": 3,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 3,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 3
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV3-E-kriya-trtiyo-k9-17.md",
+      "n_anchors": 3,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 3,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 3
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV3-F-kriya-trtiyo-close.md",
+      "n_anchors": 5,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 5,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 5
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV3-G-kriya-caturtho-k1-11.md",
+      "n_anchors": 2,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 2,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 2
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV3-H-kriya-caturtho-k12-19.md",
+      "n_anchors": 1,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 1,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 1
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV3-I-kriya-caturtho-close-k20-21.md",
+      "n_anchors": 3,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 3,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 3
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV3-J-agama-prathamo-k1-7.md",
+      "n_anchors": 8,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 8,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 8
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV3-K-agama-prathamo-k8-11-close.md",
+      "n_anchors": 3,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 0.3333,
+      "abstain_quality": 1.0,
+      "resolved_ok": 1,
+      "resolved_wrong": 0,
+      "abstained": 2,
+      "gold_anchors": 3
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV3-L-agama-dvitiyo-k1-11.md",
+      "n_anchors": 3,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 3,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 3
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV3-M-agama-dvitiyo-close-k12-20.md",
+      "n_anchors": 8,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 8,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 8
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV3-N-tattva-prathamo-k1-8.md",
+      "n_anchors": 0,
+      "anchor_recall": 1.0,
+      "resolution_precision": 0.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 0,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 0
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV3-O-tattva-trtiyo-k9-15.md",
+      "n_anchors": 3,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 3,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 3
+    },
+    {
+      "passage_id": "pt:passage:ipvv:chunkV3-P-tattva-caturtho-close-k1-3.md",
+      "n_anchors": 3,
+      "anchor_recall": 1.0,
+      "resolution_precision": 1.0,
+      "resolution_recall": 1.0,
+      "abstain_quality": 1.0,
+      "resolved_ok": 3,
+      "resolved_wrong": 0,
+      "abstained": 0,
+      "gold_anchors": 3
+    }
+  ],
+  "independent_witness": {
+    "n_links": 99,
+    "agree": 38,
+    "disagree": 9,
+    "unable": 52,
+    "agree_rate": 0.3838,
+    "agree_rate_analyzed_only": 0.8085,
+    "analyzed_share": 0.4747,
+    "note": "independent Vidyut morphological witness. AGREE = Vidyut assigns the anchor and the L0 lemma a common stem; agree_rate is the independent-confirmation rate over ALL links; agree_rate_analyzed_only is over links Vidyut could analyze (UNABLE = no witness, not a disagreement; mostly inflected/compound L0 surfaces Vidyut cannot parse \u2014 honest abstention, never fabricated agreement).",
+    "details": [
+      {
+        "anchor": "k\u0101lpanika",
+        "l0_lemma": "k\u0101lpanika\u1e43",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "j\u00f1\u0101na\u015bakti",
+        "l0_lemma": "j\u00f1\u0101na\u015baktir",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "par\u0101mar\u015ba",
+        "l0_lemma": "par\u0101mar\u015b\u0101tman\u0101",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "vimar\u015ba",
+        "l0_lemma": "vimar\u015baeva",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "pratyak\u1e63a-g\u1e5bh\u012bta",
+        "l0_lemma": "pratyak\u1e63ag\u1e5bh\u012btaeva",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "sam\u012bhit\u0101",
+        "l0_lemma": "sam\u012bhit\u0101",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "the avayavin of the Ny\u0101ya",
+        "l0_lemma": "avayavinid\u016b\u1e63ite",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "the param\u0101\u1e47u of the\nVaibh\u0101\u1e63ika",
+        "l0_lemma": "paramaj\u0101nato",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "arthakriy\u0101",
+        "l0_lemma": "arthakriy\u0101",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "param\u0101\u1e47u",
+        "l0_lemma": "param\u0101udvaya\u1e43",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "prak\u0101\u015ba",
+        "l0_lemma": "prak\u0101\u015ba",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "vimar\u015ba",
+        "l0_lemma": "vimar\u015bar\u016bpat\u0101",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "par\u0101mar\u015ba",
+        "l0_lemma": "par\u0101mar\u015ba",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "the madhyam\u0101, the vaikhar\u012b",
+        "l0_lemma": "thesamesubstratumvimar\u015ba",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "sv\u0101tantrya",
+        "l0_lemma": "sv\u0101tantry\u0101t",
+        "vidyut": "DISAGREE"
+      },
+      {
+        "anchor": "ai\u015bvarya",
+        "l0_lemma": "ai\u015bvarya\u1e43",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "k\u0101rik\u0101\n12",
+        "l0_lemma": "k\u0101rik\u0101",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "k\u0101rik\u0101 13",
+        "l0_lemma": "k\u0101rik\u0101",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "\u015babdar\u0101\u015bi",
+        "l0_lemma": "\u015babdar\u0101\u015bi\u1e25",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "the pa\u015byant\u012b-madhyam\u0101",
+        "l0_lemma": "thev\u0101kyapad\u012byadiks\u0101dhana\u1e43kriy\u0101k\u0101laiti",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "p\u016br\u1e47atva",
+        "l0_lemma": "p\u016bratvam",
+        "vidyut": "DISAGREE"
+      },
+      {
+        "anchor": "sphuratt\u0101",
+        "l0_lemma": "sphuratt\u0101",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "mah\u0101satt\u0101",
+        "l0_lemma": "mah\u0101satt\u0101",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "\u016brmi",
+        "l0_lemma": "\u016brmire\u1e63\u0101",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "j\u00f1ey\u012bkara\u1e47a",
+        "l0_lemma": "j\u00f1ey\u012bkaraameva",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "ahant\u0101/idant\u0101",
+        "l0_lemma": "ahant\u0101",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "j\u00f1\u0101na, sa\u1e43kalpa, adhyavas\u0101ya",
+        "l0_lemma": "j\u00f1\u0101na\u1e43",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "adhyavas\u0101ya",
+        "l0_lemma": "adhyavas\u0101y\u0101nutpattau",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "adhy\u0101sa",
+        "l0_lemma": "adhy\u0101saiti",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "svaprak\u0101\u015batva",
+        "l0_lemma": "svaprak\u0101\u015batvam",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "aha\u1e43-pratyavamar\u015ba",
+        "l0_lemma": "aha\u1e43pratyavamar\u015ba\u1e25",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "vikalpa, the vivida-kalpan\u0101",
+        "l0_lemma": "vikalpa",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "pr\u0101\u1e47a",
+        "l0_lemma": "pr\u0101asyaiva",
+        "vidyut": "DISAGREE"
+      },
+      {
+        "anchor": "vikalpa, k\u0101rik\u0101 6",
+        "l0_lemma": "vikalpat\u0101vinirmukta\u1e25",
+        "vidyut": "DISAGREE"
+      },
+      {
+        "anchor": "anusandh\u0101na",
+        "l0_lemma": "anusandh\u0101na\u1e43",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "k\u0101rik\u0101 8",
+        "l0_lemma": "k\u0101rik\u0101",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "k\u0101rik\u0101 9",
+        "l0_lemma": "k\u0101rik\u0101",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "k\u0101rik\u0101 10",
+        "l0_lemma": "k\u0101rik\u0101",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "k\u0101rik\u0101 11",
+        "l0_lemma": "k\u0101rik\u0101",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "mukt\u0101\u1e47ava",
+        "l0_lemma": "mukt\u0101\u016bn\u0101\u1e43",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "the d\u012bk\u1e63\u0101, the vow, the japa, the tapas, the\nconcentration, the conduct",
+        "l0_lemma": "thebha\u1e6d\u1e6dapradyumnadoctrine",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "\u0101\u015braya",
+        "l0_lemma": "\u0101\u015brayam\u0101tra\u1e43",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "r\u016b\u1e63it\u0101",
+        "l0_lemma": "r\u016b\u1e63it\u0101",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "mahe\u015bvara",
+        "l0_lemma": "mahe\u015bvarar\u016bpo",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "pram\u0101\u1e47a",
+        "l0_lemma": "pram\u0101ayojan\u0101tmik\u0101",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "pram\u0101t\u1e5b-vy\u0101p\u0101ra",
+        "l0_lemma": "pram\u0101t\u1e5bvy\u0101p\u0101ra\u1e25",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "j\u00f1\u0101taj\u00f1\u0101na",
+        "l0_lemma": "j\u00f1\u0101taj\u00f1\u0101na\u1e43",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "\u0101loka",
+        "l0_lemma": "\u0101lokaparam\u0101avaeva",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "arv\u0101k",
+        "l0_lemma": "arv\u0101kiti",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "m\u0101he\u015bvarya",
+        "l0_lemma": "m\u0101he\u015bvarya\u1e43",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "prak\u0101\u015ba",
+        "l0_lemma": "prak\u0101\u015baiky\u0101t",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "k\u0101la\u015bakti",
+        "l0_lemma": "k\u0101la\u015baktita\u1e25",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "pram\u0101\u1e47a",
+        "l0_lemma": "pram\u0101abh\u016bta\u1e43",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "\u0101bh\u0101sa",
+        "l0_lemma": "\u0101bh\u0101sa\u1e25",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "pram\u0101t\u1e5b, pram\u0101\u1e47a,\nprameya",
+        "l0_lemma": "pram\u0101t\u1e5bpram\u0101aprameyoll\u0101sa\u1e25",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "bodh\u0101tm\u0101",
+        "l0_lemma": "bodh\u0101tm\u0101",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "anusandh\u0101na",
+        "l0_lemma": "anusandh\u0101nas\u0101dhite",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "s\u0101m\u0101n\u0101dhikara\u1e47ya",
+        "l0_lemma": "s\u0101m\u0101n\u0101dhikarayam",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "svabh\u0101va",
+        "l0_lemma": "svabh\u0101v\u0101",
+        "vidyut": "DISAGREE"
+      },
+      {
+        "anchor": "asa\u1e43v\u0101da",
+        "l0_lemma": "asa\u1e43v\u0101d\u0101d",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "pram\u0101t\u1e5b-\npradh\u0101na",
+        "l0_lemma": "pram\u0101t\u1e5bpradh\u0101nat\u0101s\u016bcaka\u1e43",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "pur\u0101\u1e47a",
+        "l0_lemma": "pur\u0101\u0101gam\u0101d\u012bn\u0101\u1e43",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "d\u012bk\u1e63\u0101",
+        "l0_lemma": "d\u012bk\u1e63\u0101dikriy\u0101",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "dhy\u0101na",
+        "l0_lemma": "dhy\u0101n\u0101diyogo",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "j\u00f1\u0101na",
+        "l0_lemma": "j\u00f1\u0101na\u1e43",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "bh\u0101van\u0101",
+        "l0_lemma": "bh\u0101van\u0101iti",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "bh\u0101van\u0101",
+        "l0_lemma": "bh\u0101van\u0101iti",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "svabh\u0101vahetu",
+        "l0_lemma": "svabh\u0101vahetu\u015bca",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "wherever the\n\u015bi\u1e43\u015bap\u0101-ness is, the tree-ness is",
+        "l0_lemma": "\u015bi\u1e43\u015bap\u0101y\u0101",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "pari\u1e47\u0101ma",
+        "l0_lemma": "pariamanalak\u1e63a\u0101",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "par\u0101mar\u015ba",
+        "l0_lemma": "par\u0101mar\u015ba\u1e25",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "anirv\u0101cya",
+        "l0_lemma": "anirv\u0101cy\u0101",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "icch\u0101",
+        "l0_lemma": "icch\u0101",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "also called Sad\u0101\u015biva",
+        "l0_lemma": "sad\u0101\u015biv\u0101vasth\u0101y\u0101mapica",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "the \u012a\u015bvara",
+        "l0_lemma": "thep\u0101rame\u015bvar\u0101gamaaloneestablishesthetattvayuktiasitssupport",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "s\u0101m\u0101n\u0101dhikara\u1e47ya",
+        "l0_lemma": "s\u0101m\u0101n\u0101dhikarayavaidhikarayavaicitryair",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "an\u0101tma",
+        "l0_lemma": "an\u0101tmatvenabh\u0101san\u0101t",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "\u0101paratva",
+        "l0_lemma": "aparatva\u1e43",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "bhedadh\u012b",
+        "l0_lemma": "bhedadh\u012breva",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "ai\u015bvarya",
+        "l0_lemma": "ai\u015bvarya\u1e43",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "Sad\u0101\u015biva, \u012a\u015bvara, \u015buddhavidy\u0101",
+        "l0_lemma": "sad\u0101\u015biv\u0101vasth\u0101y\u0101mapica",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "in the S\u0101\u1e43khya manner",
+        "l0_lemma": "thevidy\u0101m\u0101y\u0101",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "\u0101\u1e47ava",
+        "l0_lemma": "\u0101avasa\u1e43j\u00f1oyo",
+        "vidyut": "DISAGREE"
+      },
+      {
+        "anchor": "m\u0101y\u012bya",
+        "l0_lemma": "m\u0101y\u012bya\u1e43mala\u1e43",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "k\u0101rma",
+        "l0_lemma": "karma",
+        "vidyut": "DISAGREE"
+      },
+      {
+        "anchor": "pr\u0101\u1e47a",
+        "l0_lemma": "pr\u0101adeh\u0101didh\u0101tu\u1e25",
+        "vidyut": "DISAGREE"
+      },
+      {
+        "anchor": "su\u1e63upta",
+        "l0_lemma": "su\u1e63uptasvapnaj\u0101gradda\u015b\u0101",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "kal\u0101",
+        "l0_lemma": "kal\u0101vidy\u0101k\u1e5bt\u0101y\u0101\u1e25",
+        "vidyut": "DISAGREE"
+      },
+      {
+        "anchor": "vidy\u0101",
+        "l0_lemma": "vidy\u0101kal\u0101\u015baktiprapa\u00f1car\u016bpasya",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "the vidy\u0101kal\u0101, still touched by the m\u0101y\u0101-stain",
+        "l0_lemma": "vidy\u0101kal\u0101\u015baktiprapa\u00f1car\u016bpasya",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "the pralay\u0101kala, free of the stain",
+        "l0_lemma": "pralay\u0101kal\u0101",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "j\u0101grat",
+        "l0_lemma": "j\u0101gratsvapnapadayor",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "pr\u0101\u1e47a and\nap\u0101na",
+        "l0_lemma": "pradh\u0101nasvabh\u0101vasya",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "as\u0101dh\u0101ra\u1e47\u012b",
+        "l0_lemma": "as\u0101dh\u0101ra\u012b",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "\u012b\u015bas\u1e5b\u1e63\u1e6dyuj\u012bvin\u012b",
+        "l0_lemma": "\u012b\u015bas\u1e5b\u1e63\u1e6dyuj\u012bvin\u012b",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "s\u0101dh\u0101ra\u1e47\u0101",
+        "l0_lemma": "s\u0101dh\u0101raat\u0101",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "svata\u1e25",
+        "l0_lemma": "svata\u1e25iti",
+        "vidyut": "AGREE"
+      },
+      {
+        "anchor": "\u015b\u0101strata\u1e25",
+        "l0_lemma": "\u015b\u0101strata\u1e25iti",
+        "vidyut": "UNABLE"
+      },
+      {
+        "anchor": "guruta\u1e25",
+        "l0_lemma": "guruta\u1e25iti",
+        "vidyut": "UNABLE"
+      }
+    ]
+  }
 }

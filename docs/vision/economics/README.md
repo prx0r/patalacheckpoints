@@ -108,6 +108,7 @@ scholarly core is the **product**.
 | `docs/endgame4.md` | **the core economic thesis** | scarce assets, moat stack, flywheel, 84000 lesson |
 | `docs/endgame5year.md` | **the funding window** | the 6+ capital channels, the 2031 moat, BHU/IKS route |
 | `docs/vision/vision-08-scholar-economics.md` | **scholar incentives** | paid adjudication, ORCID/CRediT credit, ownership |
+| `docs/vision/vision-10-market-entry-and-partnerships.md` | **market entry & partnerships** | BHU/global partners, funding sources table, pilots, legal/IP, go-to-market |
 | `docs/endgame4.md` §15 | **fellowships** | fund scholars, not per-page; outputs not pages |
 
 ---

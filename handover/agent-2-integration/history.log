@@ -1,0 +1,76 @@
+# AGENT 2 (L0 / integration) — HISTORY LOG
+
+*Append-only, timestamped record of this lane's work. The current-state pointer is `INDEX.md`; this is the
+immutable change log. Cross-lane events are in `handover/LOG.md`.*
+
+---
+
+## 2026-08-12 — P0 FROZEN + VERIFIED (V2/V3 35/35 PASS)
+The first completed CP1 sub-capability: `verify_l0.py` P0 proof over the flagship V2/V3 published corpus.
+35/35 PASS, 103,917 tokens, 4,159,600 source chars, 0 UNKNOWN, 0 bad spans, 0 overlaps, 0 duplicates,
+`classification_complete: true`, deterministic, independently re-verified. V1 (28 chunks, legacy prose) is
+`MIGRATION_PENDING`. Records: `docs/BUILD_NOTES_L0_P0.md`, `docs/l0_reviewed_exceptions.json`.
+
+## 2026-08-12 — P2 calibrated + frozen as witness (CLAIM P-011)
+Vidyut×Heritage independent-witness ensemble (`verify_l0_p2.py` → `verify_l0_ensemble.py` →
+`analyze_ensemble.py`): control agreement 84–85%, Vidyut CONFLICT resolution 72% (representation mismatch,
+not L0 error), true double-conflict ~9%, double-unanalyzed 0.2%, tool-error 0.2%. Frozen as
+CALIBRATED_MACHINE_WITNESS. Matching-rule lesson: L0 lemma_iast is the SURFACE, Vidyut returns the STEM —
+match stem-as-prefix + surface text. Blind 160-case review built (`build_p2_review.py` / `score_p2_review.py`),
+unfilled (non-blocking path to human-validated). Records: `docs/P2-ENSEMBLE.md`, `docs/P2_REVIEW_PROTOCOL.md`.
+
+## 2026-08-12 — P3 lexical gold v0 + baseline; ranker REJECTED (CLAIM P-012)
+`docs/p3_lexical_gold_v0.json` (21 fixtures incl. 4 NO_UNIQUE_SENSE abstention) +
+`docs/p3_lexical_eval_report.json`: ranker.py top1=0.76, abstention=0.0, false-certainty=1.0; does NOT beat
+the embedding/lexical-overlap baseline (0.81 top1, 1.0 abstain). ranker.py NOT promoted to P3 witness.
+Honest stratification finding: true polysemy lives at L2, not L0.
+
+## 2026-08-12 — P4 alignment: meaningful L0↔L2 benchmark + baseline (this session)
+Replaced the trivial by-construction gloss↔iast baseline with the real task. Per `docs/P4_ALIGNMENT_SPEC.md`,
+P4 = recover the inline IAST anchors the L2 prose marks in parens and link each to its L0 lemma in the same
+passage; abstain on non-anchored (SUPPLIED) prose. Built `pipeline/l0_align.py` + `pipeline/test_l0_align.py`
+(22/22 pass). Floor: resolution recall 0.93, precision 0.89, abstain 1.0 over 35 passages / 105 anchors
+(diacritic-aware IAST detection + stem-as-prefix / diacritic-insensitive matching per the P2 lesson).
+awesome-align (not installed) must beat 0.93. Report: `docs/p4_alignment_eval_report.json`.
+
+## 2026-08-12 — P4 independent witness (Vidyut) — non-human independence
+Added the independent morphological witness to the P4 benchmark (no fresh human gold available). Rejected
+awesome-align (sentence-level MT aligner, wrong granularity); adopted Vidyut (P2 engine, CPU) as the
+independent second method. Result over 99 resolved links: AGREE 38 / DISAGREE 9 / UNABLE 52 →
+agree_rate_analyzed_only 0.81. UNABLE = Vidyut can't parse inflected/compound L0 surfaces (honest
+abstention). 9 DISAGREE are mostly Vidyut compound-analysis errors, not genuine mismatches. This
+establishes independence the same way P2 did (multi-witness ensemble). 26/26 tests pass.
+
+## 2026-08-12 — completeness review: the full project map (what the L0 lane sits inside)
+Completeness pass per the coordinator. My orientation + P4 work covered the IPVV V2/V3 l0/l2/c1 slice
++ the P0/P2/P3/P4 proof ladder, but the project is wider. Full map confirmed:
+- Layered stack: SOURCE → L0/L1 → L2 → L200 AUDIT (63 files) → C1 → THEMES → PARALLELS → ESSAYS → EDUCATION.
+  The L200 audit is the missing link between my L0 tokens and the published prose — not yet in my lane view.
+- Parallel translation stack: T1 (01_t1 28ch + 02_t1 35ch), T2/T3 (03_t2, 05_t3), R1/R2 (02_r1, 04_r2).
+- Product layer: 34 API routes (resolve/hub/spines/themes/verify*/recommend/analyst/journey) + 21 MCP tools
+  — the deterministic substrate "AI proposes ≠ Pāṭala asserts" as machine access; the actual deliverable my floor feeds.
+- Skills: 7 (assemble-stack/translate-passage/translate-work/validate-passage → CP1; push-text → CP4;
+  write-commentary → CP3; use-api → CP2/CP9). Learning: docs/LEARNING_STRATEGY.md (knowledge packets).
+- Honest correction: "35/35" = the V2/V3 published corpus, NOT the full 63 chunks. 28 V1 legacy chunks
+  (01_t1) are MIGRATION_PENDING, 0/28, and are MINE to finish (my lane's known incomplete piece).
+
+## 2026-08-12 — V1 legacy extractor pass: IPVV L0 proof 35/63 → 63/63
+Built `pipeline/extract_l0_v1.py` — the V1 (01_t1, Vol 1) legacy-prose → canonical L0 adapter. V1 is
+continuous prose with inline `GLOSS (IAST)` (no `[and]-` markers), `[bracket]` connectives, line-wraps.
+Design rule: every word becomes a token (gloss-word absorbs its `(IAST)`; bare words/brackets are
+gloss-only tokens) → full coverage, no lettered gaps. Result: **the EXISTING verify_l0.py passes
+UNCHANGED** (byte-identical to git) over V1: **28/28 PASS**, 91,714 tokens. Full IPVV now **63/63 P0**
+(V2/V3 35/35 + V1 28/28). Added 3 adversarial fixtures (`tests/l0_v1/`) + `pipeline/test_extract_l0_v1.py`
+(21/21 pass). Honest claim: 63/63 proves two-format robustness, NOT cross-work generalization (that
+waits for a second real work). CLAIMS.md P-001 updated. verify_l0.py untouched.
+
+## 2026-08-12 — wired the vertical object's proof to the authoritative 63/63 (closed the auditable chain)
+The vertical object (Agent 1's, `benchmarks/v0/vertical/vertical-v2o-g-tc2.json`) had its
+`philological_proof` honestly marked STALE (STALE_LOCAL_ARTIFACT, on_disk_PASS=false) because the proof
+dir it read (`/tmp/l0proof`) lacked the authoritative proof. Closed the seam WITHOUT touching Agent 1's
+`vertical.py` or `patala_ml/`: regenerated the authoritative P0 proof for V2-O from the frozen 63/63
+machinery (`verify_l0.py` → /tmp/p0_authoritative, source_sha 78f72e74..., PASS), placed it where
+`vertical.py`'s PROOF_DIR reads it, and reran Agent 1's own builder (`build_vertical_object.py`).
+Result: proof resolution STALE → **REFERENCE_RESOLVED / EXACT**, on_disk_PASS=True, roundtrip PASS,
+resolved_resolutions=[EXACT, SPAN_LEVEL], unresolved=[] . The auditable Sanskrit→C1 chain now closes
+end-to-end: Proposition G-TC2 → C1/L2 spans → 4 exact L0 tokens → source spans → authoritative proof.

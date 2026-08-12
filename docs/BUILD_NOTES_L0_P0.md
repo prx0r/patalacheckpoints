@@ -122,3 +122,37 @@ V1 uses a different prose-based format (`the essence of consciousness (saṃvid-
 English with inline IAST, no `[and]-` gloss structure). 118,079 unknown across 28 chunks; Phase-1
 already flagged 3 V1 passages NEEDS_MAPPING. V1 needs its own extractor pass (a separate project).
 The supported published corpus is V2/V3, now fully lossless.
+
+---
+
+## UPDATE (2026-08-12, final) — V1 LEGACY PASS: the complete IPVV is 63/63 P0 PASS
+
+### Milestone: the V1 (legacy 01_t1, Vol 1) chunks now pass P0 too → the FULL IPVV is lossless.
+- **V1: 28/28 PASS** via the new V1 adapter `pipeline/extract_l0_v1.py` (91,714 tokens).
+- **Combined with V2/V3 35/35 → the complete flagship IPVV is 63/63 P0 PASS.**
+- **`verify_l0.py` is UNCHANGED** (byte-identical to git). The adapter adapts; the verifier does not.
+
+### How it works (the V1 design rule)
+V1 is continuous prose with inline `GLOSS (IAST)` (e.g. `spontaneity (svācchandya)`), `[bracket]`
+supplied-connectives (`[being]`, `[as if]`), and line-wraps — no `[and]-` gloss markers. The adapter's
+rule: **every word becomes a token** (a gloss-word absorbs its `(IAST)`; bare words/brackets become
+gloss-only tokens). This guarantees full coverage with no lettered gaps, so P0 sees 0 UNKNOWN.
+
+### Edge cases handled (3 adversarial fixtures in `tests/l0_v1/`)
+1. Quoted IAST with a hyphen-suffix + line-wrap mid-gloss (`the-"in-some-way (kathaṃcit)"-sūtra`).
+2. Multi-word IAST lemma + `[bracket]` connectives (`saṃvido vimarśa-paryantatvāt`).
+3. Blockquote + bare (non-IAST) words + apostrophes.
+Tests: `pipeline/test_extract_l0_v1.py` — 21/21 pass.
+
+### The honest cross-work caveat
+63/63 proves the L0 contract + verifier survive **two different IPVV source formats** — strong evidence
+of format robustness. It does NOT yet prove generalization to IPK/Tantrāloka/Kubjikā without
+modification. The schema/tools are designed work-agnostically; cross-work generalization is demonstrated
+only when a second real work is ingested (see CLAIMS.md P-001).
+
+### Reproduce
+```
+python3 pipeline/extract_l0_v1.py <01_t1_dir> <out_dir> --all
+python3 pipeline/verify_l0.py --t1 <01_t1_dir> --l0 <out_dir> --level p0   # 28/28
+python3 pipeline/verify_l0.py --t1 .../02_t1 --l0 .../l0 --level p0 --exceptions docs/l0_reviewed_exceptions.json   # 35/35
+```

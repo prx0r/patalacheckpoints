@@ -81,6 +81,30 @@ under circular gold" is honest.
 
 ---
 
+## THE ADEQUACY DOCTRINE (stop validating when the consumer is served)
+
+> **A supporting component stops when it becomes adequate for its consumer. It does not need to become
+> independently perfect.**
+
+The system is supposed to **propagate uncertainty upward**, not eliminate all uncertainty before
+composition. An endlessly-tuned supporting layer (OCR, morphology, alignment, sense ranking, retrieval,
+clustering, extraction) is *death by infinite validation* — it never produces the thing the layers are
+supposed to enable.
+
+- A component is **adequate** when a real consumer can use it to point downward and say: "this higher
+  object is grounded approximately here, with these machine witnesses and this uncertainty."
+- Its residual uncertainty is **metadata carried into the proposition/argument certificate**, not a blocker.
+- Freeze it at that point with an honest status (e.g. `SUPPORTED_MACHINE_WITNESS`), record the evidence,
+  and record **when to revisit** ("only when a real downstream failure demands it").
+- Do NOT keep optimizing to squeeze a headline number (0.81→0.88) unless a downstream consumer actually
+  fails because of it.
+
+**The checkpoint test for a supporting layer:** *"Can its consumer now compose it with an honest
+uncertainty label?"* If yes, it is done enough. Build the intellectual layer on top — that is where the
+value is.
+
+---
+
 ## HUMAN ADJUDICATION IS THE MISSING REALITY LAYER
 
 Avoid the closed loop: *machine creates C1 → machine creates gold → machine evaluates machine.*

@@ -18,10 +18,10 @@ So we build a **proof ladder** — each layer makes one kind of claim *provable*
 
 | Layer | Question | Status |
 |---|---|---|
-| **P0 source coverage** | did we account for every source char? | ✅ **REAL** — V2/V3 35/35 lossless, frozen |
+| **P0 source coverage** | did we account for every source char? | ✅ **REAL** — complete IPVV **63/63** lossless (V2/V3 35/35 + V1 legacy 28/28), frozen |
 | **P2 morphology** | is the grammar linguistically plausible? | ✅ **CALIBRATED** — ensemble done, blind review pending |
-| **P3 lexical sense** | what does the word MEAN here? | ⏳ gold + baselines done; ranker rejected |
-| **P4 alignment** | which Sanskrit ↔ which English? | ⬜ next |
+| **P3 lexical sense** | what does the word MEAN here? | ⚠️ gold + baselines done; ranker rejected (P-012) |
+| **P4 alignment** | which Sanskrit ↔ which English? | ✅ **SUPPORTED_MACHINE_WITNESS** (P-013) — frozen: 0.93/0.89/1.0 + Vidyut 0.81 |
 | **P5 syntax** | agent/patient/negation roles | ⬜ later |
 
 ## The anti-theatre discipline (why reviews keep happening)
@@ -39,20 +39,27 @@ overclaiming — and they're right. The review discipline is what makes the even
 
 ## Current status + the plan
 
-**Done:** P0 real & frozen. P2 calibrated (ensemble: 85% control, 72% conflict-resolve). P3 gold v0 +
-baseline eval (ranker rejected, embedding baseline 0.81 is the floor).
+**Done (the CP1 proof ladder):**
+- **P0 — complete IPVV 63/63 lossless + FROZEN.** V2/V3 35/35 + **V1 legacy 28/28** (via
+  `pipeline/extract_l0_v1.py`, `verify_l0.py` unchanged).
+- **P2 calibrated + frozen as witness (P-011).** Vidyut×Heritage ensemble: 84–85% control, 72%
+  conflict-resolve, ~9% true double-conflict. Blind 160-case review built, unfilled (non-blocking).
+- **P3 gold v0 + baselines; ranker REJECTED (P-012).** ranker.py 0.76 < embedding 0.81, 0 abstention.
+- **P4 alignment — SUPPORTED_MACHINE_WITNESS (P-013), FROZEN.** L0↔L2 term-anchor: 0.93 recall / 0.89
+  precision / 1.0 abstain, + independent Vidyut witness 0.81 analyzed-only. Frozen per the adequacy
+  doctrine — do not keep tuning.
 
-**In flight:** background ensemble enriching the V+/H- cell (should finish soon).
-
-**Next (no human needed):**
-1. Finalize P2 with the enriched ensemble.
-2. **P4 alignment benchmark** — but scoped correctly: the L0 gloss↔iast pairs are aligned *by
-   construction*, so the real P4 question is L0↔L2 (published prose) alignment. That's the meaningful one.
+**Next (in order):**
+1. **P2 blind review** (160 cases) → VALIDATED_AGAINST_HUMAN_GOLD (P-011 promotion) — non-blocking.
+2. **Deterministic related-rail** — `/api/recommend` + `recommend_related` MCP.
+3. **Cross-work ingestion demo** (later) — ingest a second real work to demonstrate/confirm L0
+   generalization; do NOT build a generic ingestion framework until then.
 
 **Human gates (logged, non-blocking):**
-- Fill the 150 genuinely-blind P2 cases → freeze P2 as human-validated.
-- Editor the 21 enriched P3 fixtures → promote to gold.
+- Fill the genuinely-blind P2 cases → freeze P2 as human-validated.
+- Editor the P3 fixtures → promote to gold (P3 remains a candidate; embedding 0.81 is the floor).
 
 **Bigger-picture next (after the floor is solid):** pivot the same proof machinery toward the
 high-visibility product — Pāṭala Review (Vision 06) — because that's what makes the project valuable to
-scholars, not just sound.
+scholars, not just sound. And the critical path moves UPWARD: ARG-001..005 review, the vertical
+Proposition→Sanskrit object, and the first external evaluator.

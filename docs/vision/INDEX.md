@@ -32,6 +32,8 @@ here and in `docs/INDEX.md`.*
 | **07** | `docs/vision/vision-07-new-scholar.md` | **The New Scholar** — workbench, perspective collector, research-graph scholarship. *(new, from R2)* |
 | **08** | `docs/vision/vision-08-scholar-economics.md` | **Scholar Incentives & Economics** — paid adjudication, ORCID/CRediT credit, ownership. *(new, from R2)* |
 | **09** | `docs/vision/vision-09-media-and-cross-tradition.md` | **The Media Layer & Cross-Tradition Engine** — the scholarly core rendered as shorts/video/essays/AI-teacher (Workengestation = written voice, Renderio = video), then reproduced across traditions (Tantra → Yogic → Vedānta → Greek). |
+| **10** | `docs/vision/vision-10-market-entry-and-partnerships.md` | **Market Entry & Partnerships** — academic partners (BHU + global scholars), funding/fellowship sources, institutional models, outreach, low-cost pilots, legal/IP, metrics. *(new, from R2)* |
+| **11** | `docs/vision/vision-11-siva-before-abhinava.md` | **Śiva Before Abhinava** — the genealogy of Śaiva ideas as the next major corpus: six chronological corpora (Rudra→Śiva→Pāśupata→Early Tantra→Bhairava/Kaula→Kashmir) + three cross-cutting graphs (concept, cosmology, argument), ending at Abhinavagupta and connecting into IPVV. *(new, from R2)* |
 
 ---
 
@@ -68,6 +70,7 @@ The vision arc (above) is the *product/strategic* view; the checkpoint ladder
 | 05 five-year strategic window | sequencing of CP1–CP6 |
 | 06 Pāṭala Review (adversarial review) | CP5 (verification) + CP8 (adversarial review) |
 | 07 New Scholar (workbench) | CP7 (workbench) → CP9 (API/MCP) |
+| 11 Śiva Before Abhinava (cross-corpus genealogy) | CP1 (per-corpus source proof, reused) → CP12 (cross-corpus) |
 
 **Where the live agent system tracks this:** `handover/SYSTEM.md` (template → instances) +
 `handover/STATE.yaml` via `python3 handover/flow.py status`.

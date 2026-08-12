@@ -10,6 +10,28 @@ source for the integration lane.*
 
 ---
 
+## THE FULL PROJECT MAP (what this lane sits inside — don't mistake the slice for the whole)
+
+```
+SOURCE (M00020/21/22 + Torella IPK)
+  ↓  L0/L1  token-level + controlled translation     (l0/, l0_v1/ — the P0/P2/P3/P4 floor I certify)
+  ↓  L2     real book prose                         (pilot/pilot_*_L2_read.md)
+  ↓  L200   how each reading was derived (8-section audit, 63 files)  ← the audit link
+  ↓  C1     what each passage means                 (c1/read/ + c1/source/)
+  ↓  THEMES → PARALLELS → ESSAYS → EDUCATION
+```
+**Parallel translation stack (T1/T2/T3):** `01_t1` (28ch) + `02_t1` (35ch) = T1; `03_t2`, `05_t3` = T2/T3;
+`02_r1`, `04_r2` = reviewer passes. Skills map these to checkpoints (translate-* → CP1).
+**Product layer (the deliverable my floor feeds):** 34 API routes + 21 MCP tools — the deterministic
+substrate (`resolve`, `hub`, `spines`, `themes`, 4 `verify_*`, `recommend`). Docs: `docs/api/`, `docs/openapi.yaml`, `mcp/`.
+**Skills:** 7 (`assemble-stack`/`translate-passage`/`translate-work`/`validate-passage` → CP1;
+`push-text` → CP4; `write-commentary` → CP3; `use-api` → CP2/CP9).
+**Learning:** `docs/LEARNING_STRATEGY.md` (knowledge packets, research-once/distill-repeatedly).
+**Honest completeness:** "35/35" = the V2/V3 published corpus, NOT all 63 chunks. 28 V1 legacy chunks
+(`01_t1`) are `MIGRATION_PENDING`, 0/28, and are **this lane's known unfinished piece**.
+
+---
+
 ## Lane
 
 - **Role:** integration + scholarly content + docs + Sanskrit substrate (the L0 philological floor).
@@ -24,29 +46,43 @@ source for the integration lane.*
 
 ## Current state (2026-08-12)
 
-### Done
+### Done (the CP1 proof ladder, top to bottom)
 - **Corpus published** — 49 IPVV passages as lazy-JSON (`data/published/ipvv/`), single source of
   truth via `getPublishedTranslation()` for both `/read` and `/api/resolve`.
 - **Deterministic substrate** — C1 wired, c1_source derived (63), themes exposed, hub + spines + journey
   + analyst + recommend exposed.
 - **Verification floor** — `lib/verify.ts` + `lib/citation.ts` + `/api/resolve`.
-- **P0 FROZEN + VERIFIED** — V2/V3 **35/35 PASS** (103,917 tokens, 0 unknown chars, 0 bad spans,
-  deterministic, independently re-verified). This is CP1's foundation. V1 (28 chunks) is a separate
-  legacy format, `MIGRATION_PENDING`. Full record: `docs/BUILD_NOTES_L0_P0.md`.
+- **P0 FROZEN + VERIFIED — COMPLETE IPVV 63/63** — **V2/V3 35/35** (103,917 tokens, 0 unknown chars,
+  0 bad spans, deterministic, independently re-verified) **+ V1 legacy 28/28** (NEW, 2026-08-12, via
+  `pipeline/extract_l0_v1.py`, 91,714 tokens, `verify_l0.py` unchanged). The full flagship corpus now
+  bottoms out in an auditable source span. Honest caveat: 63/63 proves two-format robustness, NOT
+  cross-work generalization. Full record: `docs/BUILD_NOTES_L0_P0.md`.
+- **P2 CALIBRATED + FROZEN as witness** (CLAIM **P-011**) — Vidyut×Heritage ensemble: control
+  agreement 84–85%, Vidyut CONFLICT resolution 72%, true double-conflict ~9%, double-unanalyzed
+  0.2%. Genuinely-blind 160-case review built but **unfilled** (non-blocking path to
+  VALIDATED_AGAINST_HUMAN_GOLD). Full record: `docs/P2-ENSEMBLE.md` + `docs/P2_REVIEW_PROTOCOL.md`.
+- **P3 lexical gold v0 + baselines; ranker REJECTED** (CLAIM **P-012**) — ranker.py top1=0.76 vs
+  embedding baseline 0.81, 0 abstention, 100% false-certainty. NOT promoted to P3 witness. Gold =
+  `docs/p3_lexical_gold_v0.json` (21 fixtures), eval = `docs/p3_lexical_eval_report.json`.
+- **P4 alignment — FROZEN SUPPORTED_MACHINE_WITNESS** (P-013) — the meaningful **L0↔L2 term-anchor**
+  task. Deterministic aligner: recall 0.93 / precision 0.89 / abstention 1.0 (35 passages / 105
+  anchors). Independent Vidyut witness: 0.81 analyzed-only agreement. **Proposes/resolves likely
+  anchor↔lemma links; does NOT prove semantic equivalence or replace human philology.** Frozen per the
+  adequacy doctrine — do NOT keep tuning; revisit only on downstream failure. P4's uncertainty is
+  metadata, not a blocker. Spec: `docs/P4_ALIGNMENT_SPEC.md`. Code: `pipeline/l0_align.py` +
+  `pipeline/test_l0_align.py` (26/26 pass).
 
 ### In progress / next (in order — CP1: PhilologicalProof)
-1. **Heritage ensemble → P2 disagreement analysis** — run Heritage over all Vidyut CONFLICT + UNANALYZED
-   + a stratified control (~500 CONFIRMED, ~500 AMBIGUOUS_SUPPORTED) → Vidyut×Heritage confusion matrix.
-2. **Lexical gold** (~50–100 fixtures incl. NO-UNIQUE-SENSE abstain) → ranker benchmark (baselines:
-   most-common gloss / local L0 gloss / embedding) before ranker.py becomes a witness.
-3. **Alignment gold** (held-out from manually checked L0 pairs) → alignment benchmark.
-4. **Deterministic related-rail** — `/api/recommend` + `recommend_related` MCP.
-5. **Context alignment** — wire GRETIL IPK+Vṛtti+IPV into `/api/context`.
-6. **Comparative matrix** — `comparative.ts` + seed.
-7. **Argument truth-packet** — `pt:argument:` + `/verify-argument` (coordinates with Agent 1 CP4).
-8. **PARALLELS** — typed cross-text witnesses.
-9. **L200 → graph annotations** — keep the MT/IA split.
-10. **Schema-version pin** — `data/published/ipvv/version.json`.
+1. **P2 blind review** (160 cases) → VALIDATED_AGAINST_HUMAN_GOLD (P-011 promotion) — non-blocking.
+2. **Deterministic related-rail** — `/api/recommend` + `recommend_related` MCP.
+3. **Context alignment** — wire GRETIL IPK+Vṛtti+IPV into `/api/context`.
+4. **Comparative matrix** — `comparative.ts` + seed.
+5. **Argument truth-packet** — `pt:argument:` + `/verify-argument` (coordinates with Agent 1 CP4).
+6. **PARALLELS** — typed cross-text witnesses.
+7. **L200 → graph annotations** — keep the MT/IA split.
+8. **Schema-version pin** — `data/published/ipvv/version.json`.
+9. **Cross-work ingestion demo** (later) — ingest a second real work's T1 to demonstrate/confirm the
+   L0 adapter generalizes (do NOT build a generic ingestion framework now).
 
 Full thread list: `WHAT_NEXT_PATALA.md`.
 
