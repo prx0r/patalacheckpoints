@@ -47,3 +47,23 @@ orchestrator. This is the first vertical: the controller + per-layer registries 
 ## Next (per the build order)
 L0 controller canary → L0 certificate → L2 generator+validator → **L200** (generator + Task-2 validator) →
 C1 → supersession propagation → THEME → connect Argument/Synthesis → ESSAY → EDUCATION.
+
+---
+
+## TEST RESULTS (2026-08-12, fail-fast)
+
+`pipeline/test_autonomy.py` — **16/16 PASS** (registry commit/current/idempotency/three-state · eligibility
+DAG · controller find_eligible + tick + run report · supersession/cascading-stale). `pipeline/test_autonomous.py`
+(F1/F4/F6) — **7/7 PASS**.
+
+**Fail-fast note:** the first run surfaced 2 failures — a **test-ordering bug, not a code bug**: the test
+superseded L1 *before* asserting L2 eligibility, and the controller **correctly** blocked L2 (its prereq L1
+was stale). Reordered the test to assert L2 eligibility/commit while L1 is valid, then assert the
+supersession cascade afterward. This is exactly the behavior the architecture wants: a stale upstream blocks
+downstream eligibility.
+
+Run:
+```bash
+python3 pipeline/test_autonomy.py    # 16/16
+python3 pipeline/test_autonomous.py  # 7/7
+```
