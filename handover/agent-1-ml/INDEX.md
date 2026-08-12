@@ -50,7 +50,8 @@ Built this session:
              support_scope; validator expanded (structural well-formedness only).
 Honest status: golds are MACHINE_PROPOSED/CANDIDATE — NOT yet independently reviewed.
 ```
-Next in order: (1) **independent review of the 5 golds** (ARG-GOLD-REVIEW-PROTOCOL — the central gate),
+Next in order: (1) **independent review of the 5 golds** via `benchmarks/v0/ARG-GOLD-REVIEW-PACKET.md`
+(a self-contained, human-readable packet — no Pāṭala/JSON knowledge needed; ACCEPT/REVISE/REJECT/ABSTAIN),
 (2) **then** py-aspic over the CLEANEST reviewed argument (adapter/semantics test, provenance stays in
 Pāṭala), (3) a real extractor that beats the baseline, (4) THEN viruddha as a graph op. See `NEXT-STEPS.md`.
 

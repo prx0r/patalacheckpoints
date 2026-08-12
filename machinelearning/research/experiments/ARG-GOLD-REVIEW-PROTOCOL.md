@@ -57,3 +57,24 @@ MACHINE_PROPOSED
   → DOUBLE_REVIEWED
   → ADJUDICATED
 ```
+
+**The practical ladder (this project):**
+
+```
+MACHINE_PROPOSED   (current: the 5 golds)
+  → FOUNDER_REVIEWED
+  → INDEPENDENT_REVIEWED
+  → SPECIALIST_REVIEWED
+  → ADJUDICATED
+```
+
+**Who reviews:** the first reviewer needs INDEPENDENCE from the builder + enough competence to falsify
+obvious reconstruction errors — NOT necessarily a famous senior specialist. A Sanskrit / Indian-philosophy
+PhD, postdoc, teacher, or advanced researcher is sufficient for a first pass. The hardest disputed cases
+can later go to someone much more senior. **After ONE clean argument crosses INDEPENDENT_REVIEWED**, run the
+external formal-evaluator (py-aspic) pilot on that one — you do not need all five adjudicated first.
+
+**The review packet:** a self-contained, human-readable version of the five golds — SOURCE + proposed
+argument + the four questions + an ACCEPT/REVISE/REJECT/ABSTAIN output template, with risk areas called
+out — is at `benchmarks/v0/ARG-GOLD-REVIEW-PACKET.md` (regenerate with
+`python experiments/build_review_packet.py`). The reviewer does not need to know Pāṭala or edit JSON.
