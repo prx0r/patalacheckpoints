@@ -30,10 +30,17 @@
     "passage": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
     "title": "The Order-less Support by Reductio (V2-O)",
     "structure": "REDUCTIO",
+    "review_note": {
+      "SAFE_GOLD": "pratibhā bears order + pratibhā is akrama -> the support is not exhausted by the order it supports. This is the extraction target (task_level A).",
+      "STRONG_RECONSTRUCTION": "if the support itself belonged to the order -> a further support would be required -> regress -> therefore the support is akrama. The regress warrant (G3-REG, G3-ABS, G3-INF-RED) is marked candidate_reconstruction and is NOT a required extraction target until a specialist confirms the regress is the intended warrant.",
+      "status": "MACHINE_PROPOSED"
+    },
     "research_question": "Can the support of the ordered powers itself be ordered?",
     "nodes": [
       {
         "proposition_id": "G3-ASSUM",
+        "task_level": "B_ARGUMENT_RECONSTRUCTION",
+        "candidate_reconstruction": true,
         "text": "The support (āśraya) of the powers is itself a member of the ordered sequence — it is ordered.",
         "kind": "IMPLICIT_PREMISE",
         "explicitness": "RECONSTRUCTED",
@@ -49,6 +56,7 @@
       },
       {
         "proposition_id": "G3-TC1",
+        "task_level": "A_PROPOSITION_EXTRACTION",
         "text": "pratibhā (the flashing) runs through / bears the order of the word-objects (tattatpadārthakramarūṣitā).",
         "kind": "TEXTUAL_CLAIM",
         "explicitness": "EXPLICIT",
@@ -64,6 +72,7 @@
       },
       {
         "proposition_id": "G3-TC2",
+        "task_level": "A_PROPOSITION_EXTRACTION",
         "text": "pratibhā is not itself constituted by that order (akrama — order-less).",
         "kind": "TEXTUAL_CLAIM",
         "explicitness": "EXPLICIT",
@@ -79,6 +88,8 @@
       },
       {
         "proposition_id": "G3-REG",
+        "task_level": "B_ARGUMENT_RECONSTRUCTION",
+        "candidate_reconstruction": true,
         "text": "If a support of order were itself ordered, it would require a further support of its own ordering — an infinite regress.",
         "kind": "IMPLICIT_PREMISE",
         "explicitness": "IMPLICIT",
@@ -94,6 +105,8 @@
       },
       {
         "proposition_id": "G3-ABS",
+        "task_level": "B_ARGUMENT_RECONSTRUCTION",
+        "candidate_reconstruction": true,
         "text": "If the support were ordered, an infinite regress of ordered supports would follow — which is absurd.",
         "kind": "CONCLUSION",
         "explicitness": "RECONSTRUCTED",
@@ -109,6 +122,7 @@
       },
       {
         "proposition_id": "G3-TC3",
+        "task_level": "A_PROPOSITION_EXTRACTION",
         "text": "The support (āśraya) of the powers is not itself a member of the ordered sequence.",
         "kind": "TEXTUAL_CLAIM",
         "explicitness": "RECONSTRUCTED",
@@ -124,6 +138,7 @@
       },
       {
         "proposition_id": "G3-CONC",
+        "task_level": "A_PROPOSITION_EXTRACTION",
         "text": "The support of ordered presentation is itself order-less (akrama) — the order-less, infinite-consciousness-form knower.",
         "kind": "CONCLUSION",
         "explicitness": "RECONSTRUCTED",
@@ -139,6 +154,7 @@
       },
       {
         "proposition_id": "G3-IC1",
+        "task_level": "C_SYSTEMATIC_INTERPRETATION",
         "text": "Abhinavagupta identifies this order-less support with the knower (pramātṛ), the great Lord.",
         "kind": "INTERPRETIVE_CLAIM",
         "explicitness": "RECONSTRUCTED",
@@ -156,6 +172,8 @@
     "inferences": [
       {
         "inference_id": "G3-INF-RED",
+        "task_level": "B_ARGUMENT_RECONSTRUCTION",
+        "candidate_reconstruction": true,
         "premise_ids": [
           "G3-ASSUM",
           "G3-REG"
@@ -170,6 +188,7 @@
       },
       {
         "inference_id": "G3-INF-RES",
+        "task_level": "A_PROPOSITION_EXTRACTION",
         "premise_ids": [
           "G3-TC1",
           "G3-TC2",
@@ -185,6 +204,7 @@
       },
       {
         "inference_id": "G3-INF-CONC",
+        "task_level": "A_PROPOSITION_EXTRACTION",
         "premise_ids": [
           "G3-TC3",
           "G3-ABS"
@@ -199,6 +219,7 @@
       },
       {
         "inference_id": "G3-INF-IC",
+        "task_level": "C_SYSTEMATIC_INTERPRETATION",
         "premise_ids": [
           "G3-TC3"
         ],

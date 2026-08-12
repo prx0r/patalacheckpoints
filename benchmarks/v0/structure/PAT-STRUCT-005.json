@@ -25,12 +25,18 @@
     "gold_id": "ARG-GOLD-005",
     "work_id": "ipvv",
     "passage": "pt:passage:ipvv:chunkV3-I-kriya-caturtho-close-k20-21.md",
-    "title": "The Difference is Real: two defensible reconstructions (V3-I)",
-    "structure": "AMBIGUOUS",
+    "title": "The Difference is Real: local vs systematic scope (V3-I)",
+    "structure": "INTERPRETIVE_SCOPE",
+    "review_note": {
+      "NOT_AMBIGUITY": "This is NOT a genuine 'two meanings' ambiguity. The two readings are different INFERENTIAL STRENGTHS: Reading A is LOCALLY ENTAILED (this passage refutes the anirvācya-ignorance thesis); Reading B is a CONTEXTUALLY SUPPORTED EXTENSION (difference as the self's manifestation) that relies on broader doctrine (V3-G/H, V2-S). The crux is not 'which reading is true' but: does THIS passage itself license the positive metaphysical interpretation, or does that require importing the broader doctrine?",
+      "SUPPORT_SCOPE_FIRST_CLASS": "This gold case is exactly the kind that forces support_scope (LOCAL_TEXT / LOCAL_CONTEXT / SAME_WORK / CROSS_WORK / SYSTEMATIC_RECONSTRUCTION) to be considered first-class in the IR — not yet added to the ontology, but flagged.",
+      "status": "MACHINE_PROPOSED"
+    },
     "research_question": "What does 'the difference is real' mean — does the passage positively affirm difference as the self's manifestation, or negatively establish it by refuting the 'un-explainable ignorance' thesis?",
     "nodes": [
       {
         "proposition_id": "G5-OBJ",
+        "task_level": "A_PROPOSITION_EXTRACTION",
         "text": "If consciousness is one and the difference of things is mere ignorance, how is action possible — for action needs a distinct agent and object?",
         "kind": "OBJECTION",
         "explicitness": "EXPLICIT",
@@ -46,6 +52,7 @@
       },
       {
         "proposition_id": "G5-TC1",
+        "task_level": "A_PROPOSITION_EXTRACTION",
         "text": "The single re-recollection marked by the will-to-do (cikīrṣālakṣaṇa parāmarśa) joins the agent and the object; action is possible in the one consciousness.",
         "kind": "TEXTUAL_CLAIM",
         "explicitness": "EXPLICIT",
@@ -61,6 +68,7 @@
       },
       {
         "proposition_id": "G5-TC2",
+        "task_level": "A_PROPOSITION_EXTRACTION",
         "text": "The difference cannot be an 'un-explainable' (anirvācya) ignorance: of whom would it be? The one-form reality cannot have it; the separate souls cannot bear it; 'un-explainable' is a refusal to answer.",
         "kind": "TEXTUAL_CLAIM",
         "explicitness": "EXPLICIT",
@@ -76,6 +84,7 @@
       },
       {
         "proposition_id": "G5-CONC-A",
+        "task_level": "A_PROPOSITION_EXTRACTION",
         "text": "The difference is real — cognition rests in difference as it does not rest in non-difference.",
         "kind": "CONCLUSION",
         "explicitness": "RECONSTRUCTED",
@@ -92,6 +101,7 @@
       },
       {
         "proposition_id": "G5-CONC-B",
+        "task_level": "C_SYSTEMATIC_INTERPRETATION",
         "text": "The difference is real as the self's own manifestation — the positive account of difference (developed in V3-G/H, V2-S).",
         "kind": "CONCLUSION",
         "explicitness": "RECONSTRUCTED",
@@ -180,20 +190,27 @@
       "positions": [
         {
           "position_id": "G5-POS-A",
-          "label": "Reading A — NEGATIVE",
-          "question": "What does the passage refute?",
-          "commitment": "the difference is real = the illusion/ignorance thesis is refuted",
+          "label": "Reading A — MINIMAL / LOCAL",
+          "question": "What does the passage itself establish?",
+          "commitment": "the difference is real = the illusion/ignorance thesis is refuted (locally entailed)",
           "proposition_ids": [
             "G5-CONC-A"
+          ],
+          "support_scope": [
+            "LOCAL_TEXT"
           ]
         },
         {
           "position_id": "G5-POS-B",
-          "label": "Reading B — POSITIVE",
-          "question": "What does the passage affirm?",
-          "commitment": "the difference is real = difference is the self's own manifestation",
+          "label": "Reading B — STRONGER / SYSTEMATIC",
+          "question": "What stronger interpretation becomes supportable with wider corpus context?",
+          "commitment": "the difference is real = difference is the self's own manifestation (contextually supported extension)",
           "proposition_ids": [
             "G5-CONC-B"
+          ],
+          "support_scope": [
+            "LOCAL_TEXT",
+            "SAME_WORK"
           ]
         }
       ],

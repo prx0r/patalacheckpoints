@@ -36,6 +36,7 @@ def build_gold_005() -> dict:
     nodes = [
         # the objection (attributed to the monist/illusionist opponent, NOT Abhinava's own view)
         {"proposition_id": "G5-OBJ",
+         "task_level": "A_PROPOSITION_EXTRACTION",
          "text": "If consciousness is one and the difference of things is mere ignorance, how is action possible — for action needs a distinct agent and object?",
          "kind": "OBJECTION", "explicitness": "EXPLICIT",
          "commitment": "ATTRIBUTES_TO_OPPONENT", "derived_from": "C1/L2 (the sharpest objection)",
@@ -44,12 +45,14 @@ def build_gold_005() -> dict:
          "status": "MACHINE_PROPOSED"},
         # the shared textual basis both readings accept
         {"proposition_id": "G5-TC1",
+         "task_level": "A_PROPOSITION_EXTRACTION",
          "text": "The single re-recollection marked by the will-to-do (cikīrṣālakṣaṇa parāmarśa) joins the agent and the object; action is possible in the one consciousness.",
          "kind": "TEXTUAL_CLAIM", "explicitness": "EXPLICIT",
          "commitment": "ASSERTS", "derived_from": "L2 (the will-to-do joins agent and object)",
          "grounding": _grounding(), "boundary": "", "status": "MACHINE_PROPOSED"},
         # the reductio against the illusion thesis (shared basis for Reading A)
         {"proposition_id": "G5-TC2",
+         "task_level": "A_PROPOSITION_EXTRACTION",
          "text": "The difference cannot be an 'un-explainable' (anirvācya) ignorance: of whom would it be? The one-form reality cannot have it; the separate souls cannot bear it; 'un-explainable' is a refusal to answer.",
          "kind": "TEXTUAL_CLAIM", "explicitness": "EXPLICIT",
          "commitment": "ASSERTS", "derived_from": "C1/L2 (the reductio against anirvācya)",
@@ -58,6 +61,7 @@ def build_gold_005() -> dict:
          "status": "MACHINE_PROPOSED"},
         # Reading A (NEGATIVE) conclusion
         {"proposition_id": "G5-CONC-A",
+         "task_level": "A_PROPOSITION_EXTRACTION",
          "text": "The difference is real — cognition rests in difference as it does not rest in non-difference.",
          "kind": "CONCLUSION", "explicitness": "RECONSTRUCTED",
          "commitment": "ASSERTS", "derived_from": "REDUCTIO over G5-TC2",
@@ -67,6 +71,7 @@ def build_gold_005() -> dict:
          "status": "MACHINE_PROPOSED"},
         # Reading B (POSITIVE) conclusion
         {"proposition_id": "G5-CONC-B",
+         "task_level": "C_SYSTEMATIC_INTERPRETATION",
          "text": "The difference is real as the self's own manifestation — the positive account of difference (developed in V3-G/H, V2-S).",
          "kind": "CONCLUSION", "explicitness": "RECONSTRUCTED",
          "commitment": "ASSERTS", "derived_from": "OTHER over G5-TC1 + G5-TC2 (positive extension)",
@@ -121,14 +126,16 @@ def build_gold_005() -> dict:
                           "action is the one will-to-do joining agent and object"],
         "disputed_ground": ["whether 'the difference is real' is a negative (refutation) or positive (self-manifestation) claim"],
         "positions": [
-            {"position_id": "G5-POS-A", "label": "Reading A — NEGATIVE",
-             "question": "What does the passage refute?",
-             "commitment": "the difference is real = the illusion/ignorance thesis is refuted",
-             "proposition_ids": ["G5-CONC-A"]},
-            {"position_id": "G5-POS-B", "label": "Reading B — POSITIVE",
-             "question": "What does the passage affirm?",
-             "commitment": "the difference is real = difference is the self's own manifestation",
-             "proposition_ids": ["G5-CONC-B"]},
+            {"position_id": "G5-POS-A", "label": "Reading A — MINIMAL / LOCAL",
+             "question": "What does the passage itself establish?",
+             "commitment": "the difference is real = the illusion/ignorance thesis is refuted (locally entailed)",
+             "proposition_ids": ["G5-CONC-A"],
+             "support_scope": ["LOCAL_TEXT"]},
+            {"position_id": "G5-POS-B", "label": "Reading B — STRONGER / SYSTEMATIC",
+             "question": "What stronger interpretation becomes supportable with wider corpus context?",
+             "commitment": "the difference is real = difference is the self's own manifestation (contextually supported extension)",
+             "proposition_ids": ["G5-CONC-B"],
+             "support_scope": ["LOCAL_TEXT", "SAME_WORK"]},
         ],
         "semantic_alignments": [
             # LEXICAL level
@@ -154,8 +161,13 @@ def build_gold_005() -> dict:
         "gold_id": "ARG-GOLD-005",
         "work_id": "ipvv",
         "passage": V3I_PASSAGE_ID,
-        "title": "The Difference is Real: two defensible reconstructions (V3-I)",
-        "structure": "AMBIGUOUS",
+        "title": "The Difference is Real: local vs systematic scope (V3-I)",
+        "structure": "INTERPRETIVE_SCOPE",
+        "review_note": {
+            "NOT_AMBIGUITY": "This is NOT a genuine 'two meanings' ambiguity. The two readings are different INFERENTIAL STRENGTHS: Reading A is LOCALLY ENTAILED (this passage refutes the anirvācya-ignorance thesis); Reading B is a CONTEXTUALLY SUPPORTED EXTENSION (difference as the self's manifestation) that relies on broader doctrine (V3-G/H, V2-S). The crux is not 'which reading is true' but: does THIS passage itself license the positive metaphysical interpretation, or does that require importing the broader doctrine?",
+            "SUPPORT_SCOPE_FIRST_CLASS": "This gold case is exactly the kind that forces support_scope (LOCAL_TEXT / LOCAL_CONTEXT / SAME_WORK / CROSS_WORK / SYSTEMATIC_RECONSTRUCTION) to be considered first-class in the IR — not yet added to the ontology, but flagged.",
+            "status": "MACHINE_PROPOSED",
+        },
         "research_question": research_question,
         "nodes": nodes,
         "inferences": inferences,

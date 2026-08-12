@@ -13,12 +13,25 @@ from __future__ import annotations
 import glob
 import json
 import os
+import re
 
 VALID_NODE_KINDS = {"TEXTUAL_CLAIM", "INTERPRETIVE_CLAIM", "IMPLICIT_PREMISE",
                     "CONCLUSION", "OBJECTION", "QUALIFICATION"}
 VALID_SCHEMES = {"NYAYA_ANUMANA", "REDUCTIO", "TRANSCENDENTAL", "CONCEPTUAL_DISTINCTION",
                  "OBJECTION_REPLY", "COUNTEREXAMPLE", "OTHER", "INTERPRETIVE_CLAIM"}
 VALID_EXPLICITNESS = {"EXPLICIT", "RECONSTRUCTED", "IMPLICIT"}
+# well-formedness enums (type/integrity ONLY — never validate whether the label is *correct*;
+# that is scholarly review). "Validator establishes well-formedness; reviewers establish validity."
+VALID_COMMITMENTS = {"ASSERTS", "DENIES", "PRESUPPOSES", "ASSUMES_FOR_ARGUMENT",
+                     "ATTRIBUTES_TO_OPPONENT", "QUOTES", "RECONSTRUCTED", "DERIVES"}
+VALID_STATUSES = {"MACHINE_PROPOSED", "CANDIDATE", "SINGLE_EDITOR_GOLD", "DOUBLE_REVIEWED_GOLD",
+                  "ADJUDICATED_GOLD", "SUPPORTED", "PROPOSED", "REVIEWED"}
+VALID_ALIGNMENT_LEVELS = {"LEXICAL", "CONCEPTUAL", "PROPOSITIONAL"}
+VALID_TASK_LEVELS = {"A_PROPOSITION_EXTRACTION", "B_ARGUMENT_RECONSTRUCTION",
+                     "C_SYSTEMATIC_INTERPRETATION"}
+VALID_SUPPORT_SCOPES = {"LOCAL_TEXT", "LOCAL_CONTEXT", "SAME_WORK", "CROSS_WORK",
+                        "SYSTEMATIC_RECONSTRUCTION"}
+
 
 
 def wrap_fixture(gold: dict, gold_version: str = "1",
@@ -125,6 +138,47 @@ def validate_gold(gold: dict) -> dict:
     for inf in gold.get("inferences", []):
         if inf.get("scheme") and inf["scheme"] not in VALID_SCHEMES:
             problems.append(f"{inf.get('inference_id')}: invalid scheme {inf['scheme']}")
+
+    # 6. well-formedness: type/integrity checks ONLY (never whether a label is semantically correct —
+    #    that is scholarly review, not validation). See the ARCHITECTURAL DOCTRINE: "Validator
+    #    establishes well-formedness; reviewers establish validity."
+    for nid, n in nodes.items():
+        if n.get("commitment") and n["commitment"] not in VALID_COMMITMENTS:
+            problems.append(f"{nid}: invalid commitment {n['commitment']}")
+        if n.get("status") and n["status"] not in VALID_STATUSES:
+            problems.append(f"{nid}: invalid status {n['status']}")
+        if n.get("task_level") and n["task_level"] not in VALID_TASK_LEVELS:
+            problems.append(f"{nid}: invalid task_level {n['task_level']}")
+    # derived_from: only flag DANGLING node-refs (free-text descriptions are fine, not validated)
+    for nid, n in nodes.items():
+        df = n.get("derived_from", "")
+        if df:
+            for tok in re.findall(r"(?:G[0-9]|A[0-9]|G5)[A-Z0-9_-]*", df):
+                if tok not in used_ids:
+                    problems.append(f"{nid}: derived_from references missing node {tok}")
+    # debate_frame: positions + semantic_alignments (integrity only)
+    df = gold.get("debate_frame") or {}
+    for pos in df.get("positions", []):
+        if not pos.get("position_id"):
+            problems.append("debate_frame.position missing position_id")
+        for pid in pos.get("proposition_ids", []):
+            if pid not in used_ids:
+                problems.append(f"position {pos.get('position_id')}: proposition {pid} missing")
+    for al in df.get("semantic_alignments", []):
+        if al.get("level") and al["level"] not in VALID_ALIGNMENT_LEVELS:
+            problems.append(f"semantic_alignment level {al['level']} invalid")
+        # left/right may be terms (not ids) — only resolve where they reference proposition ids
+        for side in ("left_term", "right_term"):
+            t = al.get(side)
+            if t and isinstance(t, str) and t in used_ids:
+                continue  # resolves to a node — fine
+            elif t and isinstance(t, str) and re.fullmatch(r"G[0-9][A-Z0-9_-]*", t):
+                problems.append(f"semantic_alignment {side} '{t}' does not resolve to a node")
+    # support_scope integrity (when present)
+    for pos in df.get("positions", []):
+        for sc in pos.get("support_scope", []):
+            if sc not in VALID_SUPPORT_SCOPES:
+                problems.append(f"position {pos.get('position_id')}: invalid support_scope {sc}")
 
     return {"ok": len(problems) == 0, "problems": problems,
             "n_nodes": len(nodes), "n_inferences": len(gold.get("inferences", []))}

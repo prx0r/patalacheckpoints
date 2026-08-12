@@ -46,17 +46,20 @@ task, human-grounded gold, and a reproducible evaluation show that it does what 
 
 ## CLAIM P-003 — "Pāṭala can automatically reconstruct IPVV arguments."
 - **STATUS:** NOT_ESTABLISHED
-- **EVIDENCE (2026-08-12):** 5 real hand-gold arguments now exist (ARG-GOLD-001..005, `benchmarks/v0/structure/`,
-  all `validate_gold`-consistent, `review_state=CANDIDATE`). A **primitive baseline extractor** was run BLIND
-  against them (the CP4 Build-4 gate): **macro proposition P/R/F1 = 0.32/0.42/0.36 · role macro-F1 0.58 ·
-  explicitness macro-F1 0.63 · grounding precision 1.0 · inference recovery 0.0 · inference-scheme F1 0.0**.
-  Immutable run: `benchmarks/v0/runs/2026-08-12T123147Z/`. This is the BASELINE, not a capability.
+- **EVIDENCE (2026-08-12):** 5 real hand-gold arguments exist (ARG-GOLD-001..005, `benchmarks/v0/structure/`,
+  `validate_gold`-consistent, `review_state=CANDIDATE`). A **primitive baseline extractor** was run BLIND
+  against them (the CP4 Build-4 gate). Baseline metric (bounded, `baseline-v0-lexical-proposition-overlap`):
+  **macro lexical-overlap F1 0.36 · role macro-F1 0.58 · explicitness 0.63 · grounding 1.0 · inference
+  recovery 0.0**; on **Task A** (proposition extraction) nodes only, macro F1 ≈ 0.36. Immutable run:
+  `benchmarks/v0/runs/2026-08-12T124709Z/`. This is the BASELINE, not a capability.
 - **CAVEAT:** a sentence-level baseline cannot recover abstract/reconstructed gold propositions (ARG-001 F1 = 0.0)
-  and produces NO inference graph. The golds are `CANDIDATE` — machine-authored, **not yet reviewed by an
-  independent editor**.
-- **REQUIRED to promote:** (a) ARG-GOLD-001..010 hand-adjudicated; (b) a real extractor that beats this baseline
-  (proposition F1 + inference recovery > 0, low false-assertion) on a frozen held-out split; (c) independent
-  review of the gold; (d) abstention on a genuine NO-SAFE-RECONSTRUCTION case (no such gold fixture exists yet).
+  and produces NO inference graph. Golds are `CANDIDATE` — machine-authored, **not yet independently reviewed**.
+  ARG-003's infinite-regress warrant is marked `candidate_reconstruction` pending specialist confirmation;
+  ARG-005 is typed `INTERPRETIVE_SCOPE` (local vs systematic), not an ambiguity. Review protocol:
+  `machinelearning/research/experiments/ARG-GOLD-REVIEW-PROTOCOL.md`.
+- **REQUIRED to promote:** (a) independent editorial review of the 5 golds (the review protocol); (b) a real
+  extractor that beats this baseline (lexical-overlap F1 + inference recovery > 0, low false-assertion) on a
+  frozen held-out split, compared mainly to Task A; (c) abstention on a genuine NO-SAFE-RECONSTRUCTION case.
 
 ## CLAIM P-004 — "The Nyāya gate validates claims."
 - **STATUS:** FROZEN — `NYAYA_GATE_CANDIDATE_v1` (BENCHMARKED_PRELIMINARY, NOT independently validated,
@@ -120,6 +123,26 @@ task, human-grounded gold, and a reproducible evaluation show that it does what 
 - **CAVEAT:** the gold is v0 (21 fixtures, SINGLE_EDITOR review pending). The embedding baseline (0.81)
   is the current floor any real method must beat; the abstention dimension is decisive.
 - **DOES NOT CLAIM:** lexical-sense selection is solved by ranker.py.
+
+---
+
+## CLAIM P-013 — "Pāṭala can propose/resolve L0↔L2 term-anchor alignments as an independently witnessed aid."
+- **STATUS:** SUPPORTED_MACHINE_WITNESS (FROZEN — adequate for its consumer, not a semantic validator)
+- **EVIDENCE:** `pipeline/l0_align.py` over the 35 V2/V3 passages / 105 inline IAST anchors:
+  deterministic aligner resolution recall **0.93**, precision **0.89**, abstention **1.0**; plus an
+  independent Vidyut morphological witness (assigns anchor + L0 lemma a common stem):
+  **0.81 analyzed-only agreement** (38 AGREE / 9 DISAGREE / 52 UNABLE, analyzed_share 0.47).
+  Tests: `pipeline/test_l0_align.py` 26/26. Report: `docs/p4_alignment_eval_report.json`,
+  spec: `docs/P4_ALIGNMENT_SPEC.md`.
+- **CAVEAT:** P4 is **supporting infrastructure**, not a semantic validator. It proposes/re-solves
+  likely anchor↔lemma links; it does **NOT** prove semantic equivalence, translation correctness, or
+  replace human philology. The Vidyut witness covers only ~47% of links (UNABLE = inflected/compound
+  L0 surfaces Vidyut can't parse — honest abstention, never fabricated). The 9 DISAGREE are mostly
+  Vidyut compound-analysis errors, not genuine mismatches.
+- **DOES NOT CLAIM:** perfect Sanskrit semantic alignment; that any link is editorially validated.
+- **FROZEN (per the adequacy doctrine):** do NOT keep tuning for a third analyzer / compound handling /
+  0.81→0.88. Revisit ONLY when a real downstream consumer fails. P4's uncertainty is metadata carried
+  into the proposition certificate, not a blocker.
 
 ---
 

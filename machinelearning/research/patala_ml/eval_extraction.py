@@ -49,7 +49,8 @@ def _gold_node(n: dict) -> dict:
     grounding = n.get("grounding") or n.get("source_support") or {}
     pid = grounding.get("passage_id") or (grounding.get("passage_ids") or [None])[0]
     return {"proposition_id": pid, "text": text, "kind": kind,
-            "explicitness": exp, "grounding": grounding, "resolved_passage": pid}
+            "explicitness": exp, "grounding": grounding, "resolved_passage": pid,
+            "task_level": n.get("task_level")}
 
 
 def _match(preds: list[dict], golds: list[dict]) -> list[dict]:
@@ -83,18 +84,34 @@ def _macro_f1(by_role: dict[str, list[bool]]) -> float:
     return sum(vals) / len(vals) if vals else 0.0
 
 
+def _overlap(preds: list[dict], gold_nodes: list[dict]) -> dict:
+    """Precision/recall/F1 of lexical token-overlap recovery against a (normalized) gold node set."""
+    m = _match(preds, gold_nodes)
+    tp = len(m)
+    fp = len(preds) - tp
+    fn = len(gold_nodes) - tp
+    prec = tp / (tp + fp) if tp + fp else 0.0
+    rec = tp / (tp + fn) if tp + fn else 0.0
+    f1 = 2 * prec * rec / (prec + rec) if prec + rec else 0.0
+    return {"n_gold": len(gold_nodes), "tp": tp, "precision": round(prec, 4),
+            "recall": round(rec, 4), "f1": round(f1, 4)}
+
+
 def evaluate_extraction(preds: list[dict], gold: dict) -> dict:
     """Evaluate one fixture's extraction against its gold. Returns the per-metric dict."""
     gold_nodes = [_gold_node(n) for n in gold.get("nodes", [])]
     matched = _match(preds, gold_nodes)
 
-    # 1. proposition recovery
-    tp = len(matched)
-    fp = len(preds) - tp
-    fn = len(gold_nodes) - tp
-    prec = tp / (tp + fp) if tp + fp else 0.0
-    rec = tp / (tp + fn) if tp + fn else 0.0
-    prop_f1 = 2 * prec * rec / (prec + rec) if prec + rec else 0.0
+    # 1. proposition recovery (FULL gold) — the baseline metric (bounded: see `metric_family`)
+    ov = _overlap(preds, gold_nodes)
+    prec, rec, prop_f1 = ov["precision"], ov["recall"], ov["f1"]
+
+    # 1b. Task-A-only recovery (the reviewer's key point: an extractor should be compared mainly to
+    #     what is explicitly/reconstructably present, NOT to reconstruction/interpretation nodes)
+    a_nodes = [g for g in gold_nodes
+               if (g.get("task_level") or "A_PROPOSITION_EXTRACTION") == "A_PROPOSITION_EXTRACTION"]
+    ov_a = _overlap(preds, a_nodes) if a_nodes else None
+    task_a = ov_a if ov_a else {"n_gold": 0, "tp": 0, "precision": 0.0, "recall": 0.0, "f1": 0.0}
 
     # 2. role classification (macro F1 over the roles present in the matched set)
     role_flags: dict[str, list[bool]] = {}
@@ -131,9 +148,11 @@ def evaluate_extraction(preds: list[dict], gold: dict) -> dict:
     false_assertion = sum(1 for p in preds if not p.get("abstain"))
 
     return {
-        "proposition_precision": round(prec, 4),
-        "proposition_recall": round(rec, 4),
-        "proposition_f1": round(prop_f1, 4),
+        "lexical_proposition_overlap_precision": round(prec, 4),
+        "lexical_proposition_overlap_recall": round(rec, 4),
+        "lexical_proposition_overlap_f1": round(prop_f1, 4),
+        "task_a_lexical_overlap_f1": task_a["f1"],
+        "task_a_n_gold": task_a["n_gold"],
         "role_macro_f1": round(role_f1, 4),
         "explicitness_macro_f1": round(exp_f1, 4),
         "grounding_precision": round(grounding_prec, 4),
@@ -144,16 +163,18 @@ def evaluate_extraction(preds: list[dict], gold: dict) -> dict:
         "false_assertions": false_assertion,
         "n_gold_nodes": len(gold_nodes),
         "n_preds": len(preds),
-        "n_matched": tp,
+        "n_matched": ov["tp"],
     }
 
 
 def summarize(results: dict[str, dict]) -> dict:
     """Macro-average the per-fixture metrics into one honest summary (per-metric, no aggregate)."""
-    keys = ["proposition_precision", "proposition_recall", "proposition_f1", "role_macro_f1",
+    keys = ["lexical_proposition_overlap_precision", "lexical_proposition_overlap_recall", "lexical_proposition_overlap_f1",
+            "task_a_lexical_overlap_f1", "role_macro_f1",
             "explicitness_macro_f1", "grounding_precision", "inference_recovery",
             "inference_scheme_macro_f1", "scope_fidelity_error_rate"]
-    out = {"n_fixtures": len(results)}
+    out = {"n_fixtures": len(results), "metric_family": "baseline-v0-lexical-proposition-overlap",
+           "metric_binding": "This is the PRIMITIVE BASELINE metric only. It is a lexical token-overlap proxy and is NOT the real benchmark definition; never optimize models against it. Real proposition recovery must be a multi-view bipartite match (lexical + entailment/paraphrase + role + scope + grounding). Scope/modality must survive."}
     for k in keys:
         vals = [r[k] for r in results.values() if k in r]
         out[k] = round(sum(vals) / len(vals), 4) if vals else 0.0

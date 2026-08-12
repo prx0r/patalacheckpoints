@@ -31,6 +31,7 @@ def build_gold_003() -> dict:
     nodes = [
         # the reductio hypothesis (assumed for argument, NOT asserted as Abhinava's own view)
         {"proposition_id": "G3-ASSUM",
+         "task_level": "B_ARGUMENT_RECONSTRUCTION", "candidate_reconstruction": True,
          "text": "The support (āśraya) of the powers is itself a member of the ordered sequence — it is ordered.",
          "kind": "IMPLICIT_PREMISE", "explicitness": "RECONSTRUCTED",
          "commitment": "ASSUMES_FOR_ARGUMENT", "derived_from": "implicit",
@@ -39,30 +40,35 @@ def build_gold_003() -> dict:
          "status": "MACHINE_PROPOSED"},
         # the textual basis: pratibhā bears the order
         {"proposition_id": "G3-TC1",
+         "task_level": "A_PROPOSITION_EXTRACTION",
          "text": "pratibhā (the flashing) runs through / bears the order of the word-objects (tattatpadārthakramarūṣitā).",
          "kind": "TEXTUAL_CLAIM", "explicitness": "EXPLICIT",
          "commitment": "ASSERTS", "derived_from": "Sanskrit (kārikā 1)",
          "grounding": _grounding(), "boundary": "", "status": "MACHINE_PROPOSED"},
         # the textual basis: pratibhā is itself not ordered
         {"proposition_id": "G3-TC2",
+         "task_level": "A_PROPOSITION_EXTRACTION",
          "text": "pratibhā is not itself constituted by that order (akrama — order-less).",
          "kind": "TEXTUAL_CLAIM", "explicitness": "EXPLICIT",
          "commitment": "ASSERTS", "derived_from": "Sanskrit (kārikā 1)",
          "grounding": _grounding(), "boundary": "", "status": "MACHINE_PROPOSED"},
         # the regress principle (the reductio's engine — suppressed)
         {"proposition_id": "G3-REG",
+         "task_level": "B_ARGUMENT_RECONSTRUCTION", "candidate_reconstruction": True,
          "text": "If a support of order were itself ordered, it would require a further support of its own ordering — an infinite regress.",
          "kind": "IMPLICIT_PREMISE", "explicitness": "IMPLICIT",
          "commitment": "ASSERTS", "derived_from": "implicit (the regress argument)",
          "grounding": _grounding(), "boundary": "", "status": "MACHINE_PROPOSED"},
         # the absurd consequence drawn from the hypothesis
         {"proposition_id": "G3-ABS",
+         "task_level": "B_ARGUMENT_RECONSTRUCTION", "candidate_reconstruction": True,
          "text": "If the support were ordered, an infinite regress of ordered supports would follow — which is absurd.",
          "kind": "CONCLUSION", "explicitness": "RECONSTRUCTED",
          "commitment": "ASSERTS", "derived_from": "REDUCTIO over G3-ASSUM + G3-REG",
          "grounding": _grounding(), "boundary": "", "status": "MACHINE_PROPOSED"},
         # the textual conclusion the C1 states (support is not a member of the order)
         {"proposition_id": "G3-TC3",
+         "task_level": "A_PROPOSITION_EXTRACTION",
          "text": "The support (āśraya) of the powers is not itself a member of the ordered sequence.",
          "kind": "TEXTUAL_CLAIM", "explicitness": "RECONSTRUCTED",
          "commitment": "ASSERTS", "derived_from": "C1 (the support is not ordered)",
@@ -71,6 +77,7 @@ def build_gold_003() -> dict:
          "status": "MACHINE_PROPOSED"},
         # the final conclusion of the reductio
         {"proposition_id": "G3-CONC",
+         "task_level": "A_PROPOSITION_EXTRACTION",
          "text": "The support of ordered presentation is itself order-less (akrama) — the order-less, infinite-consciousness-form knower.",
          "kind": "CONCLUSION", "explicitness": "RECONSTRUCTED",
          "commitment": "ASSERTS", "derived_from": "source + REDUCTIO",
@@ -79,6 +86,7 @@ def build_gold_003() -> dict:
          "status": "MACHINE_PROPOSED"},
         # the interpretive identification
         {"proposition_id": "G3-IC1",
+         "task_level": "C_SYSTEMATIC_INTERPRETATION",
          "text": "Abhinavagupta identifies this order-less support with the knower (pramātṛ), the great Lord.",
          "kind": "INTERPRETIVE_CLAIM", "explicitness": "RECONSTRUCTED",
          "commitment": "ASSERTS", "derived_from": "C1 (interpretive identification)",
@@ -88,6 +96,7 @@ def build_gold_003() -> dict:
     inferences = [
         # the reductio step: assume the support is ordered → regress
         {"inference_id": "G3-INF-RED",
+         "task_level": "B_ARGUMENT_RECONSTRUCTION", "candidate_reconstruction": True,
          "premise_ids": ["G3-ASSUM", "G3-REG"],
          "conclusion_ids": ["G3-ABS"],
          "scheme": "REDUCTIO",
@@ -95,6 +104,7 @@ def build_gold_003() -> dict:
          "defeaters": [], "status": "MACHINE_PROPOSED"},
         # the textual basis + the reductio jointly establish that the support is not ordered
         {"inference_id": "G3-INF-RES",
+         "task_level": "A_PROPOSITION_EXTRACTION",
          "premise_ids": ["G3-TC1", "G3-TC2", "G3-ABS"],
          "conclusion_ids": ["G3-TC3"],
          "scheme": "REDUCTIO",
@@ -102,6 +112,7 @@ def build_gold_003() -> dict:
          "defeaters": [], "status": "MACHINE_PROPOSED"},
         # the general conclusion
         {"inference_id": "G3-INF-CONC",
+         "task_level": "A_PROPOSITION_EXTRACTION",
          "premise_ids": ["G3-TC3", "G3-ABS"],
          "conclusion_ids": ["G3-CONC"],
          "scheme": "REDUCTIO",
@@ -109,6 +120,7 @@ def build_gold_003() -> dict:
          "defeaters": [], "status": "MACHINE_PROPOSED"},
         # the interpretive step
         {"inference_id": "G3-INF-IC",
+         "task_level": "C_SYSTEMATIC_INTERPRETATION",
          "premise_ids": ["G3-TC3"],
          "conclusion_ids": ["G3-IC1"],
          "scheme": "INTERPRETIVE_CLAIM",
@@ -126,6 +138,18 @@ def build_gold_003() -> dict:
     }
 
     research_question = "Can the support of the ordered powers itself be ordered?"
+
+    review_note = {
+        "SAFE_GOLD": "pratibhā bears order + pratibhā is akrama -> the support is not exhausted by the order it supports. This is the extraction target (task_level A).",
+        "STRONG_RECONSTRUCTION": "if the support itself belonged to the order -> a further support would be required -> regress -> therefore the support is akrama. The regress warrant (G3-REG, G3-ABS, G3-INF-RED) is marked candidate_reconstruction and is NOT a required extraction target until a specialist confirms the regress is the intended warrant.",
+        "status": "MACHINE_PROPOSED",
+    }
+
+    review_note = {
+        "SAFE_GOLD": "pratibhā bears order + pratibhā is akrama -> the support is not exhausted by the order it supports. This is the extraction target (task_level A).",
+        "STRONG_RECONSTRUCTION": "if the support itself belonged to the order -> a further support would be required -> regress -> therefore the support is akrama. The regress warrant (G3-REG, G3-ABS, G3-INF-RED) is marked candidate_reconstruction and is NOT a required extraction target until a specialist confirms the regress is the intended warrant.",
+        "status": "MACHINE_PROPOSED",
+    }
 
     debate_frame = {
         "question": research_question,
@@ -151,6 +175,7 @@ def build_gold_003() -> dict:
         "passage": V2O_PASSAGE_ID,
         "title": "The Order-less Support by Reductio (V2-O)",
         "structure": "REDUCTIO",
+        "review_note": review_note,
         "research_question": research_question,
         "nodes": nodes,
         "inferences": inferences,

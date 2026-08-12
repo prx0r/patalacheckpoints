@@ -49,9 +49,12 @@ def main():
     # 2. immutable run record
     print("\n== immutable run record ==")
     runs = glob.glob("/root/projects/patala/benchmarks/v0/runs/*/metrics.json")
-    check("a run record exists", len(runs) >= 1)
-    if runs:
-        d = json.load(open(runs[0]))
+    # runs/ may hold runs of different task types (retrieval, extraction, ...) append-only.
+    # This test validates the RETRIEVAL rebaseline run specifically (it has 'results.retrievers').
+    ret_runs = [r for r in runs if "retrievers" in json.load(open(r)).get("results", {})]
+    check("a retrieval run record exists", len(ret_runs) >= 1)
+    if ret_runs:
+        d = json.load(open(ret_runs[0]))
         for k in ["run_id", "benchmark_version", "split_policy", "config", "git_commit", "results"]:
             check(f"run has {k}", k in d)
         check("benchmark_version is v0", d.get("benchmark_version") == "v0")

@@ -1,9 +1,12 @@
 {
   "metrics": {
     "n_fixtures": 5,
-    "proposition_precision": 0.3175,
-    "proposition_recall": 0.4183,
-    "proposition_f1": 0.3563,
+    "metric_family": "baseline-v0-lexical-proposition-overlap",
+    "metric_binding": "This is the PRIMITIVE BASELINE metric only. It is a lexical token-overlap proxy and is NOT the real benchmark definition; never optimize models against it. Real proposition recovery must be a multi-view bipartite match (lexical + entailment/paraphrase + role + scope + grounding). Scope/modality must survive.",
+    "lexical_proposition_overlap_precision": 0.3175,
+    "lexical_proposition_overlap_recall": 0.4183,
+    "lexical_proposition_overlap_f1": 0.3563,
+    "task_a_lexical_overlap_f1": 0.3245,
     "role_macro_f1": 0.5833,
     "explicitness_macro_f1": 0.6333,
     "grounding_precision": 1.0,
@@ -15,9 +18,11 @@
   },
   "per_fixture": {
     "PAT-STRUCT-001": {
-      "proposition_precision": 0.0,
-      "proposition_recall": 0.0,
-      "proposition_f1": 0.0,
+      "lexical_proposition_overlap_precision": 0.0,
+      "lexical_proposition_overlap_recall": 0.0,
+      "lexical_proposition_overlap_f1": 0.0,
+      "task_a_lexical_overlap_f1": 0.0,
+      "task_a_n_gold": 6,
       "role_macro_f1": 0.0,
       "explicitness_macro_f1": 0.0,
       "grounding_precision": 1.0,
@@ -31,9 +36,11 @@
       "n_matched": 0
     },
     "PAT-STRUCT-002": {
-      "proposition_precision": 0.5714,
-      "proposition_recall": 0.6667,
-      "proposition_f1": 0.6154,
+      "lexical_proposition_overlap_precision": 0.5714,
+      "lexical_proposition_overlap_recall": 0.6667,
+      "lexical_proposition_overlap_f1": 0.6154,
+      "task_a_lexical_overlap_f1": 0.6154,
+      "task_a_n_gold": 6,
       "role_macro_f1": 0.8333,
       "explicitness_macro_f1": 0.8333,
       "grounding_precision": 1.0,
@@ -47,9 +54,11 @@
       "n_matched": 4
     },
     "PAT-STRUCT-003": {
-      "proposition_precision": 0.1429,
-      "proposition_recall": 0.125,
-      "proposition_f1": 0.1333,
+      "lexical_proposition_overlap_precision": 0.1429,
+      "lexical_proposition_overlap_recall": 0.125,
+      "lexical_proposition_overlap_f1": 0.1333,
+      "task_a_lexical_overlap_f1": 0.1818,
+      "task_a_n_gold": 4,
       "role_macro_f1": 1.0,
       "explicitness_macro_f1": 1.0,
       "grounding_precision": 1.0,
@@ -63,9 +72,11 @@
       "n_matched": 1
     },
     "PAT-STRUCT-004": {
-      "proposition_precision": 0.4286,
-      "proposition_recall": 0.5,
-      "proposition_f1": 0.4615,
+      "lexical_proposition_overlap_precision": 0.4286,
+      "lexical_proposition_overlap_recall": 0.5,
+      "lexical_proposition_overlap_f1": 0.4615,
+      "task_a_lexical_overlap_f1": 0.3636,
+      "task_a_n_gold": 4,
       "role_macro_f1": 0.25,
       "explicitness_macro_f1": 0.5,
       "grounding_precision": 1.0,
@@ -79,9 +90,11 @@
       "n_matched": 3
     },
     "PAT-STRUCT-005": {
-      "proposition_precision": 0.4444,
-      "proposition_recall": 0.8,
-      "proposition_f1": 0.5714,
+      "lexical_proposition_overlap_precision": 0.4444,
+      "lexical_proposition_overlap_recall": 0.8,
+      "lexical_proposition_overlap_f1": 0.5714,
+      "task_a_lexical_overlap_f1": 0.4615,
+      "task_a_n_gold": 4,
       "role_macro_f1": 0.8333,
       "explicitness_macro_f1": 0.8333,
       "grounding_precision": 1.0,

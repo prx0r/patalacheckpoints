@@ -85,8 +85,11 @@ def main():
     summary = summarize(results)
 
     print("PRIMITIVE EXTRACTOR — BLIND vs ARG-GOLD (BASELINE, not a capability)\n")
+    print("  Compared primarily to Task A (proposition extraction). Gold nodes tagged task_level="
+          "B/C (reconstruction/interpretation) are NOT expected to be extracted from the C1 body alone.\n")
     for fid, r in results.items():
-        print(f"  {fid}: prop P/R/F1={r['proposition_precision']}/{r['proposition_recall']}/{r['proposition_f1']}"
+        print(f"  {fid}: overlap P/R/F1={r['lexical_proposition_overlap_precision']}/{r['lexical_proposition_overlap_recall']}/{r['lexical_proposition_overlap_f1']}"
+              f"  TaskA-F1={r['task_a_lexical_overlap_f1']}(n={r['task_a_n_gold']})"
               f"  roleF1={r['role_macro_f1']}  expF1={r['explicitness_macro_f1']}"
               f"  ground={r['grounding_precision']}  infRec={r['inference_recovery']}"
               f"  scopeErr={r['scope_fidelity_error_rate']}  n_preds={r['n_preds']}")
@@ -104,8 +107,10 @@ def main():
     except Exception:
         commit = "unknown"
     json.dump({"benchmark": "PATALA-BENCH-v0", "gold": "ARG-GOLD-001..005",
-               "task": "ARGUMENT_EXTRACTION", "method": "primitive-baseline-v1",
-               "blind": True, "generated": ts}, open(os.path.join(run_dir, "benchmark_version.json"), "w"), indent=2)
+               "task": "ARGUMENT_EXTRACTION", "task_compared": "A_PROPOSITION_EXTRACTION",
+               "method": "primitive-baseline-v1", "blind": True, "generated": ts,
+               "status": "COMPLETED"},
+              open(os.path.join(run_dir, "benchmark_version.json"), "w"), indent=2)
     json.dump({"split": "EVALUATION_ONLY", "train_use": False,
                "note": "all fixtures EVALUATION_ONLY; single-passage, no held-out split yet"},
               open(os.path.join(run_dir, "split_manifest.json"), "w"), indent=2)

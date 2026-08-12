@@ -2,7 +2,9 @@
   "benchmark": "PATALA-BENCH-v0",
   "gold": "ARG-GOLD-001..005",
   "task": "ARGUMENT_EXTRACTION",
+  "task_compared": "A_PROPOSITION_EXTRACTION",
   "method": "primitive-baseline-v1",
   "blind": true,
-  "generated": "2026-08-12T123147Z"
+  "generated": "2026-08-12T124709Z",
+  "status": "COMPLETED"
 }

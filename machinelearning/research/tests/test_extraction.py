@@ -32,7 +32,7 @@ preds = [{"proposition_id": n.get("proposition_id"), "text": n["text"], "kind": 
           "explicitness": n.get("explicitness"), "grounding": {"passage_id": n["grounding"]["passage_id"]},
           "abstain": False} for n in gold["nodes"]]
 r = evaluate_extraction(preds, gold)
-check("gold-vs-gold proposition F1 = 1.0", r["proposition_f1"] == 1.0, str(r["proposition_f1"]))
+check("gold-vs-gold proposition F1 = 1.0", r["lexical_proposition_overlap_f1"] == 1.0, str(r["lexical_proposition_overlap_f1"]))
 check("gold-vs-gold grounding precision = 1.0", r["grounding_precision"] == 1.0, str(r["grounding_precision"]))
 
 print("\n== baseline honesty: recovers SOME content but NO inference graph ==")
@@ -40,7 +40,7 @@ preds_b = [{"proposition_id": "X0", "text": "The powers need a support.",
             "kind": "TEXTUAL_CLAIM", "explicitness": "EXPLICIT",
             "grounding": {"passage_id": "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md"}, "abstain": False}]
 r2 = evaluate_extraction(preds_b, build_gold_002())
-check("baseline gets non-negative recall", r2["proposition_recall"] >= 0.0)
+check("baseline gets non-negative recall", r2["lexical_proposition_overlap_recall"] >= 0.0)
 check("baseline recovers NO inference graph (honest)", r2["inference_recovery"] == 0.0)
 check("inference-scheme F1 = 0 for no-inference baseline", r2["inference_scheme_macro_f1"] == 0.0)
 

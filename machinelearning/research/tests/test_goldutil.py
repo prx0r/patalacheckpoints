@@ -16,6 +16,9 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from patala_ml.gold import build_gold_v0
 from patala_ml.gold002 import build_gold_002
+from patala_ml.gold003 import build_gold_003
+from patala_ml.gold004 import build_gold_004
+from patala_ml.gold005 import build_gold_005
 from patala_ml.goldutil import wrap_fixture, validate_gold
 
 PASS = 0
@@ -77,6 +80,40 @@ def main():
     bad2["inferences"][0]["premise_ids"].append("GHOST")
     r2 = validate_gold(bad2)
     check("catches missing premise", not r2["ok"], r2["problems"])
+
+    # 5. structural well-formedness checks (type/integrity ONLY — never semantics)
+    print("\n== well-formedness (structural, not semantic) ==")
+    g3 = build_gold_003()
+    check("ARG-003 (reductio) well-formed", validate_gold(g3)["ok"], validate_gold(g3)["problems"])
+    g4 = build_gold_004()
+    check("ARG-004 (conceptual distinction) well-formed", validate_gold(g4)["ok"], validate_gold(g4)["problems"])
+    g5 = build_gold_005()
+    check("ARG-005 (interpretive scope) well-formed", validate_gold(g5)["ok"], validate_gold(g5)["problems"])
+
+    # invalid commitment is caught (integrity, not correctness)
+    bad3 = build_gold_003()
+    bad3["nodes"][0]["commitment"] = "EVERYONE_KNOWS"
+    check("catches invalid commitment enum", not validate_gold(bad3)["ok"])
+    # invalid task_level is caught
+    bad3b = build_gold_003()
+    bad3b["nodes"][0]["task_level"] = "Z_EXTRACTION_EVERYTHING"
+    check("catches invalid task_level enum", not validate_gold(bad3b)["ok"])
+    # dangling derived_from node-ref is caught
+    bad4 = build_gold_004()
+    bad4["nodes"][0]["derived_from"] = "G4-TC1 + G4-GHOST"
+    check("catches dangling derived_from ref", not validate_gold(bad4)["ok"])
+    # position proposition_id that does not resolve is caught
+    bad5 = build_gold_005()
+    bad5["debate_frame"]["positions"][0]["proposition_ids"] = ["G5-NOPE"]
+    check("catches position proposition that does not resolve", not validate_gold(bad5)["ok"])
+    # invalid alignment level is caught
+    bad5b = build_gold_005()
+    bad5b["debate_frame"]["semantic_alignments"][0]["level"] = "ETYMOLOGICAL"
+    check("catches invalid alignment level enum", not validate_gold(bad5b)["ok"])
+    # invalid support_scope is caught
+    bad5c = build_gold_005()
+    bad5c["debate_frame"]["positions"][0]["support_scope"] = ["EVERYWHERE"]
+    check("catches invalid support_scope enum", not validate_gold(bad5c)["ok"])
 
     print(f"\n=== RESULT: {PASS} pass / {FAIL} fail ===")
     sys.exit(1 if FAIL else 0)

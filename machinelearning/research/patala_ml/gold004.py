@@ -29,11 +29,13 @@ def build_gold_004() -> dict:
     """ARG-GOLD-004 — the conceptual distinction (V2-H): prakāśa ≠ vimarśa."""
     nodes = [
         {"proposition_id": "G4-TC1",
+         "task_level": "A_PROPOSITION_EXTRACTION",
          "text": "Manifestation (prakāśa) is not a passive, inert light; it shows the world.",
          "kind": "TEXTUAL_CLAIM", "explicitness": "EXPLICIT",
          "commitment": "ASSERTS", "derived_from": "L2/C1 (the manifestation is not inert)",
          "grounding": _grounding(), "boundary": "", "status": "MACHINE_PROPOSED"},
         {"proposition_id": "G4-CRYSTAL",
+         "task_level": "A_PROPOSITION_EXTRACTION",
          "text": "A light that merely showed the world without knowing that it showed it would be no different from crystal — it would reflect, but be inert.",
          "kind": "TEXTUAL_CLAIM", "explicitness": "EXPLICIT",
          "commitment": "ASSERTS", "derived_from": "C1 (the crystal contrast)",
@@ -41,11 +43,13 @@ def build_gold_004() -> dict:
          "boundary": "the crystal is the inert contrast, not the subject of the doctrine",
          "status": "MACHINE_PROPOSED"},
         {"proposition_id": "G4-DIST",
+         "task_level": "B_ARGUMENT_RECONSTRUCTION",
          "text": "Bare showing (prakāśa alone) is distinct from self-aware manifesting; the distinguishing mark is self-awareness in the act (vimarśa).",
          "kind": "TEXTUAL_CLAIM", "explicitness": "RECONSTRUCTED",
          "commitment": "ASSERTS", "derived_from": "L2 (showing ≠ knowing-it-shows)",
          "grounding": _grounding(), "boundary": "", "status": "MACHINE_PROPOSED"},
         {"proposition_id": "G4-TC2",
+         "task_level": "A_PROPOSITION_EXTRACTION",
          "text": "The essence of light is the reflexive-awareness (vimarśa) — the light's own grasp of itself in the act of manifesting.",
          "kind": "TEXTUAL_CLAIM", "explicitness": "EXPLICIT",
          "commitment": "ASSERTS", "derived_from": "C1/L2 (vimarśa as the essence)",
@@ -53,11 +57,13 @@ def build_gold_004() -> dict:
          "boundary": "the reflexivity claim is established; the full powers/lordship account is developed in later vimarśas",
          "status": "MACHINE_PROPOSED"},
         {"proposition_id": "G4-CONC",
+         "task_level": "A_PROPOSITION_EXTRACTION",
          "text": "What makes the light conscious (rather than a thing) is that it is aware of itself in the very act of manifesting.",
          "kind": "CONCLUSION", "explicitness": "RECONSTRUCTED",
          "commitment": "ASSERTS", "derived_from": "CONCEPTUAL_DISTINCTION over G4-DIST + G4-TC2",
          "grounding": _grounding(), "boundary": "", "status": "MACHINE_PROPOSED"},
         {"proposition_id": "G4-IC1",
+         "task_level": "C_SYSTEMATIC_INTERPRETATION",
          "text": "Abhinavagupta identifies this self-knowing with the supreme speech (parā-vāk) and with the Lord's freedom (svātantrya) and lordship (aiśvarya).",
          "kind": "INTERPRETIVE_CLAIM", "explicitness": "RECONSTRUCTED",
          "commitment": "ASSERTS", "derived_from": "C1 (the identification with the Word)",
@@ -74,14 +80,7 @@ def build_gold_004() -> dict:
          "scheme": "CONCEPTUAL_DISTINCTION",
          "rationale": "If manifestation were only bare showing (G4-TC1), it would be like crystal — it would reflect but not know it reflected (G4-CRYSTAL). Hence bare showing is distinct from self-aware manifesting (G4-DIST).",
          "defeaters": [], "status": "MACHINE_PROPOSED"},
-        # the essence: the distinguishing mark is vimarśa
-        {"inference_id": "G4-INF-ESS",
-         "premise_ids": ["G4-DIST", "G4-TC1"],
-         "conclusion_ids": ["G4-TC2"],
-         "scheme": "CONCEPTUAL_DISTINCTION",
-         "rationale": "Since the essence of light is not the bare showing (G4-DIST), and manifestation is not inert (G4-TC1), the essence is the reflexive-awareness itself (G4-TC2).",
-         "defeaters": [], "status": "MACHINE_PROPOSED"},
-        # the conclusion
+        # the conclusion (G4-TC2 is TEXTUALLY asserted by the C1, not derived here)
         {"inference_id": "G4-INF-CONC",
          "premise_ids": ["G4-TC2", "G4-DIST"],
          "conclusion_ids": ["G4-CONC"],
@@ -107,6 +106,11 @@ def build_gold_004() -> dict:
     }
 
     research_question = "Is the essence of light bare showing (prakāśa) or reflexive awareness (vimarśa)?"
+
+    review_note = {
+        "ESSENCE_IS_TEXTUAL": "G4-TC2 (vimarśa is the essence) is TEXTUALLY asserted by the C1 ('the claim is that the essence of light is the reflexive awareness... it is the manifestation's own nature'), NOT inferred from G4-DIST. So no exhaustiveness premise (a third feature accounting for non-inert manifestation) is smuggled in. If a reviewer disagrees that the C1 asserts the essence, G4-TC2 should be demoted to task_level B and its warrant re-examined.",
+        "status": "MACHINE_PROPOSED",
+    }
 
     debate_frame = {
         "question": research_question,
@@ -136,6 +140,7 @@ def build_gold_004() -> dict:
         "passage": V2H_PASSAGE_ID,
         "title": "The Essence of Light: prakāśa vs vimarśa (V2-H)",
         "structure": "CONCEPTUAL_DISTINCTION",
+        "review_note": review_note,
         "research_question": research_question,
         "nodes": nodes,
         "inferences": inferences,

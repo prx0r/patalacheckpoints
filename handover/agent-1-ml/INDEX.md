@@ -38,8 +38,11 @@ Built this session:
   ARG-004  conceptual-distinction  (vimarśa vs prakāśa, V2-H, 6/4)                 ✅
   ARG-005  ambiguous               (two readings of "difference is real", V3-I,     ✅
             5/3, 2 Positions + 3-level SemanticAlignment)
-  Build 4  primitive extractor run BLIND against all 5 golds → BenchmarkRun        ✅
-            (proposition F1 0.36, inference recovery 0.0 = the baseline to beat)
+  Build 4  primitive extractor run BLIND vs all 5 golds → BenchmarkRun                        ✅
+            (baseline lexical-overlap F1 0.36, inference recovery 0.0; compared mainly to Task A)
+            metric is BOUNDED as baseline-v0 (not the real benchmark definition)
+Review pass fixtures per ARG-GOLD-REVIEW-PROTOCOL (ARG-003 regress, ARG-004 essence,
+            ARG-005 scope) — golds are MACHINE_PROPOSED/CANDIDATE, NOT yet independently reviewed.
 Honest status: golds are MACHINE_PROPOSED/CANDIDATE — NOT yet independently reviewed.
 ```
 Next in order: (1) independent review of the 5 golds, (2) a real extractor that beats the
