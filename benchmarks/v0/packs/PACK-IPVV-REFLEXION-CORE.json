@@ -1,0 +1,85 @@
+{
+  "pack_id": "PACK-IPVV-REFLEXION-CORE",
+  "pack_kind": "ResearchPack",
+  "title": "The Reflexion-Core: the determination cannot reach outside",
+  "research_question": "Can the determination (adhyavasāya) establish an external object, or is the self-experience self-luminous and self-contained?",
+  "thesis": {
+    "text": "The determination cannot establish anything outside: the self-experience (vimarśa) is self-luminous, un-divided from memory-cognition, and all cognition is its own shining.",
+    "status": "MACHINE_PROPOSED"
+  },
+
+  "scope": {
+    "works": ["IPVV"],
+    "passages": ["pt:passage:ipvv:chunkM-jnanadhikara-reflexion-core.md"]
+  },
+
+  "theme_refs": [
+    "cand_reflexive",
+    "cand_construction",
+    "cand_aham"
+  ],
+
+  "argument_refs": [
+    "ARG-GOLD-002",
+    "ARG-GOLD-004"
+  ],
+
+  "proposition_refs": [
+    "G2-TC2", "G2-CONC", "G4-CRYSTAL", "G4-CONC"
+  ],
+
+  "evidence_refs": [
+    {"kind": "PRIMARY_L2", "ref": "chunkM-jnanadhikara-reflexion-core", "passage": "pt:passage:ipvv:chunkM-jnanadhikara-reflexion-core.md"},
+    {"kind": "PRIMARY_SANSKRIT", "ref": "Ipk_1,6.1", "span": "chunkV2-L-sastho-vimarsa-smrti-apohana:L28:T87", "relation": "SUPPORTS", "target": "G2-TC2"},
+    {"kind": "PRIMARY_SANSKRIT", "ref": "Ipk_1,5.11", "span": "chunkV2-H-pancamo-vimarsa-k11-13:L9:T23", "relation": "SUPPORTS", "target": "G4-CRYSTAL"},
+    {"kind": "SCHOLAR", "ref": "vimarśa dossier (saivamap)", "relation": "SUPPORTS", "target": "G4-CRYSTAL"}
+  ],
+
+  "rival_readings": [
+    {"reading": "The determination establishes a real external object (the Buddhist fallback)", "held_by": "Buddhist (adhyavasāya)", "relation": "CONTRADICTS", "target": "G2-CONC"},
+    {"reading": "The 'external' is merely the strength of the practice-impression, not a thing established", "held_by": "siddhānta (Abhinavagupta)", "relation": "SUPPORTS", "target": "G2-CONC"},
+    {"reading": "Establishing is in the self; experience is self-luminous, not a thing that reaches a thing", "held_by": "siddhānta", "relation": "SUPPORTS", "target": "G4-CONC"}
+  ],
+
+  "cruxes": [
+    {"crux_id": "CRUX-REFLEXION-INERT", "question": "Can an inert thing (the determination's object-form) establish anything, or does establishment require the self-luminous non-inert?", "status": "OPEN"}
+  ],
+
+  "open_questions": [
+    "Is the 'external' appearance merely a drawing-by-impression, or does it have independent standing in any part of the cognition?",
+    "Does the reflexion-core's 'one, self-luminous, all' commit to the universal-Self (V2C), or only to per-act self-luminosity?"
+  ],
+
+  "dependency_graph": [
+    {"child": "PACK-IPVV-REFLEXION-CORE", "edge": "depends_on", "parent": "chunkM-jnanadhikara-reflexion-core"},
+    {"child": "PACK-IPVV-REFLEXION-CORE", "edge": "depends_on", "parent": "ARG-GOLD-002"},
+    {"child": "PACK-IPVV-REFLEXION-CORE", "edge": "depends_on", "parent": "ARG-GOLD-004"},
+    {"child": "ARG-GOLD-002", "edge": "depends_on", "parent": "G2-CONC"},
+    {"child": "ARG-GOLD-004", "edge": "depends_on", "parent": "G4-CONC"},
+    {"child": "G2-CONC", "edge": "grounded_in", "parent": "Ipk_1,6.1"},
+    {"child": "G4-CRYSTAL", "edge": "grounded_in", "parent": "Ipk_1,5.11"},
+    {"child": "G2-CONC", "edge": "supported_by", "parent": "chunkM reflexion-core (determination cannot reach outside)"}
+  ],
+
+  "review_summary": {
+    "composition": "COMPLETE",
+    "source_grounding": "COMPLETE",
+    "argument_review": "CANDIDATE",
+    "themes": "MACHINE_PROPOSED",
+    "scholarly_review": "NONE",
+    "engineering_validated": true,
+    "scholarly_validated": false
+  },
+
+  "renderings": {
+    "essay": null,
+    "argument_map": "benchmarks/v0/structure/PAT-STRUCT-002.json",
+    "source_passage": "data/published/ipvv/pt-passage-ipvv-chunkM-jnanadhikara-reflexion-core-md.json"
+  },
+
+  "provenance": {
+    "created_by": "agent1",
+    "created_at": "2026-08-12",
+    "note": "Composition/projection layer only. Connects a REAL published IPVV passage (chunkM) to the argument golds it bears on. Does NOT invent truth, promote claims, or replace underlying objects."
+  }
+}

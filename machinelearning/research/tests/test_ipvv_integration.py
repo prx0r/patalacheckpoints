@@ -129,5 +129,21 @@ if os.path.exists(pack_path):
     essay = pack["renderings"]["essay"]
     check("pack essay rendering references the real essay", "ESSAY-NONCONSTRUCTED-I" in essay)
 
+# also validate the reflexion-core pack (the second ResearchPack on a real IPVV passage)
+rc_path = os.path.join(ROOT, "benchmarks/v0/packs/PACK-IPVV-REFLEXION-CORE.json")
+check("reflexion-core ResearchPack exists", os.path.exists(rc_path))
+if os.path.exists(rc_path):
+    from check_research_pack import check_pack
+    r = check_pack(rc_path)
+    check("reflexion-core pack well-formed", r["ok"], str(r["problems"]))
+    rc = json.load(open(rc_path))
+    g4 = build_gold_004()
+    g4_ids = {n.get("proposition_id") for n in g4["nodes"]}
+    check("reflexion-core pack references real ARG-004 props (G4-CRYSTAL/G4-CONC)",
+          {"G4-CRYSTAL", "G4-CONC"} <= g4_ids)
+    check("reflexion-core pack points to a real published passage",
+          os.path.exists(os.path.join(ROOT, "data/published/ipvv",
+                         "pt-passage-ipvv-chunkM-jnanadhikara-reflexion-core-md.json")))
+
 print("\n" + ("RESULT: FAIL" if failures else "RESULT: PASS (IPVV integration: gate + viruddha + golds + pack connected)"))
 sys.exit(1 if failures else 0)
