@@ -24,7 +24,7 @@ from agent3_batch import load_raw_source, split_verses
 from raw_l0 import raw_l0
 from l0_registry import commit_l0, l0_versions, summary as registry_summary
 from corpus_state import next_valid_action, WorkState
-from translation_targets import order_queue, priority_label
+from translation_targets import order_queue, priority_label, all_targets, priority, tier, status
 
 LEDGER_PATH = "/root/projects/patala/data/corpus/downloads/translation-state-ledger.json"
 QUEUE_STATE_PATH = "/root/projects/patala/data/corpus/downloads/agent3-queue-state.json"
@@ -113,7 +113,14 @@ if __name__ == "__main__":
     ap.add_argument("--max-verses", type=int, default=5)
     ap.add_argument("--by", default="agent3")
     ap.add_argument("--list", action="store_true", help="list eligible works")
+    ap.add_argument("--registry", action="store_true", help="show the full prioritized target registry (the huge queue)")
     a = ap.parse_args()
+
+    if a.registry:
+        reg = all_targets()
+        rows = [{"work_id": wid, **meta, "label": priority_label(wid)} for wid, meta in reg.items()]
+        print(json.dumps({"registry_size": len(rows), "targets": rows}, indent=2))
+        sys.exit(0)
 
     if a.list:
         print(json.dumps({"eligible_raw_l0_works": eligible_works()}, indent=2))
