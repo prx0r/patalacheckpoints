@@ -96,21 +96,21 @@ def main():
         chain.add_node(id=f"{chunk}:l2", layer="L2", status="SUPPORTED",
                        evidence=f"L2 READ of {chunk}", depends_on=[f"{chunk}:l0"],
                        philological_proof=proofs[chunk].proof_id)
-        chain.add_node(id=f"{chunk}:l200", layer="L200", status="EDITOR_APPROVED",
+        chain.add_node(id=f"{chunk}:l200", layer="L200", status="MACHINE_PROPOSED",
                        evidence=f"L200 audit of {chunk}", depends_on=[f"{chunk}:l2"],
                        philological_proof=proofs[chunk].proof_id)
-        chain.add_node(id=f"{chunk}:c1", layer="C1", status="EDITOR_APPROVED",
+        chain.add_node(id=f"{chunk}:c1", layer="C1", status="MACHINE_PROPOSED",
                        evidence=f"C1 commentary of {chunk}", depends_on=[f"{chunk}:l200"],
                        philological_proof=proofs[chunk].proof_id)
 
     # ── THEME (accepted) ──
-    chain.add_node(id="theme:cl3", layer="THEME", status="EDITOR_APPROVED",
+    chain.add_node(id="theme:cl3", layer="THEME", status="MACHINE_PROPOSED",
                    evidence="Order-less Support / the order-less knower",
                    depends_on=[f"{c}:c1" for c in load_bearing])
 
     # ── ARGUMENT (B-STRUCT, the winning builder) ──
     arg = build_struct(members, c1nodes, "pt:argument:ipvv:CL-3", "ipvv", "Order-less Support")
-    chain.add_node(id="arg:cl3", layer="ARGUMENT", status="EDITOR_APPROVED",
+    chain.add_node(id="arg:cl3", layer="ARGUMENT", status="MACHINE_PROPOSED",
                    evidence=f"B-STRUCT argument, {len(arg.members)} premises",
                    depends_on=["theme:cl3"])
 
@@ -129,7 +129,7 @@ def main():
     for i, c in enumerate(plan.claims[:4]):
         ctype = "EVIDENCED" if c.passage_ids else "SYNTHETIC"
         chain.add_node(id=f"ec:{i+1}", layer="ESSAYCLAIM",
-                       status="EDITOR_APPROVED" if ctype == "EVIDENCED" else "SUPPORTED",
+                       status="MACHINE_PROPOSED",
                        evidence=f"{ctype}: {c.text[:50]}...",
                        depends_on=["plan:cl3"])
 
