@@ -1,0 +1,64 @@
+{
+  "plan_id": "PLAN-REFLEXION-CORE",
+  "thesis": "The determination cannot establish externality; self-experience is self-luminous and self-contained.",
+  "review_dossier": [
+    {
+      "claim_id": "PLAN-REFLEXION-CORE:c1",
+      "claim_text": "The determination (adhyavas\u0101ya) cannot establish an external object.",
+      "role": "supporting",
+      "grounded_in": {
+        "proposition_id": "G2-CONC",
+        "argument_id": "ARG-GOLD-002",
+        "commitment": "RECONSTRUCTED"
+      },
+      "gate_outcome": "accepted",
+      "can_update_posterior": true,
+      "gate_failures": []
+    },
+    {
+      "claim_id": "PLAN-REFLEXION-CORE:c2",
+      "claim_text": "The I-reflexive-awareness is not a conceptual construction.",
+      "role": "supporting",
+      "grounded_in": {
+        "proposition_id": "G2-TC2",
+        "argument_id": "ARG-GOLD-002",
+        "commitment": "ASSERTS"
+      },
+      "gate_outcome": "accepted",
+      "can_update_posterior": true,
+      "gate_failures": []
+    },
+    {
+      "claim_id": "PLAN-REFLEXION-CORE:c3",
+      "claim_text": "Manifestation without reflexive awareness (vimar\u015ba) would be inert, like crystal.",
+      "role": "supporting",
+      "grounded_in": {
+        "proposition_id": "G4-CRYSTAL",
+        "argument_id": "ARG-GOLD-004",
+        "commitment": "ASSERTS"
+      },
+      "gate_outcome": "accepted",
+      "can_update_posterior": true,
+      "gate_failures": []
+    },
+    {
+      "claim_id": "PLAN-REFLEXION-CORE:c4",
+      "claim_text": "What makes the light conscious is that it is aware of itself in manifesting.",
+      "role": "conclusion",
+      "grounded_in": {
+        "proposition_id": "G4-CONC",
+        "argument_id": "ARG-GOLD-004",
+        "commitment": "ASSERTS"
+      },
+      "gate_outcome": "accepted",
+      "can_update_posterior": true,
+      "gate_failures": []
+    }
+  ],
+  "summary": {
+    "grounded_claims": 4,
+    "gate_accepted": 4,
+    "gate_needs_review": 0,
+    "note": "machine pre-review (hermes PEER-REVIEW \u00a77). Claims resolve to real gold propositions; gate decides admissibility. NOT scholarly validation."
+  }
+}
