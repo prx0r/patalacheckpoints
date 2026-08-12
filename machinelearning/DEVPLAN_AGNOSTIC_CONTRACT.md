@@ -155,3 +155,8 @@ directory. Then any future text follows that frozen contract mechanically, valid
 IPVV, and the validation doubles as the ML supervision substrate. The immediate builds: **C1 machine
 metrics** (#1) and **ArgumentProposal schema + validator** (#2) — these close the two gaps that keep the
 contract from being complete, and they're proven on the IPVV before being frozen.
+
+
+---
+
+> **SUPERSEDED (2026-08-12):** consolidated into `DEVPLAN.md`. This file is kept for historical context; the authoritative execution plan is `DEVPLAN.md` (which reflects the honest post-cleanup state and the Nyāya-gate-first decision).

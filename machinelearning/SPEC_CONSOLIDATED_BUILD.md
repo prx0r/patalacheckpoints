@@ -174,3 +174,8 @@ unblocks Q3/Q5/Q6.
 Then Q2 (tokenizer) and Q3 (full retrieval baselines) — both independent, both buildable now.
 
 I will **not** build Q4–Q7 until you've reviewed the argument spec and confirmed the fork + order.
+
+
+---
+
+> **SUPERSEDED (2026-08-12):** consolidated into `DEVPLAN.md`. This file is kept for historical context; the authoritative execution plan is `DEVPLAN.md` (which reflects the honest post-cleanup state and the Nyāya-gate-first decision).

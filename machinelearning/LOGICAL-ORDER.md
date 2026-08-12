@@ -158,3 +158,8 @@ comparative essays, with the **truth engine auditing stages 4–7** (Nyāya gate
 graph-derived state-of-play, typed cross-text relations). Build it on the IPVV first, prove it, then
 replicate across the tradition — and every essay is a *derived, auditable* projection of the argument
 graph, never free-written prose.
+
+
+---
+
+> **SUPERSEDED (2026-08-12):** consolidated into `DEVPLAN.md`. This file is kept for historical context; the authoritative execution plan is `DEVPLAN.md` (which reflects the honest post-cleanup state and the Nyāya-gate-first decision).
