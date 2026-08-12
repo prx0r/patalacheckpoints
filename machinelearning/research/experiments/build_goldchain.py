@@ -59,19 +59,21 @@ def main():
     load_bearing = ["V2-O-saptamo-vimarsa", "V2-S-astamo-close-jnanadhikara",
                     "V2-P-saptamo-k5-10", "V2-L-sastho-vimarsa-smrti-apohana"]
 
-    # ── L0: consume the REAL verify_l0.py proofs where they exist; fall back to the stub ──
+    # ── L0: consume the REAL verify_l0.py proofs (the verified run) where they exist ──
+    # the proof dir is the verified output of pipeline/verify_l0.py; override via env
+    import os as _os
+    proof_dir = _os.environ.get("P0_PROOF_DIR", "/tmp/p0proof")
     proofs = {}
     for chunk in load_bearing:
         proof_id = f"pp:ipvv:{chunk.lower().split('-')[0]}:p0"
-        # try the real proof emitted by verify_l0.py
-        proof_path = os.path.join("/tmp/l0proof", f"chunk{chunk}.l0.proof.json")
-        if os.path.exists(proof_path):
+        proof_path = _os.path.join(proof_dir, f"chunk{chunk}.l0.proof.json")
+        if _os.path.exists(proof_path):
             pp = proof_from_verify_l0(proof_path, f"pt:passage:ipvv:chunk{chunk}")
-            src = "REAL verify_l0 proof"
+            src = f"REAL verified proof ({proof_dir})"
         else:
             records = load_l0_records(chunk)
             pp = proof_from_l0(records, proof_id, f"pt:passage:ipvv:chunk{chunk}")
-            src = "stub (no verify_l0 proof emitted yet)"
+            src = f"stub (no verified proof at {proof_dir})"
         proofs[chunk] = pp
         print(f"  L0 {chunk}: [{src}] → {pp.proof_level} "
               f"({pp.checks['lexical_sense']}, unknown={len(pp.open)})")

@@ -11,12 +11,27 @@ task, human-grounded gold, and a reproducible evaluation show that it does what 
 ---
 
 ## CLAIM P-001 — "Pāṭala has lossless source anchoring (L0)."
-- **STATUS:** PARTIALLY_SUPPORTED
-- **EVIDENCE:** `verify_l0.py` P0 harness — 11/35 chunks PASS (span integrity, ordering, coverage).
-- **CAVEAT:** 24 chunks fail, dominated by unmarked quote-initial tokens (V2-L: 2726 unknown chars).
-  V1 (28 chunks) is a separate format, 0/28.
-- **REQUIRED to promote:** 63/63 P0 PASS; Vidyut P2 characterized; independent parser sample; real error
-  analysis; specialist review of a sample.
+- **STATUS:** SUPPORTED (V2/V3 flagship corpus) / PARTIAL (full corpus incl. V1 legacy)
+- **EVIDENCE:** `verify_l0.py` P0 harness — **V2/V3 (the flagship published IPVV corpus, 35 chunks):
+  35/35 PASS** — 0 unknown chars, 0 bad spans, 0 overlaps, 0 duplicates, monotonic ordering, full
+  classification (`classification_complete: true`), deterministic (identical proofs across runs).
+  Independently re-verified on a random sample (slice-equality + monotonicity + no-overlap all pass).
+  The 18 remaining irregular editorial/gloss regions are explicitly classified via
+  `docs/l0_reviewed_exceptions.json` as `IGNORED_WITH_REASON:reviewed` (visible, not silently dropped).
+  Reproduce: `python3 pipeline/verify_l0.py --t1 .../02_t1 --l0 .../l0 --level p0
+  --exceptions docs/l0_reviewed_exceptions.json`.
+- **CAVEAT:** This is the V2/V3 **supported published corpus** (CP1's "supported passages"). **V1 (28
+  chunks) is a separate legacy prose format** — 0/28, `MIGRATION_PENDING`, not part of this milestone.
+  P2 (Vidyut morphology) is characterized (55% supported) but not yet the P2 ensemble-validated proof.
+- **REQUIRED to promote (full):** V1 gets its own importer + the same output contract (→ 63/63); P2
+  ensemble validated against an independent witness (Heritage) over CONFLICT/UNANALYZED + a stratified
+  control sample; specialist review of a sample.
+- **STATUS THIS SESSION (2026-08-12):** V2/V3 P0 **FROZEN** as the first completed CP1 sub-capability.
+  Next (per the cross-layer review): Heritage as an independent P2 witness over all Vidyut CONFLICT +
+  UNANALYZED records + a stratified control sample (~500 CONFIRMED, ~500 AMBIGUOUS_SUPPORTED) → an
+  ensemble disagreement report. ranker.py is NOT promoted to P3; it is first audited + given a small
+  human-reviewed lexical-sense gold + evaluated against baselines before being a non-authoritative
+  lexical witness.
 
 ## CLAIM P-002 — "Pāṭala's benchmark is a real evaluation substrate."
 - **STATUS:** SUPPORTED (as infrastructure) / PARTIAL (as evidence)
