@@ -58,6 +58,15 @@ discipline is: ALWAYS update state via `flow.py` (never let progress live only i
 **Decision pending:** add if cross-lane handoffs (Agent 1 → Agent 2 at CP4) become frequent enough to
 justify it. *Update here once tried.*
 
+### [7] Searchable session memory — ADOPTED (concept), IMPLEMENTATION PENDING
+**Source:** Loom (ghuntley/loom) — thread/conversation persistence with FTS5 search.
+**What:** make agent memory **searchable, not just persisted** — `flow.py search <term>` over
+`history.log` + `SESSION-*.md` (a small FTS index or a grep-based search command).
+**Status:** the concept is ADOPTED (persistence-without-search = storage, not memory); the command is
+not yet implemented. ~40 lines.
+**Decision pending:** add `flow.py search` so a restarting agent genuinely *remembers* ("when did we
+last touch CP4 / the Commitment decision?") instead of re-reading files. *Update once implemented.*
+
 ---
 
 ## TRIED & ABANDONED / SKIPPED (honest)
@@ -76,6 +85,8 @@ hollow success. Add entries here as you actually try and reject functions.)_
 | **CrewAI role-play + task delegation** | 2 live agents + a template, not a crew | CrewAI |
 | **Mastra / OpenAI SDK runtime tooling** | we don't run tool-calling agents; we run research agents | Mastra / OpenAI |
 | **OpenClaw always-on daemon** | Pāṭala agents work in sessions | OpenClaw |
+| **Loom coding-agent REPL + tool execution** | Pāṭala agents do research, not code editing | Loom |
+| **Loom enterprise infra (K8s Weaver, auth/ABAC, analytics, feature flags)** | overkill for a 2-agent scholarly system | Loom |
 | **Vector memory / long-term store** | our "memory" is the structured corpus + gold | various |
 | **Multi-agent debate (ACAL-style)** | a scholarly decision, not infra; not now | ACAL |
 

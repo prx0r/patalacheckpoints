@@ -1,10 +1,10 @@
-# AGENTIC-INFRA COMPARISON — Gastown, LangGraph, Temporal, CrewAI, Mastra vs. Pāṭala's agent system
+# AGENTIC-INFRA COMPARISON — Gastown, Loom, LangGraph, Temporal, CrewAI, Mastra vs. Pāṭala's agent system
 
-*2026-08-12. A grounded survey (READMEs fetched) of existing agentic infrastructure, compared to the
-Pāṭala agent system (template `agent0` → live `instances`, `STATE.yaml`, `flow.py`, `check_staleness.py`).
-The question: what FUNCTIONS are worth borrowing, and what is overengineering for Pāṭala? Honest
-position up front: **Pāṭala's agent system is small and purpose-built; the value of these frameworks is
-as a menu of functions, not as dependencies.**
+*2026-08-12. A grounded survey (READMEs + specs fetched) of existing agentic infrastructure, compared to
+the Pāṭala agent system (template `agent0` → live `instances`, `STATE.yaml`, `flow.py`,
+`check_staleness.py`). The question: what FUNCTIONS are worth borrowing, and what is overengineering for
+Pāṭala? Honest position up front: **Pāṭala's agent system is small and purpose-built; the value of these
+frameworks is as a menu of functions, not as dependencies.***
 
 ---
 
@@ -13,6 +13,7 @@ as a menu of functions, not as dependencies.**
 | System | What it is | The function most relevant to us |
 |---|---|---|
 | **Gas Town** (Steve Yegge) | Multi-agent **workspace manager** for Claude/Copilot/Codex | git-backed **persistent work state** (Beads ledger) + **identities** (persist across restarts) + **mailboxes/handoffs** + a coordinator ("the Mayor") |
+| **Loom** (Geoffrey Huntley) | AI-powered **coding agent** in Rust; REPL + tool execution + server-side LLM proxy | **conversation/thread persistence** (FTS5 search), **tool registry**, a **state machine** for agent flow, server-side **proxy** so keys never leave the server |
 | **LangGraph** (LangChain) | Low-level **stateful agent orchestration** | **durable execution** (resume from where it left off), checkpoints, memory, human-in-the-loop |
 | **Temporal** | **Durable execution** engine | durable workflows — retries, state survival, versioning |
 | **CrewAI** | Role-playing **autonomous agent** framework | role-based agents, task orchestration |
@@ -121,8 +122,47 @@ That's the single borrow that makes cross-lane autonomy real, and it's ~30 lines
 
 ---
 
-## 6. THE ONE-SENTENCE CARRY-FORWARD
+## 6. THE LOOM CONNECTION — the visionary use of Loom's infrastructure
 
+Loom (ghuntley/loom) is a Rust **coding agent**: a REPL + tool-execution + a **server-side LLM proxy**
+(API keys never leave the server) + **thread/conversation persistence with FTS5 search** + a state
+machine for agent flow. It's a research project ("if your name is not Geoffrey Huntley then do not use
+loom") — so we **borrow its functions conceptually, never its code**. What it suggests for Pāṭala:
+
+### 6a. Thread-based session persistence (the strongest idea)
+Loom persists conversations as **searchable threads** (`loom-thread`, FTS5). Pāṭala's analog is the
+per-instance `history.log` + `SESSION-<date>.md` — but they are **files, not searchable**. The visionary
+upgrade: make agent sessions **searchable threads** — so an agent can ask "when did we last touch CP4 /
+the Commitment decision / ARG-003?" and get an answer, not grep across markdown. That's a real, useful
+borrow of Loom's *concept* (searchable session memory), not its Rust.
+
+### 6b. Server-side proxy / key-hygiene (borrow the principle)
+Loom's proxy means **API keys never leave the server**. For Pāṭala's future autonomous ML agents this is
+the right posture: the agent's LLM access is proxied/guarded, keys never in the repo. We already keep
+secrets out (per the doctrine); Loom validates making it an explicit architectural boundary.
+
+### 6c. A state machine for agent flow (we already have the minimal version)
+Loom models agent flow as a **state machine**. Our `flow.py status → update → history` + `STATE.yaml`
+IS a (minimal, honest) agent-flow state machine — at the **checkpoint** level, which is exactly the level
+that matters for a research agent. We do NOT need Loom's full tool-execution state machine (we don't run
+tools at runtime).
+
+### 6d. What Loom is NOT for us
+- Its **coding-agent REPL** / tool system — Pāṭala agents do research, not code editing.
+- Its **K8s/Weaver remote execution**, **auth/ABAC**, **analytics**, **feature flags** — enterprise
+  infra overkill for a 2-agent scholarly system.
+- **Its proprietary license** — we borrow ideas, never code.
+
+### The Loom takeaway (visionary, cheap)
+> **Make Pāṭala's agent memory SEARCHABLE, not just persisted.** We have durable, versioned state
+> (Gas Town's lesson). Loom's distinctive lesson is that persistence without search is storage, not
+> memory. The visionary, non-overengineered move: index `history.log` + `SESSION-*.md` (a small FTS
+> index or a `flow.py search <term>`), so an agent genuinely *remembers* across sessions instead of
+> re-reading files. That's ~40 lines and it's the Loom function worth having.
+
+---
+
+## 7. THE ONE-SENTENCE CARRY-FORWARD
 **Gas Town is our closest cousin — it confirms our design (persistent identity + git-backed state +
 a coordinator) is the right shape, and the one function worth borrowing is the typed handoff
 (`flow.py handoff`) plus making git-backed durability explicit. LangGraph/Temporal/CrewAI solve problems
