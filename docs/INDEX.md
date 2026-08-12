@@ -21,8 +21,16 @@ stale ones as `[ARCHIVED]` so a new agent is never confused. If it's not here, i
 
 | Concern | Canonical doc | Where |
 |---|---|---|
+| **Vision + navigation (START HERE)** | `VISION_AND_NAVIGATION.md` | repo root |
 | **Full-system onboarding** | `THE_COMPANION.md` | sanskritree `_stack/ipvv/specs/` |
-| **Current site handover** | `HANDOVER_FINAL.md` | repo root |
+| **Handover folder (both lanes — README first)** | `handover/README.md` | repo `handover/` |
+| **Cross-lane coordination log** | `handover/LOG.md` | repo `handover/` |
+| **THE GOVERNING RULE — read first** | `AGENTS.md` + `machinelearning/AGENTS-DOCTRINE.md` | repo root |
+| **The project's self-audit ledger** | `machinelearning/CLAIMS.md` | repo `machinelearning/` |
+| **Anti-theatre component contracts** | `machinelearning/COMPONENT-CONTRACTS.md` | repo `machinelearning/` |
+| **Agent 1 — ML lane (current state)** | `handover/agent-1-ml/INDEX.md` | repo `handover/` |
+| **Agent 2 — integration lane (current state)** | `handover/agent-2-integration/INDEX.md` | repo `handover/` |
+| **L0 standardization (NEXT WORK — verifiable substrate)** | `machinelearning/SPEC_L0_STANDARDIZATION.md` | repo `machinelearning/` |
 | **ML strategy (frozen)** | `machinelearning/MLUSEINPATALA.md` | repo `machinelearning/` |
 | **ML dev plan** | `machinelearning/DEVPLAN.md` | repo `machinelearning/` |
 | **ML vision (big picture)** | `machinelearning/MLVISION.md` | repo `machinelearning/` |
@@ -37,7 +45,19 @@ stale ones as `[ARCHIVED]` so a new agent is never confused. If it's not here, i
 | **Scholarly graph / data model** | `data/corpus/graph.ts` + `docs/SCHOLARLY_GRAPH.md` | repo |
 | **Translation protocol** | `docs/TRANSLATION_PROTOCOL.md` | repo `docs/` |
 | **Northstar / vision spec** | `docs/NORTHSTAR.md` | repo `docs/` |
+| **Vision index (full arc, Vision 01–08)** | `docs/vision/INDEX.md` | repo `docs/vision/` |
+| **Vision 06 — Pāṭala Review (adversarial)** | `docs/vision/vision-06-adversarial-review.md` | repo `docs/vision/` |
+| **Vision 07 — The New Scholar** | `docs/vision/vision-07-new-scholar.md` | repo `docs/vision/` |
+| **Vision 08 — Scholar Economics** | `docs/vision/vision-08-scholar-economics.md` | repo `docs/vision/` |
 | **Dual-agent track** | `machinelearning/DUAL_AGENT_TRACK.md` | repo `machinelearning/` |
+| **Context engineering** | `machinelearning/CONTEXT_ENGINEERING.md` | repo `machinelearning/` |
+| **Education layer (vision)** | `machinelearning/EDUCATION_VISION.md` | repo `machinelearning/` |
+| **Geometric ideas (borrowed)** | `machinelearning/geometric.md` | repo `machinelearning/` |
+| **System growth + Hermes infra** | `machinelearning/SYSTEM_GROWTH_AND_HERMES.md` | repo `machinelearning/` |
+| **Pāṭala as the Library's engine** | `machinelearning/PATALA_AS_LIBRARY_ENGINE.md` | repo `machinelearning/` |
+| **API reference (OpenAPI)** | `docs/openapi.yaml` | repo `docs/` |
+| **API docs (guide + endpoint index)** | `docs/api/README.md` | repo `docs/api/` |
+| **MCP tool mapping** | `docs/api/mcp.md` | repo `docs/api/` |
 
 ---
 
@@ -47,11 +67,14 @@ These are kept for history but are **not** current. Read only for provenance.
 
 | File | Superseded by | Move to |
 |---|---|---|
-| `HANDOVER.md` | `HANDOVER_FINAL.md` | `docs/_archive/` |
-| `HANDOVER_NEXT.md` | `HANDOVER_FINAL.md` | `docs/_archive/` |
-| `HANDOVER_SITE.md` | `HANDOVER_FINAL.md` + `docs/SITE_STATUS.md` | `docs/_archive/` |
-| `HANDOVER_MCP_API.md` | `HANDOVER_FINAL.md` + the live `mcp/index.mjs` | `docs/_archive/` |
-| `STATE_OF_PLAY.md` | `HANDOVER_FINAL.md` + `docs/CHANGELOG.md` | `docs/_archive/` |
+| `HANDOVER.md` | `handover/` (lane INDEXs) | `handover/archive/` |
+| `HANDOVER_NEXT.md` | `handover/` (lane INDEXs) | `handover/archive/` |
+| `HANDOVER_SITE.md` | `handover/` (lane INDEXs) | `handover/archive/` |
+| `HANDOVER_MCP_API.md` | the live `mcp/index.mjs` | `handover/archive/` |
+| `STATE_OF_PLAY.md` | `handover/` + `docs/CHANGELOG.md` | `handover/archive/` |
+| `HANDOVER_FINAL.md` | `handover/README.md` + lane INDEXs | `handover/archive/` |
+| `SITE_STATUS.md` | `docs/CHANGELOG.md` | `handover/archive/` |
+| `SESSION_HANDOVER.md` | `handover/LOG.md` + lane INDEXs | `handover/archive/` |
 | `PROCESS_NOTES.md` (root) | `docs/PROCESS_NOTES.md` | `docs/_archive/` |
 | `docs/PROGRESS_2026-08-10.md` | `docs/CHANGELOG.md` | `docs/_archive/` |
 | `docs/PIPELINE_PROGRESS_2026-08-10.md` | `docs/CHANGELOG.md` | `docs/_archive/` |
