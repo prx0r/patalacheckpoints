@@ -270,3 +270,76 @@ That is the original directive in software form — and it is *exactly* the audi
 is the design Pāṭala should inherit wholesale: provenance-led, argument-graph-primary, Bayes-as-derived-view,
 fallacy-gated, falsifier-required, directionally-critical, and measured by whether the essay is *derived*,
 not copied.
+
+---
+
+## 8. THE NEW FINDINGS (the docs beyond truthreview.md, verified 2026-08-12)
+
+Three more truth-engine docs were found and reviewed; two are directly reusable for Pāṭala's data
+foundation:
+
+### 8.1 Claim v3 — the definitive claim schema (from `truthadvanced.md` §Central Schema Problem)
+
+The truth-engine resolved its THREE overlapping claim models into a single **Claim v3**. This is the
+mature form of Pāṭala's `ArgumentProposal` — adopt it:
+
+```json
+{
+  "claim_id": "cl:...",
+  "source_span_id": "span:...",
+  "claim_text": "...",
+  "tradition_scope": "...",
+  "pramana": "anumana",
+  "evidence_dimension": "phenomenological",
+  "argument_dimension": "analogical",
+  "hetu": "...", "sadhya": "...", "vyapti_statement": "...",
+  "falsifier": {...},
+  "posterior_targets": [{"target_id": "D3", "target_type": "discriminator"}],
+  "argument_targets": [{"target_id": "cand:...", "target_type": "candidate_explanation"},
+                       {"target_id": "crux:...", "target_type": "crux"}],
+  "weights": {"log_bayes_factor": 0.4, "w_rel": 0.8, "w_map": 0.7, "w_aux": 0.6}
+}
+```
+**The key rule (the runtime-vs-argument split, made concrete):**
+- `posterior_targets` move the numeric F/D state AFTER gate approval.
+- `argument_targets` create graph nodes/edges and state-of-play pressure (never touch the posterior).
+- **Every posterior update must be backed by a gate result.**
+
+**Pāṭala alignment:** this maps 1:1 onto my `ML-ALIGNMENT.md` — `posterior_targets` = the Bayesian
+Certainty scorer; `argument_targets` = the ArgumentProposal graph; "every update gated" = the verify floor.
+
+### 8.2 TRUTHMAP-REDESIGN — the discrimination cascade (transferable concept)
+
+The top layer isn't a flat Bayesian board — it's a **cascade of eliminative binary questions** (D1-D5)
+that prune candidate branches (B1-B6). Transferable to Pāṭala:
+- **each CORE question = a "discriminator"** that prunes candidate readings (the PUSHING DNA / comparative
+  matrix becomes eliminative, not just descriptive)
+- **answered thresholds per evidence type** (ordinary 0.75/0.25, discriminator 0.85/0.15, extraordinary 0.95/0.05)
+- **expected-branch-effect matrix** (near-mask 0.05-0.15 … survivor-boost 1.10-1.50)
+- **EIG question-selection** (ask the most eliminative falsifiable question next — binary search)
+
+This is the **frontier/intelligentothers wing's** domain (the B1-B6 metaphysics contest), not Pāṭala's
+primary spine — but the *discriminator-as-eliminative-question* method maps cleanly onto Pāṭala's
+questionnaire layer.
+
+### 8.3 TRUTHMAP-BASELAYER-SPEC — the full pipeline (confirms Pāṭala's design)
+
+`source basket → information packet → source map → contention benchmark → state of play → inquiry trail
+→ essay seed → EO → factories → new evidence`. Two disciplines worth keeping:
+- **Source baskets before extraction** (decide what to read and why, BEFORE claims — prevents selection
+  bias hidden in LLM extraction)
+- **Don't collapse layers** (each layer has one job) — identical to Pāṭala's layer discipline.
+
+### 8.4 The populated DBs (real artifacts, not just specs)
+- `sanskritree/proof_engine.db` (180KB — a real populated proof-engine database)
+- `/tmp/truthmap*.db` + `truthmap-argument-schema.sql` (the argument-fabric tables)
+
+So the truth-engine has both the *specs* AND *populated databases* — the schema designs are proven, not
+just described.
+
+### 8.5 What to pull into Pāṭala (updated)
+1. **Claim v3** as the canonical claim/argument schema (resolves runtime vs argument targets cleanly).
+2. **The discrimination-cascade method** for the questionnaire layer (each CORE question = an eliminative
+   discriminator).
+3. **The source-basket discipline** (decide what to read before extracting — the anti-bias step).
+4. The **populated `proof_engine.db`** as a reference/provenance source.
