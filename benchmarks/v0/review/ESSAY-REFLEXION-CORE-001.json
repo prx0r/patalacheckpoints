@@ -1,0 +1,92 @@
+{
+  "essay_id": "ESSAY-REFLEXION-CORE-001",
+  "consumes_synthesis": "SYN-IPVV-REFLEXION-CORE-001",
+  "synthesis_ceiling": "UNRESOLVED",
+  "unsupported_bridges": [
+    "SYN-INF-001"
+  ],
+  "plan": {
+    "claims": [
+      {
+        "id": "essay:c1",
+        "role": "supporting",
+        "text": "The 'I'-reflexive-awareness is not a conceptual construction.",
+        "provenance": "gold:ARG-GOLD-002:G2-TC2",
+        "ceiling": "UNRESOLVED"
+      },
+      {
+        "id": "essay:c2",
+        "role": "supporting",
+        "text": "Manifestation without reflexive awareness (vimar\u015ba) would be inert, like crystal.",
+        "provenance": "gold:ARG-GOLD-004:G4-CRYSTAL",
+        "ceiling": "PARTIALLY_CORROBORATED"
+      },
+      {
+        "id": "essay:c3",
+        "role": "thesis",
+        "text": "Reflexivity belongs intrinsically to manifestation.",
+        "provenance": "SYN-INF-001",
+        "ceiling": "UNRESOLVED",
+        "bridge": true
+      },
+      {
+        "id": "essay:c4",
+        "role": "qualification",
+        "text": "Reflexivity is established as a real feature of experience, but its nature is contested and the universalization is not entailed.",
+        "provenance": "gold-standard:LOGICAL-ARGUMENT-1-resolution",
+        "ceiling": "CAN_RENDER"
+      }
+    ],
+    "sentences": [
+      {
+        "id": "s1",
+        "text": "The I-reflexive-awareness is not a conceptual construction.",
+        "claim_ids": [
+          "essay:c1"
+        ],
+        "relation": "PARAPHRASE"
+      },
+      {
+        "id": "s2",
+        "text": "A manifestation without reflexive awareness would be inert, like a crystal.",
+        "claim_ids": [
+          "essay:c2"
+        ],
+        "relation": "PARAPHRASE"
+      },
+      {
+        "id": "s3",
+        "text": "From these, it is reconstructed that reflexivity belongs intrinsically to manifestation \u2014 but this is a reconstruction, not a proven entailment.",
+        "claim_ids": [
+          "essay:c3"
+        ],
+        "relation": "INFERENCE",
+        "marked_bridge": true
+      },
+      {
+        "id": "s4",
+        "text": "Across traditions, reflexivity is a shared phenomenon: Abhinavagupta treats it as intrinsic, Dharmak\u012brti as conditioned, and \u00d1\u0101\u1e47av\u012bra as structural.",
+        "claim_ids": [
+          "essay:c4"
+        ],
+        "relation": "COMPRESSION"
+      },
+      {
+        "id": "s5",
+        "text": "Whether this reflexivity entails a single universal Self is left open.",
+        "claim_ids": [
+          "essay:c4"
+        ],
+        "relation": "QUALIFICATION"
+      }
+    ]
+  },
+  "sentence_evidence_audit": {
+    "issues": [
+      "synthesis ceiling is UNRESOLVED: essay conclusion must QUALIFY, never settle"
+    ],
+    "verdict": "REVIEW",
+    "note": "every load-bearing sentence maps to a claim; UNRESOLVED claims are qualified/marked, never settled"
+  },
+  "render_rule": "UNRESOLVED ceiling -> QUALIFY / represent alternatives / ABSTAIN; never settle."
+}

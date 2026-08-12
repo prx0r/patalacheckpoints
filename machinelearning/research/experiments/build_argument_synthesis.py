@@ -33,11 +33,35 @@ PACK = os.path.join(ROOT, "benchmarks/v0/packs/PACK-IPVV-REFLEXION-CORE.json")
 CEILING_RANK = {"INDEPENDENT_REVIEWED": 4, "SCHOLARLY_CORROBORATED": 3,
                 "SCHOLARLY_CORROBORATED_PRELIMINARY": 2, "CANDIDATE": 1, "MACHINE_PROPOSED": 1}
 
+# per-proposition epistemic status (the REAL dependency set — not a coarse pack-level summary).
+# Each input proposition's load-bearing epistemic status drives the synthesis ceiling.
+# G4-CRYSTAL is SCHOLARLY_CORROBORATED_PRELIMINARY (folded earlier); the rest are MACHINE_PROPOSED.
+PROP_EPISTEMIC_STATUS = {
+    "gold:ARG-GOLD-002:G2-TC2": "MACHINE_PROPOSED",
+    "gold:ARG-GOLD-002:G2-CONC": "MACHINE_PROPOSED",
+    "gold:ARG-GOLD-004:G4-CRYSTAL": "SCHOLARLY_CORROBORATED_PRELIMINARY",
+    "gold:ARG-GOLD-004:G4-CONC": "MACHINE_PROPOSED",
+    "SYN-INF-001": "MACHINE_RECONSTRUCTED",   # the synthesis bridge itself
+    "SYN-CONC-001": "MACHINE_RECONSTRUCTED",
+}
 
-def input_ceiling(ref: str, prop: str) -> str:
-    """The epistemic ceiling of one input proposition (from the gold's commitments)."""
-    # Currently every gold is CANDIDATE / MACHINE_PROPOSED (nothing independently reviewed).
-    return "MACHINE_PROPOSED"
+
+def dependency_ceiling(deps: list[str]) -> str:
+    """Derive the synthesis ceiling from the ACTUAL dependency set (weakest-governs).
+
+    Returns the canonical weakest status. MACHINE_RECONSTRUCTED is treated as MACHINE_PROPOSED
+    (both are pre-review machine states); it must never inflate to CANDIDATE.
+    """
+    if not deps:
+        return "UNRESOLVED"
+    # map reconstruction to its epistemic peer (MACHINE_PROPOSED) for ceiling purposes
+    def _rank(d):
+        st = PROP_EPISTEMIC_STATUS.get(d, "MACHINE_PROPOSED")
+        if st == "MACHINE_RECONSTRUCTED":
+            st = "MACHINE_PROPOSED"
+        return CEILING_RANK.get(st, 1), st
+    weakest = min((_rank(d) for d in deps), key=lambda x: x[0])
+    return weakest[1]
 
 
 def build_synthesis() -> dict:
@@ -75,9 +99,13 @@ def build_synthesis() -> dict:
     ]
 
     # the synthesis-level audit — does NOT merge audits into stronger support
-    input_ceilings = [input_ceiling(i["ref"], p) for i in inputs for p in i["proposition_refs"]]
-    # weakest governs (UNRESOLVED if any input is CANDIDATE/MACHINE_PROPOSED)
-    weakest = min(input_ceilings, key=lambda c: CEILING_RANK.get(c, 0))
+    # The ceiling derives from the ACTUAL dependency set: every load-bearing premise + the bridge.
+    load_bearing = ["gold:ARG-GOLD-002:G2-TC2", "gold:ARG-GOLD-002:G2-CONC",
+                    "gold:ARG-GOLD-004:G4-CRYSTAL", "gold:ARG-GOLD-004:G4-CONC", "SYN-INF-001"]
+    weakest = dependency_ceiling(load_bearing)
+    # if the weakest input is below SCHOLARLY_CORROBORATED, the synthesis cannot render as settled
+    epistemic_ceiling = ("UNRESOLVED" if CEILING_RANK.get(weakest, 0) < CEILING_RANK["SCHOLARLY_CORROBORATED"]
+                         else "CAN_RENDER")
 
     # THE VALUE PROBE: does the synthesis overclaim? P1+P2 do NOT entail "self-experience is
     # intrinsically fundamental". G2-CONC is about the I-grasp not being a construction; G4-CRYSTAL
@@ -101,11 +129,13 @@ def build_synthesis() -> dict:
         "inferences": inferences,
         "dependency_audits": dependency_audits,
         "synthesis_audit": {
-            "input_ceiling": weakest,                 # weakest-governs propagation
+            "input_ceiling": weakest,                 # weakest-governs, over the real dependency set
+            "dependency_statuses": {d: PROP_EPISTEMIC_STATUS.get(d, "MACHINE_PROPOSED")
+                                    for d in load_bearing},
             "internal_consistency": "PASS",           # no internal contradictions detected
             "unsupported_bridges": unsupported_bridges,   # the reconstructed bridge, not entailed
             "unresolved_dependencies": dependency_audits,  # all CANDIDATE/MACHINE_PROPOSED
-            "epistemic_ceiling": "UNRESOLVED",        # because inputs are unresolved
+            "epistemic_ceiling": epistemic_ceiling,   # derived from the dependency set
             "audit_merge_note": "audits are NOT merged; accepted + accepted != strongly supported",
         },
         "cruxes": [
@@ -149,7 +179,9 @@ def synthesis_to_eo(syn: dict) -> dict:
         "title": syn["thesis"]["proposition"],
         "status": "draft",
         "projection_of": syn["synthesis_id"],          # the canonical object
-        "schema_source": {"repo": "patala", "path": "docs/ontology/EO-v2.md"},
+        "schema_source": {"repo": "prx0r/patala",
+                          "commit": "4e097a46d6d6228030fb6244aa9ddb5e64cd50b2",
+                          "path": "docs/ontology/EO-v2.md"},
         "question": {"question_id": "q:reflexion-core", "tension_point": syn["research_question"],
                      "why_it_matters": "the reflexion-core synthesis", "resolution_level": "local_argument"},
         "syllogism": {

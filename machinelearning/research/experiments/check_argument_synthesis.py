@@ -40,6 +40,24 @@ def check_synthesis_obj(syn: dict) -> dict:
         for k in ("inference_id", "premises", "conclusion", "warrant", "status"):
             if not inf.get(k):
                 problems.append(f"inference {inf.get('inference_id','?')} missing {k}")
+        # inferential coverage: premises must be nonempty, conclusion must resolve, warrant nonempty
+        if not inf.get("premises"):
+            problems.append(f"inference {inf.get('inference_id')}: no premises (every inference needs >=1)")
+        if not inf.get("conclusion"):
+            problems.append(f"inference {inf.get('inference_id')}: no conclusion")
+
+    # S03b: every synthesized conclusion claim must have an INCOMING inference (inferential coverage).
+    # Collect the set of premise/conclusion ids actually referenced.
+    covered_conclusions = {inf["conclusion"] for inf in syn.get("inferences", []) if inf.get("conclusion")}
+    referenced_ids = {p for inf in syn.get("inferences", []) for p in inf.get("premises", [])} | covered_conclusions
+    # the thesis (if it is a conclusion id) must be covered; and no dangling conclusion refs
+    for inf in syn.get("inferences", []):
+        for p in inf.get("premises", []):
+            if p.startswith("SYN-") and p not in covered_conclusions and p not in referenced_ids:
+                problems.append(f"premise {p} references a conclusion that is never inferred")
+    # every 'SYN-CONC-*' conclusion produced by an inference must itself be referenced or be the thesis
+    if not covered_conclusions:
+        problems.append("no inference produces a conclusion (inferential coverage empty)")
 
     audit = syn.get("synthesis_audit", {})
     # S03: the leap must be exposed

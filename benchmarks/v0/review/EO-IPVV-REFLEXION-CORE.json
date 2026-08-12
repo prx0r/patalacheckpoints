@@ -5,7 +5,8 @@
   "status": "draft",
   "projection_of": "SYN-IPVV-REFLEXION-CORE-001",
   "schema_source": {
-    "repo": "patala",
+    "repo": "prx0r/patala",
+    "commit": "4e097a46d6d6228030fb6244aa9ddb5e64cd50b2",
     "path": "docs/ontology/EO-v2.md"
   },
   "question": {

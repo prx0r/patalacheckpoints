@@ -49,6 +49,13 @@
   ],
   "synthesis_audit": {
     "input_ceiling": "MACHINE_PROPOSED",
+    "dependency_statuses": {
+      "gold:ARG-GOLD-002:G2-TC2": "MACHINE_PROPOSED",
+      "gold:ARG-GOLD-002:G2-CONC": "MACHINE_PROPOSED",
+      "gold:ARG-GOLD-004:G4-CRYSTAL": "SCHOLARLY_CORROBORATED_PRELIMINARY",
+      "gold:ARG-GOLD-004:G4-CONC": "MACHINE_PROPOSED",
+      "SYN-INF-001": "MACHINE_RECONSTRUCTED"
+    },
     "internal_consistency": "PASS",
     "unsupported_bridges": [
       "SYN-INF-001"
