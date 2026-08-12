@@ -71,6 +71,8 @@ stale ones as `[ARCHIVED]` so a new agent is never confused. If it's not here, i
 | **MCP tool mapping** | `docs/api/mcp.md` | repo `docs/api/` |
 | **Product research & build pack (2026-08-12)** | `docs/vision/functionality/research/2026-08-12/README.md` (Factory · Benchmarks · Audit · Review · Workbench + reuse/build doctrine) | repo `docs/vision/functionality/research/` |
 | **Sanskritree deep-dive audit (agent usefulness)** | `handover/SANSKRITREE-AUDIT.md` (what Agent 1 + Agent 2 should mine: scholar corroboration, QA engine reuse, concordance, Lean verdict) | repo `handover/` |
+| **Sanskritree truth/ classification (216 files)** | `handover/SANSKRITREE-TRUTH-CLASSIFICATION.md` (Class 1 scholarship citable / Class 2 frontier MACHINE_PROPOSED / Class 3 noise; + paper candidates) | repo `handover/` |
+| **Corpus goldmine docs (imported)** | `docs/corpus/{canonical_reference_map, markguidance, translation_atlas, tradition_anchors, translation_flow_spec, leapfrog_guide, leapfrog_map, atlasflaws}.md` — the master substrate + Recognition Enquiry + method docs (read-first; originals live on sanskritree, never edit) | repo `docs/corpus/` |
 
 ---
 

@@ -87,11 +87,11 @@ Most of the śiva corpus is **already on disk**, not just in the plan. The ref-a
 - The **untranslated registers** (`corpus/targets/untranslated.md`, `untranslated2.md`,
   `untranslated3.md`, `targetacquired.md`) are the ranked, on-disk-vs-[ACQ] translation roadmap.
 
-**THE TWO GOLDMINE DOCS (read before translating/acquiring):**
-- `sanskritree/corpus/targets/canonical_reference_map.md` — the master substrate: taxonomy/timeline,
+**THE TWO GOLDMIINE DOCS (read before translating/acquiring) — now imported to `docs/corpus/`:**
+- `docs/corpus/canonical_reference_map.md` — the master substrate: taxonomy/timeline,
   the canonical corpus with ingestion waves, **the semantic-shift glossary** (the fix for cross-work term
   misreading), the auditable translation architecture, the 18-month roadmap.
-- `sanskritree/corpus/targets/markguidance.md` — the Recognition Enquiry: passage dossiers, the A/B/C
+- `docs/corpus/markguidance.md` — the Recognition Enquiry: passage dossiers, the A/B/C
   thesis levels, cross-tradition mapping (the argument-layer goldmine).
 
 **Cross-work L0 finding (honest):** a legacy T1 (kramasadbhāva) extracts via the shared tool (209

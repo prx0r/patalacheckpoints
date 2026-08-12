@@ -26,7 +26,13 @@ Query: `python3 pipeline/agent3_queue.py --registry` (targets) · `--leads` (lea
 
 ## THE TWO GOLDMIINE DOCS (read these first — they are the substrate)
 
-### 1. `sanskritree/corpus/targets/canonical_reference_map.md` (the MASTER substrate, 1355 lines)
+> **Imported to patala (2026-08-12):** the goldmine + method docs now live locally in `docs/corpus/` so
+> agents read the copied version, not the mount. The sanskritree originals remain the record (never edit
+> them); the local copies are the read-first references. Also imported: `translation_atlas.md`,
+> `tradition_anchors.md`, `translation_flow_spec.md`, `leapfrog_guide.md`, `leapfrog_map.md`,
+> `atlasflaws.md`.
+
+### 1. `docs/corpus/canonical_reference_map.md` (the MASTER substrate, 1355 lines)
 The single most important reference for the autonomous translator. Contains:
 - **Taxonomy & timeline** — the Trika/Krama/Kubjikā/Kaula/Spanda/Pratyabhijñā/Sarvāmnāya ecosystem, as a
   *network with transfer-nodes*, not six separate schools.
@@ -42,7 +48,7 @@ The single most important reference for the autonomous translator. Contains:
 - **The 18-month roadmap** to a versioned canonical reference (library → atlas → timeline → glossary →
   semantic atlas → evidence graph → explainers).
 
-### 2. `sanskritree/corpus/targets/markguidance.md` (the Recognition Enquiry — the argument-layer goldmine, 254 lines)
+### 2. `docs/corpus/markguidance.md` (the Recognition Enquiry — the argument-layer goldmine, 253 lines)
 The philosophical-research substrate (feeds Agent 1 / the argument layer, not just translation):
 - **Passage dossiers** with the A/B/C thesis levels: **A** reflexive presence (prakāśa-vimarśa) ·
   **B** diachronic subjectivity & memory-ownership · **C** universal identity (the contested frontier).

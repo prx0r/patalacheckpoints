@@ -118,6 +118,22 @@ for semantic-alignment. Agent 2: difficult-case lexical retrieval for the factor
 
 ---
 
+## IMPORT — the truth/ full classification (216 files, three epistemic classes)
+
+`handover/SANSKRITREE-TRUTH-CLASSIFICATION.md` — the complete scan of `truth/`:
+- **Class 1 (GENUINE SCHOLARSHIP, citable):** torella_book (Ratié/Baumer/Cuneo/Rastogi/Tripathi), Torella
+  synthesis/logic, Dharmakīrti, isvarasiddhi/sambandhasiddhi, TANTRALOKA_*, abhinavagupta_* essays,
+  Biernacki, Rastogi, Utpaladeva → **the corroboration mine for ARG-001..005** (ARG-004 already folded).
+- **Class 2 (RIGOROUS FRONTIER SYNTHESIS, MACHINE_PROPOSED, NOT citable):** Recognition Enquiry
+  (markguidance/deep-research-report — the paper candidate), Aperture framework, unified framework,
+  valence/QRI, whattheheckis*, rasa, subtle-body, geometry/music → research scaffolding only.
+- **Class 3 (NOISE / EXCLUDED):** chittick/ficino/shaw/steiner/iamblichus/law-of-one/ochema/channeling,
+  syntheses/* (mystical) — out of scope unless Vision-11 cross-tradition needs them.
+
+Register in `handover/SANSKRITREE-AUDIT.md` + this manifest so it's durable.
+
+---
+
 ## NOISE / EXCLUDED (do not import)
 
 - `syntheses/*` entirely (mystical/tech synthesis — out of scope for evidence-grounded Pāṭala)
