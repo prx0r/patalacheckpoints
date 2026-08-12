@@ -49,6 +49,29 @@ The strategy is no longer theory for Phase 0 + Phase 2; it is shipped:
 - **Benchmark seed documented.** `machinelearning/BENCHMARK_HANDOVER.md` — the fixtures (gold.ts,
   qa_v1_gold 34, stall-log 60) the ML master builds Benchmark v0 from.
 
+---
+
+## 0.2 PROGRESS — ML lane (Agent 1, built + tested 2026-08-12)
+
+The ML research lane (all in `machinelearning/research/`, **124/124 tests passing**) built the
+argument spine and proved it end-to-end:
+
+- **Stage-2 clusterer** → 9 clean V2/V3 machine proposals (`clusters.json`); V1 dialectic flagged
+  editorially.
+- **Bayesian claim-strength** (`strength.py`) — the truth-engine `weighted_lbf` → Pāṭala `Certainty`,
+  auditable, not hand-labeled.
+- **Claim-v3 ArgumentProposal** (`argument.py`) — 5-member Nyāya, resolvable, gated; parsed from the
+  real LOGICAL-ARGUMENT files.
+- **Alternative builders + comparison** (`builders.py`, `compare_arguments.py`) — **B-STRUCT wins
+  ground-truth overlap; `coverage` is a real metric (Spearman +0.94), resolvability/diversity are noise.**
+- **AIF graph + EssayPlan** (`aifgraph.py`, `essayplan.py`) — the essay as a scholarly decision.
+- **Cross-layer gold chain** (`goldchain.py`, `philproof.py`, `build_goldchain.py`) — CL-3 walked
+  SANSKRIT→L0(proof)→L2→L200→C1→THEME→ARGUMENT→AIF→PLAN→CLAIM, per-dimension certificate, OPEN crux
+  propagates honestly. The **`philological_proof` handshake** makes the two agents converge.
+
+**The immediate next step is NOT more code** — it is the **editorial acceptance of CL-3** (human review
+→ `editorially_accepted`), then rendering the essay from its claims. See `ZOOMOUT-REVIEW.md`.
+
 The IPVV is now a **machine-queryable corpus** (source + L2 + C1 + themes + verification floor),
 so the INFER phases can operate over real data, not test fixtures.
 

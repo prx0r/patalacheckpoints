@@ -77,3 +77,35 @@ EpistemicState/EvidenceUse) + the truth-engine weighted_lbf. Nothing parallel.
 - **Discipline kept** (per the user's warning): judged on structural soundness + auditable grounding,
   NOT quantitative metrics that are likely bs. (The comparison experiment already proved coverage is
   real and resolvability/diversity are noise — I did not bolt fake scores onto the AIF graph or EssayPlan.)
+
+## 8. CROSS-LAYER GOLD CHAIN (built 2026-08-12) — the convergence milestone
+
+The milestone that makes the two agents converge instead of building parallel worlds:
+**ONE end-to-end chain from Sanskrit to essay sentence, with every lower-layer proof status propagated
+upward — NOT collapsed to a single number.**
+
+- **`philproof.py`** — the `PhilologicalProof` handshake (`pp:ipvv:v2o:p4`): the bottom contract. The ML
+  lane references proof IDs; the L0 agent (`verify_l0.py`) finalizes the authoritative proofs. Per-dimension
+  (source_integrity/morphology/syntax/alignment/lexical_sense/...), proof_level P0–P3.
+- **`goldchain.py`** — `GoldChainCertificate`: the chain
+  (SANSKRIT→L0→L2→L200→C1→THEME→ARGUMENT→AIF→ESSAYPLAN→ESSAYCLAIM→SENTENCE), each node exposing
+  `depends_on/status/evidence/review_state` + `philological_proof`.
+- **`build_goldchain.py`** — walks **CL-3** end-to-end, joins on passage IDs, produces the certificate.
+- **test_goldchain.py 40/40** — asserts per-dimension certificate, OPEN crux propagates as OPEN, node
+  audit fields, layer coverage.
+- **Total ML suite: 124/124 passing.**
+- **KEY design rule met:** an OPEN lexical crux (V2-O has 134 ambiguous L0 tokens) propagates as
+  `LEXICAL_SENSE: OPEN` — NOT hidden, NOT inflated into a fake "confidence 0.87".
+- **Did NOT touch `pipeline/verify_l0.py`** (the L0 agent's in-flight work).
+
+## 9. NEXT (per the gold-chain completion, reviewer's post-gold-chain order)
+
+1. **Adjudicate CL-3** into an ACCEPTED theme (human review — the gold-chain input must be scholarship,
+   not automation).
+2. Generate the **claim-level essay** (atomic essay claims, each EVIDENCED/SYNTHETIC + support + boundary)
+   — NOT jump straight to prose.
+3. Adjudicate the remaining 8 themes.
+4. Unify `themes.ts` + `clusters.json`.
+5. Move ArgumentProposal/AIF/EssayPlan into canonical Pāṭala schema.
+6. Freeze the reusable `contracts/`.
+7. Run across the whole IPVV, then a second work.
