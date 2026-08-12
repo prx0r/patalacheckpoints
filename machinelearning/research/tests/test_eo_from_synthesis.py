@@ -85,5 +85,55 @@ check("nigamana does not assert the universal-Self",
 check("CRUX-SYNTHESIS-UNIVERSAL is an open crux",
       "CRUX-SYNTHESIS-UNIVERSAL" in eo["state_of_play"]["open_cruxes"])
 
-print("\n" + ("RESULT: FAIL" if failures else "RESULT: PASS (EO is a lossless, never-strengthening projection of the synthesis)"))
+print("\n== B1 — projection identity (monotone policy + source synthesis) ==")
+pe = eo["patala_epistemics"]
+check("projection_policy == MONOTONE_NO_STRENGTHENING", pe["projection_policy"] == "MONOTONE_NO_STRENGTHENING")
+check("source_synthesis.synthesis_id == SYN-IPVV-REFLEXION-CORE-001",
+      pe["source_synthesis"]["synthesis_id"] == syn["synthesis_id"])
+
+print("\n== B4 — no boundary/crux loss ==")
+check("does_not_establish survives in EO", eo["boundary"]["does_not_establish"]
+      == syn["boundary"]["does_not_establish"])
+check("all crux ids survive in EO",
+      set(c["crux_id"] for c in syn["cruxes"]) <= set(eo["boundary"]["crux_ids"]))
+
+print("\n== B5 — anti-laundering mutation tests ==")
+
+# INCOMPLETE structural audit -> EO 'accepted' must be REJECTED (already in == 4, re-assert)
+bad = json.loads(json.dumps(eo))
+for e in bad["syllogism"]["hetu"]["evidence"]:
+    e["structural_gate_outcome"] = "accepted"
+check("manufactured structural 'accepted' is REJECTED", not check_eo(syn, bad)["ok"])
+
+# UNRESOLVED synthesis -> strongly_supported EO nigamana must be REJECTED
+bad = json.loads(json.dumps(eo))
+bad["syllogism"]["nigamana"]["status"] = "strongly_supported"
+check("nigamana 'strongly_supported' under UNRESOLVED ceiling is REJECTED", not check_eo(syn, bad)["ok"])
+
+# EO introduces a source ref not in the synthesis closure must be REJECTED
+bad = json.loads(json.dumps(eo))
+bad["syllogism"]["hetu"]["evidence"].append({
+    "claim": "invented", "source_id": "ARG-GOLD-999:G9-GHOST", "proposition_id": "G9-GHOST",
+    "pramana": "anumana", "structural_gate_outcome": "NOT_AUDITED", "epistemic_status": "MACHINE_PROPOSED"})
+check("invented source ref not in synthesis closure is REJECTED", not check_eo(syn, bad)["ok"])
+
+# EO drops the universal-Self boundary must be REJECTED
+bad = json.loads(json.dumps(eo))
+bad["boundary"]["does_not_establish"] = [b for b in bad["boundary"]["does_not_establish"] if "universal" not in b.lower()]
+check("dropped universal-Self boundary is REJECTED", not check_eo(syn, bad)["ok"])
+
+# EO turns a RECONSTRUCTED inference into ASSERTED must be REJECTED
+bad = json.loads(json.dumps(eo))
+bad["inferences"][0]["origin"] = "RECONSTRUCTED"
+bad["inferences"][0]["status"] = "ASSERTED"
+check("RECONSTRUCTED inference laundered to ASSERTED is REJECTED", not check_eo(syn, bad)["ok"])
+
+# candidate with 'live' status but no source_ids must be REJECTED
+bad = json.loads(json.dumps(eo))
+for c in bad["candidates"]:
+    if c["candidate_id"] == "cand:buddhist-adhyavasaya-unsourced":
+        c["status"] = "live"
+check("unsourced opponent laundered to 'live' is REJECTED", not check_eo(syn, bad)["ok"])
+
+print("\n" + ("RESULT: FAIL" if failures else "RESULT: PASS (EO is a monotone, lossless, never-strengthening projection of the synthesis)"))
 sys.exit(1 if failures else 0)

@@ -69,6 +69,7 @@ def synthesis_to_eo(syn: dict) -> dict:
     audit = syn.get("synthesis_audit", {})
     ceiling = audit.get("epistemic_ceiling", "UNRESOLVED")
     sas = audit.get("structural_audit_state", "INCOMPLETE")
+    deps = syn.get("dependency_state", {}).get("dependencies", [])
 
     # ── evidence derived from the SYNTHESIS's load-bearing proposition dependencies ──
     evidence = []
@@ -147,7 +148,43 @@ def synthesis_to_eo(syn: dict) -> dict:
         "render_rule": ("When render_ceiling == UNRESOLVED, the renderer must QUALIFY / represent "
                         "alternatives / ABSTAIN — never render as settled fact. Structural outcomes are "
                         "NOT_AUDITED until a real contextual audit exists."),
+        # ── Pāṭala epistemics extension to the legacy EO-v2 presentation schema ──
+        # (the projection's organizing invariant: authority(P(x)) <= authority(x) for every projected claim)
+        "patala_epistemics": {
+            "render_ceiling": CEILING_TO_RENDER.get(ceiling, "UNRESOLVED"),
+            "structural_audit_state": sas,
+            "projection_policy": "MONOTONE_NO_STRENGTHENING",
+            "source_synthesis": {
+                "synthesis_id": syn.get("synthesis_id"),
+                "synthesis_epistemic_ceiling": ceiling,
+                "synthesis_structural_audit_state": sas,
+            },
+        },
+        # B4 — no logical-boundary loss: every does_not_establish + crux survives machine-resolvably
+        "boundary": {
+            "does_not_establish": list(boundary.get("does_not_establish", [])),
+            "crux_ids": [c["crux_id"] for c in cruxes],
+        },
+        # candidate handling: the sourced siddhanta candidate is live; the unsourced Buddhist rival stays
+        # UNSOURCED_RECONSTRUCTION (recorded in the Pāṭala extension; never laundered to legacy 'live')
+        "candidates": [
+            {"candidate_id": "cand:siddhanta-reflexivity-intrinsic",
+             "name": "Reflexivity belongs intrinsically to manifestation",
+             "tradition": "pratyabhijna", "proponent": "Abhinavagupta",
+             "position": thesis.get("text", ""),
+             "source_ids": [d["ref"] for d in deps if d.get("gold_id") != "SYNTHESIS"],
+             "status": "live",
+             "patala_status": "RECONSTRUCTED_SUPPORTED"},
+            {"candidate_id": "cand:buddhist-adhyavasaya-unsourced",
+             "name": "The determination establishes externality (unsourced opponent)",
+             "tradition": "buddhist_pramana", "proponent": "the Buddhist (fallback)",
+             "position": "The determination (adhyavasāya) establishes an external object.",
+             "source_ids": [],
+             "status": "UNSOURCED_RECONSTRUCTION",   # honest: reconstructed opponent, not grounded
+             "patala_status": "UNSOURCED_RECONSTRUCTION"},
+        ],
         "provenance": {"parent_ros": [], "parent_synthesis": syn.get("synthesis_id"),
+                       "projection_of": syn.get("synthesis_id"),
                        "created_by": "agent1", "last_updated": "2026-08-12"},
     }
     return eo

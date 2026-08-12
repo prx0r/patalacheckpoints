@@ -81,6 +81,40 @@ def check_eo(syn: dict, eo: dict) -> dict:
     if "universal self" in nig_text or "universal-self" in nig_text:
         problems.append("nigamana asserts the universal-Self — must stay an open crux/boundary")
 
+    # B1 — projection identity: the Pāṭala epistemics extension records the source + policy
+    pe = eo.get("patala_epistemics") or {}
+    if pe.get("projection_policy") != "MONOTONE_NO_STRENGTHENING":
+        problems.append("patala_epistemics.projection_policy != MONOTONE_NO_STRENGTHENING")
+    if pe.get("source_synthesis", {}).get("synthesis_id") != syn.get("synthesis_id"):
+        problems.append("patala_epistemics.source_synthesis.synthesis_id != synthesis id")
+
+    # B4 — no logical-boundary loss: every does_not_establish + every crux must survive machine-resolvably
+    eo_boundary = eo.get("boundary", {})
+    eo_dne = set(eo_boundary.get("does_not_establish", []))
+    for b in syn.get("boundary", {}).get("does_not_establish", []):
+        if b not in eo_dne:
+            problems.append(f"boundary does_not_establish lost in projection: {b!r}")
+    eo_crux_ids = set(eo.get("state_of_play", {}).get("open_cruxes", [])) | set(eo_boundary.get("crux_ids", []))
+    for c in syn.get("cruxes", []):
+        if c["crux_id"] not in eo_crux_ids:
+            problems.append(f"crux lost in projection: {c['crux_id']}")
+    # the universalization boundary must survive (B4 / anti-laundering)
+    if any("universal Self" in b for b in syn.get("boundary", {}).get("does_not_establish", [])):
+        if not any("universal" in b.lower() for b in eo_dne):
+            problems.append("universal-Self boundary dropped in projection")
+
+    # candidate provenance: an unsourced opponent must stay UNSOURCED_RECONSTRUCTION (never laundered to live)
+    for cand in eo.get("candidates", []):
+        if cand.get("patala_status") == "UNSOURCED_RECONSTRUCTION" and cand.get("status") == "live":
+            problems.append(f"candidate {cand.get('candidate_id')}: UNSOURCED_RECONSTRUCTION laundered to 'live'")
+        elif cand.get("status") == "live" and not cand.get("source_ids"):
+            problems.append(f"candidate {cand.get('candidate_id')}: 'live' with no source_ids (laundered)")
+
+    # inference laundering: a RECONSTRUCTED inference must not be projected as ASSERTED
+    for inf in eo.get("inferences", []):
+        if inf.get("origin") == "RECONSTRUCTED" and str(inf.get("status")) == "ASSERTED":
+            problems.append(f"inference {inf.get('to')}: RECONSTRUCTED origin laundered to ASSERTED")
+
     return {"ok": len(problems) == 0, "problems": problems,
             "render_ceiling": eo.get("render_ceiling"),
             "nigamana_status": eo.get("syllogism", {}).get("nigamana", {}).get("status"),

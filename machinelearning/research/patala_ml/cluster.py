@@ -12,7 +12,6 @@ import re
 from dataclasses import dataclass, field
 
 import networkx as nx
-import community  # python-louvain
 
 
 @dataclass
@@ -93,17 +92,20 @@ def build_hybrid_graph_c1(
 
 
 def _match_see_also(sa: str, known_ids: list[str]) -> str | None:
-    """Match a see_also target to a known C1 id.
+    """Match a see_also target to a known C1 id — DETERMINISTIC (insertion-order-invariant).
 
     Handles: 'V2-S' -> V2S-..., 'IPK 1.5.11' -> (prefix), and the multi-ref 'V3-G/H' ->
-    matches both V3G-... and V3H-.... Returns the first matched id.
+    matches V3G-... and V3H-.... Returns the first match in SORTED known_ids order so the result
+    does not depend on node insertion order (this is what makes the graph byte-identical under
+    irrelevant permutations).
     """
+    known = sorted(known_ids, key=lambda k: re.sub(r"[^A-Za-z0-9]", "", k).upper())
     for part in sa.replace(",", " ").replace("·", " ").split():
         # strip punctuation and normalize (V3-G -> V3G)
         tok = re.sub(r"[^A-Za-z0-9]", "", part).upper()
         if not tok:
             continue
-        for k in known_ids:
+        for k in known:
             kk = re.sub(r"[^A-Za-z0-9]", "", k).upper()
             if tok and (tok in kk or kk in tok):
                 return k
@@ -127,6 +129,7 @@ def cluster_c1s(
     if len(g.nodes) == 0:
         return []
 
+    import community  # python-louvain — imported lazily so build_hybrid_graph_c1 is usable without it
     partition = community.best_partition(g, random_state=seed, weight="weight")
 
     # collect memberships (node -> [community ids])
