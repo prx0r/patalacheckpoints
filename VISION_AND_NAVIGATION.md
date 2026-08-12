@@ -13,7 +13,9 @@ We are building a **computable scholarly tradition**: a single evidence graph ov
 (source → translation → decision → commentary → theme → claim → essay → pedagogy), where every layer
 is machine-queryable, every claim resolves to its source, and any reader — scholar or beginner — can
 enter at the depth they need. The IPVV (Abhinavagupta's Vivṛtivimarśinī) is the flagship; the
-architecture is agnostic and generalizes to any text (Tantra now, Buddhism/Greek/Nyāya later).
+architecture is agnostic and generalizes to any text (Tantra now, then Yogic/Vedānta, Buddhism/Greek/
+Nyāya later). **One trustworthy scholarly core, rendered as many media projections** (essays, shorts,
+video, AI-teacher) — see Vision 09.
 
 The two engines that make it real:
 - **PUSHING** — mechanically hound a text with "why" to expose its deepest arguments (the discovery).
@@ -61,6 +63,12 @@ STEP 7 — THE ML LAYER (make it learnable + verifiable)
 STEP 8 — THE PRODUCT VISION (the multi-resolution endgame)
   ORIGINAL/READ/GUIDE/STUDY/CRITICAL — one graph, many projections.
   → machinelearning/VISION-COMPUTABLE-TRADITION.md + MLVISION.md
+
+STEP 9 — THE MEDIA LAYER + CROSS-TRADITION ENGINE (Vision 09)
+  The scholarly core rendered as shorts/video/essays/AI-teacher (Workengestation = written voice,
+  Renderio = video), then reproduced across traditions (Tantra → Yogic → Vedānta → Greek) —
+  same machinery, new content each time.
+  → docs/vision/vision-09-media-and-cross-tradition.md
 ```
 
 ## 3. THE NAVIGATION (where everything lives)

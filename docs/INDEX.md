@@ -52,6 +52,7 @@ stale ones as `[ARCHIVED]` so a new agent is never confused. If it's not here, i
 | **Vision 06 — Pāṭala Review (adversarial)** | `docs/vision/vision-06-adversarial-review.md` | repo `docs/vision/` |
 | **Vision 07 — The New Scholar** | `docs/vision/vision-07-new-scholar.md` | repo `docs/vision/` |
 | **Vision 08 — Scholar Economics** | `docs/vision/vision-08-scholar-economics.md` | repo `docs/vision/` |
+| **Vision 09 — Media & Cross-Tradition Engine** | `docs/vision/vision-09-media-and-cross-tradition.md` | repo `docs/vision/` |
 | **Dual-agent track** | `machinelearning/DUAL_AGENT_TRACK.md` | repo `machinelearning/` |
 | **Context engineering** | `machinelearning/CONTEXT_ENGINEERING.md` | repo `machinelearning/` |
 | **Education layer (vision)** | `machinelearning/EDUCATION_VISION.md` | repo `machinelearning/` |

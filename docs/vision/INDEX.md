@@ -28,6 +28,7 @@ here and in `docs/INDEX.md`.*
 | **06** | `docs/vision/vision-06-adversarial-review.md` | **Pāṭala Review** — adversarial scholarly review + the research compiler (scholar-facing API mega-product). *(new, from R2)* |
 | **07** | `docs/vision/vision-07-new-scholar.md` | **The New Scholar** — workbench, perspective collector, research-graph scholarship. *(new, from R2)* |
 | **08** | `docs/vision/vision-08-scholar-economics.md` | **Scholar Incentives & Economics** — paid adjudication, ORCID/CRediT credit, ownership. *(new, from R2)* |
+| **09** | `docs/vision/vision-09-media-and-cross-tradition.md` | **The Media Layer & Cross-Tradition Engine** — the scholarly core rendered as shorts/video/essays/AI-teacher (Workengestation = written voice, Renderio = video), then reproduced across traditions (Tantra → Yogic → Vedānta → Greek). |
 
 ---
 
