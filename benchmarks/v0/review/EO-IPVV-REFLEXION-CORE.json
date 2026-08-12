@@ -1,85 +1,100 @@
 {
   "eo_id": "eo:ipvv-reflexion-core",
   "schema_version": 2,
-  "title": "Reflexivity (vimar\u015ba) belongs intrinsically to manifestation: the self-grasp is not a construction, and manifestation without reflexive awareness is inert.",
+  "title": "Reflexivity (vimar\u015ba) belongs intrinsically to manifestation: the 'I'-reflexive awareness is not a conceptual construction, and what makes the light conscious is its self-awareness in the act of manifesting.",
   "status": "draft",
-  "projection_of": "SYN-IPVV-REFLEXION-CORE-001",
   "schema_source": {
-    "repo": "prx0r/patala",
-    "commit": "4e097a46d6d6228030fb6244aa9ddb5e64cd50b2",
+    "repo": "patala",
+    "commit": "docs/ontology/EO-v2.md",
     "path": "docs/ontology/EO-v2.md"
   },
+  "projection_of": "SYN-IPVV-REFLEXION-CORE-001",
   "question": {
-    "question_id": "q:reflexion-core",
+    "question_id": "q:reflexion-core-intrinsic",
     "tension_point": "Can the determination (adhyavas\u0101ya) establish an external object, or is the self-experience self-luminous and self-contained?",
-    "why_it_matters": "the reflexion-core synthesis",
+    "why_it_matters": "The reflexion-core: whether reflexivity belongs intrinsically to manifestation.",
     "resolution_level": "local_argument"
   },
   "syllogism": {
     "pratijna": {
-      "proposition": "Reflexivity (vimar\u015ba) belongs intrinsically to manifestation: the self-grasp is not a construction, and manifestation without reflexive awareness is inert.",
-      "what_it_claims": "synthesis thesis"
+      "proposition": "Reflexivity (vimar\u015ba) belongs intrinsically to manifestation: the 'I'-reflexive awareness is not a conceptual construction, and what makes the light conscious is its self-awareness in the act of manifesting.",
+      "what_it_claims": "Reflexivity belongs intrinsically to manifestation (reconstructed)."
     },
     "hetu": {
       "evidence": [
         {
-          "claim": "The awareness expressed as 'I' (aha\u1e43-pratyavamar\u015ba) is not treated as one more relation constructed between independently given elements.",
-          "source_id": "gold:ARG-GOLD-002:G2-TC2",
-          "pramana": "anumana"
-        },
-        {
           "claim": "Linguistic articulation does not show that the underlying self-awareness is itself produced by conceptual determination.",
-          "source_id": "gold:ARG-GOLD-002:G2-CONC",
-          "pramana": "anumana"
-        },
-        {
-          "claim": "A light that merely showed the world without knowing that it showed it would be no different from crystal \u2014 it would reflect, but be inert.",
-          "source_id": "gold:ARG-GOLD-004:G4-CRYSTAL",
-          "pramana": "anumana"
+          "source_id": "ARG-GOLD-002:G2-CONC",
+          "proposition_id": "G2-CONC",
+          "pramana": "anumana",
+          "structural_gate_outcome": "NOT_AUDITED",
+          "gate_failures": [],
+          "epistemic_status": "SCHOLARLY_CORROBORATED_PRELIMINARY"
         },
         {
           "claim": "What makes the light conscious (rather than a thing) is that it is aware of itself in the very act of manifesting.",
-          "source_id": "gold:ARG-GOLD-004:G4-CONC",
-          "pramana": "anumana"
+          "source_id": "ARG-GOLD-004:G4-CONC",
+          "proposition_id": "G4-CONC",
+          "pramana": "anumana",
+          "structural_gate_outcome": "NOT_AUDITED",
+          "gate_failures": [],
+          "epistemic_status": "MACHINE_PROPOSED"
         }
       ],
       "source_ids": [
-        "gold:ARG-GOLD-002:G2-TC2",
-        "gold:ARG-GOLD-002:G2-CONC",
-        "gold:ARG-GOLD-004:G4-CRYSTAL",
-        "gold:ARG-GOLD-004:G4-CONC"
+        "ARG-GOLD-002:G2-CONC",
+        "ARG-GOLD-004:G4-CONC"
       ]
     },
     "udaharana": {
-      "examples": []
+      "examples": [
+        {
+          "scenario": "a light that showed the world without knowing it showed it would be like inert crystal",
+          "what_it_shows": "self-awareness in the act is what distinguishes the conscious from the inert"
+        }
+      ]
     },
     "upanaya": {
-      "application": "synthesis of ARG-002 + ARG-004",
+      "application": "the synthesis of ARG-002 (I not a construction) + ARG-004 (manifestation without vimar\u015ba inert)",
       "cruxes": [
         "CRUX-REFLEXION-INERT",
         "CRUX-SYNTHESIS-UNIVERSAL"
       ]
     },
     "nigamana": {
-      "best_current_answer": "Reflexivity (vimar\u015ba) belongs intrinsically to manifestation: the self-grasp is not a construction, and manifestation without reflexive awareness is inert.",
+      "best_current_answer": "Reflexivity (vimar\u015ba) belongs intrinsically to manifestation: the 'I'-reflexive awareness is not a conceptual construction, and what makes the light conscious is its self-awareness in the act of manifesting.",
       "status": "structurally_suggestive",
-      "scope": "local"
+      "scope": "Local: reflexivity intrinsic per act. Universal-Self: open boundary."
     }
   },
+  "inferences": [
+    {
+      "from": [
+        "G2-CONC",
+        "G4-CONC"
+      ],
+      "to": "SYN-CONC-001",
+      "warrant": "If the 'I'-reflexive awareness is not a conceptual construction [G2-CONC], and what makes the light conscious (rather than a thing) is its self-awareness in the act of manifesting [G4-CONC], then reflexivity belongs intrinsically to manifestation [SYN-CONC-001] \u2014 the reconstruction's bridge, not an entailed result.",
+      "origin": "RECONSTRUCTED",
+      "support_state": "UNRESOLVED",
+      "status": "RECONSTRUCTED"
+    }
+  ],
   "state_of_play": {
-    "summary": "Reflexivity (vimar\u015ba) belongs intrinsically to manifestation: the self-grasp is not a construction, and manifestation without reflexive awareness is inert.",
-    "what_survives": "synthesis thesis (reconstructed)",
-    "what_is_weakened": "unsupported bridge",
-    "what_would_change_our_mind": "independent review",
+    "summary": "Reflexivity (vimar\u015ba) belongs intrinsically to manifestation: the 'I'-reflexive awareness is not a conceptual construction, and what makes the light conscious is its self-awareness in the act of manifesting.",
+    "what_survives": "the reconstructed bridge + the resolved load-bearing dependency statuses",
+    "what_is_weakened": "the bridge support_state (UNRESOLVED) + the universalization boundary",
+    "what_would_change_our_mind": "a real contextual audit (structural_audit_state -> COMPLETE) or an independent review",
     "open_cruxes": [
       "CRUX-REFLEXION-INERT",
       "CRUX-SYNTHESIS-UNIVERSAL"
     ]
   },
   "render_ceiling": "UNRESOLVED",
+  "render_rule": "When render_ceiling == UNRESOLVED, the renderer must QUALIFY / represent alternatives / ABSTAIN \u2014 never render as settled fact. Structural outcomes are NOT_AUDITED until a real contextual audit exists.",
   "provenance": {
     "parent_ros": [],
-    "parent_dossier": "SYN-IPVV-REFLEXION-CORE-001",
+    "parent_synthesis": "SYN-IPVV-REFLEXION-CORE-001",
     "created_by": "agent1",
     "last_updated": "2026-08-12"
   }
