@@ -1,0 +1,114 @@
+{
+  "atlas_id": "PATALA-SEMANTIC-SHIFT-ATLAS-v0",
+  "date": "2026-08-12",
+  "source": "docs/corpus/canonical_reference_map.md §Canonical glossary and semantic-shift atlas (imported from sanskritree)",
+  "model": "LEMMA -> SENSE { tradition, period, sense, translation_policy, evidence, semantic_warning }",
+  "principle": "Semantic consistency is the goal, not lexical uniformity. A lemma has different senses per tradition/period. Do NOT construct a single Tantric dictionary.",
+  "lemmas": [
+    {
+      "lemma": "kula",
+      "senses": [
+        {"sense_id": "kula.yogini.early.01", "tradition": "Early Yoginī/Kaula", "period": "early", "sense": "Family/lineage of Yoginīs or Mothers", "translation_policy": "translate 'family/lineage' when concrete classification", "evidence": ["Sanderson (Vidyāpīṭha sources)"], "warning": "historically important; do not erase with later metaphysical translations"},
+        {"sense_id": "kula.kaula.developed.02", "tradition": "Developed Kaula", "period": "developed", "sense": "Body; totality of power and phenomena", "translation_policy": "use 'aggregate/body/complex' only where passage supports it", "evidence": ["Kaula reinterpretation (Sanderson)"], "warning": "intentional expansion from lineage to body/totality"},
+        {"sense_id": "kula.kubjika.03", "tradition": "Kubjikā", "period": "Kubjikā", "sense": "Mantric/cosmic body; structured aggregate (kulātmaka)", "translation_policy": "retain Kula when technical system activated", "evidence": ["KMT 17.80-82"], "warning": "avoid automatically translating 'family'"},
+        {"sense_id": "kula.abhinava.trika.04", "tradition": "Abhinava/Trika", "period": "c.1000 CE", "sense": "relational pole to akula/anuttara (metaphysical polarity)", "translation_policy": "usually retain as Kula in technical contexts", "evidence": ["TA.3.143"], "warning": "interpret in relation to akula and kaulikī śakti"}
+      ]
+    },
+    {
+      "lemma": "krama",
+      "senses": [
+        {"sense_id": "krama.general.01", "tradition": "General Sanskrit/ritual", "period": "", "sense": "Order, succession, sequence, method", "translation_policy": "translate 'sequence/succession'", "evidence": ["numerous"], "warning": "do not infer 'Krama school' from the noun alone"},
+        {"sense_id": "krama.krama.kalikula.02", "tradition": "Krama/Kālīkula", "period": "", "sense": "Ordered unfolding of cognition reflected in ordered worship (pūjākrama ↔ saṃvitkrama)", "translation_policy": "'Krama' only when sectarian identity demonstrable", "evidence": ["Sanderson"], "warning": "sequence is simultaneously ritual and phenomenological"},
+        {"sense_id": "krama.abhinava.trika.03", "tradition": "Abhinava/Trika", "period": "", "sense": "Sequence, progressive manifestation, graduated procedure", "translation_policy": "context-dependent", "evidence": ["TA.1.5"], "warning": "sometimes generic; sometimes carries inherited Krama resonance"}
+      ]
+    },
+    {
+      "lemma": "śakti",
+      "senses": [
+        {"sense_id": "sakti.spanda.01", "tradition": "Spanda", "period": "", "sense": "Power/dynamism constitutive of manifestation and cognition", "translation_policy": "NOT merely 'energy'", "evidence": ["SPK 1, 18-19"], "warning": "not 'energy'"},
+        {"sense_id": "sakti.kubjika.02", "tradition": "Kubjikā", "period": "", "sense": "Goddess/mantric power with phonemic and triadic articulation", "translation_policy": "keep deity/language/causal power connected", "evidence": ["KMT 1.71-81; 2.1; 4.110"], "warning": "deity, language, causal power overlap"},
+        {"sense_id": "sakti.abhinava.trika.03", "tradition": "Abhinava/Trika", "period": "", "sense": "Freedom/power of consciousness; differentiated powers reintegrated into supreme awareness", "translation_policy": "translate by context; single 'energy' impoverishes", "evidence": ["TA.1.5; 3.143-44; 33.20-29"], "warning": "a single English 'energy' is seriously impoverished"}
+      ]
+    },
+    {
+      "lemma": "spanda",
+      "senses": [
+        {"sense_id": "spanda.spanda.01", "tradition": "Spanda tradition", "period": "", "sense": "Dynamic pulse/activity of the fundamental conscious reality", "translation_policy": "'vibration' conventional but risky", "evidence": ["SPK 19, 21-22"], "warning": "'vibration' risks sounding mechanically physical"}
+      ]
+    },
+    {
+      "lemma": "vimarśa",
+      "senses": [
+        {"sense_id": "vimarsa.pratyabhijna.01", "tradition": "Pratyabhijñā/Abhinava", "period": "", "sense": "Reflexive apprehension, self-awareness, consciousness's capacity to apprehend itself and its content", "translation_policy": "reflexive apprehension; NEVER merely 'reflection'", "evidence": ["TA.3, 33; Pratyabhijñā context", "IPK 1.5.11-13"], "warning": "'reflection' alone falsely implies discursive thought"},
+        {"sense_id": "vimarsa.krama.02", "tradition": "Krama", "period": "", "sense": "reflexion-that-is-the-sequence (svātma-cit-krama-vimarśa)", "translation_policy": "the reflexion that IS the sequence", "evidence": ["Mahārthamañjarī m.5, m.10"], "warning": "the Krama reflexion is the saṃvit-krama's self-grasping"}
+      ]
+    },
+    {
+      "lemma": "parāmarśa",
+      "senses": [
+        {"sense_id": "paramarsa.pratyabhijna.01", "tradition": "Pratyabhijñā/Trika", "period": "", "sense": "Apprehension/self-apprehension; gathering of experience into unified awareness", "translation_policy": "'apprehension'", "evidence": ["TA.33.20-29"], "warning": "related to but not always interchangeable with vimarśa"}
+      ]
+    },
+    {
+      "lemma": "prakāśa",
+      "senses": [
+        {"sense_id": "prakasa.trika.01", "tradition": "Trika/Pratyabhijñā", "period": "", "sense": "Manifest luminosity; awareness as that in virtue of which things appear", "translation_policy": "'manifest luminosity'", "evidence": ["TA.3.133"], "warning": "'light' is metaphorically suggestive but can mislead if treated as physical"}
+      ]
+    },
+    {
+      "lemma": "visarga",
+      "senses": [
+        {"sense_id": "visarga.trika.01", "tradition": "Trika/Kaula", "period": "", "sense": "Emission, release, manifestation; power by which the supreme projects itself", "translation_policy": "'emission' as safest literal anchor; tag context separately", "evidence": ["TA.3.141-46"], "warning": "carries phonemic, cosmological, and some erotic/ritual resonances; tag sub-senses (grammatical/cosmogonic/Kaula/breath/ritual/erotic)"}
+      ]
+    },
+    {
+      "lemma": "anuttara",
+      "senses": [
+        {"sense_id": "anuttara.trika.01", "tradition": "Mature Trika", "period": "", "sense": "The unsurpassed/ultimate; concentrated Parā/Ekavīrā and supreme state", "translation_policy": "technical designation", "evidence": ["TA.1.1, 1.5; 3.143"], "warning": "not merely the adjective 'highest'; a highly loaded technical term"}
+      ]
+    },
+    {
+      "lemma": "khecarī",
+      "senses": [
+        {"sense_id": "khecari.kubjika.01", "tradition": "Kubjikā", "period": "", "sense": "Goddess/power of 'sky/space'; mantra-body, Mālinī, structured divine body", "translation_policy": "retain as goddess-name", "evidence": ["KMT 17.77-82"], "warning": "not reducible to later Haṭhayogic tongue gesture"},
+        {"sense_id": "khecari.abhinava.02", "tradition": "Abhinava ritual synthesis", "period": "", "sense": "mudrā, internal condition/power, movement through space, creation/retraction, possession", "translation_policy": "context-dependent", "evidence": ["TA.32.31-65"], "warning": "excellent test case for polysemy within one chapter"}
+      ]
+    },
+    {
+      "lemma": "saṃvit",
+      "senses": [
+        {"sense_id": "samvit.krama.01", "tradition": "Krama", "period": "", "sense": "Conscious awareness considered in dynamic sequence (saṃvitkrama)", "translation_policy": "consciousness-in-sequence", "evidence": ["Sanderson"], "warning": "essential for why ritual order can model cognition"}
+      ]
+    },
+    {
+      "lemma": "svātantrya",
+      "senses": [
+        {"sense_id": "svatantrya.spanda.01", "tradition": "Spanda/Pratyabhijñā/Trika", "period": "", "sense": "Inherent autonomy/freedom of conscious agency (ontological efficacy + volition)", "translation_policy": "NOT 'free will' (too narrow)", "evidence": ["SPK 7; TA.1.5"], "warning": "this is ontological efficacy as well as volition"}
+      ]
+    },
+    {
+      "lemma": "Mālinī",
+      "senses": [
+        {"sense_id": "malini.trika.01", "tradition": "Trika/Kubjikā", "period": "", "sense": "Goddess/phonemic arrangement/power of mantra-language", "translation_policy": "keep deity, alphabet, mantra ontology connected", "evidence": ["KMT 1.71-81, 4.107-110"], "warning": "keep deity, alphabet, mantra connected"}
+      ]
+    },
+    {
+      "lemma": "mātṛkā",
+      "senses": [
+        {"sense_id": "matrka.mantric.01", "tradition": "Mantric Śaiva-Śākta", "period": "", "sense": "Mother/phonemic matrix; power embodied in letters", "translation_policy": "phonemic matrix", "evidence": ["KMT 4.110"], "warning": "candidate for cross-text phonemic dossier"}
+      ]
+    },
+    {
+      "lemma": "saṃhāra",
+      "senses": [
+        {"sense_id": "samhara.spanda.01", "tradition": "Spanda/Trika/Kubjikā", "period": "", "sense": "Retraction, withdrawal, dissolution", "translation_policy": "retraction/withdrawal", "evidence": ["SPK 6; TA.32.46, 59"], "warning": "context ranges from cosmic process to ritual/internalized operation"}
+      ]
+    },
+    {
+      "lemma": "pratyabhijñā",
+      "senses": [
+        {"sense_id": "pratyabhijna.utpala.01", "tradition": "Utpaladeva/Abhinava", "period": "", "sense": "Recognition of one's identity/nature as the autonomous conscious principle", "translation_policy": "recognition (NOT mere recollection)", "evidence": ["Utpaladeva's philosophical corpus"], "warning": "do not treat 'recognition' as mere recollection"}
+      ]
+    }
+  ]
+}

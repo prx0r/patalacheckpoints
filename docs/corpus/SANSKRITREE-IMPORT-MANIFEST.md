@@ -103,6 +103,19 @@ onto Agent 1's contrast-set/verification vocabulary. Reuse, not duplicate:
 (Ratié) were used to fold ARG-004 → `SCHOLARLY_CORROBORATED_PRELIMINARY` (the crystal/inert component
 only). See `benchmarks/v0/ARG-GOLD-REVIEW-PACKET-v2.md`. Template for mining ARG-001/002/003/005.
 
+## IMPORT — semantic-shift atlas (LEMMA→SENSE) as structured data
+
+`benchmarks/v0/semantic-shift-atlas.json` — the canonical_reference_map glossary materialized as
+machine-readable data: **16 lemmas × 25 senses**, each with tradition / period / sense /
+translation_policy / evidence / semantic_warning. Feeds:
+- **Agent 1 (semantic-alignment):** the sense-distinctions (e.g. vimarśa Pratyabhijñā vs Krama) map onto
+  the SAME/NEAR/DIFFERENT alignment labels — the seed for the semantic-alignment gold.
+- **Agent 2 (term-policy):** the translation_policy field per tradition → the T2/R2 term-ledger.
+Model: `LEMMA → SENSE{tradition, period, locus, policy, explanation, parallel, status}`. Principle:
+*semantic consistency is the goal, not lexical uniformity.*
+
+---
+
 ## IMPORT — concordance index (132 MB, 505 texts) as retrieval evidence
 
 `.concordance_index.json` — lemma→passage/token across 505 texts. Agent 1: parallel-usage retrieval
