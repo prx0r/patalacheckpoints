@@ -1,0 +1,75 @@
+{
+  "id": "pt:kramasadbhava:l0:4df33435",
+  "work_id": "kramasadbhava",
+  "passage_id": "kramasadbhava:1.1",
+  "source_span": {
+    "char_start": 0,
+    "char_end": 0,
+    "raw": "kālī tu bhairavārūḍhā mahākālakalāśinī"
+  },
+  "analysis": {
+    "units": [
+      {
+        "surface": "kAlI",
+        "lemma": "kal",
+        "data_class": "PyPadaEntry_Subanta"
+      },
+      {
+        "surface": "tu",
+        "lemma": "tu",
+        "data_class": "PyPadaEntry_Subanta"
+      },
+      {
+        "surface": "BErava",
+        "lemma": "BErava",
+        "data_class": "PyPadaEntry_Subanta"
+      },
+      {
+        "surface": "ArUQA",
+        "lemma": "Aruh",
+        "data_class": "PyPadaEntry_Subanta"
+      },
+      {
+        "surface": "mahAkAlakalASinI",
+        "lemma": null,
+        "data_class": null
+      }
+    ]
+  },
+  "gloss": {},
+  "alternatives": [],
+  "witnesses": {
+    "vidyut": [
+      {
+        "surface": "kAlI",
+        "lemma": "kal",
+        "data_class": "PyPadaEntry_Subanta"
+      },
+      {
+        "surface": "tu",
+        "lemma": "tu",
+        "data_class": "PyPadaEntry_Subanta"
+      },
+      {
+        "surface": "BErava",
+        "lemma": "BErava",
+        "data_class": "PyPadaEntry_Subanta"
+      },
+      {
+        "surface": "ArUQA",
+        "lemma": "Aruh",
+        "data_class": "PyPadaEntry_Subanta"
+      },
+      {
+        "surface": "mahAkAlakalASinI",
+        "lemma": null,
+        "data_class": null
+      }
+    ]
+  },
+  "proof": {
+    "source_span": "PROVED",
+    "source_sha": "87f72f83b26f",
+    "unknown_chars": 0
+  }
+}

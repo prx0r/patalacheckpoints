@@ -783,3 +783,43 @@ Translation Audit
 The most important point is that **you already built the safety rails before the train**. The repo's current Agent 2 architecture is explicitly designed so Agent 3 is only a worker producing candidate artifacts while Agent 2 owns corpus truth and integrity.
 
 So yes: I would make **“RAW Sanskrit → fully audited MACHINE_PROPOSED L0” the next hard milestone, prove it blind on IPVV, then unleash it on Kramasadbhāva.** Once that works, autonomous batch translation stops being a vision and becomes a queue-processing problem.
+
+---
+
+## PROGRESS (2026-08-12) — RAW-L0 deterministic core is built + the design answers
+
+**Build 1 (raw_l0.py) is working deterministically — no hermes required.** `pipeline/raw_l0.py`
+orchestrates existing IPVV machinery: Vidyut segmentation/lemma/morphology (the deterministic witness) +
+P0 source-span proof. Verified on a real Kramasadbhāva verse (`kālī tu bhairavārūḍhā mahākālakalāśinī`):
+segments extracted with lemmas + morphological class, P0 `source_span: PROVED`, `unknown_chars: 0`.
+The model gloss pass is OPTIONAL (`--no-model` for the deterministic substrate; hermes can hang, so it
+never blocks the pipeline).
+
+### The design answers (the agent loop, validation, testing, expansion)
+
+**1. The agent references all internal docs.** It reads `pipeline/`, `docs/`, the L0 specs, the gold,
+the glossary, the corpus state — all on disk. The northstar loop is retrieve-driven, not blind-prompt:
+SOURCE → DETERMINISTIC (Vidyut) → RETRIEVE (same-text/same-author/same-school usage) → PROPOSE →
+CHALLENGE (a falsifying pass) → REVISE/ABSTAIN → VERIFY → WRITE.
+
+**2. Context + chaining.** The agent processes as many passages as fit its context; each completed L0
+record updates the ledger (`NEXT_VALID_ACTION`), so it advances to the next passage naturally. The corpus
+state machine IS the chain. "Gets easier as it goes" = accumulated context + the term/glossary memory it builds.
+
+**3. Validation is deterministic + separated proof dimensions.** P0 source-span = PROVED (mechanical);
+segmentation/morphology = SUPPORTED (Vidyut witness, P2-calibrated); lexical_sense/gloss = MACHINE_PROPOSED
+(never "proved"). The key metric is **false-certainty + abstention** (the P3 ranker lesson: 100% false
+certainty = failure). A Vidyut lemma=null → OPEN/abstain, never a fabricated answer.
+
+**4. Test with a confirmed-English text = the Sanskrit-only replay.** Take a verse with existing reviewed
+English (IPVV 63 chunks, Kramasadbhāva T3, kjn T3, kubjikā T1), hide the English, run RAW-L0 + gloss, then
+compare against the gold. That is the real benchmark and the embryo of PĀṬALA Evals.
+
+**5. Expansion-ready.** `corpus_state.py` already classifies AND_GLOSS vs RAW_SANSKRIT and sets
+NEXT_VALID_ACTION; the proof contract is format-agnostic. RAW-L0 unblocks the RAW_SANSKRIT works
+(Kramasadbhāva etc.) that were BLOCKED — the first cross-work generalization.
+
+**Note:** hermes (the agent runtime) is currently hanging/unreliable on this box. The deterministic RAW-L0
+core does NOT need it. The generative gloss layer can use a plain model call; the autonomous agent loop
+(Hermes kanban/cron/skills) is deferred until hermes is stable — the deterministic substrate + validation
+are the priority.
