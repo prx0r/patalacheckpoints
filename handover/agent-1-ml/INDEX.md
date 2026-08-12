@@ -27,7 +27,23 @@ the ML lane.*
 ## Current state (2026-08-12) — THE HONEST PICTURE
 
 > **Read `handover/agent-1-ml/SESSION-2026-08-12.md` first** — the full session record. This INDEX is the
-> living summary.
+> living summary. **The vision this feeds:** `docs/vision/CORE-BIBLE.md` (Layer 3 = checkpoints) — my
+> CP4 work is the ACTIVE item there; update it via `handover/flow.py` at session end.
+
+### 🔴 THE ACTIVE WORK RIGHT NOW (this is the live task)
+**CP4 — build ARG-003/004/005** (the remaining gold arguments), with the philosophical-IR shape:
+```
+ARG-003  reductio                (V2-O ordered-support regress)
+ARG-004  conceptual-distinction  (vimarśa vs prakāśa, V2-H)
+ARG-005  ambiguous               (two defensible reconstructions, V3-I)
+```
+Each: read the C1 + L2 → extract propositions → build the Proposition/Inference/Defeater shape +
+Commitment (who asserts) + ResearchQuestion + DebateFrame + SemanticAlignment. Add to the `GOLDS`
+registry in `emit_gold_fixtures.py`, run it, confirm `validate_gold` passes. Then all 5 golds are
+consistent = the CP4 gold gate.
+
+**The source of this task:** `handover/agent-1-ml/ORIENTATION.md` Phase 4 + `NEXT-STEPS.md` + the vision
+(`docs/vision/CORE-BIBLE.md` Layer 3 / `handover/CHECKPOINTS.md` CP4).
 
 ### The pivot this session: epistemic hardening (not building more)
 We built a full ML spine (cluster→argument→essay→gold-chain), then an audit exposed it was mostly
@@ -49,15 +65,16 @@ structurally-elegant-but-hollow. We pivoted to: frozen benchmark + enforced doct
 - `builders.py` comparison — **RETIRED as CIRCULAR**
 
 ### In progress / next (in order — the real work)
-1. **Nyāya gate → viruddha-via-graph** — the hard remaining part. Detecting "memory proves the self is
-   constructed" is a defect needs the argument graph (IPVV argues the opposite, V2-P). Keyword rules can't.
-   This is where the gate + Pāṭala's C1/argument layer connect for real.
-2. **Wire `verify-claim-semantic`** — fill `argument.py`'s empty `gate` slot + `lib/verify.ts` + the API.
-3. **Grow the argument gold** (ARG-GOLD-001..010, independently reviewed) — CP4.
-4. **Retrieval re-baseline on split S2** — CP2 (currently S1-nonleak).
+1. **🔴 Complete the Argument Gold (ARG-003/004/005)** — CP4, THE live task. All 5 golds consistent =
+   the CP4 gate (see ORIENTATION Phase 4 + `emit_gold_fixtures.py`).
+2. **Validate all 5 golds** pass `validate_gold` — the "gold is worth reviewing" gate.
+3. **Test automatic extraction blind** against the 5 golds (Build 4) — measure proposition P/R, role
+   macro-F1, grounding, explicitness, inference recovery, abstention. Record a `BenchmarkRun`.
+4. **THEN viruddha becomes a graph operation** (Build 5) over DebateFrames → `VIRUDDHA_CANDIDATE`.
+5. **Adjudicate 3 themes** (Order-less Support · Vimarśa · Pramāṇa) → `AcceptedTheme` (CP3).
 
-**Do NOT:** build new layers, add graph abstractions, or pursue the Lean bridge (proves FOL tautologies,
-not Abhinavagupta).
+**Do NOT:** build new layers, add graph abstractions, pursue the Lean bridge, or hack viruddha into the
+frozen gate.
 
 ---
 

@@ -88,6 +88,11 @@ interface BenchmarkRun {
 | **CP3 THEMES** | 3 of the 9 proposals genuinely adjudicated into `AcceptedTheme` (membership inspected, not clustering-asserted) | ML |
 | **CP4 ARGUMENT** | ARG-GOLD-001..010 real propositions; extractor tested blind against them; the vertical object "I claim X because C1 says / L2 renders / span is / proof says". **Target shape = the philosophical IR** (`machinelearning/_ACTIVE/ARGUMENT-IR-VISION.md`): every proposition carries a Commitment (who asserts) + derivational `derived_from`; a ResearchQuestion per argument; Attack vs Defeat split; three-level SemanticAlignment for comparative cases. **Built gold-first — the ontology is forced by the gold, not designed empty.** | **both converge** |
 
+**ACTIVE NOW (2026-08-12): CP4 is live.** Agent 1 is building **ARG-003 (reductio) · ARG-004
+(conceptual-distinction) · ARG-005 (ambiguous)** with the IR shape. ARG-001/002 done + consistent.
+Progress tracked live in `handover/STATE.yaml` via `flow.py update agent1 CP4 <status>`. See
+`handover/agent-1-ml/INDEX.md` (current work) + `handover/agent-1-ml/ORIENTATION.md` (the process).
+
 ---
 
 ## THE TWO-AGENT RESPONSIBILITIES (the next month)

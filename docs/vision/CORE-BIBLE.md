@@ -73,6 +73,11 @@ CP6 SYNTHESIS · CP7 WORKBENCH · CP8 ADVERSARIAL REVIEW · CP9 API/MCP · CP10 
 **Real state (honest):** CP0 DONE · CP1 PARTIAL(L0) · CP2 PARTIAL · CP3 PARTIAL · CP4 PARTIAL · CP5–6
 PARTIAL · CP7+ NOT STARTED. Live tracked in `handover/STATE.yaml` via `flow.py status`.
 
+**The ACTIVE work right now (2026-08-12):** **CP4 — Agent 1 is building ARG-003/004/005** (reductio ·
+conceptual-distinction · ambiguous), with the philosophical-IR shape, gold-first. This is the CP4 gate:
+the argument layer that unblocks the Nyāya gate, the media layer, and cross-tradition. Every session
+updates this via `handover/flow.py update agent1 CP4 ...`.
+
 **Canonical doc:** `handover/CHECKPOINTS.md` + the live state.
 
 ---

@@ -264,6 +264,19 @@ For each build, answer:
 update `CLAIMS.md` (add P-009 Argument Gold, P-010 DebateFrame as you complete them) and `theatre_check.py`
 honestly.
 
+### 🔄 THE SESSION-UPDATE LOOP (do this EVERY session end — it keeps vision ↔ work linked)
+1. **Update the live state:** `python3 handover/flow.py update agent1 CP4 <status> -n "<what changed>" --by agent1`
+   (bumps the version, records it in history).
+2. **Update this lane's INDEX:** edit `handover/agent-1-ml/INDEX.md` — move done items to "done", name
+   the current work at the top (the 🔴 ACTIVE WORK section).
+3. **Update the vision's Layer 3:** edit `docs/vision/CORE-BIBLE.md` if CP4's status text changed, and
+   `handover/CHECKPOINTS.md` if the "ACTIVE NOW" line changed.
+4. **Drop a session note:** append to `handover/agent-1-ml/SESSION-<date>.md` (never overwrite).
+5. **Verify:** `python3 handover/check_staleness.py` — must be 0 failures.
+
+**This is what keeps the link clear:** vision (CORE-BIBLE Layer 3) → CP4 → this INDEX (current work) →
+STATE.yaml (live progress). Each session, these update together.
+
 ---
 
 ## PHASE 6 — THE ONE-SENTENCE CARRY-FORWARD
