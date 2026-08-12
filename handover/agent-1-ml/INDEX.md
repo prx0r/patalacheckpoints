@@ -94,3 +94,8 @@ Never edit the deterministic substrate (`data/published/`, `lib/verify.ts`, `dat
 `lib/citation.ts`, `data/corpus/graph.ts`) — consume it through the shared contract. The philproof/verify_l0
 internals are Agent 2's lane; my consumer (`philproof.py`, `build_goldchain.py`) reads their output. Join on
 Passage ID / Proof ID / C1 ID — never fuzzy.
+
+## THE ACTIVE NEXT-STEPS DOC (current execution)
+- **`handover/agent-1-ml/NEXT-STEPS.md`** — the exact how-to for the next session: build ARG-GOLD-002..005
+  (transcendental/objection-reply/reductio/conceptual-distinction/ambiguous) with the
+  DebateFrame/SemanticAlignment layer, the per-build gates, the falsification self-check, and the guardrails.
