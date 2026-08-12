@@ -34,9 +34,14 @@ const HUB: WorkHub[] = [
     work_id: "isvarapratyabhijnavivrtivimarsini",
     label: "IPVV — Abhinavagupta's Vivṛtivimarśinī",
     outputs: [
-      // PUSHING enquiry (the mechanical deep-dive method)
+      // PUSHING enquiry (the mechanical deep-dive method) + the formal guide
       { id: "pt:hub:ipvv:pushing:main", kind: "pushing", title: "PUSHING-IPVV (Logicvid method)",
-        file: "research-library/recognition/pushing-ipvv/PUSHING-IPVV.md", work_id: "isvarapratyabhijnavivrtivimarsini", status: "seed" },
+        file: "research-library/pushing/_source/PUSHING-IPVV.md", work_id: "isvarapratyabhijnavivrtivimarsini", status: "seed" },
+      { id: "pt:hub:ipvv:pushing:guide", kind: "pushing", title: "PUSHING_GUIDE (the formal method, shared)",
+        file: "research-library/pushing/PUSHING_GUIDE.md", work_id: "isvarapratyabhijnavivrtivimarsini", status: "reviewed" },
+      // The IPVV pushing sessions (worked examples)
+      { id: "pt:hub:ipvv:pushing:v3i-parallels", kind: "pushing", title: "IPVV V3-I parallels & counters (Logicvid session)",
+        file: "research-library/recognition/pushing-ipvv/LOGICVID-session-ipvv-v3i-parallels-counters.md", work_id: "isvarapratyabhijnavivrtivimarsini", status: "seed" },
       // The IPVV essay family (recognition library)
       { id: "pt:hub:ipvv:essay:vs-tantraloka", kind: "essay", title: "IPVV vs Tantrāloka",
         file: "research-library/recognition/ESSAY-IPVV-VS-TANTRALOKA.md", work_id: "isvarapratyabhijnavivrtivimarsini", status: "seed" },
@@ -66,7 +71,7 @@ const HUB: WorkHub[] = [
     label: "Tantrāloka — Abhinavagupta's great synthesis",
     outputs: [
       { id: "pt:hub:tantraloka:pushing:main", kind: "pushing", title: "PUSHING-TANTRALOKA (Logicvid method)",
-        file: "research-library/recognition/pushing-tantraloka/PUSHING-TANTRALOKA.md", work_id: "tantraloka", status: "seed" },
+        file: "research-library/pushing/_source/PUSHING-TANTRALOKA.md", work_id: "tantraloka", status: "seed" },
     ],
   },
 ];

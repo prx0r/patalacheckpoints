@@ -1,0 +1,12 @@
+# Pāṭala ML research lane — reproducible CPU-only deps.
+# The venv is disposable: delete .venv and `pip install -r requirements.txt` to rebuild.
+# Core (BM25 + clustering + theme work) — all pure CPU, ~200M:
+rank-bm25==0.2.2
+python-louvain==0.16
+networkx>=3.0
+numpy>=1.24
+scipy>=1.10
+scikit-learn>=1.3
+# Dense/hybrid retrieval arms (heavier, ~1G) — install ONLY when running dense baselines:
+# torch (CPU-only: --index-url https://download.pytorch.org/whl/cpu)
+# sentence-transformers

@@ -22,9 +22,25 @@ RESOURCES.md          the curated dataset/model/tool registry
 ```bash
 cd research
 python3 -m venv .venv && . .venv/bin/activate
-pip install rank-bm25 python-louvain networkx numpy scipy scikit-learn sentence-transformers
+pip install -r requirements.txt          # core (BM25 + clustering) — ~200M, CPU
+# ONLY for the dense/hybrid arms (heavier, ~1G): install CPU-only torch + sentence-transformers
+pip install torch --index-url https://download.pytorch.org/whl/cpu
+pip install sentence-transformers
 # optional: export HF_TOKEN=...  (stored in gitignored .env, never committed)
 ```
+
+## The venv is disposable — don't protect it
+The 5.1G GPU-build venv was rebuilt **CPU-only → 1.4G** (the 2.7G NVIDIA CUDA libs were pure waste on
+a GPU-less box). If storage is tight, **delete `.venv` and re-create with `requirements.txt` on demand** —
+the committed code + requirements fully reproduce it. The models here are tiny baseline probes
+(MiniLM ~90MB), NOT the product.
+
+## What this lane actually does (honest scope)
+Only **retrieval baselines**: does lexical (BM25) or semantic (dense) retrieval find the right passage
+for a query? The results (BM25 ≥ dense for C1→fidelity; hybrid best R@5 on hard retrieval) are the
+*evidence* that no model gets adopted until it beats these. This feeds the truth-engine's
+**premise→passage** step. The truth engine (argument verification: Nyāya gate, Bayesian scorer, Lean)
+is a different, more valuable system in `/root/projects/.meta/misc/truth-engine/` + `sanskritree/proof_engine/`.
 
 ## Run the first baseline
 ```bash

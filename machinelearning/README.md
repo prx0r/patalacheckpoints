@@ -30,6 +30,7 @@ is **`MLUSEINPATALA.md`** — read it first.*
 | **`DUAL_AGENT_TRACK.md`** | the two-lane split (Agent 1 = ML/research, Agent 2 = integration/content) with the shared contract + handoff protocol |
 | **`BENCHMARK_HANDOVER.md`** | the benchmark v0 seed (gold.ts, qa_v1_gold, stall-log) the ML master builds from |
 | **`SPEC_LOGICAL_ARGUMENTS_GOLD.md`** | the compounding loop: PUSHING → formal logical argument → truth-engine proof → essay → learning, all tracked on the hub (the highest-value output) |
+| **`SPEC_ARGUMENT_TRUTH_PACKET.md`** | the light model: a logical argument as a translation-like, auditable, strength-graded truth-packet (PROVED→SPECULATIVE, derived from existing primitives) |
 
 ## The work-directories
 

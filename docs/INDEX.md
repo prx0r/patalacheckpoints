@@ -30,6 +30,9 @@ stale ones as `[ARCHIVED]` so a new agent is never confused. If it's not here, i
 | **Source-centric hub (organizing model)** | `machinelearning/COMPOUNDING_RESEARCH_SYSTEM.md` | repo `machinelearning/` |
 | **PUSHING method (deep-dive formula)** | `machinelearning/SPEC_PUSHING_METHOD.md` | repo `machinelearning/` |
 | **Logical arguments (the gold)** | `machinelearning/SPEC_LOGICAL_ARGUMENTS_GOLD.md` | repo `machinelearning/` |
+| **Argument truth-packet (strength-graded)** | `machinelearning/SPEC_ARGUMENT_TRUTH_PACKET.md` | repo `machinelearning/` |
+| **PUSHING guide (the formal method)** | `research-library/pushing/PUSHING_GUIDE.md` | research-library |
+| **Logicvid source files** | `research-library/pushing/_source/` | research-library |
 | **Corpus build (Phase 1)** | `docs/PHASE1_IPVV_CORPUS_PROCESS_NOTES.md` | repo `docs/` |
 | **Scholarly graph / data model** | `data/corpus/graph.ts` + `docs/SCHOLARLY_GRAPH.md` | repo |
 | **Translation protocol** | `docs/TRANSLATION_PROTOCOL.md` | repo `docs/` |
