@@ -136,3 +136,5 @@ PARTIAL OVERLAP / DISPUTED FRAME. Recommended narrower claim: ...*
 
 **Status: MACHINE_PROPOSED design.** The objects are specified, not yet built. They become real at CP4
 alongside Argument Gold — which is exactly the prerequisite viruddha exposed.
+
+> **Vision link:** `ARGUMENT-GOLD-VISION.md` — the canonical framing of how Argument Gold + DebateFrame/SemanticAlignment unblock the gate (viruddha becomes a graph op). Execution: `handover/agent-1-ml/NEXT-STEPS.md`.

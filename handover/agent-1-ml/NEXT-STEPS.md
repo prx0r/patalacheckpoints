@@ -158,3 +158,8 @@ with the DebateFrame/SemanticAlignment layer — because viruddha, countereviden
 comparison require argument-under-a-frame, and a real argument graph, before they can be sound. Build the
 gold first, validate it's internally consistent, then test extraction against it blind — and only then
 does viruddha become a graph operation rather than a keyword hack.**
+
+
+---
+
+**The canonical vision for this work:** `machinelearning/ARGUMENT-GOLD-VISION.md` — the strategic WHY behind these steps (Argument Gold unblocks the gate; viruddha becomes a graph op).
