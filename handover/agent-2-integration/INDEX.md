@@ -11,6 +11,15 @@ source for the integration lane.*
 > state + the RAW-L0 priority sequence + build order + guardrails). Read it before building.
 > **SESSION HANDOVER: `handover/agent-2-integration/SESSION-2026-08-12.md`** — the complete record of this
 > session's work + the honest current state + the highest-value next work. Read it first.
+>
+> **THE CANONICAL LAYER STACK (the authoritative layer definitions — NOT in app/api or mcp, they live on
+> the mount `…/sanskritree/translations/_stack/ipvv/`):**
+> - `sourcetranslationprompt.md` (R2 original; `/tmp/opencode/sourcetranslationprompt.md`) → `c1/C1-SPEC.md` (imported) — the full `L2 → L200 → C1 → THEME → ESSAY → EDUCATION` stack + the C1 spec.
+> - `c1andmore.md` — the universal stack + the 4 human zoom questions.
+> - `l200/README-L200-SPEC.md` — the frozen 8-section L200 audit spec (derivation map, MT/IA taxonomy, typed crossrefs, review state).
+> - `IPVV-KNOWLEDGE-CORE.md`, `HANDOVER-IPVV-LAYERS-2026-08-12.md`, `c1context.md`, `README.md`.
+> The pipeline CODE is `pipeline/` (patala repo); these are the layer DEFINITIONS the autonomy layer-skills
+> (`skills/autonomous-layer/`) must map onto: **L0 → L2 → L200 → C1 → THEME → ESSAY**.
 
 ---
 

@@ -89,3 +89,42 @@ IPVV raw↔gold alignment is not done. **Until then, the loop's output quality i
 ---
 
 *Status: worker stopped (not safe to leave churning). Nothing here is claimed working beyond what §0 shows.*
+
+---
+
+## 7. FIX PROGRESS (2026-08-12, after the advice)
+
+The control-plane repair order (F1–F12) from the advice has been applied:
+
+| Fix | Status | What |
+|-----|--------|------|
+| **F1** idempotency | ✅ | completion DERIVED from `l0-version-registry.json` (`committed_passage_ids`); `run_work` skips committed passages by stable passage_id; batches only uncommitted. Metric `verses_skipped_committed` verified (=1 on a seeded committed verse). |
+| **F2** single-worker lock | ✅ | `flock` on `.autotranslate.lock` in the night supervisor (exits if held). |
+| **F3** process-group kill | ✅ | `_hermes_call` launches `hermes -z` in its own session; on timeout SIGTERM→SIGKILL the whole process group — no orphaned hermes survives. |
+| **F4** cross-verse guard | ✅ | `batch_translate.py` now requires the model to echo `passage_id` + `source_sha256`; `_verify_batch` rejects sha-mismatch / unexpected / duplicate items (never misbind a gloss to the wrong passage). |
+| **F5** adaptive batch | ✅ | supervisor starts at 8 verses, grows →12 on ≥90% commit rate, halves →min 4 on poor results. |
+| **F6** avagraha | ✅ | `'` classified `STRUCTURAL:avagraha` (lossless; never normalized inside P0). P0 passes `so'ham`. |
+| **F7** OCR noise | ✅ | verses with star-runs / `(?)` → `SOURCE_BLOCKED`, preserved raw, never auto-cleaned. |
+| **F8** crash/resume | ✅ (core) | registry-derived completion = resume-from-where-left-off; process-group kill = no orphan on crash. |
+| **F9** idempotency replay | ✅ | `pipeline/test_autonomous.py` — F1/F4/F6 pass (TEST 1 semantics). |
+| **F10** canary | ⬜ | a small unattended run to confirm no regressions. |
+| **F11** factory certificate | ⬜ | Sanskrit-only replay vs IPVV gold (false-certainty below threshold) + human review — the gate before unleashing. |
+| **F12** overnight run | ⬜ | only after F10/F11 green. |
+
+Tests: `python3 pipeline/test_autonomous.py` (all pass). The factory must NOT be restarted for a long run until F11 is met; the deterministic worker (not the hermes agent) is the execution engine, with the flock making double-invocation harmless.
+
+---
+
+## 8. CANONICAL LAYER SOURCE (the autonomy layer-skills must map to the REAL stack)
+
+The uploaded `skills/autonomous-layer/` bundle mapped to the **old/retired T-flow** (L0→T1→R1→T2→R2→T3→T3.1→C1).
+The **actual canonical stack** is defined authoritatively in:
+- `sourcetranslationprompt.md` (R2 original → `…/sanskritree/translations/_stack/ipvv/c1/C1-SPEC.md`; the file is in `/tmp/opencode/`)
+- `c1andmore.md` (the universal stack + 4 zoom questions) · `l200/README-L200-SPEC.md` (the 8-section audit)
+- `handover/agent-2-integration/INDEX.md` §CANONICAL LAYER STACK
+
+**The correct autonomy-layer set:** `L0 → L2 → L200 → C1 → THEME → ESSAY`. Reuse `AUTONOMY_CONTRACT.md` +
+`patala-autonomy-controller` + `patala-l0`; re-author `LAYER_MATRIX` + the L2/L200/C1/THEME/ESSAY layer skills
+(each = input / model job / hard commit gate / validator / certificate) — replacing the stale T1–T3.1 skills.
+Highest-value autonomous layers: **L200** (the audit) + **C1** (commentary), each with a certificate before
+unattended scale.

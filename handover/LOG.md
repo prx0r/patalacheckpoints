@@ -512,3 +512,18 @@ Vidyut adds independence but analyzes only ~47% of links.
   next agent continues.
 - **Files:** `handover/agent-1-ml/BUILD-RECORD-2026-08-12.md` (inventory) · `NEXT-STEPS.md` (continuation).
 - **Schema:** none (coordination; file-level).
+
+## Agent 2 — canonical autonomy layer source located + referenced (2026-08-12)
+
+**What:** Located the authoritative layer-definition source for the autonomous translation stack. The
+canonical stack is **`L0 → L2 → L200 → C1 → THEME → ESSAY`**, defined in `sourcetranslationprompt.md`
+(R2 original → mount `_stack/ipvv/c1/C1-SPEC.md`), `c1andmore.md`, and `l200/README-L200-SPEC.md` (the
+8-section audit). These live on the mount, NOT in app/api or mcp.
+
+**Why it matters:** the `skills/autonomous-layer/` bundle (from R2) was mapped to the OLD T-flow
+(T1→R1→T2→R2→T3→T3.1→C1). The AUTONOMY_CONTRACT + controller are correct and reusable; only the layer list
+must be re-mapped to L0→L2→L200→C1→THEME→ESSAY. The autonomy layer-skills will encode each real layer's
+spec + validator + commit gate.
+
+**Files:** `handover/agent-2-integration/INDEX.md` §CANONICAL LAYER STACK · `PROBLEMS-AUTONOMOUS-TRANSLATION.md`
+§8 · `skills/autonomous-layer/` (the bundle to re-map).
