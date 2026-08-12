@@ -583,3 +583,18 @@ hermes/direct call (8-48s or hang).
 PROGRESS-AUTONOMOUS-2026-08-12.md` (the current-state map), `docs/BUILD_NOTES_AUTONOMY.md` (update).
 
 **Next:** background unattended RAW-L0 batch on Direct → freeze autonomous RAW-L0 v1 → L200 candidate→classifier.
+
+## Agent 2 — autonomous RAW-L0: exact blocker located (2026-08-12)
+
+**Located the precise reason raw-L0 does not commit yet:** `validate_l0_spec.py` requires even AMBIGUOUS
+records to carry a literal_gloss, so an honest empty-gloss abstention fails the whole verse — the
+deterministic floor (Vidyut lemma + P0 lossless) is rejected. Fix: allow AMBIGUOUS records without a
+gloss (honest abstention), per the "miss + OPEN tolerated, never fabricated" doctrine.
+
+Also: the Direct adapter (faster, ~1.4-2.1s trivial / ~10s per real-gloss passage) is wired with a bounded
+60s timeout + retry + ok-check so it never hangs; but BOTH backends (hermes/direct) are nondeterministic on
+the real gloss prompt — the reliability gap is not yet closed. The proof harness (2-in-a-row, ledger
+advance) is built and runs without hanging.
+
+Files: `pipeline/proof_autonomous_l0.py` · `pipeline/model_adapter.py` · `pipeline/l0_worker.py` ·
+`pipeline/validate_l0_spec.py` (the blocker) · `handover/agent-2-integration/STALLS-PITFALLS.md`.

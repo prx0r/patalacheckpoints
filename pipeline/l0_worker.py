@@ -53,6 +53,12 @@ def l0_generator(layer: str, batch: list[dict]) -> list[dict]:
         gloss_map = gloss_lookup.get(i) or {t: {"literal": "", "compound": "", "supplied": False}
                                             for t in e["tokens"]}
         recs = raw_l0(e["passage_id"], e["passage_id"], e["verse"], gloss_map)["records"]
+        # working RAW-L0: the DETERMINISTIC floor (Vidyut lemma + P0 lossless) commits; a token the
+        # model could not gloss is an HONEST ABSTENTION (AMBIGUOUS), never a fabricated gloss and never
+        # a whole-verse failure. This is 'miss + OPEN tolerated' per the doctrine.
+        for r in recs:
+            if r.get("status") == "PARSED" and not r.get("literal_gloss"):
+                r["status"] = "AMBIGUOUS"
         proposals.append({"object_id": e["passage_id"], "input_hash": batch[i]["input_hash"],
                           "verse": e["verse"], "records": recs})
     return proposals

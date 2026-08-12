@@ -68,18 +68,24 @@ class DirectModelAdapter(ModelAdapter):
         )
 
     def complete_json(self, system: str, prompt: str, model: str,
-                      timeout: int = 120) -> ModelResult:
-        t0 = time.time()
-        try:
-            r = self._client.chat.completions.create(
-                model=model,
-                messages=[{"role": "system", "content": system},
-                          {"role": "user", "content": prompt}],
-                temperature=0.2, max_tokens=4000, timeout=timeout)
-            content = r.choices[0].message.content or ""
-            return ModelResult(content=content, latency_ms=int((time.time() - t0) * 1000), model=model)
-        except Exception as e:
-            return ModelResult(content="", ok=False, error=str(e)[:200], latency_ms=int((time.time() - t0) * 1000))
+                      timeout: int = 60) -> ModelResult:
+        """Lean completion. Bounded timeout + ONE retry on failure — a hanging API call must fail
+        fast (fail-closed), never block the worker for minutes."""
+        last = None
+        for attempt in range(2):
+            t0 = time.time()
+            try:
+                r = self._client.chat.completions.create(
+                    model=model,
+                    messages=[{"role": "system", "content": system},
+                              {"role": "user", "content": prompt}],
+                    temperature=0.2, max_tokens=4000, timeout=timeout)
+                content = r.choices[0].message.content or ""
+                return ModelResult(content=content, latency_ms=int((time.time() - t0) * 1000), model=model)
+            except Exception as e:
+                last = str(e)[:200]
+                time.sleep(2)
+        return ModelResult(content="", ok=False, error=last, latency_ms=0)
 
 
 class HermesAdapter(ModelAdapter):

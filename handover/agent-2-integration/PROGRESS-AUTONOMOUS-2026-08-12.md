@@ -63,3 +63,34 @@ PARTIAL) was built as a proof and is **handed to the evidence lane**. Agent 2 do
 session. A hermes/direct call can take 8–48s or hang; running it in the foreground stalls all other work.
 The controller/supervisor (`autonomy.py` tick, `auto_run.py`) already run unattended; any manual
 adapter/canary invocation should be backgrounded and the log tailed, not awaited inline.
+
+---
+
+## UPDATE (2026-08-12, end of session) — autonomous RAW-L0: the precise blocker
+
+### What works (verified)
+- **Deterministic floor**: Vidyut lemma/morphology + P0 lossless (0 unknown) — verified on raw kramasadbhāva.
+- **Autonomous controller + registry**: `autonomy.py` tick + `object_registry.py` — idempotency, flock,
+  supersession, run reports — tested (16/16).
+- **DirectModelAdapter** (~1.4–2.1s trivial; ~10s/passage on real gloss) — faster than hermes but **also
+  hangs/times out on the real gloss prompt sometimes**.
+- **Proof harness**: `pipeline/proof_autonomous_l0.py` (2-in-a-row, ledger advance) — runs without
+  hanging (bounded 60s timeout + retry + ok-check wired in), but currently reports FAIL (0 committed).
+
+### The EXACT blocker (why 0 commits)
+`pipeline/validate_l0_spec.py` **requires even AMBIGUOUS records to carry a `literal_gloss`** (line ~106:
+"AMBIGUOUS record has empty literal_gloss (IPVV L0 always glosses)"). So when the model cannot gloss a
+token, the honest-abstention path (empty gloss → AMBIGUOUS) still fails the whole verse. The deterministic
+floor is rejected.
+
+**To make raw-L0 WORK (commit the deterministic floor when the model abstains):** relax the validator so an
+**AMBIGUOUS record with an empty gloss is a valid honest abstention** (do not require gloss on AMBIGUOUS).
+This is the doctrine's "miss + OPEN tolerated, never fabricated" — the deterministic floor commits, the
+gloss is best-effort/OPEN.
+
+### Also documented
+- `STALLS-PITFALLS.md` — why the shell kept wedging (foreground model calls; `&` background jobs the
+  shell waits on; stuck workers hogging the API) + the working rule.
+- The gloss is wired to the adapter (Direct) with 60s bounded timeout + retry + ok-check (fail-closed,
+  never hangs). Both backends (hermes/direct) are nondeterministic on the real gloss prompt — the
+  reliability gap is NOT yet closed.

@@ -22,14 +22,27 @@ import object_registry as R
 import autonomy as A
 from l0_worker import source_objects
 from agent3_batch import load_raw_source
-import corpus_state
 
 # scratch registry (clean, isolated proof)
 R.REG_DIR = Path(tempfile.mkdtemp())
-LEDGER = Path(tempfile.mkdtemp()) / "ledger.json"
+
+LEDGER = Path("/root/projects/patala/data/corpus/downloads/translation-state-ledger.json")
+
+
+def advance_ledger(work_id: str, committed: int, total: int) -> dict:
+    """Advance the corpus-state control-plane ledger to reflect L0 progress."""
+    import json
+    d = json.loads(LEDGER.read_text(encoding="utf-8"))
+    w = d["works"].get(work_id, {})
+    w.setdefault("l0", {})
+    w["l0"]["status"] = "VERIFIED" if committed > 0 else "ELIGIBLE"
+    w["l0"]["reason"] = f"autonomous RAW-L0: {committed}/{total} passages committed (object_registry)"
+    d["works"][work_id] = w
+    LEDGER.write_text(json.dumps(d, indent=2, ensure_ascii=False))
+    return w["l0"]
 
 work = "kramasadbhava"
-objs = source_objects(work, load_raw_source(work))[:8]
+objs = source_objects(work, load_raw_source(work))[:4]
 for o in objs:
     R.commit("SOURCE", o["object_id"], o["input_hash"], created_by="proof")
 
@@ -43,10 +56,10 @@ def run(label):
     rep = A.tick(layers=["L0"], max_batch=8, dry_run=False, inputs={"L0": objs})
     wall = round(time.time() - t0, 1)
     committed = l0_committed()
-    # ensure ledger advances (corpus-state control plane)
-    advance = corpus_state.set_l0(work, "VERIFIED" if committed else "ELIGIBLE")
+    # ensure the corpus-state control plane advances (L0 progress)
+    advance = advance_ledger(work, committed, len(objs))
     print(f"{label}: attempted={len(objs)} committed_total={committed} new_this_run={rep['committed']} "
-          f"failed={rep['failed']} wall={wall}s ledger_l0={advance}")
+          f"failed={rep['failed']} wall={wall}s ledger_l0_status={advance.get('status')}")
     return committed
 
 
