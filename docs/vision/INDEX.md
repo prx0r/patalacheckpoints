@@ -9,7 +9,10 @@ here and in `docs/INDEX.md`.*
 ## How to read this
 
 - **Canonical** = read/trust for that concern.
-- The vision unfolds as a **sequence (Vision 01 → 08)**. Read in order for the full arc.
+- **THE CORE BIBLE (`docs/vision/CORE-BIBLE.md`) = the top-level map** — one vision chunked into 6
+  zoomable layers (sentence → paragraph → graph → checkpoints → domain lenses → specs/gold/data). Start
+  there for the whole picture, then zoom into any layer here.
+- The vision unfolds as a **sequence (Vision 01 → 09)**. Read in order for the full arc.
 - Each doc is its own file; none is superseded — they are complementary layers of one vision.
 - Original, un-numbered strategy docs (NORTHSTAR, foundationalideas, positioningpartners) are
   canonical but sit outside the numbered sequence; they are cross-referenced below.
@@ -29,6 +32,15 @@ here and in `docs/INDEX.md`.*
 | **07** | `docs/vision/vision-07-new-scholar.md` | **The New Scholar** — workbench, perspective collector, research-graph scholarship. *(new, from R2)* |
 | **08** | `docs/vision/vision-08-scholar-economics.md` | **Scholar Incentives & Economics** — paid adjudication, ORCID/CRediT credit, ownership. *(new, from R2)* |
 | **09** | `docs/vision/vision-09-media-and-cross-tradition.md` | **The Media Layer & Cross-Tradition Engine** — the scholarly core rendered as shorts/video/essays/AI-teacher (Workengestation = written voice, Renderio = video), then reproduced across traditions (Tantra → Yogic → Vedānta → Greek). |
+
+---
+
+## The top-level map (start here)
+
+| Doc | Focus |
+|---|---|
+| **`docs/vision/CORE-BIBLE.md`** | **THE CORE BIBLE** — one vision chunked into 6 zoomable layers (sentence → paragraph → graph → checkpoints → domain lenses → specs/gold/data). The top-level gate: read this, then zoom into any numbered vision below. |
+| `machinelearning/_ACTIVE/PATALA-ENGINE-ROADMAP-12MO.md` | The 12-month philosophy-engine roadmap (the strategic reference; gold-first build order + 8 benchmark tasks + crux algorithm). |
 
 ---
 

@@ -84,6 +84,10 @@ STEP 9 — THE MEDIA LAYER + CROSS-TRADITION ENGINE (Vision 09)
 2. **`docs/INDEX.md`** (the flat canonical reference — the single source of truth per concern).
 3. **`THE_COMPANION.md`** (sanskritree) — the full-system technical onboarding.
 
+> **Then, to see the whole vision as one zoomable map:** `docs/vision/CORE-BIBLE.md` — one vision
+> chunked into 6 layers (sentence → paragraph → derivation graph → checkpoints → domain lenses →
+> specs/gold/data). Every vision doc is a zoom-level of that ONE core, not a separate product.
+
 ## 4. THE TWO TRACKS (context engineering)
 
 There are two agents (see `machinelearning/DUAL_AGENT_TRACK.md` and the operational

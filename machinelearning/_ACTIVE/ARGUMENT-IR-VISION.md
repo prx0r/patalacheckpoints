@@ -196,3 +196,50 @@ ResearchQuestion, frame, alignment, regime) that existing engines cannot provide
 ontology is forced by evidence, then evaluated multi-way (ASPIC / Nyāya / semantic / formal) under a
 profile — never one "truth" number. The immediate action is to build ARG-003/004/005 with `Commitment`
 and the derivational `Proposition` already in the shape; the 14-object IR is the horizon, not the now.**
+
+---
+
+## 9. THE BENCHMARK TASKS (from the 12-month roadmap — the extraction targets)
+
+From `machinelearning/_ACTIVE/PATALA-ENGINE-ROADMAP-12MO.md` — the 8 core evaluation tasks that
+**our Argument Gold is the seed of.** These define what "extraction works" means at CP4–CP5. Our gold
+(5 real arguments) directly seeds tasks 2, 3, 5, 6; the abstention case (NO SAFE RECONSTRUCTION) seeds
+the abstention dimension across all.
+
+```
+ 1. LOCUTION SEGMENTATION      split raw text into argumentative units
+ 2. PROPOSITION RECONSTRUCTION produce the normalized proposition from a span
+ 3. COMMITMENT CLASSIFICATION  assert/deny/presuppose/attribute + speaker   ← our Commitment object
+ 4. RELATION CLASSIFICATION    support / attack / neutral + type (contradiction, undercut, ...)
+ 5. SEMANTIC ALIGNMENT         identical/partial-overlap/false-friend/different-level   ← the alignment primitive
+ 6. INFERENCE RULE LABELING    identify the implicit warrant scheme (analogical, reductio, testimony, ...)
+ 7. CRUX IDENTIFICATION        minimal crux question + which propositions are crux   ← novel, no standard dataset
+ 8. COUNTERFACTUAL TRACE       given an assumption to retract, which conclusions fail   ← algorithmic
+```
+
+**The honest state:** none of these are benchmarked yet. Our Argument Gold (ARG-001..005) is the manual
+seed; only after 5 real golds exist do these become measurable targets for the extractor (Build 4).
+
+---
+
+## 10. THE CRUX ALGORITHM DIRECTION (from the roadmap — the CP5 innovation)
+
+The roadmap's most novel algorithmic claim: **a crux is a minimal set of disputed assumptions whose flip
+changes a conclusion's status.** It is computed, not authored:
+
+```
+Given target claim Q:
+  for each disputed assumption/premise P:
+    temporarily retract P → recompute support
+    if Q's status changes → P is decisive
+  minimal hitting set of such P = the crux
+```
+
+**Where it fits:** this is CP5 (verification) work, ONLY after the argument DAGs exist (CP4 gold).
+It is exactly the "counterfactual dependency analysis" the IR vision already names as Pāṭala's
+distinctive contribution. Do NOT implement now — the gold must exist first.
+
+---
+
+*Companion: `machinelearning/_ACTIVE/PATALA-ENGINE-ROADMAP-12MO.md` (the full 12-month plan) + the
+`PHILOSOPHY-ENGINE-*` reviews. The roadmap's build order = our gold-first discipline.*
