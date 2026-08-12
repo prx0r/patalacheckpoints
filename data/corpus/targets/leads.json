@@ -1,0 +1,236 @@
+{
+  "tantrasadbhava": {
+    "register": "I",
+    "n": 1,
+    "source": "Muktabodha/Bang",
+    "note": "highest-return untranslated"
+  },
+  "devipancasataka": {
+    "register": "I",
+    "n": 2,
+    "source": "Muktabodha",
+    "note": "Twelve Kālīs; = kalikulapancasatika"
+  },
+  "yonigahvaratantra": {
+    "register": "I",
+    "n": 3,
+    "source": "MS-request",
+    "note": "no public scan"
+  },
+  "satsahasrasamhita": {
+    "register": "I",
+    "n": 4,
+    "source": "Muktabodha",
+    "note": "Kubjikā expansion"
+  },
+  "srimatottara": {
+    "register": "I",
+    "n": 5,
+    "source": "Muktabodha",
+    "note": "Kubjikā expansion"
+  },
+  "kularatnoddyota": {
+    "register": "I",
+    "n": 6,
+    "source": "Muktabodha",
+    "note": "Kaula/Kubjikā bridge"
+  },
+  "cincinmatasarasamuccaya": {
+    "register": "I",
+    "n": 7,
+    "source": "LANDED",
+    "note": "best bridge text; on disk"
+  },
+  "urmikaularnava": {
+    "register": "I",
+    "n": 9,
+    "source": "Dyczkowski e-ed",
+    "note": "Abhinava knew it"
+  },
+  "kalikulakrama": {
+    "register": "I",
+    "n": 11,
+    "source": "Muktabodha",
+    "note": "Krama preservation"
+  },
+  "kalanalatantra": {
+    "register": "I",
+    "n": 13,
+    "source": "NGMPP e-text",
+    "note": "Kubjikā-associated"
+  },
+  "pingalamata": {
+    "register": "I",
+    "n": 15,
+    "source": "Muktabodha",
+    "note": "Jayadrathādhikāra"
+  },
+  "varahitantra": {
+    "register": "I",
+    "n": 17,
+    "source": "study-only",
+    "note": "late synthesis"
+  },
+  "mahakalasamhita": {
+    "register": "I",
+    "n": 18,
+    "source": "editions",
+    "note": "huge later Kālī corpus"
+  },
+  "kubjika_liturgy": {
+    "register": "I",
+    "n": 20,
+    "source": "Muktabodha M00547-51",
+    "note": "ritual cluster"
+  },
+  "laghvikamnaya": {
+    "register": "II",
+    "n": 22,
+    "source": "MS-request",
+    "note": "earlier KMT recension"
+  },
+  "kulapancasika": {
+    "register": "II",
+    "n": 23,
+    "source": "LOCATE",
+    "note": "attributed Matsyendra"
+  },
+  "kularatnamala": {
+    "register": "II",
+    "n": 27,
+    "source": "specialist-hunt",
+    "note": "KMT draws on it"
+  },
+  "trisirobhairava": {
+    "register": "II",
+    "n": 28,
+    "source": "specialist-hunt",
+    "note": "grouped with Trika"
+  },
+  "kramavilasastotra": {
+    "register": "II",
+    "n": 29,
+    "source": "codex-unicus",
+    "note": "Sanderson prints chunk"
+  },
+  "kalasamkarsinimata": {
+    "register": "II",
+    "n": 30,
+    "source": "vishvasa",
+    "note": "Kālasaṃkarṣiṇī material"
+  },
+  "kalikarahasya": {
+    "register": "II",
+    "n": 31,
+    "source": "M00242",
+    "note": ""
+  },
+  "mahaguhyakalividhana": {
+    "register": "II",
+    "n": 32,
+    "source": "M00403/M00516",
+    "note": ""
+  },
+  "padyavahini": {
+    "register": "II",
+    "n": 37,
+    "source": "M00676",
+    "note": ""
+  },
+  "kankalamalinitantra": {
+    "register": "II",
+    "n": 40,
+    "source": "M00026",
+    "note": ""
+  },
+  "yogapithakramodaya": {
+    "register": "III",
+    "n": 41,
+    "source": "M00281",
+    "note": "earliest recovered Kaula"
+  },
+  "nityakaulatantra": {
+    "register": "III",
+    "n": 42,
+    "source": "wikisource",
+    "note": "pre-10th Tripurā"
+  },
+  "svacchandoddyota": {
+    "register": "III",
+    "n": 45,
+    "source": "M00091",
+    "note": "Kṣemarāja's commentary"
+  },
+  "netradyota": {
+    "register": "III",
+    "n": 47,
+    "source": "OCHS/M00504",
+    "note": "Kṣemarāja 9-22"
+  },
+  "tantralokaviveka": {
+    "register": "III",
+    "n": 49,
+    "source": "vishvasa",
+    "note": "Jayaratha — HUGE, privileged evidence"
+  },
+  "nisvasaguhyasutra": {
+    "register": "III",
+    "n": 50,
+    "source": "vishvasa",
+    "note": "deep historical baseline"
+  },
+  "brhatkalottaratantra": {
+    "register": "III",
+    "n": 51,
+    "source": "NGMPP A43/1",
+    "note": "early Siddhānta"
+  },
+  "kalottaragama": {
+    "register": "III",
+    "n": 52,
+    "source": "M00248/IFP",
+    "note": ""
+  },
+  "matangaparamesvara": {
+    "register": "III",
+    "n": 53,
+    "source": "GRETIL",
+    "note": "Siddhānta control group"
+  },
+  "mrgendragama": {
+    "register": "III",
+    "n": 54,
+    "source": "GRETIL",
+    "note": "Siddhānta control group"
+  },
+  "rauravagama": {
+    "register": "III",
+    "n": 55,
+    "source": "GRETIL",
+    "note": "Siddhānta control group"
+  },
+  "vimalavati": {
+    "register": "III",
+    "n": 56,
+    "source": "NGMPP A186/10",
+    "note": "Siddhānta exegesis"
+  },
+  "kaulasutra": {
+    "register": "III",
+    "n": 58,
+    "source": "hareesh",
+    "note": "64 sūtras, one-shot target"
+  },
+  "paratantra": {
+    "register": "III",
+    "n": 59,
+    "source": "M00062",
+    "note": "screen first"
+  },
+  "brahmasandhana": {
+    "register": "III",
+    "n": 60,
+    "source": "M00262",
+    "note": "BHU MS, screen first"
+  }
+}

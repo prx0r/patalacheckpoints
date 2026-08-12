@@ -1,0 +1,322 @@
+[
+  {
+    "file": "round2/athalye_tarkasamgraha.txt",
+    "group": "round2",
+    "note": "round-2 verification+commentary"
+  },
+  {
+    "file": "round2/avalon_hymns_to_goddess_1913.txt",
+    "group": "round2",
+    "note": "round-2 verification+commentary"
+  },
+  {
+    "file": "round2/bagchi_kjn_1934.txt",
+    "group": "round2",
+    "note": "round-2 verification+commentary"
+  },
+  {
+    "file": "round2/cidgagana_chandrika_trivikrama_1937.pdf",
+    "group": "round2",
+    "note": "round-2 verification+commentary"
+  },
+  {
+    "file": "round2/cidgagana_trivikrama.txt",
+    "group": "round2",
+    "note": "round-2 verification+commentary"
+  },
+  {
+    "file": "round2/heart_of_the_yogini_padoux_2013.pdf",
+    "group": "round2",
+    "note": "round-2 verification+commentary"
+  },
+  {
+    "file": "round2/heart_of_the_yogini_padoux_2013.txt",
+    "group": "round2",
+    "note": "round-2 verification+commentary"
+  },
+  {
+    "file": "round2/jha_nyayasutras_vol1.txt",
+    "group": "round2",
+    "note": "round-2 verification+commentary"
+  },
+  {
+    "file": "round2/kalhana_rajatarangini_stein.txt",
+    "group": "round2",
+    "note": "round-2 verification+commentary"
+  },
+  {
+    "file": "round2/mahartha_manjari_singh_maheshvarananda.pdf",
+    "group": "round2",
+    "note": "round-2 verification+commentary"
+  },
+  {
+    "file": "round2/paratrishika_vivarana_singh.txt",
+    "group": "round2",
+    "note": "round-2 verification+commentary"
+  },
+  {
+    "file": "round2/saiva_age_sanderson_2009.pdf",
+    "group": "round2",
+    "note": "round-2 verification+commentary"
+  },
+  {
+    "file": "round2/saiva_age_sanderson_2009.txt",
+    "group": "round2",
+    "note": "round-2 verification+commentary"
+  },
+  {
+    "file": "round3/cincinmatasarasamuccayaDEV.pdf",
+    "group": "round3",
+    "note": "round-3 acquisitions"
+  },
+  {
+    "file": "round3/cincinmatasarasamuccayaVELTHIUS.txt",
+    "group": "round3",
+    "note": "round-3 acquisitions"
+  },
+  {
+    "file": "round3/cincinmatasarasamuccaya_IAST.txt",
+    "group": "round3",
+    "note": "round-3 acquisitions"
+  },
+  {
+    "file": "round3/jayadrathayAmala_ShaTka3__M00680.txt",
+    "group": "round3",
+    "note": "round-3 acquisitions"
+  },
+  {
+    "file": "round3/jayadrathayAmala_ShaTka4__M00681.txt",
+    "group": "round3",
+    "note": "round-3 acquisitions"
+  },
+  {
+    "file": "round3/kramasadbhava_DEV.pdf",
+    "group": "round3",
+    "note": "round-3 acquisitions"
+  },
+  {
+    "file": "round3/kramasadbhava_IAST.txt",
+    "group": "round3",
+    "note": "round-3 acquisitions"
+  },
+  {
+    "file": "round3/kramasadbhava_VELTHIUS.txt",
+    "group": "round3",
+    "note": "round-3 acquisitions"
+  },
+  {
+    "file": "round3/mahArahasyasaMpradAya__M00677.txt",
+    "group": "round3",
+    "note": "round-3 acquisitions"
+  },
+  {
+    "file": "round3/padyavAhinI__M00676.txt",
+    "group": "round3",
+    "note": "round-3 acquisitions"
+  },
+  {
+    "file": "round3/shambhunirNaya__M00674.txt",
+    "group": "round3",
+    "note": "round-3 acquisitions"
+  },
+  {
+    "file": "round3/timirodghAtana_gretil.txt",
+    "group": "round3",
+    "note": "round-3 acquisitions"
+  },
+  {
+    "file": "gretil2/raw_kubjikamata.txt",
+    "group": "gretil2",
+    "note": "GRETIL acquisitions"
+  },
+  {
+    "file": "gretil2/raw_nyayabindu.txt",
+    "group": "gretil2",
+    "note": "GRETIL acquisitions"
+  },
+  {
+    "file": "gretil2/raw_nyayasutra.txt",
+    "group": "gretil2",
+    "note": "GRETIL acquisitions"
+  },
+  {
+    "file": "gretil2/raw_nyayasutra_bhasya.txt",
+    "group": "gretil2",
+    "note": "GRETIL acquisitions"
+  },
+  {
+    "file": "gretil2/raw_nyayasutra_tika.txt",
+    "group": "gretil2",
+    "note": "GRETIL acquisitions"
+  },
+  {
+    "file": "gretil2/raw_padarthadharmasamgraha.txt",
+    "group": "gretil2",
+    "note": "GRETIL acquisitions"
+  },
+  {
+    "file": "gretil2/raw_pramanavarttika.txt",
+    "group": "gretil2",
+    "note": "GRETIL acquisitions"
+  },
+  {
+    "file": "gretil2/raw_tarkasamgraha.txt",
+    "group": "gretil2",
+    "note": "GRETIL acquisitions"
+  },
+  {
+    "file": "gretil2/raw_tattvacintamani.txt",
+    "group": "gretil2",
+    "note": "GRETIL acquisitions"
+  },
+  {
+    "file": "gretil2/raw_vaisesikasutra.txt",
+    "group": "gretil2",
+    "note": "GRETIL acquisitions"
+  },
+  {
+    "file": "gretil2/raw_vakyapadiya.txt",
+    "group": "gretil2",
+    "note": "GRETIL acquisitions"
+  },
+  {
+    "file": "gretil2/raw_vakyapadiya_rau.txt",
+    "group": "gretil2",
+    "note": "GRETIL acquisitions"
+  },
+  {
+    "file": "Aphorisms oF Siva -- Dyczkowski, Mark S_ G_ -- 2011 -- fea2150a50095642a616be780cfc4d29 -- Anna’s Archive.pdf",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "Manthānabhairavatantram _ Kumārikākhaṇḍaḥ ; the section -- Mark S_ G Dyczkowski; Indira Gandhi National Centre for the -- New Delhi, India, 2009 -- isbn13 9788124604984 -- 60fb13cf2c8b1f82998d30032024e4f3 -- Anna’s .pdf",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "TANTRALOKA THE LIGHT ON AND OF THE TANTRAS - VOLUME ELEVEN_ -- MARK DYCZKOWSKI -- 11, 2023 -- Independently published -- isbn13 9788852286377 -- be5ab3df10141c92ad34487c9d06fbdf -- Anna’s Archive.pdf",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "TANTRALOKA THE LIGHT ON AND OF THE TANTRAS - VOLUME FIVE_ -- MARK DYCZKOWSKI -- 5, 2023 -- Independently published -- isbn13 9788394682712 -- e3be287807ec5c09fb9d82e6f0cef99a -- Anna’s Archive.pdf",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "TANTRALOKA THE LIGHT ON AND OF THE TANTRAS - VOLUME NINE_ -- MARK DYCZKOWSKI -- 9, 2023 -- Independently published -- isbn13 9788852285158 -- 96ffff5b13f6ec991445316a7d1800d5 -- Anna’s Archive.pdf",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "TANTRALOKA THE LIGHT ON AND OF THE TANTRAS - VOLUME ONE_ -- MARK DYCZKOWSKI -- 1, 2023 -- Independently published -- isbn13 9788394424626 -- b910fec33074af815d4ec614b4bbcaa1 -- Anna’s Archive.pdf",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "TANTRALOKA THE LIGHT ON AND OF THE TANTRAS - VOLUME SEVEN_ -- MARK DYCZKOWSKI -- 7, 2023 -- Independently published -- isbn13 9788396054098 -- 0cec7f246577c18de74fdb320626aaa5 -- Anna’s Archive.pdf",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "TANTRALOKA THE LIGHT ON AND OF THE TANTRAS - VOLUME SIX_ -- MARK DYCZKOWSKI -- 6, 2023 -- Independently published -- isbn13 9788389964496 -- 36be4900305e20218f53116827618967 -- Anna’s Archive-1.pdf",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "TANTRALOKA THE LIGHT ON AND OF THE TANTRAS - VOLUME TEN_ -- MARK DYCZKOWSKI -- 10, 2023 -- Independently published -- isbn13 9788852285868 -- 0355ebf6e39b8b8fb5c41818ec0b0c15 -- Anna’s Archive.pdf",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "TANTRALOKA THE LIGHT ON AND OF THE TANTRAS - VOLUME THREE_ -- MARK DYCZKOWSKI -- 3, 2023 -- Independently published -- isbn13 9788394428099 -- 7b6ff6cb3183b1d214aca921db10b5a8 -- Anna’s Archive.pdf",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "TANTRALOKA THE LIGHT ON AND OF THE TANTRAS - VOLUME TWO_ -- MARK DYCZKOWSKI -- 2, 2023 -- Independently published -- isbn13 9788394424626 -- 1924f0a56a4cd8b2bcc6a45bcc31cae0 -- Anna’s Archive.pdf",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "Tarkasamgraha_Khemraj_Vision.txt",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "TheDoctrineOfVibration.AnAnalysisOfTheDoctrinesAndPracticesOfKashmirShaivism.m.dyczkowskidelhi1989600dpilossy.pdf",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "akulavira_tantra_eng_archive.org.pdf",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "akulavira_tantra_eng_archive.org.txt",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "gretil_nyayabindu.txt",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "gretil_nyayasutra.txt",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "gretil_tantraloka.txt",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "gretil_tantrasara.txt",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "gretil_tarkasamgraha.txt",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "gretil_vakyapadiya.txt",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "tarkasamgraha_dipika.txt",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "tarkasamgraha_ghosh.txt",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "tarkasamgraha_khemraj.txt",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "tarkasamgraha_khemraj_vision.txt",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "tarkasamgraha_root.txt",
+    "group": "sources-root",
+    "note": ""
+  },
+  {
+    "file": "vakyapadiya_helaraja.pdf",
+    "group": "sources-root",
+    "note": ""
+  }
+]

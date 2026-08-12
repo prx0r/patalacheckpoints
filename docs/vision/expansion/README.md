@@ -80,8 +80,19 @@ Most of the śiva corpus is **already on disk**, not just in the plan. The ref-a
   round2/3, gretil) + the translation-pipeline state.
 - **`data/corpus/downloads/siva-corpus-download-manifest.json`** — the 15 works with source/translation
   URLs + status.
+- **The compiled corpus-targets DB** — `data/corpus/targets/` (sources.json, targets.json, leads.json,
+  anchors.json, index.json) built by `pipeline/build_corpus_targets_db.py`, with the master map in
+  **`docs/corpus/TARGETS-INDEX.md`** (the one-place index of every target, lead, source, and the two
+  goldmine docs).
 - The **untranslated registers** (`corpus/targets/untranslated.md`, `untranslated2.md`,
-  `targetacquired.md`) are the ranked, on-disk-vs-[ACQ] translation roadmap.
+  `untranslated3.md`, `targetacquired.md`) are the ranked, on-disk-vs-[ACQ] translation roadmap.
+
+**THE TWO GOLDMINE DOCS (read before translating/acquiring):**
+- `sanskritree/corpus/targets/canonical_reference_map.md` — the master substrate: taxonomy/timeline,
+  the canonical corpus with ingestion waves, **the semantic-shift glossary** (the fix for cross-work term
+  misreading), the auditable translation architecture, the 18-month roadmap.
+- `sanskritree/corpus/targets/markguidance.md` — the Recognition Enquiry: passage dossiers, the A/B/C
+  thesis levels, cross-tradition mapping (the argument-layer goldmine).
 
 **Cross-work L0 finding (honest):** a legacy T1 (kramasadbhāva) extracts via the shared tool (209
 tokens) and passes `verify_l0.py` with 0 overlaps/fragments/dups, but full P0 needs a small

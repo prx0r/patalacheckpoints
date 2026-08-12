@@ -1,0 +1,82 @@
+{
+  "Spandakārikā + 4 commentaries": {
+    "translation_status": "✓ translated",
+    "anchor": "Dyczkowski, *Stanzas on Vibration*",
+    "location": "`/root/projects/tantraloka/texts-clean/spandakarika-dyczkowski_clean.txt`"
+  },
+  "Tantrāloka 1–37": {
+    "translation_status": "✓ translated",
+    "anchor": "Dyczkowski, 11 vols",
+    "location": "`tantraloka/texts-clean/tantraloka-vol{1..11}-dyczkowski_clean.txt`"
+  },
+  "Aphorisms of Śiva (Śivasūtra)": {
+    "translation_status": "✓ translated",
+    "anchor": "Dyczkowski, *Aphorisms of Śiva*",
+    "location": "`tantraloka/texts-clean/aphorisms-of-siva-dyczkowski_clean.txt`"
+  },
+  "Vijñānabhairava": {
+    "translation_status": "✓ translated",
+    "anchor": "Lakshmanjoo + Singh",
+    "location": "`references/vb_lakshmanjoo.json` (aligned, CP2)"
+  },
+  "**Yoginīhṛdaya**": {
+    "translation_status": "✓ translated",
+    "anchor": "**Padoux, *The Heart of the Yoginī* (OUP 2013)** — first English; from the French (Collège de France 1994)",
+    "location": "**`sources/round2/heart_of_the_yogini_padoux_2013.pdf`**"
+  },
+  "**Mahārthamañjarī**": {
+    "translation_status": "✓ translated",
+    "anchor": "**Satya Prakash Singh & Swami Maheshvarananda (Standard Publishers, New Delhi)** — full English with the Parimala",
+    "location": "[ACQ — pdfcoffee/kupdf/epdfx free PDFs found; download pending]"
+  },
+  "**Mahānayaprakāśa**": {
+    "translation_status": "✓ partially translated",
+    "anchor": "**Dyczkowski, *Khacakrapancakastotra and The Mahanayaprakasa* (edition + translation)** + **mahanaya.org (Erakanātha's English rendering)**",
+    "location": "[ACQ — archive.org has Dyczkowski's vol; mahanaya.org online]"
+  },
+  "Nityāṣoḍaśikārṇava": {
+    "translation_status": "**untranslated (verified)**",
+    "anchor": "no English translation found (the \"Setubandha\" translations on the web are Pravarasena's Prākrit Rāvaṇavaha — a different work)",
+    "location": "—"
+  },
+  "Kākacaṇḍeśvarīmata": {
+    "translation_status": "unverified — likely untranslated",
+    "anchor": "no translation found in this session's search",
+    "location": "—"
+  },
+  "Kubjikāmata": {
+    "translation_status": "**no full English translation (verified)** — the Goudriaan–Schoterman (Brill 1988) is a **critical edition + English study**, NOT a translation; Schoterman's dissertation translates only **ch. 14–16**. A genuine first-translation target; the edition is the reference",
+    "anchor": "`sources/gretil2/raw_kubjikamata.txt` (the ed.); Schoterman's ch. 14–16 [ACQ]",
+    "location": ""
+  },
+  "Kaulajñānanirṇaya": {
+    "translation_status": "✓ translated",
+    "anchor": "Bagchi (French) + **Mukhopadhyaya/Dupuis 2012 (English)**",
+    "location": "[ACQ — per STATUS's anchor list]"
+  },
+  "Tarkasaṃgraha": {
+    "translation_status": "✓ translated",
+    "anchor": "the 1872 English + Athalye",
+    "location": "`sources/round2/` (reading-layer OCR-pending)"
+  },
+  "Śivadṛṣṭi": {
+    "translation_status": "✓ translated",
+    "anchor": "Nemec, 2 vols (English)",
+    "location": "[ACQ]"
+  },
+  "ĪPK": {
+    "translation_status": "✓ translated",
+    "anchor": "Torella (English)",
+    "location": "[ACQ]"
+  },
+  "Ātmatattvaviveka": {
+    "translation_status": "✓ translated",
+    "anchor": "Dravid (English)",
+    "location": "[ACQ]"
+  },
+  "Kulārṇavatantra": {
+    "translation_status": "✓ partial",
+    "anchor": "published translations exist",
+    "location": "—"
+  }
+}

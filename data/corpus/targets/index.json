@@ -1,0 +1,161 @@
+{
+  "source_docs": {
+    "untranslated.md": {
+      "link": "sanskritree_corpus_targets/untranslated.md",
+      "note": "register I — the 20 highest-value targets",
+      "exists": true,
+      "exists_on_disk": true
+    },
+    "untranslated2.md": {
+      "link": "sanskritree_corpus_targets/untranslated2.md",
+      "note": "register II — the sources behind the famous sources",
+      "exists": true,
+      "exists_on_disk": true
+    },
+    "untranslated3.md": {
+      "link": "sanskritree_corpus_targets/untranslated3.md",
+      "note": "register III — the next 20 (#41-60) + 6 discoveries",
+      "exists": true,
+      "exists_on_disk": true
+    },
+    "targetacquired.md": {
+      "link": "sanskritree_corpus_targets/targetacquired.md",
+      "note": "acquisition board — ACQ / LANDED / MS-request / locate",
+      "exists": true,
+      "exists_on_disk": true
+    },
+    "round2_sources.md": {
+      "link": "sanskritree_corpus_targets/round2_sources.md",
+      "note": "round-2 sources — verification + commentary anchors",
+      "exists": true,
+      "exists_on_disk": true
+    },
+    "translation_status_audit.md": {
+      "link": "sanskritree_corpus_targets/translation_status_audit.md",
+      "note": "don't-duplicate — which texts already have English translations",
+      "exists": true,
+      "exists_on_disk": true
+    },
+    "translation_atlas.md": {
+      "link": "sanskritree_corpus_targets/translation_atlas.md",
+      "note": "the translation atlas",
+      "exists": true,
+      "exists_on_disk": true
+    },
+    "canonical_reference_map.md": {
+      "link": "sanskritree_corpus_targets/canonical_reference_map.md",
+      "note": "THE master substrate: taxonomy/timeline, canonical corpus with ingestion waves (A+/A/B), the semantic-shift glossary (kula/krama/śakti/vimarśa...), the auditable translation architecture, the tool map. The single most important reference for the autonomous translator.",
+      "exists": true,
+      "exists_on_disk": true
+    },
+    "tradition_anchors.md": {
+      "link": "sanskritree_corpus_targets/tradition_anchors.md",
+      "note": "tradition-conditional term senses + anchors",
+      "exists": true,
+      "exists_on_disk": true
+    },
+    "markguidance.md": {
+      "link": "sanskritree_corpus_targets/markguidance.md",
+      "note": "guidance",
+      "exists": true,
+      "exists_on_disk": true
+    },
+    "leapfrog_map.md": {
+      "link": "sanskritree_corpus_targets/leapfrog_map.md",
+      "note": "the corpus-ladder route",
+      "exists": true,
+      "exists_on_disk": true
+    },
+    "leapfrog_guide.md": {
+      "link": "sanskritree_corpus_targets/leapfrog_guide.md",
+      "note": "the corpus-ladder engine design",
+      "exists": true,
+      "exists_on_disk": true
+    },
+    "nonsaivatranslate.md": {
+      "link": "sanskritree_corpus_targets/nonsaivatranslate.md",
+      "note": "non-Śaiva translation",
+      "exists": true,
+      "exists_on_disk": true
+    },
+    "batch_9_plan.md": {
+      "link": "sanskritree_corpus_targets/batch_9_plan.md",
+      "note": "batch-9 plan",
+      "exists": true,
+      "exists_on_disk": true
+    },
+    "atlasflaws.md": {
+      "link": "sanskritree_corpus_targets/atlasflaws.md",
+      "note": "atlas flaws",
+      "exists": true,
+      "exists_on_disk": true
+    },
+    "targetslogic.md": {
+      "link": "sanskritree_ref/targetslogic.md",
+      "note": "targets logic",
+      "exists": true,
+      "exists_on_disk": true
+    },
+    "rasaleads.md": {
+      "link": "sanskritree_truth/rasaleads.md",
+      "note": "rasa-thesis leads (different project?)",
+      "exists": true,
+      "exists_on_disk": true
+    },
+    "rasa-top-leads.md": {
+      "link": "sanskritree_truth/rasa-top-leads.md",
+      "note": "rasa frontier leads",
+      "exists": true,
+      "exists_on_disk": true
+    },
+    "round2/MANIFEST.md": {
+      "link": "sanskritree_sources/round2/MANIFEST.md",
+      "note": "round-2 downloaded sources",
+      "exists": true,
+      "exists_on_disk": true
+    },
+    "round3/MANIFEST.md": {
+      "link": "sanskritree_sources/round3/MANIFEST.md",
+      "note": "round-3 downloaded sources",
+      "exists": true,
+      "exists_on_disk": true
+    },
+    "gretil2/MANIFEST.md": {
+      "link": "sanskritree_sources/gretil2/MANIFEST.md",
+      "note": "GRETIL downloaded sources",
+      "exists": true,
+      "exists_on_disk": true
+    },
+    "siva-corpus-download-manifest.json": {
+      "link": "patala_downloads/siva-corpus-download-manifest.json",
+      "note": "the 15-work Śiva corpus download manifest",
+      "exists": true,
+      "exists_on_disk": true
+    },
+    "siva-corpus-inventory.json": {
+      "link": "patala_downloads/siva-corpus-inventory.json",
+      "note": "on-disk corpus inventory",
+      "exists": true,
+      "exists_on_disk": true
+    },
+    "translation-pipeline-inventory.json": {
+      "link": "patala_downloads/translation-pipeline-inventory.json",
+      "note": "existing T1/R1/T2/R2/T3/C1 works (easy wins)",
+      "exists": true,
+      "exists_on_disk": true
+    },
+    "translation-state-ledger.json": {
+      "link": "patala_downloads/translation-state-ledger.json",
+      "note": "the corpus-state ledger (NEXT_VALID_ACTION)",
+      "exists": true,
+      "exists_on_disk": true
+    },
+    "vision-11-siva-before-abhinava-corpus-manifest.md": {
+      "link": "patala_vision_expansion/vision-11-siva-before-abhinava-corpus-manifest.md",
+      "note": "the Śiva corpus acquisition plan (Vision 11)",
+      "exists": true,
+      "exists_on_disk": true
+    }
+  },
+  "count": 26
+}

@@ -1,0 +1,128 @@
+{
+  "kramasadbhava": {
+    "priority": 10,
+    "tier": "1",
+    "status": "TRANSLATE",
+    "tradition": "Kālīkrama"
+  },
+  "mahanayaprakasha": {
+    "priority": 11,
+    "tier": "1",
+    "status": "TRANSLATE",
+    "tradition": "Krama"
+  },
+  "kalikulapancasatika": {
+    "priority": 12,
+    "tier": "1",
+    "status": "TRANSLATE",
+    "tradition": "Kālīkrama"
+  },
+  "kubjikamata": {
+    "priority": 20,
+    "tier": "1",
+    "status": "INGEST",
+    "tradition": "Kubjikā Kaula"
+  },
+  "svacchandatantra": {
+    "priority": 21,
+    "tier": "1",
+    "status": "TRANSLATE",
+    "tradition": "Bhairava"
+  },
+  "netratantra": {
+    "priority": 22,
+    "tier": "1",
+    "status": "TRANSLATE",
+    "tradition": "Bhairava"
+  },
+  "kulasara": {
+    "priority": 23,
+    "tier": "1",
+    "status": "TRANSLATE",
+    "tradition": "early Kaula"
+  },
+  "siddhayogesvarimata": {
+    "priority": 24,
+    "tier": "0",
+    "status": "INGEST",
+    "tradition": "Vidyāpīṭha"
+  },
+  "malinivijayottara": {
+    "priority": 30,
+    "tier": "0",
+    "status": "INGEST",
+    "tradition": "Trika"
+  },
+  "tantrasadbhava": {
+    "priority": 31,
+    "tier": "2",
+    "status": "INGEST",
+    "tradition": "Trika"
+  },
+  "malinislokavarttika": {
+    "priority": 32,
+    "tier": "2",
+    "status": "TRANSLATE",
+    "tradition": "Trika (Abhinava)"
+  },
+  "sivadrsti": {
+    "priority": 33,
+    "tier": "0",
+    "status": "INGEST",
+    "tradition": "Pratyabhijñā"
+  },
+  "kiranatantra": {
+    "priority": 34,
+    "tier": "0",
+    "status": "INGEST",
+    "tradition": "Śaiva Siddhānta"
+  },
+  "brahmayamala": {
+    "priority": 35,
+    "tier": "2",
+    "status": "INGEST",
+    "tradition": "Bhairava/Śākta"
+  },
+  "cidgagana": {
+    "priority": 36,
+    "tier": "2",
+    "status": "TRANSLATE",
+    "tradition": "Krama"
+  },
+  "spandakarika": {
+    "priority": 37,
+    "tier": "0",
+    "status": "TRANSLATE",
+    "tradition": "Spanda"
+  },
+  "kubjika": {
+    "priority": 38,
+    "tier": "2",
+    "status": "TRANSLATE",
+    "tradition": "Kubjikā"
+  },
+  "tantraloka": {
+    "priority": 39,
+    "tier": "1",
+    "status": "TRANSLATE",
+    "tradition": "Trika (Abhinava)"
+  },
+  "jayadrathayamala": {
+    "priority": 90,
+    "tier": "3",
+    "status": "MANUSCRIPT",
+    "tradition": "Kālīkula"
+  },
+  "manthanabhairava": {
+    "priority": 91,
+    "tier": "3",
+    "status": "MANUSCRIPT",
+    "tradition": "Kaula/Kubjikā"
+  },
+  "devyamala": {
+    "priority": 92,
+    "tier": "3",
+    "status": "MANUSCRIPT",
+    "tradition": "Śākta/Kaula"
+  }
+}
