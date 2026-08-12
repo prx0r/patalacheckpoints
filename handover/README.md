@@ -11,7 +11,7 @@ snapshot.*
 | Lane | Folder | Owns |
 |---|---|---|
 | **Agent 1 — ML/research** | `handover/agent-1-ml/` | ML strategy, benchmark, retrieval, experiments, tokenizer, statistical rigor |
-| **Agent 2 — integration/content** | `handover/agent-2-integration/` | data, app, lib, pipeline, reader/API/MCP, Sanskrit substrate, scholarly specs, docs |
+| **Agent 2 — corpus compiler + integrity** (formerly "integration/content", formerly "the L0 agent") | `handover/agent-2-integration/` | data/corpus, app, lib, pipeline (verify_l0, corpus_state, raw_l0, agent3_batch/queue, l0_registry, review_engine), Sanskrit substrate + source→L0 proof, scholarly specs, docs |
 
 `VISION_AND_NAVIGATION.md` + `machinelearning/DUAL_AGENT_TRACK.md` define the split in full. This
 folder is the **operational record** of that split.

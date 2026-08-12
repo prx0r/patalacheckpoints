@@ -99,10 +99,11 @@ SHARED CONTEXT (both agents, the foundation)
   This vision file · docs/INDEX.md · THE_COMPANION.md
   The corpus (PHASE1 notes) · the hub · the verification floor
      ↓  (the split point — after the substrate, the lanes diverge)
-AGENT 1 — ML/RESEARCH                AGENT 2 — INTEGRATION/CONTENT
-  owns: MLUSEINPATALA, DEVPLAN,        owns: hub, PUSHING, comparative,
-  benchmark, retrieval, experiments,   logical-args specs, the reader,
-  vertical-fidelity, mllogical         API/MCP, the essays, the Sanskrit
+AGENT 1 — ML/RESEARCH                AGENT 2 — CORPUS COMPILER + INTEGRITY
+  owns: MLUSEINPATALA, DEVPLAN,        owns: data/corpus, app, lib, pipeline,
+  benchmark, retrieval, experiments,   the source→L0→proof floor, the RAW-L0 factory,
+  vertical-fidelity, mllogical         the corpus state machine + versioned L0 + review engine,
+                                        the Sanskrit substrate + scholarly specs
 ```
 
 The shared context is everything up to STEP 3 (corpus + verification + hub). After that, each agent
@@ -113,7 +114,7 @@ goes deep on its own lane, meeting again at the comparative matrix + the argumen
 - [ ] You can state the vision in one paragraph (§1).
 - [ ] You know the 8-step progression and where each step lives (§2).
 - [ ] You've read the 3 must-read docs (§3).
-- [ ] You know which lane you're on (ML vs integration) and what you own (§4 + DUAL_AGENT_TRACK.md).
+- [ ] You know which lane you're on (ML/research vs corpus-compiler + integrity) and what you own (§4 + DUAL_AGENT_TRACK.md).
 - [ ] You know the current state (what's done vs pending) — see `docs/INDEX.md` + the audit.
 
 ---

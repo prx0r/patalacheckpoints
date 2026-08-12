@@ -55,13 +55,18 @@ content, and the site renders it.*
 - [`NORTHSTAR.md`](NORTHSTAR.md) · [`nextdev.md`](nextdev.md) · [`endgame1..5year.md`](endgame2.md) — the vision.
 - [`../PROCESS_NOTES.md`](../PROCESS_NOTES.md) · [`../HANDOVER.md`](../HANDOVER.md) — current state + handover.
 
-### The strategy — corpus-side (in `sanskritree/corpus/targets/`)
-These are the authoritative strategic/analytic docs (they live in the source repo):
-- [`canonical_reference_map.md`](../../sanskritree/corpus/targets/canonical_reference_map.md) — the historical map + glossary dossiers (the atlas source of truth)
-- [`markguidance.md`](../../sanskritree/corpus/targets/markguidance.md) — the Recognition Enquiry (Pratyabhijñā)
-- [`leapfrog_map.md`](../../sanskritree/corpus/targets/leapfrog_map.md) + [`leapfrog_guide.md`](../../sanskritree/corpus/targets/leapfrog_guide.md) — the corpus-ladder strategy
-- [`translation_flow_spec.md`](../../sanskritree/corpus/targets/translation_flow_spec.md) — the T1→C1 flow spec
-- [`targetacquired.md`](../../sanskritree/corpus/targets/targetacquired.md) + [`translation_status_audit.md`](../../sanskritree/corpus/targets/translation_status_audit.md) — the acquisitions + translation-status registers
+### The strategy — corpus-side (the consolidated goldmine, now in `docs/corpus/`)
+The corpus acquisition/translation goldmine was consolidated out of `sanskritree/corpus/targets/` into
+the Pāṭala `docs/corpus/` folder + the machine-readable targets DB. **Read `docs/corpus/TARGETS-INDEX.md`
+first** (the master index) + `docs/corpus/SANSKRITREE-IMPORT-MANIFEST.md` (the full audit). The originals
+on sanskritree are read-only provenance (never edit in place); the consolidated copies are:
+- [`canonical_reference_map.md`](corpus/canonical_reference_map.md) — the historical map + glossary dossiers (the atlas source of truth)
+- [`markguidance.md`](corpus/markguidance.md) — the Recognition Enquiry (Pratyabhijñā)
+- [`leapfrog_map.md`](corpus/leapfrog_map.md) + [`leapfrog_guide.md`](corpus/leapfrog_guide.md) — the corpus-ladder strategy
+- [`translation_flow_spec.md`](corpus/translation_flow_spec.md) — the T1→C1 flow spec
+- [`translation_atlas.md`](corpus/translation_atlas.md) · [`tradition_anchors.md`](corpus/tradition_anchors.md) · [`atlasflaws.md`](corpus/atlasflaws.md) — the translation atlases + known flaws
+- The acquisitions + translation-status registers are **materialized in the DB** (`data/corpus/targets/`:
+  `sources.json`/`targets.json`/`leads.json`/`anchors.json`) — see `docs/corpus/TARGETS-INDEX.md`.
 
 ### The skills (how to interact)
 - `skills/translate-work/SKILL.md` (the T1→T3.1 state-machine workflow)
