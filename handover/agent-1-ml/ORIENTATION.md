@@ -29,6 +29,12 @@ object and the checkpoint map.
 as `CAPABILITY_CANDIDATE` (or a stated non-candidate). If you see something overclaimed as VALIDATED,
 STOP and note it. This tells you the honest state of every component you might touch.
 
+**📘 CODE-LEVEL REFERENCE (read before touching any ML module):**
+`handover/agent-1-ml/ML-MECHANICS-REFERENCE.md` — the code-level inventory of every module (`nyayagate.py`,
+`strength.py` (Bayesian), `cluster.py`, `retrieval.py`, `argument.py`, `aifgraph.py`, `corpus.py`,
+`c1corpus.py`, `metrics.py`, `eval.py`), their honest status, how they connect, and the next tasks. Read
+it after this orientation and before editing any mechanic.
+
 ### Step 0.2 — Know the two lanes (never drift)
 | | **Agent 2 — L0 / integration** | **YOU — Agent 1 / ML** |
 |---|---|---|
