@@ -23,23 +23,52 @@ metadata:
 (`verify_l0.py` P0 proof, the published store, the C1 chain) consumes it UNCHANGED.
 The precedent is `extract_l0_v1.py` (non-standard → canonical L0 that passes `verify_l0`).
 
+## Files this skill reads (READ BEFORE YOU PROPOSE — context engineering, not blind prompting)
+Load the relevant ones into context FIRST; never propose a gloss from memory alone.
+- **The L0 spec (the contract you must satisfy):** `translations/_stack/ipvv/specs/l0_schema.json`
+  — the 15 required fields + the `id` pattern `.+:L\d+:T\d+$` + `status ∈ {PARSED, AMBIGUOUS, FAILED}`.
+- **The deterministic core + proof:** `pipeline/raw_l0.py` (builds canonical records via Vidyut),
+  `pipeline/verify_l0.py` (`p0_proof`: exact span integrity, 0 unknown, roundtrip),
+  `pipeline/validate_l0_spec.py` (the un-cheatable gate: schema + P0 + abstraction-honesty + gloss).
+- **The work's term/context packet:** `docs/corpus/canonical_reference_map.md` (the LEMMA→SENSE
+  semantic-shift atlas — the translation policy per tradition/text/period) +
+  `docs/corpus/TARGETS-INDEX.md` (which work + its priority/tradition) +
+  `docs/corpus/SANSKRITREE-IMPORT-MANIFEST.md` (what's ingested vs not).
+- **The goldmine:** `docs/corpus/` + `data/corpus/targets/` (sources/targets/leads/anchors/index).
+- **The doctrine:** `machinelearning/_ACTIVE/AGENTS-DOCTRINE.md` (validation first; proof
+  dimensions separate; never a collapsed confidence).
+
+**Context engineering rule:** before glossing a token, look up its lemma in the reference map's
+glossary (tradition + period + working sense + semantic warning). E.g. `vimarśa` in Pratyabhijñā
+= "reflexive awareness", NOT "reflection"; `krama` capitalized only when sectarian identity is
+demonstrable. **Semantic consistency is the goal, not lexical uniformity.**
+
 ## The flow (per verse — the atomic unit)
 
 ```
 RAW SANSKRIT
-   ↓  [pipeline/raw_l0.py]
-canonical L0 records (15-field schema)
-   ↓  [verify_l0.p0_proof — the EXISTING harness]
-P0 proof (source_span PROVED · unknown_chars 0 · PASS)
+   ↓  [pipeline/raw_l0.py — DETERMINISTIC, Vidyut]
+canonical L0 records (15-field schema; lemma/morphology/segmentation)
+   ↓  [CONTEXT ENGINEERING — read the reference map term-packet for this work]
+   ↓  [PROPOSE — the gloss per token, the generative layer]
+   ↓  [SELF-CHALLENGE — a separate pass tries to falsify: wrong lemma? wrong sense? gloss
+       too interpretive? polarity lost? — revise or abstain]
+   ↓  [validate_l0_spec.py — the EXISTING un-cheatable .py gate]
+P0 proof (source_span PROVED · unknown_chars 0 · PASS) + schema + abstraction + gloss
    ↓  [pipeline/agent3_batch.py]
 ledger update (RAW_SANSKRIT/BLOCKED → ELIGIBLE) + batch manifest (progress)
 ```
 
 ## Step 1 — get the raw source
 The corpus-state ledger knows each work's `source_ref` (e.g. the Dyczkowski Kramasadbhāva
-edition). Load it, or take the verse directly.
+edition). Load it, or take the verse directly. Use a small text first (e.g. Kramasadbhāva).
 
-## Step 2 — run the deterministic core (no model needed)
+## Step 2 — context engineering (READ, don't prompt)
+Load the files above. For the work's key terms, pull the sense + translation policy from
+`docs/corpus/canonical_reference_map.md` (the glossary table). Build the **term-context packet**
+for this verse before you gloss anything.
+
+## Step 3 — run the deterministic core (no model needed)
 ```bash
 python3 pipeline/raw_l0.py --work <work> --passage <work>:<loc> --sanskrit "<verse>"
 ```
@@ -52,39 +81,54 @@ P0 sees only the semantic Sanskrit.
 **Abstention is honest:** a token Vidyut can't analyze (lemma=null) → `status: AMBIGUOUS`,
 never `PARSED`. A lacuna verse (`* * * *`) → FAIL (sent to the review path). Never fabricate.
 
-## Step 3 — batch a whole work (the factory loop)
+## Step 4 — propose the gloss (the generative layer) + SELF-CHALLENGE
+For each token, produce `literal_gloss` as a word/phrase-level literal meaning, anchored to the
+Vidyut lemma + the reference-map sense for this work. Then run a **self-challenge pass**: a
+separate read that asks "could this gloss be wrong? wrong lemma? imported a sense from the wrong
+tradition? too interpretive? lost negation/polarity?" — revise, or set `AMBIGUOUS` if genuinely
+uncertain. Provide via `--gloss-file` (JSON `{token: {literal, compound, supplied}}`; a flat
+`{token: literal}` is also accepted) or a model call.
+
+**`supplied: true`** means the English is supplied for readability (auditable), not a direct
+translation of the token.
+
+## Step 5 — validate with the un-cheatable .py gate (you CANNOT pass by claiming)
+```bash
+python3 pipeline/validate_l0_spec.py --records <records.jsonl> --chunk-text <source_chunk.txt>
+```
+This re-checks, deterministically and independently of the model:
+- **SCHEMA** — every record has all 15 fields, correct types, correct `id` pattern, `status` enum.
+- **P0 PROOF** — the existing `verify_l0.p0_proof` re-runs (exact spans, 0 unknown, roundtrip).
+- **ABSTRACTION HONESTY** — `PARSED` requires BOTH lemma AND gloss; a fabricated PARSED is caught.
+- **GLOSS PRESENCE** — non-`FAILED` records must have a non-empty `literal_gloss`.
+
+**The model does not decide if it passed.** This `.py` does. Exit 0 = PASS, 1 = FAIL.
+
+## Step 6 — batch + register
 ```bash
 python3 pipeline/agent3_batch.py --work <work> --max-verses N
 ```
 Splits the raw source into verses, runs RAW-L0 per verse, audits (canonical schema + P0 PASS),
 updates the ledger, writes `data/corpus/downloads/agent3-batches/<work>-batch.json`.
 
-## Step 4 — the gloss (the generative layer, optional)
-`literal_gloss` is genuinely an LLM task. Provide it via `--gloss-file` (a JSON
-`{token: {literal, compound, supplied}}`) or a model call. The deterministic core + validation
-NEVER depend on it. `literal_gloss` is MACHINE_PROPOSED, never "proved".
-
-## Step 5 — verify + register
-- Confirm the records have all 15 canonical fields: `id, chunk_id, line_id, line_kind,
-  chunk_char_start, chunk_char_end, line_char_start, line_char_end, wraps_line, raw_fragment,
-  source_text, lemma_iast, literal_gloss, quoted, status`.
-- Confirm `P0: PASS`, `unknown_chars: 0`.
-- Confirm the ledger moved the work forward (`RAW_SANSKRIT → ELIGIBLE`).
-
 ## The validation (what makes a v0 L0 "successful")
-- [ ] canonical 15-field schema (all records, no missing)
-- [ ] `verify_l0.p0_proof` PASS (unknown_chars 0)
+- [ ] canonical 15-field schema (all records, no missing) — enforced by `validate_l0_spec.py`
+- [ ] `verify_l0.p0_proof` PASS (unknown_chars 0) — re-run by the validator
 - [ ] lemma=null → AMBIGUOUS (abstain, not fabricated)
 - [ ] lacuna/unanalyzable → FAIL → review path (not a fake pass)
+- [ ] PARSED records carry BOTH lemma and non-empty gloss (no fabricated certainty)
 - [ ] ledger updated + batch manifest written (progress tracked)
 
 ## Falsification test
 > What would convince you this does NOT work? A verse that claims a PARSED lemma Vidyut never
-> produced, or a P0 PASS with unknown_chars>0, or records missing a canonical field.
+> produced, or a P0 PASS with unknown_chars>0, or records missing a canonical field, or a
+> PARSED record with an empty gloss that `validate_l0_spec.py` still passes.
 
 ## Test-drive on a new raw translation
 1. Take a fresh raw verse (e.g. another Kramasadbhāva verse, or a new work's verse).
-2. Run `raw_l0.py` → confirm canonical records + P0 PASS.
-3. Run `agent3_batch.py` → confirm the ledger + batch manifest update.
-4. Inspect the completed record: all 15 fields, honest AMBIGUOUS where Vidyut can't analyze.
-5. Supply a gloss (file or model) → the record is a complete MACHINE_PROPOSED L0.
+2. Read the reference-map term-packet for that work (context engineering).
+3. Run `raw_l0.py` → confirm canonical records + P0 PASS.
+4. Propose glosses + self-challenge → pass `--gloss-file` or a model call.
+5. Run `validate_l0_spec.py --records ... --chunk-text ...` → must PASS (exit 0).
+6. Run `agent3_batch.py` → confirm the ledger + batch manifest update.
+7. Inspect the completed record: all 15 fields, honest AMBIGUOUS where Vidyut can't analyze.

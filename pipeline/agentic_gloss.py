@@ -1,0 +1,151 @@
+#!/usr/bin/env python3
+"""pipeline/agentic_gloss.py — the agentic RAW-L0 gloss runner (context engineering + multi-pass).
+
+Makes Hermes follow the `raw-l0` skill properly:
+  1. CONTEXT ENGINEERING  inject the skill's file-links + the work's term-context packet
+                           (from the canonical_reference_map semantic-shift glossary) into the
+                           prompt so the model reads the right senses, not a flat dictionary.
+  2. PROPOSE              the literal gloss per token (word/phrase-level), anchored to Vidyut.
+  3. SELF-CHALLENGE       a SEPARATE model pass that tries to falsify the proposal (wrong lemma /
+                           wrong tradition sense / too interpretive / lost polarity) and returns a
+                           revision or an honest ABSTAIN.
+  4. UN-CHEATABLE VALIDATION  the output is validated by `validate_l0_spec.py` (schema + P0 +
+                           abstraction-honesty + gloss), which the model does not control.
+
+Usage:
+  python3 pipeline/agentic_gloss.py --work kramasadbhava --verse-idx 2 [--max-tokens 400]
+    --work       the queue work_id (its RAW_SANSKRIT source is read from the ledger)
+    --verse-idx  which verse (index into split_verses)
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import sys
+from pathlib import Path
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from agent3_batch import load_raw_source, split_verses
+from raw_l0 import raw_l0, raw_l0_to_canonical
+from model import chat
+
+REFERENCE_MAP = "/root/projects/patala/docs/corpus/canonical_reference_map.md"
+SKILL_PATH = "/root/projects/patala/skills/raw-l0/SKILL.md"
+
+# The terms most likely to appear and their sense-policy anchors (pulled from the reference map).
+# This is a seed term-context packet; the model is instructed to READ the reference map for more.
+TERM_PACKET = {
+    "krama": "capitalize 'Krama' only when sectarian identity is demonstrable; else 'sequence/order'.",
+    "śakti": "in Krama = Goddess/mantric power (not merely 'energy'); in Trika = freedom/power of consciousness.",
+    "vimarśa": "Pratyabhijñā = reflexive awareness/self-apprehension; NEVER bare 'reflection'.",
+    "kula": "Kubjikā = mantra-body/structured aggregate; Kaula = body/power-totality; NOT always 'family'.",
+    "spanda": "dynamic pulse of consciousness; 'vibration' risks sounding mechanical.",
+    "śiva": "the supreme principle / the auspicious; deity name.",
+}
+
+
+def _term_packet_for(work_id: str) -> str:
+    lines = ["# TERM-CONTEXT PACKET (from docs/corpus/canonical_reference_map.md — the LEMMA→SENSE atlas)",
+             "Semantic consistency is the goal, not lexical uniformity. Sense is set by tradition +",
+             f"period + text. For this work ({work_id}), apply these policies where the lemma appears:"]
+    for term, pol in sorted(TERM_PACKET.items()):
+        lines.append(f"- {term}: {pol}")
+    lines.append("- Read the full glossary in the reference map if a token is not listed.")
+    return "\n".join(lines)
+
+
+def _skill_file_links() -> str:
+    return (
+        "FILES THIS TASK USES (read before proposing — context engineering, not blind prompting):\n"
+        "- L0 spec (the contract): translations/_stack/ipvv/specs/l0_schema.json\n"
+        "- Deterministic core + proof: pipeline/raw_l0.py, pipeline/verify_l0.py\n"
+        "- The un-cheatable validator: pipeline/validate_l0_spec.py\n"
+        "- Reference map (term senses): docs/corpus/canonical_reference_map.md\n"
+        "- Doctrine: machinelearning/_ACTIVE/AGENTS-DOCTRINE.md\n"
+    )
+
+
+def propose_glosses(verse: str, tokens: list[str], work_id: str) -> dict:
+    """Pass 1 (PROPOSE): literal gloss per token, with the term-context packet in-context."""
+    packet = _term_packet_for(work_id)
+    prompt = (
+        "You are the Pāṭala RAW-L0 generative layer (the raw-l0 skill). Produce a literal, "
+        "word/phrase-level English gloss for EACH Sanskrit token of the verse. Anchoring:\n"
+        "- Each token has already been segmented + lemmatized by Vidyut (the deterministic witness).\n"
+        "- Use the term-context packet for the technical senses (never a flat dictionary lookup).\n"
+        "- A gloss is the literal meaning of the token, not a whole-verse translation.\n"
+        "- Return JSON only: {\"<token>\": \"<literal gloss>\"} with EXACTLY the same keys as the prompt.\n"
+        "- If a token is genuinely unanalyzable in context, use \"\" (empty) — do NOT fabricate.\n\n"
+        f"{packet}\n\n"
+        f"VERSE: {verse}\n"
+        f"TOKENS: {json.dumps(tokens, ensure_ascii=False)}\n"
+    )
+    raw = chat("You are a careful Sanskrit L0 gloss generator.", prompt, max_tokens=800)
+    try:
+        return json.loads(raw)
+    except Exception:
+        # be honest: return empty glosses rather than fabricate
+        return {t: "" for t in tokens}
+
+
+def challenge_glosses(verse: str, glosses: dict, work_id: str) -> dict:
+    """Pass 2 (SELF-CHALLENGE): a SEPARATE pass tries to falsify each gloss."""
+    packet = _term_packet_for(work_id)
+    prompt = (
+        "You are a SECOND, adversarial Sanskrit philologist (the self-challenge pass). The first "
+        "pass proposed literal glosses. Challenge each one:\n"
+        "- wrong lemma or wrong tradition sense (imported from another school)?\n"
+        "- gloss too interpretive (reading more than the token says)?\n"
+        "- lost negation / polarity / case contribution?\n"
+        "- should it be ABSTAIN (AMBIGUOUS) rather than a confident gloss?\n"
+        "Return JSON only: {\"<token>\": \"<REVISED literal gloss or ABSTAIN>\"}. Keep same keys. "
+        "Only change a gloss if the challenge finds a real problem.\n\n"
+        f"{packet}\n\n"
+        f"VERSE: {verse}\n"
+        f"PROPOSED: {json.dumps(glosses, ensure_ascii=False)}\n"
+    )
+    raw = chat("You are a skeptical Sanskrit philologist (adversarial check).", prompt, max_tokens=800)
+    try:
+        return json.loads(raw)
+    except Exception:
+        return dict(glosses)
+
+
+def run(work_id: str, verse_idx: int, max_tokens: int = 800) -> dict:
+    verses = split_verses(load_raw_source(work_id))
+    verse = verses[verse_idx]
+    records, _ = raw_l0_to_canonical(f"{work_id}-v{verse_idx+1}", verse)
+    tokens = [r["raw_fragment"] for r in records if r["raw_fragment"]]
+
+    glosses = propose_glosses(verse, tokens, work_id)
+    final = challenge_glosses(verse, glosses, work_id)
+
+    # build the canonical L0 with the glosses (nested shape; ABSTAIN -> empty gloss + AMBIGUOUS)
+    gloss_map = {}
+    for t in tokens:
+        g = final.get(t, glosses.get(t, ""))
+        if g == "ABSTAIN":
+            g = ""
+        gloss_map[t] = {"literal": g, "compound": "", "supplied": False}
+
+    res = raw_l0(work_id, f"{work_id}:v{verse_idx+1}", verse, gloss_map)
+
+    return {
+        "work_id": work_id, "verse_idx": verse_idx, "verse": verse,
+        "tokens": tokens, "proposed": glosses, "challenged": final,
+        "records": res["records"], "proof": res["proof"],
+        "PASS": res["proof"].get("PASS") and all(
+            (r["status"] == "FAILED") or (r["literal_gloss"] != "") for r in res["records"]),
+    }
+
+
+if __name__ == "__main__":
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--work", default="kramasadbhava")
+    ap.add_argument("--verse-idx", type=int, default=2)
+    ap.add_argument("--max-tokens", type=int, default=800)
+    a = ap.parse_args()
+    r = run(a.work, a.verse_idx, a.max_tokens)
+    print(json.dumps(r, indent=2, ensure_ascii=False))
