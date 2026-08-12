@@ -33,12 +33,15 @@ def main() -> int:
                                 "records": [{"status": "PARSED", "lemma_iast": "śiva", "literal_gloss": "",
                                              "raw_fragment": "śivaḥ", "chunk_char_start": 0, "chunk_char_end": 5}]})[0] == False)
 
-    # ---- L200 worker (model MT/IA stubbed) ----
-    LW._propose_mt_ia = lambda oid, txt: (
+    # ---- L200 worker (model MT/IA stubbed; COMPARATIVE L1+L2) ----
+    LW._propose_mt_ia = lambda oid, l1, l2: (
+        "COMPLETE",
         [{"label": "MT-001", "type": "SUPPLIED", "basis": "x"}],
         [{"label": "IA-001", "text": "y"}], [])
 
     l2 = {"text": "The blue shines as one with the manifestation.",
+          "l1_text": "blue manifests as one with the light (grounded).",
+          "l2_ref": "pt:l2:IPVV:V1A",
           "paragraphs": ["The blue shines as one with the manifestation."],
           "par_refs": [["pt:l1:1", "pt:l0:2", "src:3"]],
           "source_layer": [{"par": 0, "speaker": "Abhinava"}],
@@ -49,12 +52,20 @@ def main() -> int:
             secs == sorted(["0_identification","1_published_reading","2_derivation_map",
                             "3_material_translation_decisions","4_interpretive_assertions",
                             "5_source_layer","6_cross_references","7_open_items","8_review_state"]))
+    ok &= t("L200 proposal status COMPLETE on success", p["proposal_status"] == "COMPLETE")
+    ok &= t("L200 l2_ref is a canonical id, l2_hash separate",
+            p["l200"]["0_identification"].get("l2_ref") == "pt:l2:IPVV:V1A" and
+            p["l200"]["0_identification"].get("l2_hash") == "h2")
     ok &= t("L200 validator passes on a complete audit", LW.l200_validator("L200", p)[0])
     p["l200"]["3_material_translation_decisions"] = [{"type": "BOGUS"}]
     ok &= t("L200 validator rejects a bad MT type", LW.l200_validator("L200", p)[0] == False)
     p["l200"]["3_material_translation_decisions"] = []
     p["l200"]["5_source_layer"] = []
     ok &= t("L200 validator requires source-layer", LW.l200_validator("L200", p)[0] == False)
+    p["l200"]["5_source_layer"] = [{"par": 0, "speaker": "Abhinava"}]
+    p["proposal_status"] = "GENERATION_FAILED"
+    ok &= t("L200 validator blocks a GENERATION_FAILED proposal (fail-closed)",
+            LW.l200_validator("L200", p)[0] == False)
 
     # ---- controller commits L200 once L2 is committed ----
     R.commit("L2", "IPVV:V1A", "h2", created_by="test")

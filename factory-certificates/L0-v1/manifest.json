@@ -1,0 +1,17 @@
+{
+  "certificate": "L0-v1",
+  "ts": "2026-08-12T21:36:16.950125+00:00",
+  "code_sha": "4c0b6262b052",
+  "skill_sha": "872819b51b5a",
+  "validator_sha": "d74679679a59",
+  "model": "deepseek-v4-flash (hermes -z)",
+  "backend": "hermes",
+  "gold_reference": "hand-gold:8 (IPVV gold L0 format not token-alignable to RAW-L0 Sanskrit — see notes)",
+  "test_split": {
+    "held_out": 3,
+    "work": "kramasadbhava"
+  },
+  "input_hashes": [
+    "kramasadbhava"
+  ]
+}

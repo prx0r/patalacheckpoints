@@ -1,0 +1,18 @@
+{
+  "work_id": "kramasadbhava",
+  "held_out": 2,
+  "A_lossless": {
+    "ok": 2,
+    "total": 2
+  },
+  "B_binding_ok": 2,
+  "F_source_blocked": 1,
+  "G_replay_duplicates": 0,
+  "C_gloss_precision": {
+    "hand_gold_covered": 7,
+    "exact_fuzzy_matches": 5
+  },
+  "D_false_certainty_candidates": 2,
+  "E_abstentions": 0,
+  "cross_work": true
+}
