@@ -61,6 +61,25 @@ The philosophical-research substrate (feeds Agent 1 / the argument layer, not ju
 - **The gaps** (epistemic-to-ontological slide, memory-argument strength, universalization, status of
   relation, process vs witness) — exactly the places specialists push back.
 
+### 3. `docs/corpus/sivaqueue-translation-guide.md` (the SECOND corpus — "Śiva before Abhinava", 425 lines)
+The **untranslated-Śaiva translation guide**, researched as a distinct second corpus beyond the
+Kaula/Kubjikā/Trika/Krama census. Source: R2 `sanskritree/sivaqueue` (2026-08-12). Contents:
+- **100 untranslated Śaiva targets** with honest status labels (**U** no English translation · **P**
+  partial · **EN-gap** French/other exists · **U?** verify before claiming first translation), across the
+  Pāśupata/Śivadharma → early Mantramārga → Śaiva Siddhānta → Aṣṭaprakaraṇa → ritual-manual → Kashmirian
+  frontier.
+- **14 translation-memory guides (G1–G14)** — critical Sanskrit + specialist English editions (Niśvāsa,
+  Śivadharmaśāstra, Parākhya, Kiraṇavṛtti, Tattvasaṃgraha, Pāśupatasūtra, ...) to ingest as the
+  translation-memory layer BEFORE translating any of the 100.
+- **The 15-first priority sequence** (Pañcārthabhāṣya → Śivadharma corpus → early Skandapurāṇa →
+  Niśvāsaguhyasūtra → early Siddhānta → Nareśvaraparīkṣā → Kiraṇavṛtti 7-12 → Hṛdayaśiva Prāyaścittasamuccaya).
+- **The architecture**: the "Śiva Source Tree" (Rudra → Abhinavagupta), a per-work `work_id/date/
+  tradition/translation_status/source_witnesses/translation_guides/reuse_relations` record, and the
+  **translation-neighbourhood** rule — route each target through a historically-appropriate G-guide so a
+  model never renders `pāśa = "bondage"` from the dictionary alone. Same-lemma ≠ same-concept.
+- **Carry-forward**: build Niśvāsamukha + Niśvāsa + the translated early-Śaiva editions as a permanent
+  translation-reference layer before translating these works.
+
 ---
 
 ## THE SOURCE DOCS (the originals this index compiles — never edit these, they are the record)
@@ -95,6 +114,7 @@ The philosophical-research substrate (feeds Agent 1 / the argument layer, not ju
 |---|---|
 | `siva-corpus-download-manifest.json` | the 15-work Śiva corpus manifest |
 | `siva-corpus-inventory.json` | on-disk corpus inventory |
+| `sivaqueue-translation-guide.md` (`docs/corpus/`) | the second-corpus "Śiva before Abhinava" guide (100 targets + G1-G14 translation memory), from R2 `sanskritree/sivaqueue` |
 | `translation-pipeline-inventory.json` | existing T1/R1/T2/R2/T3/C1 works (the easy wins) |
 | `translation-state-ledger.json` | the corpus-state ledger (NEXT_VALID_ACTION) |
 | `translation-targets DB` (`data/corpus/targets/`) | the compiled database |
