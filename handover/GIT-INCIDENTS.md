@@ -58,3 +58,32 @@ git worktree add /root/projects/patala-agent2 agent2
 
 **Attribution rule for the past commit:** `4cc78d1` is recorded (INCIDENT-2026-08-12-01), NOT rewritten.
 Subsequent clean commits on the correct worktrees establish ownership.
+
+---
+
+## INCIDENT-2026-08-12-02 — CROSS_LANE_BRANCH_SWITCH (session close, `62cf778`)
+
+- **commit:** `62cf778` "Agent 1 (ML) session work — committed on agent2 pending Agent 0 reconciliation"
+- **symptom:** Agent 1 needed to publish its ~48 session files on the **agent1** branch (its lane), but the
+  shell was rooted in the **shared tree on `agent2`**, which also held Agent 2's unrelated uncommitted files
+  (`app/api/*`, `data/corpus/{analyst,journey,recommend}.ts`, `factory_run.py`, etc.).
+- **CAUSE (same root cause as INCIDENT-01):** one shared working tree + one shared index. Because the tree
+  was dirty with a *mixture* of both agents' files, a clean `git switch agent1` was impossible — the branch
+  checkout would have carried/conflicted across lanes.
+- **WHAT WENT WRONG with branch switching, specifically:**
+  1. Branch switching is **not a safe publication path** when the working tree is dirty and mixed-lane:
+     `git switch` refuses (or silently carries) uncommitted changes, and on a shared tree those changes
+     belong to *different* agents, so "carrying them over" is itself cross-lane contamination.
+  2. The correct per-lane target (`agent1`) is unreachable from the dirty shared tree without destructive
+     surgery (stash / cherry-pick / reset / `branch -D`) — the exact "BAD RECOVERY" INCIDENT-01 forbids.
+  3. So the only non-destructive option was to **commit only Agent 1's explicit files on the current branch
+     (`agent2`) with a clear attribution/reconciliation note**, and hand the move to `agent1` to Agent 0.
+- **CORRECT RECOVERY:** record this incident → the commit `62cf778` is Agent 1's work, correctly attributed
+  in its message, pending Agent 0 moving/reconciling it onto `agent1`. Do **not** rewrite `62cf778`.
+- **CONFIRMED PREVENTION (still outstanding):** this is the second occurrence of the same root cause. The
+  **worktree migration** in AGENT0-ACTION below is now *required before either agent's next session*:
+  `/root/projects/patala-agent1` on `agent1` and `/root/projects/patala-agent2` on `agent2`. Only a
+  per-agent worktree makes branch switching safe, because the target lane's working tree is *clean by
+  construction* and only contains that agent's files.
+- **Lesson:** branch switching on the shared tree is NOT how work is published between lanes; it is the
+  mechanism that triggers cross-lane contamination. Publish via correct worktree, reconcile via Agent 0.
