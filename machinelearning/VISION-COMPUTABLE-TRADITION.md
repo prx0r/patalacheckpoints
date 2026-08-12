@@ -2,9 +2,10 @@
 
 *2026-08-12. The target product vision that the ML strategy exists to serve. Captured verbatim-in-substance
 from a conversation, so it does not get lost. **Read this together with `MLUSEINPATALA.md` (the ML
-what-to-build) and `MLVISION.md` (the big picture).** The thesis: Pāṭala is not "a website with
-translations" — it is a **multi-resolution knowledge system for a tradition**, where every layer is a
-controlled projection over ONE evidence graph.*
+what-to-build), `MLVISION.md` (the big picture), and `PATALA_AS_LIBRARY_ENGINE.md` (the scaled version:
+Pāṭala as the whole Library's evidence engine, each wing a register-projection of the same graph).** The
+thesis: Pāṭala is not "a website with translations" — it is a **multi-resolution knowledge system for a
+tradition**, where every layer is a controlled projection over ONE evidence graph.*
 
 ---
 

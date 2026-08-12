@@ -5,10 +5,17 @@ order, and why**, grounded in (a) what the codebase already holds, (b) the verif
 (c) the executed analogues FoJin and Bilara, and (d) expert review of an earlier draft (incorporated in
 full). Companion docs in this folder supply the detail; this is the decision. **Before acting, read
 `IPVV-STACK-INTEGRATION.md`** — the verified audit of the actual IPVV stack and the current Pāṭala wiring
-(it confirms the exact C1-wiring gap that Phase 0A must close).*
+(it confirms the exact C1-wiring gap that Phase 0A must close). **For the full vision this serves, see
+`VISION-COMPUTABLE-TRADITION.md` + `PATALA_AS_LIBRARY_ENGINE.md`** — the latter scales the "one graph,
+many register-projections" idea to the whole Library (Pāṭala as the engine every wing derives from).*
 
 > **FROZEN. No new ML idea enters unless it answers:** *"Which benchmark task does it improve, and what
 > existing baseline must it beat?"* — if there is no answer, it does not get built.
+
+> **Retain the full vision while building the foundation:** the data foundation built now (the typed
+> ArgumentProposal, the provenance 4-level contract, the register-aware C1/themes) is what makes the
+> Library-engine vision possible. Build the spine (passage → claim → theme, resolvable + auditable)
+> BEFORE the content projections, so every future wing derives from it.
 
 ---
 

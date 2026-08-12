@@ -131,6 +131,14 @@ review state, derived certainty. No new audit machinery needed.
 > or a truth-engine notion (weighted_lbf/posterior), either reuse the existing type or explicitly flag
 > it as a new notion for review. No parallel systems, no invented enums where one exists.
 
+**The full-vision anchor (why this matters):** the alignment contract is what makes the
+**Library-engine vision** (`PATALA_AS_LIBRARY_ENGINE.md`) possible. That vision wants the Library's
+content-graph to carry a `patala_claim: pt:argument:<work>:<slug>` link per essay — i.e. every essay
+across every wing (tantrafiles/ochema/intelligentothers) resolves to its argument packet → passages.
+The alignment contract is exactly what guarantees that `pt:argument:` is a **typed, resolvable,
+in-system object** (not a parallel notion), so the wings can project from it. **The data foundation I'm
+building IS the Library's provenance spine.**
+
 ---
 
 ## 7. The immediate application (my in-flight work, aligned)
