@@ -49,17 +49,17 @@ task, human-grounded gold, and a reproducible evaluation show that it does what 
   grounding precision, relation F1, abstention performance; simple baseline included.
 
 ## CLAIM P-004 — "The Nyāya gate validates claims."
-- **STATUS:** CANDIDATE (NYAYA_GATE_CANDIDATE_v1) — **gold now exists, mechanism partially validated**
-- **EVIDENCE (2026-08-12):** 12 hand-made gold fixtures (`benchmarks/v0/evidence/nyaya-gate-gold.jsonl`);
-  the Pāṭala-adapted gate (`nyayagate.py`) run BLIND achieves **defect-detection 0.80 (4/5)**, **false-
-  positive 0.00 (5/5)**, **abstention 0.50 (1/2)** on `eval_gate_gold.py`.
-- **CAVEAT:** (1) the 1 miss is **viruddha**, which genuinely needs domain knowledge (knowing the IPVV
-  argues memory proves a persistent self) — a keyword rule cannot detect it; needs the argument graph.
-  (2) gold is 12 fixtures, all SINGLE_REVIEWED by one author — not independent. (3) abstention 0.50 — the
-  gate still forces verdicts on some borderlines.
-- **REQUIRED to promote to `verify-claim-semantic`:** viruddha detection via the argument graph (not
-  keywords); independently reviewed gold (≥2 reviewers); abstention gap closed; blind eval against a
-  held-out adversarial set.
+- **STATUS:** FROZEN — `NYAYA_GATE_CANDIDATE_v1` (BENCHMARKED_PRELIMINARY, NOT independently validated,
+  NOT a semantic verifier)
+- **EVIDENCE (2026-08-12):** 12 author-made gold fixtures; the Pāṭala-adapted gate run BLIND: **defect
+  recall 4/5 (0.80) · clean FP 0/5 (0.00) · abstention 1/2 (0.50)**. Full record + the pre-fix
+  savyabhicara bug/fix: `NYAYA-GATE-CANDIDATE-V1.md`.
+- **CAVEAT:** the 1 miss is **viruddha**, which requires a real argument graph (knowing the IPVV argues
+  memory proves a persistent self). Structural/local defects (asiddha/savyabhicara/satpratipaksa/badhita)
+  are partially detected; viruddha is context-dependent and NOT hackable as a keyword.
+- **REQUIRED to promote to `verify-claim-semantic`:** real Argument Gold (ARG-001..010) + argument graph;
+  viruddha as a graph operation over DebateFrames; independently reviewed gold (30–50 fixtures, ≥2
+  reviewers); abstention gap closed.
 
 ## CLAIM P-005 — "The Bayesian primitive (strength.py) scores claim support."
 - **STATUS:** UNVALIDATED_HEURISTIC (BayesianEvidencePrimitive)

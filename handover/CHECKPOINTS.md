@@ -35,7 +35,15 @@ CP4  ARGUMENTS REAL               (both — they CONVERGE here)
 5. EvidenceCandidate / EvidenceUse   retrieval returns scholarly candidates, not strings
 6. Theme / ThemeMembership   the accepted-theme object
 7. Proposition / Inference / Grounding / Defeater   the argument layer
+8. DebateFrame / SemanticAlignment   the anti-fake-contradiction layer (see SEMANTIC-COMMENSURABILITY.md)
 ```
+
+**8. DebateFrame / SemanticAlignment — the newest, and one of the most important.** Every argument is
+*argument-under-a-frame*. Before comparing two positions, require: same DebateFrame? same target
+proposition? semantic alignment adequate? scope compatible? Only then test contradiction. This makes
+viruddha a graph operation (does H support ¬S after alignment?), not a keyword hack, and prevents the
+fake contradictions that pollute argument comparison, counterevidence, and theme clustering. Full spec:
+`machinelearning/SEMANTIC-COMMENSURABILITY.md`.
 
 ### Ref (the most important — both agents share it)
 ```ts
