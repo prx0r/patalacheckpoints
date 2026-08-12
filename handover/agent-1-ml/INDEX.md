@@ -4,6 +4,10 @@
 Append-only history lives under this folder; this file is the single "what is true right now" source for
 the ML lane.*
 
+> **LEADING CHECKPOINT DOC: `handover/CHECKPOINTS.md`** (the shared 5-checkpoint plan + 7 canonical
+> contracts) + **`handover/agent-1-ml/CHECKPOINTS-ML.md`** (this lane's goals: CP0/CP2/CP3/CP4).
+> Read those before the current-state below.
+
 ---
 
 ## Lane
