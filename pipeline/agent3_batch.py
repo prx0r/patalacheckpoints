@@ -95,6 +95,35 @@ def update_ledger(work_id: str, completed: int, total: int) -> dict:
     return {"work_id": work_id, "l0_status": f"{old} -> {new}", "completed": completed, "total": total}
 
 
+def gloss_verses(verses: list[str]) -> dict:
+    """Generate literal glosses for all tokens across the verses via the model (Hermes).
+
+    Returns {passage_id: {token: {literal, compound, supplied}}}. Tokens are produced by the
+    deterministic RAW-L0 first (so glossing is anchored to the actual analysis, never a guess at
+    the segmentation), then the model fills the literal gloss. A model failure returns empty
+    glosses (the deterministic core still runs; the gloss is simply left for the file path).
+    """
+    from raw_l0 import raw_l0_to_canonical
+    from model import chat
+    out = {}
+    try:
+        for i, verse in enumerate(verses):
+            records, _ = raw_l0_to_canonical(f"batch", verse)
+            tokens = [r["raw_fragment"] for r in records if r["raw_fragment"]]
+            if not tokens:
+                continue
+            prompt = json.dumps({t: "" for t in tokens}, ensure_ascii=False)
+            raw = chat("Literal Sanskrit word glosses. Return JSON only, same keys.",
+                       "Gloss each token literally.\n" + prompt, max_tokens=800)
+            flat = json.loads(raw)
+            passage_id = f":v{i+1}"
+            out[passage_id] = {t: {"literal": flat.get(t, ""), "compound": "", "supplied": False}
+                               for t in tokens}
+    except Exception:
+        pass
+    return out
+
+
 def run_batch(work_id: str, gloss_file: str | None = None, max_verses: int = 10) -> dict:
     raw = load_raw_source(work_id)
     verses = split_verses(raw)[:max_verses]
@@ -103,13 +132,18 @@ def run_batch(work_id: str, gloss_file: str | None = None, max_verses: int = 10)
     if gloss_file:
         g = json.load(open(gloss_file))
         gloss_map = g.get("verses", g)
+    elif verses:
+        # no file: generate the gloss via the model (Hermes) — the generative layer
+        gloss_map = gloss_verses(verses)
 
     completed = structural_failures = abstentions = 0
     results = []
     for i, verse in enumerate(verses):
         passage_id = f"{work_id}:v{i+1}"
         # glosses for THIS verse (passage_keyed) or global token->literal
-        verse_glosses = gloss_map.get(passage_id) if isinstance(gloss_map.get(passage_id), dict) else None
+        verse_glosses = gloss_map.get(passage_id) or gloss_map.get(f":v{i+1}")
+        if not isinstance(verse_glosses, dict):
+            verse_glosses = None
         res = raw_l0(work_id, passage_id, verse, glosses=verse_glosses)
         audit = audit_records(res["records"], res["proof"])
         # count abstentions: AMBIGUOUS tokens (Vidyut couldn't analyze -> honest abstain)

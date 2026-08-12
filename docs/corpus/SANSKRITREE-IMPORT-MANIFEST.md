@@ -103,6 +103,23 @@ onto Agent 1's contrast-set/verification vocabulary. Reuse, not duplicate:
 (Ratié) were used to fold ARG-004 → `SCHOLARLY_CORROBORATED_PRELIMINARY` (the crystal/inert component
 only). See `benchmarks/v0/ARG-GOLD-REVIEW-PACKET-v2.md`. Template for mining ARG-001/002/003/005.
 
+## IMPORT — the source-material graph + source-library (outside sanskritree)
+
+The corroboration campaign's scholar material is NOT only in sanskritree. The graph of traditions →
+scholar papers → essays → source material lives at:
+- **`/root/projects/.meta/`** — `TRADITION-GRAPH.md` (9 traditions → source/RO/essays/site), `SCHOLARS.md`
+  (scholar → books+essays), `SOURCE-RESOURCES.md` (the on-disk source material + action items),
+  `SOURCE-MANUAL.md`.
+- **`/root/projects/source-library/`** — the actual material: `tantra/` (abhinavagupta, utpaladeva-ipk,
+  ksemaraja, jayaratha, lakshmanjoo, dyczkowski, matter-of-wonder `extracted-passages.md`, hareesh-blog),
+  `consciousness/scholars/` (29 dirs: biernacki, utpaladeva, dharmakirti, husserl, metzinger...), plus
+  platonism/sufism/occult/buddhism/frontier.
+- **Use for Agent 1:** scholar corroboration (Ratié reason-revelation at
+  `source-library/tantra/source/ratie_reason_revelation/`, Biernacki matter-of-wonder extracted
+  passages, Utpaladeva). Register in `docs/INDEX.md` (done).
+
+---
+
 ## IMPORT — semantic-shift atlas (LEMMA→SENSE) as structured data
 
 `benchmarks/v0/semantic-shift-atlas.json` — the canonical_reference_map glossary materialized as

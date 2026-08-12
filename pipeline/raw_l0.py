@@ -112,8 +112,15 @@ def build_l0_records(chunk_id: str, verse: str, segments: list[dict],
                 dclass = analyses[0].get("data_class")
         except Exception:
             pass
-        gloss = glosses.get(token, {}).get("literal", "") if glosses else ""
-        supplied = glosses.get(token, {}).get("supplied", False) if glosses else False
+        # accept BOTH gloss-map shapes (documented contract is nested
+        # {token: {literal, compound, supplied}}; agent3_batch also documents the flat
+        # {token: literal} form) — coerce a string value into the nested shape.
+        gv = (glosses or {}).get(token)
+        if isinstance(gv, str):
+            gv = {"literal": gv, "compound": "", "supplied": False}
+        gv = gv or {}
+        gloss = gv.get("literal", "")
+        supplied = gv.get("supplied", False)
         # status: PARSED only if we have both a lemma (or gloss) and a real token
         if lemma or gloss:
             status = "PARSED"

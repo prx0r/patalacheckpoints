@@ -73,6 +73,8 @@ stale ones as `[ARCHIVED]` so a new agent is never confused. If it's not here, i
 | **Sanskritree deep-dive audit (agent usefulness)** | `handover/SANSKRITREE-AUDIT.md` (what Agent 1 + Agent 2 should mine: scholar corroboration, QA engine reuse, concordance, Lean verdict) | repo `handover/` |
 | **Sanskritree truth/ classification (216 files)** | `handover/SANSKRITREE-TRUTH-CLASSIFICATION.md` (Class 1 scholarship citable / Class 2 frontier MACHINE_PROPOSED / Class 3 noise; + paper candidates) | repo `handover/` |
 | **Corpus goldmine docs (imported)** | `docs/corpus/{canonical_reference_map, markguidance, translation_atlas, tradition_anchors, translation_flow_spec, leapfrog_guide, leapfrog_map, atlasflaws}.md` — the master substrate + Recognition Enquiry + method docs (read-first; originals live on sanskritree, never edit) | repo `docs/corpus/` |
+| **Source-material graph (the tradition → scholar → source → essay map)** | `/root/projects/.meta/` (`TRADITION-GRAPH.md`, `SCHOLARS.md`, `SOURCE-RESOURCES.md`, `SOURCE-MANUAL.md`, `content-graph.json`) — the master index linking every tradition to its source-library texts + basecamp research objects + workengestation essays + sites | external `/root/projects/.meta/` |
+| **Source-library (the actual scholar/source material)** | `/root/projects/source-library/` (`tantra/` incl. abhinavagupta, utpaladeva(-ipk), ksemaraja, jayaratha, lakshmanjoo, dyczkowski, matter-of-wonder, hareesh; `consciousness/scholars/` 29 dirs incl. biernacki, utpaladeva, dharmakirti; `platonism/`, `sufism/`, `occult/`, `buddhism/`, `frontier/`) — the scholarly corpus + extracted passages feeding corroboration/essays | external `/root/projects/source-library/` |
 
 ---
 
