@@ -59,10 +59,11 @@ Built this session:
              machinelearning/_ACTIVE/IR-REVIEW-FINDINGS.md.
 Honest status: golds are MACHINE_PROPOSED/CANDIDATE — NOT yet independently reviewed.
 ```
-Next in order: (1) **independent review of the 5 golds** via `benchmarks/v0/ARG-GOLD-REVIEW-PACKET.md`
-(a self-contained, human-readable packet — no Pāṭala/JSON knowledge needed; ACCEPT/REVISE/REJECT/ABSTAIN),
-(2) **then** py-aspic over the CLEANEST reviewed argument (adapter/semantics test, provenance stays in
-Pāṭala), (3) a real extractor that beats the baseline, (4) THEN viruddha as a graph op. See `NEXT-STEPS.md`.
+Next in order: (1) **independent review of the 5 golds** via `benchmarks/v0/ARG-GOLD-REVIEW-PACKET.md`,
+(2) **the ASPIC+ pilot is RUN** (ARG-002 v2 → minimal local grounded-semantics fallback because the
+arg.tech service was 503; vikalpa accepted without defeater, defeated with G2-TC2 — matches expected;
+EvaluationRun `benchmarks/v0/runs/2026-08-12T133850Z`; MUST re-run against the real engine), (3) a real
+extractor that beats the baseline, (4) THEN viruddha as a graph op. See `NEXT-STEPS.md`.
 
 **The source of this task:** `handover/agent-1-ml/ORIENTATION.md` Phase 4 + `NEXT-STEPS.md` + the vision
 (`docs/vision/CORE-BIBLE.md` Layer 3 / `handover/CHECKPOINTS.md` CP4).

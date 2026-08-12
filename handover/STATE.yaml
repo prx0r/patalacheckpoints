@@ -1,5 +1,5 @@
-state_version: 14
-last_update: '2026-08-12T13:14:49'
+state_version: 15
+last_update: '2026-08-12T13:39:28'
 agent1:
   checkpoints:
     CP0:
@@ -14,10 +14,11 @@ agent1:
       note: cluster.py proposals exist (machine); no AcceptedTheme yet.
     CP4:
       status: IN_PROGRESS
-      note: 5 golds CANDIDATE + blind baseline + Vertical Object v0 frozen + review
-        packet ready. Next gate = independent gold review.
+      note: 'Golds revised per model review (ARG-002 v2 clean); ASPIC pilot RUN (minimal
+        local fallback, arg.tech 503): vikalpa accepted w/o defeater, defeated with
+        G2-TC2. Next = real-engine re-run + human specialist review.'
       updated_by: agent1
-      ts: '2026-08-12 13:14:49'
+      ts: '2026-08-12 13:39:28'
 agent2:
   checkpoints:
     CP1:

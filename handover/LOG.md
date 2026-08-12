@@ -492,3 +492,9 @@ Vidyut adds independence but analyzes only ~47% of links.
 - **Remaining gate (Agent 1's lane):** independent review of the 5 golds — that is what makes the
   vertical object and everything above it editorially trustworthy.
 - **Schema:** `GroundingLink{from,to,relation,resolution,review_state}` (proof resolution = EXACT)
+
+## Handoff (2026-08-12) — agent1 → TO agent0
+
+- **What:** golds model-critiqued (ARG-002 v2 clean); ASPIC pilot RUN with minimal-local fallback; real py-aspic/arg.tech engine 503 at run time — coordinate re-run or a local engine
+- **File:** benchmarks/v0/runs/2026-08-12T133850Z + machinelearning/research/patala_ml/aspic_adapter.py
+- **Schema:** GroundingLink / ASPIC theory {facts,rules,contraries}

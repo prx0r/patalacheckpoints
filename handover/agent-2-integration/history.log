@@ -86,3 +86,19 @@ pipeline/auto_run.py that drives T1->L2->C1 per passage via the existing run.py/
 validate-passage+verify after each, stamps provenance (origin=machine, MACHINE_PROPOSED, never
 auto-accepted), stops on any validation failure, writes a batch report. Do NOT build until the git +
 vision formalization is committed.
+
+## 2026-08-12 — cross-work L0 test on a legacy work (kramasadbhāva T1): the honest finding
+Tested whether the L0 machinery generalizes to a NON-IPVV legacy work, per the P-001 cross-work caveat.
+Took kramasadbhava_patala1_pass1.md (a legacy T1, Krama = a śiva-corpus priority):
+- The SHARED extractor (t1_extract.py) processes it: 209 tokens (116 PARSED / 93 AMBIGUOUS), 0 errors.
+- verify_l0.py ran UNCHANGED: 0 overlaps, 0 fragment failures, 0 duplicates.
+- BUT unknown=12516/24932 — the legacy T1 is a MIXED format: raw Sanskrit verse lines (`**1/8** — oṃ
+  namaste...`), `[and]-` gloss lines, AND metadata (`- **Author:**`, `- **PERIOD:**`, `### Provenance`).
+  verify_l0.py's editorial classifier (built for the IPVV's `*Source:` + `## T1 apparatus`) doesn't
+  recognize the legacy metadata list-items or the `**N/N**` verse labels.
+HONEST CONCLUSION: the tokenizer + verifier are format-robust (no overlaps/fragments/dups on a foreign
+work), but full P0 on a legacy T1 needs a small editorial-classification extension (recognize
+`- **Key:**` metadata + `**N/N**` verse labels) OR a raw-verse extraction mode. This is the exact
+cross-work seam P-001 flagged — recorded, NOT papered over. Do NOT redesign L0; extend classification
+only if/when a legacy work is actually adopted. See also the new download manifest
+(data/corpus/downloads/siva-corpus-download-manifest.json).
