@@ -22,6 +22,7 @@ stale ones as `[ARCHIVED]` so a new agent is never confused. If it's not here, i
 | Concern | Canonical doc | Where |
 |---|---|---|
 | **Onboarding (START HERE — single on-ramp, all agents)** | `onboarding/README.md` | repo `onboarding/` |
+| **Agent system (who + tracked progress)** | `handover/SYSTEM.md` (template `agent0` → live instances) + `handover/flow.py status` | repo `handover/` |
 | **Vision + navigation (START HERE)** | `VISION_AND_NAVIGATION.md` | repo root |
 | **Full-system onboarding** | `THE_COMPANION.md` | sanskritree `_stack/ipvv/specs/` |
 | **Handover folder (both lanes — README first)** | `handover/README.md` | repo `handover/` |

@@ -7,6 +7,7 @@ metadata:
   hermes:
     tags: [validation, audit, integrity, epistemic, patala, corpus]
     related_skills: [translate-passage, assemble-stack]
+    checkpoint: CP1 (referential + epistemic integrity of the corpus)
 ---
 
 # Validate Passages & the Corpus

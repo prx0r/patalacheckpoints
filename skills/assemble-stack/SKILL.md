@@ -7,6 +7,7 @@ metadata:
   hermes:
     tags: [stack, pipeline, patala, translation, artifact]
     related_skills: [translate-passage, validate-passage]
+    checkpoint: CP1 (assembles the per-work provenance stack the L0 floor certifies)
 ---
 
 # Assemble the Per-Work Stack

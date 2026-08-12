@@ -8,6 +8,10 @@ to their lane. Read top to bottom; then follow the specialization gate for your 
 > Every Pāṭala agent reads this before any build. Nothing is "real" because code exists — only
 > independent gold + blind eval + metric + human adjudication makes it real.
 
+> **AND the live agent system:** `../handover/SYSTEM.md` — the agnostic template (`agent0`) → live
+> instances (`agent1`/`agent2`), with tracked progress in `../handover/STATE.yaml` via
+> `python3 ../handover/flow.py status`. Know your instance's live checkpoints before you start.
+
 ---
 
 ## STAGE 0 — THE GATE (read before ANY build)

@@ -31,6 +31,25 @@ here and in `docs/INDEX.md`.*
 
 ---
 
+## Map to the engineering checkpoint ladder (CP0–CP12)
+
+The vision arc (above) is the *product/strategic* view; the checkpoint ladder
+(`handover/CHECKPOINTS.md`) is the *engineering* view of the same work. Rough mapping:
+
+| Vision | Checkpoints it lands on |
+|---|---|
+| 01 translation-lab / 02 Tantra Hub | CP1 (source proof) → CP6 (synthesis) |
+| 03 one scholarly infrastructure | the whole ladder (CP0–CP12) |
+| 04 economic thesis / 08 scholar economics | CP10–CP12 (collaborative + economic + cross-corpus) |
+| 05 five-year strategic window | sequencing of CP1–CP6 |
+| 06 Pāṭala Review (adversarial review) | CP5 (verification) + CP8 (adversarial review) |
+| 07 New Scholar (workbench) | CP7 (workbench) → CP9 (API/MCP) |
+
+**Where the live agent system tracks this:** `handover/SYSTEM.md` (template → instances) +
+`handover/STATE.yaml` via `python3 handover/flow.py status`.
+
+---
+
 ## The site spec (the concrete destination)
 
 | Doc | Focus |

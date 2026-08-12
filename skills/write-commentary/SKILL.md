@@ -7,6 +7,7 @@ metadata:
   hermes:
     tags: [commentary, c1, sanskrit, tantra, scholarly, patala]
     related_skills: [translate-work, validate-passage, use-api]
+    checkpoint: CP3 (the C1 capstone commentary feeds theme adjudication)
 ---
 
 # Produce C1 — the capstone commentary

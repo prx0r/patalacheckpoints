@@ -7,6 +7,7 @@ metadata:
   hermes:
     tags: [api, mcp, patala, tantra, retrieval, research]
     related_skills: [translate-passage, validate-passage]
+    checkpoint: CP2/CP9 (retrieval + the API/MCP surface)
 ---
 
 # Use the Pāṭala API / MCP

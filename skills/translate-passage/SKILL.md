@@ -7,6 +7,7 @@ metadata:
   hermes:
     tags: [translation, sanskrit, pipeline, patala, tantra, scholarly]
     related_skills: [validate-passage, assemble-stack, write-commentary]
+    checkpoint: CP1 (a passage through T1->C1, the source floor)
 ---
 
 # Translate a Passage (the full flow)

@@ -144,3 +144,12 @@ trustworthy, not speculative architecture.
 - **Agent 2 / L0 (CP1):** `handover/agent-2-integration/CHECKPOINTS-INTEGRATION.md`
 
 Each breaks this shared vision into that lane's concrete goals, gates, and guardrails.
+
+## SEE ALSO (the parallel layers this ladder joins)
+
+- **The live agent system (who + tracked progress):** `handover/SYSTEM.md` (template `agent0` → live
+  instances) + `handover/STATE.yaml` via `python3 handover/flow.py status`.
+- **The skills (how the work is done):** `skills/*/SKILL.md` — each skill names the checkpoint it
+  advances (e.g. `translate-work` → CP1, `push-text` → CP4, `write-commentary` → CP3).
+- **The product vision arc (why):** `docs/vision/INDEX.md` — Vision 01–08 mapped onto this ladder
+  (e.g. 06 Pāṭala Review → CP5/CP8, 07 New Scholar → CP7).

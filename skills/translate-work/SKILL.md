@@ -7,6 +7,7 @@ metadata:
   hermes:
     tags: [translation, sanskrit, tantra, pipeline, patala, audited, state-machine]
     related_skills: [validate-passage, assemble-stack, use-api]
+    checkpoint: CP1 (the audited work stack, the source floor)
 ---
 
 # Translate a Work (the audited stack)
