@@ -19,6 +19,7 @@ from dataclasses import dataclass, field
 from typing import Optional
 
 from .strength import score_argument_premises
+from .nyayagate import gate_claim
 
 
 @dataclass
@@ -120,7 +121,10 @@ def build_argument(
 
     premise_weights: per-premise [{premise_id, log_bayes_factor, w_rel, w_map, w_aux, paradigm}]
       — the inputs to strength.score_argument_premises (posterior_targets).
-    gate: the Nyāya gate result; per Claim v3, required before any posterior update.
+    gate: the Nyāya gate result; per Claim v3, required before any posterior update. If None, the
+    gate is RUN on the argument's conclusion (the NIGAMANA member) to fill the slot — this is the
+    wiring of the real Nyāya gate into the empty gate slot (per WIRE-NYAYA-GATE.md, now valid because
+    real Inference objects exist).
     """
     # build ClaimV3 for each premise (with its weights) if weights given
     premise_claims = []
@@ -143,6 +147,21 @@ def build_argument(
 
     # the conclusion = the NIGAMANA member (the explicit conclusion)
     conclusion = next((m for m in members if m.role == "NIGAMANA"), None)
+
+    # WIRE THE GATE: if no gate result was supplied, run the real Nyāya gate on the conclusion and
+    # fill the empty slot. This makes can_update_posterior deterministic and backed by a gate result
+    # (per Claim v3: every posterior update must be backed by a gate result).
+    if gate is None and conclusion is not None:
+        # extract the numeric LBF from the aggregate audit-trace (a dict), defaulting to 0.0
+        agg_trace = agg.get("aggregate") or {}
+        lbf = float(agg_trace.get("log_bayes_factor", 0.0) or agg_trace.get("weighted_lbf", 0.0) or 0.0)
+        gate = gate_claim({
+            "claim_id": argument_id,
+            "claim_text": conclusion.text,
+            "pramana": "anumana",
+            "falsifier": {"type": "structural"} if agg_trace else None,
+            "log_bayes_factor": lbf,
+        }).to_dict()
 
     return ArgumentProposal(
         argument_id=argument_id, work_id=work_id, title=title,

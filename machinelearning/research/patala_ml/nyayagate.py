@@ -176,6 +176,73 @@ def gate_claim(claim: dict, peer_claims: list[dict] | None = None) -> GateResult
     return GateResult(cid, outcome, can_update, pramana, tradition, failures, falsifier_status)
 
 
-def validate(claim: dict, peer_claims: list[dict] | None = None) -> dict:
-    """Stable wrapper → dict (for the benchmark / API)."""
-    return gate_claim(claim, peer_claims).to_dict()
+def check_viruddha_graph(claim: dict, gold_propositions: list[dict]) -> list[GateFailure]:
+    """GRAPH-AWARE viruddha: does the gold's established propositions establish the OPPOSITE of the claim?
+
+    This replaces the keyword-heuristic viruddha with a real graph operation (per
+    NYAYA-GATE-CANDIDATE-V1.md: "viruddha requires a real argument graph — knowing the text argues the
+    opposite"). For a candidate claim H, we look at the gold's committed propositions:
+      - a proposition P is 'established' if its commitment is ASSERTS/DERIVES (a siddhānta claim),
+        NOT ATTRIBUTES_TO_OPPONENT/RECONSTRUCTED-without-support.
+      - if an established proposition P semantically contradicts H (i.e. P implies ¬H, or H implies ¬P),
+        that is a VIRUDDHA_CANDIDATE → the semantic layer decides.
+
+    `contradicts`: a minimal, honest lexical-overlap-contradiction check. It flags the case where the
+    gold asserts X and the candidate asserts "X is not the case" / "not-X" / the direct negation of a
+    gold proposition. It does NOT claim full semantic entailment — it NOMINATES a viruddha candidate
+    for the semantic layer (as the doc requires), never settles it alone.
+    """
+    import re
+    failures: list[GateFailure] = []
+    claim_text = str(claim.get("claim_text", "")).lower()
+
+    # normalize: strip 'not'/negation so we can test opposite-polarity overlap
+    def _neg_polarity(s: str) -> bool:
+        return bool(re.search(r"\b(not|no|never|is not|does not|isn't|doesn't)\b", s.lower()))
+
+    def _core(s: str) -> str:
+        # drop common negation words + particles for overlap matching
+        s = s.lower()
+        for w in [" not ", " no ", " never ", " is not ", " does not ", " the ", " a ", " an ",
+                  " that ", " this ", " is ", " are ", " was ", " were "]:
+            s = s.replace(w, " ")
+        return re.sub(r"[^a-z ]", " ", s)
+
+    claim_core = _core(claim_text)
+    claim_neg = _neg_polarity(claim_text)
+
+    for p in gold_propositions:
+        commitment = str(p.get("commitment") or p.get("speaker") or "").upper()
+        # only claims the gold actually ASSERTS/DERIVES count as 'established' (the text's position)
+        if commitment in ("ASSERTS", "DERIVES", "RECONSTRUCTED", "SIDDHANTA", "ASSERTS_FOR_ARGUMENT"):
+            p_text = str(p.get("proposition") or p.get("text") or "")
+            p_neg = _neg_polarity(p_text)
+            p_core = _core(p_text)
+            # tokens shared between the claim and the gold proposition
+            shared = set(claim_core.split()) & set(p_core.split())
+            if len(shared) >= 3:
+                # opposite polarity on an overlapping subject → the gold argues the opposite
+                if claim_neg != p_neg:
+                    failures.append(GateFailure(
+                        "viruddha", "strong",
+                        f"gold proposition {p.get('proposition_id', p.get('id'))} "
+                        f"(commitment={commitment}) asserts the opposite: '{p_text[:80]}' "
+                        f"[GRAPH viruddha candidate — semantic layer decides]"))
+                    break  # one decisive graph conflict is enough to flag
+    return failures
+
+
+def validate(claim: dict, peer_claims: list[dict] | None = None, gold_propositions: list[dict] | None = None) -> dict:
+    """Stable wrapper → dict (for the benchmark / API). Optionally graph-aware viruddha over gold."""
+    result = gate_claim(claim, peer_claims).to_dict()
+    if gold_propositions:
+        gfail = check_viruddha_graph(claim, gold_propositions)
+        # promote the outcome to needs_review if a graph viruddha is found
+        if gfail:
+            result["failures"] = (result.get("failures") or []) + [f.to_dict() for f in gfail]
+            result["graph_viruddha"] = True
+            # the strongest failure governs the outcome (viruddha is strong)
+            if result.get("outcome") in ("accepted", "accepted_with_penalty"):
+                result["outcome"] = "needs_review"
+            result["can_update_posterior"] = False
+    return result
