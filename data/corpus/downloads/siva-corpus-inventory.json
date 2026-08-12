@@ -1,0 +1,128 @@
+{
+  "$schema": "patala:corpus:inventory:v1",
+  "note": "Consolidated on-disk corpus inventory (2026-08-12). Maps every work on the sanskritree mount to its state: which stack floors are present, how many passages are valid/needs_review, and whether it is L0-able. This is the ref-able index for translation automation (the future agent3). Sources: translations/_stack/AUDIT.md + sources/ + translations/01_t1_working/.",
+  "flagship": {
+    "work": "ipvv",
+    "note": "The gold standard: 63/63 L0 lossless, full stack (L0->L200->C1), vertical-object resolved. This is the reference for all other works."
+  },
+  "stack_works": [
+    {
+      "work": "kramasadbhava",
+      "tradition": "Kālīkrama",
+      "valid": 563, "needs_review": 0,
+      "floors": { "00_source": "pending", "01_t1": "present", "02_r1": "pending", "05_t3": "pending", "07_c1": "pending" },
+      "status": "VALID (563/563) — most-ready non-IPVV stack",
+      "l0_able": true,
+      "note": "The Krama-prototype. Only stack work with fully-valid passages. Legacy T1 uses [and]- gloss format."
+    },
+    {
+      "work": "kubjikamata",
+      "tradition": "Paścimāmnāya / Kubjikā Kaula",
+      "valid": 0, "needs_review": 2437,
+      "floors": { "00_source": "pending", "01_t1": "present", "02_r1": "present", "05_t3": "pending", "07_c1": "pending" },
+      "status": "T1-present, UNVALIDATED (2437 needs_review)",
+      "l0_able": true,
+      "note": "26 T1 files in the flat corpus. GRETIL Sanskrit on disk. A manifest Tier-0/Tier-1 priority."
+    },
+    {
+      "work": "kulasara",
+      "tradition": "early Kaula",
+      "valid": 0, "needs_review": 711,
+      "floors": { "00_source": "pending", "01_t1": "present", "02_r1": "present", "05_t3": "pending", "07_c1": "pending" },
+      "status": "T1-present, UNVALIDATED (711 needs_review)",
+      "l0_able": true
+    },
+    {
+      "work": "cidgaganacandrika",
+      "tradition": "Krama",
+      "valid": 0, "needs_review": 312,
+      "floors": { "00_source": "pending", "01_t1": "present", "02_r1": "present", "05_t3": "pending", "07_c1": "pending" },
+      "status": "T1-present, UNVALIDATED (312 needs_review)",
+      "l0_able": true
+    },
+    {
+      "work": "timirodghatana",
+      "tradition": "archaic Kaula",
+      "valid": 0, "needs_review": 231,
+      "floors": { "00_source": "pending", "01_t1": "present", "02_r1": "present", "05_t3": "pending", "07_c1": "pending" },
+      "status": "T1-present, UNVALIDATED (231 needs_review)",
+      "l0_able": true
+    },
+    {
+      "work": "maharthamanjari",
+      "tradition": "Kaula",
+      "valid": 0, "needs_review": 74,
+      "floors": { "00_source": "pending", "01_t1": "present", "02_r1": "present", "03_t2": "present", "04_r2": "present", "05_t3": "present", "07_c1": "pending" },
+      "status": "deepest non-IPVV stack (through T3), UNVALIDATED",
+      "l0_able": true
+    },
+    {
+      "work": "sivasutra",
+      "tradition": "Spanda",
+      "valid": 0, "needs_review": 0,
+      "floors": { "00_source": "pending", "01_t1": "present", "02_r1": "present", "03_t2": "present", "04_r2": "present", "05_t3": "present", "06_t3_1": "pending", "07_c1": "present" },
+      "status": "full stack through C1 (with Bhāskara comm.)",
+      "l0_able": true
+    },
+    {
+      "work": "jnanakarika",
+      "tradition": "Kaula",
+      "valid": 0, "needs_review": 0,
+      "floors": { "00_source": "pending", "01_t1": "present", "02_r1": "present", "03_t2": "present", "04_r2": "present", "05_t3": "present", "07_c1": "pending" },
+      "status": "deep stack (through T3)",
+      "l0_able": true
+    },
+    {
+      "work": "mahanayaprakasha",
+      "tradition": "Krama",
+      "valid": 0, "needs_review": 0,
+      "floors": { "00_source": "pending", "01_t1": "present", "02_r1": "present", "03_t2": "present", "04_r2": "present", "05_t3": "pending", "07_c1": "pending" },
+      "status": "deep stack (through R2)",
+      "l0_able": true
+    },
+    {
+      "work": "ajadapramatrsiddhi", "tradition": "Pratyabhijñā", "floors": {}, "status": "no AUDIT", "l0_able": null
+    },
+    {
+      "work": "kalanalatantra", "tradition": "Kubjikā-associated", "valid": 0, "needs_review": 0,
+      "floors": { "00_source": "pending", "01_t1": "present", "02_r1": "pending", "05_t3": "pending", "07_c1": "pending" }, "status": "T1-present", "l0_able": true
+    },
+    {
+      "work": "maharahasyasampradaya", "tradition": "Kaula", "valid": 0, "needs_review": 0,
+      "floors": { "00_source": "pending", "01_t1": "present", "02_r1": "present", "05_t3": "pending", "07_c1": "pending" }, "status": "T1+R1", "l0_able": true
+    },
+    {
+      "work": "spandakarika", "tradition": "Spanda", "valid": 0, "needs_review": 0,
+      "floors": { "00_source": "pending", "01_t1": "pending", "02_r1": "present", "05_t3": "pending", "07_c1": "pending" }, "status": "R1 only", "l0_able": true
+    },
+    {
+      "work": "tantraloka", "tradition": "Trika (Abhinavagupta)", "valid": 0, "needs_review": 0,
+      "floors": { "00_source": "pending", "01_t1": "present", "02_r1": "pending", "05_t3": "pending", "07_c1": "pending" }, "status": "T1-present", "l0_able": true
+    }
+  ],
+  "flat_translation_works": 36,
+  "source_libraries": {
+    "muktabodha": { "files": 500, "note": "Machine-readable IAST e-texts (svacchanda, netra, brahmayamala, malinivijayottara, etc.)" },
+    "round2": { "files": 23, "note": "cidgagana, heart_of_the_yogini, paratrishika, saiva_age, kalhana..." },
+    "round3": { "files": 13, "note": "kramasadbhava, jayadrathayamala s3/s4, cincinmatasarasamuccaya, sambhunirnaya, Bang TaSa" },
+    "gretil2": { "files": 14, "note": "Nyaya/Buddhist controls (tattvacintamani, pramanavarttika...)" },
+    "gretil_siva": { "files": 3, "note": "malinivijayottara, kubjikamata, kiranatantra (downloaded 2026-08-12)" }
+  },
+  "translation_pipeline_state": {
+    "01_t1_working": 141, "02_r1_review": 36, "03_t2_alternate": 15, "04_r2_adjudication": 15, "05_t3_final": 11, "06_c1_interpretation": 20,
+    "note": "The legacy T1->T3->C1 pipeline. Most T1s are UNVALIDATED (needs_review); a few reach T3/C1. The English is guidance translation ready to run through L0->L200->C1."
+  },
+  "acquisition_registers": {
+    "untranslated": "corpus/targets/untranslated.md (register I, 20 targets)",
+    "untranslated2": "corpus/targets/untranslated2.md (register II, next 20)",
+    "targetacquired": "corpus/targets/targetacquired.md (acquisition board)",
+    "translation_status_audit": "corpus/targets/translation_status_audit.md (don't-duplicate register)",
+    "note": "The registers are the actionable translation roadmap (ranked, on-disk vs [ACQ] split, strategic correction: Bhartṛhari+Nyāya, not Navya)."
+  },
+  "download_manifest": "data/corpus/downloads/siva-corpus-download-manifest.json",
+  "next_for_automation": {
+    "most_l0_ready": "kramasadbhava (563 valid passages; [and]- gloss format; runs through verify_l0.py)",
+    "highest_priority_targets": ["Tantrasadbhāva", "Devīpañcaśataka", "Ṣaṭsāhasrasaṃhitā", "Śrīmatottara", "Kularatnoddyota", "Ciñciṇīmatasārasamuccaya"],
+    "note": "When the autonomous-translation agent (agent3) is built, start with the L0-able stack works (kramasadbhava first), then pull the on-disk Sanskrit for the untranslated-register targets."
+  }
+}

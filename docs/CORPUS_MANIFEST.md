@@ -150,3 +150,20 @@ corpus/
 ```
 
 with each `.jsonl` containing addressable passages. Once that exists, ChatGPT through MCP can navigate the corpus intelligently instead of doing glorified full-text grep.
+
+---
+
+## ON-DISK CORPUS INVENTORY (2026-08-12)
+
+The consolidated, machine-readable index of every work on the sanskritree mount — its stack floors,
+passage validity, and L0-readiness. This is the ref-able map for translation automation:
+
+- **`data/corpus/downloads/siva-corpus-inventory.json`** — 15 `_stack/` works (kramasadbhava VALID 563,
+  kubjikā/kulasara/cidgagana/timirodghāṭana T1-unvalidated, sivasutra through C1, etc.) + the source
+  libraries (Muktabodha 500, round2/3, gretil) + the translation-pipeline state.
+- **`data/corpus/downloads/siva-corpus-download-manifest.json`** — the 15 śiva-corpus works with
+  canonical_id / Sanskrit URL / translation URL / format / status (INGEST/TRANSLATE/MANUSCRIPT).
+
+**Highlights:** kramasadbhava is the most L0-ready non-IPVV stack (563 valid passages, `[and]-` gloss
+format, runs through `verify_l0.py`); the untranslated registers (`corpus/targets/`) give the ranked
+translation roadmap; the source libraries already contain most of the śiva-corpus Sanskrit.
