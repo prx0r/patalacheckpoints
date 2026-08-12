@@ -111,16 +111,23 @@ def build() -> dict:
         if exists:
             index["count"] += 1
 
+    # the second-corpus sivaqueue registry (100 targets + companion guides + term context)
+    import sivaqueue_targets as SQ
+    sivaqueue = {"targets": SQ.all_targets(), "n_targets": len(SQ.all_targets()),
+                 "guides": SQ.guides(), "n_guides": len(SQ.guides()),
+                 "summary": SQ.summary()}
+
     db = {
         "compiled": "2026-08-12",
         "sources": sources, "n_sources": len(sources),
         "targets": targets, "n_targets": len(targets),
         "leads": leads, "n_leads": len(leads),
         "anchors": anchors, "n_anchors": len(anchors),
+        "sivaqueue": sivaqueue, "n_sivaqueue_targets": sivaqueue["n_targets"],
         "index": index,
     }
     for name, data in [("sources", sources), ("targets", targets), ("leads", leads),
-                       ("anchors", anchors), ("index", index)]:
+                       ("anchors", anchors), ("sivaqueue", sivaqueue), ("index", index)]:
         with (OUT / f"{name}.json").open("w", encoding="utf-8") as fh:
             json.dump(data, fh, indent=2, ensure_ascii=False)
     return db

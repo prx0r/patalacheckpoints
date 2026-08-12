@@ -17,9 +17,12 @@ structure + links to every original. **Agents: read this before translating or a
 | `targets.json` | actionable RAW-L0 targets | 21 works, prioritized (Krama packet first) |
 | `leads.json` | register I/II/III leads | 39 tracked leads (the untranslated registers + acquisition board) |
 | `anchors.json` | translation anchors/status | 16 from translation_status_audit.md (which texts already have English) |
+| `sivaqueue.json` | **the second-corpus registry** | 100 "Śiva before Abhinava" targets + 15 companion guides (G1–G14) + per-target period/tradition/status |
 | `index.json` | master doc index | 26 source docs + their links + existence |
 
 Query: `python3 pipeline/agent3_queue.py --registry` (targets) · `--leads` (leads) ·
+`python3 pipeline/agent3_queue.py --sivaqueue` (the 100 second-corpus targets) ·
+`python3 pipeline/agent3_queue.py --sivaqueue-work <work_id>` (period/tradition/companion/term-context) ·
 `python3 pipeline/audit_translation_pipeline.py` (existing T1/R1/T2/R2/T3/C1 works).
 
 ---
@@ -115,6 +118,7 @@ Kaula/Kubjikā/Trika/Krama census. Source: R2 `sanskritree/sivaqueue` (2026-08-1
 | `siva-corpus-download-manifest.json` | the 15-work Śiva corpus manifest |
 | `siva-corpus-inventory.json` | on-disk corpus inventory |
 | `sivaqueue-translation-guide.md` (`docs/corpus/`) | the second-corpus "Śiva before Abhinava" guide (100 targets + G1-G14 translation memory), from R2 `sanskritree/sivaqueue` |
+| `sivaqueue-targets.json` + `sivaqueue-guides.json` (`data/corpus/`) | the machine-readable 100-target registry + 15 companion guides (loaded by `pipeline/sivaqueue_targets.py`) |
 | `translation-pipeline-inventory.json` | existing T1/R1/T2/R2/T3/C1 works (the easy wins) |
 | `translation-state-ledger.json` | the corpus-state ledger (NEXT_VALID_ACTION) |
 | `translation-targets DB` (`data/corpus/targets/`) | the compiled database |

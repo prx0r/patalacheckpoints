@@ -115,7 +115,32 @@ if __name__ == "__main__":
     ap.add_argument("--list", action="store_true", help="list eligible works")
     ap.add_argument("--registry", action="store_true", help="show the full prioritized target registry (the huge queue)")
     ap.add_argument("--leads", action="store_true", help="show the full tracked leads (registers I-III + acquisition board)")
+    ap.add_argument("--sivaqueue", action="store_true", help="show the second-corpus sivaqueue registry (100 targets, period/tradition/companions)")
+    ap.add_argument("--sivaqueue-work", default=None, help="show period/tradition/companion/term-context for one sivaqueue work")
     a = ap.parse_args()
+
+    if a.sivaqueue_work:
+        from sivaqueue_targets import all_targets, term_context, translation_neighbourhood, guide_descriptions
+        t = all_targets().get(a.sivaqueue_work, {})
+        if not t:
+            print(json.dumps({"error": f"no sivaqueue work {a.sivaqueue_work}"})); sys.exit(1)
+        print(json.dumps({
+            "work": t,
+            "companion_guides": guide_descriptions(t.get("companion_guides", [])).split("\n"),
+            "translation_neighbourhood": translation_neighbourhood(a.sivaqueue_work),
+            "term_context": term_context(a.sivaqueue_work).split("\n"),
+        }, indent=2, ensure_ascii=False))
+        sys.exit(0)
+
+    if a.sivaqueue:
+        from sivaqueue_targets import all_targets as _sq_all
+        sq = _sq_all()
+        rows = [{"work_id": wid, "num": m.get("num"), "name": m.get("name"),
+                 "period": m.get("period"), "tradition": m.get("tradition"),
+                 "genre": m.get("genre"), "status": m.get("translation_status"),
+                 "guides": m.get("companion_guides")} for wid, m in sq.items()]
+        print(json.dumps({"sivaqueue_size": len(rows), "targets": rows}, indent=2, ensure_ascii=False))
+        sys.exit(0)
 
     if a.leads:
         leads = all_leads()

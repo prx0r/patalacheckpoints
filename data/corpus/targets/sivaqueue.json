@@ -1,0 +1,2192 @@
+{
+  "targets": {
+    "pancarthabhasya_kaundinya": {
+      "work_id": "pancarthabhasya_kaundinya",
+      "name": "Pañcārthabhāṣya — Kauṇḍinya",
+      "num": 1,
+      "section": "I",
+      "period": "c. 4th–5th/6th c.",
+      "tradition": "Pāśupata",
+      "genre": "commentary",
+      "translation_status": "P",
+      "companion_guides": [
+        "G4",
+        "G14"
+      ],
+      "translation_neighbourhood": [
+        "Pāśupatavratam",
+        "Pāśupatasūtra",
+        "Niśvāsamukha"
+      ],
+      "source": "gretil",
+      "note": "Kauṇḍinya's prose on Pāśupatasūtra; lord/soul/bondage/observance vocabulary."
+    },
+    "ganakarika": {
+      "work_id": "ganakarika",
+      "name": "Gaṇakārikā",
+      "num": 2,
+      "section": "I",
+      "period": "early Pāśupata",
+      "tradition": "Pāśupata",
+      "genre": "kārikā",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G4",
+        "G14"
+      ],
+      "translation_neighbourhood": [
+        "Pāśupatavratam",
+        "Pāśupatasūtra",
+        "Pañcārthabhāṣya"
+      ],
+      "source": "muktabodha",
+      "note": "Early Pāśupata verse summary; paired with Ratnaṭīkā."
+    },
+    "ratnatika_ganakarika": {
+      "work_id": "ratnatika_ganakarika",
+      "name": "Ratnaṭīkā on Gaṇakārikā",
+      "num": 3,
+      "section": "I",
+      "period": "early-medieval Pāśupata",
+      "tradition": "Pāśupata",
+      "genre": "commentary",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G4",
+        "G14"
+      ],
+      "translation_neighbourhood": [
+        "Pāśupatavratam",
+        "Pāśupatasūtra",
+        "Gaṇakārikā"
+      ],
+      "source": "muktabodha",
+      "note": "Commentary on Gaṇakārikā; early Pāśupata observance doctrine."
+    },
+    "samskaravidhi": {
+      "work_id": "samskaravidhi",
+      "name": "Saṃskāravidhi — Lākula/Pāśupata transformative rite",
+      "num": 4,
+      "section": "I",
+      "period": "early medieval",
+      "tradition": "Pāśupata",
+      "genre": "ritual manual",
+      "translation_status": "P",
+      "companion_guides": [
+        "G1",
+        "G4"
+      ],
+      "translation_neighbourhood": [
+        "Niśvāsamukha",
+        "Pāśupatavratam",
+        "Pāśupatasūtra"
+      ],
+      "source": "muktabodha",
+      "note": "Lākula/Pāśupata transformative rite; Pāñcārthika environment."
+    },
+    "sivadharmasastra": {
+      "work_id": "sivadharmasastra",
+      "name": "Śivadharmaśāstra — untranslated remainder",
+      "num": 5,
+      "section": "I",
+      "period": "c. 5th–7th",
+      "tradition": "Śivadharma",
+      "genre": "doctrinal treatise",
+      "translation_status": "P",
+      "companion_guides": [
+        "G3"
+      ],
+      "translation_neighbourhood": [
+        "Śivadharmaśāstra 11",
+        "Niśvāsamukha",
+        "Śivadharmasaṃgraha 5–9"
+      ],
+      "source": "shivadharmaproject",
+      "note": "Core lay Śaiva śāstra; only ch. 11 translated, remainder open."
+    },
+    "sivadharmottara": {
+      "work_id": "sivadharmottara",
+      "name": "Śivadharmottara",
+      "num": 6,
+      "section": "I",
+      "period": "early medieval",
+      "tradition": "Śivadharma",
+      "genre": "doctrinal treatise",
+      "translation_status": "U",
+      "companion_guides": [
+        "G3",
+        "G1"
+      ],
+      "translation_neighbourhood": [
+        "Śivadharmaśāstra",
+        "Niśvāsamukha",
+        "Śivadharmasaṃgraha 5–9"
+      ],
+      "source": "shivadharmaproject",
+      "note": "Lay Śaiva continuation; English critical translation underway."
+    },
+    "sivadharmasamgraha": {
+      "work_id": "sivadharmasamgraha",
+      "name": "Śivadharmasaṃgraha — remainder outside chs. 5–9",
+      "num": 7,
+      "section": "I",
+      "period": "early medieval",
+      "tradition": "Śivadharma",
+      "genre": "doctrinal treatise",
+      "translation_status": "P",
+      "companion_guides": [
+        "G1"
+      ],
+      "translation_neighbourhood": [
+        "Śivadharmaśāstra",
+        "Niśvāsamukha",
+        "Śivadharmottara"
+      ],
+      "source": "shivadharmaproject",
+      "note": "Only chs. 5–9 translated; bulk of the saṃgraha still untranslated."
+    },
+    "umamahesvarasamvada": {
+      "work_id": "umamahesvarasamvada",
+      "name": "Umāmaheśvarasaṃvāda",
+      "num": 8,
+      "section": "I",
+      "period": "early medieval",
+      "tradition": "Śivadharma",
+      "genre": "doctrinal treatise",
+      "translation_status": "U",
+      "companion_guides": [
+        "G3"
+      ],
+      "translation_neighbourhood": [
+        "Śivadharmaśāstra",
+        "Śivadharmottara",
+        "Niśvāsamukha"
+      ],
+      "source": "shivadharmaproject",
+      "note": "Śiva-Śakti dialogue; English critical translation underway."
+    },
+    "umottarasamvada": {
+      "work_id": "umottarasamvada",
+      "name": "Umottarasaṃvāda",
+      "num": 9,
+      "section": "I",
+      "period": "early medieval",
+      "tradition": "Śivadharma",
+      "genre": "doctrinal treatise",
+      "translation_status": "U",
+      "companion_guides": [
+        "G3"
+      ],
+      "translation_neighbourhood": [
+        "Śivadharmaśāstra",
+        "Umāmaheśvarasaṃvāda",
+        "Śivadharmottara"
+      ],
+      "source": "shivadharmaproject",
+      "note": "Companion Śaiva dialogue; English project underway."
+    },
+    "dharmaputrika": {
+      "work_id": "dharmaputrika",
+      "name": "Dharmaputrikā",
+      "num": 10,
+      "section": "I",
+      "period": "early medieval",
+      "tradition": "Śivadharma",
+      "genre": "doctrinal treatise",
+      "translation_status": "U",
+      "companion_guides": [
+        "G3"
+      ],
+      "translation_neighbourhood": [
+        "Śivadharmaśāstra",
+        "Śivadharmottara",
+        "Umāmaheśvarasaṃvāda"
+      ],
+      "source": "shivadharmaproject",
+      "note": "Lay Śaiva Dharma treatise; English project underway."
+    },
+    "lalitavistara_sivadharma": {
+      "work_id": "lalitavistara_sivadharma",
+      "name": "Lalitavistara of the Śivadharma corpus",
+      "num": 11,
+      "section": "I",
+      "period": "early medieval",
+      "tradition": "Śivadharma",
+      "genre": "doctrinal treatise",
+      "translation_status": "U",
+      "companion_guides": [
+        "G3"
+      ],
+      "translation_neighbourhood": [
+        "Śivadharmaśāstra",
+        "Śivadharmottara",
+        "Śivadharmasaṃgraha"
+      ],
+      "source": "shivadharmaproject",
+      "note": "Śivadharma-corpus narrative text; English project underway."
+    },
+    "vrsasarasamgraha": {
+      "work_id": "vrsasarasamgraha",
+      "name": "Vṛṣasārasaṃgraha",
+      "num": 12,
+      "section": "I",
+      "period": "early medieval",
+      "tradition": "Śivadharma",
+      "genre": "doctrinal treatise",
+      "translation_status": "P",
+      "companion_guides": [
+        "G3",
+        "G1"
+      ],
+      "translation_neighbourhood": [
+        "Śivadharmaśāstra",
+        "Niśvāsamukha",
+        "Śivadharmottara"
+      ],
+      "source": "shivadharmaproject",
+      "note": "Under collation; only provisional chapter-level translation."
+    },
+    "sivadharmasastravivarana": {
+      "work_id": "sivadharmasastravivarana",
+      "name": "Śivadharmaśāstravivaraṇa",
+      "num": 13,
+      "section": "I",
+      "period": "medieval, commenting early corpus",
+      "tradition": "Śivadharma",
+      "genre": "commentary",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G3"
+      ],
+      "translation_neighbourhood": [
+        "Śivadharmaśāstra",
+        "Śivadharmottara",
+        "Śivadharmasaṃgraha"
+      ],
+      "source": "shivadharmaproject",
+      "note": "Commentary on the early Śivadharmaśāstra; needs verification."
+    },
+    "sivadharmottaravivarana": {
+      "work_id": "sivadharmottaravivarana",
+      "name": "Śivadharmottaravivaraṇa",
+      "num": 14,
+      "section": "I",
+      "period": "medieval",
+      "tradition": "Śivadharma",
+      "genre": "commentary",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G3"
+      ],
+      "translation_neighbourhood": [
+        "Śivadharmottara",
+        "Śivadharmaśāstra",
+        "Śivadharmasaṃgraha"
+      ],
+      "source": "shivadharmaproject",
+      "note": "Commentary on Śivadharmottara; probably untranslated."
+    },
+    "skandapurana_early": {
+      "work_id": "skandapurana_early",
+      "name": "Early Skandapurāṇa critical recension",
+      "num": 15,
+      "section": "I",
+      "period": "c. 6th–7th",
+      "tradition": "Purāṇic Śaiva",
+      "genre": "purāṇa",
+      "translation_status": "P",
+      "companion_guides": [
+        "G3",
+        "G1"
+      ],
+      "translation_neighbourhood": [
+        "Śivadharmaśāstra",
+        "Niśvāsamukha",
+        "Śivadharmottara"
+      ],
+      "source": "sarit",
+      "note": "Critical recension has English synopses, not a full translation."
+    },
+    "ekamrapurana": {
+      "work_id": "ekamrapurana",
+      "name": "Ekāmrapurāṇa — relevant early Śaiva strata",
+      "num": 16,
+      "section": "I",
+      "period": "early-medieval Purāṇic",
+      "tradition": "Purāṇic Śaiva",
+      "genre": "purāṇa",
+      "translation_status": "P",
+      "companion_guides": [
+        "G3"
+      ],
+      "translation_neighbourhood": [
+        "Skandapurāṇa",
+        "Śivadharmaśāstra",
+        "Śivadharmottara"
+      ],
+      "source": "shivadharmaproject",
+      "note": "Early Śaiva strata only partially/critically translated."
+    },
+    "haracaritacintamani": {
+      "work_id": "haracaritacintamani",
+      "name": "Haracaritacintāmaṇi — selected un-English portions",
+      "num": 17,
+      "section": "I",
+      "period": "12th c., earlier traditions preserved",
+      "tradition": "Purāṇic Śaiva",
+      "genre": "purāṇa",
+      "translation_status": "P",
+      "companion_guides": [
+        "G3"
+      ],
+      "translation_neighbourhood": [
+        "Skandapurāṇa",
+        "Śivadharmaśāstra",
+        "Kālikāpurāṇa"
+      ],
+      "source": "shivadharmaproject",
+      "note": "12th-c. compilation preserving earlier traditions; selected portions open."
+    },
+    "devipurana": {
+      "work_id": "devipurana",
+      "name": "Devīpurāṇa — uncritically/partially translated relevant chapters",
+      "num": 18,
+      "section": "I",
+      "period": "early-medieval",
+      "tradition": "Purāṇic Śaiva",
+      "genre": "purāṇa",
+      "translation_status": "P",
+      "companion_guides": [
+        "G3"
+      ],
+      "translation_neighbourhood": [
+        "Kālikāpurāṇa",
+        "Skandapurāṇa",
+        "Śivadharmottara"
+      ],
+      "source": "shivadharmaproject",
+      "note": "Relevant chapters only partially/uncritically translated."
+    },
+    "brhaddharmapurana": {
+      "work_id": "brhaddharmapurana",
+      "name": "Bṛhaddharmapurāṇa — selected Śaiva material",
+      "num": 19,
+      "section": "I",
+      "period": "later Purāṇic",
+      "tradition": "Purāṇic Śaiva",
+      "genre": "purāṇa",
+      "translation_status": "P",
+      "companion_guides": [
+        "G3"
+      ],
+      "translation_neighbourhood": [
+        "Devīpurāṇa",
+        "Skandapurāṇa",
+        "Śivadharmottara"
+      ],
+      "source": "shivadharmaproject",
+      "note": "Selected Śaiva material; critical gap for full translation."
+    },
+    "kalikapurana": {
+      "work_id": "kalikapurana",
+      "name": "Kālikāpurāṇa — critically untranslated portions",
+      "num": 20,
+      "section": "I",
+      "period": "c. 10th–11th",
+      "tradition": "Purāṇic Śaiva",
+      "genre": "purāṇa",
+      "translation_status": "P",
+      "companion_guides": [
+        "G3",
+        "G11"
+      ],
+      "translation_neighbourhood": [
+        "Devīpurāṇa",
+        "Skandapurāṇa",
+        "Brahmayāmala"
+      ],
+      "source": "shivadharmaproject",
+      "note": "Critically untranslated portions remain a significant gap."
+    },
+    "nisvasaguhyasutra": {
+      "work_id": "nisvasaguhyasutra",
+      "name": "Niśvāsaguhyasūtra",
+      "num": 21,
+      "section": "II",
+      "period": "early Mantramārga",
+      "tradition": "early Mantramārga",
+      "genre": "tantra/scripture",
+      "translation_status": "U",
+      "companion_guides": [
+        "G2"
+      ],
+      "translation_neighbourhood": [
+        "Niśvāsa",
+        "Parākhyatantra",
+        "early Kiraṇa portions"
+      ],
+      "source": "ifpindia",
+      "note": "Deepest layer of the Niśvāsa corpus; not fully translated."
+    },
+    "pauskaraparamesvara": {
+      "work_id": "pauskaraparamesvara",
+      "name": "Pauṣkarapārameśvara / Pauṣkara",
+      "num": 22,
+      "section": "II",
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G2",
+        "G5"
+      ],
+      "translation_neighbourhood": [
+        "Niśvāsa",
+        "Parākhyatantra",
+        "early Kiraṇa portions"
+      ],
+      "source": "muktabodha",
+      "note": "Central pre-10th-c. Siddhānta scripture; needs verification."
+    },
+    "matangaparamesvara": {
+      "work_id": "matangaparamesvara",
+      "name": "Mataṅgapārameśvara",
+      "num": 23,
+      "section": "II",
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "P",
+      "companion_guides": [
+        "G5",
+        "G2"
+      ],
+      "translation_neighbourhood": [
+        "Parākhyatantra",
+        "Niśvāsa",
+        "early Kiraṇa portions"
+      ],
+      "source": "muktabodha",
+      "note": "Early Siddhānta Āgama; only portions translated."
+    },
+    "yaksiniparamesvara": {
+      "work_id": "yaksiniparamesvara",
+      "name": "Yakṣiṇīpārameśvara",
+      "num": 24,
+      "section": "II",
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U",
+      "companion_guides": [
+        "G2",
+        "G5"
+      ],
+      "translation_neighbourhood": [
+        "Niśvāsa",
+        "Parākhyatantra",
+        "Pauṣkarapārameśvara"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Manuscript frontier; untranslated."
+    },
+    "hamsaparamesvara": {
+      "work_id": "hamsaparamesvara",
+      "name": "Haṃsapārameśvara",
+      "num": 25,
+      "section": "II",
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G2",
+        "G5"
+      ],
+      "translation_neighbourhood": [
+        "Niśvāsa",
+        "Parākhyatantra",
+        "Pauṣkarapārameśvara"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Early Siddhānta Āgama; probably untranslated."
+    },
+    "mukuta_makutagama": {
+      "work_id": "mukuta_makutagama",
+      "name": "Mukuṭa / Makuṭāgama early recension",
+      "num": 26,
+      "section": "II",
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G2",
+        "G5"
+      ],
+      "translation_neighbourhood": [
+        "Niśvāsa",
+        "Parākhyatantra",
+        "Makuṭottara"
+      ],
+      "source": "muktabodha",
+      "note": "Early recension of the Makuṭa/Makuṭāgama; untranslated."
+    },
+    "svayambhuvasutrasamgraha": {
+      "work_id": "svayambhuvasutrasamgraha",
+      "name": "Svāyambhuvasūtrasaṃgraha — untranslated bulk",
+      "num": 27,
+      "section": "II",
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "P",
+      "companion_guides": [
+        "G2",
+        "G5"
+      ],
+      "translation_neighbourhood": [
+        "Niśvāsa",
+        "Parākhyatantra",
+        "Sūkṣmasvāyambhuva"
+      ],
+      "source": "muktabodha",
+      "note": "Central Siddhānta scripture; only the bulk untranslated."
+    },
+    "suksmasvayambhuva": {
+      "work_id": "suksmasvayambhuva",
+      "name": "Sūkṣmasvāyambhuva",
+      "num": 28,
+      "section": "II",
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U",
+      "companion_guides": [
+        "G2",
+        "G5"
+      ],
+      "translation_neighbourhood": [
+        "Svāyambhuvasūtrasaṃgraha",
+        "Niśvāsa",
+        "Parākhyatantra"
+      ],
+      "source": "muktabodha",
+      "note": "Compact early Siddhānta scripture; fully untranslated."
+    },
+    "rauravasutrasamgraha": {
+      "work_id": "rauravasutrasamgraha",
+      "name": "Rauravasūtrasaṃgraha",
+      "num": 29,
+      "section": "II",
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U",
+      "companion_guides": [
+        "G2",
+        "G5"
+      ],
+      "translation_neighbourhood": [
+        "Niśvāsa",
+        "Parākhyatantra",
+        "Rauravāgama"
+      ],
+      "source": "muktabodha",
+      "note": "Distinct early textual state of the Raurava tradition."
+    },
+    "dvisatikalottara": {
+      "work_id": "dvisatikalottara",
+      "name": "Dviśatikālottara",
+      "num": 30,
+      "section": "II",
+      "period": "early Kālottara family",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U",
+      "companion_guides": [
+        "G2",
+        "G5"
+      ],
+      "translation_neighbourhood": [
+        "Niśvāsa",
+        "Parākhyatantra",
+        "Bṛhatkālottara"
+      ],
+      "source": "muktabodha",
+      "note": "Earliest Kālottara recension; untranslated."
+    },
+    "sardhatrisatikalottara": {
+      "work_id": "sardhatrisatikalottara",
+      "name": "Sārdhatriśatikālottara",
+      "num": 31,
+      "section": "II",
+      "period": "early medieval",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U",
+      "companion_guides": [
+        "G2",
+        "G5"
+      ],
+      "translation_neighbourhood": [
+        "Niśvāsa",
+        "Parākhyatantra",
+        "Bṛhatkālottara"
+      ],
+      "source": "muktabodha",
+      "note": "Kālottara family recension; untranslated."
+    },
+    "saptasatikalottara": {
+      "work_id": "saptasatikalottara",
+      "name": "Saptaśatikālottara",
+      "num": 32,
+      "section": "II",
+      "period": "early medieval",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U",
+      "companion_guides": [
+        "G2",
+        "G5"
+      ],
+      "translation_neighbourhood": [
+        "Niśvāsa",
+        "Parākhyatantra",
+        "Bṛhatkālottara"
+      ],
+      "source": "muktabodha",
+      "note": "Kālottara family recension; untranslated."
+    },
+    "brhatkalottara": {
+      "work_id": "brhatkalottara",
+      "name": "Bṛhatkālottara — outside published translated portions",
+      "num": 33,
+      "section": "II",
+      "period": "early medieval",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "P",
+      "companion_guides": [
+        "G8"
+      ],
+      "translation_neighbourhood": [
+        "Kiraṇa",
+        "Devyāmata",
+        "Mohacūḍottara"
+      ],
+      "source": "ifpindia",
+      "note": "Only temple-design portion translated; surrounding text open."
+    },
+    "sarvajnanottara": {
+      "work_id": "sarvajnanottara",
+      "name": "Sarvajñānottara — non-Yogapāda bulk",
+      "num": 34,
+      "section": "II",
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "P",
+      "companion_guides": [
+        "G2",
+        "G5"
+      ],
+      "translation_neighbourhood": [
+        "Niśvāsa",
+        "Parākhyatantra",
+        "Kiraṇatantra"
+      ],
+      "source": "muktabodha",
+      "note": "Only Yogapāda known; bulk of the Āgama untranslated."
+    },
+    "mayasamgraha": {
+      "work_id": "mayasamgraha",
+      "name": "Mayasaṃgraha — outside temple-design section",
+      "num": 35,
+      "section": "II",
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "P",
+      "companion_guides": [
+        "G8"
+      ],
+      "translation_neighbourhood": [
+        "Kiraṇa",
+        "Devyāmata",
+        "Mohacūḍottara"
+      ],
+      "source": "ifpindia",
+      "note": "Only temple-design portion translated; rest untranslated."
+    },
+    "devyamata": {
+      "work_id": "devyamata",
+      "name": "Devyāmata — outside temple-design section",
+      "num": 36,
+      "section": "II",
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "P",
+      "companion_guides": [
+        "G8"
+      ],
+      "translation_neighbourhood": [
+        "Kiraṇa",
+        "Mayasaṃgraha",
+        "Bṛhatkālottara"
+      ],
+      "source": "ifpindia",
+      "note": "Only temple-design portion translated; rest untranslated."
+    },
+    "mohacudottara": {
+      "work_id": "mohacudottara",
+      "name": "Mohacūḍottara — outside temple-design section",
+      "num": 37,
+      "section": "II",
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "P",
+      "companion_guides": [
+        "G8"
+      ],
+      "translation_neighbourhood": [
+        "Kiraṇa",
+        "Devyāmata",
+        "Mayasaṃgraha"
+      ],
+      "source": "ifpindia",
+      "note": "Only temple-design portion translated; rest untranslated."
+    },
+    "pratisthaparamesvara": {
+      "work_id": "pratisthaparamesvara",
+      "name": "Pratiṣṭhāpārameśvara",
+      "num": 38,
+      "section": "II",
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G8"
+      ],
+      "translation_neighbourhood": [
+        "Kiraṇa",
+        "Parākhyatantra",
+        "Niśvāsa"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Installation-focused Āgama; probably untranslated."
+    },
+    "pingalamata": {
+      "work_id": "pingalamata",
+      "name": "Piṅgalāmata — outside translated architectural portions",
+      "num": 39,
+      "section": "II",
+      "period": "early Mantramārga adjacency",
+      "tradition": "early Mantramārga",
+      "genre": "tantra/scripture",
+      "translation_status": "P",
+      "companion_guides": [
+        "G8"
+      ],
+      "translation_neighbourhood": [
+        "Kiraṇa",
+        "Devyāmata",
+        "Mayasaṃgraha"
+      ],
+      "source": "ifpindia",
+      "note": "Only architectural portion translated; rest untranslated."
+    },
+    "kiranatantra": {
+      "work_id": "kiranatantra",
+      "name": "Kiraṇatantra — untranslated bulk of root text",
+      "num": 40,
+      "section": "II",
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "P",
+      "companion_guides": [
+        "G6",
+        "G5"
+      ],
+      "translation_neighbourhood": [
+        "Kiraṇavṛtti 1–6",
+        "Parākhyatantra",
+        "Niśvāsa"
+      ],
+      "source": "vishvasa",
+      "note": "Root text only partially translated beyond the vṛtti."
+    },
+    "rauragama": {
+      "work_id": "rauragama",
+      "name": "Rauravāgama — complete scholarly English",
+      "num": 41,
+      "section": "III",
+      "period": "early Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "EN_GAP",
+      "companion_guides": [
+        "G5",
+        "G8"
+      ],
+      "translation_neighbourhood": [
+        "Parākhyatantra",
+        "Kiraṇa",
+        "Niśvāsa"
+      ],
+      "source": "ifpindia",
+      "note": "Entire work exists in French; no comparable complete English."
+    },
+    "mrgendratantra": {
+      "work_id": "mrgendratantra",
+      "name": "Mṛgendratantra — complete modern English",
+      "num": 42,
+      "section": "III",
+      "period": "early Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "P",
+      "companion_guides": [
+        "G5"
+      ],
+      "translation_neighbourhood": [
+        "Parākhyatantra",
+        "Kiraṇa",
+        "Niśvāsa"
+      ],
+      "source": "ifpindia",
+      "note": "Full French and partial English; complete modern English lacking."
+    },
+    "sahasragama": {
+      "work_id": "sahasragama",
+      "name": "Sāhasra/Sahasrāgama ancient material",
+      "num": 43,
+      "section": "III",
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G2"
+      ],
+      "translation_neighbourhood": [
+        "Niśvāsa",
+        "Parākhyatantra",
+        "Kiraṇa"
+      ],
+      "source": "muktabodha",
+      "note": "Ancient material of the Sāhasra Āgama; probably untranslated."
+    },
+    "paramesvaragama": {
+      "work_id": "paramesvaragama",
+      "name": "Pārameśvarāgama / Pārameśvara corpus",
+      "num": 44,
+      "section": "III",
+      "period": "early Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G5"
+      ],
+      "translation_neighbourhood": [
+        "Parākhyatantra",
+        "Pauṣkarapārameśvara",
+        "Mataṅgapārameśvara"
+      ],
+      "source": "muktabodha",
+      "note": "Pārameśvara corpus; probably untranslated."
+    },
+    "makutottara": {
+      "work_id": "makutottara",
+      "name": "Makuṭottara",
+      "num": 45,
+      "section": "III",
+      "period": "early Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G5"
+      ],
+      "translation_neighbourhood": [
+        "Makuṭāgama",
+        "Parākhyatantra",
+        "Niśvāsa"
+      ],
+      "source": "vishvasa",
+      "note": "Late Makuṭa recension; probably untranslated."
+    },
+    "satsahasrakalottara": {
+      "work_id": "satsahasrakalottara",
+      "name": "Ṣaṭsahasrakālottara",
+      "num": 46,
+      "section": "III",
+      "period": "early medieval",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G5"
+      ],
+      "translation_neighbourhood": [
+        "Bṛhatkālottara",
+        "Sārdhatriśatikālottara",
+        "Niśvāsa"
+      ],
+      "source": "vishvasa",
+      "note": "Kālottara recension; probably untranslated."
+    },
+    "naresvarapariksa": {
+      "work_id": "naresvarapariksa",
+      "name": "Nareśvaraparīkṣā — Sadyojyotis + Rāmakaṇṭha's Prakāśa",
+      "num": 47,
+      "section": "III",
+      "period": "early Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "commentary",
+      "translation_status": "U",
+      "companion_guides": [
+        "G6",
+        "G7"
+      ],
+      "translation_neighbourhood": [
+        "Kiraṇavṛtti",
+        "Paramokṣanirāsa",
+        "contemporaneous Buddhist/Nyāya material"
+      ],
+      "source": "vishvasa",
+      "note": "Systematic Siddhānta philosopher for the philosophy engine; very high value."
+    },
+    "tattvasamgraha_sadyojyotis": {
+      "work_id": "tattvasamgraha_sadyojyotis",
+      "name": "Tattvasaṃgraha — Sadyojyotis + Aghoraśiva commentary",
+      "num": 48,
+      "section": "III",
+      "period": "early Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "commentary",
+      "translation_status": "EN_GAP",
+      "companion_guides": [
+        "G6",
+        "G7"
+      ],
+      "translation_neighbourhood": [
+        "Paramokṣanirāsa",
+        "Kiraṇavṛtti",
+        "Nareśvaraparīkṣā"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Sadyojyotis kārikā with Aghoraśiva's commentary; EN gap."
+    },
+    "tattvatrayanirnaya": {
+      "work_id": "tattvatrayanirnaya",
+      "name": "Tattvatrayanirṇaya — Aghoraśiva commentary",
+      "num": 49,
+      "section": "III",
+      "period": "early Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "commentary",
+      "translation_status": "EN_GAP",
+      "companion_guides": [
+        "G6"
+      ],
+      "translation_neighbourhood": [
+        "Paramokṣanirāsa",
+        "Kiraṇavṛtti",
+        "Tattvasaṃgraha"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Sadyojyotis with Aghoraśiva's commentary; EN gap."
+    },
+    "ratnatrayapariksa_srikantha": {
+      "work_id": "ratnatrayapariksa_srikantha",
+      "name": "Ratnatrayaparīkṣā — Śrīkaṇṭha, untranslated remainder",
+      "num": 50,
+      "section": "III",
+      "period": "medieval Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "doctrinal treatise",
+      "translation_status": "P",
+      "companion_guides": [
+        "G6",
+        "G7"
+      ],
+      "translation_neighbourhood": [
+        "Paramokṣanirāsa",
+        "Kiraṇavṛtti",
+        "Ratnatrayaparīkṣā-vyākhyā"
+      ],
+      "source": "springer",
+      "note": "Śrīkaṇṭha's three-gems treatise; only portions translated."
+    },
+    "ratnatrayapariksa_vyakhya": {
+      "work_id": "ratnatrayapariksa_vyakhya",
+      "name": "Anonymous Ratnatrayaparīkṣā-vyākhyā",
+      "num": 51,
+      "section": "III",
+      "period": "medieval Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "vṛtti/commentary",
+      "translation_status": "P",
+      "companion_guides": [
+        "G6"
+      ],
+      "translation_neighbourhood": [
+        "Ratnatrayaparīkṣā",
+        "Paramokṣanirāsa",
+        "Kiraṇavṛtti"
+      ],
+      "source": "springer",
+      "note": "Anonymous commentary on Ratnatrayaparīkṣā; partially translated."
+    },
+    "ullekhini_ratnatrayapariksa": {
+      "work_id": "ullekhini_ratnatrayapariksa",
+      "name": "Aghoraśiva's Ullekhinī on Ratnatrayaparīkṣā",
+      "num": 52,
+      "section": "III",
+      "period": "medieval Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "commentary",
+      "translation_status": "P",
+      "companion_guides": [
+        "G6"
+      ],
+      "translation_neighbourhood": [
+        "Ratnatrayaparīkṣā",
+        "Ratnatrayaparīkṣā-vyākhyā",
+        "Kiraṇavṛtti"
+      ],
+      "source": "springer",
+      "note": "Aghoraśiva's Ullekhinī; translation project active."
+    },
+    "nadakarika": {
+      "work_id": "nadakarika",
+      "name": "Nādakārikā + commentary",
+      "num": 53,
+      "section": "III",
+      "period": "early Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "kārikā",
+      "translation_status": "EN_GAP",
+      "companion_guides": [
+        "G6",
+        "G7"
+      ],
+      "translation_neighbourhood": [
+        "Paramokṣanirāsa",
+        "Kiraṇavṛtti",
+        "Nareśvaraparīkṣā"
+      ],
+      "source": "muktabodha",
+      "note": "Kārikā with commentary; EN gap."
+    },
+    "ramakantha_kiravavrtti_7_12": {
+      "work_id": "ramakantha_kiravavrtti_7_12",
+      "name": "Rāmakaṇṭha's Kiraṇavṛtti, chapters 7–12",
+      "num": 54,
+      "section": "III",
+      "period": "c. 10th c. (Kashmir)",
+      "tradition": "Kashmirian Śaiva Siddhānta",
+      "genre": "vṛtti/commentary",
+      "translation_status": "U",
+      "companion_guides": [
+        "G6"
+      ],
+      "translation_neighbourhood": [
+        "Kiraṇavṛtti 1–6",
+        "Paramokṣanirāsa",
+        "Kiraṇatantra"
+      ],
+      "source": "ifpindia",
+      "note": "Continuation of Goodall's English Kiraṇavṛtti 1–6; extremely attractive."
+    },
+    "ramakantha_matangavrtti": {
+      "work_id": "ramakantha_matangavrtti",
+      "name": "Rāmakaṇṭha's Mataṅgavṛtti — untranslated sections",
+      "num": 55,
+      "section": "III",
+      "period": "c. 10th c. (Kashmir)",
+      "tradition": "Kashmirian Śaiva Siddhānta",
+      "genre": "vṛtti/commentary",
+      "translation_status": "P",
+      "companion_guides": [
+        "G6"
+      ],
+      "translation_neighbourhood": [
+        "Kiraṇavṛtti",
+        "Mataṅgapārameśvara",
+        "Paramokṣanirāsa"
+      ],
+      "source": "muktabodha",
+      "note": "Rāmakaṇṭha's vṛtti on Mataṅga; untranslated sections remain."
+    },
+    "ramakantha_sardhatrisatikalottaravrtti": {
+      "work_id": "ramakantha_sardhatrisatikalottaravrtti",
+      "name": "Rāmakaṇṭha's Sārdhatriśatikālottaravṛtti",
+      "num": 56,
+      "section": "III",
+      "period": "c. 10th c. (Kashmir)",
+      "tradition": "Kashmirian Śaiva Siddhānta",
+      "genre": "vṛtti/commentary",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G6"
+      ],
+      "translation_neighbourhood": [
+        "Kiraṇavṛtti",
+        "Sārdhatriśatikālottara",
+        "Paramokṣanirāsa"
+      ],
+      "source": "muktabodha",
+      "note": "Rāmakaṇṭha's vṛtti on the Kālottara; probably untranslated."
+    },
+    "sarvagamapramanyopanyasa": {
+      "work_id": "sarvagamapramanyopanyasa",
+      "name": "Sarvāgamaprāmāṇyopanyāsa — Rāmakaṇṭha",
+      "num": 57,
+      "section": "III",
+      "period": "c. 10th c. (Kashmir)",
+      "tradition": "Kashmirian Śaiva Siddhānta",
+      "genre": "doctrinal treatise",
+      "translation_status": "P",
+      "companion_guides": [
+        "G6",
+        "G7"
+      ],
+      "translation_neighbourhood": [
+        "Paramokṣanirāsa",
+        "Kiraṇavṛtti",
+        "contemporaneous philosophical material"
+      ],
+      "source": "muktabodha",
+      "note": "Rāmakaṇṭha's scriptural-authority treatise; only fragmentary translation."
+    },
+    "saivasiddhantadipika": {
+      "work_id": "saivasiddhantadipika",
+      "name": "Śaivasiddhāntadīpikā — Sarvātmaśambhu",
+      "num": 58,
+      "section": "III",
+      "period": "medieval Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "doctrinal treatise",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G6",
+        "G7"
+      ],
+      "translation_neighbourhood": [
+        "Paramokṣanirāsa",
+        "Kiraṇavṛtti",
+        "Sarvamatopanyāsa"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Sarvātmaśambhu's Siddhānta compendium; probably untranslated."
+    },
+    "sarvamatopanyasa": {
+      "work_id": "sarvamatopanyasa",
+      "name": "Sarvamatopanyāsa — Sarvātmaśambhu",
+      "num": 59,
+      "section": "III",
+      "period": "medieval Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "doctrinal treatise",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G7",
+        "G13"
+      ],
+      "translation_neighbourhood": [
+        "Paramokṣanirāsa",
+        "Śaivasiddhāntadīpikā",
+        "Tattvasaṃgraha"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Sarvātmaśambhu's survey of rival systems; probably untranslated."
+    },
+    "tattvaprakasa_bhojadeva": {
+      "work_id": "tattvaprakasa_bhojadeva",
+      "name": "Tattvaprakāśa — Bhojadeva",
+      "num": 60,
+      "section": "III",
+      "period": "11th c.",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "doctrinal treatise",
+      "translation_status": "EN_GAP",
+      "companion_guides": [
+        "G6",
+        "G7"
+      ],
+      "translation_neighbourhood": [
+        "Paramokṣanirāsa",
+        "Kiraṇavṛtti",
+        "contemporaneous philosophical material"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Bhojadeva's Tattvaprakāśa; EN gap."
+    },
+    "aghorasiva_tattvaprakasika": {
+      "work_id": "aghorasiva_tattvaprakasika",
+      "name": "Aghoraśiva's Tattvaprakāśikā",
+      "num": 61,
+      "section": "IV",
+      "period": "12th c.",
+      "tradition": "Aṣṭaprakaraṇa",
+      "genre": "commentary",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G6"
+      ],
+      "translation_neighbourhood": [
+        "Paramokṣanirāsa",
+        "Kiraṇavṛtti",
+        "Nareśvaraparīkṣā"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Aghoraśiva's commentary; probably untranslated."
+    },
+    "aghorasiva_tattvasamgrahalaghutika": {
+      "work_id": "aghorasiva_tattvasamgrahalaghutika",
+      "name": "Aghoraśiva's Tattvasaṃgrahalaghuṭīkā",
+      "num": 62,
+      "section": "IV",
+      "period": "12th c.",
+      "tradition": "Aṣṭaprakaraṇa",
+      "genre": "commentary",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G6",
+        "G7"
+      ],
+      "translation_neighbourhood": [
+        "Tattvasaṃgraha",
+        "Paramokṣanirāsa",
+        "Nareśvaraparīkṣā"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Aghoraśiva's short ṭīkā; probably untranslated."
+    },
+    "moksakarika": {
+      "work_id": "moksakarika",
+      "name": "Mokṣakārikā — Sadyojyotis, untranslated/commentarial portions",
+      "num": 63,
+      "section": "IV",
+      "period": "early Siddhānta",
+      "tradition": "Aṣṭaprakaraṇa",
+      "genre": "kārikā",
+      "translation_status": "P",
+      "companion_guides": [
+        "G7"
+      ],
+      "translation_neighbourhood": [
+        "Paramokṣanirāsa",
+        "Kiraṇavṛtti",
+        "Nareśvaraparīkṣā"
+      ],
+      "source": "vishvasa",
+      "note": "Sadyojyotis kārikā; only commentarial portions open."
+    },
+    "ramakantha_moksakarikavrtti": {
+      "work_id": "ramakantha_moksakarikavrtti",
+      "name": "Rāmakaṇṭha's Mokṣakārikāvṛtti",
+      "num": 64,
+      "section": "IV",
+      "period": "c. 10th c. (Kashmir)",
+      "tradition": "Aṣṭaprakaraṇa",
+      "genre": "vṛtti/commentary",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G7"
+      ],
+      "translation_neighbourhood": [
+        "Mokṣakārikā",
+        "Paramokṣanirāsa",
+        "Kiraṇavṛtti"
+      ],
+      "source": "vishvasa",
+      "note": "Rāmakaṇṭha's vṛtti on Mokṣakārikā; probably untranslated."
+    },
+    "aghorasiva_ashtaprakarana_corpus": {
+      "work_id": "aghorasiva_ashtaprakarana_corpus",
+      "name": "Aghoraśiva's doctrinal commentarial corpus surrounding the Aṣṭaprakaraṇa",
+      "num": 65,
+      "section": "IV",
+      "period": "12th c.",
+      "tradition": "Aṣṭaprakaraṇa",
+      "genre": "commentary",
+      "translation_status": "P",
+      "companion_guides": [
+        "G6",
+        "G7"
+      ],
+      "translation_neighbourhood": [
+        "Paramokṣanirāsa",
+        "Kiraṇavṛtti",
+        "Tattvasaṃgraha"
+      ],
+      "source": "vishvasa",
+      "note": "Aghoraśiva's surrounding commentarial corpus; partially translated."
+    },
+    "nityakriyanusandhana": {
+      "work_id": "nityakriyanusandhana",
+      "name": "Nityakriyānusandhāna — Brahmaśambhu",
+      "num": 66,
+      "section": "V",
+      "period": "before/completed c. 937/8",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G8",
+        "G9"
+      ],
+      "translation_neighbourhood": [
+        "Prāyaścittasamuccaya",
+        "Kriyākramadyotikā",
+        "Īśānaśivagurudevapaddhati"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Brahmaśambhu's daily-rites manual; probably untranslated."
+    },
+    "naimittikakriyanusandhana": {
+      "work_id": "naimittikakriyanusandhana",
+      "name": "Naimittikakriyānusandhāna — Brahmaśambhu",
+      "num": 67,
+      "section": "V",
+      "period": "c. 10th",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G8",
+        "G9"
+      ],
+      "translation_neighbourhood": [
+        "Nityakriyānusandhāna",
+        "Prāyaścittasamuccaya",
+        "Kriyākramadyotikā"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Brahmaśambhu's occasional-rites manual; probably untranslated."
+    },
+    "siddhantasarapaddhati": {
+      "work_id": "siddhantasarapaddhati",
+      "name": "Siddhāntasārapaddhati — Bhojadeva",
+      "num": 68,
+      "section": "V",
+      "period": "early 11th",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G8",
+        "G9"
+      ],
+      "translation_neighbourhood": [
+        "Prāyaścittasamuccaya",
+        "Kriyākramadyotikā",
+        "Siddhāntasārāvalī"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Bhojadeva's Siddhānta ritual compendium; probably untranslated."
+    },
+    "natarajapaddhati": {
+      "work_id": "natarajapaddhati",
+      "name": "Naṭarājapaddhati — Rāmanātha",
+      "num": 69,
+      "section": "V",
+      "period": "1058",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U",
+      "companion_guides": [
+        "G8",
+        "G9"
+      ],
+      "translation_neighbourhood": [
+        "Prāyaścittasamuccaya",
+        "Siddhāntadīpikā",
+        "Kriyākramadyotikā"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Rāmanātha's dated ritual paddhati; high value, untranslated."
+    },
+    "siddhantadipika_ramanatha": {
+      "work_id": "siddhantadipika_ramanatha",
+      "name": "Siddhāntadīpikā — Rāmanātha",
+      "num": 70,
+      "section": "V",
+      "period": "11th c.",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G9"
+      ],
+      "translation_neighbourhood": [
+        "Naṭarājapaddhati",
+        "Prāyaścittasamuccaya",
+        "Siddhāntasārapaddhati"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Rāmanātha's Siddhānta compendium; probably untranslated."
+    },
+    "kriyasamgrahapaddhati": {
+      "work_id": "kriyasamgrahapaddhati",
+      "name": "Kriyāsaṃgrahapaddhati — Valadharin",
+      "num": 71,
+      "section": "V",
+      "period": "before 1091/92 witness",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U",
+      "companion_guides": [
+        "G8",
+        "G9"
+      ],
+      "translation_neighbourhood": [
+        "Prāyaścittasamuccaya",
+        "Kriyākramadyotikā",
+        "Īśānaśivagurudevapaddhati"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Valadharin's ritual compendium; unpublished."
+    },
+    "jnanaratnavali": {
+      "work_id": "jnanaratnavali",
+      "name": "Jñānaratnāvalī — Jñānaśiva",
+      "num": 72,
+      "section": "V",
+      "period": "c. 12th",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U",
+      "companion_guides": [
+        "G9"
+      ],
+      "translation_neighbourhood": [
+        "Kriyādīpikā",
+        "Prāyaścittasamuccaya",
+        "Kriyākramadyotikā"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Jñānaśiva's ritual manual; largely unpublished."
+    },
+    "kriyakramadyotika": {
+      "work_id": "kriyakramadyotika",
+      "name": "Kriyākramadyotikā — Aghoraśiva",
+      "num": 73,
+      "section": "V",
+      "period": "12th",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U",
+      "companion_guides": [
+        "G9"
+      ],
+      "translation_neighbourhood": [
+        "Prāyaścittasamuccaya",
+        "Īśānaśivagurudevapaddhati",
+        "Siddhāntasārāvalī"
+      ],
+      "source": "vishvasa",
+      "note": "Aghoraśiva's great ritual compendium; only portions translated."
+    },
+    "isanasivagurudevapaddhati": {
+      "work_id": "isanasivagurudevapaddhati",
+      "name": "Īśānaśivagurudevapaddhati — Śaiva sections",
+      "num": 74,
+      "section": "V",
+      "period": "c. 12th",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "P",
+      "companion_guides": [
+        "G8",
+        "G9"
+      ],
+      "translation_neighbourhood": [
+        "Kriyākramadyotikā",
+        "Prāyaścittasamuccaya",
+        "Siddhāntasārapaddhati"
+      ],
+      "source": "muktabodha",
+      "note": "Īśānaśivagurudeva's paddhati; only Śaiva sections translated."
+    },
+    "isanasivacaryapaddhati": {
+      "work_id": "isanasivacaryapaddhati",
+      "name": "Īśānaśivācāryapaddhati / Śivārcanavidhi",
+      "num": 75,
+      "section": "V",
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G9"
+      ],
+      "translation_neighbourhood": [
+        "Īśānaśivagurudevapaddhati",
+        "Prāyaścittasamuccaya",
+        "Kriyākramadyotikā"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Śiva worship manual; probably untranslated."
+    },
+    "pararthanityapujavidhi": {
+      "work_id": "pararthanityapujavidhi",
+      "name": "Parārthanityapūjāvidhi",
+      "num": 76,
+      "section": "V",
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G9"
+      ],
+      "translation_neighbourhood": [
+        "Prāyaścittasamuccaya",
+        "Kriyākramadyotikā",
+        "Īśānaśivagurudevapaddhati"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Temple pūjā manual; probably untranslated."
+    },
+    "pratisthakriyadipika": {
+      "work_id": "pratisthakriyadipika",
+      "name": "Pratiṣṭhākriyādīpikā",
+      "num": 77,
+      "section": "V",
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G8",
+        "G9"
+      ],
+      "translation_neighbourhood": [
+        "Pratiṣṭhālakṣaṇasārasamuccaya",
+        "Sthāpanadīpikā",
+        "Kriyādīpikā"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Installation ritual manual; probably untranslated."
+    },
+    "kriyadipika_jnanasivacarya": {
+      "work_id": "kriyadipika_jnanasivacarya",
+      "name": "Kriyādīpikā — Jñānaśivācārya",
+      "num": 78,
+      "section": "V",
+      "period": "medieval Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G9"
+      ],
+      "translation_neighbourhood": [
+        "Jñānaratnāvalī",
+        "Prāyaścittasamuccaya",
+        "Kriyākramadyotikā"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Jñānaśiva's ritual manual; probably untranslated."
+    },
+    "siddhantasaravali": {
+      "work_id": "siddhantasaravali",
+      "name": "Siddhāntasārāvalī — Trilocanaśiva + Anantaśiva commentary",
+      "num": 79,
+      "section": "V",
+      "period": "12th",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U",
+      "companion_guides": [
+        "G9"
+      ],
+      "translation_neighbourhood": [
+        "Prāyaścittasamuccaya",
+        "Kriyākramadyotikā",
+        "Siddhāntasārapaddhati"
+      ],
+      "source": "muktabodha",
+      "note": "Trilocanaśiva with Anantaśiva's commentary; partially translated."
+    },
+    "prayascittasamuccaya_hridayasiva": {
+      "work_id": "prayascittasamuccaya_hridayasiva",
+      "name": "Prāyaścittasamuccaya — Hṛdayaśiva",
+      "num": 80,
+      "section": "V",
+      "period": "before 1157 MS",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U",
+      "companion_guides": [
+        "G9"
+      ],
+      "translation_neighbourhood": [
+        "Trilocanaśiva Prāyaścittasamuccaya"
+      ],
+      "source": "ifpindia",
+      "note": "Complete Sanskrit transcription only; perfect Pāṭala experiment."
+    },
+    "pratisthalaksanasarasamuccaya": {
+      "work_id": "pratisthalaksanasarasamuccaya",
+      "name": "Pratiṣṭhālakṣaṇasārasamuccaya",
+      "num": 81,
+      "section": "VI",
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G8",
+        "G9"
+      ],
+      "translation_neighbourhood": [
+        "Pratiṣṭhākriyādīpikā",
+        "Sthāpanadīpikā",
+        "Kiraṇa"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Installation manual; probably untranslated."
+    },
+    "vimalavati": {
+      "work_id": "vimalavati",
+      "name": "Vimalāvatī — Vimalaśiva",
+      "num": 82,
+      "section": "VI",
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G8"
+      ],
+      "translation_neighbourhood": [
+        "Pratiṣṭhākriyādīpikā",
+        "Sthāpanadīpikā",
+        "Kiraṇa"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Vimalaśiva's installation manual; probably untranslated."
+    },
+    "nityadisangrahapaddhati": {
+      "work_id": "nityadisangrahapaddhati",
+      "name": "Nityādisaṅgrahapaddhati — Rājānaka Takṣakavarta",
+      "num": 83,
+      "section": "VI",
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G9"
+      ],
+      "translation_neighbourhood": [
+        "Prāyaścittasamuccaya",
+        "Kriyākramadyotikā",
+        "Nityakriyānusandhāna"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Daily-rites collection; probably untranslated."
+    },
+    "aghorasivacaryapujanukramani": {
+      "work_id": "aghorasivacaryapujanukramani",
+      "name": "Aghoraśivācāryapūjānukramaṇī",
+      "num": 84,
+      "section": "VI",
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G9"
+      ],
+      "translation_neighbourhood": [
+        "Prāyaścittasamuccaya",
+        "Kriyākramadyotikā",
+        "Īśānaśivagurudevapaddhati"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Aghoraśiva's pūjā index/manual; probably untranslated."
+    },
+    "sivotsavapaddhati": {
+      "work_id": "sivotsavapaddhati",
+      "name": "Śivotsavapaddhati",
+      "num": 85,
+      "section": "VI",
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G9"
+      ],
+      "translation_neighbourhood": [
+        "Prāyaścittasamuccaya",
+        "Kriyākramadyotikā",
+        "Īśānaśivagurudevapaddhati"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Festival-rite manual; probably untranslated."
+    },
+    "saivasiddhanta_pujapaddhati": {
+      "work_id": "saivasiddhanta_pujapaddhati",
+      "name": "anonymous Śaivasiddhānta Pūjāpaddhati corpus",
+      "num": 86,
+      "section": "VI",
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U",
+      "companion_guides": [
+        "G9"
+      ],
+      "translation_neighbourhood": [
+        "Prāyaścittasamuccaya",
+        "Kriyākramadyotikā",
+        "Īśānaśivagurudevapaddhati"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Anonymous manuscript corpus; untranslated."
+    },
+    "sthapanadipika": {
+      "work_id": "sthapanadipika",
+      "name": "Sthāpanadīpikā",
+      "num": 87,
+      "section": "VI",
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G8"
+      ],
+      "translation_neighbourhood": [
+        "Pratiṣṭhākriyādīpikā",
+        "Pratiṣṭhālakṣaṇasārasamuccaya",
+        "Kiraṇa"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Installation manual; probably untranslated."
+    },
+    "balalayavidhi": {
+      "work_id": "balalayavidhi",
+      "name": "Bālālayavidhi",
+      "num": 88,
+      "section": "VI",
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G8"
+      ],
+      "translation_neighbourhood": [
+        "Śivaliṅgapratiṣṭhāvidhi",
+        "Pratiṣṭhākriyādīpikā",
+        "Kiraṇa"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Image-establishment manual; probably untranslated."
+    },
+    "sripratisthavidhi": {
+      "work_id": "sripratisthavidhi",
+      "name": "Śrīpratiṣṭhāvidhi",
+      "num": 89,
+      "section": "VI",
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G8"
+      ],
+      "translation_neighbourhood": [
+        "Śivaliṅgapratiṣṭhāvidhi",
+        "Pratiṣṭhākriyādīpikā",
+        "Bālālayavidhi"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Installation rite manual; probably untranslated."
+    },
+    "sivalingapratisthavidhi": {
+      "work_id": "sivalingapratisthavidhi",
+      "name": "Śivaliṅgapratiṣṭhāvidhi",
+      "num": 90,
+      "section": "VI",
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G8",
+        "G9"
+      ],
+      "translation_neighbourhood": [
+        "Śrīpratiṣṭhāvidhi",
+        "Bālālayavidhi",
+        "Pratiṣṭhākriyādīpikā"
+      ],
+      "source": "digitalcollections.ifpindia",
+      "note": "Liṅga-installation manual; probably untranslated."
+    },
+    "sivadrsti": {
+      "work_id": "sivadrsti",
+      "name": "Śivadṛṣṭi — Somānanda, untranslated remainder",
+      "num": 91,
+      "section": "VII",
+      "period": "c. 9th c.",
+      "tradition": "Pratyabhijñā",
+      "genre": "philosophical text",
+      "translation_status": "P",
+      "companion_guides": [
+        "G7",
+        "G10"
+      ],
+      "translation_neighbourhood": [
+        "Śivadṛṣṭivṛtti",
+        "Paramokṣanirāsa",
+        "Īśvarapratyabhijñā"
+      ],
+      "source": "muktabodha",
+      "note": "Somānanda's foundational Pratyabhijñā text; substantial sections untranslated."
+    },
+    "utpaladeva_sivadrstivrtti": {
+      "work_id": "utpaladeva_sivadrstivrtti",
+      "name": "Utpaladeva's Śivadṛṣṭivṛtti — untranslated remainder",
+      "num": 92,
+      "section": "VII",
+      "period": "c. 9th–10th c.",
+      "tradition": "Pratyabhijñā",
+      "genre": "vṛtti/commentary",
+      "translation_status": "P",
+      "companion_guides": [
+        "G7",
+        "G10"
+      ],
+      "translation_neighbourhood": [
+        "Śivadṛṣṭi",
+        "Paramokṣanirāsa",
+        "Īśvarapratyabhijñā"
+      ],
+      "source": "muktabodha",
+      "note": "Utpaladeva's auto-commentary; untranslated remainder."
+    },
+    "spandapradipika": {
+      "work_id": "spandapradipika",
+      "name": "Spandapradīpikā — Bhagavadutpala",
+      "num": 93,
+      "section": "VII",
+      "period": "early medieval",
+      "tradition": "Spanda",
+      "genre": "commentary",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G10"
+      ],
+      "translation_neighbourhood": [
+        "Spandakārikā",
+        "Śivadṛṣṭi",
+        "Īśvarapratyabhijñā"
+      ],
+      "source": "muktabodha",
+      "note": "Commentary on the Spandakārikā; probably untranslated."
+    },
+    "svacchandodyota": {
+      "work_id": "svacchandodyota",
+      "name": "Svacchandodyota — Kṣemarāja, untranslated bulk",
+      "num": 94,
+      "section": "VII",
+      "period": "c. 11th c.",
+      "tradition": "Kashmirian Śaiva Siddhānta",
+      "genre": "commentary",
+      "translation_status": "P",
+      "companion_guides": [
+        "G10"
+      ],
+      "translation_neighbourhood": [
+        "Svacchandatantra",
+        "Netratantroddyota",
+        "Īśvarapratyabhijñā"
+      ],
+      "source": "muktabodha",
+      "note": "Kṣemarāja's massive commentary; bulk untranslated."
+    },
+    "netratantroddyota": {
+      "work_id": "netratantroddyota",
+      "name": "Netratantroddyota — Kṣemarāja, untranslated bulk",
+      "num": 95,
+      "section": "VII",
+      "period": "c. 11th c.",
+      "tradition": "Kashmirian Śaiva Siddhānta",
+      "genre": "commentary",
+      "translation_status": "P",
+      "companion_guides": [
+        "G10"
+      ],
+      "translation_neighbourhood": [
+        "Netratantra",
+        "Svacchandodyota",
+        "Īśvarapratyabhijñā"
+      ],
+      "source": "muktabodha",
+      "note": "Kṣemarāja's commentary on the Netra; bulk untranslated."
+    },
+    "bhavopahara": {
+      "work_id": "bhavopahara",
+      "name": "Bhāvopahāra — Cakrapāṇinātha + Ramyadeva commentary",
+      "num": 96,
+      "section": "VII",
+      "period": "medieval",
+      "tradition": "Kaula/Nātha",
+      "genre": "kārikā",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G10"
+      ],
+      "translation_neighbourhood": [
+        "Vātūlanāthasūtra",
+        "Matsyendrasaṃhitā",
+        "Śivadṛṣṭi"
+      ],
+      "source": "shaivism.net",
+      "note": "Devotional kārikā with Ramyadeva's commentary; probably untranslated."
+    },
+    "bhagavadgita_sarvatobhadra": {
+      "work_id": "bhagavadgita_sarvatobhadra",
+      "name": "Bhagavadgītā-Sarvatobhadra — Rāmakaṇṭha",
+      "num": 97,
+      "section": "VII",
+      "period": "c. 10th c. (Kashmir)",
+      "tradition": "Kashmirian Śaiva Siddhānta",
+      "genre": "commentary",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G6",
+        "G7"
+      ],
+      "translation_neighbourhood": [
+        "Kiraṇavṛtti",
+        "Paramokṣanirāsa",
+        "Īśvarapratyabhijñā"
+      ],
+      "source": "shaivism.net",
+      "note": "Rāmakaṇṭha's Śaiva Gītā commentary; probably untranslated."
+    },
+    "janmamaranavicara": {
+      "work_id": "janmamaranavicara",
+      "name": "Janmamaraṇavicāra — Bhaṭṭa Vāmadeva",
+      "num": 98,
+      "section": "VII",
+      "period": "medieval",
+      "tradition": "Kashmirian Śaiva Siddhānta",
+      "genre": "doctrinal treatise",
+      "translation_status": "U",
+      "companion_guides": [
+        "G6",
+        "G10"
+      ],
+      "translation_neighbourhood": [
+        "Kiraṇavṛtti",
+        "Paramokṣanirāsa",
+        "Īśvarapratyabhijñā"
+      ],
+      "source": "muktabodha",
+      "note": "First English now being prepared by Muktabodha series."
+    },
+    "vatulanathasutra": {
+      "work_id": "vatulanathasutra",
+      "name": "Vātūlanāthasūtra + Anantaśaktipādavivaraṇa",
+      "num": 99,
+      "section": "VII",
+      "period": "medieval",
+      "tradition": "Kaula/Nātha",
+      "genre": "sūtra",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G10",
+        "G12"
+      ],
+      "translation_neighbourhood": [
+        "Bhāvopahāra",
+        "Matsyendrasaṃhitā",
+        "Spandakārikā"
+      ],
+      "source": "muktabodha",
+      "note": "Verify before claiming first translation."
+    },
+    "kaulasutra": {
+      "work_id": "kaulasutra",
+      "name": "Kaulasūtra — Bhaṭṭa Śitikaṇṭha",
+      "num": 100,
+      "section": "VII",
+      "period": "medieval",
+      "tradition": "Kaula",
+      "genre": "sūtra",
+      "translation_status": "U?",
+      "companion_guides": [
+        "G10",
+        "G12"
+      ],
+      "translation_neighbourhood": [
+        "Vātūlanāthasūtra",
+        "Matsyendrasaṃhitā",
+        "Bhāvopahāra"
+      ],
+      "source": "muktabodha",
+      "note": "Final status check needed before claiming first translation."
+    }
+  },
+  "n_targets": 100,
+  "guides": {
+    "G1": {
+      "code": "G1",
+      "title": "Niśvāsamukhatattvasaṃhitā",
+      "period": "c. 7th c.",
+      "tradition": "early Śaiva (Pāśupata/Lākula → Mantramārga bridge)",
+      "why": "bridge from Pāśupata/Lākula/lay Śaiva worlds into Tantra; describes the fourfold environment (Pāñcārthika Pāśupatas, Lākulas, emerging Mantramārga, non-Mantramārga lay Śaivism)",
+      "source": "IFP ci145"
+    },
+    "G2": {
+      "code": "G2",
+      "title": "Niśvāsatattvasaṃhitā (Mūla/Uttara/Naya)",
+      "period": "c. 7th c.",
+      "tradition": "earliest Mantramārga",
+      "why": "earliest major Mantramārga translation memory: cosmology, initiation, mantra, yoga",
+      "source": "IFP ci128"
+    },
+    "G3": {
+      "code": "G3",
+      "title": "A Śaiva Utopia — Śivadharmaśāstra 11",
+      "period": "c. 5th–7th c.",
+      "tradition": "lay Śaiva / Śivadharma",
+      "why": "early lay Śaiva terminology, Śiva devotion, social/religious world",
+      "source": "fedoa books"
+    },
+    "G4": {
+      "code": "G4",
+      "title": "Atharvavedapariśiṣṭa 40 — Pāśupatavratam",
+      "period": "early",
+      "tradition": "Pāśupata",
+      "why": "one of the best early guides to Pāśupata observance vocabulary",
+      "source": "RUG (Pāśupata observance)"
+    },
+    "G4-SKT": {
+      "code": "G4-SKT",
+      "title": "Sanskrit AV Pariśiṣṭa",
+      "period": "early",
+      "tradition": "Pāśupata",
+      "why": "Sanskrit paired with G4",
+      "source": "GRETIL"
+    },
+    "G5": {
+      "code": "G5",
+      "title": "Parākhyatantra",
+      "period": "early",
+      "tradition": "Śaiva Siddhānta",
+      "why": "early Siddhānta doctrine + yoga",
+      "source": "IFP ci98"
+    },
+    "G6": {
+      "code": "G6",
+      "title": "Rāmakaṇṭha's Kiraṇavṛtti 1–6",
+      "period": "c. 10th c.",
+      "tradition": "Kashmirian Śaiva Siddhānta",
+      "why": "the crucial Kashmirian Siddhānta philosophical/commentarial English memory",
+      "source": "IFP pdi86"
+    },
+    "G7": {
+      "code": "G7",
+      "title": "Paramokṣanirāsakārikā + Rāmakaṇṭha",
+      "period": "c. 10th c.",
+      "tradition": "Kashmirian Siddhānta philosophy",
+      "why": "philosophical argumentation: self, liberation, rival systems",
+      "source": "IFP ci122"
+    },
+    "G8": {
+      "code": "G8",
+      "title": "Temple Design in Six Early Śaiva Scriptures",
+      "period": "early medieval",
+      "tradition": "early Siddhānta (Bṛhatkālottara, Devyāmata, Kiraṇa, Mohacūḍottara, Mayasaṃgraha, Piṅgalāmata)",
+      "why": "Bṛhatkālottara, Devyāmata, Kiraṇa, Mohacūḍottara, Mayasaṃgraha, Piṅgalāmata in Sanskrit+English",
+      "source": "IFP ci138"
+    },
+    "G9": {
+      "code": "G9",
+      "title": "Trilocanaśiva, Prāyaścittasamuccaya",
+      "period": "12th c.",
+      "tradition": "Śaiva Siddhānta ritual",
+      "why": "full Sanskrit-English specialist ritual lexicon",
+      "source": "IFP ci127"
+    },
+    "G10": {
+      "code": "G10",
+      "title": "Mālinīvijayottara selected chapters",
+      "period": "pre-Abhinava",
+      "tradition": "Trika/Bhairava",
+      "why": "nondual/Bhairava/Trika technical terminology",
+      "source": "IFP ci97"
+    },
+    "G11": {
+      "code": "G11",
+      "title": "Brahmayāmala translated chapters",
+      "period": "early",
+      "tradition": "Vidyāpīṭha/Bhairava",
+      "why": "early Vidyāpīṭha/Bhairava ritual vocabulary",
+      "source": "IFP ci130"
+    },
+    "G12": {
+      "code": "G12",
+      "title": "Matsyendrasaṃhitā selections",
+      "period": "later",
+      "tradition": "Kaula/Nātha/yoga",
+      "why": "later Kaula/Nātha/yoga terminology",
+      "source": "IFP ci146"
+    },
+    "G13": {
+      "code": "G13",
+      "title": "Śāntarakṣita, Tattvasaṃgraha",
+      "period": "8th c.",
+      "tradition": "Buddhist philosophical opponent",
+      "why": "8th-c. philosophical/Sanskrit opponent vocabulary",
+      "source": "Wisdomlib"
+    },
+    "G14": {
+      "code": "G14",
+      "title": "Pāśupatasūtra + Kauṇḍinya",
+      "period": "early (c. 4th–5th c.)",
+      "tradition": "Pāśupata",
+      "why": "Sanskrit source for comparison with early Śaiva prose",
+      "source": "GRETIL"
+    }
+  },
+  "n_guides": 15,
+  "summary": {
+    "n_targets": 100,
+    "n_guides": 15,
+    "by_status": {
+      "P": 33,
+      "U?": 40,
+      "U": 22,
+      "EN_GAP": 5
+    },
+    "by_section": {
+      "I": 20,
+      "II": 20,
+      "III": 20,
+      "IV": 5,
+      "V": 15,
+      "VI": 10,
+      "VII": 10
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "guides": [
+    {"code": "G1", "title": "Niśvāsamukhatattvasaṃhitā", "period": "c. 7th c.", "tradition": "early Śaiva (Pāśupata/Lākula → Mantramārga bridge)", "why": "bridge from Pāśupata/Lākula/lay Śaiva worlds into Tantra; describes the fourfold environment (Pāñcārthika Pāśupatas, Lākulas, emerging Mantramārga, non-Mantramārga lay Śaivism)", "source": "IFP ci145"},
+    {"code": "G2", "title": "Niśvāsatattvasaṃhitā (Mūla/Uttara/Naya)", "period": "c. 7th c.", "tradition": "earliest Mantramārga", "why": "earliest major Mantramārga translation memory: cosmology, initiation, mantra, yoga", "source": "IFP ci128"},
+    {"code": "G3", "title": "A Śaiva Utopia — Śivadharmaśāstra 11", "period": "c. 5th–7th c.", "tradition": "lay Śaiva / Śivadharma", "why": "early lay Śaiva terminology, Śiva devotion, social/religious world", "source": "fedoa books"},
+    {"code": "G4", "title": "Atharvavedapariśiṣṭa 40 — Pāśupatavratam", "period": "early", "tradition": "Pāśupata", "why": "one of the best early guides to Pāśupata observance vocabulary", "source": "RUG (Pāśupata observance)"},
+    {"code": "G4-SKT", "title": "Sanskrit AV Pariśiṣṭa", "period": "early", "tradition": "Pāśupata", "why": "Sanskrit paired with G4", "source": "GRETIL"},
+    {"code": "G5", "title": "Parākhyatantra", "period": "early", "tradition": "Śaiva Siddhānta", "why": "early Siddhānta doctrine + yoga", "source": "IFP ci98"},
+    {"code": "G6", "title": "Rāmakaṇṭha's Kiraṇavṛtti 1–6", "period": "c. 10th c.", "tradition": "Kashmirian Śaiva Siddhānta", "why": "the crucial Kashmirian Siddhānta philosophical/commentarial English memory", "source": "IFP pdi86"},
+    {"code": "G7", "title": "Paramokṣanirāsakārikā + Rāmakaṇṭha", "period": "c. 10th c.", "tradition": "Kashmirian Siddhānta philosophy", "why": "philosophical argumentation: self, liberation, rival systems", "source": "IFP ci122"},
+    {"code": "G8", "title": "Temple Design in Six Early Śaiva Scriptures", "period": "early medieval", "tradition": "early Siddhānta (Bṛhatkālottara, Devyāmata, Kiraṇa, Mohacūḍottara, Mayasaṃgraha, Piṅgalāmata)", "why": "Bṛhatkālottara, Devyāmata, Kiraṇa, Mohacūḍottara, Mayasaṃgraha, Piṅgalāmata in Sanskrit+English", "source": "IFP ci138"},
+    {"code": "G9", "title": "Trilocanaśiva, Prāyaścittasamuccaya", "period": "12th c.", "tradition": "Śaiva Siddhānta ritual", "why": "full Sanskrit-English specialist ritual lexicon", "source": "IFP ci127"},
+    {"code": "G10", "title": "Mālinīvijayottara selected chapters", "period": "pre-Abhinava", "tradition": "Trika/Bhairava", "why": "nondual/Bhairava/Trika technical terminology", "source": "IFP ci97"},
+    {"code": "G11", "title": "Brahmayāmala translated chapters", "period": "early", "tradition": "Vidyāpīṭha/Bhairava", "why": "early Vidyāpīṭha/Bhairava ritual vocabulary", "source": "IFP ci130"},
+    {"code": "G12", "title": "Matsyendrasaṃhitā selections", "period": "later", "tradition": "Kaula/Nātha/yoga", "why": "later Kaula/Nātha/yoga terminology", "source": "IFP ci146"},
+    {"code": "G13", "title": "Śāntarakṣita, Tattvasaṃgraha", "period": "8th c.", "tradition": "Buddhist philosophical opponent", "why": "8th-c. philosophical/Sanskrit opponent vocabulary", "source": "Wisdomlib"},
+    {"code": "G14", "title": "Pāśupatasūtra + Kauṇḍinya", "period": "early (c. 4th–5th c.)", "tradition": "Pāśupata", "why": "Sanskrit source for comparison with early Śaiva prose", "source": "GRETIL"}
+  ]
+}

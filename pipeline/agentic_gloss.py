@@ -52,7 +52,26 @@ def _term_packet_for(work_id: str) -> str:
              f"period + text. For this work ({work_id}), apply these policies where the lemma appears:"]
     for term, pol in sorted(TERM_PACKET.items()):
         lines.append(f"- {term}: {pol}")
-    lines.append("- Read the full glossary in the reference map if a token is not listed.")
+    # merge the semantic-shift term-context for this work's school/period (if it's a sivaqueue target)
+    try:
+        from sivaqueue_targets import term_context, translation_neighbourhood, guide_descriptions, all_targets
+        sq = all_targets().get(work_id)
+        if sq:
+            lines.append(f"\nWORK: {sq.get('name')} | school: {sq.get('tradition')} | "
+                         f"period: {sq.get('period')} | genre: {sq.get('genre')} | "
+                         f"status: {sq.get('translation_status')}")
+            lines.append("\nCOMPANION TRANSLATION-MEMORY GUIDES to consult for correct terminology:")
+            lines.append(guide_descriptions(sq.get("companion_guides", [])))
+            nh = translation_neighbourhood(work_id)
+            if nh:
+                lines.append("\nTRANSLATION NEIGHBOURHOOD (consult these specific works for period-correct senses):")
+                lines.append("- " + "\n- ".join(nh))
+            tc = term_context(work_id)
+            if tc:
+                lines.append("\n" + tc)
+    except Exception:
+        pass
+    lines.append("\n- Read the full glossary in the reference map if a token is not listed.")
     return "\n".join(lines)
 
 
