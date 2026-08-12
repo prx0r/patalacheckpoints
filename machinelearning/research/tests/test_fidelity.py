@@ -68,8 +68,13 @@ if runs:
            "detected", "false_positive", "detector"]
     check("run results carry all required fields",
           all(all(k in r for k in req) for r in d.get("results", [])))
-    check("run records git_sha + verifier_version",
-          bool(d.get("git_sha")) and d.get("verifier_version") == "fidelity-v0")
+    check("run records execution_base_sha + verifier_version",
+          bool(d.get("execution_base_sha")) and d.get("verifier_version") == "fidelity-v0")
+    check("run records artifact_commit_sha (may be None if uncommitted) + working_tree_dirty flag",
+          "artifact_commit_sha" in d and "working_tree_dirty" in d)
+    check("run uses stable detector IDs (no <lambda>)",
+          all(isinstance(r["detector"], str) and not r["detector"].startswith("<")
+              for r in d.get("results", [])))
     check("run records clean false-positive rate 0 for every family",
           all(s["false_positives"] == 0 for s in d.get("summary", {}).values()))
 

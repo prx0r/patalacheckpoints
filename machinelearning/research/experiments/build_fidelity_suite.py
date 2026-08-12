@@ -41,7 +41,31 @@ VERTICAL_PATH = os.path.join(ROOT, "benchmarks/v0/vertical/vertical-v2o-g-tc2.js
 RUNS_DIR = os.path.join(ROOT, "benchmarks/v0/runs")
 
 VERIFIER_VERSION = "fidelity-v0"
-GIT_SHA = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, text=True).stdout.strip() or "unknown"
+
+# Stable, implementation-independent detector IDs (never "<lambda>"):
+DETECTOR_IDS = {
+    "FID-SOURCE": "PATALA.P0.SOURCE.v1",
+    "FID-PROVENANCE": "PATALA.VERTICAL.PROVENANCE.v1",
+    "FID-ALIGNMENT": "PATALA.VERTICAL.ALIGNMENT.v1",
+}
+
+# Benchmark-provenance SHAs. execution_base_sha = HEAD when the evaluator RAN (may precede the commit
+# that introduces the run). artifact_commit_sha = the commit that carries the immutable run (unknown
+# until it is committed; recorded as None if the run is not yet committed). working_tree_dirty tells
+# whether uncommitted changes existed at execution time.
+def _git(args: list[str]) -> str:
+    r = subprocess.run(["git", *args], capture_output=True, text=True, cwd=ROOT)
+    return r.stdout.strip() or "unknown"
+
+
+EXECUTION_BASE_SHA = _git(["rev-parse", "HEAD"])
+WORKING_TREE_DIRTY = bool(_git(["status", "--porcelain"]))
+
+
+def artifact_commit_sha(run_path: str) -> str | None:
+    """The commit that carries this run file, or None if it is not yet committed."""
+    out = _git(["log", "-1", "--format=%H", "--", os.path.relpath(run_path, ROOT)])
+    return out if out != "unknown" and out else None
 
 
 def sha256(text: str) -> str:
@@ -181,13 +205,14 @@ def mutate_alignment(vertical: dict, corruption: str) -> dict:
 
 # ── the harness ───────────────────────────────────────────────────────────────
 def run_family(family: str, corruptions: list[str], apply_mut, verify, get_pristine_anchor_ids=None):
+    detector_id = DETECTOR_IDS[family]
     rows = []
     # CLEAN CONTROL (must PASS -> false-positive rate must be 0)
     clean = verify(*load_fixture_base(family))
     rows.append({
         "fixture_id": f"{family}-CLEAN", "family": family, "corruption": "CLEAN_CONTROL",
         "expected": "PASS", "observed": "PASS" if clean["PASS"] else "FAIL",
-        "detected": False, "false_positive": not clean["PASS"], "detector": verify.__name__,
+        "detected": False, "false_positive": not clean["PASS"], "detector": detector_id,
     })
     pristine_anchors = set(get_pristine_anchor_ids()) if get_pristine_anchor_ids else set()
     for i, c in enumerate(corruptions, 1):
@@ -198,7 +223,7 @@ def run_family(family: str, corruptions: list[str], apply_mut, verify, get_prist
             "fixture_id": f"{family}-{i:03d}", "family": family, "corruption": c,
             "expected": "FAIL", "observed": observed,
             "detected": (observed == "FAIL"), "false_positive": False,
-            "detector": verify.__name__, "mutation_isolation_ok": True,
+            "detector": detector_id, "mutation_isolation_ok": True,
             "details": (res.get("problems", [])[:4]),
         })
     return rows
@@ -256,16 +281,24 @@ def main() -> int:
 
     run = {
         "run_id": f"FIDELITY-v0-{run_id}", "benchmark_version": "v0", "family": "PATALA-FIDELITY",
-        "git_sha": GIT_SHA, "verifier_version": VERIFIER_VERSION,
+        "execution_base_sha": EXECUTION_BASE_SHA,   # HEAD when the evaluator RAN
+        "artifact_commit_sha": None,                # filled once this run file is committed
+        "working_tree_dirty": WORKING_TREE_DIRTY,
+        "verifier_version": VERIFIER_VERSION,
         "date": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "results": all_rows, "summary": summary,
     }
     out = os.path.join(RUNS_DIR, f"fidelity-{run_id}.json")
     with open(out, "w", encoding="utf-8") as f:
         json.dump(run, f, indent=2)
+    # record the artifact_commit_sha now that the run exists on disk (None if uncommitted)
+    run["artifact_commit_sha"] = artifact_commit_sha(out)
+    with open(out, "w", encoding="utf-8") as f:
+        json.dump(run, f, indent=2)
 
     # console
-    print(f"FIDELITY-v0 run: {run['run_id']} (git {GIT_SHA[:8]})")
+    print(f"FIDELITY-v0 run: {run['run_id']} (exec {EXECUTION_BASE_SHA[:8]}"
+          f" / commit {run['artifact_commit_sha'][:8] if run['artifact_commit_sha'] else 'uncommitted'})")
     for fam, s in summary.items():
         print(f"  {fam:14} sensitivity {s['sensitivity']}  ({s['detected']}/{s['injected']})  "
               f"clean-FP {s['false_positives']}")
