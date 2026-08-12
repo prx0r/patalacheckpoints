@@ -561,3 +561,25 @@ GROBID/scholar products.
 `l200_worker.py`, `object_registry.py`, `autonomy.py` · `factory-certificates/L0-v1/`, `L200-v1/`.
 
 **Next:** bounded real IPVV batch → freeze L200 → C1 autonomous production → unattended vertical.
+
+## Agent 2 — autonomous RAW-L0 re-anchor + ModelAdapter (2026-08-12)
+
+**What:** Re-anchored on autonomous RAW-L0 (the original goal). The canary proved the controller drives
+real RAW-L0 (11/12 kramasadbhāva passages committed, 1 fail-closed). Built `pipeline/model_adapter.py`
+(DirectModelAdapter ~1.4-2.1s vs hermes 8-48s + HermesAdapter + strict batch ID/hash binding, fail-closed);
+wired the RAW-L0 gloss through it. L200 is secondary until autonomous RAW-L0 v1 is proven.
+
+**Unverified-but-close:** a full unattended RAW-L0 batch on the Direct adapter is not yet proven end-to-end
+after wiring (needs a background re-run); L200 live semantic quality (MT precision 0.20) is not yet bounded.
+
+**Agent-1 / evidence-lane handover:** the scholarly-oracle proof (`pipeline/scholarly_oracle.py`,
+`test_scholarly_oracle.py`, `docs/BUILD_NOTES_S0_1.md`) is handed to the evidence lane — Agent 2 does not
+continue it. Location recorded in `PROGRESS-AUTONOMOUS-2026-08-12.md` §5.
+
+**Working practice (from review):** run long model calls in the BACKGROUND — never block the session on a
+hermes/direct call (8-48s or hang).
+
+**Files:** `pipeline/model_adapter.py`, `agentic_gloss.py` (wired), `handover/agent-2-integration/
+PROGRESS-AUTONOMOUS-2026-08-12.md` (the current-state map), `docs/BUILD_NOTES_AUTONOMY.md` (update).
+
+**Next:** background unattended RAW-L0 batch on Direct → freeze autonomous RAW-L0 v1 → L200 candidate→classifier.

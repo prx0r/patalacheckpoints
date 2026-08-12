@@ -97,3 +97,24 @@ calls are the generative layer, wired but exercised separately in the canary (L0
 L200 MT/IA at scale.
 
 Run: `python3 pipeline/test_workers.py` · `test_autonomy.py` · `test_autonomous.py`.
+
+---
+
+## UPDATE (2026-08-12, later) — ModelAdapter + autonomous RAW-L0 re-anchor
+
+**Re-anchor:** Agent 2 is back on autonomous RAW-L0 (the original goal). L200 is secondary until
+autonomous RAW-L0 v1 is proven.
+
+- **`pipeline/model_adapter.py`** — the ModelAdapter boundary: `DirectModelAdapter` (~1.4–2.1s, structured
+  JSON via OPENCODE_GO_BASE_URL/API_KEY) + `HermesAdapter` (fallback) + `complete_batch_json` (strict
+  object_id + input_hash binding, reject missing/wrong/duplicate/unknown, fail-closed partial).
+- **Gloss wired to the adapter** — `agentic_gloss.py` batch gloss now routes through
+  `get_adapter()` (Direct fast path). This attacks the RAW-L0 gloss nondeterminism + latency.
+- **Autonomous RAW-L0 runs**: 11/12 kramasadbhāva passages committed through the controller (real glossed
+  L0), 1 fail-closed. The Direct adapter should close the remaining reliability gap.
+
+**Still needed (per PROGRESS-AUTONOMOUS-2026-08-12.md):** prove a real unattended batch on the Direct
+adapter in the background; freeze autonomous RAW-L0 v1; then L200 candidate→classifier + TEST; then C1.
+
+**File map + agent-1 handover + working-practice note:** `handover/agent-2-integration/PROGRESS-AUTONOMOUS-2026-08-12.md`
+(single current-state map).

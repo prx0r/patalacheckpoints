@@ -14,6 +14,9 @@ source for the integration lane.*
 > **AUTONOMY BUILD RECORD: `handover/agent-2-integration/BUILD-RECORD-2026-08-12-AUTONOMY.md`** — the full
 > inventory + results of the autonomous translation factory build (controller, registry, certificates,
 > live L200 benchmark). **Read this for the current autonomous-factory state.**
+> **CURRENT STATE (READ FIRST): `handover/agent-2-integration/PROGRESS-AUTONOMOUS-2026-08-12.md`** — what is
+> VERIFIED / CLOSE-unverified / STILL-NEEDED + the file map + the agent-1 scholarly-oracle handover
+> location + the background-run working practice.
 >
 > **THE CANONICAL LAYER STACK (the authoritative layer definitions — NOT in app/api or mcp, they live on
 > the mount `…/sanskritree/translations/_stack/ipvv/`):**

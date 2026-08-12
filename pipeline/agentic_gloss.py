@@ -30,6 +30,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from agent3_batch import load_raw_source, split_verses
 from raw_l0 import raw_l0, raw_l0_to_canonical
 from model import chat
+from model_adapter import get_adapter
 
 REFERENCE_MAP = "/root/projects/patala/docs/corpus/canonical_reference_map.md"
 SKILL_PATH = "/root/projects/patala/skills/raw-l0/SKILL.md"
