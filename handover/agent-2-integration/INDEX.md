@@ -7,6 +7,8 @@ source for the integration lane.*
 > **LEADING CHECKPOINT DOC: `handover/CHECKPOINTS.md`** (the shared 5-checkpoint plan + 7 canonical
 > contracts) + **`handover/agent-2-integration/CHECKPOINTS-INTEGRATION.md`** (this lane's goal:
 > CP1 PhilologicalProof). Read those before the current-state below.
+> **SESSION HANDOVER: `handover/agent-2-integration/SESSION-2026-08-12.md`** — the complete record of this
+> session's work + the honest current state + the highest-value next work. Read it first.
 
 ---
 

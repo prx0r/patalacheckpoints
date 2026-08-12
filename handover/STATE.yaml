@@ -1,5 +1,5 @@
-state_version: 20
-last_update: '2026-08-12T15:03:00'
+state_version: 21
+last_update: '2026-08-12T16:09:30'
 agent1:
   checkpoints:
     CP0:
@@ -32,13 +32,13 @@ agent2:
   checkpoints:
     CP1:
       status: PARTIAL
-      note: 'Agent 2 reframed as corpus compiler + integrity layer. DONE: CP1 floor
-        63/63 lossless (V1 28/28), P2/P3/P4 witnesses, corpus state machine (corpus_state.py
-        + /api/corpus/state), executable-corrections review engine Phase 3A (review_engine.py,
-        15/15). NEXT: Phase 3D MCP review tools -> 3E Workbench screen -> 3F Hermes
-        A4 (last).'
+      note: 'Session complete: RAW-L0 factory core built (raw_l0.py/agent3_batch/agent3_queue/l0_registry),
+        21-target+39-lead prioritized queue, executable-corrections review engine
+        (3A+3D), full sanskritree goldmine consolidated (TARGETS-INDEX + IMPORT-MANIFEST
+        + concepts.ts completed). Next: gloss/model transport + Sanskrit-only replay
+        benchmark + ingest not-yet-ingested primary texts.'
       updated_by: agent2
-      ts: '2026-08-12 14:40:05'
+      ts: '2026-08-12 16:09:30'
 shared:
   CP0: DONE
   CP1: PARTIAL
