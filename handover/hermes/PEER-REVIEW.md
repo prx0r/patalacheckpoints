@@ -301,3 +301,28 @@ recomputes downstream arguments/cruxes/themes/syntheses and is inherited by futu
 existing ReviewEvent + supersede primitives, exposed through the Scholar Workbench and the `patala_propose_review`
 tool boundary, with Hermes triggering (never determining) the recomputation. Build Phases 3–5 of DEV-PLAN
 in this order, gate each on the falsification tests above.**
+
+---
+
+## 14. PHASE 3A — BUILT: the executable-corrections vertical loop (2026-08-12)
+
+The first **executable scholarly correction** is implemented and proven:
+`pipeline/review_engine.py` (+ `pipeline/test_review_engine.py`, 15/15 pass).
+
+**The five concepts are real:** `ReviewEvent` (append-only), `ObjectVersion` (immutable),
+`DependencyEdge` (GROUNDS / USES_AS_PREMISE / USES_AS_WARRANT / ORGANIZES), `DerivedState`
+(deterministically reduced from the ledger), `ImpactReport` (the product-facing output).
+
+**The proven vertical loop (ARG-002, G2-TC2 v1 → v2):**
+- a REVISE of G2-TC2:v1 creates an immutable ReviewEvent; v2 is created; v1 is retained
+- the deterministic reducer → G2-INF1 NEED_REVIEW, G2-CONC NEED_REVIEW
+- the impact report names exactly {G2-INF1, G2-CONC}; ARG-004 (unrelated) untouched
+- the reducer is idempotent; a proposition REVISE does NOT stale its source grounding
+- REJECT semantics: effective REJECTED, v1 still resolvable (REJECT ≠ delete)
+
+**The doctrine holds:** ACCEPT ≠ truth · REJECT ≠ delete · REVISE ≠ overwrite.
+
+**Next (per DEV-PLAN):** Phase 3B typed-dependency propagation is already partially proven here
+(the 4 edge types); Phase 3C ImpactReport done; Phase 3D MCP tools
+(`patala_get_review_state` / `patala_propose_review` / `patala_submit_review` / `patala_get_impact`)
+and Phase 3E (tiny Workbench review screen) remain. Hermes A4 scheduling (Phase 3F) comes LAST.

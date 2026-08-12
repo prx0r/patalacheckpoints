@@ -1,0 +1,88 @@
+{
+  "versions": {
+    "G2-TC2": [
+      "v1",
+      "v2"
+    ]
+  },
+  "reviews": [
+    {
+      "review_id": "REV-0001",
+      "target_ref": "G2-TC2",
+      "target_version": "v1",
+      "reviewer": "synthetic-reviewer",
+      "reviewer_kind": "machine",
+      "scope": "proposition",
+      "decision": "REVISE",
+      "rationale": "narrow the formulation to exclude over-claiming construction (controlled demo)",
+      "evidence_refs": [
+        "source:V2L",
+        "pp:ipvv:v2l:p0"
+      ],
+      "replacement_ref": "G2-TC2",
+      "created_at": "2026-08-12T14:36:33.059379+00:00"
+    }
+  ],
+  "derived_state": {
+    "G2-TC1": "CANDIDATE",
+    "G2-INF1": "NEED_REVIEW",
+    "G2-TC2": "SUPERSEDED",
+    "G2-CONC": "NEED_REVIEW",
+    "W-ARTICULATION": "CANDIDATE",
+    "source:V2L": "CANDIDATE",
+    "pp:ipvv:v2l:p0": "CANDIDATE",
+    "TD:V2L": "CANDIDATE",
+    "ARG-004-P": "CANDIDATE",
+    "ARG-004": "CANDIDATE"
+  },
+  "impact": {
+    "review": "REV-0001",
+    "target": "G2-TC2",
+    "directly_affected": [
+      {
+        "object": "G2-INF1",
+        "type": "USES_AS_PREMISE",
+        "state": "NEED_REVIEW"
+      },
+      {
+        "object": "G2-CONC",
+        "type": "DERIVED",
+        "state": "NEED_REVIEW"
+      }
+    ],
+    "potentially_affected": [
+      {
+        "object": "TD:V2L",
+        "type": "GROUNDS",
+        "state": "CANDIDATE"
+      }
+    ],
+    "unaffected": [
+      {
+        "object": "G2-TC1",
+        "state": "CANDIDATE"
+      },
+      {
+        "object": "W-ARTICULATION",
+        "state": "CANDIDATE"
+      },
+      {
+        "object": "source:V2L",
+        "state": "CANDIDATE"
+      },
+      {
+        "object": "pp:ipvv:v2l:p0",
+        "state": "CANDIDATE"
+      },
+      {
+        "object": "ARG-004-P",
+        "state": "CANDIDATE"
+      },
+      {
+        "object": "ARG-004",
+        "state": "CANDIDATE"
+      }
+    ],
+    "historical_version_retained": true
+  }
+}
