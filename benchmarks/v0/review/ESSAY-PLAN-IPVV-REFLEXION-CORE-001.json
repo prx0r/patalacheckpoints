@@ -1,0 +1,59 @@
+{
+  "plan_id": "ESSAY-PLAN-IPVV-REFLEXION-CORE-001",
+  "synthesis_id": "SYN-IPVV-REFLEXION-CORE-001",
+  "question": "Does reflexivity belong intrinsically to manifestation?",
+  "sections": [
+    {
+      "section": "problem",
+      "sentences": [
+        "S001",
+        "S002"
+      ]
+    },
+    {
+      "section": "arg-002",
+      "sentences": [
+        "S003",
+        "S004",
+        "S005"
+      ]
+    },
+    {
+      "section": "arg-004",
+      "sentences": [
+        "S006",
+        "S007",
+        "S014"
+      ]
+    },
+    {
+      "section": "synthesis",
+      "sentences": [
+        "S008",
+        "S009",
+        "S015"
+      ]
+    },
+    {
+      "section": "limitation",
+      "sentences": [
+        "S010",
+        "S011"
+      ]
+    },
+    {
+      "section": "boundary",
+      "sentences": [
+        "S012"
+      ]
+    },
+    {
+      "section": "rival",
+      "sentences": [
+        "S013"
+      ]
+    }
+  ],
+  "epistemic_ceiling": "UNRESOLVED",
+  "render_rule": "UNRESOLVED -> QUALIFIED (suggest/motivate/can-be-reconstructed); never proves/establishes."
+}
