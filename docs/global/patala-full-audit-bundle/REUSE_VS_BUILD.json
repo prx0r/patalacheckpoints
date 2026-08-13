@@ -1,0 +1,89 @@
+{
+  "OWN": [
+    "Stable Pāṭala IDs and canonical resolution",
+    "SourceAssertion",
+    "CorroborationEvent",
+    "TranslationDecision",
+    "PhilologicalProof semantics",
+    "Proposition derivation",
+    "Commitment",
+    "DebateFrame",
+    "SemanticAlignment",
+    "Argument-under-interpretation IR",
+    "Crux / counterfactual dependency",
+    "ReviewEvent and supersession semantics",
+    "DerivedState / ImpactReport",
+    "Expert-gold datasets",
+    "Pāṭala error taxonomy",
+    "AuditFinding epistemic classes",
+    "Scholar action event stream"
+  ],
+  "REUSE": {
+    "Morphology": [
+      "Vidyut",
+      "Sanskrit Heritage",
+      "SanskritShala"
+    ],
+    "Corpora": [
+      "Ambuda",
+      "DCS",
+      "GRETIL"
+    ],
+    "Document extraction": [
+      "GROBID",
+      "Docling",
+      "JATS ingestion"
+    ],
+    "Bibliography": [
+      "Zotero",
+      "Crossref",
+      "OpenAlex",
+      "OpenCitations",
+      "Unpaywall"
+    ],
+    "Provenance/spans": [
+      "PROV-O",
+      "W3C Web Annotation"
+    ],
+    "Packaging/media/text": [
+      "RO-Crate",
+      "IIIF",
+      "TEI",
+      "CTS/DTS"
+    ],
+    "Research identity": [
+      "ORCID",
+      "ROR",
+      "DataCite"
+    ],
+    "Retrieval": [
+      "PaperQA2",
+      "Tantivy/BM25"
+    ],
+    "Annotation": [
+      "INCEpTION",
+      "Hypothesis/Recogito concepts"
+    ],
+    "Review workflow": [
+      "OpenReview",
+      "Kotahi",
+      "Janeway",
+      "PubPub",
+      "COAR Notify"
+    ],
+    "Evaluation": [
+      "Inspect AI",
+      "mt-metrics-eval",
+      "xCOMET",
+      "MetricX"
+    ],
+    "Argument interchange": [
+      "xAIF",
+      "oAMF"
+    ],
+    "Execution": [
+      "Hermes",
+      "replaceable model providers"
+    ]
+  }
+}

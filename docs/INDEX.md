@@ -75,7 +75,7 @@ stale ones as `[ARCHIVED]` so a new agent is never confused. If it's not here, i
 | **Vision 13 — Product Portfolio (by user base)** | `docs/vision/vision-13-product-portfolio-by-user-base.md` | repo `docs/vision/` |
 | **Dual-agent track** | `machinelearning/DUAL_AGENT_TRACK.md` | repo `machinelearning/` |
 | **Context engineering** | `machinelearning/CONTEXT_ENGINEERING.md` | repo `machinelearning/` |
-| **Education layer (vision)** | `machinelearning/EDUCATION_VISION.md` | repo `machinelearning/` |
+| **Education layer (vision)** | `docs/vision/education/` | repo `docs/vision/` |
 | **Geometric ideas (borrowed)** | `machinelearning/geometric.md` | repo `machinelearning/` |
 | **System growth + Hermes infra** | `machinelearning/SYSTEM_GROWTH_AND_HERMES.md` | repo `machinelearning/` |
 | **Pāṭala as the Library's engine** | `machinelearning/PATALA_AS_LIBRARY_ENGINE.md` | repo `machinelearning/` |

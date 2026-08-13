@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pt://schema/benchmark-fixture/v1",
+  "title": "BenchmarkFixtureV1",
+  "type": "object",
+  "required": [
+    "fixture_id",
+    "fixture_version",
+    "family",
+    "task",
+    "input_snapshot",
+    "source_refs",
+    "expected",
+    "gold_state",
+    "freeze_hash"
+  ],
+  "properties": {
+    "fixture_id": {
+      "type": "string"
+    },
+    "fixture_version": {
+      "const": "1"
+    },
+    "family": {
+      "enum": [
+        "T1_SOURCE",
+        "T2_TRANSLATION",
+        "T3_INTERPRETATION",
+        "T4_ARGUMENT"
+      ]
+    },
+    "task": {
+      "type": "string"
+    },
+    "input_snapshot": {
+      "type": "object"
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "$ref": "pt://schema/object-ref/v1"
+      }
+    },
+    "expected": {},
+    "acceptable_alternatives": {
+      "type": "array"
+    },
+    "forbidden_inferences": {
+      "type": "array"
+    },
+    "abstention_expected": {
+      "type": "boolean"
+    },
+    "gold_state": {
+      "enum": [
+        "CANDIDATE",
+        "SINGLE_EDITOR_GOLD",
+        "DOUBLE_REVIEWED_GOLD",
+        "ADJUDICATED_GOLD"
+      ]
+    },
+    "review_event_refs": {
+      "type": "array"
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "freeze_hash": {
+      "type": "string"
+    }
+  }
+}

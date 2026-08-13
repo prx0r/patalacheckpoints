@@ -1,0 +1,32 @@
+{
+  "name": "Pāṭala Live Architecture Spec",
+  "version": "2026-08-13",
+  "status": "PROPOSED_TARGET_CONTRACT",
+  "repository": "prx0r/patala",
+  "git_writes": false,
+  "contents": [
+    "README.md",
+    "LIVE_REPO_RECONCILIATION.md",
+    "CANONICAL_KERNEL_SPEC.md",
+    "OBJECT_OWNERSHIP_MATRIX.csv",
+    "STATUS_AXIS_MIGRATION.md",
+    "CROSS_AGENT_CONTRACT.md",
+    "RAW_L0_HARDENING.md",
+    "REVIEW_ENGINE_HARDENING.md",
+    "TRANSLATION_AUDIT_API_SPEC.md",
+    "BENCHMARK_INSPECT_ADAPTER_SPEC.md",
+    "REUSE_ADAPTERS.md",
+    "FIRST_VERTICAL_IPVV.md",
+    "MIGRATION_PLAN.md",
+    "DEPRECATIONS_AND_DUPLICATES.md",
+    "IMPLEMENTATION_BACKLOG.csv",
+    "REPO_EVIDENCE.json",
+    "schemas/"
+  ],
+  "non_claims": [
+    "This spec does not claim proposed schemas are currently implemented.",
+    "This spec does not claim current benchmark fixtures are independently adjudicated unless their own metadata says so.",
+    "This spec does not claim machine-proposed semantic outputs are scholarly truth.",
+    "External integrations named here should be rechecked against current upstream APIs/licenses at implementation time."
+  ]
+}

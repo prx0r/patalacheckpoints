@@ -38,6 +38,10 @@ New here? Do not read the whole surface top-down. Follow the arc:
    vision files the Hermes kernel operationalizes.
 7. **The lenses** — `docs/vision/functionality/README.md`, `docs/vision/scholars/README.md`,
    `docs/vision/economics/README.md` — the same vision at Layer 4 (tools / people / value), to taste.
+8. **The education lens** — `docs/vision/education/PATALA-EDUCATION-SYNTHESIS.md` (the current, most-complete
+   statement, imported from R2) + `docs/vision/education/LEARNING_STRATEGY.md` (content strategy) +
+   `docs/vision/education/EDUCATION_VISION.md` (graph-native teaching engine) + `docs/vision/education/sources/`
+   (raw imported design dialogue).
 8. **Foundational deep-dives** — `docs/NORTHSTAR.md` (deepest strategy), `docs/foundationalideas.md`
    (the passage-identity idea), `docs/positioningpartners.md` (positioning).
 
@@ -119,6 +123,47 @@ The vision arc (above) is the *product/strategic* view; the checkpoint ladder
 
 ---
 
+## The scholarly-evidence infrastructure (2026-08-13 — a foundational cross-cutting layer)
+
+| Doc | Focus |
+|---|---|
+| `source-evidence/docs/scholar-layer-schema-stack.md` | the **Pāṭala Source Evidence Profile v0** — compose FaBiO/PROV-O/Web Annotation/CiTO/RO-Crate/IIIF (not a new ontology); only SourceAssertion/CorroborationEvent/authority/review are Pāṭala-native |
+| `source-evidence/docs/scholar-layer-evaluation-and-ids.md` | four standards families + the **evaluation plane** (TantraFact/ArgumentBench/PāṭalaQA sit OUTSIDE the production graph) + CTS/DTS/JATS/ORCID/ROR |
+| `source-evidence/docs/reuse-first-stack.md` | **borrow open-source systems** (GROBID/Zotero/OpenAlex/OpenCitations/RO-Crate/ORKG/OpenReview); Pāṭala owns only the thin resolver + the epistemic seam |
+| `source-evidence/docs/tools/` | per-tool integration docs with API details + polite rate-limiting etiquette |
+| `source-evidence/` | the working substrate (schema/registry/ro_crate/pilot) |
+
+**Why it matters to the vision:** the scholar corpus is potentially a massive moat, but **only after it becomes a
+provenance-addressable evidence corpus rather than a folder of excellent PDFs**. This layer feeds the
+two-source-side architecture (primary text + published scholarship converge at Proposition ↔ CorroborationEvent
+↔ SourceAssertion) and is the substrate every projection (site, education, media, scholar hub, assistant) consumes
+via the same IDs.
+
+## The vision → borrowed-tools map (2026-08-13 — what each vision capability is implemented with)
+
+The vision's capabilities map to mature open tools; Pāṭala builds only the epistemic dependency graph on top.
+See `source-evidence/docs/tool-integration3.md` (the final assembled architecture) + `source-evidence/docs/tools/`.
+
+| Vision capability | Implemented with (borrowed) |
+|---|---|
+| source ingest / identify (V01/02/11) | GROBID / Docling / Zotero / Crossref / OpenAlex / OpenCitations |
+| scholarly retrieval (V06/07) | PaperQA2 / SciRAG / Tantivy (BM25 baseline) |
+| translation audit (V06/13) | Pāṭala vertical + GROBID extraction + the verification floor |
+| argument extraction/audit (V06) | Pāṭala argument IR + the active Nyāya audit (native) |
+| adversarial thesis review (V06) | OpenReview / Kotahi + COAR Notify federation + Pāṭala ReviewEvent |
+| research exploration / perspectives (V07) | STORM / Co-STORM + Recogito annotations + Pāṭala graph |
+| benchmark / evaluation (V13) | **Inspect AI** (the runtime) + custom scorers/scanners |
+| human annotation / adjudication (V07/08) | INCEpTION (gold lab) + Recogito (native Workbench UI) |
+| publication / review workflow (V06/08/12) | OpenReview / Kotahi / Janeway / PubPub + Manubot (essays) |
+| identity / credit / economics (V08) | ORCID / ROR / CRediT / RAiD / Crossref review-DOI / Open Collective |
+| many surfaces / education / media / API (V09/12/13) | Pāṭala Next.js + the graph projections + DTS/IIIF/TEI/JATS |
+
+**The takeaway:** the vision looked mammoth because every doc described a product capability — but capabilities do
+NOT imply building the surrounding software. Pāṭala's proprietary layer is only the fine-grained epistemic
+dependency graph that knows *which source supports which interpretation, which licenses which proposition, which
+participates in which argument, what the crux is, who reviewed it, and what downstream conclusions change when a
+judgment changes.*
+
 ## Foundational / strategic (the deep vision, un-numbered)
 
 | Doc | Focus |
@@ -146,10 +191,12 @@ The vision arc (above) is the *product/strategic* view; the checkpoint ladder
 |---|---|
 | `machinelearning/VISION-COMPUTABLE-TRADITION.md` | The computable-scholarly-tradition vision (ORIGINAL/READ/GUIDE/STUDY/CRITICAL projections). |
 | `machinelearning/MLVISION.md` | ML vision (big picture). |
-| `machinelearning/EDUCATION_VISION.md` | The graph-native teaching engine vision. |
 | `machinelearning/PATALA_AS_LIBRARY_ENGINE.md` | Pāṭala as the engine for the `.meta/` Library (4 wings as register-projections). |
 | `machinelearning/_ACTIVE/RETRIEVAL-NEUROSYNTHETIC-VISION.md` | the "semantic microscope" — the neural retrieval + neurosymbolic layer (Stages A–E) + the comprehensive review of BGE-M3/ColBERT/HippoRAG/GraphRAG/DSPy/Kùzu vs current state. |
-| `docs/LEARNING_STRATEGY.md` | The learning/education strategy. |
+| `docs/vision/education/LEARNING_STRATEGY.md` | The learning/education content strategy — research once, structure once, distill repeatedly (knowledge packet as the durable unit). |
+| `docs/vision/education/EDUCATION_VISION.md` | The graph-native teaching engine vision — the graph selects the teaching move; every lesson is a path through the graph. |
+| `docs/vision/education/PATALA-EDUCATION-SYNTHESIS.md` | **Pāṭala Education — cross-lane synthesis** (imported from R2) — the one-line definition, the 4 native education objects (LearningClaim/Skill/Interaction/MasteryEvidence), the interaction compiler, the counterfactual/crux primitive, the tech stack, and the first prototype. The current, most-complete statement of the education vision. |
+| `docs/vision/education/sources/` | Raw imported education design docs (01–05) — the original dialogue exports (educationn/2/main/global + greeek-GlossLM) preserved byte-for-byte. |
 
 ---
 

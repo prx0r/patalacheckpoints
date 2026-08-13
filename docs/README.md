@@ -42,7 +42,7 @@ content, and the site renders it.*
 - The **external-resource register** — `../data/atlas/resources.ts` (types + data): the federation of external sources, surfaced on `/resources` + `GET /api/resources`. Source spec: [`RESOURCES_SEED.md`](RESOURCES_SEED.md).
 
 ### The learning / content strategy
-- [`LEARNING_STRATEGY.md`](LEARNING_STRATEGY.md) — research-once/distill-repeatedly: the ConceptLesson knowledge packet, question-driven pathways, and the derived video/shorts/quiz layer.
+- [`LEARNING_STRATEGY.md`](vision/education/LEARNING_STRATEGY.md) — research-once/distill-repeatedly: the ConceptLesson knowledge packet, question-driven pathways, and the derived video/shorts/quiz layer.
 - [`nextdev2.md`](nextdev2.md) — the forward plan (reader-is-the-product, school pages, C1 engine, scaling the corpus).
 
 ### The corpus & status

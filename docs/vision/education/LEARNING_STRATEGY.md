@@ -198,7 +198,7 @@ the major scholarly interpretations, and where simplification becomes misleading
 
 | Artifact | Where |
 |---|---|
-| This strategy | `docs/LEARNING_STRATEGY.md` |
+| This strategy | `docs/vision/education/LEARNING_STRATEGY.md` |
 | Tantrāloka workbook (the seed content) | `sanskritree/corpus/learning/REFERENCE_TANTRALOKA_WORKBOOK.txt` |
 | The master map | `sanskritree/corpus/learning/REFERENCE_TANTRALOKA_MASTER_MAP.md` |
 | C1s (the scholarly material to draw from) | `sanskritree/translations/06_c1_interpretation/` |

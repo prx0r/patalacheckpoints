@@ -9,7 +9,7 @@ teaching move, and every lesson is a path through the graph, not a paragraph.**
 
 ## 1. What we already have
 
-- **`docs/LEARNING_STRATEGY.md`** — "research once, distill repeatedly": primary text → essay →
+- **`docs/vision/education/LEARNING_STRATEGY.md`** — "research once, distill repeatedly": primary text → essay →
   concept explainer → video → short. The knowledge packet is the durable unit.
 - **`docs/content/modules/`** — school modules (trika, spanda, pratyabhijñā, krama, recognition).
 - **`app/learning/`** — the Learn layer (foundations, timeline, geography, school index).

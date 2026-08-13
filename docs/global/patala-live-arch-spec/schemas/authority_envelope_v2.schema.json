@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pt://schema/authority-envelope/v2",
+  "title": "AuthorityEnvelopeV2",
+  "type": "object",
+  "required": [
+    "origin",
+    "structural_validation",
+    "evidence_status",
+    "review_status",
+    "publication_status"
+  ],
+  "properties": {
+    "origin": {
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "MACHINE",
+            "HUMAN",
+            "INSTITUTION"
+          ]
+        },
+        "actor_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "structural_validation": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "evidence_status": {
+      "enum": [
+        "UNSUPPORTED",
+        "SUPPORTED",
+        "CONFLICT",
+        "UNDERDETERMINED"
+      ]
+    },
+    "review_status": {
+      "enum": [
+        "UNREVIEWED",
+        "SINGLE_REVIEWED",
+        "DOUBLE_REVIEWED",
+        "ADJUDICATED",
+        "SPECIALIST_REVIEWED"
+      ]
+    },
+    "publication_status": {
+      "enum": [
+        "DRAFT",
+        "RELEASED",
+        "SUPERSEDED",
+        "WITHDRAWN"
+      ]
+    },
+    "legacy_state": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

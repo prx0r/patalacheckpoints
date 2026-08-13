@@ -1,6 +1,6 @@
 # Pāṭala Content Modules — Foundation Index
 
-*2026-08-10. The teaching layer, built per `docs/LEARNING_STRATEGY.md` (research once,
+*2026-08-10. The teaching layer, built per `docs/vision/education/LEARNING_STRATEGY.md` (research once,
 distill repeatedly) and `docs/STYLE_GUIDE.md` (house voice). Each module is a
 **ConceptLesson / knowledge packet** for one school or concept, grounded in the on-disk
 scholar material (Ratié, Torella, Bäumer, Biernacki, Dyczkowski). Everything bottoms out

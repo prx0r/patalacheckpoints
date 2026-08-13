@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pt://schema/review-event/v2",
+  "title": "ReviewEventV2",
+  "type": "object",
+  "required": [
+    "event_id",
+    "event_version",
+    "command_id",
+    "actor_ref",
+    "target_ref",
+    "decision",
+    "scope",
+    "created_at",
+    "event_hash"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "event_version": {
+      "const": "2"
+    },
+    "command_id": {
+      "type": "string"
+    },
+    "actor_ref": {
+      "type": "string"
+    },
+    "credential_snapshot": {
+      "type": "object"
+    },
+    "target_ref": {
+      "$ref": "pt://schema/object-ref/v1"
+    },
+    "decision": {
+      "enum": [
+        "ACCEPT",
+        "REVISE",
+        "REJECT",
+        "ABSTAIN"
+      ]
+    },
+    "scope": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "object"
+    },
+    "replacement_ref": {
+      "anyOf": [
+        {
+          "$ref": "pt://schema/object-ref/v1"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "event_hash": {
+      "type": "string"
+    }
+  }
+}

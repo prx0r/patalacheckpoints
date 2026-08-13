@@ -1,0 +1,25 @@
+priority,id,task,area,why,phase
+P0,KERNEL-001,Define shared ObjectRef/ObjectVersionRef,kernel,blocks all,M1
+P0,KERNEL-002,Inventory legacy state enums and exact semantics,kernel,blocks authority migration,M0
+P0,KERNEL-003,Implement AuthorityEnvelopeV2 + legacy adapters,kernel,blocks products,M2
+P0,REVIEW-001,Make one authorized ReviewService command boundary,review,security/authority,M3
+P0,REVIEW-002,Make low-level event append inaccessible to callers,review,security/authority,M3
+P0,REVIEW-003,Pin exact target/replacement versions + hashes,review,reproducibility,M3
+P0,REVIEW-004,Add persistent append-only events + idempotency,review,production,M3
+P0,REVIEW-005,Add optimistic concurrency/version conflict,review,production,M3
+P0,L0-001,Separate surface_iast from nullable lemma_iast,factory,semantic honesty,M4
+P0,L0-002,Create AnalysisWitness with analyzer/version/raw hash,factory,lineage,M4
+P0,L0-003,Replace work promotion-on-any-commit with passage aggregation,factory,correctness,M4
+P0,L0-004,Rename tokenization claims unless real segmentation used,factory,honesty,M4
+P1,BENCH-001,Create fixture adapter around benchmarks/v0,benchmark,evaluation,M5
+P1,BENCH-002,Implement Inspect task/run adapter,benchmark,evaluation,M5
+P1,BENCH-003,One-way reviewed production object → CANDIDATE fixture exporter,benchmark,flywheel,M5
+P1,AUDIT-001,Implement AuditRun + AuditFinding schemas,audit,first product,M6
+P1,AUDIT-002,Implement deterministic provenance/ref/span detectors,audit,first product,M6
+P1,AUDIT-003,Map finding actions to ReviewCommand,audit,closed loop,M6
+P1,VERT-001,Extend ARG-002 review fixture into Audit→Review→Benchmark integration test,integration,core moat test,M6
+P1,AUTH-001,Contributor/Credential + reviewer independence policy,authority,gold/review,M3
+P2,AUDIT-010,Add interpretive detector proposal framework + abstention,audit,v1,M7
+P2,AUDIT-011,Calibrate first detector against reviewed fixtures,audit,v2,M8
+P2,REVIEW-010,Native Argument compiler diagnostics,review product,mega-product,M9
+P3,WORK-001,ResearchQuestion-centered Workbench from observed actions,workbench,later lock-in,M10

@@ -1,0 +1,65 @@
+{
+  "audit_date": "2026-08-13",
+  "repository": "prx0r/patala",
+  "mode": "read-only",
+  "live_files_inspected": [
+    {
+      "branch": "main",
+      "path": "data/corpus/primitives.ts",
+      "finding": "overlapping generic epistemic-state vocabulary"
+    },
+    {
+      "branch": "main",
+      "path": "data/corpus/graph.ts",
+      "finding": "generic graph/annotation substrate with overlapping state semantics"
+    },
+    {
+      "branch": "agent1-argument-layer-a1b",
+      "path": "pipeline/review_engine.py",
+      "finding": "executable correction reducer/review prototype"
+    },
+    {
+      "branch": "agent1-argument-layer-a1b",
+      "path": "pipeline/test_review_engine.py",
+      "sha": "5bdbfa7bec31c957af60c227cb0a09dd1ebfdc9d",
+      "finding": "ARG-002/G2-TC2 vertical + proposal/authorization/simulation tests"
+    },
+    {
+      "branch": "agent1-argument-layer-a1b",
+      "path": "machinelearning/_ACTIVE/CLAIMS.md",
+      "finding": "capability self-audit; automatic argument reconstruction NOT_ESTABLISHED; benchmark partial evidence"
+    },
+    {
+      "branch": "agent1-argument-layer-a1b",
+      "path": "source-evidence/docs/INTEGRATION-SPEC.md",
+      "sha": "f57825bd4b9883dcd2b2ca2b860da01700581d13",
+      "finding": "reuse-first current integration map"
+    },
+    {
+      "branch": "agent1-argument-layer-a1b",
+      "path": "benchmarks/v0/MANIFEST.json",
+      "finding": "evaluation-plane doctrine/gold states"
+    },
+    {
+      "branch": "agent2",
+      "path": "pipeline/raw_l0.py",
+      "finding": "lemma_iast can fall back to surface token"
+    },
+    {
+      "branch": "agent2",
+      "path": "pipeline/auto_raw_l0.py",
+      "finding": "whole-work advancement can occur after any committed passage"
+    },
+    {
+      "branch": "agent2",
+      "path": "pipeline/corpus_state.py",
+      "finding": "workflow-state semantics require reconciliation"
+    },
+    {
+      "branch": "agent2",
+      "path": "pipeline/validate_l0_spec.py",
+      "finding": "validation semantics require alignment with current L0-A/L0-B doctrine"
+    }
+  ],
+  "interpretation_rule": "A file being present or tested is infrastructure evidence only. Scholarly capability status follows the project's own claims/evaluation doctrine."
+}

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pt://schema/audit-finding/v1",
+  "title": "AuditFinding",
+  "type": "object",
+  "required": [
+    "finding_id",
+    "audit_run_ref",
+    "class",
+    "type",
+    "severity",
+    "detector",
+    "claim"
+  ],
+  "properties": {
+    "finding_id": {
+      "type": "string"
+    },
+    "audit_run_ref": {
+      "type": "string"
+    },
+    "class": {
+      "enum": [
+        "DETERMINISTIC",
+        "MODEL_PROPOSED",
+        "CALIBRATED"
+      ]
+    },
+    "type": {
+      "type": "string"
+    },
+    "severity": {
+      "enum": [
+        "INFO",
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "CRITICAL"
+      ]
+    },
+    "source_spans": {
+      "type": "array"
+    },
+    "target_spans": {
+      "type": "array"
+    },
+    "evidence_refs": {
+      "type": "array"
+    },
+    "detector": {
+      "type": "object"
+    },
+    "claim": {
+      "type": "object"
+    },
+    "calibration": {
+      "type": [
+        "object",
+        "null"
+      ]
+    }
+  }
+}

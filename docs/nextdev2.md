@@ -61,7 +61,7 @@ We already hold real content we haven't surfaced:
 ## 3. The concrete next moves (priority order)
 
 ### A. Per-school learning pages (the endgame3 "Learn X" pathway) — HIGHEST
-*Architecture: see `docs/LEARNING_STRATEGY.md` — research once, structure once, distill
+*Architecture: see `docs/vision/education/LEARNING_STRATEGY.md` — research once, structure once, distill
 repeatedly. The durable unit is the ConceptLesson (knowledge packet); video/shorts/quizzes
 are renderings of it, never separately-researched formats.*
 For each school, build `/traditions/{krama,trika,kubjika,kaula,...}` pulling from

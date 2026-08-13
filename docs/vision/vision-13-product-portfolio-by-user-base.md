@@ -14,7 +14,7 @@ floor proves.
 
 | Surface | User | Products | Sources |
 |---|---|---|---|
-| **CONSUMER** | learners, practitioners, general readers | Tantra Hub · reader · atlas graph · learning/courses · media (shorts/video/AI-teacher) | V01/02, V09, `LEARNING_STRATEGY.md`, `EDUCATION_VISION.md` |
+| **CONSUMER** | learners, practitioners, general readers | Tantra Hub · reader · atlas graph · learning/courses · media (shorts/video/AI-teacher) | V01/02, V09, `education/LEARNING_STRATEGY.md`, `education/EDUCATION_VISION.md`, `education/PATALA-EDUCATION-SYNTHESIS.md` |
 | **SCHOLAR** | Sanskritists, philosophers, digital-humanities researchers | **Pāṭala Review** · Scholar Workbench · research compiler · translation QA · benchmark/rating | V06, V07, V08 |
 | **CONTRIBUTOR** | manuscript holders, editors, translators | acquisition pipeline · manuscript upload · translation memory · critical editions | V11, `endgame1.md` |
 | **DEVELOPER** | external agents, researchers building tools | Pāṭala API · MCP (`mcp.patala.org`) · OAuth · BYOA · executable-corrections protocol | V12, `apideas.md`, `hermes-execution.md` |
@@ -142,8 +142,9 @@ every model evaluation generates failure cases. This is harder to copy than the 
 
 17. **Tantra Hub / Reader** (V02) — bibliography, reader, translation-workshop, commentary, media.
 18. **The atlas graph** — the traditions/texts/concepts rendered as a navigable graph (the current homepage).
-19. **Learning / courses** (V09 + `LEARNING_STRATEGY.md`) — knowledge packets → quizzes/courses; the
-    graph-native teaching engine (`EDUCATION_VISION.md`).
+19. **Learning / courses** (V09 + `education/LEARNING_STRATEGY.md`) — knowledge packets → quizzes/courses; the
+    graph-native teaching engine (`education/EDUCATION_VISION.md`). The most complete statement is the
+    `education/PATALA-EDUCATION-SYNTHESIS.md` (imported from R2).
 20. **Media layer** (V09) — the scholarly core rendered as shorts/video/essays/AI-teacher, reproduced
     across traditions (Tantra → Yogic → Vedānta → Greek).
 

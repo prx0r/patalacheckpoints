@@ -1,0 +1,31 @@
+object,canonical_owner,external_or_execution_seam,primary_consumers,rule
+ObjectRef,core.identity,legacy ID adapters,ALL,Stable diachronic ID + exact version pin
+ObjectVersion,core.identity,pipeline persistence,"Review, Audit",Immutable content snapshot
+Work,core.identity,CTS/DTS adapter,"Factory, Hub",Canonical work identity
+Witness,core.identity,IIIF/TEI/GROBID adapters,"Factory, Hub",Source witness identity
+StableSpan,core.identity,Web Annotation adapter,ALL,Resolvable source target
+AnalysisWitness,core.interpretation,Vidyut/Heritage adapters,"Factory, Audit","Analyzer evidence, not authority"
+SourceAssertion,core.evidence,source-evidence adapters,"Audit, Review",Evidence-bearing source claim
+EvidenceUse,core.evidence,CiTO adapter,Review,How evidence is used
+CorroborationEvent,core.evidence,OpenCitations/OpenAlex adapters,Review,Narrow support relation + independence
+PhilologicalProof,core.interpretation,pipeline builders,"Factory, Audit",Inspectable philological evidence
+TranslationDecision,core.interpretation,Audit product,"Factory, Audit",Choice among readings/renderings
+TermSense,core.interpretation,lexical witnesses,"Audit, Review",Historical/contextual sense
+SemanticAlignment,core.interpretation,xAIF export optional,Review,Commensurability before contradiction
+Proposition,core.interpretation,argument adapters,Review,Typed claim with derivation
+Commitment,core.interpretation,annotation UI adapter,Review,Speaker/dialectical stance
+ResearchQuestion,core.argument,Workbench UI,"Review, Workbench",Frame anchor
+DebateFrame,core.argument,xAIF/oAMF adapter,Review,Argument-under-frame
+Inference,core.argument,evaluators,Review,Typed inferential step
+Argument,core.argument,xAIF/oAMF adapter,Review,Structured reasoning
+Defeater,core.argument,evaluators,Review,Counterevidence/attack
+Crux,core.argument,simulation/reducer,Review,Counterfactual decisive dependency
+Contributor,core.authority,ORCID adapter,ALL,Actor identity
+Credential,core.authority,ORCID/ROR/manual,Review,Scoped authority facts
+ReviewEvent,core.authority,pipeline ReviewService,ALL,Immutable authority event
+DependencyEdge,core.dependency,pipeline reducer,ALL,Epistemic dependency
+DerivedState,core.dependency,pipeline reducer only,ALL,Computed effective state
+ImpactReport,core.dependency,pipeline reducer,Review,Explain downstream consequences
+AuditFinding,products.audit,detector adapters,Audit,Product diagnostic; not canonical authority
+BenchmarkFixture,benchmarks,Inspect adapter,Benchmark,Frozen evaluation object
+BenchmarkRun,benchmarks,Inspect EvalLog adapter,Benchmark,Reproducible eval record

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pt://schema/analysis-witness/v1",
+  "title": "AnalysisWitness",
+  "type": "object",
+  "required": [
+    "witness_id",
+    "analyzer",
+    "analyzer_version",
+    "input_ref",
+    "outcome",
+    "raw_output_hash"
+  ],
+  "properties": {
+    "witness_id": {
+      "type": "string"
+    },
+    "analyzer": {
+      "type": "string"
+    },
+    "analyzer_version": {
+      "type": "string"
+    },
+    "input_ref": {
+      "$ref": "pt://schema/object-ref/v1"
+    },
+    "outcome": {
+      "enum": [
+        "SUPPORTED",
+        "AMBIGUOUS",
+        "CONFLICT",
+        "UNANALYZED",
+        "TOOL_ERROR"
+      ]
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "raw_output_hash": {
+      "type": "string"
+    }
+  }
+}
