@@ -1,0 +1,27 @@
+{
+  "checkpoint": "CP2 AUTONOMOUS RAW-L0 v1",
+  "status": "AUTONOMOUSLY_PROVEN",
+  "date": "2026-08-13",
+  "commit": "1a115d8",
+  "work": "kramasadbhava",
+  "n_passages": 10,
+  "model_required_for_commit": false,
+  "gloss_in_commit_path": false,
+  "evidence": {
+    "run1_committed": 9,
+    "run1_failed": 1,
+    "run2_replay_committed": 9,
+    "replay_new": 0,
+    "idempotent": true,
+    "duplicate_objects": 0,
+    "lacuna_source_blocked": "1/1",
+    "source_mutation_hash_differs": true,
+    "wall_s_10_passages": 1.45,
+    "records_committed": 23,
+    "parsed": 14,
+    "ambiguous": 9
+  },
+  "lacuna_failed_verse": "kramasadbhava:v2 (* * * * * * * *(?) — OCR/source, fail-closed)",
+  "doctrine": "RAW-L0 v1 = deterministic philological floor (L0-A). Gloss (L0-B) is optional enrichment, OFF the commit gate; never blocks/delays/invalidates canonical L0.",
+  "next": "CP3 RAW->L2 provenance continuity; then L0-B gloss as separate checkpoint"
+}
