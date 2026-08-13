@@ -1,14 +1,28 @@
 # AGENT 2 — DEV PLAN (canonical, honest state)
 
 *2026-08-13. The single authoritative execution plan for the **corpus compiler + integrity lane**. Reflects
-the honest state after the full autonomous stack was wired. Governed by `machinelearning/_ACTIVE/AGENTS-DOCTRINE.md` +
+the honest state after the controller shells were built. Governed by `machinelearning/_ACTIVE/AGENTS-DOCTRINE.md` +
 `CLAIMS.md` + `handover/CHECKPOINTS.md` + `handover/agent-2-integration/CHECKPOINTS-INTEGRATION.md`. Read
 those first.*
 
-> **THE NEW NORTHSTAR (2026-08-13):** Agent 1 solved the *algorithms* of the higher layers (theme
-> clustering, argument, essay, semantic alignment). Agent 2's job is now to wrap each layer in the
-> **autonomous controller flow** — producing deterministic, provenance-bound, layer-specific-validated
-> objects through the registry — until the whole canonical stack is a **single autonomous pipeline**.
+> **THE NORTHSTAR (2026-08-13, two-plane):** Agent 1 solved the *algorithms* of the higher layers (theme
+> clustering, argument, essay, semantic alignment). Agent 2 wraps each layer in the **autonomous controller
+> flow** — producing deterministic, provenance-bound, layer-specific-validated objects — until the whole
+> canonical stack is a **single autonomous compiler** with a **separate verification plane**:
+> ```
+> PRODUCTION COMPILER                          VERIFICATION PLANE
+> SOURCE→T1→L0→ARGMAP→L2→L200→C1→              Inspect AI
+>   THEME→ESSAY→EDUCATION                       ├─ LayerContract (deterministic+semantic+metamorphic)
+>        │ every object                         ├─ external ML witnesses (RefChecker/AlignScore/GlossLM)
+>        ▼                                      ├─ metamorphic tests (from our historical failures)
+>   immutable registry                          └─ calibrated abstention + certificates
+> ```
+> **External ML methods TEST Pāṭala; they do not get to define Pāṭala truth.** The verification plane lives
+> in `evals/` (research/eval env), NOT in the translation runtime. Full design:
+> **`docs/ml/LAYER-TOOLS-INTEGRATION-NORTHSTAR.md`** (two-plane + LayerContract + PATALA-EVALS build order),
+> grounded in `docs/ml/MACHINE-PROOF-CONTRACTS.md` (per-layer contracts + G0–G5 + the 5-gate checkpoint
+> ladder) + `docs/ml/LAYER-TOOLS-SURVEY.md` (the tool survey: IGT/GlossLM, ByT5-Sanskrit, RefChecker,
+> FActScore, AlignScore, metamorphic, conformal, Inspect).
 > **THE CANONICAL LAYER STACK IS LOCKED: see `handover/agent-2-integration/CANONICAL-LAYER-STACK.md`**
 > (verified against the actual IPVV files — do not reorder/rename without updating that file). The order:
 > ```
@@ -21,9 +35,9 @@ those first.*
 > by the argument map); `L200` = the audit of how L2 was derived; `C1` = commentary.
 > **Hard rule: work LAYER BY LAYER** — each layer according to its canonical spec + source files
 > (`translations/_stack/ipvv/specs/*`, the L200 8-section spec, the C1-SPEC, the argument maps).
-> Perfect T1 → commit → L0 → commit → L2 → commit → L200 → commit → C1 → commit → THEME → ESSAY →
-> EDUCATION. Do NOT skip ahead; do NOT build a layer whose upstream is not committed.
-> **CP1 = a machine-learning-verified L0 (or T1/L1/R1 reading)** — the foundation everything below builds on.
+> **CP1 = SOURCE → T1** (the transliteral word-gloss producer + its semantic contract) — the first
+> genuinely-difficult AI layer and the current frontier. Do NOT skip ahead; do NOT build a layer whose
+> upstream is not committed.
 
 > **The governing rule:** *Nothing is "real" because code exists. It becomes real only when independent gold
 > + blind prediction + metric + human adjudication show it does what its name claims.* A tested schema ≠ a
@@ -35,16 +49,19 @@ those first.*
 
 ## 0. THE HONEST STATE (what's real vs. hollow — from CLAIMS.md)
 
-> **Where we are (2026-08-13):** the **full autonomous stack is WIRED** — every layer
-> (L0/L1/L2/L200/C1/THEME/ESSAY/EDUCATION) has a controller handler producing its canonical file shape +
-> a layer-specific deterministic validator. The frontier is **CP1 = a machine-learning-verified L0/T1/L1/R1
-> reading** — proving semantic equivalence against the IPVV exemplar gold (the ML harness), which then
-> becomes the reusable substrate for every downstream layer's own proof.
+> **Where we are (2026-08-13):** the **controller shells exist for several downstream layers**, but the
+> canonical T1 worker is the current **first unsatisfied layer contract** (per `docs/ml/MACHINE-PROOF-CONTRACTS.md`
+> §20). L0/L1/L2/L200/C1 have controller handlers + layer-specific validators (L0→…→C1 mechanical vertical
+> PASS). THEME/ESSAY/EDUCATION are wired (structural validators). **T1 (the transliteral word-gloss producer)
+> is NOT built** — and T1 is where the semantic/ML work belongs (the gloss, false-certainty, technical
+> senses, abstention). The frontier is **CP1 = SOURCE → T1**: build the T1 producer, then its semantic
+> contract (IGT/GlossLM + ByT5-Sanskrit + metamorphic mutations + Inspect, per `docs/ml/LAYER-TOOLS-SURVEY.md`).
 
 | Asset | Status | Real? |
 |---|---|---|
-| **Full autonomous stack wired** (`autonomy.py`) | L0/L1/L2/L200/C1/THEME/ESSAY/EDUCATION all have controller handlers + layer-specific validators; deterministic vertical proof L0→…→C1 PASS | ✅ REAL (build 2026-08-13) |
-| **L0 worker** (`l0_worker.py` + `raw_l0.py`) | deterministic RAW-L0 (MODE_B) schema-conformant + P0-lossless; validator accepts real IPVV exemplars | ✅ REAL |
+| **Controller shells** (`autonomy.py`) | L0/L1/L2/L200/C1 have real handlers + layer-specific validators; THEME/ESSAY/EDUCATION wired (structural); deterministic vertical proof L0→…→C1 PASS | ✅ REAL (build 2026-08-13) |
+| **T1 worker (transliteral word-gloss)** | **NOT BUILT** — the first unsatisfied layer contract. This is CP1. | ❌ TO BUILD |
+| **L0 worker** (`l0_worker.py` + `raw_l0.py`) | deterministic RAW-L0 (MODE_B) schema-conformant + P0-lossless; validator accepts real IPVV exemplars | ✅ REAL (but see note: L0 = deterministic round-trip of T1 per canonical stack, not the ML layer) |
 | **L1/L2 workers** (`l1_l2_worker.py`, `l1_l2_translate.py`) | provenance continuity + semantic-fidelity validators; model path produces fluent prose | ✅ REAL |
 | **L200 worker** (`l200_worker.py`) | constrained compiler (candidate→classifier, IGNORE default); 8-section audit; derivation map binds argmap+L0+source | ✅ REAL |
 | **C1 worker** (`c1_worker.py`) | passage-local commentary per C1-SPEC; C1-SPEC §17 validator | ✅ REAL |
@@ -69,19 +86,22 @@ for the whole stack.
 files.** The algorithms of the higher layers already exist (Agent 1); we wrap each in the autonomous flow.
 
 ```
-0. ✅ STACK WIRED (2026-08-13): L0/L1/L2/L200/C1/THEME/ESSAY/EDUCATION all have controller handlers
-   + layer-specific validators; test_theme_essay_education.py + test_workers.py ALL PASS.
-1. ▶ CP1 = ML-VERIFIED L0/T1/L1/R1 READING  (the foundation proof)
-   run the semantic-equivalence harness vs the IPVV exemplar gold:
-   prove our RAW-L0 is (a) schema-isomorphic, (b) validator-equivalent, (c) P0-lossless, (d) semantically
-   equivalent to the exemplar gloss (the ML part). Emit the mechanical proof. This becomes the reusable
-   eval substrate for every downstream layer's proof.
-2. L1/L2 verified against a real passage (provenance + semantic-fidelity + live model path).
-3. L200 constrained compiler measured against benchmarks/l200/dev.jsonl (CP5 DEV gate).
-4. C1 live-model comparison vs the c1/read exemplars.
-5. THEME/ESSAY/EDUCATION produced autonomously on a real corpus subset; each layer's validator gates.
-6. FULL END-TO-END autonomous vertical proof: raw Sanskrit → SOURCE → L0 → L1 → L2 → L200 → C1 →
-   THEME → ESSAY → EDUCATION, all through the controller, fail-closed, idempotent, provenance-bound.
+0. ✅ CONTROLLER SHELLS (2026-08-13): L0/L1/L2/L200/C1 have real handlers + layer-specific validators;
+   THEME/ESSAY/EDUCATION wired (structural); test_theme_essay_education.py + test_workers.py ALL PASS.
+1. ▶ CP1 = SOURCE → T1  (the current frontier — the first unsatisfied layer contract)
+   Build the T1 transliteral-word-gloss producer; run its semantic contract:
+   IGT/GlossLM + ByT5-Sanskrit + metamorphic mutations + Inspect (per docs/ml/LAYER-TOOLS-SURVEY.md);
+   measure coverage / segmentation / lemma / gloss-adequacy / technical-sense / false-certainty /
+   abstention against the IPVV T1 gold. Emit the certificate. (docs/ml/MACHINE-PROOF-CONTRACTS.md §5-6.)
+2. CP2 = T1 → deterministic L0 round-trip/isomorphism proof (L0 = lossless encode of T1; no ML).
+3. CP3 = argument map (SOURCE + T1/L0 → structural + semantic benchmark).
+4. CP4 = L2 (coverage + licensing + adversarial fidelity).
+5. CP5 = L200 constrained compiler measured against benchmarks/l200/dev.jsonl (DEV gate).
+6. CP6 = C1 passage-local commentary benchmark.
+7. CP7 = THEME evidence-backed benchmark.
+8. CP8 = ESSAY SentenceEvidenceAudit + adversarial faithfulness.
+9. CP9 = EDUCATION faithful pedagogic compression.
+10. CP10 = full factory on a fresh unseen work, end-to-end.
 ```
 
 ### The factory certificate (the threshold before "set it loose")

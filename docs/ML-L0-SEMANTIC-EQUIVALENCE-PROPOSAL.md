@@ -5,6 +5,19 @@
 the benchmark it improves and the baseline it must beat). This proposal is written so an external agent
 with web access can validate the method choices and add current best-practice citations.*
 
+> **⚠️ SUPERSEDED FRAMING (corrected 2026-08-13, per `docs/ml/MACHINE-PROOF-CONTRACTS.md` §3 + §20):**
+> this proposal was written under the **MODE_B RAW→L0** conception (raw Sanskrit creates the gloss).
+> The **locked canonical stack** (`handover/agent-2-integration/CANONICAL-LAYER-STACK.md`) says instead:
+> **T1 creates the gloss (the transliteral word-gloss); L0 structurally encodes T1** (`t1_extract.py → l0`).
+> Therefore **most of the semantic-equivalence work described here belongs on T1, not L0.** L0 becomes
+> a **deterministic round-trip contract** (T1→L0→T1 lossless), not an ML task. The correct home for the
+> gloss-semantics / false-certainty / technical-sense / abstention benchmark is
+> **`docs/ML-VERIFIABLE-LAYER-CONTRACTS.md` §2 (T1)** + the T1-eval scaffold in `docs/ml/LAYER-TOOLS-SURVEY.md`
+> (IGT/GlossLM + ByT5-Sanskrit + metamorphic mutations + Inspect). Keep this doc for the historical
+> MODE_B→T1 reconciliation (raw works like kramasadbhava still need a T1 producer), but do NOT build a
+> separate L0 semantic scorer — that would duplicate/confuse authority (machineproof §7: "Do not run
+> another semantic model over L0 and pretend this independently verifies T1").
+
 ---
 
 ## 0. TL;DR (one paragraph)
