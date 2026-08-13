@@ -34,12 +34,27 @@ sys.path.insert(0, "/root/projects/patala/pipeline")
 import object_registry as R
 import factory_batch as FB
 import factory_status as FS
+from translation_targets import priority as _target_priority, priority_label
 
 # canonical layer order + the upstream each layer depends on — DERIVED from the canonical DAG
 # manifest (contracts/CANONICAL-DAG.yaml) via object_registry.PREREQS. Do NOT hardcode an independent
 # UPSTREAM map here (that was the A2-ARCH-HARDEN bug — three competing DAG definitions).
 LAYER_ORDER = ["T1", "ARGMAP", "L0", "L2", "L200", "C1"]
 MODEL_LAYERS = {"T1", "ARGMAP", "L2", "L200", "C1"}   # L0 is deterministic (free-draining)
+
+
+def work_priority(work_id: str) -> int:
+    """Queue priority of a work (lower = higher). Unknown works = 100 (last)."""
+    return _target_priority(work_id)
+
+
+def _rank_works(by_work: dict) -> list[str]:
+    """Order works by target priority (lower value = higher priority, i.e. next-best target).
+
+    Unknown works (not in the translation-target registry) sort to the end (priority 100). Within a
+    priority band the round-robin spread below prevents one work from monopolizing the model budget.
+    """
+    return sorted(by_work.keys(), key=lambda w: (work_priority(w), w))
 
 
 def _registered_works() -> list[str]:
@@ -137,14 +152,15 @@ def scheduler_pass(works: list[str], layers: list[str], per_layer: int = 2,
     # deterministic jobs are free (A2-13b)
     deterministic = [j for j in jobs if j["layer"] not in MODEL_LAYERS]
     model = [j for j in jobs if j["layer"] in MODEL_LAYERS]
-    # model ranking: round-robin across works so one work can't monopolize; prefer ARGMAP/T1 (unlock more)
+    # model ranking: round-robin across works (in TARGET-PRIORITY order, lower priority first) so the
+    # next-best targets get budget first while no single work monopolizes. Prefer ARGMAP/T1 (unlock more).
     from collections import defaultdict
     by_work = defaultdict(list)
     for j in model:
         by_work[j["object_id"].split(":")[0]].append(j)
     ranked_model = []
     widx = 0
-    work_names = sorted(by_work.keys())
+    work_names = _rank_works(by_work)
     while by_work:
         if not work_names:
             break
@@ -154,7 +170,7 @@ def scheduler_pass(works: list[str], layers: list[str], per_layer: int = 2,
             widx += 1
         elif w in by_work and not by_work[w]:
             del by_work[w]
-            work_names = sorted(by_work.keys())
+            work_names = _rank_works(by_work)
             widx = 0
         else:
             widx += 1
@@ -196,6 +212,29 @@ def scheduler_pass(works: list[str], layers: list[str], per_layer: int = 2,
             "works": len(works)}
 
 
+def queue_preview(works: list[str], layers: list[str]) -> dict:
+    """Show the prioritized next-best-target ordering (read-only; no production).
+
+    Returns the eligible model jobs ordered as the scheduler will spend budget on them, grouped with
+    their work's priority tier. Use to confirm the factory picks the right targets first."""
+    jobs = _eligible_jobs(works, layers)
+    model = [j for j in jobs if j["layer"] in MODEL_LAYERS]
+    from collections import defaultdict
+    by_work = defaultdict(list)
+    for j in model:
+        by_work[j["object_id"].split(":")[0]].append(j)
+    order = _rank_works(by_work)
+    grouped = []
+    for w in order:
+        grouped.append({
+            "work": w,
+            "priority": work_priority(w),
+            "tier": priority_label(w),
+            "jobs": sorted(by_work[w], key=lambda j: LAYER_ORDER.index(j["layer"])),
+        })
+    return {"model_jobs": len(model), "works_ordered": grouped}
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--max-works", type=int, default=0, help="0=all registered works")
@@ -205,6 +244,8 @@ def main() -> int:
     ap.add_argument("--max-model-calls", type=int, default=6)
     ap.add_argument("--throttle", type=float, default=0.0)
     ap.add_argument("--retry", action="store_true", help="retry durable failures first")
+    ap.add_argument("--queue", action="store_true",
+                    help="show the prioritized next-best-target ordering (read-only, no production)")
     a = ap.parse_args()
     layers = [l.strip() for l in a.layers.split(",") if l.strip()]
 
@@ -217,6 +258,17 @@ def main() -> int:
     works = [w.strip() for w in a.works.split(",") if w.strip()] if a.works else _registered_works()
     if a.max_works:
         works = works[:a.max_works]
+
+    if a.queue:
+        pv = queue_preview(works, layers)
+        print(f"PRIORITIZED QUEUE: {pv['model_jobs']} eligible model jobs across "
+              f"{len(pv['works_ordered'])} works", flush=True)
+        for w in pv["works_ordered"]:
+            layers_avail = ",".join(sorted({j["layer"] for j in w["jobs"]}))
+            print(f"  p{w['priority']:>3} [{w['tier']:<28}] {w['work']:<40} -> {layers_avail}",
+                  flush=True)
+        return 0
+
     print(f"scheduler DAG pass: works={len(works)} layers={layers} "
           f"budget={a.max_model_calls} throttle={a.throttle}", flush=True)
     r = scheduler_pass(works, layers, per_layer=a.per_layer,

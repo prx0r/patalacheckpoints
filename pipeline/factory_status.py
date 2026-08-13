@@ -57,13 +57,14 @@ def work_status(work_id: str) -> dict:
     retryable = _retryable_ids()
     counts = {}
     for L in LAYER_ORDER:
-        cur = [oid for oid, vs in R._load(L)["objects"].items()
+        objects = R._load(L)["objects"]
+        cur = [oid for oid, vs in objects.items()
                if oid.startswith(work_id) and not vs[-1].get("superseded")]
-        counts[L] = {"current": len(cur),
-                     "stale": sum(1 for vs in R._load(L)["objects"].values()
-                                  for v in vs if v.get("superseded")),
-                     "total_versions": sum(len(vs) for vs in R._load(L)["objects"].values()
-                                           if any(oid.startswith(work_id) for oid in []) or True)}
+        stale = sum(1 for oid, vs in objects.items() if oid.startswith(work_id)
+                    for v in vs if v.get("superseded"))
+        counts[L] = {"current": len(cur), "stale": stale,
+                     "total_versions": sum(len(vs) for oid, vs in objects.items()
+                                           if oid.startswith(work_id))}
     # denominator: for SOURCE use current SOURCE objects; downstream = min(prev_current, this layer)
     n_source = counts["SOURCE"]["current"]
     view = {"work": work_id, "layers": {}}

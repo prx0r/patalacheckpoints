@@ -36,8 +36,10 @@ import object_registry as R
 import factory_status as FS
 
 LAYERS = ["T1", "ARGMAP", "L0", "L2", "L200", "C1"]
-UPSTREAM = {"T1": "SOURCE", "ARGMAP": "T1", "L0": "T1",
-            "L2": "ARGMAP", "L200": "L2", "C1": "L200"}
+# Upstream per layer derived from the canonical DAG manifest (object_registry.PREREQS),
+# NOT an independent hardcoded copy. For multi-parent layers (e.g. L2 <- {L0, ARGMAP}) we use the
+# first required layer as the primary upstream for the hash/bad-parent integrity checks.
+UPSTREAM = {layer: R.PREREQS[layer][0] for layer in LAYERS if R.PREREQS.get(layer)}
 
 
 def _duplicates() -> list[str]:

@@ -336,24 +336,33 @@ def main() -> int:
         print(f"ARGMAP: {len(r['committed'])} committed, {len(r['rejected'])} rejected, "
               f"{len(r.get('retryable',[]))} retryable", flush=True)
 
-    # L0: consume committed T1 (or fall back to source verses via the L0 handler)
+    # L0: consume committed T1 (DAG: L0 requires T1). If no T1 is committed, fail-closed and
+    # skip — never fall back to raw SOURCE verses, or L0 commits without a T1 parent
+    # (that was the source of the 773 bad-parent-hash integrity violations).
     if "L0" in layers:
         t1_ids = [oid for oid, vs in R._load("T1")["objects"].items()
                   if not vs[-1].get("superseded") and oid.startswith(a.work)]
         l0_inputs = [{"object_id": o, "input_hash": R.current("T1", o)["input_hash"],
                       "verse": R.current("T1", o)["payload"]["t1"]["source_text"]}
                      for o in t1_ids[:a.count]]
-        r = _produce_layer("L0", l0_inputs or srcs)
-        print(f"L0: {len(r['committed'])} committed, {len(r['rejected'])} rejected", flush=True)
+        if not l0_inputs:
+            print("L0: skipped — no committed T1 upstream (L0 requires T1; fail-closed)", flush=True)
+        else:
+            r = _produce_layer("L0", l0_inputs)
+            print(f"L0: {len(r['committed'])} committed, {len(r['rejected'])} rejected", flush=True)
 
-    # L2: consume committed L0 via the L1L2/L2 workers
+    # L2: consume committed L0 via the L1L2/L2 workers (DAG: L2 requires L0). Fail-closed on
+    # missing L0 — never fall back to raw SOURCE verses.
     if "L2" in layers:
         l0_ids = [oid for oid, vs in R._load("L0")["objects"].items()
                   if not vs[-1].get("superseded") and oid.startswith(a.work)][:a.count]
         l2_inputs = [{"object_id": o, "input_hash": R.current("L0", o)["input_hash"]}
                      for o in l0_ids]
-        r = _produce_layer("L2", l2_inputs or srcs)
-        print(f"L2: {len(r['committed'])} committed, {len(r['rejected'])} rejected", flush=True)
+        if not l2_inputs:
+            print("L2: skipped — no committed L0 upstream (L2 requires L0; fail-closed)", flush=True)
+        else:
+            r = _produce_layer("L2", l2_inputs)
+            print(f"L2: {len(r['committed'])} committed, {len(r['rejected'])} rejected", flush=True)
 
     # L200: consume committed L2
     if "L200" in layers:

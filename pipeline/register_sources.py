@@ -62,12 +62,21 @@ def register_work(wid: str, dry_run: bool = False) -> int:
         return len(verses)
     # load existing committed SOURCE object_ids ONCE (avoid a full registry read per verse)
     existing = set(R._load("SOURCE")["objects"].keys())
+    # content-hash index of ALL committed SOURCE input_hashes, so the same verse text is never
+    # re-registered under a different (e.g. typo'd/underscore-vs-plain) work id (AGENTS.md: dedup by
+    # content, not name). A verse whose content hash already exists is skipped regardless of name.
+    all_source_hashes = set()
+    for oid, vs in R._load("SOURCE")["objects"].items():
+        for v in vs:
+            all_source_hashes.add(v.get("input_hash", ""))
     entries = []
     for i, v in enumerate(verses):
         oid = f"{wid}:v{i+1}"
         if oid in existing:
             continue
         h = hashlib.sha256(v.encode("utf-8")).hexdigest()
+        if h in all_source_hashes:
+            continue  # content already committed under some work id — skip (prevents duplicate intake)
         entries.append({"object_id": oid, "input_hash": h,
                         "payload": {"verse": v, "source_text": v}})
     R.commit_batch("SOURCE", entries, created_by="register-sources-intake")
