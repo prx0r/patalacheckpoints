@@ -15,3 +15,6 @@ machinelearning/research/.venv/
 
 # Inspect AI eval logs (regenerated on each run; don't commit)
 logs/
+
+# Atlas dev virtualenv + local env
+.venv-atlas/
