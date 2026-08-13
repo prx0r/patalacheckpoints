@@ -92,5 +92,18 @@ check("layer is honest (no reviewed ceiling)",
       all(x["epistemic_ceiling"] in ("MACHINE_PROPOSED", "ENGINEERING_VALIDATED")
           for x in res["propositions"]))
 
+print("\n== G3A hard rule (devpath13 P2): argmap route gated on ARGMAP NAT ==")
+# with NAT not verified / failed -> argmap route NOT_ELIGIBLE (no downstream propositions)
+if argmap_row:
+    res_none = build_proposition_layer([], argmap_row, None, argmap_nat_ok=None)
+    res_fail = build_proposition_layer([], argmap_row, None, argmap_nat_ok=False)
+    res_ok = build_proposition_layer([], argmap_row, None, argmap_nat_ok=True)
+    check("argmap route NOT_ELIGIBLE when NAT not run", res_none["counts"]["argmap"] == 0)
+    check("argmap route NOT_ELIGIBLE when NAT failed (load-bearing failure)",
+          res_fail["counts"]["argmap"] == 0)
+    check("argmap route ELIGIBLE only when NAT passed", res_ok["counts"]["argmap"] >= 1)
+    check("g3a rule recorded", "NOT_ELIGIBLE" in res_fail["g3a"]["note"]
+          or res_fail["g3a"]["argmap_route_eligible"] is False)
+
 print("\n" + ("RESULT: FAIL" if failures else "RESULT: PASS (derivational Proposition layer works)"))
 sys.exit(1 if failures else 0)

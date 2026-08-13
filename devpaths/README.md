@@ -86,6 +86,11 @@ devpath13 ──► A1-CONTINUE-v2: QUALIFY THE SYSTEM, DO NOT EXPAND THE ONTOLO
               semantic-inflation findings (publication not rights-aware [SEVERE], factory keyed on
               work-identity not edition, single-ladder vocab across heterogeneous dims). Fixed _gate
               to be rights-aware + dimension-consistent; P1 regression tests pass. → devpath13-p1-atlas-audit.md
+
+  P2 real ARGMAP G3A  STATUS: ✅ CLOSED (2026-08-13) — ARGMAP NAT verifier runs on the real committed
+              factory map (kramasadbhava:v1, PASS) + 51 real IPVV exemplars (shape 1.0, mutation recall
+              1.0). Added G3A hard rule: build_proposition_layer gated on argmap_nat_ok — load-bearing
+              ARGMAP failure => proposition production NOT_ELIGIBLE. → devpath13-p2-argmap-g3a.md
 ```
 
 ---

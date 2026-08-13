@@ -214,17 +214,26 @@ def load_gold_propositions(gold_builder, gold_id: str, work_id: str) -> list[Pro
 
 
 # ── the layer: emit a full proposition corpus as DerivedScholarlyObjects ──────
-def build_proposition_layer(gold_builders=None, argmap=None, assertions=None) -> dict:
+def build_proposition_layer(gold_builders=None, argmap=None, assertions=None,
+                            argmap_nat_ok: bool | None = None) -> dict:
     """Assemble the proposition layer from all real committed sources.
 
+    G3A hard rule (devpath13 P2 / devpath3): propositions may be derived from an ARGMAP ONLY if that
+    ARGMAP passed Agent 1 ARGMAP NAT. A load-bearing ARGMAP failure makes downstream proposition
+    production NOT_ELIGIBLE. `argmap_nat_ok` is the Agent-1 NAT verdict (None => not yet verified =>
+    the argmap route is NOT eligible). Gold/assertion routes are independent of ARGMAP NAT.
+
     Returns {propositions: [...DerivedScholarlyObject.emit()...],
-             counts: {gold, argmap, assertions}, ceiling_honesty: str}.
+             counts: {gold, argmap, assertions}, ceiling_honesty: str, g3a: {...}}.
     """
     props: list[Proposition] = []
     gold_builders = gold_builders or []
     for builder, gid, wid in gold_builders:
         props.extend(load_gold_propositions(builder, gid, wid))
-    if argmap:
+
+    # G3A gate: derive from ARGMAP only if it passed NAT (or NAT not yet run -> not eligible)
+    argmap_route = argmap is not None and argmap_nat_ok is True
+    if argmap_route:
         # a registry row is {layer, object_id, payload:{argument_map,...}}; pass the argument_map
         argmap_payload = argmap.get("payload", {}) if isinstance(argmap.get("payload"), dict) else argmap
         am_for_props = argmap_payload.get("argument_map", argmap_payload)
@@ -242,8 +251,14 @@ def build_proposition_layer(gold_builders=None, argmap=None, assertions=None) ->
                    "argmap": sum(1 for _ in from_argmap(
                        (argmap.get("payload", {}).get("argument_map")
                         if isinstance(argmap.get("payload"), dict) else argmap),
-                       argmap.get("object_id", "argmap"))) if argmap else 0,
+                       argmap.get("object_id", "argmap"))) if argmap_route else 0,
                    "assertions": len(assertions or [])},
+        "g3a": {"argmap_nat_ok": argmap_nat_ok,
+                "argmap_route_eligible": bool(argmap_route),
+                "rule": "load-bearing ARGMAP failure => proposition production NOT_ELIGIBLE",
+                "note": (None if argmap is None
+                         else ("eligible" if argmap_route else
+                               "NOT_ELIGIBLE: ARGMAP not verified by Agent 1 ARGMAP NAT"))},
         "ceiling_honesty": "every proposition is MACHINE_PROPOSED/ENGINEERING_VALIDATED; "
                            "review axis is NOT_REVIEWED (only an H witness raises it)",
     }
@@ -279,8 +294,9 @@ if __name__ == "__main__":
                 if line:
                     assertions.append(json.loads(line))
 
-    res = build_proposition_layer(builders, argmap, assertions)
+    res = build_proposition_layer(builders, argmap, assertions, argmap_nat_ok=None)
     print(f"proposition layer: {len(res['propositions'])} propositions "
           f"({json.dumps(res['counts'])})")
+    print(f"g3a: {json.dumps(res['g3a'])}")
     for p in res["propositions"][:3]:
         print(f"  {p['proposition_id']:20} {p['commitment']:36} {p['explicitness']:14} {p['epistemic_ceiling']}")
