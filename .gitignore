@@ -22,3 +22,6 @@ logs/
 # local secrets (R2/Cloudflare credentials — NEVER commit)
 .env.local
 .r2-env
+apps/web/dist/
+apps/web/.astro/
+apps/web/src/env.d.ts
