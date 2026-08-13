@@ -15,11 +15,18 @@ Read the linked docs; trust THIS for "what is true right now."*
 - **Era B (Corpus Compiler): DONE** — DAG scheduler, rate limiting, failure/retry queue, dashboard,
   bulk certificate, unified catalog.
 - **Era C (Rebuild Engine): STARTED** — supersession propagation + targeted regeneration.
-- **A2-ARCH-HARDEN: JUST DONE** — one canonical DAG manifest (`contracts/CANONICAL-DAG.yaml`),
+- **A2-ARCH-HARDEN: DONE** — one canonical DAG manifest (`contracts/CANONICAL-DAG.yaml`),
   honest `VERSIONED_REGISTRY`, append-only hash-chained ObjectEvent ledger.
-- **Live systems RUNNING:** live RAW→EN runner (pid `362890`) + factory loop (pid `647686`),
-  watchdog-protected. **19/19 tests pass.**
-- **Reference:** `docs/FACTORY.md` · `handover/agent-2-integration/HANDOVER-2026-08-13-LATE-SESSION.md`.
+- **Integrity + queue (2026-08-13):** removed the L0/L2-from-SOURCE dependency fallback (the 773
+  bad-parent-hash source) — fail-closed per the DAG; scheduler now ranks by **translation-target
+  priority** (next-best-target ordering); intake dedups by content hash.
+- **Throughput (2026-08-13):** `t1_worker` batched (one call per batch + per-verse stream log) with a
+  new persistent-session streaming path (`t1_session.py`, Hermes `--resume` retains context across
+  calls). Session path EXPERIMENTAL (not yet proven live); batched is the default.
+- **Live systems RUNNING:** live RAW→EN runner + factory loop, watchdog-protected. All deterministic
+  factory suites + T1 tests PASS.
+- **Reference:** `docs/FACTORY.md` ·
+  `handover/agent-2-integration/BUILD-RECORD-2026-08-13-FACTORY-THROUGHPUT.md`.
 
 ### Agent 1 — Verification / Evals / Scholar Evidence (frozen ML vertical, forward = S0)
 - Per GLOBAL-STATE-2026-08-13 §CURRENT DIRECTION: Agent 1's forward work is the **scholar-corpus
@@ -43,6 +50,20 @@ Scholars = reviewers. Pāṭala graph = canonical repository.
 ---
 
 ## 3. WHAT'S NEXT (in priority order — for the next agent)
+
+### Priority 0 — The Integration/Identity layer (the strategic north star) — **DO**
+The global strategy is now `docs/global/globalpartnerships.md`: **Pāṭala = the integration/identity layer
+("OpenAlex for Sanskrit"), not another corpus.** This reframes the S0 / scholar-evidence work as the
+identity/crosswalk foundation:
+- Build the identity/crosswalk objects (Work/Person/Institution/Collection/Manuscript/Edition/
+  TextInstance/Passage/Token/LexicalSense + external `identifiers` crosswalk) — **never an external DB
+  as primary key** (`PATA-W-…` survives any external change).
+- Integrate the adapters first (11): Wikidata · OpenAlex · Crossref · VIAF · ROR · C-SALT · GRETIL ·
+  SARIT · PANDiT · NGMCP · IIIF (one IIIF adapter → many libraries).
+- Every imported fact is a versioned, citable **Assertion** with `source/confidence/status` (never
+  overwrite fields) — this is the catalogue-scholarship generalization of the review engine.
+- **See:** `docs/global/globalpartnerships.md` · `docs/positioningpartners.md` ·
+  `docs/vision/vision-10-market-entry-and-partnerships.md`.
 
 ### Priority 1 — The intake step (extend the backlog 73 → ~102 works)
 The factory runs on 73 on-disk RAW_SANSKRIT works. **sivaqueue3/4 add ~29 more targets** (compiled to
@@ -95,10 +116,15 @@ objects) — it is NOT Agent 3. Agent 3 is a separate, unbuilt orchestration lay
 |---|---|
 | Canonical DAG (single source of truth) | `contracts/CANONICAL-DAG.yaml` |
 | Factory reference | `docs/FACTORY.md` |
+| Factory throughput/integrity build record | `handover/agent-2-integration/BUILD-RECORD-2026-08-13-FACTORY-THROUGHPUT.md` |
+| T1 persistent-session streaming | `pipeline/t1_session.py` (+ T1 stream log `data/corpus/downloads/t1-stream.jsonl`) |
 | Agent-2 lane index (READ FIRST) | `handover/agent-2-integration/README.md` |
 | Emergency handover | `handover/agent-2-integration/HANDOVER-2026-08-13-LATE-SESSION.md` |
 | Global architecture | `docs/global/PATALA-GLOBAL-ARCHITECTURE.md` |
 | Global state (stale on A2 side — see §3 here) | `docs/global/GLOBAL-STATE-2026-08-13.md` |
+| Global partnerships / integration-layer strategy | `docs/global/globalpartnerships.md` |
+| Partnership competitive landscape + pitches | `docs/positioningpartners.md` |
+| Market entry + go-to-market | `docs/vision/vision-10-market-entry-and-partnerships.md` |
 | Agent-3 case + peer review | `docs/agent3potential.md` |
 | Hermes orchestration review | `docs/HERMES-ORCHESTRATION-REVIEW.md` |
 | Agent-3 factory-coordinator design | `handover/hermes/HERMES-AGENT3-FACTORY-COORDINATOR.md` |
@@ -109,7 +135,8 @@ objects) — it is NOT Agent 3. Agent 3 is a separate, unbuilt orchestration lay
 ## 6. THE ONE-SENTENCE CARRY-FORWARD
 
 **The autonomous factory is built, running, hardened (canonical DAG + event ledger), and 19/19 tested;
-the next moves are (1) acquire+register the sivaqueue3/4 sources to grow the backlog, (2) build the
-`patala_*` MCP verbs, (3) wire Agent 3 (Hermes kanban coordinator) above the factory, (4) finish Era C
-(ImpactReport + ReviewBundle) — with the global architecture as the north star and the factory as the
-compiler/CI system underneath.**
+the next moves are (0) build the Integration/Identity layer per `docs/global/globalpartnerships.md` (the
+"OpenAlex-for-Sanskrit" crosswalk + 11 adapters + versioned Assertions), (1) acquire+register the
+sivaqueue3/4 sources to grow the backlog, (2) build the `patala_*` MCP verbs, (3) wire Agent 3 (Hermes
+kanban coordinator) above the factory, (4) finish Era C (ImpactReport + ReviewBundle) — with the global
+architecture as the north star and the factory as the compiler/CI system underneath.**

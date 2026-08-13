@@ -3268,3 +3268,27 @@ It is:
 > **prove that external scholarly corrections propagate monotonically from Sanskrit evidence all the way to final human-readable claims.**
 
 If that works across a handful of genuinely contested IPVV cases, you have the first convincing version of the thing we have been circling around for the last several conversations: **trust infrastructure for scholarship in the AI era.**
+
+---
+
+# CURRENT DIRECTION (2026-08-13 — supersedes the stale parts above where they conflict)
+
+Agent 1 is **frozen** (vertical peer-review-clean relative to the current objects). The forward work is the
+**scholar-corpus foundation**:
+
+- **S0 source-evidence substrate** (`source-evidence/`): Publication → Witness → StableSpan → SourceAssertion →
+  CorroborationEvent, composed from standards (FaBiO/PROV-O/Web Annotation/CiTO/RO-Crate/IIIF) and REUSING mature
+  open systems (GROBID/Zotero/OpenAlex/OpenCitations/RO-Crate/ORKG/OpenReview). Pāṭala owns only the thin resolver
+  + the epistemic seam (SourceAssertion, CorroborationEvent, authority/review, dependency propagation).
+- **Scholar oracle:** published scholarship is the scalable scholarly CORROBORATION oracle (can promote matched
+  claims to SCHOLARLY_CORROBORATED without a live reviewer) — but it is NOT review/adjudication of Pāṭala's exact
+  object. Corroboration is proposition-by-proposition via CorroborationEvents, preserves disagreement, and tracks
+  independence (never raw source count).
+- **Evaluation plane:** TantraFact / ArgumentBench / PāṭalaQA / CorroborationBench / CitationBench sit OUTSIDE
+  the production graph and test it (TantraFact must not be generated from the graph it evaluates). The most
+  Pāṭala-native benchmark asks "at what layer does support fail?" (SOURCE → SPAN → ATTRIBUTION → SCOPE → WARRANT →
+  CONCLUSION).
+- **Two-source-side architecture:** primary text (SOUCE→L0/L1→L2→L200→C1) + scholarship
+  (Publication→Witness→Span→SourceAssertion) converge at Proposition ↔ CorroborationEvent ↔ SourceAssertion.
+
+Guiding docs: `source-evidence/docs/` (schema-stack, evaluation-and-ids, reuse-first-stack) + `source-evidence/docs/tools/`.

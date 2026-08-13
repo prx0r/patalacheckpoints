@@ -1,5 +1,9 @@
 # Canonical Reference Map for the Trika–Krama–Kubjikā–Kaula–Pratyabhijñā–Sarvāmnāya Ecosystem
 
+> **STATUS: REFERENCE / GUIDANCE.** This is a scholarly-content reference map (the textual-territory
+> model), NOT the global strategy. It is consumed as domain guidance for the source/ontology layers.
+> The global strategy + partnerships live in `docs/global/globalpartnerships.md` and `docs/global/*`.
+
 ## Executive summary
 
 The most useful way to model the territory you are entering is **not as six separate schools and not as one monolithic “Kashmir Śaivism.”** It is better understood as a historically changing network of scriptural cults, Kaula reformulations, philosophical/exegetical systems, and later syntheses. Alexis Sanderson's reconstruction is particularly important here: the Trika belongs to the Śaiva Mantramārga's Bhairava/Vidyāpīṭha environment; Kaulism developed within the Yoginī cults; the Krama became a highly internalized Kālī-oriented system; the Kubjikā tradition developed as the Western Transmission while extensively incorporating Trika material; and the philosophical systems of Spanda and Pratyabhijñā supplied concepts that Kashmiri exegetes—above all Abhinavagupta—used to reinterpret the scriptural traditions. citeturn15view2turn16view2turn16view4

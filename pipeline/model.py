@@ -11,6 +11,7 @@ only the "call the model" step is delegated to hermes.
 from __future__ import annotations
 import json
 import os
+import signal
 import subprocess
 import time
 from dataclasses import dataclass
@@ -36,28 +37,67 @@ class StageOutputError(Exception):
     required to be JSON. NOT a silent fallback — the state machine must surface it."""
 
 
-def _hermes_call(prompt: str, model: str = DEFAULT_MODEL, timeout: int = 120, _retries: int = 1) -> str:
+def _killpg(proc: subprocess.Popen) -> None:
+    """Kill the whole process group of a hermes child (F3) so a hung call can't orphan
+    a `hermes -z` subprocess (as observed: killing the parent left an orphan running)."""
+    try:
+        gid = os.getpgid(proc.pid)
+    except ProcessLookupError:
+        return
+    try:
+        os.killpg(gid, signal.SIGTERM)
+    except (ProcessLookupError, PermissionError):
+        pass
+    try:
+        proc.wait(timeout=5)
+        return
+    except subprocess.TimeoutExpired:
+        pass
+    try:
+        os.killpg(gid, signal.SIGKILL)
+    except (ProcessLookupError, PermissionError):
+        pass
+    try:
+        proc.wait(timeout=5)
+    except Exception:
+        pass
+
+
+def _hermes_call(prompt: str, model: str = DEFAULT_MODEL, timeout: int = 120, _retries: int = 1,
+                 session: Optional[str] = None) -> str:
     """Run hermes -z with the given prompt; return its stdout (the model response).
 
+    The child runs in its OWN PROCESS GROUP (start_new_session=True); on timeout we
+    SIGTERM→SIGKILL the whole group, so no orphaned hermes survives (F3).
     timeout: batch calls (many verses in one context) legitimately take minutes — pass a large
     timeout (600+). Default 120 is for short calls. timeout=0 disables the cap. Overridable via
-    HERMES_TIMEOUT. One bounded retry on a timeout (a transient hermes hang may succeed on retry);
-    fail-closed beyond that — never block the whole queue."""
+    HERMES_TIMEOUT. One bounded retry on a timeout (a transient hang may succeed on retry);
+    fail-closed beyond that — never block the whole queue.
+    session: if given, continue a persistent Hermes session via `--resume SESSION` so the model
+    retains the accumulated context across calls (the "long context essential + document as it goes"
+    mechanism). Pass the session id returned by the previous call."""
     if timeout == 0:
         timeout = int(os.environ.get("HERMES_TIMEOUT", "0"))
     env = dict(os.environ)
     env.setdefault("HERMES_MODEL", model)
     last = None
     for attempt in range(_retries + 1):
+        proc = None
         try:
-            proc = subprocess.run(
-                [HERMES_BIN, "-z", prompt],
-                capture_output=True, text=True, env=env,
-                timeout=(timeout if timeout else None), cwd="/root/projects/patala",
+            cmd = [HERMES_BIN, "-z", prompt]
+            if session:
+                cmd += ["--resume", session]
+            proc = subprocess.Popen(
+                cmd,
+                stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
+                env=env, start_new_session=True, cwd="/root/projects/patala",
             )
-            return (proc.stdout or "").strip()
+            out, _ = proc.communicate(timeout=(timeout if timeout else None))
+            return (out or "").strip()
         except subprocess.TimeoutExpired as e:
             last = e
+            if proc is not None:
+                _killpg(proc)
             if attempt < _retries:
                 time.sleep(5)
                 continue
@@ -69,17 +109,18 @@ def _hermes_call(prompt: str, model: str = DEFAULT_MODEL, timeout: int = 120, _r
 def chat(system: str, user: str, model: str = DEFAULT_MODEL,
          temperature: float = 0.3, max_tokens=None, timeout: int = 120,
          response_format: Optional[dict] = None,
-         seed: Optional[int] = None) -> str:
+         seed: Optional[int] = None, session: Optional[str] = None) -> str:
     """A single model call via hermes -z. Returns just the text content.
 
     max_tokens is deliberately UNENFORCED: _hermes_call passes only the prompt +
     model to `hermes -z`, so there is NO token cap on the call. This lets one
     batch carry as many L0 records as possible in a single context. The param is
-    kept for API compatibility only. timeout: pass a large value for batch calls."""
+    kept for API compatibility only. timeout: pass a large value for batch calls.
+    session: if given, continue a persistent Hermes session (context retained across calls)."""
     prompt = f"{system}\n\n{user}"
     if response_format is not None:
         prompt += "\n\nReturn ONLY the requested JSON object. No prose, no markdown fences, no commentary."
-    return _hermes_call(prompt, model=model, timeout=timeout)
+    return _hermes_call(prompt, model=model, timeout=timeout, session=session)
 
 
 def chat_result(system: str, user: str, model: str = DEFAULT_MODEL,

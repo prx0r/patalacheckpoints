@@ -160,9 +160,98 @@ def _assemble_t1(verse: str, segments: list[dict], gloss_map: dict) -> list[dict
     return out
 
 
+def _build_batch_prompt(verses: list[dict]) -> str:
+    """One prompt for a WHOLE batch of verses -> ONE model call glosses many verses (max work per call).
+
+    Mirrors batch_translate.py: each verse block carries its object_id (stable passage id) so the model
+    can echo it back and we can bind each gloss map to the right verse. Uses the 1M context to pack as
+    many verses as fit, instead of one call per verse."""
+    blocks = []
+    for e in verses:
+        tokens = e["tokens"]
+        blocks.append(
+            f"--- VERSE ---\n"
+            f"object_id: {e['object_id']}\n"
+            f"VERSE: {e['verse']}\n"
+            f"TOKENS: {json.dumps(tokens, ensure_ascii=False)}\n"
+        )
+    prompt = (
+        "You are the Pāṭala T1 translator (the transliteral word-gloss producer). You are given a BATCH "
+        "of raw Sanskrit verses with their Vidyut-segmented tokens. For EVERY verse, produce the "
+        "canonical T1 transliteral gloss:\n"
+        "  a word/phrase-level literal English gloss for EACH token, in the IPVV form\n"
+        "  `[and]-GLOSS (IAST)` — e.g. `[and]-thus (evam)`, `[and]-the-great-Lord (maheśvaraḥ)`.\n"
+        "RULES:\n"
+        "- Use the term-context packet for technical senses (krama, śakti, vimarśa, prakāśa, ...), "
+        "  never a flat dictionary.\n"
+        "- The gloss is the PLAIN literal English phrase WITHOUT any '[and]-' prefix or parentheses; "
+        "  the pipeline adds the canonical '[and]-... (IAST)' framing for you. E.g. gloss = "
+        "  'the great Lord' (NOT '[and]-the great Lord' and NOT '(maheśvaraḥ)').\n"
+        "- Preserve the exact IAST token in the parentheses; never invent or swap tokens.\n"
+        "- If a token is genuinely unanalyzable, use empty gloss: \"\", NOT a fabricated sense.\n"
+        "- Preserve negation / polarity / case contributions exactly in the gloss.\n"
+        "Return JSON ONLY:\n"
+        "{\"verses\": [\n"
+        "  {\"object_id\": \"<echoed from the prompt>\", \"tokens\": {\"<surface>\": "
+        "{\"gloss\": \"<literal gloss>\", \"quoted\": <bool>}, ...}}\n"
+        "]}\n"
+        "covering EVERY verse and EVERY token. You MUST echo each verse's object_id exactly; do not "
+        "invent or swap them.\n\n"
+        + "\n".join(blocks)
+    )
+    return prompt
+
+
+def _parse_batch(raw: str) -> dict:
+    """Parse the multi-verse JSON response into {object_id: {surface: gloss}}."""
+    raw = (raw or "").strip()
+    if raw.startswith("```"):
+        raw = raw.split("\n", 1)[-1]
+        raw = raw.rsplit("```", 1)[0]
+    start, end = raw.find("{"), raw.rfind("}")
+    if start < 0 or end <= start:
+        raise ValueError("no JSON object in T1 batch output")
+    data = json.loads(raw[start:end + 1])
+    out = {}
+    for item in (data.get("verses") or []):
+        if not isinstance(item, dict):
+            continue
+        oid = item.get("object_id")
+        if not oid:
+            continue
+        out[oid] = item.get("tokens") or {}
+    return out
+
+
+T1_OUT_LOG = Path(os.environ.get("PATALA_T1_OUT_LOG",
+                                 "/root/projects/patala/data/corpus/downloads/t1-stream.jsonl"))
+
+
+def _log_t1_output(object_id: str, status: str, gloss_map: dict, error: str = "") -> None:
+    """Append one verse's T1 result to the streaming output log (immediate, crash-safe).
+
+    This is the observability/streaming layer: every verse's model output is recorded as it is
+    produced, so a later failure in the batch never loses the already-committed/labelled record, and
+    an operator can tail the log to watch the factory gloss verses in near-real-time."""
+    try:
+        T1_OUT_LOG.parent.mkdir(parents=True, exist_ok=True)
+        rec = {"ts": __import__("time").strftime('%Y-%m-%dT%H:%M:%S'),
+               "object_id": object_id, "status": status, "gloss_count": len(gloss_map),
+               "error": error or None}
+        with T1_OUT_LOG.open("a", encoding="utf-8") as fh:
+            fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
+    except Exception:
+        pass   # logging must never break production
+
+
 def t1_generator(layer: str, batch: list[dict]) -> list[dict]:
-    """Produce canonical T1 objects for a batch of raw-Sanskrit verses."""
-    proposals = []
+    """Produce canonical T1 objects for a batch of raw-Sanskrit verses.
+
+    BATCHED (A2-17): the WHOLE batch is glossed in ONE model call (all verses + tokens in a single
+    prompt), so one API call does max work — the same design as batch_translate.py. Each verse is
+    then bound to its own gloss map via its echoed object_id. If the batch call fails, every verse in
+    the batch is marked GENERATION_FAILED (fail-closed, retryable) — never a partial commit."""
+    entries = []
     for b in batch:
         verse = (b.get("verse") or "").strip()
         if not verse:
@@ -171,17 +260,35 @@ def t1_generator(layer: str, batch: list[dict]) -> list[dict]:
         tokens = [s["surface"] for s in segments]
         if not tokens:
             continue
-        prompt = _build_prompt(verse, tokens)
-        # A2-10b size-aware timeout: scale with input size so long verses (e.g. bhavopahara) get more
-        # time instead of failing at a fixed cap. base 120s + ~0.5s/token (bounded).
-        timeout = min(180 + int(len(tokens) * 0.5), 600)
+        entries.append({"object_id": b["object_id"], "verse": verse,
+                        "segments": segments, "tokens": tokens})
+    if not entries:
+        return []
+
+    n_tokens = sum(len(e["tokens"]) for e in entries)
+    prompt = _build_batch_prompt(entries)
+    # A2-10b size-aware timeout: scale with total batch size so big batches get enough time.
+    timeout = min(180 + int(n_tokens * 0.5), 600)
+    try:
+        raw = chat("You are the Pāṭala T1 translator (transliteral word-gloss).", prompt,
+                   timeout=timeout)
+        gloss_by_oid = _parse_batch(raw)
+    except Exception as e:
+        # fail-closed: the whole batch failed -> every verse retryable, no partial commit
+        for e_ in entries:
+            _log_t1_output(e_["object_id"], "GENERATION_FAILED", {}, error=str(e)[:80])
+        return [{"object_id": e_["object_id"], "input_hash": _verse_hash(e_["verse"]),
+                 "t1": {}, "t1_status": "GENERATION_FAILED"} for e_ in entries]
+
+    proposals = []
+    for e in entries:
+        verse = e["verse"]
+        gloss_map = gloss_by_oid.get(e["object_id"]) or {}
         try:
-            raw = chat("You are the Pāṭala T1 translator (transliteral word-gloss).", prompt,
-                       timeout=timeout)
-            gloss_map = _parse(raw).get("tokens", {}) or {}
-            t1_tokens = _assemble_t1(verse, segments, gloss_map)
+            t1_tokens = _assemble_t1(verse, e["segments"], gloss_map)
+            _log_t1_output(e["object_id"], "MACHINE_PROPOSED", gloss_map)
             proposals.append({
-                "object_id": b["object_id"],
+                "object_id": e["object_id"],
                 "input_hash": _verse_hash(verse),
                 "verse": verse,
                 "t1": {"tokens": t1_tokens,
@@ -190,9 +297,9 @@ def t1_generator(layer: str, batch: list[dict]) -> list[dict]:
                        "status": "MACHINE_PROPOSED"},
                 "t1_status": "MACHINE_PROPOSED",
             })
-        except Exception:
-            # fail-closed: no partial commit
-            proposals.append({"object_id": b["object_id"], "input_hash": _verse_hash(verse),
+        except Exception as ex:
+            _log_t1_output(e["object_id"], "GENERATION_FAILED", gloss_map, error=str(ex)[:80])
+            proposals.append({"object_id": e["object_id"], "input_hash": _verse_hash(verse),
                               "t1": {}, "t1_status": "GENERATION_FAILED"})
     return proposals
 
@@ -238,4 +345,79 @@ def t1_validator(layer: str, proposal: dict) -> tuple[bool, str]:
 
 
 def make_t1_handlers() -> dict:
-    return {"generator": t1_generator, "validator": t1_validator}
+    """Return the T1 layer handlers.
+
+    Default: the batched generator (t1_generator) — one call glosses a whole batch (context-filled,
+    stream-logged). Set PATALA_T1_SESSION=1 to use the PERSISTENT-SESSION streaming generator instead
+    (long-lived per-work Hermes session that retains context across calls, "document as it goes")."""
+    gen = t1_generator_session if os.environ.get("PATALA_T1_SESSION", "0") == "1" else t1_generator
+    return {"generator": gen, "validator": t1_validator}
+
+
+def t1_generator_session(layer: str, batch: list[dict]) -> list[dict]:
+    """PERSISTENT-SESSION T1 generator: drive a long-lived per-work Hermes session that retains the
+    work's context packet + accumulated verses across calls, and commit each verse incrementally.
+
+    Solves the giant-call fragility: instead of one 10-min all-or-nothing call, feed chunked verses
+    through `--resume <session>` (context retained), committing + stream-logging each chunk as it
+    returns. A failed chunk loses only that chunk (retryable), never the whole text.
+
+    Falls back to the batched generator if session streaming is unavailable."""
+    try:
+        import t1_session
+        from agentic_gloss import _term_packet_for  # noqa: F401 (ensure importable)
+    except Exception:
+        return t1_generator(layer, batch)
+
+    # group by work so each work uses its own persistent session
+    by_work = {}
+    order = []
+    for b in batch:
+        verse = (b.get("verse") or "").strip()
+        if not verse:
+            continue
+        wid = (b.get("object_id") or "?").split(":")[0]
+        segments = _segment(verse)
+        tokens = [s["surface"] for s in segments]
+        if not tokens:
+            continue
+        by_work.setdefault(wid, []).append(
+            {"object_id": b["object_id"], "verse": verse, "segments": segments,
+             "tokens": tokens, "input_hash": _verse_hash(verse)})
+        if wid not in order:
+            order.append(wid)
+
+    proposals = []
+    for wid in order:
+        entries = by_work[wid]
+        try:
+            res = t1_session.stream_gloss_work(wid, entries)
+            committed = {c["object_id"]: c for c in res["committed"]}
+            failed_ids = {f["object_id"] for f in res["failed"]}
+        except Exception as ex:
+            committed, failed_ids = {}, set()
+            for e in entries:
+                _log_t1_output(e["object_id"], "GENERATION_FAILED", {}, error=str(ex)[:80])
+        for e in entries:
+            verse = e["verse"]
+            c = committed.get(e["object_id"])
+            if c is not None and c.get("gloss_map"):
+                try:
+                    t1_tokens = _assemble_t1(verse, e["segments"], c["gloss_map"])
+                    proposals.append({
+                        "object_id": e["object_id"],
+                        "input_hash": _verse_hash(verse),
+                        "verse": verse,
+                        "t1": {"tokens": t1_tokens,
+                               "source_sha256": _verse_hash(verse),
+                               "source_text": verse,
+                               "status": "MACHINE_PROPOSED"},
+                        "t1_status": "MACHINE_PROPOSED",
+                    })
+                except Exception as ex:
+                    proposals.append({"object_id": e["object_id"], "input_hash": _verse_hash(verse),
+                                      "t1": {}, "t1_status": "GENERATION_FAILED"})
+            elif e["object_id"] in failed_ids:
+                proposals.append({"object_id": e["object_id"], "input_hash": _verse_hash(verse),
+                                  "t1": {}, "t1_status": "GENERATION_FAILED"})
+    return proposals

@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 import time
 from pathlib import Path
@@ -137,6 +138,12 @@ def _job_input(job: dict) -> dict:
     return inp
 
 
+def _est_tokens(inp: dict) -> int:
+    """Rough input-token estimate for a verse job (IAST ~1.5 tok/char + ~40 tok JSON/echo framing)."""
+    verse = inp.get("verse") or ""
+    return int(len(verse) * 1.5) + 40
+
+
 def scheduler_pass(works: list[str], layers: list[str], per_layer: int = 2,
                    max_model_calls: int = 6, throttle_s: float = 0.0) -> dict:
     """One DAG pass: enumerate eligible jobs, drain deterministic free, then spend the model budget.
@@ -188,21 +195,57 @@ def scheduler_pass(works: list[str], layers: list[str], per_layer: int = 2,
         except Exception as e:
             rejected.append({"object_id": j["object_id"], "layer": j["layer"], "error": str(e)[:100]})
 
-    # 2. spend the model budget across the ranked graph
+    # 2. spend the model budget across the ranked graph. We ACCUMULATE up to batch_max verses (fills
+    #    the context, huge-call throughput), but then SPLIT into independent CHUNKS of chunk_size that
+    #    are produced+committed separately. This gives huge per-API-call volume while isolating
+    #    failure: a timeout in one chunk loses only that chunk (retryable), not the whole batch.
+    # Env: PATALA_CONTEXT / PATALA_INPUT_FRAC (token budget), PATALA_FACTORY_BATCH_MAX (accumulate cap),
+    #      PATALA_FACTORY_CHUNK (independent commit size, default 50).
+    context = int(os.environ.get("PATALA_CONTEXT", "1000000"))
+    input_frac = float(os.environ.get("PATALA_INPUT_FRAC", "0.5"))
+    input_budget = int(context * input_frac)
+    batch_max = int(os.environ.get("PATALA_FACTORY_BATCH_MAX", "1000"))
+    chunk_size = int(os.environ.get("PATALA_FACTORY_CHUNK", "50"))
+    consumed = set()   # object_ids already placed in a batch (skip on later iterations)
     for j in ranked_model:
         if model_calls >= max_model_calls:
             break
-        try:
-            r = FB._produce_layer(j["layer"], [_job_input(j)], batch_size=1)
-            committed += r["committed"]
-            rejected += r["rejected"]
-            retryable += r.get("retryable", [])
-            if j["layer"] in MODEL_LAYERS:
-                model_calls += 1
-                if throttle_s:
-                    time.sleep(throttle_s)
-        except Exception as e:
-            rejected.append({"object_id": j["object_id"], "layer": j["layer"], "error": str(e)[:100]})
+        if j["object_id"] in consumed:
+            continue
+        # accumulate same-layer jobs until the batch's estimated INPUT tokens approach the budget
+        batch = [_job_input(j)]
+        consumed.add(j["object_id"])
+        est_input = 900   # fixed prompt overhead (instruction + token grammar)
+        est_input += _est_tokens(batch[0])
+        for k in ranked_model:
+            if batch_max and len(batch) >= batch_max:
+                break
+            if k["object_id"] in consumed:
+                continue
+            if k["layer"] != j["layer"]:
+                continue
+            if est_input + _est_tokens(k) > input_budget:
+                break   # context nearly full -> flush
+            batch.append(_job_input(k))
+            consumed.add(k["object_id"])
+            est_input += _est_tokens(k)
+        # produce+commit the batch in INDEPENDENT chunks (one API call per chunk, isolated failure)
+        for start in range(0, len(batch), chunk_size):
+            if model_calls >= max_model_calls:
+                break
+            chunk = batch[start:start + chunk_size]
+            try:
+                r = FB._produce_layer(j["layer"], chunk, batch_size=len(chunk))
+                committed += r["committed"]
+                rejected += r["rejected"]
+                retryable += r.get("retryable", [])
+                if j["layer"] in MODEL_LAYERS:
+                    model_calls += 1   # one API call for this chunk
+                    if throttle_s:
+                        time.sleep(throttle_s)
+            except Exception as e:
+                rejected.append({"object_id": chunk[0]["object_id"], "layer": j["layer"],
+                                 "error": str(e)[:100]})
 
     return {"eligible": len(jobs), "committed": len(committed),
             "deterministic": len(deterministic),

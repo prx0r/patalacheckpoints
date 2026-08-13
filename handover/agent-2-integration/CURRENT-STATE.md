@@ -5,6 +5,13 @@ operational status of each canonical layer — what is AUTONOMOUSLY_PRODUCIBLE, 
 against the REAL IPVV exemplars, and the guarantees (crash/resume, zero duplicates, provenance). The
 registry is authoritative; this doc explains the architecture.*
 
+> **2026-08-13 factory throughput/integrity update:** see
+> `BUILD-RECORD-2026-08-13-FACTORY-THROUGHPUT.md`. Key deltas: (1) L0/L2 no longer fall back to raw
+> SOURCE without a committed T1/L0 parent (fail-closed per the DAG — the 773 bad-parent-hash source);
+> (2) the scheduler ranks by translation-target priority (next-best-target ordering); (3) T1 is produced
+> in batches (+ optional persistent-session streaming via `PATALA_T1_SESSION=1`, EXPERIMENTAL); (4)
+> intake dedups by content hash; (5) 9 duplicate work registrations consolidated.
+
 ---
 
 ## 1. THE CANONICAL STACK + PRODUCTION STATUS

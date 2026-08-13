@@ -1,5 +1,9 @@
 # Recognition Enquiry across Pratyabhijñā, Its Rivals, and Contemporary Consciousness Research
 
+> **STATUS: GUIDANCE (scholarly/research reference).** This is domain guidance on the Recognition
+> (Pratyabhijñā) enquiry — an analytic scaffold with status tags (T/R/E/C/H/X), NOT the global strategy.
+> The global strategy + partnerships live in `docs/global/globalpartnerships.md` and `docs/global/*`.
+
 ## Executive summary
 
 [T][R] The strongest textually grounded core of the Recognition Enquiry is **A**, not **C**: Utpaladeva’s most defensible arguments establish that consciousness is intrinsically self-present or reflexive (*prakāśa–vimarśa*), that determinate cognition requires exclusion and synthesis, and that episodic memory presupposes more than a bare causal trace; they do **not** yield an uncontested proof that all finite subjects are numerically one universal subject. citeturn10view0turn10view1turn12view0turn12view2turn23search3turn23search4

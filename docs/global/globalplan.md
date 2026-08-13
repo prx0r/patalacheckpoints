@@ -1,5 +1,10 @@
 # Global Pāṭala Dev Plan — from current state to full platform
 
+> **Strategic lens (2026-08-13):** Pāṭala is the **integration & identity layer** over the fragmented
+> Sanskrit ecosystem ("OpenAlex for Sanskrit"), not another corpus. This dev plan builds the substrate
+> and machinery; `docs/global/globalpartnerships.md` is the strategic framing (identity/crosswalk,
+> 11 adapters, versioned Assertions). The AUTHORITY GRAPH below is exactly where that identity layer lives.
+
 The cleanest way to organize everything now is around **one canonical scholarly graph**, with Agent 2 building the substrate and production machinery, Agent 1 defining and proving the epistemic semantics, and both converging at exact versioned objects.
 
 The whole project becomes:

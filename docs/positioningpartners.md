@@ -1,5 +1,9 @@
 # Positioning & Partners — the connective research layer
 
+> **STATUS: DETAILED COMPETITIVE LANDSCAPE.** Superseded as the *global* partnerships doc by
+> `docs/global/globalpartnerships.md` (the integration/identity-layer framing). This file remains the
+> detailed landscape + pitch templates. Global strategy: `docs/global/globalpartnerships.md`.
+
 *The most important strategic conclusion: Pāṭala should not become another archive, Sanskrit library, manuscript-digitisation project, or translation publisher. Several established groups already do those jobs well. The gap is the **connective research layer between them**.*
 
 ## The landscape

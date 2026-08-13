@@ -83,18 +83,22 @@ pipeline/factory_status.py           <- per-work progress dashboard
 pipeline/factory_certificate.py      <- bulk-run certificate (integrity + resume)
 pipeline/factory_rebuild.py          <- Era C: supersession propagation + targeted regeneration
 pipeline/{t1,l0,l1_l2,l200,c1,theme,essay,education,argument_map}_worker.py  <- the layer producers
+pipeline/t1_session.py                 <- optional persistent-session T1 streaming (PATALA_T1_SESSION=1)
 pipeline/object_registry.py          <- immutable per-layer registry (the authoritative state)
 ```
 
 ## HONEST EXPECTATIONS FOR OVERNIGHT
 
-- **What advances**: T1 → ARGMAP → L0 → L2 → L200 → C1 objects across all registered works, steadily.
-  The dashboard reflects real progress.
-- **What's slow**: T1 is model-bound; with a small budget (to respect the live runner), the factory
-  advances a few passages per pass. Raising `FACTORY_MODEL_CALLS` speeds it up at the live runner's
-  expense.
-- **Failures are SAFE**: a problematic verse (e.g. bhavopahara's long text) is recorded as retryable,
-  never wedges the run, and is retried via the size-aware policy.
+- **What advances**: T1 → ARGMAP → L0 → L2 → L200 → C1 objects across all registered works, steadily,
+  **spending budget on the highest-priority targets first** (Krama packet → tier-1 → tier-0/2). The
+  dashboard reflects real progress.
+- **What's slow**: T1 is model-bound. The factory now glosses T1 in **batches** (one call per many
+  verses), far more throughput than one-verse-per-call; a small `FACTORY_MODEL_CALLS` still respects
+  the live runner. Raise it (or enable `PATALA_T1_SESSION=1`) for more speed.
+- **Failures are SAFE**: a problematic verse is recorded as retryable, never wedges the run, and is
+  retried via the size-aware policy. Every T1 verse is also written to the stream log as produced.
 - **The certificate proves integrity**: 0 duplicate current versions + resume PASS = the run was clean.
+  **Honest caveat:** the historical orphaned-L0 bad-parent-hash violations predate the fail-closed fix
+  and remain until a data migration.
 
 *This is the Era B "run for 8 hours" deliverable — the autonomous corpus compiler left unattended.*

@@ -61,13 +61,30 @@ Full spec: `handover/agent-2-integration/CANONICAL-LAYER-STACK.md`.
 **The DAG pass** (each scheduler iteration):
 1. enumerate all eligible (object, layer) jobs from the registry (upstream committed + this layer not current)
 2. drain deterministic L0 (free)
-3. spend the model budget on T1/ARGMAP/L2/L200/C1 (rate-limited, round-robin across works)
-4. worker → validator → `registry.commit` (immutable, versioned)
-5. record failures (upserted, capped) + audit events
+3. rank model jobs by **translation-target priority** (Krama packet → tier-1 → tier-0/2 → flagships/
+   unknown), round-robin within each priority band so one work can't monopolize
+4. spend the model budget on T1/ARGMAP/L2/L200/C1. T1 is produced in **batches** (one call glosses many
+   verses — see §3a) — optionally via a **persistent Hermes session** (`PATALA_T1_SESSION=1`) that
+   retains the work's context across calls
+5. worker → validator → `registry.commit` (immutable, versioned)
+6. record failures (upserted, capped) + audit events
 
 **How a passage advances** (registry-derived, no manual calls):
 `SOURCE → T1 → ARGMAP → L0 → L2 → L200 → C1 → ...` — each pass re-scans the registry and picks up
 whatever became eligible.
+
+## 3a. T1 throughput (batched + optional session streaming)
+
+- **Default (batched):** `t1_worker.t1_generator` packs a whole batch (all verses + Vidyut tokens)
+  into ONE prompt, binds each verse's gloss to its `object_id`, and writes a per-verse stream log
+  (`data/corpus/downloads/t1-stream.jsonl`) as each verse is produced.
+- **Session streaming (`PATALA_T1_SESSION=1`):** `t1_session.py` opens ONE long-lived Hermes session per
+  work seeded with the work's context packet, then feeds verse-chunks via `--resume <session>` — Hermes
+  retains accumulated context across calls ("long context + document as it goes"), and each chunk is
+  committed + stream-logged immediately (a failed chunk loses only that chunk, retryable).
+  **EXPERIMENTAL — not yet proven live; batched is the proven default.**
+- **Stream log schema:** `{ts, object_id, status: MACHINE_PROPOSED|ABSTAIN|GENERATION_FAILED,
+  gloss_count, error}` — append-only, per-verse, consumable read-only by Agent 1.
 
 Deep trace: `docs/SOURCE-PROCESS-OVERNIGHT.md`.
 
@@ -80,6 +97,7 @@ Deep trace: `docs/SOURCE-PROCESS-OVERNIGHT.md`.
 | **REGISTRY (canonical)** | `data/corpus/registries/<layer>-registry.jsonl` | the factory (`object_registry.commit`) | the authoritative per-layer object state — immutable, versioned, provenance-bound |
 | **LEDGER (operational)** | `data/corpus/downloads/translation-state-ledger.json` | `auto_translate_raw.py` + `corpus_state.py` | per-work operational view (`bibliographic_id`, translation/l0 status, `next_action`) |
 | **AUDIT (action trail)** | `data/corpus/downloads/factory-audit.jsonl` | the factory (`_audit`) | append-only, in-order record of every commit/reject/retryable |
+| **T1 STREAM LOG** | `data/corpus/downloads/t1-stream.jsonl` | `t1_worker` / `t1_session` | append-only per-verse T1 output (MACHINE_PROPOSED/ABSTAIN/GENERATION_FAILED) |
 | **QUEUE (resilience)** | `factory-failure-queue.jsonl` + `agent3-queue-state.json` | factory + live runner | durable failure/retry records + scheduling |
 
 **The factory is registry-driven** — it scans committed registries, never walks the ledger. The live
@@ -172,6 +190,7 @@ them together.
 **The current factory** is exactly these files — nothing else in `pipeline/factory_*` is part of it:
 `start_overnight.sh` · `factory_loop.sh` · `factory_loop_watchdog.sh` · `factory_scheduler.py` ·
 `factory_batch.py` · `factory_status.py` · `factory_certificate.py` · `factory_rebuild.py` ·
+`t1_worker.py` · `t1_session.py` ·
 `catalog.py` + `object_registry.py` (the state).
 
 **Marked obsolete (superseded, kept for history only):**

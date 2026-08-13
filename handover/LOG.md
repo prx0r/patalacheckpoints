@@ -5,6 +5,47 @@
 
 ---
 
+## Agent 2 — factory integrity + prioritized queue + throughput + global strategy (2026-08-13)
+
+**What:** Factory hardening + throughput work on the Agent 2 side:
+1. **Integrity fix:** removed the `l0_inputs or srcs` / `l2_inputs or srcs` fallbacks in
+   `factory_batch.py` that committed L0/L2 from raw SOURCE without a T1/L0 parent (the 773
+   bad-parent-hash source). Now fail-closed per the canonical DAG.
+2. **Prioritized queue:** `factory_scheduler.py` ranks model jobs by translation-target priority
+   (Krama packet → tier-1 → tier-0/2 → flagships/unknowns) instead of alphabetical round-robin.
+3. **Duplicate cleanup:** intake dedups by content hash across all works; consolidated 9 duplicate
+   work registrations (SOURCE 14,021 → 13,418).
+4. **Throughput:** `t1_worker.py` batched (one call per batch + per-verse stream log); new
+   `pipeline/t1_session.py` persistent-session streaming (Hermes `--resume` retains context across
+   calls — "long context + document as it goes"). Session path **not yet proven live**; batched is
+   the default. `PATALA_T1_SESSION=1` to switch.
+5. **Global strategy:** new `docs/global/globalpartnerships.md` (integration/identity layer) +
+   `docs/global/globalaccess.md` (open-reference, controlled-corpus access model).
+
+**Why it matters to Agent 1:** the factory now spends its model budget on the highest-value targets
+with correct DAG ordering; T1 throughput is far higher (batched; session path when proven). Agent 1's
+verification/evals can now consume a growing, correctly-ordered T1 stream.
+
+**Files:**
+- `handover/agent-2-integration/BUILD-RECORD-2026-08-13-FACTORY-THROUGHPUT.md`
+- `pipeline/factory_batch.py`, `factory_scheduler.py`, `factory_status.py`, `factory_certificate.py`,
+  `register_sources.py`, `t1_worker.py`, `t1_session.py` (new), `model.py`,
+  `watchdog_auto_translate.sh`
+- `docs/global/globalpartnerships.md`, `docs/global/globalaccess.md` (new)
+
+**Schema of the T1 stream log (new, consumed read-only by Agent 1):**
+```json
+{ "ts": "...", "object_id": "<work>:v<N>", "status": "MACHINE_PROPOSED|ABSTAIN|GENERATION_FAILED",
+  "gloss_count": <int>, "error": "<msg>|null" }
+```
+
+**Status:** all deterministic factory suites + T1 tests PASS; ObjectEvent chain verifies. Session path
+EXPERIMENTAL_INFRASTRUCTURE (unproven live). Registry data files excluded from commit (running factory
+writes them concurrently).
+
+---
+---
+
 ## E1 — Agent 1 → Agent 2: E1-fidelity baseline done (2026-08-12)
 
 **What:** Agent 1 completed the first real retrieval baseline — BM25 vs dense vs hybrid on the
