@@ -1,0 +1,401 @@
+{
+  "learning_packet_id": "learn-VERTICAL-1",
+  "derived_from": "VERTICAL-1",
+  "learner_level": "introductory",
+  "learning_claims": [
+    {
+      "learning_claim_id": "LC-1",
+      "content": "The learner can classify speaker: author-vs-opponent commitment",
+      "claim_type": "DISTINCTION",
+      "derived_from": [
+        "P1",
+        "P2"
+      ],
+      "prerequisites": [],
+      "source_refs": [
+        "pt:passage:ipvv:chunkM-jnanadhikara-reflexion-core.md"
+      ],
+      "epistemic_ceiling": "UNRESOLVED",
+      "claim_hash": "a4f408e8084a4d452bf4e2190eeecc4a8e0f1a90ae8d49f1fc1516094b63b577"
+    },
+    {
+      "learning_claim_id": "LC-2",
+      "content": "The learner can attach premise: load-bearing premises of V1-ADHYAVASAYA",
+      "claim_type": "DISTINCTION",
+      "derived_from": [
+        "V1-ADHYAVASAYA"
+      ],
+      "prerequisites": [],
+      "source_refs": [
+        "pt:passage:ipvv:chunkM-jnanadhikara-reflexion-core.md"
+      ],
+      "epistemic_ceiling": "UNRESOLVED",
+      "claim_hash": "f5b8af8dd6346cb2a48a23ba235f333e55b633ede25ae6349a665feaaff45e65"
+    },
+    {
+      "learning_claim_id": "LC-3",
+      "content": "The learner can identify crux: the decisive unresolved dispute",
+      "claim_type": "DISTINCTION",
+      "derived_from": [
+        "CRUX-REFLEXION-INERT",
+        "CRUX-SYNTHESIS-UNIVERSAL",
+        "CRUX-IPVV-001"
+      ],
+      "prerequisites": [],
+      "source_refs": [
+        "pt:passage:ipvv:chunkM-jnanadhikara-reflexion-core.md"
+      ],
+      "epistemic_ceiling": "UNRESOLVED",
+      "claim_hash": "ff40d01f27b97452d5364795780e1593a37baf4dae4c031908d6bc52d018314c"
+    },
+    {
+      "learning_claim_id": "LC-4",
+      "content": "The learner can qualify scope: the scope boundary of the conclusion",
+      "claim_type": "DISTINCTION",
+      "derived_from": [
+        "boundary"
+      ],
+      "prerequisites": [],
+      "source_refs": [
+        "pt:passage:ipvv:chunkM-jnanadhikara-reflexion-core.md"
+      ],
+      "epistemic_ceiling": "UNRESOLVED",
+      "claim_hash": "bb6c8a5dab0ac5f9b3758f62af959e9c4b0f5ff4b8e7d0caa14f7745b8c9b429"
+    },
+    {
+      "learning_claim_id": "LC-5",
+      "content": "The learner can reconstruct warrant: the warrant licensing the inference",
+      "claim_type": "DISTINCTION",
+      "derived_from": [],
+      "prerequisites": [],
+      "source_refs": [
+        "pt:passage:ipvv:chunkM-jnanadhikara-reflexion-core.md"
+      ],
+      "epistemic_ceiling": "UNRESOLVED",
+      "claim_hash": "586f777d197b4898ce16eb6a42b32a69cb3363ea0f6e40540202eca7e4c9bcd7"
+    }
+  ],
+  "learning_skills": [
+    "ATTACH_PREMISE",
+    "CLASSIFY_SPEAKER",
+    "IDENTIFY_CRUX",
+    "QUALIFY_SCOPE",
+    "RECONSTRUCT_WARRANT"
+  ],
+  "misconceptions": [
+    {
+      "misconception_id": "MC-SPK-1",
+      "type": "SPEAKER_COLLAPSE",
+      "description": "merging the author's commitment with the opponent's",
+      "confuses": [
+        "author",
+        "opponent"
+      ],
+      "detected_by": [
+        "LI-SPK-1"
+      ],
+      "remediation": [],
+      "distinguishing_test": [],
+      "misconception_hash": "adea2a4899f73e3e15d610da56316bc55a59fdb772d1aa85bc7f00b9a2441952"
+    },
+    {
+      "misconception_id": "MC-PREM-1",
+      "type": "GROUNDING_AS_INFERENCE",
+      "description": "treating a source citation as a logical premise",
+      "confuses": [
+        "grounding",
+        "premise"
+      ],
+      "detected_by": [
+        "LI-PREM-2"
+      ],
+      "remediation": [],
+      "distinguishing_test": [],
+      "misconception_hash": "3a8aad16c89cd95fd839f06ac08efd2278cf7ed391c26bc932309b2c30708e58"
+    },
+    {
+      "misconception_id": "MC-CRUX-1",
+      "type": "OPEN_AS_RESOLVED",
+      "description": "presenting an open crux as a settled conclusion",
+      "confuses": [
+        "open",
+        "resolved"
+      ],
+      "detected_by": [
+        "LI-CRUX-3"
+      ],
+      "remediation": [],
+      "distinguishing_test": [],
+      "misconception_hash": "b21e49282334043cb748dfc3f10f5b4e8892a77621915a8a66851709a7aebee3"
+    },
+    {
+      "misconception_id": "MC-SCOPE-1",
+      "type": "SCOPE_INFLATION",
+      "description": "generalizing a per-act claim to a universal",
+      "confuses": [
+        "per-act",
+        "universal"
+      ],
+      "detected_by": [
+        "LI-SCOPE-4"
+      ],
+      "remediation": [],
+      "distinguishing_test": [],
+      "misconception_hash": "b3695d8047b7ee243ec8fe2619ccee4a72cda189b50dd3d88fcc51766ebf8919"
+    },
+    {
+      "misconception_id": "MC-WARR-1",
+      "type": "WARRANT_OMISSION",
+      "description": "omitting a load-bearing warrant / treating it as settled",
+      "confuses": [
+        "warrant",
+        "settled"
+      ],
+      "detected_by": [
+        "LI-WARR-5"
+      ],
+      "remediation": [],
+      "distinguishing_test": [],
+      "misconception_hash": "834ac2f4eb54ee868d293e4f2b1246b62b68ca38ee2e3150858377d6b1de184d"
+    }
+  ],
+  "interactions": [
+    {
+      "interaction_id": "LI-SPK-1",
+      "skill": "CLASSIFY_SPEAKER",
+      "target": "author-vs-opponent commitment",
+      "prompt": "Who is committed to: \"the determination (adhyavasāya) is error-form: it is only the drawing of the appearance outward\"?",
+      "response_space": "SINGLE_CHOICE",
+      "options": [
+        {
+          "text": "author: the determination (adhyavasāya) is error-form: it is only the drawing of the appearance outward",
+          "correct": true,
+          "role": "CORRECT",
+          "derives_from": "proposition:the determination (adhyavasāya"
+        },
+        {
+          "text": "opponent: as fire burns wood though inert, so the determination establishes the object",
+          "correct": false,
+          "role": "ATTRIBUTION_ERROR",
+          "misconception": "SPEAKER_COLLAPSE",
+          "derives_from": "proposition:as fire burns wood though iner"
+        }
+      ],
+      "feedback_rules": [
+        {
+          "correct_option": "the speaker whose commitment this is"
+        }
+      ],
+      "what_it_tests": {
+        "skill": "CLASSIFY_SPEAKER",
+        "misconceptions": [
+          "SPEAKER_COLLAPSE",
+          "OBJECTION_AS_AUTHOR_VIEW"
+        ]
+      },
+      "source_refs": [
+        "pt:passage:ipvv:chunkM-jnanadhikara-reflexion-core.md"
+      ],
+      "derived_from": [
+        "P1",
+        "P2"
+      ]
+    },
+    {
+      "interaction_id": "LI-PREM-2",
+      "skill": "ATTACH_PREMISE",
+      "target": "load-bearing premises of V1-ADHYAVASAYA",
+      "prompt": "Which premises does the inference to 'C1' load-bearingly depend on?",
+      "response_space": "SINGLE_CHOICE",
+      "options": [
+        {
+          "text": "P1: the determination (adhyavasāya) is error-form: it is only the drawing of the appearance outward",
+          "correct": true,
+          "role": "CORRECT",
+          "derives_from": "proposition:P1"
+        },
+        {
+          "text": "P2: an inert part cannot establish anything",
+          "correct": true,
+          "role": "CORRECT",
+          "derives_from": "proposition:P2"
+        },
+        {
+          "text": "P3: the non-inert part (pure self-experience / vimarśa) is un-divided from the memory-cognition and is not external-natured",
+          "correct": true,
+          "role": "CORRECT",
+          "derives_from": "proposition:P3"
+        },
+        {
+          "text": "P4: establishing power belongs only to the self-luminous awareness (prakāśa), not to a thing that reaches a thing",
+          "correct": true,
+          "role": "CORRECT",
+          "derives_from": "proposition:P4"
+        },
+        {
+          "text": "the conclusion itself: C1",
+          "correct": false,
+          "role": "ARGUMENT_DIRECTION_REVERSAL",
+          "misconception": "ARGUMENT_DIRECTION_REVERSAL",
+          "derives_from": "proposition:C1"
+        },
+        {
+          "text": "the source passage (grounding, not a premise)",
+          "correct": false,
+          "role": "GROUNDING_AS_INFERENCE",
+          "misconception": "GROUNDING_AS_INFERENCE",
+          "derives_from": "source:pt:passage:ipvv:chunkM-jnanadhikara-reflexion-core.md"
+        }
+      ],
+      "feedback_rules": [
+        {
+          "correct": "the load-bearing premises; the conclusion and the source citation are NOT premises"
+        }
+      ],
+      "what_it_tests": {
+        "skill": "ATTACH_PREMISE",
+        "misconceptions": [
+          "ARGUMENT_DIRECTION_REVERSAL",
+          "GROUNDING_AS_INFERENCE"
+        ]
+      },
+      "source_refs": [
+        "pt:passage:ipvv:chunkM-jnanadhikara-reflexion-core.md"
+      ],
+      "derived_from": [
+        "V1-ADHYAVASAYA"
+      ]
+    },
+    {
+      "interaction_id": "LI-CRUX-3",
+      "skill": "IDENTIFY_CRUX",
+      "target": "the decisive unresolved dispute",
+      "prompt": "Which item is the decisive UNRESOLVED crux of this debate (not a settled conclusion)?",
+      "response_space": "SINGLE_CHOICE",
+      "options": [
+        {
+          "text": "CRUX-REFLEXION-INERT: Can an inert thing establish, or does establishment require the self-luminous non-inert?",
+          "correct": true,
+          "role": "CORRECT",
+          "derives_from": "CRUX-REFLEXION-INERT"
+        },
+        {
+          "text": "CRUX-SYNTHESIS-UNIVERSAL: Does per-act intrinsic reflexivity commit to the universal Self, or only to per-act self-luminosity?",
+          "correct": true,
+          "role": "CORRECT",
+          "derives_from": "CRUX-SYNTHESIS-UNIVERSAL"
+        },
+        {
+          "text": "CRUX-IPVV-001: Which assumption about the establishing power must hold for the recognition inference to succeed? Does 'establishing' require the self-luminous awareness (prakāśa) itself — such that the inert part cannot establish and the external is only drawn-to — or can a non-self-luminous (inert) representation nonetheless establish an external, as the Buddhist's fire-burning-wood analogy asserts?",
+          "correct": true,
+          "role": "CORRECT",
+          "derives_from": "CRUX-IPVV-001"
+        },
+        {
+          "text": "a settled conclusion: the universal Self (one Lord)",
+          "correct": false,
+          "role": "OPEN_AS_RESOLVED",
+          "misconception": "OPEN_AS_RESOLVED",
+          "derives_from": "boundary"
+        }
+      ],
+      "feedback_rules": [
+        {
+          "correct": "the crux that remains open"
+        }
+      ],
+      "what_it_tests": {
+        "skill": "IDENTIFY_CRUX",
+        "misconceptions": [
+          "OPEN_AS_RESOLVED",
+          "CRUX_OMISSION"
+        ]
+      },
+      "source_refs": [
+        "pt:passage:ipvv:chunkM-jnanadhikara-reflexion-core.md"
+      ],
+      "derived_from": [
+        "CRUX-REFLEXION-INERT",
+        "CRUX-SYNTHESIS-UNIVERSAL",
+        "CRUX-IPVV-001"
+      ]
+    },
+    {
+      "interaction_id": "LI-SCOPE-4",
+      "skill": "QUALIFY_SCOPE",
+      "target": "the scope boundary of the conclusion",
+      "prompt": "Which statement correctly preserves the scope of the conclusion?",
+      "response_space": "SINGLE_CHOICE",
+      "options": [
+        {
+          "text": "the claim holds per-act, with open boundaries (does not establish a universal Self)",
+          "correct": true,
+          "role": "CORRECT",
+          "derives_from": "boundary"
+        },
+        {
+          "text": "the claim establishes a universal Self in which all manifestation is one consciousness",
+          "correct": false,
+          "role": "SCOPE_INFLATION",
+          "misconception": "SCOPE_INFLATION",
+          "derives_from": "boundary"
+        },
+        {
+          "text": "the claim applies to every case without qualification",
+          "correct": false,
+          "role": "QUALIFIER_DROP",
+          "misconception": "QUALIFIER_DROP",
+          "derives_from": "boundary"
+        }
+      ],
+      "feedback_rules": [
+        {
+          "correct": "the per-act, bounded reading; the universal readings drop the qualifier"
+        }
+      ],
+      "what_it_tests": {
+        "skill": "QUALIFY_SCOPE",
+        "misconceptions": [
+          "SCOPE_INFLATION",
+          "QUALIFIER_DROP"
+        ]
+      },
+      "source_refs": [
+        "pt:passage:ipvv:chunkM-jnanadhikara-reflexion-core.md"
+      ],
+      "derived_from": [
+        "boundary"
+      ]
+    },
+    {
+      "interaction_id": "LI-WARR-5",
+      "skill": "RECONSTRUCT_WARRANT",
+      "target": "the warrant licensing the inference",
+      "prompt": "What must be granted for the inference in this debate (Can the determination (adhyavasāya) establish an external object, or is the self-experience self-luminous and self-contained?) to go through?",
+      "response_space": "SHORT_CONSTRUCT",
+      "options": [],
+      "feedback_rules": [
+        {
+          "correct": "the warrant must be explicitly stated and its reconstructed status flagged (UNRESOLVED), never presented as settled"
+        }
+      ],
+      "what_it_tests": {
+        "skill": "RECONSTRUCT_WARRANT",
+        "misconceptions": [
+          "WARRANT_OMISSION",
+          "OPEN_AS_RESOLVED"
+        ]
+      },
+      "source_refs": [
+        "pt:passage:ipvv:chunkM-jnanadhikara-reflexion-core.md"
+      ],
+      "derived_from": []
+    }
+  ],
+  "interaction_count": 5,
+  "epistemic_ceiling": "UNRESOLVED",
+  "packet_hash": "02f77ef06c30ffec881615a0d6a287b7a4d9dd780962d181aaa7b4585c13e6cd",
+  "design_law": "education is a projection of Pāṭala objects, not a separate knowledge base",
+  "moat": "wrong answer -> known epistemic neighbor (distractors derived from the graph)",
+  "review_state": "GENERATED"
+}
