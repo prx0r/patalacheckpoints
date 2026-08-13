@@ -179,23 +179,20 @@ def _write_batch_file(work: str, entries: list[dict]) -> Path:
 
 
 def _build_file_prompt(path: Path, n: int, work: str) -> str:
-    """A SMALL prompt: point hermes at the FILES (batch + IPVV gold exemplar + term-reference map) so it
-    reviews the actual house format itself — not inlined instructions. Max-turns must be high enough
-    for it to read the files and gloss (set in chat_agentic)."""
-    gold = "/root/projects/patala/data/published/ipvv/pt-passage-ipvv-chunkV2-O-saptamo-vimarsa-md.json"
-    refmap = "/root/projects/patala/docs/corpus/canonical_reference_map.md"
+    """A SMALL prompt: point hermes at the batch file (it reads the verses) + inline T1 format/terms.
+
+    Kept lean & reliable: forcing hermes to read 3 files (gold exemplar + ref map + batch) every call
+    overloaded it -> 'no JSON object in T1 batch output'. The batch file + inline format/terms produces
+    clean glosses. (Session continuity already keeps the work's context across chunks.)"""
     return (
         f"You are Patala's T1 translator for the work '{work}'. There are {n} Sanskrit verses in the "
-        f"file at {path} (JSONL, fields 'object_id' and 'verse').\n"
-        "Use your FILE TOOL to READ these files first:\n"
-        f"  1. {gold}   <- an IPVV GOLD passage. Review how its T1 transliteral gloss is written "
-        "(the canonical `[and]-GLOSS (IAST)` form per token) and MATCH that style and specialist senses.\n"
-        f"  2. {refmap} <- the term-reference map (krama, sakti, vimarsa, prakasa, svatantrya, spanda, "
-        "tattva, isvara) for the correct specialist senses for this work.\n"
-        f"  3. {path}   <- the batch of verses to gloss.\n"
-        "Then for EVERY verse in the batch, produce the canonical T1 transliteral gloss in the form "
-        "`[and]-GLOSS (IAST)` per token. The GLOSS is the plain literal English phrase (no '[and]-' "
-        "prefix, no parentheses, no IAST). Empty gloss only if genuinely unanalyzable (never fabricate).\n"
+        f"file at {path} (JSONL, fields 'object_id' and 'verse'). Use your FILE TOOL to READ that file.\n"
+        "SPECIALIST TERM SENSES: krama=sequence/order; sakti=power (Krama: Goddess/mantric power; "
+        "Trika: freedom of consciousness); vimarsa=reflexive awareness; prakasa=luminous consciousness; "
+        "spanda=pulse of consciousness; tattva=principle; isvara/mahesvara=the Lord.\n"
+        "For EVERY verse, produce the canonical T1 transliteral gloss in the form `[and]-GLOSS (IAST)` "
+        "per token. The GLOSS is the plain literal English phrase (no '[and]-' prefix, no parentheses, "
+        "no IAST). Empty gloss only if genuinely unanalyzable (never fabricate).\n"
         "Output JSON ONLY:\n{\"verses\": [{\"object_id\": \"<echoed>\", \"tokens\": "
         "{\"<surface>\": {\"gloss\": \"<literal>\", \"quoted\": false}, ...}}]}\n"
         "covering EVERY verse and EVERY token. Echo each object_id exactly.\n"
@@ -400,7 +397,7 @@ def t1_generator(layer: str, batch: list[dict]) -> list[dict]:
                 # persistent per-work session: first chunk creates it (retains the work's context),
                 # later chunks --resume so context does NOT reset between 50-verse batches.
                 raw = chat_agentic("You are the Pāṭala T1 translator (transliteral word-gloss).", prompt,
-                                   timeout=timeout, session=(sid or None), max_turns=20)
+                                   timeout=timeout, session=(sid or None), max_turns=10)
                 if not sid:
                     sid = _discover_session_id()
                     if sid:
