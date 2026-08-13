@@ -1,0 +1,970 @@
+{
+  "total_argmaps": 50,
+  "total_interactions": 250,
+  "skills_covered": [
+    "ATTACH_PREMISE",
+    "CLASSIFY_SPEAKER",
+    "IDENTIFY_CRUX",
+    "QUALIFY_SCOPE",
+    "RECONSTRUCT_WARRANT"
+  ],
+  "misconception_families_covered": [
+    "GROUNDING_AS_INFERENCE",
+    "OPEN_AS_RESOLVED",
+    "SCOPE_INFLATION",
+    "SPEAKER_COLLAPSE",
+    "WARRANT_OMISSION"
+  ],
+  "packets": [
+    {
+      "object_id": "kramasadbhava:v1",
+      "status": "GENERATED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V1A",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V1B",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V1C",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V1D",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V1E",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V1F",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V1G",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V1H",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V1I",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V1J",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V1K",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V1L",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V1M",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V1N",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V2A",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V2B",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V2C",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V2D",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V2E",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V2F",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V2G",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V2H",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V2I",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V2J",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V2K",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V2L",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V2M",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V2N",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V2O",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V2P",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V2Q",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V2R",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V2S",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V3A",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V3B",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V3C",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V3D",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V3E",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V3F",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V3G",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V3H",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V3I",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V3J",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V3K",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V3L",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V3M",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V3N",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V3O",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    },
+    {
+      "object_id": "ipvv:V3P",
+      "status": "GOLDEN_INGESTED",
+      "interaction_count": 5,
+      "learning_skills": [
+        "ATTACH_PREMISE",
+        "CLASSIFY_SPEAKER",
+        "IDENTIFY_CRUX",
+        "QUALIFY_SCOPE",
+        "RECONSTRUCT_WARRANT"
+      ],
+      "misconceptions": [
+        "SPEAKER_COLLAPSE",
+        "GROUNDING_AS_INFERENCE",
+        "OPEN_AS_RESOLVED",
+        "SCOPE_INFLATION",
+        "WARRANT_OMISSION"
+      ]
+    }
+  ]
+}
