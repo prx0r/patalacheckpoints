@@ -68,6 +68,18 @@ branch merge — do not force-push between the diverged branches.
 
 ---
 
+## The sequence (PHASE 4 — empirical qualification: A1-CONTINUE-v2)
+
+```
+devpath13 ──► A1-CONTINUE-v2: QUALIFY THE SYSTEM, DO NOT EXPAND THE ONTOLOGY
+              P0 ATLAS-NAT-NATURAL-v1 · P1 cross-lane Atlas audit · P2 real ARGMAP G3A
+              · P3–P12 VERTICAL-1 IPVV end-to-end · P13–P20 discipline/benchmarks
+                                                              STATUS: 🔄 IN PROGRESS (2026-08-13)
+              full spec → `endgamebuild/devpath13-a1-continue-v2.md` (verbatim directive)
+```
+
+---
+
 ## Status legend
 
 | Mark | Meaning |
