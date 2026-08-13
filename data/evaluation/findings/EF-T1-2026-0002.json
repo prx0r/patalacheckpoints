@@ -1,0 +1,24 @@
+{
+  "finding_id": "EF-T1-2026-0002",
+  "schema_version": "EvaluationFinding-v1",
+  "object_ref": "brahmayamala:v2",
+  "evaluated_version": "t1-brahmayamala:v2-v1",
+  "layer": "T1",
+  "contract": "T1-HARD-v2",
+  "evaluation_run_ref": "T1-NAT-REGRESSION-v1",
+  "dimension": "SEGMENTATION",
+  "result": "FAIL",
+  "failure_class": "OVER_SEGMENTATION",
+  "observed": "kāra + am (kāraṇam over-split)",
+  "expected_constraint": "kāraṇam must remain one lexical unit glossed 'the cause'",
+  "evidence_refs": [
+    "T1-REG-002"
+  ],
+  "recommended_action": "REGENERATE_AFTER_WORKER_FIX",
+  "status": "OPEN",
+  "producer": {
+    "agent": "agent1",
+    "commit": "d50ab7f19a013a61de9c254e5485b0bc076a347c"
+  },
+  "finding_hash": "6e3eccaae5e445f0180c89a1cfdf0f191df92638c638df4f0b8f4ddc1d3574b1"
+}

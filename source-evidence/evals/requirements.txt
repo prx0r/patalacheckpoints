@@ -1,0 +1,4 @@
+# Pinned evaluation substrate — the Pāṭala eval-plane runtime.
+# Changes to the substrate must be EXPLICIT upgrades, not accidental runtime drift.
+# Pin exactly the tested version; bump deliberately + re-record BenchmarkRun after any bump.
+inspect-ai==0.3.258

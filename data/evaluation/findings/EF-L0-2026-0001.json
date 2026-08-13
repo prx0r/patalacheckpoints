@@ -1,0 +1,24 @@
+{
+  "finding_id": "EF-L0-2026-0001",
+  "schema_version": "EvaluationFinding-v1",
+  "object_ref": "brahmayamala:v2",
+  "evaluated_version": "l0-brahmayamala:v2-v1",
+  "layer": "L0",
+  "contract": "L0-LOSSLESS-v1",
+  "evaluation_run_ref": "L0-PROOF-v0.4",
+  "dimension": "LOSSLESSNESS",
+  "result": "FAIL",
+  "failure_class": "TOKEN_LOSS",
+  "observed": "roundtrip False, coverage 2/3 (kāra+am over-split propagated from T1)",
+  "expected_constraint": "L0 is a lossless serialization of T1: all content tokens present + roundtrip",
+  "evidence_refs": [
+    "EF-T1-2026-0002"
+  ],
+  "recommended_action": "REGENERATE_AFTER_WORKER_FIX",
+  "status": "OPEN",
+  "producer": {
+    "agent": "agent1",
+    "commit": "d50ab7f19a013a61de9c254e5485b0bc076a347c"
+  },
+  "finding_hash": "1be095930b3159faa0969fc9225f97525b8903dda0cd07fc2cf3b2ab1c3313f4"
+}

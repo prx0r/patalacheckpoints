@@ -1,0 +1,24 @@
+{
+  "finding_id": "EF-T1-2026-0001",
+  "schema_version": "EvaluationFinding-v1",
+  "object_ref": "brahmayamala:v1",
+  "evaluated_version": "t1-brahmayamala:v1-v1",
+  "layer": "T1",
+  "contract": "T1-HARD-v2",
+  "evaluation_run_ref": "T1-NAT-REGRESSION-v1",
+  "dimension": "GLOSS_COMPLETENESS",
+  "result": "FAIL",
+  "failure_class": "UNGLOSSED_TOKEN",
+  "observed": "siramaisvaraiḥ has no gloss (empty)",
+  "expected_constraint": "every source token must receive a real gloss (no empty gloss)",
+  "evidence_refs": [
+    "T1-REG-001"
+  ],
+  "recommended_action": "REGENERATE_AFTER_WORKER_FIX",
+  "status": "OPEN",
+  "producer": {
+    "agent": "agent1",
+    "commit": "d50ab7f19a013a61de9c254e5485b0bc076a347c"
+  },
+  "finding_hash": "f06b0a8b1b0f416ce582bc682c70a7444954b1c4143e0d9df3d1df7315ee69ab"
+}

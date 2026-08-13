@@ -1,0 +1,24 @@
+{
+  "finding_id": "EF-T1-2026-0003",
+  "schema_version": "EvaluationFinding-v1",
+  "object_ref": "cidgagana:v1",
+  "evaluated_version": "t1-cidgagana:v1-v1",
+  "layer": "T1",
+  "contract": "T1-HARD-v2",
+  "evaluation_run_ref": "T1-NAT-REGRESSION-v1",
+  "dimension": "SEGMENTATION",
+  "result": "FAIL",
+  "failure_class": "OVER_SEGMENTATION",
+  "observed": "ga + eśaḥ (gaṇeśaḥ over-split); śaktijanmā mis-split",
+  "expected_constraint": "gaṇeśaḥ must remain one lexical unit glossed 'Ganesha'",
+  "evidence_refs": [
+    "T1-REG-003"
+  ],
+  "recommended_action": "REGENERATE_AFTER_WORKER_FIX",
+  "status": "OPEN",
+  "producer": {
+    "agent": "agent1",
+    "commit": "d50ab7f19a013a61de9c254e5485b0bc076a347c"
+  },
+  "finding_hash": "cd77919a8d32468e42b1f3fc06b6a6e4845738c94f2ef559b62bc6c939a391b7"
+}
