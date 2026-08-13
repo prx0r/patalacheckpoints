@@ -71,9 +71,26 @@ def _upstream_inputs(work_id: str, layer: str, limit: int) -> list[dict]:
         if upstream == "SOURCE":
             verse = (cur.get("payload", {}) or {}).get("verse") or \
                     (cur.get("payload", {}) or {}).get("source_text", "")
+            if not verse:
+                # fall back to the live-runner translations file (some SOURCE payloads are empty)
+                verse = _verse_from_runner(work_id, cur["input_hash"])
             item["verse"] = verse
         out.append(item)
     return out
+
+
+def _verse_from_runner(work_id: str, source_sha: str) -> str:
+    tpath = Path(f"/root/projects/patala/data/corpus/downloads/translations/{work_id}.jsonl")
+    if not tpath.exists():
+        return ""
+    for line in tpath.open(encoding="utf-8"):
+        try:
+            r = json.loads(line)
+            if r.get("source_sha256") == source_sha:
+                return r.get("sanskrit", "")
+        except Exception:
+            pass
+    return ""
 
 
 def scheduler_pass(work_ids: list[str], layers: list[str], per_layer: int) -> dict:
