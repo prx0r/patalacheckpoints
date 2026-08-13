@@ -124,7 +124,7 @@ def semantic_judge(gold_text: str, candidate_text: str, use_llm: bool = True) ->
     if use_llm:
         try:
             sys.path.insert(0, "/root/projects/patala/pipeline")
-            from model import chat
+            from model import chat_agentic  # the correct agentic path (per HERMES-CALLING); not blind -z
             prompt = (
                 "Classify the semantic relation between a GOLD scholarly proposition and a CANDIDATE "
                 "recovered proposition. Return JSON ONLY with keys: relation (one of "
@@ -134,8 +134,8 @@ def semantic_judge(gold_text: str, candidate_text: str, use_llm: bool = True) ->
                 "Note: NARROWER = candidate is a more specific true case of gold; BROADER = candidate "
                 "over-generalizes gold; CONTRADICTS = opposite claim. Pay attention to negation/scope."
             )
-            raw = chat("You are a scholarly-proposition semantic judge (structured, no prose).",
-                       prompt, timeout=120)
+            raw = chat_agentic("You are a scholarly-proposition semantic judge (structured, no prose).",
+                               prompt, max_turns=4, timeout=180)
             raw = (raw or "").strip()
             if raw.startswith("```"):
                 raw = raw.split("\n", 1)[-1].rsplit("```", 1)[0]

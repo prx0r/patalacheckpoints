@@ -135,6 +135,45 @@ def chat_result(system: str, user: str, model: str = DEFAULT_MODEL,
     return ModelResult(content=content, finish_reason="stop", latency_ms=latency, model=model)
 
 
+def chat_agentic(system: str, user: str, skills: str = "", max_turns: int = 8,
+                 timeout: int = 240) -> str:
+    """A model call via AGENTIC `hermes chat` (file access + skills) — the CORRECT way.
+
+    Per docs/global/HERMES-CALLING.md, `hermes -z` is blind (no file access, no tools, ~3.8% yield
+    on translation). This is the additive fix: call Hermes as an AGENT so it can read the repo, the
+    skills, and the reference maps itself.
+
+    Usage:
+        from model import chat_agentic
+        out = chat_agentic("You are a semantic judge.", "Classify: EQUIVALENT...")
+
+    Reference: pipeline/agentic_translate.py (the working invocation).
+    """
+    import subprocess
+    prompt = f"{system}\n\n{user}"
+    cmd = [HERMES_BIN, "chat", "-Q", "-q", prompt, "--yolo",
+           "--max-turns", str(max_turns)]
+    if skills:
+        cmd += ["--skills", skills]
+    # hermes may spawn a lingering grandchild; put it in its own process group so we can kill it
+    proc = subprocess.Popen(cmd, cwd="/root/projects/patala", start_new_session=True,
+                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+    try:
+        out, _ = proc.communicate(timeout=timeout)
+    except subprocess.TimeoutExpired:
+        import signal as _signal
+        try:
+            os.killpg(os.getpgid(proc.pid), _signal.SIGKILL)
+        except Exception:
+            proc.kill()
+        raise TimeoutError(f"chat_agentic timed out after {timeout}s")
+    # extract the JSON object if present (hermes -Q may print reasoning before/after it)
+    s, e = out.find("{"), out.rfind("}")
+    if s >= 0 and e > s:
+        return out[s:e + 1]
+    return out.strip()
+
+
 def _extract_json(raw: str) -> dict[str, Any]:
     """Strip fences and parse. Raises ValueError if no object is found."""
     raw = (raw or "").strip()
