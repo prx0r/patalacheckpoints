@@ -55,6 +55,39 @@ def _source_objects(work_id: str, count: int) -> list[dict]:
     return out
 
 
+def _register_source(work_id: str, count: int) -> list[dict]:
+    """Register SOURCE objects from the live-runner verses if not already present.
+
+    Deduplicates by verse content hash. Returns the registered [{object_id, input_hash, verse}]."""
+    tpath = Path(f"/root/projects/patala/data/corpus/downloads/translations/{work_id}.jsonl")
+    if not tpath.exists():
+        return []
+    verses = []
+    for line in tpath.open(encoding="utf-8"):
+        try:
+            r = json.loads(line)
+            v = (r.get("sanskrit") or "").strip()
+            if v:
+                verses.append(v)
+        except Exception:
+            pass
+    out = []
+    for i, v in enumerate(verses):
+        if count and len(out) >= count:
+            break
+        oid = f"{work_id}:v{i+1}"
+        if R.current("SOURCE", oid):
+            cur = R.current("SOURCE", oid)
+            out.append({"object_id": oid, "input_hash": cur["input_hash"], "verse": v})
+            continue
+        import hashlib
+        h = hashlib.sha256(v.encode("utf-8")).hexdigest()
+        R.commit("SOURCE", oid, h, created_by="factory-batch",
+                 payload={"verse": v, "source_text": v})
+        out.append({"object_id": oid, "input_hash": h, "verse": v})
+    return out
+
+
 def _commit_proposal(layer: str, p: dict) -> dict:
     """Commit a layer proposal via the controller's handler validator, MACHINE_PROPOSED."""
     handler = A.LAYER_HANDLERS.get(layer)
@@ -96,6 +129,8 @@ def main() -> int:
     a = ap.parse_args()
     layers = [l.strip() for l in a.layers.split(",") if l.strip()]
 
+    # register SOURCE if not present, then recover the verse-text inputs
+    _register_source(a.work, a.count)
     srcs = _source_objects(a.work, a.count)
     print(f"work={a.work} count={len(srcs)} layers={layers}", flush=True)
     if not srcs:
