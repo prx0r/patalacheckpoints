@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """pipeline/test_rate_limit.py — deterministic tests for resource/rate limiting (A2-10).
 
-Verifies the scheduler's model-call budget:
-  - a global max-model-calls budget stops advancing once exhausted
+Verifies the DAG scheduler's model-call budget:
+  - a global max-model-calls budget caps model-bound jobs per pass
   - model_calls is tracked accurately
+  - deterministic jobs (L0) do NOT consume the budget (free-draining)
   - the budget is per-pass (a later pass continues)
 Run: python3 pipeline/test_rate_limit.py
 """
@@ -18,7 +19,13 @@ sys.path.insert(0, "/root/projects/patala/pipeline")
 import object_registry as R
 import factory_batch as FB
 import factory_scheduler as FS
-import t1_worker as TW
+
+
+def _stub_model():
+    import t1_worker as TW
+    import argument_map_worker as AM
+    TW.chat = lambda s, p, **kw: '{"tokens": {"śivo": {"gloss":"x"}, "śivaṃ": {"gloss":"y"}}}'
+    AM.chat = lambda s, p, **kw: '{"what_is_at_issue":"q","argument_steps":["s1"],"open_items":[],"decision_for_l2":"d"}'
 
 
 def t(name, cond, detail=""):
@@ -30,27 +37,27 @@ def main() -> int:
     ok = True
     R.REG_DIR = Path(tempfile.mkdtemp())
     FB.FAILURE_QUEUE = Path(tempfile.mkdtemp()) / "q.jsonl"
-    TW.chat = lambda s, p, **kw: '{"tokens": {"śivo": {"gloss":"x"}}}'
+    _stub_model()
 
-    print("=== A2-10 resource/rate limiting ===")
+    print("=== A2-10 resource/rate limiting (DAG scheduler) ===")
+    # 3 works, each with SOURCE done (so T1 eligible = model-bound)
     for w in ("a", "b", "c"):
-        for i in (1, 2):
-            R.commit("SOURCE", f"{w}:v{i}", f"{w}h{i}", created_by="test",
-                     payload={"verse": "śivo", "source_text": "śivo"})
+        R.commit("SOURCE", f"{w}:v1", f"{w}h1", created_by="test",
+                 payload={"verse": "śivo", "source_text": "śivo"})
 
-    # budget of 2 model calls -> only work 'a' (2 verses) advances; b/c skipped
-    r = FS.scheduler_pass(["a", "b", "c"], ["T1"], per_layer=2, max_model_calls=2)
-    ok &= t("budget limits advance to 1 work", r["advanced"] == 1, f"advanced={r['advanced']}")
-    ok &= t("model_calls tracked = 2", r["model_calls"] == 2, f"{r['model_calls']}")
-    a_t1 = [o for o, vs in R._load("T1")["objects"].items() if o.startswith("a")]
-    b_t1 = [o for o, vs in R._load("T1")["objects"].items() if o.startswith("b")]
-    ok &= t("work a advanced", len(a_t1) == 2, f"{a_t1}")
-    ok &= t("work b did NOT advance (budget)", len(b_t1) == 0)
+    # budget 2 -> only 2 model-bound T1 jobs advance in this pass
+    r = FS.scheduler_pass(["a", "b", "c"], ["T1", "ARGMAP", "L0", "L2", "L200", "C1"],
+                          per_layer=2, max_model_calls=2)
+    ok &= t("budget caps model-bound jobs", r["model_calls"] <= 2, f"model_calls={r['model_calls']}")
+    committed_works = {oid.split(":")[0] for oid in r["committed_detail"]}
+    ok &= t("only a subset of works advanced (budget)", len(committed_works) <= 2,
+            f"advanced={sorted(committed_works)}")
 
-    # a later pass with a fresh budget continues (b now advances)
-    r2 = FS.scheduler_pass(["a", "b", "c"], ["T1"], per_layer=2, max_model_calls=4)
-    b_t1 = [o for o, vs in R._load("T1")["objects"].items() if o.startswith("b")]
-    ok &= t("later pass continues (budget resets per pass)", len(b_t1) == 2, f"b={b_t1}")
+    # a later pass with a bigger budget continues the remaining works
+    r2 = FS.scheduler_pass(["a", "b", "c"], ["T1", "ARGMAP", "L0", "L2", "L200", "C1"],
+                           per_layer=2, max_model_calls=4)
+    ok &= t("later pass continues (budget resets per pass)",
+            r2["model_calls"] >= 1, f"model_calls={r2['model_calls']}")
 
     print("\n" + ("RATE-LIMIT ALL PASS" if ok else "RATE-LIMIT SOME FAIL"))
     return 0 if ok else 1

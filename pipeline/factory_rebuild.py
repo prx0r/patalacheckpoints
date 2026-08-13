@@ -93,8 +93,6 @@ def regenerate(object_id: str, per_layer: int = 3, dry_run: bool = False) -> dic
     for down in DOWNSTREAM.get(layer, []):
         if R.current(down, passage):
             continue  # still has a current version -> nothing to rebuild
-        inputs = FS._upstream_inputs(passage.split(":")[0] + ":" + passage.split(":")[1],
-                                     down, per_layer) if ":" in passage else []
         # build the single-passage input directly
         upstream = {"T1": "SOURCE", "ARGMAP": "T1", "L0": "T1",
                     "L2": "L1", "L200": "L2", "C1": "L200"}[down]

@@ -164,9 +164,12 @@ def t1_generator(layer: str, batch: list[dict]) -> list[dict]:
         if not tokens:
             continue
         prompt = _build_prompt(verse, tokens)
+        # A2-10b size-aware timeout: scale with input size so long verses (e.g. bhavopahara) get more
+        # time instead of failing at a fixed cap. base 120s + ~0.5s/token (bounded).
+        timeout = min(180 + int(len(tokens) * 0.5), 600)
         try:
             raw = chat("You are the Pāṭala T1 translator (transliteral word-gloss).", prompt,
-                       timeout=180)
+                       timeout=timeout)
             gloss_map = _parse(raw).get("tokens", {}) or {}
             t1_tokens = _assemble_t1(verse, segments, gloss_map)
             proposals.append({

@@ -10,6 +10,7 @@ Run: python3 pipeline/test_failure_queue.py
 """
 from __future__ import annotations
 
+import json
 import sys
 import tempfile
 from pathlib import Path
@@ -32,6 +33,9 @@ def main() -> int:
     FB.FAILURE_QUEUE = Path(tempfile.mkdtemp()) / "failure-queue.jsonl"
 
     print("=== A2-11 durable failure/retry queue ===")
+    # commit SOURCE so the retry can recover the verse (the real factory always has SOURCE)
+    for oid, v in (("work:v1", "śivo"), ("work:v2", "śivaṃ")):
+        R.commit("SOURCE", oid, oid[-2:], created_by="test", payload={"verse": v, "source_text": v})
     # stub T1 so passage v1 FAILS and v2 SUCCEEDS (isolation test)
     calls = {"n": 0}
     def flaky(s, p, **kw):
@@ -56,19 +60,23 @@ def main() -> int:
     ok &= t("queue has the failed object", any("work:v1" in line for line in q))
 
     print()
-    print("=== retry from the durable queue ===")
+    print("=== retry from the durable queue (append-only audit) ===")
     # now the model succeeds on retry
     TW.chat = lambda s, p, **kw: '{"tokens": {"śivo": {"gloss":"x"}}}'
-    # retry with the correct input_hash (the factory resolves it from SOURCE verse on the next pass)
     n = FB._retry_failures("work", "T1")
     ok &= t("retry re-attempted the failed object", n == 1, f"{n}")
-    # idempotency: a second retry of the (now-cleared) queue is a no-op
-    n2 = FB._retry_failures("work", "T1")
-    ok &= t("retry is idempotent (empty queue -> no-op)", n2 == 0, f"{n2}")
-    # the failed object is either committed or removed from the queue (not retried forever)
+    # A2-11b: history preserved — the record is RESOLVED, NOT deleted
     q = FB.FAILURE_QUEUE.read_text().splitlines() if FB.FAILURE_QUEUE.exists() else []
-    ok &= t("failed object cleared from the durable queue (no infinite retry)", not any("work:v1" in l for l in q),
-            f"queue now has {len(q)} lines")
+    resolved = [json.loads(l) for l in q if "work:v1" in l and l.strip()]
+    ok &= t("retry history preserved (record still present, status RESOLVED)",
+            any(x.get("status") == "RESOLVED" for x in resolved),
+            f"statuses={[x.get('status') for x in resolved]}")
+    ok &= t("retry record carries attempt count",
+            any(x.get("attempt", 0) >= 2 for x in resolved),
+            f"attempts={[x.get('attempt') for x in resolved]}")
+    # resolved records are not retried again (no infinite loop)
+    n2 = FB._retry_failures("work", "T1")
+    ok &= t("resolved records not retried again (no infinite loop)", n2 == 0, f"{n2}")
 
     print("\n" + ("FAILURE-QUEUE ALL PASS" if ok else "FAILURE-QUEUE SOME FAIL"))
     return 0 if ok else 1

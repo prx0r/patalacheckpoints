@@ -151,41 +151,88 @@ FAILURE_QUEUE = Path("/root/projects/patala/data/corpus/downloads/factory-failur
 
 
 def _record_failures(layer: str, retryable: list[dict]) -> None:
-    """Append retryable failures to the durable queue (the next pass retries them)."""
+    """Append retryable failures to the durable AUDIT queue (append-only, never cleared).
+
+    A2-11b: retry history is preserved. A record stays in the queue; on a successful retry it is
+    marked RESOLVED (not deleted), so the audit trail (attempt 1 FAIL, attempt 2 PASS) survives for
+    worker/model-reliability metrics, pathological-source identification, and regression debugging."""
     if not retryable:
         return
     FAILURE_QUEUE.parent.mkdir(parents=True, exist_ok=True)
+    ts = __import__("time").strftime('%Y-%m-%dT%H:%M:%S')
     with FAILURE_QUEUE.open("a", encoding="utf-8") as fh:
         for f in retryable:
-            fh.write(json.dumps({**f, "ts": __import__("time").strftime('%Y-%m-%dT%H:%M:%S')},
+            fh.write(json.dumps({**f, "ts": ts, "status": "OPEN",
+                                 "attempt": f.get("attempt", 1),
+                                 "input_size": f.get("input_size", 0),
+                                 "timeout_used": f.get("timeout_used", 0)},
                                 ensure_ascii=False) + "\n")
 
 
-def _retry_failures(work_id: str, layer: str) -> int:
-    """Retry retryable failures for a work+layer from the durable queue. Returns # retried.
+def _verse_from_source(object_id: str) -> str:
+    """Recover the SOURCE verse for a passage (from the SOURCE registry or the live-runner file)."""
+    cur = R.current("SOURCE", object_id)
+    if cur:
+        v = (cur.get("payload", {}) or {}).get("verse") or (cur.get("payload", {}) or {}).get("source_text", "")
+        if v:
+            return v
+    wid = object_id.split(":")[0]
+    sha = (cur or {}).get("input_hash", "")
+    tpath = Path(f"/root/projects/patala/data/corpus/downloads/translations/{wid}.jsonl")
+    if tpath.exists():
+        for line in tpath.open(encoding="utf-8"):
+            try:
+                r = json.loads(line)
+                if r.get("source_sha256") == sha:
+                    return r.get("sanskrit", "")
+            except Exception:
+                pass
+    return ""
 
-    Idempotency (registry input-hash) prevents duplicate commits on retry."""
+
+def _retry_failures(work_id: str, layer: str) -> int:
+    """Retry OPEN retryable failures for a work+layer. Returns # retried.
+
+    A2-11b: on retry, an OPEN record is re-attempted; on success it is marked RESOLVED (audit history
+    preserved, never deleted). On failure it stays OPEN (bounded by the size-aware backoff policy).
+    Idempotency (registry input-hash) prevents duplicate commits."""
     if not FAILURE_QUEUE.exists():
         return 0
+    ts = __import__("time").strftime('%Y-%m-%dT%H:%M:%S')
     lines = FAILURE_QUEUE.read_text(encoding="utf-8").splitlines()
-    keep, retry = [], []
+    out, retry = [], []
     for line in lines:
         try:
             f = json.loads(line)
         except Exception:
+            out.append(line)  # preserve unparseable
             continue
-        if f.get("layer") == layer and f.get("object_id", "").startswith(work_id):
-            retry.append(f)
-        else:
-            keep.append(line)
+        is_target = f.get("layer") == layer and f.get("object_id", "").startswith(work_id) \
+            and f.get("status") in (None, "OPEN")
+        if not is_target:
+            out.append(line)
+            continue
+        retry.append(f)
     if not retry:
         return 0
-    inputs = [{"object_id": f["object_id"],
-               "input_hash": (R.current(layer, f["object_id"]) or {}).get("input_hash", "")}
-              for f in retry]
+    inputs = []
+    for f in retry:
+        inp = {"object_id": f["object_id"],
+               "input_hash": (R.current(layer, f["object_id"]) or {}).get("input_hash", ""),
+               "_retry_record": f}
+        if layer == "T1":
+            # recover the SOURCE verse (T1 generator needs it)
+            inp["verse"] = _verse_from_source(f["object_id"])
+        inputs.append(inp)
     r = _produce_layer(layer, inputs)
-    # remove retried (regardless of outcome — a permanent reject is recorded, not looped forever)
-    FAILURE_QUEUE.write_text("\n".join(keep) + ("\n" if keep else ""), encoding="utf-8")
+    committed = {c["object_id"] for c in r["committed"]}
+    # mark RESOLVED on success, keep OPEN on failure (audit preserved)
+    for f in retry:
+        f["status"] = "RESOLVED" if f["object_id"] in committed else "OPEN"
+        f["retry_ts"] = ts
+        f["attempt"] = f.get("attempt", 1) + 1
+        out.append(json.dumps(f, ensure_ascii=False))
+    FAILURE_QUEUE.write_text("\n".join(out) + ("\n" if out else ""), encoding="utf-8")
     return len(retry)
 
 
