@@ -1,5 +1,10 @@
 # AGENT 2 — ATLAS FOUNDATION PLAN (do B properly first, then one vertical)
 
+> **Operational plan:** `docs/AGENT2-SELF-EXECUTING-DEVPLAN.md` — the fragility-ordered, self-executing
+> version of this plan (TIER 0 [done] → TIER 1 Pydantic → TIER 2 Postgres → TIER 3 adapter+migration →
+> TIER 4 API → TIER 5 vertical). This doc is the strategic sequence; the self-executing plan is the
+> ordered, per-step-gated execution.
+
 *2026-08-13. The corrected build plan: build the **foundation** (B) completely and properly first —
 DB, R2, bibliography-as-Atlas, API — while the running factory stays untouched behind a compatibility
 adapter. Only when the foundation is real do we run one end-to-end vertical. This supersedes

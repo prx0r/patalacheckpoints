@@ -80,7 +80,8 @@ locked; see `handover/agent-2-integration/CANONICAL-LAYER-STACK.md`).
 
 **The Atlas forward plan (2026-08-13+).** Agent 2's next cycle is **building the Pāṭala Atlas foundation
 properly first** (do B, then one vertical), not translating more works. Read in this order:
-1. **`docs/AGENT2-ATLAS-FOUNDATION-PLAN.md`** — the active plan (Postgres Atlas I1 + R2 I2 + API I4, then a vertical).
+1. **`docs/AGENT2-SELF-EXECUTING-DEVPLAN.md`** — **the operational plan (fragility-ordered, per-step gated):** TIER 0 [done] → TIER 1 Pydantic contract package → TIER 2 dedicated Postgres Atlas → TIER 3 compatibility adapter + 254-record migration → TIER 4 OpenAlex-grammar read API → TIER 5 one vertical. Least fragile first; every step additive/revertible; the factory never breaks.
+2. **`docs/AGENT2-ATLAS-FOUNDATION-PLAN.md`** — the strategic I1–I6 sequence (do B then the vertical).
 2. **`docs/vision/atlas/technical-architecture-v1.md`** — **the authoritative Technical Architecture v1** (freeze this): the Pāṭala Authority Graph (Atlas = the surface over it), the full SQL schema (work/edition/witness/surrogate/etext/asset/authority_evidence/...), Pydantic discriminated epistemic objects, the 3 P0 schema corrections (no `dict[str,Any]` content; no single scalar authority rank — use an `AuthorityVector` of 4 axes; no universal review ladder — education states must not apply to Propositions), the exact stack (Neon/Postgres 17 + R2 + Workers/Hono + Astro + Python factory + Rust/Vidyut kernels). **Read before writing any schema.**
 3. **`openpatala/README.md`** — the "OpenAlex for Sanskrit" build folder (imported OpenAlex reference docs).
 4. **`docs/vision/vision-15-patala-atlas-sanskrit-research-graph.md`** — the strategy.
