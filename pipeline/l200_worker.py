@@ -192,7 +192,7 @@ def l200_generator(layer: str, batch: list[dict]) -> list[dict]:
                                  "l2_hash": l2_hash, "upstream": l2_refs,
                                  "l2_version": obj.get("version", "")},
             "1_published_reading": l2_text,
-            "2_derivation_map": _derivation_map(l2_text, l1_text),
+            "2_derivation_map": _derivation_map(l2_text, l1_text, b["object_id"]),
             "5_source_layer": [],
             "6_cross_references": [],
             "8_review_state": "machine",
@@ -209,14 +209,40 @@ def l200_generator(layer: str, batch: list[dict]) -> list[dict]:
     return proposals
 
 
-def _derivation_map(l2_text: str, l1_text: str) -> list[dict]:
-    """Deterministic derivation map: per L2 paragraph -> best-guess L1 span (positional)."""
+def _committed_l0_ranges(object_id: str) -> list[dict]:
+    """Deterministic L0 spans for a passage (the derivation map's L0-range column)."""
+    l0 = R.current("L0", object_id)
+    if not l0:
+        return []
+    recs = (l0.get("payload", {}) or {}).get("records", [])
+    ranges = []
+    for r in recs:
+        cs, ce = r.get("chunk_char_start"), r.get("chunk_char_end")
+        if isinstance(cs, int) and isinstance(ce, int):
+            ranges.append({"l0_record": r.get("id", ""), "range": f"L{cs}-L{ce}",
+                           "fragment": (r.get("raw_fragment") or "")[:40]})
+    return ranges
+
+
+def _derivation_map(l2_text: str, l1_text: str, object_id: str = "") -> list[dict]:
+    """Deterministic derivation map: per L2 paragraph -> argument-map segment -> L1 span ->
+    L0 range -> source range (the IPVV L200-SPEC §2 shape).
+
+    The argument-map segment is best-effort positional (the model does not invent it); L0 range is
+    bound deterministically from the committed L0 records; source range is the passage locator."""
+    l1 = _split_sentences(l1_text)
+    l0_ranges = _committed_l0_ranges(object_id)
     out = []
     for i, sent in enumerate(_split_sentences(l2_text)):
-        l1 = _split_sentences(l1_text)
         l1_span = l1[i] if i < len(l1) else ""
-        out.append({"l2_par": sent, "l1_span": l1_span, "l0_range": "",
-                    "source_range": ""})
+        l0_span = l0_ranges[i]["range"] if i < len(l0_ranges) else ""
+        out.append({
+            "l2_par": sent,
+            "argument_map_segment": f"V2-O.{i+1}" if object_id else "",
+            "l1_span": l1_span,
+            "l0_range": l0_span,
+            "source_range": object_id.split(":")[-1] if ":" in object_id else "",
+        })
     return out
 
 

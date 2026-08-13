@@ -29,6 +29,12 @@ source for the integration lane.*
 > (was a stub); THEME/ESSAY/EDUCATION wired to the Hermes-skill worker. Proof: `pipeline/prove_vertical.py`
 > (3 real kramasadbhava L0 → L1→L2→L200→C1, fail-closed, ALL PASS). The live `auto_translate_raw.py` runner
 > is untouched.
+> **LAYER TESTS vs IPVV EXEMPLARS (2026-08-13): `handover/agent-2-integration/BUILD-RECORD-2026-08-13-LAYER-TESTS.md`**
+> — confirmed the layer registry maps to the **canonical IPVV stack** (L0/L1/L2/L200/C1/THEME/ESSAY/EDUCATION,
+> NOT T1/R1/T2). L0 PASS (validator accepts real exemplars, RAW-L0 lossless, controller gate); L1/L2 PASS
+> (provenance + semantic-fidelity + live model path); L200 constrained compiler under live test vs the V2-O
+> exemplar; C1 built + gated, live test next. Loose threads in §4 (L200 DEV-benchmark measurement, real
+> THEME worker, unpushed commits).
 > **CURRENT STATE (READ FIRST): `handover/agent-2-integration/SESSION-2026-08-13.md`** — **WE GOT IT RUNNING**:
 > the autonomous translation factory is live. Hermes (`hermes -z`) translates the full 73-work RAW_SANSKRIT
 > queue to MACHINE_PROPOSED English, unattended + watchdog-survivable. Driver =

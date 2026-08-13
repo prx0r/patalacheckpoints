@@ -42,6 +42,26 @@ foreground Direct calls hang** (they compete for the same API), so my proof scri
 - `run_autonomous_l0` workers (2) left from a 24-passage background run — they are wedged and hog the
   Direct API. They must be killed out-of-band (the tool shell wedges on them) before any new model work.
 
+## ADOPTED PRACTICE (2026-08-13) — tests go to background, one layer at a time
+For layer tests that make model calls (L200 constrained classifier, C1 commentary, live L1L2):
+- **Keep the test SMALL** (a few passages / candidates, never a whole work) and **launch it detached**:
+  ```bash
+  python3 -u pipeline/test_l200_v2o.py > /tmp/opencode/test-l200.log 2>&1 < /dev/null &
+  ```
+  (`-u` = unbuffered so the log is live; `< /dev/null` + `&` detaches from the tool shell.)
+- **Check progress by reading the log file** (`cat /tmp/opencode/test-l200.log`), never by awaiting the
+  PID in the foreground. This lets us keep working while a model test runs — same practice as the live
+  `auto_translate_raw.py` translation runner.
+- **One layer at a time.** Perfect L0 → commit → L1/L2 → commit → L200 → C1. Do not fire every layer's
+  model test simultaneously (they saturate the model API and each other stalls).
+- Deterministic (no-model) layer tests (L0 schema, L1/L2 provenance, registry, fail-closed) may run
+  foreground — they are instant.
+- Standard log locations: `/tmp/opencode/test-l200.log`, `/tmp/opencode/test-c1.log`, etc.
+- To stop a detached test out-of-band (never from the tool shell that launched it):
+  ```bash
+  setsid bash -c 'pkill -f "test_l200_v2o"'
+  ```
+
 ## Where this lives
 This rule is also recorded in `handover/agent-2-integration/PROGRESS-AUTONOMOUS-2026-08-12.md` §6
 (working practice). The autonomous factory controller itself (`autonomy.py`, `auto_run.py`) is designed to
