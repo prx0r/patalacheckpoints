@@ -1,0 +1,2535 @@
+{
+  "bench": "INCEPTION-GOLD-PREP",
+  "passages": 20,
+  "layers": [
+    "speaker",
+    "proposition",
+    "commitment",
+    "premise",
+    "conclusion",
+    "objection",
+    "reply",
+    "warrant"
+  ],
+  "design": "machine pre-annotation -> INCEpTION review -> import as ReviewEvents/gold",
+  "projects": [
+    {
+      "passage": "pt:passage:ipvv:chunkA-svatyandya.md",
+      "project": {
+        "annotation_project_id": "IPVV-GOLD-chunkA-svatyandya.md",
+        "exported_at": "2026-08-13T22:53:10.600757+00:00",
+        "format": "PĀTALA-ANNOTATION-PROJECT-v1",
+        "compatible_with": [
+          "INCEpTION (webanno/W3C)",
+          "Recogito",
+          "TEI WebAnnotation"
+        ],
+        "text": "**The spontaneity of the Lord: the self-aware light**\n\nThis is where the whole Īśvarapratyabhijñāvivṛtivimarśinī begins — with the spontaneity, the\nsvācchandya, of the Lord. And the doctrine is announced in its fullness from the first lines. The blue\nand the yellow and the jar are not things that a light shines upon from outside; they shine forth\n*as* the light, without abandoning their own being, and are one with the manifestation itself. This —\nthat the world shines as the consciousness, and that the consciousness shines as the world — is the\nLord's spontaneity.\n\nThe Lord is of the nature of consciousness. He shines forth as the whole variety of knowers and knowns,\nwith a body that appears as if it were more than consciousness even though it is not more; and — this is\ndecisive — he is *aware* of shining. The image Abhinavagupta uses is the mirror. A mirror reflects the\nwall, the house, the elephant, the horse, the person, the pot, the potter — all the distinctions of\npart and whole, support and supported, cause and effect — without being more than its own smooth\nsurface. But the mirror does not know that it reflects. That is its only limit; it is inert. The Lord\nis the mirror that *knows*: he shines forth as all things, and he is aware that he does so, because\nconsciousness culminates in reflexive-awareness. The light that shines is the light that knows itself\nshining.\n\nAnd this answers the obvious objection: \"then it would always shine.\" For the \"always\" has no\nindependent time against which it could fail. What we call time is just the sun's movement — the\nshining of things in their succession. To ask \"why does the world shine as the sun moves?\" is like\nasking \"why does the blue not shine as yellow?\" It is the nature of the light to shine; there is no\ntime outside it that could make it shine or not. So the Lord is: *śaśvat*, un-cut by time; *acchanna*,\nnever becoming other than his own form; *svaccha*, clear — able to appear as more than himself while\nbeing only ",
+        "text_hash": "fd53f0e2de35c570877ccd40d717ba5178d62465ed1062a90e0228bc138c8662",
+        "layers": [
+          "speaker",
+          "proposition",
+          "commitment",
+          "premise",
+          "conclusion",
+          "objection",
+          "reply",
+          "warrant"
+        ],
+        "vocabularies": {
+          "speaker": [
+            "author",
+            "opponent",
+            "commentator",
+            "reconstructed",
+            "unspecified"
+          ],
+          "commitment": [
+            "ASSERTS",
+            "DENIES",
+            "ATTRIBUTES",
+            "REPORTS",
+            "RECONSTRUCTS",
+            "OPEN"
+          ],
+          "support": [
+            "DIRECT_SUPPORT",
+            "PARTIAL_SUPPORT",
+            "CONTRADICTION",
+            "BACKGROUND",
+            "NON_EQUIVALENT"
+          ],
+          "scope": [
+            "UNIVERSAL",
+            "PER_ACT",
+            "QUALIFIED",
+            "UNKNOWN"
+          ],
+          "uncertainty": [
+            "UNRESOLVED",
+            "NEEDS_REVIEW",
+            "CONTESTED",
+            "CONFIRMED"
+          ]
+        },
+        "annotations": [
+          {
+            "@id": "ann:chunkA-svatyandya.md:author:828",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Abhinavagupta",
+                  "start": 828,
+                  "end": 841,
+                  "prefix": "*aware* of shining. The image ",
+                  "suffix": " uses is the mirror. A mirror "
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "d7a10d3fd9b2e3dcf85699e3f4c248121d919914bcaf20cac2a8521ede0909e7"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkA-svatyandya.md"
+          },
+          {
+            "@id": "ann:chunkA-svatyandya.md:author:21",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "the Lord",
+                  "start": 21,
+                  "end": 29,
+                  "prefix": "**The spontaneity of ",
+                  "suffix": ": the self-aware light**\n\nThis"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "9e128a2b6bb894cc6b490e1a3a1e6f441044f94208de11a9fee03f968335b0c1"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkA-svatyandya.md"
+          },
+          {
+            "@id": "ann:chunkA-svatyandya.md:opponent:1424",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "objection",
+                  "start": 1424,
+                  "end": 1433,
+                  "prefix": "\nAnd this answers the obvious ",
+                  "suffix": ": \"then it would always shine."
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "266fc989bdbb5add9d23ba7bcb0ba10baa4b6bda728895f5733860bf498c0ade"
+                }
+              ]
+            },
+            "body": {
+              "label": "opponent",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkA-svatyandya.md"
+          }
+        ],
+        "annotation_count": 3,
+        "export_hash": "d1297ba3549844c2027bb4058b85156ef50e1d024b6001972e2cf9bbd8d966c5"
+      }
+    },
+    {
+      "passage": "pt:passage:ipvv:chunkB-eligibility-gita.md",
+      "project": {
+        "annotation_project_id": "IPVV-GOLD-chunkB-eligibility-g",
+        "exported_at": "2026-08-13T22:53:10.600966+00:00",
+        "format": "PĀTALA-ANNOTATION-PROJECT-v1",
+        "compatible_with": [
+          "INCEpTION (webanno/W3C)",
+          "Recogito",
+          "TEI WebAnnotation"
+        ],
+        "text": "**The homage that is two-resting, and who is worthy to make it**\n\nThe work opens with a prostration — and Abhinavagupta takes care to say what that prostration is. It\nis not a bending of the body, nor an empty sound. It is a *two-resting* homage: it rests at once in the\nLord, whom it exalts, and in the devotee, whom it subordinates. The words of homage — \"jaya,\" \"victory,\"\n\"namaḥ,\" \"I bow,\" \"I worship\" — all move by one of these two directions, but each must culminate in the\nother. The \"victory\" of the Lord, to be real, requires the devotee's self-subordination; the \"I bow\" of\nthe devotee, to be real, must rest in the Lord's excess. The two — the exalting and the subordinating —\nare one act, two aspects, made manifest by the single word of homage before the whole assembly.\n\nAnd the attaining of the Lord, the commentary tells us, is the attainment of *dāsya* — of\nservant-ness. And the servant-ness is extremely hard to get: that is what \"kathaṃcit,\" \"in some way,\"\nmeans. It is not a title; it is the very heart of the eligibility. And it is fruitful of the greatest\ngood — for in becoming the servant of the Lord one attains the Lord's own excess, and all the fortunes\n(dāsyalakṣmī) follow from that servant-ness, granted by the Lord's grace. It is this that makes the\ndevotee one who has attained all.\n\nThe homage, moreover, is made in the mind and the speech — the mind-awareness and the word-essence —\nnever in the inert body. \"Even by speech,\" the text says, and by the \"even\" we understand \"and by the\nbody.\" But the prostration proper is the offering of the undivided mind-and-speech, which is the\nconsciousness-power itself; and in offering that, the devotee offers the whole world to the Lord. As the\nteaching says: \"he should offer his own self.\" The physical prostration — the bowing, the eight-limbed\nsalutation — is only the upacāra, the visible mark by which the inner offering is inferred, not the\nprimary act.\n\nAnd so the question of who is worthy. The objection arises: \"",
+        "text_hash": "c2c61a5d439549dd7d6d9c35fc1dd90fafb43d42675a98e64f330e558a19efef",
+        "layers": [
+          "speaker",
+          "proposition",
+          "commitment",
+          "premise",
+          "conclusion",
+          "objection",
+          "reply",
+          "warrant"
+        ],
+        "vocabularies": {
+          "speaker": [
+            "author",
+            "opponent",
+            "commentator",
+            "reconstructed",
+            "unspecified"
+          ],
+          "commitment": [
+            "ASSERTS",
+            "DENIES",
+            "ATTRIBUTES",
+            "REPORTS",
+            "RECONSTRUCTS",
+            "OPEN"
+          ],
+          "support": [
+            "DIRECT_SUPPORT",
+            "PARTIAL_SUPPORT",
+            "CONTRADICTION",
+            "BACKGROUND",
+            "NON_EQUIVALENT"
+          ],
+          "scope": [
+            "UNIVERSAL",
+            "PER_ACT",
+            "QUALIFIED",
+            "UNKNOWN"
+          ],
+          "uncertainty": [
+            "UNRESOLVED",
+            "NEEDS_REVIEW",
+            "CONTESTED",
+            "CONFIRMED"
+          ]
+        },
+        "annotations": [
+          {
+            "@id": "ann:chunkB-eligibility-gita.md:author:106",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Abhinavagupta",
+                  "start": 106,
+                  "end": 119,
+                  "prefix": "pens with a prostration — and ",
+                  "suffix": " takes care to say what that p"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "d7a10d3fd9b2e3dcf85699e3f4c248121d919914bcaf20cac2a8521ede0909e7"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkB-eligibility-gita.md"
+          },
+          {
+            "@id": "ann:chunkB-eligibility-gita.md:author:504",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "the Lord",
+                  "start": 504,
+                  "end": 512,
+                  "prefix": "n the\nother. The \"victory\" of ",
+                  "suffix": ", to be real, requires the dev"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "9e128a2b6bb894cc6b490e1a3a1e6f441044f94208de11a9fee03f968335b0c1"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkB-eligibility-gita.md"
+          },
+          {
+            "@id": "ann:chunkB-eligibility-gita.md:opponent:1981",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "objection",
+                  "start": 1981,
+                  "end": 1990,
+                  "prefix": "uestion of who is worthy. The ",
+                  "suffix": " arises: \""
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "266fc989bdbb5add9d23ba7bcb0ba10baa4b6bda728895f5733860bf498c0ade"
+                }
+              ]
+            },
+            "body": {
+              "label": "opponent",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkB-eligibility-gita.md"
+          }
+        ],
+        "annotation_count": 3,
+        "export_hash": "7b82e70626a556641c633cfed0967c76ddf0f4c158101a8a44a6ff5d32eafe19"
+      }
+    },
+    {
+      "passage": "pt:passage:ipvv:chunkC-svatma-maya-upanishad.md",
+      "project": {
+        "annotation_project_id": "IPVV-GOLD-chunkC-svatma-maya-u",
+        "exported_at": "2026-08-13T22:53:10.601101+00:00",
+        "format": "PĀTALA-ANNOTATION-PROJECT-v1",
+        "compatible_with": [
+          "INCEpTION (webanno/W3C)",
+          "Recogito",
+          "TEI WebAnnotation"
+        ],
+        "text": "**The own-self: the one consciousness, whose body is the world**\n\nThe kārikā says that the own-self alone is the Lord. But what is this \"own-self\"? Does it reach the\nwhole world — the inert things, the void, everything? The objector presses hard on this. If the\nmaheśvara is the self of the blue, then he must be the self of the yellow too; and then how can the\nworld be divided — \"this is the blue, this is the yellow\"? The answer turns on what \"own-self\" really\nmeans.\n\nThe \"own\" in \"own-self\" (svātmā) is not restricted to anything in particular; so it is the self's own —\nthe inner, non-other-dependent, un-conditioned relation. And what is that? It is consciousness. For\nthe conscious things, he is plainly the one self. But for the inert — the lump of clay, the blue — how\ncan they have one self, since separate things seem to have separate natures? Here Abhinavagupta shows\nthat the inert, in its supposed inertia, has no real being at all. If the clay is truly in itself, is\nit or is it not? If it were not, nothing would suffer; if it did its effect, so what; if it shone,\nwhat is its own glory? The \"it shines for me, for Caitra\" fails too — for the perception belongs to\nthe perceiver, not to the thing; and \"by the perceiver it shines\" is a new-fangled reason that would\nmake the white make the yellow white. In truth, the thing has no being apart from its being-manifested;\nand being-manifested is the consciousness's own act. So the blue and the yellow are not things with\ntheir own separate bodies; they are *awareness-forms* (bodhātmānaḥ) — and their own-self, no less than\nours, is the maheśvara.\n\nWhat of the void, the mere nothing? If it is cognized at all, then the maheśvara is its self too; if\nit is not cognized, then it is nothing, and no one's self is at issue. The test is always the same: is\nit cognized? That is the whole answer — the \"being-cognized\" is what makes anything the self of the\none consciousness.\n\nAnd so the division of the world. If the maheśvara is the sel",
+        "text_hash": "ea87b0464c390c413e80e6535236d17e5a875da25b5dd71b17d0060fece76736",
+        "layers": [
+          "speaker",
+          "proposition",
+          "commitment",
+          "premise",
+          "conclusion",
+          "objection",
+          "reply",
+          "warrant"
+        ],
+        "vocabularies": {
+          "speaker": [
+            "author",
+            "opponent",
+            "commentator",
+            "reconstructed",
+            "unspecified"
+          ],
+          "commitment": [
+            "ASSERTS",
+            "DENIES",
+            "ATTRIBUTES",
+            "REPORTS",
+            "RECONSTRUCTS",
+            "OPEN"
+          ],
+          "support": [
+            "DIRECT_SUPPORT",
+            "PARTIAL_SUPPORT",
+            "CONTRADICTION",
+            "BACKGROUND",
+            "NON_EQUIVALENT"
+          ],
+          "scope": [
+            "UNIVERSAL",
+            "PER_ACT",
+            "QUALIFIED",
+            "UNKNOWN"
+          ],
+          "uncertainty": [
+            "UNRESOLVED",
+            "NEEDS_REVIEW",
+            "CONTESTED",
+            "CONFIRMED"
+          ]
+        },
+        "annotations": [
+          {
+            "@id": "ann:chunkC-svatma-maya-upanishad.md:author:861",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Abhinavagupta",
+                  "start": 861,
+                  "end": 874,
+                  "prefix": "o have separate natures? Here ",
+                  "suffix": " shows\nthat the inert, in its "
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "d7a10d3fd9b2e3dcf85699e3f4c248121d919914bcaf20cac2a8521ede0909e7"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkC-svatma-maya-upanishad.md"
+          },
+          {
+            "@id": "ann:chunkC-svatma-maya-upanishad.md:author:109",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "the Lord",
+                  "start": 109,
+                  "end": 117,
+                  "prefix": "ys that the own-self alone is ",
+                  "suffix": ". But what is this \"own-self\"?"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "9e128a2b6bb894cc6b490e1a3a1e6f441044f94208de11a9fee03f968335b0c1"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkC-svatma-maya-upanishad.md"
+          }
+        ],
+        "annotation_count": 2,
+        "export_hash": "113e5ca5b9d12eb1165b76bad49b40bd191022c6c8356c1b98b9dd86201c3e3b"
+      }
+    },
+    {
+      "passage": "pt:passage:ipvv:chunkD-memory-pramana.md",
+      "project": {
+        "annotation_project_id": "IPVV-GOLD-chunkD-memory-praman",
+        "exported_at": "2026-08-13T22:53:10.601237+00:00",
+        "format": "PĀTALA-ANNOTATION-PROJECT-v1",
+        "compatible_with": [
+          "INCEpTION (webanno/W3C)",
+          "Recogito",
+          "TEI WebAnnotation"
+        ],
+        "text": "**The eternal knower: \"I was never not\"**\n\nMemory seems to bind the self to the past — to what the self has itself experienced. But then the\nobjection arises, and it is a sharp one. \"I was not at the time of the Rāmāyaṇa,\" the reader says.\n\"Vālmīki composed it long ago, and I was not there to experience it; so how can the self, which\nremembers only what it has experienced, be the eternal knower?\"\n\nAbhinavagupta answers that the objection mistakes the body for the self. It is true that *this body*\nwas not at the time of the Rāmāyaṇa — but that is not the self. The \"I\"-recollection, the aham-vimarśa,\nis of the consciousness-nature, and it is eternal. And here is the crucial move: if memory reaches only\nwhat has been experienced, then even the Vālmīki of the Rāmāyaṇa was an experiencer; and the āgama\nitself, by which we learn of that time, presupposes an experiencer. What flashes in the \"we were not\" —\nthe past-time-appearance, in the perfect tense — is itself a cognition; and since it is not the\nexperience-form (else the past would flash like the yogin's present), it must be memory. And memory, by\nits very nature, presupposes a prior experience. So every memory, even the memory of the Rāmāyaṇa, points\nback to an experiencer who was there.\n\nThis is where the eternal knower enters. The pure consciousness-mere, being free of the tint of time,\ncannot by itself bear the memory; the memory is of the body-and-the-rest-tinted. But the tint of the\nprior body is distinct from the tint of this body — so the memory-ness, if pinned to the body, would not\nbe clear (as the young man who was never a child would have no clear memory of childhood). The clear\nmemory requires the firm conceit of the experiencer — and that conceit, in its root, is the self that\nwas there. And that self, being consciousness, is not cut by time.\n\nSo the manifestation of the self is not un-precedented (apūrva). It does not begin to shine at some\nmoment; it was always shining. The being-ness of the self rests",
+        "text_hash": "5bcf8b3844a6bbfde6f850b52eef9275a5ac34b39f61e08ae3aa1515dc53a35a",
+        "layers": [
+          "speaker",
+          "proposition",
+          "commitment",
+          "premise",
+          "conclusion",
+          "objection",
+          "reply",
+          "warrant"
+        ],
+        "vocabularies": {
+          "speaker": [
+            "author",
+            "opponent",
+            "commentator",
+            "reconstructed",
+            "unspecified"
+          ],
+          "commitment": [
+            "ASSERTS",
+            "DENIES",
+            "ATTRIBUTES",
+            "REPORTS",
+            "RECONSTRUCTS",
+            "OPEN"
+          ],
+          "support": [
+            "DIRECT_SUPPORT",
+            "PARTIAL_SUPPORT",
+            "CONTRADICTION",
+            "BACKGROUND",
+            "NON_EQUIVALENT"
+          ],
+          "scope": [
+            "UNIVERSAL",
+            "PER_ACT",
+            "QUALIFIED",
+            "UNKNOWN"
+          ],
+          "uncertainty": [
+            "UNRESOLVED",
+            "NEEDS_REVIEW",
+            "CONTESTED",
+            "CONFIRMED"
+          ]
+        },
+        "annotations": [
+          {
+            "@id": "ann:chunkD-memory-pramana.md:author:401",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Abhinavagupta",
+                  "start": 401,
+                  "end": 414,
+                  "prefix": "ced, be the eternal knower?\"\n\n",
+                  "suffix": " answers that the objection mi"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "d7a10d3fd9b2e3dcf85699e3f4c248121d919914bcaf20cac2a8521ede0909e7"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkD-memory-pramana.md"
+          },
+          {
+            "@id": "ann:chunkD-memory-pramana.md:opponent:141",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "objection",
+                  "start": 141,
+                  "end": 150,
+                  "prefix": "elf experienced. But then the\n",
+                  "suffix": " arises, and it is a sharp one"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "266fc989bdbb5add9d23ba7bcb0ba10baa4b6bda728895f5733860bf498c0ade"
+                }
+              ]
+            },
+            "body": {
+              "label": "opponent",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkD-memory-pramana.md"
+          }
+        ],
+        "annotation_count": 2,
+        "export_hash": "645609c3faab7d1e8d528887da3f0a82a1f0850237a8ae3ff417a14b1739f6c0"
+      }
+    },
+    {
+      "passage": "pt:passage:ipvv:chunkE-cit-acid-dvairasya.md",
+      "project": {
+        "annotation_project_id": "IPVV-GOLD-chunkE-cit-acid-dvai",
+        "exported_at": "2026-08-13T22:53:10.601361+00:00",
+        "format": "PĀTALA-ANNOTATION-PROJECT-v1",
+        "compatible_with": [
+          "INCEpTION (webanno/W3C)",
+          "Recogito",
+          "TEI WebAnnotation"
+        ],
+        "text": "**The self is the Lord: what the recognition does**\n\nThe kārikā declares that the self alone is the Lord. And at once a sharp objection arises. A valid\nmeans of knowledge, it is said, establishes what was *not* established before — it serves the practical\ndealings of the world. But the Lord-self, on our own showing, is already established. So what could a\npramāṇa possibly do here? What is there left for it to prove?\n\nAbhinavagupta's answer turns this objection around. For an inert object, even an established one, the\npramāṇa does indeed make a new attainment — it brings out some part that was not yet grasped, at least\nthe manifestation and the designation (prakhyā and upākhyā) of the thing in our dealing with it. But in\nthe self — the Lord — there is nothing un-attained to be established. The manifestation and the\ndesignation are already there; without them, not even a trace of a thing could be known at all. So the\npramāṇa here is not establishing something new.\n\nWhat, then, is it doing? It is *foregrounding* what is already present but hidden. The recognition\n(pratyabhijñā) does not bring the Lord into being; it brings the Lord, who was always near and always\npresent, into the *foreground of our own awareness*. As Abhinavagupta says, what is hidden and standing\nclose by is shown as primary, by the coming-together of the heart. The recognition makes the\nmanifestation and the designation of the self-as-Lord no longer an instrument lost among the things of\nthe body and the world, but the primary thing that we see. It is the turning of the attention — the\n\"see, see\" — upon what was always before us.\n\nAnd this recognition is the very content of the whole teaching. After the upoddhāta, the opening, the\nwhole śāstra that is to come has, as its to-be-said content, the recognition — which is the\njñāna-kriyā, the knowledge-and-action power, made firm by the conviction (dṛḍhaniścaya) that arises from\nit. The two powers — knowledge and action — are determined at length through",
+        "text_hash": "651e11f1f680e00950cd75bc3bf3fbd81a75e415a75e64267659b5d80ea7b121",
+        "layers": [
+          "speaker",
+          "proposition",
+          "commitment",
+          "premise",
+          "conclusion",
+          "objection",
+          "reply",
+          "warrant"
+        ],
+        "vocabularies": {
+          "speaker": [
+            "author",
+            "opponent",
+            "commentator",
+            "reconstructed",
+            "unspecified"
+          ],
+          "commitment": [
+            "ASSERTS",
+            "DENIES",
+            "ATTRIBUTES",
+            "REPORTS",
+            "RECONSTRUCTS",
+            "OPEN"
+          ],
+          "support": [
+            "DIRECT_SUPPORT",
+            "PARTIAL_SUPPORT",
+            "CONTRADICTION",
+            "BACKGROUND",
+            "NON_EQUIVALENT"
+          ],
+          "scope": [
+            "UNIVERSAL",
+            "PER_ACT",
+            "QUALIFIED",
+            "UNKNOWN"
+          ],
+          "uncertainty": [
+            "UNRESOLVED",
+            "NEEDS_REVIEW",
+            "CONTESTED",
+            "CONFIRMED"
+          ]
+        },
+        "annotations": [
+          {
+            "@id": "ann:chunkE-cit-acid-dvairasya.md:author:421",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Abhinavagupta",
+                  "start": 421,
+                  "end": 434,
+                  "prefix": " there left for it to prove?\n\n",
+                  "suffix": "'s answer turns this objection"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "d7a10d3fd9b2e3dcf85699e3f4c248121d919914bcaf20cac2a8521ede0909e7"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkE-cit-acid-dvairasya.md"
+          },
+          {
+            "@id": "ann:chunkE-cit-acid-dvairasya.md:author:14",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "the Lord",
+                  "start": 14,
+                  "end": 22,
+                  "prefix": "**The self is ",
+                  "suffix": ": what the recognition does**\n"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "9e128a2b6bb894cc6b490e1a3a1e6f441044f94208de11a9fee03f968335b0c1"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkE-cit-acid-dvairasya.md"
+          },
+          {
+            "@id": "ann:chunkE-cit-acid-dvairasya.md:opponent:126",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "objection",
+                  "start": 126,
+                  "end": 135,
+                  "prefix": "the Lord. And at once a sharp ",
+                  "suffix": " arises. A valid\nmeans of know"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "266fc989bdbb5add9d23ba7bcb0ba10baa4b6bda728895f5733860bf498c0ade"
+                }
+              ]
+            },
+            "body": {
+              "label": "opponent",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkE-cit-acid-dvairasya.md"
+          }
+        ],
+        "annotation_count": 3,
+        "export_hash": "31713ace730e2a2532c4bb71ac602af79904514af4e54b74fed6192e1ad81dd5"
+      }
+    },
+    {
+      "passage": "pt:passage:ipvv:chunkF-upoddhata-k1-7.md",
+      "project": {
+        "annotation_project_id": "IPVV-GOLD-chunkF-upoddhata-k1-",
+        "exported_at": "2026-08-13T22:53:10.601468+00:00",
+        "format": "PĀTALA-ANNOTATION-PROJECT-v1",
+        "compatible_with": [
+          "INCEpTION (webanno/W3C)",
+          "Recogito",
+          "TEI WebAnnotation"
+        ],
+        "text": "**The self is the Lord: against the Buddhist no-self**\n\nThe upoddhāta, the preliminary of the whole work, must first clear the ground — by showing who denies\nthe self's lordship and why their denial fails. Not everyone is a real opponent. The materialist, the\nCārvāka, cannot even argue: having no means of proof of their own, they cannot refute the other side\nwithout first adopting the very conventions of proof they reject. The Sāṃkhya, with its many selves or\nits one self with hidden lordship, is not wholly far from us. The real opponent — the one who must be\nmet head-on — is the **Buddhist**, the Sautrāntika, who denies the self outright. It is his no-self that\nthe eleven verses of this vimarśa set out and answer.\n\nThe Buddhist's attack is twofold. First, he denies the self that we claim to perceive: \"the self is\nnot seen,\" he says, \"only the momentary cognitions flash by, with their own-mark appearances.\" Second,\nhe denies the self that we might infer: memory and the synthesis, he holds, are otherwise established —\nthey are only the work of the impressions in the stream, with no abiding owner behind them. So the\nself, whether taken as perceived or as inferred, is rejected; and with it, he concludes, the whole\napparatus of the knowledge-action relation — the very lordship we ascribe to the self — collapses, for\nthere is no one to be the knower and the doer.\n\nAbhinavagupta meets him on both fronts. To the denial of the perceived self, he answers with the\n\"I\"-cognition itself (ahaṃpratyaya): the self is not some object hidden behind the perceptions — it is\npresent, unmistakably, in the very act of saying \"I.\" The \"I\" is not a thing seen among others; it is\nthe seeing itself, that which is present in every cognition, never itself absent. The ādi — the stream\nof the senses, the breath, the knowledge — all presuppose this \"I\" that runs through them. The Buddhist's\n\"the self is not seen\" fails: the self is the seer, and the seer is never not seen, for he is the\nseeing.\n\n",
+        "text_hash": "acf59284fc233de2be41408938b911196620d7e15428527399ec63056521c5d5",
+        "layers": [
+          "speaker",
+          "proposition",
+          "commitment",
+          "premise",
+          "conclusion",
+          "objection",
+          "reply",
+          "warrant"
+        ],
+        "vocabularies": {
+          "speaker": [
+            "author",
+            "opponent",
+            "commentator",
+            "reconstructed",
+            "unspecified"
+          ],
+          "commitment": [
+            "ASSERTS",
+            "DENIES",
+            "ATTRIBUTES",
+            "REPORTS",
+            "RECONSTRUCTS",
+            "OPEN"
+          ],
+          "support": [
+            "DIRECT_SUPPORT",
+            "PARTIAL_SUPPORT",
+            "CONTRADICTION",
+            "BACKGROUND",
+            "NON_EQUIVALENT"
+          ],
+          "scope": [
+            "UNIVERSAL",
+            "PER_ACT",
+            "QUALIFIED",
+            "UNKNOWN"
+          ],
+          "uncertainty": [
+            "UNRESOLVED",
+            "NEEDS_REVIEW",
+            "CONTESTED",
+            "CONFIRMED"
+          ]
+        },
+        "annotations": [
+          {
+            "@id": "ann:chunkF-upoddhata-k1-7.md:opponent:36",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Buddhist",
+                  "start": 36,
+                  "end": 44,
+                  "prefix": "self is the Lord: against the ",
+                  "suffix": " no-self**\n\nThe upoddhāta, the"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "07549b4b2be9457ee0623e9a737dc1f591d2be0189e919a75643faeb2e3545ef"
+                }
+              ]
+            },
+            "body": {
+              "label": "opponent",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkF-upoddhata-k1-7.md"
+          },
+          {
+            "@id": "ann:chunkF-upoddhata-k1-7.md:author:1382",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Abhinavagupta",
+                  "start": 1382,
+                  "end": 1395,
+                  "prefix": " be the knower and the doer.\n\n",
+                  "suffix": " meets him on both fronts. To "
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "d7a10d3fd9b2e3dcf85699e3f4c248121d919914bcaf20cac2a8521ede0909e7"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkF-upoddhata-k1-7.md"
+          },
+          {
+            "@id": "ann:chunkF-upoddhata-k1-7.md:author:14",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "the Lord",
+                  "start": 14,
+                  "end": 22,
+                  "prefix": "**The self is ",
+                  "suffix": ": against the Buddhist no-self"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "9e128a2b6bb894cc6b490e1a3a1e6f441044f94208de11a9fee03f968335b0c1"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkF-upoddhata-k1-7.md"
+          }
+        ],
+        "annotation_count": 3,
+        "export_hash": "b8f0f6a1a51cf1fc31ca547b4dc49b72c99a7e2bb9788ba9dca42beae01153a6"
+      }
+    },
+    {
+      "passage": "pt:passage:ipvv:chunkG-k1.2.7-1.8-citsvarupam.md",
+      "project": {
+        "annotation_project_id": "IPVV-GOLD-chunkG-k1.2.7-1.8-ci",
+        "exported_at": "2026-08-13T22:53:10.601590+00:00",
+        "format": "PĀTALA-ANNOTATION-PROJECT-v1",
+        "compatible_with": [
+          "INCEpTION (webanno/W3C)",
+          "Recogito",
+          "TEI WebAnnotation"
+        ],
+        "text": "**The cognition cannot be a thing: the dilemma of the consciousness-form**\n\nThe Buddhist had denied the self. But he had also, in a different mood, offered a reason for the\nself's lordship — \"by the union of knowledge and action.\" To stop even this, Abhinavagupta turns the\nsame logic against the cognition itself. Whatever the opponent says cognition is, it cannot stand.\nAnd he forces the choice with a single dilemma, put in the seventh kārikā: if the cognition is of the\nconsciousness-form, then it must be eternal, like the self; but if it is inert, then it cannot reveal\nany object at all. There is no third option.\n\nTake the first horn. The consciousness-nature is, by its very marker, *self-manifestation* — it is the\nlight that knows itself. And self-manifestation is directly opposed to being-an-object, to being\nmanifested by another. A thing that is manifest by another is caught in place and time — it is here or\nthere, now or then. But the self-manifest light is free of all such being-caught. If the cognition were\ntruly of the consciousness-form, it could not be the momentary, place-and-time-bound thing the Buddhist\ntakes it to be; it would have to be eternal and omnipresent, exactly like the self. And then the\nBuddhist's whole picture — a stream of fleeting cognitions, each a separate momentary quality — falls\napart. The cognition would not be a momentary flash; it would be the eternal light itself.\n\nThe Buddhist tries to escape by saying: \"the cognition is not the self's own form; it is a quality of\nthe self, made by the union with the mind.\" But this, Abhinavagupta shows, fails too. For what we call\nthe cognition is the manifestation of the blue and the rest; and if that manifestation is only an\noccasional quality, absent when its cause is absent, then the self, apart from it, is simply not\nmanifesting the blue. The cognition, taken as a separate thing, has no place to stand. Whether you call\nit consciousness-form or a quality, it dissolves.\n\nThe second horn is n",
+        "text_hash": "7d9c1f203fa4b7af73a417ad370ae5f6b7dfd507ffd7c5fa0b40e7be63805816",
+        "layers": [
+          "speaker",
+          "proposition",
+          "commitment",
+          "premise",
+          "conclusion",
+          "objection",
+          "reply",
+          "warrant"
+        ],
+        "vocabularies": {
+          "speaker": [
+            "author",
+            "opponent",
+            "commentator",
+            "reconstructed",
+            "unspecified"
+          ],
+          "commitment": [
+            "ASSERTS",
+            "DENIES",
+            "ATTRIBUTES",
+            "REPORTS",
+            "RECONSTRUCTS",
+            "OPEN"
+          ],
+          "support": [
+            "DIRECT_SUPPORT",
+            "PARTIAL_SUPPORT",
+            "CONTRADICTION",
+            "BACKGROUND",
+            "NON_EQUIVALENT"
+          ],
+          "scope": [
+            "UNIVERSAL",
+            "PER_ACT",
+            "QUALIFIED",
+            "UNKNOWN"
+          ],
+          "uncertainty": [
+            "UNRESOLVED",
+            "NEEDS_REVIEW",
+            "CONTESTED",
+            "CONFIRMED"
+          ]
+        },
+        "annotations": [
+          {
+            "@id": "ann:chunkG-k1.2.7-1.8-citsvarupam.md:opponent:80",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Buddhist",
+                  "start": 80,
+                  "end": 88,
+                  "prefix": "the consciousness-form**\n\nThe ",
+                  "suffix": " had denied the self. But he h"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "07549b4b2be9457ee0623e9a737dc1f591d2be0189e919a75643faeb2e3545ef"
+                }
+              ]
+            },
+            "body": {
+              "label": "opponent",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkG-k1.2.7-1.8-citsvarupam.md"
+          },
+          {
+            "@id": "ann:chunkG-k1.2.7-1.8-citsvarupam.md:author:250",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Abhinavagupta",
+                  "start": 250,
+                  "end": 263,
+                  "prefix": "d action.\" To stop even this, ",
+                  "suffix": " turns the\nsame logic against "
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "d7a10d3fd9b2e3dcf85699e3f4c248121d919914bcaf20cac2a8521ede0909e7"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkG-k1.2.7-1.8-citsvarupam.md"
+          }
+        ],
+        "annotation_count": 2,
+        "export_hash": "7d845618e5023d0333e3cc2099904f154e05bfef666aa54f9b9910d101ed3685"
+      }
+    },
+    {
+      "passage": "pt:passage:ipvv:chunkH-k1.8-caitanyamajada-pratibimba.md",
+      "project": {
+        "annotation_project_id": "IPVV-GOLD-chunkH-k1.8-caitanya",
+        "exported_at": "2026-08-13T22:53:10.601677+00:00",
+        "format": "PĀTALA-ANNOTATION-PROJECT-v1",
+        "compatible_with": [
+          "INCEpTION (webanno/W3C)",
+          "Recogito",
+          "TEI WebAnnotation"
+        ],
+        "text": "**Enjoyment is the meeting of two reflections**\n\nWhat is it to enjoy — to experience an object? The schools have their answers: the Sāṃkhya makes the\ncognition a transformation of matter; the Vaiśeṣika makes it a quality of the self joined to the object\nby a mysterious relation called inherence (samavāya). Abhinavagupta cuts through all of this with a\nsingle image: enjoyment is the *union of two reflections* — the reflection of consciousness and the\nreflection of the object — meeting in the intellect, and fused by the ego into the one act \"I know\nthis.\"\n\nConsider what happens when you know the blue. The intellect (buddhi) bears two reflections: the\nreflection of consciousness — the light itself, as it is present in the act of knowing — and the\nreflection of the blue, the object. The ego (ahaṅkāra) mixes them into the single conceit \"I know\nthis,\" and that conceit — the two reflections joined, determined by the intellect, resting in the one\nconsciousness — is the enjoyment. The self, in itself, is not really an enjoyer; it is\nconsciousness-mere. It is the ego that makes it appear as one who enjoys. And this is not a mere figure\nof speech in the loose sense: if it were, then by the infinite division of knowers, the same body could\nbe dealt with at once as fire and water, as contradictory things, in a single moment — which is absurd.\nThe enjoyment is real, but real as this union of reflections in the one consciousness.\n\nNow the Vaiśeṣika says: the cognition is a quality of the self, and it is joined to the object by\ninherence (samavāya). But Abhinavagupta's point is that the mere *relation* does all the work. If the\ncognition-quality is other than the self, then how is it enjoyed? \"By inherence,\" the Vaiśeṣika says.\nBut then the relation alone is the cause of the enjoyment-form — and that is precisely our point. Here\ntoo there is a relation: the consciousness-reflection, the object-reflection, the ego's mixing, the\nintellect's determining — the union in the one support",
+        "text_hash": "52eccd93b945c059148e138426754e25a7d4a9e2e2617c1b473a241a6755db9a",
+        "layers": [
+          "speaker",
+          "proposition",
+          "commitment",
+          "premise",
+          "conclusion",
+          "objection",
+          "reply",
+          "warrant"
+        ],
+        "vocabularies": {
+          "speaker": [
+            "author",
+            "opponent",
+            "commentator",
+            "reconstructed",
+            "unspecified"
+          ],
+          "commitment": [
+            "ASSERTS",
+            "DENIES",
+            "ATTRIBUTES",
+            "REPORTS",
+            "RECONSTRUCTS",
+            "OPEN"
+          ],
+          "support": [
+            "DIRECT_SUPPORT",
+            "PARTIAL_SUPPORT",
+            "CONTRADICTION",
+            "BACKGROUND",
+            "NON_EQUIVALENT"
+          ],
+          "scope": [
+            "UNIVERSAL",
+            "PER_ACT",
+            "QUALIFIED",
+            "UNKNOWN"
+          ],
+          "uncertainty": [
+            "UNRESOLVED",
+            "NEEDS_REVIEW",
+            "CONTESTED",
+            "CONFIRMED"
+          ]
+        },
+        "annotations": [
+          {
+            "@id": "ann:chunkH-k1.8-caitanyamajada-pratibimba.md:author:308",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Abhinavagupta",
+                  "start": 308,
+                  "end": 321,
+                  "prefix": " called inherence (samavāya). ",
+                  "suffix": " cuts through all of this with"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "d7a10d3fd9b2e3dcf85699e3f4c248121d919914bcaf20cac2a8521ede0909e7"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkH-k1.8-caitanyamajada-pratibimba.md"
+          }
+        ],
+        "annotation_count": 1,
+        "export_hash": "ea746321a4ef77c71aefa822b97bab6d7799948aa3565c813563c9e9fa36eb4c"
+      }
+    },
+    {
+      "passage": "pt:passage:ipvv:chunkI-k1.9-1.10-kriya-karyakarana.md",
+      "project": {
+        "annotation_project_id": "IPVV-GOLD-chunkI-k1.9-1.10-kri",
+        "exported_at": "2026-08-13T22:53:10.601758+00:00",
+        "format": "PĀTALA-ANNOTATION-PROJECT-v1",
+        "compatible_with": [
+          "INCEpTION (webanno/W3C)",
+          "Recogito",
+          "TEI WebAnnotation"
+        ],
+        "text": "**Action is the ordered operation, not a thing that moves**\n\nThe opponent had offered the self's lordship as the union of knowledge and action. We have seen that\nknowledge cannot be a separate thing in his view. Now Abhinavagupta shows that *action* cannot be a\nseparate thing either. Kārikā 9 makes the point: the action of a body is just the coming-to-be of this\nor that place; it is not some hidden cause (the unseen, adṛṣṭa) moving it; and it is not one — for\norder does not belong to a single thing.\n\nBut wait — if action is not a movement, what is it? The word-knowers, the grammarians, refuse to say\nthat the body-less self moves. They locate the self's agency only in the union of knowledge, desire,\nand effort. So the action that belongs to the self must be defined differently. Its marker,\nAbhinavagupta says, is this: the operation of the agent that brings about the fruit — the means,\nrelated to the doer, or inhering in it, or its very self — whose form is such that its parts are\nprior-and-later, standing in order. Action is the ordered operation. And the gurus' verses make this\nvivid: \"as long as the established or un-established is spoken of as the to-be-established, being of\nthe resting-order-form, it is perceived as that action.\" The mass of order-born parts, unified by the\nmind, is what we call action. \"White is whitened\" — the whiteness appears as a prior-later order, and\nthat is the declaration of action. So action is not a thing that moves; it is the ordered self-shaping\nof a nature.\n\nAnd this action is in the self. \"He desires, he knows, he strives\" — these are the prior-later dharmas\nof the one self, perceived in their order; and this ordered operation, Abhinavagupta notes, is accepted\nby the very thinkers who hold the self to be the Lord. The guru's words: \"such is the will, such the\nknowledge, such the action.\" The will, the knowledge, the action — these are not three separate things\nattached to a self; they are the one self's ordered operation, its desir",
+        "text_hash": "38d4e8ca9179675e0011efde12ccd9554d244d5546d03ab23976c98ba1afb45c",
+        "layers": [
+          "speaker",
+          "proposition",
+          "commitment",
+          "premise",
+          "conclusion",
+          "objection",
+          "reply",
+          "warrant"
+        ],
+        "vocabularies": {
+          "speaker": [
+            "author",
+            "opponent",
+            "commentator",
+            "reconstructed",
+            "unspecified"
+          ],
+          "commitment": [
+            "ASSERTS",
+            "DENIES",
+            "ATTRIBUTES",
+            "REPORTS",
+            "RECONSTRUCTS",
+            "OPEN"
+          ],
+          "support": [
+            "DIRECT_SUPPORT",
+            "PARTIAL_SUPPORT",
+            "CONTRADICTION",
+            "BACKGROUND",
+            "NON_EQUIVALENT"
+          ],
+          "scope": [
+            "UNIVERSAL",
+            "PER_ACT",
+            "QUALIFIED",
+            "UNKNOWN"
+          ],
+          "uncertainty": [
+            "UNRESOLVED",
+            "NEEDS_REVIEW",
+            "CONTESTED",
+            "CONFIRMED"
+          ]
+        },
+        "annotations": [
+          {
+            "@id": "ann:chunkI-k1.9-1.10-kriya-karyakarana.md:author:216",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Abhinavagupta",
+                  "start": 216,
+                  "end": 229,
+                  "prefix": "parate thing in his view. Now ",
+                  "suffix": " shows that *action* cannot be"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "d7a10d3fd9b2e3dcf85699e3f4c248121d919914bcaf20cac2a8521ede0909e7"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkI-k1.9-1.10-kriya-karyakarana.md"
+          },
+          {
+            "@id": "ann:chunkI-k1.9-1.10-kriya-karyakarana.md:author:1769",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "the Lord",
+                  "start": 1769,
+                  "end": 1777,
+                  "prefix": "nkers who hold the self to be ",
+                  "suffix": ". The guru's words: \"such is t"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "9e128a2b6bb894cc6b490e1a3a1e6f441044f94208de11a9fee03f968335b0c1"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkI-k1.9-1.10-kriya-karyakarana.md"
+          }
+        ],
+        "annotation_count": 2,
+        "export_hash": "01282be0a5fdaea87c71118551f1438595af1940b78559e4a696efcb3a6a3335"
+      }
+    },
+    {
+      "passage": "pt:passage:ipvv:chunkJ-k1.11-kartapi-kalpita.md",
+      "project": {
+        "annotation_project_id": "IPVV-GOLD-chunkJ-k1.11-kartapi",
+        "exported_at": "2026-08-13T22:53:10.601849+00:00",
+        "format": "PĀTALA-ANNOTATION-PROJECT-v1",
+        "compatible_with": [
+          "INCEpTION (webanno/W3C)",
+          "Recogito",
+          "TEI WebAnnotation"
+        ],
+        "text": "**\"Thence the agent too is constructed\"**\n\nThe Buddhist's attack has been relentless. He has denied the self, denied the cognition, denied the\naction. Now he completes it. For what holds all these together — the *relation* between the knower and\nthe known, between the agent and the act — is itself impossible; and once the relation is gone, \"thence\nthe agent too is constructed.\" The agent, like everything else, is only a fabrication, a convenient\nconstruction with nothing real behind it.\n\nThe kārikā's \"thence\" gathers a fourfold absence as its reason: the absence of the action, the absence\nof the object, the absence of the relation, and the absence of any determination of being in any of\nthem. And the relation's absence is argued on its own terms. A relation would have to stand *in both*\nits terms — in the knower and the known at once. But the two-resting thing cannot be one: what stands\nin two cannot be a single thing, any more than the two jars in the two houses are one jar. Moreover,\nthe established does not expect another — a thing already complete does not reach out for a relation —\nand the dependence that a relation would impose is itself unfitting. So the relation is absent; and\nwith it, the agent that the relation would bind together is only constructed.\n\nAbhinavagupta pauses to make one methodological point, and it is important. The Buddhist thinks he\nrefutes the relation by a bare non-perception — \"I do not see it, so it is not.\" But a bare\nnon-perception proves non-being only within a restriction of place and time: \"here, now, there is no\njar.\" It cannot reach the universal non-being of the relation. To do that, one must show a real\ncontradiction in the opponent's own account — that the very form he ascribes to the relation is\ncontradicted by another form he ascribes to it. That is a refutation grounded in the thing itself\n(prameya-niṣṭha), not a mere failure to perceive.\n\nAnd this is where the pūrvapakṣa — the no-self attack — comes to its close. The Budd",
+        "text_hash": "c582da21c5045716f9be1ec13f276210f2f06e0c322e33611e5eb7576968cb75",
+        "layers": [
+          "speaker",
+          "proposition",
+          "commitment",
+          "premise",
+          "conclusion",
+          "objection",
+          "reply",
+          "warrant"
+        ],
+        "vocabularies": {
+          "speaker": [
+            "author",
+            "opponent",
+            "commentator",
+            "reconstructed",
+            "unspecified"
+          ],
+          "commitment": [
+            "ASSERTS",
+            "DENIES",
+            "ATTRIBUTES",
+            "REPORTS",
+            "RECONSTRUCTS",
+            "OPEN"
+          ],
+          "support": [
+            "DIRECT_SUPPORT",
+            "PARTIAL_SUPPORT",
+            "CONTRADICTION",
+            "BACKGROUND",
+            "NON_EQUIVALENT"
+          ],
+          "scope": [
+            "UNIVERSAL",
+            "PER_ACT",
+            "QUALIFIED",
+            "UNKNOWN"
+          ],
+          "uncertainty": [
+            "UNRESOLVED",
+            "NEEDS_REVIEW",
+            "CONTESTED",
+            "CONFIRMED"
+          ]
+        },
+        "annotations": [
+          {
+            "@id": "ann:chunkJ-k1.11-kartapi-kalpita.md:opponent:47",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Buddhist",
+                  "start": 47,
+                  "end": 55,
+                  "prefix": "nt too is constructed\"**\n\nThe ",
+                  "suffix": "'s attack has been relentless."
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "07549b4b2be9457ee0623e9a737dc1f591d2be0189e919a75643faeb2e3545ef"
+                }
+              ]
+            },
+            "body": {
+              "label": "opponent",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkJ-k1.11-kartapi-kalpita.md"
+          },
+          {
+            "@id": "ann:chunkJ-k1.11-kartapi-kalpita.md:author:1283",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Abhinavagupta",
+                  "start": 1283,
+                  "end": 1296,
+                  "prefix": "ogether is only constructed.\n\n",
+                  "suffix": " pauses to make one methodolog"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "d7a10d3fd9b2e3dcf85699e3f4c248121d919914bcaf20cac2a8521ede0909e7"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkJ-k1.11-kartapi-kalpita.md"
+          }
+        ],
+        "annotation_count": 2,
+        "export_hash": "120d4ba39144ac73a98bb4c855007092dbbf11265239451b40b7cd9c68cf7016"
+      }
+    },
+    {
+      "passage": "pt:passage:ipvv:chunkK-purvapaksa-siddhanta.md",
+      "project": {
+        "annotation_project_id": "IPVV-GOLD-chunkK-purvapaksa-si",
+        "exported_at": "2026-08-13T22:53:10.601938+00:00",
+        "format": "PĀTALA-ANNOTATION-PROJECT-v1",
+        "compatible_with": [
+          "INCEpTION (webanno/W3C)",
+          "Recogito",
+          "TEI WebAnnotation"
+        ],
+        "text": "**The reply: the cognition is self-cognition**\n\nThe Buddhist's attack has run its course — the self, the cognition, the action, the relation all\ndenied, and \"thence the agent too is constructed.\" Now, in the third vimarśa, the established doctrine\nreplies. And Abhinavagupta's first move is a shrewd concession. \"It is true,\" he begins — and this is\nthe characteristic gesture of the reflective thinker, granting the opponent what is sound in order to\nsharpen what is not. It is true, he says, that the cognition cannot be a separate thing in the way the\nSāṃkhya or the Kāṇāda suppose; that much the Buddhist has rightly seen. But — and here is the turn — the\nreason the cognition cannot be a separate thing is precisely because it is *self-cognition*\n(svasaṃvid). It is not a quality attached to a self; it is the self's own luminous awareness of itself.\nAnd this self-cognition is the very self the Buddhist thought he had abolished.\n\nConsider memory. When you remember, the prior experience does not stand before you as a new object; it\nshines in the single act of the \"I\" that remembers. The cognition, even in memory, is self-cognition —\nit is aware of itself, not of some detached past thing. The Buddhist thought memory freed him from the\nself; but memory itself is self-luminous. And if the construction, the determination, were all error —\nas the Buddhist would have it — then every determination would fall, and the dealing of the world would\ncollapse. The Buddhist cannot have it both ways. The memory, the determination, the cognition all\npresuppose the self-luminous awareness that is aware of itself in each act.\n\nSo the siddhānta's reply rests on the self-luminous dṛk — the seeing that is aware of itself. The \"I\"\nis not constructed; it is that without which no cognition, no memory, no construction could shine at\nall. The cognition is self-cognition: it is the light that knows itself, and this light is the self —\nthe self that the Buddhist denied and Abhinavagupta here restores. ",
+        "text_hash": "3fe117fd94a3e7f09e109b10c93a687addfd41f0d869349c797beed1e43faafa",
+        "layers": [
+          "speaker",
+          "proposition",
+          "commitment",
+          "premise",
+          "conclusion",
+          "objection",
+          "reply",
+          "warrant"
+        ],
+        "vocabularies": {
+          "speaker": [
+            "author",
+            "opponent",
+            "commentator",
+            "reconstructed",
+            "unspecified"
+          ],
+          "commitment": [
+            "ASSERTS",
+            "DENIES",
+            "ATTRIBUTES",
+            "REPORTS",
+            "RECONSTRUCTS",
+            "OPEN"
+          ],
+          "support": [
+            "DIRECT_SUPPORT",
+            "PARTIAL_SUPPORT",
+            "CONTRADICTION",
+            "BACKGROUND",
+            "NON_EQUIVALENT"
+          ],
+          "scope": [
+            "UNIVERSAL",
+            "PER_ACT",
+            "QUALIFIED",
+            "UNKNOWN"
+          ],
+          "uncertainty": [
+            "UNRESOLVED",
+            "NEEDS_REVIEW",
+            "CONTESTED",
+            "CONFIRMED"
+          ]
+        },
+        "annotations": [
+          {
+            "@id": "ann:chunkK-purvapaksa-siddhanta.md:opponent:52",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Buddhist",
+                  "start": 52,
+                  "end": 60,
+                  "prefix": "tion is self-cognition**\n\nThe ",
+                  "suffix": "'s attack has run its course —"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "07549b4b2be9457ee0623e9a737dc1f591d2be0189e919a75643faeb2e3545ef"
+                }
+              ]
+            },
+            "body": {
+              "label": "opponent",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkK-purvapaksa-siddhanta.md"
+          },
+          {
+            "@id": "ann:chunkK-purvapaksa-siddhanta.md:author:261",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Abhinavagupta",
+                  "start": 261,
+                  "end": 274,
+                  "prefix": "blished doctrine\nreplies. And ",
+                  "suffix": "'s first move is a shrewd conc"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "d7a10d3fd9b2e3dcf85699e3f4c248121d919914bcaf20cac2a8521ede0909e7"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkK-purvapaksa-siddhanta.md"
+          }
+        ],
+        "annotation_count": 2,
+        "export_hash": "59580e5616d9c106d262878bb4adaba8e253be987480d3a4b3619858e58bc8d8"
+      }
+    },
+    {
+      "passage": "pt:passage:ipvv:chunkL-memory-error-sankaranandana.md",
+      "project": {
+        "annotation_project_id": "IPVV-GOLD-chunkL-memory-error-",
+        "exported_at": "2026-08-13T22:53:10.602024+00:00",
+        "format": "PĀTALA-ANNOTATION-PROJECT-v1",
+        "compatible_with": [
+          "INCEpTION (webanno/W3C)",
+          "Recogito",
+          "TEI WebAnnotation"
+        ],
+        "text": "**The self-luminous seeing: how the yogin knows another's mind**\n\nWe have said the cognition is self-cognition, and the self is self-luminous. But this seems to close\nthe door on a striking fact — the yogin's knowledge of another's mind. If the self is not an object,\nhow can the yogin perceive another's cognition with perfect clarity? And if the cognition is\nself-luminous only in its own stream, could it not, after all, be manifested by some other cognition?\n\nThe answer to the first is that the yogin's knowledge of another is a *perception*, not an inference.\nIt is the yogipratyakṣa. By the discipline of the yogin — the holding, the meditating, the samādhi —\none comes, in the union with the other, to meditate the non-difference of the self from the other. And\nthat meditation, following the truth of the thing (for in truth there is unity, and the conceit of\ndifference is māyā-made), makes the other's cognition shine forth directly, clearly, as a thing seen —\nnot inferred, not concluded. As the yoga-sūtra says, the knowledge of another's cognition comes by the\nsaṃyama. The other's passions, too, are manifested in this seeing; but in their very experience the\nyogin and the other are one, so the experience shines as self-luminous, not as an object spread before\na detached observer.\n\nAnd this is the point that matters. The other's cognition, thus seen, is a direct seeing\n(sākṣātkāra) — not a conclusion about another stream. And the self that sees, and the self that is\nseen, are, in that act, one. So the \"being-manifested-by-another\" — the picture of one cognition\nstanding as an object before another — has no place even here. The other knower too is not manifested\nby another; he is self-luminous, and in the yogin's perception the two are one.\n\nNow the second objection: \"the cognition is self-luminous in its own stream, but could it not, with\nrespect to another knower, be manifested by another cognition? After all, the same woman gives pleasure\nto her lover and pain to her",
+        "text_hash": "2d4d880f36dc07ee7ced8cdc952f46af2b7b0610d1bdd6cfc61913b6da0711f4",
+        "layers": [
+          "speaker",
+          "proposition",
+          "commitment",
+          "premise",
+          "conclusion",
+          "objection",
+          "reply",
+          "warrant"
+        ],
+        "vocabularies": {
+          "speaker": [
+            "author",
+            "opponent",
+            "commentator",
+            "reconstructed",
+            "unspecified"
+          ],
+          "commitment": [
+            "ASSERTS",
+            "DENIES",
+            "ATTRIBUTES",
+            "REPORTS",
+            "RECONSTRUCTS",
+            "OPEN"
+          ],
+          "support": [
+            "DIRECT_SUPPORT",
+            "PARTIAL_SUPPORT",
+            "CONTRADICTION",
+            "BACKGROUND",
+            "NON_EQUIVALENT"
+          ],
+          "scope": [
+            "UNIVERSAL",
+            "PER_ACT",
+            "QUALIFIED",
+            "UNKNOWN"
+          ],
+          "uncertainty": [
+            "UNRESOLVED",
+            "NEEDS_REVIEW",
+            "CONTESTED",
+            "CONFIRMED"
+          ]
+        },
+        "annotations": [
+          {
+            "@id": "ann:chunkL-memory-error-sankaranandana.md:opponent:1783",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "objection",
+                  "start": 1783,
+                  "end": 1792,
+                  "prefix": " two are one.\n\nNow the second ",
+                  "suffix": ": \"the cognition is self-lumin"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "266fc989bdbb5add9d23ba7bcb0ba10baa4b6bda728895f5733860bf498c0ade"
+                }
+              ]
+            },
+            "body": {
+              "label": "opponent",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkL-memory-error-sankaranandana.md"
+          }
+        ],
+        "annotation_count": 1,
+        "export_hash": "76eceb321dfd498b895035e83a94b17b2034f8edffc39af85493750747b8172f"
+      }
+    },
+    {
+      "passage": "pt:passage:ipvv:chunkM-jnanadhikara-reflexion-core.md",
+      "project": {
+        "annotation_project_id": "IPVV-GOLD-chunkM-jnanadhikara-",
+        "exported_at": "2026-08-13T22:53:10.602103+00:00",
+        "format": "PĀTALA-ANNOTATION-PROJECT-v1",
+        "compatible_with": [
+          "INCEpTION (webanno/W3C)",
+          "Recogito",
+          "TEI WebAnnotation"
+        ],
+        "text": "**The determination cannot reach outside**\n\nThe Buddhist, having lost the self, the cognition, the action, and the relation, falls back on one\nlast notion: the *determination* (adhyavasāya) — the act by which, he thinks, the cognition is taken\nto establish an external thing. Abhinavagupta now cuts this last thread. The determination, he shows,\ncannot establish anything outside.\n\nConsider how the \"external\" seems to appear. It is, Abhinavagupta says, only the strength of the firm\npractice-impression that makes the appearance seem drawn to an external object. From the very first,\nthe appearance shining in the consciousness and in the determination is taken as external — but only\nfor the slow-minded, in the illusion and the diseased-eye case. He who knows the cause of the\nappearance does not determine its externality at all. The child who cries in astonishment, \"the trees\non the far bank rush against the current!\" is told: \"it is not so — the trees do not rush; it is only\nseen so.\" The manifestation-dharma alone is this. The seeming outwardness is a manner of the seeing,\nnot a thing established.\n\nAnd the determination itself, Abhinavagupta presses, is error-form. In every determination — even in\nthe most ordinary case — there is this error-form, this drawing of the appearance outward. So the\nexternal, which the error-form determination was supposed to establish, has no standing in that very\npart: for the part is inert, and an inert thing cannot establish. And in the part that is not inert —\nthe non-construction, the pure self-experience — there the establishment is not made either, for that\npart shines only its own form and its own self-appearance. So the determination's object-establishing\npower fails on both sides. The non-erroneous part, the self-experience, is un-divided from the\nmemory-cognition — it is not a separate thing reaching out to an external — and so it is not\nexternal-natured.\n\nThe Buddhist tries once more: \"let the determination be both erroneous and e",
+        "text_hash": "5760ba1d7587b68a280f9697c2631ef97920fb78a1e5bc36d07d32f2a122da5e",
+        "layers": [
+          "speaker",
+          "proposition",
+          "commitment",
+          "premise",
+          "conclusion",
+          "objection",
+          "reply",
+          "warrant"
+        ],
+        "vocabularies": {
+          "speaker": [
+            "author",
+            "opponent",
+            "commentator",
+            "reconstructed",
+            "unspecified"
+          ],
+          "commitment": [
+            "ASSERTS",
+            "DENIES",
+            "ATTRIBUTES",
+            "REPORTS",
+            "RECONSTRUCTS",
+            "OPEN"
+          ],
+          "support": [
+            "DIRECT_SUPPORT",
+            "PARTIAL_SUPPORT",
+            "CONTRADICTION",
+            "BACKGROUND",
+            "NON_EQUIVALENT"
+          ],
+          "scope": [
+            "UNIVERSAL",
+            "PER_ACT",
+            "QUALIFIED",
+            "UNKNOWN"
+          ],
+          "uncertainty": [
+            "UNRESOLVED",
+            "NEEDS_REVIEW",
+            "CONTESTED",
+            "CONFIRMED"
+          ]
+        },
+        "annotations": [
+          {
+            "@id": "ann:chunkM-jnanadhikara-reflexion-core.md:opponent:48",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Buddhist",
+                  "start": 48,
+                  "end": 56,
+                  "prefix": "n cannot reach outside**\n\nThe ",
+                  "suffix": ", having lost the self, the co"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "07549b4b2be9457ee0623e9a737dc1f591d2be0189e919a75643faeb2e3545ef"
+                }
+              ]
+            },
+            "body": {
+              "label": "opponent",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkM-jnanadhikara-reflexion-core.md"
+          },
+          {
+            "@id": "ann:chunkM-jnanadhikara-reflexion-core.md:author:276",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Abhinavagupta",
+                  "start": 276,
+                  "end": 289,
+                  "prefix": " establish an external thing. ",
+                  "suffix": " now cuts this last thread. Th"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "d7a10d3fd9b2e3dcf85699e3f4c248121d919914bcaf20cac2a8521ede0909e7"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkM-jnanadhikara-reflexion-core.md"
+          }
+        ],
+        "annotation_count": 2,
+        "export_hash": "ee406b6fd70cb6db4fc797934bcdfe833a29a613e31197e95f37b36e4a3ec3c1"
+      }
+    },
+    {
+      "passage": "pt:passage:ipvv:chunkN-close-mahesvara-saktis.md",
+      "project": {
+        "annotation_project_id": "IPVV-GOLD-chunkN-close-mahesva",
+        "exported_at": "2026-08-13T22:53:10.602196+00:00",
+        "format": "PĀTALA-ANNOTATION-PROJECT-v1",
+        "compatible_with": [
+          "INCEpTION (webanno/W3C)",
+          "Recogito",
+          "TEI WebAnnotation"
+        ],
+        "text": "**The one who is the whole world: the close of the first volume**\n\nThe cognitions, we have seen, are self-luminous and one with the \"I.\" But how, the question arises, do\nthey not take the form of the \"I\" when they appear as the objects — the blue, the yellow, the jar? The\nanswer is that their seeming excess over the \"I\" — their non-pervasion, their non-eternity, their being\ncaught in the place and time of the object — is made only by the object-facing condition (upādhi). The\ndifference of the object, Abhinavagupta says, is a mere conceit (abhimāna), made by the māyā-power; and\neven in the state of māyā, the deep un-dividedness of the object from the \"I\" is un-broken. For māyā is\nthe Lord's own power — and a power does not cover the power-holder. The māyā cannot hide the Lord's own\nform, because it is his own shining. So the whole world, even the seemingly external, is un-divided\nfrom the \"I\": the one whose body is consciousness, with the inner-made, infinite world-form, possessed\nof the knowledge and the rest of the powers.\n\nThis is the great vision toward which the volume has been building. The Lord is the one whose body is\nthe whole world — the inner-made, the outer-form, all of it, un-lost in the least, made by his freedom\nand resting in the one knower. The world, counted in the four, the six, the sixteen, the twenty-four,\nthe thirty-six categories and more, is his body. There is nothing outside the consciousness; the māyā\nis his power, not a veil over him.\n\nAnd the synthesis (anusandhāna) — the act by which the many cognitions are gathered into one — is\nitself the consciousness. The objection: \"you said the memory's arising is the world's standing; but\nhere you say 'if the synthesis were not,' and call it consciousness-form — how?\" Abhinavagupta answers:\nthe synthesis of all the knowledges, mutually, *is* the consciousness-tattva. By the co-reference, by\nthe following-ness, the one-becoming of even the seemingly separate cognitions is the consciousness\nalone, tu",
+        "text_hash": "d967329fdfbc7b6a7304ba96a0bfda2208f407cb6555e3ad70a005850827f3ed",
+        "layers": [
+          "speaker",
+          "proposition",
+          "commitment",
+          "premise",
+          "conclusion",
+          "objection",
+          "reply",
+          "warrant"
+        ],
+        "vocabularies": {
+          "speaker": [
+            "author",
+            "opponent",
+            "commentator",
+            "reconstructed",
+            "unspecified"
+          ],
+          "commitment": [
+            "ASSERTS",
+            "DENIES",
+            "ATTRIBUTES",
+            "REPORTS",
+            "RECONSTRUCTS",
+            "OPEN"
+          ],
+          "support": [
+            "DIRECT_SUPPORT",
+            "PARTIAL_SUPPORT",
+            "CONTRADICTION",
+            "BACKGROUND",
+            "NON_EQUIVALENT"
+          ],
+          "scope": [
+            "UNIVERSAL",
+            "PER_ACT",
+            "QUALIFIED",
+            "UNKNOWN"
+          ],
+          "uncertainty": [
+            "UNRESOLVED",
+            "NEEDS_REVIEW",
+            "CONTESTED",
+            "CONFIRMED"
+          ]
+        },
+        "annotations": [
+          {
+            "@id": "ann:chunkN-close-mahesvara-saktis.md:author:506",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Abhinavagupta",
+                  "start": 506,
+                  "end": 519,
+                  "prefix": "The\ndifference of the object, ",
+                  "suffix": " says, is a mere conceit (abhi"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "d7a10d3fd9b2e3dcf85699e3f4c248121d919914bcaf20cac2a8521ede0909e7"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkN-close-mahesvara-saktis.md"
+          },
+          {
+            "@id": "ann:chunkN-close-mahesvara-saktis.md:author:688",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "the Lord",
+                  "start": 688,
+                  "end": 696,
+                  "prefix": "\"I\" is un-broken. For māyā is\n",
+                  "suffix": "'s own power — and a power doe"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "9e128a2b6bb894cc6b490e1a3a1e6f441044f94208de11a9fee03f968335b0c1"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkN-close-mahesvara-saktis.md"
+          },
+          {
+            "@id": "ann:chunkN-close-mahesvara-saktis.md:opponent:1614",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "objection",
+                  "start": 1614,
+                  "end": 1623,
+                  "prefix": "itself the consciousness. The ",
+                  "suffix": ": \"you said the memory's arisi"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "266fc989bdbb5add9d23ba7bcb0ba10baa4b6bda728895f5733860bf498c0ade"
+                }
+              ]
+            },
+            "body": {
+              "label": "opponent",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkN-close-mahesvara-saktis.md"
+          }
+        ],
+        "annotation_count": 3,
+        "export_hash": "ccc6435acaf7b7d0a91a440c8f58e5ea7522289d6c86a1d3ad8e8bd4aefd225f"
+      }
+    },
+    {
+      "passage": "pt:passage:ipvv:chunkV2-A-caturtho-vimarsa-aham.md",
+      "project": {
+        "annotation_project_id": "IPVV-GOLD-chunkV2-A-caturtho-v",
+        "exported_at": "2026-08-13T22:53:10.602296+00:00",
+        "format": "PĀTALA-ANNOTATION-PROJECT-v1",
+        "compatible_with": [
+          "INCEpTION (webanno/W3C)",
+          "Recogito",
+          "TEI WebAnnotation"
+        ],
+        "text": "**Memory as the Lord's power: how the \"I\" holds time together**\n\nThe jñānādhikāra has established knowledge; now it takes up memory. And here Abhinavagupta makes a\nstartling claim. The ordinary view — the view of the schools — is that memory is only the revival of an\nimpression after the experience is gone. When the experience is destroyed, a mere trace remains, and\nmemory is the stirring of that trace. But Abhinavagupta rejects this. Memory, he insists, is itself a\n*knowledge*; and far from being a pale echo of experience, it is the **Lord's own power** — the\nun-broken manifestation by which the past and the present are held together in the single \"I.\"\n\nConsider what memory actually does. It brings the previously-experienced object back before the mind;\nthe object appears, again, in the knower. If memory were only an impression's revival, this would be\ninexplicable — for how could a mere trace present an object? The truth is that memory is the un-broken\nmanifestation of the experienced object: the experience and its object are carried forward into the\nmemory as one. In memory, the experience does not stand apart as a separate object; it is the very act\nof knowing that returns. Even the yogin's knowledge of another, Abhinavagupta notes, does not appear as\na detached object — it is the one awareness continuing. The separation that memory seems to make between\nthe past cognition and the present one is only a construction (kālpanika), not a real division. And\nultimately, the remembered, the memory, and the rememberer — and by the same token the seen, the seeing,\nand the seer — all rest in the one consciousness-essence.\n\nNow the \"I\" itself. The \"aham\" shines in two directions at once. As \"the seer of the blue\" it is turned\ninward; but the same \"I, thus\" is also turned outward toward the blue. The experience is the outward-\nfacing blue-knowledge. And here is the freedom: by the freedom of the awareness, one first construes,\nwithin, \"I would see the blue,\" and then the bl",
+        "text_hash": "22a379f372b06cf1777c5dcaa69089ec2c0b87168995415426f472f775063a9e",
+        "layers": [
+          "speaker",
+          "proposition",
+          "commitment",
+          "premise",
+          "conclusion",
+          "objection",
+          "reply",
+          "warrant"
+        ],
+        "vocabularies": {
+          "speaker": [
+            "author",
+            "opponent",
+            "commentator",
+            "reconstructed",
+            "unspecified"
+          ],
+          "commitment": [
+            "ASSERTS",
+            "DENIES",
+            "ATTRIBUTES",
+            "REPORTS",
+            "RECONSTRUCTS",
+            "OPEN"
+          ],
+          "support": [
+            "DIRECT_SUPPORT",
+            "PARTIAL_SUPPORT",
+            "CONTRADICTION",
+            "BACKGROUND",
+            "NON_EQUIVALENT"
+          ],
+          "scope": [
+            "UNIVERSAL",
+            "PER_ACT",
+            "QUALIFIED",
+            "UNKNOWN"
+          ],
+          "uncertainty": [
+            "UNRESOLVED",
+            "NEEDS_REVIEW",
+            "CONTESTED",
+            "CONFIRMED"
+          ]
+        },
+        "annotations": [
+          {
+            "@id": "ann:chunkV2-A-caturtho-vimarsa-aham.md:author:142",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Abhinavagupta",
+                  "start": 142,
+                  "end": 155,
+                  "prefix": " it takes up memory. And here ",
+                  "suffix": " makes a\nstartling claim. The "
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "d7a10d3fd9b2e3dcf85699e3f4c248121d919914bcaf20cac2a8521ede0909e7"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkV2-A-caturtho-vimarsa-aham.md"
+          },
+          {
+            "@id": "ann:chunkV2-A-caturtho-vimarsa-aham.md:author:12",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "the Lord",
+                  "start": 12,
+                  "end": 20,
+                  "prefix": "**Memory as ",
+                  "suffix": "'s power: how the \"I\" holds ti"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "9e128a2b6bb894cc6b490e1a3a1e6f441044f94208de11a9fee03f968335b0c1"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkV2-A-caturtho-vimarsa-aham.md"
+          }
+        ],
+        "annotation_count": 2,
+        "export_hash": "1073a47efc9044f9fc40f8b582186b48de0abc20fe091e33d36316404d2e004d"
+      }
+    },
+    {
+      "passage": "pt:passage:ipvv:chunkV2-B-sahajavimarsa-prakasavimarsa.md",
+      "project": {
+        "annotation_project_id": "IPVV-GOLD-chunkV2-B-sahajavima",
+        "exported_at": "2026-08-13T22:53:10.602535+00:00",
+        "format": "PĀTALA-ANNOTATION-PROJECT-v1",
+        "compatible_with": [
+          "INCEpTION (webanno/W3C)",
+          "Recogito",
+          "TEI WebAnnotation"
+        ],
+        "text": "**The self-luminous cognition: how memory reaches the past, and the yogin reaches the other**\n\nTwo puzzles press on the account of memory. The first is the pastness of the past. We remember what\nhappened yesterday — but how, if the manifestation of consciousness has no touch of time at all? The\nanswer is that the pastness is not a real quality of the object; it is the *being-previously-manifested*.\nThe one light, contracting under the limiting conditions of place and time — \"yesterday, thirsty, with\nthat friend, I saw this jar un-ripe\" — appears as the past. The manifestation is cut by these upādhis;\nand what we call the māyā-word, the realm of ordinary experience, is precisely this contraction of the\nlight by the conditions. The memory is the re-apprehension of what was previously manifested; and the\ncognition of the object, so cut by the past experience, is itself a fresh act of experience. There is\nnothing ghostly in memory: it is the one light, narrowed to a past moment, shining again.\n\nThe second puzzle is the yogin's perception of another's mind. The yogin is the one who has attained\nunity with the supreme knower; for him, all objects are un-cut by time, present in his own self as \"I\"\nor as \"I-this.\" How, then, does one particular appearance arise for him, and with its past-time-\nspecificity? Here Abhinavagupta gives the key: time is the order of appearing and not-appearing. The\nbody, flashing and fading moment by moment, is what gives the endless difference of time. Those who\ntake the body as the knower are bound in the chain of time, and can never see past or future. But the\nyogin, by the teaching and the sustained meditation, thins the body — and then the other's cognition\nshines in its own place.\n\nAnd this leads to the deepest point: the nature of cognition itself. The cognition is\nself-cognition (svasaṃvitti). Its own nature — that which never deviates, the marker neither over- nor\nunder-pervading — is to be self-luminous, the own-awareness that distingui",
+        "text_hash": "d9302ebcb8d983f74aac1af1f1147ff28b635c785930703edd1c0cec51e3070e",
+        "layers": [
+          "speaker",
+          "proposition",
+          "commitment",
+          "premise",
+          "conclusion",
+          "objection",
+          "reply",
+          "warrant"
+        ],
+        "vocabularies": {
+          "speaker": [
+            "author",
+            "opponent",
+            "commentator",
+            "reconstructed",
+            "unspecified"
+          ],
+          "commitment": [
+            "ASSERTS",
+            "DENIES",
+            "ATTRIBUTES",
+            "REPORTS",
+            "RECONSTRUCTS",
+            "OPEN"
+          ],
+          "support": [
+            "DIRECT_SUPPORT",
+            "PARTIAL_SUPPORT",
+            "CONTRADICTION",
+            "BACKGROUND",
+            "NON_EQUIVALENT"
+          ],
+          "scope": [
+            "UNIVERSAL",
+            "PER_ACT",
+            "QUALIFIED",
+            "UNKNOWN"
+          ],
+          "uncertainty": [
+            "UNRESOLVED",
+            "NEEDS_REVIEW",
+            "CONTESTED",
+            "CONFIRMED"
+          ]
+        },
+        "annotations": [
+          {
+            "@id": "ann:chunkV2-B-sahajavimarsa-prakasavimarsa.md:author:1325",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Abhinavagupta",
+                  "start": 1325,
+                  "end": 1338,
+                  "prefix": " past-time-\nspecificity? Here ",
+                  "suffix": " gives the key: time is the or"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "d7a10d3fd9b2e3dcf85699e3f4c248121d919914bcaf20cac2a8521ede0909e7"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkV2-B-sahajavimarsa-prakasavimarsa.md"
+          }
+        ],
+        "annotation_count": 1,
+        "export_hash": "65ed7c2064821bd116b576bfcf9816c0e1c21305039dd6a0b02ffc72cea869eb"
+      }
+    },
+    {
+      "passage": "pt:passage:ipvv:chunkV2-C-vistanti-ajadapramatrsiddhi.md",
+      "project": {
+        "annotation_project_id": "IPVV-GOLD-chunkV2-C-vistanti-a",
+        "exported_at": "2026-08-13T22:53:10.602647+00:00",
+        "format": "PĀTALA-ANNOTATION-PROJECT-v1",
+        "compatible_with": [
+          "INCEpTION (webanno/W3C)",
+          "Recogito",
+          "TEI WebAnnotation"
+        ],
+        "text": "**The self-luminous cognition is never the object of another**\n\nWe have seen that the yogin, by the purity and the un-opposed spreading of his cognition, knows\nanother's cognition. But this draws a sharp objection from the epistemologist. \"Even granting that,\" he\nsays, \"a cognition can never be the *object* of another cognition. For how can one awareness be known\nby a second? The two would have to stand in the relation of object and holder — and between two\ncognitions no such relation is possible.\"\n\nAbhinavagupta takes this seriously and analyzes what \"being an object\" really means. A thing is an\nobject of a cognition when the awareness *assimilates its form* — when it takes on the form of the\nthing, as the blue-awareness takes on the blue. This assimilation is the sārūpya, the conformity of the\ncognition to its object. And it requires that the object be *both* like and unlike the cognition: in\ntotal identity the thing would be the cognition itself, and in total difference there would be nothing\nto assimilate. Now here is the crux. A cognition has no such difference from another cognition. The\ndifference of place, time, and form is absent between two awarenesses; the difference that comes from\nthe object (the blue) is not the param-essence of the cognition; and though the object-part — the blue\n— or the intent-part — the passion — can be an object by a separate manifestation, the *awareness-part*\nitself can never be an object at all. An awareness cannot be spread before itself as a thing to be\ngrasped.\n\nAbhinavagupta makes this vivid with two mirrors. Two mirrors can reflect one another, each bearing the\nother's image — because their forms, being of place and time, are genuinely distinct. But two\ncognitions are not like that. Their form is not the place-time form of things; it is the self-luminous\nawareness, which has nothing in it to be set over against another awareness. So the object-holder\nrelation between two cognitions is impossible: there is no perception of ",
+        "text_hash": "5476ba0dfaa50c6b0fbeb9178b80f2559e042169aab218c526d9ef7f2f53aa0b",
+        "layers": [
+          "speaker",
+          "proposition",
+          "commitment",
+          "premise",
+          "conclusion",
+          "objection",
+          "reply",
+          "warrant"
+        ],
+        "vocabularies": {
+          "speaker": [
+            "author",
+            "opponent",
+            "commentator",
+            "reconstructed",
+            "unspecified"
+          ],
+          "commitment": [
+            "ASSERTS",
+            "DENIES",
+            "ATTRIBUTES",
+            "REPORTS",
+            "RECONSTRUCTS",
+            "OPEN"
+          ],
+          "support": [
+            "DIRECT_SUPPORT",
+            "PARTIAL_SUPPORT",
+            "CONTRADICTION",
+            "BACKGROUND",
+            "NON_EQUIVALENT"
+          ],
+          "scope": [
+            "UNIVERSAL",
+            "PER_ACT",
+            "QUALIFIED",
+            "UNKNOWN"
+          ],
+          "uncertainty": [
+            "UNRESOLVED",
+            "NEEDS_REVIEW",
+            "CONTESTED",
+            "CONFIRMED"
+          ]
+        },
+        "annotations": [
+          {
+            "@id": "ann:chunkV2-C-vistanti-ajadapramatrsiddhi.md:author:505",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Abhinavagupta",
+                  "start": 505,
+                  "end": 518,
+                  "prefix": " such relation is possible.\"\n\n",
+                  "suffix": " takes this seriously and anal"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "d7a10d3fd9b2e3dcf85699e3f4c248121d919914bcaf20cac2a8521ede0909e7"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkV2-C-vistanti-ajadapramatrsiddhi.md"
+          },
+          {
+            "@id": "ann:chunkV2-C-vistanti-ajadapramatrsiddhi.md:opponent:204",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "objection",
+                  "start": 204,
+                  "end": 213,
+                  "prefix": "ition. But this draws a sharp ",
+                  "suffix": " from the epistemologist. \"Eve"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "266fc989bdbb5add9d23ba7bcb0ba10baa4b6bda728895f5733860bf498c0ade"
+                }
+              ]
+            },
+            "body": {
+              "label": "opponent",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkV2-C-vistanti-ajadapramatrsiddhi.md"
+          }
+        ],
+        "annotation_count": 2,
+        "export_hash": "ebb2b4d44d5df64e85c5e99fbbb58c6eaac06d8d1753b5633c764f77b4adff4e"
+      }
+    },
+    {
+      "passage": "pt:passage:ipvv:chunkV2-D-pancamo-vimarsa-jnanasakti.md",
+      "project": {
+        "annotation_project_id": "IPVV-GOLD-chunkV2-D-pancamo-vi",
+        "exported_at": "2026-08-13T22:53:10.602759+00:00",
+        "format": "PĀTALA-ANNOTATION-PROJECT-v1",
+        "compatible_with": [
+          "INCEpTION (webanno/W3C)",
+          "Recogito",
+          "TEI WebAnnotation"
+        ],
+        "text": "**The knowledge-power: manifestation as the very form of things**\n\nWe have examined memory and the construction. But both presuppose something deeper — the\nknowledge-power (jñānaśakti), the capacity by which anything at all is known. And here Abhinavagupta\nmakes the central claim of this vimarśa: **the manifestation is the very form of the objects.** The\nthings of the world are not hidden realities that a light shines upon from outside; their being *is*\ntheir being-manifested. To know a thing is not to touch something beyond the light; it is to be the\nlight in which that thing appears.\n\nConsider the present beings. As they manifest, they manifest \"as the outer-self\" — the inner\nstanding-alone of consciousness, pouring itself out as the external world. The jar before you is not a\nthing outside that your mind then copies; it is the inner light, standing as the outer form. Memory and\nthe construction, for their part, do not present a common object as something separate and distinct; and\neven in perception, the object does not exceed the experience that reveals it. The thing is not more\nthan its being-manifested.\n\nNow the Vijñānavādin, the Buddhist idealist, agrees that the object is not outside — but he draws the\nwrong conclusion. He concludes that there is no object at all, only the inner cognition with its blue\nform. Abhinavagupta replies that this does not follow. The cognition's inner blue-form is a\n*reflection*; and a reflection expects a ground that it reflects — as a mirror-image expects the thing\nbefore the mirror. So the inner blue-form, being a reflection, points to an identical ground that\nproduces it. This is the inference of the object: not as a thing hidden beyond all experience, but as\nthe ground whose reflection the blue-form is. Even as the sense-organ is inferred from the perception\nit causes, so the object is inferred as the cause of its manifestation. The object is real — but its\nreality is to be the ground of the manifestation, not a bare thing bey",
+        "text_hash": "eabdd52c4f895887d2fe2b37469a5a58c2c151327bdac81cf810b5059b8aead8",
+        "layers": [
+          "speaker",
+          "proposition",
+          "commitment",
+          "premise",
+          "conclusion",
+          "objection",
+          "reply",
+          "warrant"
+        ],
+        "vocabularies": {
+          "speaker": [
+            "author",
+            "opponent",
+            "commentator",
+            "reconstructed",
+            "unspecified"
+          ],
+          "commitment": [
+            "ASSERTS",
+            "DENIES",
+            "ATTRIBUTES",
+            "REPORTS",
+            "RECONSTRUCTS",
+            "OPEN"
+          ],
+          "support": [
+            "DIRECT_SUPPORT",
+            "PARTIAL_SUPPORT",
+            "CONTRADICTION",
+            "BACKGROUND",
+            "NON_EQUIVALENT"
+          ],
+          "scope": [
+            "UNIVERSAL",
+            "PER_ACT",
+            "QUALIFIED",
+            "UNKNOWN"
+          ],
+          "uncertainty": [
+            "UNRESOLVED",
+            "NEEDS_REVIEW",
+            "CONTESTED",
+            "CONFIRMED"
+          ]
+        },
+        "annotations": [
+          {
+            "@id": "ann:chunkV2-D-pancamo-vimarsa-jnanasakti.md:opponent:1154",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Buddhist",
+                  "start": 1154,
+                  "end": 1162,
+                  "prefix": "d.\n\nNow the Vijñānavādin, the ",
+                  "suffix": " idealist, agrees that the obj"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "07549b4b2be9457ee0623e9a737dc1f591d2be0189e919a75643faeb2e3545ef"
+                }
+              ]
+            },
+            "body": {
+              "label": "opponent",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkV2-D-pancamo-vimarsa-jnanasakti.md"
+          },
+          {
+            "@id": "ann:chunkV2-D-pancamo-vimarsa-jnanasakti.md:author:243",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Abhinavagupta",
+                  "start": 243,
+                  "end": 256,
+                  "prefix": "ing at all is known. And here ",
+                  "suffix": "\nmakes the central claim of th"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "d7a10d3fd9b2e3dcf85699e3f4c248121d919914bcaf20cac2a8521ede0909e7"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkV2-D-pancamo-vimarsa-jnanasakti.md"
+          }
+        ],
+        "annotation_count": 2,
+        "export_hash": "a9615023e7a26647f23a2ce41f9abc45a0f0cb46ae261522c8b4929db56e76bf"
+      }
+    },
+    {
+      "passage": "pt:passage:ipvv:chunkV2-E-pancamo-jnanasakti-k5.md",
+      "project": {
+        "annotation_project_id": "IPVV-GOLD-chunkV2-E-pancamo-jn",
+        "exported_at": "2026-08-13T22:53:10.602854+00:00",
+        "format": "PĀTALA-ANNOTATION-PROJECT-v1",
+        "compatible_with": [
+          "INCEpTION (webanno/W3C)",
+          "Recogito",
+          "TEI WebAnnotation"
+        ],
+        "text": "**How the external object is inferred and confirmed**\n\nThe Vijñānavādin grants that the cognition is self-luminous, but he presses on its inner form. \"The\ncognition's blue-form,\" he says, \"is a reflection (pratibimba); and a reflection demands a ground that\nproduces it (the arpaka). So the external object is inferred.\" But then the classic objection follows:\nhow can you infer an external object that is never perceived? An inference rests on a pervasion grasped\nin perception — and the external is never perceived at all.\n\nAbhinavagupta answers with the sense-organ analogy. The sense-organ itself is never perceived — yet we\ninfer it as the cause of the perceptions it produces. The eye is inferred from the seeing, not seen.\nSo too the external object: though never perceived as an object, it is inferred as the cause of its\ncognition. And the mechanism is the sārūpya, the conformity: the inner blue-form, with all its\nplace-and-time variety, un-lost, points to its ground — the object similar to it. The determination \"I\nsee this object\" arises from this conformity, and it is not a bare error, like the shell-silver in the\ngrasped shell.\n\nFor here is the crucial point, and Abhinavagupta states it boldly: even this determination, though it\nbegins as error — the drawing of the inner form outward — is, by its bond to the thing, a *valid means*.\nAs the rule has it, \"even the error, being a relation, is a pramā.\" The determination, by the strength\nof the seeing, takes the form \"I see\" and enlists the perception as the object's helper — as a minister\nmoves a king who has been won over. So the external object, thus determined and confirmed, is\nperceived (pratyakṣa-gṛhīta).\n\nAnd what, then, is the inference's own work? It is the sasaṃvāda — the agreement. The inference\nestablishes that the root-cause, the ground of the forms (the arpaka), is the object similar to the\nform. This is its operation: not to create the object, but to confirm that the ground of the cognition's\nform is the t",
+        "text_hash": "b1709ff1c44bbf028c450d2afa4be6e450fdb8ad03e1d0decab7213d6a033e6c",
+        "layers": [
+          "speaker",
+          "proposition",
+          "commitment",
+          "premise",
+          "conclusion",
+          "objection",
+          "reply",
+          "warrant"
+        ],
+        "vocabularies": {
+          "speaker": [
+            "author",
+            "opponent",
+            "commentator",
+            "reconstructed",
+            "unspecified"
+          ],
+          "commitment": [
+            "ASSERTS",
+            "DENIES",
+            "ATTRIBUTES",
+            "REPORTS",
+            "RECONSTRUCTS",
+            "OPEN"
+          ],
+          "support": [
+            "DIRECT_SUPPORT",
+            "PARTIAL_SUPPORT",
+            "CONTRADICTION",
+            "BACKGROUND",
+            "NON_EQUIVALENT"
+          ],
+          "scope": [
+            "UNIVERSAL",
+            "PER_ACT",
+            "QUALIFIED",
+            "UNKNOWN"
+          ],
+          "uncertainty": [
+            "UNRESOLVED",
+            "NEEDS_REVIEW",
+            "CONTESTED",
+            "CONFIRMED"
+          ]
+        },
+        "annotations": [
+          {
+            "@id": "ann:chunkV2-E-pancamo-jnanasakti-k5.md:author:526",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Abhinavagupta",
+                  "start": 526,
+                  "end": 539,
+                  "prefix": "l is never perceived at all.\n\n",
+                  "suffix": " answers with the sense-organ "
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "d7a10d3fd9b2e3dcf85699e3f4c248121d919914bcaf20cac2a8521ede0909e7"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkV2-E-pancamo-jnanasakti-k5.md"
+          },
+          {
+            "@id": "ann:chunkV2-E-pancamo-jnanasakti-k5.md:opponent:342",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "objection",
+                  "start": 342,
+                  "end": 351,
+                  "prefix": "ferred.\" But then the classic ",
+                  "suffix": " follows:\nhow can you infer an"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "266fc989bdbb5add9d23ba7bcb0ba10baa4b6bda728895f5733860bf498c0ade"
+                }
+              ]
+            },
+            "body": {
+              "label": "opponent",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkV2-E-pancamo-jnanasakti-k5.md"
+          }
+        ],
+        "annotation_count": 2,
+        "export_hash": "00aa64217e3f858b504e9bb41a7a6008292caa0e2cc2fbd1f722ba7fa0de236a"
+      }
+    },
+    {
+      "passage": "pt:passage:ipvv:chunkV2-F-pancamo-vimarsa-k6.md",
+      "project": {
+        "annotation_project_id": "IPVV-GOLD-chunkV2-F-pancamo-vi",
+        "exported_at": "2026-08-13T22:53:10.602969+00:00",
+        "format": "PĀTALA-ANNOTATION-PROJECT-v1",
+        "compatible_with": [
+          "INCEpTION (webanno/W3C)",
+          "Recogito",
+          "TEI WebAnnotation"
+        ],
+        "text": "**You cannot infer another's mind — and you do not need the external object**\n\nThe Buddhist hopes to escape by inferring *another's* mind. He thinks: from Maitra's speech, from his\nuttered words and gestures, one can infer what is going on in his mind — the other stream. Abhinavagupta\nshows this inference cannot work, and he does it with a precise analogy.\n\nSuppose you want to infer the fire *in the sandalwood* from the smoke. If you set aside the\nsandalwood's fragrance — the very thing that marks this smoke as coming from sandalwood — then you\nestablish only fire in general, not the sandalwood-fire. The distinction must be accepted; without it\nthe desired conclusion is not reached. But to infer another's mind, you would need exactly such a\nfurther distinction — the \"being-gone-to-the-other,\" the fact that this utterance belongs to Maitra and\nnot to you. And that distinction cannot be inferred from the mere utterance. The utterance could belong\nto anything; nothing in it, by itself, says \"this is Maitra's intent, this is another's mind.\"\n\nAnd the \"being-gone-to-the-other,\" Abhinavagupta argues, is not like the sandalwood-fragrance, a\nfurther distinguishing mark resting apart from the thing. It is a different kind of thing entirely. To\npress the point, he notes that if every additional feature were a \"further distinction,\" then \"cow\" and\n\"speckled\" would both be separate things, and the statement \"the cow is the speckled\" would fail. But\nthat statement holds; so a real further-distinction is something that rests apart from the thing, and\nthe \"being-gone-to-the-other\" does not rest apart from the mere utterance in the way that would make it\ninferable.\n\nMoreover — and this is the decisive point — only the *aimed* action (samīhitā) is the wish's effect.\nA wish produces the action it intends, not a mere utterance or gesture that could be aimed at anything.\nSo from Maitra's mere utterance one cannot infer his wish, since the utterance does not reveal which\naim it serves. ",
+        "text_hash": "1b425c946be806c582d227780a6b09ebacead80d077b94c39a883c3c2e76eb5d",
+        "layers": [
+          "speaker",
+          "proposition",
+          "commitment",
+          "premise",
+          "conclusion",
+          "objection",
+          "reply",
+          "warrant"
+        ],
+        "vocabularies": {
+          "speaker": [
+            "author",
+            "opponent",
+            "commentator",
+            "reconstructed",
+            "unspecified"
+          ],
+          "commitment": [
+            "ASSERTS",
+            "DENIES",
+            "ATTRIBUTES",
+            "REPORTS",
+            "RECONSTRUCTS",
+            "OPEN"
+          ],
+          "support": [
+            "DIRECT_SUPPORT",
+            "PARTIAL_SUPPORT",
+            "CONTRADICTION",
+            "BACKGROUND",
+            "NON_EQUIVALENT"
+          ],
+          "scope": [
+            "UNIVERSAL",
+            "PER_ACT",
+            "QUALIFIED",
+            "UNKNOWN"
+          ],
+          "uncertainty": [
+            "UNRESOLVED",
+            "NEEDS_REVIEW",
+            "CONTESTED",
+            "CONFIRMED"
+          ]
+        },
+        "annotations": [
+          {
+            "@id": "ann:chunkV2-F-pancamo-vimarsa-k6.md:opponent:83",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Buddhist",
+                  "start": 83,
+                  "end": 91,
+                  "prefix": "ed the external object**\n\nThe ",
+                  "suffix": " hopes to escape by inferring "
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "07549b4b2be9457ee0623e9a737dc1f591d2be0189e919a75643faeb2e3545ef"
+                }
+              ]
+            },
+            "body": {
+              "label": "opponent",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkV2-F-pancamo-vimarsa-k6.md"
+          },
+          {
+            "@id": "ann:chunkV2-F-pancamo-vimarsa-k6.md:author:272",
+            "@type": "oa:Annotation",
+            "layer": "speaker",
+            "target": {
+              "@type": "oa:SpecificResource",
+              "selectors": [
+                {
+                  "@type": "oa:TextQuoteSelector",
+                  "exact": "Abhinavagupta",
+                  "start": 272,
+                  "end": 285,
+                  "prefix": " his mind — the other stream. ",
+                  "suffix": "\nshows this inference cannot w"
+                },
+                {
+                  "@type": "pt:HashSelector",
+                  "span_sha256": "d7a10d3fd9b2e3dcf85699e3f4c248121d919914bcaf20cac2a8521ede0909e7"
+                }
+              ]
+            },
+            "body": {
+              "label": "author",
+              "label_type": "SPEAKER",
+              "machine_proposed": true,
+              "uncertainty": "NEEDS_REVIEW"
+            },
+            "source_ref": "pt:passage:ipvv:chunkV2-F-pancamo-vimarsa-k6.md"
+          }
+        ],
+        "annotation_count": 2,
+        "export_hash": "c7f3773ea3274f94730d215079f68129e098455d344ad6814da0b5b1af249858"
+      }
+    }
+  ]
+}
