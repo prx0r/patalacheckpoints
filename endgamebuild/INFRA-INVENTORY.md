@@ -116,6 +116,23 @@ VISION_AND_NAVIGATION.md → docs/INDEX.md → docs/vision/CORE-BIBLE.md
 - ⚠️ **Repo history rewrite** (owner decision): the in-copyright PDFs are untracked now but still in
   prior git history (destructive filter-repo, deferred).
 
+## 10. RECONCILIATION-ENGINE LAYER (the ecosystem reframe, built 2026-08-13)
+
+The partnership files (`docs/positioningpartners.md`, `docs/global/globalpartnerships.md`,
+`docs/vision/vision-14-manuscript-to-scholarly-asset.md`) position Pāṭala as the reconciliation /
+connective layer over Gyan Bharatam/OCHS/NGMPP/IFP/Muktabodha/GRETIL/SARIT. Built the concrete layer:
+
+| Piece | Status | Where |
+|---|---|---|
+| **P4 MANUSCRIPT-RESOLUTION-GOLD** | ✅ | `evals/.../manuscript_resolution_gold.py` — 10 frozen cases, FALSE_MERGE_RATE primary |
+| **P3 entity reconciliation engine** | ✅ | `evals/.../entity_reconciliation.py` — typed CandidateMatch (EXACT/PROBABLE/POSSIBLE/CONFLICT/UNRESOLVED) |
+| **P3↔P4 loop** | ✅ | `evals/.../run_reconciliation_eval.py` — FALSE_MERGE_RATE=0, abstains 30% |
+| **P2 ExternalRecord + adapter framework** | ✅ | `schema/external_record.py` — raw-immutable record + ReconciliationAdapter contract + maturity ladder |
+| **Text fingerprints** | ✅ | `schema/text_fingerprint.py` — incipit/explicit/ngram/MinHash + candidate_rank |
+
+The deep philosophy/argument stack (Track B) is unchanged and still the moat; this adds the
+reconciliation layer (Track A) so the two meet on the same canonical IDs.
+
 ---
 
 *If you're about to build something, check §1–§7 first. If it's listed, extend it. If it's not, it may be in the compass docs — read those before writing code.*
