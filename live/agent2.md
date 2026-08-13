@@ -25,16 +25,19 @@ Agent 1 does NOT gate Agent 2's development (production ≠ epistemic maturity).
 
 ---
 
-## CURRENT CHECKPOINT — A2-CP1: SOURCE → T1 (the transliteral word-gloss producer)
+## CURRENT CHECKPOINT — A2-CP1..A2-CP7 (batch factory through C1)
+
+**MILESTONE (2026-08-13):** a real Sanskrit verse ran **unattended through the ENTIRE canonical stack**
+via the controller (`factory_batch.py`): `T1 → L0 → L2 → L200 → C1` all committed with matching
+provenance for **kramasadbhava:v1**. This is the vertical factory proof on a real verse.
 
 | Item | Status | Notes |
 |---|---|---|
-| `pipeline/t1_worker.py` | **BUILT** | segments raw Sanskrit (Vidyut → IAST surfaces), glosses each token into canonical `[and]-GLOSS (IAST)`, deterministic production gate |
-| `object_registry.py` | **BUILT** | T1 added to LAYERS + PREREQS (`SOURCE → T1 → L0`) |
-| `autonomy.py` | **BUILT** | T1 handler wired |
-| `pipeline/test_t1.py` | **ALL PASS** | canonical shape, source binding, coverage, provenance, fail-closed, honest abstention |
-| Live model run | ✅ verified | real verse → `[and]-GLOSS (IAST)`, validator PASS |
-| **Ready for Agent 1 eval?** | **NOT YET** | T1 objects not yet committed to the registry on a real batch; semantic eval (gloss correctness vs gold) is Agent 1's lane |
+| `pipeline/t1_worker.py` | **BUILT + committed** | canonical `[and]-GLOSS (IAST)` transliteral word-gloss; 2 real T1 objects committed (v1, v100) |
+| `pipeline/factory_batch.py` | **BUILT + committed** | simple batch driver: SOURCE → T1 → L0 → L2 → L200 → C1, reuses existing workers, good-enough production |
+| T1 registry | ✅ | `SOURCE → T1` wired (registry LAYERS/PREREQS); test_t1.py ALL PASS |
+| **Full vertical (v1)** | ✅ **PROVEN** | kramasadbhava:v1 has T1 + L0 + L2 + L200 + C1 committed, input_hash-bound |
+| **Ready for Agent 1 eval?** | **YES (v1 chain + L200 candidates)** | T1 gloss correctness + L200 MT/IA precision are Agent 1's evals lane |
 
 ## VALIDATION STATUS (what Agent 2 has proven — production only)
 - **T1**: canonical shape + source binding + coverage + provenance + fail-closed + abstention. ✅ (production)
