@@ -40,7 +40,7 @@ from translation_targets import priority as _target_priority, priority_label
 # canonical layer order + the upstream each layer depends on — DERIVED from the canonical DAG
 # manifest (contracts/CANONICAL-DAG.yaml) via object_registry.PREREQS. Do NOT hardcode an independent
 # UPSTREAM map here (that was the A2-ARCH-HARDEN bug — three competing DAG definitions).
-LAYER_ORDER = ["T1", "ARGMAP", "L0", "L2", "L200", "C1"]
+LAYER_ORDER = ["T1", "ARGMAP", "L0", "L2", "L200", "C1", "THEME"]
 MODEL_LAYERS = {"T1", "ARGMAP", "L2", "L200", "C1"}   # L0 is deterministic (free-draining)
 
 
