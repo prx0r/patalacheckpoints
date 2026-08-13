@@ -102,7 +102,7 @@ TIER 1 [DONE]   Pydantic contract package (python/patala_core) — typed discrim
                 independent axes, no scalar rank; no universal review ladder).
 TIER 2 [DONE]   Dedicated patala-atlas Postgres (isolated container) + Alembic migrations.
 TIER 3 [DONE]  Compatibility adapter + 254-record bibliography migration (254/254, 0 mismatches, preserve IDs, factory never breaks).
-TIER 4          OpenAlex-grammar read API (/works /editions /people /etexts /witnesses /passages
+TIER 4 [DONE]   OpenAlex-grammar read API (/works /editions /people /etexts /witnesses /passages
                 /search /resolve /context /bundle; filter/search/select/sort/cursor; no N+1).
 TIER 5          One vertical — Brahmayāmala (engineering) / Dviśatikālottara (flagship) → ReviewBundle.
 TIER 6          [DEFERRED] resolver adapters, ingest, snapshots, hardening.
