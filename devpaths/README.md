@@ -60,7 +60,7 @@ branch merge — do not force-push between the diverged branches.
 
 **Peer-review actions (A1-Q1..Q6):**
 - A1-Q1 authority-inflation fix — DONE (resolver + ladders + test; `a96daee`)
-- A1-Q2 ATLAS-NAT-NATURAL-v1 (natural benchmark, false-promotion metric) — pending
+- A1-Q2 ATLAS-NAT-NATURAL-v1 (natural benchmark, false-promotion metric) — DONE (devpath13 P0)
 - A1-Q3 SYNTHESIS-NAT-NATURAL-v1 (real debates) — pending
 - A1-Q4 real G2 blind retest — blocked on Agent 2
 - A1-Q5 real ARGMAP whole-chain benchmark — blocked on Agent 2
@@ -76,6 +76,11 @@ devpath13 ──► A1-CONTINUE-v2: QUALIFY THE SYSTEM, DO NOT EXPAND THE ONTOLO
               · P3–P12 VERTICAL-1 IPVV end-to-end · P13–P20 discipline/benchmarks
                                                               STATUS: 🔄 IN PROGRESS (2026-08-13)
               full spec → `endgamebuild/devpath13-a1-continue-v2.md` (verbatim directive)
+
+  P0 ATLAS-NAT-NATURAL-v1  STATUS: ✅ CLOSED (2026-08-13) — 51 frozen natural cases, non-circular
+              evidence-derived evaluator; SYSTEM_FALSE_AUTHORITY_PROMOTION_RATE=0.216, detection
+              recall/precision=1.000, false-rejection=0.000; regression tests for the
+              MULTI_SOURCE_MATCHED inflation bug. Record: benchmarks/v0/runs/atlas-nat-natural-*.json
 ```
 
 ---

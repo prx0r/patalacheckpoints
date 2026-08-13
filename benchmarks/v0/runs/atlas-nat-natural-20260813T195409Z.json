@@ -1,0 +1,62 @@
+{
+  "run_id": "ATLAS-NAT-NATURAL-20260813T195409Z",
+  "benchmark_version": "v0",
+  "family": "PATALA-ATLAS-NAT-NATURAL",
+  "bench": "PĀṬALA-ATLAS-NAT-NATURAL-v1",
+  "bench_version": "v0.1",
+  "framework": "inspect-ai==0.3.258",
+  "task": "atlas_nat_natural",
+  "execution_base_sha": "2c3c06402f5501bb014a6552e20ab128bcf4a136",
+  "working_tree_dirty": true,
+  "date": "20260813T195409Z",
+  "dataset": {
+    "kind": "NATURAL",
+    "objects": 51,
+    "frozen_set_hash": "a8acc7d44354d811540517c2070efa0d0f8e8e2f69b68315f709d56bfe2e2182",
+    "categories": [
+      "ABSENCE_NOT_NONEXISTENCE",
+      "ALIAS",
+      "ANONYMOUS",
+      "APPROXIMATE_DATE",
+      "ARCHIVE_FALSE_HIT",
+      "DATE_PRECISION_INFLATION",
+      "DISCOVERED_NO_GATE",
+      "DISPUTED_AUTHORSHIP",
+      "EDITION_ETEXT_CONFUSION",
+      "EXACT_UNAMBIGUOUS",
+      "GRETIL_UNCLEAR_BASIS",
+      "HOMONYMOUS_TITLE",
+      "INTERNAL_CROSSWALK",
+      "MODERN_REPRINT",
+      "MUKTABODHA",
+      "MULTI_SOURCE_HONEST",
+      "NGMCP_MANUSCRIPT",
+      "NMM_UNCERTAINTY",
+      "NO_RIGHTS_NO_FACTORY",
+      "RIGHTS_DISCOVERABLE_ONLY",
+      "RIGHTS_PROCESSING",
+      "RIGHTS_UNCERTAINTY",
+      "SAME_TITLE_DIFF_AUTHOR",
+      "SARIT_EXPLICIT_PROVENANCE",
+      "SOURCE_ECHO",
+      "WEAK_EDITION_NO_FACTORY",
+      "WRONG_WITNESS_LINK"
+    ]
+  },
+  "sut": "ATLAS source resolver evidence rules (honest_ceiling derived from evidence, non-circular)",
+  "metrics": {
+    "SYSTEM_FALSE_AUTHORITY_PROMOTION_RATE": 0.2157,
+    "promotion_detection_recall": 1.0,
+    "promotion_detection_precision": 1.0,
+    "false_rejection_rate": 0.0,
+    "open_state_preservation": 0.8235,
+    "n_expect_false_promotion": 11,
+    "n_flagged": 11
+  },
+  "findings": [
+    "11/51 frozen natural resolver-outputs genuinely inflate authority (SYSTEM_FALSE_AUTHORITY_PROMOTION_RATE=0.216) — the resolver-side problem the evaluator must catch.",
+    "Evaluator detection: recall=1.000, precision=1.000, false-rejection=0.000 — non-circular (honest ceilings derived from evidence facts, not hand-written labels)."
+  ],
+  "notes": "NATURAL benchmark, not a mutation suite: real source-resolution ambiguities frozen with honest expected state. UNKNOWN->OPEN is never penalized; UNKNOWN->VERIFIED (false promotion) is the primary metric.",
+  "review_status": "NOT_HUMAN_REVIEWED"
+}
