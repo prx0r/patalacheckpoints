@@ -110,19 +110,24 @@ USES_AS_PREMISE / USES_AS_WARRANT / ORGANIZES) · `DerivedState` · `ImpactRepor
 ```
 CP1 floor ✅ (63/63)  →  corpus state ✅ (ledger)  →  review engine ✅ (Phase 3A+3D)
    ↓
-✅ 2026-08-13: FULL STACK WIRED — every layer (L0/L1/L2/L200/C1/THEME/ESSAY/EDUCATION) has a
-   controller handler producing its canonical file shape + a layer-specific deterministic validator.
-   The singular autonomous pipeline is now RUNNABLE end-to-end through autonomy.py.
+✅ 2026-08-13 (Era A): FACTORY COMPLETION — all six canonical layers (T1/L0/ARGMAP/L2/L200/C1) are
+   AUTONOMOUSLY_PRODUCIBLE, each with a controller handler + layer-specific validator, and each
+   VERIFIED against the REAL IPVV exemplars (the test_*_ipvv.py suite). See
+   `handover/agent-2-integration/CURRENT-STATE.md`.
    ↓
-🔴 CP1 (the foundation proof): a MACHINE-LEARNING-VERIFIED L0 (or T1/L1/R1) READING
-   Run the semantic-equivalence harness (docs/ML-L0-SEMANTIC-EQUIVALENCE-PROPOSAL.md) against the IPVV
-   exemplar gold; prove our RAW-L0 is schema-isomorphic + validator-equivalent + P0-lossless +
-   semantically-equivalent to the exemplar gloss (the ML part). Emit the mechanical proof. This becomes
-   the reusable eval substrate for every downstream layer's own proof.
+✅ 2026-08-13 (Era B): CORPUS COMPILER — durable failure/retry queue (A2-11), progress dashboard
+   (A2-12), backlog scheduler + multi-work execution (A2-8/9), resource/rate limiting (A2-10) all DONE.
+   Unattended bulk translation (A2-13) running across all registered works.
    ↓
-PRIORITY (after CP1): autonomous end-to-end vertical proof on a real corpus subset —
-   RAW SANSKRIT → SOURCE → L0 → L1 → L2 → L200 → C1 → THEME → ESSAY → EDUCATION, all through the
-   controller, fail-closed, idempotent, provenance-bound.
+🔴 NEXT (Era B frontier): let the unattended bulk run advance the whole corpus through SOURCE→C1;
+   then Era C (living rebuild engine: supersession propagation, dependency invalidation, targeted
+   regeneration, ImpactReport integration).
+   ↓
+NOTE: semantic correctness is Agent 1's evals lane (Inspect/Pāṭala-Evals — the T1-NAT / L200-DEV
+gates). Agent 2's gate per layer is PRODUCTION (canonical shape + provenance + safe unattended).
+   ↓
+PRIORITY (Era C, after bulk): autonomous end-to-end vertical proof on a real corpus subset with the
+   supersession/regeneration engine (correct one upstream object → rebuild only its affected downstream).
    ↓
 PHASE 3E  tiny Scholar Workbench review screen   (deferred until a real reviewer is ready)
 PHASE 3F  Hermes A4 scheduling                   (LAST)
