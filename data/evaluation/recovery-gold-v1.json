@@ -1,0 +1,3936 @@
+{
+  "bench": "ARGUMENT-RECOVERY-BENCH-v1",
+  "frozen": true,
+  "cases": [
+    {
+      "case_id": "ipvv:V1A",
+      "passage_ref": "pt:passage:ipvv:V1A",
+      "research_question": "**The question:** This is the very opening of the IPVV. The maṅgala (the prostration to Śiva) has been\nmade; now Abhinavagupta expounds the first kārikā — the *spontaneity* (svācchandya) of the Lord. His\nthesis: the Lord is not a bare, featureless light that reveals a world outside itself; he is the",
+      "propositions": [
+        {
+          "pid": "ipvv:V1A:THESIS",
+          "text": "**The question:** This is the very opening of the IPVV. The maṅgala (the prostration to Śiva) has been made; now Abhinavagupta expounds the first kārikā — the *spontaneity* (svācchandya) of the Lord. His thesis: the Lord",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1A:P1",
+          "text": "**The spontaneity as the self-aware manifestation (lines 200–210):** The blue and the other things, without abandoning their blue-ness, shine forth and are one with the manifestation (prakāśābhedamayāḥ). This is the Lord",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1A:BOUNDARY",
+          "text": "Proceed. The argument is understood: the Lord's spontaneity is the self-aware manifestation — the consciousness that shines as the world and is aware of shining (like a mirror, but aware). The four epithets (un-cut by ti",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V1A:I1",
+          "premises": [
+            "ipvv:V1A:P1"
+          ],
+          "conclusion": "ipvv:V1A:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The four terms (śaśvat, acchanna, svaccha, svacchanda) and their precise glosses — preserved as",
+          "status": "OPEN"
+        },
+        {
+          "text": "given; the \"svacchandā\" as the pāryantika-pratiṣṭhāsthāna-vimarśāśūnyatā.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"a-śiva-rūpa-sāṃsārika-mohāpahastana\" (the removal of the saṃsāric delusion of the",
+          "status": "OPEN"
+        },
+        {
+          "text": "non-Śiva-form) — the soteriological frame; kept as Abhinava's.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V1A:CRUX",
+          "decisive_premises": [
+            "ipvv:V1A:P1"
+          ],
+          "question": "The four terms (śaśvat, acchanna, svaccha, svacchanda) and their precise glosses — preserved as"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V1B",
+      "passage_ref": "pt:passage:ipvv:V1B",
+      "research_question": "**The question:** The opening of the IPVV has made the prostration to Śiva. Now Abhinavagupta must\nexplain what that prostration actually is and means — and who is eligible to make it. The commentary\non the word \"kathaṃcit āsādya\" (having attained, in some way) opens up: the attaining of the Lord is",
+      "propositions": [
+        {
+          "pid": "ipvv:V1B:THESIS",
+          "text": "**The question:** The opening of the IPVV has made the prostration to Śiva. Now Abhinavagupta must explain what that prostration actually is and means — and who is eligible to make it. The commentary on the word \"kathaṃc",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1B:P1",
+          "text": "**The right teacher and the prostration's form (lines 600–618):** The right teacher (samyagvyutpādakaḥ śāstrakāraḥ) is he who does not abandon the view; the Buddhists and the rest are its makers-and-haters (this is set o",
+          "speaker": "opponent",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1B:BOUNDARY",
+          "text": "Proceed. The argument is understood: the prostration is the two-resting homage — self-subordinating and Lord-exalting, made in the mind and speech, not the inert body; the dāsya (servant-ness) is the heart of the eligibi",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V1B:I1",
+          "premises": [
+            "ipvv:V1B:P1"
+          ],
+          "conclusion": "ipvv:V1B:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The \"kathāmukhatilake\" (in the Kathāmukhatilaka) reference — a lost or separate work; cited, the",
+          "status": "OPEN"
+        },
+        {
+          "text": "detail not on our text.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The exact four Gītā-devotees' gradation in the eligibility (the text's continuation) — kept at the",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V1B:CRUX",
+          "decisive_premises": [
+            "ipvv:V1B:P1"
+          ],
+          "question": "The \"kathāmukhatilake\" (in the Kathāmukhatilaka) reference — a lost or separate work; cited, the"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V1C",
+      "passage_ref": "pt:passage:ipvv:V1C",
+      "research_question": "**The question:** The kārikā says \"the own-self alone\" (svātmā eva) is the Lord. But what does\n\"own-self\" (svātmā) mean? Does it include everything — the inert things, the void, the whole world? The\nobjector presses: if the maheśvara is the self of the blue, then he is equally the self of the yellow",
+      "propositions": [
+        {
+          "pid": "ipvv:V1C:THESIS",
+          "text": "**The question:** The kārikā says \"the own-self alone\" (svātmā eva) is the Lord. But what does \"own-self\" (svātmā) mean? Does it include everything — the inert things, the void, the whole world? The objector presses: if ",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1C:P1",
+          "text": "**The \"own-self\" (svātmā) — what it includes (lines 1200–1236):** The \"sva\" (own) in \"svātmā\" attracts a relation; being un-said, it is not restricted — so the whole being-class, inert and conscious, is perceived [as rel",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1C:BOUNDARY",
+          "text": "Proceed. The argument is understood: \"svātmā\" is the own-self, the consciousness, which is the self of all — including the inert and the void (in their being-cognized). The division of blue and yellow is not a division o",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V1C:I1",
+          "premises": [
+            "ipvv:V1C:P1"
+          ],
+          "conclusion": "ipvv:V1C:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The Upaniṣadic/vedānta citation (the ghaṭākāśa/paṭākāśa — the space-of-the-jar) — cited to",
+          "status": "OPEN"
+        },
+        {
+          "text": "confirm the one-space/one-consciousness; kept as given.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"dṛśyatā-rūpya-vyāpaka-niyama\" (the rule of the seen-ness-and-silverness-pervader) — the",
+          "status": "OPEN"
+        },
+        {
+          "text": "technical rule; kept close to the text.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V1C:CRUX",
+          "decisive_premises": [
+            "ipvv:V1C:P1"
+          ],
+          "question": "The Upaniṣadic/vedānta citation (the ghaṭākāśa/paṭākāśa — the space-of-the-jar) — cited to"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V1D",
+      "passage_ref": "pt:passage:ipvv:V1D",
+      "research_question": "**The question:** How can the self be the *eternal* knower, if memory reaches only what one has\nexperienced — and the Rāmāyaṇa was composed by Vālmīki long ago, whom \"I\" was not? The objection: \"I\nwas not at the time of the Rāmāyaṇa.\" Abhinavagupta answers that the *param-essence knower* — the\nconsc",
+      "propositions": [
+        {
+          "pid": "ipvv:V1D:THESIS",
+          "text": "**The question:** How can the self be the *eternal* knower, if memory reaches only what one has experienced — and the Rāmāyaṇa was composed by Vālmīki long ago, whom \"I\" was not? The objection: \"I was not at the time of ",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1D:P1",
+          "text": "**The Rāmāyaṇa objection (lines 1800–1816):** If memory reaches only the experienced, then \"I was not at the time of the Rāmāyaṇa\" — for that time was not experienced by me. If it is said \"from the āgama we know that tim",
+          "speaker": "opponent",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1D:BOUNDARY",
+          "text": "Proceed. The argument is understood: memory presupposes the prior experience, and hence the eternal knower; the \"I was not at the Rāmāyaṇa\" refers only to the present body, not the self; the param-essence knower is un-cu",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V1D:I1",
+          "premises": [
+            "ipvv:V1D:P1"
+          ],
+          "conclusion": "ipvv:V1D:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The Gītā 2.12 citation (the \"I was never not\") — the load-bearing confirmation; cited, the exact",
+          "status": "OPEN"
+        },
+        {
+          "text": "textual frame preserved.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"atiśiśutā-padānabhūta iva yūnaḥ\" (the young man who was not yet a child) — the memory-",
+          "status": "OPEN"
+        },
+        {
+          "text": "clarity example; kept as Abhinava's.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V1D:CRUX",
+          "decisive_premises": [
+            "ipvv:V1D:P1"
+          ],
+          "question": "The Gītā 2.12 citation (the \"I was never not\") — the load-bearing confirmation; cited, the exact"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V1E",
+      "passage_ref": "pt:passage:ipvv:V1E",
+      "research_question": "**The question:** The kārikā declares \"the self alone is the Lord.\" But the objector asks: what is the\n*pramāṇa* (valid means) for this? A pramāṇa, it is said, establishes something *un-established* — it\nserves the practical dealing (vyavahāra). But the Lord-self is already established; so what does",
+      "propositions": [
+        {
+          "pid": "ipvv:V1E:THESIS",
+          "text": "**The question:** The kārikā declares \"the self alone is the Lord.\" But the objector asks: what is the *pramāṇa* (valid means) for this? A pramāṇa, it is said, establishes something *un-established* — it serves the pract",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1E:P1",
+          "text": "**The coming verses (lines 2400–2412):** \"Kalā-raised consciousness-essence, agent-ness-made; the inert-form's void-and-the-rest, manifest as the quality, standing\" (3.22) — will be said; and \"the primary-ness of the age",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1E:BOUNDARY",
+          "text": "Proceed. The argument is understood: the self alone is the Lord, and he is already established; so the pramāṇa here does not establish a new thing but foregrounds the hidden recognition. The pratyabhijñā, the jñāna-kriyā",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V1E:I1",
+          "premises": [
+            "ipvv:V1E:P1"
+          ],
+          "conclusion": "ipvv:V1E:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The \"prakhyā/upākhyā\" (manifestation/designation) — the two modes; preserved as given.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"upāṃśu-cchanna\" (the hidden) — what the pramāṇa foregrounds; kept close.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V1E:CRUX",
+          "decisive_premises": [
+            "ipvv:V1E:P1"
+          ],
+          "question": "The \"prakhyā/upākhyā\" (manifestation/designation) — the two modes; preserved as given."
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V1F",
+      "passage_ref": "pt:passage:ipvv:V1F",
+      "research_question": "**The question:** The upoddhāta (the preliminary) has two vimarśas. In this second, Abhinavagupta faces\nthe opponents who deny the self's lordship. Who are the true opponents? The Cārvāka (materialist)\ncannot even frame a refutation (having no means of proof); the Sāṃkhya (the many selfs, or one\nsel",
+      "propositions": [
+        {
+          "pid": "ipvv:V1F:THESIS",
+          "text": "**The question:** The upoddhāta (the preliminary) has two vimarśas. In this second, Abhinavagupta faces the opponents who deny the self's lordship. Who are the true opponents? The Cārvāka (materialist) cannot even frame ",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1F:P1",
+          "text": "**The opponents (lines 3135–3162):** Those who dispute the self's being — how could they attain its lordship? They are the root-opponents. The Cārvāka, lacking a stance of their own, cannot refute the other side (without",
+          "speaker": "opponent",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1F:BOUNDARY",
+          "text": "Proceed. The argument is understood: the Buddhist no-self is the real opponent (the Cārvāka cannot argue, the Sāṃkhya is near); the 11 verses reject the perception-self and the inferred-self, and then establish the self'",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V1F:I1",
+          "premises": [
+            "ipvv:V1F:P1"
+          ],
+          "conclusion": "ipvv:V1F:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The \"dṛśyānupalabdhi\" (the non-perception of the seen) — the Buddhist's argument; the exact force",
+          "status": "OPEN"
+        },
+        {
+          "text": "The 11-verse plan's precise mapping to the kārikās — given at the doctrinal level; the detail in",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V1F:CRUX",
+          "decisive_premises": [
+            "ipvv:V1F:P1"
+          ],
+          "question": "The \"dṛśyānupalabdhi\" (the non-perception of the seen) — the Buddhist's argument; the exact force"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V1G",
+      "passage_ref": "pt:passage:ipvv:V1G",
+      "research_question": "**The question:** The Buddhist has denied the self (the dharmin) outright. But even granting the\nself, the opponent offered a reason for its lordship: \"by the union of knowledge and action\"\n(jñānakriyāyogāt). To refute this, Abhinavagupta must show that *knowledge itself* (jñāna), as the\nopponent co",
+      "propositions": [
+        {
+          "pid": "ipvv:V1G:THESIS",
+          "text": "**The question:** The Buddhist has denied the self (the dharmin) outright. But even granting the self, the opponent offered a reason for its lordship: \"by the union of knowledge and action\" (jñānakriyāyogāt). To refute t",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1G:P1",
+          "text": "**The framing (lines 3705–3718):** The self (dharmin) being rejected, no lordship could be established by the reasons. To refute the \"jñānakriyāyogāt\" reason, the cognition itself is shown to be un-established in the oth",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1G:P2",
+          "text": "(lines 3719–3744) — the dilemma:** > If the cognition is of the consciousness-form, then why is it not eternal, like the self? Or, if it > is inert, then how is there the object-manifestation of it? The 'ca' collects the",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1G:BOUNDARY",
+          "text": "Proceed. The argument is understood: the cognition cannot be a separate momentary quality, for if it is consciousness-form it is eternal (self-manifestation is opposed to being-an-object); if inert, it cannot manifest. T",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V1G:I1",
+          "premises": [
+            "ipvv:V1G:P1",
+            "ipvv:V1G:P2"
+          ],
+          "conclusion": "ipvv:V1G:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The \"āvṛta\" (the covered) argument — whether the covered self could bear another's support; kept",
+          "status": "OPEN"
+        },
+        {
+          "text": "The Vaiśeṣika objection (the cognition as the self's quality) and the answer — preserved.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V1G:CRUX",
+          "decisive_premises": [
+            "ipvv:V1G:P1",
+            "ipvv:V1G:P2"
+          ],
+          "question": "The \"āvṛta\" (the covered) argument — whether the covered self could bear another's support; kept"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V1H",
+      "passage_ref": "pt:passage:ipvv:V1H",
+      "research_question": "**The question:** What is *enjoyment* (bhoga) — the experiencing of objects? Abhinavagupta argues that\nit is the *union of reflections* in the consciousness: the reflection of consciousness (cit-pratibimba)\nand the reflection of the object (viṣaya-pratibimba) meet in the buddhi (the intellect), join",
+      "propositions": [
+        {
+          "pid": "ipvv:V1H:THESIS",
+          "text": "**The question:** What is *enjoyment* (bhoga) — the experiencing of objects? Abhinavagupta argues that it is the *union of reflections* in the consciousness: the reflection of consciousness (cit-pratibimba) and the refle",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1H:P1",
+          "text": "**Enjoyment as the reflection-union (lines 4301–4323):** The objection: \"let the transformation-action not be real in the self; but why is not the enjoyment (bhoktṛtā) param-real?\" Answer: the self is consciousness-mere;",
+          "speaker": "opponent",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1H:BOUNDARY",
+          "text": "Proceed. The argument is understood: enjoyment is the union of the consciousness-reflection and the object-reflection in the buddhi, mixed by the ego into \"I know this\"; the self is consciousness-mere, not really an enjo",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V1H:I1",
+          "premises": [
+            "ipvv:V1H:P1"
+          ],
+          "conclusion": "ipvv:V1H:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The \"paropādhau sarvā dhīr vyāvahārikī / ayathārthā\" verse — cited; the exact source/force kept.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The saṃyoga/samavāya equivalence (the beginningless saṃyoga) — Abhinava's own move; preserved.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V1H:CRUX",
+          "decisive_premises": [
+            "ipvv:V1H:P1"
+          ],
+          "question": "The \"paropādhau sarvā dhīr vyāvahārikī / ayathārthā\" verse — cited; the exact source/force kept."
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V1I",
+      "passage_ref": "pt:passage:ipvv:V1I",
+      "research_question": "**The question:** The Buddhist has been refuted on the self. But the opponent's reason for the self's\nlordship was \"jñānakriyāyogāt\" — by the union of knowledge and action. Having shown that the cognition\n(jñāna) is impossible in the opponent's view (V1-G), Abhinavagupta now shows that *action* (kri",
+      "propositions": [
+        {
+          "pid": "ipvv:V1I:THESIS",
+          "text": "**The question:** The Buddhist has been refuted on the self. But the opponent's reason for the self's lordship was \"jñānakriyāyogāt\" — by the union of knowledge and action. Having shown that the cognition (jñāna) is impo",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1I:P1",
+          "text": "(lines 5077–5093):** > The action of the body-and-the-rest, of the meaning, is the birth-of-this-and-that-place-and-the- > rest; not other, from the unseen; nor is it one — for the ordered of the one is not fit. The \"adṛ",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1I:BOUNDARY",
+          "text": "Proceed. The argument is understood: the action, like the cognition, cannot be a separate momentary thing in the opponent's view. Its real nature is the ordered operation — the prior-later forms of the agent's willing, k",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V1I:I1",
+          "premises": [
+            "ipvv:V1I:P1"
+          ],
+          "conclusion": "ipvv:V1I:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The five śloka quotations (the guru's kriyā-definition) — cited at length; their exact source kept.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"adṛṣṭeḥ / anupalabdheḥ\" (the unseen/non-perception) — the Buddhist's hidden cause; preserved.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V1I:CRUX",
+          "decisive_premises": [
+            "ipvv:V1I:P1"
+          ],
+          "question": "The five śloka quotations (the guru's kriyā-definition) — cited at length; their exact source kept."
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V1J",
+      "passage_ref": "pt:passage:ipvv:V1J",
+      "research_question": "**The question:** The Buddhist's pūrvapakṣa has denied the self (V1-F), the cognition (V1-G), and the\naction (V1-I). Now it completes itself: since the *relation* (between the cognition and its object, or\nthe agent and the action) is also impossible, \"thence the agent too is constructed (kalpita).\" ",
+      "propositions": [
+        {
+          "pid": "ipvv:V1J:THESIS",
+          "text": "**The question:** The Buddhist's pūrvapakṣa has denied the self (V1-F), the cognition (V1-G), and the action (V1-I). Now it completes itself: since the *relation* (between the cognition and its object, or the agent and t",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1J:P1",
+          "text": "**The fourfold absence (lines 5587–5602):** The kārikā's \"thence\" (tena) gathers a fourfold absence (abhāva-catuṣṭaya) as the reason: (i) the absence of the action (established in the prior sūtra: no supporter, refuted);",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1J:BOUNDARY",
+          "text": "Proceed. The argument is understood: the Buddhist's pūrvapakṣa closes by refuting the relation — the two-resting cannot be one — so the agent too is only constructed. The refutation is the announcement of the determined ",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V1J:I1",
+          "premises": [
+            "ipvv:V1J:P1"
+          ],
+          "conclusion": "ipvv:V1J:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The \"dviṣṭhasyānekarūpatvāt\" (the two-resting's many-form) — the relation's crux; preserved.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"sārvātrikī asattā\" (the universal non-being) refutation via the two-form contradiction —",
+          "status": "OPEN"
+        },
+        {
+          "text": "Abhinava's own move; kept close.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V1J:CRUX",
+          "decisive_premises": [
+            "ipvv:V1J:P1"
+          ],
+          "question": "The \"dviṣṭhasyānekarūpatvāt\" (the two-resting's many-form) — the relation's crux; preserved."
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V1K",
+      "passage_ref": "pt:passage:ipvv:V1K",
+      "research_question": "**The question:** The Buddhist's pūrvapakṣa (V1-F..J) has denied the self, the cognition, the action,\nand the relation. Now, in the third vimarśa, the siddhānta replies. Abhinavagupta grants the Buddhist\nmuch — that the cognition is not a separate thing in the Sāṃkhya/Kāṇāda views — but he turns it ",
+      "propositions": [
+        {
+          "pid": "ipvv:V1K:THESIS",
+          "text": "**The question:** The Buddhist's pūrvapakṣa (V1-F..J) has denied the self, the cognition, the action, and the relation. Now, in the third vimarśa, the siddhānta replies. Abhinavagupta grants the Buddhist much — that the ",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1K:P1",
+          "text": "**Maṅgala + the plan (lines 5758–5794):** \"Bowing to the will-power-full, nectar-shining, capable of generating endless worlds; the Bhairava-joy, thickened by the waves of the own-power…\" The siddhānta is established in ",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1K:BOUNDARY",
+          "text": "Proceed. The argument is understood: the siddhānta grants the Buddhist that the cognition is not a separate thing, but turns it around — the cognition is self-cognition, the self-luminous \"I\"-seeing, which is the very se",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V1K:I1",
+          "premises": [
+            "ipvv:V1K:P1"
+          ],
+          "conclusion": "ipvv:V1K:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The \"satyaṃ kintu\" concessive style (the prekṣāvat) — Abhinava's rhetorical method; preserved.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"smṛtyapohanaśaktimān\" (the one possessed of the memory-removal-power) — the siddhānta's",
+          "status": "OPEN"
+        },
+        {
+          "text": "description of the self; kept close.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V1K:CRUX",
+          "decisive_premises": [
+            "ipvv:V1K:P1"
+          ],
+          "question": "The \"satyaṃ kintu\" concessive style (the prekṣāvat) — Abhinava's rhetorical method; preserved."
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V1L",
+      "passage_ref": "pt:passage:ipvv:V1L",
+      "research_question": "**The question:** The siddhānta holds that the cognition is self-cognition (svasaṃvid), and the self\nis self-luminous. But two objections arise. First: if the self is self-luminous and not manifest as an\nobject, how does the *yogin* perceive *another's* cognition clearly (the yogipratyakṣa)? Second:",
+      "propositions": [
+        {
+          "pid": "ipvv:V1L:THESIS",
+          "text": "**The question:** The siddhānta holds that the cognition is self-cognition (svasaṃvid), and the self is self-luminous. But two objections arise. First: if the self is self-luminous and not manifest as an object, how does",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1L:P1",
+          "text": "**The yogin's perception of another (lines 6303–6333):** The objection: \"if the self is not directly manifest as another's, how does the knowledge of another's cognition shine clearly — since the other-self is not percei",
+          "speaker": "opponent",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1L:BOUNDARY",
+          "text": "Proceed. The argument is understood: the yogin's knowledge of another is the yogipratyakṣa (a direct seeing by the union, not an inference); the cognition is self-luminous throughout, never the object of another (it rest",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V1L:I1",
+          "premises": [
+            "ipvv:V1L:P1"
+          ],
+          "conclusion": "ipvv:V1L:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The yo. sū. 3.20 citation (the saṃyama-rule for the knowledge of another's cognition) — cited;",
+          "status": "OPEN"
+        },
+        {
+          "text": "the exact application preserved.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The vāsanāprabodha-sūtra (where the Buddhist's other-mind is refuted at length) — referenced.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V1L:CRUX",
+          "decisive_premises": [
+            "ipvv:V1L:P1"
+          ],
+          "question": "The yo. sū. 3.20 citation (the saṃyama-rule for the knowledge of another's cognition) — cited;"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V1M",
+      "passage_ref": "pt:passage:ipvv:V1M",
+      "research_question": "**The question:** The siddhānta holds that the cognition is self-luminous and the self is one. The\nBuddhist's last resort is the *determination* (adhyavasāya) — the act by which the cognition is taken\nto establish an external thing. Abhinavagupta now shows that the determination cannot do this: it i",
+      "propositions": [
+        {
+          "pid": "ipvv:V1M:THESIS",
+          "text": "**The question:** The siddhānta holds that the cognition is self-luminous and the self is one. The Buddhist's last resort is the *determination* (adhyavasāya) — the act by which the cognition is taken to establish an ext",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1M:P1",
+          "text": "**The external and the determination (lines 6900–6932):** The external-object-made (bāhyārthakṛta) is only by the strength of the firm-practice-impression (dṛḍhābhyāsavāsanāmahimnā); from the very first, the appearance, ",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1M:BOUNDARY",
+          "text": "Proceed. The argument is understood: the determination cannot establish an external thing — it is only the manifestation-form in the self, and the \"external\" is drawn-to only by the impression, not established; the error",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V1M:I1",
+          "premises": [
+            "ipvv:V1M:P1"
+          ],
+          "conclusion": "ipvv:V1M:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The Nareśvaraviveka citation (\"even of others, in the hair-and-the-rest, the erroneous",
+          "status": "OPEN"
+        },
+        {
+          "text": "outward-facing cognition\") — cited; kept as given.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"jñānād avyatiriktam\" (the un-divided from the cognition) rule — the load-bearing point;",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V1M:CRUX",
+          "decisive_premises": [
+            "ipvv:V1M:P1"
+          ],
+          "question": "The Nareśvaraviveka citation (\"even of others, in the hair-and-the-rest, the erroneous"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V1N",
+      "passage_ref": "pt:passage:ipvv:V1N",
+      "research_question": "**The question:** This closes Vol 1. The cognitions (jñāna) have been shown to be self-luminous and one\nwith the \"I\" (ahaṃ). The final points: (1) how the cognitions, though appearing in their object-parts,\nare un-divided from the \"I\"-part; (2) the māyā is the Lord's power, which does not cover his ",
+      "propositions": [
+        {
+          "pid": "ipvv:V1N:THESIS",
+          "text": "**The question:** This closes Vol 1. The cognitions (jñāna) have been shown to be self-luminous and one with the \"I\" (ahaṃ). The final points: (1) how the cognitions, though appearing in their object-parts, are un-divide",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1N:P1",
+          "text": "**The cognitions un-divided from the \"I\" (lines 7600–7628):** The cognitions are of the manifestation-mere own-form. How, then, do they not take the form of the \"I\" when they shine beyond the \"I\"-part? Their excess over ",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V1N:BOUNDARY",
+          "text": "Proceed. The argument is understood: the cognitions are un-divided from the \"I\"; the māyā is the Lord's power, which does not cover his own form; the synthesis (anusandhāna) is the consciousness alone — the one-becoming ",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V1N:I1",
+          "premises": [
+            "ipvv:V1N:P1"
+          ],
+          "conclusion": "ipvv:V1N:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The \"hetumallīṅga\" (the reason-possessing liṅ) — the grammatical reading of \"naśyet na cet\"; kept",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"dadāti\" karma-kartṛ and the kriyā-kartṛ upacara — the grammar; preserved per the text.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V1N:CRUX",
+          "decisive_premises": [
+            "ipvv:V1N:P1"
+          ],
+          "question": "The \"hetumallīṅga\" (the reason-possessing liṅ) — the grammatical reading of \"naśyet na cet\"; kept"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V2A",
+      "passage_ref": "pt:passage:ipvv:V2A",
+      "research_question": "**The question:** Having established knowledge (jñāna), the jñānādhikāra now takes up memory (smṛti)\nand the power of removal (apohanaśakti). The prior view (pūrvapakṣa) held that memory is merely the\nimpression's revival after the experience is gone (\"in the destruction of the experience, memory…\")",
+      "propositions": [
+        {
+          "pid": "ipvv:V2A:THESIS",
+          "text": "**The question:** Having established knowledge (jñāna), the jñānādhikāra now takes up memory (smṛti) and the power of removal (apohanaśakti). The prior view (pūrvapakṣa) held that memory is merely the impression's reviva",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2A:P1",
+          "text": "**Maṅgala + the 8-verse plan (lines 31–73):** \"Bowing to the Lord, the removers of all woe, the nectar-fluid, the un-thwarted-freedom-unfolding-rest, the nectar-handed-crowned…\" The order is jñāna, then smṛti, then the a",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2A:P2",
+          "text": "— the remembered object's apprehension (lines 48–164):** \"Since he is the apprehender of the previously-experienced object…\" The memory's object appears in the knower (arthau bhātaḥ pramātari). The refutation of the prio",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2A:BOUNDARY",
+          "text": "Proceed. The argument is understood: memory is not the mere revival of an impression — it is the Lord's power, the un-broken manifestation that brings the experienced object back into the knower. The \"aham\" shines both i",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V2A:I1",
+          "premises": [
+            "ipvv:V2A:P1",
+            "ipvv:V2A:P2"
+          ],
+          "conclusion": "ipvv:V2A:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The \"veśyā iva māyāprabhāveṇa\" (the prostitute-like māyā-power) image (line 181) — the māyā",
+          "status": "OPEN"
+        },
+        {
+          "text": "seducing the self into the object-form; kept as Abhinava's image.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The grammatical point (the tṛc/samāsa in \"arthaviṣaya\") — the kriyā-vṛddhi; kept close to the text.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V2A:CRUX",
+          "decisive_premises": [
+            "ipvv:V2A:P1",
+            "ipvv:V2A:P2"
+          ],
+          "question": "The \"veśyā iva māyāprabhāveṇa\" (the prostitute-like māyā-power) image (line 181) — the māyā"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V2B",
+      "passage_ref": "pt:passage:ipvv:V2B",
+      "research_question": "**The question:** Having established that memory is the Lord's un-broken power, Abhinavagupta now\nfaces two further problems. First: how can the *past* be remembered, since the manifestation has no\ntouch of time (the memory's \"pastness\")? Second: how can the *yogin* know another's cognition — the\nfa",
+      "propositions": [
+        {
+          "pid": "ipvv:V2B:THESIS",
+          "text": "**The question:** Having established that memory is the Lord's un-broken power, Abhinavagupta now faces two further problems. First: how can the *past* be remembered, since the manifestation has no touch of time (the mem",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2B:P1",
+          "text": "**Memory's pastness (lines 700–714):** The objection: \"the manifestation has no touch of time — how, then, is the past remembered?\" Answer: the pastness is the *being-previously-manifested* (pūrvaprakāśitatva). The manif",
+          "speaker": "opponent",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2B:BOUNDARY",
+          "text": "Proceed. The argument is understood: memory's pastness is the being-previously-manifested, the manifestation contracted by the upādhis; time is the appearing/not-appearing order; and the cognition is fundamentally self-c",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V2B:I1",
+          "premises": [
+            "ipvv:V2B:P1"
+          ],
+          "conclusion": "ipvv:V2B:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The exact \"yogijñāne vā avicāritāpātaśaṅkitapratibhānabalādeva vedyatā\" (the yogin-cognition's",
+          "status": "OPEN"
+        },
+        {
+          "text": "object-ness by the un-investigated flash) — the crux; rendered per the text.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"kākākṣivat\" (the crow's-eye) joining of \"bhānti\" — the textual joining point; kept close.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V2B:CRUX",
+          "decisive_premises": [
+            "ipvv:V2B:P1"
+          ],
+          "question": "The exact \"yogijñāne vā avicāritāpātaśaṅkitapratibhānabalādeva vedyatā\" (the yogin-cognition's"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V2C",
+      "passage_ref": "pt:passage:ipvv:V2C",
+      "research_question": "**The question:** Continuing from the yogin's perception (V2-B): how can one cognition be *known by\nanother* cognition (jñāntaravedyatā)? The objector presses that the cognition of another cannot be a\nreal object for the yogin, because cognitions are self-luminous — the relation of object-and-holder",
+      "propositions": [
+        {
+          "pid": "ipvv:V2C:THESIS",
+          "text": "**The question:** Continuing from the yogin's perception (V2-B): how can one cognition be *known by another* cognition (jñāntaravedyatā)? The objector presses that the cognition of another cannot be a real object for the",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2C:P1",
+          "text": "**The yogin's perception of the other (lines 1400–1409):** The other's cognition, being self-luminous, shines of itself; the yogin's cognition, by the excess of purity and its un-opposed spreading, knows it without the o",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2C:BOUNDARY",
+          "text": "Proceed. The argument is understood: the cognition is never known by another cognition, because being-an-object is the sārūpya (the assimilation of the object's form), which requires real difference — and two cognitions ",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V2C:I1",
+          "premises": [
+            "ipvv:V2C:P1"
+          ],
+          "conclusion": "ipvv:V2C:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The \"bamboo and pillar\" (aṃbhaḥstambha) and \"jar-with-itself\" examples — the sārūpya's",
+          "status": "OPEN"
+        },
+        {
+          "text": "difference/non-difference requirement; kept as Abhinava's examples.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The exact force of \"anupalabdhi\" (the Dharmakīrti non-perception) as the vyāpaka-anupalabdhi.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V2C:CRUX",
+          "decisive_premises": [
+            "ipvv:V2C:P1"
+          ],
+          "question": "The \"bamboo and pillar\" (aṃbhaḥstambha) and \"jar-with-itself\" examples — the sārūpya's"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V2D",
+      "passage_ref": "pt:passage:ipvv:V2D",
+      "research_question": "**The question:** Having examined memory (smṛti) and the construction (vikalpa), Abhinavagupta now\nexamines the knowledge-power (jñānaśakti) that both presuppose. The central claim: **the manifestation\n(prakāśa) is the very form of the objects** — the objects are not something outside the light that",
+      "propositions": [
+        {
+          "pid": "ipvv:V2D:THESIS",
+          "text": "**The question:** Having examined memory (smṛti) and the construction (vikalpa), Abhinavagupta now examines the knowledge-power (jñānaśakti) that both presuppose. The central claim: **the manifestation (prakāśa) is the v",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2D:P1",
+          "text": "**Maṅgala + the plan (lines 2084–2110):** \"Praising the Lord's abode — full, from the un-surpassed awakening, the unfolding-bliss-will, the rising-nectar-beautiful…\" The jñānaśakti is examined in 21 verses: the thesis (k",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2D:P2",
+          "text": "(lines 2112–2121) — the present appearances:** > Of the present-manifesting beings, the manifestation, of the inner-standing-alone, is fitting as > the outer-self (bahirātmanā). The present beings, as they manifest, have",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2D:BOUNDARY",
+          "text": "Proceed. The argument is understood: the jñānaśakti is examined; the manifestation is the form of the objects (the inner standing manifesting as outer); the Vijñānavādin's denial of the external is answered (the object i",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V2D:I1",
+          "premises": [
+            "ipvv:V2D:P1",
+            "ipvv:V2D:P2"
+          ],
+          "conclusion": "ipvv:V2D:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The \"bahirātmanā\" (as the outer-self) — the inner standing manifesting as outer; the precise",
+          "status": "OPEN"
+        },
+        {
+          "text": "reading is preserved.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The Dharmakīrti/Dharmottara and the bāhya-anumāna (the inference of the external object from the",
+          "status": "OPEN"
+        },
+        {
+          "text": "reflection) — dense; the map keeps the doctrinal sense (the cognition's inner blue-form expects an",
+          "status": "OPEN"
+        },
+        {
+          "text": "identical arpaka, like a mirror-reflection).",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V2D:CRUX",
+          "decisive_premises": [
+            "ipvv:V2D:P1",
+            "ipvv:V2D:P2"
+          ],
+          "question": "The \"bahirātmanā\" (as the outer-self) — the inner standing manifesting as outer; the precise"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V2E",
+      "passage_ref": "pt:passage:ipvv:V2E",
+      "research_question": "**The question:** Having shown that the cognition is self-luminous (V2-D), Abhinavagupta now examines\nthe *inference* of the external object. The Vijñānavādin says: the cognition's inner blue-form is a\nreflection (pratibimba), and a reflection requires an external ground (the arpaka) — so the extern",
+      "propositions": [
+        {
+          "pid": "ipvv:V2E:THESIS",
+          "text": "**The question:** Having shown that the cognition is self-luminous (V2-D), Abhinavagupta now examines the *inference* of the external object. The Vijñānavādin says: the cognition's inner blue-form is a reflection (pratib",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2E:P1",
+          "text": "**The sense-organ analogy (lines 2800–2816):** The objection: \"then, like the sense-organ, it would be merely a cause.\" The \"kevalam\" (merely) answers: the determination (adhyavasāya) \"I see\" is of the cognition-form-obj",
+          "speaker": "opponent",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2E:BOUNDARY",
+          "text": "Proceed. The argument is understood: the external object is inferred (like the sense-organ, from the cognition it causes, by the sārūpya); the determination, though error-born, is by the thing's bond a pramāṇa-operation;",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V2E:I1",
+          "premises": [
+            "ipvv:V2E:P1"
+          ],
+          "conclusion": "ipvv:V2E:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The \"sāmānābhihāramelana\" rule — the technical grammar/logic rule; kept close.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"bhrāntirapi saṃbandhaḥ pramā\" — the striking claim that even the error, being a bond, is a",
+          "status": "OPEN"
+        },
+        {
+          "text": "pramāṇa; the crux, preserved.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V2E:CRUX",
+          "decisive_premises": [
+            "ipvv:V2E:P1"
+          ],
+          "question": "The \"sāmānābhihāramelana\" rule — the technical grammar/logic rule; kept close."
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V2F",
+      "passage_ref": "pt:passage:ipvv:V2F",
+      "research_question": "**The question:** Can one infer *another's* mind (paracitta) from its uttered appearances — e.g. infer\nMaitra's intent from his speech or action? The Buddhist (Vijñānavādin) thinks the other-stream can be\ninferred. Abhinavagupta shows it cannot: only the *aimed* (samīhita) action is the wish's effec",
+      "propositions": [
+        {
+          "pid": "ipvv:V2F:THESIS",
+          "text": "**The question:** Can one infer *another's* mind (paracitta) from its uttered appearances — e.g. infer Maitra's intent from his speech or action? The Buddhist (Vijñānavādin) thinks the other-stream can be inferred. Abhin",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2F:P1",
+          "text": "**The candana/agni analogy (lines 3600–3644):** As, when one wishes to infer the fire in the sandalwood, if the sandalwood's fragrance of the smoke is set aside, only the fire in general is established, not the sandalwoo",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2F:BOUNDARY",
+          "text": "Proceed. The argument is understood: the other-stream cannot be inferred from the mere utterance, because only the aimed action is the wish's effect, and the \"being-gone-to-the-other\" is not inferable (like the sandalwoo",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V2F:I1",
+          "premises": [
+            "ipvv:V2F:P1"
+          ],
+          "conclusion": "ipvv:V2F:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The \"sāmānyaviśeṣavyavahāra\" (the universal-particular dealing) and the cow/speckled co-reference —",
+          "status": "OPEN"
+        },
+        {
+          "text": "the grammar; preserved.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"piśācaprāya\" (the piśāca-like) example — the aimed action of the other; kept close.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V2F:CRUX",
+          "decisive_premises": [
+            "ipvv:V2F:P1"
+          ],
+          "question": "The \"sāmānyaviśeṣavyavahāra\" (the universal-particular dealing) and the cow/speckled co-reference —"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V2G",
+      "passage_ref": "pt:passage:ipvv:V2G",
+      "research_question": "**The question:** The Buddhist's external object (whole or atom) has been refuted (V2-F, the\nshadow/sun, the avayavin, the paramāṇu). But the objector asks: \"you established the external by the\nappearance-order-variety as the cause; so how is it un-established now?\" Abhinavagupta answers with the\npo",
+      "propositions": [
+        {
+          "pid": "ipvv:V2G:THESIS",
+          "text": "**The question:** The Buddhist's external object (whole or atom) has been refuted (V2-F, the shadow/sun, the avayavin, the paramāṇu). But the objector asks: \"you established the external by the appearance-order-variety a",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2G:P1",
+          "text": "**The avayavin/paramāṇu refutation (lines 4400–4443):** The whole (avayavin) is refuted by the shadow/sun argument: the jar has shadow on one side, sun on the other, the middle covered, the two sides uncovered — so the p",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2G:P2",
+          "text": "(lines 4445–4484) — the Lord manifests from within:** > The consciousness-self alone, indeed, the God, the inner-standing, by the will, outward — like a > yogin, without the material-cause, the object-mass, he would mani",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2G:BOUNDARY",
+          "text": "Proceed. The argument is understood: the external (whole or atom) is refuted by the shadow/sun and the part-less-atom arguments; so the Lord manifests the object-mass from within, by his will, like a yogin, without an ex",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V2G:I1",
+          "premises": [
+            "ipvv:V2G:P1",
+            "ipvv:V2G:P2"
+          ],
+          "conclusion": "ipvv:V2G:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The Bhaṭṭadivākavatsa verse — cited; the exact application preserved.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"cittattvaiva sarvatra nirmātṛ\" (the consciousness-tattva alone, everywhere, is the creator) —",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V2G:CRUX",
+          "decisive_premises": [
+            "ipvv:V2G:P1",
+            "ipvv:V2G:P2"
+          ],
+          "question": "The Bhaṭṭadivākavatsa verse — cited; the exact application preserved."
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V2H",
+      "passage_ref": "pt:passage:ipvv:V2H",
+      "research_question": "**The question:** This is the deepest section of the jñānaśakti vimarśa. Abhinavagupta now states the\nheart of the whole doctrine: the manifestation (prakāśa) is not an inert light — its own nature is the\n*reflexive-awareness* (vimarśa). Without the vimarśa, the manifestation would be like crystal, ",
+      "propositions": [
+        {
+          "pid": "ipvv:V2H:THESIS",
+          "text": "**The question:** This is the deepest section of the jñānaśakti vimarśa. Abhinavagupta now states the heart of the whole doctrine: the manifestation (prakāśa) is not an inert light — its own nature is the *reflexive-awar",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2H:P1",
+          "text": "**The pramātṛ-prameya abheda and the parā-vāk (lines 5200–5244):** In the manas-cognition (the middle-self, the inner-speech), the first surge — the paśyantī-word-said, of the will-marker — is where the pramātṛ-prameya a",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2H:BOUNDARY",
+          "text": "Proceed. The argument is understood: the manifestation's own nature is the reflexive-awareness; the pramātṛ-prameya are not two (the swift action shows the re-reflection); this reflexive-awareness is the parā-vāk, the Lo",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V2H:I1",
+          "premises": [
+            "ipvv:V2H:P1"
+          ],
+          "conclusion": "ipvv:V2H:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The Śivadṛṣṭi 1.8 citation (the icchā as the first tuṭi) — cited at length; the application",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"kārya-hetu/svabhāva-hetu\" (the effect-reason/own-nature-reason) — the two arguments for the",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V2H:CRUX",
+          "decisive_premises": [
+            "ipvv:V2H:P1"
+          ],
+          "question": "The Śivadṛṣṭi 1.8 citation (the icchā as the first tuṭi) — cited at length; the application"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V2I",
+      "passage_ref": "pt:passage:ipvv:V2I",
+      "research_question": "**The question:** Having established the reflexive-awareness (vimarśa) as the manifestation's nature\nand as the parā-vāk (V2-H), Abhinavagupta now gives the positive account of the powers. He must: (1)\nshow that the paśyantī-speech, the word, is not a separate param (the grammarian's paśyantī-as-par",
+      "propositions": [
+        {
+          "pid": "ipvv:V2I:THESIS",
+          "text": "**The question:** Having established the reflexive-awareness (vimarśa) as the manifestation's nature and as the parā-vāk (V2-H), Abhinavagupta now gives the positive account of the powers. He must: (1) show that the paśy",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2I:P1",
+          "text": "**The speech-power not-param (lines 6000–6044):** The speech (vāk) and the mind (manas) — their motion — are only the ahaṅkāra-vṛtti (the ego-operation), like the hand; so how could they be the param? The paśyantī-speech",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2I:BOUNDARY",
+          "text": "Proceed. The argument is understood: the speech and the mind are only the ego-operation, not the param; the param-eśvara is the word-mass, of the reflexive-awareness; the paśyantī-speech is not the param (only the vimarś",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V2I:I1",
+          "premises": [
+            "ipvv:V2I:P1"
+          ],
+          "conclusion": "ipvv:V2I:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The Śivadṛṣṭi 2.17/2.19 and the mā. vi. 3.28 citations — cited; the applications preserved.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"pañcamantramahāmūrti\" (the fifth-mantra great-form) — the Lord's word-body; kept close.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V2I:CRUX",
+          "decisive_premises": [
+            "ipvv:V2I:P1"
+          ],
+          "question": "The Śivadṛṣṭi 2.17/2.19 and the mā. vi. 3.28 citations — cited; the applications preserved."
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V2J",
+      "passage_ref": "pt:passage:ipvv:V2J",
+      "research_question": "**The question:** The vimarśa (reflexive-awareness) has been shown to be the manifestation's nature\nand the source of the powers. Now Abhinavagupta must show that even the *impression* (saṃskāra) — the\nseed of memory — and the *determination* (adhyavasāya) are the vimarśa. The memory-seed is laid an",
+      "propositions": [
+        {
+          "pid": "ipvv:V2J:THESIS",
+          "text": "**The question:** The vimarśa (reflexive-awareness) has been shown to be the manifestation's nature and the source of the powers. Now Abhinavagupta must show that even the *impression* (saṃskāra) — the seed of memory — a",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2J:P1",
+          "text": "**The saṃskāra-vimarśa (lines 6800–6844):** The remembering of the convention (saṃketa) depends on the saṃskāra-ādhāna (the laying of the impression) and the saṃskāra-prabodhana (the awakening); and these two cannot be d",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2J:BOUNDARY",
+          "text": "Proceed. The argument is understood: the impression (saṃskāra) is laid and awakened only by the vimarśa (the resting in the reflexive-awareness); the non-construction cannot do it; the strong-ness of the experience is th",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V2J:I1",
+          "premises": [
+            "ipvv:V2J:P1"
+          ],
+          "conclusion": "ipvv:V2J:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The Bhaṭṭa's verses and the nālikera (coconut-island) example — cited; the applications preserved.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"mārgagamana\" (the going on the road) example — kept close to the text.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V2J:CRUX",
+          "decisive_premises": [
+            "ipvv:V2J:P1"
+          ],
+          "question": "The Bhaṭṭa's verses and the nālikera (coconut-island) example — cited; the applications preserved."
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V2K",
+      "passage_ref": "pt:passage:ipvv:V2K",
+      "research_question": "**The question:** The vimarśa-section closes. Two final points: (1) the word (vācaka) and its\ndetermination — the \"this\" of the jar is not a separate thing the word pastes on; the word's own form\nis the reflexive-awareness, self-luminous like a lamp (the sphoṭa analysis); and (2) kārikā 21 — the\ncog",
+      "propositions": [
+        {
+          "pid": "ipvv:V2K:THESIS",
+          "text": "**The question:** The vimarśa-section closes. Two final points: (1) the word (vācaka) and its determination — the \"this\" of the jar is not a separate thing the word pastes on; the word's own form is the reflexive-awarene",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2K:P1",
+          "text": "**The vācaka and the sphoṭa (lines 7600–7644):** The substance-ness (dravyatva) is by the primary-ness, the object-action-use, the being-differentiated by the other-dharmas (the kriyāvatva). The whole, of the other-appea",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2K:BOUNDARY",
+          "text": "Proceed. The argument is understood: the word's determination \"this jar\" is not a separate thing the word pastes on — the word's own form is the reflexive-awareness, self-luminous like a lamp, revealing itself and the ob",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V2K:I1",
+          "premises": [
+            "ipvv:V2K:P1"
+          ],
+          "conclusion": "ipvv:V2K:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The \"asmād agner ḍhak\" rule — the free-standing word; kept close.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The Vākyapadīya citations — cited; the applications preserved.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V2K:CRUX",
+          "decisive_premises": [
+            "ipvv:V2K:P1"
+          ],
+          "question": "The \"asmād agner ḍhak\" rule — the free-standing word; kept close."
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V2L",
+      "passage_ref": "pt:passage:ipvv:V2L",
+      "research_question": "**The question:** Having established knowledge (jñāna) and memory (smṛti), Abhinavagupta now examines\nthe *apohanaśakti* (the removal-power) that serves both. The core question: is the \"I\"-recollection\n(ahaṃ-pratyavamarśa) a *construction* (vikalpa)? If the reflexive-awareness is necessarily word-jo",
+      "propositions": [
+        {
+          "pid": "ipvv:V2L:THESIS",
+          "text": "**The question:** Having established knowledge (jñāna) and memory (smṛti), Abhinavagupta now examines the *apohanaśakti* (the removal-power) that serves both. The core question: is the \"I\"-recollection (ahaṃ-pratyavamarś",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2L:P1",
+          "text": "**The plan (lines 8410–8433):** The apohanaśakti is examined in 11 verses: one says the pratyavamarśa's distinction is the vikalpa; one removes the apohana-operation in the pure \"I\"-recollection; one says the apohana-ope",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2L:P2",
+          "text": "(lines 8435–8449):** > The \"I\"-recollection (ahaṃ-pratyavamarśa), which, though of the manifestation-nature, has the word > as its body — that is not a construction; it is the fit, the two-throwing (dvayākṣepī), the > de",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2L:BOUNDARY",
+          "text": "Proceed. The argument is understood: the ahaṃ-pratyavamarśa — the pure self-grasp of the manifestation, even though word-bodied — is not a vikalpa, because the vikalpa is the joining of the distinct or the splitting of t",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V2L:I1",
+          "premises": [
+            "ipvv:V2L:P1",
+            "ipvv:V2L:P2"
+          ],
+          "conclusion": "ipvv:V2L:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The \"dvayākṣepī\" (the two-throwing) — the niścaya that throws up the knower/known; kept close.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"guḍadadhimaricādivat\" (the molasses/curd/pepper) example — the joining-construction; preserved.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V2L:CRUX",
+          "decisive_premises": [
+            "ipvv:V2L:P1",
+            "ipvv:V2L:P2"
+          ],
+          "question": "The \"dvayākṣepī\" (the two-throwing) — the niścaya that throws up the knower/known; kept close."
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V2M",
+      "passage_ref": "pt:passage:ipvv:V2M",
+      "research_question": "**The question:** Having examined the apohanaśakti (the removal-power), Abhinavagupta now traces how\nthe consciousness, entering the states (the prāṇa, the buddhi, the puryaṣṭaka, the body), comes to\nidentify with them and to deal with the world. The construction (vikalpa) is the joining of the \"thi",
+      "propositions": [
+        {
+          "pid": "ipvv:V2M:THESIS",
+          "text": "**The question:** Having examined the apohanaśakti (the removal-power), Abhinavagupta now traces how the consciousness, entering the states (the prāṇa, the buddhi, the puryaṣṭaka, the body), comes to identify with them a",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2M:P1",
+          "text": "**The states and the krama (lines 9200–9244):** The consciousness, descending into the known-form (the lower ground), takes up the void, the breath, the intellect, the body — the prior-prior union, the order (krama). Eve",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2M:BOUNDARY",
+          "text": "Proceed. The argument is understood: the consciousness descends through the states (the void, the prāṇa, the intellect, the body), presiding over them by the prāṇa-puryaṣṭaka; the construction is the impression-joining (",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V2M:I1",
+          "premises": [
+            "ipvv:V2M:P1"
+          ],
+          "conclusion": "ipvv:V2M:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The Gītā 15.8 and the Spandakārikā 7 citations — cited; the applications preserved.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"hastina iva taṭe\" (the elephant in the mud-bank) image — the consciousness's descent; kept.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V2M:CRUX",
+          "decisive_premises": [
+            "ipvv:V2M:P1"
+          ],
+          "question": "The Gītā 15.8 and the Spandakārikā 7 citations — cited; the applications preserved."
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V2N",
+      "passage_ref": "pt:passage:ipvv:V2N",
+      "research_question": "**The question:** The ṣaṣṭho vimarśa (the apohanaśakti) closes. Its final concern: the inner appearance\n(antarābhāsa) stands firm in memory, construction, and cognition alike (kārikā 8); it is innate in the\ncognition whose form is the external manifestation, while it stands in memory etc. (kārikā 9)",
+      "propositions": [
+        {
+          "pid": "ipvv:V2N:THESIS",
+          "text": "**The question:** The ṣaṣṭho vimarśa (the apohanaśakti) closes. Its final concern: the inner appearance (antarābhāsa) stands firm in memory, construction, and cognition alike (kārikā 8); it is innate in the cognition who",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2N:P1",
+          "text": "**The muktāṇava and the mantreśvara (lines 10000–10044):** Even in the mokṣa-state, the freed atoms (muktāṇava) — from the parama-śiva, from the ādi-śiva-ness, from the stain-removal-manifested-śiva-ness — have a distinc",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2N:BOUNDARY",
+          "text": "Proceed. The argument is understood: the freed atoms and the mantreśvaras are distinct yet all-knowing (their manifestation un-broken); the creation is by the unity, per-knower; the appearance is the cognition; and kārik",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V2N:I1",
+          "premises": [
+            "ipvv:V2N:P1"
+          ],
+          "conclusion": "ipvv:V2N:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The vāsanāprabodha-sūtra 1.5.5 and the 1.5.7 references — cited; the applications preserved.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"traiyambaka\" — the lineage; kept close.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V2N:CRUX",
+          "decisive_premises": [
+            "ipvv:V2N:P1"
+          ],
+          "question": "The vāsanāprabodha-sūtra 1.5.5 and the 1.5.7 references — cited; the applications preserved."
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V2O",
+      "passage_ref": "pt:passage:ipvv:V2O",
+      "research_question": "**The question:** The previous vimarśa (the ṣaṣṭha) established the powers — knowledge, memory, removal\n(jñāna, smaraṇa, apohana). But a power needs a *support* (āśraya); and the support of all the powers is\nthe maheśvara — not an inert support (like the fire's relation to its powers of burning, coo",
+      "propositions": [
+        {
+          "pid": "ipvv:V2O:THESIS",
+          "text": "**The question:** The previous vimarśa (the ṣaṣṭha) established the powers — knowledge, memory, removal (jñāna, smaraṇa, apohana). But a power needs a *support* (āśraya); and the support of all the powers is the maheśvar",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2O:P1",
+          "text": "**The plan (lines 10385–10429):** The three powers (knowledge, memory, removal) were established in the previous vimarśas. The power-holder's own form, touched there, is to establish that these are powers by the power-ho",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2O:P2",
+          "text": "(lines 10404–10430):** > This pratibhā (the flashing), seasoned with the order of the various word-objects — the order-less, > infinite-consciousness-form knower, he is the great Lord. The pratibhā — the flash that runs ",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2O:BOUNDARY",
+          "text": "Proceed. The argument is understood: the powers need a support, and the support is the maheśvara — the free Lord, not an inert fire-like base. The pratibhā (the flashing, seasoned with the ordered word-objects) has, as i",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V2O:I1",
+          "premises": [
+            "ipvv:V2O:P1",
+            "ipvv:V2O:P2"
+          ],
+          "conclusion": "ipvv:V2O:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The \"na cedantaḥkṛtā\" (1.3.7) reference — the hint of the support; cited.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The Vaiśeṣika refutation (1.2.6) — the prior denial of the support; referenced.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V2O:CRUX",
+          "decisive_premises": [
+            "ipvv:V2O:P1",
+            "ipvv:V2O:P2"
+          ],
+          "question": "The \"na cedantaḥkṛtā\" (1.3.7) reference — the hint of the support; cited."
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V2P",
+      "passage_ref": "pt:passage:ipvv:V2P",
+      "research_question": "**The question:** The saptamo vimarśa establishes the one support of the powers. Its core: the valid\nmeans (pramāṇa) is not a separate thing — it is the *operation of the knower* (pramātṛ-vyāpāra), the\nunification of the cognitions in the one knower. Kārikā 5: in memory, that very self-consciousness",
+      "propositions": [
+        {
+          "pid": "ipvv:V2P:THESIS",
+          "text": "**The question:** The saptamo vimarśa establishes the one support of the powers. Its core: the valid means (pramāṇa) is not a separate thing — it is the *operation of the knower* (pramātṛ-vyāpāra), the unification of the",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2P:P1",
+          "text": "**The vyavasthāpaka and the unification (lines 11200–11223):** The objection: \"then how is the not-establishing established?\" — the \"evam\" (the prior-suggested reason): even there (in the construction-state), if the two ",
+          "speaker": "opponent",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2P:P2",
+          "text": "(lines 11225–11244):** The objection: \"by the perception-non-perception, what was made is to be unified; this much is the acceptance of the knower; but what is this — in the unification, the memory alone is engaged?\" — t",
+          "speaker": "opponent",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2P:BOUNDARY",
+          "text": "Proceed. The argument is understood: the valid means is the knower-operation, the unification of the cognitions in the one knower (the joiner); and in memory, the prior experience itself, self-conscious, is what shines —",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V2P:I1",
+          "premises": [
+            "ipvv:V2P:P1",
+            "ipvv:V2P:P2"
+          ],
+          "conclusion": "ipvv:V2P:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The Mukuta-saṃhitā citation — cited; the application preserved.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"jñātajñāna\" (the known-cognition) — the regress avoided; kept close.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V2P:CRUX",
+          "decisive_premises": [
+            "ipvv:V2P:P1",
+            "ipvv:V2P:P2"
+          ],
+          "question": "The Mukuta-saṃhitā citation — cited; the application preserved."
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V2Q",
+      "passage_ref": "pt:passage:ipvv:V2Q",
+      "research_question": "**The question:** The saptamo vimarśa closes with the question of the *omniscient* (sarvajña) — the\nsupreme knower who is the support of all the powers. The Buddhist objector presses: if the piśāca (the\ngoblin) is not perceived even by the omniscient, how can he deny it? The analysis turns on whethe",
+      "propositions": [
+        {
+          "pid": "ipvv:V2Q:THESIS",
+          "text": "**The question:** The saptamo vimarśa closes with the question of the *omniscient* (sarvajña) — the supreme knower who is the support of all the powers. The Buddhist objector presses: if the piśāca (the goblin) is not pe",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2Q:P1",
+          "text": "**The piśāca and the āloka-atoms (lines 12000–12044):** Even if the piśāca is not seen by us, the form-and-the-rest atoms are there — not seen by us, but seen by the omniscient. The atoms have no un-precedented variety. ",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2Q:BOUNDARY",
+          "text": "Proceed. The argument is understood: the omniscient, seeing all the atoms, knows the piśāca's absence in its place (the āloka-atoms alone); the limited seer (arvāk) cannot — his non-perception is only the limited, not th",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V2Q:I1",
+          "premises": [
+            "ipvv:V2Q:P1"
+          ],
+          "conclusion": "ipvv:V2Q:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The 1.7.10 (\"svajñāna-maghaṭātmatā\") and the hetubindu references — cited; the applications",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"arvāk\" (the limited-seeing) vs. the sarvajña distinction — the crux; kept close.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V2Q:CRUX",
+          "decisive_premises": [
+            "ipvv:V2Q:P1"
+          ],
+          "question": "The 1.7.10 (\"svajñāna-maghaṭātmatā\") and the hetubindu references — cited; the applications"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V2R",
+      "passage_ref": "pt:passage:ipvv:V2R",
+      "research_question": "**The question:** The aṣṭamo vimarśa examines the *great-Lordship* (māheśvarya) — that the Lord is\nmaheśvara, the great Lord. It is twofold: the jñānaviṣaya (the knowledge-object) and the\nkriyāviṣaya (the action-object); the former is determined here in the jñānādhikāra. The knower has\nbeen establis",
+      "propositions": [
+        {
+          "pid": "ipvv:V2R:THESIS",
+          "text": "**The question:** The aṣṭamo vimarśa examines the *great-Lordship* (māheśvarya) — that the Lord is maheśvara, the great Lord. It is twofold: the jñānaviṣaya (the knowledge-object) and the kriyāviṣaya (the action-object);",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2R:P1",
+          "text": "**The plan and the first doubt (lines 12428–12467):** The knower, possessed of the knowledge-memory-removal powers, with the inner-made-infinite-world-form, is established. Now \"maheśvara\" is to be determined. The māheśv",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2R:BOUNDARY",
+          "text": "Proceed. The argument is understood: the aṣṭamo vimarśa determines the great-Lordship — that the knower is maheśvara. Its knowledge-object: the freedom in the appearance-group, the jñāna as the \"aham\"-experience. The app",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V2R:I1",
+          "premises": [
+            "ipvv:V2R:P1"
+          ],
+          "conclusion": "ipvv:V2R:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The 11-verse plan's exact mapping — given at the doctrinal level.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"sphuṭatva-vicitra-vicāra\" (the clearness-variety-vicāra) — the doubt; kept close.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V2R:CRUX",
+          "decisive_premises": [
+            "ipvv:V2R:P1"
+          ],
+          "question": "The 11-verse plan's exact mapping — given at the doctrinal level."
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V2S",
+      "passage_ref": "pt:passage:ipvv:V2S",
+      "research_question": "**The question:** The jñānādhikāra — the whole first adhikāra of the IPVV — closes. Its final point:\nthe *unity of the knowers* (aikya). It was said \"the one maheśvara.\" Kārikā 10 establishes the unity:\nwithout it, the world-path of the consciousnesses would not be; from the manifestation-unity, tha",
+      "propositions": [
+        {
+          "pid": "ipvv:V2S:THESIS",
+          "text": "**The question:** The jñānādhikāra — the whole first adhikāra of the IPVV — closes. Its final point: the *unity of the knowers* (aikya). It was said \"the one maheśvara.\" Kārikā 10 establishes the unity: without it, the w",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2S:P1",
+          "text": "— the unity of the knowers (lines 13203–13244):** It was said \"the one maheśvara.\" The unity is concluded: \"Without that unity, the world-path of the consciousnesses would not be; from the manifestation-unity, that one-n",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2S:P2",
+          "text": "— the great-Lordship summary (lines 13370–13401):** The Sāṃkhya's objection: \"the puruṣa's sattva-rajas-operation-form knowledge-action, in the buddhi-tattva, are dealt as 'I'\" — what new procedure is this? None: the pur",
+          "speaker": "opponent",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V2S:BOUNDARY",
+          "text": "Proceed. The argument is understood: the knowers are one — the manifestation is one, and the one manifestation is the knower; without the unity no dealing would be. The puruṣa is not another — it is the un-recognized own",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V2S:I1",
+          "premises": [
+            "ipvv:V2S:P1",
+            "ipvv:V2S:P2"
+          ],
+          "conclusion": "ipvv:V2S:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The Ajaḍapramātṛsiddhi 20 and 1.2.7 citations — cited; the applications preserved.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"bhittikalpa\" (the wall-like) vs. the \"where there is smoke\" — the anuvāda distinction; kept.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V2S:CRUX",
+          "decisive_premises": [
+            "ipvv:V2S:P1",
+            "ipvv:V2S:P2"
+          ],
+          "question": "The Ajaḍapramātṛsiddhi 20 and 1.2.7 citations — cited; the applications preserved."
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V3A",
+      "passage_ref": "pt:passage:ipvv:V3A",
+      "research_question": "**The question:** Is action (kriyā) — and in particular the *Lord's* action — ordered or\nsequence-bound (sakrama)? And what is time (kāla) and order (krama) in relation to it?\nThe whole vimarśa (kārikās 1–9) is announced at the start. Abhinavagupta is now leaving the\nknowledge-power (jñānaśakti) and",
+      "propositions": [
+        {
+          "pid": "ipvv:V3A:THESIS",
+          "text": "**The question:** Is action (kriyā) — and in particular the *Lord's* action — ordered or sequence-bound (sakrama)? And what is time (kāla) and order (krama) in relation to it? The whole vimarśa (kārikās 1–9) is announced",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3A:P1",
+          "text": "**Maṅgala (lines 61–62):** > I bow to Śiva, who — though free of sequence — manifests manifold sequences; the nectar-bodied one, > enjoying the third part of the fourfold nectar-moment (amṛtakalā). This states the whole ",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3A:P2",
+          "text": "— the action of the one is not ordered; rejected (lines 82–108):** > \"Hence, although it was said that the action of the one is not ordered — 'the one' and the rest — > [that] is rejected, by the establishing of that one",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3A:P3",
+          "text": "— only the *worldly* action is ordered, from the time-power (lines 115–156):** > \"The ordered-ness of the worldly action is from the time-power; it obtains, but not of the eternal > [action] of the Lord, as of the Lord [",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3A:BOUNDARY",
+          "text": "Proceed. The opening is now understood: the Lord is timeless yet manifests sequence (the mirror that bears reflections without division); the worldly action is ordered by the time-power, which is nothing but the Lord's f",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V3A:I1",
+          "premises": [
+            "ipvv:V3A:P1",
+            "ipvv:V3A:P2",
+            "ipvv:V3A:P3"
+          ],
+          "conclusion": "ipvv:V3A:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The a. pra. si. 22 and \"idam ityasya vicchinnavimarśasya\" quotations (lines 139, 152) are fragmentary",
+          "status": "OPEN"
+        },
+        {
+          "text": "here; they anchor the kāla/prakāśa point but are truncated in this excerpt.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The exact force of \"vedyacchāyāchuraṇā\" (\"the tint of the shadow of the known\") — rendered as \"the",
+          "status": "OPEN"
+        },
+        {
+          "text": "shadow of the known\"; the veil/nuance image is clear, the precise mechanism is Abhinava's own.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V3A:CRUX",
+          "decisive_premises": [
+            "ipvv:V3A:P1",
+            "ipvv:V3A:P2"
+          ],
+          "question": "The a. pra. si. 22 and \"idam ityasya vicchinnavimarśasya\" quotations (lines 139, 152) are fragmentary"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V3B",
+      "passage_ref": "pt:passage:ipvv:V3B",
+      "research_question": "Abhinavagupta is defending the thesis of kārikā 1 — the cognitions of action, relation, *substance*,\ndirection, etc. are true (by stability + efficacy). In kārikā 6 he has been showing that the\n*conjunction* (samanvaya) of the grammatical adjuncts (kāraka) is the action-reflexive-awareness\nobject. N",
+      "propositions": [
+        {
+          "pid": "ipvv:V3B:THESIS",
+          "text": "Abhinavagupta is defending the thesis of kārikā 1 — the cognitions of action, relation, *substance*, direction, etc. are true (by stability + efficacy). In kārikā 6 he has been showing that the *conjunction* (samanvaya) ",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3B:P1",
+          "text": "**Step 0 — the maxim (line 1905):** > \"No real entity (sattvabhūto'rthaḥ) is expressed without a number.\" — i.e. every thing we speak of comes numbered (one, two, …). So number seems to be essential to reality. **Step 1 ",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3B:BOUNDARY",
+          "text": "Proceed. The point is now understood: number and measure are *not* real intrinsic features — they are *relational appearances of comparison and counting* (against a standard: the cubit, the balance, the cup). Atom/great,",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V3B:I1",
+          "premises": [
+            "ipvv:V3B:P1"
+          ],
+          "conclusion": "ipvv:V3B:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The exact Vaiśeṣika definitions (parimāṇa vs. pramāṇa vs. unmāna) — the text presupposes the",
+          "status": "OPEN"
+        },
+        {
+          "text": "Vaiśeṣika-sūtra's three measures; my reconstruction (parimāṇa = all-sides/volume, pramāṇa = length,",
+          "status": "OPEN"
+        },
+        {
+          "text": "unmāna = weight/upward) follows the text's own glosses but should be checked against the Vaiśeṣika",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"twenty-four-digit\" cubit and the \"prastha-kudava\" (volume measures), \"māṣaka-rakitikā\" (gold",
+          "status": "OPEN"
+        },
+        {
+          "text": "weights), \"sarṣapaka-vāṭapiṭikapeṭaka\" (mustard-pod/small-box) — realia whose exact magnitudes are",
+          "status": "OPEN"
+        },
+        {
+          "text": "technical; the *argument* (measure = comparison) is clear, the magnitudes are not.",
+          "status": "OPEN"
+        },
+        {
+          "text": "\"diṣṭya (yaṣṭy)upādānaṃ\" — the reading/correction of the measuring-rod; textual.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V3B:CRUX",
+          "decisive_premises": [
+            "ipvv:V3B:P1"
+          ],
+          "question": "The exact Vaiśeṣika definitions (parimāṇa vs. pramāṇa vs. unmāna) — the text presupposes the"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V3B",
+      "passage_ref": "pt:passage:ipvv:V3B",
+      "research_question": "**The question:** What makes a cognition \"true\" (satya)? In kārikā 1, Abhinavagupta said the\naction-cognitions are true by two things: their *stability* (sthairya) and their *efficacy* (upayoga,\n= arthakriyā, the capacity to bring about its intended effect). But \"efficacy\" is a slippery criterion.\nT",
+      "propositions": [
+        {
+          "pid": "ipvv:V3B:THESIS",
+          "text": "**The question:** What makes a cognition \"true\" (satya)? In kārikā 1, Abhinavagupta said the action-cognitions are true by two things: their *stability* (sthairya) and their *efficacy* (upayoga, = arthakriyā, the capacit",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3B:P1",
+          "text": "**Step 0 — where efficacy holds.** [Abhinava, from the prior passage:] For anything, being *the cause of a given cognition* (tajjñānakāritā) is what establishes that thing's having causal efficacy (arthakriyākāritva) and",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3B:BOUNDARY",
+          "text": "Proceed to L2. The doctrinal spine is now *understood*: Abhinava defends \"efficacy = truth\" by showing that (i) manifest-ness alone is too weak (two-moon), (ii) the real criterion is manifest-ness *tracking presence-and-",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V3B:I1",
+          "premises": [
+            "ipvv:V3B:P1"
+          ],
+          "conclusion": "ipvv:V3B:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The exact force of \"nīle staḥ / pūrvam abhūt eva\" — whether Abhinava concedes a real prior blue or",
+          "status": "OPEN"
+        },
+        {
+          "text": "only a conventional one. This bears on whether he grants the Sautrāntika an external object. [Ratié/",
+          "status": "OPEN"
+        },
+        {
+          "text": "Torella on IPK 2.2.1 and the Buddhist opponent should adjudicate.]",
+          "status": "OPEN"
+        },
+        {
+          "text": "The sarcastic \"poor man / festival\" (daridreṇeva utsavakāriṇā) — Abhinava's wry tone; the reply",
+          "status": "OPEN"
+        },
+        {
+          "text": "\"and it is filled\" (pūritā ca) needs the next clause (kṣaṇabhaṅge'pi) to be read as completing his",
+          "status": "OPEN"
+        },
+        {
+          "text": "own view. Interpreted here as self-completion, but the exact referent of \"it\" (nijā dṛṣṭiḥ = his own",
+          "status": "OPEN"
+        },
+        {
+          "text": "view, or the other view) is worth a second look.",
+          "status": "OPEN"
+        },
+        {
+          "text": "\"tat vijñānāt pūrvam abhūt eva\" — the ontology of the prior blue (realist vs idealist reading).",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V3B:CRUX",
+          "decisive_premises": [
+            "ipvv:V3B:P1"
+          ],
+          "question": "The exact force of \"nīle staḥ / pūrvam abhūt eva\" — whether Abhinava concedes a real prior blue or"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V3B",
+      "passage_ref": "pt:passage:ipvv:V3B",
+      "research_question": "Abhinavagupta has been distinguishing the *conventionally-true* (saṃvṛtisatya) from the *untrue*\n(asatya). The objector (Buddhist/Naiyāyika) tried to collapse the conventional into the merely\nfictional — like the double-moon — by saying: \"the convention-mind covers [reality], and what it\ncovers is o",
+      "propositions": [
+        {
+          "pid": "ipvv:V3B:THESIS",
+          "text": "Abhinavagupta has been distinguishing the *conventionally-true* (saṃvṛtisatya) from the *untrue* (asatya). The objector (Buddhist/Naiyāyika) tried to collapse the conventional into the merely fictional — like the double-",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3B:P1",
+          "text": "**Step 0 — recap (from prior lines 1139–1149):** The objector: \"the convention-mind is a *coverer*: it attributes to an object what was never actually seen, such as the universal.\" Abhinava's reply: \"not even so\" (nāpi).",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3B:BOUNDARY",
+          "text": "Proceed. The point is now understood: the universal/cow is a *conventional* entity whose whole reality is \"this much\" — the practical, world-bound tracking of a sub-class — not a fiction and not a bare Platonic universal",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V3B:I1",
+          "premises": [
+            "ipvv:V3B:P1"
+          ],
+          "conclusion": "ipvv:V3B:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "**dāntava / līvarda** — the lexemes. Argument: they're male-class (bull) words in contrast to",
+          "status": "OPEN"
+        },
+        {
+          "text": "\"cow\" (female). Exact referents/etymology unknown (likely regionally-marked agrarian terms for",
+          "status": "OPEN"
+        },
+        {
+          "text": "castrated/male bovines). NOT resolved; the *argument* (some words pick the male, \"cow\" the female)",
+          "status": "OPEN"
+        },
+        {
+          "text": "is clear and preserved.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The exact force of the dvandva point: \"convention-and-delusion\" as coordinate (tulyasvarūpa) vs.",
+          "status": "OPEN"
+        },
+        {
+          "text": "the objector's subordination — interpreted here as Abhinava denying the conventional is a",
+          "status": "OPEN"
+        },
+        {
+          "text": "sub-species of delusion. Worth a second check against the actual dvandva in the text.",
+          "status": "OPEN"
+        },
+        {
+          "text": "\"gomad idaṃ nagaram\" — is this Abhinava's example or a quoted usage? Read as his own example of",
+          "status": "OPEN"
+        },
+        {
+          "text": "the word's practical referent (milk-and-curds), i.e. the conventional's *arthakriyā*.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V3B:CRUX",
+          "decisive_premises": [
+            "ipvv:V3B:P1"
+          ],
+          "question": "**dāntava / līvarda** — the lexemes. Argument: they're male-class (bull) words in contrast to"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V3C",
+      "passage_ref": "pt:passage:ipvv:V3C",
+      "research_question": "**The question:** What is a valid means of cognition (pramāṇa), and what is its result (pramiti /\nphala)? The whole vimarśa (17 sūtras) is devoted to the *relation* (sambandha) between the known and\nthe knower. Abhinava opens it by asking what counts as a pramāṇa and what it produces.\nThe frame (lin",
+      "propositions": [
+        {
+          "pid": "ipvv:V3C:THESIS",
+          "text": "**The question:** What is a valid means of cognition (pramāṇa), and what is its result (pramiti / phala)? The whole vimarśa (17 sūtras) is devoted to the *relation* (sambandha) between the known and the knower. Abhinava ",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3C:P1",
+          "text": "(lines 2094–2095):** > The object, through whose force \"this, of-this-form, thus\" it stands — that is the pramāṇa; and it, > too, is self-appearance (svābhāsa), a new rise (abhinavodaya).",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3C:P2",
+          "text": "(lines 2096–2097):** > It, the inner-thus-reflexive-awareness-own (antaḥ-stathā-vimarśātmā), in the place-time-and-the-rest > un-divided — in the one-utterance-object, the cognition (miti) is the un-broken (abādhitā) cog",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3C:BOUNDARY",
+          "text": "Proceed. The argument is understood: the pramāṇa is the appearance of a distinct object in consciousness, standing firm by its own (conscious) power; its fruit is the reflexive-awareness of that same appearance, turned i",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V3C:I1",
+          "premises": [
+            "ipvv:V3C:P1",
+            "ipvv:V3C:P2"
+          ],
+          "conclusion": "ipvv:V3C:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The pā. vā. 3.308 and siddhapāda quotes anchor the pramāṇa/fruit relation; their exact force is",
+          "status": "OPEN"
+        },
+        {
+          "text": "cited, not re-derived here.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"śūnyādyupādhi-saṅkoca\" — the contraction by the void-and-the-rest limiting conditions — is",
+          "status": "OPEN"
+        },
+        {
+          "text": "the load-bearing mechanism; rendered as such, but the full list of upādhis (beyond śūnya/deha/prāṇa)",
+          "status": "OPEN"
+        },
+        {
+          "text": "is not enumerated in this excerpt.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V3C:CRUX",
+          "decisive_premises": [
+            "ipvv:V3C:P1",
+            "ipvv:V3C:P2"
+          ],
+          "question": "The pā. vā. 3.308 and siddhapāda quotes anchor the pramāṇa/fruit relation; their exact force is"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V3D",
+      "passage_ref": "pt:passage:ipvv:V3D",
+      "research_question": "**The question:** In V3-C, Abhinava established that the pramāṇa operates *on the appearance alone*\n(ābhāsamātre), not on the bare own-marker thing apart from all manifestation. Now the objection\narises: if the pramāṇa seizes only the appearance, how can it ever reach the *single* thing\n(svalakṣaṇa)",
+      "propositions": [
+        {
+          "pid": "ipvv:V3D:P1",
+          "text": "(lines 3199–3243) — the one thing, established by the synthesizing awareness:** > As the taste, as the wish, as the derivation — the appearance, even of one object established by > the synthesis (anusandhāna), is divided",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3D:P2",
+          "text": "(lines 3264–3265) — the divisions by shape and the rest:** > With the long, the round, the upright-person, the smoke, the sandalwood, and the rest, the > appearances are divided, un-divided by place-and-time. The jar app",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3D:P3",
+          "text": "(lines 3266–3267) — the same for the being/jar/substance/gold/shining:** > Thus-alone the being, jar, substance, gold, shining-ness, and the rest — the appearance-divisions, > doing divided objects — [are] the word's foo",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3D:P4",
+          "text": "(lines 3392–3426) — the fixed object-action through the co-reference (sāmānādhikaraṇya):** > From the appearance-distinction of the objects, the fixed object-action, again — through the > co-reference (sāmānādhikaraṇya),",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3D:P5",
+          "text": "(lines 3475–3503) — the streams-in-ocean: many, yet one effect:** > As the separate lamp-lights, the streams, in the ocean, — of the un-opposed appearances, the > one-effect (ekakāryā), thus the one-cognition (aikyadhī).",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3D:P6",
+          "text": "(lines 3598–3627) — the fire/heat: the un-divided object's own-form is fixed by niyati:** > There, in the un-distinguished fire-and-the-rest, from the effect-cause, the heat-ness; the > this-and-this-word-meaning-ness, a",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V3D:I1",
+          "premises": [
+            "ipvv:V3D:P1",
+            "ipvv:V3D:P2",
+            "ipvv:V3D:P3",
+            "ipvv:V3D:P4"
+          ],
+          "conclusion": "ipvv:V3D:P1",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The vā. pa. 1.35 citation (\"the perception born of practice\") — its exact force as",
+          "status": "OPEN"
+        },
+        {
+          "text": "ābhyāsika-pratyakṣa is cited, not re-derived.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"niyatiśaktimahimnā\" (\"by the glory of the niyati-power\") — the determinative power is",
+          "status": "OPEN"
+        },
+        {
+          "text": "load-bearing; the exact relation to kālaśakti is Abhinava's own, rendered as \"the fixative power.\"",
+          "status": "OPEN"
+        },
+        {
+          "text": "The kārikā 8's complex \"tattacchabdārthatā\" (this-and-this-word's-meaning) — the denotation fixed",
+          "status": "OPEN"
+        },
+        {
+          "text": "by convention; kept close to the text.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V3D:CRUX",
+          "decisive_premises": [
+            "ipvv:V3D:P1",
+            "ipvv:V3D:P2"
+          ],
+          "question": "The vā. pa. 1.35 citation (\"the perception born of practice\") — its exact force as"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V3E",
+      "passage_ref": "pt:passage:ipvv:V3E",
+      "research_question": "**The question:** Having established that the pramāṇa operates on the appearance (V3-D), Abhinava now\nfaces the hardest consequence: if the means seizes only appearances, how do we tell *true* from\n*false* — the real jar from the illusory double-moon or the shell-mistaken-for-silver? And since the\nm",
+      "propositions": [
+        {
+          "pid": "ipvv:V3E:P1",
+          "text": "(lines 4415–4422) — the many means, one operation:** The logic everywhere is the collective of means (pramāṇasamūhamayī). The objection \"then is there just one means?\" — no: by the difference of object, there must be a d",
+          "speaker": "opponent",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3E:P2",
+          "text": "(lines 4500–4515) — the object-action is innate, fixed by the Lord's will:** > The object-action, even the innate, is not of the objects by the Lord's will; for it is fixed by > that — so of it, from the non-doing, there",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3E:P3",
+          "text": "(lines 4517–4544) — the shell-silver error; the upādhi-place non-agreement:** > In the silver-unity-recognition even, in the shell there is no silver-standing; from the > non-agreement of the upādhi-place, even in the do",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3E:P4",
+          "text": "(lines 4687–4726) — the qualities divide, the class un-divides; the knower as ground:** > With the qualities, the word and the rest, the difference; with the class and the rest, the > un-divided-ness — the bhāvanā, thus,",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3E:P5",
+          "text": "(lines 4802–4803) — the world-picture on the even wall:** > Of the world-variety-pictured, with the even-wall-surface-comparison — touched by the opposed > being-non-being — in the param-essence-real Lord. The appearance",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3E:P6",
+          "text": "(lines 4804–4836) — the ancient knower needs no pramāṇa:** > In the ancient knower, though, with the always-manifested form — what pramāṇa, or the new > appearance, in the partaking of all the cognitions? For the contrac",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V3E:I1",
+          "premises": [
+            "ipvv:V3E:P1",
+            "ipvv:V3E:P2",
+            "ipvv:V3E:P3",
+            "ipvv:V3E:P4"
+          ],
+          "conclusion": "ipvv:V3E:P1",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The \"vyañjaka\" (manifestor) in kārikā 10 — the list (by far-near, by outer-inner, by defects, or",
+          "status": "OPEN"
+        },
+        {
+          "text": "otherwise of the manifestor) is dense; the point (the same thing appears variously by condition) is",
+          "status": "OPEN"
+        },
+        {
+          "text": "The exact force of \"ullekhā eva ghaṭādayaḥ\" (kārikā 12) — the \"designations are the jar and the",
+          "status": "OPEN"
+        },
+        {
+          "text": "rest\" — rendered as the designation/ullekha being the thing; the Vṛtti's sense (even without the",
+          "status": "OPEN"
+        },
+        {
+          "text": "external own-marker's object-action) is preserved.",
+          "status": "OPEN"
+        },
+        {
+          "text": "Kārikā 17's close and its link to 1.1.3 — rendered per the Vṛtti/Vivṛti, with the",
+          "status": "OPEN"
+        },
+        {
+          "text": "śaktiprakāśena as the operation of the means.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V3E:CRUX",
+          "decisive_premises": [
+            "ipvv:V3E:P1",
+            "ipvv:V3E:P2"
+          ],
+          "question": "The \"vyañjaka\" (manifestor) in kārikā 10 — the list (by far-near, by outer-inner, by defects, or"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V3F",
+      "passage_ref": "pt:passage:ipvv:V3F",
+      "research_question": "**The question:** The tṛtīyo vimarśa established the pramāṇa, its fruit, and the primacy of the\nknower. Now, in closing, Abhinavagupta asks the practical question: given all this, **how does one\nactually attain the Lord** (parameśvaratā)? The answer runs through the fourfold \"work\" (caturvidha\nkṛtya",
+      "propositions": [
+        {
+          "pid": "ipvv:V3F:THESIS",
+          "text": "**The question:** The tṛtīyo vimarśa established the pramāṇa, its fruit, and the primacy of the knower. Now, in closing, Abhinavagupta asks the practical question: given all this, **how does one actually attain the Lord*",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3F:P1",
+          "text": "**The fourfold work and grace (lines 5000–5016):** A supreme (pārameśvara) work must be accomplished [by the aspirant]; even if impossible in itself, it is assumed as possible. The \"effort\" (prayatna) is the life of the ",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3F:BOUNDARY",
+          "text": "Proceed. The argument is understood: the attainment of the Lord is by grace, through the fourfold work — dīkṣā (initiation) first, then vision, knowledge, devotion; the prāṇa's ātma-being is the param-ātman's free manife",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V3F:I1",
+          "premises": [
+            "ipvv:V3F:P1"
+          ],
+          "conclusion": "ipvv:V3F:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The exact working of the \"caturvidha kṛtya\" (the fourfold work) — its items are given via the",
+          "status": "OPEN"
+        },
+        {
+          "text": "Vṛtti (dīkṣā, dhyāna, jñāna, yoga) but the canonical fourfold enumeration is Abhinava's;",
+          "status": "OPEN"
+        },
+        {
+          "text": "rendered per the text.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The mā. vi. 4.6 citation (eligibility requires dīkṣā) — cited, not re-derived.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"mohakalāsaṃskāra\" (delusion-fragment-impression) — the exact ontology of the residual",
+          "status": "OPEN"
+        },
+        {
+          "text": "impression; rendered as the \"delusion-impression.\"",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V3F:CRUX",
+          "decisive_premises": [
+            "ipvv:V3F:P1"
+          ],
+          "question": "The exact working of the \"caturvidha kṛtya\" (the fourfold work) — its items are given via the"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V3G",
+      "passage_ref": "pt:passage:ipvv:V3G",
+      "research_question": "**The question:** In the tṛtīyo vimarśa, the *relation* (sambandha) was shown to be the expansion of\nthe action-power (kriyāśaktisphāra). Now Abhinava examines the second great relation: **cause and\neffect (kāryakāraṇatā)**. His thesis, announced at once: **the essence of cause-and-effect is nothing",
+      "propositions": [
+        {
+          "pid": "ipvv:V3G:THESIS",
+          "text": "**The question:** In the tṛtīyo vimarśa, the *relation* (sambandha) was shown to be the expansion of the action-power (kriyāśaktisphāra). Now Abhinava examines the second great relation: **cause and effect (kāryakāraṇatā",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3G:P1",
+          "text": "**Maṅgala + the 21-verse plan (lines 5516–5538):** \"By the meld of the param-essence-unity, I remember Hara, the great cause of the whole, the three-power-joined form…\" The plan: kārikā 1 states the thesis (agent-object-",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3G:P2",
+          "text": "(lines 5540–5564) — the Lord manifests by his will:** > This one, from his infinite-power-ness, thus manifests these beings; by his will — this is his > action, his making-ness. This ancient knower manifests the beings w",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3G:P3",
+          "text": ": thus the one action is she, with-order, inner-outer standing. Kārikā 6: the outer of that alone is the effect, which-inner-with-respect-to-which. Kārikā 7: the own alone is the cause, by that he in the two-appearance-s",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3G:P4",
+          "text": "+ the svabhāvahetu (lines 5927–5966) — the own-nature reason:** > The effect, the reason, or the nature — from that alone the origin-root-born. The svabhāvahetu (own-nature reason) has two kinds: the clear-embryonic-caus",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3G:BOUNDARY",
+          "text": "Proceed. The argument is understood: causality is ultimately the conscious knower's agency — the inert has no real causal power (satkāryavāda), the conscious alone is the agent (potter, yogin), the inference rests on the",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V3G:I1",
+          "premises": [
+            "ipvv:V3G:P1",
+            "ipvv:V3G:P2",
+            "ipvv:V3G:P3",
+            "ipvv:V3G:P4"
+          ],
+          "conclusion": "ipvv:V3G:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The exact scope of the \"anumāna / niyatiśakti\" three kārikās (the inference must presuppose the",
+          "status": "OPEN"
+        },
+        {
+          "text": "niyati-power) — the relation to the fixative power is Abhinava's own; rendered per the text.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The śiṃśapā/tree example's precise force — the non-otherness of the two is the crux; rendered as",
+          "status": "OPEN"
+        },
+        {
+          "text": "the entailment without real causal otherness.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V3G:CRUX",
+          "decisive_premises": [
+            "ipvv:V3G:P1",
+            "ipvv:V3G:P2"
+          ],
+          "question": "The exact scope of the \"anumāna / niyatiśakti\" three kārikās (the inference must presuppose the"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V3H",
+      "passage_ref": "pt:passage:ipvv:V3H",
+      "research_question": "**The question:** V3-G established that causality is the conscious knower's agency and that inference\nrests on the own-nature-reason. Now the Vijñānavādin (Buddhist idealist) objects: \"If everything is\nappearance (ābhāsa), then cause and effect are just relations *between appearances* — and an\nun-ma",
+      "propositions": [
+        {
+          "pid": "ipvv:V3H:THESIS",
+          "text": "**The question:** V3-G established that causality is the conscious knower's agency and that inference rests on the own-nature-reason. Now the Vijñānavādin (Buddhist idealist) objects: \"If everything is appearance (ābhāsa",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3H:P1",
+          "text": "**Kārikās 12–13 (lines 6460–6509) — inference across knowers, against the Vijñānavādin:** > From the more, the that-that-knower, the one, the fire-appearance, from this it would be — even > from the indirect, of the Lord",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3H:P2",
+          "text": "(line 6579) — \"in-this-existing-this-is\": the causal relation as the pervasion:** > \"In this existing, this is\" — the cause-effect relation, which — [is what the pervasion expresses]. **Kārikās 15–16 (lines 6892–6975) — ",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3H:P3",
+          "text": "(lines 6976–6980) — mutual nature would collapse difference:** > In the mutual nature of the cause-and-effect two, even — the one-ness alone; for in difference, > there is not at all the mutual own-form-ness. If cause an",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3H:P4",
+          "text": "(lines 6982–7015) — the Sāṃkhya's one-substance with order-variety:** > Of the one-self, the distinction, and the action following the time-order — thus there would be > agency, and thus, by the thus-transforming-ness — ",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3H:P5",
+          "text": "(lines 7028–7057) — only consciousness can bear difference-and-non-difference (the reflection):** > And not fitting is this for the inert, from the difference-non-difference-contradiction; from the > appearance-differenc",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V3H:I1",
+          "premises": [
+            "ipvv:V3H:P1",
+            "ipvv:V3H:P2",
+            "ipvv:V3H:P3",
+            "ipvv:V3H:P4"
+          ],
+          "conclusion": "ipvv:V3H:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The exact \"adhipatipratyaya\" (Lord's-cause) in kārikā 12 — the inference's object-cause is the",
+          "status": "OPEN"
+        },
+        {
+          "text": "fire-appearance created by the Lord as one across knowers; rendered per the text.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The kārikā 16's four-case (pakṣacatuṣṭaya) dependence analysis is dense; the real/constructed",
+          "status": "OPEN"
+        },
+        {
+          "text": "distinction is preserved, the full enumeration kept close.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V3H:CRUX",
+          "decisive_premises": [
+            "ipvv:V3H:P1",
+            "ipvv:V3H:P2"
+          ],
+          "question": "The exact \"adhipatipratyaya\" (Lord's-cause) in kārikā 12 — the inference's object-cause is the"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V3I",
+      "passage_ref": "pt:passage:ipvv:V3I",
+      "research_question": "**The question:** The vimarśa has shown that causality is the conscious knower's agency. Now the\nsharpest objection: if consciousness is *one* and the world is mere appearance, how is action\npossible at all? For action requires an agent and an object, distinct; but if all is one\nconsciousness, there",
+      "propositions": [
+        {
+          "pid": "ipvv:V3I:THESIS",
+          "text": "**The question:** The vimarśa has shown that causality is the conscious knower's agency. Now the sharpest objection: if consciousness is *one* and the world is mere appearance, how is action possible at all? For action r",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3I:P1",
+          "text": "(lines 7434–7483) — action needs the one will-recollection:** > Even in the real consciousness-unity, the action would not be, of the appearance-distinct two, > without the one-recollection marked by the will-to-do (cikī",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3I:P2",
+          "text": "(lines 7607–7662) — the will IS the cause-ness, agent-ness, action:** > Thus, in this way, with the jar-cloth-and-the-rest-appearance-world-self — of the one who wishes to > stand (tiṣṭhāsoḥ), this very will (icchā) is t",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3I:BOUNDARY",
+          "text": "Proceed. The argument is understood: even granting the real unity of consciousness, action is possible because it is the one will-recollection (cikīrṣā-parāmarśa) that joins agent and object; the alleged \"un-explainable ",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V3I:I1",
+          "premises": [
+            "ipvv:V3I:P1",
+            "ipvv:V3I:P2"
+          ],
+          "conclusion": "ipvv:V3I:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The \"cikīrṣā\" (will-to-do) and its genitive joining of agent/object — the crux; rendered as the",
+          "status": "OPEN"
+        },
+        {
+          "text": "one re-recollection that joins the two.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"śaśaśṛṅga / gaganakusuma\" (hare's horn, sky-flower) — the reductio against the un-explainable",
+          "status": "OPEN"
+        },
+        {
+          "text": "ignorance; kept as Abhinava's image.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The śi. dṛ. 1.4 citation (\"the three subtle powers in harmony\") — cited, not re-derived.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V3I:CRUX",
+          "decisive_premises": [
+            "ipvv:V3I:P1",
+            "ipvv:V3I:P2"
+          ],
+          "question": "The \"cikīrṣā\" (will-to-do) and its genitive joining of agent/object — the crux; rendered as the"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V3J",
+      "passage_ref": "pt:passage:ipvv:V3J",
+      "research_question": "**The question:** The kriyādhikāra showed that the action-power's form is \"the un-clouded manifestation\nof all the padārthas\" (all the categories). But then — what are these padārthas, the categories, the\ntattvas? The jñānādhikāra and kriyādhikāra worked by perception and reasoning. But these cannot",
+      "propositions": [
+        {
+          "pid": "ipvv:V3J:P1",
+          "text": "**Maṅgala + the authority of the āgama (lines 7666–7716):** \"Warp-and-woof having penetrated all, by its own force it makes [all] Śiva-may; he who, rising in the un-surpassed abode, is himself the pouring of nectar — to ",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3J:P2",
+          "text": "(lines 7719–7766) — the Śivatattva as the body of all:** > Thus the inner-outer operation, the action following the time-order — of the mother alone, the two > un-joined [knowledge and action], the knowledge-action. The ",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3J:P3",
+          "text": "(lines 7954–7988) — the Sadākhya and the Īśvara:** > But from the inner-state-surge, the Sadākhya-category first; in the outer-being-primary-ness, > though, later, the param-Lord's [Īśvara]. The Śivatattva alone is the o",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3J:P4",
+          "text": ": she, the co-reference, and the true-knowledge of the \"I-this\"-cognition-two. Kārikā 4: of the this-being-attained-ones, to the known-ground-attaining. [The Sadāvidyā (śuddhavidyā) is the state where \"I-this\" are co-ref",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3J:P5",
+          "text": "(line 8330) — the āparatva (the un-param-ness):** > Here the un-param-ness of the beings, from the non-self-ness manifestation. [The beings below the pure group are \"un-param\" (apara) because they manifest as non-self (a",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3J:P6",
+          "text": "(line 8378) — the bhedadhī:** > The distinction-cognition alone, in the beings, of the agent-awareness-own even, which — [The distinction-cognition (bhedadhī) — the cognition of difference — belongs even to the awareness",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V3J:I1",
+          "premises": [
+            "ipvv:V3J:P1",
+            "ipvv:V3J:P2",
+            "ipvv:V3J:P3",
+            "ipvv:V3J:P4"
+          ],
+          "conclusion": "ipvv:V3J:P1",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The exact enumeration of kārikās 3–7 (Sadāvidyā, āparatva, bhedadhī, aiśvarya) — the source",
+          "status": "OPEN"
+        },
+        {
+          "text": "passages for 3–4 and 5–7 are partial in my read; the map gives the doctrinal sense, the L2 keeps",
+          "status": "OPEN"
+        },
+        {
+          "text": "the tattva-progression (pure → impure, Sadāśiva → Īśvara → śuddhavidyā → apara) without inventing",
+          "status": "OPEN"
+        },
+        {
+          "text": "details beyond the source.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The mataṅgāgama 1.5.4 definition of \"tattva\" — cited, not re-derived.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V3J:CRUX",
+          "decisive_premises": [
+            "ipvv:V3J:P1",
+            "ipvv:V3J:P2"
+          ],
+          "question": "The exact enumeration of kārikās 3–7 (Sadāvidyā, āparatva, bhedadhī, aiśvarya) — the source"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V3K",
+      "passage_ref": "pt:passage:ipvv:V3K",
+      "research_question": "**The question:** Having traced the categories from the Śivatattva down through the pure group\n(V3-J), Abhinavagupta now descends into the impure realm — the world of the bound knower (paśu). Here\nthe pure self is covered by the *kañcukas* (the limiting sheaths or \"armours\"): niyati (fixity),\nkāla (",
+      "propositions": [
+        {
+          "pid": "ipvv:V3K:THESIS",
+          "text": "**The question:** Having traced the categories from the Śivatattva down through the pure group (V3-J), Abhinavagupta now descends into the impure realm — the world of the bound knower (paśu). Here the pure self is covere",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3K:P1",
+          "text": "— the bheda, the I-ness in the non-self:** > In the distinction, though, one-flavor-manifested, with the I-ness, in the non-self, seen — [The bound state: though the reality is one-flavor, in the distinction the I-ness (",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3K:P2",
+          "text": "— the śūnyādi knower:** > Who-and-the-knower, the-emptiness-and-the-rest, in the known-distinct — [The knower of the \"emptiness-and-the-rest\" (śūnyādi) — the void-thought, breath, body — is the bound knower, who, in the ",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3K:BOUNDARY",
+          "text": "Proceed. The argument is understood: in the impure realm the pure self is covered by the kañcukas (niyati, kāla, rāga, vidyā, kalā) — which in truth belong to the knower, not the known; the bound knower (śūnyādi) knows t",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V3K:I1",
+          "premises": [
+            "ipvv:V3K:P1",
+            "ipvv:V3K:P2"
+          ],
+          "conclusion": "ipvv:V3K:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The exact count of the \"thirteen organs\" — the Sāṃkhya enumeration is presupposed; the text says",
+          "status": "OPEN"
+        },
+        {
+          "text": "\"thirteen-fold external-inner-instrument-series\" and \"ten-fold effect-group\"; the detail is in the",
+          "status": "OPEN"
+        },
+        {
+          "text": "Vivṛti. Rendered per the text without over-specifying.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The precise working of kārikā 8 (the I-ness in the non-self) — the covering of the self; the",
+          "status": "OPEN"
+        },
+        {
+          "text": "kañcuka detail is in the following commentary.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V3K:CRUX",
+          "decisive_premises": [
+            "ipvv:V3K:P1",
+            "ipvv:V3K:P2"
+          ],
+          "question": "The exact count of the \"thirteen organs\" — the Sāṃkhya enumeration is presupposed; the text says"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V3L",
+      "passage_ref": "pt:passage:ipvv:V3L",
+      "research_question": "**The question:** The prathamo vimarśa gave the categories of the *known* (prameya). Now the dvitīyo\nvimarśa examines the *knowers* (pramātṛ) themselves — for the recognition of the Lord in the self is\nthe heart of the whole śāstra, and to recognize him we must understand the various knowers: the bo",
+      "propositions": [
+        {
+          "pid": "ipvv:V3L:THESIS",
+          "text": "**The question:** The prathamo vimarśa gave the categories of the *known* (prameya). Now the dvitīyo vimarśa examines the *knowers* (pramātṛ) themselves — for the recognition of the Lord in the self is the heart of the w",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3L:P1",
+          "text": "**Maṅgala + the 20-verse plan (lines 9274–9293):** \"Bowing to the nectar-bodied, the full-param-essence of the three powers, who wields the trident, cutting the three nooses (pāśatraya) in diseases and the rest…\" Having ",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3L:P2",
+          "text": "(lines 9295–9321) — the presiding deities of the knower-states:** > There, in the knower-mere-ness-standing, the Rudra the superior-deity; in the distinct-known-spread, > the Brahmā and Viṣṇu are established. In the stat",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3L:P3",
+          "text": "(line ~?) — the māyā-blind, the saṃsāra, the action-bound:** > This knower, the māyā-blind, the saṃsāra-one, the action-bound — [The bound knower (paśu) is blind by māyā, a wanderer in saṃsāra, bound by action (karma). T",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3L:P4",
+          "text": "— the māyā as the distinct-known-manifestation:** > The distinct-known-manifestation, here alone, the māyā-named, the birth-enjoyment-giving — [Māyā is the manifestation of the distinct known (the objectivity), which giv",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3L:P5",
+          "text": "— the kalā-raised consciousness-essence:** > The time-raised (kalā-udbalita), this, the consciousness-essence, the agent-ness-made — [The kalā (the limited agency) raises the consciousness-essence as the agent-ness; the ",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V3L:I1",
+          "premises": [
+            "ipvv:V3L:P1",
+            "ipvv:V3L:P2",
+            "ipvv:V3L:P3",
+            "ipvv:V3L:P4"
+          ],
+          "conclusion": "ipvv:V3L:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The exact enumeration of the vidyeśvara/pralayākala/vijñānākala grades (k6–8) — the text is dense;",
+          "status": "OPEN"
+        },
+        {
+          "text": "the grades are preserved at the doctrinal level, the detail in the Vivṛti.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The \"unmīlita-tṛtīyanetra\" (the opened third eye) of the Rudra in the māyā-word — the symbol is",
+          "status": "OPEN"
+        },
+        {
+          "text": "preserved, not re-derived.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V3L:CRUX",
+          "decisive_premises": [
+            "ipvv:V3L:P1",
+            "ipvv:V3L:P2"
+          ],
+          "question": "The exact enumeration of the vidyeśvara/pralayākala/vijñānākala grades (k6–8) — the text is dense;"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V3M",
+      "passage_ref": "pt:passage:ipvv:V3M",
+      "research_question": "**The question:** Having examined the knowers and the stains, Abhinavagupta now examines the *states*\n(avasthā) of the bound knower — jāgrat (waking), svapna (dream), suṣupta (deep sleep), and turya (the\nfourth) — and the vital breaths (prāṇādi) that sustain them. The point: these states are the sta",
+      "propositions": [
+        {
+          "pid": "ipvv:V3M:P1",
+          "text": "— the primacy of agency, awareness, consciousness-self:** > The primary-ness of the agent-ness, and of the awareness, and of the consciousness-self — [The knower's essence: agency (kartṛtā), awareness (bodha), and the co",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3M:P2",
+          "text": "— the emptiness, the I-ness-word:** > In the emptiness, the intellect-and-the-rest-absence-own, the I-ness, the agent-ness-word — [In the state of the void (śūnya), where the intellect and the rest are absent, the \"I-nes",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3M:P3",
+          "text": "— the inner operation of the senses, the breath-stimulating:** > The inner operation of the senses, the breath-and-the-rest-stimulating, the thought — [The prāṇa (the vital breath) is the inner operation that stimulates ",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3M:P4",
+          "text": "— suṣupta, the sleep like dissolution (lines 10326–10361):** > In the that-much-standing, the said, the sleep-like-the-dissolution-equal — with the known, and > without-the-known, with-the-māyā-stain, and-without — In th",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3M:P5",
+          "text": "— svapna, the dream (lines 10367–10401):** > In the mind-mere-path even, with the sense-object-ness, from the delusion — the clear-manifestation > creation of the beings, the dream-word, the thought. In the dream, the se",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3M:P6",
+          "text": "— jāgrat, the waking (lines 10432–10461):** > With-the-all-sense-object-ness, which-though-with-the-external-ness-firm — the creation, the > common, of-all-the-knowers, that is the waking. The waking state is the *common",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V3M:I1",
+          "premises": [
+            "ipvv:V3M:P1",
+            "ipvv:V3M:P2",
+            "ipvv:V3M:P3",
+            "ipvv:V3M:P4"
+          ],
+          "conclusion": "ipvv:V3M:P1",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The exact prāṇa enumeration (prāṇa, apāna, udāna, samāna, vyāna) — kārikās 19–20 give the",
+          "status": "OPEN"
+        },
+        {
+          "text": "prāṇa/apāna/udāna/turya; the full fivefold count is presupposed.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The savedya/apavedya grades of suṣupta (vidyākalā vs. pralayākala) — the two grades with/without",
+          "status": "OPEN"
+        },
+        {
+          "text": "the māyā-stain are preserved.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V3M:CRUX",
+          "decisive_premises": [
+            "ipvv:V3M:P1",
+            "ipvv:V3M:P2"
+          ],
+          "question": "The exact prāṇa enumeration (prāṇa, apāna, udāna, samāna, vyāna) — kārikās 19–20 give the"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V3N",
+      "passage_ref": "pt:passage:ipvv:V3N",
+      "research_question": "**The question:** This is the fourth and final adhikāra of the IPVV — the tattvasaṅgrahādhikāra, the\n\"collection of the essence of the categories.\" Having established the self-manifest ātmatattva (the\nmaheśvara-form, the knowledge-action power) at length, in three adhikāras, Abhinavagupta now collec",
+      "propositions": [
+        {
+          "pid": "ipvv:V3N:P1",
+          "text": "**Maṅgala (lines 10899–10916):** \"I bow to him, the nectar-Lord, who, in his un-surpassed own abode, makes the drop-made nectar-juice known, the fully-full-making…\" The plan: 15 verses — one on the pāramārthika svarūpa (",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3N:P2",
+          "text": "(lines 10919–10934) — the own-self alone of all beings is the Lord:** > The own-self alone of all beings, the one alone, the maheśvara — the world-form, \"I this,\" the > un-broken-re-recollection-augmented. The sūtra is i",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3N:P3",
+          "text": "(line ~10950) — the bound grasper in the own-created this-part:** > There, in the own-created this-being-part, with the intellect-and-the-rest grasper-own, the > I-construction-re-recollection-word is brought, with this,",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3N:P4",
+          "text": "(lines 11028) — the many person, the own-form-un-cognition:** > He, the own-form-un-cognition-made, the many person, is the thought; there in the creation, the > action-bliss two, the enjoyment, is the suffering-pleasure",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3N:P5",
+          "text": "(lines 11092) — the Lord's knowledge-action as the paśu's guṇas:** > In the own-member-form beings, of the Lord the knowledge and the action, which — with the māyā-third, > they alone are of the animal the being-ness (sa",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3N:P6",
+          "text": "(lines 11112) — the power-ness not declared from the distinction:** > From the distinction-standing, of the power-possessor, the power-ness is not declared; of these > qualities, the instrument-effect-ness-transforming. ",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V3N:I1",
+          "premises": [
+            "ipvv:V3N:P1",
+            "ipvv:V3N:P2",
+            "ipvv:V3N:P3",
+            "ipvv:V3N:P4"
+          ],
+          "conclusion": "ipvv:V3N:P1",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The exact \"puruṣa evedaṃ sarvam\" and \"sarvabhāvāḥ śivaḥ\" citations — the Śivadṛṣṭi and the",
+          "status": "OPEN"
+        },
+        {
+          "text": "upadeśa; cited, not re-derived.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The sattva/rajas/tamas mapping onto the Lord's powers (k4–6) — the correspondence is Abhinava's;",
+          "status": "OPEN"
+        },
+        {
+          "text": "rendered per the text.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V3N:CRUX",
+          "decisive_premises": [
+            "ipvv:V3N:P1",
+            "ipvv:V3N:P2"
+          ],
+          "question": "The exact \"puruṣa evedaṃ sarvam\" and \"sarvabhāvāḥ śivaḥ\" citations — the Śivadṛṣṭi and the"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V3O",
+      "passage_ref": "pt:passage:ipvv:V3O",
+      "research_question": "**The question:** The tattvasaṅgraha's middle section (kārikās 9–15) expounds the bond (bandha) and\nits relation to the knower and the known. The central problem: the bound knower (paśu) creates his own\nworld — but how is this creation related to the Lord's creation? And what is the difference betwe",
+      "propositions": [
+        {
+          "pid": "ipvv:V3O:P1",
+          "text": "(lines 11600–11700) — the paśu's un-common creation:** > \"This,\" indeed, of that, the un-common creation, the Lord-creation-dependent; she-even, with the > un-knowing-ness, in-the-existing-alone, with the Lord-power, wit",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3O:P2",
+          "text": "(lines 11700–11850) — the prāṇarūpā vikalpakriyā:** > With the own-rest-obstruction, with the moving, with the breath-form; with the construction-action, > the that-that-syllable-variety-form — The construction-action (v",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3O:P3",
+          "text": "(lines 11852–12068) — the sādhāraṇā aiśvarī sarga and the vikalpahāna:** > The common-alone, the-other, and-the-Lord's-creation, from-the-clear-manifestation; from-the- > construction-removal, from-the-one-pointedness, b",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3O:P4",
+          "text": "(lines 12070–12109) — the viśvātman's maheśatā:** > All-mine-this-splendor, thus-of-the-knowing — of-the-world-self, of-the-constructions, in-the- > spread-even, the-mahā-Lord-ness — With the thinning of construction and",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3O:P5",
+          "text": "(lines 12111–12140) — the known is common; the liberated knows it with the own-self:** > The-known-the-common, the-liberated-with-the-own-self-non-distinction-he-thinks; the-mahā-Lord-as, > the-bound-again-with-the-utter",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3O:P6",
+          "text": "(lines 12142–12157) — in the supreme Śiva, no separate known:** > In-every-way-though-the-inner-dissolved-infinite-category-flood-filled; the-Śiva, the-consciousness- > bliss-mass, the-param-syllable-form — In the Sadāśi",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V3O:I1",
+          "premises": [
+            "ipvv:V3O:P1",
+            "ipvv:V3O:P2",
+            "ipvv:V3O:P3",
+            "ipvv:V3O:P4"
+          ],
+          "conclusion": "ipvv:V3O:P1",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The \"daśaradana\" (ten-tusked vs. ten-faced) elephant (k10) — the correct reading is ten-tusked",
+          "status": "OPEN"
+        },
+        {
+          "text": "(Airāvata); the earlier T1 gloss \"ten-faced\" was a mis-gloss, corrected per Ratié.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The exact \"sabhittika/nirbhittika\" (based/un-based) creations of the kṣetrajña (k10).",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V3O:CRUX",
+          "decisive_premises": [
+            "ipvv:V3O:P1",
+            "ipvv:V3O:P2"
+          ],
+          "question": "The \"daśaradana\" (ten-tusked vs. ten-faced) elephant (k10) — the correct reading is ten-tusked"
+        }
+      ]
+    },
+    {
+      "case_id": "ipvv:V3P",
+      "passage_ref": "pt:passage:ipvv:V3P",
+      "research_question": "**The question:** This is the final vimarśa of the entire Īśvarapratyabhijñāvivṛtivimarśinī. It is the\nclosing sum (samastanigamana) that draws together the whole teaching. Its theme: the transmission of the\nteaching — from the guru, from the śāstra, and from the self (gurutaḥ, śāstrataḥ, svataḥ) — ",
+      "propositions": [
+        {
+          "pid": "ipvv:V3P:THESIS",
+          "text": "**The question:** This is the final vimarśa of the entire Īśvarapratyabhijñāvivṛtivimarśinī. It is the closing sum (samastanigamana) that draws together the whole teaching. Its theme: the transmission of the teaching — f",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3P:P1",
+          "text": "**Maṅgala (lines 12265–12266):** \"Bowing to the spread, the world that, from the un-surpassed form, in the order of bliss and the rest, emits the all-nectar-bearing, within and without…\" **The threefold transmission (lin",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3P:P2",
+          "text": "(lines 12309–12383) — the new, well-fitted path:** > Thus is made manifest by me, this well-fitted, new path; by the great gurus it is spoken, in the > Śivadṛṣṭi-śāstra, as; placing the foot here, perceiving the world-cr",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3P:P3",
+          "text": "(lines 12385–12405) — the kāntā/loka analogy:** > With-those-those-petitioned-favours, the-sought-to-by-the-slender-woman, standing-even-near; the > lover, like-the-world, the-un-known, not-for-enjoying, as; of-the-world",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3P:P4",
+          "text": "(lines 12407–12413) — the utpala-colophon:** > Of-the-people-for-the-effort-less-establishment, by-the-sun-rise-son (Uddayākarasūnu = Utpala); the > Lord-recognition, this, is-established — The recognition, established b",
+          "speaker": "author",
+          "commitment": "ASSERTS",
+          "explicitness": "EXPLICIT",
+          "source_span": ""
+        },
+        {
+          "pid": "ipvv:V3P:BOUNDARY",
+          "text": "Proceed. The argument is understood: the closing sum draws together the whole teaching — the transmission from guru, śāstra, and self; the recognition-path (the new well-fitted path) as the effort-less means to jīvanmukt",
+          "speaker": "author",
+          "commitment": "RECONSTRUCTS",
+          "explicitness": "RECONSTRUCTED",
+          "source_span": ""
+        }
+      ],
+      "inferences": [
+        {
+          "iid": "ipvv:V3P:I1",
+          "premises": [
+            "ipvv:V3P:P1",
+            "ipvv:V3P:P2",
+            "ipvv:V3P:P3",
+            "ipvv:V3P:P4"
+          ],
+          "conclusion": "ipvv:V3P:THESIS",
+          "warrant": "the argument reconstructs the passage's reasoning step by step; the bridge is rational reconstruction, not a textually-explicit inference",
+          "warrant_status": "RATIONAL_RECONSTRUCTION",
+          "warrant_constraints": []
+        }
+      ],
+      "attacks": [],
+      "open_questions": [
+        {
+          "text": "The exact lineage details (Śrīkaṇṭhanātha → Durvāsa → Tryambakāditya) — preserved as given, the",
+          "status": "OPEN"
+        },
+        {
+          "text": "hagiographic detail not re-derived.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The 17 ślokas' specific referents (the \"dāntava\"-type lexemes) — kept at the doctrinal level.",
+          "status": "OPEN"
+        }
+      ],
+      "cruxes": [
+        {
+          "crux_id": "ipvv:V3P:CRUX",
+          "decisive_premises": [
+            "ipvv:V3P:P1",
+            "ipvv:V3P:P2"
+          ],
+          "question": "The exact lineage details (Śrīkaṇṭhanātha → Durvāsa → Tryambakāditya) — preserved as given, the"
+        }
+      ]
+    }
+  ],
+  "case_count": 51,
+  "gold_hash": "a2b756fe596dc037ae54c33462d743b7cc0f4ca5af05a2ad90b9e1c1fb89d138",
+  "frozen_at": "2026-08-13",
+  "design_note": "Independent frozen gold derived from the hand-authored IPVV pilot argument-maps. Hidden from the ARGMAP generator. Never edited to make a candidate pass."
+}
