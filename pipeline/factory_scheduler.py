@@ -35,10 +35,10 @@ import object_registry as R
 import factory_batch as FB
 import factory_status as FS
 
-# canonical layer order + the upstream each layer depends on (from object_registry.PREREQS)
+# canonical layer order + the upstream each layer depends on — DERIVED from the canonical DAG
+# manifest (contracts/CANONICAL-DAG.yaml) via object_registry.PREREQS. Do NOT hardcode an independent
+# UPSTREAM map here (that was the A2-ARCH-HARDEN bug — three competing DAG definitions).
 LAYER_ORDER = ["T1", "ARGMAP", "L0", "L2", "L200", "C1"]
-UPSTREAM = {"T1": "SOURCE", "ARGMAP": "T1", "L0": "T1",
-            "L2": "ARGMAP", "L200": "L2", "C1": "L200"}
 MODEL_LAYERS = {"T1", "ARGMAP", "L2", "L200", "C1"}   # L0 is deterministic (free-draining)
 
 
@@ -58,25 +58,34 @@ def _committed_passages(layer: str) -> set[str]:
 def _eligible_jobs(works: list[str], layers: list[str]) -> list[dict]:
     """Enumerate all eligible (object, layer) jobs across the graph (DAG scheduling).
 
-    A job is eligible if its upstream layer has a committed object for the passage AND this layer
-    does not yet have a committed current object for it."""
+    A job is eligible when ALL its canonical 'requires' (from the manifest) have a committed object
+    for the passage, AND this layer does not yet have a committed current object for it. This is
+    MULTI-PARENT eligibility (e.g. L2 requires BOTH L0 AND ARGMAP)."""
     jobs = []
     for layer in layers:
-        upstream = UPSTREAM.get(layer)
-        if not upstream:
+        requires = R.PREREQS.get(layer, [])
+        if not requires:
             continue
         done = _committed_passages(layer)
-        up_done = _committed_passages(upstream)
+        # the passages whose EVERY required layer is committed
+        eligible_ids = None
+        for req in requires:
+            req_done = _committed_passages(req)
+            if eligible_ids is None:
+                eligible_ids = set(req_done)
+            else:
+                eligible_ids &= set(req_done)
         for wid in works:
-            up_ids = [oid for oid in up_done if oid.startswith(wid)]
-            for oid in up_ids:
+            for oid in eligible_ids or set():
+                if not oid.startswith(wid):
+                    continue
                 if oid in done:
                     continue
-                cur = R.current(upstream, oid)
                 jobs.append({"object_id": oid, "layer": layer,
-                             "upstream": upstream,
-                             "input_hash": (cur or {}).get("input_hash", "")})
+                             "requires": requires,
+                             "input_hash": ""})   # resolved in _job_input from any parent
     return jobs
+
 
 
 def _verse_for(object_id: str) -> str:
@@ -102,8 +111,13 @@ def _verse_for(object_id: str) -> str:
 
 
 def _job_input(job: dict) -> dict:
-    inp = {"object_id": job["object_id"], "input_hash": job["input_hash"]}
-    if job["layer"] == "T1":
+    """Resolve the input_hash + verse for a job from its canonical parents (multi-parent DAG).
+
+    The passage's stable input_hash comes from SOURCE (the root); T1 and L0 need the verse text."""
+    src = R.current("SOURCE", job["object_id"])
+    ih = (src or {}).get("input_hash", "") if src else job.get("input_hash", "")
+    inp = {"object_id": job["object_id"], "input_hash": ih}
+    if job["layer"] in ("T1", "L0"):
         inp["verse"] = _verse_for(job["object_id"])
     return inp
 

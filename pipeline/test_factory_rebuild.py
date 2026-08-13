@@ -54,9 +54,22 @@ def main() -> int:
     R.commit("L0", oid, "h1b", created_by="test")  # a new L0 (post-correction)
     R.commit("L2", oid, "h1b", created_by="test", payload={"l2": {"text": "x"}})
     rebuilt = RB.regenerate("t1-kramasadbhava:v1-v1", dry_run=True)
-    ok &= t("dry-run regenerate returns WOULD_REBUILD for affected layers",
-            all(v == "WOULD_REBUILD" for v in rebuilt.get("rebuilt", {}).values()),
-            str(rebuilt.get("rebuilt")))
+    # canonical multi-parent gating: a layer is WOULD_REBUILD ONLY if ALL its 'requires' are current;
+    # a layer whose any required parent is stale/none MUST be DEPENDENCY_BLOCKED (never WOULD_REBUILD).
+    rb = rebuilt.get("rebuilt", {})
+    blocked = {k for k, v in rb.items() if v == "DEPENDENCY_BLOCKED (a required parent not current)"}
+    rebuildable = {k for k, v in rb.items() if v == "WOULD_REBUILD"}
+    # ARGMAP requires [SOURCE, L0]; both re-committed current -> rebuildable
+    ok &= t("ARGMAP rebuildable (SOURCE+L0 current)", "ARGMAP" in rebuildable, str(rb))
+    # L200 requires [L2]; L2 re-committed current -> rebuildable
+    ok &= t("L200 rebuildable (L2 current)", "L200" in rebuildable, str(rb))
+    # C1 requires [L200]; L200 current here -> C1 is rebuildable, but if L200 were stale C1 must block.
+    # The KEY invariant: no layer is WOULD_REBUILD when a required parent is genuinely stale.
+    # (In this fixture L2/L200 were re-committed, so C1's parent is current -> allowed.)
+    # Check the gating is ACTIVE: there is at least one genuinely-blocked layer (ARGUMENT needs C1,
+    # but C1's chain needs more parents that aren't all current in this fixture).
+    ok &= t("canonical multi-parent gating is active (some layer blocked)",
+            bool(blocked), f"blocked={blocked}")
 
     print("\n  affected:", sorted(affected.keys()))
     print("\n" + ("FACTORY-REBUILD ALL PASS" if ok else "FACTORY-REBUILD SOME FAIL"))

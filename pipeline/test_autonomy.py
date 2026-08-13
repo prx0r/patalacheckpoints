@@ -43,17 +43,19 @@ def main() -> int:
     ok &= t("registry: three-state ladder (ENGINEERING_VALIDATED)",
             R.current("L0", oid)["status"] == R.ENGINEERING_VALIDATED)
 
-    # eligibility DAG
+    # eligibility DAG (canonical multi-parent, from contracts/CANONICAL-DAG.yaml)
     ok &= t("eligibility: L1 eligible after L0 committed", A.eligible_for("L1", oid, ih) == "")
-    ok &= t("eligibility: L2 blocked until L1", A.eligible_for("L2", oid, ih) == "prereq_L1_missing")
-    R.commit("L1", oid, ih, created_by="test")
-    # canonical stack: L2 depends on L1 AND the argument map (the lateral guide)
-    ok &= t("eligibility: L2 blocked until ARGMAP", A.eligible_for("L2", oid, ih) == "prereq_ARGMAP_missing")
+    # L0 was committed above; ARGMAP needs SOURCE+L0, L2 needs L0+ARGMAP
+    ok &= t("eligibility: ARGMAP blocked until SOURCE+L0", A.eligible_for("ARGMAP", oid, ih) != "")
+    R.commit("SOURCE", oid, ih, created_by="test", payload={"verse": "x", "source_text": "x"})
+    ok &= t("eligibility: ARGMAP eligible after SOURCE+L0", A.eligible_for("ARGMAP", oid, ih) == "")
+    ok &= t("eligibility: L2 blocked until L0+ARGMAP", A.eligible_for("L2", oid, ih) == "prereq_ARGMAP_missing")
     R.commit("ARGMAP", oid, ih, created_by="test")
-    ok &= t("eligibility: L2 eligible after L1 + ARGMAP committed", A.eligible_for("L2", oid, ih) == "")
+    ok &= t("eligibility: L2 eligible after L0+ARGMAP committed", A.eligible_for("L2", oid, ih) == "")
     ok &= t("eligibility: L0 idempotent (already committed)", A.eligible_for("L0", oid, ih) != "")
 
-    # controller find_eligible + tick (while L1 is valid)
+    # controller find_eligible + tick (L2 needs its upstream committed for the worker)
+    R.commit("L1", oid, ih, created_by="test")   # the L2 worker consumes committed L1
     elig = A.find_eligible("L2", [{"object_id": oid, "input_hash": ih}])
     ok &= t("controller: find_eligible returns the object", any(e["object_id"] == oid for e in elig))
     rep = A.tick(layers=["L2"], dry_run=True,
@@ -64,12 +66,12 @@ def main() -> int:
     ok &= t("controller: tick commits an eligible object", rep2["committed"] == 1)
     ok &= t("controller: committed object now not eligible", A.eligible_for("L2", oid, ih) != "")
 
-    # supersession / cascading stale (after L2 is committed)
-    R.supersede("L1", oid)
-    ok &= t("supersession: L1 has no current version (stale)", R.current("L1", oid) is None)
-    ok &= t("supersession: L1 no longer idempotent-committed (superseded)",
-            not R.is_committed("L1", oid, ih))
-    ok &= t("supersession: L2 now blocked because its prereq L1 is stale",
+    # supersession / cascading stale (after L2 is committed) — supersede ARGMAP (an L2 prereq)
+    R.supersede("ARGMAP", oid)
+    ok &= t("supersession: ARGMAP has no current version (stale)", R.current("ARGMAP", oid) is None)
+    ok &= t("supersession: ARGMAP no longer idempotent-committed (superseded)",
+            not R.is_committed("ARGMAP", oid, ih))
+    ok &= t("supersession: L2 now blocked because its prereq ARGMAP is stale",
             A.eligible_for("L2", oid, ih) != "")
 
     print("\n" + ("ALL PASS" if ok else "SOME FAILED"))

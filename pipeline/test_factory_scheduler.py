@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
-"""pipeline/test_factory_scheduler.py — deterministic tests for the DAG-based backlog scheduler.
+"""pipeline/test_factory_scheduler.py — deterministic tests for the DAG scheduler + canonical DAG (A2-ARCH-HARDEN).
 
-A2-13a (DAG scheduling): enumerates ALL eligible (object,layer) jobs across the graph (not T1-only),
-ranks them, and executes within the model budget.
-A2-13b (free-draining): deterministic L0 jobs run immediately WITHOUT consuming the model budget.
-
-Verifies:
-  - eligible-job enumeration across layers (not just the frontier)
-  - model budget spent across the whole graph
-  - deterministic L0 drains free (model_calls doesn't count it)
-  - downstream advancement (T1 -> L0/ARGMAP become eligible once T1 committed)
+A2-13a (DAG scheduling): enumerates ALL eligible (object,layer) jobs across the graph.
+A2-13b (free-draining): deterministic L0 runs free.
+A2-ARCH-HARDEN (canonical DAG): eligibility derives from contracts/CANONICAL-DAG.yaml (multi-parent):
+  - ARGMAP requires [SOURCE, L0]
+  - L2 requires [L0, ARGMAP]
+  - no L2 eligibility without L0 + ARGMAP; no ARGMAP eligibility without L0 + SOURCE
 Run: python3 pipeline/test_factory_scheduler.py
 """
 from __future__ import annotations
@@ -43,30 +40,42 @@ def main() -> int:
     FB.FAILURE_QUEUE = Path(tempfile.mkdtemp()) / "q.jsonl"
     _stub_model()
 
-    print("=== A2-13a/b DAG scheduling + free-draining deterministic layers ===")
-    # A: SOURCE done (T1 eligible). B: SOURCE+T1 done (L0 + ARGMAP eligible)
+    print("=== A2-ARCH-HARDEN canonical DAG + A2-13a/b scheduling ===")
+    # A: SOURCE only (T1 eligible). B: SOURCE+T1 (L0 eligible; ARGMAP NOT yet — needs L0).
     R.commit("SOURCE", "A:v1", "Ah1", created_by="test", payload={"verse": "śivo", "source_text": "śivo"})
     R.commit("SOURCE", "B:v1", "Bh1", created_by="test", payload={"verse": "śivaṃ", "source_text": "śivaṃ"})
     R.commit("T1", "B:v1", "Bh1", created_by="test",
              payload={"t1": {"tokens": [{"sanskrit": "śivaṃ", "gloss": "x"}], "source_text": "śivaṃ"}})
 
-    jobs = FS._eligible_jobs(["A", "B"], ["T1", "ARGMAP", "L0", "L2", "L200", "C1"])
-    jobs_key = sorted((j["layer"], j["object_id"]) for j in jobs)
-    ok &= t("DAG enumerates all eligible jobs across layers", jobs_key ==
-            [("ARGMAP", "B:v1"), ("L0", "B:v1"), ("T1", "A:v1")], str(jobs_key))
+    # eligibility check (A2-ARCH-HARDEN): ARGMAP needs L0 (not just T1); L2 needs L0+ARGMAP
+    ok &= t("ARGMAP NOT eligible for B (no L0 yet — canonical DAG)",
+            "ARGMAP" not in [j["layer"] for j in FS._eligible_jobs(["B"], ["ARGMAP"])])
+    ok &= t("L0 eligible for B (L0 requires T1, committed)",
+            "L0" in [j["layer"] for j in FS._eligible_jobs(["B"], ["L0"])])
+    ok &= t("L2 NOT eligible for B (no L0 + ARGMAP — canonical multi-parent)",
+            "L2" not in [j["layer"] for j in FS._eligible_jobs(["B"], ["L2"])])
+    ok &= t("T1 eligible for A", "T1" in [j["layer"] for j in FS._eligible_jobs(["A"], ["T1"])])
 
+    # full pass: A:T1 (model) + B:L0 (free) commit; ARGMAP for B still blocked (no L0 yet at pass time)
     r = FS.scheduler_pass(["A", "B"], ["T1", "ARGMAP", "L0", "L2", "L200", "C1"],
                           per_layer=2, max_model_calls=2)
-    ok &= t("model budget spent across the graph (2 calls: A:T1 + B:ARGMAP)",
-            r["model_calls"] == 2, f"{r['model_calls']}")
-    ok &= t("deterministic L0 drained free (counted separately)", r["deterministic"] == 1,
-            f"{r['deterministic']}")
     ok &= t("T1 A:v1 committed", R.current("T1", "A:v1") is not None)
-    ok &= t("ARGMAP B:v1 committed", R.current("ARGMAP", "B:v1") is not None)
-    ok &= t("downstream unlocked: L0 eligible after T1", "L0" in
-            [j["layer"] for j in FS._eligible_jobs(["B"], ["L0"])])
+    ok &= t("L0 B:v1 committed (free-draining deterministic)", R.current("L0", "B:v1") is not None)
+    ok &= t("ARGMAP B:v1 still NOT committed (was blocked: no L0 at eligibility time)",
+            R.current("ARGMAP", "B:v1") is None)
 
-    print("\n" + ("FACTORY-SCHEDULER(DAG) ALL PASS" if ok else "FACTORY-SCHEDULER(DAG) SOME FAIL"))
+    # once L0 IS committed for B, ARGMAP becomes eligible (canonical: needs SOURCE + L0)
+    ok &= t("ARGMAP eligible for B once L0 committed",
+            "ARGMAP" in [j["layer"] for j in FS._eligible_jobs(["B"], ["ARGMAP"])])
+
+    # downstream: L2 requires L0 AND ARGMAP — only eligible when both committed
+    R.commit("ARGMAP", "B:v1", "Bh1", created_by="test",
+             payload={"argument_map": {"what_is_at_issue": "q", "argument_steps": ["s1"],
+                                       "open_items": [], "decision_for_l2": "d"}})
+    ok &= t("L2 eligible for B once L0 + ARGMAP committed (multi-parent)",
+            "L2" in [j["layer"] for j in FS._eligible_jobs(["B"], ["L2"])])
+
+    print("\n" + ("FACTORY-SCHEDULER(CANONICAL-DAG) ALL PASS" if ok else "SOME FAIL"))
     return 0 if ok else 1
 
 

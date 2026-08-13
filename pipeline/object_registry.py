@@ -26,22 +26,37 @@ REG_DIR = ROOT / "data/corpus/registries"
 # The canonical layers in derivational order (the DAG spine).
 LAYERS = ["SOURCE", "T1", "ARGMAP", "L0", "L1L2", "L1", "L2", "L200", "C1", "THEME", "ARGUMENT", "SYNTHESIS", "ESSAY", "EDUCATION"]
 
-# Layer prerequisites (all must be committed before this layer is eligible).
-PREREQS: dict[str, list[str]] = {
-    "T1": ["SOURCE"],
-    "ARGMAP": ["T1"],      # the lateral guide: reconstruct the argument from the transliteral floor
-    "L0": ["T1"],
-    "L1L2": ["L0"],
-    "L1": ["L0"],
-    "L2": ["L1", "ARGMAP"],
-    "L200": ["L2"],
-    "C1": ["L200"],
-    "THEME": ["C1"],
-    "ARGUMENT": ["C1"],
-    "SYNTHESIS": ["ARGUMENT", "THEME"],
-    "ESSAY": ["SYNTHESIS"],
-    "EDUCATION": ["ESSAY"],
-}
+# Layer prerequisites — THE SINGLE SOURCE OF TRUTH is contracts/CANONICAL-DAG.yaml.
+# Every consumer (scheduler, rebuild, catalog, certificate, tests) must derive from the manifest,
+# not from an independent copy. PREREQS is the compiled view loaded once from the manifest.
+_DAG_PATH = Path(__file__).resolve().parents[1] / "contracts" / "CANONICAL-DAG.yaml"
+
+
+def _load_dag_prereqs() -> dict[str, list[str]]:
+    """Compile the canonical dependency manifest into {layer: [requires...]}.
+
+    Falls back to the manifest's 'requires' for each layer; if the manifest is missing/unparseable,
+    fail loudly (do NOT silently fall back to a stale hardcoded copy — that is the very bug we removed)."""
+    if not _DAG_PATH.exists():
+        raise FileNotFoundError(f"canonical DAG manifest missing: {_DAG_PATH}")
+    text = _DAG_PATH.read_text(encoding="utf-8")
+    # minimal YAML parse for the 'dependencies:' block (no yaml dep)
+    import re
+    deps = {}
+    cur = None
+    for line in text.splitlines():
+        m = re.match(r"^  ([A-Z0-9]+):\s*$", line)
+        if m:
+            cur = m.group(1)
+            deps.setdefault(cur, [])
+            continue
+        r = re.match(r"^\s+requires:\s*\[(.*?)\]\s*(#.*)?$", line)
+        if r and cur:
+            deps[cur] = [x.strip().strip('"').strip("'") for x in r.group(1).split(",") if x.strip()]
+    return deps
+
+
+PREREQS: dict[str, list[str]] = _load_dag_prereqs()
 
 # Three-state ladder.
 GENERATED = "GENERATED"

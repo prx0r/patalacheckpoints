@@ -35,17 +35,34 @@ import object_registry as R
 import factory_batch as FB
 import factory_scheduler as FS
 
-# downstream-of map: layer -> layers that depend on it (transitive, from PREREQS)
-DOWNSTREAM = {
-    "SOURCE": ["T1", "L0", "ARGMAP", "L2", "L200", "C1"],
-    "T1": ["L0", "ARGMAP", "L2", "L200", "C1"],
-    "ARGMAP": ["L2", "L200", "C1"],
-    "L0": ["L2", "L200", "C1"],
-    "L1": ["L2", "L200", "C1"],
-    "L2": ["L200", "C1"],
-    "L200": ["C1"],
-    "C1": [],
-}
+# DOWNSTREAM is DERIVED from the canonical DAG manifest (contracts/CANONICAL-DAG.yaml) via
+# object_registry.PREREQS — do NOT hardcode an independent map (the A2-ARCH-HARDEN bug).
+
+
+def _downstream_of() -> dict[str, list[str]]:
+    """Compute, for each layer, the layers that transitively depend on it (from the manifest)."""
+    prereqs = R.PREREQS
+    # direct: layer -> layers that require it
+    direct = {L: [] for L in prereqs}
+    for layer, reqs in prereqs.items():
+        for req in reqs:
+            direct.setdefault(req, []).append(layer)
+    # transitive closure
+    downstream = {L: set() for L in direct}
+    for start in direct:
+        stack = list(direct[start])
+        seen = set()
+        while stack:
+            d = stack.pop()
+            if d in seen:
+                continue
+            seen.add(d)
+            downstream[start].add(d)
+            stack.extend(direct.get(d, []))
+    return {k: sorted(v) for k, v in downstream.items()}
+
+
+DOWNSTREAM: dict[str, list[str]] = _downstream_of()
 
 
 def _passage_id(object_id: str) -> str:
@@ -89,22 +106,23 @@ def regenerate(object_id: str, per_layer: int = 3, dry_run: bool = False) -> dic
     if not layer:
         return {"error": "cannot determine layer"}
     rebuilt = {}
-    # for each downstream layer, if it now has no current (non-superseded) object, regenerate it
+    # for each downstream layer, if it now has no current (non-superseded) object AND all its
+    # canonical 'requires' are committed, regenerate it (targeted, bounded).
     for down in DOWNSTREAM.get(layer, []):
         if R.current(down, passage):
             continue  # still has a current version -> nothing to rebuild
-        # build the single-passage input directly
-        upstream = {"T1": "SOURCE", "ARGMAP": "T1", "L0": "T1",
-                    "L2": "L1", "L200": "L2", "C1": "L200"}[down]
-        up_cur = R.current(upstream, passage)
-        inp = [{"object_id": passage, "input_hash": (up_cur or {}).get("input_hash", "")}]
-        if upstream == "SOURCE":
-            inp[0]["verse"] = (up_cur or {}).get("payload", {}).get("verse", "")
+        # canonical multi-parent eligibility: all 'requires' committed for this passage
+        requires = R.PREREQS.get(down, [])
+        if requires and not all(R.current(req, passage) for req in requires):
+            rebuilt[down] = "DEPENDENCY_BLOCKED (a required parent not current)"
+            continue
+        # build the single-passage input via the scheduler (verse + input_hash from SOURCE)
+        inp = FS._job_input({"object_id": passage, "layer": down})
         if dry_run:
             rebuilt[down] = "WOULD_REBUILD"
             continue
         try:
-            r = FB._produce_layer(down, inp, batch_size=2)
+            r = FB._produce_layer(down, [inp], batch_size=2)
             rebuilt[down] = f"{len(r['committed'])} committed, {len(r.get('retryable',[]))} retryable"
         except Exception as e:
             rebuilt[down] = f"ERROR: {str(e)[:80]}"
