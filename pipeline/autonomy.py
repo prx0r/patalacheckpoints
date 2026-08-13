@@ -140,6 +140,24 @@ try:
 except Exception as e:  # pragma: no cover
     print("L1L2 translation worker not wired:", e, file=sys.stderr)
 
+# Wire the C1 passage-commentary worker (CP8 — consumes L200's MT/IA/OPEN, passage-local).
+try:
+    from c1_worker import make_c1_handlers
+    LAYER_HANDLERS["C1"] = make_c1_handlers()
+except Exception as e:  # pragma: no cover
+    print("C1 worker not wired:", e, file=sys.stderr)
+
+# Wire the Hermes-runs-layer-skill worker for the synthesis/derivation layers (THEME, ESSAY,
+# EDUCATION) that have canonical skills but no dedicated python worker. The model proposes via the
+# layer skill; a deterministic structural validator gates the commit (the model never self-validates).
+try:
+    from generative_worker import make_generative_handler, skill_proposal_validator
+    for _layer in ("THEME", "ESSAY", "EDUCATION"):
+        LAYER_HANDLERS[_layer] = {"generator": make_generative_handler(_layer)["generator"],
+                                  "validator": skill_proposal_validator}
+except Exception as e:  # pragma: no cover
+    print("generative worker not wired:", e, file=sys.stderr)
+
 
 def tick(layers: list[str] | None = None, max_batch: int = 8,
          dry_run: bool = False, inputs: dict[str, list[dict]] | None = None) -> dict:

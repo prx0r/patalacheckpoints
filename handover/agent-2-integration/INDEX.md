@@ -23,6 +23,12 @@ source for the integration lane.*
 > **AUTONOMY BUILD RECORD: `handover/agent-2-integration/BUILD-RECORD-2026-08-12-AUTONOMY.md`** — the full
 > inventory + results of the autonomous translation factory build (controller, registry, certificates,
 > live L200 benchmark). **Read this for the current autonomous-factory state.**
+> **VERTICAL WORKERS (2026-08-13): `handover/agent-2-integration/BUILD-RECORD-2026-08-13-VERTICAL-WORKERS.md`**
+> — the canonical stack L0→L1→L2→L200→C1 now has per-layer workers each producing its canonical file shape
+> + a layer-specific validator; L200 rewritten as the constrained compiler (default IGNORE); C1 wired
+> (was a stub); THEME/ESSAY/EDUCATION wired to the Hermes-skill worker. Proof: `pipeline/prove_vertical.py`
+> (3 real kramasadbhava L0 → L1→L2→L200→C1, fail-closed, ALL PASS). The live `auto_translate_raw.py` runner
+> is untouched.
 > **CURRENT STATE (READ FIRST): `handover/agent-2-integration/SESSION-2026-08-13.md`** — **WE GOT IT RUNNING**:
 > the autonomous translation factory is live. Hermes (`hermes -z`) translates the full 73-work RAW_SANSKRIT
 > queue to MACHINE_PROPOSED English, unattended + watchdog-survivable. Driver =

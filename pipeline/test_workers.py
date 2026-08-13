@@ -6,6 +6,7 @@ Model-proposal layers are stubbed so the test is deterministic and fail-fast.
 """
 from __future__ import annotations
 
+import json
 import sys
 import tempfile
 from pathlib import Path
@@ -41,8 +42,8 @@ def main() -> int:
             l0_validator("L0", {"object_id": "x", "input_hash": "h", "verse": "śivaḥ",
                                 "records": [_l0rec("PARSED", "śiva", "")]})[0] == True)
 
-    # ---- L200 worker (model MT/IA stubbed; COMPARATIVE L1+L2) ----
-    LW._propose_mt_ia = lambda oid, l1, l2: (
+    # ---- L200 worker (model MT/IA stubbed; COMPARATIVE L1+L2; constrained classifier) ----
+    LW._classify_candidates = lambda oid, cands: (
         "COMPLETE",
         [{"label": "MT-001", "type": "SUPPLIED", "basis": "x"}],
         [{"label": "IA-001", "text": "y"}], [])
@@ -54,7 +55,10 @@ def main() -> int:
           "par_refs": [["pt:l1:1", "pt:l0:2", "src:3"]],
           "source_layer": [{"par": 0, "speaker": "Abhinava"}],
           "cross_references": [{"target": "IPVV:V2-C", "type": "SAME_ARGUMENT_CONTINUATION"}]}
-    p = LW.l200_generator("L200", [{"object_id": "IPVV:V1A", "input_hash": "h2", "_l2": l2}])[0]
+    # L200 resolves committed L2 from the registry (constrained compiler) — commit it first.
+    R.commit("L2", "IPVV:V1A", "h2", created_by="test",
+             payload={"l2": {"text": l2["text"]}, "l1": {"text": l2["l1_text"]}})
+    p = LW.l200_generator("L200", [{"object_id": "IPVV:V1A", "input_hash": "h2"}])[0]
     secs = sorted(p["l200"].keys())
     ok &= t("L200 generator produces all 8 sections",
             secs == sorted(["0_identification","1_published_reading","2_derivation_map",
@@ -62,28 +66,61 @@ def main() -> int:
                             "5_source_layer","6_cross_references","7_open_items","8_review_state"]))
     ok &= t("L200 proposal status COMPLETE on success", p["proposal_status"] == "COMPLETE")
     ok &= t("L200 l2_ref is a canonical id, l2_hash separate",
-            p["l200"]["0_identification"].get("l2_ref") == "pt:l2:IPVV:V1A" and
+            p["l200"]["0_identification"].get("l2_ref") == "IPVV:V1A" and
             p["l200"]["0_identification"].get("l2_hash") == "h2")
+    ok &= t("L200 derivation map present", bool(p["l200"].get("2_derivation_map")))
     ok &= t("L200 validator passes on a complete audit", LW.l200_validator("L200", p)[0])
     p["l200"]["3_material_translation_decisions"] = [{"type": "BOGUS"}]
     ok &= t("L200 validator rejects a bad MT type", LW.l200_validator("L200", p)[0] == False)
     p["l200"]["3_material_translation_decisions"] = []
-    p["l200"]["5_source_layer"] = []
-    ok &= t("L200 validator requires source-layer", LW.l200_validator("L200", p)[0] == False)
-    p["l200"]["5_source_layer"] = [{"par": 0, "speaker": "Abhinava"}]
     p["proposal_status"] = "GENERATION_FAILED"
     ok &= t("L200 validator blocks a GENERATION_FAILED proposal (fail-closed)",
             LW.l200_validator("L200", p)[0] == False)
+    p["proposal_status"] = "COMPLETE"
+    p["l200"]["2_derivation_map"] = []
+    ok &= t("L200 validator requires a derivation map", LW.l200_validator("L200", p)[0] == False)
+    p["l200"]["2_derivation_map"] = [{"l2_par": "The blue shines as one with the manifestation."}]
+    ok &= t("L200 validator passes after derivation map restored", LW.l200_validator("L200", p)[0])
 
     # ---- controller commits L200 once L2 is committed ----
-    R.commit("L2", "IPVV:V1A", "h2", created_by="test")
     rep = A.tick(layers=["L200"], max_batch=1, dry_run=False,
-                 inputs={"L200": [{"object_id": "IPVV:V1A", "input_hash": "h2", "_l2": l2}]})
+                 inputs={"L200": [{"object_id": "IPVV:V1A", "input_hash": "h2"}]})
     ok &= t("controller L200 tick commits", rep["committed"] == 1 and rep["failed"] == 0)
     cur = R.current("L200", "IPVV:V1A")
     ok &= t("L200 object persisted with derivation map", cur and cur["payload"].get("l200", {}).get("2_derivation_map"))
     ok &= t("L200 idempotent (second tick skips)", A.tick(layers=["L200"], max_batch=1, dry_run=False,
-                                                          inputs={"L200": [{"object_id": "IPVV:V1A", "input_hash": "h2", "_l2": l2}]})["committed"] == 0)
+                                                          inputs={"L200": [{"object_id": "IPVV:V1A", "input_hash": "h2"}]})["committed"] == 0)
+
+    # ---- CP8: C1 worker consumes committed L200; deterministic validator gates ----
+    from c1_worker import c1_generator, c1_validator
+    c1b = [{"object_id": "IPVV:V1A", "input_hash": "h2"}]
+    # stub the model call for a deterministic test
+    _orig_chat = LW.chat
+    from c1_worker import chat as c1_chat
+    def _fake_chat(system, prompt, **kw):
+        return json.dumps({"summary": "The powers need a support.",
+                           "function": "introduces the support of the powers.",
+                           "key_terms": [{"term": "pratibhā", "meaning": "the flashing"}],
+                           "explanation": "This passage establishes that the flashing is not the order "
+                                          "itself but has an order-less support, the great Lord.",
+                           "boundary": "It establishes the local support, not every Śaiva claim.",
+                           "related_passages": ["V2-P"], "uncertain": ["akrama"]})
+    import c1_worker
+    c1_worker.chat = _fake_chat
+    pc1 = c1_generator("C1", c1b)[0]
+    ok &= t("C1 generator produces MACHINE_PROPOSED", pc1["c1_status"] == "MACHINE_PROPOSED")
+    ok &= t("C1 validator passes on good commentary", c1_validator("C1", pc1)[0])
+    pc1["c1"]["explanation"] = "short"
+    ok &= t("C1 validator rejects paraphrase-length explanation", c1_validator("C1", pc1)[0] == False)
+    pc1["c1"]["explanation"] = ("This passage establishes that the flashing is not the order itself "
+                                "but has an order-less support and anticipates contemporary self-model "
+                                "theory.")
+    ok &= t("C1 validator rejects modern-comparison lexicon", c1_validator("C1", pc1)[0] == False)
+    rep_c1 = A.tick(layers=["C1"], max_batch=1, dry_run=False,
+                    inputs={"C1": [{"object_id": "IPVV:V1A", "input_hash": "h2"}]})
+    ok &= t("controller C1 tick commits", rep_c1["committed"] == 1 and rep_c1["failed"] == 0)
+    ok &= t("C1 object persisted", R.current("C1", "IPVV:V1A") is not None)
+    c1_worker.chat = _orig_chat
 
     # ---- CP3: L1/L2 provenance continuity (deterministic, no model) ----
     from l1_l2_worker import make_l1_handlers, make_l2_handlers

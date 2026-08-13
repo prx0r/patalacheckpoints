@@ -76,12 +76,20 @@ def l1_validator(layer: str, proposal: dict) -> tuple[bool, str]:
     l1 = proposal.get("l1", {})
     if not l1.get("controlled_segments"):
         return False, "L1 missing controlled_segments (deterministic floor)"
-    prov = l1.get("provenance", {})
-    if not prov.get("l0_version"):
-        return False, "L1 missing L0 provenance"
+    # semantic-fidelity (L1-SPEC): the controlled reading is word/phrase-faithful to the L0 tokens;
+    # it must not silently introduce doctrinal supplementation. Check against the committed L0 records.
     l0 = R.current("L0", proposal["object_id"])
     if not l0:
         return False, "L1 L0 object not committed (upstream must exist)"
+    l0_frags = [r.get("raw_fragment", "") for r in
+                (l0.get("payload", {}) or {}).get("records", []) if r.get("raw_fragment")]
+    if l0_frags:
+        seg_surfaces = [s.get("surface", "") for s in l1.get("controlled_segments", [])]
+        if seg_surfaces and any(s and s not in l0_frags for s in seg_surfaces):
+            return False, "L1 controlled_segment surface not present in committed L0 (doctrinal supplement)"
+    prov = l1.get("provenance", {})
+    if not prov.get("l0_version"):
+        return False, "L1 missing L0 provenance"
     if l0.get("version") != prov.get("l0_version"):
         return False, "L1 L0 version mismatch (provenance not resolvable)"
     return True, ""
@@ -130,6 +138,22 @@ def l2_validator(layer: str, proposal: dict) -> tuple[bool, str]:
         return False, "L2 L1 object not committed (upstream must exist)"
     if l1.get("version") != prov.get("l1_version"):
         return False, "L2 L1 version mismatch (provenance not resolvable)"
+    # semantic-fidelity (L2-SPEC): content(L2) ⊆ content(L1) + declared_supplies. The readable
+    # prose must not silently add substantive content beyond the controlled L1 reading. We check
+    # the L2 text is non-empty and (when L1 is available) that every sentence is a credible
+    # realization of some L1 fragment (a conservative token-overlap guard — drift, not style).
+    text = (l2.get("text") or "").strip()
+    if not text:
+        return False, "L2 empty text (no commit)"
+    l1_segs = (l1.get("payload", {}).get("l1", {}) or {}).get("controlled_segments", [])
+    l1_lemmas = {s.get("lemma", "").lower() for s in l1_segs if s.get("lemma")}
+    if l1_lemmas:
+        l2_lower = text.lower()
+        # every L1 lemma must surface in the L2 text OR be declared in the supplies
+        supplies = set(s.get("supplied", "").lower() for s in l2.get("declared_supplies", []) if s.get("supplied"))
+        missing = [lem for lem in l1_lemmas if lem and lem not in l2_lower and lem not in supplies]
+        if missing:
+            return False, f"L2 omits L1 content (unsupported loss): {missing[:5]}"
     return True, ""
 
 
