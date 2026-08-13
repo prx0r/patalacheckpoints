@@ -123,9 +123,11 @@ def c1_validator(layer: str, proposal: dict) -> tuple[bool, str]:
     expl = (c1.get("explanation") or "").strip()
     if len(expl) < 40:
         return False, "explanation too short (paraphrase, not commentary)"
-    # 3. concise enough to be commentary (hard ceiling — drifting toward essay)
+    # 3. concise enough to be commentary (ceiling per C1-SPEC: 250-600 words, hard cases to ~900).
+    #    ~4500 chars ≈ the upper bound of a faithful passage commentary. The essay-drift guard is the
+    #    lexicon check below (modern-comparison / essays-as-evidence), not raw length.
     total = len(" ".join(str(c1.get(k) or "") for k in C1_SECTIONS))
-    if total > 3000:
+    if total > 4500:
         return False, "c1 too long (escalating toward essay)"
     # 4. no modern-comparison / essays-as-evidence lexicon in the core prose
     core = " ".join(str(c1.get(k) or "") for k in ("summary", "function", "explanation", "boundary"))
