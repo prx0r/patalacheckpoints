@@ -125,6 +125,14 @@ try:
 except Exception as e:  # pragma: no cover
     print("L200 worker not wired:", e, file=sys.stderr)
 
+# Wire the L1 (controlled) + L2 (readable) provenance-continuity handlers (CP3).
+try:
+    from l1_l2_worker import make_l1_handlers, make_l2_handlers
+    LAYER_HANDLERS["L1"] = make_l1_handlers()
+    LAYER_HANDLERS["L2"] = make_l2_handlers()
+except Exception as e:  # pragma: no cover
+    print("L1/L2 workers not wired:", e, file=sys.stderr)
+
 
 def tick(layers: list[str] | None = None, max_batch: int = 8,
          dry_run: bool = False, inputs: dict[str, list[dict]] | None = None) -> dict:

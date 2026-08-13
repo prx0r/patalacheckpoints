@@ -25,13 +25,21 @@ def t(name, cond):
 def main() -> int:
     ok = True
     R.REG_DIR = Path(tempfile.mkdtemp())
+    import autonomy as A
 
-    # ---- L0 validator: fail-closed on empty glosses (PARSED w/o gloss) ----
+    # ---- L0 validator: fail-closed on a fabricated lemma; PARSED lemma commits w/o gloss ----
     from l0_worker import l0_validator
-    ok &= t("L0 validator rejects a PARSED record with empty gloss",
+    def _l0rec(status, lemma, gloss):
+        return {"id": "x:L1:T1", "chunk_id": "x", "line_id": 1, "line_kind": "prose",
+                "chunk_char_start": 0, "chunk_char_end": 5, "line_char_start": 0, "line_char_end": 5,
+                "wraps_line": False, "raw_fragment": "śivaḥ", "source_text": "śivaḥ",
+                "lemma_iast": lemma, "literal_gloss": gloss, "quoted": False, "status": status}
+    ok &= t("L0 validator rejects a PARSED record with empty lemma (fabricated)",
             l0_validator("L0", {"object_id": "x", "input_hash": "h", "verse": "śivaḥ",
-                                "records": [{"status": "PARSED", "lemma_iast": "śiva", "literal_gloss": "",
-                                             "raw_fragment": "śivaḥ", "chunk_char_start": 0, "chunk_char_end": 5}]})[0] == False)
+                                "records": [_l0rec("PARSED", "", "")]})[0] == False)
+    ok &= t("L0 validator accepts a PARSED record with a deterministic lemma, no gloss (L0-A)",
+            l0_validator("L0", {"object_id": "x", "input_hash": "h", "verse": "śivaḥ",
+                                "records": [_l0rec("PARSED", "śiva", "")]})[0] == True)
 
     # ---- L200 worker (model MT/IA stubbed; COMPARATIVE L1+L2) ----
     LW._propose_mt_ia = lambda oid, l1, l2: (
@@ -76,6 +84,40 @@ def main() -> int:
     ok &= t("L200 object persisted with derivation map", cur and cur["payload"].get("l200", {}).get("2_derivation_map"))
     ok &= t("L200 idempotent (second tick skips)", A.tick(layers=["L200"], max_batch=1, dry_run=False,
                                                           inputs={"L200": [{"object_id": "IPVV:V1A", "input_hash": "h2", "_l2": l2}]})["committed"] == 0)
+
+    # ---- CP3: L1/L2 provenance continuity (deterministic, no model) ----
+    from l1_l2_worker import make_l1_handlers, make_l2_handlers
+    from l0_worker import l0_generator, l0_validator
+    # commit a deterministic L0 object first (L0-A floor)
+    l0batch = [{"object_id": "sp:k1", "input_hash": "h0",
+                "verse": "śivo bhūtvā śivaṃ yajet"}]
+    l0prop = l0_generator("L0", l0batch)[0]
+    ok &= t("CP3 L0-A floor commits", l0_validator("L0", l0prop)[0])
+    R.commit("L0", "sp:k1", "h0", created_by="test", payload={k: v for k, v in l0prop.items() if k not in ("object_id", "input_hash")})
+
+    h1 = make_l1_handlers()
+    p1 = h1["generator"]("L1", [{"object_id": "sp:k1", "input_hash": "h0"}])[0]
+    ok &= t("CP3 L1 resolves committed L0 provenance", h1["validator"]("L1", p1)[0])
+    R.commit("L1", "sp:k1", "h0", created_by="test", payload={k: v for k, v in p1.items() if k not in ("object_id", "input_hash")})
+
+    h2 = make_l2_handlers()
+    p2 = h2["generator"]("L2", [{"object_id": "sp:k1", "input_hash": "h0"}])[0]
+    ok &= t("CP3 L2 resolves committed L1 provenance", h2["validator"]("L2", p2)[0])
+
+    # CP3.5 stale propagation: new L0 hash -> old L1 must be superseded, new L1 resolves
+    # (driven through the controller tick so detect_stale/supersede runs, as in production)
+    from object_registry import supersede
+    l0h1 = [{"object_id": "sp:k1", "input_hash": "h1", "verse": "śivo bhūtvā śivaṃ yajet (emended)"}]
+    l0prop1 = l0_generator("L0", l0h1)[0]
+    R.commit("L0", "sp:k1", "h1", created_by="test", payload={k: v for k, v in l0prop1.items() if k not in ("object_id", "input_hash")})
+    # drive L1 with the new hash through the controller (detect_stale supersedes the old L1)
+    rep = A.tick(layers=["L1"], max_batch=1, dry_run=False,
+                 inputs={"L1": [{"object_id": "sp:k1", "input_hash": "h1"}]})
+    vers = [v for v in R.versions("L1", "sp:k1")]
+    old = [v for v in vers if v["input_hash"] != "h1"]
+    ok &= t("CP3.5 old L1 superseded on source mutation",
+            (not old) or all(v.get("superseded") for v in old))
+    ok &= t("CP3.5 new L1 resolves new L0", R.current("L1", "sp:k1")["input_hash"] == "h1")
 
     print("\n" + ("ALL PASS" if ok else "SOME FAILED"))
     return 0 if ok else 1
