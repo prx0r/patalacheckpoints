@@ -4,6 +4,12 @@
 work. Append-only history lives under this folder; this file is the single "what is true right now"
 source for the integration lane.*
 
+> **🔒 CANONICAL LAYER STACK (LOCKED): `handover/agent-2-integration/CANONICAL-LAYER-STACK.md`** — the
+> single authoritative reference for the layer order, file type, and dependency. Verified against the
+> actual IPVV files. Order: `SOURCE → T1 → L0 → [argument map] → L2 → L200 → C1 → THEME → ESSAY → EDUCATION`.
+> T1 = transliteral word-gloss; L0 = structured token records from T1; argument map = lateral guide;
+> L2 = readable prose. **Do NOT reorder/rename without updating that file.**
+>
 > **GUIDING MISSION (READ FIRST): `handover/agent-2-integration/MISSION-AUTONOMOUS-FACTORY.md`** — the
 > canonical long-horizon mission: CP0–CP10 ladder, checkpoint doctrine (NOT_BUILT→BUILT→VALIDATED→
 > AUTONOMOUSLY_PROVEN), hard gates, anti-drift rules. Each checkpoint = a working system property, not a
