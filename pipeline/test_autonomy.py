@@ -47,7 +47,10 @@ def main() -> int:
     ok &= t("eligibility: L1 eligible after L0 committed", A.eligible_for("L1", oid, ih) == "")
     ok &= t("eligibility: L2 blocked until L1", A.eligible_for("L2", oid, ih) == "prereq_L1_missing")
     R.commit("L1", oid, ih, created_by="test")
-    ok &= t("eligibility: L2 eligible after L1 committed", A.eligible_for("L2", oid, ih) == "")
+    # canonical stack: L2 depends on L1 AND the argument map (the lateral guide)
+    ok &= t("eligibility: L2 blocked until ARGMAP", A.eligible_for("L2", oid, ih) == "prereq_ARGMAP_missing")
+    R.commit("ARGMAP", oid, ih, created_by="test")
+    ok &= t("eligibility: L2 eligible after L1 + ARGMAP committed", A.eligible_for("L2", oid, ih) == "")
     ok &= t("eligibility: L0 idempotent (already committed)", A.eligible_for("L0", oid, ih) != "")
 
     # controller find_eligible + tick (while L1 is valid)
