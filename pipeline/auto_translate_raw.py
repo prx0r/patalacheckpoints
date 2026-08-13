@@ -162,6 +162,36 @@ def split_any(work_id: str, src: str, max_verses: int) -> list[str]:
     return verses
 
 
+def _kill_stale_hermes(max_age_s: int = 300) -> None:
+    """Kill orphaned/stale `hermes -z` processes not owned by the current runner.
+
+    Observed failure mode (STALLS-PITFALLS): a hermes subprocess whose parent died keeps
+    running and hogs the model API, stalling the whole queue. Before each batch, kill any
+    hermes -z process older than max_age_s that is NOT a child of this runner.
+    """
+    import subprocess
+    try:
+        out = subprocess.run(["ps", "-eo", "pid,ppid,etimes,cmd"], capture_output=True, text=True).stdout
+    except Exception:
+        return
+    my_pid = str(os.getpid())
+    for line in out.splitlines()[1:]:
+        parts = line.split(None, 3)
+        if len(parts) < 4:
+            continue
+        pid, ppid, etimes, cmd = parts[0], parts[1], parts[2], parts[3]
+        if "hermes -z" not in cmd:
+            continue
+        if ppid == my_pid:
+            continue   # this runner's own active call — leave it
+        try:
+            if int(etimes) > max_age_s:
+                os.system(f"kill -9 {pid} 2>/dev/null")
+                print(f"  killed stale hermes pid {pid} (age {etimes}s, ppid {ppid})", flush=True)
+        except Exception:
+            pass
+
+
 def run_work(work_id: str, max_verses: int) -> dict:
     src = load_raw_source(work_id)
     if not _is_sanskrit(src):
@@ -184,6 +214,7 @@ def run_work(work_id: str, max_verses: int) -> dict:
     B = int(os.environ.get("PATALA_BATCH", "6"))
     with out_path.open("a", encoding="utf-8") as fh:
         for start in range(0, len(verses), B):
+            _kill_stale_hermes()   # kill orphaned hermes before each batch (STALLS-PITFALLS)
             batch = verses[start:start + B]
             batch_idx = []
             batch_verses = []
@@ -201,7 +232,7 @@ def run_work(work_id: str, max_verses: int) -> dict:
             # hermes -z call per unit (no Vidyut tokenization needed).
             is_verse = all(len(v) < 300 for v in batch_verses)
             if is_verse:
-                entries = build_entries(work_id, batch_verses)
+                entries = build_entries(work_id, batch_verses, start=start)
                 res = translate_batch(entries, work_id)
             else:
                 res = _translate_prose_batch(work_id, batch_verses, start_idx=start)
