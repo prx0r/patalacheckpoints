@@ -1,5 +1,9 @@
 # AGENT 2 — FULL DEV PLAN (for the next agent — begin work immediately)
 
+> **SUPERSEDED for the next cycle.** The sivaqueue intake (below) is done. The new plan is
+> `docs/AGENT2-ATLAS-FOUNDATION-PLAN.md` — do the **Atlas foundation (B) properly first** (Postgres DB +
+> R2 asset store + bibliography→Atlas migration + OpenAlex-grammar API), then one vertical.
+
 *2026-08-13. The complete execution plan for the next Agent-2 session: acquire all sivaqueue sources →
 ensure they're in the factory queue → verify the live factory → link to the bibliography → polish the
 whole factory. Grounded in the VERIFIED current state (every number checked against the live files).*
