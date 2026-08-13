@@ -47,6 +47,10 @@ def main() -> int:
     ok &= t("T1 surfaces all appear in source",
             all(tk["surface"].lower() in verse.lower() for tk in tokens))
     ok &= t("T1 input_hash bound", bool(p["input_hash"]))
+    # Agent 1's export contract: tokens carry sanskrit/iast/gloss/status (layer_contract.py)
+    ok &= t("T1 tokens carry Agent-1 contract keys (sanskrit/iast/gloss/status)",
+            all(all(k in tk for k in ("sanskrit", "iast", "gloss", "status")) for tk in tokens))
+    ok &= t("T1 token status enum valid", all(tk["status"] in ("GLOSSED", "ABSTAIN") for tk in tokens))
     vok, why = TW.t1_validator("T1", p)
     ok &= t("T1 validator passes", vok, why)
 

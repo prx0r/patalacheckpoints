@@ -116,7 +116,16 @@ def _parse(raw: str) -> dict:
 
 
 def _assemble_t1(verse: str, segments: list[dict], gloss_map: dict) -> list[dict]:
-    """Build the canonical T1 token stream: [{surface, lemma, gloss, quoted, form}]."""
+    """Build the canonical T1 token stream, matching Agent 1's T1 contract shape.
+
+    Each token carries the keys Agent 1's `validate_t1_shape` requires (layer_contract.py):
+      sanskrit  the source token/fragment
+      iast      the IAST surface
+      gloss     the literal English gloss
+      status    GLOSSED | ABSTAIN
+    plus our internal form/lemma. This keeps the export seam clean (Agent 2 writes, Agent 1 reads
+    the same shape) — see source-evidence/evals/patala/contracts/layer_contract.py.
+    """
     out = []
     for i, seg in enumerate(segments):
         surface = seg["surface"]
@@ -127,13 +136,20 @@ def _assemble_t1(verse: str, segments: list[dict], gloss_map: dict) -> list[dict
         quoted = bool(g.get("quoted"))
         if gloss:
             # defensive: strip a model-injected leading "[and]-" so we don't double-prefix
-            g = re.sub(r"^\[and\]-\s*", "", gloss).strip()
+            g_clean = re.sub(r"^\[and\]-\s*", "", gloss).strip()
             q = '"' if quoted else ''
-            form = f'[and]-{q}{g}{q} ({surface})'
+            form = f'[and]-{q}{g_clean}{q} ({surface})'
         else:
             form = f"[and]-({surface})"  # honest abstention
-        out.append({"idx": i, "surface": surface, "lemma": seg.get("lemma"),
-                    "gloss": gloss, "quoted": quoted, "form": form})
+        out.append({"idx": i,
+                    "sanskrit": surface,   # source token
+                    "iast": surface,       # IAST surface
+                    "gloss": gloss,
+                    "status": "GLOSSED" if gloss else "ABSTAIN",
+                    "lemma": seg.get("lemma"),
+                    "quoted": quoted,
+                    "form": form,
+                    "surface": surface})   # retained for back-compat with our source-binding check
     return out
 
 
