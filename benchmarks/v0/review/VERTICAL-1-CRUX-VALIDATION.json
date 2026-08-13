@@ -1,0 +1,50 @@
+{
+  "object_kind": "VERTICAL_1_CRUX_VALIDATION",
+  "argument": "Pratyabhijñā recognition vs Buddhist adhyavasāya",
+  "crux": {
+    "crux_id": "CRUX-IPVV-001",
+    "argument": "ARG-IPVV-VERTICAL-1-ADHYAVASAYA",
+    "object_kind": "CRUX",
+    "decisive_premises": [
+      "P1",
+      "P2"
+    ],
+    "method": "PERTURBATION",
+    "question": "Which assumption about the establishing power must hold for the recognition inference to succeed? Does 'establishing' require the self-luminous awareness (prakāśa) itself — such that the inert part cannot establish and the external is only drawn-to — or can a non-self-luminous (inert) representation nonetheless establish an external, as the Buddhist's fire-burning-wood analogy asserts?",
+    "defeater": "O3-FIRE-WOOD (fire burns wood though inert)",
+    "review_status": "NOT_HUMAN_REVIEWED",
+    "status": "MACHINE_PROPOSED"
+  },
+  "structures_tested": {
+    "redundant_support_P1_OR_P2": {
+      "decisive_sets": [
+        [
+          "P1",
+          "P2"
+        ]
+      ]
+    },
+    "active_defeater_O3_fire_wood": {
+      "blocked": true
+    },
+    "alternative_route_bypass_P2": {
+      "decisive_sets": [
+        [
+          "P1",
+          "P2"
+        ]
+      ]
+    },
+    "warrant_P4_removal": {
+      "decisive_sets": [
+        [
+          "P3"
+        ],
+        [
+          "P4"
+        ]
+      ]
+    }
+  },
+  "review_status": "NOT_HUMAN_REVIEWED"
+}

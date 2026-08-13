@@ -46,7 +46,21 @@ def _sha256(obj) -> str:
 
 
 def _conclusion_holds(premises_present: set, inference: dict) -> bool:
-    """Deterministic outcome model: conclusion holds iff all premises are present."""
+    """Deterministic outcome model: the conclusion holds iff its support is satisfiable.
+
+    P6 stress-test support (devpath13 P6): the plain AND-rule holds when all premise_ids are present.
+    Harder structures are modeled by optional inference fields:
+      - `alternative_support_sets`: [[...],[...]] — the conclusion holds if ANY full alternative set
+        is present (redundant / P1-OR-P2 independently-sufficient support). When present, it OVERRIDES
+        the plain AND rule.
+      - `defeaters`: if any defeater is `active` (True), the inference is blocked -> conclusion fails
+        even with all premises (a non-monotonic defeater).
+    """
+    if inference.get("active_defeater"):
+        return False  # a defeater blocks the inference (non-monotonic)
+    alt = inference.get("alternative_support_sets")
+    if alt:
+        return any(set(a).issubset(premises_present) for a in alt)
     req = set(inference.get("premise_ids", []))
     return req.issubset(premises_present)
 
@@ -57,8 +71,40 @@ def _minimal_decisive_sets(premise_ids: list[str], inference: dict) -> list[list
     Returns the minimal hitting sets of decisive premises: the smallest premise-set whose absence
     changes the conclusion from LICENSED to UNLICENSED. This IS the crux (perturbation, not
     importance).
+
+    P6 (devpath13): for `alternative_support_sets` (redundant support), the decisive set is the
+    premises OUTSIDE the surviving alternative — i.e. what must be removed to leave no alternative
+    intact. For plain AND support, it is the minimal combo whose removal breaks the AND (handled below).
     """
     all_ids = list(premise_ids)
+    alt = inference.get("alternative_support_sets")
+    if alt:
+        # conclusion holds iff at least one alternative survives; decisive = premises that kill all
+        # alternatives. Minimal decisive set = a hitting set over the alternatives' complements.
+        full_present = set(all_ids)
+        if not _conclusion_holds(full_present, inference):
+            return []
+        decisive = []
+        # single premises whose removal leaves no alternative intact
+        for p in all_ids:
+            if not _conclusion_holds(full_present - {p}, inference):
+                decisive.append([p])
+        if not decisive:
+            # need a combination that removes every alternative's full set
+            from itertools import combinations
+            alt_sets = [set(a) for a in alt]
+            n = 2
+            while n <= len(all_ids) and not decisive:
+                for combo in combinations(all_ids, n):
+                    removed = set(combo)
+                    if not any(removed.isdisjoint(a) for a in alt_sets):
+                        decisive.append(list(combo))
+                n += 1
+        return decisive
+    return _minimal_and_decisive_sets(all_ids, inference)
+
+
+def _minimal_and_decisive_sets(all_ids: list[str], inference: dict) -> list[list[str]]:
     full_present = set(all_ids)
     if not _conclusion_holds(full_present, inference):
         return []  # conclusion doesn't hold even with all premises -> not a crux here
@@ -94,6 +140,12 @@ def compute_cruxes(arguments: list[dict], propositions: list[Proposition]) -> li
     for arg in arguments:
         for inf in arg.get("inferences", []):
             premise_ids = inf.get("premise_ids", [])
+            # P6: mark an active defeater (a defeater with status ACTIVE blocks the inference)
+            active_defeater = any(
+                str(d.get("status", "")).upper() == "ACTIVE"
+                for d in inf.get("defeaters", [])
+                if isinstance(d, dict))
+            inf = {**inf, "active_defeater": active_defeater}
             decisive = _minimal_decisive_sets(premise_ids, inf)
             if not decisive:
                 continue

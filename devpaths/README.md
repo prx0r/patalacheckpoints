@@ -103,6 +103,14 @@ devpath13 ──► A1-CONTINUE-v2: QUALIFY THE SYSTEM, DO NOT EXPAND THE ONTOLO
               reconstruction reference (thesis/premises/opponent/reply/qualification), and the load-bearing
               crux CRUX-IPVV-001 (self-luminosity of the establishing act). Exercises the existing
               reflexion-core stack (SYN-IPVV-REFLEXION-CORE-001).
+
+  P4/P6 VERTICAL-1 proposition + crux stress-test  STATUS: ✅ CLOSED (2026-08-13) — extended the crux
+              engine to model the directive's P6 hard structures: redundant support (P1-OR-P2
+              independently sufficient), jointly-necessary premises, active non-monotonic DEFEATERS, and
+              alternative-route bypass. Verified on the real VERTICAL-1 argument (adhyavasāya): decisive
+              set {P1,P2}; O3 fire-burning-wood defeater blocks the inference (= CRUX-IPVV-001); warrant
+              P4 is load-bearing. Tests in test_crux_engine.py + experiments/vertical1_crux_validation.py
+              (all pass); output benchmarks/v0/review/VERTICAL-1-CRUX-VALIDATION.json.
 ```
 
 ---

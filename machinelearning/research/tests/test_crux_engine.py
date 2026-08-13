@@ -70,6 +70,30 @@ combos = _minimal_decisive_sets(["P1", "P2", "P3"], syn)
 # with _conclusion_holds (all-or-nothing), removing ONE premise flips it, so each single is decisive
 check("all-or-nothing model -> single premises decisive", combos == [["P1"], ["P2"], ["P3"]], combos)
 
+print("\n== P6 stress-test: redundant support, joint necessity, defeaters (devpath13 P6) ==")
+# (a) P1-OR-P2 independently sufficient: redundant support -> decisive set must be the OTHER premise(s)
+or_inf = {"inference_id": "OR", "premise_ids": ["P1", "P2", "P3"],
+          "alternative_support_sets": [["P1"], ["P2"]]}
+or_combos = _minimal_decisive_sets(["P1", "P2", "P3"], or_inf)
+# conclusion holds iff P1 OR P2 present; removing P3 does nothing (redundant), removing BOTH P1+P2 flips it
+check("redundant support: P3 alone is NOT decisive", ["P3"] not in or_combos, or_combos)
+check("redundant support: decisive set requires removing both P1 and P2",
+      ["P1", "P2"] in or_combos, or_combos)
+# (b) jointly-necessary premises that are redundant as a pair (P1+P2 together suffice; neither alone)
+joint_inf = {"inference_id": "JOINT", "premise_ids": ["P1", "P2"],
+             "alternative_support_sets": [["P1", "P2"]]}
+joint_combos = _minimal_decisive_sets(["P1", "P2"], joint_inf)
+# with a single alternative {P1,P2}, removing either one breaks it -> both single are decisive
+check("jointly-necessary: removing either P1 or P2 flips", {"P1"} in {frozenset(c) for c in joint_combos}
+      and {"P2"} in {frozenset(c) for c in joint_combos}, joint_combos)
+# (c) an ACTIVE defeater blocks the inference -> no conclusion, no crux
+defeated_inf = {"inference_id": "DEF", "premise_ids": ["P1", "P2"], "active_defeater": True}
+defeated_combos = _minimal_decisive_sets(["P1", "P2"], defeated_inf)
+check("active defeater blocks inference -> no decisive set (crux)", defeated_combos == [], defeated_combos)
+# (d) an inactive defeater does NOT block
+not_defeated = {"inference_id": "ND", "premise_ids": ["P1", "P2"], "active_defeater": False}
+check("inactive defeater does not block", _minimal_decisive_sets(["P1", "P2"], not_defeated) == [["P1"], ["P2"]])
+
 print("\n== Nyāya-profile wired via the bounded gate ==")
 for a in arguments:
     prof = wire_nyaya_profile(a, gold_nodes)
