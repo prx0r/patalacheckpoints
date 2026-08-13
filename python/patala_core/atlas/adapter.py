@@ -101,7 +101,9 @@ class PostgresBackend:
         if not legacy_map:
             cur.close()
             return {}
-        # fetch all works + their translation_status/verified from authority_evidence payload (ONE query, no N+1)
+        # fetch all works + their translation_status/verified from authority_evidence payload (ONE query, no N+1).
+        # Prefer the row that carries the contract payload (translation_status) so resolver-added evidence
+        # (which may not set the contract fields) doesn't clobber the bibliography contract.
         cur.execute("""
             SELECT w.id, w.canonical_title,
                    ae.evidence_payload, ae.relation
@@ -110,6 +112,7 @@ class PostgresBackend:
                 SELECT evidence_payload, relation FROM authority_evidence ae
                 WHERE ae.subject_type='work' AND ae.subject_id=w.id
                   AND ae.dimension='WORK_IDENTITY'
+                  AND (ae.evidence_payload ? 'translation_status')
                 ORDER BY ae.asserted_at DESC LIMIT 1
             ) ae ON true
         """)

@@ -105,6 +105,7 @@ TIER 3 [DONE]  Compatibility adapter + 254-record bibliography migration (254/25
 TIER 4 [DONE]   OpenAlex-grammar read API (/works /editions /people /etexts /witnesses /passages
                 /search /resolve /context /bundle; filter/search/select/sort/cursor; no N+1).
 TIER 5          One vertical — Brahmayāmala (engineering) / Dviśatikālottara (flagship) → ReviewBundle.
+I3 [DONE]        source resolver slice (resolve_work → multidimensional AuthorityEvidence → Atlas; feeds Agent 1 Atlas NAT).
 TIER 6          [DEFERRED] resolver adapters, ingest, snapshots, hardening.
 ```
 
