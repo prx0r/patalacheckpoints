@@ -90,10 +90,13 @@ STEP 9 — THE MEDIA LAYER + CROSS-TRADITION ENGINE (Vision 09)
 | **Sanskritree specs** (`.../_stack/ipvv/specs/`) | the scholarly factory specs + full onboarding | `THE_COMPANION.md` |
 | **Research-library** (`/root/projects/research-library`) | the essays, the PUSHING method, the comparative work | `pushing/PUSHING_GUIDE.md` + the essays in `recognition/` |
 
-**The three docs every agent MUST read first (in order):**
+**The docs every agent MUST read first (in order):**
 1. **This file** (the vision + progression).
 2. **`docs/INDEX.md`** (the flat canonical reference — the single source of truth per concern).
-3. **`THE_COMPANION.md`** (sanskritree) — the full-system technical onboarding.
+3. **`endgamebuild/INFRA-INVENTORY.md`** — **WHAT EXISTS / WHERE / DON'T REBUILD.** The consolidated
+   map of all built infra (schemas, factory, ML engines, eval plane, external tools, Atlas, API).
+   **Read this before writing code** — if it's listed, extend it, not rebuild it.
+4. **`THE_COMPANION.md`** (sanskritree) — the full-system technical onboarding.
 
 > **Then, to see the whole vision as one zoomable map:** `docs/vision/CORE-BIBLE.md` — one vision
 > chunked into 6 layers (sentence → paragraph → derivation graph → checkpoints → domain lenses →

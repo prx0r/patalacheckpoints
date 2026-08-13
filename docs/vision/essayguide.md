@@ -698,6 +698,7 @@ disconnected systems.
 - Ontology: `docs/ontology/EO-v2.md`, `docs/ontology/` (Essay Object)
 - Build: `devpaths/devpath10.md` (essay compiler), `devpaths/devpath11.md` (education compiler),
   `devpaths/devpath13-a1-continue-v2.md` (P8 whole-essay audit)
+- Inventory (WHAT EXISTS / DON'T REBUILD): `endgamebuild/INFRA-INVENTORY.md`
 - Findings: `data/evaluation/findings/EF-ESSAY-2026-0001.json`
 - VERTICAL-1: `data/published/ipvv/IPVV-VERTICAL-001-SOURCE-DOSSIER.md`
 - Benchmarks: `benchmarks/v0/review/VERTICAL-1-ESSAY-AUDIT.json`,

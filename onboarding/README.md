@@ -28,6 +28,7 @@ to their lane. Read top to bottom; then follow the specialization gate for your 
 | # | Doc | Why |
 |---|---|---|
 | 1 | `../VISION_AND_NAVIGATION.md` | THE vision + 8-step logical progression + navigation across the 3 homes |
+| 1a | `../endgamebuild/INFRA-INVENTORY.md` | **WHAT EXISTS / WHERE / DON'T REBUILD** — the consolidated inventory of all built infra (schemas, factory, ML engines, eval plane, external tools, Atlas, API). Read before writing code; if it's listed, extend not rebuild. |
 | 1b | `../docs/global/GLOBAL-STATE-2026-08-13.md` | **READ THE TIMESTAMPED GLOBAL CHECKPOINT EARLY** — the current-state orientation snapshot (big picture, discipline, architecture, the CURRENT DIRECTION: scholar-corpus foundation S0 + scholar oracle + evaluation plane). Stale by design — a snapshot, later docs supersede it. |
 | 1c | `../docs/vision/INDEX.md` | the full vision arc (Vision 01–13) + foundational strategy + the vision→borrowed-tools map |
 | 1d | `../machinelearning/dualagentvision.md` | the master derivation graph + the two-agent split + CP0–CP12 checkpoint ladder |
