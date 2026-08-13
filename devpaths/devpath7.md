@@ -1,6 +1,7 @@
 # DEVPATH 7 — CANONICAL GRAPH CONTRACT (the Agent 1 × Atlas convergence point)
 
-**Status: ⏳ READY** (next unblocked after devpath1/4/5/6)
+**Status: ✅ CLOSED (2026-08-13)**
+**Commit:** `3a10ed1`
 **Source of truth:** `docs/global/agent1atlas.md` + `docs/vision/atlas/technical-architecture-v1.md`
 **My analysis:** `devpaths/agent1atlas-reaction.md`
 
@@ -60,3 +61,54 @@ ObjectEvent           the append-only event (the ledger)
 - `docs/global/agent1atlas.md` §11–15 (the boundary + six-object contract)
 - `source-evidence/schema/derived_scholarly_object.py` (current, to fix)
 - `machinelearning/research/patala_ml/proposition_layer.py` (my devpath4, to reconcile)
+
+## Work completed
+
+`source-evidence/schema/typed_scholarly_object.py` (new):
+- **§27 fix** — content is a Pydantic **discriminated union** (`PropositionContent`, `CommitmentContent`,
+  `GroundingLinkContent`, `InferenceApplicationContent`, `CruxContent`, `ReviewEventContent`,
+  `ReviewProposalContent`, `AdjudicationContent`), not `dict[str, Any]`. Object union
+  (`PropositionObject`/`CruxObject`/`ReviewEventObject`/`CommitmentObject`) discriminates by `layer`.
+- **§28 fix** — `authority` is a VECTOR (generation/evidence/review/publication) with only derived
+  `display_badge()` + eligibility predicates; no scalar ceiling.
+- **§33** — `CruxContent` records PERTURBATION (what changed → which conclusion), not "LLM says important".
+- **§34** — `ReviewEventContent` is a typed content record (evidence, never mutation).
+- The **six-object convergence contract**: `CanonicalObjectRef`, `CanonicalVersionRef`,
+  `BaseScholarlyObject` (envelope), `AuthorityVector`, `ObjectDependency`, `ObjectEvent` (hashed).
+
+`machinelearning/research/patala_ml/proposition_layer.py` (reconciled):
+- Added `Proposition.to_typed()` → typed `PropositionObject`/`PropositionContent` (Atlas field shape:
+  formulation/subject/scope/modality/explicitness/speaker_ref/support_scope) with vector authority.
+- Backward-compatible `to_dso()`/`emit()` kept.
+
+`source-evidence/schema/test_typed_scholarly_object.py` (new): 26 checks, all pass.
+
+## Acceptance / verification
+
+| Check | Result |
+|---|---|
+| `test_typed_scholarly_object.py` | 26/26 PASS |
+| `test_proposition_layer.py` (reconciled) | PASS |
+| `test_crux_engine.py` (dependent) | PASS |
+| full regression (6 suites) | all PASS |
+
+## Honest note (git hygiene)
+
+The devpath7 commit `3a10ed1` also swept in pre-existing `apps/web/*` (the frontend PoC) and
+`docs/atlas-contracts/frontend-architecture.md` that were sitting untracked in the working tree. These are
+now pushed; rewriting would need a force-push (avoided per discipline). They are valid tracked content
+(the frontend law + a working PoC). A duplicate `docs/global/frontend-architecture.md` (my earlier draft)
+was removed — the canonical frontend law lives in `docs/atlas-contracts/frontend-architecture.md`.
+
+## Boundary
+
+- This module defines the EPISTEMIC contracts (what a Proposition/Crux/ReviewEvent IS). The Atlas owns
+  persistence (Postgres/R2/events). The typed content validates here; the Atlas stores
+  `schema_name`/`schema_version`/validated payload.
+- devpath7 is the last schema-unification task. **devpath8 (synthesis) can now build on a clean typed
+  contract.**
+
+## Exit → next
+
+**devpath8 (SYNTHESIS CORE)**: `ResearchQuestion` / `DebateFrame` / `Position` / `ArgumentSynthesis` —
+the convergence object. See `devpaths/devpath8.md`.

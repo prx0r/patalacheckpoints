@@ -23,7 +23,7 @@ devpath6 ──► G4: Human authority path + first UI               STATUS: ✅
 
 ```
 devpath7  ──► CANONICAL GRAPH CONTRACT (typed DSO + vector authority + reconcile my
-              proposition layer -> Atlas PropositionContent)  STATUS: ⏳ READY
+              proposition layer -> Atlas PropositionContent)  STATUS: ✅ CLOSED (2026-08-13)
 devpath8  ──► SYNTHESIS CORE (ResearchQuestion / DebateFrame / Position / ArgumentSynthesis)
                                                              STATUS: ⏳ READY (after devpath7)
 devpath9  ──► SYNTHESIS NAT (mutation suite)                  STATUS: ⏳ READY (after devpath8)
