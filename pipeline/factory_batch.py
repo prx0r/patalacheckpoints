@@ -109,6 +109,14 @@ def main() -> int:
         for c in r["committed"][:3]:
             print("   ", c["object_id"], c["version"], flush=True)
 
+    # ARGMAP: the lateral guide from committed T1 (reconstruct the argument before L2)
+    if "ARGMAP" in layers:
+        t1_ids = [oid for oid, vs in R._load("T1")["objects"].items()
+                  if not vs[-1].get("superseded") and oid.startswith(a.work)][:a.count]
+        r = _produce_layer("ARGMAP", [{"object_id": o, "input_hash": R.current("T1", o)["input_hash"]}
+                                      for o in t1_ids])
+        print(f"ARGMAP: {len(r['committed'])} committed, {len(r['rejected'])} rejected", flush=True)
+
     # L0: consume committed T1 (or fall back to source verses via the L0 handler)
     if "L0" in layers:
         t1_ids = [oid for oid, vs in R._load("T1")["objects"].items()

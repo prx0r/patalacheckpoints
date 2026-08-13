@@ -126,6 +126,14 @@ try:
 except Exception as e:  # pragma: no cover
     print("T1 worker not wired:", e, file=sys.stderr)
 
+# Wire the ARGUMENT MAP handler (A2-CP3: the lateral guide that unlocks L2). Reconstructs the passage's
+# argument structure from committed T1/L0 before prose is written. Deterministic production gate.
+try:
+    from argument_map_worker import make_argmap_handlers
+    LAYER_HANDLERS["ARGMAP"] = make_argmap_handlers()
+except Exception as e:  # pragma: no cover
+    print("ARGMAP worker not wired:", e, file=sys.stderr)
+
 # Wire the L200 audit compiler (partly deterministic + Task-2 validator).
 try:
     from l200_worker import make_l200_handlers
