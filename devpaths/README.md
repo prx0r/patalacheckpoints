@@ -111,6 +111,13 @@ devpath13 ──► A1-CONTINUE-v2: QUALIFY THE SYSTEM, DO NOT EXPAND THE ONTOLO
               set {P1,P2}; O3 fire-burning-wood defeater blocks the inference (= CRUX-IPVV-001); warrant
               P4 is load-bearing. Tests in test_crux_engine.py + experiments/vertical1_crux_validation.py
               (all pass); output benchmarks/v0/review/VERTICAL-1-CRUX-VALIDATION.json.
+
+  P7 SYNTHESIS-NAT-NATURAL-v1  STATUS: ✅ CLOSED (2026-08-13) — audited the real VERTICAL-1 synthesis
+              (SYN-IPVV-REFLEXION-CORE-001) against the dossier on the P7 natural metrics: catastrophic
+              RIVAL_AS_CONSENSUS=~0, OPEN_AS_RESOLVED=~0; POSITION_RECOVERY (rival+śaiva), ARGUMENT_
+              COVERAGE, CRUX_RECALL, SCOPE_FIDELITY (honest does-not-establish boundary), and
+              COUNTEREVIDENCE_RECALL (Buddhist defeater preserved) all PASS.
+              → experiments/vertical1_synthesis_natural.py → benchmarks/v0/review/VERTICAL-1-SYNTHESIS-NAT-NATURAL.json
 ```
 
 ---

@@ -1,0 +1,32 @@
+{
+  "object_kind": "SYNTHESIS_NAT_NATURAL",
+  "bench": "PĀṬALA-SYNTHESIS-NAT-NATURAL-v1",
+  "synthesis": "SYN-IPVV-REFLEXION-CORE-001",
+  "metrics": {
+    "RIVAL_AS_CONSENSUS": [],
+    "OPEN_AS_RESOLVED": [],
+    "POSITION_RECOVERY": {
+      "rival": true,
+      "saiva": true
+    },
+    "ARGUMENT_COVERAGE": [
+      "argument",
+      "inference",
+      "premise",
+      "warrant",
+      "position"
+    ],
+    "CRUX_RECALL": true,
+    "SCOPE_FIDELITY": {
+      "honest": true,
+      "does_not_establish": [
+        "the universal Self (one Lord)",
+        "all manifestation is one consciousness",
+        "consciousness is fundamental simpliciter"
+      ]
+    },
+    "COUNTEREVIDENCE_RECALL": true
+  },
+  "verdict": "PASS",
+  "review_status": "NOT_HUMAN_REVIEWED"
+}
