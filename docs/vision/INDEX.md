@@ -52,6 +52,8 @@ New here? Do not read the whole surface top-down. Follow the arc:
     `docs/vision/vision-14-manuscript-to-scholarly-asset.md` (upload → label → route → process → expose) +
     `docs/vision/vision-15-patala-atlas-sanskrit-research-graph.md` (the Atlas = "OpenAlex for Sanskrit") +
     `openpatala/README.md` (the build folder + imported OpenAlex reference docs) +
+    `docs/vision/atlas/technical-architecture-v1.md` (the authoritative Architecture v1: the Pāṭala
+    Authority Graph + full SQL/Pydantic schema + 3 P0 corrections) +
     `docs/vision/atlas/atlas-engineering-blueprint.md` (Postgres=R2=event-log storage; I1–I6) +
     `docs/vision/atlas/atlas-cloudflare-edge-layer.md` (Neon/Postgres canonical, Workers API + Hyperdrive +
     R2, factory self-hosted) + `docs/vision/atlas/atlas-performance.md` (compute-on-write doctrine;

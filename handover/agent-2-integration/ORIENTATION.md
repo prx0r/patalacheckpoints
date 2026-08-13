@@ -81,11 +81,12 @@ locked; see `handover/agent-2-integration/CANONICAL-LAYER-STACK.md`).
 **The Atlas forward plan (2026-08-13+).** Agent 2's next cycle is **building the Pāṭala Atlas foundation
 properly first** (do B, then one vertical), not translating more works. Read in this order:
 1. **`docs/AGENT2-ATLAS-FOUNDATION-PLAN.md`** — the active plan (Postgres Atlas I1 + R2 I2 + API I4, then a vertical).
-2. **`openpatala/README.md`** — the "OpenAlex for Sanskrit" build folder (imported OpenAlex reference docs).
-3. **`docs/vision/vision-15-patala-atlas-sanskrit-research-graph.md`** — the strategy.
-4. **`docs/vision/atlas/atlas-engineering-blueprint.md`** + **`atlas-cloudflare-edge-layer.md`** + **`atlas-performance.md`** — the build blueprint, the Cloudflare edge layer, and the performance doctrine ("compute on write, not read; exact versions are static; one agent question = one request; Astro islands; Rust only for hot kernels").
-5. **`docs/vision/source-resolution/source-resolver-design.md`** — the reconciliation authority stack.
-6. **`docs/vision/functionality/research/2026-08-12/06_ATLAS/RESEARCH_AND_BUILD.md`** — the endgame-build project.
+2. **`docs/vision/atlas/technical-architecture-v1.md`** — **the authoritative Technical Architecture v1** (freeze this): the Pāṭala Authority Graph (Atlas = the surface over it), the full SQL schema (work/edition/witness/surrogate/etext/asset/authority_evidence/...), Pydantic discriminated epistemic objects, the 3 P0 schema corrections (no `dict[str,Any]` content; no single scalar authority rank — use an `AuthorityVector` of 4 axes; no universal review ladder — education states must not apply to Propositions), the exact stack (Neon/Postgres 17 + R2 + Workers/Hono + Astro + Python factory + Rust/Vidyut kernels). **Read before writing any schema.**
+3. **`openpatala/README.md`** — the "OpenAlex for Sanskrit" build folder (imported OpenAlex reference docs).
+4. **`docs/vision/vision-15-patala-atlas-sanskrit-research-graph.md`** — the strategy.
+5. **`docs/vision/atlas/atlas-engineering-blueprint.md`** + **`atlas-cloudflare-edge-layer.md`** + **`atlas-performance.md`** — the build blueprint, the Cloudflare edge layer, and the performance doctrine ("compute on write, not read; exact versions are static; one agent question = one request; Astro islands; Rust only for hot kernels").
+6. **`docs/vision/source-resolution/source-resolver-design.md`** — the reconciliation authority stack.
+7. **`docs/vision/functionality/research/2026-08-12/06_ATLAS/RESEARCH_AND_BUILD.md`** — the endgame-build project.
 
 Key facts: DB is **Postgres** (canonical; Neon+Hyperdrive in prod); **D1/DurableObjects are NOT** the
 Atlas DB; Cloudflare is the **global delivery layer** only; the factory stays **self-hosted** behind it;
