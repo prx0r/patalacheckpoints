@@ -121,18 +121,31 @@ hard-coded machine paths.
 ## PRIORITY FIXES (ranked)
 
 1. **Reconcile IPVV passage ids** (published store ↔ jsonl corpus) so /resolve + /context serve the richest IPVV data.
-2. **Write the rich scholarship graph to Postgres** (the ATLAS-10 backfill → the 22-table schema; add publication/scholarly_claim if needed) — closes the thin-vs-rich gap.
-3. **Delete the stale `source-evidence/schema/schema/` duplicate dir** (silent schema drift danger).
-4. **Wire the high layers (THEME/ESSAY/EDUCATION) into the production factory loop** + give ARGUMENT/SYNTHESIS real workers.
-5. **Repair the live-registry integrity debt** (factory_certificate: 789 bad hashes, 119 conflicts) or re-certify cleanly.
-6. **Refresh the /api index** + add the missing education route or drop it from the expected surface.
-7. **Resolve the L1/L1L2 duplication** (add to the canonical DAG or remove one).
-8. **Standardize the translation-status field** casing + unify the sivaqueue intake state model.
-9. **Portability**: move hard-coded `/mnt/...` + `/tmp` paths to env-config.
+2. **Write the rich scholarship graph to Postgres** (the ATLAS-10 backfill → the 22-table schema; add publication/scholarly_claim if needed) — ✅ **FIXED** (`atlas_persist_rich.py`: 3 editions, 8 etexts, 6 scholarly_work, 9 related persisted).
+3. **Delete the stale `source-evidence/schema/schema/` duplicate dir** — ✅ **FIXED** (deleted; canonical `derived_scholarly_object` is the one imported).
+4. **Wire the high layers (THEME/ESSAY/EDUCATION) into the production factory loop** + give ARGUMENT/SYNTHESIS real workers — ⚠️ **PARTIAL**: THEME added to the scheduler `LAYER_ORDER`; ARGUMENT/SYNTHESIS still no worker; the live `factory_loop.sh` still runs only T1..C1 (needs a deliberate production rewire).
+5. **Repair the live-registry integrity debt** (factory_certificate: 789 bad hashes, 119 conflicts) — ⚠️ OPEN (live-data debt; the cert logic is correct).
+6. **Refresh the /api index** + add the missing education route — ✅ **FIXED** (`/api/education` added; `/api` index expanded to ~15 more endpoints).
+7. **Resolve the L1/L1L2 duplication** — ⚠️ OPEN (L2 canonical; L1L2 AI-worker fallback read by l200/c1; bare L1 legacy side-path not in DAG).
+8. **Standardize the translation-status field** casing + unify the sivaqueue intake state model — ⚠️ OPEN.
+9. **Portability**: move hard-coded `/mnt/...` + `/tmp` paths to env-config — ✅ **FIXED** for Atlas adapter/resolver + ML c1corpus/vertical (`PATALA_ROOT`/`PATALA_DB_URL`/`PATALA_C1_DIR`/`PATALA_IPVV_DIR`/`PATALA_PROOF_DIR`); still hard-coded in `extract.py`, `concordance/route.ts`, `reingest_grobid.py`.
 
-## OPEN (owner decisions)
-- Repo history rewrite (in-copyright PDFs still in prior git history — destructive `filter-repo`).
-- The modern-paper external adapters (Crossref/OpenAlex/OpenCitations) have ~0% coverage for Sanskrit works (measured) — don't invest further; the local scholar corpus + fingerprints are the path.
+## FIXED IN THIS AUDIT (commits)
+
+- `source-evidence/schema/schema/` deleted (schema drift).
+- `atlas_persist_rich.py` — rich scholarship graph → Postgres (thin-vs-rich gap closed).
+- `/api/education` route + expanded `/api` index.
+- Env-config machine paths (Atlas + c1corpus + vertical).
+- THEME added to the scheduler LAYER_ORDER.
+
+## OPEN / OWNER DECISIONS
+- ARGUMENT/SYNTHESIS real workers + wiring THEME/ESSAY/EDUCATION into the live factory loop.
+- Live-registry integrity debt (789 bad hashes).
+- L1/L1L2 duplication.
+- translation-status casing + sivaqueue intake-state unification.
+- Remaining hard-coded paths (extract.py, concordance route, reingest_grobid).
+- Repo history rewrite (in-copyright PDFs — destructive filter-repo).
+- Modern-paper external adapters ~0% coverage for Sanskrit (don't invest further).
 
 ---
 
