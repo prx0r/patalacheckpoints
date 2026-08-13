@@ -8,6 +8,11 @@ source for the integration lane.*
 > canonical long-horizon mission: CP0–CP10 ladder, checkpoint doctrine (NOT_BUILT→BUILT→VALIDATED→
 > AUTONOMOUSLY_PROVEN), hard gates, anti-drift rules. Each checkpoint = a working system property, not a
 > file. Work the ladder until terminal CP9 (full unattended SOURCE→C1) or a genuine blocker.
+> **RAW→ENGLISH TRANSLATION (THE ACTUAL DELIVERABLE): Hermes (`hermes -z` via `pipeline/model.py::chat`)
+> translates raw Sanskrit → English, driving the queue. Driver = `pipeline/auto_translate_raw.py` +
+> `pipeline/batch_translate.py`. See `PROGRESS-AUTONOMOUS-2026-08-12.md` §"RAW → ENGLISH TRANSLATION VIA
+> HERMES". Output = `data/corpus/downloads/translations/<work>.jsonl`, MACHINE_PROPOSED, idempotent by
+> source_sha256. Run detached (`setsid nohup`), never foreground model calls.**
 > **LEADING CHECKPOINT DOC: `handover/CHECKPOINTS.md`** (the shared 5-checkpoint plan + 7 canonical
 > contracts) + **`handover/agent-2-integration/CHECKPOINTS-INTEGRATION.md`** (this lane's goal:
 > CP1 PhilologicalProof). Read those before the current-state below.

@@ -66,6 +66,52 @@ adapter/canary invocation should be backgrounded and the log tailed, not awaited
 
 ---
 
+## UPDATE (2026-08-13) — RAW → ENGLISH TRANSLATION VIA HERMES (the actual deliverable)
+
+**THE POINT OF THE FACTORY — HERMES TRANSLATES RAW SANSKRIT → ENGLISH, DRIVING THE QUEUE.**
+
+Do NOT rebuild this. The mechanism is: **`pipeline/model.py::chat()` shells out to `hermes -z`**
+(see `handover/hermes/PATALA-SETUP.md`, `BACKEND-MODEL.md`). `pipeline/batch_translate.py` uses that
+`chat()` (model.py → hermes -z) to translate a whole batch of raw Sanskrit verses in ONE call.
+
+### The exact working loop (verified 2026-08-13)
+```
+1. driver = pipeline/auto_translate_raw.py          ← iterate the RAW_SANSKRIT queue (ledger)
+2. per work: load_raw_source → split_verses → bounded batches (default 6)
+3. engine   = batch_translate.build_entries + translate_batch
+             → translate_batch calls model.chat → hermes -z (the real Hermes agent, skill-aware)
+             → returns per-verse { tokens, close (English), uncertain }
+4. write    data/corpus/downloads/translations/<work>.jsonl
+             {sanskrit, translation, status: MACHINE_PROPOSED|OPEN, source_sha256, ts}
+5. next passage → next work (idempotent: source_sha256 skip)
+```
+
+**VERIFIED on kramasadbhava:** `kālī tu bhairavārūḍhā mahākālakalāśinī` → Hermes produced the full T1
+working translation with grammar `[G]`, reconstruction `[R]`, anchor `[A]`, parallel `[P]`, Krama-doctrine
+term handling (kalā = technical, not "form"), and `[X:GRAM]/[X:DOCT]` flags — via `hermes -z` directly
+(`/tmp/translate_real.sh`). Also verified through the `auto_translate_raw.py` queue loop (4 verses → 4
+MACHINE_PROPOSED English translations).
+
+### How to run the autonomous translation (unattended, hours)
+```bash
+# the whole RAW_SANSKRIT queue:
+setsid nohup python3 pipeline/auto_translate_raw.py > /tmp/opencode/auto-translate.log 2>&1 < /dev/null &
+# one work:
+setsid nohup python3 pipeline/auto_translate_raw.py --works kramasadbhava > /tmp/opencode/at.log 2>&1 < /dev/null &
+```
+- **Do NOT run model calls in the foreground** (STALLS-PITFALLS: `hermes -z` is 8–48s and can hang).
+  Use the detached runner; check the output file later, never babysit the PID.
+
+### The supporting layers (already built, off the translation critical path)
+- `pipeline/raw_l0.py` + `validate_l0_spec.py` — deterministic L0-A floor (lossless, no model; gloss optional).
+- `pipeline/autonomy.py` — the controller (state machine, flock, idempotency, supersession).
+- `skills/translate-work|translate-passage|write-commentary|patala-translate` — the skills Hermes runs.
+- The deeper scholarly argument construction happens **inside Hermes** (T1→R1→T2→R2→T3→C1), not in a
+  python layer.
+
+---
+
+
 ## UPDATE (2026-08-13) — THE RAW-L0 BLOCKER IS CLOSED (checkpoint CP1/CP2)
 
 ### The validator fix (the exact blocker, now resolved)
