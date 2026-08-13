@@ -64,8 +64,18 @@ Production reference: `handover/agent-2-integration/CURRENT-STATE.md`. Roadmap: 
 - L200 candidates per `EVAL-CONTRACT-L200-EXPORT.md`
 
 ## LOOSE THREADS / NOTES
-- **Era B (corpus compiler)** is next: backlog scheduler, multi-work, rate limiting, failure/retry
-  queues, progress dashboard, unattended bulk translation. The fresh-work run is slow under the live
-  runner's API contention — a per-passage timeout/retry scheduler is the key Era B build.
+- **Era B (corpus compiler) in progress:**
+  - ✅ **A2-11 durable failure/retry queue** (`factory_batch` + `test_failure_queue`): a model failure is
+    recorded as retryable, neighbors are isolated, retries are idempotent + clear the queue (no infinite
+    retry). This is what prevents a fresh-work run from wedging on one hung model call.
+  - ✅ **A2-12 corpus progress dashboard** (`factory_status.py` + `test_factory_status`): the per-work
+    operational view (SOURCE/T1/ARGMAP/L0/L2/L200/C1 done-of + stale/retryable/source_blocked), read-only
+    from the registry — the "operational truth."
+  - ▶ Next: **A2-8/A2-9 backlog scheduler + multi-work execution**, A2-10 rate limiting, A2-13 unattended
+    bulk translation.
 - Semantic correctness = Agent 1's evals lane (AlignScore/NLI), NOT Agent 2's.
 - Live runner (auto_translate_raw.py, pid 362890) still translating — untouched.
+
+## THIS SESSION'S COMMITS (Era B)
+- `d84ea03` A2-11 durable failure/retry queue + isolation
+- `8aee600` A2-12 corpus progress dashboard
