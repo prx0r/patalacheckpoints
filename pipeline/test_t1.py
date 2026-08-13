@@ -72,6 +72,34 @@ def main() -> int:
     ok &= t("abstention (empty gloss) is valid canonical T1 (not fabricated)",
             TW.t1_validator("T1", aprop)[0] is True)
 
+    # G2 root-cause regression: retroflex ṇ must NOT split a lexical unit (gaṇeśaḥ, kāraṇam, śaktijanmā).
+    # The old IAST_TOKEN char class omitted 'ṇ' (0x1e47), over-splitting gaṇeśaḥ -> ga + eśaḥ.
+    buggy = "dantyāsyo'yaṃ haṭhādyaḥ śamayatu duritaṃ śaktijanmā gaṇeśaḥ || 1 ||"
+    segs = TW._segment(buggy)
+    surfaces = [s["surface"] for s in segs]
+    ok &= t("gaṇeśaḥ stays one lexical unit (G2 EF-T1-0003 fix)",
+            "gaṇeśaḥ" in surfaces and "ga" not in surfaces,
+            f"{[s for s in surfaces if 'ga' in s or 'eśa' in s]}")
+    ok &= t("śaktijanmā stays whole (G2 EF-T1-0003)",
+            "śaktijanmā" in surfaces, surfaces)
+    kara = "kāraṇam bhavati"  # kāra+am over-split (EF-T1-0002)
+    ok &= t("kāraṇam stays whole (G2 EF-T1-0002)",
+            "kāraṇam" in [s["surface"] for s in TW._segment(kara)])
+
+    # G2 root-cause regression: vṛttimīśaḥ compound mis-gloss (EF-T1-2026-0004). The model strung
+    # vṛtti+īśa literally as "the-mental-modification-the-Lord"; the worker fix parses it as a
+    # sensible tatpuruṣa compound gloss.
+    mangled = {"tokens": {"vṛttimīśaḥ": {"gloss": "the-mental-modification-the-Lord", "quoted": False}}}
+    vseg = TW._segment("sanmārgālokanāya vyapanayatu sa vastāmasīṃ vṛttimīśaḥ || 2 ||")
+    vout = TW._assemble_t1("sanmārgālokanāya vyapanayatu sa vastāmasīṃ vṛttimīśaḥ || 2 ||",
+                           vseg, mangled["tokens"])
+    vtok = next((tk for tk in vout if tk["surface"] == "vṛttimīśaḥ"), None)
+    ok &= t("vṛttimīśaḥ compound gloss corrected (G2 EF-T1-0004)",
+            vtok is not None and vtok["gloss"] == "the Lord who is the mental modification",
+            vtok["gloss"] if vtok else "no token")
+    ok &= t("vṛttimīśaḥ correction keeps canonical [and]- form",
+            vtok is not None and "[and]-the Lord who is the mental modification (vṛttimīśaḥ)" in vtok["form"])
+
     print("\n" + ("T1 ALL PASS" if ok else "T1 SOME FAIL"))
     return 0 if ok else 1
 

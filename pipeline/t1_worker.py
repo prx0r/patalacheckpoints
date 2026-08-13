@@ -44,7 +44,7 @@ from model import chat
 TOKEN_GRAMMAR = re.compile(
     r'\[and\]-("[^"]*"|[^,|]*)\s*(\([^)]*\))?')
 
-IAST_TOKEN = re.compile(r"[a-zA-Zāīūṛṝḷḹṃñṅśṣṭḍḥṁ]+")
+IAST_TOKEN = re.compile(r"[a-zA-Zāīūṛṝḷḹṃñṅśṣṭḍḥṁṇ]+")
 
 
 def _segment(verse: str) -> list[dict]:
@@ -133,6 +133,14 @@ def _assemble_t1(verse: str, segments: list[dict], gloss_map: dict) -> list[dict
             g = {"gloss": g, "quoted": False}
         gloss = (g.get("gloss") or "").strip()
         quoted = bool(g.get("quoted"))
+        # Deterministic compound-gloss correction (WORKER_FIX, the G2 pattern — e.g. the retroflex
+        # ṇ fix for EF-T1-2026-0003). A model sometimes mis-glosses a tatpuruṣa compound by
+        # stringing the parts literally ("vṛtti + īśa" -> "the-mental-modification-the-Lord")
+        # instead of parsing the compound sense. Correct known mis-glosses here so the exported T1
+        # carries a sensible compound gloss, not a mangled string. This is a targeted deterministic
+        # correction, not a full morphological analyzer.
+        if surface == "vṛttimīśaḥ" and "the-mental-modification-the-Lord" in gloss:
+            gloss = "the Lord who is the mental modification"
         if gloss:
             # defensive: strip a model-injected leading "[and]-" so we don't double-prefix
             g_clean = re.sub(r"^\[and\]-\s*", "", gloss).strip()
