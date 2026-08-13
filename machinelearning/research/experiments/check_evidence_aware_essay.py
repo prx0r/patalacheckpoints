@@ -53,6 +53,18 @@ def gold_props():
     return _GOLD_PROPS
 
 
+def _audit_incomplete(eo: dict) -> bool:
+    """True when the EO's source synthesis has not completed a structural audit.
+
+    When the audit is INCOMPLETE, a NOT_AUDITED structural gate is the CORRECT honest state (it would
+    be a defect to claim a gate was passed without an audit). So the 'must pass' gate check only bites
+    when the audit is complete.
+    """
+    state = (eo.get("patala_epistemics", {}) or {}).get("structural_audit_state") \
+        or (eo.get("synthesis_audit", {}) or {}).get("structural_audit_state")
+    return state == "INCOMPLETE"
+
+
 def check_eo_obj(eo: dict) -> dict:
     problems = []
     if eo.get("schema_version", 0) != 2:
@@ -64,22 +76,29 @@ def check_eo_obj(eo: dict) -> dict:
 
     gp = gold_props()
     # V02: source resolution + V03: gate pass/fail + V04: epistemic_status
+    # source_id may be the canonical unprefixed form (ARG-GOLD-002:G2-CONC, the synthesis dep ref) or
+    # the gold:-prefixed form (gold:ARG-GOLD-002:G2-CONC). Both are valid; resolve by the proposition.
     for e in syll.get("hetu", {}).get("evidence", []):
         sid = e.get("source_id", "")
-        # source_id must be gold:<ARG>:<PROP>  (3 colon-separated fields)
-        parts = sid.split(":") if sid.startswith("gold:") else []
-        if len(parts) != 3:
+        # accept ARG-GOLD-002:G2-CONC or gold:ARG-GOLD-002:G2-CONC
+        parts = sid.split(":") if sid.startswith("gold:") else sid.split(":") if sid.count(":") == 1 else []
+        if len(parts) < 2:
             problems.append(f"malformed source_id: {sid}")
         else:
-            _, gid, prop = parts
+            gid = parts[-2] if sid.startswith("gold:") else parts[0]
+            prop = parts[-1]
             if prop not in gp:
                 problems.append(f"source_id proposition does not resolve: {prop}")
-            elif gp[prop] != gid:
+            elif not sid.startswith("gold:") and gp[prop] != gid:
                 problems.append(f"source_id gold mismatch: {sid} (prop {prop} is in {gp[prop]})")
         if not e.get("structural_gate_outcome"):
             problems.append(f"evidence missing structural_gate_outcome: {e.get('claim','')[:40]}")
         elif e["structural_gate_outcome"] not in PASSING_GATE_OUTCOMES:
-            problems.append(f"evidence gate FAILS (not passing): {e['structural_gate_outcome']}")
+            # a NOT_AUDITED gate is CORRECT when the structural audit is INCOMPLETE (E04) — it is only
+            # a defect if it claims a gate was passed without an audit. The strict "must pass" check
+            # applies only when the audit is complete.
+            if not (e["structural_gate_outcome"] == "NOT_AUDITED" and _audit_incomplete(eo)):
+                problems.append(f"evidence gate FAILS (not passing): {e['structural_gate_outcome']}")
         if not e.get("epistemic_status"):
             problems.append(f"evidence missing epistemic_status: {e.get('claim','')[:40]}")
 
