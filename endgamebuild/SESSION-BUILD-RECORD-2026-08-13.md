@@ -96,13 +96,33 @@ The directive: QUALIFY the system, do not expand the ontology. Force the existin
 | `27bdaaf` | **#10 Adapter coverage** — measured: modern-paper adapters (Crossref/OpenAlex/OpenCitations) ~0% coverage for Sanskrit tantric works; name-normalization 5/5. The local scholar corpus + fingerprints are the real path. |
 | `fa6033b` | **Factory T1 via agentic hermes** — switched the T1 batch to `chat_agentic` (file access) not blind `-z` + robust batch JSON parse. |
 
+## Phase 10 — FULL PROJECT AUDIT (5 parallel subsystems)
+
+| Commit | Deliverable |
+|---|---|
+| `PROJECT-AUDIT.md` | The consolidated read-only audit of all 5 subsystems (factory, ML/research, source-evidence/external-tools, Atlas, app/API/MCP/data). Core is healthy + green; real findings: unwired high layers, IPVV passage-id mismatch, thin-vs-rich Atlas, stale schema duplicate, live-registry debt, L1/L1L2 duplication, hard-coded paths. |
+| audit-fix pass | Deleted the stale `schema/schema/` duplicate; `atlas_persist_rich.py` wrote the rich scholarship graph to Postgres (3 editions/8 etexts/6 scholarly_work/9 related); added `/api/education` + refreshed the `/api` index; env-config'd machine paths; added THEME to scheduler (later reverted per P4). |
+
+## Phase 11 — CANONICAL-GRAPH-1 (make one graph genuinely canonical; no new features)
+
+| Commit | Deliverable |
+|---|---|
+| `6dcb5d3` | **P0 PassageIdentity crosswalk** — IPVV id reconciliation: published (`pt:passage:ipvv:chunk*.md`) + segmented (`tantra:text:...:V2-A:<slug>`) ids now resolve to ONE canonical via the V-tag. 49/49 + 231/231 resolve (invariant holds); published-only V1 chunks resolve honestly to themselves. |
+| `12bb100` | **P1 REGISTRY-FORENSICS-v1** — read-only classifier (no mutation): 789 bad parents = 723 MISSING_HISTORICAL_OBJECT (orphaned L0), 66 MISSING_PARENT, 119 WRONG_HASH_COMPUTATION conflicts, 521 duplicates, 6 legacy placeholders. Fix-by-class recorded. |
+| `da6b31e` | **P2 L2 canonicalization / L1 retirement** — L2 is the ONE canonical contract; L1L2 = producer impl emitting L2-shaped; L1 = RETIRED. Decision doc, no factory change. |
+| `738e66c` | **P4 on-demand projections** — reverted THEME from LAYER_ORDER (lateral index, not epistemic parent); THEME/ESSAY/EDUCATION stay on-demand, not automatic. |
+| `1f6bfa0` | **P7 TEST-HYGIENE** — cleared the 2 stale ML tests (evidence-aware essay validator aligned to unprefixed refs + NOT_AUDITED-when-incomplete; vertical generates deterministic proof fixture). ML suite 39/39. |
+| `EF-ARGMAP-2026-0001` | **P6** — froze the real V3M unsupported-inference live defect as an EvaluationFinding. |
+| `8d7de32` | **P3 real ARGUMENT + SYNTHESIS workers** — replaced the generic_generator stub: ARGUMENT derives propositions+cruxes from eligible ARGMAP (hard gate: ARGMAP eligible + traceable + no unsupported bridge, else DEPENDENCY_BLOCKED); SYNTHESIS builds ArgumentSynthesis from Arguments+Cruxes (never resolves open disputes). Wired into LAYER_HANDLERS. |
+| factory-T1 | Parallel factory commits (0c83f11/d0d0334/8070e5c/8f6b921): T1 batch via file prompts + persistent per-work hermes sessions — reliable 50-verse batches. |
+
 ---
 
 ## Session totals
 
-- **66 commits**, all pushed to `origin/agent2`.
-- Built: 5 NAT/bench evaluators + 6 external-tool adapters + the reconciliation-engine layer (ExternalRecord/EntityResolution/ManuscriptGold/Fingerprints) + the IPVV pilot (real argument recovery proven) + the ATLAS-100 pipeline (backfill/scorecard/scholarship/QA/INCEpTION) + the Pāṭala Thesis.
-- Fixed: registry concurrency, the resolver publication-gate inflation bug, the essay traceability gap, the Hermes `-z`-vs-agentic bug.
+- **~76 commits**, all pushed to `origin/agent2`.
+- Built: 5 NAT/bench evaluators + 6 external-tool adapters + the reconciliation-engine layer (ExternalRecord/EntityResolution/ManuscriptGold/Fingerprints) + the IPVV pilot (real argument recovery proven) + the ATLAS-100 pipeline (backfill/scorecard/scholarship/QA/INCEpTION) + the Pāṭala Thesis + the full project audit + CANONICAL-GRAPH-1 (passage identity, registry forensics, L2 canonicalization, on-demand projections, ARGUMENT/SYNTHESIS workers, test hygiene).
+- Fixed: registry concurrency, the resolver publication-gate inflation bug, the essay traceability gap, the Hermes `-z`-vs-agentic bug, the stale schema duplicate, the thin-vs-rich Atlas gap (rich graph → Postgres).
 - Security: removed 9 in-copyright PDFs from the public repo.
 
 ## Open review items (carried forward)
@@ -110,3 +130,16 @@ The directive: QUALIFY the system, do not expand the ontology. Force the existin
 1. ~~Hermes model-config~~ — FIXED (`chat_agentic`, agentic path).
 2. Atlas bibliography thin — the ATLAS-10 backfill pipeline now fills it from `audited.ts` (ongoing: scale to ATLAS-100).
 3. Repo history rewrite (owner decision, destructive).
+
+## CANONICAL-GRAPH-1 exit-criteria status (P8 in progress)
+
+- [x] all IPVV passage aliases resolve canonically (P0: 49/49 + 231/231)
+- [x] registry bad-parent hashes classified (P1, read-only; repair deferred — no factory mutation)
+- [x] one canonical L2 production path (P2 decision)
+- [x] ARGUMENT real worker (P3)
+- [x] SYNTHESIS real worker (P3)
+- [x] no generic fallback for epistemic layers (P3)
+- [x] V3M real inference defect frozen (P6, EF-ARGMAP-2026-0001)
+- [ ] one real IPVV passage traverses Source→…→C1→Proposition→Argument→Crux→Synthesis (P8 — whole_chain_proof script in progress)
+- [ ] same object accessible through API/MCP (P8 — the PassageIdentity crosswalk enables it; the API route wiring is next)
+- [ ] exact upstream + downstream trace works (P8)
