@@ -159,28 +159,16 @@ def scheduler_pass(works: list[str], layers: list[str], per_layer: int = 2,
     # deterministic jobs are free (A2-13b)
     deterministic = [j for j in jobs if j["layer"] not in MODEL_LAYERS]
     model = [j for j in jobs if j["layer"] in MODEL_LAYERS]
-    # model ranking: round-robin across works (in TARGET-PRIORITY order, lower priority first) so the
-    # next-best targets get budget first while no single work monopolizes. Prefer ARGMAP/T1 (unlock more).
+    # model ranking: ONE WORK AT A TIME, in TARGET-PRIORITY order (lower priority first). Process the
+    # highest-priority work's eligible model jobs first, then the next work. This finishes a work
+    # instead of round-robining across 20 (better per-work context consistency + clear completion).
     from collections import defaultdict
     by_work = defaultdict(list)
     for j in model:
         by_work[j["object_id"].split(":")[0]].append(j)
     ranked_model = []
-    widx = 0
-    work_names = _rank_works(by_work)
-    while by_work:
-        if not work_names:
-            break
-        w = work_names[widx % len(work_names)]
-        if w in by_work and by_work[w]:
-            ranked_model.append(by_work[w].pop(0))
-            widx += 1
-        elif w in by_work and not by_work[w]:
-            del by_work[w]
-            work_names = _rank_works(by_work)
-            widx = 0
-        else:
-            widx += 1
+    for w in _rank_works(by_work):
+        ranked_model.extend(by_work[w])
 
     committed, retryable, rejected = [], [], []
     model_calls = 0
