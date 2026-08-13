@@ -61,30 +61,35 @@ those first.*
 
 > **Where we are (2026-08-13, end of session):** **Era A (Factory Completion) is DONE.** All six canonical
 > layers (T1/L0/ARGMAP/L2/L200/C1) are AUTONOMOUSLY_PRODUCIBLE and **verified against the REAL IPVV
-> exemplars** (the `test_*_ipvv.py` suite). **Era B (Corpus Compiler) is underway**: A2-11 (durable
-> failure/retry queue) and A2-12 (corpus progress dashboard) are DONE. **The next frontier is A2-8/A2-9
-> (backlog scheduler + multi-work execution)** — the controller that advances all works through the
-> corpus automatically.
+> exemplars** (the `test_*_ipvv.py` suite). **Era B (Corpus Compiler) is DONE** — the DAG scheduler
+> (A2-8/9), rate limiting (A2-10), durable append-only failure/retry queue (A2-11), progress dashboard
+> (A2-12), and bulk certificate (A2-13) are built + tested, and the overnight loop is live.
+> **Era C (Rebuild Engine) is STARTED** — supersession propagation + targeted regeneration
+> (`factory_rebuild.py`) + the critical `object_registry.current()` fix.
 
 | Asset | Status | Real? |
 |---|---|---|
 | **Controller shells** (`autonomy.py`) | all layers have handlers + layer-specific validators; T1 + ARGMAP wired | ✅ REAL |
 | **T1 worker** (`t1_worker.py`) | canonical `[and]-GLOSS (IAST)`, verified vs IPVV gold, Agent-1 evaluated (gloss_accuracy 1.000) | ✅ REAL (A2-CP1) |
-| **L0 worker** (`raw_l0.py`) | deterministic floor, verified vs IPVV l0 exemplar (P0 lossless + token coverage) | ✅ REAL (A2-CP2) |
-| **ARGMAP worker** (`argument_map_worker.py`) | lateral guide, verified vs pilot_V2O_ARGUMENT_MAP (6/8 gold claims) | ✅ REAL (A2-CP3) |
+| **L0 worker** (`raw_l0.py`) | deterministic floor, verified vs IPVV l0 exemplar | ✅ REAL (A2-CP2) |
+| **ARGMAP worker** (`argument_map_worker.py`) | lateral guide, verified vs pilot_V2O_ARGUMENT_MAP | ✅ REAL (A2-CP3) |
 | **L2 worker** (`l1_l2_translate.py`) | readable prose, verified vs pilot_V2O_L2_read | ✅ REAL (A2-CP4) |
-| **L200 worker** (`l200_worker.py`) | constrained compiler, verified vs l200/V2O audit (MT taxonomy) | ✅ REAL (A2-CP5) |
+| **L200 worker** (`l200_worker.py`) | constrained compiler, verified vs l200/V2O audit | ✅ REAL (A2-CP5) |
 | **C1 worker** (`c1_worker.py`) | commentary, verified vs c1/read/V2O | ✅ REAL (A2-CP6) |
-| **Batch factory** (`factory_batch.py`) | SOURCE→C1 batch; registers SOURCE; A2-11 failure/retry queue + isolation | ✅ REAL |
-| **Progress dashboard** (`factory_status.py`) | per-work operational view (SOURCE/T1/.../C1 + stale/retryable) | ✅ REAL (A2-12) |
-| **THEME/ESSAY/EDUCATION** | wired (structural) — NOT Era-A targets (wait for Agent 1 contracts) | ⚠️ deferred |
+| **DAG scheduler** (`factory_scheduler.py`) | all eligible (object,layer) jobs; free-draining L0; rate-limited model budget | ✅ REAL (A2-8/9/10,13a/b) |
+| **Failure/retry queue** (`factory_batch.py`) | durable, append-only history, isolation, size-aware retry | ✅ REAL (A2-11,11b) |
+| **Progress dashboard** (`factory_status.py`) | per-work operational view | ✅ REAL (A2-12) |
+| **Bulk certificate** (`factory_certificate.py`) | passes/jobs/integrity/resume | ✅ REAL (A2-13) |
+| **Rebuild engine** (`factory_rebuild.py`) | supersession propagation + targeted regeneration | ✅ REAL (Era C, A2-14/15/16) |
+| **Overnight pack** (`start_overnight.sh`, `OVERNIGHT.md`) | one-command launcher + runbook | ✅ REAL |
+| **THEME/ESSAY/EDUCATION** | wired (structural) — wait for Agent 1 contracts | ⚠️ deferred |
 | **P0/P2/P4 + review engine** | frozen proofs + the moat | ✅ REAL |
 
-**The single highest-value real build (now):** **A2-8/A2-9 = the backlog scheduler + multi-work
-execution** — the controller that advances the whole corpus (all registered works) through SOURCE→C1
-automatically, one layer at a time, using the failure/retry queue + dashboard. This is what turns the
-factory into the autonomous corpus compiler (Era B exit: continuously turn a backlog into SOURCE→C1
-objects).
+**The single highest-value real build (now):** **Era C continuation** — the DependencyImpactReport
+(mechanical: changed object → descendants invalidated → rebuilt) + the ReviewBundle export
+(SOURCE/T1/L0/ARGMAP/L2/L200/C1 + dependencies + versions + OPEN items) for Agent 1 / the scholar
+review. **Overnight operation is ready:** `bash pipeline/start_overnight.sh start` (see
+`pipeline/OVERNIGHT.md`).
 
 ---
 
@@ -107,17 +112,23 @@ A2-CP7  whole-work unattended run   🔶 Era A done; Era B scales to the whole c
 
 **Era A (Factory Completion) is DONE.** All six layers AUTONOMOUSLY_PRODUCIBLE + IPVV-verified.
 
-**Era B (Corpus Compiler) — current frontier:**
+**Era B (Corpus Compiler) — DONE:**
 ```
-A2-8   backlog scheduler       ✅ DONE (factory_scheduler, verified live)
-A2-9   multi-work execution    ✅ DONE (advances all works, one layer per pass)
-A2-10  resource/rate limiting  ✅ DONE (model-call budget + throttle)
-A2-11  durable failure/retry queues   ✅ DONE (factory_batch + test_failure_queue)
-A2-12  corpus progress dashboard      ✅ DONE (factory_status + test_factory_status)
-A2-13  unattended bulk translation    ▶ IN PROGRESS (running across all 12 works, all layers)
+A2-8   backlog scheduler       ✅ DONE (DAG scheduler, verified live)
+A2-9   multi-work execution    ✅ DONE (all eligible jobs across the graph)
+A2-10  resource/rate limiting  ✅ DONE (model-call budget + throttle + size-aware timeout)
+A2-11  durable failure/retry queues   ✅ DONE (append-only history, isolation)
+A2-12  corpus progress dashboard      ✅ DONE (factory_status)
+A2-13  unattended bulk translation    ✅ DONE (factory_loop + certificate + overnight pack)
 ```
-**Era C (Living rebuild engine)** — later: supersession propagation, dependency invalidation, targeted
-regeneration, ImpactReport integration, review-bundle generation.
+**Era C (Living rebuild engine) — STARTED:**
+```
+A2-14/15/16  supersession propagation + dependency invalidation + targeted regeneration  ✅ DONE (factory_rebuild)
+A2-18  DependencyImpactReport   ▶ NEXT (mechanical: changed -> invalidated -> rebuilt)
+A2-19  ReviewBundle export      ▶ NEXT (SOURCE/T1/L0/ARGMAP/L2/L200/C1 + deps + versions + OPEN)
+```
+
+**Overnight operation:** `bash pipeline/start_overnight.sh start` (see `pipeline/OVERNIGHT.md`).
 
 **Do NOT start THEME/ESSAY/EDUCATION yet** — they wait until the factory through C1 is proven. Each
 layer's worker + deterministic validator against its canonical spec + source files

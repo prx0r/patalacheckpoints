@@ -64,19 +64,20 @@ Production reference: `handover/agent-2-integration/CURRENT-STATE.md`. Roadmap: 
 - L200 candidates per `EVAL-CONTRACT-L200-EXPORT.md`
 
 ## LOOSE THREADS / NOTES
-- **Era B (corpus compiler) — 4/5 DONE:**
-  - ✅ **A2-11** durable failure/retry queue · **A2-12** dashboard · **A2-8/9** scheduler (live verified:
-    spandakarika T1 2/2) · **A2-10** rate limiting (model-call budget + throttle)
-  - ▶ **A2-13** unattended bulk translation — **RUNNING** across all 12 works. Progress so far:
-    brahmayamala T1 advanced 2/2; bhavopahara T1 retryable (long verse times out under the live runner's
-    API contention — recorded safely, no wedge).
-- **Era C (living rebuild engine) STARTED:**
-  - ✅ **A2-14/15/16** supersession propagation + targeted regeneration (`factory_rebuild.py`) + a
-    **critical `object_registry.current()` fix** (returns None when all versions superseded — without it
-    the rebuild engine can't detect invalidation).
+- **Era B (corpus compiler) — DONE:**
+  - ✅ **A2-8/9** DAG scheduler (all eligible jobs, free-draining L0) · **A2-10** rate limiting +
+    size-aware timeout · **A2-11** durable append-only failure/retry queue · **A2-12** dashboard ·
+    **A2-13** bulk certificate + overnight loop.
+- **Era C (living rebuild engine) — STARTED:**
+  - ✅ **A2-14/15/16** supersession propagation + targeted regeneration (`factory_rebuild.py`) +
+    the **critical `object_registry.current()` fix**.
+  - ▶ **Next:** A2-18 DependencyImpactReport + A2-19 ReviewBundle export.
+- **OVERNIGHT OPERATION READY:** `bash pipeline/start_overnight.sh start` (both systems +
+  watchdogs). Runbook: `pipeline/OVERNIGHT.md`.
 - L0-orphan gap RESOLVED by design: registry `commit()` auto-supersedes old L0 as T1 is built.
 - Semantic correctness = Agent 1's evals lane. Live runner (pid 362890) untouched throughout.
 
-## THIS SESSION'S COMMITS (Era B + C)
-- `d84ea03` A2-11 · `8aee600` A2-12 · `6eea830` A2-8/9 · `4f8c3b5` scheduler verse-recovery ·
-  `46cea8b` A2-10 rate limiting · `35103cc` Era C rebuild engine + current() fix
+## THIS SESSION'S COMMITS (Era B + C + overnight pack)
+- `d84ea03` A2-11 · `8aee600` A2-12 · `6eea830` A2-8/9 · `4f8c3b5` verse-recovery · `46cea8b` A2-10 ·
+  `35103cc` Era C rebuild + current() fix · `fed6a09` A2-11b/10b append-only history + size timeout ·
+  `b4f510c` A2-13 certificate · `cf48e71` overnight pack (start_overnight + OVERNIGHT.md)

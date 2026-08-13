@@ -58,13 +58,16 @@ prove_vertical (whole-chain L0→C1, fail-closed) · prove_l0_equivalence (vs ex
 
 ---
 
-## 4. THE WHOLE-FACTORY COMMAND (the user experience)
+## 4. THE OVERNIGHT FACTORY (the user experience)
 
 ```bash
-# register + advance a work through the full canonical stack, one layer at a time:
-python3 pipeline/factory_batch.py --work <work_id> --count <n> --layers T1,ARGMAP,L0,L2,L200,C1
+# ONE-COMMAND overnight launch (both systems + watchdogs):
+bash pipeline/start_overnight.sh start
+bash pipeline/start_overnight.sh status     # what's running
+python3 pipeline/factory_status.py --all    # the corpus dashboard
+python3 pipeline/factory_certificate.py     # the bulk certificate (integrity + resume)
 ```
-The controller + registry advance from the correct frontier; workers are implementation details.
+Full runbook: `pipeline/OVERNIGHT.md`. The DAG scheduler advances all works through SOURCE→C1.
 
 ---
 
@@ -72,21 +75,27 @@ The controller + registry advance from the correct frontier; workers are impleme
 
 1. **Semantic correctness is NOT validated** — that is Agent 1's evals lane (AlignScore/NLI, the
    T1-NAT / L200-DEV gates). Agent 2 proves shape + provenance + safe unattended production.
-2. **Whole-work unattended run on a fresh work is slow under the live runner's API contention** — the
-   batch advances correctly but model calls queue. A per-passage timeout/retry scheduler (Era B,
-   A2-8..A2-13) is the next milestone for corpus-scale.
-3. **L2/C1 live model calls intermittently GENERATION_FAILED under contention** — fail-closed works
-   correctly (no partial commit); the deterministic logic is verified.
+2. **The overnight rate is bounded by the shared model API** — T1 is model-bound; with a conservative
+   budget (to respect the live runner) the factory advances a few passages per pass. Raising
+   `FACTORY_MODEL_CALLS` speeds it up at the live runner's expense. A single problem verse (e.g.
+   bhavopahara's long text) is recorded as retryable, not a blocker.
+3. **Pre-existing data cruft** (from earlier MODE_B L0 experimentation) is surfaced by the certificate:
+   11 duplicate current versions + 781 orphan L0 (no T1 parent). The factory itself is consistent; the
+   data cruft is being superseded as T1 is built (registry supersession handles it).
 4. **ESSAY/EDUCATION/THEME** have workers but are NOT yet Era-A targets (they wait until Agent 1
    freezes their contracts).
 
 ---
 
-## 6. NEXT (Era B — corpus compiler, per docs/agent2nextdev.md)
+## 6. CURRENT STATE (2026-08-13) — Era A done, Era B running, Era C started
 
-- A2-8 backlog scheduler · A2-9 multi-work execution · A2-10 resource/rate limiting
-- A2-11 durable failure/retry queues · A2-12 corpus progress dashboard · A2-13 unattended bulk translation
-- Then Era C: the living rebuild engine (supersession propagation, targeted regeneration, ImpactReport).
+- **Era A (Factory Completion): DONE** — all 6 layers AUTONOMOUSLY_PRODUCIBLE + IPVV-verified.
+- **Era B (Corpus Compiler): running** — DAG scheduler (A2-8/9), rate limiting (A2-10), durable
+  failure/retry queue with append-only history (A2-11), progress dashboard (A2-12), bulk certificate
+  (A2-13) all built + tested. The overnight loop is live.
+- **Era C (Rebuild Engine): started** — supersession propagation + targeted regeneration
+  (`factory_rebuild.py`), the critical `current()` fix. Next: DependencyImpactReport + ReviewBundle.
+- **16 deterministic test suites + the IPVV-exemplar suite all PASS.**
 
 *This is the Era A reference. The canonical layer order + file types: `handover/agent-2-integration/
 CANONICAL-LAYER-STACK.md`. The full roadmap: `docs/agent2nextdev.md`.*

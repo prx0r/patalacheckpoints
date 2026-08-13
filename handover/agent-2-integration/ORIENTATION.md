@@ -244,40 +244,42 @@ These are the IPVV Sanskrit volumes (M00020/21/22) — the actual source you cer
 ### Step 4.0 — The state you inherit (done, verified)
 ```
 P0 source floor        ✅ 63/63 LOSSLESS (V2/V3 35/35 + V1 28/28), frozen
-P2 morphology          ✅ calibrated witness (P-011); human blind review pending (non-blocking)
-P3 lexical sense       ⚠️ ranker REJECTED (P-012); embedding 0.81 is the floor
+P2 morphology          ✅ calibrated witness (P-011)
 P4 alignment           ✅ frozen witness (P-013)
-Corpus state machine   ✅ corpus_state.py + /api/corpus/state (NEXT_VALID_ACTION control plane)
-RAW-L0 factory core    ✅ raw_l0.py → canonical L0, P0-validated; agent3_batch / agent3_queue / l0_registry
-Executable corrections ✅ review_engine.py (Phase 3A+3D) — the validation gate for Agent 3's output
+Corpus state machine   ✅ corpus_state.py + /api/corpus/state
+Executable corrections ✅ review_engine.py (Phase 3A+3D)
 Autonomy controller    ✅ pipeline/autonomy.py + object_registry.py (eligibility DAG, flock, idempotency,
-                        supersession, run reports) — the ONE controller for L0..L200..C1
-ModelAdapter           ✅ pipeline/model_adapter.py (DirectModelAdapter ~1-2s + HermesAdapter + strict batch)
-Certificates           ✅ L0 (deterministic floor) + L200 validator-torture; L200 live quality NOT bounded
+                         supersession, run reports)
+ModelAdapter           ✅ pipeline/model_adapter.py (Direct + Hermes + strict batch)
 ```
 The `PhilologicalProof` contract: proof_id · passage_id · source_span_ids · source_integrity ·
 extraction_coverage · segmentation · morphology · syntax · alignment · lexical_sense · open_issues ·
 tool_witnesses · review_events. Every `ProofDimension` has an honest status, never a collapsed number.
 
-> **CURRENT STATE (READ FIRST):** `handover/agent-2-integration/PROGRESS-AUTONOMOUS-2026-08-12.md` —
-> VERIFIED / CLOSE-unverified / STILL-NEEDED + file map + the agent-1 scholarly-oracle handover +
-> the background-run working practice.
+> **CURRENT STATE (READ FIRST):** `handover/agent-2-integration/CURRENT-STATE.md` (the production
+> reference for the autonomous SOURCE→C1 factory) + `handover/agent-2-integration/DEV-PLAN.md` (the
+> Era A/B/C plan) + `docs/agent2nextdev.md` (the roadmap). The live cross-agent status:
+> `live/agent2.md` + `live/agent1.md`.
 
-### Step 4.1 — THE CURRENT PRIORITY: autonomous RAW-L0 v1 (re-anchored)
-Agent 2 is re-anchored on **autonomous RAW-L0** (the original goal). L200 is secondary until RAW-L0 v1
-is proven. In order:
+### Step 4.1 — THE CURRENT STATE: the autonomous factory (Era A done, Era B running)
+
+**Era A (Factory Completion) is DONE.** All six canonical layers (T1/L0/ARGMAP/L2/L200/C1) are
+AUTONOMOUSLY_PRODUCIBLE + verified against the REAL IPVV exemplars. **Era B (Corpus Compiler) is
+running** — the DAG scheduler advances all works through SOURCE→C1 unattended. The one-command
+overnight launch:
+
+```bash
+bash pipeline/start_overnight.sh start      # launch both systems + install watchdogs
+bash pipeline/start_overnight.sh status     # check what's running
+python3 pipeline/factory_status.py --all    # corpus dashboard
+python3 pipeline/factory_certificate.py     # bulk certificate (integrity + resume)
 ```
-1. CLOSE THE GLOSS RELIABILITY GAP  prove a real unattended RAW-L0 batch on the Direct adapter
-                                   (background run), bounding the previous hermes nondeterminism
-2. AUTONOMOUS RAW-L0 v1             leave a bounded corpus to the controller unattended: only correctly
-                                   bound, validator-passing canonical L0 commits; malformed/model-failed/
-                                   source-corrupt never silently commit; reruns don't duplicate
-3. FREEZE RAW-L0 v1                 wire into the controller for unattended scale
-4. THEN L200                        candidate→classifier redesign (deterministic L1↔L2/L0 candidates,
-                                   default IGNORE, L0 evidence into the input, IA as a separate pass)
-5. THEN C1                          passage-local commentary (skill + validator + certificate + canary)
-6. THEN the unattended SOURCE→L0/L1→L2→L200→C1 vertical
-```
+See `pipeline/OVERNIGHT.md` for the full runbook.
+
+**Your job now (Agent 2 = the corpus OS):** schedule · execute · retry · resume · version · invalidate ·
+rebuild · report. Continue advancing the backlog (A2-13), then Era C (supersession propagation,
+DependencyImpactReport, ReviewBundle).
+
 Working practice: **run long model calls in the background** — never block the session on a hermes/direct
 call (8–48s or hang).
 
