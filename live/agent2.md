@@ -81,3 +81,51 @@ Production reference: `handover/agent-2-integration/CURRENT-STATE.md`. Roadmap: 
 - `d84ea03` A2-11 · `8aee600` A2-12 · `6eea830` A2-8/9 · `4f8c3b5` verse-recovery · `46cea8b` A2-10 ·
   `35103cc` Era C rebuild + current() fix · `fed6a09` A2-11b/10b append-only history + size timeout ·
   `b4f510c` A2-13 certificate · `cf48e71` overnight pack (start_overnight + OVERNIGHT.md)
+
+## CURRENT WORK — ATLAS FOUNDATION (new, for Agent 1's awareness)
+
+Agent 2 has started building the **Pāṭala Atlas foundation** (do B properly first, then one vertical)
+while the running factory stays production behind a compatibility adapter. This is additive + isolated +
+revertible; it does NOT change factory behavior. Full plan: `docs/AGENT2-SELF-EXECUTING-DEVPLAN.md`
++ `docs/AGENT2-ATLAS-FOUNDATION-PLAN.md` + `docs/vision/atlas/technical-architecture-v1.md`.
+
+**Layering (the strategic reframe):** Atlas = identity/provenance layer → Factory = transformation →
+Epistemic Core = trust. "OpenAlex for Sanskrit": models textual transmission (Work→Edition→Witness→
+Surrogate→Transcription→E-text→Source), not citation networks.
+
+### Dev plan (fragility-ordered — least fragile first)
+```text
+TIER 0 [DONE]  R2 infra — patala bucket (prefix-folders), infra/r2_assets.py (SHA-256 content-addressed
+               put/get/verify/head/presign), 86 on-disk Sanskrit sources migrated to patala/source/.
+TIER 1 ▶        Pydantic contract package (python/patala_core) — typed discriminated epistemic objects;
+                implements the 3 P0 schema corrections (no dict[str,Any] content; AuthorityVector = 4
+                independent axes, no scalar rank; no universal review ladder).
+TIER 2          Dedicated patala-atlas Postgres (isolated container) + Alembic migrations.
+TIER 3          Compatibility adapter + 254-record bibliography migration (preserve IDs, factory never breaks).
+TIER 4          OpenAlex-grammar read API (/works /editions /people /etexts /witnesses /passages
+                /search /resolve /context /bundle; filter/search/select/sort/cursor; no N+1).
+TIER 5          One vertical — Brahmayāmala (engineering) / Dviśatikālottara (flagship) → ReviewBundle.
+TIER 6          [DEFERRED] resolver adapters, ingest, snapshots, hardening.
+```
+
+### The 3 P0 schema corrections (being implemented in TIER 1 — relevant to Agent 1's schema review)
+1. `DerivedScholarlyObject.content` must be **typed discriminated content**, never `dict[str, Any]`.
+2. **`AuthorityVector`** = 4 independent axes (generation / evidence / review / publication), NOT one
+   numeric rank. Gates are explicit predicates (`eligible_for_publication()`, `eligible_for_scholar_review()`),
+   never `ceiling >= 3`. (The old shared scalar authority ladder was semantically conflating engineering
+   status with scholarly status.)
+3. **No universal review_state ladder** — education states (e.g. `PEDAGOGICALLY_REVIEWED`) must never apply
+   to a Proposition; each object type has its own state machine.
+
+### Ready for Agent 1 review
+- The **AuthorityVector** model (does it correctly separate engineering/evidence/review/publication without
+  a misleading scalar rank?) — the biggest schema fix.
+- The TIER 1 discriminated-union epistemic object contracts (Proposition/Commitment/GroundingLink/
+  InferenceApplication/Crux/ReviewEvent/Adjudication).
+
+### Infrastructure already done (confirmed wins)
+- `patala` R2 bucket + prefix folders · `infra/r2_assets.py` · 86 sources migrated (immutable, SHA-256).
+
+### Current commits
+- `404fa21` infra R2 asset store + patala bucket · `4762a89` Technical Architecture v1 + 3 P0 corrections ·
+  `04c5f22` self-executing dev plan · `c0ec708` foundation plan · `766f5d2` cloudflare edge · `cb030ab` performance.
