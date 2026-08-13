@@ -1,0 +1,329 @@
+{
+  "essay_id": "ESSAY-IPVV-REFLEXION-CORE-001.v2",
+  "supersedes": "ESSAY-IPVV-REFLEXION-CORE-001.v1",
+  "synthesis_id": "SYN-IPVV-REFLEXION-CORE-001",
+  "question": "Does reflexivity belong intrinsically to manifestation?",
+  "epistemic_ceiling": "UNRESOLVED",
+  "render_vocabulary": [
+    "DIRECT",
+    "QUALIFIED",
+    "ATTRIBUTED",
+    "RIVAL",
+    "BOUNDARY",
+    "ABSTAIN"
+  ],
+  "whole_essay_audit": {
+    "THESIS_WARRANTED": true,
+    "ARGUMENT_BALANCE": true,
+    "CRUX_FIDELITY": true,
+    "CONCLUSION_STRENGTH": true,
+    "SOURCE_TRACEABILITY": true
+  },
+  "resolves_finding": "EF-ESSAY-2026-0001",
+  "sentences": [
+    {
+      "sid": "S001",
+      "role": "LOAD_BEARING",
+      "render_mode": "QUALIFIED",
+      "claim_refs": [
+        "ARG-GOLD-002:G2-OBJ",
+        "SYN-CONC-001"
+      ],
+      "inference_refs": [
+        "SYN-INF-001"
+      ],
+      "source_refs": [
+        "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md",
+        "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md"
+      ],
+      "attribution": "SYNTHESIS",
+      "speaker": "the reconstruction",
+      "assertion_strength": "MOTIVATES",
+      "semantic_relation_to_claim": "EXPANSIVE",
+      "text": "At stake is whether the reflexive awareness in which consciousness is present to itself belongs to the very nature of manifestation, or is something added to it by linguistic and conceptual articulation.",
+      "epistemic_ceiling": "UNRESOLVED",
+      "audit": {
+        "claim_supported": true,
+        "inference_preserved": true,
+        "boundary_preserved": true,
+        "epistemic_strength_ok": true,
+        "traceable": true
+      }
+    },
+    {
+      "sid": "S002",
+      "role": "EXPLANATORY",
+      "text": "The worry is real: if the self's awareness of itself is always joined to a word, it may look like a mental construction rather than an intrinsic feature."
+    },
+    {
+      "sid": "S003",
+      "role": "LOAD_BEARING",
+      "render_mode": "ATTRIBUTED",
+      "claim_refs": [
+        "ARG-GOLD-002:G2-TC1"
+      ],
+      "inference_refs": [],
+      "source_refs": [
+        "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md"
+      ],
+      "attribution": "AUTHOR",
+      "speaker": "Abhinavagupta",
+      "assertion_strength": "ASSERTS",
+      "semantic_relation_to_claim": "CONSERVATIVE_PARAPHRASE",
+      "text": "Abhinavagupta's reply turns on what construction does: a conceptual construction combines, differentiates, or determines contents.",
+      "epistemic_ceiling": "UNRESOLVED",
+      "audit": {
+        "claim_supported": true,
+        "inference_preserved": true,
+        "boundary_preserved": true,
+        "epistemic_strength_ok": true,
+        "traceable": true
+      }
+    },
+    {
+      "sid": "S004",
+      "role": "LOAD_BEARING",
+      "render_mode": "ATTRIBUTED",
+      "claim_refs": [
+        "ARG-GOLD-002:G2-TC2"
+      ],
+      "inference_refs": [],
+      "source_refs": [
+        "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md"
+      ],
+      "attribution": "AUTHOR",
+      "speaker": "Abhinavagupta",
+      "assertion_strength": "ASSERTS",
+      "semantic_relation_to_claim": "CONSERVATIVE_PARAPHRASE",
+      "text": "The awareness expressed as “I” is not itself treated as one more constructed relation.",
+      "epistemic_ceiling": "UNRESOLVED",
+      "audit": {
+        "claim_supported": true,
+        "inference_preserved": true,
+        "boundary_preserved": true,
+        "epistemic_strength_ok": true,
+        "traceable": true
+      }
+    },
+    {
+      "sid": "S005",
+      "role": "LOAD_BEARING",
+      "render_mode": "QUALIFIED",
+      "claim_refs": [
+        "ARG-GOLD-002:G2-CONC"
+      ],
+      "inference_refs": [],
+      "source_refs": [
+        "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md"
+      ],
+      "attribution": "SYNTHESIS",
+      "speaker": "the reconstruction",
+      "assertion_strength": "CAN_BE_RECONSTRUCTED",
+      "semantic_relation_to_claim": "CONSERVATIVE_PARAPHRASE",
+      "text": "It can be reconstructed that being articulated in language does not, by itself, show that the underlying self-awareness is produced by conceptual determination.",
+      "epistemic_ceiling": "UNRESOLVED",
+      "audit": {
+        "claim_supported": true,
+        "inference_preserved": true,
+        "boundary_preserved": true,
+        "epistemic_strength_ok": true,
+        "traceable": true
+      }
+    },
+    {
+      "sid": "S006",
+      "role": "LOAD_BEARING",
+      "render_mode": "ATTRIBUTED",
+      "claim_refs": [
+        "ARG-GOLD-004:G4-CRYSTAL"
+      ],
+      "inference_refs": [],
+      "source_refs": [
+        "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md"
+      ],
+      "attribution": "AUTHOR",
+      "speaker": "Abhinavagupta",
+      "assertion_strength": "ASSERTS",
+      "semantic_relation_to_claim": "CONSERVATIVE_PARAPHRASE",
+      "text": "A light that merely showed the world without knowing that it showed it would be no different from inert crystal.",
+      "epistemic_ceiling": "UNRESOLVED",
+      "audit": {
+        "claim_supported": true,
+        "inference_preserved": true,
+        "boundary_preserved": true,
+        "epistemic_strength_ok": true,
+        "traceable": true
+      }
+    },
+    {
+      "sid": "S007",
+      "role": "LOAD_BEARING",
+      "render_mode": "ATTRIBUTED",
+      "claim_refs": [
+        "ARG-GOLD-004:G4-CONC"
+      ],
+      "inference_refs": [],
+      "source_refs": [
+        "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md"
+      ],
+      "attribution": "AUTHOR",
+      "speaker": "Abhinavagupta",
+      "assertion_strength": "ASSERTS",
+      "semantic_relation_to_claim": "CONSERVATIVE_PARAPHRASE",
+      "text": "The light can be taken to be conscious in that it is aware of itself in the very act of manifesting.",
+      "epistemic_ceiling": "UNRESOLVED",
+      "audit": {
+        "claim_supported": true,
+        "inference_preserved": true,
+        "boundary_preserved": true,
+        "epistemic_strength_ok": true,
+        "traceable": true
+      }
+    },
+    {
+      "sid": "S008",
+      "role": "LOAD_BEARING",
+      "render_mode": "QUALIFIED",
+      "claim_refs": [
+        "SYN-CONC-001"
+      ],
+      "inference_refs": [
+        "SYN-INF-001"
+      ],
+      "source_refs": [
+        "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md",
+        "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md"
+      ],
+      "attribution": "SYNTHESIS",
+      "speaker": "the reconstruction",
+      "assertion_strength": "MOTIVATES",
+      "semantic_relation_to_claim": "EXPANSIVE",
+      "text": "The second argument approaches the same question from the side of manifestation rather than of the knowing subject.",
+      "epistemic_ceiling": "UNRESOLVED",
+      "audit": {
+        "claim_supported": true,
+        "inference_preserved": true,
+        "boundary_preserved": true,
+        "epistemic_strength_ok": true,
+        "traceable": true
+      }
+    },
+    {
+      "sid": "S009",
+      "role": "LOAD_BEARING",
+      "render_mode": "QUALIFIED",
+      "claim_refs": [
+        "ARG-GOLD-002:G2-CONC",
+        "ARG-GOLD-004:G4-CONC"
+      ],
+      "inference_refs": [
+        "SYN-INF-001"
+      ],
+      "source_refs": [
+        "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md",
+        "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md"
+      ],
+      "attribution": "SYNTHESIS",
+      "speaker": "the reconstruction",
+      "assertion_strength": "MOTIVATES",
+      "semantic_relation_to_claim": "EXPANSIVE",
+      "text": "Taken together, these passages give reason to think that reflexivity belongs intrinsically to manifestation rather than being added to it from outside.",
+      "epistemic_ceiling": "UNRESOLVED",
+      "audit": {
+        "claim_supported": true,
+        "inference_preserved": true,
+        "boundary_preserved": true,
+        "epistemic_strength_ok": true,
+        "traceable": true
+      }
+    },
+    {
+      "sid": "S010",
+      "role": "LOAD_BEARING",
+      "render_mode": "QUALIFIED",
+      "claim_refs": [
+        "SYN-CONC-001"
+      ],
+      "inference_refs": [
+        "SYN-INF-001"
+      ],
+      "source_refs": [
+        "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md",
+        "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md"
+      ],
+      "attribution": "SYNTHESIS",
+      "speaker": "the reconstruction",
+      "assertion_strength": "MOTIVATES",
+      "semantic_relation_to_claim": "CONSERVATIVE_PARAPHRASE",
+      "text": "It is worth pausing on how much this step does and does not establish.",
+      "epistemic_ceiling": "UNRESOLVED",
+      "audit": {
+        "claim_supported": true,
+        "inference_preserved": true,
+        "boundary_preserved": true,
+        "epistemic_strength_ok": true,
+        "traceable": true
+      }
+    },
+    {
+      "sid": "S011",
+      "role": "LOAD_BEARING",
+      "render_mode": "QUALIFIED",
+      "claim_refs": [
+        "SYN-INF-001"
+      ],
+      "inference_refs": [],
+      "source_refs": [
+        "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md",
+        "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md"
+      ],
+      "attribution": "SYNTHESIS",
+      "speaker": "the reconstruction",
+      "assertion_strength": "UNRESOLVED",
+      "semantic_relation_to_claim": "CONSERVATIVE_PARAPHRASE",
+      "text": "But the warrant is itself reconstructed, and its support remains unresolved: one can reconstruct the argument as running this way, but one cannot yet present it as established.",
+      "epistemic_ceiling": "UNRESOLVED",
+      "audit": {
+        "claim_supported": true,
+        "inference_preserved": true,
+        "boundary_preserved": true,
+        "epistemic_strength_ok": true,
+        "traceable": true
+      }
+    },
+    {
+      "sid": "S012",
+      "role": "LOAD_BEARING",
+      "render_mode": "BOUNDARY",
+      "claim_refs": [
+        "SYN-CONC-001"
+      ],
+      "inference_refs": [
+        "SYN-INF-001"
+      ],
+      "source_refs": [
+        "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md",
+        "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md"
+      ],
+      "attribution": "SYNTHESIS",
+      "speaker": "the reconstruction",
+      "assertion_strength": "BOUNDARY",
+      "semantic_relation_to_claim": "QUALIFIER_DROP_GUARD",
+      "text": "The step, even where it succeeds, is per-act: it does not establish a universal Self in which all manifestation is one consciousness, nor that consciousness is fundamental simpliciter — those remain open boundaries.",
+      "epistemic_ceiling": "UNRESOLVED",
+      "audit": {
+        "claim_supported": true,
+        "inference_preserved": true,
+        "boundary_preserved": true,
+        "epistemic_strength_ok": true,
+        "traceable": true
+      }
+    },
+    {
+      "sid": "S013",
+      "role": "EXPLANATORY",
+      "is_rival": true,
+      "text": "A Buddhist opponent can be reconstructed as holding that the determination establishes an external object, but because that position is not grounded in the passages under study here, it remains an unsourced, hypothetical rival rather than a live, sourced opponent."
+    }
+  ]
+}

@@ -16,10 +16,22 @@
     "benchmarks/v0/review/ESSAY-IPVV-REFLEXION-CORE-001.audit.json"
   ],
   "recommended_action": "REGENERATE_AFTER_ESSAY_COMPILER_FIX",
-  "status": "OPEN",
+  "status": "CLOSED",
+  "resolution": {
+    "resolved_at": "2026-08-13",
+    "via": "ESSAY v2 supersession (build_reflexion_essay_v2.py)",
+    "superseded_by": "ESSAY-IPVV-REFLEXION-CORE-001.v2",
+    "changes": [
+      "S012 (BOUNDARY) now carries claim_refs=[SYN-CONC-001], inference_refs=[SYN-INF-001], source_refs=[V2L,V2H] — a boundary that bounds a grounded claim is itself traceable.",
+      "S013 (RIVAL) demoted from LOAD_BEARING to EXPLANATORY — an unsourced, hypothetical rival is honest only as a flagged note, never as a load-bearing claim.",
+      "S011 (warrant) now carries source_refs=[V2L,V2H] via the inference's premises.",
+      "The whole-essay audit now requires every LOAD_BEARING sentence to resolve claim_refs AND source_refs (GLOBAL_TRACEABILITY gate)."
+    ],
+    "blind_retest": "ESSAY-IPVV-REFLEXION-CORE-001.v2.audit.json whole_essay_audit = all True including SOURCE_TRACEABILITY"
+  },
   "producer": {
     "agent": "agent1",
     "commit": "experiments/vertical1_essay_audit.py"
   },
-  "note": "The scope/boundary claim (S012) and the rival representation (S013) are exactly the load-bearing sentences that MUST be traceable (A1-CONTINUE-v2 P8: unsupported claim rate, rival fidelity, scope inflation). The C.1 per-sentence audit passed (claim_supported=True) because it checks declared relations; the whole-essay audit adds that boundary + rival claims carry real refs. Fix belongs to the essay compiler (essay_compiler), not to the frozen essay."
+  "note": "The scope/boundary claim (S012) and the rival representation (S013) are exactly the load-bearing sentences that MUST be traceable (A1-CONTINUE-v2 P8: unsupported claim rate, rival fidelity, scope inflation). The C.1 per-sentence audit passed (claim_supported=True) because it checks declared relations; the whole-essay audit adds that boundary + rival claims carry real refs. Resolved via G2-style supersession: v2 supersedes v1 (v1 preserved), blind retest passes, finding CLOSED."
 }

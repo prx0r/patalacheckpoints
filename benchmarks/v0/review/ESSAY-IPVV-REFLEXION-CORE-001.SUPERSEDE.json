@@ -1,0 +1,9 @@
+{
+  "object": "ESSAY-IPVV-REFLEXION-CORE-001",
+  "v1": "ESSAY-IPVV-REFLEXION-CORE-001 (preserved, NOT patched)",
+  "v2": "ESSAY-IPVV-REFLEXION-CORE-001.v2",
+  "superseded_by": "ESSAY-IPVV-REFLEXION-CORE-001.v2",
+  "reason": "EF-ESSAY-2026-0001 (SOURCE_TRACEABILITY): S012 boundary + S013 rival were load-bearing but untraceable. v2 grounds the boundary claim in SYN-CONC-001 + source spans, and demotes the unsourced rival to EXPLANATORY so the load-bearing traceability gate holds.",
+  "finding": "EF-ESSAY-2026-0001",
+  "status": "SUPERSEDED"
+}
