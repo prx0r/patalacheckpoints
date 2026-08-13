@@ -36,6 +36,7 @@ stale ones as `[ARCHIVED]` so a new agent is never confused. If it's not here, i
 | **Agent 1 — ML lane (current state)** | `handover/agent-1-ml/INDEX.md` | repo `handover/` |
 | **External standards alignment (SEPIO/xAIF/nanopub/SPARE/SCL — deferred roadmap)** | `docs/integrations/ARGUMENT-EVIDENCE-STANDARDS-ALIGNMENT.md` | repo `docs/integrations/` |
 | **Global state checkpoint (2026-08-13, ELAD handover — timestamped, stale by design)** | `docs/global/GLOBAL-STATE-2026-08-13.md` | repo `docs/global/` |
+| **Pāṭala Thesis (START HERE — what Pāṭala is/isn't, one page)** | `docs/global/README.md` | repo `docs/global/` |
 | **Pāṭala Global Architecture v0.1 (THE definitive architecture — the one answer to "what are we building?")** | `docs/global/PATALA-GLOBAL-ARCHITECTURE.md` | repo `docs/global/` |
 | **Global architectural files home (both agents read at orientation)** | `docs/global/README.md` | repo `docs/global/` |
 | **Global partnerships / integration-layer strategy ("OpenAlex for Sanskrit" — identity/crosswalk, 11 adapters, versioned assertions)** | `docs/global/globalpartnerships.md` | repo `docs/global/` |
