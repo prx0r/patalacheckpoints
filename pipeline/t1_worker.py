@@ -38,7 +38,7 @@ from pathlib import Path
 sys.path.insert(0, "/root/projects/patala/pipeline")
 
 import object_registry as R
-from model import chat
+from model import chat_agentic
 
 # the canonical [and]- token grammar (from the IPVV T1 exemplars + SPEC_L0_L1.md)
 TOKEN_GRAMMAR = re.compile(
@@ -217,24 +217,45 @@ def _build_batch_prompt(verses: list[dict]) -> str:
 
 
 def _parse_batch(raw: str) -> dict:
-    """Parse the multi-verse JSON response into {object_id: {surface: gloss}}."""
+    """Parse the multi-verse JSON response into {object_id: {surface: gloss}}.
+
+    Robust to the agentic model wrapping the JSON in reasoning: scan candidate '{' starts, find the
+    matching '}' with a depth counter, and return the first object that actually has a 'verses' key."""
     raw = (raw or "").strip()
     if raw.startswith("```"):
         raw = raw.split("\n", 1)[-1]
         raw = raw.rsplit("```", 1)[0]
-    start, end = raw.find("{"), raw.rfind("}")
-    if start < 0 or end <= start:
-        raise ValueError("no JSON object in T1 batch output")
-    data = json.loads(raw[start:end + 1])
-    out = {}
-    for item in (data.get("verses") or []):
-        if not isinstance(item, dict):
-            continue
-        oid = item.get("object_id")
-        if not oid:
-            continue
-        out[oid] = item.get("tokens") or {}
-    return out
+    i = 0
+    while True:
+        i = raw.find("{", i)
+        if i < 0:
+            raise ValueError("no JSON object in T1 batch output")
+        depth = 0
+        j = i
+        while j < len(raw):
+            c = raw[j]
+            if c == "{":
+                depth += 1
+            elif c == "}":
+                depth -= 1
+                if depth == 0:
+                    try:
+                        data = json.loads(raw[i:j + 1])
+                    except Exception:
+                        break
+                    if isinstance(data, dict) and isinstance(data.get("verses"), list):
+                        out = {}
+                        for item in data["verses"]:
+                            if not isinstance(item, dict):
+                                continue
+                            oid = item.get("object_id")
+                            if not oid:
+                                continue
+                            out[oid] = item.get("tokens") or {}
+                        return out
+                    break
+            j += 1
+        i = i + 1
 
 
 T1_OUT_LOG = Path(os.environ.get("PATALA_T1_OUT_LOG",
@@ -303,8 +324,8 @@ def t1_generator(layer: str, batch: list[dict]) -> list[dict]:
             # A2-10b size-aware timeout: scale with total batch size so big batches get enough time.
             timeout = min(180 + int(n_tokens * 0.5), 600)
             try:
-                raw = chat("You are the Pāṭala T1 translator (transliteral word-gloss).", prompt,
-                           timeout=timeout)
+                raw = chat_agentic("You are the Pāṭala T1 translator (transliteral word-gloss).", prompt,
+                                   timeout=timeout)
                 gloss_by_oid = _parse_batch(raw)
             except Exception as exc:
                 # fail-closed: only THIS call's verses, never the whole input
