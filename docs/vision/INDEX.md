@@ -42,14 +42,22 @@ New here? Do not read the whole surface top-down. Follow the arc:
    statement, imported from R2) + `docs/vision/education/LEARNING_STRATEGY.md` (content strategy) +
    `docs/vision/education/EDUCATION_VISION.md` (graph-native teaching engine) + `docs/vision/education/sources/`
    (raw imported design dialogue).
-9. **The source-resolution lens** — `docs/vision/source-resolution/source-resolver-design.md` — the
-   **federated edition/manuscript resolver**: Work → Edition → Witness → Surrogate → Transcription → E-text
-   → SOURCE, with the authority ladder (DISCOVERED → … → SCHOLAR_CONFIRMED), the Sanskrit-specific authority
-   stack (NCC, NMM/Pandulipi Patala, NGMCP, SARIT, GRETIL, Muktabodha) + book catalogs + IIIF, and the
-   reconciliation pattern (no automatic authority promotion). This is the layer *below* the factory that the
-   verification work (pipeline/verify_editions.py) and manuscript vision (Vision 14) build on.
-8. **Foundational deep-dives** — `docs/NORTHSTAR.md` (deepest strategy), `docs/foundationalideas.md`
-   (the passage-identity idea), `docs/positioningpartners.md` (positioning).
+ 9. **The source-resolution lens** — `docs/vision/source-resolution/source-resolver-design.md` — the
+    **federated edition/manuscript resolver**: Work → Edition → Witness → Surrogate → Transcription → E-text
+    → SOURCE, with the authority ladder (DISCOVERED → … → SCHOLAR_CONFIRMED), the Sanskrit-specific authority
+    stack (NCC, NMM/Pandulipi Patala, NGMCP, SARIT, GRETIL, Muktabodha) + book catalogs + IIIF, and the
+    reconciliation pattern (no automatic authority promotion). This is the layer *below* the factory that the
+    verification work (pipeline/verify_editions.py) and manuscript vision (Vision 14) build on.
+ 10. **The manuscript / OpenPāṭala lens** — the manuscript-ingest + Atlas-build vision:
+    `docs/vision/vision-14-manuscript-to-scholarly-asset.md` (upload → label → route → process → expose) +
+    `docs/vision/vision-15-patala-atlas-sanskrit-research-graph.md` (the Atlas = "OpenAlex for Sanskrit") +
+    `openpatala/README.md` (the build folder + imported OpenAlex reference docs) +
+    `docs/vision/atlas/atlas-engineering-blueprint.md` (Postgres=R2=event-log storage; I1–I6) +
+    `docs/vision/atlas/atlas-cloudflare-edge-layer.md` (Neon/Postgres canonical, Workers API + Hyperdrive +
+    R2, factory self-hosted) + `docs/vision/functionality/research/2026-08-12/06_ATLAS/RESEARCH_AND_BUILD.md`
+    (the endgame-build project). This is the current forward build — the foundation (B) before the vertical (C).
+ 8. **Foundational deep-dives** — `docs/NORTHSTAR.md` (deepest strategy), `docs/foundationalideas.md`
+    (the passage-identity idea), `docs/positioningpartners.md` (positioning).
 
 > Why step 4 before step 5? Vision 12/13 are the *current* product frame; Vision 11 is the *next*
 > corpus. Read the current frame first, then the expansion you will actually build toward.

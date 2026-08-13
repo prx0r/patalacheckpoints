@@ -78,6 +78,20 @@ re-read the canonical vision so the map is live in front of you: `VISION_AND_NAV
 `SOURCE → T1 → L0 → [argument map] → L2 → L200 → C1 → THEMES → ESSAY → EDUCATION` (the canonical stack,
 locked; see `handover/agent-2-integration/CANONICAL-LAYER-STACK.md`).
 
+**The Atlas forward plan (2026-08-13+).** Agent 2's next cycle is **building the Pāṭala Atlas foundation
+properly first** (do B, then one vertical), not translating more works. Read in this order:
+1. **`docs/AGENT2-ATLAS-FOUNDATION-PLAN.md`** — the active plan (Postgres Atlas I1 + R2 I2 + API I4, then a vertical).
+2. **`openpatala/README.md`** — the "OpenAlex for Sanskrit" build folder (imported OpenAlex reference docs).
+3. **`docs/vision/vision-15-patala-atlas-sanskrit-research-graph.md`** — the strategy.
+4. **`docs/vision/atlas/atlas-engineering-blueprint.md`** + **`atlas-cloudflare-edge-layer.md`** — the build + Cloudflare edge layer.
+5. **`docs/vision/source-resolution/source-resolver-design.md`** — the reconciliation authority stack.
+6. **`docs/vision/functionality/research/2026-08-12/06_ATLAS/RESEARCH_AND_BUILD.md`** — the endgame-build project.
+
+Key facts: DB is **Postgres** (canonical; Neon+Hyperdrive in prod); **D1/DurableObjects are NOT** the
+Atlas DB; Cloudflare is the **global delivery layer** only; the factory stays **self-hosted** behind it;
+bytes go to **R2 content-addressed by SHA-256**; the 254 bibliography records migrate to Postgres behind
+a compatibility adapter so the running factory never breaks.
+
 **🟢 GATE 0.2** — *Run* `python3 pipeline/verify_l0.py --t1 .../02_t1 --l0 .../l0 --level p0 --exceptions
 docs/l0_reviewed_exceptions.json` AND `python3 pipeline/verify_l0.py --t1 .../01_t1 --l0 .../l0_v1 --level p0`.
 You must see **63/63 P0 PASS** (V2/V3 35/35 + V1 legacy 28/28 — the complete IPVV source floor you certify).

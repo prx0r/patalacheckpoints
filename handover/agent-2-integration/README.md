@@ -45,6 +45,21 @@ TRUST`. Agent 2 builds the canonical SOURCE→C1→(higher) factory; Agent 1 ind
   Tier B ML) — the shared methodology
 - **`agent2nextdev.md`** — the Era A/B/C roadmap
 
+## The Atlas / foundation work (the current forward plan — READ THIS)
+
+Agent 2's next cycle is **building the Pāṭala Atlas foundation properly first** (do B, then one vertical),
+while the running factory stays untouched. Everything you need:
+
+| Doc/File | What it is |
+|---|---|
+| **`docs/AGENT2-ATLAS-FOUNDATION-PLAN.md`** | **THE active next-cycle plan.** Do B (foundation) first: Postgres Atlas (I1) + R2 asset store (I2) + OpenAlex-grammar API (I4), then one vertical (Brahmayāmala / Dviśatikālottara). DB locked to Postgres. The old `AGENT2-NEXT-DEVPLAN.md` (sivaqueue intake) is superseded. |
+| **`openpatala/README.md`** | **The "OpenAlex for Sanskrit" build folder.** Home of the Atlas; imported OpenAlex reference docs under `openpatala/reference/openalex/`. |
+| **`docs/vision/vision-15-patala-atlas-sanskrit-research-graph.md`** | The Atlas **strategy** (Vision 15). |
+| **`docs/vision/atlas/atlas-engineering-blueprint.md`** | The Atlas **build blueprint** (storage: Postgres=R2=event log; I1–I6). |
+| **`docs/vision/atlas/atlas-cloudflare-edge-layer.md`** | The **Cloudflare edge layer** (Neon/Postgres canonical, Workers API + Hyperdrive + Cache + R2, factory stays self-hosted). |
+| **`docs/vision/source-resolution/source-resolver-design.md`** | The **reconciliation authority stack** (NCC/NMM/NGMCP/GRETIL/SARIT/Muktabodha + catalogs + IIIF). |
+| **`docs/vision/functionality/research/2026-08-12/06_ATLAS/RESEARCH_AND_BUILD.md`** | The **endgame-build** project doc for the Atlas. |
+
 ## The live cross-agent surface
 
 - `live/agent2.md` — Agent 2's live current state
