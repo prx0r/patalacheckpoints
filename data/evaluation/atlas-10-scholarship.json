@@ -1,0 +1,150 @@
+{
+  "bench": "ATLAS-10-SCHOLARSHIP",
+  "design_law": "SourceAssertion + CorroborationEvent (proven sufficient); no new ScholarClaim schema",
+  "evidence_axis_only": true,
+  "works": [
+    {
+      "work": "malinivijayottara",
+      "title": "Mālinīvijayottaratantra",
+      "scholarship": [
+        {
+          "work": "malinivijayottara",
+          "kind": "work_scholarship",
+          "scholar": "Somadeva Vasudeva",
+          "publication": "The Yoga of the Mālinīvijayottaratantra (2004)",
+          "kind_note": "critical-edition-study",
+          "year": 2004,
+          "authority": "MACHINE_PROPOSED",
+          "evidence_axis": true
+        }
+      ]
+    },
+    {
+      "work": "vijnanabhairava",
+      "title": "Vijñānabhairava",
+      "scholarship": []
+    },
+    {
+      "work": "paratrisika",
+      "title": "Parātriṃśikā (root)",
+      "scholarship": []
+    },
+    {
+      "work": "paratrisikavivarana",
+      "title": "Parātriṃśikāvivaraṇa (Abhinavagupta)",
+      "scholarship": []
+    },
+    {
+      "work": "tantraloka",
+      "title": "Tantrāloka",
+      "scholarship": [
+        {
+          "work": "tantraloka",
+          "kind": "work_scholarship",
+          "scholar": "Bäumer",
+          "publication": "Tantrāloka studies (accessible scholarship)",
+          "kind_note": "study",
+          "year": null,
+          "authority": "MACHINE_PROPOSED",
+          "evidence_axis": true
+        }
+      ]
+    },
+    {
+      "work": "tantrasara",
+      "title": "Tantrasāra (Abhinavagupta)",
+      "scholarship": []
+    },
+    {
+      "work": "malinislokavarttika",
+      "title": "Mālinīślokavārttika (Mālinīvijayavārttika)",
+      "scholarship": []
+    },
+    {
+      "work": "tantrasadbhava",
+      "title": "Tantrasadbhāva",
+      "scholarship": []
+    },
+    {
+      "work": "sivasutra",
+      "title": "Śivasūtra + Kṣemarāja's Vimarśinī",
+      "scholarship": [
+        {
+          "work": "sivasutra",
+          "kind": "work_scholarship",
+          "scholar": "Sanderson",
+          "publication": "Śaivism and the Tantric Traditions (1990)",
+          "kind_note": "study",
+          "year": null,
+          "authority": "MACHINE_PROPOSED",
+          "evidence_axis": true
+        }
+      ]
+    },
+    {
+      "work": "spandakarika",
+      "title": "Spandakārikā (root) + Spandanirṇaya (Kṣemarāja commentary)",
+      "scholarship": []
+    },
+    {
+      "work": "paratrisikalaghuvrtti",
+      "title": "Parātriṃśikā Laghuvṛtti / Anuttaratattvavimarśinī (Abhinavagupta)",
+      "scholarship": []
+    },
+    {
+      "work": "isvarapratyabhijnavivrtivimarsini",
+      "title": "Īśvarapratyabhijñāvivṛtivimarśinī (Abhinavagupta)",
+      "scholarship": [
+        {
+          "work": "isvarapratyabhijnavivrtivimarsini",
+          "kind": "proposition_corroboration",
+          "proposition": "G2-TC2",
+          "publication": "Otherness in the Pratyabhijñā Philosophy, JIP 35 (2007)",
+          "span": "p. 342 fn. 63",
+          "scholar": "Ratié",
+          "relation": "DIRECT_SUPPORT",
+          "independence": "INDEPENDENT_TEXTUAL_ANALYSIS",
+          "authority": "MACHINE_PROPOSED",
+          "evidence_axis": true
+        },
+        {
+          "work": "isvarapratyabhijnavivrtivimarsini",
+          "kind": "proposition_corroboration",
+          "proposition": "G2-CONC",
+          "publication": "On Reason and Scripture in the Pratyabhijñā (Vienna: ÖAW, 2013)",
+          "span": "pp. 19–22",
+          "scholar": "Ratié",
+          "relation": "DIRECT_SUPPORT",
+          "independence": "INDEPENDENT_TEXTUAL_ANALYSIS",
+          "authority": "MACHINE_PROPOSED",
+          "evidence_axis": true
+        },
+        {
+          "work": "isvarapratyabhijnavivrtivimarsini",
+          "kind": "proposition_corroboration",
+          "proposition": "G2-OBJ",
+          "publication": "IPK ed./trans. (Delhi: Motilal, 2002)",
+          "span": "kārikā 1.6.1 + nn. 2, 45",
+          "scholar": "Torella",
+          "relation": "DIRECT_SUPPORT",
+          "independence": "INDEPENDENT_TRANSLATION",
+          "authority": "MACHINE_PROPOSED",
+          "evidence_axis": true
+        },
+        {
+          "work": "isvarapratyabhijnavivrtivimarsini",
+          "kind": "proposition_corroboration",
+          "proposition": "G4-CRYSTAL",
+          "publication": "IPK ed. (Motilal, 2002)",
+          "span": "ĪPK 1.5.11",
+          "scholar": "Torella",
+          "relation": "DIRECT_SUPPORT",
+          "independence": "INDEPENDENT_TRANSLATION",
+          "authority": "MACHINE_PROPOSED",
+          "evidence_axis": true
+        }
+      ]
+    }
+  ],
+  "total_links": 7
+}
