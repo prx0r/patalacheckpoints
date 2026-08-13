@@ -1,0 +1,383 @@
+{
+  "source": [
+    "sivaqueue3",
+    "sivaqueue4"
+  ],
+  "compiled": "2026-08-13",
+  "targets": {
+    "sanskrit": {
+      "source_census": "sivaqueue3",
+      "title": "Sanskrit",
+      "section": "0. Ṛgveda — especially the Rudra hymns",
+      "sources": [
+        "[https://gretil.sub.uni-goettingen.de/gretil.html](https://gretil.sub.uni-goettingen.de/gretil.html)",
+        "[https://sanskritdocuments.org/mirrors/rigveda/](https://sanskritdocuments.org/mirrors/rigveda/)",
+        "[https://sanskritdocuments.org/iast/veda/](https://sanskritdocuments.org/iast/veda/)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": true
+    },
+    "english_translations": {
+      "source_census": "sivaqueue3",
+      "title": "English translations",
+      "section": "0. Ṛgveda — especially the Rudra hymns",
+      "sources": [
+        "[https://archive.sacred-texts.com/hin/rigveda/](https://archive.sacred-texts.com/hin/rigveda/)",
+        "[https://archive.org/details/FourVedasEnglishTranslation](https://archive.org/details/FourVedasEnglishTranslation)",
+        "[https://archive.org/details/rigvedasanhitac01websgoog](https://archive.org/details/rigvedasanhitac01websgoog)",
+        "[https://archive.org/details/rigvedasanhitac00websgoog](https://archive.org/details/rigvedasanhitac00websgoog)",
+        "[https://academic.oup.com/book/33632](https://academic.oup.com/book/33632)",
+        "[https://india.oup.com/product/the-rigveda-9780197626955/](https://india.oup.com/product/the-rigveda-9780197626955/)",
+        "[https://sjamisonsanskrit.wordpress.com/](https://sjamisonsanskrit.wordpress.com/)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": true
+    },
+    "dro_a_parvan": {
+      "source_census": "sivaqueue3",
+      "title": "Droṇa Parvan",
+      "section": "6. Mahābhārata Śiva corpus",
+      "sources": [
+        "[https://archive.org/details/mahabharataofkri04calcuoft](https://archive.org/details/mahabharataofkri04calcuoft)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": true
+    },
+    "santi_parvan": {
+      "source_census": "sivaqueue3",
+      "title": "Śānti Parvan",
+      "section": "6. Mahābhārata Śiva corpus",
+      "sources": [
+        "[https://archive.org/details/mahabharataofkri07calcuoft](https://archive.org/details/mahabharataofkri07calcuoft)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": true
+    },
+    "anusasana_parvan": {
+      "source_census": "sivaqueue3",
+      "title": "Anuśāsana Parvan",
+      "section": "6. Mahābhārata Śiva corpus",
+      "sources": [
+        "[https://archive.org/details/mahabharataofkri08calcuoft](https://archive.org/details/mahabharataofkri08calcuoft)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": true
+    },
+    "direct_sanskrit_pdf": {
+      "source_census": "sivaqueue3",
+      "title": "Direct Sanskrit PDF:",
+      "section": "Śivadharmottara — Sanskrit",
+      "sources": [
+        "[https://www.ifpindia.org/transcripts/pdf/T0075.pdf](https://www.ifpindia.org/transcripts/pdf/T0075.pdf)",
+        "[https://digitalcollections.ifpindia.org/s/manuscripts/item/372767](https://digitalcollections.ifpindia.org/s/manuscripts/item/372767)",
+        "[https://commons.wikimedia.org/wiki/File:%E0%AE%9A%E0%AE%BF%E0%AE%B5%E0%AE%A4%E0%AE%B0%E0%AF%81%E0%AE%AE%E0%AF%8B%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AF%8D%E0%AE%B0%E0%AE%AE%E0%AF%8D_-_%E0%AE%AE%E0%AF%82%E0%AE%B2%E0%AE%AE%E0%AF%81%E0%AE%AE%E0%AF%81%E0%AE%B0%E0%AF%88%E0%AE%AF%E0%AF%81%E0%AE%AE%E0%AF%8D_%28IA_Sivatharmoththram%29.pdf](https://commons.wikimedia.org/wiki/File:%E0%AE%9A%E0%AE%BF%E0%AE%B5%E0%AE%A4%E0%AE%B0%E0%AF%81%E0%AE%AE%E0%AF%8B%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AF%8D%E0%AE%B0%E0%AE%AE%E0%AF%8D_-_%E0%AE%AE%E0%AF%82%E0%AE%B2%E0%AE%AE%E0%AF%81%E0%AE%AE%E0%AF%81%E0%AE%B0%E0%AF%88%E0%AE%AF%E0%AF%81%E0%AE%AE%E0%AF%8D_%28IA_Sivatharmoththram%29.pdf)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": false
+    },
+    "direct_legal_open_access_pdf": {
+      "source_census": "sivaqueue3",
+      "title": "Direct legal Open Access PDF:",
+      "section": "9. Early Skandapurāṇa",
+      "sources": [
+        "[https://library.oapen.org/bitstream/20.500.12657/25710/1/9789004383517%20-%20The%20Skandapur%c4%81%e1%b9%87a%20Volume%20IV.pdf](https://library.oapen.org/bitstream/20.500.12657/25710/1/9789004383517%20-%20The%20Skandapur%c4%81%e1%b9%87a%20Volume%20IV.pdf)",
+        "[https://library.oapen.org/handle/20.500.12657/25710](https://library.oapen.org/handle/20.500.12657/25710)",
+        "[https://www.jstor.org/stable/10.1163/j.ctv2gjx020](https://www.jstor.org/stable/10.1163/j.ctv2gjx020)",
+        "[https://britishmuseum.academia.edu/HansTBakker](https://britishmuseum.academia.edu/HansTBakker)",
+        "[https://leidenuniv.academia.edu/PeterBisschop](https://leidenuniv.academia.edu/PeterBisschop)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": false
+    },
+    "the_nisvasatattvasamhita_the_earliest_surviving_sa": {
+      "source_census": "sivaqueue3",
+      "title": "The Niśvāsatattvasaṃhitā: The Earliest Surviving Śaiva Tantra, Volume 1. A Critical Edition & Annotated Translation of the Mūlasūtra, Uttarasūtra & Nayasūtra",
+      "section": "Niśvāsatattvasaṃhitā — Mūlasūtra, Uttarasūtra, Nayasūtra",
+      "sources": [
+        "[https://ifpindia.org/bookstore/ci128/](https://ifpindia.org/bookstore/ci128/)",
+        "[https://publications.efeo.fr/en/livres/828_the-ni-v-satattvasa-hit--the-earliest-surviving-aiva-tantra](https://publications.efeo.fr/en/livres/828_the-ni-v-satattvasa-hit--the-earliest-surviving-aiva-tantra)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": false
+    },
+    "nisvasamukhatattvasamhita_a_preface_to_the_earlies": {
+      "source_census": "sivaqueue3",
+      "title": "Niśvāsamukhatattvasaṃhitā: A Preface to the Earliest Surviving Śaiva Tantra",
+      "section": "Niśvāsamukhatattvasaṃhitā",
+      "sources": [
+        "[https://ifpindia.org/bookstore/ci145/](https://ifpindia.org/bookstore/ci145/)",
+        "[https://publications.efeo.fr/fr/livres/944_ni-v-samukhatattvasamhit](https://publications.efeo.fr/fr/livres/944_ni-v-samukhatattvasamhit)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": false
+    },
+    "sanskrit_e_text": {
+      "source_census": "sivaqueue4",
+      "title": "Sanskrit e-text",
+      "section": "1. Maitrāyaṇī Saṃhitā",
+      "sources": [
+        "[https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/1_veda/1_sam/maitrs_pu.htm](https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/1_veda/1_sam/maitrs_pu.htm)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": true
+    },
+    "sanskrit_scan_satavalekar_edition": {
+      "source_census": "sivaqueue4",
+      "title": "Sanskrit scan, Satavalekar edition",
+      "section": "1. Maitrāyaṇī Saṃhitā",
+      "sources": [
+        "[https://archive.org/details/maitrayanisamhit015004mbp](https://archive.org/details/maitrayanisamhit015004mbp)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": true
+    },
+    "sanskrit_discovery_index": {
+      "source_census": "sivaqueue4",
+      "title": "Sanskrit discovery/index",
+      "section": "2. Kāṭhaka Saṃhitā",
+      "sources": [
+        "[https://gretil.sub.uni-goettingen.de/gretil.html](https://gretil.sub.uni-goettingen.de/gretil.html)",
+        "[https://titus.uni-frankfurt.de/texte/texte2.htm](https://titus.uni-frankfurt.de/texte/texte2.htm)",
+        "[https://vedicheritage.gov.in/samhitas/yajurveda/](https://vedicheritage.gov.in/samhitas/yajurveda/)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": true
+    },
+    "sanskrit_edition_dissertation": {
+      "source_census": "sivaqueue4",
+      "title": "Sanskrit edition / dissertation",
+      "section": "3. Kapiṣṭhala-Kaṭha Saṃhitā",
+      "sources": [
+        "[https://soas-repository.worktribe.com/output/383107/kapisthala-katha-samhita](https://soas-repository.worktribe.com/output/383107/kapisthala-katha-samhita)",
+        "[https://doi.org/10.25501/SOAS.00034009](https://doi.org/10.25501/SOAS.00034009)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": false
+    },
+    "sanskrit_vol_ii_direct_pdf": {
+      "source_census": "sivaqueue4",
+      "title": "Sanskrit vol. II direct PDF",
+      "section": "4. Taittirīya Brāhmaṇa",
+      "sources": [
+        "[https://archive.org/download/dli.granth.71695/71695.pdf](https://archive.org/download/dli.granth.71695/71695.pdf)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": true
+    },
+    "sanskrit_vol_iii_direct_pdf": {
+      "source_census": "sivaqueue4",
+      "title": "Sanskrit vol. III direct PDF",
+      "section": "4. Taittirīya Brāhmaṇa",
+      "sources": [
+        "[https://archive.org/download/dli.granth.71696/71696.pdf](https://archive.org/download/dli.granth.71696/71696.pdf)",
+        "[https://gretil.sub.uni-goettingen.de/gretil.html](https://gretil.sub.uni-goettingen.de/gretil.html)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": true
+    },
+    "complete_machine_readable_sanskrit": {
+      "source_census": "sivaqueue4",
+      "title": "Complete machine-readable Sanskrit",
+      "section": "5. Kauṣītaki / Śāṅkhāyana Brāhmaṇa",
+      "sources": [
+        "[https://gretil.sub.uni-goettingen.de/gretil/corpustei/transformations/html/sa_kauSItakibrAhmaNa.htm](https://gretil.sub.uni-goettingen.de/gretil/corpustei/transformations/html/sa_kauSItakibrAhmaNa.htm)",
+        "[https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/1_veda/2_bra/kausibru.htm](https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/1_veda/2_bra/kausibru.htm)",
+        "[https://archive.org/details/rigvedabrahmana00keitgoog](https://archive.org/details/rigvedabrahmana00keitgoog)",
+        "[https://onlinebooks.library.upenn.edu/webbin/book/lookupid?key=olbp98766](https://onlinebooks.library.upenn.edu/webbin/book/lookupid?key=olbp98766)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": true
+    },
+    "machine_readable_sanskrit": {
+      "source_census": "sivaqueue4",
+      "title": "Machine-readable Sanskrit",
+      "section": "10. Śāṅkhāyana Āraṇyaka",
+      "sources": [
+        "[https://gretil.sub.uni-goettingen.de/gretil/corpustei/transformations/html/sa_zaGkhAyana-AraNyaka.htm](https://gretil.sub.uni-goettingen.de/gretil/corpustei/transformations/html/sa_zaGkhAyana-AraNyaka.htm)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": true
+    },
+    "full_historical_sanskrit_edition": {
+      "source_census": "sivaqueue4",
+      "title": "Full historical Sanskrit edition",
+      "section": "6. Gopatha Brāhmaṇa",
+      "sources": [
+        "[https://archive.org/details/gopathabrahmanao00gopauoft](https://archive.org/details/gopathabrahmanao00gopauoft)",
+        "[https://vedicheritage.gov.in/brahmanas/gopatha-brhamana/](https://vedicheritage.gov.in/brahmanas/gopatha-brhamana/)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": true
+    },
+    "sanskrit_scan": {
+      "source_census": "sivaqueue4",
+      "title": "Sanskrit scan",
+      "section": "8. Jaiminīya Brāhmaṇa",
+      "sources": [
+        "[https://archive.org/details/jaiminiyabrahman014906mbp](https://archive.org/details/jaiminiyabrahman014906mbp)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": true
+    },
+    "online_sanskrit": {
+      "source_census": "sivaqueue4",
+      "title": "Online Sanskrit",
+      "section": "8. Jaiminīya Brāhmaṇa",
+      "sources": [
+        "[https://sa.wikisource.org/wiki/सामवेदः/जैमिनीयाः/जैमिनीयं_ब्राह्मणम्](https://sa.wikisource.org/wiki/सामवेदः/जैमिनीयाः/जैमिनीयं_ब्राह्मणम्)",
+        "[https://vedicheritage.gov.in/brahmanas/jaiminiya-brhamana/](https://vedicheritage.gov.in/brahmanas/jaiminiya-brhamana/)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": true
+    },
+    "sanskrit_xml_resource": {
+      "source_census": "sivaqueue4",
+      "title": "Sanskrit XML/resource",
+      "section": "9. Jaiminīya-Upaniṣad-Brāhmaṇa",
+      "sources": [
+        "[https://sanskritlibrary.org/catalogsText/titus/vedic/jub.html](https://sanskritlibrary.org/catalogsText/titus/vedic/jub.html)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": false
+    },
+    "english_related_early_translation_source": {
+      "source_census": "sivaqueue4",
+      "title": "English / related early translation source",
+      "section": "10. Śāṅkhāyana Āraṇyaka",
+      "sources": [
+        "[https://archive.org/search?query=%22Sankhayana+Aranyaka%22](https://archive.org/search?query=%22Sankhayana+Aranyaka%22)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": true
+    },
+    "searchable_public_domain_scan": {
+      "source_census": "sivaqueue4",
+      "title": "Searchable public-domain scan",
+      "section": "11. Aitareya Āraṇyaka",
+      "sources": [
+        "[https://archive.org/search?query=%22Aitareya+Aranyaka%22+Keith](https://archive.org/search?query=%22Aitareya+Aranyaka%22+Keith)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": true
+    },
+    "modern_vedic_resource_hub": {
+      "source_census": "sivaqueue4",
+      "title": "Modern Vedic resource hub",
+      "section": "11. Aitareya Āraṇyaka",
+      "sources": [
+        "[https://titus.uni-frankfurt.de/texte/texte2.htm](https://titus.uni-frankfurt.de/texte/texte2.htm)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": true
+    },
+    "full_volume_scan": {
+      "source_census": "sivaqueue4",
+      "title": "Full volume scan",
+      "section": "12. Maitrī / Maitrāyaṇīya Upaniṣad",
+      "sources": [
+        "[https://archive.org/details/p2upanishads00mluoft](https://archive.org/details/p2upanishads00mluoft)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": true
+    },
+    "sanskrit_electronic_corpus_index": {
+      "source_census": "sivaqueue4",
+      "title": "Sanskrit electronic corpus index",
+      "section": "12. Maitrī / Maitrāyaṇīya Upaniṣad",
+      "sources": [
+        "[https://gretil.sub.uni-goettingen.de/gretil.html](https://gretil.sub.uni-goettingen.de/gretil.html)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": true
+    },
+    "sanskrit_index": {
+      "source_census": "sivaqueue4",
+      "title": "Sanskrit index",
+      "section": "14. Mahānārāyaṇa Upaniṣad",
+      "sources": [
+        "[https://gretil.sub.uni-goettingen.de/gretil.html](https://gretil.sub.uni-goettingen.de/gretil.html)",
+        "[https://vedicheritage.gov.in/](https://vedicheritage.gov.in/)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": true
+    },
+    "this_is_one_of_the_most_important_omissions_from_t": {
+      "source_census": "sivaqueue4",
+      "title": "This is one of the most important omissions from the first list.",
+      "section": "15. Atharvaśiras / Atharvaśira Upaniṣad",
+      "sources": [
+        "[https://gretil.sub.uni-goettingen.de/gretil/corpustei/transformations/html/sa_zira-upaniSad.htm](https://gretil.sub.uni-goettingen.de/gretil/corpustei/transformations/html/sa_zira-upaniSad.htm)",
+        "[https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/1_veda/4_upa/sirup_u.htm](https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/1_veda/4_upa/sirup_u.htm)"
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": true
+    },
+    "atharvasiras_kaivalya_vayu_kurma_pura_ic_layer": {
+      "source_census": "sivaqueue4",
+      "title": "Atharvaśiras → Kaivalya → Vāyu/Kūrma Purāṇic layer.",
+      "section": "What these 20 actually add",
+      "sources": [
+        "[1]: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/1_veda/1_sam/maitrs_pu.htm?utm_source=chatgpt.com \"Maitrayani-Samhita, plain text\"",
+        "[2]: https://soas-repository.worktribe.com/output/383107/kapisthala-katha-samhita?utm_source=chatgpt.com \"Kapisthala - Katha - Samhita.\"",
+        "[3]: https://commons.wikimedia.org/wiki/File%3AThe_Taittiriya_Brahmana_of_the_Black_Yajur_Veda%2C_in_Three_Volumes%2C_Vol._II_%28Bibliotheca_Indica-_A_Collection_of_Oriental_Works%2C_New_Series_Nos.%2C_151%2C_152%2C_153%2C_154%2C_155%2C_175%2C_176%2C_188_and_189%29_%28IA_dli.granth.71695%29.pdf?utm_source=chatgpt.com \"File:The Taittiriya Brahmana of the Black Yajur Veda, in Three Volumes, Vol. II (Bibliotheca Indica- A Collection of Oriental Works, New Series Nos., 151, 152, 153, 154, 155, 175, 176, 188 and 189) (IA dli.granth.71695).pdf - Wikimedia Commons\"",
+        "[4]: https://theaum.org/pages/hinduism/concepts/wiki/taittir%C4%ABya_br%C4%81hma%E1%B9%87a/?utm_source=chatgpt.com \"Dictionary: Taittirīya Brāhmaṇa | TheAum\"",
+        "[5]: https://gretil.sub.uni-goettingen.de/gretil/corpustei/transformations/html/sa_kauSItakibrAhmaNa.htm?utm_source=chatgpt.com \"Kauṣītakibrāhmaṇa (or Śāṅkhāyanabrāhmaṇa) (GRETIL)\"",
+        "[6]: https://openlibrary.org/books/OL6646847M/Rigveda_Brahmanas?utm_source=chatgpt.com \"Rigveda Brahmanas by Arthur Berriedale Keith | Open Library\"",
+        "[7]: https://openlibrary.org/books/OL7030423M/The_Gopatha_Brahmana_of_the_Atharva_Veda.?utm_source=chatgpt.com \"The Gopatha Brahmana of the Atharva Veda. by Gopathabrahmana | Open Library\"",
+        "[8]: https://gyanbooks.com/index.php?Book=Gopatha+Brahmana+English+Translation+With+Notes+And+Introduction&Field=bookcode&String=1111026280871&format=fullpage&p=sr&utm_source=chatgpt.com \"Gopatha Brahmana English Translation With Notes And Introduction | HUKAM CHAND PATYAL\"",
+        "[9]: https://gretil.sub.uni-goettingen.de/gretil/corpustei/transformations/html/sa_paJcaviMzabrAhmaNa.htm?utm_source=chatgpt.com \"Pañcaviṃśabrāhmaṇa (GRETIL)\"",
+        "[10]: https://openlibrary.org/works/OL43299507W/Pancavimsa_Brahmana?utm_source=chatgpt.com \"Pancavimsa Brahmana by Caland. W | Open Library\"",
+        "[11]: https://openlibrary.org/books/OL58891713M/Jaiminiya_Brahmana_of_the_Samaveda?utm_source=chatgpt.com \"Jaiminiya Brahmana of the Samaveda by Raghuvira | Open Library\"",
+        "[12]: https://mr.kuchewar.com/brahmana/?utm_source=chatgpt.com \"Brahmana - kuchewar\"",
+        "[13]: https://sanskritlibrary.org/catalogsText/titus/vedic/jub.html?utm_source=chatgpt.com \"The Jaiminīya-Upaniṣad-Brāhmaṇa\"",
+        "[14]: https://gretil.sub.uni-goettingen.de/gretil/corpustei/transformations/html/sa_zaGkhAyana-AraNyaka.htm?utm_source=chatgpt.com \"Śaṅkhāyana-Āraṇyaka (GRETIL)\"",
+        "[15]: https://onlinebooks.library.upenn.edu/webbin/book/lookupname?key=Keith%2C+Arthur+Berriedale%2C+1879-1944&utm_source=chatgpt.com \"Arthur Berriedale Keith (Keith, Arthur Berriedale, 1879-1944) | The Online Books Page\"",
+        "[16]: https://openlibrary.org/books/OL6771113M/The_Upanishads?utm_source=chatgpt.com \"The Upanishads by F. Max Müller | Open Library\"",
+        "[17]: https://www.wisdomlib.org/hinduism/book/katha-upanishad-shankara-bhashya?utm_source=chatgpt.com \"Katha Upanishad with Shankara’s Commentary\"",
+        "[18]: https://gretil.sub.uni-goettingen.de/gretilbk.htm?utm_source=chatgpt.com \"GRETIL - Göttingen Register of Electronic Texts in Indian Languages\"",
+        "[19]: https://gretil.sub.uni-goettingen.de/gretil/corpustei/transformations/html/sa_zira-upaniSad.htm?utm_source=chatgpt.com \"Śira-upaniṣad (= Atharvaśira-upanisad) (GRETIL)\"",
+        "[20]: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/1_veda/4_upa/sirup_u.htm?utm_source=chatgpt.com \"Sira-Upanisad (= Atharvasira-Upanisad)\"",
+        "[21]: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/1_veda/4_upa/kaivup_u.htm?utm_source=chatgpt.com \"Kaivalya-Upanisad\"",
+        "[22]: https://openlibrary.org/books/OL23276232M/Amritabindu_and_Kaivalya_Upanishad?utm_source=chatgpt.com \"Amritabindu and Kaivalya Upanishad by Alladi Mahadeva Sastri | Open Library\"",
+        "[23]: https://upasanayoga.org/KaivU.htm?utm_source=chatgpt.com \"Kaivalya Upanisad\"",
+        "[24]: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/4_rellit/saiva/sivup_pu.htm?utm_source=chatgpt.com \"Siva-Upanisad (plain text)\"",
+        "[25]: https://sanatanhindudharma.org/Puranas/Vayu_Purana?utm_source=chatgpt.com \"Introduction to Vayu Purana\"",
+        "[26]: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/3_purana/lip_2__u.htm?utm_source=chatgpt.com \"Linga-Purana 2,1 - 55\"",
+        "[27]: https://sanatanhindudharma.org/Puranas/Linga_Purana?utm_source=chatgpt.com \"Introduction to Linga Purana\"",
+        "[28]: https://gretil.sub.uni-goettingen.de/gretil/1_sanskr/3_purana/kurmp2_u.htm?utm_source=chatgpt.com \"Kurma-Purana, Part 2\"",
+        "[29]: https://handwiki.org/wiki/Religion%3AVamana?utm_source=chatgpt.com \"Religion:Vamana - HandWiki\""
+      ],
+      "translation_status": "unknown",
+      "verdict": "",
+      "public_e_text_hint": true
+    }
+  }
+}
