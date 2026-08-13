@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -150,23 +151,50 @@ def _produce_layer(layer: str, inputs: list[dict], batch_size: int = 4) -> dict:
 FAILURE_QUEUE = Path("/root/projects/patala/data/corpus/downloads/factory-failure-queue.jsonl")
 
 
-def _record_failures(layer: str, retryable: list[dict]) -> None:
-    """Append retryable failures to the durable AUDIT queue (append-only, never cleared).
+MAX_ATTEMPTS = int(os.environ.get("PATALA_MAX_RETRY_ATTEMPTS", "3"))
 
-    A2-11b: retry history is preserved. A record stays in the queue; on a successful retry it is
-    marked RESOLVED (not deleted), so the audit trail (attempt 1 FAIL, attempt 2 PASS) survives for
-    worker/model-reliability metrics, pathological-source identification, and regression debugging."""
+
+def _record_failures(layer: str, retryable: list[dict]) -> None:
+    """Upsert retryable failures into the durable AUDIT queue (one record per object, no bloat).
+
+    A2-11b: audit history is preserved — a record keeps its attempt count. If an OPEN record already
+    exists for the same (object, layer), it is UPDATED IN PLACE (attempt +1, new ts) rather than
+    appending a duplicate. A NEW record is appended only for a first-time failure. This keeps the queue
+    bounded (one row per failing object) while the audit trail survives.
+    """
     if not retryable:
         return
-    FAILURE_QUEUE.parent.mkdir(parents=True, exist_ok=True)
     ts = __import__("time").strftime('%Y-%m-%dT%H:%M:%S')
-    with FAILURE_QUEUE.open("a", encoding="utf-8") as fh:
-        for f in retryable:
-            fh.write(json.dumps({**f, "ts": ts, "status": "OPEN",
-                                 "attempt": f.get("attempt", 1),
-                                 "input_size": f.get("input_size", 0),
-                                 "timeout_used": f.get("timeout_used", 0)},
-                                ensure_ascii=False) + "\n")
+    FAILURE_QUEUE.parent.mkdir(parents=True, exist_ok=True)
+    # load existing records (upsert key = object_id + layer)
+    lines = FAILURE_QUEUE.read_text(encoding="utf-8").splitlines() if FAILURE_QUEUE.exists() else []
+    records = {}
+    preserved = []
+    for line in lines:
+        try:
+            f = json.loads(line)
+        except Exception:
+            preserved.append(line)
+            continue
+        key = (f.get("object_id"), f.get("layer"))
+        records[key] = f
+    # upsert
+    for f in retryable:
+        key = (f.get("object_id"), f.get("layer"))
+        prev = records.get(key)
+        if prev and prev.get("status") in (None, "OPEN"):
+            prev["attempt"] = prev.get("attempt", 1) + 1
+            prev["ts"] = ts
+            prev["reason"] = f.get("reason", prev.get("reason", ""))
+            records[key] = prev
+        else:
+            f.setdefault("attempt", 1)
+            f["ts"] = ts
+            f["status"] = "OPEN"
+            records[key] = f
+    # write back: preserved + deduped records
+    out = list(preserved) + [json.dumps(v, ensure_ascii=False) for v in records.values()]
+    FAILURE_QUEUE.write_text("\n".join(out) + ("\n" if out else ""), encoding="utf-8")
 
 
 def _verse_from_source(object_id: str) -> str:
@@ -216,7 +244,17 @@ def _retry_failures(work_id: str, layer: str) -> int:
     if not retry:
         return 0
     inputs = []
+    skipped_blocked = 0
     for f in retry:
+        # retry cap (A2-11b): a record past MAX_ATTEMPTS is BLOCKED (won't be retried again,
+        # but stays in the audit as BLOCKED_RETRY_EXHAUSTED). Prevents endless retry-cycling of a
+        # genuinely-troublesome passage while the rest of the corpus continues.
+        if f.get("attempt", 1) >= MAX_ATTEMPTS:
+            f["status"] = "BLOCKED_RETRY_EXHAUSTED"
+            f["retry_ts"] = ts
+            out.append(json.dumps(f, ensure_ascii=False))
+            skipped_blocked += 1
+            continue
         inp = {"object_id": f["object_id"],
                "input_hash": (R.current(layer, f["object_id"]) or {}).get("input_hash", ""),
                "_retry_record": f}
@@ -233,7 +271,8 @@ def _retry_failures(work_id: str, layer: str) -> int:
         f["attempt"] = f.get("attempt", 1) + 1
         out.append(json.dumps(f, ensure_ascii=False))
     FAILURE_QUEUE.write_text("\n".join(out) + ("\n" if out else ""), encoding="utf-8")
-    return len(retry)
+    # return only actually-attempted retries (blocked ones are counted separately)
+    return len(inputs)
 
 
 def main() -> int:

@@ -78,6 +78,25 @@ def main() -> int:
     n2 = FB._retry_failures("work", "T1")
     ok &= t("resolved records not retried again (no infinite loop)", n2 == 0, f"{n2}")
 
+    print()
+    print("=== A2-11b upsert (no queue bloat) + retry cap ===")
+    # record the same failure 5x -> upserts to ONE record, attempt grows
+    FB.FAILURE_QUEUE = Path(tempfile.mkdtemp()) / "q2.jsonl"
+    R.REG_DIR = Path(tempfile.mkdtemp())
+    R.commit("SOURCE", "work:v1", "h1", created_by="test", payload={"verse": "śivo", "source_text": "śivo"})
+    for _ in range(5):
+        FB._record_failures("T1", [{"object_id": "work:v1", "layer": "T1", "reason": "gen"}])
+    q2 = FB.FAILURE_QUEUE.read_text().splitlines()
+    ok &= t("5 identical failures -> 1 record (no bloat)", len(q2) == 1, f"{len(q2)}")
+    ok &= t("attempt count grew to 5", json.loads(q2[0])["attempt"] == 5,
+            f"{json.loads(q2[0])['attempt']}")
+    # retry past MAX_ATTEMPTS -> BLOCKED, not retried
+    TW.chat = lambda s, p, **kw: '{"tokens": {"śivo": {"gloss":"x"}}}'
+    n3 = FB._retry_failures("work", "T1")
+    rec = json.loads(FB.FAILURE_QUEUE.read_text().splitlines()[0])
+    ok &= t("retry past MAX_ATTEMPTS -> BLOCKED (not re-attempted)", rec["status"] == "BLOCKED_RETRY_EXHAUSTED",
+            rec["status"])
+
     print("\n" + ("FAILURE-QUEUE ALL PASS" if ok else "FAILURE-QUEUE SOME FAIL"))
     return 0 if ok else 1
 
