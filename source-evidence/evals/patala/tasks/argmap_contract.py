@@ -51,11 +51,15 @@ MUTATION_FAMILIES = (
 # a minimal set of "inference"/"grounding" cue words used by the shape-level verifier.
 # NOTE: these are STRUCTURAL cues only — the verifier nominates, never settles truth.
 _INFERENCE_CUES = ("therefore", "hence", "so", "thus", "it follows", "consequently", "implies")
+# grounding cues: textual + citation cues. A line-range citation (e.g. "(lines 11028)" / "(line ~10950)")
+# is a real textual grounding, exactly how the IPVV gold argument-maps anchor each step. Without it, the
+# verifier false-positives on real gold prose.
 _GROUNDING_CUES = ("the passage", "the verse", "the segment", "as given", "licensed", "the text",
-                   "fidelity bound")
+                   "fidelity bound", "line", "lines", "kārikā", "karika", "sūtra", "sutra")
 _OBJECTION_CUES = ("one might object", "someone could", "the opponent", "a rival", "however,",
                    "alternatively")
-_UNIVERSAL_CUES = ("all", "every", "always", "invariably", "in all cases", "universal", "everywhere")
+_UNIVERSAL_CUES = ("in all cases", "universally", "universal self", "applies to all", "without exception",
+                   "in every case", "always and everywhere", "one universal")
 
 
 def check_shape(argmap: dict) -> list[str]:
