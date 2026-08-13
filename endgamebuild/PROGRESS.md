@@ -58,6 +58,19 @@
 3. **SCHOLAR-VERTICAL-1** — one proposition, all primary + published evidence, one real human
    adjudication, full downstream impact. ("Show me exactly what my objection changes.")
 
+## CANONICAL-GRAPH-1 (the current phase — make one graph genuinely canonical, no new features)
+
+Status: **substantially DONE** (see `SESSION-BUILD-RECORD-2026-08-13.md` for the full P0-P8 log):
+- ✅ P0 PassageIdentity crosswalk — IPVV ids resolve canonically (49/49 + 231/231).
+- ✅ P1 REGISTRY-FORENSICS-v1 — classified 789 bad hashes + 119 conflicts + duplicates (read-only;
+  repair deferred, no factory mutation).
+- ✅ P2 L2 canonicalization / L1 retirement (decision).
+- ✅ P3 real ARGUMENT + SYNTHESIS workers (no generic fallback).
+- ✅ P4 THEME/ESSAY/EDUCATION on-demand (not automatic).
+- ✅ P6 V3M real defect frozen (EF-ARGMAP-2026-0001).
+- ✅ P7 ML test hygiene (39/39).
+- 🔄 P8 whole-chain traversal (one real passage Source→…→Synthesis + API/MCP) — in progress.
+
 ## OWNER DECISION PENDING
 
 - **Repo history rewrite** (destructive `filter-repo`) — remove the in-copyright PDFs from prior git

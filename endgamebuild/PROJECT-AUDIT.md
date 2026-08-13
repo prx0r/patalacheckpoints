@@ -149,4 +149,7 @@ hard-coded machine paths.
 
 ---
 
-*This audit was read-only; nothing was modified. It supersedes the older `docs/global/patala-full-audit-bundle/FULL_AUDIT.md` as the current full-project health check (that one audited an earlier snapshot).*
+*The five subsystem audit passes were read-only. The consolidated audit then applied the explicitly
+listed safe fixes (schema-drift deletion, rich-scholarship→Postgres, /api/education, env-config paths,
+scheduler LAYER_ORDER). This supersedes the older `docs/global/patala-full-audit-bundle/FULL_AUDIT.md`
+as the current full-project health check (that one audited an earlier snapshot).*
