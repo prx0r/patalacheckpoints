@@ -58,6 +58,7 @@ New here? Do not read the whole surface top-down. Follow the arc:
     `docs/vision/atlas/atlas-cloudflare-edge-layer.md` (Neon/Postgres canonical, Workers API + Hyperdrive +
     R2, factory self-hosted) + `docs/vision/atlas/atlas-performance.md` (compute-on-write doctrine;
     immutable versions = cacheable; agent bundles; Astro islands; Rust for hot kernels) +
+    `docs/vision/atlas/agent-optimization.md` (the agent product surface: discoverability, 7 MCP tools, token budgets, evals) +
     `docs/vision/functionality/research/2026-08-12/06_ATLAS/RESEARCH_AND_BUILD.md`
     (the endgame-build project). This is the current forward build — the foundation (B) before the vertical (C).
  8. **Foundational deep-dives** — `docs/NORTHSTAR.md` (deepest strategy), `docs/foundationalideas.md`
