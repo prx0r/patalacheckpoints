@@ -64,18 +64,19 @@ Production reference: `handover/agent-2-integration/CURRENT-STATE.md`. Roadmap: 
 - L200 candidates per `EVAL-CONTRACT-L200-EXPORT.md`
 
 ## LOOSE THREADS / NOTES
-- **Era B (corpus compiler) in progress:**
-  - ✅ **A2-11 durable failure/retry queue** (`factory_batch` + `test_failure_queue`)
-  - ✅ **A2-12 corpus progress dashboard** (`factory_status.py` + `test_factory_status`)
-  - ✅ **A2-8/A2-9 backlog scheduler + multi-work execution** (`factory_scheduler.py` +
-    `test_factory_scheduler`) — advances all registered works through SOURCE→C1 automatically, one
-    layer per work per pass. **Verified live: spandakarika T1 advanced 2/2 unattended via the scheduler.**
-  - ▶ Next: **A2-10 resource/rate limiting**, A2-13 unattended bulk translation, then Era C (rebuild engine).
-- Semantic correctness = Agent 1's evals lane (AlignScore/NLI), NOT Agent 2's.
-- Live runner (auto_translate_raw.py, pid 362890) still translating — untouched.
+- **Era B (corpus compiler) — 4/5 DONE:**
+  - ✅ **A2-11** durable failure/retry queue · **A2-12** dashboard · **A2-8/9** scheduler (live verified:
+    spandakarika T1 2/2) · **A2-10** rate limiting (model-call budget + throttle)
+  - ▶ **A2-13** unattended bulk translation — **RUNNING** across all 12 works. Progress so far:
+    brahmayamala T1 advanced 2/2; bhavopahara T1 retryable (long verse times out under the live runner's
+    API contention — recorded safely, no wedge).
+- **Era C (living rebuild engine) STARTED:**
+  - ✅ **A2-14/15/16** supersession propagation + targeted regeneration (`factory_rebuild.py`) + a
+    **critical `object_registry.current()` fix** (returns None when all versions superseded — without it
+    the rebuild engine can't detect invalidation).
+- L0-orphan gap RESOLVED by design: registry `commit()` auto-supersedes old L0 as T1 is built.
+- Semantic correctness = Agent 1's evals lane. Live runner (pid 362890) untouched throughout.
 
-## THIS SESSION'S COMMITS (Era B)
-- `d84ea03` A2-11 durable failure/retry queue + isolation
-- `8aee600` A2-12 corpus progress dashboard
-- `6eea830` A2-8/A2-9 backlog scheduler + multi-work execution
-- `4f8c3b5` scheduler SOURCE-verse recovery (live spandakarika T1 2/2)
+## THIS SESSION'S COMMITS (Era B + C)
+- `d84ea03` A2-11 · `8aee600` A2-12 · `6eea830` A2-8/9 · `4f8c3b5` scheduler verse-recovery ·
+  `46cea8b` A2-10 rate limiting · `35103cc` Era C rebuild engine + current() fix
