@@ -1,0 +1,1352 @@
+{
+  "bench": "ATLAS-BACKFILL",
+  "source": "data/atlas/audited.ts",
+  "records_parsed": 11,
+  "candidates": [
+    {
+      "id": "malinivijayottara",
+      "work_identity": {
+        "value": {
+          "id": "malinivijayottara",
+          "title": "Mālinīvijayottaratantra",
+          "alternate_titles": []
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "authorship": {
+        "value": "anonymous",
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "date": {
+        "value": {
+          "start": 800,
+          "end": 950,
+          "approximate": true
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "language": {
+        "value": "Sanskrit",
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "tradition": {
+        "value": [
+          "Bhairava/Vidyāpīṭha",
+          "Trika"
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "editions": {
+        "value": [
+          {
+            "type": "edition",
+            "coverage": "complete",
+            "provider": "Muktabodha M00160",
+            "tier": "B"
+          }
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "etexts": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "translations": {
+        "value": [
+          {
+            "language": "en",
+            "translator": "Somadeva Vasudeva",
+            "work": "The Yoga of the Mālinīvijayottaratantra",
+            "coverage": "chs. 1–4, 7, 12–17",
+            "complete": false,
+            "type": "scholarly",
+            "year": 2004,
+            "url": "http://www.ifpindia.org/bookstore/ci97/",
+            "tier": "A"
+          }
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "scholarship": {
+        "value": [
+          {
+            "author": "Somadeva Vasudeva",
+            "work": "The Yoga of the Mālinīvijayottaratantra",
+            "year": 2004,
+            "url": "http://publications.efeo.fr/en/livres/618_the-yoga-of-the-malinivijayottaratantra-chapters-1-4-7-i2-17",
+            "tier": "A",
+            "kind": "study"
+          },
+          {
+            "work": "Wisdom Library references",
+            "url": "http://www.wisdomlib.org/definition/malinivijayottaratantra",
+            "tier": "C"
+          }
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "related": {
+        "value": [
+          "malinislokavarttika",
+          "tantraloka"
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "rights": {
+        "value": {
+          "status": "unknown"
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "UNKNOWN"
+      },
+      "source": "audited.ts (Trika-10 bibliography)",
+      "provenance_hash": "becba283c5a1dc58f02c221ad6a017fc9556eafa7e00bcc894d3f5ac179fe9a3",
+      "authority_vector": {
+        "identity": "CATALOG_MATCHED",
+        "authorship": "CATALOG_SUPPORTED",
+        "date": "CATALOG_SUPPORTED",
+        "editions": "CATALOG_SUPPORTED",
+        "etexts": "CATALOG_SUPPORTED",
+        "translations": "CATALOG_SUPPORTED",
+        "scholarship": "CATALOG_SUPPORTED",
+        "rights": "UNKNOWN"
+      }
+    },
+    {
+      "id": "vijnanabhairava",
+      "work_identity": {
+        "value": {
+          "id": "vijnanabhairava",
+          "title": "Vijñānabhairava",
+          "alternate_titles": []
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "authorship": {
+        "value": "anonymous",
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "date": {
+        "value": {
+          "start": 850,
+          "end": 950,
+          "approximate": true
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "language": {
+        "value": "Sanskrit",
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "tradition": {
+        "value": [
+          "Trika"
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "editions": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "etexts": {
+        "value": [
+          {
+            "type": "etext",
+            "coverage": "complete",
+            "provider": "GRETIL (enc. Marino Faliero)",
+            "url": "http://gretil.sub.uni-goettingen.de/gretil/corpustei/transformations/html/sa_vijJAnabhairava.htm",
+            "tier": "B"
+          }
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "translations": {
+        "value": [
+          {
+            "language": "en",
+            "translator": "Jaideva Singh",
+            "work": "Vijñānabhairava or Divine Consciousness",
+            "coverage": "complete",
+            "complete": true,
+            "type": "traditional",
+            "year": 1979,
+            "url": "http://www.motilalbanarsidass.com/products/vijnanabhairava-or-divine-consciousness-a-treasury-of-112-types-of-yoga-1",
+            "tier": "A",
+            "note": "Sanskrit + English + notes"
+          },
+          {
+            "language": "en",
+            "translator": "Bettina Bäumer",
+            "work": "Vijñāna Bhairava: The Practice of Centring Awareness",
+            "coverage": "complete",
+            "complete": true,
+            "type": "traditional",
+            "year": 2002,
+            "url": "http://books.google.com/books?id=lqRGxgEACAAJ",
+            "tier": "A",
+            "note": "verses; with Swami Lakshman Joo's commentary"
+          },
+          {
+            "language": "fr",
+            "translator": "Lilian Silburn",
+            "work": "Le Vijñāna Bhairava",
+            "coverage": "complete",
+            "complete": true,
+            "type": "scholarly",
+            "year": 1961,
+            "tier": "A"
+          }
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "scholarship": {
+        "value": [
+          {
+            "work": "Wisdom Library references",
+            "url": "http://www.wisdomlib.org/definition/vijnanabhairava",
+            "tier": "C"
+          }
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "related": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "rights": {
+        "value": {
+          "status": "unknown"
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "UNKNOWN"
+      },
+      "source": "audited.ts (Trika-10 bibliography)",
+      "provenance_hash": "1f961b4b86083cf8dd839387cefc4136cdfcdf59697989c9d7f9ca89ed8d8836",
+      "authority_vector": {
+        "identity": "CATALOG_MATCHED",
+        "authorship": "CATALOG_SUPPORTED",
+        "date": "CATALOG_SUPPORTED",
+        "editions": "CATALOG_SUPPORTED",
+        "etexts": "CATALOG_SUPPORTED",
+        "translations": "CATALOG_SUPPORTED",
+        "scholarship": "CATALOG_SUPPORTED",
+        "rights": "UNKNOWN"
+      }
+    },
+    {
+      "id": "paratrisika",
+      "work_identity": {
+        "value": {
+          "id": "paratrisika",
+          "title": "Parātriṃśikā (root)",
+          "alternate_titles": []
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "authorship": {
+        "value": "anonymous",
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "date": {
+        "value": {
+          "start": 800,
+          "end": 900,
+          "approximate": true
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "language": {
+        "value": "Sanskrit",
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "tradition": {
+        "value": [
+          "Trika"
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "editions": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "etexts": {
+        "value": [
+          {
+            "type": "etext",
+            "coverage": "complete",
+            "provider": "Sanskrit Wikisource (export PDF/EPUB/MOBI)",
+            "url": "http://sa.wikisource.org/wiki/श्रीपरात्रिंशिका",
+            "tier": "B"
+          }
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "translations": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "scholarship": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "related": {
+        "value": [
+          "paratrisikavivarana",
+          "paratrisikalaghuvrtti"
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "rights": {
+        "value": {
+          "status": "unknown"
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "UNKNOWN"
+      },
+      "source": "audited.ts (Trika-10 bibliography)",
+      "provenance_hash": "a36d939470ce66603467b7a1aac728c81913a676b506eb5f1d740d43ed75d60b",
+      "authority_vector": {
+        "identity": "CATALOG_MATCHED",
+        "authorship": "CATALOG_SUPPORTED",
+        "date": "CATALOG_SUPPORTED",
+        "editions": "CATALOG_SUPPORTED",
+        "etexts": "CATALOG_SUPPORTED",
+        "translations": "CATALOG_SUPPORTED",
+        "scholarship": "CATALOG_SUPPORTED",
+        "rights": "UNKNOWN"
+      }
+    },
+    {
+      "id": "paratrisikavivarana",
+      "work_identity": {
+        "value": {
+          "id": "paratrisikavivarana",
+          "title": "Parātriṃśikāvivaraṇa (Abhinavagupta)",
+          "alternate_titles": []
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "authorship": {
+        "value": "anonymous",
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "date": {
+        "value": {
+          "start": 975,
+          "end": 1025,
+          "approximate": true
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "language": {
+        "value": "Sanskrit",
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "tradition": {
+        "value": [
+          "Trika"
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "editions": {
+        "value": [
+          {
+            "type": "edition",
+            "coverage": "complete",
+            "editor": "Muktabodha M00154 / KSTS vol. 18",
+            "year": 1918,
+            "provider": "Wikisource/Muktabodha",
+            "url": "http://sa.wikisource.org/wiki/परात्रिंशिका_(तत्त्वविवेकाख्यव्याख्योपेता)",
+            "tier": "B"
+          }
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "etexts": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "translations": {
+        "value": [
+          {
+            "language": "en",
+            "translator": "Jaideva Singh",
+            "work": "Parā-trīśikā-vivaraṇa: The Secret of Tantric Mysticism",
+            "coverage": "complete",
+            "complete": true,
+            "type": "traditional",
+            "url": "http://www.motilalbanarsidass.com/products/para-trisika-vivarana-of-abhinavagupta-the-secret-of-tantric-mysticism",
+            "tier": "A",
+            "note": "Motilal calls it the first English translation; Sanskrit + English"
+          },
+          {
+            "language": "it",
+            "translator": "Raniero Gnoli",
+            "coverage": "complete",
+            "complete": true,
+            "type": "scholarly"
+          }
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "scholarship": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "related": {
+        "value": [
+          "paratrisika",
+          "paratrisikalaghuvrtti"
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "rights": {
+        "value": {
+          "status": "unknown"
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "UNKNOWN"
+      },
+      "source": "audited.ts (Trika-10 bibliography)",
+      "provenance_hash": "4dfce7adaebd61fb05028084f65724de734f09c439681aaf959a79463228ab0b",
+      "authority_vector": {
+        "identity": "CATALOG_MATCHED",
+        "authorship": "CATALOG_SUPPORTED",
+        "date": "CATALOG_SUPPORTED",
+        "editions": "CATALOG_SUPPORTED",
+        "etexts": "CATALOG_SUPPORTED",
+        "translations": "CATALOG_SUPPORTED",
+        "scholarship": "CATALOG_SUPPORTED",
+        "rights": "UNKNOWN"
+      }
+    },
+    {
+      "id": "tantraloka",
+      "work_identity": {
+        "value": {
+          "id": "tantraloka",
+          "title": "Tantrāloka",
+          "alternate_titles": []
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "authorship": {
+        "value": "anonymous",
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "date": {
+        "value": {
+          "start": 975,
+          "end": 1025,
+          "approximate": true
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "language": {
+        "value": "Sanskrit",
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "tradition": {
+        "value": [
+          "Trika"
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "editions": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "etexts": {
+        "value": [
+          {
+            "type": "etext",
+            "coverage": "complete",
+            "provider": "GRETIL (Jun Takashima)",
+            "url": "http://gretil.sub.uni-goettingen.de/gretilbk.htm",
+            "tier": "B"
+          },
+          {
+            "type": "etext",
+            "coverage": "complete",
+            "provider": "Wisdom Library verse-reader",
+            "url": "http://www.wisdomlib.org/hinduism/book/tantraloka-sanskrit-text",
+            "tier": "C"
+          }
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "translations": {
+        "value": [
+          {
+            "language": "en",
+            "translator": "Mark Dyczkowski",
+            "work": "Tantrāloka, 11 vols (all 37 chapters + Jayaratha's commentary)",
+            "coverage": "complete",
+            "complete": true,
+            "type": "scholarly",
+            "url": "http://www.anuttaratrikakula.org/tantraloka-translation/",
+            "tier": "D",
+            "note": "translates both Abhinavagupta AND Jayaratha"
+          },
+          {
+            "language": "en",
+            "translator": "Satya Prakash Singh / Swami Maheshvarananda",
+            "work": "Sri Tantraloka (complete Sanskrit + English)",
+            "coverage": "complete",
+            "complete": true,
+            "type": "scholarly",
+            "url": "http://www.wisdomlib.org/hinduism/book/tantraloka-sanskrit-text",
+            "tier": "C"
+          }
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "scholarship": {
+        "value": [
+          {
+            "work": "Dyczkowski's lecture/course material (per chapter, with Sanskrit + translation + audio/video)",
+            "url": "http://www.anuttaratrikakula.org/course-taa-ch6-overview/",
+            "tier": "D",
+            "kind": "lecture"
+          }
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "related": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "rights": {
+        "value": {
+          "status": "unknown"
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "UNKNOWN"
+      },
+      "source": "audited.ts (Trika-10 bibliography)",
+      "provenance_hash": "3183fb62b7ef16dea69ea9ec9bf89ef461927be018c7676ba9459d2a18baadf3",
+      "authority_vector": {
+        "identity": "CATALOG_MATCHED",
+        "authorship": "CATALOG_SUPPORTED",
+        "date": "CATALOG_SUPPORTED",
+        "editions": "CATALOG_SUPPORTED",
+        "etexts": "CATALOG_SUPPORTED",
+        "translations": "CATALOG_SUPPORTED",
+        "scholarship": "CATALOG_SUPPORTED",
+        "rights": "UNKNOWN"
+      }
+    },
+    {
+      "id": "tantrasara",
+      "work_identity": {
+        "value": {
+          "id": "tantrasara",
+          "title": "Tantrasāra (Abhinavagupta)",
+          "alternate_titles": []
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "authorship": {
+        "value": "anonymous",
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "date": {
+        "value": {
+          "start": 975,
+          "end": 1025,
+          "approximate": true
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "language": {
+        "value": "Sanskrit",
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "tradition": {
+        "value": [
+          "Trika"
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "editions": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "etexts": {
+        "value": [
+          {
+            "type": "etext",
+            "coverage": "complete",
+            "provider": "GRETIL (enc. Oliver Hellwig)",
+            "url": "http://gretil.sub.uni-goettingen.de/gretil/corpustei/transformations/html/sa_abhinavagupta-tantrasAra.htm",
+            "tier": "B"
+          }
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "translations": {
+        "value": [
+          {
+            "language": "en",
+            "translator": "H. N. Chakravarty",
+            "work": "Tantrasāra of Abhinavagupta (ed. Boris Marjanovic)",
+            "coverage": "complete",
+            "complete": true,
+            "type": "scholarly",
+            "url": "http://www.indicabooks.com/product/tantrasara-of-abhinavagupta-copy/",
+            "tier": "A"
+          }
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "scholarship": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "related": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "rights": {
+        "value": {
+          "status": "unknown"
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "UNKNOWN"
+      },
+      "source": "audited.ts (Trika-10 bibliography)",
+      "provenance_hash": "46e7e5d4d49e5b7fa706d7521b070d88d15e477b242ff6159999cb13c2f7f556",
+      "authority_vector": {
+        "identity": "CATALOG_MATCHED",
+        "authorship": "CATALOG_SUPPORTED",
+        "date": "CATALOG_SUPPORTED",
+        "editions": "CATALOG_SUPPORTED",
+        "etexts": "CATALOG_SUPPORTED",
+        "translations": "CATALOG_SUPPORTED",
+        "scholarship": "CATALOG_SUPPORTED",
+        "rights": "UNKNOWN"
+      }
+    },
+    {
+      "id": "malinislokavarttika",
+      "work_identity": {
+        "value": {
+          "id": "malinislokavarttika",
+          "title": "Mālinīślokavārttika (Mālinīvijayavārttika)",
+          "alternate_titles": []
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "authorship": {
+        "value": "anonymous",
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "date": {
+        "value": {
+          "start": 975,
+          "end": 1025,
+          "approximate": true
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "language": {
+        "value": "Sanskrit",
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "tradition": {
+        "value": [
+          "Trika"
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "editions": {
+        "value": [
+          {
+            "type": "edition",
+            "coverage": "remainder",
+            "editor": "Madhusudan Kaul Shastri",
+            "year": 1921,
+            "tier": "B"
+          }
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "etexts": {
+        "value": [
+          {
+            "type": "etext",
+            "coverage": "complete",
+            "provider": "GRETIL (both kāṇḍas)",
+            "url": "http://gretil.sub.uni-goettingen.de/gretil/1_sanskr/6_sastra/3_phil/saiva/abhmal1u.htm",
+            "tier": "B"
+          }
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "translations": {
+        "value": [
+          {
+            "language": "en",
+            "translator": "Jürgen Hanneder",
+            "work": "Abhinavagupta's Philosophy of Revelation",
+            "coverage": "1.1–1.399",
+            "complete": false,
+            "type": "scholarly",
+            "year": 1998,
+            "url": "http://philpapers.org/rec/HANAPO",
+            "tier": "A",
+            "note": "2023 Brill reissue"
+          }
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "scholarship": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "related": {
+        "value": [
+          "malinivijayottara"
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "rights": {
+        "value": {
+          "status": "unknown"
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "UNKNOWN"
+      },
+      "source": "audited.ts (Trika-10 bibliography)",
+      "provenance_hash": "6c6304aaf439968cb4ad17bd4f17cb87e96d9756f3590f9d3425fee268727e89",
+      "authority_vector": {
+        "identity": "CATALOG_MATCHED",
+        "authorship": "CATALOG_SUPPORTED",
+        "date": "CATALOG_SUPPORTED",
+        "editions": "CATALOG_SUPPORTED",
+        "etexts": "CATALOG_SUPPORTED",
+        "translations": "CATALOG_SUPPORTED",
+        "scholarship": "CATALOG_SUPPORTED",
+        "rights": "UNKNOWN"
+      }
+    },
+    {
+      "id": "tantrasadbhava",
+      "work_identity": {
+        "value": {
+          "id": "tantrasadbhava",
+          "title": "Tantrasadbhāva",
+          "alternate_titles": []
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "authorship": {
+        "value": "anonymous",
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "date": {
+        "value": {
+          "start": 800,
+          "end": 950,
+          "approximate": true
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "language": {
+        "value": "Sanskrit",
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "tradition": {
+        "value": [
+          "Bhairava/Vidyāpīṭha",
+          "Trika"
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "editions": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "etexts": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "translations": {
+        "value": [
+          {
+            "language": "en",
+            "translator": "Junglan Bang",
+            "work": "Selected Chapters from the Tantrasadbhāva (critical edition + translation)",
+            "coverage": "chs. 1, part of 3, 9, 18, 28",
+            "complete": false,
+            "type": "scholarly",
+            "url": "http://ediss.sub.uni-hamburg.de/handle/ediss/9642",
+            "tier": "A",
+            "note": "CC BY 4.0 open-access; with Svacchandalalitabhairava parallels"
+          }
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "scholarship": {
+        "value": [
+          {
+            "work": "Hamburg project description",
+            "url": "http://www.tantric-studies.uni-hamburg.de/research/post-doc-and-doctoral-research/jung-lan-bang.html",
+            "tier": "A",
+            "kind": "study"
+          },
+          {
+            "work": "Wisdom Library references",
+            "url": "http://www.wisdomlib.org/definition/tantrasadbhava",
+            "tier": "C"
+          }
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "related": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "rights": {
+        "value": {
+          "status": "unknown"
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "UNKNOWN"
+      },
+      "source": "audited.ts (Trika-10 bibliography)",
+      "provenance_hash": "88f12c11f3139f161f12cccdfab11770b7fe6026277aa36cdb0506c70237b1f7",
+      "authority_vector": {
+        "identity": "CATALOG_MATCHED",
+        "authorship": "CATALOG_SUPPORTED",
+        "date": "CATALOG_SUPPORTED",
+        "editions": "CATALOG_SUPPORTED",
+        "etexts": "CATALOG_SUPPORTED",
+        "translations": "CATALOG_SUPPORTED",
+        "scholarship": "CATALOG_SUPPORTED",
+        "rights": "UNKNOWN"
+      }
+    },
+    {
+      "id": "sivasutra",
+      "work_identity": {
+        "value": {
+          "id": "sivasutra",
+          "title": "Śivasūtra + Kṣemarāja's Vimarśinī",
+          "alternate_titles": []
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "authorship": {
+        "value": "anonymous",
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "date": {
+        "value": {
+          "start": 850,
+          "end": 950,
+          "approximate": true
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "language": {
+        "value": "Sanskrit",
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "tradition": {
+        "value": [
+          "Trika"
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "editions": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "etexts": {
+        "value": [
+          {
+            "type": "etext",
+            "provider": "GRETIL / SanskritDocuments",
+            "tier": "B"
+          }
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "translations": {
+        "value": [
+          {
+            "language": "en",
+            "translator": "Jaideva Singh",
+            "work": "Śiva Sūtras: The Yoga of Supreme Identity",
+            "coverage": "complete (sūtras + Vimarśinī)",
+            "complete": true,
+            "type": "traditional",
+            "url": "http://www.motilalbanarsidass.com/products/siva-sutras-the-yoga-of-supreme-identity-jaideva-singh",
+            "tier": "A",
+            "note": "with Sanskrit, word meanings, exposition"
+          },
+          {
+            "language": "en",
+            "translator": "Swami Lakshman Joo",
+            "work": "Śiva Sūtras: The Supreme Awakening",
+            "coverage": "complete",
+            "complete": true,
+            "type": "traditional",
+            "year": 2007,
+            "url": "http://books.google.com/books?id=XIPXAAAAMAAJ",
+            "tier": "A",
+            "note": "based on oral lectures; prioritizes meaning over literal translation"
+          },
+          {
+            "language": "en",
+            "translator": "Subhash Kak",
+            "work": "independent online translation",
+            "coverage": "complete",
+            "complete": true,
+            "type": "independent",
+            "url": "http://sanskritdocuments.org/doc_shiva/shivasuutra.html",
+            "tier": "D",
+            "note": "the page itself distinguishes Kak's from Singh/Dyczkowski"
+          }
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "scholarship": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "related": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "rights": {
+        "value": {
+          "status": "unknown"
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "UNKNOWN"
+      },
+      "source": "audited.ts (Trika-10 bibliography)",
+      "provenance_hash": "7d666d4fbe605578a41d63e2d863f601e8945b7bbd6fb860cbe7166924df9070",
+      "authority_vector": {
+        "identity": "CATALOG_MATCHED",
+        "authorship": "CATALOG_SUPPORTED",
+        "date": "CATALOG_SUPPORTED",
+        "editions": "CATALOG_SUPPORTED",
+        "etexts": "CATALOG_SUPPORTED",
+        "translations": "CATALOG_SUPPORTED",
+        "scholarship": "CATALOG_SUPPORTED",
+        "rights": "UNKNOWN"
+      }
+    },
+    {
+      "id": "spandakarika",
+      "work_identity": {
+        "value": {
+          "id": "spandakarika",
+          "title": "Spandakārikā (root) + Spandanirṇaya (Kṣemarāja commentary)",
+          "alternate_titles": []
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "authorship": {
+        "value": "anonymous",
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "date": {
+        "value": {
+          "start": 850,
+          "end": 950,
+          "approximate": true
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "language": {
+        "value": "Sanskrit",
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "tradition": {
+        "value": [
+          "Trika",
+          "Spanda"
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "editions": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "etexts": {
+        "value": [
+          {
+            "type": "etext",
+            "coverage": "complete",
+            "provider": "GRETIL",
+            "tier": "B"
+          }
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "translations": {
+        "value": [
+          {
+            "language": "en",
+            "translator": "Jaideva Singh",
+            "work": "Spanda-kārikās: The Divine Creative Pulsation (kārikās + Spandanirṇaya)",
+            "coverage": "complete",
+            "complete": true,
+            "type": "traditional",
+            "url": "http://wellcomecollection.org/works/manv6j64",
+            "tier": "A"
+          },
+          {
+            "language": "en",
+            "translator": "Mark Dyczkowski",
+            "work": "The Doctrine of Vibration",
+            "coverage": "interpretive/translation",
+            "complete": true,
+            "type": "scholarly",
+            "tier": "A"
+          }
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "scholarship": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "related": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "rights": {
+        "value": {
+          "status": "unknown"
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "UNKNOWN"
+      },
+      "source": "audited.ts (Trika-10 bibliography)",
+      "provenance_hash": "f18994372af7f45f0338b747235768d690c62f164da2694eaa9e6cd6c30dfe4e",
+      "authority_vector": {
+        "identity": "CATALOG_MATCHED",
+        "authorship": "CATALOG_SUPPORTED",
+        "date": "CATALOG_SUPPORTED",
+        "editions": "CATALOG_SUPPORTED",
+        "etexts": "CATALOG_SUPPORTED",
+        "translations": "CATALOG_SUPPORTED",
+        "scholarship": "CATALOG_SUPPORTED",
+        "rights": "UNKNOWN"
+      }
+    },
+    {
+      "id": "paratrisikalaghuvrtti",
+      "work_identity": {
+        "value": {
+          "id": "paratrisikalaghuvrtti",
+          "title": "Parātriṃśikā Laghuvṛtti / Anuttaratattvavimarśinī (Abhinavagupta)",
+          "alternate_titles": []
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "authorship": {
+        "value": "anonymous",
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "date": {
+        "value": {
+          "start": 975,
+          "end": 1025,
+          "approximate": true
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "language": {
+        "value": "Sanskrit",
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "tradition": {
+        "value": [
+          "Trika"
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "editions": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "etexts": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "translations": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "scholarship": {
+        "value": [],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "related": {
+        "value": [
+          "paratrisika",
+          "paratrisikavivarana"
+        ],
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "CATALOG_SUPPORTED"
+      },
+      "rights": {
+        "value": {
+          "status": "unknown"
+        },
+        "source": "audited.ts",
+        "derivation": "direct",
+        "authority_state": "UNKNOWN"
+      },
+      "source": "audited.ts (Trika-10 bibliography)",
+      "provenance_hash": "07b746a41a6d01c5df82ce387301f0a729c800ee75026bd00a8d9bf699a82c37",
+      "authority_vector": {
+        "identity": "CATALOG_MATCHED",
+        "authorship": "CATALOG_SUPPORTED",
+        "date": "CATALOG_SUPPORTED",
+        "editions": "CATALOG_SUPPORTED",
+        "etexts": "CATALOG_SUPPORTED",
+        "translations": "CATALOG_SUPPORTED",
+        "scholarship": "CATALOG_SUPPORTED",
+        "rights": "UNKNOWN"
+      }
+    }
+  ],
+  "provenance_rule": "every field carries value/source/derivation/authority_state",
+  "next": "ATLAS-10 GOLD: manually verify the first 10, then scale to 100"
+}
