@@ -155,6 +155,27 @@ only, NOT the validated L0→…→C1 objects.
 Agent 1's `semantic_alignment.py`** (extend/benchmark it), NOT as a parallel module. This is the shared
 mechanism both lanes must treat as one.
 
+**THE CLEAN ROLE SPLIT (2026-08-13):** `AGENT 2 = MAKE THE FACTORY RUN` · `AGENT 1 = PROVE THE FACTORY
+DESERVES TRUST`.
+- **Agent 2 = the Autonomous Translation Factory**: controller, registries, queues, workers, model
+  adapters, batching, retries, crash/resume, idempotency, provenance, schemas, deterministic validation,
+  staleness, pipeline certificates, running the corpus. Its gate per layer is **production only**
+  (canonical shape + provenance + safe unattended run → MACHINE_PROPOSED). Sequence A2-CP1..A2-CP7,
+  **stop at C1** for the first milestone. Does NOT do ML research / benchmark architecture / scholar
+  corpus / model comparison / external-tool experiments.
+- **Agent 1 = Verification + Evals + Scholar Evidence**: Inspect AI / Pāṭala-Evals (LayerContract,
+  gold/DEV/TEST, metamorphic tests, external baselines, false-certainty, calibration) + the S0
+  scholar-corpus (SourceAssertion/CorroborationEvent). **Evaluates Agent 2** independently, one layer
+  behind. Owns `source-evidence/evals/` + `benchmarks/v0/` + the ML methodology.
+- **The seam = the frozen export contract** (`EVAL-CONTRACT-L200-EXPORT.md`): Agent 2 writes an immutable
+  MACHINE_PROPOSED candidate bundle; Agent 1 consumes read-only and returns failure taxonomies +
+  improvement recommendations. Agent 1 does NOT gate Agent 2's development (production ≠ epistemic
+  maturity — the two status axes move independently).
+- **VERIFICATION-PLANE NOTE:** the Inspect evaluation plane is Agent 1's (already built in
+  `source-evidence/evals/`). Agent 2 does NOT build a parallel Inspect/PATALA-EVALS plane. The two-plane
+  northstar (`docs/ml/LAYER-TOOLS-INTEGRATION-NORTHSTAR.md`) is the shared *methodology*; it RUNS in
+  Agent 1's Inspect plane.
+
 ---
 
 ## 5. KEY FILE MAP (for tracking)

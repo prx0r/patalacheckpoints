@@ -23,6 +23,16 @@ those first.*
 > grounded in `docs/ml/MACHINE-PROOF-CONTRACTS.md` (per-layer contracts + G0–G5 + the 5-gate checkpoint
 > ladder) + `docs/ml/LAYER-TOOLS-SURVEY.md` (the tool survey: IGT/GlossLM, ByT5-Sanskrit, RefChecker,
 > FActScore, AlignScore, metamorphic, conformal, Inspect).
+> **ROLE DIVERGENCE (IMPORTANT): the verification plane is AGENT 1's lane.** Agent 1 has ALREADY built the
+> Inspect evaluation plane in `source-evidence/evals/` (Inspect L200 + arg-laundry tasks + the frozen
+> `EVAL-CONTRACT.md` + the `EVAL-CONTRACT-L200-EXPORT.md` lane-safe export contract; `inspect_ai` is
+> installed in Agent 1's ML venv). **Agent 2 does NOT build a parallel `PATALA-EVALS` / Inspect plane.**
+> Agent 2's job: build the production-compiler layers (T1/L0/L2/L200/C1/theme/essay/education workers +
+> per-layer validators + the controller), then **EXPORT candidate bundles to Agent 1's evals plane** per the
+> frozen export contract (Agent 1 consumes read-only; Agent 1 owns how Pāṭala is *tested*). This is the
+> doctrine: external ML methods (Agent 1) test Pāṭala (Agent 2); they do not define Pāṭala truth. The
+> LayerContract / G0–G5 / metamorphic / certificate schema from the northstar docs are the shared
+> *methodology*; Agent 1's Inspect plane is where they run.
 > **THE CANONICAL LAYER STACK IS LOCKED: see `handover/agent-2-integration/CANONICAL-LAYER-STACK.md`**
 > (verified against the actual IPVV files — do not reorder/rename without updating that file). The order:
 > ```
@@ -73,36 +83,44 @@ those first.*
 | **P4 alignment** (`l0_align.py`) | L0↔L2 term-anchor: recall 0.93 / prec 0.89 / abstain 1.0 | ✅ REAL (P-013 SUPPORTED_MACHINE_WITNESS, FROZEN) |
 | **Executable-corrections review engine** (`review_engine.py`) | append-only ReviewEvent → reducer → ImpactReport | ✅ REAL (15/15 tests — the moat) |
 
-**The single highest-value real build (now):** **CP1 = the machine-learning-verified L0/T1/L1/R1 reading**
-— run the semantic-equivalence harness (`docs/ML-L0-SEMANTIC-EQUIVALENCE-PROPOSAL.md`) against the IPVV
-exemplar gold, iterate our RAW-L0 toward it, and emit the mechanical proof. This is the foundation-proof
-for the whole stack.
+**The single highest-value real build (now):** **A2-CP1 = SOURCE → T1** — the transliteral word-gloss
+producer (the first unsatisfied layer). This is the factory's job. Note: the ML/semantic-equivalence
+*evaluation* of T1 is **Agent 1's lane** (the Inspect/Pāṭala-Evals plane + `docs/ml/MACHINE-PROOF-CONTRACTS.md`
+contracts) — Agent 2 builds the producer + deterministic validation, Agent 1 evaluates it. Agent 2 does
+NOT need a passed gold benchmark to move to the next layer (production ≠ epistemic maturity).
 
 ---
 
-## 1. THE PRIORITY SEQUENCE (the singular autonomous stack, layer by layer)
+## 1. THE PRIORITY SEQUENCE — AGENT 2'S AUTONOMOUS FACTORY (A2-CP1..A2-CP7)
 
-**THE NORTHSTAR — work layer by layer, each layer's worker + validator against its canonical spec + source
-files.** The algorithms of the higher layers already exist (Agent 1); we wrap each in the autonomous flow.
+**THE ROLE SPLIT (2026-08-13):** `AGENT 2 = MAKE THE FACTORY RUN` · `AGENT 1 = PROVE THE FACTORY DESERVES
+TRUST`. Agent 2 builds the shortest working autonomous factory through **C1**; Agent 1 (parallel, one layer
+behind) builds the evals. **Agent 2's gate per layer is PRODUCTION only** — canonical shape + provenance/
+integrity + safe unattended production → `MACHINE_PROPOSED`, move on. Do NOT gate on Agent-1's benchmark.
 
 ```
-0. ✅ CONTROLLER SHELLS (2026-08-13): L0/L1/L2/L200/C1 have real handlers + layer-specific validators;
-   THEME/ESSAY/EDUCATION wired (structural); test_theme_essay_education.py + test_workers.py ALL PASS.
-1. ▶ CP1 = SOURCE → T1  (the current frontier — the first unsatisfied layer contract)
-   Build the T1 transliteral-word-gloss producer; run its semantic contract:
-   IGT/GlossLM + ByT5-Sanskrit + metamorphic mutations + Inspect (per docs/ml/LAYER-TOOLS-SURVEY.md);
-   measure coverage / segmentation / lemma / gloss-adequacy / technical-sense / false-certainty /
-   abstention against the IPVV T1 gold. Emit the certificate. (docs/ml/MACHINE-PROOF-CONTRACTS.md §5-6.)
-2. CP2 = T1 → deterministic L0 round-trip/isomorphism proof (L0 = lossless encode of T1; no ML).
-3. CP3 = argument map (SOURCE + T1/L0 → structural + semantic benchmark).
-4. CP4 = L2 (coverage + licensing + adversarial fidelity).
-5. CP5 = L200 constrained compiler measured against benchmarks/l200/dev.jsonl (DEV gate).
-6. CP6 = C1 passage-local commentary benchmark.
-7. CP7 = THEME evidence-backed benchmark.
-8. CP8 = ESSAY SentenceEvidenceAudit + adversarial faithfulness.
-9. CP9 = EDUCATION faithful pedagogic compression.
-10. CP10 = full factory on a fresh unseen work, end-to-end.
+A2-CP1  SOURCE → T1      the transliteral word-gloss producer  (CURRENT FRONTIER)
+A2-CP2  T1 → L0          deterministic structured encode of T1 (round-trip/isomorphism)
+A2-CP3  → argument map   the passage's argument structure
+A2-CP4  → L2             readable translation
+A2-CP5  → L200           constrained audit (MT/IA split)
+A2-CP6  → C1             passage-local commentary
+A2-CP7  whole-work unattended run through C1   ← FIRST FACTORY MILESTONE (stop here)
 ```
+
+**Do NOT start THEME/ESSAY/EDUCATION yet** — they wait until the factory through C1 is proven. Each
+layer's worker + deterministic validator against its canonical spec + source files
+(`translations/_stack/ipvv/specs/*`, the L200 8-section spec, the C1-SPEC, the argument maps). Do NOT do
+ML research, benchmark architecture, scholar-corpus integration, model comparison, or external-tool
+experiments — that is Agent 1's verification/evidence lane.
+
+**Agent 1's parallel track (for reference — NOT Agent 2's work):**
+```
+A1:  T1-EVAL ── ARGMAP-EVAL ── L2-EVAL ── ...  (Inspect AI / Pāṭala-Evals, one layer behind A2)
+     + scholar-evidence corpus continuously (SourceAssertion/CorroborationEvent)
+```
+Agent 2 exports MACHINE_PROPOSED candidate bundles to Agent 1 per the frozen export contract; Agent 1
+returns failure taxonomies + improvement recommendations.
 
 ### The factory certificate (the threshold before "set it loose")
 ```

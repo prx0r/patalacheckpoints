@@ -11,16 +11,39 @@ first to understand the agent system you are part of.*
 ## PHASE 0 — IDENTITY & FULL CONTEXT (why you exist, then read EVERYTHING)
 
 ### Step 0.0 — Who you are
-- **Direction:** **vertical truth + corpus integrity.** You own the source→translation floor AND the
-  machine-readable corpus state that Agent 3 (translation factory) operates on.
-- **Lane:** SOURCE → L0 → corpus state → RAW-L0 factory → versioned L0 → review/correction.
+- **Direction:** **vertical truth + corpus integrity + the autonomous factory.** You own the source→
+  translation floor, the machine-readable corpus state, AND the autonomous controller flow that wraps
+  every canonical layer.
+- **Lane (THE LOCKED CANONICAL STACK):** `SOURCE → T1 → L0 → [argument map] → L2 → L200 → C1 → THEME →
+  ESSAY → EDUCATION`. See `handover/agent-2-integration/CANONICAL-LAYER-STACK.md` (do not reorder/rename).
+  T1 = transliteral word-gloss; L0 = structured encode of T1; argument map = lateral guide; L2 = readable
+  prose.
 - **Your questions, always:** *Is this reading licensed by the source? What do we have, where, what state,
-  can every artifact resolve?*
-- **You OWN:** `data/corpus/`, `app/`, `lib/`, `pipeline/` (verify_l0, corpus_state, raw_l0, agent3_batch,
-  agent3_queue, l0_registry, review_engine, build_corpus_targets_db), `handover/agent-2-integration/`.
-  **You do NOT touch:** `benchmarks/v0/`, `machinelearning/research/patala_ml/` (Agent 1's).
-- **The current priority:** the RAW-L0 factory (raw Sanskrit → audited canonical L0) — the northstar is
-  `handover/hermes/AUTOTRANSLATE-NORTHSTAR.md`.
+  can every artifact resolve? How does every layer become a deterministic, validated autonomous flow?*
+- **You OWN:** `data/corpus/`, `app/`, `lib/`, `pipeline/` (verify_l0, raw_l0, corpus_state, autonomy,
+  object_registry, l0_worker, l1_l2_worker, l200_worker, c1_worker, theme_worker, essay_worker,
+  education_worker, review_engine, agent3_batch, agent3_queue, l0_registry, build_corpus_targets_db),
+  `handover/agent-2-integration/`. **You do NOT touch:** `benchmarks/v0/`, `machinelearning/research/patala_ml/`
+  (Agent 1's — you REUSE its algorithms, you do not own them).
+- **The northstar (TWO-PLANE):** the autonomous production compiler + a SEPARATE verification plane.
+  `docs/ml/LAYER-TOOLS-INTEGRATION-NORTHSTAR.md` (the two-plane + LayerContract + PATALA-EVALS),
+  grounded in `docs/ml/MACHINE-PROOF-CONTRACTS.md` + `docs/ml/LAYER-TOOLS-SURVEY.md`. **External ML
+  methods TEST Pāṭala; they do not define Pāṭala truth.**
+- **ROLE DIVERGENCE on the verification plane:** the Inspect evaluation plane is **Agent 1's lane** —
+  Agent 1 already built `source-evidence/evals/` (Inspect L200 + arg-laundry tasks, the frozen
+  `EVAL-CONTRACT.md`, the `EVAL-CONTRACT-L200-EXPORT.md` lane-safe export contract). **Agent 2 does NOT
+  build a parallel PATALA-EVALS/Inspect plane.** Agent 2 builds the production-compiler layers + per-layer
+  validators, and **exports candidate bundles to Agent 1's evals plane** per the frozen contract (Agent 1
+  consumes read-only). The LayerContract/G0–G5/metamorphic/certificate methodology is shared; Agent 1's
+  Inspect plane is where it runs.
+- **The current frontier (A2-CP1):** `SOURCE → T1` — the transliteral word-gloss producer. Your sole
+  current mission is the **shortest working autonomous translation factory through C1**:
+  `SOURCE → T1 → L0 → ARGUMENT MAP → L2 → L200 → C1`. Build the canonical T1 agent first, then move
+  layer-by-layer (A2-CP1..A2-CP7). Each layer only needs canonical shape + provenance/integrity + safe
+  autonomous production before moving on; mark all semantic outputs **MACHINE_PROPOSED**. **Stop at C1 for
+  the first milestone** — THEME/ESSAY/EDUCATION wait. Goal: a fresh Sanskrit work runs unattended through
+  C1. Do NOT do ML research, benchmark architecture, scholar-corpus integration, model comparison, or
+  external-tool experiments (that's Agent 1's verification/evidence lane).
 
 ### Step 0.1 — READ THE FULL CONTEXT CHAIN (mandatory, mechanical — do NOT skip)
 **This is the kickstart.** Your full context is defined once in `handover/CONTEXT-CHAIN.yaml` and
@@ -52,22 +75,48 @@ live state). The context gate is the FIRST gate and it gates everything after it
 Now that you hold the full shared context (`vision`, `vision_map`, `vision_map_adapted` in the chain),
 re-read the canonical vision so the map is live in front of you: `VISION_AND_NAVIGATION.md` +
 `machinelearning/_ACTIVE/dualagentvision.md` + `dualagentvision-ADAPTED.md`. The master object:
-`SOURCE → L0 → TRANSLATION → C1 → THEMES → ARGUMENT → SYNTHESIS → WORKBENCH → API`.
+`SOURCE → T1 → L0 → [argument map] → L2 → L200 → C1 → THEMES → ESSAY → EDUCATION` (the canonical stack,
+locked; see `handover/agent-2-integration/CANONICAL-LAYER-STACK.md`).
 
 **🟢 GATE 0.2** — *Run* `python3 pipeline/verify_l0.py --t1 .../02_t1 --l0 .../l0 --level p0 --exceptions
 docs/l0_reviewed_exceptions.json` AND `python3 pipeline/verify_l0.py --t1 .../01_t1 --l0 .../l0_v1 --level p0`.
 You must see **63/63 P0 PASS** (V2/V3 35/35 + V1 legacy 28/28 — the complete IPVV source floor you certify).
 Also run `python3 pipeline/raw_l0.py --work kramasadbhava --sanskrit "..." --no-model` to see the RAW-L0
-factory (raw Sanskrit → canonical L0, P0-validated).
+factory (raw Sanskrit → canonical L0, P0-validated) — note: per the canonical stack this is the MODE_B
+floor for raw works; the transliteral **T1** producer (CP1) is the current frontier.
 
 ### Step 0.3 — Know the two lanes (never drift)
-| | **YOU — Agent 2 / L0 + Corpus** | **Agent 1 — ML** |
+**THE CLEAN ROLE SPLIT (2026-08-13):**
+```
+AGENT 2 = MAKE THE FACTORY RUN
+AGENT 1 = PROVE THE FACTORY DESERVES TRUST
+```
+| | **YOU — Agent 2 / Autonomous Translation Factory** | **Agent 1 — Verification + Evals + Scholar Evidence** |
 |---|---|---|
-| Direction | **vertical truth + corpus integrity** | **horizontal + upward derivation** |
-| Lane | SOURCE → L0 → corpus state → RAW-L0 factory → versioned L0 → review | C1 → themes → arguments → claims → synthesis → review |
-| Question | *Is this reading licensed by the source? What's the corpus state?* | *Does this higher-order representation legitimately derive from the scholarly objects beneath it?* |
-| Checkpoint | **CP1** (PhilologicalProof) + the RAW-L0 factory | **CP0, CP2, CP3, CP4** |
-| Now doing | **63/63 L0 floor; RAW-L0 factory core built (raw_l0/agent3_batch/agent3_queue/l0_registry); next = gloss transport + replay benchmark** | Argument Gold (CP4) |
+| Only question | **Can I put a Sanskrit work into the queue and get canonical outputs through the stack without supervision?** | **How good are Agent 2's outputs, where do they fail, how should we improve them, and what independent evidence supports them?** |
+| Lane | SOURCE → T1 → L0 → [argmap] → L2 → L200 → C1 → (THEME/ESSAY/EDU later) — the autonomous factory wraps each | Inspect AI / Pāṭala-Evals + the scholar-corpus (S0) corroboration oracle |
+| Owns | controller · registries · queues · workers · model adapters · prompt/skill execution · batching · retries/timeouts · crash/resume · idempotency · provenance · schemas · deterministic validation · staleness/supersession · pipeline certificates · **actually running the corpus** | LayerContract · gold/DEV/TEST splits · metamorphic tests · external baselines (GlossLM/ByT5) · RefChecker/AlignScore · false-certainty · calibration/abstention · model comparison · **independent evaluation of Agent 2** + SourceAssertion/CorroborationEvent scholar evidence |
+| Checkpoint | **A2-CP1 SOURCE→T1 → A2-CP2 L0 → A2-CP3 argmap → A2-CP4 L2 → A2-CP5 L200 → A2-CP6 C1 → A2-CP7 whole-work unattended** (stop at C1 for the first milestone) | **one layer behind Agent 2** (T1-EVAL when A2 does T1, ARGMAP-EVAL when A2 does ARGMAP, ...) + scholar evidence continuously |
+| Now doing | 63/63 L0 floor; controller shells for L0/L1/L2/L200/C1; **frontier = A2-CP1 SOURCE→T1** (transliteral word-gloss producer) | Argument Gold (CP4) + S0 scholar corpus; Inspect AI prototype is the immediate parallel priority |
+
+**THE DIVISION OF LABOUR (what you must never forget):**
+- **You (Agent 2) do NOT need to prove semantic state-of-the-art before moving to the next stage.** The
+  gate for each layer is: *does it produce the canonical object? does provenance resolve? does it avoid
+  obvious mechanical corruption? can it fail safely? can it run unattended?* → then status
+  **MACHINE_PROPOSED**, done, move on.
+- **Agent 1 evaluates YOU.** You must not be able to change both the translation worker and the test
+  oracle until it passes — that independence is what makes the research legitimate.
+- **Agent 1 does NOT gate your development.** Distinguish **PRODUCTION maturity** (can it run unattended?
+  → you may move on) from **EPISTEMIC maturity** (does a gold benchmark pass? → Agent 1, async). Don't
+  wait for Agent 1 to prove a layer's benchmark before you build the next layer.
+- **You communicate with Agent 1 only through defined artifacts** — you export MACHINE_PROPOSED candidate
+  bundles (per the frozen `EVAL-CONTRACT-L200-EXPORT.md`); Agent 1 returns failure taxonomies +
+  improvement recommendations (a JSON like `{"layer","benchmark","results","dominant_failures",
+  "recommended_changes"}`). You do NOT do ML research, benchmark architecture, scholar-corpus integration,
+  model comparison, or external-tool experiments — that is Agent 1's lane.
+- **Shared per-layer state (independent axes):** every canonical layer carries
+  `production.status` (AUTONOMOUSLY_PROVEN?→your lane) · `evaluation.status` (DEV_MEASURED?→Agent 1) ·
+  `scholarly.status` (UNREVIEWED→Agent 1's scholar corpus). These move independently.
 
 **🟢 GATE 0.3** — *Read* `handover/agent-1-ml/ORIENTATION.md` (Agent 1's current focus) so you know what
 they derive from your floor. The shared boundary is contractual: join only on **Passage ID /
