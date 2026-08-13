@@ -103,6 +103,24 @@ def _commit_proposal(layer: str, p: dict) -> dict:
     return {"object_id": p["object_id"], "layer": layer, "version": rec.get("version")}
 
 
+AUDIT_LEDGER = Path("/root/projects/patala/data/corpus/downloads/factory-audit.jsonl")
+
+
+def _audit(entry: dict) -> None:
+    """Append one line to the machine-readable audit ledger (the verifiable pipeline trail).
+
+    Append-only, one JSON line per factory action (commit / reject / retryable / skip / pass).
+    This is the queryable record of EVERYTHING the factory did, in order — the 'verifiable pipeline
+    with logs we can monitor' view. Timestamped; callers add object_id/layer/hash/status."""
+    try:
+        AUDIT_LEDGER.parent.mkdir(parents=True, exist_ok=True)
+        with AUDIT_LEDGER.open("a", encoding="utf-8") as fh:
+            fh.write(json.dumps({"ts": __import__("time").strftime('%Y-%m-%dT%H:%M:%S'), **entry},
+                                ensure_ascii=False) + "\n")
+    except Exception:
+        pass  # audit failure must never break the factory
+
+
 def _produce_layer(layer: str, inputs: list[dict], batch_size: int = 4) -> dict:
     """Run a layer's worker over the inputs (bounded), commit each valid proposal.
 
@@ -128,22 +146,23 @@ def _produce_layer(layer: str, inputs: list[dict], batch_size: int = 4) -> dict:
             continue
         for p in proposals:
             r = _commit_proposal(layer, p)
+            oid = p.get("object_id")
+            ih = p.get("input_hash", "")
             if "version" in r:
                 committed.append(r)
-            elif "rejected" in r and r["rejected"].startswith("t1_status:GENERATION_FAILED"):
-                retryable.append({"object_id": p.get("object_id"), "layer": layer,
+                _audit({"event": "commit", "layer": layer, "object_id": oid,
+                        "input_hash": ih, "version": r["version"]})
+            elif "rejected" in r and r["rejected"].startswith((
+                    "t1_status:GENERATION_FAILED", "proposal_status:GENERATION_FAILED",
+                    "c1_status:GENERATION_FAILED", "argmap_status:GENERATION_FAILED")):
+                retryable.append({"object_id": oid, "layer": layer,
                                   "reason": "generation_failed (retryable)"})
-            elif "rejected" in r and r["rejected"].startswith("proposal_status:GENERATION_FAILED"):
-                retryable.append({"object_id": p.get("object_id"), "layer": layer,
-                                  "reason": "generation_failed (retryable)"})
-            elif "rejected" in r and r["rejected"].startswith("c1_status:GENERATION_FAILED"):
-                retryable.append({"object_id": p.get("object_id"), "layer": layer,
-                                  "reason": "generation_failed (retryable)"})
-            elif "rejected" in r and r["rejected"].startswith("argmap_status:GENERATION_FAILED"):
-                retryable.append({"object_id": p.get("object_id"), "layer": layer,
-                                  "reason": "generation_failed (retryable)"})
+                _audit({"event": "retryable", "layer": layer, "object_id": oid,
+                        "input_hash": ih, "reason": r["rejected"][:60]})
             else:
                 rejected.append(r)
+                _audit({"event": "rejected", "layer": layer, "object_id": oid,
+                        "input_hash": ih, "reason": (r.get("rejected") or "")[:60]})
     _record_failures(layer, retryable)
     return {"layer": layer, "committed": committed, "rejected": rejected, "retryable": retryable}
 
