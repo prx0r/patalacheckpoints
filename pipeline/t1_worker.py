@@ -290,6 +290,40 @@ def _parse_batch(raw: str) -> dict:
 T1_OUT_LOG = Path(os.environ.get("PATALA_T1_OUT_LOG",
                                  "/root/projects/patala/data/corpus/downloads/t1-stream.jsonl"))
 
+SESSION_STATE = Path(os.environ.get("PATALA_SESSION_STATE",
+                                    "/root/projects/patala/data/corpus/downloads/t1-sessions.json"))
+
+
+def _load_sessions() -> dict:
+    if SESSION_STATE.exists():
+        try:
+            return json.loads(SESSION_STATE.read_text(encoding="utf-8"))
+        except Exception:
+            return {}
+    return {}
+
+
+def _save_sessions(sessions: dict) -> None:
+    try:
+        SESSION_STATE.parent.mkdir(parents=True, exist_ok=True)
+        SESSION_STATE.write_text(json.dumps(sessions, indent=2, ensure_ascii=False), encoding="utf-8")
+    except Exception:
+        pass
+
+
+def _discover_session_id() -> str:
+    """Capture the most recent CLI session id hermes just used/created (for --resume continuity)."""
+    try:
+        out = __import__("subprocess").run(["hermes", "sessions", "list"],
+                                           capture_output=True, text=True, timeout=30).stdout
+        for line in out.splitlines():
+            parts = line.split()
+            if parts and parts[-1].startswith("20") and len(parts[-1]) >= 14 and "cli" in line:
+                return parts[-1]
+    except Exception:
+        pass
+    return ""
+
 
 def _log_t1_output(object_id: str, status: str, gloss_map: dict, error: str = "") -> None:
     """Append one verse's T1 result to the streaming output log (immediate, crash-safe).
@@ -343,20 +377,29 @@ def t1_generator(layer: str, batch: list[dict]) -> list[dict]:
     for work_entries in by_work.values():
         sub: list[dict] = []
         sub_bytes = 0
+        work = work_entries[0]["object_id"].split(":")[0]
+        sessions = _load_sessions()
+        sid = sessions.get(work, "")   # "" = not open yet (first chunk seeds the persistent session)
 
         def flush() -> None:
-            nonlocal sub, sub_bytes
+            nonlocal sub, sub_bytes, sid
             if not sub:
                 return
             n_tokens = sum(len(e["tokens"]) for e in sub)
-            work = sub[0]["object_id"].split(":")[0]
             # write the batch to a file and tell hermes to READ it (small prompt -> no ARG_MAX, big batch)
             bfile = _write_batch_file(work, sub)
             prompt = _build_file_prompt(bfile, len(sub), work)
             timeout = min(240 + int(n_tokens * 0.5), 900)
             try:
+                # persistent per-work session: first chunk creates it (retains the work's context),
+                # later chunks --resume so context does NOT reset between 50-verse batches.
                 raw = chat_agentic("You are the Pāṭala T1 translator (transliteral word-gloss).", prompt,
-                                   timeout=timeout)
+                                   timeout=timeout, session=(sid or None))
+                if not sid:
+                    sid = _discover_session_id()
+                    if sid:
+                        sessions[work] = sid
+                        _save_sessions(sessions)
                 gloss_by_oid = _parse_batch(raw)
             except Exception as exc:
                 # fail-closed: only THIS call's verses, never the whole input

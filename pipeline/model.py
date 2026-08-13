@@ -136,12 +136,15 @@ def chat_result(system: str, user: str, model: str = DEFAULT_MODEL,
 
 
 def chat_agentic(system: str, user: str, skills: str = "", max_turns: int = 8,
-                 timeout: int = 240) -> str:
+                 timeout: int = 240, session: str | None = None) -> str:
     """A model call via AGENTIC `hermes chat` (file access + skills) — the CORRECT way.
 
     Per docs/global/HERMES-CALLING.md, `hermes -z` is blind (no file access, no tools, ~3.8% yield
     on translation). This is the additive fix: call Hermes as an AGENT so it can read the repo, the
     skills, and the reference maps itself.
+
+    session: if given, continue a persistent Hermes session via `--resume SESSION` so context is
+    retained across calls (the "long context essential + document as it goes" mechanism).
 
     Usage:
         from model import chat_agentic
@@ -155,6 +158,8 @@ def chat_agentic(system: str, user: str, skills: str = "", max_turns: int = 8,
            "--max-turns", str(max_turns)]
     if skills:
         cmd += ["--skills", skills]
+    if session:
+        cmd += ["--resume", session]
     # hermes may spawn a lingering grandchild; put it in its own process group so we can kill it
     proc = subprocess.Popen(cmd, cwd="/root/projects/patala", start_new_session=True,
                             stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
