@@ -217,12 +217,20 @@ def scheduler_pass(works: list[str], layers: list[str], per_layer: int = 2,
         consumed.add(j["object_id"])
         est_input = 900   # fixed prompt overhead (instruction + token grammar)
         est_input += _est_tokens(batch[0])
+        work_id = j["object_id"].split(":")[0]
         for k in ranked_model:
             if batch_max and len(batch) >= batch_max:
                 break
             if k["object_id"] in consumed:
                 continue
             if k["layer"] != j["layer"]:
+                continue
+            # SINGLE-WORK batching (FIX 2026-08-13): keep every verse in one model call within ONE
+            # work. Mixing many works into a single T1 prompt made the model return non-JSON and the
+            # whole batch failed closed (retryable) -> ~93% T1 failure rate. Per-work calls match the
+            # proven live-runner pattern (auto_translate_raw.py) and kalikarahasya's success, while
+            # still filling the context budget with as many of that work's verses as fit.
+            if k["object_id"].split(":")[0] != work_id:
                 continue
             if est_input + _est_tokens(k) > input_budget:
                 break   # context nearly full -> flush

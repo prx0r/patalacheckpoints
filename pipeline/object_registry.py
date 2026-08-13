@@ -74,6 +74,7 @@ def _atomic_write(path: Path, data: str) -> None:
     file, never a torn middle state. This permanently fixes the source-registry corruption.
     """
     path.parent.mkdir(parents=True, exist_ok=True)
+    _LOAD_CACHE.pop(str(path), None)   # invalidate any cached parse of this registry
     fd, tmp = tempfile.mkstemp(dir=str(path.parent), prefix=path.name + ".", suffix=".tmp")
     try:
         with os.fdopen(fd, "w", encoding="utf-8") as fh:
@@ -217,11 +218,29 @@ def _path(layer: str) -> Path:
     return REG_DIR / f"{layer.lower()}-registry.jsonl"
 
 
+_LOAD_CACHE: dict[str, tuple] = {}   # (path) -> (st_ino, st_mtime_ns, st_size, reg)
+
+
 def _load(layer: str) -> dict:
     p = _path(layer)
-    reg = {"layer": layer.upper(), "objects": {}}
+    empty = {"layer": layer.upper(), "objects": {}}
     if not p.exists():
-        return reg
+        return empty
+    # In-process cache keyed by file identity (inode+mtime+size). Re-parsing the registry (which can
+    # be tens of MB / tens of thousands of objects) on EVERY current()/versions() call was the factory's
+    # CPU bottleneck: the --retry path called _load once per failing passage (~761 * 0.6s = minutes of
+    # pure re-parse before any model call). The cache invalidates automatically whenever the file
+    # changes on disk (including writes from other processes, e.g. the live RAW->EN runner), so it is
+    # always observably correct — just much faster for repeated reads in one pass.
+    try:
+        st = p.stat()
+        key = (st.st_ino, st.st_mtime_ns, st.st_size)
+    except OSError:
+        return empty
+    hit = _LOAD_CACHE.get(str(p))
+    if hit and hit[:3] == key:
+        return hit[3]
+    reg = {"layer": layer.upper(), "objects": {}}
     for line in p.open(encoding="utf-8"):
         line = line.strip()
         if not line:
@@ -233,6 +252,7 @@ def _load(layer: str) -> dict:
         oid = rec.get("object_id")
         if oid:
             reg["objects"].setdefault(oid, []).append(rec)
+    _LOAD_CACHE[str(p)] = (key[0], key[1], key[2], reg)
     return reg
 
 

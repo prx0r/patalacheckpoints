@@ -160,6 +160,20 @@ def _assemble_t1(verse: str, segments: list[dict], gloss_map: dict) -> list[dict
     return out
 
 
+# Max assembled-prompt size for one model call, in bytes. model.py passes the prompt as a
+# command-line argument to `hermes -z`, so a prompt near the OS ARG_MAX (~2MB on Linux) fails with
+# `[Errno 7] Argument list too long`. 800KB leaves generous headroom for argv/env overhead while
+# still packing many verses per call.
+T1_MAX_BYTES = int(os.environ.get("PATALA_T1_MAX_BYTES", "800000"))
+
+
+def _block_bytes(e: dict) -> int:
+    """Upper-bound estimate of the byte size one verse contributes to a T1 batch prompt."""
+    return (len(e.get("verse", "").encode("utf-8"))
+            + len(json.dumps(e.get("tokens", []), ensure_ascii=False).encode("utf-8"))
+            + 200)
+
+
 def _build_batch_prompt(verses: list[dict]) -> str:
     """One prompt for a WHOLE batch of verses -> ONE model call glosses many verses (max work per call).
 
@@ -247,10 +261,15 @@ def _log_t1_output(object_id: str, status: str, gloss_map: dict, error: str = ""
 def t1_generator(layer: str, batch: list[dict]) -> list[dict]:
     """Produce canonical T1 objects for a batch of raw-Sanskrit verses.
 
-    BATCHED (A2-17): the WHOLE batch is glossed in ONE model call (all verses + tokens in a single
-    prompt), so one API call does max work — the same design as batch_translate.py. Each verse is
-    then bound to its own gloss map via its echoed object_id. If the batch call fails, every verse in
-    the batch is marked GENERATION_FAILED (fail-closed, retryable) — never a partial commit."""
+    BATCHED, PER-WORK, BYTE-CAPPED: verses are glossed in model calls grouped by WORK (each call
+    contains only ONE work's verses) and sized so the assembled prompt stays well under the OS
+    ARG_MAX limit. This fixes the two live failures:
+      (a) mixing many works into one prompt made the model return non-JSON and the whole batch
+          failed closed -> ~93% T1 failure rate;
+      (b) prompts >~2MB hit `[Errno 7] Argument list too long` because model.py passes the prompt
+          as a command-line argument to `hermes -z`.
+    Each call is fail-closed: a failed call marks only THAT call's verses retryable, never the whole
+    input. Same shape/provenance contract as before; per-verse stream log is preserved."""
     entries = []
     for b in batch:
         verse = (b.get("verse") or "").strip()
@@ -265,42 +284,65 @@ def t1_generator(layer: str, batch: list[dict]) -> list[dict]:
     if not entries:
         return []
 
-    n_tokens = sum(len(e["tokens"]) for e in entries)
-    prompt = _build_batch_prompt(entries)
-    # A2-10b size-aware timeout: scale with total batch size so big batches get enough time.
-    timeout = min(180 + int(n_tokens * 0.5), 600)
-    try:
-        raw = chat("You are the Pāṭala T1 translator (transliteral word-gloss).", prompt,
-                   timeout=timeout)
-        gloss_by_oid = _parse_batch(raw)
-    except Exception as e:
-        # fail-closed: the whole batch failed -> every verse retryable, no partial commit
-        for e_ in entries:
-            _log_t1_output(e_["object_id"], "GENERATION_FAILED", {}, error=str(e)[:80])
-        return [{"object_id": e_["object_id"], "input_hash": _verse_hash(e_["verse"]),
-                 "t1": {}, "t1_status": "GENERATION_FAILED"} for e_ in entries]
-
-    proposals = []
+    # group by work so each model call is single-work (context-consistent)
+    by_work: dict[str, list[dict]] = {}
     for e in entries:
-        verse = e["verse"]
-        gloss_map = gloss_by_oid.get(e["object_id"]) or {}
-        try:
-            t1_tokens = _assemble_t1(verse, e["segments"], gloss_map)
-            _log_t1_output(e["object_id"], "MACHINE_PROPOSED", gloss_map)
-            proposals.append({
-                "object_id": e["object_id"],
-                "input_hash": _verse_hash(verse),
-                "verse": verse,
-                "t1": {"tokens": t1_tokens,
-                       "source_sha256": _verse_hash(verse),
-                       "source_text": verse,
-                       "status": "MACHINE_PROPOSED"},
-                "t1_status": "MACHINE_PROPOSED",
-            })
-        except Exception as ex:
-            _log_t1_output(e["object_id"], "GENERATION_FAILED", gloss_map, error=str(ex)[:80])
-            proposals.append({"object_id": e["object_id"], "input_hash": _verse_hash(verse),
-                              "t1": {}, "t1_status": "GENERATION_FAILED"})
+        by_work.setdefault(e["object_id"].split(":")[0], []).append(e)
+
+    proposals: list[dict] = []
+    for work_entries in by_work.values():
+        sub: list[dict] = []
+        sub_bytes = 0
+
+        def flush() -> None:
+            nonlocal sub, sub_bytes
+            if not sub:
+                return
+            n_tokens = sum(len(e["tokens"]) for e in sub)
+            prompt = _build_batch_prompt(sub)
+            # A2-10b size-aware timeout: scale with total batch size so big batches get enough time.
+            timeout = min(180 + int(n_tokens * 0.5), 600)
+            try:
+                raw = chat("You are the Pāṭala T1 translator (transliteral word-gloss).", prompt,
+                           timeout=timeout)
+                gloss_by_oid = _parse_batch(raw)
+            except Exception as exc:
+                # fail-closed: only THIS call's verses, never the whole input
+                for e_ in sub:
+                    _log_t1_output(e_["object_id"], "GENERATION_FAILED", {}, error=str(exc)[:80])
+                    proposals.append({"object_id": e_["object_id"],
+                                      "input_hash": _verse_hash(e_["verse"]),
+                                      "t1": {}, "t1_status": "GENERATION_FAILED"})
+                sub, sub_bytes = [], 0
+                return
+            for e in sub:
+                verse = e["verse"]
+                gloss_map = gloss_by_oid.get(e["object_id"]) or {}
+                try:
+                    t1_tokens = _assemble_t1(verse, e["segments"], gloss_map)
+                    _log_t1_output(e["object_id"], "MACHINE_PROPOSED", gloss_map)
+                    proposals.append({
+                        "object_id": e["object_id"],
+                        "input_hash": _verse_hash(verse),
+                        "verse": verse,
+                        "t1": {"tokens": t1_tokens,
+                               "source_sha256": _verse_hash(verse),
+                               "source_text": verse,
+                               "status": "MACHINE_PROPOSED"},
+                        "t1_status": "MACHINE_PROPOSED",
+                    })
+                except Exception as ex:
+                    _log_t1_output(e["object_id"], "GENERATION_FAILED", gloss_map, error=str(ex)[:80])
+                    proposals.append({"object_id": e["object_id"], "input_hash": _verse_hash(verse),
+                                      "t1": {}, "t1_status": "GENERATION_FAILED"})
+            sub, sub_bytes = [], 0
+
+        for e in work_entries:
+            if sub and sub_bytes + _block_bytes(e) > T1_MAX_BYTES:
+                flush()
+            sub.append(e)
+            sub_bytes += _block_bytes(e)
+        flush()
     return proposals
 
 
