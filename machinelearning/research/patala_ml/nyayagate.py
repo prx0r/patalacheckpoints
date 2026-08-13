@@ -304,3 +304,75 @@ def validate(claim: dict, peer_claims: list[dict] | None = None, gold_propositio
                 result["outcome"] = "needs_review"
             result["can_update_posterior"] = False
     return result
+
+
+# ── verify_claim_semantic: the BOUNDED structural/evaluative gate (devpath1, E2-02) ──────────
+# The handover's target adapter. It is NOT a truth oracle and must never output `argument_valid=true`
+# (GLOBAL-STATE §8). It maps the deterministic gate onto a bounded verdict + the four dimensions the
+# semantic layer later tests (pratijna/hetu/scope/support_relation). The result is an
+# engineering/structural result; it establishes nothing about historical or philosophical correctness.
+VERIFY_VERDICTS = ("PASS", "PASS_WITH_OPEN", "FAIL")
+_VERIFY_DIMENSIONS = ("pratijna", "hetu", "scope", "support_relation")
+
+# outcome → bounded verdict (never "proven"/"true"; a clean result is an engineering result)
+_OUTCOME_TO_VERDICT = {
+    "accepted": "PASS",
+    "accepted_with_penalty": "PASS_WITH_OPEN",
+    "needs_review": "PASS_WITH_OPEN",
+    "hollow": "FAIL",
+    "refuted": "FAIL",
+}
+
+
+def _dimension_flags(claim: dict, failures: list[dict]) -> dict:
+    """Fold the gate failures + claim signals into the four bounded dimensions.
+
+    Each dimension is one of: CLEAN | OPEN | DEFECT (never a truth judgement).
+      - pratijna        the thesis/statement is present and not over-claimed
+      - hetu            the reason is present and established enough for structural review
+      - scope           the claim does not overreach (universal/always without vyāpti backing)
+      - support_relation the reason-to-conclusion relation is coherent (no self-inversion/badhita)
+    """
+    text = str(claim.get("claim_text", "")).lower()
+    fallacies = {f.get("fallacy") for f in failures}
+
+    def dim(flag: str, *_f: str) -> str:
+        return "DEFECT" if (flag in fallacies) else "CLEAN"
+
+    return {
+        "pratijna": "OPEN" if (claim.get("falsifier") is None) else dim("asiddha", "hollow"),
+        "hetu": dim("asiddha"),
+        "scope": "DEFECT" if (any(w in text for w in UNIVERSAL_OVERRECH)) else "CLEAN",
+        "support_relation": dim("viruddha", "badhita"),
+    }
+
+
+def verify_claim_semantic(claim: dict, peer_claims: list[dict] | None = None,
+                          gold_propositions: list[dict] | None = None) -> dict:
+    """Bounded structural/evaluative gate → PASS / PASS_WITH_OPEN / FAIL + per-dimension flags.
+
+    This is the devpath1 bounded evaluator. It:
+      - NEVER asserts truth (no `argument_valid=true`, no "proven") — a clean result is
+        engineering/structural, per GLOBAL-STATE §8 and NYAYA-GATE-CANDIDATE-V1.
+      - maps the deterministic 5-hetvābhāsa gate + optional graph viruddha onto the verdict.
+      - reports the four dimensions (pratijna/hetu/scope/support_relation) as CLEAN/OPEN/DEFECT,
+        giving the semantic layer an explicit handshake of what to test next.
+
+    Returns {verdict, can_update_posterior, dimensions, failures, graph_viruddha, ...}.
+    """
+    res = validate(claim, peer_claims, gold_propositions)
+    outcome = res.get("outcome", "needs_review")
+    verdict = _OUTCOME_TO_VERDICT.get(outcome, "PASS_WITH_OPEN")
+    # a graph viruddha is always FAIL (strong, decisive) — never silently passed
+    if res.get("graph_viruddha"):
+        verdict = "FAIL"
+    dimensions = _dimension_flags(claim, res.get("failures") or [])
+    return {
+        "claim_id": claim.get("claim_id"),
+        "verdict": verdict,
+        "dimensions": dimensions,
+        "can_update_posterior": res.get("can_update_posterior", False) and verdict == "PASS",
+        "failures": res.get("failures") or [],
+        "graph_viruddha": res.get("graph_viruddha", False),
+        "note": "bounded structural/evaluative result — NOT a truth or philosophical-correctness claim",
+    }
