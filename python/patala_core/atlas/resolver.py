@@ -36,8 +36,13 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 ROOT = Path("/root/projects/patala")
 
 # ── authority ladder (shared vocabulary, per design doc) ─────────────────────────
+# Literal producer vocabulary (per peer review — authority inflation fix):
+#   an internal crosswalk is INTERNAL_IDENTITY_BOUND, NOT multi-source corroboration;
+#   a single external search hit is EXTERNAL_CANDIDATE_FOUND, NOT multi-source;
+#   MULTI_SOURCE_MATCHED requires >=2 epistemically independent sources + field agreement.
 LADDER = [
-    "DISCOVERED", "CATALOG_MATCHED", "MULTI_SOURCE_MATCHED", "COPY_INSPECTED",
+    "UNKNOWN", "DISCOVERED", "INTERNAL_IDENTITY_BOUND", "EXTERNAL_CANDIDATE_FOUND",
+    "CATALOG_MATCHED", "MULTI_SOURCE_MATCHED", "COPY_INSPECTED",
     "EDITION_VERIFIED", "TEXT_DERIVATION_VERIFIED", "SCHOLAR_CONFIRMED",
 ]
 DIMENSIONS = ["WORK_IDENTITY", "AUTHOR_IDENTITY", "EDITION_IDENTITY",
@@ -114,8 +119,12 @@ def resolve_work(wid: str, net: bool = True) -> dict:
 
     # WORK_IDENTITY + EDITION_IDENTITY from archive.org + the crosswalk
     atlas_uuid = _legacy_to_uuid(wid)
-    # if the crosswalk resolved it (a real atlas row exists), that's a catalog match; else seed/discovered
-    work_relation = "MULTI_SOURCE_MATCHED" if _crosswalk_has(wid) else "CATALOG_MATCHED"
+    # The internal Pāṭala legacy-id → UUID crosswalk is an INTERNAL mapping, not external
+    # corroboration. Only genuine independent-source agreement is MULTI_SOURCE_MATCHED.
+    if _crosswalk_has(wid):
+        work_relation = "INTERNAL_IDENTITY_BOUND"
+    else:
+        work_relation = "DISCOVERED"
     evidence["WORK_IDENTITY"] = {
         "relation": work_relation,
         "source_scheme": "ATLAS_CROSSWALK", "payload": {"legacy_id": wid, "atlas_uuid": atlas_uuid},
@@ -131,8 +140,12 @@ def resolve_work(wid: str, net: bool = True) -> dict:
             {"source": "archive.org", "kind": "translation", "num_found": tr.get("num_found", 0), "hits": tr.get("hits", [])},
         ]
         time.sleep(1)
+        # One archive.org query with search hits is an EXTERNAL CANDIDATE, never multi-source.
+        # MULTI_SOURCE_MATCHED requires >=2 independent sources + field agreement (checked by
+        # Agent 1 Atlas NAT, which also catches SOURCE_ECHO when catalogues copy one record).
+        edition_relation = "EXTERNAL_CANDIDATE_FOUND" if ed.get("num_found", 0) > 0 else "DISCOVERED"
         evidence["EDITION_IDENTITY"] = {
-            "relation": "MULTI_SOURCE_MATCHED" if ed.get("num_found", 0) > 0 else "DISCOVERED",
+            "relation": edition_relation,
             "source_scheme": "ARCHIVE_ORG",
             "payload": {"num_found": ed.get("num_found", 0), "hits": ed.get("hits", [])[:3]},
         }
@@ -161,12 +174,18 @@ def resolve_work(wid: str, net: bool = True) -> dict:
 
 
 def _gate(evidence: dict, kind: str) -> bool:
-    """Explicit predicates — never a scalar rank."""
+    """Explicit predicates — never a scalar rank.
+
+    Authority-inflation fix: INTERNAL_IDENTITY_BOUND (a crosswalk mapping) and
+    EXTERNAL_CANDIDATE_FOUND (one external search hit) are NOT publication-grade. Only genuine
+    corroboration (MULTI_SOURCE_MATCHED / COPY_INSPECTED / EDITION_VERIFIED) qualifies.
+    """
     wid = evidence.get("WORK_IDENTITY", {}).get("relation", "DISCOVERED")
     ed = evidence.get("EDITION_IDENTITY", {}).get("relation", "DISCOVERED")
     if kind == "factory":
         return wid in ("CATALOG_MATCHED", "MULTI_SOURCE_MATCHED")
     if kind == "publication":
+        # a single archive hit / internal mapping must NOT open publication
         return ed in ("MULTI_SOURCE_MATCHED", "COPY_INSPECTED", "EDITION_VERIFIED")
     if kind == "scholar":
         return wid in ("MULTI_SOURCE_MATCHED",) or ed in ("EDITION_VERIFIED", "TEXT_DERIVATION_VERIFIED")

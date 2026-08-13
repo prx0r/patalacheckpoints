@@ -37,7 +37,8 @@ def main() -> int:
     ok &= t("no single authority_state scalar", "authority_state" not in cand)
 
     # each dimension has a relation from the ladder vocabulary (or honest OPEN/UNSUPPORTED)
-    vocab = {"DISCOVERED", "CATALOG_MATCHED", "MULTI_SOURCE_MATCHED", "COPY_INSPECTED",
+    vocab = {"DISCOVERED", "INTERNAL_IDENTITY_BOUND", "EXTERNAL_CANDIDATE_FOUND",
+             "CATALOG_MATCHED", "MULTI_SOURCE_MATCHED", "COPY_INSPECTED",
              "EDITION_VERIFIED", "TEXT_DERIVATION_VERIFIED", "SCHOLAR_CONFIRMED", "OPEN", "UNSUPPORTED"}
     bad = [d for d, ev in cand["authority"].items() if ev.get("relation") not in vocab]
     ok &= t("all dimension relations use the authority vocabulary", not bad, f"bad={bad}")
@@ -51,9 +52,15 @@ def main() -> int:
             f"gates={list(gates)}")
     ok &= t("all gate values are bools", all(isinstance(v, bool) for v in gates.values()))
 
-    # WORK_IDENTITY should resolve via the crosswalk (the work was migrated)
-    ok &= t("WORK_IDENTITY is a catalog match (crosswalk)", cand["authority"]["WORK_IDENTITY"]["relation"] in ("CATALOG_MATCHED", "MULTI_SOURCE_MATCHED"),
-            cand["authority"]["WORK_IDENTITY"]["relation"])
+    # Authority-inflation fix: an internal crosswalk mapping is INTERNAL_IDENTITY_BOUND, NOT
+    # MULTI_SOURCE_MATCHED (a crosswalk is not external corroboration). If the DB crosswalk is
+    # unreachable the relation stays DISCOVERED (honest). It must NEVER be promoted to
+    # MULTI_SOURCE_MATCHED or CATALOG_MATCHED by an internal mapping alone.
+    wid_rel = cand["authority"]["WORK_IDENTITY"]["relation"]
+    ok &= t("WORK_IDENTITY is NOT inflated to MULTI_SOURCE/CATALOG by an internal mapping",
+            wid_rel in ("INTERNAL_IDENTITY_BOUND", "DISCOVERED"), wid_rel)
+    ok &= t("publication gate NOT opened by an internal mapping",
+            gates["publication_eligible"] is False, f"publication={gates['publication_eligible']}")
 
     # honesty: etext/witness/date/rights stay OPEN (we don't claim what we can't resolve)
     for dim in ("ETEXT_DERIVATION", "WITNESS_LINKAGE", "DATE_PRECISION", "RIGHTS"):
