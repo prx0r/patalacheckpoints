@@ -147,16 +147,40 @@ try:
 except Exception as e:  # pragma: no cover
     print("C1 worker not wired:", e, file=sys.stderr)
 
-# Wire the Hermes-runs-layer-skill worker for the synthesis/derivation layers (THEME, ESSAY,
-# EDUCATION) that have canonical skills but no dedicated python worker. The model proposes via the
-# layer skill; a deterministic structural validator gates the commit (the model never self-validates).
+# Wire the Hermes-runs-layer-skill worker for the synthesis/derivation layers (ESSAY, EDUCATION)
+# that have canonical skills but no dedicated python worker. The model proposes via the layer skill;
+# a deterministic structural validator gates the commit (the model never self-validates).
 try:
     from generative_worker import make_generative_handler, skill_proposal_validator
-    for _layer in ("THEME", "ESSAY", "EDUCATION"):
+    for _layer in ("ESSAY", "EDUCATION"):
         LAYER_HANDLERS[_layer] = {"generator": make_generative_handler(_layer)["generator"],
                                   "validator": skill_proposal_validator}
 except Exception as e:  # pragma: no cover
     print("generative worker not wired:", e, file=sys.stderr)
+
+# Wire the THEME worker (evidence-backed synthesis across committed C1s) — reuses Agent 1's hybrid
+# graph + overlapping clustering; deterministic THEME validator gates the commit.
+try:
+    from theme_worker import make_theme_handlers
+    LAYER_HANDLERS["THEME"] = make_theme_handlers()
+except Exception as e:  # pragma: no cover
+    print("THEME worker not wired:", e, file=sys.stderr)
+
+# Wire the ESSAY worker (proof-carrying prose from committed THEME+C1) — reuses Agent 1's Essay
+# object model + verify_essay (SentenceEvidenceAudit) as the commit gate.
+try:
+    from essay_worker import make_essay_handlers
+    LAYER_HANDLERS["ESSAY"] = make_essay_handlers()
+except Exception as e:  # pragma: no cover
+    print("ESSAY worker not wired:", e, file=sys.stderr)
+
+# Wire the EDUCATION worker (distill the committed essay into a concept primer) — deterministic
+# EDUCATION validator gates the commit (derived-from-essay, concise, no overreach).
+try:
+    from education_worker import make_education_handlers
+    LAYER_HANDLERS["EDUCATION"] = make_education_handlers()
+except Exception as e:  # pragma: no cover
+    print("EDUCATION worker not wired:", e, file=sys.stderr)
 
 
 def tick(layers: list[str] | None = None, max_batch: int = 8,
