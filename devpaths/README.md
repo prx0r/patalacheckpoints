@@ -119,12 +119,11 @@ devpath13 ──► A1-CONTINUE-v2: QUALIFY THE SYSTEM, DO NOT EXPAND THE ONTOLO
               COUNTEREVIDENCE_RECALL (Buddhist defeater preserved) all PASS.
               → experiments/vertical1_synthesis_natural.py → benchmarks/v0/review/VERTICAL-1-SYNTHESIS-NAT-NATURAL.json
 
-  P8 whole-essay audit  STATUS: 🔄 IN PROGRESS — the C.1 sentence audit (per-sentence fidelity) PASSES
-              (all 12 load-bearing sentences claim_supported). The WHOLE-ESSAY audit found a genuine
+  P8 whole-essay audit  STATUS: ✅ CLOSED (2026-08-13) — the C.1 sentence audit (per-sentence fidelity)
+              PASSES (all 12 load-bearing sentences claim_supported). The WHOLE-ESSAY audit found a genuine
               gap: S012 (the scope/boundary claim) and S013 (the Buddhist rival representation) are
-              LOAD_BEARING but carry NO source/claim refs → SOURCE_TRACEABILITY=False. This is exactly
-              the whole-essay gap P8 targets (boundary + rival claims must be traceable).
-              → experiments/vertical1_essay_audit.py → benchmarks/v0/review/VERTICAL-1-ESSAY-AUDIT.json
+              LOAD_BEARING but carry NO source/claim refs → SOURCE_TRACEABILITY=False. Promoted to
+              EF-ESSAY-2026-0001 (OPEN).
 
   P9 education validation  STATUS: ✅ CLOSED (2026-08-13) — derived 8 LearningInteractions from the
               SAME VERTICAL-1 synthesis covering the directive §11 skills (speaker classify, proposition
