@@ -12,6 +12,7 @@
 #   crontab -l   # confirm
 
 set -u
+export PATH="/usr/local/bin:/usr/bin:/bin:$PATH"
 LOG=/tmp/opencode/auto-translate.log
 PIDFILE=/tmp/opencode/auto-translate.pid
 
