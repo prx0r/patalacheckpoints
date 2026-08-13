@@ -42,11 +42,15 @@ def l0_generator(layer: str, batch: list[dict]) -> list[dict]:
     gloss_lookup = {}
     glossable = [e for e in entries if e["tokens"]]
     if glossable:
+        # derive the real work_id from the passage object_id (e.g. "kramasadbhava:v1" -> "kramasadbhava")
+        # so the term-context packet (sivaqueue target lookup) uses the correct work, not the layer name.
+        probe = next((e["passage_id"] for e in glossable if e["passage_id"]), "")
+        work_id = probe.split(":")[0] if ":" in probe else layer
         # bound each model call: chunk the gloss into sub-batches (default 8) so one
         # giant batch does not overload/stall the model (the autonomous-run lesson)
         CHUNK = int(os.environ.get("PATALA_GLOSS_CHUNK", "8"))
         for start in range(0, len(glossable), CHUNK):
-            for g in run_batch(glossable[start:start + CHUNK], layer):
+            for g in run_batch(glossable[start:start + CHUNK], work_id):
                 gloss_lookup[g["idx"]] = g["gloss_map"]
     proposals = []
     for i, e in enumerate(entries):

@@ -188,7 +188,9 @@ def propose_glosses_batch(entries: list, work_id: str, max_tokens=None) -> dict:
         f"{packet}\n\n"
         + "\n".join(blocks)
     )
-    raw = chat("You are a careful Sanskrit L0 gloss generator.", prompt, max_tokens=max_tokens, timeout=600)
+    res = get_adapter().complete_json("You are a careful Sanskrit L0 gloss generator.", prompt,
+                                     model="deepseek-v4-flash", timeout=60)
+    raw = res.content if res.ok else ""
     return _parse_batch_gloss(raw, entries)
 
 
@@ -214,12 +216,34 @@ def challenge_glosses_batch(entries: list, proposed: dict, work_id: str, max_tok
         f"{packet}\n\n"
         + "\n".join(blocks)
     )
-    raw = chat("You are a skeptical Sanskrit philologist (adversarial check).", prompt, max_tokens=max_tokens, timeout=600)
+    res = get_adapter().complete_json("You are a skeptical Sanskrit philologist (adversarial check).", prompt,
+                                     model="deepseek-v4-flash", timeout=60)
+    raw = res.content if res.ok else ""
     try:
         challenged = _parse_batch_gloss(raw, entries)
     except Exception:
         challenged = proposed
     return challenged
+
+
+def _gloss_call_with_retry(fn, entries, work_id, proposed=None, attempts=2):
+    """Bound a generative gloss pass with retries on EMPTY output.
+
+    The model is nondeterministic on the real gloss prompt — it occasionally returns empty
+    content or an all-empty parse. A single empty response must NOT be accepted as success
+    (that silently erases the gloss layer). Retry up to `attempts`; only accept empty when
+    every attempt is empty (honest fail, never fabricated).
+    """
+    out = {}
+    for a in range(attempts):
+        if proposed is None:
+            out = fn(entries, work_id)
+        else:
+            out = fn(entries, proposed, work_id)
+        n = sum(1 for e in entries for g in out.get(e["idx"], {}).values() if g)
+        if n > 0:
+            return out
+    return out
 
 
 def run_batch(entries: list, work_id: str) -> list:
@@ -228,15 +252,18 @@ def run_batch(entries: list, work_id: str) -> list:
     {idx, proposed, challenged, gloss_map}."""
     if not entries:
         return []
-    proposed = propose_glosses_batch(entries, work_id)
-    challenged = challenge_glosses_batch(entries, proposed, work_id)
+    proposed = _gloss_call_with_retry(propose_glosses_batch, entries, work_id)
+    challenged = _gloss_call_with_retry(challenge_glosses_batch, entries, work_id, proposed)
     out = []
     for e in entries:
         p = proposed.get(e["idx"], {})
         c = challenged.get(e["idx"], p)
         gloss_map = {}
         for t in e["tokens"]:
-            g = c.get(t, p.get(t, ""))
+            # fall back to the propose-pass gloss whenever the challenge produced nothing
+            # for this token (empty/ABSTAIN from an empty or malformed challenge response must
+            # never silently drop a real proposal — that is the 'challenge erased the gloss' bug)
+            g = c.get(t, "") or p.get(t, "")
             if g == "ABSTAIN":
                 g = ""
             gloss_map[t] = {"literal": g, "compound": "", "supplied": False}

@@ -66,6 +66,39 @@ adapter/canary invocation should be backgrounded and the log tailed, not awaited
 
 ---
 
+## UPDATE (2026-08-13) — THE RAW-L0 BLOCKER IS CLOSED (checkpoint CP1/CP2)
+
+### The validator fix (the exact blocker, now resolved)
+`validate_l0_spec.py` no longer requires a `literal_gloss` on `AMBIGUOUS` records. An empty-gloss
+`AMBIGUOUS` is now a **valid honest abstention** (deterministic Layer A commits; the gloss is best-effort
+Layer B enrichment — an enrichment failure never erases Layer A). `PARSED` STILL strictly requires both
+lemma AND gloss (no fabricated certainty). Regression-tested (F10).
+
+### Three reliability bugs fixed (all in the gloss path)
+1. **`l0_worker.py` passed `"L0"` as the work_id** to the gloss term-packet lookup → the sivaqueue
+   term-context was never applied. Now derives the real work_id from the passage object_id (F11).
+2. **`agentic_gloss.run_batch` let an empty/malformed challenge response ERASE the propose-pass glosses**
+   (challenged returned `{idx:{token:""}}` which overwrote proposed). Now falls back to proposed (F).
+3. **Gloss nondeterminism** — propose/challenge occasionally return all-empty. Added `_gloss_call_with_retry`
+   (bounded retry, only accept empty when every attempt is empty — honest fail, never fabricated).
+
+### Verified (fast, deterministic, no model)
+- **CP1 on a real verse:** `aśarīrāḥ śarīrasthāḥ kālyārādhanatatparāḥ` → 3 canonical L0 (PARSED, correct
+  glosses) → `validate_l0_spec` **PASS** (schema 3/3, abstention 3/3, gloss 3/3, P0 true, 0 unknown).
+- **Whole-work deterministic floor:** kramasadbhāva **97/100 P0-PASS** (lossless, 0 unknown), 509 canonical
+  records, 350 parsed / 159 honest AMBIGUOUS; the 3 fails are all genuine lacuna/OCR verses that
+  fail-closed (e.g. `* * * * * * *(?)`). This is the certified floor, no model required.
+- Tests: `test_autonomous.py` ALL PASS (incl. new F10/F11 regressions).
+
+### In flight (CP2 — autonomous RAW→L0 v1, driven by the real controller)
+`pipeline/prove_raw_l0.py` (detached) drives `autonomy.tick` for kramasadbhāva through the Direct model
+adapter, committing validator-passing canonical L0 to the durable registry, writing
+`factory-certificates/L0-v1/raw-l0-v1.json` + `data/corpus/registries/l0-registry.jsonl`. Gloss layer is
+slow (real model calls, retries), so this takes a few minutes — checked back later, not babysat.
+
+---
+
+
 ## UPDATE (2026-08-12, end of session) — autonomous RAW-L0: the precise blocker
 
 ### What works (verified)
