@@ -12,3 +12,6 @@ __pycache__/
 
 # local ML virtualenv (5GB torch/nvidia) — the research environment, NOT part of the app
 machinelearning/research/.venv/
+
+# Inspect AI eval logs (regenerated on each run; don't commit)
+logs/
