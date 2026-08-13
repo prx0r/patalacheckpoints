@@ -227,6 +227,27 @@ This emits (to `data/corpus/downloads/factory-certificate.json`):
 
 ---
 
+## 10.5 HOW STATE PERSISTS: the registry (canonical) vs the ledger (operational)
+
+Two state systems, two writers. Do not conflate them:
+
+| System | Files | Written by | Role |
+|---|---|---|---|
+| **REGISTRY (canonical)** | `data/corpus/registries/<layer>-registry.jsonl` | the factory workers (`object_registry.commit`) | the authoritative object state — immutable, versioned, provenance-bound |
+| **LEDGER (operational)** | `data/corpus/downloads/translation-state-ledger.json` | the live RAW→EN runner (`advance_ledger`) + `corpus_state.py` | per-work operational view (translation/l0 status/next_action) |
+| **QUEUE** | `agent3-queue-state.json` + `factory-failure-queue.jsonl` | live runner + factory | scheduling + durable failure/retry records |
+
+**The factory is registry-driven.** The DAG scheduler (`factory_scheduler.py`) derives "what's next" by
+scanning what is actually committed in the registries — it never walks the ledger. The live runner
+advances the ledger. They stay consistent because both read/write the same passages; the **registry is
+authoritative for the factory**, the **ledger is the operational view**.
+
+**Transitions are derived, not hardcoded:** once T1 commits for a passage, the next pass sees L0 +
+ARGMAP become eligible (from the registry), and so on down to C1. Every commit is immutable + versioned
+(a correction creates a new version that supersedes the old). `is_committed(object_id, input_hash)`
+makes everything idempotent + crash-resume-safe — a watchdog-restarted loop continues from the correct
+frontier, never redoing completed work and never duplicating.
+
 ## 11. THE COMPLETE FILE → PROCESS MAP
 
 ```

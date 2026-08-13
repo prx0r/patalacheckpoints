@@ -102,7 +102,48 @@ SOURCE   981 · L0   790 · L1   5 · L2   3 · L200   9 · C1   3 · THEME   1 
 So the pipeline is **populated and committed through THEME**; ESSAY/EDUCATION workers exist + test but
 have not yet committed real objects on the current corpus subset.
 
-### 2c. The two sides of the graph (Agent 1's architecture)
+### 2c. TWO STATE SYSTEMS — the registry (canonical truth) vs the ledger (operational view)
+
+Pāṭala has **two distinct state systems**, and the overnight factory is driven by the **registry**,
+NOT the ledger. Do not conflate them:
+
+| System | Files | Who writes | Role |
+|---|---|---|---|
+| **REGISTRY (canonical)** | `data/corpus/registries/<layer>-registry.jsonl` (T1/L0/ARGMAP/L2/L200/C1/...) | `object_registry.commit()` — the factory workers | **the authoritative object state**: immutable, versioned, provenance-bound, input-hash idempotent |
+| **LEDGER (operational)** | `data/corpus/downloads/translation-state-ledger.json` | `auto_translate_raw.py` (`advance_ledger`) + `corpus_state.py` | the higher-level per-work operational view (`translation.t1/l2/c1`, `l0.status`, `next_action`) |
+| **QUEUE (work request)** | `data/corpus/downloads/agent3-queue-state.json` + `factory-failure-queue.jsonl` | the live runner + the factory | scheduling + durable failure/retry records |
+
+**The factory scheduler (`factory_scheduler.py`) is REGISTRY-DRIVEN.** It derives the DAG of "what's
+next" by scanning what is actually committed in the registries — it never walks the ledger. The live
+RAW→EN runner is the one that advances the ledger. The two stay consistent because both read/write the
+same underlying passages; the **registry is authoritative for the factory**, the **ledger is the
+operational view**.
+
+### 2d. The DAG transition (how a passage advances, registry-derived)
+
+Each pass, the scheduler re-scans the registry and picks up whatever became eligible:
+
+```
+SOURCE committed  → T1 eligible     → commit T1
+T1 committed      → L0 + ARGMAP eligible → commit L0 (free) + ARGMAP
+ARGMAP committed  → L2 eligible     → commit L2
+L2 committed      → L200 eligible   → commit L200
+L200 committed    → C1 eligible     → commit C1
+```
+
+So a passage naturally travels `SOURCE→T1→ARGMAP→L0→L2→L200→C1` over successive passes, with no manual
+"advance to next layer" call. Eligibility = `upstream layer has a committed object` AND `this layer has
+no current committed object` (both from the registry, per `object_registry.PREREQS`). Deterministic L0
+drains free (never consumes the model budget); model-bound layers are rate-limited.
+
+**Persistence:** each commit is immutable + versioned (a fix creates a NEW version that supersedes the
+old; nothing is edited in place). **Idempotency / crash-resume:** `is_committed(object_id, input_hash)`
+prevents re-committing anything already current — if the loop crashes, the watchdog restarts it and it
+continues from the correct frontier, never redoing completed work. **Failure resilience:** a failing
+passage is recorded (upserted) in the failure queue, retried (capped at MAX_ATTEMPTS), then marked
+BLOCKED_RETRY_EXHAUSTED so it can't wedge the run.
+
+### 2e. The two sides of the graph (Agent 1's architecture)
 
 ```
 PRIMARY-TEXT SIDE                     SCHOLARSHIP SIDE
@@ -114,7 +155,7 @@ SOURCE → L0/L1 → L2                   Publication → Witness → Span
 The generic source substrate sits under/alongside the Sanskrit L0/L200 stack. Modern English scholarship
 is NOT forced through L0/L1/L2/L200.
 
-### 2d. The live production run (separate from the validated vertical)
+### 2f. The live production run (separate from the validated vertical)
 
 ```
 auto_translate_raw.py (detached, watchdog-cron)  →  batch_translate.py  →  model.chat → hermes -z
