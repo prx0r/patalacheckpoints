@@ -95,12 +95,26 @@ VISION_AND_NAVIGATION.md → docs/INDEX.md → docs/vision/CORE-BIBLE.md
 
 ---
 
-## 9. THE REAL GAPS (what is NOT built — work here, not on the above)
+## 9. THE REAL GAPS — STATUS (updated 2026-08-13)
 
-1. **External adapters**: INCEpTION annotation bridge, OpenCitations citation graph, ORCID/ROR identity crosswalks (all documented, none integrated).
-2. **Recovery scorer**: semantic matching (the token-overlap scorer under-measures correct paraphrase — see argrec-pilot).
-3. **ATLAS-100**: resolve the 100 highest-value works into useful `/works/PTW...` objects (read API exists; full resolution doesn't).
-4. **Repo history rewrite** (owner decision): the in-copyright PDFs are untracked now but still in prior git history.
+| Gap | Status |
+|---|---|
+| **Recovery scorer semantic matching** (P0) | ✅ DONE — `semantic_recovery_judge.py` (2-stage: embedding align + structured judge; offline fallback + LLM swap-in) |
+| **INCEpTION annotation/gold bridge** (P1) | ✅ DONE — `annotation_bridge.py` (W3C-Web-Annotation export/import, round-trip verified) |
+| **OpenCitations adapter** (P2) | ✅ DONE — `adapters/opencitations.py` (independence + SOURCE_ECHO detection) |
+| **ORCID/ROR identity crosswalks** (P3) | ✅ DONE — `adapters/identity_crosswalk.py` (name-variant→Person, institution→ROR) |
+| **Scholar-graph evaluation** (P4) | ✅ DONE — `scholar_graph_eval.py` (SourceAssertion+CorroborationEvent suffices; quality is measurable) |
+| **Continuous semantic QA on Atlas** (P5) | ✅ DONE — `atlas_qa_audit.py` (authority-inflation/completeness/rights audit) |
+
+**Flagged for review:**
+- ⚠️ **Hermes model-config bug**: `model.py` sets `HERMES_MODEL` env (→ "Model not supported"); the
+  config uses provider `opencode-go` (not `deepseek`). Blocks the LLM-judge path + any factory model
+  call that overrides the model. The pilot's T1/ARGMAP worked via config default.
+- ⚠️ **Atlas bibliography thin**: `atlas-bibliography.json` (254 recs) is 1/8 ATLAS-100 fields
+  complete (all flagged by the P5 audit); the rich `audited.ts` (Trika-10) has full depth. ATLAS-100
+  needs the rich fields backfilled from the TS bibliography.
+- ⚠️ **Repo history rewrite** (owner decision): the in-copyright PDFs are untracked now but still in
+  prior git history (destructive filter-repo, deferred).
 
 ---
 
