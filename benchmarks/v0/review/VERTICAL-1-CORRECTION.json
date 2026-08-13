@@ -1,0 +1,28 @@
+{
+  "object_kind": "WHOLE_CHAIN_CORRECTION_TEST",
+  "trigger": {
+    "trigger": "REVISE G2-TC2 v1 -> v2",
+    "must_flip_to_NEED_REVIEW": [
+      "G2-INF1",
+      "G2-CONC"
+    ],
+    "must_consider_synthesis": "SYN-CONC-001",
+    "must_stay_CANDIDATE": [
+      "ARG-004"
+    ],
+    "source_grounding_untouched": true
+  },
+  "frozen_expectation_met": {
+    "G2-INF1 -> NEED_REVIEW": true,
+    "G2-CONC -> NEED_REVIEW": true,
+    "isolation: ARG-004 stays CANDIDATE": true,
+    "impact names the load-bearing chain": true
+  },
+  "semantic_downstream": {
+    "SYN-CONC-001 (synthesis conclusion)": "depends on G2-CONC (load-bearing) -> stale until rebuilt",
+    "essay claim S001 (refs SYN-CONC-001)": "stale (synthesis changed)",
+    "learning interactions (derived from synthesis)": "must be regenerated from the corrected synthesis"
+  },
+  "verdict": "PASS",
+  "review_status": "NOT_HUMAN_REVIEWED"
+}

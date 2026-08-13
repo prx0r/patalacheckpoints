@@ -134,6 +134,14 @@ devpath13 ──► A1-CONTINUE-v2: QUALIFY THE SYSTEM, DO NOT EXPAND THE ONTOLO
               distractors encode the NAT failure taxonomy — OBJECTION_AS_AUTHOR_VIEW, QUALIFIER_DROP,
               SCOPE_INFLATION, etc.). All PASS.
               → experiments/vertical1_education.py → benchmarks/v0/review/VERTICAL-1-EDUCATION.json
+
+  P11 whole-chain correction  STATUS: ✅ CLOSED (2026-08-13) — froze the expected consequences of a
+              low-level correction (REVISE the load-bearing premise G2-TC2) BEFORE applying it, then
+              verified the review_engine's deterministic impact: G2-INF1 + G2-CONC flip to NEED_REVIEW,
+              isolation holds (ARG-004 stays CANDIDATE), and the semantic downstream (synthesis
+              conclusion → essay claim → learning interactions) is marked stale. The correction
+              propagates semantically, not merely 'rebuilds'.
+              → experiments/vertical1_correction.py → benchmarks/v0/review/VERTICAL-1-CORRECTION.json
 ```
 
 ---
