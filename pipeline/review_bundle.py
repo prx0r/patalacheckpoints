@@ -206,7 +206,6 @@ def run_human_authority_path(bundle: dict, scholar: dict, decision: str, reasoni
 
 if __name__ == "__main__":
     # build one ReviewBundle for a real proposition (G2-TC1 from gold002) and run one review
-    import argparse
     sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "machinelearning", "research"))
     from patala_ml.gold002 import build_gold_002
 

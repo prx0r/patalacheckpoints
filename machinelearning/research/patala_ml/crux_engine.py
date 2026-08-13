@@ -26,9 +26,11 @@ import json
 import os
 import sys
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-
-from proposition_layer import Proposition, from_gold_node  # noqa: E402
+try:
+    from .proposition_layer import Proposition, from_gold_node
+except ImportError:  # run as a bare script (python patala_ml/crux_engine.py)
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from proposition_layer import Proposition, from_gold_node  # noqa: E402
 
 
 def _sha256(obj) -> str:
@@ -133,8 +135,11 @@ def wire_nyaya_profile(argument: dict, gold_propositions: list[dict]) -> dict:
     attaches the bounded audit to the argument. The gate stays a bounded evaluator (never
     `argument_valid=true`).
     """
-    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__))))
-    from nyayagate import verify_claim_semantic  # noqa: E402
+    try:
+        from .nyayagate import verify_claim_semantic  # noqa: E402
+    except ImportError:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from nyayagate import verify_claim_semantic  # noqa: E402
 
     # a conclusion = the last inference's conclusion_ids resolved to a proposition text
     inferences = argument.get("inferences", [])
@@ -191,12 +196,14 @@ def build_arguments_from_gold(gold) -> list[dict]:
 
 
 if __name__ == "__main__":
-    from gold002 import build_gold_002
-    from gold003 import build_gold_003
-    from gold004 import build_gold_004
-    from gold005 import build_gold_005
-    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-    from proposition_layer import from_gold_node
+    _research = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
+    if _research not in sys.path:
+        sys.path.insert(0, _research)
+    from patala_ml.gold002 import build_gold_002
+    from patala_ml.gold003 import build_gold_003
+    from patala_ml.gold004 import build_gold_004
+    from patala_ml.gold005 import build_gold_005
+    from patala_ml.proposition_layer import from_gold_node
 
     all_golds = [build_gold_002(), build_gold_003(), build_gold_004(), build_gold_005()]
     arguments = [build_arguments_from_gold(g)[0] for g in all_golds]
