@@ -77,17 +77,36 @@ The directive: QUALIFY the system, do not expand the ontology. Force the existin
 | `0126511` | **Text fingerprints** — incipit/explicit/ngram/MinHash + candidate_rank. |
 | `c897b26` | Recorded the reconciliation layer in the inventory. |
 
+## Phase 8 — the Pāṭala THESIS (the global README)
+
+| Commit | Deliverable |
+|---|---|
+| `b5e8a8b` | **The Pāṭala Thesis** (`docs/global/README.md`) — what Pāṭala is (authority graph + reconciliation engine), is not, the one contribution, the integration posture (borrow 26 tools, own the evidence seam), the authority ladder, the products, the honest proven state. Wired into `docs/INDEX.md`. + `SESSION-BUILD-RECORD-2026-08-13.md`. |
+
+## Phase 9 — ATLAS-100 (the main project now)
+
+| Commit | Deliverable |
+|---|---|
+| `c1d822b` | **#1 Hermes fix** — added agentic `chat_agentic()` (correct `hermes chat`, not blind `-z`); semantic judge uses it. |
+| `954f439` | **#2 Atlas backfill** — `atlas_backfill.py` parses the rich `audited.ts` (node) → 11 provenance-carrying candidates (every field has value/source/derivation/authority_state). |
+| `07815a2` | **#3/#5 ATLAS-10 + quality scorecard** — per-dimension PASS/OPEN/FAIL + completeness vector. |
+| `d154a1f` | **#4 Scholarship side** — real Ratié/Torella → IPVV proposition corroboration (publication/span/relation/independence). |
+| `ebce504` | **#6/#7 Agent-1 QA + 50-IPVV recovery batch** — 0 authority-inflation on backfill; semantic scorer over 50 golds. |
+| `d0ea3c7` | **#9 INCEpTION gold** — 20-passage real annotation project (8 layers, W3C-Web-Annotation) ready for human gold. |
+| `27bdaaf` | **#10 Adapter coverage** — measured: modern-paper adapters (Crossref/OpenAlex/OpenCitations) ~0% coverage for Sanskrit tantric works; name-normalization 5/5. The local scholar corpus + fingerprints are the real path. |
+| `fa6033b` | **Factory T1 via agentic hermes** — switched the T1 batch to `chat_agentic` (file access) not blind `-z` + robust batch JSON parse. |
+
 ---
 
 ## Session totals
 
-- **57 commits**, all pushed to `origin/agent2`.
-- Built: 5 NAT/bench evaluators + 6 external-tool adapters + the reconciliation-engine layer (ExternalRecord/EntityResolution/ManuscriptGold/Fingerprints) + the IPVV pilot (real argument recovery proven).
-- Fixed: registry concurrency, the resolver publication-gate inflation bug, the essay traceability gap.
+- **66 commits**, all pushed to `origin/agent2`.
+- Built: 5 NAT/bench evaluators + 6 external-tool adapters + the reconciliation-engine layer (ExternalRecord/EntityResolution/ManuscriptGold/Fingerprints) + the IPVV pilot (real argument recovery proven) + the ATLAS-100 pipeline (backfill/scorecard/scholarship/QA/INCEpTION) + the Pāṭala Thesis.
+- Fixed: registry concurrency, the resolver publication-gate inflation bug, the essay traceability gap, the Hermes `-z`-vs-agentic bug.
 - Security: removed 9 in-copyright PDFs from the public repo.
 
 ## Open review items (carried forward)
 
-1. Hermes model-config (default works; overrides 401 — see `HERMES-CALLING`).
-2. Atlas bibliography thin (254 recs, 1/8 fields) — the ATLAS-100 backfill target.
+1. ~~Hermes model-config~~ — FIXED (`chat_agentic`, agentic path).
+2. Atlas bibliography thin — the ATLAS-10 backfill pipeline now fills it from `audited.ts` (ongoing: scale to ATLAS-100).
 3. Repo history rewrite (owner decision, destructive).
