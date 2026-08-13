@@ -97,10 +97,10 @@ Surrogate→Transcription→E-text→Source), not citation networks.
 ```text
 TIER 0 [DONE]  R2 infra — patala bucket (prefix-folders), infra/r2_assets.py (SHA-256 content-addressed
                put/get/verify/head/presign), 86 on-disk Sanskrit sources migrated to patala/source/.
-TIER 1 ▶        Pydantic contract package (python/patala_core) — typed discriminated epistemic objects;
+TIER 1 [DONE]   Pydantic contract package (python/patala_core) — typed discriminated epistemic objects;
                 implements the 3 P0 schema corrections (no dict[str,Any] content; AuthorityVector = 4
                 independent axes, no scalar rank; no universal review ladder).
-TIER 2          Dedicated patala-atlas Postgres (isolated container) + Alembic migrations.
+TIER 2 [DONE]   Dedicated patala-atlas Postgres (isolated container) + Alembic migrations.
 TIER 3          Compatibility adapter + 254-record bibliography migration (preserve IDs, factory never breaks).
 TIER 4          OpenAlex-grammar read API (/works /editions /people /etexts /witnesses /passages
                 /search /resolve /context /bundle; filter/search/select/sort/cursor; no N+1).
@@ -129,3 +129,9 @@ TIER 6          [DEFERRED] resolver adapters, ingest, snapshots, hardening.
 ### Current commits
 - `404fa21` infra R2 asset store + patala bucket · `4762a89` Technical Architecture v1 + 3 P0 corrections ·
   `04c5f22` self-executing dev plan · `c0ec708` foundation plan · `766f5d2` cloudflare edge · `cb030ab` performance.
+
+### TIER 0–2 progress (this session)
+- ✅ **TIER 0** R2 infra: `patala` bucket + prefix folders, `infra/r2_assets.py` (SHA-256 content-addressed put/get/verify/head/presign), 86 Sanskrit sources migrated.
+- ✅ **TIER 1** Pydantic contract package `python/patala_core/` — typed discriminated epistemic objects + `AuthorityVector` (4 axes, no scalar rank). Implements all 3 P0 corrections. `test_contracts.py` ALL PASS. (commits `6a7f17b`)
+- ✅ **TIER 2** dedicated `patala-atlas` Postgres 17 (port 5433) + Alembic Authority Graph schema (22 tables). Round-trip verified. (commit `f42a320`)
+- ▶ **Next:** TIER 3 — compatibility adapter + migrate 254 bibliography records (preserve IDs, factory never breaks).
