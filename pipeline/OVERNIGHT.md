@@ -1,7 +1,8 @@
 # PĀṬALA AUTONOMOUS FACTORY — OVERNIGHT RUNBOOK
 
 *2026-08-13. How to leave the autonomous factory running overnight and wake up to maximum progress.
-Everything is watchdog-protected, rate-limited, and idempotent — you do NOT need to watch it.*
+Everything is watchdog-protected, rate-limited, and idempotent — you do NOT need to watch it.
+For the full code-level trace of every step, see `docs/SOURCE-PROCESS-OVERNIGHT.md`.*
 
 ---
 
