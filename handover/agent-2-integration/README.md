@@ -57,6 +57,7 @@ while the running factory stays untouched. Everything you need:
 | **`docs/vision/vision-15-patala-atlas-sanskrit-research-graph.md`** | The Atlas **strategy** (Vision 15). |
 | **`docs/vision/atlas/atlas-engineering-blueprint.md`** | The Atlas **build blueprint** (storage: Postgres=R2=event log; I1–I6). |
 | **`docs/vision/atlas/atlas-cloudflare-edge-layer.md`** | The **Cloudflare edge layer** (Neon/Postgres canonical, Workers API + Hyperdrive + Cache + R2, factory stays self-hosted). |
+| **`docs/vision/atlas/atlas-performance.md`** | The **performance doctrine** — compute on write not read, exact versions = static (cache forever), one agent question = one request (materialized bundles), Astro islands (no JS tax), Rust only for hot Sanskrit kernels (Vidyut/Wasm). Epistemic immutability = cacheability. |
 | **`docs/vision/source-resolution/source-resolver-design.md`** | The **reconciliation authority stack** (NCC/NMM/NGMCP/GRETIL/SARIT/Muktabodha + catalogs + IIIF). |
 | **`docs/vision/functionality/research/2026-08-12/06_ATLAS/RESEARCH_AND_BUILD.md`** | The **endgame-build** project doc for the Atlas. |
 

@@ -83,7 +83,7 @@ properly first** (do B, then one vertical), not translating more works. Read in 
 1. **`docs/AGENT2-ATLAS-FOUNDATION-PLAN.md`** — the active plan (Postgres Atlas I1 + R2 I2 + API I4, then a vertical).
 2. **`openpatala/README.md`** — the "OpenAlex for Sanskrit" build folder (imported OpenAlex reference docs).
 3. **`docs/vision/vision-15-patala-atlas-sanskrit-research-graph.md`** — the strategy.
-4. **`docs/vision/atlas/atlas-engineering-blueprint.md`** + **`atlas-cloudflare-edge-layer.md`** — the build + Cloudflare edge layer.
+4. **`docs/vision/atlas/atlas-engineering-blueprint.md`** + **`atlas-cloudflare-edge-layer.md`** + **`atlas-performance.md`** — the build blueprint, the Cloudflare edge layer, and the performance doctrine ("compute on write, not read; exact versions are static; one agent question = one request; Astro islands; Rust only for hot kernels").
 5. **`docs/vision/source-resolution/source-resolver-design.md`** — the reconciliation authority stack.
 6. **`docs/vision/functionality/research/2026-08-12/06_ATLAS/RESEARCH_AND_BUILD.md`** — the endgame-build project.
 

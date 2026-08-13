@@ -54,7 +54,9 @@ New here? Do not read the whole surface top-down. Follow the arc:
     `openpatala/README.md` (the build folder + imported OpenAlex reference docs) +
     `docs/vision/atlas/atlas-engineering-blueprint.md` (Postgres=R2=event-log storage; I1–I6) +
     `docs/vision/atlas/atlas-cloudflare-edge-layer.md` (Neon/Postgres canonical, Workers API + Hyperdrive +
-    R2, factory self-hosted) + `docs/vision/functionality/research/2026-08-12/06_ATLAS/RESEARCH_AND_BUILD.md`
+    R2, factory self-hosted) + `docs/vision/atlas/atlas-performance.md` (compute-on-write doctrine;
+    immutable versions = cacheable; agent bundles; Astro islands; Rust for hot kernels) +
+    `docs/vision/functionality/research/2026-08-12/06_ATLAS/RESEARCH_AND_BUILD.md`
     (the endgame-build project). This is the current forward build — the foundation (B) before the vertical (C).
  8. **Foundational deep-dives** — `docs/NORTHSTAR.md` (deepest strategy), `docs/foundationalideas.md`
     (the passage-identity idea), `docs/positioningpartners.md` (positioning).

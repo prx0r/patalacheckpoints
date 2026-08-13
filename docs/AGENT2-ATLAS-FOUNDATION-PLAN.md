@@ -108,6 +108,18 @@ Tier D  semantic/context       → Worker → Postgres + Vectorize → compact b
 Immutable versions (`/passages/PTPASS17/versions/6`) cache effectively forever
 (`max-age=31536000, immutable`); latest pointers get short caching.
 
+### The performance doctrine (from `atlas-performance.md`)
+
+> **Compute on write, not read.** Exact versions are static files conceptually. One agent question =
+> one request (materialized context bundles). Never ship JS where HTML is enough (Astro islands).
+> Rust only owns hot deterministic kernels (Vidyut/Wasm). Measure before adding infrastructure.
+
+The deep point: Pāṭala's epistemic requirements (exact IDs, frozen versions, deterministic provenance,
+compiled projections) are exactly the properties CDNs love — **immutable, addressable, repeatable,
+cacheable.** The trust architecture and the performance architecture don't fight; they reinforce each
+other. "Expensive scholarship once; essentially static knowledge thereafter." Languages: Python
+(scholarly intelligence) · Rust (Sanskrit kernels) · TypeScript (network/edge/UI) · SQL (canonical graph).
+
 ### R2 bucket layout (four buckets, clear permissions)
 
 | Bucket | Contents | Visibility |
