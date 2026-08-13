@@ -14,7 +14,7 @@ Idempotent: already-translated passages (by source hash) are skipped; replay = n
 Crash-safe: writes a per-work checkpoint so it resumes where it left off.
 """
 from __future__ import annotations
-import argparse, json, os, sys, time, hashlib
+import argparse, json, os, re, sys, time, hashlib
 from pathlib import Path
 
 sys.path.insert(0, "/root/projects/patala/pipeline")
@@ -76,9 +76,98 @@ def advance_ledger(work_id: str, translated: int, total: int) -> None:
     path.write_text(json.dumps(d, indent=2, ensure_ascii=False))
 
 
+def _chunks(text: str, target: int = 1200) -> list[str]:
+    """Split text into bounded translation units when it is NOT verse-line formatted.
+
+    Handles prose works (tantraloka, malinivijayottara) and verse works without || markers
+    (bhavopahara): split on double-newline paragraphs, else sentences, else fixed windows,
+    so no Sanskrit-bearing work is skipped by split_verses returning [].
+    """
+    units = []
+    # try paragraphs first
+    for para in re.split(r"\n\s*\n", text):
+        p = para.strip()
+        if not p:
+            continue
+        # skip headers/front-matter/noise (title lines, "Header", URL boilerplate, etc.)
+        if re.match(r"^(#|.*[Hh]eader|.*transformation of http|.*rudimentary)", p):
+            continue
+        if len(p) <= target:
+            units.append(p)
+        else:
+            # sentences
+            parts = re.split(r"(?<=[।॥])\s*|(?<=[.])\s+", p)
+            buf = ""
+            for s in parts:
+                s = s.strip()
+                if not s:
+                    continue
+                if len(buf) + len(s) <= target:
+                    buf = f"{buf} {s}".strip()
+                else:
+                    if buf:
+                        units.append(buf)
+                    buf = s
+            if buf:
+                units.append(buf)
+    return units
+
+
+def _is_sanskrit(text: str) -> bool:
+    """Heuristic: does the text contain real Sanskrit (IAST diacritics), not English prose?"""
+    iast = len(re.findall(r"[āīūṛṝḷḹṃñṅśṣṭḍḥṁ]", text))
+    english = len(re.findall(r"\b(the|and|of|is|in|to|a|for|with)\b", text.lower()))
+    return iast > 5 and english < iast / 2
+
+
+def _translate_prose_batch(work_id: str, units: list[str], start_idx: int = 0) -> dict:
+    """Translate long prose chunks via hermes -z directly (no verse tokenization).
+
+    Returns {passage_id: {close: ...}} where passage_id = f"{work_id}:v{start_idx + i + 1}".
+    """
+    from model import chat
+    packet = _term_packet_for(work_id)
+    blocks = []
+    for i, u in enumerate(units):
+        blocks.append(f"--- UNIT {start_idx + i + 1} ---\n{re.sub(r'#+', '', u).strip()[:1500]}\n")
+    prompt = (
+        "You are a careful translator of Tantric Sanskrit. Translate EACH Sanskrit unit below into "
+        "scholarly English prose in the Pāṭala house style — accurate, preserving technical terms "
+        "(śakti, kula, krama, vimarśa, prakāśa, svātantrya, spanda, āveśa, tattva). If a unit is "
+        "corrupt/unreadable/boilerplate, set it empty and list it in 'skipped'. NEVER fabricate.\n"
+        "Return JSON ONLY: {\"translations\": [{\"idx\": <i>, \"text\": \"<english>\"}]}\n\n"
+        f"{packet}\n\n" + "\n".join(blocks)
+    )
+    try:
+        raw = chat("You are the Pāṭala translation engine.", prompt, max_tokens=None, timeout=600)
+        data = json.loads(raw)
+        out = {}
+        for it in data.get("translations", []):
+            idx = it.get("idx")
+            t = (it.get("text") or "").strip()
+            if isinstance(idx, int) and t:
+                out[f"{work_id}:v{start_idx + idx + 1}"] = {"close": t}
+        return out
+    except Exception:
+        return {}
+
+
+def split_any(work_id: str, src: str, max_verses: int) -> list[str]:
+    """Best-effort splitter: verse format first, then prose chunks. Filters non-Sanskrit."""
+    verses = split_verses(src)
+    if not verses:
+        verses = _chunks(src)
+    if max_verses:
+        verses = verses[:max_verses]
+    return verses
+
+
 def run_work(work_id: str, max_verses: int) -> dict:
     src = load_raw_source(work_id)
-    verses = split_verses(src)[:max_verses] if max_verses else split_verses(src)
+    if not _is_sanskrit(src):
+        return {"work": work_id, "passages": 0, "translated": 0, "open_skipped": 0,
+                "note": "non-Sanskrit source (scholarship); skipped"}
+    verses = split_any(work_id, src, max_verses)
     # skip already-translated by source hash
     out_path = OUT_DIR / f"{work_id}.jsonl"
     done = set()
@@ -107,15 +196,19 @@ def run_work(work_id: str, max_verses: int) -> dict:
                 batch_verses.append(v)
             if not batch_verses:
                 continue
-            # the skill engine: batch_translate builds Vidyut entries + term packet and calls
-            # model.chat (hermes -z) ONCE for the whole batch -> per-verse close translation.
-            entries = build_entries(work_id, batch_verses)
-            res = translate_batch(entries, work_id)   # {passage_id: {tokens, close, uncertain}}
-            # align result back to batch_verses via the verse->passage mapping
+            # Translate the batch. Verse-lines -> the skill engine (batch_translate →
+            # model.chat → hermes -z, per-verse close). Long prose chunks -> a direct
+            # hermes -z call per unit (no Vidyut tokenization needed).
+            is_verse = all(len(v) < 300 for v in batch_verses)
+            if is_verse:
+                entries = build_entries(work_id, batch_verses)
+                res = translate_batch(entries, work_id)
+            else:
+                res = _translate_prose_batch(work_id, batch_verses, start_idx=start)
             for j, v in zip(batch_idx, batch_verses):
                 pid = f"{work_id}:v{start + j + 1}"
-                item = res.get(pid) or {}
-                text = item.get("close", "") if isinstance(item, dict) else ""
+                item = res.get(pid) if isinstance(res, dict) else None
+                text = (item.get("close", "") if isinstance(item, dict) else "") or ""
                 sha = hashlib.sha256(strip_verse_marker(v).encode()).hexdigest()
                 rec = {"work": work_id, "verse_idx": start + j, "source_sha256": sha,
                        "sanskrit": v.strip(), "translation": text,
