@@ -6,6 +6,10 @@ close. The sequence comes from `endgamebuild/HANDOVER-TO-NEW-AGENT.md` (the a1b 
 `docs/global/agent1atlas.md` (the Atlas convergence directive) — see `devpaths/agent1atlas-reaction.md`
 for my analysis.*
 
+**Global lens (2026-08-13):** Pāṭala = the integration & identity layer ("OpenAlex for Sanskrit") —
+`docs/global/globalpartnerships.md`. The devpath work here (Atlas, synthesis, scholar substrate) IS the
+identity/epistemic foundation that strategy sits on.*
+
 ---
 
 ## The sequence (PHASE 1 — epistemic core: G2→G4)
@@ -91,6 +95,14 @@ devpath13 ──► A1-CONTINUE-v2: QUALIFY THE SYSTEM, DO NOT EXPAND THE ONTOLO
               factory map (kramasadbhava:v1, PASS) + 51 real IPVV exemplars (shape 1.0, mutation recall
               1.0). Added G3A hard rule: build_proposition_layer gated on argmap_nat_ok — load-bearing
               ARGMAP failure => proposition production NOT_ELIGIBLE. → devpath13-p2-argmap-g3a.md
+
+  P3 VERTICAL-1 selection + dossier  STATUS: ✅ CLOSED (2026-08-13) — selected IPVV-VERTICAL-001 = the
+              Pratyabhijñā recognition argument vs the Buddhist determination (adhyavasāya) account of
+              external cognition. FROZEN the human-readable SOURCE-DOSSIER
+              (data/published/ipvv/IPVV-VERTICAL-001-SOURCE-DOSSIER.md): source identity, L2 spans,
+              reconstruction reference (thesis/premises/opponent/reply/qualification), and the load-bearing
+              crux CRUX-IPVV-001 (self-luminosity of the establishing act). Exercises the existing
+              reflexion-core stack (SYN-IPVV-REFLEXION-CORE-001).
 ```
 
 ---
