@@ -15,10 +15,15 @@
     "T1-REG-004"
   ],
   "recommended_action": "REGENERATE_AFTER_WORKER_FIX",
-  "status": "OPEN",
+  "status": "CLOSED",
   "producer": {
     "agent": "agent1",
     "commit": "d50ab7f19a013a61de9c254e5485b0bc076a347c"
   },
-  "finding_hash": "4a69f27634457959d7bb2708aed909f392fe10de43a795b2eeb11a18cef5284b"
+  "finding_hash": "4a69f27634457959d7bb2708aed909f392fe10de43a795b2eeb11a18cef5284b",
+  "resolution": {
+    "resolved_at": "2026-08-13T19:27:10.793396+00:00",
+    "resolved_by": "agent1",
+    "action": "WORKER_FIX (vṛttimīśaḥ compound gloss correction in t1_worker._assemble_t1) + REGENERATED as t1-cidgagana:v2-v2 (supersedes v1)"
+  }
 }
