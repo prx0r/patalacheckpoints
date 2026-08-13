@@ -18,12 +18,24 @@ CP1 PHILOLOGICAL PROOF   →   CORPUS STATE   →   REVIEW/EXECUTABLE-CORRECTION
 - *Is this reading licensed by the source?* (the L0 floor)
 - *What do we have, where is it, what state is it in, and can every artifact resolve?* (corpus state)
 - *How does a scholar's judgment become an executable graph mutation?* (the review engine)
+- *How does every layer of the canonical stack become a deterministic, validated autonomous flow?* (the factory)
 
-**The clean division (per the agent architecture):** Agent 2 = corpus compiler + integrity + state truth.
-Agent 3 = translation factory (consumes NEXT_VALID_ACTION). Agent 1 = philosophical intelligence.
+**The clean division (per the agent architecture):** Agent 2 = corpus compiler + integrity + state truth +
+**the autonomous factory** (wraps each layer in a controller handler + layer-specific validator, reusing
+Agent 1's higher-layer algorithms). Agent 1 = the higher-layer *algorithms* (theme/argument/essay/semantic
+alignment). The join is the registry: Agent 2 produces the deterministic validated objects; Agent 1's
+machinery is the *proposal engine* Agent 2 reuses.
 
-**Does NOT:** generate translations (Agent 3), write C1 / choose interpretive readings (Agent 1), promote
-machine output to accepted scholarship, do argument extraction / themes / synthesis (Agent 1).
+**Does NOT:** generate T1/L2/C1 independently (that's the factory, which Agent 2 builds but which honors
+Agent 1's algorithms), promote machine output to accepted scholarship, do argument extraction / themes /
+synthesis *as scholarship* (Agent 1).
+
+**HARD RULE — work LAYER BY LAYER, each against its canonical spec + source files.** Perfect L0 (or
+T1/L1/R1) → commit → L1/L2 → commit → L200 → commit → C1 → commit → THEME → ESSAY → EDUCATION. Do not build
+a layer whose upstream is not committed; do not skip ahead to a higher layer because its algorithm already
+exists. Each layer's worker produces its canonical file shape (`translations/_stack/ipvv/specs/*`, the
+L200 8-section spec, the C1-SPEC, the `pilot_*_ARGUMENT_MAP.md` argument maps) and is gated by a
+layer-specific deterministic validator.
 
 ---
 
@@ -84,24 +96,31 @@ USES_AS_PREMISE / USES_AS_WARRANT / ORGANIZES) · `DerivedState` · `ImpactRepor
 
 ---
 
-## THE CONCRETE SEQUENCE (where we're headed — updated)
+## THE CONCRETE SEQUENCE (where we're headed — updated 2026-08-13)
+
+> **NEW NORTHSTAR:** Agent 1 solved the *algorithms* of the higher layers (theme clustering, argument,
+> essay, semantic alignment). Agent 2 wraps each in the **autonomous controller flow** — deterministic,
+> provenance-bound, layer-specific-validated — until the whole canonical stack is a **single autonomous
+> pipeline**. **Work LAYER BY LAYER**, each layer against its canonical spec + source files
+> (`translations/_stack/ipvv/specs/*`, the L200 8-section spec, the C1-SPEC, the argument maps). Perfect
+> L0 → commit → L1/L2 → commit → L200 → commit → C1 → commit → THEME → ESSAY → EDUCATION.
 
 ```
 CP1 floor ✅ (63/63)  →  corpus state ✅ (ledger)  →  review engine ✅ (Phase 3A+3D)
    ↓
-🔴 THE IMMEDIATE OBJECTIVE: RAW-L0 (MODE_B) — RAW SANSKRIT → L0
-   The one giant hole blocking the autonomous translator. MODE_A (AND_GLOSS) exists;
-   MODE_B (RAW_SANSKRIT) does NOT — so raw works (Kramasadbhāva etc.) are blocked from
-   Agent 3 (BUILD_L0_SOURCE_MODE → BLOCKED in the ledger).
-   Per `handover/hermes/AUTOTRANSLATE-NORTHSTAR.md`:
-   Build 1  pipeline/raw_l0.py (Vidyut + Heritage + Hermes/A3 → canonical L0 JSONL, no downstream translation)
-   Build 2  RAW-L0 audit (extend verify_l0.py: P0 lossless + P1 segmentation + P2 morphology + P3 gloss + P4 alignment)
-   Build 3  IPVV Sanskrit-only replay (hide English; regenerate L0; compare vs gold → the embryo of Pāṭala Evals)
-   Build 4  human review 50–100 difficult RAW-L0 cases (every correction = benchmark data)
-   Build 5  Kramasadbhāva first cross-work run (RAW_SANSKRIT → GENERATE_L0 → VERIFIED P0 → MACHINE_PROPOSED)
-   Build 6  then batch mode (passages/chunks independently, bounded retries, halt-on-failure)
+✅ 2026-08-13: FULL STACK WIRED — every layer (L0/L1/L2/L200/C1/THEME/ESSAY/EDUCATION) has a
+   controller handler producing its canonical file shape + a layer-specific deterministic validator.
+   The singular autonomous pipeline is now RUNNABLE end-to-end through autonomy.py.
    ↓
-PRIORITY (after RAW-L0): Agent 3 translation factory — RAW-L0 → close translation → adversarial → resolved → C1
+🔴 CP1 (the foundation proof): a MACHINE-LEARNING-VERIFIED L0 (or T1/L1/R1) READING
+   Run the semantic-equivalence harness (docs/ML-L0-SEMANTIC-EQUIVALENCE-PROPOSAL.md) against the IPVV
+   exemplar gold; prove our RAW-L0 is schema-isomorphic + validator-equivalent + P0-lossless +
+   semantically-equivalent to the exemplar gloss (the ML part). Emit the mechanical proof. This becomes
+   the reusable eval substrate for every downstream layer's own proof.
+   ↓
+PRIORITY (after CP1): autonomous end-to-end vertical proof on a real corpus subset —
+   RAW SANSKRIT → SOURCE → L0 → L1 → L2 → L200 → C1 → THEME → ESSAY → EDUCATION, all through the
+   controller, fail-closed, idempotent, provenance-bound.
    ↓
 PHASE 3E  tiny Scholar Workbench review screen   (deferred until a real reviewer is ready)
 PHASE 3F  Hermes A4 scheduling                   (LAST)
