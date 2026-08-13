@@ -48,36 +48,35 @@ IAST_TOKEN = re.compile(r"[a-zA-Zāīūṛṝḷḹṃñṅśṣṭḍḥṁ]+")
 
 
 def _segment(verse: str) -> list[dict]:
-    """Deterministic segmentation of a raw Sanskrit verse -> [{surface(IAST), lemma, source_surface}].
+    """Deterministic segmentation of a raw Sanskrit verse -> [{surface(IAST), lemma}].
 
-    Uses Vidyut (SLP1) for lemma/morphology, but transliterates the surface back to IAST so it matches
-    the canonical `[and]-GLOSS (IAST)` form AND the source verse text (which is IAST). Falls back to
-    IAST-token regex splitting if Vidyut is unavailable.
+    The canonical T1 glosses the SOURCE's actual IAST token stream (the ground truth), NOT Vidyut's
+    over-segmentation. Vidyut is used only for lemma/morphology. So:
+      - the authoritative surfaces = the IAST tokens present in the source verse
+      - Vidyut may split a compound (e.g. maheśvaraḥ -> maha + īśvaras); we keep the source token as
+        ONE surface and attach Vidyut's lemma where it aligns, else fall back to the source token.
+
+    Falls back to IAST-token regex if Vidyut is unavailable.
     """
-    # the IAST tokens actually present in the source verse (the ground truth surfaces).
-    # Strip any verse locator (e.g. '||1/1') first — it is structural, not Sanskrit.
     from raw_l0 import strip_verse_marker
     clean = strip_verse_marker(verse) if verse else verse
-    iast_tokens = re.findall(IAST_TOKEN, clean)
+    iast_tokens = re.findall(IAST_TOKEN, clean)   # the authoritative source surfaces
     try:
         from raw_l0 import vidyut_tokens
-        from vidyut.lipi import transliterate, Scheme
-        toks = vidyut_tokens(clean)
-        # transliterate each SLP1 surface -> IAST; pair with the source IAST token by position where
-        # counts align (Vidyut segments the same words as the source IAST stream).
+        vid = vidyut_tokens(clean)
+        # build a lemma lookup: try to match each Vidyut lemma to a source token (prefix/stem align),
+        # else leave lemma None (Vidyut's split pieces don't become T1 surfaces).
         out = []
-        for i, t in enumerate(toks):
-            surface_iast = ""
-            try:
-                surface_iast = transliterate(t["surface"], Scheme.Slp1, Scheme.Iast)
-            except Exception:
-                surface_iast = iast_tokens[i] if i < len(iast_tokens) else ""
-            # prefer the literal source-surface (exact IAST from the verse) when available
-            src = iast_tokens[i] if i < len(iast_tokens) else surface_iast
-            out.append({"surface": src or surface_iast, "lemma": t.get("lemma")})
+        for i, surf in enumerate(iast_tokens):
+            lemma = None
+            for t in vid:
+                tl = t.get("lemma")
+                if tl and (surf.lower().startswith(tl.lower()) or tl.lower().startswith(surf.lower())):
+                    lemma = tl
+                    break
+            out.append({"surface": surf, "lemma": lemma})
         return out
     except Exception:
-        # fallback: IAST token regex (no Vidyut)
         return [{"surface": t, "lemma": None} for t in iast_tokens]
 
 
