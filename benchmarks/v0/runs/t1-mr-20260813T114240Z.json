@@ -1,0 +1,18 @@
+{
+  "run_id": "T1-MR-20260813T114240Z",
+  "benchmark_version": "v0",
+  "family": "PATALA-T1-MR",
+  "bench": "PĀṬALA-T1-MR",
+  "bench_version": "v0.1",
+  "framework": "inspect-ai==0.3.258",
+  "task": "t1_metamorphic",
+  "execution_base_sha": "d64e4bfaae40343e9384cf31b052e2e8d666bd2a",
+  "working_tree_dirty": true,
+  "date": "20260813T114240Z",
+  "dataset": {"kind": "SYN_METAMORPHIC", "mutations": 8, "control": 1,
+    "failure_classes": ["POLARITY_CHANGE","CASE_ROLE_ERROR","NUMBER_ERROR","COMPOUND_MISSPLIT",
+      "TECHNICAL_SENSE_ERROR","FALSE_DISAMBIGUATION","OMISSION","UNSUPPORTED_ADDITION"]},
+  "sut": "reference T1 verifier (deterministic)",
+  "metrics": {"verifier_mutation_recall": 1.0, "clean_pass_rate": 1.0},
+  "notes": "Metamorphic verifier-mutation-recall (critic competence), separate from generator accuracy. 8/8 mutations caught, pristine not over-rejected. Synthetic stand-in verifier; real semantic grader model replaces it later."
+}

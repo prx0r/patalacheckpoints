@@ -1,0 +1,1261 @@
+{
+  "batch_id": "isanasivagurudevapaddhati_p1-p2_v1-100_a3_raw-l0_20260813",
+  "translations": [
+    {
+      "passage_id": "isanasivagurudevapaddhati:v1",
+      "source_sha256": "348641aada43fad32c227fa42578a3d9e2bbcb2ba2730541409762b325bdbdce",
+      "tokens": {
+        "dūrgāṃ": "Durgā (the goddess), acc. sg. f.",
+        "ca": "and",
+        "durgārtiharāṃ": "remover of the affliction (ārti) of those in difficulty (durgā) — durgā-ārti-hara, acc. sg. f.",
+        "viriñcaṃ": "Viriñca (Brahmā), acc. sg. m.",
+        "lakṣmīṃ": "Lakṣmī, acc. sg. f.",
+        "lakṣmīśamapi": "also the Lord of Lakṣmī (lakṣmī-īśa = Viṣṇu) + api, acc. sg. m.",
+        "prapadye": "I take refuge in / I resort to (1sg. pres. middle)"
+      },
+      "close": "I take refuge in Durgā, who removes the affliction of those in distress, and in Viriñca, and in Lakṣmī, and also in Lakṣmī's Lord.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v2",
+      "source_sha256": "7ffb9214e418f0ce54be6dd89081e0e11a497c7b35aa85e1488d13f691f7ec07",
+      "tokens": {
+        "mahāmahimnā": "by great majesty (mahā-mahiman), instr. sg.",
+        "mihirānivoditāṃstamomahāmohaharān": "risen like suns, dispelling darkness and great delusion (mihira-iva-udita + tamas-mahā-moha-hara), acc. pl. m.",
+        "nato": "bowed, prostrated (nata, ppp.), nom. sg. m.",
+        "smyaham": "asmi + aham: 'I am — I' (with nataḥ: 'I bow')"
+      },
+      "close": "By their great majesty, risen like suns, dispelling darkness and the great delusion — I bow to them.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v3",
+      "source_sha256": "d566d72ab54d8910537e273647668fe6d81800c32155821b0ea689aa1b50db1c",
+      "tokens": {
+        "yāvatsāmarthyamālocya": "having considered (ālocya) the capacity (sāmarthya) to the extent (yāvat) [possible], gerund",
+        "kariṣye": "I will make / compose (1sg. fut.)",
+        "tantrapaddhatim": "the Tantrapaddhati (this ritual manual), acc. sg. f."
+      },
+      "close": "Having considered my capacity as far as it goes, I will compose the Tantrapaddhati.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v4",
+      "source_sha256": "f5f9ad28ab70e5ad3b23f66187313c992bbd929b9bcbc808de2ed9ec64d5d607",
+      "tokens": {
+        "ṛddhairvidhānamantrārthairvedyāṃ": "to be known (vedyā) through successful (ṛddha) ritual prescriptions (vidhāna) and mantra-meanings (mantr-artha), acc. sg. f. + instr. pl.",
+        "śrutimivāparām": "like (iva) another (aparā) Śruti (Veda), acc. sg. f."
+      },
+      "close": "(It shall be) like another Śruti, to be known through efficacious prescriptions and mantra-meanings.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v5",
+      "source_sha256": "2a3120dd2bee8770495e7c93fab72aebf3f8eae31ffe22b2c92168e82bae6e49",
+      "tokens": {
+        "citrāṃ": "wonderful, variegated, acc. sg. f.",
+        "bahugu": "many- (bahuguṇa-, 'having many qualities') [fragment of bahuguṇāṃ]",
+        "āṃ": "f. acc. sg. ending (-ṇāṃ) [fragment of bahuguṇāṃ]",
+        "viṣ": "Viṣṇu- [fragment of viṣṇoḥ]",
+        "oḥ": "gen. sg. ending (-ṇoḥ) [fragment of viṣṇoḥ]",
+        "śayyāṃ": "couch / bed, acc. sg. f.",
+        "bhogavatīmiva": "like the serpent-couch (bhogavatī, i.e. Śeṣa) + iva, acc. sg. f."
+      },
+      "close": "Like the wonderful, many-qualitied serpent-couch (Śeṣa) of Viṣṇu.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v6",
+      "source_sha256": "1aaa306411c0c9a52b2bfbdb25ee96235fab284787cb5656b90d4ab62052626f",
+      "tokens": {
+        "sevyāṃ": "to be served / waited upon, acc. sg. f.",
+        "kāmijanasyeṣṭāṃ": "desired (iṣṭā) by people of passion (kāmi-janasya), acc. sg. f.",
+        "lalitāṃ": "lovely, graceful, acc. sg. f.",
+        "pramadāmiva": "like a young woman (pramadā) + iva, acc. sg. f."
+      },
+      "close": "Like a lovely young woman, to be served, desired by men of passion.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v7",
+      "source_sha256": "9fe0c3b3510ee5f6e7f8a1b4be5a8da55f72182780bf33c5978d9e05d3cf3297",
+      "tokens": {
+        "mantrabimbauṣadhidhyānairvidyāṃ": "the lore (vidyā) [attained] through mantra, image, herb, and meditation (mantra-bimba-oṣadhi-dhyāna), acc. sg. f. + instr. pl.",
+        "sañjīvinīmiva": "like the reviving (sañjīvinī, the life-restoring science) + iva, acc. sg. f."
+      },
+      "close": "Like the reviving lore (sañjīvinī-vidyā), (attained) through mantras, images, herbs, and meditations.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v8",
+      "source_sha256": "bbd3939104097212bf82e2edf34599dfb4d3a7f1c047838ec9735d5cbc8eaae7",
+      "tokens": {
+        "utsādamāra": "uprooting (utsāda) and killing (māraṇa) [fragment of utsādamāraṇopāyair]",
+        "opāyairda": "by means (upāyaiḥ) [fragment of utsādamāraṇopāyair]",
+        "ḍanītimivāparām": "like another treatise on statecraft (daṇḍa-nītim iva aparām) [fragment]"
+      },
+      "close": "Like another treatise on polity (daṇḍanīti), (equipped) with means of suppression and execution.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v9",
+      "source_sha256": "91bcd323a4c72b3725adb6e3b4204fdfe441ec534bee055ac6d0925335fdb565",
+      "tokens": {
+        "satyabhāmāsamāśliṣṭāṃ": "embraced (samāśliṣṭā) by Satyabhāmā, acc. sg. f.",
+        "yathā": "as, just as",
+        "mūrtiṃ": "the form / image, acc. sg. f.",
+        "muradviṣaḥ": "of the enemy of Mura (mura-dviṣ = Viṣṇu/Kṛṣṇa), gen. sg."
+      },
+      "close": "Just as the form of Mura's foe (Kṛṣṇa) embraced by Satyabhāmā.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v10",
+      "source_sha256": "35adab7e78ae5c29e8d3b9b087ad18e563ac0872ac40ea3c106badfa8b947d40",
+      "tokens": {
+        "kṛtatretādikalpaiśca": "and by kalpas beginning with the Kṛta and Tretā (ages) (kṛta-tretā-ādi-kalpa + ca), instr. pl.",
+        "śaradaṃ": "autumn, acc. sg. f.",
+        "brahma": "Brahmā (brahman, gen. 'brahmaṇaḥ') [fragment of brahmaṇo]",
+        "o": "gen. sg. ending (-ṇo) [fragment of brahmaṇo]",
+        "yathā": "as, just as"
+      },
+      "close": "Just as the autumns of Brahmā, (counted) by kalpas beginning with the Kṛta and Tretā (ages).",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v11",
+      "source_sha256": "40ec32fd55bf07f7155851a255b0ddabc16e2c28f0c4a979c24b92c330d803e0",
+      "tokens": {
+        "yantrairdūrīkṛtānarthāṃ": "whose misfortunes (anartha) have been removed (dūrīkṛta) by yantras, acc. sg. f.",
+        "durgabhūmimivāparām": "like (iva) another (aparā) fortress-land (durga-bhūmi), acc. sg. f."
+      },
+      "close": "Like a fortress-land whose dangers have been driven away by yantras.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v12",
+      "source_sha256": "f62a4978cb592d9b23e8b642dba0da62c1b7c83cb603a53558e9c6cd96cbdc14",
+      "tokens": {
+        "kaliprasaṅgakaṭukāṃ": "bitter (kaṭukā) through contact (prasaṅga) with the Kali (age), acc. sg. f.",
+        "kālasyeha": "of Time here (kālasya + iha), gen. sg.",
+        "gatiryathā": "as the course (gatiḥ) + yathā, acc./nom. sg. f."
+      },
+      "close": "Like the course of Time here, made bitter by contact with the Kali age.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v13",
+      "source_sha256": "16e2d25116e995982269a74a32e3ddafece410ac5a3a06370bd4ffbd6d386919",
+      "tokens": {
+        "caturyugakramāyattāṃ": "dependent (āyattā) on the sequence (krama, order) of the four ages (catur-yuga), acc. sg. f.",
+        "vaidhasīmiva": "like that of Vidhi/Brahmā (vaidhasī) + iva, acc. sg. f.",
+        "kalpanām": "the creation / cosmic ordering, acc. sg. f."
+      },
+      "close": "Like the creation of Brahmā, dependent on the sequence of the four ages.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v14",
+      "source_sha256": "8e1b620afad150cb18f79462cb6f87ae885441403b10a22bd7e90b245d81a371",
+      "tokens": {
+        "mūrtiṃ": "the form / image, acc. sg. f.",
+        "vināyakasyeva": "as of Vināyaka (Gaṇeśa) (vināyakasya + iva), gen. sg.",
+        "gajavaktrāṃ": "elephant-faced (gaja-vaktra), acc. sg. f.",
+        "narākṛtim": "having a human body (nara-ākṛti), acc. sg. f."
+      },
+      "close": "Like the image of Vināyaka — elephant-faced, of human form.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v15",
+      "source_sha256": "f94a7a92ea02c6a0026aa57d497ee7b50e28e2f2adf58c6bde0b78b92a095980",
+      "tokens": {
+        "tadvidāṃ": "of those who know that (tad-vid), gen. pl.",
+        "pratyayāvedyāṃ": "to be known with certainty (pratyaya-āvedya), acc. sg. f.",
+        "muktidāṃ": "granting liberation (mukti-da), acc. sg. f.",
+        "śaktimaiśvarīm": "the sovereign Śakti (aiśvarī śakti, power of the Lord), acc. sg. f."
+      },
+      "close": "The sovereign Śakti, liberation-granting, to be known with certainty by those who know it.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v16",
+      "source_sha256": "245f1e67b6097c8f336aa79e74cf81adfd858e290a966a6c81c5b68f531e9f05",
+      "tokens": {
+        "mokṣaprasādhanīṃ": "accomplishing liberation (mokṣa-prasādhana), acc. sg. f.",
+        "tattatkramāvedyāṃ": "to be known through the sequence (krama, order) of this and that (tat-tat, the various procedures), acc. sg. f.",
+        "trayīmiva": "like the triple Veda (trayī) + iva, acc. sg. f."
+      },
+      "close": "Like the triple Veda, which accomplishes liberation and is to be known through the sequence of its various (procedures).",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v17",
+      "source_sha256": "58daf6de406dcfd600afc42deadd64c5ea07353a7f031aceaadeec1ca160defd",
+      "tokens": {
+        "sacchandomunidigbandhāḥ": "endowed with true meters (sat-chandas), bounded by the sages' directions (muni-dig-bandha), nom. pl. m.",
+        "sadhyānāḥ": "together with meditation (sa-dhyāna), nom. pl. m.",
+        "saprayojanāḥ": "with purpose / accompanied by their application (sa-prayojana), nom. pl. m."
+      },
+      "close": "Possessing true meters, bounded by the sages' directions, accompanied by meditation, and purposeful.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v18",
+      "source_sha256": "69f10ad27db28f8d49530d9a63067b7670cb174b772c3cf5f30c885b2cb37a9b",
+      "tokens": {
+        "bījāni": "the seed-syllables (bīja), nom. pl. n.",
+        "bījamantrāśca": "and the bīja-mantras (bīja-mantra + ca), nom. pl. m.",
+        "mantrā": "the mantras, nom. pl. m.",
+        "mālākhyamantrakāḥ": "mantras called mālā ('garland') (mālā-ākhya-mantraka), nom. pl. m."
+      },
+      "close": "The bījas, the bīja-mantras, and the mantras known as mālā-mantras.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v19",
+      "source_sha256": "cfe4336c6f2bdc7f314a27bef6aea607a2f3fc56a2f5e6d47e47d0388087661c",
+      "tokens": {
+        "bījamantrā": "the bīja-mantras, nom. pl. m.",
+        "daśār": "ten syllables (daśa-arṇa-) [fragment of daśārṇādhaḥ]",
+        "ādho": "below (adhaḥ) [fragment of daśārṇādhaḥ]",
+        "mantrāḥ": "the mantras, nom. pl. m.",
+        "syurviṃśateradhaḥ": "would be (syuḥ) below twenty (viṃśateḥ adhaḥ)"
+      },
+      "close": "Bīja-mantras (are those) below ten syllables; (full) mantras would be those below twenty.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v20",
+      "source_sha256": "2c3be6abc611e90790a754519975366a878fd996754574c0e5e4bbf16759b08b",
+      "tokens": {
+        "prāye": "for the most part (prāyeṇa) [fragment]",
+        "a": "instr. sg. ending -ṇa [fragment of prāyeṇa]",
+        "bālye": "in childhood, loc. sg.",
+        "bījāni": "the seed-syllables, nom. pl. n.",
+        "siddhiṃ": "success, accomplishment, acc. sg. f.",
+        "yacchanti": "they give / yield (3pl. pres.)",
+        "bhūyasīm": "abundant, greater, acc. sg. f."
+      },
+      "close": "For the most part, the bījas yield abundant success in childhood.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v21",
+      "source_sha256": "f2b40078346700d4c4a84374a6c12ce5279ff6d2776099e5e17c53165d562c30",
+      "tokens": {
+        "vārddhake": "in old age, loc. sg. n.",
+        "pi": "even (api) [fragment of 'pi]",
+        "ca": "and",
+        "sidhyanti": "they succeed / are accomplished (3pl. pres.)",
+        "mālāmantrāḥ": "the mālā-mantras, nom. pl. m.",
+        "sadaiva": "always (sadā eva)",
+        "hi": "indeed, for"
+      },
+      "close": "And even in old age, the mālā-mantras always succeed.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v22",
+      "source_sha256": "04046b90c37ca986137ff42d485862f71c3cf21766b99847592acef836bfa028",
+      "tokens": {
+        "mananatrā": "thinking and protecting (manana-trāṇa-) [fragment of mananatrāṇadharmitvaṃ]",
+        "adharmitvaṃ": "the state of possessing the property (-dharmitva) [fragment of mananatrāṇadharmitvaṃ]",
+        "vācake": "in the signifier (vācaka, i.e. the mantra), loc. sg.",
+        "daivatasya": "of the deity, gen. sg.",
+        "tu": "but, however"
+      },
+      "close": "But the property of thinking-and-protecting belongs to the signifier (the mantra) of the deity.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v23",
+      "source_sha256": "4a4b01fb1903cf45a41229cc76d91f9b2ae51593e68c6bed54d6c9bc5ae1bd5b",
+      "tokens": {
+        "mantrarūpā": "having the form of mantra (mantra-rūpā), nom. sg. f.",
+        "hi": "for, indeed",
+        "tacchaktirmananatrā": "that Śakti, (consisting of) thinking-and-protecting (tac-chaktiḥ manana-trāṇa-) [fragment]",
+        "adharmi": "possessed of the property (-dharmiṇī) [fragment]",
+        "ī": "fem. ending -ī [fragment]"
+      },
+      "close": "For that Śakti, having the form of a mantra, is possessed of thinking-and-protecting.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v24",
+      "source_sha256": "a8ff2410ed15a46025982008643e3870090b939e6a309f1db5802c7eb3e6d3ae",
+      "tokens": {
+        "vācyavācakayoraikyamadhigamya": "having understood (adhigamya) the unity (aikya) of the signified and the signifier (vācya-vācakayoḥ), gerund",
+        "gurāvapi": "even in the guru (gurau + api), loc. sg."
+      },
+      "close": "Having grasped the unity of the signified and the signifier, even in the guru...",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v25",
+      "source_sha256": "94881ba9bfbda9fbd3c2aaa7e2706b02be67299a2b6ba9f37794fd62c9bbf034",
+      "tokens": {
+        "lipirvai": "indeed (vai) the script (lipiḥ)",
+        "sarvamantrā": "of all mantras (sarva-mantrāṇāṃ) [fragment]",
+        "āṃ": "gen. pl. ending (-ṇāṃ) [fragment of sarvamantrāṇāṃ]",
+        "śabdānāṃ": "of sounds / words, gen. pl. m.",
+        "caiva": "and also (ca eva)",
+        "mātṛkā": "the Mātṛkā (the phonemic Mother-matrix, power embodied in letters), nom. sg. f."
+      },
+      "close": "Indeed, the script (lipi) is the Mātṛkā of all mantras and of all sounds.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v26",
+      "source_sha256": "35fa01b2da534d5768bfa9cb0c0e3ef2e6d6ac1ca2985854eedc01dd2c152d0f",
+      "tokens": {
+        "nirvikalpātmakaṃ": "whose nature is free from conceptual construction (nirvikalpa-ātmaka), acc. sg. n.",
+        "bra": "bra(hma), 'Brahman' [fragment — source reads bra(hma)]",
+        "hma": "(-hma) [fragment]",
+        "yannityānandavigraham": "which (yat) has eternal bliss as its body (nitya-ānanda-vigraha), acc. sg. n."
+      },
+      "close": "Brahman, whose nature is without conceptual construction, which has eternal bliss as its body.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v27",
+      "source_sha256": "687612fbbfa4ffe7aac90cd368f87692e9aa748be1b0e22d880103e92fb67732",
+      "tokens": {
+        "susūkṣmaṃ": "exceedingly subtle (su-sūkṣma), acc. sg. n.",
+        "cirddhanaṃ": "whose treasure is consciousness (cid-dhana; source reads cirddhana), acc. sg. n.",
+        "vyāpi": "pervasive, acc. sg. n.",
+        "sarvagaṃ": "going everywhere, all-pervading (sarva-ga), acc. sg. n.",
+        "tada": "that (tad) [fragment of tadaṇoraṇu]",
+        "ora": "than the subtle (aṇoḥ, gen. of comparison) [fragment of tadaṇoraṇu]",
+        "u": "the subtle (aṇu) [fragment of tadaṇoraṇu]"
+      },
+      "close": "Exceedingly subtle, having consciousness as its treasure, pervasive, all-pervading — that (is) subtler than the subtle.",
+      "uncertain": [
+        "cirddhanaṃ"
+      ]
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v28",
+      "source_sha256": "6691d812d70e4bce344f0c2593f34f539bb3af470683c0f1ca7e6fde5fe9800c",
+      "tokens": {
+        "ādisargamukhe": "at the beginning (mukhe) of the first creation (ādi-sarga), loc. sg.",
+        "jñānacikīrṣāyatnadhāra": "the sustaining (dhāraṇa) of knowledge, will-to-make, and effort (jñāna-cikīrṣā-yatna-) [fragment of jñānacikīrṣāyatnadhāraṇāt]",
+        "āt": "abl. sg. ending (-ṇāt) [fragment]"
+      },
+      "close": "From the sustaining of knowledge, will, and effort at the outset of the first creation...",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v29",
+      "source_sha256": "1bd2916b1607ef903622029218cb6722fc31df12cc47da497799ef3b3fb74d96",
+      "tokens": {
+        "sattvaṃ": "sattva (the principle of goodness/purity), nom. sg. n.",
+        "rajastamaścaitacchuklaraktāsitaprabham": "and rajas and tamas — this (etat), having white, red, and black radiance (rajas-tamas + ca + etat + śukla-rakta-asita-prabham), nom. sg. n."
+      },
+      "close": "Sattva, rajas, and tamas — this (triad) with white, red, and black radiance.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v30",
+      "source_sha256": "077abf49f9543a314d3b0c53aa3efa321bbdacb2d913b752f845c347bded5f75",
+      "tokens": {
+        "sā": "that, nom. sg. f.",
+        "śaktirbindutāmeti": "the Śakti attains the state of a bindu (śaktiḥ bindu-tām eti)",
+        "binduḥ": "the bindu (the seed-point), nom. sg. m.",
+        "so": "that (saḥ), nom. sg. m.",
+        "pi": "too (api)",
+        "tridhā": "threefold (adv.)",
+        "bhavet": "would be / becomes (3sg. opt.)"
+      },
+      "close": "That Śakti attains the state of a bindu; that bindu, too, becomes threefold.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v31",
+      "source_sha256": "f47b4c7e9c9f0c18b38e5fd8ecaf2ca48715edaa8189654ea3c8c956a0a3f0b0",
+      "tokens": {
+        "avyaktāduditaṃ": "arisen (udita) from the Unmanifest (avyaktāt), acc. sg. n.",
+        "tattvaṃ": "the principle (tattva), acc. sg. n.",
+        "mahānnāma": "named the Great (mahān nāma), acc. sg. n.",
+        "tribhedakam": "having three divisions (tri-bhedaka), acc. sg. n."
+      },
+      "close": "From the Unmanifest arose the principle named the Great (Mahat), which has three divisions.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v32",
+      "source_sha256": "500a69f8d1ca7b51633e4e0faf19a212325eb12ca579973f36ba53f9aa3e5f33",
+      "tokens": {
+        "vaikārikastaijasaśca": "the Vaikārika and the Taijasa (vaikārikaḥ taijasaḥ ca, first two forms of ahaṃkāra), nom. sg. m.",
+        "bhūtādiriti": "and the Bhūtādi — thus (bhūtādi iti), nom. sg. m.",
+        "cāparaḥ": "and the other (ca aparaḥ, the third), nom. sg. m."
+      },
+      "close": "The Vaikārika, the Taijasa, and the Bhūtādi — thus the other one (the threefold ahaṃkāra).",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v33",
+      "source_sha256": "2d96c87d556ca9e21788027742a82bb577ef28c1ca431bc975e940ff6b0c4bf5",
+      "tokens": {
+        "muktidaṃ": "granting liberation (mukti-da), acc. sg. n.",
+        "paramaṃ": "supreme, acc. sg. n.",
+        "divyaṃ": "divine, acc. sg. n.",
+        "sarvasiddhipradāyakam": "bestowing all accomplishments (sarva-siddhi-pradāyaka), acc. sg. n."
+      },
+      "close": "(The bindu is) liberation-granting, supreme, divine, bestowing every accomplishment.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v34",
+      "source_sha256": "f340ae86b0fbbe3ff1cc52754a393c00f9fc20ed92c76aafe0d580f0dd5c3da8",
+      "tokens": {
+        "hrasvā": "the short (vowels), nom. pl. f.",
+        "brahma": "Brahman, nom./acc. sg. n.",
+        "samākhyātā": "are declared / named (samākhyāta), nom. pl. f.",
+        "dīrghā": "the long (vowels), nom. pl. f.",
+        "hyaṅgāni": "verily the limbs (hi aṅgāni), nom. pl. n.",
+        "ṣa": "ṣaṇ, 'six' [fragment of ṣaṇmukha]",
+        "mukha": "mukha, 'face' (→ Ṣaṇmukha, the Six-Faced) [fragment]"
+      },
+      "close": "The short (vowels) are declared to be Brahman; the long ones, verily, are the limbs of Ṣaṇmukha (the Six-Faced).",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v35",
+      "source_sha256": "ca1b632f14e3efe2762391b5ea72c2f6597764b567193f2215fa81afebd885c8",
+      "tokens": {
+        "jāyate": "is born / arises (3sg. pres.)",
+        "bindusaṃkṣobhādanantasyārthasiddhaye": "from the agitation of the bindu (bindu-saṃkṣobhāt), for the accomplishment of the aims (artha-siddhaye) of the Infinite (anantasya)"
+      },
+      "close": "For the accomplishment of the aims of the Infinite One, (the universe) is born from the agitation of the bindu.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v36",
+      "source_sha256": "0693a5536143724961a4bc3f81c076576ba1510e0f01c12b0bc7af9903900882",
+      "tokens": {
+        "śaktirnādo": "Śakti and Nāda (śaktiḥ nādaḥ), nom. sg. m.",
+        "mahāmāyā": "Mahāmāyā (the Great Māyā), nom. sg. f.",
+        "vyometi": "and Vyoman (space) — thus (vyoma iti), nom. sg. n.",
+        "ca": "and",
+        "caturvidham": "fourfold, acc./nom. sg. n."
+      },
+      "close": "Śakti, Nāda, Mahāmāyā, and Vyoman — thus the fourfold (division).",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v37",
+      "source_sha256": "1ecece2252cfd411a88b443cf42cfd3d6fbcf2bac5fc42f32c454817bd3adf6c",
+      "tokens": {
+        "vaikharī": "Vaikharī (the fully articulated level of speech), nom. sg. f.",
+        "madhyamā": "Madhyamā (the middle level), nom. sg. f.",
+        "caiva": "and also (ca eva)",
+        "paśyantī": "Paśyantī (the 'seeing' level), nom. sg. f.",
+        "cāpi": "and also (ca api)",
+        "sūkṣmayā": "with the subtle one (sūkṣmā = Parā, the supreme level), instr. sg. f."
+      },
+      "close": "Vaikharī, Madhyamā, and Paśyantī — and also the subtle (Parā).",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v38",
+      "source_sha256": "fd8678e5c51cdc8ee8b4478ad2ac61831582173a23f3a1101cc7e8aa55ec3406",
+      "tokens": {
+        "sūkṣmā": "the subtle one, nom. sg. f.",
+        "ku": "ku- [fragment of kuṇḍalinīmadhye]",
+        "ḍalinīmadhye": "in the middle of the Kuṇḍalinī (-ḍalinī-madhye) [fragment]",
+        "jyotirmātrātya": "a measure of light, exceedingly (jyotir-mātrā-ati-) [fragment of jyotirmātrātyaṇīyasī]",
+        "īyasī": "-aṇīyasī, extremely fine [fragment]"
+      },
+      "close": "The subtle one (Parā), in the middle of the Kuṇḍalinī, is an exceedingly minute measure of light.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v39",
+      "source_sha256": "64c6c8923987f3ad8864d1c526133df89b9c7305cc1dee7035bc21ab37fd3f78",
+      "tokens": {
+        "svayaṃ": "self (svayam, by itself)",
+        "prakāśā": "luminous / self-illuminating, nom. sg. f.",
+        "paśyantī": "Paśyantī (the 'seeing' level of speech), nom. sg. f.",
+        "suṣumnāmāśritā": "resting on (āśritā) the Suṣumnā (suṣumnām), nom. sg. f.",
+        "bhavet": "would be (3sg. opt.)"
+      },
+      "close": "Paśyantī is self-luminous; she abides in the Suṣumnā.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v40",
+      "source_sha256": "40a438454c32f3d391fc65a8eb222cb29ecc4995485b7719410c253273cb46ef",
+      "tokens": {
+        "antaḥsañjalpamātrā": "consisting only of inner articulation (antaḥ-sañjalpa-mātrā), nom. sg. f.",
+        "syādavibhaktordhvagāminī": "would be (syāt) undivided (avibhakta), moving upward (ūrdhva-gāminī)"
+      },
+      "close": "She (Madhyamā) would be only inner articulation — undivided, moving upward.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v41",
+      "source_sha256": "ff0eaa7cf5fa66bd7ee3f526f789c5e83d8737977bb49fbefc1407fd54cf9223",
+      "tokens": {
+        "jihvāmūloṣṭhaniṣṭyūtā": "emitted / thrust forth at the root of the tongue and the lips (jihvā-mūla-oṣṭha-niṣṭyūta), nom. sg. f.",
+        "kṛtavar": "having made the phonemes (kṛta-varṇa-) [fragment of kṛtavarṇaparigrahā]",
+        "aparigrahā": "taking hold of (-parigrahā) [fragment of kṛtavarṇaparigrahā]"
+      },
+      "close": "(Vaikharī is) thrust forth from the tongue-root and lips, having taken possession of the phonemes.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v42",
+      "source_sha256": "2f93a2914a4bada476ffa3dd3055dd2250709ad3681e7ef1d6e6c96a80342975",
+      "tokens": {
+        "hakāraḥ": "the letter ha, nom. sg. m.",
+        "savikāro": "with modification (sa-vikāraḥ), nom. sg. m.",
+        "tha": "then (atha) [fragment of 'tha]",
+        "rephe": "with repha (r) (repha-) [fragment of repheṇa]",
+        "a": "instr. sg. ending -ṇa [fragment of repheṇa]",
+        "samayujyata": "was joined (sam-yuj, 3sg. impf. passive)"
+      },
+      "close": "Then the letter ha, modified, was joined with repha (the letter r).",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v43",
+      "source_sha256": "e0fe3e21bab3e851182fc829294eed96623760d16eba4f32f7a6d0ad7db880f2",
+      "tokens": {
+        "śaktibījaṃ": "the Śakti-bīja (the seed-mantra of Śakti, i.e. HRĪM), nom. sg. n.",
+        "hi": "for, indeed",
+        "tadyogāt": "from union with it (tad-yoga), abl. sg.",
+        "prapañcotpattikāra": "the cause of the arising of the phenomenal world (prapañca-utpatti-kāraṇa-) [fragment of prapañcotpattikāraṇam]",
+        "am": "acc. sg. ending (-ṇam) [fragment]"
+      },
+      "close": "For the Śakti-bīja, through union with it, is the cause of the arising of the phenomenal world.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v44",
+      "source_sha256": "ebd891668bba1487f76fd9d3ca81105879b0b705724e2ac1faf6738d90f79289",
+      "tokens": {
+        "śliṣṭoccāritayoḥ": "of the two uttered in close conjunction (śliṣṭa-uccārita), gen. dual",
+        "śābdaṃ": "verbal, consisting of sound, acc. sg. n.",
+        "rūpaṃ": "the form, acc. sg. n.",
+        "tadbījamīritam": "that (tad) is declared (īrita) the bīja (bījam), acc. sg. n."
+      },
+      "close": "When the two are uttered in coalescence, that sound-form is declared to be the bīja.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v45",
+      "source_sha256": "673f9d15c09084b8b207f26536b4a8c58d8f56b7570c51c262981fa4adbe8624",
+      "tokens": {
+        "īkārastu": "but the letter ī (īkāraḥ tu), nom. sg. m.",
+        "bhavenmāyā": "would be Māyā (bhavet māyā)",
+        "bindurīśvara": "the bindu (is) Īśvara (binduḥ īśvaraḥ)",
+        "ucyate": "is called (3sg. pres. passive)"
+      },
+      "close": "The letter ī would be Māyā; the bindu is called Īśvara.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v46",
+      "source_sha256": "46a66b345bf1076adb6bba15b653976ee5f3ad653fbf078502c49c39e28257d4",
+      "tokens": {
+        "hakāro": "the letter ha, nom. sg. m.",
+        "vyaktimāpanno": "having attained manifestation (vyaktim āpannaḥ), nom. sg. m.",
+        "hārdaghoṣavivakṣitaḥ": "intended to express the inner sound (hārda-ghoṣa-vivakṣita), nom. sg. m."
+      },
+      "close": "The letter ha, having become manifest, is meant to convey the inner sound.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v47",
+      "source_sha256": "ff029cba55d0691de1d929cb2e1ed400ac65d3cbcd014c0e775d9464db5335c9",
+      "tokens": {
+        "ūkārāntānyakārādīnyakṣarā": "the phonemes beginning with a and ending with ū (ūkārāntāni akārādīni akṣarāṇi) [fragment of ūkārāntānyakārādīnyakṣarāṇi]",
+        "i": "nom. pl. ending (-ṇi) [fragment]",
+        "ṣaḍasya": "its six (ṣaṭ asya), nom. pl. n.",
+        "tu": "but"
+      },
+      "close": "But its six phonemes, beginning with a and ending with ū...",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v48",
+      "source_sha256": "c510cec31b5b42c17769afe4a5164d95259187ae40572337cc1241e1d39dbd41",
+      "tokens": {
+        "īkārabhedatastvāsannekārādyakṣarā": "but from the differentiation of ī, the phonemes beginning with e are adjacent (īkāra-bhedataḥ tu āsanna ekārādi akṣarāṇi) [fragment]",
+        "i": "nom. pl. ending (-ṇi) [fragment]",
+        "ṣaṭ": "six"
+      },
+      "close": "But through the differentiation of the ī, the six syllables beginning with e are adjacent.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v49",
+      "source_sha256": "6f44879c40546194264aefc98bc375ba108a852dd7fb80d6609a3bfb19f2c247",
+      "tokens": {
+        "śaktyaṅgatvāt": "because of being limbs of Śakti (śakti-aṅgatva), abl. sg.",
+        "kalāste": "those (te) kalās (kalāḥ, digits/portions)",
+        "syuramṛtāṃśukalātmakāḥ": "would be (syuḥ) having the nature of the digits of the immortal-rayed (amṛtāṃśu = moon) (kalā-ātmaka), nom. pl. m."
+      },
+      "close": "Because they are members of Śakti, they would be kalās, of the nature of the digits of the immortal-rayed (moon).",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v50",
+      "source_sha256": "2a592216e896c78b63ad660c24037c64c581467d4c058c39ea04682607627e76",
+      "tokens": {
+        "dīrghasvarā": "the long vowels (dīrgha-svara), nom. pl. m.",
+        "visargāntāḥ": "ending in visarga (the emission-mark 'ḥ') (visarga-anta), nom. pl. m.",
+        "strīliṅgāḥ": "feminine in gender (strī-liṅga), nom. pl. m.",
+        "somarūpi": "having the form of Soma (soma-rūpi-) [fragment of somarūpiṇaḥ]",
+        "aḥ": "nom. pl. ending (-ṇaḥ) [fragment]"
+      },
+      "close": "The long vowels, ending in visarga, are feminine and of Soma's (lunar) form.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v51",
+      "source_sha256": "b1ba0be6eb9e81e46f2b8d448a3f3c87ce2f46f6c863403dfaeb30c8280067be",
+      "tokens": {
+        "svarā": "of the vowels (svarāṇām) [fragment of svarāṇāmudayādyaṃ]",
+        "āmudayādyaṃ": "the first emergence (-ṇām udaya-ādyaṃ) [fragment of svarāṇāmudayādyaṃ]",
+        "tu": "but, now",
+        "purastādiha": "here in front (purastāt + iha)",
+        "likhyate": "is written (3sg. pres. passive)"
+      },
+      "close": "But the first arising of the vowels is written here at the beginning.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v52",
+      "source_sha256": "557d836ea6a9382d135f190dc7d3977457581e9bc0e82567823c46ccc456b0e3",
+      "tokens": {
+        "vyomnaḥ": "from space / ether (vyoman), abl. sg.",
+        "sparśagu": "having touch as its quality (sparśa-guṇa-) [fragment of sparśaguṇo]",
+        "o": "nom. sg. ending (-ṇo) [fragment]",
+        "vāyuḥ": "wind, nom. sg. m.",
+        "sparśākhyāḥ": "called sparśa ('touch', i.e. stops) (sparśa-ākhya), nom. pl. m.",
+        "kādayo": "the (consonants) beginning with ka (kādayaḥ), nom. pl. m.",
+        "bhavan": "came to be (abhavan, 3pl. impf.)"
+      },
+      "close": "From space (arose) wind, whose quality is touch; the consonants beginning with ka, called sparśas, came into being.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v53",
+      "source_sha256": "23ce1ccf3487ae8298aa4bcefb07bfcca1ebcdef1f1ee63c3aefd4c233697fb4",
+      "tokens": {
+        "yādyakṣaracatuṣkaṃ": "the group of four phonemes beginning with ya (yādi-akṣara-catuṣka), nom. sg. n.",
+        "tu": "but, now",
+        "vāyvagnikṣmāmbhasāṃ": "of wind, fire, earth, and water (vāyu-agni-kṣmā-ambhas), gen. pl.",
+        "tanuḥ": "the body, nom. sg. f."
+      },
+      "close": "But the four phonemes beginning with ya are the body of wind, fire, earth, and water.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v54",
+      "source_sha256": "f7f6dda73ac87da569c5375cd8d0ff1521f46f0294fea65cee495f9c9d031a0b",
+      "tokens": {
+        "śeṣāstu": "but the rest (śeṣāḥ tu), nom. pl. m.",
+        "vyāpakāḥ": "pervasive, nom. pl. m.",
+        "śādyāḥ": "beginning with śa (śādi, i.e. the remaining letters śa…ha), nom. pl. m.",
+        "sāgnīṣomāḥ": "endowed with Agni and Soma (sa-agni-ṣoma), nom. pl. m.",
+        "svaraspṛśaḥ": "touching the vowels (svara-spṛś), nom. pl. m."
+      },
+      "close": "But the rest, beginning with śa, are pervasive, endowed with Agni and Soma, in contact with the vowels.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v55",
+      "source_sha256": "d9adce31ac906757d988284746a353115e9724bc6dfc3f52a35bf2bbf88853bd",
+      "tokens": {
+        "kādayaḥ": "the (group) beginning with ka, nom. pl. m.",
+        "pañcaviṃśār": "twenty-five phonemes (pañcaviṃśa-arṇa-) [fragment of pañcaviṃśārṇāḥ]",
+        "ā": "nom. pl. ending (-āḥ) [fragment]",
+        "yādayaḥ": "the (group) beginning with ya, nom. pl. m.",
+        "śādayastathā": "likewise the (group) beginning with śa (śādayaḥ tathā)"
+      },
+      "close": "The ka-group (numbers) twenty-five phonemes; likewise the ya-group and the śa-group.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v56",
+      "source_sha256": "550c35a43ae35e58fe0d32685c0d9e4fd141cc01c996bcc19310e3291e7c0298",
+      "tokens": {
+        "akārādisvarairyuktahalāṃ": "the consonants joined with the vowels beginning with a (akārādi-svaraiḥ yukta-hal), acc. sg. f.",
+        "yogānmitho": "from mutual (mithaḥ) combination (yogāt), abl. sg.",
+        "pi": "also (api)",
+        "ca": "and"
+      },
+      "close": "And (the count arises from) the consonants joined with the vowels beginning with a, and also from their mutual combination.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v57",
+      "source_sha256": "846c1d573e709720eebd0488f93a66e2f808392f587d322b30f06cd10b235f69",
+      "tokens": {
+        "saiva": "that very (sā eva), nom. sg. f.",
+        "śaktirdvidhā": "the Śakti twofold (śaktiḥ dvidhā)",
+        "bhūtā": "become (bhūta, ppp.), nom. sg. f.",
+        "tāro": "the Tāra (tāraḥ, the praṇava OM), nom. sg. m.",
+        "vāgbhavamityapi": "and the Vāgbhava — thus too (vāgbhavam iti api), acc. sg. n."
+      },
+      "close": "That very Śakti has become twofold: the Tāra and the Vāgbhava.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v58",
+      "source_sha256": "75128571bdd19bbbf4d7d7c1144414bbb2d1425975fe4549c28b2c450f2cde32",
+      "tokens": {
+        "tārākhyaḥ": "called Tāra (tāra-ākhya), nom. sg. m.",
+        "pra": "pra- [fragment of praṇavo]",
+        "avo": "-ṇavaḥ, the praṇava [fragment]",
+        "hyeṣa": "for this (hi eṣa)",
+        "śabdabrahmātmako": "having the nature of Sound-Brahman (śabda-brahma-ātmaka), nom. sg. m.",
+        "mataḥ": "considered / held (mata), nom. sg. m."
+      },
+      "close": "This praṇava, called Tāra, is held to be of the nature of Sound-Brahman.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v59",
+      "source_sha256": "8106caef7e1091087d5ed1c710707f9b867791af9167feaf9f4be55622b16c19",
+      "tokens": {
+        "viśvavāgbhūtidaṃ": "bestowing all speech and prosperity (viśva-vāk-bhūti-da), acc. sg. n.",
+        "tattu": "and that (tat tu)",
+        "vāgīśvaryāstanurbhavet": "would be the body (tanuḥ) of Vāgīśvarī (vāgīśvaryāḥ), 3sg. opt."
+      },
+      "close": "And that, which bestows all speech and prosperity, would be the body of Vāgīśvarī.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v60",
+      "source_sha256": "6e78c079b3ab4cc6d4fae241654ab0eb3bfcff2e6c1a5bc60d620895853488f4",
+      "tokens": {
+        "śaktibījaṃ": "the Śakti-bīja, nom. sg. n.",
+        "tathā": "likewise",
+        "tāro": "the Tāra, nom. sg. m.",
+        "vāgbhavaṃ": "the Vāgbhava, nom. sg. n.",
+        "ca": "and",
+        "tataḥ": "thereafter (adv.)",
+        "param": "after / next (adv.)"
+      },
+      "close": "The Śakti-bīja, then the Tāra, then the Vāgbhava, and thereafter...",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v61",
+      "source_sha256": "c2b06ef7d04be3f2bacf31438ae910c00515bdfe85c37350c0f4a466205231e0",
+      "tokens": {
+        "tadbhedajāśca": "and born from their differentiation (tad-bheda-ja + ca), nom. pl. f.",
+        "yā": "which, nom. pl. f.",
+        "vāco": "the utterances / speech (vācaḥ), nom. pl. f.",
+        "deśabhājā": "by division of place (deśa-bhājā, i.e. articulatory position), instr. sg. f.",
+        "vilakṣa": "distinguished (vilakṣaṇa-) [fragment of vilakṣaṇāḥ]",
+        "āḥ": "nom. pl. ending (-ṇāḥ) [fragment]"
+      },
+      "close": "And the utterances born from their differentiation, which are distinguished by (articulatory) place.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v62",
+      "source_sha256": "ef26048afe2ee6452561ad3060d681ebb6de2cb886d3c5ae463c86236e8df915",
+      "tokens": {
+        "ākāśādīni": "beginning with space (ākāśa-ādi), nom. pl. n.",
+        "bhūtāni": "the (gross) elements, nom. pl. n.",
+        "tanmātrā": "the subtle elements (tanmātrā-) [fragment of tanmātrāṇīndriyāṇi]",
+        "īndriyā": "the sense-organs (indriyāṇi) [fragment of tanmātrāṇīndriyāṇi]",
+        "i": "nom. pl. ending (-ṇi) [fragment]",
+        "ca": "and"
+      },
+      "close": "The elements beginning with space, the tanmātras, and the sense-organs...",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v63",
+      "source_sha256": "c6fce9f1124addc23a38643e8fc0451f3252158434f606f27ffd43b247b254c6",
+      "tokens": {
+        "bahunā": "with much (bahunā, i.e. much prattle), instr. sg. n.",
+        "kiṃ": "what (kim, interrogative)",
+        "pralāpena": "with prattle / chatter, instr. sg. m.",
+        "yaḥ": "which / who, nom. sg. m.",
+        "śabdārthātmako": "having the nature of word and meaning (śabda-artha-ātmaka), nom. sg. m.",
+        "khilaḥ": "the whole (akhilaḥ) [fragment]"
+      },
+      "close": "What (need) of much prattle — (that) which is the whole, of the nature of word and meaning?",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v64",
+      "source_sha256": "d69c8eb3566f99268d057d35d42b1eca61e4d245c28bb75249424776d96bb3e7",
+      "tokens": {
+        "asyāṃ": "in this, loc. sg. f.",
+        "tu": "but, now",
+        "mātṛkākhyāyāṃ": "called Mātṛkā (mātṛkā-ākhyā), loc. sg. f.",
+        "lipitvaṃ": "the state of being script (lipi-tva), acc. sg. n.",
+        "likhyate": "is written (3sg. pres. passive)",
+        "yataḥ": "because / since"
+      },
+      "close": "And in this (system) called the Mātṛkā, the property of being script is written, because...",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v65",
+      "source_sha256": "63828930ec2388be51d2a533693397be1210758bb4017386da767036cd1b743b",
+      "tokens": {
+        "ar": "ar- [fragment of arṇatvāt]",
+        "atvamamṛtātmatvādar": "the phoneme-ness and the immortal-nature (arṇatvam amṛtātmatvāt) [fragment]",
+        "o": "arṇo, 'the phoneme' [fragment]",
+        "mbhaḥ": "ambhaḥ, 'water' [fragment]",
+        "kathyate": "is called (3sg. pres. passive)",
+        "yataḥ": "because / since"
+      },
+      "close": "Because the phoneme is called 'water' (ambhas) owing to its being a phoneme and owing to its immortal nature.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v66",
+      "source_sha256": "3f7333cc7c180766a54b964bf50788eeea488b00116cde6fe1fb1a835de52e25",
+      "tokens": {
+        "upādānāni": "the material causes (upādāna), nom. pl. n.",
+        "viśvātmamātṛkāyāstu": "but of the Mātṛkā whose self is the universe (viśva-ātma-mātṛkāyāḥ tu), gen. sg. f.",
+        "pañca": "five",
+        "vai": "indeed"
+      },
+      "close": "But the material causes of the Mātṛkā, whose self is the universe, are indeed five.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v67",
+      "source_sha256": "4cbf4ae3b2fec8caf5ccb7ec8df8a85571dd3f6d7164bbd3a502d6b0f1eea1bd",
+      "tokens": {
+        "ṭatavargau": "the ṭa-group and the ta-group (ṭa-ta-varga), nom. dual m.",
+        "tathā": "likewise",
+        "pādau": "the two feet (pāda), nom. dual m.",
+        "pārśvayugmaṃ": "the pair of sides (pārśva-yugma), nom. sg. n.",
+        "paphau": "pa and pha (paphau), nom. dual m.",
+        "matau": "considered (mata), nom. dual m."
+      },
+      "close": "The ṭa- and ta-groups are the two feet; pa and pha, likewise, are the pair of flanks — so they are held.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v68",
+      "source_sha256": "52a27f1427010734fa2c1bc46b32b876439fdc2a15fea46a22525669d30840ff",
+      "tokens": {
+        "tvagasṛṅmāṃsamedosthimajjāśuklāni": "skin, blood, flesh, fat, bone, marrow, (and) semen (tvag-asṛk-māṃsa-medas-astthi-majjā-śukla), nom. pl. n.",
+        "yādayaḥ": "the (group) beginning with ya, nom. pl. m."
+      },
+      "close": "The ya-group (are) skin, blood, flesh, fat, bone, marrow, and semen.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v69",
+      "source_sha256": "1e2cf879dbdbc43133986714b83002ca387a1b3bc680d25d7734fafe395fc726",
+      "tokens": {
+        "sphūrtiḥ": "the throb / flash of manifestation (sphūrti), nom. sg. f.",
+        "kṣakāraḥ": "the letter kṣa, nom. sg. m.",
+        "sakrodho": "with anger (sa-krodhaḥ), nom. sg. m.",
+        "viśvalokamayī": "consisting of the whole world (viśva-loka-mayī), nom. sg. f.",
+        "tanuḥ": "the body, nom. sg. f."
+      },
+      "close": "The letter kṣa is the pulsation, together with wrath; (it is) the body consisting of the whole world.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v70",
+      "source_sha256": "9eb9ddf35f2ef645e989b1abafd1239b69ef7c48eb4b6917e0053cc4a1f59e1e",
+      "tokens": {
+        "brahmādistambaparyantaṃ": "from Brahmā down to a clump of grass (brahmādi-stamba-paryanta), acc. sg. n.",
+        "mātṛkāyāṃ": "in the Mātṛkā, loc. sg. f.",
+        "vyavasthitam": "established (vyavasthita, ppp.), acc. sg. n."
+      },
+      "close": "Everything from Brahmā up to a blade of grass is established in the Mātṛkā.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v71",
+      "source_sha256": "c6e7fc68523ad90ca926649344242c8031d4cb4e6fb98f4e1e60f6cfe386ad6b",
+      "tokens": {
+        "avargādudgataḥ": "risen from the a-group (avarga-udgata), nom. sg. m.",
+        "sūryaḥ": "the sun, nom. sg. m.",
+        "kavargādapi": "also from the ka-group (kavargāt api)",
+        "bhūsutaḥ": "the son of Earth (bhū-suta = Mars), nom. sg. m."
+      },
+      "close": "From the a-group has risen the Sun; from the ka-group, the son of Earth (Mars).",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v72",
+      "source_sha256": "97b21db5bcc61106a1a1830a7551577c45e5427e2fa8473443b4eb3c81d01a8b",
+      "tokens": {
+        "pavargācca": "and from the pa-group (pavargāt ca)",
+        "śaniścandro": "Saturn and the Moon (śaniḥ candraḥ), nom. sg. m.",
+        "yavargādabhavad": "from the ya-group arose (yavargāt abhavat)",
+        "vibhuḥ": "the omnipresent (Lord), nom. sg. m."
+      },
+      "close": "From the pa-group, Saturn and the Moon; from the ya-group arose the omnipresent (Vibhu).",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v73",
+      "source_sha256": "102bf36c858039eafec1959c2e456212ba7d586708400a750c7bf63bb7f435e8",
+      "tokens": {
+        "mātṛkākṣarasambhedāt": "from the differentiation of the Mātṛkā's phonemes (mātṛkā-akṣara-sambheda), abl. sg.",
+        "kathyante": "they are spoken / declared (3pl. pres. passive)",
+        "parato": "hereafter (parataḥ)",
+        "tra": "here (atra) [fragment]",
+        "vai": "indeed"
+      },
+      "close": "From the differentiation of the Mātṛkā's phonemes, (the following) are indeed declared below, here.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v74",
+      "source_sha256": "a731d1d85aeeaf8fba520bce2953f57dd9c0284b54fee2d338ba2d5341f36a59",
+      "tokens": {
+        "samudgatāstathā": "likewise emerged (samudgatāḥ tathā), nom. pl. f.",
+        "rudraśaktayastatprasaṃkhyayā": "the Rudra-Śaktis, by that enumeration (rudra-śaktayaḥ tat-prasaṃkhyayā), nom. pl. f."
+      },
+      "close": "Likewise have emerged the Rudra-Śaktis, according to that enumeration.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v75",
+      "source_sha256": "b9b001f557581d2f1a68fafa1322232364e46d9fd826b2024c267c2f288e1d92",
+      "tokens": {
+        "oṣadhyaścāpi": "and also the herbs (oṣadhyaḥ ca api), nom. pl. f.",
+        "pañcāśadaṣṭatriṃśat": "fifty, and thirty-eight (pañcāśat aṣṭatriṃśat)",
+        "kalāstathā": "and likewise the kalās (kalāḥ tathā)"
+      },
+      "close": "And the herbs — fifty — and the kalās, thirty-eight, likewise.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v76",
+      "source_sha256": "b7a715ebb88e00aab0d5c599618758cbf6d2e4714b6a279bf8660337abf34bb9",
+      "tokens": {
+        "evaṃ": "thus",
+        "hi": "for, indeed",
+        "mātṛkotpattirāgamoktā": "the origin of the Mātṛkā as declared in the Āgama (mātṛkā-utpattiḥ āgama-uktā), nom. sg. f.",
+        "pradarśitā": "has been shown (pradarśita, ppp.), nom. sg. f."
+      },
+      "close": "Thus has been shown the origin of the Mātṛkā, as declared in the Āgama.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v77",
+      "source_sha256": "d9286b538a04b3183da3a1b19b288080734241218fca903648a434d05178769b",
+      "tokens": {
+        "atroddhriyante": "here are extracted / drawn out (atra + uddhriyante, 3pl. pres. passive)",
+        "bījāni": "the seed-syllables, nom. pl. n.",
+        "bījamantrāḥ": "the bīja-mantras, nom. pl. m.",
+        "samantrakāḥ": "together with their mantras (sa-mantraka), nom. pl. m."
+      },
+      "close": "Here are extracted the bījas — the bīja-mantras together with their (full) mantras.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v78",
+      "source_sha256": "56b5fb2c06bce7b036e2e6772925e54ba1fa549d6351ef4881b22b230c93174d",
+      "tokens": {
+        "tataḥ": "thereafter",
+        "paraṃ": "after (adv.)",
+        "yathāpāṭhaṃ": "according to the reading / as in the text (yathā-pāṭham)",
+        "vijñeyā": "to be known (vijñeya), nom. pl. f.",
+        "nipu": "skilled (nipuṇa-) [fragment of nipuṇaiḥ]",
+        "aiḥ": "instr. pl. ending (-ṇaiḥ) [fragment]",
+        "sphuṭam": "clearly (adv.)"
+      },
+      "close": "Thereafter they are to be known clearly by the expert, according to the text.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v79",
+      "source_sha256": "16ace635d840b0528603b88e205613053aa4ea1e8df274bc5af88a9a1c274f84",
+      "tokens": {
+        "yathāvadatra": "here, as appropriate (yathāvat + atra)",
+        "likhyante": "they are written (3pl. pres. passive)",
+        "bhagavacchabdasaṃyutāḥ": "joined with the word 'bhagavat' (bhagavat-śabda-saṃyuta), nom. pl. m."
+      },
+      "close": "Here they are written as appropriate, joined with the word 'Lord' (bhagavat).",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v80",
+      "source_sha256": "f43be7e66280926a9ccc1a069ceba2c4bd3c65e4bfddb80d0b96375742de09e4",
+      "tokens": {
+        "da": "da- [fragment of daṇḍārdhendurbhaved]",
+        "ḍārdhendurbhaved": "would be staff-and-half-moon (daṇḍa-ardhendu + bhavet) [fragment]",
+        "binduḥ": "the bindu, nom. sg. m.",
+        "sargo": "the emission (sargaḥ — here the visarga), nom. sg. m.",
+        "bindudvaye": "in the pair of bindus (bindu-dvaya), loc. sg.",
+        "mataḥ": "considered (mata), nom. sg. m."
+      },
+      "close": "The bindu would be a staff (with) a half-moon; the visarga is held (to consist of) the two bindus.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v81",
+      "source_sha256": "5e97fedf68a441c23c8e6b859b124b93ae982bf04b06616f6909d23301afc5f5",
+      "tokens": {
+        "viṣakālau": "poison and Time (viṣa-kāla), nom. dual m.",
+        "makāraḥ": "the letter ma, nom. sg. m.",
+        "syād": "would be (3sg. opt.)",
+        "dhātavo": "the (bodily) elements / constituents (dhātavaḥ), nom. pl. m.",
+        "yādayo": "the (group) beginning with ya (yādayaḥ), nom. pl. m.",
+        "matāḥ": "considered (mata), nom. pl. m."
+      },
+      "close": "The letter ma would be poison and Time; the ya-group are held to be the bodily elements.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v82",
+      "source_sha256": "336e44daf30a71c543ca96e78961c8354a55b98985a45f4a25b74764f1289a80",
+      "tokens": {
+        "khaḥ": "the letter kha, nom. sg. m.",
+        "prā": "prāṇa-, 'vital breath' [fragment of prāṇabhuvaneśākhyo]",
+        "abhuvaneśākhyo": "-bhuvaneśākhyaḥ, called the lord of the (vital) worlds [fragment]",
+        "hakāraḥ": "the letter ha, nom. sg. m.",
+        "śivasaṃjñitaḥ": "denominated 'Śiva' (śiva-saṃjñita), nom. sg. m."
+      },
+      "close": "Kha is called the lord of the vital worlds; ha is denominated Śiva.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v83",
+      "source_sha256": "2ae18d0193d998a1e048c9a45493a19bb3dcd876ecc5a7ae4a31c1ba1a35dd05",
+      "tokens": {
+        "paphabāśca": "and pa, pha, ba (pa-pha-ba + ca), nom. pl. m.",
+        "bhamakṣāśca": "and bha, ma, kṣa (bha-ma-kṣa + ca), nom. pl. m.",
+        "vyatyayaṃ": "interchange (acc. sg. m.)",
+        "te": "they, nom. pl. m.",
+        "trayastrayaḥ": "three and three (trayas trayas), nom. pl. m."
+      },
+      "close": "And (the sets) pa-pha-ba and bha-ma-kṣa — those (groups of) three and three undergo interchange.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v84",
+      "source_sha256": "7dd2faaf88cbd93d4116e16775e64bc735b8ad6af4ee40749e83b3561f6406dc",
+      "tokens": {
+        "svareṣu": "in the vowels, loc. pl. m.",
+        "vyatyayo": "interchange (vyatyayaḥ), nom. sg. m.",
+        "neṣṭastadvad": "is not approved (na iṣṭaḥ), likewise (tadvat)",
+        "yuktākṣareṣvapi": "also in the conjunct phonemes (yuktākṣareṣu api), loc. pl."
+      },
+      "close": "Interchange is not approved among the vowels, nor likewise among the conjunct phonemes.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v85",
+      "source_sha256": "6ea4d22c74eb62099f6fe4feb6b2a19f7c507f57c19ebfe901495eeb7558e5f1",
+      "tokens": {
+        "tattadakṣaravijñaptyai": "for the making-known of this-and-that phoneme (tat-tad-akṣara-vijñapti), dat. sg.",
+        "saṅketāya": "as a convention (saṅketa), dat. sg.",
+        "bhavanti": "they are / serve (3pl. pres.)",
+        "hi": "for, indeed"
+      },
+      "close": "For they serve as a convention for signalling each particular phoneme.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v86",
+      "source_sha256": "892534d197c6b01343e0841048d5c66a84f99e00fcc959ad43eab75739681083",
+      "tokens": {
+        "yathāsaṅkhyaṃ": "according to the count (yathā-saṅkhyam)",
+        "tathā": "so, thus",
+        "vidyāt": "one should know (3sg. opt.)",
+        "svarāḥ": "the vowels, nom. pl. m.",
+        "sapta": "seven",
+        "diśo": "the directions (diśaḥ), nom. pl. f.",
+        "daśa": "ten"
+      },
+      "close": "Correspondingly, one should know: the vowels are seven, the directions ten.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v87",
+      "source_sha256": "a7a0fe6353f67b116c3662b4cc9a96c915578487bce679a6f01eeaf289ab9177",
+      "tokens": {
+        "vedāścatvāra": "the Vedas, four (vedāḥ catvāraḥ), nom. pl. m.",
+        "eva": "indeed",
+        "syustrayo": "would be three (syuḥ trayaḥ)",
+        "rāmāśtrayo": "three are the Rāmas (rāmāḥ trayaḥ)",
+        "gnayaḥ": "the fires (agnayaḥ) [fragment]"
+      },
+      "close": "The Vedas are indeed four; three are the Rāmas; three are the fires.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v88",
+      "source_sha256": "7516c9dae40a0ce9a5a38b60ce75de1fd4974a883bdbcc4eaad4b95b09a11a78",
+      "tokens": {
+        "uktātyuktā": "Uktā and Atyuktā (uktā atyuktā, meter names), nom. sg. f.",
+        "tathā": "likewise",
+        "madhyā": "Madhyā (meter name), nom. sg. f.",
+        "pratiṣṭhā": "Pratiṣṭhā (meter name), nom. sg. f.",
+        "supratiṣṭhitā": "Supratiṣṭhitā (meter name), nom. sg. f."
+      },
+      "close": "Uktā, Atyuktā, and likewise Madhyā, Pratiṣṭhā, Supratiṣṭhitā.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v89",
+      "source_sha256": "48a877c2edaeff57f1e73e7db7c0158d38fc38ffd22c9430299bb4462e75d163",
+      "tokens": {
+        "tṛṣṭup": "the Triṣṭubh (meter), nom. sg. f.",
+        "ca": "and",
+        "jagatī": "the Jagatī (meter), nom. sg. f.",
+        "tadvat": "likewise",
+        "tato": "thereafter (tataḥ)",
+        "tijagatī": "the Atijagatī (meter) (atijagatī) [fragment]",
+        "matā": "considered (mata), nom. sg. f."
+      },
+      "close": "And Triṣṭubh, and likewise Jagatī; after that, Atijagatī is recognized.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v90",
+      "source_sha256": "8a1400c9267f7bf38034cb54253e78ef6cd278a8f2f46d7159d1c0876d622598",
+      "tokens": {
+        "dhṛtiścātidhṛtiścaiva": "Dhṛti and Atidhṛti (dhṛtiḥ ca atidhṛtiḥ ca eva, meter names), nom. sg. f.",
+        "kṛtiḥ": "Kṛti (meter name), nom. sg. f.",
+        "prakṛtirākṛtiḥ": "Prakṛti and Ākṛti (prakṛtiḥ ākṛtiḥ, meter names), nom. sg. f."
+      },
+      "close": "Dhṛti, and Atidhṛti, Kṛti, Prakṛti, Ākṛti.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v91",
+      "source_sha256": "78a98d4a16a7d3aad87535138d11f9908e5cec5d4fb001d0d3661717e315dc60",
+      "tokens": {
+        "etāsāṃ": "of these, gen. pl. f.",
+        "chandasāṃ": "of the meters (chandas), gen. pl. n.",
+        "saṃkhyā": "the count, nom. sg. f.",
+        "kvacidatra": "here somewhere (kvacit + atra)",
+        "vidhīyate": "is prescribed (3sg. pres. passive)"
+      },
+      "close": "The count of these meters is prescribed here somewhere.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v92",
+      "source_sha256": "62bd8ff72d055ba35e538cb8d6a9dd4d7e21825d3c1bc59859bd0ffa561b1eea",
+      "tokens": {
+        "tathā": "likewise",
+        "ṣaṭtriṃśadeva": "thirty-six indeed (ṣaṭtriṃśat eva)",
+        "syuḥ": "would be (3pl. opt.)",
+        "śaive": "in the Śaiva (doctrine), loc. sg.",
+        "tattvāni": "the tattvas / principles, nom. pl. n.",
+        "saṃkhyayā": "in number (instr. sg. f.)"
+      },
+      "close": "Likewise, in the Śaiva (system), the tattvas would be thirty-six in number.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v93",
+      "source_sha256": "528c5704623e86eac6d1c5782ec9f886daf00686717259b1d9ce90dea99d31ad",
+      "tokens": {
+        "navabhirnavapañcāṣṭavar": "by nines, by (groups of) nine, five, (and) eight phonemes (navabhiḥ nava-pañca-aṣṭa-varṇa-) [fragment of navabhirnavapañcāṣṭavarṇaiḥ]",
+        "aiḥ": "instr. pl. ending (-ṇaiḥ) [fragment]",
+        "saṃkhyātra": "the count here (saṃkhyā atra)",
+        "vā": "or",
+        "bhavet": "would be (3sg. opt.)"
+      },
+      "close": "Or the count here could be by nines — by (groups of) nine, five, and eight phonemes.",
+      "uncertain": [
+        "navabhirnavapañcāṣṭavarṇaiḥ"
+      ]
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v94",
+      "source_sha256": "478df402fcacacabe66d12ad2132dad1b54e4d43e2016dfb22a41d8d664766bd",
+      "tokens": {
+        "sukhāvabodho": "easy comprehension (sukha-avabodha), nom. sg. m.",
+        "hyarthānāṃ": "for of the meanings (hi + arthānām), gen. pl. m.",
+        "bhavatyeveṣṭasiddhaye": "indeed becomes, for the accomplishment of the desired (bhavati eva iṣṭa-siddhaye)"
+      },
+      "close": "For easy comprehension of the meanings indeed serves the accomplishment of what is desired.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v95",
+      "source_sha256": "7d18e3ef6d6c6b89a3715c4645f41bb0d98efb82d9033eaa91e5860019c70797",
+      "tokens": {
+        "tacchāktaṃ": "that Śākta (tat śākta, belonging to Śakti), acc. sg. n.",
+        "pra": "pra- [fragment of praṇavākhyabījamakhilaṃ]",
+        "avākhyabījamakhilaṃ": "-ṇavākhya-bījam, the seed called praṇava, the whole (akhilam) [fragment]",
+        "nyagrodhabījaṃ": "a banyan-seed (nyagrodha-bīja), acc. sg. n.",
+        "viduḥ": "they know (3pl. perf.)"
+      },
+      "close": "They know that Śākta seed called the Praṇava — the whole (world) — as a banyan seed.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v96",
+      "source_sha256": "5f52e718435667971a2ffac63fa471acc0a89e6b794d44fe1597587401392dc2",
+      "tokens": {
+        "iti": "thus",
+        "śrīmadīśānaśivagurudevamiśraviracite": "composed by the revered Īśānaśivagurudevamiśra (śrīmat-īśāna-śiva-gurudeva-miśra-viracita), loc. sg. n.",
+        "tantrasārapaddhatau": "in the Tantrasārapaddhati, loc. sg. f.",
+        "vastunirdeśamātṛkopapattinir": "the determination (nirṇaya) of the genesis (upapatti) of the Mātṛkā in the exposition of the subject-matter (vastu-nirdeśa-mātṛkā-upapatti-nirṇaya-) [fragment of vastunirdeśamātṛkopapattinirṇayo]",
+        "ayo": "nom. sg. ending (-ṇayo) [fragment]",
+        "nāma": "named (adv.)",
+        "prathamaḥ": "the first, nom. sg. m.",
+        "paṭalaḥ": "chapter, nom. sg. m."
+      },
+      "close": "Thus, in the Tantrasārapaddhati composed by the revered Īśānaśivagurudevamiśra, (this is) the first chapter named 'The Determination of the Genesis of the Mātṛkā in the Exposition of the Subject-Matter'.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v97",
+      "source_sha256": "c0462c0978944b31ae13ed10639126213da0ffb31b4bd620a09ba31499d32406",
+      "tokens": {
+        "aśvīśo": "Aśvīśa (the Lord of the Horses), nom. sg. m.",
+        "bhārabhūtiśca": "and Bhārabhūti (bhāra-bhūtiḥ ca), nom. sg. m.",
+        "tithīśaḥ": "Tithīśa (the Lord of the lunar days), nom. sg. m.",
+        "sthā": "sthā- [fragment of sthāṇuko]",
+        "uko": "-ṇukaḥ, Sthāṇuka [fragment]",
+        "haraḥ": "Hara, nom. sg. m."
+      },
+      "close": "Aśvīśa, Bhārabhūti, Tithīśa, Sthāṇuka, Hara.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v98",
+      "source_sha256": "fd0dbd6578482e82158a4374a5fad3f3b1289506655498333300fd7cb7f41457",
+      "tokens": {
+        "akrūraśca": "and Akrūra (akrūraḥ ca), nom. sg. m.",
+        "mahāsenaḥ": "Mahāsena, nom. sg. m.",
+        "ṣoḍaśaite": "these sixteen (ṣoḍaśa ete), nom. pl. m.",
+        "svareśvarāḥ": "the lords of the vowels (svara-īśvara), nom. pl. m."
+      },
+      "close": "And Akrūra and Mahāsena — these sixteen are the lords of the vowels.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v99",
+      "source_sha256": "ae3e274ab298a8e07fc12712bdce11806eac8ecbf55f84c4faf259c239affaa9",
+      "tokens": {
+        "ekarudraśca": "and Ekarudra (eka-rudraḥ ca), nom. sg. m.",
+        "kūrmaikanetrau": "Kūrma and Ekanetra (kūrma-ekanetrau), nom. dual m.",
+        "ca": "and",
+        "caturānanaḥ": "Caturānana (the Four-Faced), nom. sg. m."
+      },
+      "close": "And Ekarudra, Kūrma and Ekanetra (the two), and Caturānana.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "isanasivagurudevapaddhati:v100",
+      "source_sha256": "f90e9400c0569a8b84d1e10880f59f613c6d4dee5797f5d2a1c82270c8ceefbf",
+      "tokens": {
+        "ardhanārīśvaraścomākāntaścāṣaḍiḍi": "and Ardhanārīśvara, and Umākānta, and the two Ṣaḍiḍiṇḍin (ardhanārīśvaraḥ ca umākāntaḥ ca ṣaḍiḍiṇḍin-) [fragment of ardhanārīśvaraścomākāntaścāṣaḍiḍiṇḍinau]",
+        "ḍinau": "-ḍiṇḍinau, the two (nom. dual m.) [fragment]"
+      },
+      "close": "And Ardhanārīśvara, and Umākānta, and the two Ṣaḍiḍiṇḍins.",
+      "uncertain": []
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "run_id": "T1-NAT-20260813T115002Z",
+  "benchmark_version": "v0",
+  "family": "PATALA-T1-NAT",
+  "bench": "PĀṬALA-T1-NAT",
+  "bench_version": "v0.1",
+  "framework": "inspect-ai==0.3.258",
+  "task": "t1_nat",
+  "execution_base_sha": "b0ee8c8f085469cb5816c7fffb73e0eb8b3d99ec",
+  "working_tree_dirty": true,
+  "date": "20260813T115002Z",
+  "dataset": {"kind": "NAT", "objects": 2, "versions": ["t1-kramasadbhava:v1-v1", "t1-kramasadbhava:v100-v2"]},
+  "sut": "Agent 2 T1 worker (factory-batch), MACHINE_PROPOSED",
+  "adjudicator": {"type": "MACHINE", "agent": "agent1", "review_status": "NOT_HUMAN_REVIEWED"},
+  "metrics": {"gloss_accuracy": 1.0, "object_gloss_rate": 1.0},
+  "notes": "First evaluation of real Agent 2 T1 output. Both committed objects pass structure/coverage/gloss_gold under Agent 1's independent MACHINE adjudication. NOT human/scholar-reviewed; review_status=NOT_HUMAN_REVIEWED. Does not gate Agent 2 production."
+}

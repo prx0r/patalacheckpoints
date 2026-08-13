@@ -1,0 +1,278 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    {
+      "oa": "http://www.w3.org/ns/oa#",
+      "prov": "http://www.w3.org/ns/prov#",
+      "fabio": "http://purl.org/spar/fabio/",
+      "pt": "https://patala.example/"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate"
+      },
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "P\u0101\u1e6dala Scholar Corpus Pilot (source-evidence v0)",
+      "description": "FaBiO + PROV-O + Web Annotation + RO-Crate + P\u0101\u1e6dala SourceAssertions",
+      "hasPart": [
+        "pt:witness:sanderson:saiva_exegesis_kashmir:file",
+        "pt:witness:sanderson:saivism_tantric_traditions:file",
+        "pt:witness:sanderson:encyclopedia_religion_1987:file",
+        "pt:witness:sanderson:tantrasara_commentary:file",
+        "pt:witness:ratie:Otherness_in_the_Pratyabhijna_Philosophy:file"
+      ]
+    },
+    {
+      "@id": "pt:PatalaSourceEvidenceProfile_v0",
+      "@type": "Profile",
+      "name": "P\u0101\u1e6dala Source Evidence Profile v0",
+      "alignment": {
+        "BibliographicWork": "fabio:Work",
+        "Witness": "fabio:Manifestation/Item + PROV-O provenance",
+        "SourceSpan": "W3C Web Annotation SpecificResource + selectors",
+        "SourceAssertion": "P\u0101\u1e6dala-native (attributed actor commits to a structured proposition at a span)",
+        "CorroborationEvent": "P\u0101\u1e6dala-native (proposition <-> SourceAssertion epistemic relation)",
+        "CitationRelation": "CiTO",
+        "Asset": "IIIF content resource",
+        "Package": "RO-Crate",
+        "Metadata": "DataCite/Crossref/OpenAlex (metadata witness)",
+        "PrimaryTextIdentity": "CTS-compatible (TextGroup -> Work -> Edition/Translation -> Passage); keep pt:* internal",
+        "TextAPI": "DTS-compatible (external text retrieval; internal = canonical graph)",
+        "ArticleMarkup": "JATS (consume losslessly when available; JATS -> HTML -> born-digital PDF -> OCR PDF)",
+        "PersonIdentity": "ORCID (sameAs) on pt:person:; internal id kept for historical actors without ORCID",
+        "OrgIdentity": "ROR (sameAs) on pt:org:"
+      }
+    },
+    {
+      "@id": "pt:publication:sanderson:saiva_exegesis_kashmir",
+      "@type": [
+        "fabio:Work",
+        "pt:BibliographicWork"
+      ],
+      "title": "The \u015aaiva Exegesis of Kashmir",
+      "author": [
+        "pt:person:alexis-sanderson"
+      ],
+      "year": 2007,
+      "venue": null,
+      "publication_type": "CHAPTER",
+      "identifiers": {}
+    },
+    {
+      "@id": "pt:witness:sanderson:saiva_exegesis_kashmir:file",
+      "@type": [
+        "pt:Witness",
+        "File"
+      ],
+      "publication_ref": "pt:publication:sanderson:saiva_exegesis_kashmir",
+      "format": "PDF",
+      "sha256": "a217d798d6447ad1b6beef64340d40e57bfcb6471ecc8c46f85cd585bbc02f8c",
+      "local_path": "data/corpus/sources/sanderson/saiva_exegesis_kashmir.pdf",
+      "source_uri": "https://archive.org/details/zcux_the-saiva-exegesis-of-kashmir.-in-melang-tantra-books",
+      "derives_from": null,
+      "extraction_status": "NOT_EXTRACTED",
+      "rights": {}
+    },
+    {
+      "@id": "pt:witness:sanderson:saiva_exegesis_kashmir:file",
+      "prov:specializationOf": "pt:publication:sanderson:saiva_exegesis_kashmir"
+    },
+    {
+      "@id": "pt:publication:sanderson:saivism_tantric_traditions",
+      "@type": [
+        "fabio:Work",
+        "pt:BibliographicWork"
+      ],
+      "title": "\u015aaivism and the Tantric Traditions",
+      "author": [
+        "pt:person:alexis-sanderson"
+      ],
+      "year": 1988,
+      "venue": null,
+      "publication_type": "CHAPTER",
+      "identifiers": {}
+    },
+    {
+      "@id": "pt:witness:sanderson:saivism_tantric_traditions:file",
+      "@type": [
+        "pt:Witness",
+        "File"
+      ],
+      "publication_ref": "pt:publication:sanderson:saivism_tantric_traditions",
+      "format": "PDF",
+      "sha256": "cc97aec17f099b0e80d20c9856c96dfb282adc25eb5ebfaef5ed19b48e53dc7b",
+      "local_path": "data/corpus/sources/sanderson/shaivism_tantric_traditions_mirror.pdf",
+      "source_uri": "https://www.academia.edu/6255658/_%C5%9Aaivism_and_the_Tantric_Traditions_In_The_Worlds_Religions_edited_by_S_Sutherland_et_al_London_Routledge_and_Kegan_Paul_1988_pp_660_704_Reprinted_in_The_Worlds_Religions_The_Religions_of_Asia_edited_by_F_Hardy_London_Routledge_and_Kegan_Paul_1990_pp_128_72",
+      "derives_from": null,
+      "extraction_status": "NOT_EXTRACTED",
+      "rights": {}
+    },
+    {
+      "@id": "pt:witness:sanderson:saivism_tantric_traditions:file",
+      "prov:specializationOf": "pt:publication:sanderson:saivism_tantric_traditions"
+    },
+    {
+      "@id": "pt:publication:sanderson:encyclopedia_religion_1987",
+      "@type": [
+        "fabio:Work",
+        "pt:BibliographicWork"
+      ],
+      "title": "The Encyclopedia of Religion (1987) \u2014 Sanderson entries: Krama \u015aaivism, Trika \u015aaivism, \u015aaivism in Kashmir, Abhinavagupta",
+      "author": [
+        "pt:person:alexis-sanderson"
+      ],
+      "year": 1987,
+      "venue": null,
+      "publication_type": "CHAPTER",
+      "identifiers": {}
+    },
+    {
+      "@id": "pt:witness:sanderson:encyclopedia_religion_1987:file",
+      "@type": [
+        "pt:Witness",
+        "File"
+      ],
+      "publication_ref": "pt:publication:sanderson:encyclopedia_religion_1987",
+      "format": "TXT",
+      "sha256": "a146b2b3776c3d84427645725bfdf6be8c697ec28155941836c0cecd8bcb45d2",
+      "local_path": "data/corpus/sources/sanderson/encyclopedia_of_religion_1987.txt",
+      "source_uri": "https://archive.org/details/encyclopediaofre00macm",
+      "derives_from": null,
+      "extraction_status": "NOT_EXTRACTED",
+      "rights": {}
+    },
+    {
+      "@id": "pt:witness:sanderson:encyclopedia_religion_1987:file",
+      "prov:specializationOf": "pt:publication:sanderson:encyclopedia_religion_1987"
+    },
+    {
+      "@id": "pt:publication:sanderson:tantrasara_commentary",
+      "@type": [
+        "fabio:Work",
+        "pt:BibliographicWork"
+      ],
+      "title": "A Commentary on the Opening Verses of the Tantras\u0101ra of Abhinavagupta",
+      "author": [
+        "pt:person:alexis-sanderson"
+      ],
+      "year": 2005,
+      "venue": null,
+      "publication_type": "CHAPTER",
+      "identifiers": {}
+    },
+    {
+      "@id": "pt:witness:sanderson:tantrasara_commentary:file",
+      "@type": [
+        "pt:Witness",
+        "File"
+      ],
+      "publication_ref": "pt:publication:sanderson:tantrasara_commentary",
+      "format": "PDF",
+      "sha256": "6a07a881caa033b4bb81bf5f3334f038488bdac5edbe5fbc09d8613b298cbb70",
+      "local_path": "data/corpus/sources/sanderson/commentary_tantrasara_opening.pdf",
+      "source_uri": "https://anuttaratrika.com/DOWNLOAD/eng/commentary_on_the%20opening_verses_of_Tantasara_sanderson.pdf",
+      "derives_from": null,
+      "extraction_status": "NOT_EXTRACTED",
+      "rights": {}
+    },
+    {
+      "@id": "pt:witness:sanderson:tantrasara_commentary:file",
+      "prov:specializationOf": "pt:publication:sanderson:tantrasara_commentary"
+    },
+    {
+      "@id": "pt:publication:ratie:Otherness_in_the_Pratyabhijna_Philosophy",
+      "@type": [
+        "fabio:Work",
+        "pt:BibliographicWork"
+      ],
+      "title": "Otherness in the Pratyabhij\u00f1\u0101 Philosophy",
+      "author": [
+        "pt:person:isabelle-ratie"
+      ],
+      "year": 2007,
+      "venue": "Journal of Indian Philosophy 35",
+      "publication_type": "ARTICLE",
+      "identifiers": {}
+    },
+    {
+      "@id": "pt:witness:ratie:Otherness_in_the_Pratyabhijna_Philosophy:file",
+      "@type": [
+        "pt:Witness",
+        "File"
+      ],
+      "publication_ref": "pt:publication:ratie:Otherness_in_the_Pratyabhijna_Philosophy",
+      "format": "PDF",
+      "sha256": "d6afc2bc77fd8c29f1e2dcd4f0eb97384ee16dd93ea2dc34d869ee773c035dac",
+      "local_path": "/mnt/HC_Volume_106427611/sanskritree/corpus/ipvv-anchor/scholarship/Otherness_in_the_Pratyabhijna_Philosophy.pdf",
+      "source_uri": null,
+      "derives_from": null,
+      "extraction_status": "NOT_EXTRACTED",
+      "rights": {}
+    },
+    {
+      "@id": "pt:witness:ratie:Otherness_in_the_Pratyabhijna_Philosophy:file",
+      "prov:specializationOf": "pt:publication:ratie:Otherness_in_the_Pratyabhijna_Philosophy"
+    },
+    {
+      "@id": "pt:span:ratie-otherness:file:p342-fn63",
+      "@type": [
+        "oa:SpecificResource",
+        "pt:Span"
+      ],
+      "witness_ref": "pt:witness:ratie:Otherness_in_the_Pratyabhijna_Philosophy:file",
+      "selectors": {
+        "HumanPageSelector": {
+          "@type": "pt:HumanPageSelector",
+          "page": 342,
+          "section": "fn. 63",
+          "paragraph": null
+        },
+        "TextQuoteSelector": {
+          "@type": "oa:TextQuoteSelector",
+          "exact": "the grasping of the I is not a mere concept",
+          "prefix": null,
+          "suffix": null
+        },
+        "P\u0101\u1e6dalaHashSelector": {
+          "@type": "pt:HashSelector",
+          "span_sha256": "d6afc2bc77fd8c29"
+        }
+      }
+    },
+    {
+      "@id": "pt:assertion:ratie-otherness:g2-tc2",
+      "@type": "pt:SourceAssertion",
+      "source_span_ref": "pt:span:ratie-otherness:file:p342-fn63",
+      "attributed_to": "pt:person:isabelle-ratie",
+      "claim": "The 'I'-awareness (aha\u1e43-pratyavamar\u015ba) is not a mere concept, for when one says 'I' one is not eliminating from consciousness whatever is not one's consciousness.",
+      "assertion_type": "INTERPRETIVE",
+      "commitment": "ASSERTS",
+      "extraction_origin": "MACHINE_MATCHED_HUMAN_SOURCE",
+      "verification": "SPAN_VERIFIED",
+      "extraction_activity": "pt:activity:scholar-ingest:v0"
+    },
+    {
+      "@id": "pt:corr:g2-tc2:ratie-otherness",
+      "@type": "pt:CorroborationEvent",
+      "target_ref": "ARG-GOLD-002:G2-TC2",
+      "source_assertion_ref": "pt:assertion:ratie-otherness:g2-tc2",
+      "relation": "DIRECT_SUPPORT",
+      "scope": "PROPOSITION",
+      "semantic_relation": "CONSERVATIVE_PARAPHRASE",
+      "independence": "INDEPENDENT_AUTHOR",
+      "method": "MACHINE_MATCHED_HUMAN_SOURCE",
+      "review_state": "MACHINE_VERIFIED_MAPPING",
+      "defeaters": []
+    }
+  ]
+}

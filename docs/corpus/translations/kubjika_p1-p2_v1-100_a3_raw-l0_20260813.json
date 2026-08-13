@@ -1,0 +1,1306 @@
+{
+  "batch_id": "kubjika_pt1-2_v1-100_a3_raw-l0_20260813",
+  "translations": [
+    {
+      "passage_id": "kubjika:v1",
+      "source_sha256": "5a7a2fe3a638583c584b70a310454a0a35c1ad9a9d4c68b6c8d28569738111ec",
+      "tokens": {
+        "nandīśa": "Nandīśa (Nandi-lord; voc.)",
+        "sarvabhūteṣa": "O lord of all beings (voc.)",
+        "nirañjana": "O stainless one, free from stain (voc.)",
+        "parātpara": "O higher-than-the-highest / supreme beyond the supreme (voc.)"
+      },
+      "close": "O Nandīśa, O Lord of all beings, O stainless one, O supreme beyond the supreme!",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v2",
+      "source_sha256": "1d5e351fc996f3605ea90491dd67a4ad80dc6b9e27f2ef2771f9d55057d43641",
+      "tokens": {
+        "kenopāyena": "by what means (kena + upāyena, instr.)",
+        "deveśa": "O Lord of the gods (voc.)",
+        "nirañjanapadaṃ": "the state (pada) of the Stainless One (acc.)",
+        "labhet": "one would obtain / may obtain (opt.)"
+      },
+      "close": "By what means, O Lord of the gods, may one obtain the state of the Stainless One?",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v3",
+      "source_sha256": "fe1052a628a8476cd22c47cf972054c120bd6ca9f327a2d34d8adb593f71cb29",
+      "tokens": {
+        "samayācāravidhānañca": "and the rule of samaya-conduct (samayācāra-vidhāna + ca)",
+        "sādhanañca": "and the sādhana (means of attainment; ca)",
+        "prakāśaya": "reveal! (impv.)"
+      },
+      "close": "Reveal the ordinance of samaya conduct and the sādhana.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v4",
+      "source_sha256": "00737dda0bbf86040a719a49d0ddb09c71fa8215ead9f25949aa6f797109fc7a",
+      "tokens": {
+        "tatsarvaṃ": "all that (acc.)",
+        "śrotumicchāmi": "I wish to hear (śrotum + icchāmi)",
+        "sādhakānāṃ": "of the sādhakas (practitioners, gen.)",
+        "hitāya": "for the welfare (dat.)",
+        "ca": "and"
+      },
+      "close": "I wish to hear all that — and (it is) for the welfare of sādhakas.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v5",
+      "source_sha256": "2de402416209a4d88a581a28c0f36dfffa1b3edba1a877d55fa825170ecb9e91",
+      "tokens": {
+        "śapathaṃ": "the oath (acc.)",
+        "me": "to me / my",
+        "mahādeva": "O Mahādeva, Great God (voc.)",
+        "vṛhadyoniṃ": "the great Yoni (womb-source; acc.)",
+        "prakāśaya": "reveal! (impv.)"
+      },
+      "close": "O Mahādeva, reveal to me the great Yoni, (bound by) the oath.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v6",
+      "source_sha256": "cd705d02ca8ab29884f254f22abbe09b3ffaf32ab21c6d64ed36de3bfdca7d65",
+      "tokens": {
+        "vedānāṃ": "of the Vedas (gen.)",
+        "sāragamyañca": "and the essence to be attained (sāra-gamya + ca)",
+        "taṃ": "that (acc.)",
+        "sāraṃ": "the essence (acc.)",
+        "me": "to me",
+        "prakāśaya": "reveal! (impv.)"
+      },
+      "close": "Reveal to me that essence — the essence attainable (from) the Vedas.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v7",
+      "source_sha256": "c17f06ef0686c6ccdc19cdaa81ac12eaa8831b10929548d2b97f5c6e3381119a",
+      "tokens": {
+        "sārātsārataraṃ": "more essential than the essential (sārāt + sārataram)",
+        "devi": "O Goddess (voc.)",
+        "parādapi": "even than the supreme (parāt + api)",
+        "paraṃ": "higher (acc.)",
+        "param": "the highest (acc.)"
+      },
+      "close": "O Goddess, (it is) more essential than the essential, higher than the supreme — the highest of all.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v8",
+      "source_sha256": "ef8ff330b78540edbbabd80895d4c0aa2f79e0c84f7036713fdcc95d20aa8680",
+      "tokens": {
+        "satyaṃ": "truth (acc.)",
+        "punaḥ": "again"
+      },
+      "close": "Truth, truth, again truth — truth, truth, truth, again and again.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v9",
+      "source_sha256": "a9965c156b4e76192153d8d4dc616d4333006260245de46b1a8c841a14d41372",
+      "tokens": {
+        "idantu": "but this (idam + tu)",
+        "paramaṃ": "supreme (acc.)",
+        "guhyaṃ": "secret / hidden (acc.)",
+        "triṣu": "in the three (loc.)",
+        "lokeṣu": "worlds (loc.)",
+        "durlabham": "hard to obtain"
+      },
+      "close": "But this supreme secret is hard to obtain in the three worlds.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v10",
+      "source_sha256": "05bd6b062bafa14596a43dfaafcb01a3f6b4330adf6add56c4eca3601853c3e4",
+      "tokens": {
+        "janmāntarasahasre": "thousand of other-births (janmāntara-sahasre) [fragment of janmāntarasahasreṇa]",
+        "a": "",
+        "kathituṃ": "to tell (inf.)",
+        "naiva": "not at all (na + eva)",
+        "śakyate": "is possible / can be done"
+      },
+      "close": "It cannot be told even by a thousand (series of) other births.",
+      "uncertain": ["janmāntarasahasre", "a"]
+    },
+    {
+      "passage_id": "kubjika:v11",
+      "source_sha256": "4640765397241de30c9642d97dbc38c7ffa94891ec0caf8e42e08c698fd558c4",
+      "tokens": {
+        "gopitavyaṃ": "to be concealed (gerundive)",
+        "tvayā": "by you (instr.)",
+        "punaḥ": "again"
+      },
+      "close": "It must be concealed, must be concealed, must be concealed — by you, again.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v12",
+      "source_sha256": "355f04270821bdee37b16330d9ec4c296249ddef3ad035f6a950b59368456789",
+      "tokens": {
+        "mantrārthaṃ": "the meaning of the mantra (acc.)",
+        "mantracaitanyaṃ": "the consciousness (caitanya) of the mantra (acc.)",
+        "yonimudrāṃ": "the yoni-mudrā (womb-seal; acc.)",
+        "na": "not",
+        "vetti": "knows",
+        "yaḥ": "who(ever)"
+      },
+      "close": "Whoever does not know the mantra's meaning, the mantra's consciousness, and the yoni-mudrā —",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v13",
+      "source_sha256": "a345fea35e7e246988c20a544adbf8a6a746f55790f8f63405929ef61775638b",
+      "tokens": {
+        "kathayāmi": "I will tell (1sg.)",
+        "mahāmantraṃ": "the great mantra (acc.)",
+        "mantrārthatvaṃ": "the meaning-essence (tva) of the mantra (acc.)",
+        "sūreśvari": "O Sūreśvarī (voc.; goddess, 'Mistress of the Sun')"
+      },
+      "close": "I will tell the great mantra and the meaning-essence of the mantra, O Sūreśvarī.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v14",
+      "source_sha256": "4680b17d787a6697f490ec570ec0c866d89a0e563b491d1a091601a0e8da0c23",
+      "tokens": {
+        "kevalaṃ": "only / solely",
+        "bhāvaśuddhyā": "by purity of mind (bhāva-śuddhi, instr.)",
+        "ca": "and",
+        "mantrārthaṃ": "the meaning of the mantra (acc.)",
+        "prā": "",
+        "avallabhe": ""
+      },
+      "close": "And only by purity of mind, O beloved of Prāṇa, (is) the mantra's meaning (attained).",
+      "uncertain": ["prā", "avallabhe"]
+    },
+    {
+      "passage_id": "kubjika:v15",
+      "source_sha256": "119e75e49a4c1b687da1ab160f414c8c8da825efe52f810812718c6ea5e9ff36",
+      "tokens": {
+        "kālī": "Kālī (goddess)",
+        "tārā": "Tārā (goddess)",
+        "mahādevi": "the Great Goddess (Mahādevī)",
+        "bhuvaneśī": "Bhuvaneśī (Mistress of the worlds)",
+        "ca": "and",
+        "ṣoḍaśī": "Ṣoḍaśī (the Sixteenth)"
+      },
+      "close": "Kālī, Tārā, Mahādevī, Bhuvaneśī, and Ṣoḍaśī.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v16",
+      "source_sha256": "c82589c0c66b9fe186b00f103ce7e84186fd51929d3ca37fc20e4d074307fa3a",
+      "tokens": {
+        "vagalā": "Bagalā (Vagalā; goddess)",
+        "caiva": "and indeed (ca + eva)",
+        "mātaṅgī": "Mātaṅgī (goddess)",
+        "kamalā": "Kamalā (goddess)",
+        "ca": "and",
+        "prakīrtitā": "is proclaimed / declared"
+      },
+      "close": "And Bagalā, Mātaṅgī, and Kamalā are proclaimed.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v17",
+      "source_sha256": "d1bcda1272e7d3f3b147960561c40fba3ff378d5863bb3e799a391506a7efd32",
+      "tokens": {
+        "bhogadā": "bestower of enjoyment (bhoga-dā)",
+        "mokṣā": "liberation (mokṣā; verse pattern suggests mokṣadā 'bestower of liberation')",
+        "devī": "the Goddess",
+        "koṭibrahmā": "ten million brahmāṇḍa- (universe-eggs) [fragment]",
+        "ḍagopitā": "concealed by [fragment of -brahmāṇḍagopitā]"
+      },
+      "close": "The Goddess is the bestower of enjoyment and liberation, concealed by ten million brahmāṇḍas (universes).",
+      "uncertain": ["mokṣā", "koṭibrahmā", "ḍagopitā"]
+    },
+    {
+      "passage_id": "kubjika:v18",
+      "source_sha256": "fcfa2db0466ae99a20b758037d2c725c3e029ca16f4084d240c86f22537e8f39",
+      "tokens": {
+        "devadevaprā": "life-breath of the God of gods (devadeva-prāṇa-) [fragment]",
+        "amayī": "consisting of (-mayī) [fragment]",
+        "sarvadevasvarūpi": "having the form of all gods (sarvadeva-svarūpiṇī) [fragment]",
+        "ī": "fem. ending -ī [fragment]"
+      },
+      "close": "She is made of the life-breath of the God of gods; she has the form of all gods.",
+      "uncertain": ["devadevaprā", "amayī", "sarvadevasvarūpi", "ī"]
+    },
+    {
+      "passage_id": "kubjika:v19",
+      "source_sha256": "8aac8cf4622333943c937b328ff74255e7a46fccf511e8763e612d88bfe968c4",
+      "tokens": {
+        "sṛṣṭisthitikarī": "she who effects creation and maintenance",
+        "devī": "the Goddess",
+        "viṣ": "Viṣṇu- [fragment]",
+        "urūpā": "-rūpā, having the form [fragment]",
+        "maheśvarī": "Maheśvarī (the Great Sovereign Goddess)"
+      },
+      "close": "The Goddess who effects creation and maintenance, having the form of Viṣṇu, is Maheśvarī.",
+      "uncertain": ["viṣ", "urūpā"]
+    },
+    {
+      "passage_id": "kubjika:v20",
+      "source_sha256": "3be5104cb9222050cc57b0cf6744093d6abe8d43d619b51c7fa2e15df64db500",
+      "tokens": {
+        "asyāḥ": "of her / of this (gen.)",
+        "śrava": "hearing (śravaṇa-) [fragment]",
+        "amātre": "by mere (-mātreṇa) [fragment]",
+        "a": "",
+        "jīvanmuktaśca": "and liberated-while-living (jīvanmukta + ca)",
+        "sādhakaḥ": "the sādhaka (practitioner)"
+      },
+      "close": "By the mere hearing of her, the sādhaka becomes liberated while living.",
+      "uncertain": ["śrava", "amātre", "a"]
+    },
+    {
+      "passage_id": "kubjika:v21",
+      "source_sha256": "7d06b7bfecd80fa2e81491bf93b787936f454204a4907bf30f6b35fa20210d26",
+      "tokens": {
+        "tat": "that (acc.)",
+        "śrutvā": "having heard",
+        "pitaraḥ": "the fathers (ancestors)",
+        "sarve": "all",
+        "nṛtyanti": "they dance",
+        "hṛṣṭamānasāḥ": "with joyful minds"
+      },
+      "close": "Having heard that, all the ancestors dance, their minds filled with joy.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v22",
+      "source_sha256": "2b6ec07eb6d514d8930013fb90aa48f1ce9f82ab6698faab9a9eabe3dbcdc27f",
+      "tokens": {
+        "adeyāpi": "even though not to be given (adeyā + api)",
+        "mahāvidyā": "the great Vidyā (Mahāvidyā)",
+        "kalau": "in the Kali age (loc.)",
+        "pūr": "full (pūrṇa-) [fragment]",
+        "aphalapradā": "fruit-bestowing (-phalapradā) [fragment]"
+      },
+      "close": "Even though it is not to be given, the Mahāvidyā bestows full fruit in the Kali age.",
+      "uncertain": ["pūr", "aphalapradā"]
+    },
+    {
+      "passage_id": "kubjika:v23",
+      "source_sha256": "cc9972c27b98e9e26a04553a0238bd6b8134dcc794e6086cc01e9585ef47f60d",
+      "tokens": {
+        "āgamoktavidhānena": "by the rule declared in the Āgama (instr.)",
+        "kalau": "in the Kali age (loc.)",
+        "devān": "the gods (acc.)",
+        "yajet": "should worship (opt.)",
+        "sudhīḥ": "the wise one"
+      },
+      "close": "In the Kali age, the wise one should worship the gods by the rule declared in the Āgama.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v24",
+      "source_sha256": "9be838957bb4a58f9712dbad8eed2dd25d11dd5377342f28cdff531978efe6e7",
+      "tokens": {
+        "kālikā": "Kālikā (goddess)",
+        "mokṣadā": "bestower of liberation",
+        "devi": "O Goddess (voc.)",
+        "kalau": "in the Kali age (loc.)",
+        "śīghraphalapradā": "bestower of swift fruit"
+      },
+      "close": "Kālikā, O Goddess, bestows liberation in the Kali age — she grants swift fruit.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v25",
+      "source_sha256": "5d1896d3d80dcbae119adbcffbc310703ff801000d355746b127381bd6eba202",
+      "tokens": {
+        "brahmā": "Brahmā(ṇī) [fragment]",
+        "ī": "fem. ending -ī (→ Brahmāṇī) [fragment]",
+        "kurute": "performs",
+        "sṛṣṭiṃ": "creation (acc.)",
+        "na": "not",
+        "tu": "but",
+        "brahmā": "Brahmā",
+        "kadācana": "at any time / ever"
+      },
+      "close": "Brahmāṇī performs creation, but never Brahmā.",
+      "uncertain": ["brahmā", "ī"]
+    },
+    {
+      "passage_id": "kubjika:v26",
+      "source_sha256": "665f476f2a8934835011dbdffe83e350f6c775956ee008e7c4c7e36421eeb7c8",
+      "tokens": {
+        "pālanaṃ": "protection (acc.)",
+        "vaiṣ": "Vaiṣṇavī- [fragment]",
+        "avī": "-vī (→ Vaiṣṇavī) [fragment]",
+        "devi": "O Goddess (voc.)",
+        "na": "not",
+        "tu": "but",
+        "viṣ": "Viṣṇu- [fragment]",
+        "uḥ": "",
+        "kadācana": "at any time / ever"
+      },
+      "close": "Protection (is done) by Vaiṣṇavī, O Goddess, but never by Viṣṇu.",
+      "uncertain": ["vaiṣ", "avī", "viṣ", "uḥ"]
+    },
+    {
+      "passage_id": "kubjika:v27",
+      "source_sha256": "c8d32b41d334e2c9c20c47908bf16ece79bfe9496e55689c0b843700d325a6ff",
+      "tokens": {
+        "rudrā": "Rudrā(ṇī) [fragment]",
+        "ī": "fem. ending -ī (→ Rudrāṇī) [fragment]",
+        "kurute": "performs",
+        "grāsaṃ": "the devouring (grāsa; acc.)",
+        "na": "not",
+        "tu": "but",
+        "rudraḥ": "Rudra",
+        "kadācana": "at any time / ever"
+      },
+      "close": "Rudrāṇī performs the devouring, but never Rudra.",
+      "uncertain": ["rudrā", "ī"]
+    },
+    {
+      "passage_id": "kubjika:v28",
+      "source_sha256": "dd954f05809482769c912ac204fe0c1f27cc7c174e124a491a80238585a0e47e",
+      "tokens": {
+        "brahmaviṣ": "Brahmā, Viṣṇu- [fragment]",
+        "umaheśādyā": "-Maheśa and the rest (ādyāḥ) [fragment]",
+        "jaḍāścaiva": "and indeed inert (jaḍāḥ + ca + eva)",
+        "prakīrtitāḥ": "are proclaimed"
+      },
+      "close": "Brahmā, Viṣṇu, Maheśa, and the rest are proclaimed to be mere inert matter (jaḍa).",
+      "uncertain": ["brahmaviṣ", "umaheśādyā"]
+    },
+    {
+      "passage_id": "kubjika:v29",
+      "source_sha256": "95ff7c3b349413e410e4b380eb527d072166229f6d68e634d1efebac6fbdbd83",
+      "tokens": {
+        "dharmādharmādikaṃ": "dharma, adharma, and the like (acc.)",
+        "yasmāt": "because of whom (rel. abl.)",
+        "kurute": "performs",
+        "sādhakottamaḥ": "the best of sādhakas"
+      },
+      "close": "Because of whom the best of sādhakas performs dharma, adharma, and the like.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v30",
+      "source_sha256": "6ad559715c956c071705fffb5c9b35056085351b716e5a6df43653847f162aa5",
+      "tokens": {
+        "saṃpradāyavidhānena": "by the rule of the tradition (saṃpradāya-vidhāna, instr.)",
+        "kartavyañca": "and must be done (kartavya + ca)",
+        "maheśvari": "O Maheśvarī (voc.)"
+      },
+      "close": "And it must be done according to the rule of the tradition, O Maheśvarī.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v31",
+      "source_sha256": "2a2be462bf066986a531dc80d3505e1fea877f554265a62052f2a78a8ac6e04e",
+      "tokens": {
+        "yā": "she who (rel. fem.)",
+        "tu": "but / indeed",
+        "kṛṣ": "Kṛṣṇā (the Dark One) [fragment]",
+        "ā": "fem. ending -ā [fragment]",
+        "saiva": "she indeed (sā + eva)",
+        "astathā": "tathā, likewise [fragment]",
+        "brahmā": "Brahmā",
+        "prakīrtitaḥ": "is proclaimed"
+      },
+      "close": "She who is Kṛṣṇā — she indeed is Kṛṣṇa; likewise Brahmā is proclaimed.",
+      "uncertain": ["kṛṣ", "ā", "astathā"]
+    },
+    {
+      "passage_id": "kubjika:v32",
+      "source_sha256": "3522439a886b1c41b1687c4a5641e2aef93c595b637448c69f6dd2de3c829438",
+      "tokens": {
+        "vibhinnaṃ": "as distinct / different (acc.)",
+        "cintayedyastu": "who indeed thinks (cintayet + yaḥ + tu)",
+        "mūḍhabuddhiḥ": "of deluded intellect",
+        "sa": "he",
+        "pātakī": "a sinner"
+      },
+      "close": "But whoever, of deluded intellect, thinks (them) distinct — he is a sinner.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v33",
+      "source_sha256": "925e157af8a909535ce7897cd05a825d49f236213b540dd56d2770d7bef5e1fb",
+      "tokens": {
+        "abhedañcintayedyastu": "who indeed thinks non-distinction (abheda + cintayet + yaḥ + tu)",
+        "sa": "he",
+        "yogī": "a yogin",
+        "nātra": "not here (na + atra)",
+        "saṃśayaḥ": "doubt"
+      },
+      "close": "But whoever thinks (them) non-distinct — he is a yogin; here there is no doubt.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v34",
+      "source_sha256": "738b33bd46bdac5ccfd8796f99649bd8fa757e9426aa8e773211a7a8c0fa3521",
+      "tokens": {
+        "vaṃśīnādavinodena": "by the delight of the flute's sound (instr.)",
+        "mohayatyakhilaṃ": "deludes the whole (mohayati + akhilam)",
+        "jagat": "world"
+      },
+      "close": "By the delight of the flute's sound, she deludes the entire world.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v35",
+      "source_sha256": "1eb21a4a6ee6c02f459fdb190feb9c2c82235a6fa6acd81dd2ac791af968eff2",
+      "tokens": {
+        "kalau": "in the Kali age (loc.)",
+        "kṛṣ": "black- (kṛṣṇa-) [fragment]",
+        "atvamāsādya": "having attained -ness (tva + āsādya) [fragment]",
+        "śuklāpi": "even though white (śuklā + api)",
+        "nīlarūpi": "dark-blue-formed (nīla-rūpiṇī) [fragment]",
+        "ī": "fem. ending -ī [fragment]"
+      },
+      "close": "In the Kali age, having attained blackness, she is dark-blue in form even though she is white.",
+      "uncertain": ["kṛṣ", "atvamāsādya", "nīlarūpi", "ī"]
+    },
+    {
+      "passage_id": "kubjika:v36",
+      "source_sha256": "8aec98660eb91ddd48a4080a26bdb658c51f3026b21dd0c0f4b9fc50e2309d06",
+      "tokens": {
+        "p": "",
+        "tārakatvāt": "because of (her) ferrying-across / saving nature (tāraka-tva, abl.)",
+        "sadā": "always",
+        "tārā": "Tārā (goddess)",
+        "tāri": "Tāriṇī (she who ferries across) [fragment]",
+        "īti": "iti, thus [fragment]",
+        "prakīrtitā": "is proclaimed"
+      },
+      "close": "Because of her saving (tāraka) nature, Tārā is always proclaimed 'Tāriṇī'.",
+      "uncertain": ["p", "tāri", "īti"]
+    },
+    {
+      "passage_id": "kubjika:v37",
+      "source_sha256": "8d1fe0dab2e41a73a12ff2e2ae08287ccd850b02d4bf2af068de00a7a06bf3d8",
+      "tokens": {
+        "sṛṣṭisthitikarī": "she who effects creation and maintenance",
+        "devī": "the Goddess",
+        "bhuvaneśī": "Bhuvaneśī (Mistress of the worlds)",
+        "ca": "and",
+        "kathyate": "is said / is called"
+      },
+      "close": "The Goddess who effects creation and maintenance is also called Bhuvaneśī.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v38",
+      "source_sha256": "019eae940209f031cef92bdc081a44ccb174e728051107a46ab46eaf8f939723",
+      "tokens": {
+        "nirgu": "quality-less (nirguṇa-) [fragment]",
+        "ā": "fem. ending -ā [fragment]",
+        "ca": "and",
+        "mahādevī": "the Great Goddess",
+        "ṣoḍaśī": "Ṣoḍaśī (the Sixteenth)",
+        "parikīrtitā": "is proclaimed"
+      },
+      "close": "And the Great Goddess, devoid of qualities, is proclaimed Ṣoḍaśī.",
+      "uncertain": ["nirgu", "ā"]
+    },
+    {
+      "passage_id": "kubjika:v39",
+      "source_sha256": "4ca713c8182338cc0d74f0eca6b2d72c0c634c43c8e3e4e52bedf2f0107eef5b",
+      "tokens": {
+        "kālabhairavabhāryā": "the wife of Kālabhairava",
+        "ca": "and",
+        "bhairavī": "Bhairavī (goddess)",
+        "parikīrtitā": "is proclaimed"
+      },
+      "close": "And she, the wife of Kālabhairava, is proclaimed Bhairavī.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v40",
+      "source_sha256": "6b47b3cd626e423ec5ce04ae895054a0706ab1fe6fe833fed916b986ca1ca24a",
+      "tokens": {
+        "trigu": "three-guṇa (triguṇa-) [fragment]",
+        "ā": "fem. ending -ā [fragment]",
+        "ca": "and",
+        "mahādevī": "the Great Goddess",
+        "mohinī": "Mohinī (the Enchantress)",
+        "mokṣadā": "bestower of liberation",
+        "dhruvam": "certainly"
+      },
+      "close": "And the Great Goddess, possessed of the three guṇas, is the Enchantress Mohinī, bestower of liberation — certainly.",
+      "uncertain": ["trigu", "ā"]
+    },
+    {
+      "passage_id": "kubjika:v41",
+      "source_sha256": "b8f6cfab94df847baeb9de28a9cf06332bb604f658dd166bce4c67a03be5ff82",
+      "tokens": {
+        "dhūmarupā": "having the form of smoke (dhūma-rūpā)",
+        "mahādevī": "the Great Goddess",
+        "caturvargapradāyinī": "bestower of the four aims (dharma, artha, kāma, mokṣa)"
+      },
+      "close": "The Great Goddess, having the form of smoke, is the bestower of the four aims (caturvarga).",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v42",
+      "source_sha256": "83c3ed3c6d05fcb4675b08eb505b0aad538f0fbbfe7cf2281c18d35dfd5fc43b",
+      "tokens": {
+        "vakāre": "in the letter va (loc.)",
+        "vāru": "Vāruṇī- [fragment]",
+        "ī": "fem. ending -ī (→ Vāruṇī) [fragment]",
+        "devī": "the Goddess",
+        "gakāre": "in the letter ga (loc.)",
+        "siddhidā": "bestower of siddhi",
+        "smṛtā": "is declared / is remembered"
+      },
+      "close": "In the letter va (resides) the Goddess Vāruṇī; in the letter ga she is declared the bestower of siddhi.",
+      "uncertain": ["vāru", "ī"]
+    },
+    {
+      "passage_id": "kubjika:v43",
+      "source_sha256": "ddc635ec1f9cfcf8e800a200997af0f23b0bd89c6b5a06622ee6b73322a5b529",
+      "tokens": {
+        "mātaṅgī": "Mātaṅgī (goddess)",
+        "madaśīlatvānmataṅgāsuranāśinī": "from (her) nature of intoxication, the destroyer of the demon Mataṅga (mada-śīla-tvāt + mataṅgāsura-nāśinī)"
+      },
+      "close": "Mātaṅgī, by her nature of intoxication, is the destroyer of the demon Mataṅga.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v44",
+      "source_sha256": "e9009aab313d4d01ba7d8c99b56362cab9c75b1da896873e19df61841a766267",
+      "tokens": {
+        "vaiku": "Vaikuṇṭha- [fragment]",
+        "ṭhavāsinī": "-vāsinī, dwelling in [fragment]",
+        "devī": "the Goddess",
+        "kamalā": "Kamalā (goddess)",
+        "ca": "and",
+        "prakīrtitā": "is proclaimed"
+      },
+      "close": "And the Goddess Kamalā, dwelling in Vaikuṇṭha, is proclaimed.",
+      "uncertain": ["vaiku", "ṭhavāsinī"]
+    },
+    {
+      "passage_id": "kubjika:v45",
+      "source_sha256": "066a2b7e0af604971a8cf4004f8aeb8c6da5cccde54b17aae206ea044852141f",
+      "tokens": {
+        "etādaśa": "these ten (etāḥ + daśa)",
+        "mahāvidyāḥ": "the great Vidyās (Mahāvidyās)",
+        "siddhavidyā": "the Siddhavidyā (the Perfected Vidyā)",
+        "ca": "and",
+        "kathyate": "is said / is called"
+      },
+      "close": "These ten are the Mahāvidyās; and (she) is called the Siddhavidyā.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v46",
+      "source_sha256": "28bac5fb13693a098871e231c80241c4083b0eda7fff264d9c68c9bf35f2e1fa",
+      "tokens": {
+        "yena": "by which (instr.)",
+        "tena": "by that (instr.)",
+        "prakāre": "manner (prakāra-) [fragment]",
+        "a": "",
+        "kalau": "in the Kali age (loc.)",
+        "pūr": "full (pūrṇa-) [fragment]",
+        "aphalapradā": "fruit-bestowing (-phalapradā) [fragment]"
+      },
+      "close": "In the Kali age, by whatever manner, she bestows full fruit.",
+      "uncertain": ["prakāre", "a", "pūr", "aphalapradā"]
+    },
+    {
+      "passage_id": "kubjika:v47",
+      "source_sha256": "b097b9e2b5de742ca74fbdbc34af713aca56dcc2334ef0b611eb74bc1dff5fe9",
+      "tokens": {
+        "pāṣa": "heretic (pāṣaṇḍa-) [fragment]",
+        "ḍe": "-ṇḍe, loc. ending [fragment]",
+        "ca": "and",
+        "śaṭhe": "toward a rogue / deceiver (loc.)",
+        "caiva": "and indeed",
+        "nirgu": "quality-less (nirguṇa-) [fragment]",
+        "e": "loc. ending -e [fragment]",
+        "nindake": "toward a reviler / censorious one (loc.)"
+      },
+      "close": "To a heretic, to a rogue, and indeed to one devoid of qualities, and indeed to a reviler —",
+      "uncertain": ["pāṣa", "ḍe", "nirgu", "e"]
+    },
+    {
+      "passage_id": "kubjika:v48",
+      "source_sha256": "6f785242f9cd7dfa7fcb711a9d21102d01790859b06f61f25b6c3e567a18ef2e",
+      "tokens": {
+        "na": "not",
+        "prakāśyamidaṃ": "this is to be revealed (prakāśya + idam)",
+        "bhadre": "O blessed one (voc.)",
+        "śapathaṃ": "the oath (acc.)",
+        "me": "my / to me",
+        "dhruvaṃ": "fixed / certainly",
+        "sadā": "always"
+      },
+      "close": "This must not be revealed, O blessed one — it is my fixed oath, always.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v49",
+      "source_sha256": "90672d675daf0059860a43106558c211d4c78fd4c4061118ac8b1e1ab546c2bf",
+      "tokens": {
+        "āsāñcaiva": "and indeed of these (āsām + ca + eva)",
+        "samā": "an equal (fem.)",
+        "nāsti": "there is not",
+        "tribhuvane": "in the three worlds (loc.)",
+        "dhruvam": "certainly"
+      },
+      "close": "Of these there is no equal — none in the three worlds, certainly.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v50",
+      "source_sha256": "b36d28721489114046cf9b530d4a4949a5c500d680f187161ab06e0c3e1e4e17",
+      "tokens": {
+        "smara": "remembrance (smaraṇa-) [fragment]",
+        "enaiva": "indeed by (-eṇa + eva) [fragment]",
+        "deveśi": "O Devī, Mistress of the gods (voc.)",
+        "mucyate": "is released",
+        "bhavabandhanāt": "from the bondage of existence (abl.)"
+      },
+      "close": "By mere remembrance (of her), O Devī, one is released from the bondage of worldly existence.",
+      "uncertain": ["smara", "enaiva"]
+    },
+    {
+      "passage_id": "kubjika:v51",
+      "source_sha256": "47801d0300d77aed5d3be2eb827218b8afd193e050fb5dae4bed2cdb4e4bb722",
+      "tokens": {
+        "nirgu": "Nirguṇā (the Qualityless One) [fragment]",
+        "āccaiva": "and indeed from (her) (āc + ca + eva) [fragment]",
+        "saṃjātā": "born / arisen (fem.)",
+        "vindavastraya": "the three bindus (vindavaḥ + trayaḥ)",
+        "eva": "indeed",
+        "ca": "and"
+      },
+      "close": "And indeed from Nirguṇā were born the three bindus.",
+      "uncertain": ["nirgu", "āccaiva"]
+    },
+    {
+      "passage_id": "kubjika:v52",
+      "source_sha256": "ded8ca224902047f1c2419d78f39d77519550b941e280d86445d2052535c4d11",
+      "tokens": {
+        "āsīdavindustato": "there was the Bindu; from that (āsīt + avinduḥ + tataḥ)",
+        "nādo": "the Nāda (inner sound-current)",
+        "nādāt": "from the Nāda (abl.)",
+        "śaktisamudbhavaḥ": "the arising of Śakti (Goddess-power / mantric power)"
+      },
+      "close": "There was the Bindu; from it (arose) the Nāda; from the Nāda, the arising of Śakti.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v53",
+      "source_sha256": "016eb0db578fabc8847892979ba0b05bdf59833746208e543cceaed1a266d784",
+      "tokens": {
+        "nādāccaiva": "and indeed from the Nāda (nādāt + ca + eva)",
+        "samutpannā": "arisen forth (fem.)",
+        "arddhabindurmaheśvari": "the half-Bindu, O Maheśvarī (ardhabinduḥ + maheśvari)"
+      },
+      "close": "And indeed from the Nāda arose the half-Bindu (ardha-bindu), O Maheśvarī.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v54",
+      "source_sha256": "0c2cecea817fe02c88cb2cd40078c98e23d48bfff5ccff8709a450bfa69530ea",
+      "tokens": {
+        "nirgu": "quality-less (nirguṇa-) [fragment]",
+        "ā": "fem. ending -ā [fragment]",
+        "sagu": "with qualities (saguṇa-) [fragment]",
+        "devī": "the Goddess",
+        "brahmarūpā": "having the form of Brahman",
+        "sanātanī": "eternal"
+      },
+      "close": "The Goddess is without qualities and with qualities, having the form of Brahman, eternal.",
+      "uncertain": ["nirgu", "ā", "sagu"]
+    },
+    {
+      "passage_id": "kubjika:v55",
+      "source_sha256": "f54d6762e8b9e4aaaaa0a91f3092f8f327440852c012a0800d99b6ecd85fc9d9",
+      "tokens": {
+        "caitanyarūpi": "consciousness-formed (caitanya-rūpiṇī) [fragment]",
+        "ī": "fem. ending -ī [fragment]",
+        "devī": "the Goddess",
+        "sarvabhūtaprakāśinī": "she who illumines all beings"
+      },
+      "close": "The Goddess, whose form is consciousness, illumines all beings.",
+      "uncertain": ["caitanyarūpi", "ī"]
+    },
+    {
+      "passage_id": "kubjika:v56",
+      "source_sha256": "4b0c7023fa2d98adaf936793c4be72e2278c54780f9373246f9550839bff594c",
+      "tokens": {
+        "nirgu": "quality-less (nirguṇa-) [fragment]",
+        "ā": "fem. ending -ā [fragment]",
+        "sā": "she",
+        "ca": "and",
+        "vijñeyā": "is to be known (gerundive)",
+        "brahmarūpā": "having the form of Brahman",
+        "kevalā": "alone / only"
+      },
+      "close": "And she is to be known as quality-less, as having the form of Brahman, and as alone (kevalā).",
+      "uncertain": ["nirgu", "ā"]
+    },
+    {
+      "passage_id": "kubjika:v57",
+      "source_sha256": "bc8a1f9a4cc32bd78b3ef9ef36ab0c69cde2df1a9ccb72ccb127647ac5bbc7ba",
+      "tokens": {
+        "caturgu": "four-guṇa (caturguṇa-) [fragment]",
+        "ā": "fem. ending -ā [fragment]",
+        "maheśāni": "O Maheśānī (voc.)",
+        "caturvedaprabhāvinī": "she who irradiates the four Vedas"
+      },
+      "close": "Four-qualitied, O Maheśānī, she irradiates the four Vedas.",
+      "uncertain": ["caturgu", "ā"]
+    },
+    {
+      "passage_id": "kubjika:v58",
+      "source_sha256": "212ea36e681983f898657540285e39586630268e61fa1034ba4c8c55b46ac7b5",
+      "tokens": {
+        "sarvagu": "all-guṇa (sarvaguṇa-) [fragment]",
+        "ā": "fem. ending -ā [fragment]",
+        "mahādevī": "the Great Goddess",
+        "sarvaviśvaprabhāvinī": "she who irradiates the entire universe"
+      },
+      "close": "The Great Goddess, possessed of all qualities, irradiates the entire universe.",
+      "uncertain": ["sarvagu", "ā"]
+    },
+    {
+      "passage_id": "kubjika:v59",
+      "source_sha256": "449b23a5b60d1c18d39f6544d548b940595a74e5cd77916c971bd82b1cdf0c49",
+      "tokens": {
+        "brahmaviṣ": "Brahmā, Viṣṇu- [fragment]",
+        "uśivādīnāṃ": "-Śiva and the rest, of (gen.) [fragment]",
+        "jananī": "the mother",
+        "surasundari": "O beautiful one of the gods (voc.)"
+      },
+      "close": "The mother of Brahmā, Viṣṇu, Śiva, and the rest — O beautiful goddess.",
+      "uncertain": ["brahmaviṣ", "uśivādīnāṃ"]
+    },
+    {
+      "passage_id": "kubjika:v60",
+      "source_sha256": "229a8a57a42f36ba4bf8697431ed59eeea77d42d3a1a006ce5698ac2a3899af0",
+      "tokens": {
+        "ekagu": "one-guṇa (ekaguṇa-) [fragment]",
+        "ā": "fem. ending -ā [fragment]",
+        "mahādevī": "the Great Goddess",
+        "ekākṣarasvarūpi": "having the form of the single syllable (eka-akṣara-rūpiṇī) [fragment]",
+        "ī": "fem. ending -ī [fragment]"
+      },
+      "close": "The Great Goddess, of one quality, has the form of the single syllable.",
+      "uncertain": ["ekagu", "ā", "ekākṣarasvarūpi", "ī"]
+    },
+    {
+      "passage_id": "kubjika:v61",
+      "source_sha256": "6948719089122f7b0c9619abc489d9db2cbfadab59765b72fad75edc3ea81be9",
+      "tokens": {
+        "trigu": "three-guṇa (triguṇa-) [fragment]",
+        "ā": "fem. ending -ā [fragment]",
+        "tu": "but / indeed",
+        "mahādevī": "the Great Goddess",
+        "tryakṣarī": "three-syllabled",
+        "parikīrttitā": "is proclaimed"
+      },
+      "close": "But the Great Goddess, three-qualitied, is proclaimed three-syllabled (tryakṣarī).",
+      "uncertain": ["trigu", "ā"]
+    },
+    {
+      "passage_id": "kubjika:v62",
+      "source_sha256": "972159bd64322b0af1a0d6d2a458a5240f482dc51c214451195d72ca9b30e79b",
+      "tokens": {
+        "navagu": "nine-guṇa (navaguṇa-) [fragment]",
+        "ā": "fem. ending -ā [fragment]",
+        "maheśāni": "O Maheśānī (voc.)",
+        "navākṣaraprakāśinī": "she who illumines the nine syllables"
+      },
+      "close": "Nine-qualitied, O Maheśānī, she illumines the nine syllables.",
+      "uncertain": ["navagu", "ā"]
+    },
+    {
+      "passage_id": "kubjika:v63",
+      "source_sha256": "d66e062c81867032f301a93adf1c27327efdea24dd891839d878a83634480ab8",
+      "tokens": {
+        "dvādaśatrayodaśe": "in the twelve (and) thirteen (loc.)",
+        "caiva": "and indeed",
+        "dvādaśī": "the twelfth (Dvādaśī)",
+        "tridaśātmikā": "of the nature of the thirty"
+      },
+      "close": "And indeed in the twelve and the thirteen, (she is) the Twelfth, of the nature of the thirty.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v64",
+      "source_sha256": "bc1cdacba8dbda3aca306b74ac39155728ac08deada5f6e2eb326df5b1786dcb",
+      "tokens": {
+        "pañcadaśātmikā": "of the nature of fifteen",
+        "devī": "the Goddess",
+        "pañcadaśaprakāśinī": "she who illumines the fifteen"
+      },
+      "close": "The Goddess, of the nature of fifteen, illumines the fifteen.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v65",
+      "source_sha256": "cef8b43ba013ce52ca3c96fb80603f86ee24481bd73f05d44565903914b8a13d",
+      "tokens": {
+        "daśasaptaga": "the group of ten and seven (daśa-sapta-gaṇa-) [fragment]",
+        "opetā": "endowed with",
+        "saptadaśā": "the seventeen(-syllabled one)",
+        "prakīrtitā": "is proclaimed"
+      },
+      "close": "Endowed with the group of ten and seven, she is proclaimed the Seventeen.",
+      "uncertain": ["daśasaptaga"]
+    },
+    {
+      "passage_id": "kubjika:v66",
+      "source_sha256": "ce86b4241cd0e52c60e9d5b0d48a869db182ee5f1b76fb6c59b7bd788c95d1c2",
+      "tokens": {
+        "aṣṭāviṃśagu": "twenty-eight- (aṣṭāviṃśa-) [fragment]",
+        "opetā": "endowed with",
+        "paramārādhyarūpi": "supremely-worship-worthy-formed (parama-ārādhya-rūpiṇī) [fragment]",
+        "ī": "fem. ending -ī [fragment]"
+      },
+      "close": "Endowed with twenty-eight, she has a form supremely worthy of worship.",
+      "uncertain": ["aṣṭāviṃśagu", "paramārādhyarūpi", "ī"]
+    },
+    {
+      "passage_id": "kubjika:v67",
+      "source_sha256": "ef671bd0d93f1529a8912e8f7f3f4f48832cde13e9dbb3de8b2142006bdc7069",
+      "tokens": {
+        "viṃśatyar": "twenty- (viṃśati-) [fragment]",
+        "ādhikāmantrā": "the mantras with more (syllables) (ādhikā + mantrāḥ) [fragment]",
+        "mālāmantrāḥ": "the garland-mantras (mālā-mantra)",
+        "prakīrtitāḥ": "are proclaimed"
+      },
+      "close": "The mantras with more than twenty syllables are proclaimed the garland-mantras.",
+      "uncertain": ["viṃśatyar", "ādhikāmantrā"]
+    },
+    {
+      "passage_id": "kubjika:v68",
+      "source_sha256": "41eda03d4ce790d34298c4233b6b035c07e1022643fe3457c00a55ec5ad99a82",
+      "tokens": {
+        "trayoviṃśa": "twenty-three",
+        "caturviṃśa": "twenty-four",
+        "pañcaviṃśaprakīrtitā": "proclaimed twenty-five (pañcaviṃśa + prakīrtitā)"
+      },
+      "close": "She is proclaimed twenty-three, twenty-four, (and) twenty-five.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v69",
+      "source_sha256": "ea47a955973864234ca92c270fab2833dcac5eefd62d58e5f829d6cc098d8f33",
+      "tokens": {
+        "aṣṭāviṃśagu": "twenty-eight- (aṣṭāviṃśa-) [fragment]",
+        "opetā": "endowed with",
+        "aṣṭāviṃśat": "twenty-eight",
+        "prakīrtitā": "is proclaimed"
+      },
+      "close": "Endowed with twenty-eight, she is proclaimed (as) twenty-eight.",
+      "uncertain": ["aṣṭāviṃśagu"]
+    },
+    {
+      "passage_id": "kubjika:v70",
+      "source_sha256": "d4a6b52fe386c5b08bb33b293407a680505a4ea66125a3383efffd687ae71ebf",
+      "tokens": {
+        "triṃśadādyāścatuḥṣaṣṭi": "thirty and the rest up to sixty-four (triṃśat + ādyāḥ + catuḥṣaṣṭi)",
+        "dīrghamantrāḥ": "the long mantras",
+        "prakīrtitāḥ": "are proclaimed"
+      },
+      "close": "Beginning with thirty up to sixty-four, they are proclaimed the long mantras.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v71",
+      "source_sha256": "374934d9933888cb9876bbcbc8182b9004200412b8f84c0e58b808f8f260112d",
+      "tokens": {
+        "svāhāyuktāśca": "and those joined with svāhā",
+        "ye": "which / those that",
+        "mantrāḥ": "mantras",
+        "śaktimantrāśca": "and the Śakti-mantras (mantras of the Goddess-power)",
+        "pārvati": "O Pārvatī (voc.)"
+      },
+      "close": "Those mantras that are joined with svāhā are the Śakti-mantras, O Pārvatī.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v72",
+      "source_sha256": "1f686e4c5c4553c84751d0e8b7db003fa1fd8debf807791031becb736078002e",
+      "tokens": {
+        "iti": "thus",
+        "kubjikātantre": "in the Kubjikā Tantra (loc.)",
+        "pārvatīparameśvarasaṃvāde": "in the dialogue of Pārvatī and Parameśvara (loc.)",
+        "prathamaḥ": "first",
+        "paṭalaḥ": "chapter (paṭala)"
+      },
+      "close": "Thus, in the Kubjikā Tantra, in the dialogue between Pārvatī and Parameśvara, (ends) the first chapter.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v73",
+      "source_sha256": "98dfbe33cee4a3226bb71cda077c84b024073a550fbd7917a5b442149c3a30d4",
+      "tokens": {
+        "vinā": "without",
+        "yena": "whom / which (instr.)",
+        "na": "not",
+        "siddheta": "would be accomplished (opt.)",
+        "japapūjādikaṃ": "japa, worship, and the like",
+        "kvacit": "anywhere / at any time"
+      },
+      "close": "Without whom japa, worship, and the like would never be accomplished anywhere.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v74",
+      "source_sha256": "1523043227e160743ad181eb5d0baefe15245d0fcfc265938c0072e430fd9ba5",
+      "tokens": {
+        "kakāraḥ": "the letter ka",
+        "kāmadaḥ": "bestower of desires",
+        "prokto": "is declared",
+        "rephaḥ": "the letter ra (repha)",
+        "pāpasya": "of sin (gen.)",
+        "nāśakaḥ": "destroyer"
+      },
+      "close": "The letter ka is declared the bestower of desires; the letter ra is the destroyer of sin.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v75",
+      "source_sha256": "4d5665ca26f17dd0fdba97a52c7382fc09fa471f0c84c7fff269694f2abc1f3e",
+      "tokens": {
+        "nādarūpā": "having the form of Nāda",
+        "mahādevī": "the Great Goddess",
+        "nirgu": "quality-less (nirguṇa-) [fragment]",
+        "ā": "fem. ending -ā [fragment]",
+        "brahmarūpi": "Brahman-formed (brahma-rūpiṇī) [fragment]",
+        "ī": "fem. ending -ī [fragment]"
+      },
+      "close": "The Great Goddess has the form of Nāda, is devoid of qualities, (and) has the form of Brahman.",
+      "uncertain": ["nirgu", "ā", "brahmarūpi", "ī"]
+    },
+    {
+      "passage_id": "kubjika:v76",
+      "source_sha256": "0ffe0867a21347407851aec4fe008171bfbf6cb31add54f210a9d524f33273ff",
+      "tokens": {
+        "brahmarūpomakāraśca": "and the letter Om having the form of Brahman (brahma-rūpa + omakāra + ca)",
+        "sagu": "with qualities (saguṇa-) [fragment]",
+        "onirgu": "and quality-less (o + nirguṇa-) [fragment]",
+        "aśca": "ca, and [fragment]",
+        "saḥ": "it / he"
+      },
+      "close": "And the letter Om, having the form of Brahman — it is both with qualities and without qualities.",
+      "uncertain": ["sagu", "onirgu", "aśca"]
+    },
+    {
+      "passage_id": "kubjika:v77",
+      "source_sha256": "4b640596b981f8299a090067afd2e4629709900e9b9fb41be1be78944236c02d",
+      "tokens": {
+        "durgārūpā": "having the form of Durgā",
+        "īkāraśca": "and the letter ī",
+        "caturvargaphalapradaḥ": "bestower of the fruit of the four aims"
+      },
+      "close": "And the letter ī, having the form of Durgā, bestows the fruit of the four aims.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v78",
+      "source_sha256": "1e66970095cf3ec596b9d8186fdd6bcdde31e7dd986eda1125efef03673155e6",
+      "tokens": {
+        "kakāro": "the letter ka",
+        "varu": "Varuṇa- [fragment]",
+        "aḥ": "nom. ending -ḥ [fragment]",
+        "prokto": "is declared",
+        "jagataḥ": "of the world (gen.)",
+        "prā": "prāṇa- (life-breath) [fragment]",
+        "akārakaḥ": "-kārakaḥ, maker [fragment]"
+      },
+      "close": "The letter ka is declared (to be) Varuṇa, the maker of the life-breath of the world.",
+      "uncertain": ["varu", "aḥ", "prā", "akārakaḥ"]
+    },
+    {
+      "passage_id": "kubjika:v79",
+      "source_sha256": "a89d5a6f412b91c19c3f2895a8c0a00f3216f0ee8bd277b394b6961796c43de6",
+      "tokens": {
+        "īkāre": "in the letter ī (loc.)",
+        "tāri": "Tāriṇī- [fragment]",
+        "īdevī": "-ṇī Devī, the Goddess [fragment]",
+        "bhavasaṃsāratāri": "ferrying across the cycle of worldly existence (bhava-saṃsāra-tāriṇī) [fragment]",
+        "ī": "fem. ending -ī [fragment]"
+      },
+      "close": "In the letter ī (resides) the Goddess Tāriṇī, who ferries (beings) across the cycle of worldly existence.",
+      "uncertain": ["tāri", "īdevī", "bhavasaṃsāratāri", "ī"]
+    },
+    {
+      "passage_id": "kubjika:v80",
+      "source_sha256": "6a3c678e8223071df61ece8f75e97f7155ff0ee75e6737e3dc47d2bda7ecc075",
+      "tokens": {
+        "rakāro": "the letter ra",
+        "vahnirūpoyaṃ": "this one having the form of fire (vahni-rūpaḥ + ayam)",
+        "bhavaduḥkhasya": "of the suffering of existence (gen.)",
+        "dāhakaḥ": "the burner"
+      },
+      "close": "The letter ra, having the form of fire, is the burner of the suffering of existence.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v81",
+      "source_sha256": "ab3ec57691222518b4a618cf847a5496a74747f341c42867e9e67f9494715c3b",
+      "tokens": {
+        "sagu": "with qualities (saguṇa-) [fragment]",
+        "ā": "fem. ending -ā [fragment]",
+        "ca": "and",
+        "yadā": "when",
+        "devī": "the Goddess",
+        "sarvasiddhipradāyinī": "bestower of all siddhis"
+      },
+      "close": "And when the Goddess is with qualities, she is the bestower of all siddhis.",
+      "uncertain": ["sagu", "ā"]
+    },
+    {
+      "passage_id": "kubjika:v82",
+      "source_sha256": "e4bf911ccab60d4193e1acdf0b4bd0fa60886770002371585bd504afb7244308",
+      "tokens": {
+        "nirvā": "nirvāṇa- [fragment]",
+        "amuktido": "-muktidaḥ, bestower of liberation [fragment]",
+        "devaḥ": "the God",
+        "sarvasiddhipradāyakaḥ": "bestower of all siddhis"
+      },
+      "close": "The God is the bestower of nirvāṇa-liberation, the bestower of all siddhis.",
+      "uncertain": ["nirvā", "amuktido"]
+    },
+    {
+      "passage_id": "kubjika:v83",
+      "source_sha256": "7bc3d92d8a17350ec083eb4679440fb87a756ecc882d7c1e9c25dc0500a5023b",
+      "tokens": {
+        "ukāre": "in the letter u (loc.)",
+        "bhairavī": "Bhairavī (goddess)",
+        "devī": "the Goddess",
+        "sarvaśaṅkaṭanāśinī": "destroyer of all dangers"
+      },
+      "close": "In the letter u (resides) the Goddess Bhairavī, destroyer of all dangers.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v84",
+      "source_sha256": "0dd368cf1a7d4177626fd0f031c1fb87eff716d6ecbb8e640236ae66909b815a",
+      "tokens": {
+        "hakāre": "in the letter ha (loc.)",
+        "ca": "and",
+        "mahāviṣ": "the great Viṣṇu- (mahā-viṣṇu-) [fragment]",
+        "urmahāpātakanāśanaḥ": "-destroyer of great sins (ur + mahāpātaka-nāśanaḥ) [fragment]"
+      },
+      "close": "And in the letter ha (is) the great Viṣṇu, destroyer of great sins.",
+      "uncertain": ["mahāviṣ", "urmahāpātakanāśanaḥ"]
+    },
+    {
+      "passage_id": "kubjika:v85",
+      "source_sha256": "a6f8210d6d2f33b5a402b692be860e0e60797d22d93e0635707ae7ed3fac3fcb",
+      "tokens": {
+        "ukāre": "in the letter u (loc.)",
+        "mohinī": "Mohinī (the Enchantress)",
+        "devī": "the Goddess",
+        "jaganmohanakāri": "world-enchanting (jagan-mohana-kāriṇī) [fragment]",
+        "ī": "fem. ending -ī [fragment]"
+      },
+      "close": "In the letter u (resides) the Goddess Mohinī, who enchants the world.",
+      "uncertain": ["jaganmohanakāri", "ī"]
+    },
+    {
+      "passage_id": "kubjika:v86",
+      "source_sha256": "ef9ec70ef7240c28b2b54daf840bede4d70704a09eff71637d85b0cf6d3af274",
+      "tokens": {
+        "sadāśivo": "Sadāśiva",
+        "hakāraḥ": "the letter ha",
+        "syādukāre": "should be; in the letter u (syāt + ukāre)",
+        "brahma": "Brahman",
+        "caiva": "and indeed",
+        "hi": "for / indeed"
+      },
+      "close": "The letter ha is Sadāśiva; and indeed in the letter u (is) Brahman.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v87",
+      "source_sha256": "db15d0514f4fb27faae11f5f13dc2a80ff181464e8a9dd0fca74c1d0b0432891",
+      "tokens": {
+        "asya": "of this (gen.)",
+        "smara": "remembrance (smaraṇa-) [fragment]",
+        "amātre": "by mere (-mātreṇa) [fragment]",
+        "a": "",
+        "aśvamedhāyutaṃ": "ten thousand Aśvamedha (horse-sacrifices)",
+        "labhet": "one would obtain (opt.)"
+      },
+      "close": "By the mere remembrance of this, one would obtain (the fruit of) ten thousand Aśvamedha sacrifices.",
+      "uncertain": ["smara", "amātre", "a"]
+    },
+    {
+      "passage_id": "kubjika:v88",
+      "source_sha256": "e8183f9325fac7c9d8a59cf58e1ac6f4b84ec7e60b252f07d1d090f53d6d2103",
+      "tokens": {
+        "īkāre": "in the letter ī (loc.)",
+        "paramā": "supreme",
+        "devī": "the Goddess",
+        "gu": "guṇa- [fragment]",
+        "atrayamayī": "-trayamayī, consisting of the triad [fragment]",
+        "sadā": "always"
+      },
+      "close": "In the letter ī (resides) the supreme Goddess, always consisting of the three guṇas.",
+      "uncertain": ["gu", "atrayamayī"]
+    },
+    {
+      "passage_id": "kubjika:v89",
+      "source_sha256": "0ee1c7f19798c5781c4db9ab48dc550846232fa25d04e34f499d853e154a3578",
+      "tokens": {
+        "kṣakāraḥ": "the letter kṣa",
+        "kṣetrado": "bestower of the field (kṣetra-da)",
+        "viṣ": "Viṣṇu- [fragment]",
+        "urmahāpātakanāśanaḥ": "-destroyer of great sins (ur + mahāpātaka-nāśanaḥ) [fragment]"
+      },
+      "close": "The letter kṣa, the bestower of the field (kṣetra), is Viṣṇu, the destroyer of great sins.",
+      "uncertain": ["viṣ", "urmahāpātakanāśanaḥ"]
+    },
+    {
+      "passage_id": "kubjika:v90",
+      "source_sha256": "d15feec059f07ff0fb8d0511aa5baba98ca45e3e4a634dbc7fbc5aba90742476",
+      "tokens": {
+        "lakāre": "in the letter la (loc.)",
+        "ca": "and",
+        "ḍikā": "-ḍikā, of Caṇḍikā [fragment]",
+        "devī": "the Goddess",
+        "ḍadaityavināśinī": "-ḍa-daitya-vināśinī, destroyer of the demon Caṇḍa [fragment]"
+      },
+      "close": "And in the letter la (resides) the Goddess Caṇḍikā, destroyer of the demon Caṇḍa.",
+      "uncertain": ["ḍikā", "ḍadaityavināśinī"]
+    },
+    {
+      "passage_id": "kubjika:v91",
+      "source_sha256": "5baf75f5b732e6305fba2537321c5f4c47059bb750cbf4e3191107ca040c76e5",
+      "tokens": {
+        "kakāre": "in the letter ka (loc.)",
+        "medinī": "the earth",
+        "proktā": "is declared",
+        "saśailavanakānanā": "together with mountains, forests, and groves"
+      },
+      "close": "In the letter ka the earth is declared, together with its mountains, forests, and groves.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v92",
+      "source_sha256": "a081cfb77ed9e3a487cbc3e40417b397b4423f8d461db3e7c51f59e2a95478ae",
+      "tokens": {
+        "lakāre": "in the letter la (loc.)",
+        "pṛthivī": "the earth",
+        "devi": "O Goddess (voc.)",
+        "pṛthvīdānaphalapradā": "bestower of the fruit of the gift of land"
+      },
+      "close": "In the letter la (is) the earth, O Goddess — the bestower of the fruit of the gift of land.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v93",
+      "source_sha256": "adf8aefc79702b2548d5df2b1dc01aaa5476c22d08a1710e6883f0b99ab75028",
+      "tokens": {
+        "kakāre": "in the letter ka (loc.)",
+        "sundarī": "Sundarī (the Beautiful)",
+        "devi": "O Goddess (voc.)",
+        "ekāre": "in the letter e (loc.)",
+        "yonirūpi": "yoni-formed (yoni-rūpiṇī) [fragment]",
+        "ī": "fem. ending -ī [fragment]"
+      },
+      "close": "In the letter ka (is) Sundarī, O Goddess; in the letter e, she who has the form of the yoni.",
+      "uncertain": ["yonirūpi", "ī"]
+    },
+    {
+      "passage_id": "kubjika:v94",
+      "source_sha256": "7e25b4bdc567af221558d3ea3cadbd2ea4cb058ded669649bf94b3c785a3d361",
+      "tokens": {
+        "parā": "Parā (the Supreme)",
+        "ca": "and",
+        "paramā": "the highest (Paramā)",
+        "caiva": "and indeed",
+        "paramātmakalā": "the kalā (emanation-phase) of the Supreme Self",
+        "punaḥ": "again"
+      },
+      "close": "And Parā, and indeed the highest Paramā — again, the kalā of the Supreme Self.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v95",
+      "source_sha256": "7d78d9fefba173cf23a36f40a798d04442b2a6d0b8e427f98ce73e66422087c1",
+      "tokens": {
+        "kakāre": "in the letter ka (loc.)",
+        "ca": "and",
+        "mahādevo": "Mahādeva",
+        "brahmā": "Brahmā(ṇī) [fragment]",
+        "ī": "fem. ending -ī (→ Brahmāṇī) [fragment]",
+        "repha": "the letter ra",
+        "eva": "indeed",
+        "ca": "and"
+      },
+      "close": "And in the letter ka (is) Mahādeva; and the letter ra, indeed, is Brahmāṇī.",
+      "uncertain": ["brahmā", "ī"]
+    },
+    {
+      "passage_id": "kubjika:v96",
+      "source_sha256": "adad8d67f4813298d7aa43f1a00e0347320aa8b4cdf386e5212e88cc2d9ee90b",
+      "tokens": {
+        "īkāraḥ": "the letter ī",
+        "kāmadaḥ": "bestower of desires",
+        "kānto": "the beloved / the shining one (kānta)",
+        "nādabinduvibhūṣitaḥ": "adorned with Nāda and Bindu"
+      },
+      "close": "The letter ī, bestower of desires, the beloved, is adorned with Nāda and Bindu.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v97",
+      "source_sha256": "f51bf841998f1cd6c3ac2adc858fcde05bfdae5fa309e86432c4b729e26fef26",
+      "tokens": {
+        "ukāraḥ": "the letter u",
+        "ṣoḍaśī": "Ṣoḍaśī (the Sixteenth)",
+        "devī": "the Goddess",
+        "ūkāro": "the letter ū",
+        "bhuvaneśvarī": "Bhuvaneśvarī (Mistress of the worlds)"
+      },
+      "close": "The letter u (is) the Goddess Ṣoḍaśī; the letter ū (is) Bhuvaneśvarī.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v98",
+      "source_sha256": "cdd7c1ebb0e0132e312a17978b088f086cd426c5120f6e5be6c3a9c9b976995a",
+      "tokens": {
+        "hakāro": "the letter ha",
+        "yoganidrā": "Yoganidrā (the sleep of yoga)",
+        "ca": "and",
+        "hakāraḥ": "the letter ha",
+        "paramovibhuḥ": "the supreme Lord (parama-vibhu)"
+      },
+      "close": "The letter ha is Yoganidrā; and the letter ha is the supreme Lord.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v99",
+      "source_sha256": "9d37af8027572f40de070e4c363dfcf2a311b7709173922d3b3bd35fc40ad091",
+      "tokens": {
+        "rephaścaiva": "and indeed the letter ra (repha + ca + eva)",
+        "mahādevi": "O Great Goddess (voc.)",
+        "nādabinduvibhūṣitaḥ": "adorned with Nāda and Bindu"
+      },
+      "close": "And indeed the letter ra, O Great Goddess, is adorned with Nāda and Bindu.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "kubjika:v100",
+      "source_sha256": "cec463059c6e98aa48a1a74a15a73541f9863bb08e3d6c7880d10a1fae2147ff",
+      "tokens": {
+        "ekākṣarī": "the single-syllabled one",
+        "mahāvidyā": "the great Vidyā (Mahāvidyā)",
+        "brahmavidyā": "the knowledge of Brahman (Brahma-vidyā)",
+        "sanātanī": "eternal"
+      },
+      "close": "The single-syllabled one is the great Vidyā, the eternal knowledge of Brahman.",
+      "uncertain": []
+    }
+  ]
+}

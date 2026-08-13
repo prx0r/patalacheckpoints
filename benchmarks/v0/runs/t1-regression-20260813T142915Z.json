@@ -1,0 +1,17 @@
+{
+  "run_id": "T1-REGRESSION-20260813T142915Z",
+  "benchmark_version": "v0",
+  "family": "PATALA-T1-REGRESSION",
+  "bench": "PĀṬALA-T1-REGRESSION",
+  "bench_version": "v0.1",
+  "framework": "inspect-ai==0.3.258",
+  "task": "t1_regression",
+  "execution_base_sha": "26fa7820d1ee7fe20a11996549a54f80fe73c7a9",
+  "working_tree_dirty": true,
+  "date": "20260813T142915Z",
+  "dataset": {"kind": "NAT_REGRESSION", "fixtures": 4},
+  "sut": "Agent 2 T1 worker (after A2-13/orphan-resolved), MACHINE_PROPOSED",
+  "metrics": {"resolved_count": 1.0, "still_failing_count": 3.0},
+  "finding": "P13 verify after Agent 2 A2-13 'L0-orphan resolved by design': T1 regressions UNCHANGED (1 resolved vṛttimīśaḥ, 3 STILL_FAILING). L0 content-loss UNCHANGED (402/786 roundtrip, 384 content-loss). Agent 2's orphan fix addresses L0-without-T1-parent, NOT the content-loss I measure (token retention within L0 records).",
+  "notes": "The orphan-vs-content-loss distinction: orphan = L0 with no T1 parent (Agent 2 fixed); content-loss = L0 record missing real tokens (Agent 1 measures, persists). NOT_HUMAN_REVIEWED; does not gate Agent 2."
+}

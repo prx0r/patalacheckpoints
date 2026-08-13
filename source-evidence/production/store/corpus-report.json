@@ -1,0 +1,42 @@
+{
+  "corpus_report": {
+    "publications_ingested": 6,
+    "witnesses_bound": 6,
+    "exact_spans": 13,
+    "source_assertions": 13,
+    "canonical_propositions": 10,
+    "proposition_evidence_links": 14,
+    "relations": {
+      "DIRECT_SUPPORT": 12,
+      "PARTIAL_SUPPORT": 1,
+      "ALTERNATIVE_READING": 1
+    },
+    "direct_support_candidates": 12,
+    "partial_support_candidates": 1,
+    "contradiction_candidates": 0,
+    "alternative_readings": 1,
+    "independence_lineage": {
+      "PRIMARY_EDITION": 1,
+      "INDEPENDENT_TEXTUAL_ANALYSIS": 4,
+      "INDEPENDENT_AUTHOR": 9
+    },
+    "independent_author_links": 9,
+    "independent_textual_analysis_links": 4,
+    "derived_citation_links": 0,
+    "commitments": {
+      "ASSERTS": 13
+    },
+    "unattributed_or_uncertain_assertions": 0,
+    "attributes_to_other": 0,
+    "duplicate_objects_rejected": 4,
+    "provenance_failures": 0,
+    "objects_requiring_review": 13
+  },
+  "unresolved_epistemic_problems": [
+    "All 5 evidence links are MACHINE_CANDIDATE (review_status NOT_HUMAN_REVIEWED); no proposition is independently corroborated yet.",
+    "Corpus breadth is thin: 5 assertions across 4 publications, all by Isabelle Ratié; no independent-author corroboration exists yet (only INDEPENDENT_TEXTUAL_ANALYSIS within her own work).",
+    "'recognition-responds-to-buddhist-accounts' is framed dialectically; without an explicit Buddhist-opponent source in the corpus it risks over-strengthening the response relation.",
+    "Page anchors inferred from form-feed boundaries; roman-numeral/unnumbered front matter may make some page numbers approximate (need manual page verification).",
+    "The ARG-002-mapped Otherness passage failed verbatim span match (PDF glyph artifacts) and was excluded; needs normalized-text matching or manual page entry."
+  ]
+}

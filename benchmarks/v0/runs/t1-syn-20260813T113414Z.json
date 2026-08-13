@@ -1,0 +1,25 @@
+{
+  "run_id": "T1-SYN-20260813T113414Z",
+  "benchmark_version": "v0",
+  "family": "PATALA-T1-SYN",
+  "bench": "PĀṬALA-T1-SYN",
+  "bench_version": "v0.1",
+  "framework": "inspect-ai==0.3.258",
+  "task": "t1_syn",
+  "execution_base_sha": "8ba261cb85a35535e9da39101272549535deb751",
+  "working_tree_dirty": true,
+  "date": "20260813T113414Z",
+  "dataset": {
+    "kind": "SYN",
+    "fixtures": 6,
+    "control_PASS": 1,
+    "control_FAIL": 5
+  },
+  "sut": "reference T1 scorer (deterministic, five dims)",
+  "dimensions": ["t1_structure", "t1_coverage", "t1_gloss_gold", "t1_false_certainty", "t1_abstention"],
+  "results": {
+    "all_dimensions_accuracy": 1.0,
+    "per_dimension_accuracy": 1.0
+  },
+  "notes": "Scorer sensitivity to controlled mutations (synthetic). NOT T1-NAT (no real model glosses yet - waits for Agent 2 T1 batch). Engineered discrimination, not scholarly validation."
+}

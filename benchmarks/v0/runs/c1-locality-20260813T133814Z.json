@@ -1,0 +1,16 @@
+{
+  "run_id": "C1-LOCALITY-20260813T133814Z",
+  "benchmark_version": "v0",
+  "family": "PATALA-C1-LOCALITY",
+  "bench": "PĀṬALA-C1-LOCALITY",
+  "bench_version": "v0.1",
+  "framework": "inspect-ai==0.3.258",
+  "task": "c1_locality",
+  "execution_base_sha": "84fe29255387e19b4fe02bcd0e64ce8b4a335fa0",
+  "working_tree_dirty": true,
+  "date": "20260813T133814Z",
+  "dataset": {"kind": "NAT", "committed_c1_objects": 3, "objects": ["kramasadbhava:v1","kramasadbhava:v3","kramasadbhava:v4"]},
+  "sut": "Agent 2 c1_worker, MACHINE_PROPOSED",
+  "metrics": {"locality_pass_rate": 1.0},
+  "notes": "C1 passage-local licensing proof (C1LocalityProof). All 3 committed C1 objects satisfy canonical 7-section shape + passage-locality (no modern comparison/overreach) + honest boundary. Deterministic (witness D). review_status=NOT_HUMAN_REVIEWED; does not gate Agent 2."
+}

@@ -46,7 +46,7 @@ from verify_l0 import p0_proof
 VIDYUT_PATH = "/root/vidyut-0.4.0"
 
 # IAST token: any run of Sanskrit letters/diacritics
-IAST_TOKEN = re.compile(r"[a-zA-Zāīūṛṝḷḹṃñṅśṣṭḍḥṁ]+")
+IAST_TOKEN = re.compile(r"[a-zA-Zāīūṛṝḷḹṃñṅśṣṭḍḥṁṇ]+")
 # structural chars (verse markers, punctuation) — classified, not UNKNOWN
 STRUCTURAL = set(" ॥|॥,;:!?()[]{}*-—_।|")
 

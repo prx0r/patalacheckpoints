@@ -61,7 +61,7 @@ def _clean_signal(wid: str) -> dict:
     if not p:
         return {"on_disk": False, "clean": False, "reason": "no on-disk source"}
     txt = p.read_text(encoding="utf-8", errors="ignore")
-    iast = len(re.findall(r"[āīūṛṝḷḹṃñṅśṣṭḍḥṁ]", txt))
+    iast = len(re.findall(r"[āīūṛṝḷḹṃñṅśṣṭḍḥṁṇ]", txt))
     deva = len(re.findall(r"[\u0900-\u097F]", txt))
     sanskrit_chars = iast + deva
     lines = [l for l in txt.splitlines() if l.strip()]

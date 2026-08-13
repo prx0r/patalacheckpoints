@@ -1,0 +1,31 @@
+{
+  "type": "EVALUATION_CANDIDATE",
+  "evaluated_version": "l0-brahmayamala:v2-v2",
+  "old_version": "l0-brahmayamala:v2-v1",
+  "finding_ref": "EF-L0-2026-0001",
+  "layer": "L0",
+  "object_ref": "brahmayamala:v2",
+  "impact": {
+    "trigger": "EF-L0-2026-0001",
+    "old_version": "l0-brahmayamala:v2-v1",
+    "evaluated_version": "l0-brahmayamala:v2-v2",
+    "downstream_affected": [
+      {
+        "object": "brahmayamala:v2",
+        "layer": "L200",
+        "state": "NEED_REVIEW",
+        "previous_version": null
+      },
+      {
+        "object": "brahmayamala:v2",
+        "layer": "C1",
+        "state": "NEED_REVIEW",
+        "previous_version": null
+      }
+    ]
+  },
+  "emitted_at": "2026-08-13T18:59:39.750672+00:00",
+  "producer": {
+    "agent": "agent2"
+  }
+}

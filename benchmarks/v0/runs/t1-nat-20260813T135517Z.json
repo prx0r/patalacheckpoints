@@ -1,0 +1,18 @@
+{
+  "run_id": "T1-NAT-20260813T135517Z",
+  "benchmark_version": "v0",
+  "family": "PATALA-T1-NAT",
+  "bench": "PĀṬALA-T1-NAT",
+  "bench_version": "v0.3",
+  "framework": "inspect-ai==0.3.258",
+  "task": "t1_nat",
+  "execution_base_sha": "922b0e05f59775a914e9610ed959eece61bbba42",
+  "working_tree_dirty": true,
+  "date": "20260813T135517Z",
+  "dataset": {"kind": "NAT", "objects": 6, "adjudicated": 5, "unscored": 1},
+  "sut": "Agent 2 T1 worker (factory-batch + scheduler), MACHINE_PROPOSED",
+  "metrics": {"machine_adjudicated_acceptability": 1.0, "n_adjudicated": 5.0,
+    "n_unscored": 1.0, "adjudicated_acceptance_rate": 1.0, "placeholder_objects": 1.0},
+  "finding": "Larger NAT sample (6 objects, up from 2). 5 real glossed objects pass (kramasadbhava v1/v100/v11 + NEW spandakarika v1/v2). ipvv:V2O:k1 still all-placeholder ('x') - NOT_SCORED, persistent defect.",
+  "notes": "materially larger natural sample than the 2-object smoke test. 5/5 real glossed objects pass independent adjudication. Placeholder object excluded from acceptability denominator. review_status=NOT_HUMAN_REVIEWED; does not gate Agent 2."
+}

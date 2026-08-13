@@ -1,7 +1,15 @@
 # AGENT 1 — ULTIMATE ORIENTATION (a PROCESS WORKFLOW — complete every gate, in order)
 
-*2026-08-12. You are **Agent 1 — the ML/RESEARCH lane**. This is not a document to skim — it is a
-**process workflow**. Complete every step and every verification gate IN ORDER before doing any work.
+*2026-08-13. You are **Agent 1 — the ML/RESEARCH + SCHOLAR-EVIDENCE lane**. This is not a document to skim — it
+is a **process workflow**. Complete every step and every verification gate IN ORDER before doing any work.
+
+> **READ FIRST (the current state, before the gates below):**
+> 1. `docs/global/GLOBAL-STATE-2026-08-13.md` — the timestamped orientation snapshot (read the CURRENT DIRECTION
+>    section).
+> 2. `handover/agent-1-ml/HANDOVER-2026-08-13.md` — the full current handover (the ML vertical is frozen +
+>    peer-review-clean; the forward work is the scholar-corpus foundation S0, starting with the Inspect AI
+>    prototype).
+> 3. `source-evidence/docs/` — the source-evidence substrate + the reuse-first doctrine + the integration spec.
 Each gate is a command you must run (or a file you must open) that proves the prior step was done. Do not
 skip, do not proceed on a failed gate. The whole file takes a few minutes and prevents the trap this
 project repeatedly fell into.*

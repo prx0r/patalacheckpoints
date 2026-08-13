@@ -83,7 +83,13 @@ interpretations, disagreements and cruxes — while preserving exactly where int
 > CP4 work is the ACTIVE item there; update it via `handover/flow.py` at session end.
 
 ### 🔴 THE ACTIVE WORK RIGHT NOW (this is the live task)
-**CP4 — gold gate MET; vertical object resolves; next = independent review of the 5 golds.**
+**The scholar-corpus foundation (S0) is the forward work.** The ML vertical is frozen + peer-review-clean; the
+pivot is turning the on-disk published-scholar corpus (Sanderson/Ratié/Torella/Bäumer) into a
+provenance-addressable corroboration oracle — **no live reviewer needed** — by **borrowing mature open tools**
+(GROBID/Zotero/OpenAlex/OpenCitations/RO-Crate/PaperQA2/Inspect/INCEpTION/Recogito) and adding only the **epistemic
+dependency graph** (SourceAssertion → CorroborationEvent → Proposition → Argument → Crux → Synthesis → ReviewEvent
+→ dependency). **Start with the Inspect AI prototype** (port one existing benchmark + the laundering mutations).
+**HANDOVER: `handover/agent-1-ml/HANDOVER-2026-08-13.md`** (read this first).
 ```
 Built this session:
   ARG-003  reductio                (V2-O ordered-support regress, 8 nodes/4 infs)   ✅
@@ -126,14 +132,15 @@ Built this session (cont.) — the CP3 / theme layer + retrieval readiness:
                    REPRESENTATIONAL_FIDELITY=PARTIAL, SEMANTIC=PROXY_SUPPORTED, BET=OPEN
   Vertical object  proof edge now reference_resolution=EXACT + semantic_support=MACHINE_PROPOSED    ✅
   Doctrine         Axiom 11 (git worktree discipline) + GIT-INCIDENTS.md (4cc78d1 recorded)        ✅
-Next (REVISED PLAN — see `NEXT-STEPS.md`): **the bottleneck is epistemic, not engineering.** In order:
-(0) fix worktrees + reconcile commits; (1) **get ≥ 1 argument independently reviewed** — the CP4
-critical path, success metric `count(INDEPENDENT_REVIEWED) > 0`; (2) build the **PĀṬALA-FIDELITY
-synthetic corruption suite** (construction-verifiable: verifier sensitivity to injected errors);
-(3) establish a **deterministic graph baseline** (k-core); (4) support/wait for human gold review; and
-only AFTER review — extractor, external argument evaluator, semantic-alignment and retrieval
-experiments (all currently PARKED). Doctrine: *when the missing oracle is human judgment, don't
-substitute another model — obtain the judgment, or work only on claims verifiable mechanically.*
+Next (see `NEXT-STEPS.md` revision 6): **the Pāṭala Review vertical is FROZEN and peer-review-clean relative to
+the current objects** — the synthesis (weakest-governs, `SYN-INF-001` reconstructed + UNRESOLVED), monotone EO,
+one provenance-linked essay + SentenceEvidenceAudit (6 laundering/paraphrase mutation classes caught), and a
+deterministic k-core structural hierarchy + Louvain stability ablation (P-019 v2; Louvain empirically stable at
+11 communities on the 63-node graph). **Agent 1 is on hold; the next move is Agent 2 / the autonomous factory**
+(registry idempotency → single-writer lock → Hermes cleanup → stable passage_id+hash binding → bounded batching →
+ASCII-avagraha → OCR→SOURCE_BLOCKED → crash/resume + adversarial tests → Sanskrit-only replay certificate → a small
+Kramasadbhāva unattended canary, then a generic L0 controller reused across T1/R1/T2/R2/T3/T3.1/C1). Deferred
+roadmap (xAIF/SEPIO/nanopub/TantraFact) = record, not queue.
 
 **The source of this task:** `handover/agent-1-ml/ORIENTATION.md` Phase 4 + `NEXT-STEPS.md` + the vision
 (`docs/vision/CORE-BIBLE.md` Layer 3 / `handover/CHECKPOINTS.md` CP4).

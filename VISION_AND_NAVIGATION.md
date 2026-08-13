@@ -35,6 +35,17 @@ STEP 2 — THE VERIFICATION FLOOR (make it trustworthy)
   /api/resolve + /api/verify/* — every claim resolves; nothing unanchored is served.
   → docs/INDEX.md (the map) + the API routes
 
+STEP 2b — THE SCHOLARLY-EVIDENCE SUBSTRATE (the source-evidence layer, 2026-08-13)
+  The published-scholar corpus (Sanderson/Ratié/Torella/Bäumer) is the scalable scholarly CORROBORATION
+  oracle — no live reviewer needed for SCHOLARLY_CORROBORATED. But it only becomes usable once it is a
+  provenance-addressable evidence corpus, not a folder of PDFs. `source-evidence/` builds the thin layer
+  (Publication→Witness→StableSpan→SourceAssertion→CorroborationEvent) by REUSING mature tools (GROBID/Zotero/
+  OpenAlex/OpenCitations/RO-Crate/ORKG/OpenReview); Pāṭala owns only the epistemic seam. This feeds the
+  two-source-side architecture: primary text + published scholarship converge at Proposition ↔
+  CorroborationEvent ↔ SourceAssertion. The evaluation plane (TantraFact/ArgumentBench/PāṭalaQA) sits OUTSIDE
+  the graph and tests it.
+  → source-evidence/ + source-evidence/docs/ + DEVPLAN S0
+
 STEP 3 — THE HUB (organize by source)
   Every primary source tracks ALL its outputs (essays, arguments, pushing, learning).
   → machinelearning/COMPOUNDING_RESEARCH_SYSTEM.md + data/corpus/hub.ts

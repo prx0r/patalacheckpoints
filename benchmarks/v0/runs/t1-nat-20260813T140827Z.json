@@ -1,0 +1,18 @@
+{
+  "run_id": "T1-NAT-20260813T140827Z",
+  "benchmark_version": "v0",
+  "family": "PATALA-T1-NAT",
+  "bench": "PĀṬALA-T1-NAT",
+  "bench_version": "v0.4",
+  "framework": "inspect-ai==0.3.258",
+  "task": "t1_nat",
+  "execution_base_sha": "2ad6cf5c655d39fac127742f7da0058dc3fd1a83",
+  "working_tree_dirty": true,
+  "date": "20260813T140827Z",
+  "dataset": {"kind": "NAT", "objects": 10, "adjudicated": 9, "unscored": 1},
+  "sut": "Agent 2 T1 worker (factory-batch + scheduler bulk), MACHINE_PROPOSED",
+  "metrics": {"machine_adjudicated_acceptability": 0.864, "n_adjudicated": 9.0,
+    "n_unscored": 1.0, "adjudicated_acceptance_rate": 0.556, "placeholder_objects": 1.0},
+  "finding": "Larger bulk sample (10 objects) reveals real T1 defects. 5 clean objects pass (kramasadbhava v1/v100/v11 + spandakarika v1/v2). 4 NEW objects FAIL t1_gloss_gold: brahmayamala v1 (unglossed siramaisvaraiḥ), v2 (kāra/am over-split), cidgagana v1 (ga/eśaḥ over-split of gaṇeśaḥ), v2 (vṛttimīśaḥ mangled). ipvv:V2O:k1 still all-placeholder. acceptance_rate 0.556 - NOT the earlier inflated 1.000.",
+  "notes": "The larger sample exposed over-segmentation/compound defects in the new bulk objects. acceptance_rate 0.556 (5/9) is the honest result. review_status=NOT_HUMAN_REVIEWED; does not gate Agent 2."
+}

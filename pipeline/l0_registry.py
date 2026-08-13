@@ -24,6 +24,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -49,10 +50,14 @@ def l0_versions(work_id: str) -> dict:
 
 
 def commit_l0(work_id: str, records: list[dict], committed_by: str,
-              status: str = "MACHINE_PROPOSED", n_verses: int = 0) -> dict:
+              status: str = "MACHINE_PROPOSED", n_verses: int = 0,
+              passage_ids: list[str] | None = None) -> dict:
     """Commit a new immutable L0 version for a work. A fix emits a NEW version (never edit in place).
 
     records: the canonical L0 records produced by raw_l0.
+    passage_ids: the stable per-verse passage ids this version commits (the authoritative
+                 completion record — F1 idempotency: 'does this passage already have a
+                 committed version?' is answered from here, never a mutable ledger).
     Returns the committed version entry.
     """
     reg = _load()
@@ -71,6 +76,7 @@ def commit_l0(work_id: str, records: list[dict], committed_by: str,
         "supersedes": prev,
         "n_records": len(records),
         "n_verses": n_verses,
+        "passage_ids": list(passage_ids or []),
     }
     # immutable: if an identical sha already exists, do NOT duplicate
     if any(v["sha256"] == sha for v in work["versions"]):
@@ -80,7 +86,34 @@ def commit_l0(work_id: str, records: list[dict], committed_by: str,
     reg["works"][work_id] = work
     _save(reg)
     return {"work_id": work_id, "version": f"v{vnum}", "sha256": sha,
-            "supersedes": prev, "n_records": len(records)}
+            "supersedes": prev, "n_records": len(records), "passage_ids": list(passage_ids or [])}
+
+
+def committed_passage_ids(work_id: str) -> set[str]:
+    """The set of stable passage_ids that already have a committed L0 version (F1).
+
+    This is the AUTHORITY for idempotency: derive what's done from the immutable registry,
+    never from a mutable progress ledger. The ledger may cache/report counts but must not
+    be the source of truth for 'is this passage committed'.
+    """
+    reg = _load()
+    work = reg["works"].get(work_id, {})
+    out: set[str] = set()
+    for v in work.get("versions", []):
+        for p in v.get("passage_ids", []):
+            out.add(p)
+    return out
+
+
+def _passage_from_record_id(rec_id: str) -> str | None:
+    """Derive a stable passage id from a record id like 'kramasadbhava-v1:L1:T1'.
+    chunk='kramasadbhava-v1' -> 'kramasadbhava:v1'. Used as a fallback for legacy
+    versions committed before passage_ids were stored."""
+    chunk = rec_id.split(":L")[0]
+    m = re.match(r"^(.*)-v(\d+)$", chunk)
+    if m:
+        return f"{m.group(1)}:v{m.group(2)}"
+    return None
 
 
 def mark_reviewed(work_id: str, version: str, reviewed_by: str) -> dict:

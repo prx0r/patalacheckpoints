@@ -1,0 +1,18 @@
+{
+  "run_id": "TANTRA-GOLD-20260813T131357Z",
+  "benchmark_version": "v0",
+  "family": "PATALA-TANTRA-GOLD",
+  "bench": "PĀṬALA-TANTRA-GOLD",
+  "bench_version": "v0.1",
+  "framework": "inspect-ai==0.3.258",
+  "task": "tantra_gold",
+  "execution_base_sha": "0b861da2e80432c8e9b31838f8916af5ae7ae0e3",
+  "working_tree_dirty": true,
+  "date": "20260813T131357Z",
+  "dataset": {"kind": "EXTERNAL_GOLD", "units": 20, "term_alignments": 15,
+    "gold_source": "Dyczkowski, Tantrāloka: The Light on and of the Tantras (Abhinavagupta + Jayaratha Viveka)",
+    "SAME": 10, "PARTIAL": 5, "DIFFERENT": 0},
+  "sut": "cross-gold consistency scorer (IPVV internal vs Dyczkowski external)",
+  "metrics": {"cross_gold_consistency": 1.0},
+  "notes": "Pāṭala's internal IPVV conventions are consistent with Dyczkowski's published Tantrāloka translation on shared technical terms (10 SAME, 5 PARTIAL, 0 DIFFERENT). PARTIAL on vimarśa/prakāśa/svatantra/tattva/vikalpa. Cross-gold corroboration map, NOT a correctness verdict (different texts). Scorer rejects wrong technical senses. review_status=NOT_HUMAN_REVIEWED."
+}

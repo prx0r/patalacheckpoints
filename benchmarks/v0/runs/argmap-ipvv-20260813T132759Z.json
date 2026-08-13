@@ -1,0 +1,17 @@
+{
+  "run_id": "ARGMAP-IPVV-20260813T132759Z",
+  "benchmark_version": "v0",
+  "family": "PATALA-ARGMAP-IPVV",
+  "bench": "PĀṬALA-ARGMAP-IPVV",
+  "bench_version": "v0.1",
+  "framework": "inspect-ai==0.3.258",
+  "task": "argmap_ipvv",
+  "execution_base_sha": "a11a04900cf5e9dfe7cd00e3332f1c2983c73fdf",
+  "working_tree_dirty": true,
+  "date": "20260813T132759Z",
+  "dataset": {"kind": "GOLD_EXEMPLARS", "ipvv_argmaps": 51, "samples": 459,
+    "gold_source": "IPVV pilot_V*_ARGUMENT_MAP.md (real gold)"},
+  "sut": "ARGMAP-PROOF-v0 verifier on real IPVV exemplars",
+  "metrics": {"shape_pass_rate": 1.0, "mutation_recall": 1.0},
+  "notes": "ARGMAP-PROOF-v0 evaluated on 51 REAL IPVV argument-map exemplars. All satisfy the canonical 4-section contract (shape 1.0); verifier catches all 8 argument-failure mutations across all maps (408/408, recall 1.0). Established the verifier works on real material, not just the single synthetic registry object. mutation_recall = critic competence. NOT_HUMAN_REVIEWED; does not gate Agent 2."
+}

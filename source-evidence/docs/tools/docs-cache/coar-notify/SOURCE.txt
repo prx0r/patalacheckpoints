@@ -1,0 +1,3 @@
+url: https://github.com/coar-notify/coarnotifypy
+fetched: 2026-08-12
+content-type: text/html

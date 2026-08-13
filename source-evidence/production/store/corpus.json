@@ -1,0 +1,876 @@
+{
+  "schema_version": "v0.1",
+  "generated_at": "2026-08-13T19:12:01+00:00",
+  "counts": {
+    "publications": 6,
+    "witnesses": 6,
+    "spans": 13,
+    "assertions": 13,
+    "propositions": 10,
+    "evidence_links": 14,
+    "duplicates_rejected": 4
+  },
+  "provenance": {
+    "extraction_origin": "CURATED_HUMAN_READ",
+    "adjudicator": {
+      "type": "MACHINE",
+      "agent": "agent1",
+      "model": null,
+      "prompt_hash": null
+    },
+    "review_status": "NOT_HUMAN_REVIEWED",
+    "notes": "Assertions are curated from actual source text (SPAN_VERIFIED). Evidence links are MACHINE_CANDIDATE, not independently adjudicated. None of this is expert gold; review_status stays NOT_HUMAN_REVIEWED until independent human/expert adjudication.",
+    "provenance_failures": []
+  },
+  "objects": {
+    "publications": [
+      {
+        "@id": "pt:publication:ratie-utpaladeva-lost-vivrti",
+        "@type": [
+          "fabio:Work",
+          "pt:BibliographicWork"
+        ],
+        "title": "In Search of Utpaladeva's Lost Vivṛti on the Pratyabhijñā Treatise",
+        "author": "pt:person:isabelle-ratie",
+        "author_name": "Isabelle Ratié",
+        "year": 2017,
+        "venue": "Journal of Indian Philosophy 45 (2017) 163-189",
+        "publication_type": "ARTICLE",
+        "identifiers": {}
+      },
+      {
+        "@id": "pt:publication:ratie-utpaladeva-abhinavagupta-free",
+        "@type": [
+          "fabio:Work",
+          "pt:BibliographicWork"
+        ],
+        "title": "Utpaladeva and Abhinavagupta on the Freedom of Consciousness",
+        "author": "pt:person:isabelle-ratie",
+        "author_name": "Isabelle Ratié",
+        "year": null,
+        "venue": null,
+        "publication_type": "ARTICLE",
+        "identifiers": {}
+      },
+      {
+        "@id": "pt:publication:ratie-on-reason-scripture-pratyabhijna",
+        "@type": [
+          "fabio:Work",
+          "pt:BibliographicWork"
+        ],
+        "title": "On Reason and Scripture in the Pratyabhijñā",
+        "author": "pt:person:isabelle-ratie",
+        "author_name": "Isabelle Ratié",
+        "year": 2013,
+        "venue": "Scriptural Authority, Reason and Action (ÖAW)",
+        "publication_type": "ARTICLE",
+        "identifiers": {}
+      },
+      {
+        "@id": "pt:publication:ratie-otherness-pratyabhijna",
+        "@type": [
+          "fabio:Work",
+          "pt:BibliographicWork"
+        ],
+        "title": "Otherness in the Pratyabhijñā Philosophy",
+        "author": "pt:person:isabelle-ratie",
+        "author_name": "Isabelle Ratié",
+        "year": 2007,
+        "venue": "Journal of Indian Philosophy 35",
+        "publication_type": "ARTICLE",
+        "identifiers": {}
+      },
+      {
+        "@id": "pt:publication:sanderson-saivism-tantric-traditions",
+        "@type": [
+          "fabio:Work",
+          "pt:BibliographicWork"
+        ],
+        "title": "Saivism and the Tantric Traditions: Essays in Honour of Alexis Sanderson",
+        "author": "pt:person:alexis-sanderson",
+        "author_name": "Alexis Sanderson",
+        "year": 2000,
+        "venue": "Gonda Indological Studies (Festschrift)",
+        "publication_type": "ARTICLE",
+        "identifiers": {}
+      },
+      {
+        "@id": "pt:publication:sanderson-saiva-exegesis-kashmir",
+        "@type": [
+          "fabio:Work",
+          "pt:BibliographicWork"
+        ],
+        "title": "The Saiva Exegesis of Kashmir",
+        "author": "pt:person:alexis-sanderson",
+        "author_name": "Alexis Sanderson",
+        "year": 2007,
+        "venue": "Mélanges tantriques / Tantric Studies in Memory of Hélène Brunner",
+        "publication_type": "ARTICLE",
+        "identifiers": {}
+      }
+    ],
+    "witnesses": [
+      {
+        "@id": "pt:witness:ratie-utpaladeva-lost-vivrti:file",
+        "@type": [
+          "fabio:Manifestation",
+          "pt:Witness"
+        ],
+        "publication_ref": "pt:publication:ratie-utpaladeva-lost-vivrti",
+        "format": "PDF",
+        "sha256": "4d9c1cfa6924b1d1ba02bb915859a7cd2b9bad6a195dda0a12ceb3cad0412a40",
+        "local_path": "/mnt/HC_Volume_106427611/sanskritree/corpus/ipvv-anchor/scholarship/In_search_of_Utpaladeva_s_lost_Vivrti_on.pdf",
+        "source_uri": null,
+        "extraction_status": "EXTRACTED",
+        "rights": {}
+      },
+      {
+        "@id": "pt:witness:ratie-utpaladeva-abhinavagupta-free:file",
+        "@type": [
+          "fabio:Manifestation",
+          "pt:Witness"
+        ],
+        "publication_ref": "pt:publication:ratie-utpaladeva-abhinavagupta-free",
+        "format": "PDF",
+        "sha256": "22c6c8d66fd5f519e1b957e1a54ffc39093d7465068fbd77640eb36586886bdc",
+        "local_path": "/mnt/HC_Volume_106427611/sanskritree/corpus/ipvv-anchor/scholarship/Utpaladeva_and_Abhinavagupta_on_the_Free.pdf",
+        "source_uri": null,
+        "extraction_status": "EXTRACTED",
+        "rights": {}
+      },
+      {
+        "@id": "pt:witness:ratie-on-reason-scripture-pratyabhijna:file",
+        "@type": [
+          "fabio:Manifestation",
+          "pt:Witness"
+        ],
+        "publication_ref": "pt:publication:ratie-on-reason-scripture-pratyabhijna",
+        "format": "PDF",
+        "sha256": "c79ac120c597f7b444a9456ebc6302988786ecf0de2d3c31749f5926130024a0",
+        "local_path": "/mnt/HC_Volume_106427611/sanskritree/corpus/ipvv-anchor/scholarship/On_reason_and_scripture_in_the_Pratyabhi.pdf",
+        "source_uri": null,
+        "extraction_status": "EXTRACTED",
+        "rights": {}
+      },
+      {
+        "@id": "pt:witness:ratie-otherness-pratyabhijna:file",
+        "@type": [
+          "fabio:Manifestation",
+          "pt:Witness"
+        ],
+        "publication_ref": "pt:publication:ratie-otherness-pratyabhijna",
+        "format": "PDF",
+        "sha256": "d6afc2bc77fd8c29f1e2dcd4f0eb97384ee16dd93ea2dc34d869ee773c035dac",
+        "local_path": "/mnt/HC_Volume_106427611/sanskritree/corpus/ipvv-anchor/scholarship/Otherness_in_the_Pratyabhijna_Philosophy.pdf",
+        "source_uri": null,
+        "extraction_status": "EXTRACTED",
+        "rights": {}
+      },
+      {
+        "@id": "pt:witness:sanderson-saivism-tantric-traditions:file",
+        "@type": [
+          "fabio:Manifestation",
+          "pt:Witness"
+        ],
+        "publication_ref": "pt:publication:sanderson-saivism-tantric-traditions",
+        "format": "TXT",
+        "sha256": "a1188a9ad7bb356703973fd9acb388945ac20b8fb40fa97aa2d9715ad16e19a1",
+        "local_path": "data/corpus/sources/sanderson/Saivism_and_the_Tantric_Traditions_Festschrift_fulltext.txt",
+        "source_uri": null,
+        "extraction_status": "EXTRACTED",
+        "rights": {}
+      },
+      {
+        "@id": "pt:witness:sanderson-saiva-exegesis-kashmir:file",
+        "@type": [
+          "fabio:Manifestation",
+          "pt:Witness"
+        ],
+        "publication_ref": "pt:publication:sanderson-saiva-exegesis-kashmir",
+        "format": "TXT",
+        "sha256": "11b6bb00bc222fdbcf0df11f1ed18e21f8823993b365541881c542a37b070843",
+        "local_path": "data/corpus/sources/sanderson/saiva_exegesis_kashmir.txt",
+        "source_uri": null,
+        "extraction_status": "EXTRACTED",
+        "rights": {}
+      }
+    ],
+    "spans": [
+      {
+        "@id": "pt:span:pt:publication:ratie-utpaladeva-lost-vivrti:p179-vimarsa-not-devoid-of-prakasa",
+        "@type": [
+          "oa:SpecificResource",
+          "pt:Span"
+        ],
+        "witness_ref": "pt:witness:ratie-utpaladeva-lost-vivrti:file",
+        "page": 179,
+        "section": null,
+        "paragraph": null,
+        "char_start": 64099,
+        "char_end": 64184,
+        "quote": "there can be no [conscious] manifestation (prakāśa) devoid of a realization (vimarśa)",
+        "prefix": "’s Lost Vivṛti…\n\n179\n\n[And] because, according to a principle stated [earlier], ",
+        "suffix": ",69 this\ninternal manifestation is none other than the Lord, since it has a real",
+        "span_sha256": "0ddbbaa1da7914cc2a08c89ccf63ed97c6d4a72f7e23275648afead864e30abc"
+      },
+      {
+        "@id": "pt:span:pt:publication:ratie-utpaladeva-lost-vivrti:p180-unity-of-consciousness-not-contradicted",
+        "@type": [
+          "oa:SpecificResource",
+          "pt:Span"
+        ],
+        "witness_ref": "pt:witness:ratie-utpaladeva-lost-vivrti:file",
+        "page": 180,
+        "section": null,
+        "paragraph": null,
+        "char_start": 60670,
+        "char_end": 60748,
+        "quote": "differentiated phenomena are not contradictory with the unity of consciousness",
+        "prefix": "multifarious reflections that it shows by manifesting itself.\nOn this idea that ",
+        "suffix": " and on\nthe Śaivas’ use of the notion of background to justify the principle th",
+        "span_sha256": "f1b6dd642c04ef4bda10232bcd9ec95f54d9ce45dcafab5fe6f228d74c0cf7cd"
+      },
+      {
+        "@id": "pt:span:pt:publication:ratie-utpaladeva-abhinavagupta-free:p-vimarsa-distinguishes-consciousness",
+        "@type": [
+          "oa:SpecificResource",
+          "pt:Span"
+        ],
+        "witness_ref": "pt:witness:ratie-utpaladeva-abhinavagupta-free:file",
+        "page": 10,
+        "section": null,
+        "paragraph": null,
+        "char_start": 30592,
+        "char_end": 30676,
+        "quote": "an act of realization (vimarśa) that distinguishes consciousness from other entities",
+        "prefix": "ognitions, far from merely reflecting their objects, involve at their very core\n",
+        "suffix": " such\nas mirrors.50 Although the latter are endowed with the power to reflect, t",
+        "span_sha256": "61617604314d2a05c3412447cb9e6621fe8161b01e64641adcd106c852707b2e"
+      },
+      {
+        "@id": "pt:span:pt:publication:ratie-utpaladeva-abhinavagupta-free:p-liberation-is-recognition-of-self-as-siva",
+        "@type": [
+          "oa:SpecificResource",
+          "pt:Span"
+        ],
+        "witness_ref": "pt:witness:ratie-utpaladeva-abhinavagupta-free:file",
+        "page": 3,
+        "section": null,
+        "paragraph": null,
+        "char_start": 6219,
+        "char_end": 6280,
+        "quote": "liberation from the beginningless cycle of rebirths (saṃsāra)",
+        "prefix": "ousness that creates the world by merely imagining it.\nAccording to Utpaladeva, ",
+        "suffix": "–\nwhich is also the beginningless cycle of pain–is nothing but this blissful\n“re",
+        "span_sha256": "091f5f855c9eece31576545f3a05025773c0adab64f22298134307f252eeae9f"
+      },
+      {
+        "@id": "pt:span:pt:publication:ratie-on-reason-scripture-pratyabhijna:p-self-awareness-opponent-buddhist",
+        "@type": [
+          "oa:SpecificResource",
+          "pt:Span"
+        ],
+        "witness_ref": "pt:witness:ratie-on-reason-scripture-pratyabhijna:file",
+        "page": 34,
+        "section": null,
+        "paragraph": null,
+        "char_start": 71233,
+        "char_end": 71335,
+        "quote": "The opponent mentioned here is a Buddhist who considers that perception is restricted to the knowledge",
+        "prefix": "the fact that [the various means of knowledge] rest\non a single self-awareness. ",
+        "suffix": "\nof the particular, whereas concept vikalpa regards only generalities\nsāmānya . ",
+        "span_sha256": "1ddf2c2baa3c4e2753ea3d997dae61b772ddf16471b00ca4b1af3532c8f03ada"
+      },
+      {
+        "@id": "pt:span:pt:publication:ratie-on-reason-scripture-pratyabhijna:p-certainty-grounded-in-self-awareness",
+        "@type": [
+          "oa:SpecificResource",
+          "pt:Span"
+        ],
+        "witness_ref": "pt:witness:ratie-on-reason-scripture-pratyabhijna:file",
+        "page": 21,
+        "section": null,
+        "paragraph": null,
+        "char_start": 34893,
+        "char_end": 34963,
+        "quote": "this certainty itself is grounded in the self-awareness of the omnisci",
+        "prefix": " fundamental\n38\nmeans of knowledge as regards everything without exception; and\n",
+        "suffix": "39\nent universal consciousness.\n38\n\n39\n\ntheir power to express a particular mean",
+        "span_sha256": "dac9815c9ed391e26ee2e3d2aaf03b8ed24d0d637f882279f6fa8796339be88f"
+      },
+      {
+        "@id": "pt:span:pt:publication:sanderson-saivism-tantric-traditions:p389-liberation-identity-with-siva",
+        "@type": [
+          "oa:SpecificResource",
+          "pt:Span"
+        ],
+        "witness_ref": "pt:witness:sanderson-saivism-tantric-traditions:file",
+        "page": 1,
+        "section": null,
+        "paragraph": null,
+        "char_start": 1067135,
+        "char_end": 1067225,
+        "quote": "Conviction of \none's identity with Siva is the means; no external cause bestows liberation",
+        "prefix": "āsmīty \nevam ācāryašisyayoh || hetutadvattaya dārdhyābhimāno mocako hy anoh | (\"",
+        "suffix": ". 'He is Šiva, and \nIam nothing but Siva’: [in the rite of initiation, this firm",
+        "span_sha256": "b9ffd1e7bfc58936bac5a3604de260fda9684608a7ef3e443773df987a6cdbc0"
+      },
+      {
+        "@id": "pt:span:pt:publication:sanderson-saivism-tantric-traditions:p389-inner-conviction-gnosis-liberation",
+        "@type": [
+          "oa:SpecificResource",
+          "pt:Span"
+        ],
+        "witness_ref": "pt:witness:sanderson-saivism-tantric-traditions:file",
+        "page": 1,
+        "section": null,
+        "paragraph": null,
+        "char_start": 1066170,
+        "char_end": 1066252,
+        "quote": "This \ninner conviction alone, a form of knowledge, is the real means of liberation",
+        "prefix": " \nonly as ancillaries to $ivabhimanata, conviction of one's identity with Siva. ",
+        "suffix": ".? \n\nOne need not follow Abhinavagupta entirely in reading the BraYa's dichot- \n",
+        "span_sha256": "5764d1b169c0dffa2c1496cea9a9fe76d5d0120315899429577e9e76e2f79987"
+      },
+      {
+        "@id": "pt:span:pt:publication:sanderson-saivism-tantric-traditions:p-external-object-alien-unthinkable",
+        "@type": [
+          "oa:SpecificResource",
+          "pt:Span"
+        ],
+        "witness_ref": "pt:witness:sanderson-saivism-tantric-traditions:file",
+        "page": 1,
+        "section": null,
+        "paragraph": null,
+        "char_start": 76602,
+        "char_end": 76667,
+        "quote": "an object by nature alien to consciousness is simply \nunthinkable",
+        "prefix": "e inference) of an external object is in fact impos- \nsible to perform, because ",
+        "suffix": ". \n\nChapter 6, by Christopher D. Wallis, is entitled “Alchemical Metaphors for \n",
+        "span_sha256": "0b11d6d8b8c698fd09a4c3111ff48ec393d2e0eedc6b344fcbfbe5581310c71d"
+      },
+      {
+        "@id": "pt:span:pt:publication:sanderson-saivism-tantric-traditions:p-loc-self-manifest-light-fourth-state",
+        "@type": [
+          "oa:SpecificResource",
+          "pt:Span"
+        ],
+        "witness_ref": "pt:witness:sanderson-saivism-tantric-traditions:file",
+        "page": 1,
+        "section": null,
+        "paragraph": null,
+        "char_start": 499326,
+        "char_end": 499429,
+        "quote": "the Light of Consciousness is self-manifest and we cannot speak of an \nimmersion, except metaphorically",
+        "prefix": "which there is perception but no sense of a separate perceiver or per- \nceived, ",
+        "suffix": " (10.269). This helps us understand that the \nmovement into the transcendent Fou",
+        "span_sha256": "c70afad7cfe028f574124119e28e7dab64597f45d915100fbecfeb487e5f5a9e"
+      },
+      {
+        "@id": "pt:span:pt:publication:sanderson-saiva-exegesis-kashmir:p-insight-liberation-exceptional",
+        "@type": [
+          "oa:SpecificResource",
+          "pt:Span"
+        ],
+        "witness_ref": "pt:witness:sanderson-saiva-exegesis-kashmir:file",
+        "page": 1,
+        "section": null,
+        "paragraph": null,
+        "char_start": 52401,
+        "char_end": 52503,
+        "quote": "liberation through insight alone and recognition as a \nGuru without passing through visible ceremonies",
+        "prefix": "emoval could be seen as a goal that could be achieved \nbefore death. Of course, ",
+        "suffix": " but by an internal and there- \nfore unverifiable “consecration by the goddesses",
+        "span_sha256": "d5a94cec3070c0a64a1cd061a6a9b797088eb107a2507ba7080739b841b11687"
+      },
+      {
+        "@id": "pt:span:pt:publication:sanderson-saiva-exegesis-kashmir:p-prakasa-and-vimarsa-unitary-source",
+        "@type": [
+          "oa:SpecificResource",
+          "pt:Span"
+        ],
+        "witness_ref": "pt:witness:sanderson-saiva-exegesis-kashmir:file",
+        "page": 1,
+        "section": null,
+        "paragraph": null,
+        "char_start": 582946,
+        "char_end": 583055,
+        "quote": "embodying the self-manifest light of reality (prakasah) and its \ninnate power of creative ideation (vimarsah)",
+        "prefix": "rates in its opening verse the blissful fusion (sémarasya-) of \nSiva and Sakti, ",
+        "suffix": " as the ‘supreme sandal’ (para pa- \ndukda) of the Guru Paramasiva (parasivatmano",
+        "span_sha256": "e9c92f97f2a03709e253c645f77471e510f9f080add2ffc4d2df18b7fbbb292d"
+      },
+      {
+        "@id": "pt:span:pt:publication:sanderson-saiva-exegesis-kashmir:p-sivananda-footstool-is-consciousness",
+        "@type": [
+          "oa:SpecificResource",
+          "pt:Span"
+        ],
+        "witness_ref": "pt:witness:sanderson-saiva-exegesis-kashmir:file",
+        "page": 1,
+        "section": null,
+        "paragraph": null,
+        "char_start": 585604,
+        "char_end": 585707,
+        "quote": "the footstool on which the [two] feet \nof Siva-and-Sakti rest, identifying it with consciousness itself",
+        "prefix": "o parents through these.!! Similarly, \nSivànanda quotes a verse which venerates ",
+        "suffix": " and describing it \nas haloed by the radiance of the infinite worlds that it spo",
+        "span_sha256": "0584b574d4db95727fa40579f4f70d9718d9e65a5c25c9915c41184bab940ded"
+      }
+    ],
+    "assertions": [
+      {
+        "@id": "pt:assertion:pt:publication:ratie-utpaladeva-lost-vivrti:p179-vimarsa-not-devoid-of-prakasa",
+        "@type": "pt:SourceAssertion",
+        "source_span_ref": "pt:span:pt:publication:ratie-utpaladeva-lost-vivrti:p179-vimarsa-not-devoid-of-prakasa",
+        "attributed_to": "pt:person:isabelle-ratie",
+        "claim": "There can be no conscious manifestation (prakāśa) devoid of a realization (vimarśa); the internal manifestation is none other than the Lord because it has a realization (pratyavamarśa) as its essence.",
+        "commitment": "ASSERTS",
+        "assertion_type": "INTERPRETIVE",
+        "extraction_origin": "CURATED_HUMAN_READ",
+        "verification": "SPAN_VERIFIED",
+        "extraction_activity": "pt:activity:scholar-extract:v0.1"
+      },
+      {
+        "@id": "pt:assertion:pt:publication:ratie-utpaladeva-lost-vivrti:p180-unity-of-consciousness-not-contradicted",
+        "@type": "pt:SourceAssertion",
+        "source_span_ref": "pt:span:pt:publication:ratie-utpaladeva-lost-vivrti:p180-unity-of-consciousness-not-contradicted",
+        "attributed_to": "pt:person:isabelle-ratie",
+        "claim": "Differentiated phenomena are not contradictory with the unity of consciousness (in the relevant Utpaladeva account).",
+        "commitment": "ASSERTS",
+        "assertion_type": "INTERPRETIVE",
+        "extraction_origin": "CURATED_HUMAN_READ",
+        "verification": "SPAN_VERIFIED",
+        "extraction_activity": "pt:activity:scholar-extract:v0.1"
+      },
+      {
+        "@id": "pt:assertion:pt:publication:ratie-utpaladeva-abhinavagupta-free:p-vimarsa-distinguishes-consciousness",
+        "@type": "pt:SourceAssertion",
+        "source_span_ref": "pt:span:pt:publication:ratie-utpaladeva-abhinavagupta-free:p-vimarsa-distinguishes-consciousness",
+        "attributed_to": "pt:person:isabelle-ratie",
+        "claim": "vimarśa is an act of realization that distinguishes consciousness from other entities; it names a self-cognitive (reflexive) dimension of consciousness.",
+        "commitment": "ASSERTS",
+        "assertion_type": "INTERPRETIVE",
+        "extraction_origin": "CURATED_HUMAN_READ",
+        "verification": "SPAN_VERIFIED",
+        "extraction_activity": "pt:activity:scholar-extract:v0.1"
+      },
+      {
+        "@id": "pt:assertion:pt:publication:ratie-utpaladeva-abhinavagupta-free:p-liberation-is-recognition-of-self-as-siva",
+        "@type": "pt:SourceAssertion",
+        "source_span_ref": "pt:span:pt:publication:ratie-utpaladeva-abhinavagupta-free:p-liberation-is-recognition-of-self-as-siva",
+        "attributed_to": "pt:person:isabelle-ratie",
+        "claim": "According to Utpaladeva, liberation from the beginningless cycle of rebirths is nothing but the blissful 'recognition' (pratyabhijñā) of oneself as 'the Lord' (īśvara), that is, Śiva.",
+        "commitment": "ASSERTS",
+        "assertion_type": "INTERPRETIVE",
+        "extraction_origin": "CURATED_HUMAN_READ",
+        "verification": "SPAN_VERIFIED",
+        "extraction_activity": "pt:activity:scholar-extract:v0.1"
+      },
+      {
+        "@id": "pt:assertion:pt:publication:ratie-on-reason-scripture-pratyabhijna:p-self-awareness-opponent-buddhist",
+        "@type": "pt:SourceAssertion",
+        "source_span_ref": "pt:span:pt:publication:ratie-on-reason-scripture-pratyabhijna:p-self-awareness-opponent-buddhist",
+        "attributed_to": "pt:person:isabelle-ratie",
+        "claim": "Utpaladeva's account of self-awareness (svasaṃvedana) responds to a Buddhist opponent who restricts perception to the knowledge of a particular object.",
+        "commitment": "ASSERTS",
+        "assertion_type": "INTERPRETIVE",
+        "extraction_origin": "CURATED_HUMAN_READ",
+        "verification": "SPAN_VERIFIED",
+        "extraction_activity": "pt:activity:scholar-extract:v0.1"
+      },
+      {
+        "@id": "pt:assertion:pt:publication:ratie-on-reason-scripture-pratyabhijna:p-certainty-grounded-in-self-awareness",
+        "@type": "pt:SourceAssertion",
+        "source_span_ref": "pt:span:pt:publication:ratie-on-reason-scripture-pratyabhijna:p-certainty-grounded-in-self-awareness",
+        "attributed_to": "pt:person:isabelle-ratie",
+        "claim": "Certainty is grounded in self-awareness (of the omniscient Lord) in the relevant Pratyabhijñā account.",
+        "commitment": "ASSERTS",
+        "assertion_type": "INTERPRETIVE",
+        "extraction_origin": "CURATED_HUMAN_READ",
+        "verification": "SPAN_VERIFIED",
+        "extraction_activity": "pt:activity:scholar-extract:v0.1"
+      },
+      {
+        "@id": "pt:assertion:pt:publication:sanderson-saivism-tantric-traditions:p389-liberation-identity-with-siva",
+        "@type": "pt:SourceAssertion",
+        "source_span_ref": "pt:span:pt:publication:sanderson-saivism-tantric-traditions:p389-liberation-identity-with-siva",
+        "attributed_to": "pt:person:alexis-sanderson",
+        "claim": "Sanderson states (quoting Tantrāloka 15.42-43b) that conviction of one's identity with Śiva is the means of liberation and that no external cause bestows it.",
+        "commitment": "ASSERTS",
+        "assertion_type": "INTERPRETIVE",
+        "extraction_origin": "CURATED_HUMAN_READ",
+        "verification": "SPAN_VERIFIED",
+        "extraction_activity": "pt:activity:scholar-extract:v0.2"
+      },
+      {
+        "@id": "pt:assertion:pt:publication:sanderson-saivism-tantric-traditions:p389-inner-conviction-gnosis-liberation",
+        "@type": "pt:SourceAssertion",
+        "source_span_ref": "pt:span:pt:publication:sanderson-saivism-tantric-traditions:p389-inner-conviction-gnosis-liberation",
+        "attributed_to": "pt:person:alexis-sanderson",
+        "claim": "Sanderson reports that the inner conviction of identity with Śiva, a form of knowledge, is the real means of liberation.",
+        "commitment": "ASSERTS",
+        "assertion_type": "INTERPRETIVE",
+        "extraction_origin": "CURATED_HUMAN_READ",
+        "verification": "SPAN_VERIFIED",
+        "extraction_activity": "pt:activity:scholar-extract:v0.2"
+      },
+      {
+        "@id": "pt:assertion:pt:publication:sanderson-saivism-tantric-traditions:p-external-object-alien-unthinkable",
+        "@type": "pt:SourceAssertion",
+        "source_span_ref": "pt:span:pt:publication:sanderson-saivism-tantric-traditions:p-external-object-alien-unthinkable",
+        "attributed_to": "pt:person:goodall-et-al",
+        "claim": "Goodall et al. report that Utpaladeva argued that an object by nature alien to consciousness is unthinkable, in his polemic against the existence of external objects (Vijñānavādin debate).",
+        "commitment": "ASSERTS",
+        "assertion_type": "INTERPRETIVE",
+        "extraction_origin": "CURATED_HUMAN_READ",
+        "verification": "SPAN_VERIFIED",
+        "extraction_activity": "pt:activity:scholar-extract:v0.2"
+      },
+      {
+        "@id": "pt:assertion:pt:publication:sanderson-saivism-tantric-traditions:p-loc-self-manifest-light-fourth-state",
+        "@type": "pt:SourceAssertion",
+        "source_span_ref": "pt:span:pt:publication:sanderson-saivism-tantric-traditions:p-loc-self-manifest-light-fourth-state",
+        "attributed_to": "pt:person:alexis-sanderson",
+        "claim": "Sanderson (on Tantrāloka 10.269) reports that in the Fourth state the Light of Consciousness is self-manifest; a distinct claim about manifestation than 'manifestation-not-devoid-of-realization'.",
+        "commitment": "ASSERTS",
+        "assertion_type": "INTERPRETIVE",
+        "extraction_origin": "CURATED_HUMAN_READ",
+        "verification": "SPAN_VERIFIED",
+        "extraction_activity": "pt:activity:scholar-extract:v0.2"
+      },
+      {
+        "@id": "pt:assertion:pt:publication:sanderson-saiva-exegesis-kashmir:p-insight-liberation-exceptional",
+        "@type": "pt:SourceAssertion",
+        "source_span_ref": "pt:span:pt:publication:sanderson-saiva-exegesis-kashmir:p-insight-liberation-exceptional",
+        "attributed_to": "pt:person:alexis-sanderson",
+        "claim": "Sanderson notes that liberation through insight alone and recognition as a Guru without visible ceremonies 'were seen as exceptional' — qualifying the claim that gnosis alone is the means.",
+        "commitment": "ASSERTS",
+        "assertion_type": "INTERPRETIVE",
+        "extraction_origin": "CURATED_HUMAN_READ",
+        "verification": "SPAN_VERIFIED",
+        "extraction_activity": "pt:activity:scholar-extract:v0.2"
+      },
+      {
+        "@id": "pt:assertion:pt:publication:sanderson-saiva-exegesis-kashmir:p-prakasa-and-vimarsa-unitary-source",
+        "@type": "pt:SourceAssertion",
+        "source_span_ref": "pt:span:pt:publication:sanderson-saiva-exegesis-kashmir:p-prakasa-and-vimarsa-unitary-source",
+        "attributed_to": "pt:person:alexis-sanderson",
+        "claim": "Sanderson reports (Cidvilāsastava) that Śiva and Śakti embody the self-manifest light of reality (prakāśa) and its innate power of creative ideation (vimarśa) as the unitary source.",
+        "commitment": "ASSERTS",
+        "assertion_type": "INTERPRETIVE",
+        "extraction_origin": "CURATED_HUMAN_READ",
+        "verification": "SPAN_VERIFIED",
+        "extraction_activity": "pt:activity:scholar-extract:v0.2"
+      },
+      {
+        "@id": "pt:assertion:pt:publication:sanderson-saiva-exegesis-kashmir:p-sivananda-footstool-is-consciousness",
+        "@type": "pt:SourceAssertion",
+        "source_span_ref": "pt:span:pt:publication:sanderson-saiva-exegesis-kashmir:p-sivananda-footstool-is-consciousness",
+        "attributed_to": "pt:person:sivananda",
+        "claim": "Sanderson reports that Śivānanda venerates the footstool of Śiva-and-Śakti, identifying it with consciousness itself, haloed by the radiance of the infinite worlds it spontaneously creates.",
+        "commitment": "ASSERTS",
+        "assertion_type": "INTERPRETIVE",
+        "extraction_origin": "CURATED_HUMAN_READ",
+        "verification": "SPAN_VERIFIED",
+        "extraction_activity": "pt:activity:scholar-extract:v0.2"
+      }
+    ],
+    "propositions": [
+      {
+        "@id": "pt:prop:manifestation-not-devoid-of-realization",
+        "@type": "pt:Prop",
+        "formulation": "There can be no conscious manifestation (prakāśa) devoid of a realization (vimarśa); the internal manifestation is the Lord because it has pratyavamarśa as its essence.",
+        "subject": "prakāśa / vimarśa",
+        "scope": "Utpaladeva's Pratyabhijñā (ĪPVV, commentary on ĪPK 1.8)",
+        "modality": "modal necessity (no manifestation without realization)",
+        "temporal_scope": "Utpaladeva / 10th c. Kashmir Pratyabhijñā",
+        "assumptions": "read as Ratié's report of Utpaladeva's own position, not later Śaivism generally",
+        "provenance": "FROM_SOURCE_EVIDENCE"
+      },
+      {
+        "@id": "pt:prop:differentiation-compatible-with-unity",
+        "@type": "pt:Prop",
+        "formulation": "Differentiated phenomena are not contradictory with the unity of consciousness in the relevant Pratyabhijñā account.",
+        "subject": "unity of consciousness / differentiation",
+        "scope": "Utpaladeva's Pratyabhijñā",
+        "modality": "non-contradiction",
+        "temporal_scope": "Utpaladeva / 10th c.",
+        "assumptions": null,
+        "provenance": "FROM_SOURCE_EVIDENCE"
+      },
+      {
+        "@id": "pt:prop:vimarsa-is-reflexive-self-cognition",
+        "@type": "pt:Prop",
+        "formulation": "vimarśa names a reflexive / self-cognitive act of realization that distinguishes consciousness from other entities.",
+        "subject": "vimarśa",
+        "scope": "Utpaladeva / Abhinavagupta Pratyabhijñā",
+        "modality": "defines a term (self-cognitive dimension)",
+        "temporal_scope": "10th-11th c. Kashmir",
+        "assumptions": null,
+        "provenance": "FROM_SOURCE_EVIDENCE"
+      },
+      {
+        "@id": "pt:prop:recognition-responds-to-buddhist-accounts",
+        "@type": "pt:Prop",
+        "formulation": "Utpaladeva's account of self-awareness (svasaṃvedana) responds to a Buddhist opponent who restricts perception to a particular object.",
+        "subject": "self-awareness / Buddhist epistemology",
+        "scope": "Utpaladeva's Pratyabhijñā vs Buddhist epistemologists",
+        "modality": "responds to (dialectical)",
+        "temporal_scope": "Utpaladeva / 10th c.",
+        "assumptions": "framed as a response to Buddhist epistemology per Ratié's account",
+        "provenance": "FROM_SOURCE_EVIDENCE"
+      },
+      {
+        "@id": "pt:prop:certainty-grounded-in-self-awareness",
+        "@type": "pt:Prop",
+        "formulation": "Certainty is grounded in self-awareness (of the omniscient Lord) in the Pratyabhijñā account.",
+        "subject": "certainty / self-awareness",
+        "scope": "Pratyabhijñā epistemology",
+        "modality": "grounding relation",
+        "temporal_scope": "Pratyabhijñā tradition",
+        "assumptions": null,
+        "provenance": "FROM_SOURCE_EVIDENCE"
+      },
+      {
+        "@id": "pt:prop:liberation-is-conviction-of-identity-as-siva",
+        "@type": "pt:Prop",
+        "formulation": "Liberation is achieved by conviction of one's identity with Śiva; no external cause bestows it.",
+        "subject": "liberation / recognition of identity",
+        "scope": "Abhinavagupta / Tantrāloka 15.42-43b, as reported by Sanderson",
+        "modality": "identity of means (conviction), denial of external cause",
+        "temporal_scope": "Abhinavagupta / 11th c. Kashmir; reported by Sanderson",
+        "assumptions": "reported through Sanderson's citation of Tantrāloka; not a claim by Utpaladeva",
+        "provenance": "FROM_SOURCE_EVIDENCE"
+      },
+      {
+        "@id": "pt:prop:gnosis-is-the-means-of-liberation",
+        "@type": "pt:Prop",
+        "formulation": "Inner conviction (a form of knowledge/gnosis), not ritual action per se, is the real means of liberation.",
+        "subject": "gnosis vs ritual as means of liberation",
+        "scope": "Abhinavagupta (Tantrāloka), as reported by Sanderson",
+        "modality": "qualification (ritual only ancillary)",
+        "temporal_scope": "Abhinavagupta / 11th c.",
+        "assumptions": null,
+        "provenance": "FROM_SOURCE_EVIDENCE"
+      },
+      {
+        "@id": "pt:prop:external-object-alien-to-consciousness-unthinkable",
+        "@type": "pt:Prop",
+        "formulation": "An object by nature alien to consciousness is unthinkable; postulating an external world is of no use in everyday practice.",
+        "subject": "external objects / idealism",
+        "scope": "Utpaladeva (Pratyabhijñā), Vijñānavādin debate",
+        "modality": "impossibility (unthinkable)",
+        "temporal_scope": "Utpaladeva / 10th c.",
+        "assumptions": "reported by Goodall et al. (in a Festschrift chapter), not by Sanderson himself",
+        "provenance": "FROM_SOURCE_EVIDENCE"
+      },
+      {
+        "@id": "pt:prop:siva-sakti-unitary-prakasa-vimarsa",
+        "@type": "pt:Prop",
+        "formulation": "Śiva and Śakti embody the self-manifest light of reality (prakāśa) and its innate power of creative ideation (vimarśa) as the unitary source.",
+        "subject": "prakāśa / vimarśa / Śiva-Śakti",
+        "scope": "Cidvilāsastava, as reported by Sanderson",
+        "modality": "identity (unitary source)",
+        "temporal_scope": "South-Indian Śākta Śaiva / Śaiva non-dualism",
+        "assumptions": "reported through Sanderson's account of the Cidvilāsastava",
+        "provenance": "FROM_SOURCE_EVIDENCE"
+      },
+      {
+        "@id": "pt:prop:siva-sakti-footstool-is-consciousness",
+        "@type": "pt:Prop",
+        "formulation": "The (ritual) footstool of Śiva-and-Śakti is identified with consciousness itself.",
+        "subject": "consciousness / Śiva-Śakti",
+        "scope": "Śivānanda, as reported by Sanderson (Saiva Exegesis)",
+        "modality": "identity (with consciousness)",
+        "temporal_scope": "Śivānanda / Śaiva exegesis",
+        "assumptions": "reported through Sanderson's account of Śivānanda; ritual-symbolic context",
+        "provenance": "FROM_SOURCE_EVIDENCE"
+      }
+    ],
+    "evidence_links": [
+      {
+        "@id": "pt:link:1",
+        "@type": "pt:EvidenceLink",
+        "assertion_ref": "pt:assertion:pt:publication:ratie-utpaladeva-lost-vivrti:p179-vimarsa-not-devoid-of-prakasa",
+        "prop_ref": "pt:prop:manifestation-not-devoid-of-realization",
+        "relation": "DIRECT_SUPPORT",
+        "independence": "PRIMARY_EDITION",
+        "scope": "PROPOSITION",
+        "review_state": "MACHINE_CANDIDATE",
+        "target_proposition_ref": "pt:prop:manifestation-not-devoid-of-realization",
+        "target_proposition_snapshot": "There can be no conscious manifestation (prakāśa) devoid of a realization (vimarśa); the internal manifestation is the Lord because it has pratyavamarśa as its essence.",
+        "target_proposition_hash": "d7b176cbd2f4ec2f36c0964b00bdd5254965c17c9871b6d495b3f96b9b81d370"
+      },
+      {
+        "@id": "pt:link:2",
+        "@type": "pt:EvidenceLink",
+        "assertion_ref": "pt:assertion:pt:publication:ratie-utpaladeva-lost-vivrti:p180-unity-of-consciousness-not-contradicted",
+        "prop_ref": "pt:prop:differentiation-compatible-with-unity",
+        "relation": "DIRECT_SUPPORT",
+        "independence": "INDEPENDENT_TEXTUAL_ANALYSIS",
+        "scope": "PROPOSITION",
+        "review_state": "MACHINE_CANDIDATE",
+        "target_proposition_ref": "pt:prop:differentiation-compatible-with-unity",
+        "target_proposition_snapshot": "Differentiated phenomena are not contradictory with the unity of consciousness in the relevant Pratyabhijñā account.",
+        "target_proposition_hash": "d034a8f041eb5f3404cdb59f5358966a33bd9de33d9e08d477b052292bd372b2"
+      },
+      {
+        "@id": "pt:link:3",
+        "@type": "pt:EvidenceLink",
+        "assertion_ref": "pt:assertion:pt:publication:ratie-utpaladeva-abhinavagupta-free:p-vimarsa-distinguishes-consciousness",
+        "prop_ref": "pt:prop:vimarsa-is-reflexive-self-cognition",
+        "relation": "DIRECT_SUPPORT",
+        "independence": "INDEPENDENT_TEXTUAL_ANALYSIS",
+        "scope": "PROPOSITION",
+        "review_state": "MACHINE_CANDIDATE",
+        "target_proposition_ref": "pt:prop:vimarsa-is-reflexive-self-cognition",
+        "target_proposition_snapshot": "vimarśa names a reflexive / self-cognitive act of realization that distinguishes consciousness from other entities.",
+        "target_proposition_hash": "b7419547131ef991331848b4ece40a0fa96f1c117552e08549d922b944bbfa57"
+      },
+      {
+        "@id": "pt:link:4",
+        "@type": "pt:EvidenceLink",
+        "assertion_ref": "pt:assertion:pt:publication:ratie-on-reason-scripture-pratyabhijna:p-self-awareness-opponent-buddhist",
+        "prop_ref": "pt:prop:recognition-responds-to-buddhist-accounts",
+        "relation": "DIRECT_SUPPORT",
+        "independence": "INDEPENDENT_TEXTUAL_ANALYSIS",
+        "scope": "PROPOSITION",
+        "review_state": "MACHINE_CANDIDATE",
+        "target_proposition_ref": "pt:prop:recognition-responds-to-buddhist-accounts",
+        "target_proposition_snapshot": "Utpaladeva's account of self-awareness (svasaṃvedana) responds to a Buddhist opponent who restricts perception to a particular object.",
+        "target_proposition_hash": "25cf9c92228e55f7bd067c6319b6270c707f4f7a4cac76057baa79e91bef6f31"
+      },
+      {
+        "@id": "pt:link:5",
+        "@type": "pt:EvidenceLink",
+        "assertion_ref": "pt:assertion:pt:publication:ratie-on-reason-scripture-pratyabhijna:p-certainty-grounded-in-self-awareness",
+        "prop_ref": "pt:prop:certainty-grounded-in-self-awareness",
+        "relation": "DIRECT_SUPPORT",
+        "independence": "INDEPENDENT_TEXTUAL_ANALYSIS",
+        "scope": "PROPOSITION",
+        "review_state": "MACHINE_CANDIDATE",
+        "target_proposition_ref": "pt:prop:certainty-grounded-in-self-awareness",
+        "target_proposition_snapshot": "Certainty is grounded in self-awareness (of the omniscient Lord) in the Pratyabhijñā account.",
+        "target_proposition_hash": "0e2408b018138b99d275d4a1af882fefcb964ab0623a42ed2bbc65e2b13b0c62"
+      },
+      {
+        "@id": "pt:link:6",
+        "@type": "pt:EvidenceLink",
+        "assertion_ref": "pt:assertion:pt:publication:sanderson-saivism-tantric-traditions:p389-liberation-identity-with-siva",
+        "prop_ref": "pt:prop:liberation-is-conviction-of-identity-as-siva",
+        "relation": "DIRECT_SUPPORT",
+        "independence": "INDEPENDENT_AUTHOR",
+        "scope": "PROPOSITION",
+        "review_state": "MACHINE_CANDIDATE",
+        "target_proposition_ref": "pt:prop:liberation-is-conviction-of-identity-as-siva",
+        "target_proposition_snapshot": "Liberation is achieved by conviction of one's identity with Śiva; no external cause bestows it.",
+        "target_proposition_hash": "3f8f048136f15e190519d1bb7a3b590f5ccb039ca69fe75bc9a5db4148d3b527"
+      },
+      {
+        "@id": "pt:link:7",
+        "@type": "pt:EvidenceLink",
+        "assertion_ref": "pt:assertion:pt:publication:sanderson-saivism-tantric-traditions:p389-inner-conviction-gnosis-liberation",
+        "prop_ref": "pt:prop:gnosis-is-the-means-of-liberation",
+        "relation": "DIRECT_SUPPORT",
+        "independence": "INDEPENDENT_AUTHOR",
+        "scope": "PROPOSITION",
+        "review_state": "MACHINE_CANDIDATE",
+        "target_proposition_ref": "pt:prop:gnosis-is-the-means-of-liberation",
+        "target_proposition_snapshot": "Inner conviction (a form of knowledge/gnosis), not ritual action per se, is the real means of liberation.",
+        "target_proposition_hash": "b5b460361847dbfcbc22d787c1fb0a45d4b3e54c1799d67eed4984af7c0c49ca"
+      },
+      {
+        "@id": "pt:link:8",
+        "@type": "pt:EvidenceLink",
+        "assertion_ref": "pt:assertion:pt:publication:ratie-utpaladeva-abhinavagupta-free:p-liberation-is-recognition-of-self-as-siva",
+        "prop_ref": "pt:prop:liberation-is-conviction-of-identity-as-siva",
+        "relation": "DIRECT_SUPPORT",
+        "independence": "INDEPENDENT_AUTHOR",
+        "scope": "PROPOSITION",
+        "review_state": "MACHINE_CANDIDATE",
+        "target_proposition_ref": "pt:prop:liberation-is-conviction-of-identity-as-siva",
+        "target_proposition_snapshot": "Liberation is achieved by conviction of one's identity with Śiva; no external cause bestows it.",
+        "target_proposition_hash": "3f8f048136f15e190519d1bb7a3b590f5ccb039ca69fe75bc9a5db4148d3b527"
+      },
+      {
+        "@id": "pt:link:9",
+        "@type": "pt:EvidenceLink",
+        "assertion_ref": "pt:assertion:pt:publication:sanderson-saivism-tantric-traditions:p-external-object-alien-unthinkable",
+        "prop_ref": "pt:prop:external-object-alien-to-consciousness-unthinkable",
+        "relation": "DIRECT_SUPPORT",
+        "independence": "INDEPENDENT_AUTHOR",
+        "scope": "PROPOSITION",
+        "review_state": "MACHINE_CANDIDATE",
+        "target_proposition_ref": "pt:prop:external-object-alien-to-consciousness-unthinkable",
+        "target_proposition_snapshot": "An object by nature alien to consciousness is unthinkable; postulating an external world is of no use in everyday practice.",
+        "target_proposition_hash": "754ad36b983c7db43af9bdde448ee99f6bd88bda44496e274c2db36d7a8741d2"
+      },
+      {
+        "@id": "pt:link:10",
+        "@type": "pt:EvidenceLink",
+        "assertion_ref": "pt:assertion:pt:publication:sanderson-saiva-exegesis-kashmir:p-insight-liberation-exceptional",
+        "prop_ref": "pt:prop:gnosis-is-the-means-of-liberation",
+        "relation": "PARTIAL_SUPPORT",
+        "independence": "INDEPENDENT_AUTHOR",
+        "scope": "PROPOSITION",
+        "review_state": "MACHINE_CANDIDATE",
+        "target_proposition_ref": "pt:prop:gnosis-is-the-means-of-liberation",
+        "target_proposition_snapshot": "Inner conviction (a form of knowledge/gnosis), not ritual action per se, is the real means of liberation.",
+        "target_proposition_hash": "b5b460361847dbfcbc22d787c1fb0a45d4b3e54c1799d67eed4984af7c0c49ca"
+      },
+      {
+        "@id": "pt:link:11",
+        "@type": "pt:EvidenceLink",
+        "assertion_ref": "pt:assertion:pt:publication:sanderson-saiva-exegesis-kashmir:p-prakasa-and-vimarsa-unitary-source",
+        "prop_ref": "pt:prop:manifestation-not-devoid-of-realization",
+        "relation": "DIRECT_SUPPORT",
+        "independence": "INDEPENDENT_AUTHOR",
+        "scope": "PROPOSITION",
+        "review_state": "MACHINE_CANDIDATE",
+        "target_proposition_ref": "pt:prop:manifestation-not-devoid-of-realization",
+        "target_proposition_snapshot": "There can be no conscious manifestation (prakāśa) devoid of a realization (vimarśa); the internal manifestation is the Lord because it has pratyavamarśa as its essence.",
+        "target_proposition_hash": "d7b176cbd2f4ec2f36c0964b00bdd5254965c17c9871b6d495b3f96b9b81d370"
+      },
+      {
+        "@id": "pt:link:12",
+        "@type": "pt:EvidenceLink",
+        "assertion_ref": "pt:assertion:pt:publication:sanderson-saiva-exegesis-kashmir:p-prakasa-and-vimarsa-unitary-source",
+        "prop_ref": "pt:prop:siva-sakti-unitary-prakasa-vimarsa",
+        "relation": "DIRECT_SUPPORT",
+        "independence": "INDEPENDENT_AUTHOR",
+        "scope": "PROPOSITION",
+        "review_state": "MACHINE_CANDIDATE",
+        "target_proposition_ref": "pt:prop:siva-sakti-unitary-prakasa-vimarsa",
+        "target_proposition_snapshot": "Śiva and Śakti embody the self-manifest light of reality (prakāśa) and its innate power of creative ideation (vimarśa) as the unitary source.",
+        "target_proposition_hash": "35379403b7e9fd386fd16cb5b89aff2ddf8a77684955de63ee1d650342fd4a4b"
+      },
+      {
+        "@id": "pt:link:13",
+        "@type": "pt:EvidenceLink",
+        "assertion_ref": "pt:assertion:pt:publication:sanderson-saiva-exegesis-kashmir:p-sivananda-footstool-is-consciousness",
+        "prop_ref": "pt:prop:siva-sakti-footstool-is-consciousness",
+        "relation": "DIRECT_SUPPORT",
+        "independence": "INDEPENDENT_AUTHOR",
+        "scope": "PROPOSITION",
+        "review_state": "MACHINE_CANDIDATE",
+        "target_proposition_ref": "pt:prop:siva-sakti-footstool-is-consciousness",
+        "target_proposition_snapshot": "The (ritual) footstool of Śiva-and-Śakti is identified with consciousness itself.",
+        "target_proposition_hash": "06bfbc462473490ae6dcf833a2da01e4f660998be220e31ab57605979e37bbda"
+      },
+      {
+        "@id": "pt:link:14",
+        "@type": "pt:EvidenceLink",
+        "assertion_ref": "pt:assertion:pt:publication:sanderson-saivism-tantric-traditions:p-loc-self-manifest-light-fourth-state",
+        "prop_ref": "pt:prop:manifestation-not-devoid-of-realization",
+        "relation": "ALTERNATIVE_READING",
+        "independence": "INDEPENDENT_AUTHOR",
+        "scope": "PROPOSITION",
+        "review_state": "MACHINE_CANDIDATE",
+        "target_proposition_ref": "pt:prop:manifestation-not-devoid-of-realization",
+        "target_proposition_snapshot": "There can be no conscious manifestation (prakāśa) devoid of a realization (vimarśa); the internal manifestation is the Lord because it has pratyavamarśa as its essence.",
+        "target_proposition_hash": "d7b176cbd2f4ec2f36c0964b00bdd5254965c17c9871b6d495b3f96b9b81d370"
+      }
+    ]
+  }
+}

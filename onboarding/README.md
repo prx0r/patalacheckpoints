@@ -28,9 +28,13 @@ to their lane. Read top to bottom; then follow the specialization gate for your 
 | # | Doc | Why |
 |---|---|---|
 | 1 | `../VISION_AND_NAVIGATION.md` | THE vision + 8-step logical progression + navigation across the 3 homes |
-| 1b | `../docs/vision/INDEX.md` | the full vision arc (Vision 01–08) + foundational strategy + dev plans |
-| 1c | `../machinelearning/dualagentvision.md` | the master derivation graph + the two-agent split + CP0–CP12 checkpoint ladder |
-| 1d | `../machinelearning/dualagentvision-ADAPTED.md` | the vision mapped onto our ACTUAL infra (per-checkpoint real state) |
+| 1b | `../docs/global/GLOBAL-STATE-2026-08-13.md` | **READ THE TIMESTAMPED GLOBAL CHECKPOINT EARLY** — the current-state orientation snapshot (big picture, discipline, architecture, the CURRENT DIRECTION: scholar-corpus foundation S0 + scholar oracle + evaluation plane). Stale by design — a snapshot, later docs supersede it. |
+| 1c | `../docs/vision/INDEX.md` | the full vision arc (Vision 01–13) + foundational strategy + the vision→borrowed-tools map |
+| 1d | `../machinelearning/dualagentvision.md` | the master derivation graph + the two-agent split + CP0–CP12 checkpoint ladder |
+| 1e | `../machinelearning/dualagentvision-ADAPTED.md` | the vision mapped onto our ACTUAL infra (per-checkpoint real state) |
+| 1f | `../source-evidence/docs/` (reuse-first + INTEGRATION-SPEC + tools/) | **the current direction**: the source-evidence substrate (S0) + the scholar-corpus corroboration oracle + the reuse-first doctrine (borrow tools, build only the epistemic graph) |
+
+> **If you are Agent 1, read `../handover/agent-1-ml/HANDOVER-2026-08-13.md`** (the full current handover) after this stage — the ML vertical is frozen + peer-review-clean; the forward work is the scholar-corpus foundation (S0), starting with the Inspect AI prototype.
 
 ## STAGE 2 — THE MAP (where everything lives)
 

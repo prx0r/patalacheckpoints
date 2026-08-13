@@ -1,0 +1,16 @@
+{
+  "run_id": "ARGMAP-EVAL-20260813T131836Z",
+  "benchmark_version": "v0",
+  "family": "PATALA-ARGMAP-EVAL",
+  "bench": "PĀṬALA-ARGMAP-EVAL",
+  "bench_version": "v0.2",
+  "framework": "inspect-ai==0.3.258",
+  "task": "argmap_eval",
+  "execution_base_sha": "f19c8f28072f1e6c2a0d2f1ac68aa4cc3a7eeb86",
+  "working_tree_dirty": true,
+  "date": "20260813T131836Z",
+  "dataset": {"kind": "NAT", "committed_argmaps": 1, "object": "kramasadbhava:v1"},
+  "sut": "Agent 2 argument_map_worker (A2-CP3), MACHINE_PROPOSED",
+  "metrics": {"shape_pass_rate": 1.0, "mutation_recall": 1.0},
+  "notes": "ARGMAP-PROOF-v0 ready-before-production (P3). Extended mutation suite to 8 classes (added QUALIFIER_DROP). Contract dimensions defined in contracts/argmap_contract.py (NODE/ROLE/EDGE/SPEAKER/SCOPE/OPEN/UNSUPPORTED). Committed kramasadbhava:v1 map passes shape + all 8 mutations. shape_pass=mutation_recall=1.0 (verifier/critic competence, not generator accuracy). NOT_HUMAN_REVIEWED; does not gate Agent 2."
+}

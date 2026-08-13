@@ -1,0 +1,37 @@
+{
+  "type": "EVALUATION_CANDIDATE",
+  "evaluated_version": "?",
+  "old_version": "t1-cidgagana:v2-v1",
+  "finding_ref": "EF-T1-2026-0004",
+  "layer": "T1",
+  "object_ref": "cidgagana:v2",
+  "impact": {
+    "trigger": "EF-T1-2026-0004",
+    "old_version": "t1-cidgagana:v2-v1",
+    "evaluated_version": "?",
+    "downstream_affected": [
+      {
+        "object": "cidgagana:v2",
+        "layer": "L0",
+        "state": "SUPERSEDED",
+        "previous_version": "l0-cidgagana:v2-v1"
+      },
+      {
+        "object": "cidgagana:v2",
+        "layer": "C1",
+        "state": "NEED_REVIEW",
+        "previous_version": null
+      },
+      {
+        "object": "cidgagana:v2",
+        "layer": "L200",
+        "state": "NEED_REVIEW",
+        "previous_version": null
+      }
+    ]
+  },
+  "emitted_at": "2026-08-13T19:07:51.055670+00:00",
+  "producer": {
+    "agent": "agent2"
+  }
+}

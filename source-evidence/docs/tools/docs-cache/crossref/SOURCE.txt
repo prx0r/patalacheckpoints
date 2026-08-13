@@ -1,0 +1,4 @@
+url: https://api.crossref.org
+fetched: 2026-08-12T21:52:30+00:00
+content-type: text/html
+bytes: 734

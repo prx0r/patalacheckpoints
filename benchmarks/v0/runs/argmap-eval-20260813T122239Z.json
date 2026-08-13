@@ -1,0 +1,17 @@
+{
+  "run_id": "ARGMAP-EVAL-20260813T122239Z",
+  "benchmark_version": "v0",
+  "family": "PATALA-ARGMAP-EVAL",
+  "bench": "PĀṬALA-ARGMAP-EVAL",
+  "bench_version": "v0.1",
+  "framework": "inspect-ai==0.3.258",
+  "task": "argmap_eval",
+  "execution_base_sha": "850470621641f92ce62ac148b35bcf4aaa427524",
+  "working_tree_dirty": true,
+  "date": "20260813T122239Z",
+  "dataset": {"kind": "NAT", "committed_argmaps": 1, "object": "kramasadbhava:v1"},
+  "sut": "Agent 2 argument_map_worker (A2-CP3), MACHINE_PROPOSED",
+  "metrics": {"shape_pass_rate": 1.0, "mutation_recall": 1.0},
+  "findings": "Committed kramasadbhava:v1 argument map passes the canonical 4-section shape contract (what_is_at_issue/argument_steps/open_items/decision_for_l2) with honest structured OPEN items. Verifier catches all 7 argument-failure mutations (OBJECTION_AS_AUTHOR_VIEW, GROUNDING_AS_INFERENCE, PREMISE_CONCLUSION_SWAP, RESPONSE_DIRECTION_FLIP, FALSE_CONTRADICTION, INVENTED_BRIDGE, OPEN_AS_RESOLVED).",
+  "notes": "Agent 1 independent eval of the first canonical argument map (A2-CP3). Shape = engineering validity; mutation_recall = verifier competence (critic, not generator). review_status=NOT_HUMAN_REVIEWED. Does not gate Agent 2."
+}

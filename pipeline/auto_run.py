@@ -37,6 +37,17 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from agent3_batch import load_raw_source, split_verses, update_ledger
 from raw_l0 import raw_l0, raw_l0_to_canonical
 from l0_registry import commit_l0
+
+
+def _is_ocr_noise(verse: str) -> bool:
+    """F7: detect illegible OCR/noise in a verse (e.g. '* * * * * * * *(?)', star runs, '(?)').
+    Such verses are SOURCE_BLOCKED (preserved raw, never auto-cleaned into guessed Sanskrit)."""
+    import re
+    if re.search(r"\*\s*\*", verse):          # star runs = OCR noise
+        return True
+    if "(?)" in verse:                          # explicit illegibility marker
+        return True
+    return False
 from validate_l0_spec import validate
 from agentic_gloss import run_batch
 
@@ -72,21 +83,47 @@ def eligible_works(order: str = "smallest") -> list[str]:
 def run_work(work_id: str, max_verses: int, log_every: int = 1,
              skip_gloss: bool = False) -> dict:
     """Run one work: RAW-L0 + agentic gloss (BATCHED — many verses per single
-    hermes -z call) + un-cheatable validation + commit + log."""
+    hermes -z call) + un-cheatable validation + commit + log.
+
+    F1 idempotency: completion is DERIVED FROM THE IMMUTABLE L0 REGISTRY, not the
+    ledger. Verses whose stable passage_id already has a committed version are
+    SKIPPED (never re-glossed, never re-committed). Only uncommitted verses are
+    batched. passage_id and the record chunk_id always agree on the all-verses index.
+    """
+    from l0_registry import committed_passage_ids
     raw = load_raw_source(work_id)
-    verses = split_verses(raw)[:max_verses]
-    done = committed = failed = abstained = 0
+    all_verses = split_verses(raw)
+    committed = committed_passage_ids(work_id)
+
+    picks = []  # (all_idx, passage_id, verse)
+    blocked = []
+    skipped_committed = 0
+    for i, verse in enumerate(all_verses):
+        if max_verses and len(picks) >= max_verses:
+            break
+        pid = f"{work_id}:v{i+1}"
+        if pid in committed:
+            skipped_committed += 1
+            continue
+        if _is_ocr_noise(verse):
+            blocked.append(pid)
+            _log({"event": "SOURCE_BLOCKED", "work_id": work_id, "passage_id": pid,
+                  "reason": "OCR_NOISE / ILLEGIBLE_SOURCE", "verse": verse[:60]})
+            continue
+        picks.append((i, pid, verse))
+
+    done = committed_count = failed = abstained = 0
     failures = []
     commits = []
 
-    # 1+2. DETERMINISTIC pass over all verses (collect Vidyut tokens), then BATCH gloss.
-    # The gloss layer runs the whole work in ONE propose + ONE challenge call (no token cap),
-    # so as many L0 records as possible are produced per context/API call.
+    # deterministic pass over the UNCOMMITTED verses, then BATCH gloss them.
     entries = []
-    for i, verse in enumerate(verses):
-        records, _ = raw_l0_to_canonical(f"{work_id}-v{i+1}", verse)
+    for all_idx, pid, verse in picks:
+        chunk = f"{work_id}-v{all_idx+1}"
+        records, _ = raw_l0_to_canonical(chunk, verse)
         tokens = [r["raw_fragment"] for r in records if r["raw_fragment"]]
-        entries.append({"idx": i, "verse": verse, "tokens": tokens, "records": records})
+        entries.append({"idx": len(entries), "verse": verse, "tokens": tokens,
+                        "records": records, "passage_id": pid, "chunk": chunk})
 
     gloss_lookup = {}
     if not skip_gloss:
@@ -94,24 +131,22 @@ def run_work(work_id: str, max_verses: int, log_every: int = 1,
         for g in run_batch(glossable, work_id):
             gloss_lookup[g["idx"]] = g["gloss_map"]
 
-    for i, verse in enumerate(verses):
-        passage_id = f"{work_id}:v{i+1}"
-        verdict = {"work_id": work_id, "verse_idx": i, "passage_id": passage_id,
-                   "verse": verse[:80], "decisions": [], "ok": False}
+    for e in entries:
+        passage_id = e["passage_id"]
+        verdict = {"work_id": work_id, "passage_id": passage_id,
+                   "verse": e["verse"][:80], "decisions": [], "ok": False}
         try:
-            records = entries[i]["records"]
-            tokens = entries[i]["tokens"]
-            gloss_map = gloss_lookup.get(i) or {t: {"literal": "", "compound": "", "supplied": False}
-                                                for t in tokens}
+            records = e["records"]
+            tokens = e["tokens"]
+            gloss_map = gloss_lookup.get(e["idx"]) or {t: {"literal": "", "compound": "", "supplied": False}
+                                                       for t in tokens}
             if not skip_gloss and tokens:
                 verdict["decisions"].append({"pass": "propose_challenge_batch", "tokens": len(tokens)})
                 abstained += sum(1 for v in gloss_map.values() if not v["literal"])
 
-            # build canonical L0 with glosses
-            res = raw_l0(work_id, passage_id, verse, gloss_map)
+            res = raw_l0(work_id, passage_id, e["verse"], gloss_map)
             verdict["n_records"] = len(res["records"])
 
-            # 3. un-cheatable validation (records are built against the STRIPPED verse)
             from raw_l0 import strip_verse_marker
             v = validate(res["records"], chunk_text=strip_verse_marker(res["verse"]))
             verdict["validation"] = {"schema_ok": v["schema_ok"], "n": v["n_records"],
@@ -126,28 +161,29 @@ def run_work(work_id: str, max_verses: int, log_every: int = 1,
                 failures.append({"passage_id": passage_id, "why": "validate_l0_spec FAIL"})
                 verdict["ok"] = False
             else:
-                # 4. commit immutable L0 version
-                commit = commit_l0(work_id, res["records"], committed_by="agent3-autonomous")
+                commit = commit_l0(work_id, res["records"], committed_by="agent3-autonomous",
+                                   passage_ids=[passage_id])
                 verdict["commit"] = commit
-                verdict["decisions"].append({"action": "COMMIT_L0", "version": commit.get("version")})
-                committed += 1
+                verdict["decisions"].append({"action": "COMMIT_L0", "version": commit.get("version"),
+                                             "passage_id": passage_id})
+                committed_count += 1
                 verdict["ok"] = True
                 done += 1
 
-        except Exception as e:
-            verdict["decisions"].append({"action": "ERROR", "error": str(e)[:200]})
+        except Exception as ex:
+            verdict["decisions"].append({"action": "ERROR", "error": str(ex)[:200]})
             failed += 1
-            failures.append({"passage_id": passage_id, "why": f"exception: {str(e)[:120]}"})
+            failures.append({"passage_id": passage_id, "why": f"exception: {str(ex)[:120]}"})
 
-        # log every verse (or every Nth)
         _log(verdict)
 
-    # ledger: if we committed at least one clean verse, the work is ELIGIBLE and progressing
-    ledger_update = update_ledger(work_id, committed, len(verses))
+    ledger_update = update_ledger(work_id, committed_count, len(all_verses))
 
     summary = {
-        "work_id": work_id, "verses_attempted": len(verses), "verses_committed": committed,
+        "work_id": work_id, "verses_attempted": len(picks), "verses_committed": committed_count,
         "verses_failed": failed, "abstentions": abstained,
+        "verses_skipped_committed": skipped_committed,
+        "verses_blocked_source": len(blocked),
         "failures": failures, "ledger_update": ledger_update,
     }
     _log({"event": "WORK_SUMMARY", **summary})

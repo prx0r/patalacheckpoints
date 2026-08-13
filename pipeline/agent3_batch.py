@@ -60,7 +60,7 @@ def split_verses(raw: str) -> list[str]:
         s = line.strip()
         if not s or s.startswith("*") or s.startswith("#"):
             continue
-        if re.search(r"[।|]{2}", s) and len(re.sub(r"[^a-zA-Zāīūṛṝḷḹṃñṅśṣṭḍḥṁ]", "", s)) > 10:
+        if re.search(r"[।|]{2}", s) and len(re.sub(r"[^a-zA-Zāīūṛṝḷḹṃñṅśṣṭḍḥṁṇ]", "", s)) > 10:
             verses.append(s)
     return verses[:100]
 

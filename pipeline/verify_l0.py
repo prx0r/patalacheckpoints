@@ -58,6 +58,11 @@ def classify_char(ch: str, in_token: bool, in_structural_gap: bool = False) -> s
         return "STRUCTURAL:separator"
     if ch in QUOTE_CHARS:
         return "STRUCTURAL:quote"
+    if ch == "'":
+        # ASCII avagraha / apostrophe (e.g. 'so'ham', 'dantyāsyo'yaṃ'): a lossless boundary
+        # char — NOT semantic content, NOT lost. Preserved in the raw span; never normalized
+        # to 'ऽ' inside P0 (P0 is source identity). (F6)
+        return "STRUCTURAL:avagraha"
     if ch in MD_HEADER:
         return "STRUCTURAL:md_header"
     if ch == MD_BLOCKQUOTE:

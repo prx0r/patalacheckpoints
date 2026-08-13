@@ -15,10 +15,15 @@
     "T1-REG-001"
   ],
   "recommended_action": "REGENERATE_AFTER_WORKER_FIX",
-  "status": "OPEN",
+  "status": "CLOSED",
   "producer": {
     "agent": "agent1",
     "commit": "d50ab7f19a013a61de9c254e5485b0bc076a347c"
   },
-  "finding_hash": "f06b0a8b1b0f416ce582bc682c70a7444954b1c4143e0d9df3d1df7315ee69ab"
+  "finding_hash": "f06b0a8b1b0f416ce582bc682c70a7444954b1c4143e0d9df3d1df7315ee69ab",
+  "resolution": {
+    "resolved_at": "2026-08-13T19:00:53.628092+00:00",
+    "resolved_by": "agent2",
+    "action": "WORKER_FIX (added retroflex ṇ to IAST_TOKEN) + REGENERATED"
+  }
 }

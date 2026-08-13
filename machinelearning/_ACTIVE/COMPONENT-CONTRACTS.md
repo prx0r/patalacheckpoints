@@ -45,6 +45,12 @@
 - **FAILURE MODE:** prose invents claims; verifier is regex-only
 - **ADOPTION GATE:** real accepted claims + verified argument graph + verified synthesis FIRST
 - **STATUS:** `ESSAY REPRESENTATION / RENDERING INFRASTRUCTURE` — frozen, do not develop until real content
+- **UPDATE (2026-08-12):** one REAL essay now exists (`ESSAY-IPVV-REFLEXION-CORE-001`) from the validated
+  synthesis+EO, with a `SentenceEvidenceAudit` catching 6 mutation classes (strength inflation, authorship
+  laundering, boundary erasure, rival laundering, warrant erasure, **paraphrase expansion**). It is
+  **peer-review-clean relative to the current objects** — a DEMONSTRATION, NOT a validated capability. The
+  semantic-relation labels are reviewer-assigned, not machine-proven. Do NOT generalize to bulk essay
+  generation (Agent 1 is frozen here; next = Agent 2 autonomous factory).
 
 ## 4. strength.py
 - **NAME:** `BayesianEvidencePrimitive`

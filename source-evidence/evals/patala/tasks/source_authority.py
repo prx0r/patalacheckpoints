@@ -86,8 +86,17 @@ class SourceAuthority(BaseModel):
 
 
 # ── the honest-ladder validator ───────────────────────────────────────────────
+# OPEN / UNSUPPORTED are always valid honest states (per the peer review: UNKNOWN -> OPEN is cheap;
+# UNKNOWN -> VERIFIED is dangerous). They must never be rejected as invalid.
+_HONEST_OPEN = ("OPEN", "UNSUPPORTED")
+
+
 def validate_authority(auth: dict) -> dict:
-    """Validate a SourceAuthority dict against the ladders; returns {ok, problems}."""
+    """Validate a SourceAuthority dict against the ladders; returns {ok, problems}.
+
+    OPEN / UNSUPPORTED are accepted on every axis (honest unresolved states, never inflated).
+    A value is invalid only if it is NOT in the ladder AND NOT an honest-open state.
+    """
     problems = []
     try:
         obj = SourceAuthority(**auth)
@@ -100,7 +109,7 @@ def validate_authority(auth: dict) -> dict:
                          ("witness_basis", WITNESS_BASIS_LADDER),
                          ("rights", RIGHTS_LADDER)):
         val = getattr(obj, axis)
-        if val not in ladder:
+        if val not in ladder and val not in _HONEST_OPEN:
             problems.append(f"{axis} value '{val}' not in ladder {ladder}")
     # provenance-aware corroboration: MULTI_SOURCE_MATCHED must not be claimed on echo
     return {"ok": not problems, "problems": problems, "authority": obj.model_dump()}

@@ -1,190 +1,459 @@
 agents_md:
   by: agent2
-  at: '2026-08-12T11:59:49+00:00'
-  key_point: 'THE ONE RULE: nothing is real because code exists; it becomes real only
-    via independent gold + blind eval + metric + human adjudication. Agent L0 = vertical
-    truth, question ''is this reading licensed by the source''; join on Ref IDs never
-    fuzzy.'
+  at: '2026-08-12T16:24:48+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'The ONE RULE: nothing is real because code exists; real only when independent
+    task + human gold + reproducible eval prove it. 3 categories A infra/B evidence/C
+    results, never call A->C. Banned: PROVED/TRUTH/CORRECT. Use: SUPPORTED BY/BENCHMARKED
+    ON/MACHINE-PROPOSED. Agents L0(vertical source->proof) + ML(horizontal upward);
+    join contractually on Passage/TranslationDecision/PhilologicalProof/C1 IDs, never
+    fuzzy. Result lineage 9-field. Run theatre_check.py before claiming done.'
 system:
   by: agent2
-  at: '2026-08-12T11:59:50+00:00'
-  key_point: One template agent0 instantiated as live agents (agent1 ML, agent2 L0).
-    Orientation derived from AGENTS.yaml registry + CHECKPOINTS; check_staleness.py
-    fails on drift; flow.py is the only way to change live STATE.
+  at: '2026-08-12T16:24:54+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'Agent system: agent0=agnostic template/archetype, agent1/agent2=instance_of
+    with concrete owns/must_not_touch. Single source of truth = VISION_AND_NAVIGATION.md;
+    orientations are DERIVED not copied (checker flags verbatim copies). Per-agent
+    branches (agent1/agent2) + shared main trunk for coordination state (LOG/STATE/flow/checkers/AGENTS.yaml).
+    flow.py is the ONLY way to change live state (versions + history.log). check_staleness.py
+    is the enforcement: fix the doc, never the checker. Governance function of agent0
+    can be run by any instance.'
 vision:
   by: agent2
-  at: '2026-08-12T11:59:50+00:00'
-  key_point: 'Computable scholarly tradition: one evidence graph over Sanskrit sources,
-    IPVV flagship, agnostic. Two engines PUSHING + logical-arguments-as-gold. I certify
-    the SOURCE floor; Agent ML derives upward.'
+  at: '2026-08-12T16:25:16+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'Canonical north star: build a computable scholarly tradition = single
+    evidence graph over Sanskrit sources (source->translation->decision->commentary->theme->claim->essay->pedagogy),
+    every layer machine-queryable, every claim resolves to source. IPVV flagship,
+    agnostic architecture. One trustworthy scholarly core rendered as many media projections
+    (Vision 09). Two engines: PUSHING (mechanical why-hounding) + LOGICAL ARGUMENTS
+    AS GOLD. 8-step logical progression. 3 must-read docs: this, docs/INDEX.md, THE_COMPANION.md.
+    Two tracks split after substrate: Agent1 ML, Agent2 integration/content. Note:
+    vision lists Agent2 owns hub/PUSHING/reader/API/MCP, but current orientation reframes
+    Agent2 as corpus compiler+integrity.'
 checkpoints:
   by: agent2
-  at: '2026-08-12T11:59:50+00:00'
-  key_point: 'Five CPs: benchmark, philological proof (MINE = CP1), retrieval, themes,
-    arguments (both converge at CP4). No higher layer until lower object crosses its
-    gate. 8 contracts incl Ref. Nyaya gate plugs in at CP4.'
+  at: '2026-08-12T16:26:16+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'Shared execution map: 7 phases, checkpoints CP0-CP12 as children of
+    higher-order goals. My lane = CP1 PHILOLOGICAL PROOF REAL (owned by Agent L0):
+    every source->L0 decision exposes PROVED/SUPPORTED/CONFLICT/OPEN/REVIEWED per
+    dimension; P0 done, P1-P4 via Vidyut+Heritage+gold. 7 canonical contracts incl
+    Ref (every ID must resolve - no fabricated/fuzzy), ReviewState/Event, BenchmarkFixture/Run,
+    PhilologicalProof, Theme, Proposition/Inference/Grounding/Defeater, DebateFrame/SemanticAlignment
+    (anti-fake-contradiction). ProofDimension interface {status PROVED|SUPPORTED|CONFLICT|OPEN|UNCHECKED|REVIEWED,
+    evidence_ids} - no invented confidence .93. CP4 ARGUMENT is where both lanes CONVERGE
+    (the vertical object ''I claim X because C1 says/L2 renders/span is/proof says'').
+    No higher layer built until lower object crosses its gate.'
 doctrine:
   by: agent2
-  at: '2026-08-12T11:59:50+00:00'
-  key_point: Master anti-theatre rule. 3 categories A infra / B evidence / C results,
-    never A->C. 9-field contract, epistemic labels, banned words, abstention, human
-    adjudication, result lineage, falsification-before-promotion.
+  at: '2026-08-12T16:25:01+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'Master anti-theatre: 3 categories (A infra/B evidence/C results, never
+    A->C). 9-field contract per component. Epistemic labels never interchangeable
+    (TESTED != BENCHMARKED != EDITOR_REVIEWED). Adequacy doctrine: supporting layer
+    stops when consumer can compose it with honest uncertainty (death by infinite
+    validation). Human adjudication is the missing reality layer (avoid machine->machine
+    closed loop). Falsification before promotion. Adversarial fixtures NOT written
+    by builder. Git discipline: stage only own paths, never git add -A on shared tree,
+    verify branch, no invasive surgery, flag misplaced commits to Agent 0.'
 claims:
   by: agent2
-  at: '2026-08-12T11:59:50+00:00'
-  key_point: 'Audit ledger. P-001 MY L0 claim: V2/V3 35/35 SUPPORTED, V1 legacy MIGRATION_PENDING
-    PARTIAL. P-011 calibrated ensemble witness (Vidyut x Heritage, control agreement
-    84-85%). P-012 ranker rejected (doesn''t beat baseline). Tests != benchmarks !=
-    expert review.'
+  at: '2026-08-12T16:25:08+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'Project self-audit ledger. My lane''s claims: P-001 L0 lossless SUPPORTED
+    63/63 (35 V2/V3 + 28 V1 legacy via extract_l0_v1.py, verify_l0.py unchanged).
+    P-011 two-analyzer (Vidyut x Heritage) ensemble SUPPORTED calibrated witness (control
+    agreement 84-85%, CONFLICT resolution 72%, double-conflict ~9%). P-012 ranker
+    REJECTED (0.81 embedding baseline is floor, abstention decisive). P-013 L0<->L2
+    anchor alignment SUPPORTED_MACHINE_WITNESS FROZEN (recall .93 prec .89 abstention
+    1.0; Vidyut witness .81 analyzed-only). P-014 vertical object serialization SUPPORTED
+    infra. Evidence hierarchy MACHINE_PROPOSED->ENGINEERING_VALIDATED->MULTI_MODEL->SCHOLARLY->INDEPENDENT_REVIEWED.
+    ENGINEERING_VALIDATED != SCHOLARLY_VALIDATED.'
 contracts:
   by: agent2
-  at: '2026-08-12T11:59:50+00:00'
-  key_point: 9-field contract per component; empty field = EXPERIMENTAL_INFRASTRUCTURE.
-    The PhilologicalProof contract is evidence (B), not infrastructure. Promotion
-    requires gold + blind pred + metric + error analysis + human adjudication.
+  at: '2026-08-12T16:26:24+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: '9-field contract (NAME/INPUT/OUTPUT/AUTHORITY/GOLD/BASELINE/METRIC/FAILURE
+    MODE/ADOPTION GATE); empty field = EXPERIMENTAL_INFRASTRUCTURE not capability.
+    Applies to argument.py, aifgraph.py, essay machinery, strength.py, c1metrics.py,
+    nyaya gate. Promotion requires: independent gold->blind prediction->metric->error
+    analysis->human adjudication. ''Tests pass/schema validates'' never promotes.
+    CP1 (my lane) = philological floor: source coverage proven, Vidyut characterized,
+    independent parser sample, specialist review. This doc is mostly Agent1''s components;
+    my CP1 contract lives in CHECKPOINTS.md (PhilologicalProof + ProofDimension honest
+    statuses).'
 vision_map:
   by: agent2
-  at: '2026-08-12T11:59:50+00:00'
-  key_point: Patala is ONE derivation graph SOURCE->L0->TRANSLATION->COMMENTARY->THEMES->ARGUMENT->SYNTHESIS->WORKBENCH->API,
-    every node points downward, status honest. Two agents join contractually on Passage/TranslationDecision/PhilologicalProof/C1
-    IDs.
+  at: '2026-08-12T16:25:36+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'Master derivation graph + 13-phase roadmap. Patala = ONE scholarly derivation
+    graph (SOURCE->L0->TRANSLATION->COMMENTARY->THEMES->ARGUMENT->SYNTHESIS->WORKBENCH->API/MCP),
+    every node status DETERMINISTIC_FACT/MACHINE_PROPOSED/HUMAN_REVIEWED/ACCEPTED
+    never blurred; every higher node points downward. PHASE 1 = PhilologicalProof
+    floor = L0 agent owns: P0 source integrity, P1 segmentation/sandhi, P2 morphology,
+    P3 syntax, P4 alignment, P5 lexical evidence (Vidyut then independent witnesses);
+    outputs stable PhilologicalProof objects not logs. Gate: 0 unknown chars, 0 bad
+    spans, 0 silent omissions, proofs resolve. Anti-weeds: every task names checkpoint
+    + scholarly object + benchmark/proof; if not, don''t build. My boundary: join
+    on Passage/TranslationDecision/PhilologicalProof/C1 ID, never fuzzy.'
 vision_map_adapted:
   by: agent2
-  at: '2026-08-12T11:59:50+00:00'
-  key_point: 'Vision mapped to real infra: CP0 DONE, CP1-CP6 PARTIAL, CP7+ NOT STARTED.
-    CP1 is the closest to done (P0 35/35 real). My next work: Heritage ensemble P2,
-    lexical gold P3, alignment gold P4.'
+  at: '2026-08-12T16:25:43+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'Vision mapped to real infra per-checkpoint: CP0 BENCHMARK DONE (benchmarks/v0
+    frozen), CP1 SOURCE PROOF PARTIAL (verify_l0.py P0 + philproof.py handshake -
+    my lane), CP2 RETRIEVAL not re-baselined, CP3 THEMES partial (clusters.json vs
+    themes.ts not unified), CP4 ARGUMENT partial (ARG-GOLD-001, extractor not built),
+    CP5-6 partial, CP7+ not started. The gap everywhere is proof, not machinery. My
+    lane = Phase 1 (the vision''s P1 floor): make P0 lossless, wire P1-P5, output
+    PhilologicalProof objects not logs; pp: IDs consumed by philproof.py. Anti-weeds
+    rule applies: every task names checkpoint + object + benchmark/proof.'
 orientation:
   by: agent2
-  at: '2026-08-12T11:59:57+00:00'
-  key_point: 'This is the process workflow I am executing: 6 phases (identity+full-context,
-    doctrine, handover, explore corpus+code, exact next steps=finish PhilologicalProof
-    v1 P0-P4, guardrails+falsification). Phase 0 Step 0.1 is the NEW mechanical full-context
-    gate. CP1 is my live checkpoint.'
+  at: '2026-08-12T16:26:54+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'My process workflow: I am Agent 2 = CORPUS COMPILER + INTEGRITY LANE
+    (formerly L0 agent). Direction vertical truth + corpus integrity. Lane SOURCE->L0->corpus
+    state->RAW-L0 factory->versioned L0->review. Own data/corpus, app, lib, pipeline
+    (verify_l0, corpus_state, raw_l0, agent3_batch, agent3_queue, l0_registry, review_engine,
+    build_corpus_targets_db), handover/agent-2-integration. Do NOT touch benchmarks/v0
+    or machinelearning/research/patala_ml. Current priority = RAW-L0 factory (raw
+    Sanskrit -> audited canonical L0); northstar = handover/hermes/AUTOTRANSLATE-NORTHSTAR.md.
+    My checkpoint = CP1 PhilologicalProof, closest to done. Anti-weeds rule. Guards:
+    output PhilologicalProof objects not logs, honest proof dimensions, L0 immutable+versioned,
+    wrong translation worse than none, IDs must resolve.'
 index:
   by: agent2
-  at: '2026-08-12T11:59:57+00:00'
-  key_point: 'Living current-state pointer. Done: 49 passages published, deterministic
-    substrate, P0 FROZEN+VERIFIED 35/35 (103,917 tokens, 0 unknown chars). In progress
-    CP1: Heritage ensemble P2, lexical gold P3 (50-100 fixtures), alignment gold P4.
-    Join on Ref IDs never fuzzy.'
+  at: '2026-08-12T16:28:17+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'My living current-state pointer (most recent handover). Role = CORPUS
+    COMPILER + INTEGRITY LAYER. Owns data/corpus, app, lib, pipeline, translations/_stack/ipvv/specs.
+    Rule: AI proposes != Patala asserts; Agent2 = build system/state truth, Agent3
+    = worker, Agent1 = philosophical intelligence. Done: corpus published (49 passages
+    lazy JSON), deterministic substrate (C1 wired, 63 c1_source, themes), verification
+    floor (lib/verify.ts + /api/resolve), P0 63/63 frozen, P2 calibrated witness P-011,
+    P3 ranker rejected P-012, P4 alignment frozen P-013, corpus state machine (45
+    works, /api/corpus/state), review engine Phase 3A (15/15 tests, the moat). Current
+    priority: Agent 3 translation factory closed-loop; RAW-L0 is the seam (MODE_B
+    blocked). Open threads: 6 downloaded IPV/IPK sources not registered as resources;
+    49-passage canonical vs 1.5.11 exemplar; recommended related-rail spec. Protocol:
+    log data-carrying handoffs to LOG.md, join on Ref IDs never fuzzy.'
 checkpoints_int:
   by: agent2
-  at: '2026-08-12T11:59:57+00:00'
-  key_point: 'CP1 PhilologicalProof v1. Finish in order: P0 coverage DONE, P1 segmentation,
-    P2 morphology (Vidyut+Heritage ensemble), P3 lexical sense (gold->ranker benchmark),
-    P4 alignment (gold->baseline). PhilologicalProof object with ProofDimensions (PROVED/SUPPORTED/CONFLICT/OPEN/UNCHECKED/REVIEWED),
-    no collapsed confidence.'
+  at: '2026-08-12T16:27:03+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'My lane leading doc: identity broadened from L0 agent to CORPUS COMPILER
+    + INTEGRITY LAYER. Lane: CP1 PHILOLOGICAL PROOF -> CORPUS STATE -> REVIEW/EXECUTABLE-CORRECTIONS.
+    3 goals: (1) CP1 floor substantially DONE - P0 63/63 lossless frozen, P2 calibrated
+    witness P-011, P3 ranker rejected P-012, P4 alignment frozen P-013, P5 syntax
+    deferred; (2) corpus state machine BUILT (corpus_state.py, ledger 45 works, /api/corpus/state)
+    - the Agent3 control plane; (3) executable-corrections review engine BUILT Phase
+    3A+3D (review_engine.py) - the moat: scholar judgment = immutable provenance-carrying
+    graph mutation. IMMEDIATE OBJECTIVE = RAW-L0 MODE_B (RAW SANSKRIT->L0), the one
+    giant hole; MODE_A (AND_GLOSS) exists, MODE_B blocked. Build sequence 1-6: raw_l0.py,
+    RAW-L0 audit, IPVV replay, human review, Kramasadbhava first, batch mode. Factory
+    certificate: P0 100%, 0 bad spans, false certainty below threshold (most important),
+    abstention precision. Do NOT build generic ingestion/review infra; Hermes doesn''t
+    determine what Patala knows.'
 code_verify:
   by: agent2
-  at: '2026-08-12T11:59:57+00:00'
-  key_point: 'verify_l0.py is my P0 proof harness: staged levels P0_SOURCE (chunk
-    hash, span integrity, ordering, coverage, roundtrip, no NLP deps), P1_SEGMENT,
-    P2_MORPH, P3_ENSEMBLE, P4_ALIGNMENT. lossless = every semantic source char token-covered
-    OR explicitly classified (STRUCTURAL/IGNORED_WITH_REASON); any UNKNOWN = coverage
-    failure. Proof harness, never fabricates.'
+  at: '2026-08-12T16:27:13+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: "My P0 proof harness. Staged proof levels P0_SOURCE (deterministic: chunk\
+    \ sha256, span integrity, ordering monotonic no overlap/dup/reverse, coverage\
+    \ classification, roundtrip; NO NLP deps) -> P1_SEGMENT (Vidyut sandhi) -> P2_MORPH\
+    \ (Vidyut) -> P3_ENSEMBLE (Heritage/Samsaadhanii) -> P4_ALIGNMENT (awesome-align).\
+    \ Lossless = every semantic source char token-covered OR classified STRUCTURAL/IGNORED_WITH_REASON;\
+    \ UNKNOWN>0 = FAIL. Char classes: SEMANTIC/STRUCTURAL(newline,ws,separator,quote,md,header,bracket)/UNKNOWN.\
+    \ gap_is_structural detects IAST-diacritic citation patterns (P\u0101\u1E47inian\
+    \ s\u016Btra refs, verse numbers, work-title citations, editorial labels). Reviewed\
+    \ exceptions file docs/l0_reviewed_exceptions.json: irregular regions classified\
+    \ IGNORED_WITH_REASON:reviewed. P0 PASS requires frag_bad=0, overlaps=0, dup=0,\
+    \ reversed=0, unknown=0, order_ok. Proof object: source_sha256, span_integrity,\
+    \ ordering, coverage, roundtrip, PASS. I own verify_l0.py + philproof.py (pp:\
+    \ proof IDs)."
 code_verify_p2:
   by: agent2
-  at: '2026-08-12T11:59:57+00:00'
-  key_point: verify_l0_p2.py is my standalone Vidyut P2 morphology witness. P2 asks
-    'is the extracted Sanskrit lemma morphologically licensed?' independent of P0
-    coverage. States CONFIRMED/AMBIGUOUS_SUPPORTED/CONFLICT/UNANALYZED/TOOL_ERROR/NO_SANSKRIT.
-    Frozen normalization v1; witness not editor (never overwrites L0).
+  at: '2026-08-12T16:27:22+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'The Vidyut P2 morphology witness (standalone). P2 asks: is the extracted
+    Sanskrit lemma morphologically licensed? P0 (coverage) and P2 (lemma license)
+    are independent. For each L0 record with lemma_iast, run Vidyut Chedaka+Kosha
+    over surface, compare licensed analyses vs our lemma. States: CONFIRMED (Vidyut
+    licenses exactly our lemma), AMBIGUOUS_SUPPORTED (ours is 1 of several), CONFLICT
+    (analyses but not as our lemma), UNANALYZED (no analysis), NO_SANSKRIT (gloss-only,
+    no IAST), TOOL_ERROR. Normalization p2-v1: anusvara -> anusvara U+1E43, apostrophes
+    removed, IAST->SLP1. Matching M1-M4: vidyut_lemma == our_surface (SLP1), stem
+    prefix of surface, etc (treats surface/stem relation like saMvedanasya->saMvid
+    as compatible). Frozen v1, changes bump NORMALIZATION_VERSION + record in BUILD_NOTES_L0_P2.md.
+    Witness not editor - never overwrites L0.'
 core_bible:
   by: agent2
-  at: '2026-08-12T12:03:41+00:00'
-  key_point: 'THE CORE BIBLE: ONE vision in 6 zoomable layers (sentence->paragraph->derivation
-    graph->checkpoints->domain lenses->specs/gold/data). Layer 2 spine SANSKRIT->L0
-    PROOF->TRANSLATION->...->API/MEDIA; Layer 3 CP ladder with CP1 SOURCE PROOF =
-    MY checkpoint. Every vision doc is one zoom-level of one vision.'
+  at: '2026-08-12T16:25:23+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'The one vision chunked into 6 zoomable layers of scope: Layer0 one sentence,
+    L1 paragraph, L2 derivation graph spine (SANSKRIT->L0 PROOF->TRANSLATION->C1->THEMES->ARGUMENT->SYNTHESIS->WORKBENCH->API/MCP->MEDIA),
+    L3 checkpoints CP0-CP12 with honest real-state (CP0 DONE, CP1 PARTIAL(L0), CP5-6
+    PARTIAL, CP7+ NOT STARTED; ACTIVE=CP4 argument layer), L4 domain lenses (factory/discovery/IR/ML/agent-system/product/media/economics
+    + functionality/scholars/economics sub-lenses incl Hermes execution kernel), L5
+    specs/gold/data. All layers = same truth at different resolution, interdependent
+    projections of one spine, not separate products. Update: top stable, middle live
+    via flow.py, bottom = where work lives.'
 vision_index:
   by: agent2
-  at: '2026-08-12T12:03:41+00:00'
-  key_point: 'docs/vision/INDEX.md: full Vision 01-09 arc + 3 lenses + foundational
-    docs. Vision 01/02 (translation-lab, Tantra Hub) land on CP1-CP6 - MY source proof
-    feeds them. The whole vision is one scholarly infrastructure, several interfaces.'
+  at: '2026-08-12T16:25:28+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'Canonical map of full vision doc set. Numbered sequence Vision 01(endgame1
+    translation-lab)->02(Tantra Hub)->03(one infrastructure/many interfaces)->04(economic
+    thesis)->05(5yr window)->06(Patala Review adversarial)->07(New Scholar workbench)->08(scholar
+    economics)->09(media+cross-tradition)->10(market entry)->11(Siva Before Abhinava
+    expansion)->12(multi-surface platform)->13(product portfolio by user base). Top-level
+    map starts at CORE-BIBLE. 3 lenses: functionality(hermes-execution)/scholars/economics.
+    Maps to CP ladder + foundational un-numbered docs (NORTHSTAR/foundationalideas/positioningpartners)
+    + dev plans + ML vision. I added a recommended reading order (CORE-BIBLE->01-05->06-10->12/13->11->hermes-execution->lenses->foundational)
+    this session.'
 docs_index:
   by: agent2
-  at: '2026-08-12T12:03:41+00:00'
-  key_point: 'docs/INDEX.md: canonical single-source-of-truth per concern. AGENT2-INDEX
-    = my current state; L0 standardization = verifiable substrate; SCHOLARLY_GRAPH
-    + TRANSLATION_PROTOCOL = the data model + translation claims I build the source
-    floor on. THE_COMPANION (sanskritree) = full-system onboarding.'
+  at: '2026-08-12T16:25:51+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'The flat canonical map: single source of truth per concern; [ARCHIVED]
+    = superseded. Key for my lane: corpus targets = docs/corpus/TARGETS-INDEX.md (master
+    index), sanskritree import manifest = docs/corpus/SANSKRITREE-IMPORT-MANIFEST.md,
+    scholarly graph/data model = data/corpus/graph.ts + docs/SCHOLARLY_GRAPH.md, translation
+    protocol = docs/TRANSLATION_PROTOCOL.md, API = docs/openapi.yaml + docs/api/README.md,
+    MCP = docs/api/mcp.md. Agent2 current state = handover/agent-2-integration/INDEX.md.
+    Corpus goldmine = docs/corpus/{canonical_reference_map, markguidance, ...}.md
+    (originals on sanskritree, never edit). Two sibling knowledge homes: this repo
+    + sanskritree.'
 handover_readme:
   by: agent2
-  at: '2026-08-12T12:03:41+00:00'
-  key_point: 'handover/README.md: coordination rules. Each lane keeps ONE living INDEX.md
-    (current state); everything else append-only; cross-lane handoffs logged in LOG.md
-    with schema snippet; SESSION-<date>.md at session end; archive superseded. My
-    lane owns data/app/lib/pipeline.'
+  at: '2026-08-12T16:25:59+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'Coordination folder rules: each lane keeps ONE living INDEX.md (current
+    state, not snapshot); everything else append-only (never overwrite, add dated
+    file); cross-lane handoffs in shared LOG.md (one entry per handoff: what/why/file/date/direction/schema
+    snippet); when a doc becomes authority add to lane INDEX (never two competing
+    current docs); session end = SESSION-<date>.md then archive superseded snapshots.
+    Authoritative: Agent2 current state = handover/agent-2-integration/INDEX.md. Old
+    top-level snapshots moved to handover/archive/. Note: handover README + vision
+    call Agent2 integration/content; current ORIENTATION reframes as corpus compiler
+    + integrity lane.'
 docs_readme:
   by: agent2
-  at: '2026-08-12T12:03:41+00:00'
-  key_point: 'docs/README.md: machine-first docs. System RAW SANSKRIT -> pipeline
-    -> hub -> /api + MCP. My lane builds the pipeline (T1->T3.1->C1->passages) + verification
-    floor (/api/verify) + the scholarly substrate. Invariants: stable IDs, machine
-    output always proposal, annotations independent + addressable.'
+  at: '2026-08-12T16:26:07+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'Docs home: API is the product, MCP is the agent layer, pipeline produces
+    content, site renders it. System one-view: RAW SANSKRIT(sanskritree)->PIPELINE(T1->R1->T2->R2->T3->T3.1->C1->passages)->HUB(app/api
+    -> /api/passages|works|terms|concordance + MCP). Data model canonical = SCHOLARLY_GRAPH.md
+    (Work/Witness/Passage/SourceSpan/Person/Term/Sense/Resource + assertions). 7 invariants:
+    stable IDs never depend on mutable wording; Work != witness != representation
+    != passage; annotations independent + addressable; machine output = proposal never
+    authority; every judgment carries evidence+review history; translation prose +
+    decisions independent version histories; API bundles = projections not canonical
+    model. Note: docs/README.md still points goldmine to ../../sanskritree relative
+    paths, docs/INDEX says consolidated into docs/corpus/ - minor staleness.'
 phase1:
   by: agent2
-  at: '2026-08-12T12:03:41+00:00'
-  key_point: 'PHASE1 notes: how the IPVV corpus was built agnostically (source->passage->L2->provenance,
-    zero-loss). 49 passages published as lazy-JSON; getPublishedTranslation is the
-    single loader for /read + /api/resolve. This is the substrate MY L0 proof certifies.
-    Never guess unresolved - flag NEEDS_MAPPING.'
+  at: '2026-08-12T16:26:33+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'How the IPVV canonical passage corpus was built (agnostic/reproducible):
+    49 passages published as lazy JSON (data/published/ipvv/ index.json + one .json/passage,
+    2.3MB, .next static 1.3MB not 90MB). Single source of truth = getPublishedTranslation(id)
+    used by BOTH /read and /api/resolve; ipvvResolveImmutable() is the immutable-id
+    authority. Chunk->source-range map is the authoritative segmentation (parsed from
+    L200, not re-segmented). Hard-stop: fails on source-disappearance, orphaned L2,
+    dup IDs, unresolvable locators, silent skips, order change, auto-guessed mappings
+    (unresolved = status NEEDS_MAPPING, never best-effort). Phase0A C1 wired (63 C1s
+    into 49 passages, verse_commentary[]), 0B c1/source derived (53), 0C deterministic
+    MACHINE_PROPOSED themes, Phase2 deterministic verify floor (lib/verify.ts + /api/verify/*,
+    never silent-fallback).'
 scholarly_graph:
   by: agent2
-  at: '2026-08-12T12:03:41+00:00'
-  key_point: 'SCHOLARLY_GRAPH: objects (Work/Witness/Passage/SourceSpan...) vs annotations
-    vs ReviewEvents. My PhilologicalProof + source spans are annotations/objects in
-    this graph; every claim carries evidence + review history. Machine never self-promotes
-    to accepted; only a scoped ReviewEvent does.'
+  at: '2026-08-12T16:26:41+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'Durable data model: OBJECTS (Work pt:work, Witness pt:wit, DigitalRepresentation
+    pt:dr, CanonicalPassage pt:passage:{work}:{loc}, SourceSpan pt:span, Person, Organization,
+    Term pt:term:{lemma}, Sense pt:sense, Resource pt:res) vs ANNOTATIONS (claims,
+    target any id, origin machine/editor/scholar, status proposed->accepted, certainty
+    != status, machine never sets accepted by itself) vs EVENTS (ReviewEvent scoped
+    to a version, accept->reviewed, editorial promotion->accepted separate). Three
+    independent dimensions never conflated: origin/status/certainty. Evidence links
+    claims to sources (supports/contradicts/defines...); makes traceable not true.
+    Versioning: annotations immutable, change = new version superseded_by. Bundles
+    on read, normalize on write.'
 translation_protocol:
   by: agent2
-  at: '2026-08-12T12:03:41+00:00'
-  key_point: 'TRANSLATION_PROTOCOL: translation = versioned passage-level claims linked
-    to Sanskrit evidence, never one blob. 3 layers (close/reading/commentary). This
-    is the substrate the L0 floor certifies - my source proof licenses the reading
-    the translation claims.'
+  at: '2026-08-12T16:26:49+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'The translation is the prima materia: never store as one blob, store
+    as a VERSIONED set of passage-level claims linked to Sanskrit evidence (WORK->WITNESS->PASSAGE->TOKEN/LEMMA/PARSE->TRANSLATION
+    SEGMENT->ANNOTATIONS->REVIEW->PUBLISHED). 3 layers: close / reading / commentary.
+    Formalise lexical decisions while translating (surface/lemma/morphology/translation_here/sense_id/certainty).
+    Distinguish lemma from sense. Version everything (v1 AI draft -> v5 published).
+    Style guide: Sanskrit retention for technical terms, supplied-English auditable,
+    ambiguity = preferred reading + note not fuzzy merge. 10-step pipeline: SOURCE
+    CONTROL->SEGMENTATION->SANSKRIT ANALYSIS->CLOSE DRAFT->CONTEXT RETRIEVAL->TERMINOLOGY->READING->AUDIT->HUMAN
+    EDIT->SCHOLAR REVIEW->RELEASE. MCP returns evidence primitives not one translate_passage().'
 build_notes_p0:
   by: agent2
-  at: '2026-08-12T12:05:40+00:00'
-  key_point: 'BUILD_NOTES_L0_P0: built verify_l0.py P0 harness (source_sha256, span_integrity,
-    ordering, coverage, roundtrip), fixed coordinate-model bug (dual chunk_char +
-    line_char), fixed 4 tokenizer content-loss bugs (overlap, blockquote-wrap, [And]-case,
-    comma/quote-in-gloss) recovering ~1900 V2/V3 + ~1700 V1 tokens. Final milestone:
-    V2/V3 35/35 P0 lossless (0 unknown), V1 legacy separate MIGRATION_PENDING.'
+  at: '2026-08-12T16:27:31+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'P0 build record: coordinate-model bug fixed (char coords were absolute
+    but source_text only held containing line -> dual coordinate system chunk_char_*
+    + line_char_*). Four tokenizer content-loss bugs fixed in t1_extract.py (overlap
+    bug, blockquote-wrap loss, [And]-case 2554 dropped tokens, comma/quote-in-gloss).
+    Recovered 102,157->102,952 (V2/V3) + 22,064->23,823 (V1). Journey to 63/63 LOSSLESS:
+    V2/V3 35/35 via multi-line Source: attribution detection, editorial markers, uppercase
+    IAST, reviewed-exception file (docs/l0_reviewed_exceptions.json, 18 irregular
+    regions IGNORED_WITH_REASON:reviewed not silently dropped). Tightened P0: PASS
+    iff every char classified, UNKNOWN=0, no overlap, no bad span, monotonic (account
+    for every region, not make every char a token). V1 28/28 via extract_l0_v1.py
+    adapter (every word a token, gloss-word absorbs IAST; bare/bracket = gloss-only),
+    verify_l0.py UNCHANGED. Cross-work caveat: proves 2-format robustness not generalization.
+    Reuse: Vidyut 0.4.0 (P1/P2 engine) + Heritage 1.1.0 (2nd analyzer).'
 build_notes_p2:
   by: agent2
-  at: '2026-08-12T12:05:40+00:00'
-  key_point: 'BUILD_NOTES_L0_P2: standalone Vidyut P2 witness (verify_l0_p2.py). P0/P2
-    separation frozen (coverage vs morphology). Full-corpus result 103,906 records:
-    55.1% supported (CONFIRMED 28.2 + AMBIGUOUS 26.9), 29.5% CONFLICT (mostly compounds
-    Vidyut segments - real signal not error), 11.8% UNANALYZED. Matching rule: match
-    stem-as-prefix + surface (else ~50% false CONFLICT). philproof.py fix: extraction_coverage
-    OPEN != lexical_sense.'
+  at: '2026-08-12T16:27:40+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'P2 build record + proof-semantics correction. Frozen architecture: P0
+    (account for every T1 region -> verify_l0.py) vs P2 (is extracted Sanskrit lemma
+    licensed -> verify_l0_p2.py Vidyut) independent, never conflated. Full-corpus
+    P2 result V2/V3 103,906 records: CONFIRMED 28.2%, AMBIGUOUS_SUPPORTED 26.9%, supported
+    subtotal 55.1%, CONFLICT 29.5% (mostly multi-member compounds Vidyut segments
+    like svaprakASatA -> su+aprakASatA while L0 treats as one lemma - a real surface-vs-segmentation
+    signal, first-class disagreement queue), UNANALYZED 11.8%, NO_SANSKRIT 3.6%, TOOL_ERROR
+    7. Critical matching rule: lemma_iast stores SURFACE (saMvedanasya), Vidyut returns
+    STEM (saMvid); naive exact match gives ~50% false CONFLICT - match stem-as-prefix
+    of surface. PROOF-SEMANTICS FIX in philproof.py: unknown chars -> extraction_coverage:
+    OPEN NOT lexical_sense (that''s P3); passing chunk -> extraction_coverage PROVED,
+    lexical_sense UNCHECKED. Vidyut is witness not editor.'
 p2_ensemble:
   by: agent2
-  at: '2026-08-12T12:05:40+00:00'
-  key_point: 'P2-ENSEMBLE: Vidyut x Heritage independent calibration. 4600 records:
-    CONTROL AGREEMENT 84.1%, CONFLICT RESOLUTION 71.6% (most Vidyut CONFLICT = representation
-    mismatch, NOT L0 error), DOUBLE-CONFLICT 9.2% (genuine review set, ~424), Heritage-disagrees
-    5.5%. Honest statuses SUPPORTED_BY_ENSEMBLE/SINGLE/CONFLICTING/UNANALYZED, never
-    PROVED. P2 is a useful witness. Blind manual review required for agreement=correctness.'
+  at: '2026-08-12T16:27:50+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'P2 ensemble = INDEPENDENT INSTRUMENT CALIBRATION (not another parser
+    in stack). Question: how trustworthy is the morphology witness, what does disagreement
+    mean? Vidyut x Heritage over 500-record stratified sample (150 CONFLICT + 150
+    UNANALYZED + 100 CONFIRMED + 100 AMBIGUOUS_SUPPORTED). Results: CONTROL AGREEMENT
+    85% (both agree on known-supported -> validates instruments), CONFLICT RESOLUTION
+    72% (Vidyut CONFLICT resolves to Heritage support -> representation mismatch NOT
+    L0 error), DOUBLE-CONFLICT 8.4% (genuine review candidates, real philological
+    dispute signal), DOUBLE-UNANALYZED 0.2%, TOOL ERROR 0.2%. Key conclusion: Vidyut
+    29.5% CONFLICT heavily inflated by representation mismatch (72% resolves); real
+    dispute signal ~8.4%. Honest labels NEVER PROVED: SUPPORTED_BY_ENSEMBLE / SUPPORTED_BY_SINGLE_WITNESS
+    / CONFLICTING_WITNESSES / UNANALYZED. Blind manual review of 25-50 cases per cell
+    required (else agreement could be both tools same mistake).'
 p2_review_protocol:
   by: agent2
-  at: '2026-08-12T12:05:40+00:00'
-  key_point: 'P2_REVIEW_PROTOCOL (corrected after external review): build_p2_review
-    emits reviewer file with opaque IDs + secret key file, reviewer sees ONLY the
-    blind CSV. Labels SUPPORTED/PLAUSIBLE_ALTERNATIVE/CONFLICT/CANNOT_DECIDE + preferred
-    lemma + material_to_translation + reason. score_p2_review joins only via the secret
-    key, per-witness. Don''t tune normalization after seeing human labels without
-    versioning.'
+  at: '2026-08-12T16:27:58+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'Corrected P2 blind-review protocol - the remaining human gate for P2.
+    Build blind review: build_p2_review_blind_fixed.py --ensemble p2_disagreements.jsonl
+    --l0dir ipvv/l0 --out p2review.jsonl --key-out p2review_key.jsonl. Give reviewer
+    ONLY the blind CSV, NOT the key or ensemble file (blinding). Reviewer labels:
+    SUPPORTED / PLAUSIBLE_ALTERNATIVE / CONFLICT / CANNOT_DECIDE + preferred lemma
+    if different + whether difference materially changes translation + reason. Score:
+    score_p2_review_fixed.py --review --key --out. Rule: do NOT tune Vidyut/Heritage
+    normalization rules after inspecting human labels without versioning a new evaluation
+    round. Blinding + unblinding key are the anti-bias mechanism.'
 p3_editorial:
   by: agent2
-  at: '2026-08-12T12:05:40+00:00'
-  key_point: "P3_EDITORIAL_REVIEW: 0/21 lexical-gold fixtures promoted - intentional,\
-    \ circular (gloss embodies the label). Needs: passage_id, source_span_id, Sanskrit\
-    \ token+clause, candidate senses independent of label, parallels, refs. Red flags:\
-    \ duplicate incompatible labels (tattva reality/principle), m\u0101y\u0101/krama\
-    \ double-labeled. Keep as MACHINE_DRAFT -> SINGLE_EDITOR_GOLD -> DOUBLE -> ADJUDICATED.\
-    \ These are adversarial/abstention tests after human review."
+  at: '2026-08-12T16:28:06+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'P3 lexical-gold editorial review: 0/21 fixtures promoted to SINGLE_EDITOR_GOLD
+    - INTENTIONAL. The local_context fields were merely the pre-existing English literal
+    gloss -> promotion CIRCULAR (proposed sense judged from translation that already
+    embodies it). For a real P3 gold fixture need: immutable passage_id, exact source_span_id,
+    Sanskrit token + full clause, 1-3 surrounding clauses, L2 context, candidate senses
+    generated independently of the gold label, same-work parallels, dictionary refs,
+    optional commentary, reviewer rationale, explicit NO_UNIQUE_SENSE when underdetermined.
+    Red flags: duplicated tattva/vimarsa/maya/krama occurrences with incompatible
+    preferred senses (real adversarial/abstention tests, keep not delete, re-author
+    with context). Review states ladder: MACHINE_DRAFT -> SINGLE_EDITOR_GOLD -> DOUBLE_REVIEWED_GOLD
+    -> ADJUDICATED_GOLD. This is the honesty record that ranker.py P-012 was REJECTED
+    against.'
+global_state_2026_08_13:
+  by: agent2
+  at: '2026-08-13T03:02:54+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'GLOBAL-STATE-2026-08-13: Patala is trust/research infra, not AI translation.
+    Moat = D*P*V*N*A. Distinguish software/empirical/scholarly validity. Weakest-governs
+    dependency propagation; synthesis ceiling = min(load-bearing deps). Two axes:
+    epistemic vs structural-audit. Viruddha is bounded defect checker, not semantic
+    oracle. EO is projection not canonical reasoning. ArgumentSynthesis is the missing
+    layer. Paraphrase-expansion/claim-surface-inflation: correct metadata != faithful
+    paraphrase.'
+global_architecture:
+  by: agent2
+  at: '2026-08-13T03:02:54+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'PATALA-GLOBAL-ARCHITECTURE v0.1: 7 planes (borrowed infra, execution/control,
+    source substrate, domain compilers, epistemic core, projections, product surfaces).
+    Constitutional rule: higher may depend on lower, lower never gains authority from
+    above. Native ontology: SourceAssertion/EvidenceUse/CorroborationEvent/Proposition/Commitment/DebateFrame/Argument/Attack/Crux/ArgumentSynthesis/ReviewEvent/ImpactReport.
+    Three DAGs. 4 authority dims not one ladder. Reuse-first; benchmarks separate
+    evaluation plane; six benchmarks; do-not-build list; R1-R6.'
+agent1_current_state:
+  by: agent2
+  at: '2026-08-13T03:02:54+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'Agent1 CURRENT STATE (NEXT-STEPS r7): ML vertical frozen + peer-review-clean;
+    pivot to scholar-corpus foundation S0 - on-disk published scholars become corroboration
+    oracle, no live reviewer. Agent1 owns source-evidence layer. Start Inspect AI
+    prototype then GROBID/Zotero/Crossref/OpenAlex. Shared infra order for Agent2:
+    registry idempotency, single-writer lock, timeout cleanup, passage_id+hash binding,
+    bounded batching, avagraha, OCR->SOURCE_BLOCKED, replay certificate, Kramasadbhava
+    canary.'
+source_evidence_substrate:
+  by: agent2
+  at: '2026-08-13T03:02:54+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'S0 substrate (reuse-first): borrow GROBID/Zotero/OpenAlex/OpenCitations/RO-Crate/ORKG/OpenReview;
+    Patala owns only thin resolver + SourceAssertion + CorroborationEvent. Custom
+    code shrinks to ids/resolver/span/assertion/crosswalk. Scholar corpus becomes
+    corroboration oracle when provenance-addressable. Criterion: find mature open
+    project first; spend engineering only where epistemic structure begins.'
+source_evidence_schema:
+  by: agent2
+  at: '2026-08-13T03:02:54+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'Patala Source Evidence Profile v0: compose FaBiO/BIBFRAME (biblio identity)
+    + W3C Web Annotation (stable spans, multi-selector) + PROV-O (derivation) + CiTO
+    (citation) + RO-Crate (packaging) + IIIF (assets) + TEI (editions). Patala-native
+    only: SourceAssertion, CorroborationEvent, epistemic status, dependency consequences.
+    Align contract not runtime; test on 5-10 ugly real files.'
+global_partnerships:
+  by: agent2
+  at: '2026-08-13T20:02:16+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'Patala = the integration & identity layer over the fragmented Sanskrit
+    ecosystem (OpenAlex-for-Sanskrit), not another corpus. 4 partner classes (manuscript
+    custodians / digital-Sanskrit sources / global open infra incl IIIF / Buddhist
+    analogues). Foundational principle: PATA-W-... survives external change - never
+    an external DB as primary key (Work/Witness/Edition/TextInstance separated, never
+    flattened). Every imported fact is a versioned citable Assertion (source/confidence/status),
+    never overwrites fields - the catalogue-scholarship generalization of the review
+    engine. Canonical schema additions: Work/Person/Institution/Collection/Manuscript/Folio/Edition/Translation/TextInstance/Passage/Token/LexicalSense/Publication/ScholarlyClaim/Assertion/Evidence/Review/Identifier.
+    11 adapters first: Wikidata/OpenAlex/Crossref/VIAF/ROR/C-SALT/GRETIL/SARIT/PANDiT/NGMCP/IIIF.
+    Frames S0/source-evidence as the identity foundation.'
+global_access:
+  by: agent2
+  at: '2026-08-13T20:03:56+00:00'
+  session_token: f323e644710299c24ee550778b22f77a
+  key_point: 'Open-reference, controlled-corpus: 4 access layers (L0 identity, L1
+    public discovery, L2 partner/scholar, L3 core). Asymmetric openness - open identifiers/PATA-W
+    IDs + citation crosswalks, protect the intelligence (passages/translations/arguments/embeddings/adjudications).
+    Identifier is the highest-value product (patala.org/work/PW0000182 + free constrained
+    resolution service). Institution bargain = we improve your catalogue (normalizations,
+    dup identities, reconciliation, bib links). Scholar attribution records (Assertion
+    with reviewer/ORCID/status -> persistent contribution profile). AI-extraction
+    protection: robots/rate-limits/auth/signed-URLs/licensing/audit + keep core server-side,
+    never in client-side JS. Public dossiers as a publication pipeline (private graph
+    -> verified claims -> public dossier -> Google/ChatGPT/humans). First-class /institution
+    and /scholar pages. Social contract: public knowledge, scholarly commons, attribution,
+    custodianship, machine exploitation licensed. Crawler policy: allow OAI-SearchBot
+    on /work /person /concept /public; auth /scholar /corpus /export /training NO.
+    Rule: open what increases network effects, control what increases extractability.
+    Atlas largely public.'

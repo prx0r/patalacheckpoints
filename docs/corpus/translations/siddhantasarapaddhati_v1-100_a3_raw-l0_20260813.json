@@ -1,0 +1,1303 @@
+{
+  "batch_id": "siddhantasarapaddhati_v1-100_a3_raw-l0_20260813",
+  "translations": [
+    {
+      "passage_id": "siddhantasarapaddhati:v1",
+      "source_sha256": "298f1635f51a227ab8a7177aba838c3331434bc3b73bd4c3789652b5b9b4ef0f",
+      "tokens": {
+        "tatra": "there, in that connection",
+        "madhyandine": "at midday (loc. sg.)",
+        "pūrvavatātvyāmupānya": "as before (pūrvavat) ... having brought near (upānya, gerund); middle element (ātvyām?) unanalysable [segmentation unclear]",
+        "mantrādīntarpayet": "he should gratify the mantras etc. (mantrādīn, acc. pl., + tarpayet, 3sg. opt. caus.)"
+      },
+      "close": "There, at midday, having brought [himself] near as before (text garbled), he should gratify the mantras and the rest.",
+      "uncertain": ["pūrvavatātvyāmupānya"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v2",
+      "source_sha256": "9bd9c499dd0150e6f501c2e726c7e8ac0f27ce4150420c2791cbdb503eca120b",
+      "tokens": {
+        "iti": "thus (closing marker)",
+        "siddhāna": "the Siddhānta ('established doctrine'; truncated form of siddhāntaḥ)"
+      },
+      "close": "Thus [ends] the Siddhānta.",
+      "uncertain": ["siddhāna"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v3",
+      "source_sha256": "0a92254d48ca66e0b78ca6f1c2a1037feff375f9fcd370cf4cf8006b1d15ba83",
+      "tokens": {
+        "pradaśyāgneyaṃ": "having shown (pradaśya, gerund; possibly pradarśya) — the āgneya (south-east) [quarter], acc. sg. [segmentation unclear]"
+      },
+      "close": "Having shown [it] — the south-east (āgneya) [quarter].",
+      "uncertain": ["pradaśyāgneyaṃ"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v4",
+      "source_sha256": "bc81107d52483808d6cfb093a2409883307f9c553c01cfa0eff29683bda5183f",
+      "tokens": {
+        "tejaśca": "brilliance (tejaḥ) + and (ca); likely the head of tejaścaṇḍāya 'to Tejaścaṇḍa (the fierce-brilliance one)' [mis-segmented]",
+        "ḍāya": "",
+        "namaḥ": "homage (with dat. object)",
+        "iti": "thus (closing marker)",
+        "sūrya": "Sūrya (the sun deity)",
+        "pūjāvidhiḥ": "the rite of worship (pūjā-vidhi), nom. sg."
+      },
+      "close": "Homage to Tejaścaṇḍa — thus the rite of Sūrya-worship.",
+      "uncertain": ["tejaśca", "ḍāya"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v5",
+      "source_sha256": "79be71c93282632a3cdd3291e0a16751160287da53a923bc0ac34168d72250df",
+      "tokens": {
+        "pṛṣṭhe": "on the back (loc. sg.)",
+        "oṃ": "oṃ (sacred syllable)",
+        "rūpābhyo": "to the forms (rūpābhyaḥ, dat. pl., sandhi before namaḥ)",
+        "nama": "homage (namaḥ, sandhi before iti)",
+        "iti": "thus (closing marker)",
+        "tṛṣāmurasi": "on the chest (urasi, loc.); tṛṣām unanalysable (lit. gen. pl. of tṛṣā 'thirst'?)",
+        "aghorasya": "of Aghora (the non-terrible [face of Śiva]), gen. sg.",
+        "kalāṣṭhakaḥ": "the group of eight kalās (kalā-aṣṭaka), nom. sg.",
+        "oṃ": "oṃ (sacred syllable)"
+      },
+      "close": "On the back: 'oṃ, homage to the forms' — thus ...on the chest: the eight-kalā group of Aghora. Oṃ.",
+      "uncertain": ["tṛṣāmurasi"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v6",
+      "source_sha256": "209b427530c780c00043900b2a61b794531bc6d73f9883bd7f40aafda9403a3e",
+      "tokens": {
+        "jvarāṃ": "fever (jvarā), acc. sg. f.",
+        "vāmapārśve": "on the left side (loc. sg.)",
+        "iti": "thus (closing marker)",
+        "vāmadevakalāstrayodaśa": "the thirteen (trayodaśa) kalās of Vāmadeva (vāmadeva-kalā), nom. sg. m."
+      },
+      "close": "Fever on the left side — thus the thirteen kalās of Vāmadeva.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v7",
+      "source_sha256": "eb35f8d50c47591b23b7a81780ffe4822a15991d07729b431a0531464e8cbd6f",
+      "tokens": {
+        "iti": "thus (closing marker)",
+        "sadyojāta": "Sadyojāta ('born-at-once', the eastern face of Śiva)",
+        "kalpeṣu": "in the ritual procedures (kalpa), loc. pl.",
+        "kame": "",
+        "tat": "that, nom./acc. sg. n.",
+        "svasvamudrābhirīśānādiṣu": "with one's respective own mudrās (sva-sva-mudrā, instr. pl.), among [those] beginning with Īśāna (īśāna-ādi, loc. pl.)"
+      },
+      "close": "Thus Sadyojāta — in the ritual procedures ... that ...; with their respective own mudrās among [the group] beginning with Īśāna.",
+      "uncertain": ["kame", "svasvamudrābhirīśānādiṣu"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v8",
+      "source_sha256": "d0b0629be13094fbf238c99fbf43e5710a653b3194d8cbbc27a4ad36b73dcc90",
+      "tokens": {
+        "tanme": "that ... to me (tat + me, sandhi)",
+        "śivapadasthasye": "of [one] standing in the Śiva-state (śivapada-stha, gen. sg., sandhi before hūṃ)",
+        "hūṃ": "hūṃ (seed syllable)",
+        "kṣaḥ": "kṣaḥ (seed syllable)",
+        "kṣapaya": "destroy! (2sg. imp. caus.)",
+        "śaṅkara": "O Śaṅkara (voc.)"
+      },
+      "close": "That [sin] of mine — of [me] standing in the Śiva-state — hūṃ kṣaḥ, destroy [it], O Śaṅkara.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v9",
+      "source_sha256": "e6a00e71828dc5dd60d4f6cdbd7293373116b98da9614658662cc126d7d7458c",
+      "tokens": {
+        "śivo": "Śiva (nom. sg.)",
+        "yajati": "he sacrifices / performs worship (3sg. pres.)",
+        "sarvatrayaḥ": "all three (sarva-traya), nom. pl. m.",
+        "śivaḥ": "Śiva (nom. sg.)",
+        "sohameva": "he — I — indeed (saḥ + aham + eva; sandhi so'ham eva)",
+        "tu": "but / and (particle)"
+      },
+      "close": "Śiva performs the worship; all three are Śiva; I indeed am he (so'ham eva) — and (tu).",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v10",
+      "source_sha256": "ec470b8f9a29970295d9e2b1abb9974f34ca1ab0353c91c91c550883081e1724",
+      "tokens": {
+        "madhyasthādbahiraṅkatrayānta": "from the middle-point (madhyasthāt, abl.), outward (bahiḥ), ending at the third aṅka (line-mark) [compound; segmentation unclear]",
+        "arddhacandrava": "half-moon (ardhacandra) + fragmentary -va (possibly ardhacandravat 'like a half-moon')",
+        "sambhrāmya": "having whirled round (gerund of sam-√bhram)",
+        "cāpā": "bow (cāpa, fragment of cāpākāra 'bow-shaped'; source text marked corrupt)",
+        "kāra": "-form / -shape (kāra, fragment of ākāra)"
+      },
+      "close": "From the middle-point, outward to the end of the third line, having whirled [the cord] round like a half-moon, [making] a bow-shape (cāpākāra; text corrupt).",
+      "uncertain": ["madhyasthādbahiraṅkatrayānta", "arddhacandrava", "cāpā", "kāra"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v11",
+      "source_sha256": "7d34b5117a43c89faae2318dc55d190e614bf9bdb41db2ca846eadaa1e0a329b",
+      "tokens": {
+        "datvāda": "having given (datvā) + fragment (of daṇḍasya 'of the staff')",
+        "ḍasyārddhamadhūśca": "half of the staff (daṇḍasyārdham) + unanalysable middle + and (ca) [segmentation unclear]",
+        "vṛttaṃ": "a circle, acc./nom. sg. n.",
+        "ṭaṃkāre": "at the ṭaṃkāra (loc. sg.; implement/sound — sense unclear)"
+      },
+      "close": "Having given half of the staff ... (unclear) — a circle at the ṭaṃkāra.",
+      "uncertain": ["datvāda", "ḍasyārddhamadhūśca", "ṭaṃkāre"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v12",
+      "source_sha256": "f69edd4734ddf6fa4203b5c18ca1a23357795fffa9219351e72a4c0968d0f83f",
+      "tokens": {
+        "sūtradvayaṅkeṣu": "at the two cord-marks (sūtra-dvaya-aṅka), loc. pl.",
+        "saṃyojya": "having joined (gerund)",
+        "samasūtrayaṃ": "having equal cords (sama-sūtra), acc. sg. m./n.",
+        "tryaśre": "in the triangle (tryaśra), loc. sg."
+      },
+      "close": "Having joined [the cord] at the two line-marks, [one makes] an equal-corded [figure] in the triangle.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v13",
+      "source_sha256": "a08777e25abb688583c13338ca557af04779b1518c4de063b9d709e5c6b26ee8",
+      "tokens": {
+        "madhyāttatsamasūtre": "from the middle (madhyāt, abl.) — that (tat) — with the equal cord (samasūtreṇa, instr.; truncated)",
+        "a": "",
+        "matsya": "fish (matsya [figure])",
+        "catuṣṭaye": "in the set of four (loc. sg.)",
+        "samasūtradānāt": "from the laying of the equal cord (samasūtra-dāna), abl. sg.",
+        "ṣaḍaśram": "a hexagon (ṣaḍaśra), acc. sg."
+      },
+      "close": "From the middle, with that same equal cord, in the four fish[-figures], from the laying of the equal cord [comes] a hexagon.",
+      "uncertain": ["madhyāttatsamasūtre", "a"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v14",
+      "source_sha256": "03e67339eb780ddc10fbbb02c65a7b7c2bf85f3ce448978d0f4705218ad64124",
+      "tokens": {
+        "matsya": "fish (matsya [figure])",
+        "catuṣṭayeṣvapi": "also in the sets of four (catuṣṭaya, loc. pl. + api)",
+        "tryaśra": "triangle (tryaśra [figure])",
+        "krame": "in sequence (krameṇa, instr.; truncated)",
+        "a": "",
+        "sūtrayātanāta": "from the stretching of the cord (sūtra-āyātana?; abl.; truncated — reading uncertain)",
+        "ṣaṭko": "hexagon (ṣaṭkoṇa; truncated)",
+        "e": ""
+      },
+      "close": "Also in the four fish[-figures], drawing the triangles in sequence through the stretching of the cord, [one gets] a hexagon.",
+      "uncertain": ["krame", "a", "sūtrayātanāta", "ṣaṭko", "e"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v15",
+      "source_sha256": "80aecb7f58f3c662260d6eae68663fde2e186504da2b35a2cb85850c47450d70",
+      "tokens": {
+        "tridhāvibhajyabhāgeka": "having divided into three (tridhā vibhajya) — one part (bhāga-eka) [segmentation unclear]",
+        "tyāgādbrahmasthānādbhrame": "from the abandonment (tyāgāt, abl.) — from the Brahmā-sthāna (abl.) — by whirling (bhrameṇa, instr.; truncated)",
+        "a": "",
+        "vṛttam": "a circle, acc./nom. sg. n."
+      },
+      "close": "Having divided into three, [taking] one part, from the abandonment [of the rest] from the Brahmā-sthāna, by whirling — a circle.",
+      "uncertain": ["tridhāvibhajyabhāgeka", "tyāgādbrahmasthānādbhrame", "a"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v16",
+      "source_sha256": "f34005a31b3b873f271bd0d697f9368cc78a642e65b67076030d98535692c1a8",
+      "tokens": {
+        "sarvatobhadravat": "as in the Sarvatobhadra ('all-round-auspicious') [figure] (sarvatobhadra-vat)"
+      },
+      "close": "As in the Sarvatobhadra (figure).",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v17",
+      "source_sha256": "0a7738ea4c076c6e6779ddd3a6fa8508a8aebe49195961d03327a00a99cc3442",
+      "tokens": {
+        "sahaśiṣyavatbhūpet": "together with (saha) — disciple (śiṣya) — like (-vat) — he should be (bhūpet, 3sg. opt.) [segmentation unclear]",
+        "tataḥ": "then",
+        "prātarutthāya": "having risen at dawn (prātar-utthāya, gerund)"
+      },
+      "close": "Together with the disciple, as before, he should be. Then, having risen at dawn ...",
+      "uncertain": ["sahaśiṣyavatbhūpet"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v18",
+      "source_sha256": "7b2ec8aac5e0ea42f72a3e427d33cd5082ce8bc00226adb66bd335b01692546b",
+      "tokens": {
+        "caitanya": "consciousness (caitanya)",
+        "yojanaṃ": "the joining / application (yojana), nom./acc. sg.",
+        "malakarmādisaṃkalpaḥ": "the ritual resolve (saṃkalpa) concerning impurity (mala), karma, etc. (mala-karma-ādi), nom. sg.",
+        "śāntyatītāditaḥ": "beginning with Śāntyatīta (śānti-atīta-ādi; -taḥ 'from ... onward')",
+        "kramāt": "in sequence (krama, abl.; 'sequence/order', not sectarian)"
+      },
+      "close": "The application of consciousness. The ritual resolve concerning mala, karma, etc., in sequence from Śāntyatīta and the rest.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v19",
+      "source_sha256": "189da8a8e8c78c2a3fcf5084ae82c6eba3cddf0829bba5d2028a18594a620012",
+      "tokens": {
+        "tāḍanaṃ": "striking (tāḍana), nom./acc. sg.",
+        "graha": "seizing (grahaṇa; truncated)",
+        "aṃ": "",
+        "yogaḥ": "yoga (union), nom. sg.",
+        "pūjātarpa": "worship and libation (pūjā-tarpaṇa; truncated)",
+        "adīpanam": "kindling (dīpanam with stray initial a-), nom./acc. sg.",
+        "bandhanaṃ": "binding (bandhana), nom./acc. sg."
+      },
+      "close": "Striking, seizing, yoga, worship, libation, kindling — and binding.",
+      "uncertain": ["graha", "aṃ", "pūjātarpa", "adīpanam"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v20",
+      "source_sha256": "ab3abd28f38f5546205df0f67eedbf9cd4a2021edd8de447a74e5d45d611f173",
+      "tokens": {
+        "pāśabandha": "the binding of the pāśa (noose/bond of impurity), compound",
+        "śivena": "by Śiva (instr. sg.)",
+        "tu": "but / and (particle)",
+        "tataḥ": "then",
+        "śiṣyaṃ": "the disciple, acc. sg.",
+        "śivaśambhu": "Śivaśambhu (name; voc. — case uncertain)",
+        "kumbhāgnīnāṃ": "of the pot-fires (kumbha-agni), gen. pl."
+      },
+      "close": "And the binding of the pāśa is by Śiva. Then the disciple, O Śivaśambhu, [with] the pot-fires ...",
+      "uncertain": ["śivaśambhu"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v21",
+      "source_sha256": "b34170ce8a9cebc35afbc29d8f870c71a2a6b8a2abc0d1f7351184c18933b53a",
+      "tokens": {
+        "nityakarmavidhissamāptaḥ": "the procedure of the daily rites is concluded (nitya-karma-vidhi + samāptaḥ)"
+      },
+      "close": "The procedure of the daily rites is concluded.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v22",
+      "source_sha256": "8d98827bd54fffa6ab1f88272da181e7f5c11aecaef4813a90018634f749d937",
+      "tokens": {
+        "pratigṛh": "let them accept (pratigṛhṇantu, 3pl. imp.; truncated)",
+        "antu": "",
+        "śivedyanuvidhāyinaḥ": "the attendants/followers beginning with Śivā (śivādi-anuvidhāyin; nom. pl. — segmentation uncertain)",
+        "mayādantaṃ": "given by me (mayā + dattaṃ, acc. n. agreeing with valim)",
+        "valiṃ": "the offering (vali), acc. sg.",
+        "kṣipraṃ": "quickly"
+      },
+      "close": "Let the attendants beginning with Śivā accept the offering given by me, quickly.",
+      "uncertain": ["pratigṛh", "antu", "śivedyanuvidhāyinaḥ"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v23",
+      "source_sha256": "80128ab9af89764655532d0af65425d02c3410884d33d894e130ea8edd5ba915",
+      "tokens": {
+        "kecitsaumyasthāna": "some (kecit) — gentle-station (saumya-sthāna) [compound; segmentation unclear]",
+        "nivāsinaḥ": "dwellers (nivāsin), nom. pl.",
+        "mātaro": "the Mothers (mātṛ — the Mother-goddesses), nom. pl.",
+        "raudrarūpāśca": "and [those] of fierce form (raudra-rūpa, nom. pl. + ca)",
+        "ga": "of the gaṇas (gaṇānām; truncated)",
+        "ānāmapi": "...of the troops — also (fragment of -ṇānām + api)"
+      },
+      "close": "Some dwell in the gentle (saumya) stations; the Mothers of fierce form, and also [those] of the gaṇas —",
+      "uncertain": ["kecitsaumyasthāna", "ga", "ānāmapi"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v24",
+      "source_sha256": "2e048aec6dac1b9f34f1156813cff21fd1ff2fb3ab9bfa983c3d1438801a13e7",
+      "tokens": {
+        "pāścaye": "in the west(ern quarter)? (pāścātye? — form unclear)",
+        "sarvasu": "in all (sarva, loc. pl.)",
+        "prītama": "most pleased/dear (prītama; case unclear)",
+        "namaḥ": "homage",
+        "pratigṛh": "accepting (pratigṛhṇan, pres. part.; truncated)",
+        "anvimānyaliṃ": "",
+        "siddhiṃ": "success (siddhi), acc. sg."
+      },
+      "close": "In the west... homage to the most pleased one in all; accepting ... (unclear) — success.",
+      "uncertain": ["pāścaye", "prītama", "pratigṛh", "anvimānyaliṃ"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v25",
+      "source_sha256": "e814b0c2ba89d7e24f6ea8776ad0be222129e90556ccebc2f4b2282054a5ee99",
+      "tokens": {
+        "viśeṣa": "special",
+        "pūjā": "worship (pūjā)",
+        "kuryāt": "he should perform (3sg. opt.)",
+        "atha": "now / then",
+        "bhoktumicchanmadhyāhnikaṃ": "desiring to eat (bhoktum icchan, pres. part.) — the midday rite (madhyāhnika, acc.) [sandhi-blob]",
+        "nirvṛtya": "having finished (gerund of nir-√vṛt)"
+      },
+      "close": "He should perform the special worship. Then, when he wishes to eat, having finished the midday rite ...",
+      "uncertain": ["bhoktumicchanmadhyāhnikaṃ"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v26",
+      "source_sha256": "ccab9bb14989c0e40c1c7f5342a5df3ec8c9512f50e4cb3f10d08946e6c42e56",
+      "tokens": {
+        "dvihastātpatite": "fallen from two cubits (dvihastāt, abl. + patite, loc. sg.)",
+        "devāṅga": "the deity's body/limb (deva-aṅga)",
+        "lakṣajaptvā": "having muttered a lakh (100,000) (lakṣa + japtvā)",
+        "punaḥ": "again",
+        "saṃskāre": "by the consecration-rite (saṃskāreṇa, instr.; truncated)",
+        "a": "",
+        "śudhyati": "it becomes pure (3sg. pres.)"
+      },
+      "close": "If [it] has fallen from two cubits [high, damaging] the deity's body — having muttered a lakh [of mantras], it becomes pure again by the consecration-rite.",
+      "uncertain": ["saṃskāre", "a"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v27",
+      "source_sha256": "603bb7175b7b7c564a7f2f625ff64d82f90c6ae7dbe3304202667cdc27d3d638",
+      "tokens": {
+        "muṣṭisaṃveṣṭanena": "by the wrapping of the fist (muṣṭi-saṃveṣṭana), instr. sg.",
+        "liṅgamudrā": "the liṅga-mudrā (hand-gesture of the liṅga), nom. sg."
+      },
+      "close": "The liṅga-mudrā [is made] by wrapping the fist.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v28",
+      "source_sha256": "345f10ab3b86121b7b52becef58cf71bed45c96b666c4431ebd8be700cb39a9d",
+      "tokens": {
+        "liṅgāntaraṃ": "another liṅga (liṅga-antara), acc. sg.",
+        "pratiṣṭhāpya": "having established (gerund, caus.)",
+        "viśuddhyati": "it becomes pure (3sg. pres.)",
+        "pi": "of the pedestal (piṇḍikāyāḥ; truncated)",
+        "ḍikāyā": "...of the pedestal (fragment of -ṇḍikāyāḥ)",
+        "madhyevaṃ": "in the middle (madhye) — thus (evam)"
+      },
+      "close": "Having established another liṅga, it becomes pure. In the middle of the pedestal, thus ...",
+      "uncertain": ["pi", "ḍikāyā"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v29",
+      "source_sha256": "2aa62bdb8672689781ffae45920def93973036bf7df6e9c362bc946dd297d9cf",
+      "tokens": {
+        "pañcagavyādināsaṃ": "with pañcagavya (the five cow-products) etc. — having bathed (pañcagavyādinā + snāpya [mis-segmented])",
+        "snāpya": "having bathed (gerund, caus.)",
+        "viśeṣapūjāṃ": "the special worship, acc. sg.",
+        "kuryāt": "he should perform (3sg. opt.)"
+      },
+      "close": "Having bathed [it] with pañcagavya and the rest, he should perform the special worship.",
+      "uncertain": ["pañcagavyādināsaṃ"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v30",
+      "source_sha256": "e858d06d33b3917539312658d88733e80eee29da6336efff0e761557ab5e5f21",
+      "tokens": {
+        "svajātīśvaraṃ": "the lord of one's own class/family (sva-jāti-īśvara), acc. sg.",
+        "kīrtayet": "he should recite / proclaim (3sg. opt.)",
+        "ucchiṣṭādīkṣita": "one initiated while defiled (ucchiṣṭa-dīkṣita; compound — initiation in a state of impurity)",
+        "sparśamutpatī": "touch (sparśa, acc.) + unanalysable (utpatī? — text corrupt)",
+        "tathā": "so / thus"
+      },
+      "close": "He should recite the lord of his own family. [As for] one initiated while defiled — touch ... (text corrupt); so ...",
+      "uncertain": ["ucchiṣṭādīkṣita", "sparśamutpatī"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v31",
+      "source_sha256": "e432a0ee624d2c5196f07d4e79697155a527e28c4ba9290a5901bcf32533bd31",
+      "tokens": {
+        "sahasratrayañjapet": "he should mutter three thousand (sahasra-traya + japet, 3sg. opt.)",
+        "trirātrañcopavasediti": "and he should fast for three nights — thus (trirātram + ca + upavaset + iti)",
+        "athavā": "or else",
+        "āgnika": "the fire[-rite] (āgnika — sense uncertain)",
+        "devārcanādilpe": "in the procedure beginning with the worship of the deities (devārcanādi-kalpa, loc.)"
+      },
+      "close": "He should mutter three thousand; and he should fast for three nights — thus. Or else, in the procedure beginning with the worship of the deities, the fire[-rite] ...",
+      "uncertain": ["āgnika"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v32",
+      "source_sha256": "124dad6c58e8b850c0839c66e3549ad006fdb3c9378b6e9a2f6ebe2ae9147cb5",
+      "tokens": {
+        "japahomaupavāsātadviśuddhaye": "for that purification (tad-viśuddhi, dat.) through muttering, oblation, [and] fasting (japa-homa-upavāsa; segmentation unclear)",
+        "kartavyamiti": "it is to be done — thus (kartavya + iti)"
+      },
+      "close": "It is to be done for purification through muttering, oblations, [and] fasting — thus.",
+      "uncertain": ["japahomaupavāsātadviśuddhaye"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v33",
+      "source_sha256": "dbcfa203464a55207f311367d8a14acdbe5a60ba98ebf053eaffa472052c993e",
+      "tokens": {
+        "prāyaścitta": "expiation (prāyaścitta)",
+        "vidhiḥ": "the procedure, nom. sg.",
+        "samāptaḥ": "is concluded"
+      },
+      "close": "The procedure of expiation is concluded.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v34",
+      "source_sha256": "e9923fb1472c335f616403c855ca3ea19c28cfb17834f4abe31b63a5b20fa054",
+      "tokens": {
+        "proktārudreśa": "was declared (proktā, f. ppp.) — O Rudreśa (voc.; case uncertain)",
+        "padadāyinī": "the giver of the rank/position (pada-dāyinī), nom. sg. f."
+      },
+      "close": "...was declared, O Rudreśa, [as] the one who grants the rank.",
+      "uncertain": ["proktārudreśa"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v35",
+      "source_sha256": "d71e7e2638a123c2781a1baedafcb70d3a1fc602ddd7f8b30f91a83497da0a83",
+      "tokens": {
+        "samayadīkṣāvidhiḥ": "the procedure of the samaya initiation (samaya-dīkṣā-vidhi), nom. sg.",
+        "samāptaḥ": "is concluded"
+      },
+      "close": "The procedure of the samaya initiation is concluded.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v36",
+      "source_sha256": "add2f35b25ee814af8ad60f843ff979721d728b8bada556b08d3a63de9484a28",
+      "tokens": {
+        "sarvatobhadravakuryāllatā": "he should make (kuryāt) the Sarvatobhadra as-[before] (sarvatobhadravat) — creeper (latā) [sandhi-blob; sense unclear]",
+        "liṅgodbhave": "at the arising of the liṅga (liṅga-udbhava), loc. sg."
+      },
+      "close": "He should make the Sarvatobhadra [figure] like a creeper(?) at the arising of the liṅga.",
+      "uncertain": ["sarvatobhadravakuryāllatā"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v37",
+      "source_sha256": "d168943576d45a407926a912732e74e844632fd447e4bcb24d4f224597a0d9f2",
+      "tokens": {
+        "sūtrabhrama": "by the whirling of the cord (sūtrabhramaṇa, instr.; truncated)",
+        "enārddha": "...by-whirling — half (fragment of -ṇenārdham)",
+        "candraṃ": "moon[-shape] (candra; sc. ardhacandra 'half-moon'), acc. sg."
+      },
+      "close": "By whirling the cord, [make] a half-moon.",
+      "uncertain": ["sūtrabhrama", "enārddha"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v38",
+      "source_sha256": "086bf4d6514609628857d66cf2a1f1a1aa38e123e6e1f27c81e234803310e7f4",
+      "tokens": {
+        "pañcamaṃ": "the fifth, acc. sg. n.",
+        "svayamevābhivyajyate": "is manifested by itself (svayam eva + abhivyajyate, 3sg. pres. pass.)",
+        "svastike": "in the svastika [figure], loc. sg."
+      },
+      "close": "In the svastika, the fifth manifests by itself.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v39",
+      "source_sha256": "e04dc78d7c3c7bf0b8779239abde8800f464c54b258d5e70b47878570317a893",
+      "tokens": {
+        "kumbhadvayāntaḥ": "within the two pots (kumbha-dvaya-antaḥ)",
+        "padmasaṃmukhaṃdvāraṃ": "the door (dvāra) facing the lotus (padma-saṃmukha), acc. sg.",
+        "yonyākāre": "in the yoni-shape (yoni-ākāra), loc. sg."
+      },
+      "close": "Within the pair of pots — the door facing the lotus, in the yoni-shape.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v40",
+      "source_sha256": "4d6ab000b6234cc42e8ae0b3f18cedf6a331834513452aaeb415f7848d256796",
+      "tokens": {
+        "caturaśre": "in the square (caturaśra), loc. sg.",
+        "tridhāvibhakte": "divided into three (tridhā-vibhakta), loc. sg.",
+        "saṃsaktāni": "joined / attached (saṃsakta), nom. pl. n.",
+        "navapadmāni": "nine lotuses (nava-padma), nom. pl. n.",
+        "saṃsakte": "joined (saṃsakta), loc. sg.",
+        "navanābhe": "in the nine-navel[led figure] (nava-nābha), loc. sg."
+      },
+      "close": "In the square divided into three, nine lotuses are attached; attached in the nine-navel[led figure].",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v41",
+      "source_sha256": "23259b7f86c31b1765ca592dd2d2a109401b472c639ab131cdbe8570d2f183cc",
+      "tokens": {
+        "dvārādirahitaṃ": "devoid of doors, etc. (dvāra-ādi-rahita), acc. sg. n."
+      },
+      "close": "Devoid of doors, etc.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v42",
+      "source_sha256": "f2ea2999b9084c837a325e1d6274564955062c8624b313a2599a09ccbaeedcb5",
+      "tokens": {
+        "dvārā": "the doors (dvārāṇi, nom. pl.; truncated)",
+        "i": "",
+        "cā": "and (ca; with stray ā)",
+        "saṃsakte": "joined (loc. sg.)",
+        "evaṃ": "thus",
+        "triprakāraṃ": "of three kinds (tri-prakāra), acc. sg. n.",
+        "navanābhaṃ": "the nine-navel[led figure] (nava-nābha), acc. sg. n."
+      },
+      "close": "The doors, too, are joined — thus the nine-navel[led figure] is of three kinds.",
+      "uncertain": ["dvārā", "i", "cā"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v43",
+      "source_sha256": "eb67c80a2251874b34a333a73f1d66a8867b56601905b9f299ec8fbfc8cb457d",
+      "tokens": {
+        "sarvama": "in all maṇḍalas (sarvamaṇḍaleṣu, loc. pl.; truncated)",
+        "ḍaleṣu": "...maṇḍalas (fragment of -ṇḍaleṣu)",
+        "padmadvārā": "the lotus-doors (padmadvārāṇi, nom. pl.; truncated)",
+        "yaḥ": "",
+        "naivamārge": "by this-very method (naiva-mārgeṇa, instr.; truncated — reading uncertain)",
+        "a": "",
+        "kartavyānīti": "they are to be made — thus (kartavyāni + iti)"
+      },
+      "close": "In all maṇḍalas the lotus-doors are to be made by no [other] method than this — thus.",
+      "uncertain": ["sarvama", "ḍaleṣu", "padmadvārā", "yaḥ", "naivamārge", "a"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v44",
+      "source_sha256": "d4b7b055ed5a4ff41cee99a76ea9c7c6f589ad4b1dd1f358514d68d4c69f71dd",
+      "tokens": {
+        "viśeṣa": "special",
+        "siddhikāmaḥ": "one desiring success (siddhi-kāma), nom. sg.",
+        "muktā": "pearl (muktā — case unclear)",
+        "cidrumādinā": "with ...-etc. (instr.; compound unclear — possibly citrādinā 'with variegated [materials] etc.')",
+        "etadeva": "this very (etad + eva), acc. sg. n.",
+        "kuryāt": "he should perform / make (3sg. opt.)"
+      },
+      "close": "One desiring special success — with pearl, [and] variegated[-materials] etc., he should make just this.",
+      "uncertain": ["muktā", "cidrumādinā"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v45",
+      "source_sha256": "14433b6398eeca424d76049c746cf66331534cc964dd8674fbe03363150ac7aa",
+      "tokens": {
+        "yojanaṃ": "the application (yojana), nom./acc. sg.",
+        "sarvayoniṣu": "in all yonis (sources/wombs), loc. pl.",
+        "garbhajanmadeśvaryaṃ": "sovereignty over womb-birth (garbhajanma-aiśvarya; compound segmentation unclear), acc. sg.",
+        "tadbhogāpādanaṃ": "the bringing-about of that enjoyment (tad-bhoga-āpādana), acc. sg.",
+        "tathā": "so / thus"
+      },
+      "close": "The application in all yonis: sovereignty over conception and birth, and the production of that enjoyment — thus.",
+      "uncertain": ["garbhajanmadeśvaryaṃ"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v46",
+      "source_sha256": "a65e363c0be549b67dcafa36da3edf89a1d66df0565b0103552f313c15b26c87",
+      "tokens": {
+        "pūrvā": "the earlier one (pūrvā, f. nom. sg.)",
+        "dadyāt": "he should give (3sg. opt.)",
+        "tadanu": "after that (tad + anu)",
+        "oṃ": "oṃ (sacred syllable)",
+        "viṣ": "to Viṣṇu (viṣṇave, dat. sg.; truncated)",
+        "uve": "...to Viṣṇu (fragment of -ṇave)",
+        "nama": "homage (namaḥ, sandhi before iti)",
+        "ityāvāhya": "thus — having invited (iti + āvāhya, gerund, caus.)",
+        "saṃsthāpya": "having established (gerund, caus.)"
+      },
+      "close": "He should give the earlier one. After that: 'oṃ, homage to Viṣṇu' — thus, having invited and established [the deity] ...",
+      "uncertain": ["viṣ", "uve"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v47",
+      "source_sha256": "593ad2d71d3d67d48c1acf20ec3593afbe3aec53c16133b133276f9a8157c6a9",
+      "tokens": {
+        "vidyākyānnama": "homage to [the one] called Vidyā (vidyā-ākhya + namaḥ; segmentation unclear)",
+        "iti": "thus",
+        "sampūjyāhutitrayaṃ": "having worshipped — three oblations (saṃpūjya + hutitrayam; sandhi-blob)",
+        "datvā": "having given (gerund)",
+        "vidyāmupasthāpayet": "the Vidyā — he should summon (vidyā + upasthāpayet, 3sg. opt. caus.)",
+        "oṃ": "oṃ (sacred syllable)"
+      },
+      "close": "...homage to [the one] called Vidyā — thus, having worshipped [and] given three oblations, he should summon the Vidyā. Oṃ ...",
+      "uncertain": ["vidyākyānnama"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v48",
+      "source_sha256": "b36e035309bb0e80a3a111c566bc12a4fe41dbe79fc63cac388d42631992629e",
+      "tokens": {
+        "saṃpūjyāhutitrayaṃ": "having worshipped — three oblations (saṃpūjya + hutitrayam; sandhi-blob)",
+        "datvā": "having given (gerund)",
+        "visarjayet": "he should dismiss (3sg. opt. caus.)",
+        "yojanaḥ": "the application (yojana), nom. sg."
+      },
+      "close": "Having worshipped [and] given three oblations, he should dismiss — the application.",
+      "uncertain": ["yojanaḥ"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v49",
+      "source_sha256": "4571940aa835d440368bd0ae1f14421313c2281660af19a7ebc48da19f93e89d",
+      "tokens": {
+        "vaikyaṃ": "the utterance? (vākya, spelling unclear — possibly vaikhya)",
+        "śiṣyadehe": "in the disciple's body (śiṣya-deha), loc. sg.",
+        "niyojanaḥ": "the application (niyojana), nom. sg.",
+        "visarjanaśca": "and the dismissal (visarjana + ca), nom. sg.",
+        "vāgīśyāḥ": "of Vāgīśī (the goddess of speech), gen. sg.",
+        "śuddha": "pure, nom. sg."
+      },
+      "close": "The utterance [is to be applied] in the disciple's body — the application; and the dismissal, of Vāgīśī — pure.",
+      "uncertain": ["vaikyaṃ"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v50",
+      "source_sha256": "34fe1c9b828824c43d647b348f1c2465d98ecf57f403a8f04a9e71168aa3083f",
+      "tokens": {
+        "tatvāvalokanaṃ": "the contemplation of the tattvas (tattva-avalokana), nom./acc. sg.",
+        "kalāṃ": "the kalā (ritual power-segment), acc. sg. f.",
+        "saṃpūjya": "having worshipped (gerund)",
+        "punaḥ": "again",
+        "śaktipūjanaṃ": "the worship of Śakti (the Goddess / divine power), nom./acc. sg."
+      },
+      "close": "The contemplation of the tattvas. Having worshipped the kalā, again the worship of Śakti.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v51",
+      "source_sha256": "1eedf313e87e5e804594aa7ede1e6f6157416e584a4186aaa466e59a4a6041d8",
+      "tokens": {
+        "pratiṣṭhākalāyāṃ": "in the pratiṣṭhā-kalā (the kalā of establishment), loc. sg.",
+        "sannidhī": "presence (sannidhi), acc. sg.",
+        "kuru": "make! (2sg. imp.)",
+        "iti": "thus",
+        "tataḥ": "then",
+        "prakṛtyādyaptatvānte": "beginning with Prakṛti (prakṛtyādi) ... ending at ... (fragment; segmentation unclear)"
+      },
+      "close": "In the pratiṣṭhā-kalā: 'make [your] presence [here]' twice — thus. Then, from Prakṛti onward to ... (unclear) ...",
+      "uncertain": ["prakṛtyādyaptatvānte"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v52",
+      "source_sha256": "2814ad250bbbd59b9b6a6057385ffcb6df1bbb0f247c29bfb1203104474325d9",
+      "tokens": {
+        "śāntimupasthāpayet": "Śānti — he should summon (śānti + upasthāpayet, 3sg. opt. caus.)"
+      },
+      "close": "He should summon Śānti.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v53",
+      "source_sha256": "54e97b3a9e65fcef0d68ebd08a431c15af26675e5f8fd56605857a9b47fb30dc",
+      "tokens": {
+        "śāntyatītāmupasthāpayet": "Śāntyatītā — he should summon (śāntyatītā + upasthāpayet, 3sg. opt. caus.)"
+      },
+      "close": "He should summon Śāntyatītā.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v54",
+      "source_sha256": "4223c2eff06dc9482243727b6a18b16b20fe059034d161ba13ed3b08f4179590",
+      "tokens": {
+        "saṃmayajñābhavabhaktā": "devoted to the state of samaya-knowledge (samaya-jñāna-bhava-bhaktā; reading/segmentation uncertain — possibly saṃmaya-...)",
+        "prapālayet": "he should protect (3sg. opt.)"
+      },
+      "close": "He should protect [her who is] devoted to the state of samaya-knowledge.",
+      "uncertain": ["saṃmayajñābhavabhaktā"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v55",
+      "source_sha256": "e76d9bbc7ae032f7594593ac9949b1dfa9d5c99b4abbccc582d23149ea36f1fb",
+      "tokens": {
+        "dīkṣāvidhiḥ": "the procedure of initiation (dīkṣā-vidhi), nom. sg.",
+        "samāptaḥ": "is concluded"
+      },
+      "close": "The procedure of initiation is concluded.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v56",
+      "source_sha256": "3c526384a321e64238aa004ec2b6604a727410a44a1e82716345a975970f1fdb",
+      "tokens": {
+        "pūjākṣetraśīmāsuca": "and in the boundaries (śīmā) of the worship-ground (pūjā-kṣetra), loc. pl. + ca (truncated)",
+        "parvasu": "on the parvan (festival) days, loc. pl."
+      },
+      "close": "And in the boundaries of the worship-ground, on parvan days ...",
+      "uncertain": ["pūjākṣetraśīmāsuca"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v57",
+      "source_sha256": "641e3b14c0fedae95770394cd2d7b0e0941b5914801091d0496ba597b2a6800f",
+      "tokens": {
+        "sādhakābhiṣeka": "the anointing of the sādhaka (sādhaka-abhiṣeka)",
+        "vidhiḥ": "the procedure, nom. sg.",
+        "samāptaḥ": "is concluded"
+      },
+      "close": "The procedure of the sādhaka's abhiṣeka (consecratory anointing) is concluded.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v58",
+      "source_sha256": "cc24f381a5269dd928ef79b228ed8ed791bad2967ec39e1cf66c5bb4dc7d132a",
+      "tokens": {
+        "oṃ": "oṃ (sacred syllable)",
+        "āṃ": "āṃ (seed syllable)",
+        "iṃ": "iṃ (seed syllable)",
+        "ūṃ": "ūṃ (seed syllable)",
+        "tasyātmane": "to its self (tasya + ātmane, dat. sg.)",
+        "namaḥ": "homage",
+        "śaṅkhamantrāḥ": "the conch-mantras (śaṅkha-mantra), nom. pl."
+      },
+      "close": "'Oṃ āṃ iṃ ūṃ, homage to its self' — the conch-mantras.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v59",
+      "source_sha256": "9a34f98897e9d2d293ded43215eefa197e8be1908f04b22c432ef62871efddb8",
+      "tokens": {
+        "namaḥ": "homage",
+        "oṃ": "oṃ (sacred syllable)",
+        "āṃ": "āṃ (seed syllable)",
+        "iṃ": "iṃ (seed syllable)",
+        "ūṃ": "ūṃ (seed syllable)",
+        "uttarātmane": "to the northern/higher self (uttara-ātmane, dat. sg.)",
+        "namaḥ": "homage",
+        "kalasamantrāḥ": "the pot-mantras (kalaśa-mantra), nom. pl."
+      },
+      "close": "'Homage. Oṃ āṃ iṃ ūṃ, homage to the northern self' — the pot-mantras.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v60",
+      "source_sha256": "98100caef805c9a2677caaf91aac8e3167e9a8f3196bc2ab22763bf90afc33e8",
+      "tokens": {
+        "oṃ": "oṃ (sacred syllable)",
+        "āṃ": "āṃ (seed syllable)",
+        "iṃ": "iṃ (seed syllable)",
+        "ūṃ": "ūṃ (seed syllable)",
+        "sarvaratnabhyo": "to all the jewels (sarva-ratna, dat. pl., sandhi before namaḥ)",
+        "namaḥ": "homage",
+        "ratnamantrāḥ": "the jewel-mantras (ratna-mantra), nom. pl."
+      },
+      "close": "'Oṃ āṃ iṃ ūṃ, homage to all the jewels' — the jewel-mantras.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v61",
+      "source_sha256": "e528bf906d0a8af3c83182c9504d28291269f10f100238472103471f1b33127c",
+      "tokens": {
+        "ye": "",
+        "oṃ": "oṃ (sacred syllable)",
+        "iṃ": "iṃ (seed syllable)",
+        "ūṃ": "ūṃ (seed syllable)",
+        "sarvavīje": "to the all-seed ... (sarva-vīja; case unclear — possibly part of a dative plural)",
+        "sva": "",
+        "indrātmakebhyo": "to those whose nature is Indra (indra-ātmaka, dat. pl., sandhi before namo)",
+        "namonamaḥ": "homage, homage (namo namaḥ)",
+        "vījamantraḥ": "the seed-mantra (vīja-mantra), nom. sg."
+      },
+      "close": "'... oṃ iṃ ūṃ, to the all-seed ..., to those whose nature is Indra — homage, homage' — the seed-mantra.",
+      "uncertain": ["ye", "sarvavīje", "sva"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v62",
+      "source_sha256": "385abac53d01e556d228846ec490925665e26716743719a50097775b3c433d8b",
+      "tokens": {
+        "oṃ": "oṃ (sacred syllable)",
+        "āṃ": "āṃ (seed syllable)",
+        "iṃ": "iṃ (seed syllable)",
+        "ūṃ": "ūṃ (seed syllable)",
+        "sarvauṣadhibhyaḥ": "to all the herbs (sarva-oṣadhi, dat. pl.)",
+        "somātmakebhyo": "to those whose nature is Soma (soma-ātmaka, dat. pl., sandhi)",
+        "namonamaḥ": "homage, homage (namo namaḥ)",
+        "oṣadhī": "the herbs (oṣadhī)"
+      },
+      "close": "'Oṃ āṃ iṃ ūṃ, homage, homage to all the herbs whose nature is Soma' — the herb[-mantra].",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v63",
+      "source_sha256": "9856600e8ccff4d4b1413d3f535e5d1d4c7eea1add4f58d019c0a7382530eb30",
+      "tokens": {
+        "oṃ": "oṃ (sacred syllable)",
+        "āṃ": "āṃ (seed syllable)",
+        "iṃ": "iṃ (seed syllable)",
+        "uṃ": "uṃ (seed syllable)",
+        "sarvagandhabhyaḥ": "to all the perfumes (sarva-gandha, dat. pl.)",
+        "pārthivātmakebhyo": "to those whose nature is earthly (pārthiva-ātmaka, dat. pl., sandhi)",
+        "namonamaḥ": "homage, homage (namo namaḥ)"
+      },
+      "close": "'Oṃ āṃ iṃ uṃ, homage, homage to all the perfumes whose nature is earthly.'",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v64",
+      "source_sha256": "40b96098105ed3930274cb29cddad6205c2d0546bfd1bdb722d26983f49774de",
+      "tokens": {
+        "gandhamantraḥ": "the perfume-mantra (gandha-mantra), nom. sg."
+      },
+      "close": "The perfume-mantra.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v65",
+      "source_sha256": "e17232d09834d96ee2e3dfae8ff0f2cd54669fb16e578febeb7683861d39caef",
+      "tokens": {
+        "oṃ": "oṃ (sacred syllable)",
+        "āṃ": "āṃ (seed syllable)",
+        "iṃ": "iṃ (seed syllable)",
+        "ūṃ": "ūṃ (seed syllable)",
+        "sarvamṛdbhyaḥ": "to all the clays (sarva-mṛd, dat. pl.)",
+        "pṛthivyātmabhyo": "to those whose nature is the earth (pṛthivī-ātmaka, dat. pl., sandhi)",
+        "namonamaḥ": "homage, homage (namo namaḥ)"
+      },
+      "close": "'Oṃ āṃ iṃ ūṃ, homage, homage to all the clays whose nature is the earth.'",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v66",
+      "source_sha256": "46af082c2a1f97ab99e06e179c03ece25b471aab5f98009b66e0156d64bf54c9",
+      "tokens": {
+        "vidyādhipatora": "of the lord of the vidyās (vidyādhipati) — the archway (toraṇa; truncated)",
+        "āya": "...-archway (fragment of -toraṇāya, dat. ending)",
+        "namaḥ": "homage",
+        "iti": "thus",
+        "tora": "archway (toraṇa; truncated)",
+        "a": "",
+        "mantrāḥ": "the mantras, nom. pl."
+      },
+      "close": "Homage to the archway of the Lord of the Vidyās — thus the archway-mantras.",
+      "uncertain": ["vidyādhipatora", "āya", "tora", "a"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v67",
+      "source_sha256": "cb5b81ab7dcb9081f866ebb78e505e13e927ec696285382a47cce809b360e992",
+      "tokens": {
+        "vyāptameva": "pervaded, indeed (vyāptam + eva)",
+        "ṣaḍvidhādhva": "the sixfold path (ṣaḍvidha-adhvan; truncated)",
+        "vyāptiḥ": "the pervasion (vyāpti), nom. sg."
+      },
+      "close": "The sixfold path is pervaded, indeed — [this is] the pervasion (vyāpti).",
+      "uncertain": ["ṣaḍvidhādhva"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v68",
+      "source_sha256": "3038a9fa62186ef5571d0042222f01aba42c205e7a59245a9feaff743a25d442",
+      "tokens": {
+        "vyāptaṃ": "pervaded, acc./nom. sg. n.",
+        "sañcintyaivaṃ": "having contemplated — thus (sañcintya + evam)",
+        "ṣaḍvidhādhva": "the sixfold path (ṣaḍvidha-adhvan; truncated)",
+        "vyāptiḥ": "the pervasion (vyāpti), nom. sg."
+      },
+      "close": "Having contemplated [it] as pervaded, thus [is] the pervasion of the sixfold path.",
+      "uncertain": ["ṣaḍvidhādhva"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v69",
+      "source_sha256": "bd531a6fd3462b08d1b3c359dda1492d93c4db992b3d1765d1240599bda79e1b",
+      "tokens": {
+        "sañcintanīyamiti": "to be contemplated — thus (sañcintanīya + iti)",
+        "ṣaḍvidhādhva": "the sixfold path (ṣaḍvidha-adhvan; truncated)",
+        "vyāptiḥ": "the pervasion (vyāpti), nom. sg.",
+        "pratiṣṭhākalāyāṃ": "in the pratiṣṭhā-kalā, loc. sg."
+      },
+      "close": "It is to be contemplated thus — the pervasion of the sixfold path; in the pratiṣṭhā-kalā ...",
+      "uncertain": ["ṣaḍvidhādhva"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v70",
+      "source_sha256": "95a98889c01b96777dc23ab3f51f01ad797f87d4cc0a440c4cdd879a3a131522",
+      "tokens": {
+        "bhadrakar": "Bhadrakarṇa (bhuvana-name; truncated)",
+        "asvar": "...Svarṇa (bhuvana-name; fragment)",
+        "asvar": "...Svarṇākṣa (bhuvana-name; fragment)",
+        "ākṣasthā": "...Sthāṇu (bhuvana-name; fragment)",
+        "u": "",
+        "iti": "thus",
+        "bhuvanāṣṭakamākāśe": "the group of eight worlds (bhuvana-aṣṭaka) — in the ākāśa (loc.) [sandhi-blob]",
+        "bhū": ""
+      },
+      "close": "Bhadrakarṇa, Svarṇa, Svarṇākṣa, Sthāṇu — thus the group of eight worlds in the ākāśa. Bhū...",
+      "uncertain": ["bhadrakar", "asvar", "asvar", "ākṣasthā", "u", "bhuvanāṣṭakamākāśe", "bhū"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v71",
+      "source_sha256": "658d48f307aa3765a272bdb5dedc3bc3a1a8d16452e8d7c5329189d249920c36",
+      "tokens": {
+        "pūrvadigbhāge": "in the eastern quarter-part (pūrva-dig-bhāga), loc. sg.",
+        "daśa": "ten",
+        "agnirudro": "Agnirudra (name), nom. sg.",
+        "hutāśaḥ": "Hutāśa ('fire'; name), nom. sg.",
+        "piṅgalaḥ": "Piṅgala (name), nom. sg.",
+        "khādakoharā": "the devourer (khādaka) — and — Harā? (fragment; segmentation unclear)"
+      },
+      "close": "In the eastern quarter: ten — Agnirudra, Hutāśa, Piṅgala, the devourer, Harā(?) ...",
+      "uncertain": ["khādakoharā"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v72",
+      "source_sha256": "9ffe389c301d85670fec60534e4f57adb03abd1d11cb0202d40775a015b06ce6",
+      "tokens": {
+        "jvalanodahanovabhrūrbhasmāntakaḥ": "Jvalana, Udahana ('burner'), Avabhṛt(?), Bhasmāntaka — name-list (blob; segmentation unclear)",
+        "kṛpāntakaḥ": "Kṛpāntaka (name), nom. sg.",
+        "ityāgneye": "thus — in the āgneya (south-east) [quarter] (iti + āgneya, loc.)",
+        "daśaṃ": "ten, acc./nom. sg. n."
+      },
+      "close": "Jvalana, Udahana, Avabhṛt, Bhasmāntaka, Kṛpāntaka — thus in the south-east (āgneya): ten.",
+      "uncertain": ["jvalanodahanovabhrūrbhasmāntakaḥ"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v73",
+      "source_sha256": "de452f5506ba252fb4d3b0d2c8a99f43e34090a28573550193a844c0c2c6eea8",
+      "tokens": {
+        "adharmayatiḥ": "Adharmayati? (name; unclear — possibly 'the destroyer of adharma')",
+        "iti": "thus",
+        "pāsyedaśa": "...in the ...(pāśyā?; direction-word unclear) — ten (daśa)",
+        "nirdatirmāra": "Nirdati(?) — the destroyer (māraṇa; truncated) [name-list blob]",
+        "ohantā": "...the slayer (hantā; fragment)"
+      },
+      "close": "Adharmayati — thus in the ... [quarter]: ten. Nirdati, the destroyer, the slayer ...",
+      "uncertain": ["adharmayatiḥ", "pāsyedaśa", "nirdatirmāra", "ohantā"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v74",
+      "source_sha256": "de452f5506ba252fb4d3b0d2c8a99f43e34090a28573550193a844c0c2c6eea8",
+      "tokens": {
+        "daṃṣṭravāniti": "the tusked-one (daṃṣṭravān) — thus (iti) [sandhi-blob]",
+        "nairṛte": "in the south-west (nairṛta), loc. sg.",
+        "daśa": "ten",
+        "vala": "Vala (name)",
+        "ativala": "Ativala (name)",
+        "pāśahasta": "Pāśahasta ('noose-handed'; name)",
+        "mahāvalaśceta": "Mahāvala — and — thus (mahāvalaḥ + ca + iti, sandhi)"
+      },
+      "close": "The tusked one — thus in the south-west (nairṛta): ten. Vala, Ativala, Pāśahasta, Mahāvala — thus.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v75",
+      "source_sha256": "1ca38e9b714fe8e08e47c39e827b9ec2dcb78ccd1fcb44b8d90a5225cd6be1d4",
+      "tokens": {
+        "jayabhadradīrgha": "Jaya — Bhadra — Dīrgha(?) (name-list; segmentation unclear)",
+        "bhadra": "Bhadra (name)",
+        "oṃ": "oṃ (sacred syllable)",
+        "ka": "",
+        "meghanādasunādā": "Meghanāda — Sunāda (name-list; segmentation unclear)",
+        "iti": "thus",
+        "vāru": "in the vāruṇa (west) [quarter] (vāruṇe, loc.; truncated)",
+        "e": "",
+        "daśa": "ten"
+      },
+      "close": "Jaya, Bhadra, Dīrgha, Bhadra — oṃ ...(corrupt)... Meghanāda, Sunāda — thus in the west (vāruṇa): ten.",
+      "uncertain": ["jayabhadradīrgha", "ka", "meghanādasunādā", "vāru", "e"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v76",
+      "source_sha256": "7da656288591868712a8627a64785619cda434c92eb3c3452641442a42c1cafa",
+      "tokens": {
+        "ratnadharaḥ": "Ratnadhara ('jewel-bearer'; name), nom. sg.",
+        "śrīdharaḥ": "Śrīdhara ('bearer of Śrī'; name), nom. sg.",
+        "prāsādaḥ": "Prāsāda ('palace'; name), nom. sg.",
+        "prakāśa": "Prakāśa ('light'; name), nom. sg.",
+        "ityūttare": "thus — in the north (iti + uttara, loc.)",
+        "daśa": "ten",
+        "vidyādhipa": "Vidyādhipa ('lord of the vidyās'; name; truncated — continues as Vidyādhipapriyā)"
+      },
+      "close": "Ratnadhara, Śrīdhara, Prāsāda, Prakāśa — thus in the north: ten. Vidyādhipa...",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v77",
+      "source_sha256": "7955b0a7fe5fb25f8942f24ee5e67c5e36dda129f8e377c8ca1dd3cc87495f02",
+      "tokens": {
+        "priyā": "Priyā ('beloved'; name), nom. sg.",
+        "iti": "thus",
+        "aiśāne": "in the aiśāna (north-east) [quarter], loc. sg.",
+        "daśa": "ten",
+        "vṛṣa": "Vṛṣa (name)",
+        "vṛṣa": "Vṛṣa (name; possibly the beginning of Vṛṣapara)",
+        "para": "...-para ('further'; name-fragment)",
+        "anantakrodhanamārutāsanagrasana": "Ananta — Krodhana — Māruta — Āsana(?) — Grasana(?) (name-list; segmentation unclear)"
+      },
+      "close": "[Vidyādhipa-]Priyā — thus in the north-east (aiśāna): ten. Vṛṣa, Vṛṣa-para(?), Ananta, Krodhana, Māruta, Āsana, Grasana ...",
+      "uncertain": ["vṛṣa", "para", "anantakrodhanamārutāsanagrasana"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v78",
+      "source_sha256": "6c9f0c81048d539fa9766f2517e081b50499ffacf73b0c606daa21e435d9a068",
+      "tokens": {
+        "nabhalipsutrilocanā": "Nabhalipsu — Trilocanā (name-list; segmentation unclear)",
+        "ityūrddhvedaśa": "thus — above — ten (iti + ūrdhve + daśa; sandhi-blob)",
+        "teṣāmurivīrabhadrabhadrakālītu": "of them (teṣām) — verily (u) — Vīrabhadra — Bhadrakālī — and (tu) [sandhi-blob; segmentation unclear]"
+      },
+      "close": "Nabhalipsu, Trilocanā — thus above: ten. Of them, indeed, Vīrabhadra [and] Bhadrakālī — and ...",
+      "uncertain": ["nabhalipsutrilocanā", "ityūrddhvedaśa", "teṣāmurivīrabhadrabhadrakālītu"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v79",
+      "source_sha256": "411032e98a2b1569999afd7eef7c8b808df6742b470a5e1405f0c060f07afe4f",
+      "tokens": {
+        "yogādhiyaye": "to the lord-of-yoga? (yogādhi...?; form unclear — possibly yogādhiśāya or yogādhyāye 'in the yoga chapter')",
+        "mahātejaḥ": "great brilliance (mahā-tejas)",
+        "svāhā": "svāhā (oblation exclamation)",
+        "sadbhāveśvara": "Sadbhāveśvara ('lord of true being'; name)",
+        "mahādeva": "Mahādeva (name)",
+        "iti": "thus"
+      },
+      "close": "To the lord of yoga — great brilliance, svāhā. Sadbhāveśvara, Mahādeva — thus.",
+      "uncertain": ["yogādhiyaye"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v80",
+      "source_sha256": "3e4c1dc221617ea38d22d546fbe4d283660304012a60fb98facbfee32825a1b6",
+      "tokens": {
+        "oṃ": "oṃ (sacred syllable)",
+        "ketave": "to Keta (the beacon/flame; dat. sg. of ketu)",
+        "namaḥ": "homage",
+        "iti": "thus",
+        "svā": "...svā (fragment of svāhā; text corrupt)",
+        "hān": "...hā... (fragment of svāhā; text corrupt)",
+        "oṃ": "oṃ (sacred syllable)",
+        "sarvabhūbhyovaṣaṭ": "to all beings — vaṣaṭ (sarva-bhūta, dat. pl. + vaṣaṭ)",
+        "namaḥ": "homage",
+        "iti": "thus"
+      },
+      "close": "Oṃ, homage to Keta — thus svāhā(?). Oṃ, vaṣaṭ to all beings, homage — thus.",
+      "uncertain": ["svā", "hān"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v81",
+      "source_sha256": "8819429280cfc8ec8a0fc90bf997d5c48d6357acb2f839f5862108d41599df6e",
+      "tokens": {
+        "vyāptamevaṃ": "pervaded — thus (vyāptam + evam)",
+        "ṣaḍvidhādhvavyāptiḥ": "the pervasion of the sixfold path (ṣaḍvidha-adhvan-vyāpti), nom. sg.",
+        "evametaktra": "thus — this — here (evam + etat + atra; sandhi-blob)",
+        "ṣaḍvidhādhva": "the sixfold path (ṣaḍvidha-adhvan; truncated)"
+      },
+      "close": "Pervaded thus — the pervasion of the sixfold path. Thus this here, the sixfold path ...",
+      "uncertain": ["ṣaḍvidhādhvavyāptiḥ", "evametaktra", "ṣaḍvidhādhva"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v82",
+      "source_sha256": "0a6f7030d0b8dd9830cd0f7e09d020c9fe9914db6cfab9e18ad187931134bdaf",
+      "tokens": {
+        "mocayati": "it releases (3sg. pres. caus.)",
+        "ceti": "and — thus (ca + iti)"
+      },
+      "close": "...and thus it releases.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v83",
+      "source_sha256": "832d1fad1f0e91a197fe2a17a20d2a77cf70057cdd297f474dc2ef8784fff646",
+      "tokens": {
+        "siddhāntasārapaddhatau": "in the Siddhāntasārapaddhati (title; loc. sg.)",
+        "ṣaḍvidhādhva": "the sixfold path (ṣaḍvidha-adhvan; truncated)",
+        "nir": "the determination (nirṇaya; truncated)",
+        "ayaḥ": "",
+        "samāptaḥ": "is concluded"
+      },
+      "close": "In the Siddhāntasārapaddhati, the determination of the sixfold path is concluded.",
+      "uncertain": ["ṣaḍvidhādhva", "nir", "ayaḥ"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v84",
+      "source_sha256": "adbe3d7782e53e9c5d6c1a671dbb3b33c08c37660dc435bc921efb2354ab2319",
+      "tokens": {
+        "manakantarpayāmi": "...I gratify (tarpayāmi, 1sg. pres. caus.; initial element unclear — text uncertain)",
+        "namaḥ": "homage",
+        "oṃ": "oṃ (sacred syllable)",
+        "candramane": "to the moon (candramase, dat. sg.; truncated)",
+        "namaḥ": "homage",
+        "iti": "thus",
+        "siddhān": "the Siddhānta (truncated form of siddhāntaḥ)",
+        "oṃ": "oṃ (sacred syllable)"
+      },
+      "close": "...I gratify ... — homage. Oṃ, homage to the moon — thus the Siddhānta. Oṃ ...",
+      "uncertain": ["manakantarpayāmi", "candramane", "siddhān"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v85",
+      "source_sha256": "6b58f31720a4c55ea07a31d0ee51d4ca7db2974a867f0cbedcd77df12681b1b0",
+      "tokens": {
+        "namaḥ": "homage",
+        "oṃ": "oṃ (sacred syllable)",
+        "triśvalāya": "to Triśvala(?) (dat. sg.; name uncertain)",
+        "namaḥ": "homage",
+        "aṣṭadiśi": "in the eight directions (aṣṭa-diś), loc. sg.",
+        "tatraiva": "right there (tatra + eva)",
+        "oṃ": "oṃ (sacred syllable)",
+        "brahma": "to Brahmā (brahmaṇe, dat. sg.; truncated)",
+        "e": "",
+        "namaḥ": "homage",
+        "oṃ": "oṃ (sacred syllable)"
+      },
+      "close": "Homage. Oṃ, homage to Triśvala(?) — in the eight directions. Right there: oṃ, homage to Brahmā. Oṃ ...",
+      "uncertain": ["triśvalāya", "brahma", "e"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v86",
+      "source_sha256": "175fbbebaa5640a465273a943d76dae0aa0aa89ccd9acac6761f014638cd17fc",
+      "tokens": {
+        "sarvātmanāmunāśambhā": "with the whole self (sarvātmanā, instr.) — with this (amunā, instr.) — ? (aśambhā?; unanalysable segment)",
+        "pavitre": "with the pavitra (pavitreṇa, instr.; truncated)",
+        "atvadicchayā": "...with your will (fragment of -ṇa + tvadicchayā, instr.)",
+        "oṃ": "oṃ (sacred syllable)",
+        "pūraya": "fill! (2sg. imp. caus.; '2' marks repetition)",
+        "makha": "...makha (fragment; text corrupt — possibly makhāya 'for the sacrifice')"
+      },
+      "close": "With one's whole self, with this ..., with the pavitra, according to your will — oṃ, fill, fill, ... (text corrupt).",
+      "uncertain": ["sarvātmanāmunāśambhā", "pavitre", "atvadicchayā", "makha"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v87",
+      "source_sha256": "8944dcab0bc5a086f1f34823c5f83079248233c61a1630da8b0671a1d1f5ba4b",
+      "tokens": {
+        "pavitrakavidhiḥ": "the procedure of the pavitraka (pavitraka-vidhi), nom. sg.",
+        "samāptaḥ": "is concluded"
+      },
+      "close": "The procedure of the pavitraka is concluded.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v88",
+      "source_sha256": "9445f8ec7455d6114da7a3cb2e8cea98bf8eb7f549aff0422a84bf4afbff081d",
+      "tokens": {
+        "prāsādaḥ": "the prāsāda (temple/palace), nom. sg.",
+        "kāryaḥ": "is to be made (gerundive), nom. sg.",
+        "ratnajānāṃ": "of the jewel-born (ratnaja), gen. pl.",
+        "svasādhyāditi": "from one's own objective (sva-sādhya, abl.) — thus (iti)"
+      },
+      "close": "The prāsāda is to be made of the jewel-born; [it proceeds] from one's own sādhya — thus.",
+      "uncertain": ["svasādhyāditi"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v89",
+      "source_sha256": "1f1f99d7369e7ac2905a849a747f65dc52e56233b074d2b36cb8d208565f82a6",
+      "tokens": {
+        "parākṣasī": "Parākṣasī? (unclear name)",
+        "pilipicchāntarvahi": "pilipicchā (a plant?) — inner — ? (blob; unanalysable)",
+        "devatāṣṭakaṃ": "the group of eight deities (devatā-aṣṭaka), acc. sg.",
+        "pūjayediti": "he should worship — thus (pūjayet + iti)"
+      },
+      "close": "Parākṣasī(?), pilipicchā ... (unclear) — he should worship the group of eight deities — thus.",
+      "uncertain": ["parākṣasī", "pilipicchāntarvahi"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v90",
+      "source_sha256": "99df9aa082f16ae0d6680b2e6c1384905dd6635ce3e2d787d34c47abc38a478a",
+      "tokens": {
+        "vāstu": "the vāstu (site[-deity]), acc. sg.",
+        "saṃpūjya": "having worshipped (gerund)",
+        "marmādi": "the vital spots, etc. (marma-ādi)",
+        "gṛha": "the house (gṛha), acc. sg.",
+        "parihṛtya": "having avoided (gerund)",
+        "śilā": "the stone (śilā), acc. sg.",
+        "pradikaṃ": "circumambulation? (pradakṣiṇam? — reading uncertain)",
+        "vidadhyāt": "he should make (3sg. opt.)"
+      },
+      "close": "Having worshipped the vāstu and avoided the vital spots, etc., of the house, he should make the stone [figure] with circumambulation(?).",
+      "uncertain": ["pradikaṃ"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v91",
+      "source_sha256": "8801e53a6fb11e7bae0cfbc4d290b8e92e4193bec4d92f1e9c827fdf92d67617",
+      "tokens": {
+        "dvāliṅga": "door-liṅga? (dvāra-liṅga or dvi-liṅga — segmentation/case unclear)",
+        "pi": "of the two pedestals (piṇḍikayoḥ; truncated)",
+        "ḍikayorvidhināyogaḥ": "...of the pedestals — by the rite — the joining (fragment of -ṇḍikayoḥ + vidhinā + yogaḥ)",
+        "pratiṣṭhati": "it stands / is established (3sg. pres.)"
+      },
+      "close": "The joining of the door-liṅga(?) and the pedestals by the rite — it stands established.",
+      "uncertain": ["dvāliṅga", "pi", "ḍikayorvidhināyogaḥ"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v92",
+      "source_sha256": "b1547c0e736f54605bc4494a5e92b3f990286069f23166b12fa7ce0dfae598b1",
+      "tokens": {
+        "pāda": "the pāda (base/foundation)",
+        "pratiṣṭhāvidhiḥ": "the procedure of installation (pratiṣṭhā-vidhi), nom. sg.",
+        "samāptaḥ": "is concluded"
+      },
+      "close": "The procedure of the pāda-installation is concluded.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v93",
+      "source_sha256": "58a18c2355c50678aa7ea4f4e3cc60bc2dcc7fd1421290c5feef55b6455fb2aa",
+      "tokens": {
+        "suvrate": "O Suvratā (good-vowed one; voc. sg. f.)",
+        "namonamaḥ": "homage, homage (namo namaḥ)",
+        "svāhā": "svāhā (oblation exclamation)",
+        "pratyāṅgarā": "Pratyāṅgarā? (unclear — possibly pratyāṅgirā; text corrupt)"
+      },
+      "close": "O Suvratā — homage, homage, svāhā. Pratyāṅgarā(?) (text corrupt).",
+      "uncertain": ["pratyāṅgarā"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v94",
+      "source_sha256": "aef2378d8018aa965636fd892fe58298a34ea11f2344c0b9d24f38930f8010ca",
+      "tokens": {
+        "saṃpūjya": "having worshipped (gerund)",
+        "badhvāyaścittanittaṃ": "having bound (badhvā) — ? (ayaścittanittam; unanalysable)",
+        "pūrvaddhomaḥ": "the oblation as before (pūrvavad-homa; sandhi-blob), nom. sg.",
+        "kāryaḥ": "is to be made (gerundive), nom. sg."
+      },
+      "close": "Having worshipped and bound ... (unclear), the oblation is to be made as before.",
+      "uncertain": ["badhvāyaścittanittaṃ"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v95",
+      "source_sha256": "4592b34600556137460815b38c50bd549ca2a129aed6fcc49aca376a3977bb25",
+      "tokens": {
+        "siddhāntasārapaddhatau": "in the Siddhāntasārapaddhati (loc. sg.)",
+        "dvāraṃ": "the door (dvāra), acc./nom. sg.",
+        "pratiṣṭhāvidhiḥ": "the procedure of installation, nom. sg.",
+        "samāptaḥ": "is concluded"
+      },
+      "close": "In the Siddhāntasārapaddhati, the procedure of the door-installation is concluded.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v96",
+      "source_sha256": "eedfaec06b90f293b6bf9cb16eda651c97611f8a7e2c20c21b268b56a38f2a9f",
+      "tokens": {
+        "hūṃ": "hūṃ (seed syllable)",
+        "phaṭ": "phaṭ (mantric expulsion syllable)",
+        "aghorāstraṃ": "the Aghora-missile (aghora-astra), nom./acc. sg.",
+        "oṃ": "oṃ (sacred syllable)",
+        "ślīṃ": "ślīṃ (seed syllable)",
+        "paśu": "paśu ('bound soul/beast' — mantra-word)",
+        "hūṃ": "hūṃ (seed syllable)",
+        "phaṭ": "phaṭ (mantric expulsion syllable)",
+        "pāśupatāstraṃ": "the Pāśupata-missile (pāśupata-astra), nom./acc. sg."
+      },
+      "close": "hūṃ phaṭ — the Aghora-astra. oṃ ślīṃ paśu hūṃ phaṭ — the Pāśupata-astra.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v97",
+      "source_sha256": "d558087ddf1cb76ba5e42c51505a7a84af30f94db9ede69fde9fe2febf39efcb",
+      "tokens": {
+        "sahasramarddhasvā": "half-a-thousand? (sahasrārdham, with stray svā; reading unclear)",
+        "aghorāstre": "with the Aghora-astra (aghorāstreṇa, instr.; truncated)",
+        "a": "",
+        "pāśupatāstre": "with the Pāśupata-astra (pāśupatāstreṇa, instr.; truncated)",
+        "a": "",
+        "vā": "or",
+        "homaḥ": "the oblation (homa), nom. sg.",
+        "kartavyaḥ": "is to be performed (gerundive), nom. sg."
+      },
+      "close": "Five hundred(?) [oblations] — the homa is to be performed with the Aghora-astra or the Pāśupata-astra.",
+      "uncertain": ["sahasramarddhasvā", "aghorāstre", "a", "pāśupatāstre", "a"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v98",
+      "source_sha256": "2a1cd25e0e8b57e3f8bbf6d2d3146623ee7cf8d628ab72a6f6e7d0cacd4e393e",
+      "tokens": {
+        "liṅga": "the liṅga",
+        "pratiṣṭhāvidhaḥ": "the procedure of installation (pratiṣṭhā-vidhi; spelling variant -vidhaḥ), nom. sg.",
+        "samāptaḥ": "is concluded"
+      },
+      "close": "The procedure of the liṅga-installation is concluded.",
+      "uncertain": []
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v99",
+      "source_sha256": "dafbc0bfed21dbf913404fd5d897e1c98dbaab33fc8222bff9255a5e2f2738de",
+      "tokens": {
+        "saṃpūjya": "having worshipped (gerund)",
+        "radhvā": "having bound? (unclear — possibly badhvā; spelling uncertain)",
+        "paścittanittaṃ": "afterwards? (unclear; possibly paścāt + ...)",
+        "pūrvavaddhomaḥ": "the oblation as before (pūrvavad-homa; sandhi-blob), nom. sg.",
+        "kāryaḥ": "is to be made (gerundive), nom. sg."
+      },
+      "close": "Having worshipped and bound(?) ... (unclear), the oblation is to be made as before.",
+      "uncertain": ["radhvā", "paścittanittaṃ"]
+    },
+    {
+      "passage_id": "siddhantasarapaddhati:v100",
+      "source_sha256": "19741113154de2c34ecbf25f10a3721823d24c9b3a9cad9cc4571313bf969ac1",
+      "tokens": {
+        "siddhāntasārapaddhatau": "in the Siddhāntasārapaddhati (loc. sg.)",
+        "dvārapratiṣṭhāvidhiḥ": "the procedure of the door-installation (dvāra-pratiṣṭhā-vidhi), nom. sg.",
+        "samāptaḥ": "is concluded"
+      },
+      "close": "In the Siddhāntasārapaddhati, the procedure of the door-installation is concluded. Now ...",
+      "uncertain": []
+    }
+  ]
+}

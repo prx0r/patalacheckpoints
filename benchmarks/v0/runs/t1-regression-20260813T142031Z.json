@@ -1,0 +1,18 @@
+{
+  "run_id": "T1-REGRESSION-20260813T142031Z",
+  "benchmark_version": "v0",
+  "family": "PATALA-T1-REGRESSION",
+  "bench": "PĀṬALA-T1-REGRESSION",
+  "bench_version": "v0.1",
+  "framework": "inspect-ai==0.3.258",
+  "task": "t1_regression",
+  "execution_base_sha": "122ff29c221599d42888aae31337c7e3a4dc780f",
+  "working_tree_dirty": true,
+  "date": "20260813T142031Z",
+  "dataset": {"kind": "NAT_REGRESSION", "fixtures": 4,
+    "regressions": ["T1-REG-001 siramaisvaraiḥ UNGLOSSED","T1-REG-002 kāraṇam OVER_SEG","T1-REG-003 gaṇeśaḥ OVER_SEG","T1-REG-004 vṛttimīśaḥ MORPH_FAIL"]},
+  "sut": "Agent 2 T1 worker (current), MACHINE_PROPOSED",
+  "metrics": {"resolved_count": 1.0, "still_failing_count": 3.0},
+  "finding": "Natural-error regression loop (A1-P10) baseline. T1-REG-004 (vṛttimīśaḥ) RESOLVED (now one token). T1-REG-001/002/003 STILL_FAILING (siramaisvaraiḥ unglossed; kāra+am; ga+eśaḥ). Tracked for Agent2 fix-verification (A1-P13).",
+  "notes": "4 frozen NATURAL_REGRESSION fixtures from the T1-NAT v0.4 bulk finding. Blind constraint check per fixture. NOT_HUMAN_REVIEWED; does not gate Agent 2."
+}

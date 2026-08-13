@@ -13,6 +13,7 @@ Design (per AUTOTRANSLATE-NORTHSTAR Build 6):
 from __future__ import annotations
 
 import argparse
+import fcntl
 import json
 import os
 import sys
@@ -25,6 +26,18 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from auto_run import eligible_works, run_work, LEDGER_PATH, LOG_PATH
 
 REVIEW_LOG = Path("/root/projects/patala/data/corpus/downloads/night-review.jsonl")
+LOCK_PATH = Path("/root/projects/patala/data/corpus/downloads/.autotranslate.lock")
+
+
+def acquire_lock() -> int:
+    """F2 single-worker flock: exit if another worker already holds the lock."""
+    fd = os.open(LOCK_PATH, os.O_CREAT | os.O_RDWR, 0o644)
+    try:
+        fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except BlockingIOError:
+        print("another autotranslate worker holds the lock; exiting", flush=True)
+        sys.exit(0)
+    return fd
 
 
 def log_review(record: dict) -> None:
@@ -36,16 +49,19 @@ def log_review(record: dict) -> None:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--max-verses", type=int, default=50, help="verses per work per run")
+    ap.add_argument("--max-verses", type=int, default=8, help="verses per work per run (adaptive from here)")
     ap.add_argument("--max-works", type=int, default=3, help="works before re-scanning")
     ap.add_argument("--rounds", type=int, default=0, help="0 = run until no eligible work")
     ap.add_argument("--consec-fail-limit", type=int, default=3, help="stop if this many consecutive works hard-fail")
     ap.add_argument("--sleep", type=int, default=30, help="seconds between works")
     a = ap.parse_args()
 
+    lock_fd = acquire_lock()
     log_review({"event": "NIGHT_START", "config": vars(a)})
     consec_fail = 0
     rounds_done = 0
+    history = []  # recent commit-rates for adaptive batch size (F5)
+    batch = a.max_verses
     try:
         while a.rounds == 0 or rounds_done < a.rounds:
             works = eligible_works("smallest")[: a.max_works]
@@ -54,9 +70,9 @@ def main() -> int:
                 break
             progressed = False
             for wid in works:
-                log_review({"event": "WORK_START", "work_id": wid})
+                log_review({"event": "WORK_START", "work_id": wid, "batch": batch})
                 try:
-                    s = run_work(wid, a.max_verses)
+                    s = run_work(wid, batch)
                 except Exception as e:
                     log_review({"event": "WORK_ERROR", "work_id": wid, "error": str(e)[:300]})
                     consec_fail += 1
@@ -65,6 +81,18 @@ def main() -> int:
                         return 1
                     continue
                 log_review({"event": "WORK_SUMMARY", "work_id": wid, "summary": s})
+                # F5 adaptive batch size: optimise committed-per-call, not verses-per-call
+                attempted = s.get("verses_attempted", 0)
+                if attempted > 0:
+                    rate = s.get("verses_committed", 0) / attempted
+                    history.append(rate)
+                    history = history[-3:]
+                    avg = sum(history) / len(history)
+                    if avg >= 0.9 and batch < 12:
+                        batch = min(12, batch + 2)
+                    elif avg < 0.75 and batch > 4:
+                        batch = max(4, batch // 2)
+                    log_review({"event": "BATCH_ADJUST", "work_id": wid, "rate": round(avg, 3), "batch": batch})
                 if s.get("verses_committed", 0) > 0:
                     progressed = True
                     consec_fail = 0
@@ -82,6 +110,10 @@ def main() -> int:
         log_review({"event": "NIGHT_STOPPED", "reason": "interrupt"})
     finally:
         log_review({"event": "NIGHT_END", "rounds_done": rounds_done})
+        try:
+            os.close(lock_fd)
+        except Exception:
+            pass
     return 0
 
 

@@ -1,8 +1,15 @@
 # machinelearning/ — Pāṭala's ML workspace (organized)
 
 *2026-08-12. The ML workspace, organized into **ACTIVE** (the living doctrine + current work) and
-**ARCHIVE** (superseded / historical / no-longer-actionable — kept, never deleted). **Start with
-`_ACTIVE/AGENTS-DOCTRINE.md`.** The enforcement gate `theatre_check.py` lives in the root.*
+**ARCHIVE** (superseded / historical / no-longer-actionable — kept, never deleted). The enforcement gate
+`theatre_check.py` lives in the root.*
+
+> **CURRENT STATUS (2026-08-13):** the Agent 1 ML vertical is frozen + peer-review-clean; the forward work is the
+> **scholar-corpus foundation (S0)** (`source-evidence/`) — the on-disk published scholars become the
+> corroboration oracle by borrowing mature tools, and Pāṭala owns only the epistemic dependency graph.
+> **Read, in order:** `docs/global/PATALA-GLOBAL-ARCHITECTURE.md` (the definitive architecture) →
+> `docs/global/GLOBAL-STATE-2026-08-13.md` (timestamped snapshot) → `handover/agent-1-ml/HANDOVER-2026-08-13.md`
+> (the handover) → `_ACTIVE/DEVPLAN.md` (rev 5.x) → `source-evidence/docs/` → then `_ACTIVE/AGENTS-DOCTRINE.md`.
 
 > **Nothing is "real" because code exists.** It becomes real only when independent gold + blind eval +
 > metric + human adjudication show it does what its name claims. See `_ACTIVE/AGENTS-DOCTRINE.md`.
@@ -14,7 +21,7 @@
 | File | What it is |
 |---|---|
 | `_ACTIVE/AGENTS-DOCTRINE.md` | **the master anti-theatre rule** (both agents). The 3 categories, 9-field contract, epistemic labels, banned words, abstention, lineage, falsification |
-| `_ACTIVE/CLAIMS.md` | the project's self-audit ledger (P-001..P-010) — update honestly as you work |
+| `_ACTIVE/CLAIMS.md` | the project's self-audit ledger (P-001..P-024) — update honestly as you work |
 | `_ACTIVE/COMPONENT-CONTRACTS.md` | the 9-field anti-theatre contract per component |
 | `_ACTIVE/AGENT1-HANDOVER.md` | the working doctrine (axioms, recurring errors, tone) |
 | `_ACTIVE/MLUSEINPATALA.md` | the frozen ML strategy + the north-star rule |

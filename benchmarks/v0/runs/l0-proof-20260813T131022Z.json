@@ -1,0 +1,18 @@
+{
+  "run_id": "L0-PROOF-20260813T131022Z",
+  "benchmark_version": "v0",
+  "family": "PATALA-L0-PROOF",
+  "bench": "PĀṬALA-L0-PROOF",
+  "bench_version": "v0.2",
+  "framework": "inspect-ai==0.3.258",
+  "task": "l0_proof",
+  "execution_base_sha": "0b861da2e80432c8e9b31838f8916af5ae7ae0e3",
+  "working_tree_dirty": true,
+  "date": "20260813T131022Z",
+  "dataset": {"kind": "NAT", "committed_l0_objects": 786},
+  "sut": "Agent 2 L0 worker / t1_extract, deterministic (witness D)",
+  "metrics": {"roundtrip_pass_rate": 0.511, "coverage_rate": 0.858},
+  "finding": "CORRECTED from v0.1 (0.266 was inflated by verse-marker miscounting in the evaluator). Genuine result: 384/786 (49%) L0 objects drop content tokens (CONTENT_LOSS - e.g. kāraṇam, brahmāṇi, śṛṇu, cāmuṇḍī), concentrated in brahmayamala/kubjika batches. Canonical kramasadbhava:v1 chain PASSES (3/3).",
+  "verdict": "MIXED: (a) evaluator marker bug fixed (0.266->0.511); (b) genuine worker coverage gap in brahmayamala/kubjika batches - the T1->L0 transform is NOT lossless for those objects.",
+  "notes": "Deterministic proof, NO ML. L0 inherits semantic quality from T1; this proof establishes structural/roundtrip contract only. review_status=NOT_HUMAN_REVIEWED. Does not gate Agent 2."
+}

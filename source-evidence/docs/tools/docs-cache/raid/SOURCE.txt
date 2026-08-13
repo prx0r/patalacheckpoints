@@ -1,0 +1,4 @@
+url: https://www.raid.org
+fetched: 2026-08-12T21:53:33+00:00
+content-type: text/html; charset=utf-8
+bytes: 35049

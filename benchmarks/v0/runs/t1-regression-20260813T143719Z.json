@@ -1,0 +1,17 @@
+{
+  "run_id": "T1-REGRESSION-20260813T143719Z",
+  "benchmark_version": "v0",
+  "family": "PATALA-T1-REGRESSION",
+  "bench": "PĀṬALA-T1-REGRESSION",
+  "bench_version": "v0.1",
+  "framework": "inspect-ai==0.3.258",
+  "task": "t1_regression",
+  "execution_base_sha": "42e39f39e1cb1f3a652246daf171a691aa0b26c3",
+  "working_tree_dirty": true,
+  "date": "20260813T143719Z",
+  "dataset": {"kind": "NAT_REGRESSION", "fixtures": 4},
+  "sut": "Agent 2 T1 worker (Era C regeneration engine exists, not yet run on these objects)",
+  "metrics": {"resolved_count": 1.0, "still_failing_count": 3.0},
+  "finding": "Re-verified after Agent 2 Era C (A2-15 factory_rebuild built): T1 objects UNCHANGED (same versions) - regeneration has NOT run on these passages yet. Regressions stable: 1 resolved, 3 STILL_FAILING. L0 content-loss stable (384). Loop waits on Agent 2 running factory_rebuild on the failing passages.",
+  "notes": "P13 tracking: defect loop is open, awaiting Agent 2 regeneration on the failing objects. NOT_HUMAN_REVIEWED; does not gate Agent 2."
+}

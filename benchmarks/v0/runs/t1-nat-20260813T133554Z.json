@@ -1,0 +1,19 @@
+{
+  "run_id": "T1-NAT-20260813T133554Z",
+  "benchmark_version": "v0",
+  "family": "PATALA-T1-NAT",
+  "bench": "PĀṬALA-T1-NAT",
+  "bench_version": "v0.2",
+  "framework": "inspect-ai==0.3.258",
+  "task": "t1_nat",
+  "execution_base_sha": "c616f58dd7e9c07b60d00b9522b11cd0e1079b14",
+  "working_tree_dirty": true,
+  "date": "20260813T133554Z",
+  "dataset": {"kind": "NAT", "objects": 4, "adjudicated": 3, "unscored": 1,
+    "versions": ["t1-kramasadbhava:v1-v2","t1-kramasadbhava:v100-v3","t1-kramasadbhava:v11-v1","t1-ipvv:V2O:k1-v3"]},
+  "sut": "Agent 2 T1 worker (factory-batch), MACHINE_PROPOSED",
+  "metrics": {"machine_adjudicated_acceptability": 1.0, "n_adjudicated": 3.0,
+    "n_unscored": 1.0, "adjudicated_acceptance_rate": 1.0, "placeholder_objects": 1.0},
+  "finding": "Larger NAT sample (4 objects vs 2). 3 real glossed objects pass. NEW FINDING: ipvv:V2O:k1 (a REAL IPVV verse) has ALL placeholder glosses ('x') - e.g. '[and]-x (yā)'. This is a genuine NAT defect: the most important T1 object (real IPVV) has no real glossing. Flagged NOT_SCORED.",
+  "notes": "A1-T1-NAT-HARDEN: placeholder detection added (gloss 'x'/''/'None' -> ABSTAIN; all-placeholder -> NOT_SCORED). 3 real objects pass independent adjudication. Placeholder object excluded from acceptability denominator (not a pass). review_status=NOT_HUMAN_REVIEWED; does not gate Agent 2."
+}

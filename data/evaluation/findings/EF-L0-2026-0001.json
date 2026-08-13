@@ -15,10 +15,15 @@
     "EF-T1-2026-0002"
   ],
   "recommended_action": "REGENERATE_AFTER_WORKER_FIX",
-  "status": "OPEN",
+  "status": "CLOSED",
   "producer": {
     "agent": "agent1",
     "commit": "d50ab7f19a013a61de9c254e5485b0bc076a347c"
   },
-  "finding_hash": "1be095930b3159faa0969fc9225f97525b8903dda0cd07fc2cf3b2ab1c3313f4"
+  "finding_hash": "1be095930b3159faa0969fc9225f97525b8903dda0cd07fc2cf3b2ab1c3313f4",
+  "resolution": {
+    "resolved_at": "2026-08-13T18:59:39.751003+00:00",
+    "resolved_by": "agent2",
+    "action": "WORKER_FIX (added retroflex ṇ to IAST_TOKEN) + REGENERATED"
+  }
 }

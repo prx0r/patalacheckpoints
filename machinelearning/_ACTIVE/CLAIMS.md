@@ -391,3 +391,35 @@ capability. See `AGENT1-HANDOVER.md` §4 + the component contracts below.
   established precision.
 - **REQUIRED to promote to T3/T4 fixture:** the eligibility gate (source spans resolve + commitment known
   + scope/modality/speaker compared + independent published evidence) + a surviving manual audit.
+
+## CLAIM P-023 — "Pāṭala produced one end-to-end epistemically constrained prose vertical (peer-review-clean relative to the current objects)."
+- **STATUS:** SUPPORTED (one synthesis; a DEMONSTRATION, NOT a validated capability)
+- **EVIDENCE (2026-08-12):** `SYN-IPVV-REFLEXION-CORE-001` (canonical ArgumentSynthesis, bridge `SYN-INF-001`
+  reconstructed + UNRESOLVED, weakest-governs ceiling) → monotone EO projection → one readable essay +
+  `SentenceEvidenceAudit` (`ESSAY-IPVV-REFLEXION-CORE-001.{md,audit.json}` + EssayPlan), pushed on
+  `origin/agent1-argument-layer-a1b`. The audit catches 6 corruption classes (strength inflation, authorship
+  laundering, boundary erasure, rival laundering, warrant erasure, paraphrase expansion) via metadata-driven
+  checks (not forbidden-word regex). All test suites pass.
+- **CAVEAT (honest):** for ONE IPVV synthesis only. The semantic-relation labels (`EXACT /
+  CONSERVATIVE_PARAPHRASE / EXPANSIVE`) are reviewer-assigned assertions, NOT independently machine-proven
+  facts — C.1 rejects *declared* unsupported expansion but does not yet auto-establish that a declared
+  `CONSERVATIVE_PARAPHRASE` is semantically correct. `reconstructable argument ≠ structurally validated
+  argument` (S010 frozen). NOT "Pāṭala writes reliable scholarly essays."
+- **REQUIRED to promote (→ a real essay capability):** many more syntheses + independent review.
+
+## CLAIM P-024 — "Pāṭala has a deterministic structural k-core hierarchy over the C1 evidence graph, plus a real Louvain ablation (P-019 v2)."
+- **STATUS:** SUPPORTED (as ENGINEERING_VALIDATED, structural — NOT a theme)
+- **EVIDENCE (2026-08-12):** `patala_ml/kcore.py` + `build_kcore_structure.py` produce a
+  `CoreStructureProposal` over the frozen C1 evidence graph (see_also w=1.0 + key-term w=0.5·Jaccard min0.3,
+  body excluded, edge_evidence preserved): k-core number/shell/component/structural-role per C1 + a canonical
+  graph_hash. Byte-identical across separate processes + insertion-order permutations
+  (`test_kcore_reproducibility.py`, 3x stable). Artifact: `benchmarks/v0/structural/kcore-ipvv-c1-v0.json`
+  (max_core=3; 17 C1s at top core = density, not centrality). `louvain_baseline` + a comparison/synthesis field
+  populated from a REAL partition (regenerated with python-louvain, k-core hash unchanged `96f6623cd5963e98`).
+- **EMPIRICAL FINDING:** on the actual 63-node IPVV C1 graph, Louvain is STABLE — 11 communities across 20
+  seeds + insertion-order permutations, 0 unstable co-membership boundaries, 187 robust pairs
+  (`louvain-stability-ipvv-c1-v0.json`). So k-core's rationale is **deterministic structural embeddedness +
+  reproducible graph statistics, NOT because Louvain was empirically unstable here**.
+- **CAVEAT:** `k_core != theme`. High core_number = density under representation R, NOT "philosophically
+  central". Neither k-core nor Louvain is an AcceptedTheme; no claim of semantic/philosophical validity.
+- **REQUIRED to promote (→ theme):** human adjudication of whether any structure deserves `AcceptedTheme`.

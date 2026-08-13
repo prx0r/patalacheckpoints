@@ -1,0 +1,252 @@
+{
+  "$schema": "./MANIFEST.schema.json",
+  "about": "Pāṭala S0.1 external-tool registry. Each entry names what Pāṭala borrows, the license, the canonical docs URL (for offline download into docs-cache/), and the repository. Pāṭala owns only the epistemic graph; every tool here is borrowed. See docs-cache/<slug>/ for locally-downloaded documentation.",
+  "updated": "2026-08-12",
+  "category_order": [
+    "parsing",
+    "bibliography",
+    "retrieval",
+    "annotation",
+    "evaluation",
+    "workflow",
+    "packaging",
+    "assistant",
+    "watch"
+  ],
+  "tools": {
+    "grobid": {
+      "category": "parsing",
+      "borrow": "PDF → structured scholarly text (TEI, references, citation contexts, sections, coordinates)",
+      "license": "Apache-2.0",
+      "docs_url": "https://grobid.readthedocs.io",
+      "repo": "https://github.com/kermitt2/grobid",
+      "local_doc": "source-evidence/docs/tools/grobid.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/grobid/"
+    },
+    "docling": {
+      "category": "parsing",
+      "borrow": "general docs (DOCX/EPUB/HTML/audio/…) → normalized witness",
+      "license": "MIT",
+      "docs_url": "https://github.com/docling-project/docling",
+      "repo": "https://github.com/docling-project/docling",
+      "local_doc": "source-evidence/docs/tools/docling.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/docling/"
+    },
+    "anystyle": {
+      "category": "parsing",
+      "borrow": "bibliography reference parser (GROBID fallback)",
+      "license": "BSD",
+      "docs_url": "https://anystyle.io",
+      "repo": "https://github.com/inukshuk/anystyle",
+      "local_doc": "source-evidence/docs/tools/anystyle.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/anystyle/"
+    },
+    "zotero": {
+      "category": "bibliography",
+      "borrow": "bibliography CRUD, citations, `since=` sync, CSL/BibTeX/TEI export",
+      "license": "free client/API",
+      "docs_url": "https://www.zotero.org/support/dev/web_api/v3/basics",
+      "repo": "https://github.com/zotero",
+      "local_doc": "source-evidence/docs/tools/zotero.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/zotero/"
+    },
+    "crossref": {
+      "category": "bibliography",
+      "borrow": "DOI/metadata resolution + review DOI registration (isReviewOf)",
+      "license": "CC0",
+      "docs_url": "https://api.crossref.org",
+      "repo": "https://gitlab.com/crossref",
+      "local_doc": "source-evidence/docs/tools/crossref.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/crossref/"
+    },
+    "openalex": {
+      "category": "bibliography",
+      "borrow": "works/authors/venues/concepts enrichment",
+      "license": "CC0/MIT",
+      "docs_url": "https://docs.openalex.org",
+      "repo": "https://github.com/ourresearch/openalex",
+      "local_doc": "source-evidence/docs/tools/openalex.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/openalex/"
+    },
+    "opencitations": {
+      "category": "bibliography",
+      "borrow": "citation graph + disambiguation",
+      "license": "CC0/ODC",
+      "docs_url": "https://opencitations.net",
+      "repo": "https://github.com/opencitations",
+      "local_doc": "source-evidence/docs/tools/opencitations.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/opencitations/"
+    },
+    "unpaywall": {
+      "category": "bibliography",
+      "borrow": "OA full-text discovery",
+      "license": "CC0",
+      "docs_url": "https://unpaywall.org",
+      "repo": "https://github.com/ourresearch/unpaywall",
+      "local_doc": "source-evidence/docs/tools/unpaywall.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/unpaywall/"
+    },
+    "raid": {
+      "category": "bibliography",
+      "borrow": "research-activity identifier (binds contributors/orgs/outputs/PIDs)",
+      "license": "open",
+      "docs_url": "https://www.raid.org",
+      "repo": "https://github.com/au-research/raid-metadata",
+      "local_doc": "source-evidence/docs/tools/raid.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/raid/"
+    },
+    "tantivy": {
+      "category": "retrieval",
+      "borrow": "local BM25 full-text (lexical baseline)",
+      "license": "MIT",
+      "docs_url": "https://docs.rs/tantivy",
+      "repo": "https://github.com/quickwit-oss/tantivy",
+      "local_doc": "source-evidence/docs/tools/tantivy.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/tantivy/"
+    },
+    "paperqa": {
+      "category": "retrieval",
+      "borrow": "Scholar Assistant RAG + metadata clients (Crossref/OpenAlex/Unpaywall)",
+      "license": "Apache-2.0",
+      "docs_url": "https://github.com/future-house/paper-qa",
+      "repo": "https://github.com/future-house/paper-qa",
+      "local_doc": "source-evidence/docs/tools/paperqa.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/paperqa/"
+    },
+    "scirrag": {
+      "category": "retrieval",
+      "borrow": "query decomposition, citation-graph expansion, gap detection",
+      "license": "open",
+      "docs_url": "https://github.com/yale-nlp/SciRAG",
+      "repo": "https://github.com/yale-nlp/SciRAG",
+      "local_doc": "source-evidence/docs/tools/scirrag.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/scirrag/"
+    },
+    "s2orc": {
+      "category": "retrieval",
+      "borrow": "full-text corpus of 100M+ OA papers (source of GROBID XML)",
+      "license": "CC0 (corpus)",
+      "docs_url": "https://github.com/allenai/s2orc",
+      "repo": "https://github.com/allenai/s2orc",
+      "local_doc": "source-evidence/docs/tools/s2orc.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/s2orc/"
+    },
+    "crag": {
+      "category": "retrieval",
+      "borrow": "corrective RAG (retriever + grader) pattern",
+      "license": "MIT",
+      "docs_url": "https://github.com/langchain-ai/langgraph",
+      "repo": "https://github.com/langchain-ai/langgraph",
+      "local_doc": "source-evidence/docs/tools/crag.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/crag/"
+    },
+    "inception": {
+      "category": "annotation",
+      "borrow": "annotation/gold/adjudication workbench (the gold lab)",
+      "license": "Apache-2.0",
+      "docs_url": "https://inception-project.github.io",
+      "repo": "https://github.com/inception-project/inception",
+      "local_doc": "source-evidence/docs/tools/inception.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/inception/"
+    },
+    "recogito": {
+      "category": "annotation",
+      "borrow": "native Workbench/Review annotation UI (W3C Web Annotation)",
+      "license": "BSD",
+      "docs_url": "https://recogito.github.io",
+      "repo": "https://github.com/recogito/text-annotator-js",
+      "local_doc": "source-evidence/docs/tools/recogito.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/recogito/"
+    },
+    "hypothesis": {
+      "category": "annotation",
+      "borrow": "inline public annotation (→ ReviewProposal)",
+      "license": "BSD client",
+      "docs_url": "https://h.readthedocs.io",
+      "repo": "https://github.com/hypothesis/client",
+      "local_doc": "source-evidence/docs/tools/hypothesis.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/hypothesis/"
+    },
+    "inspect": {
+      "category": "evaluation",
+      "borrow": "THE benchmark runtime (datasets/agents/scorers/scanners/EvalLog/viewer)",
+      "license": "MIT",
+      "docs_url": "https://inspect.aisi.org.uk",
+      "repo": "https://github.com/UKGovernmentBEIS/inspect_ai",
+      "local_doc": "source-evidence/docs/tools/inspect.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/inspect/"
+    },
+    "orkg": {
+      "category": "annotation",
+      "borrow": "scholarly KG patterns (precedent/interop, NOT backend)",
+      "license": "open",
+      "docs_url": "https://orkg.org",
+      "repo": "https://gitlab.com/TIBHannover/orkg",
+      "local_doc": "source-evidence/docs/tools/orkg.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/orkg/"
+    },
+    "ro-crate": {
+      "category": "packaging",
+      "borrow": "portable corpus/benchmark packaging",
+      "license": "Apache-2.0",
+      "docs_url": "https://www.researchobject.org/ro-crate/",
+      "repo": "https://github.com/ResearchObject/ro-crate-py",
+      "local_doc": "source-evidence/docs/tools/ro-crate.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/ro-crate/"
+    },
+    "openreview": {
+      "category": "workflow",
+      "borrow": "review/submission workflow (with Kotahi/Janeway/PubPub)",
+      "license": "MIT",
+      "docs_url": "https://docs.openreview.net",
+      "repo": "https://github.com/openreview/openreview-api",
+      "local_doc": "source-evidence/docs/tools/openreview.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/openreview/"
+    },
+    "coar-notify": {
+      "category": "workflow",
+      "borrow": "peer-review federation protocol (Pāṭala as a review service)",
+      "license": "open",
+      "docs_url": "https://github.com/coar-notify/coarnotifypy",
+      "repo": "https://github.com/COAR-Notify/notify",
+      "local_doc": "source-evidence/docs/tools/coar-notify.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/coar-notify/"
+    },
+    "manubot": {
+      "category": "workflow",
+      "borrow": "forkable Git-versioned scholarly essays (Vision 07)",
+      "license": "open",
+      "docs_url": "https://manubot.org",
+      "repo": "https://github.com/manubot/manubot",
+      "local_doc": "source-evidence/docs/tools/manubot.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/manubot/"
+    },
+    "storm": {
+      "category": "assistant",
+      "borrow": "perspective-guided exploration / Co-STORM mind-map (Vision 07)",
+      "license": "MIT",
+      "docs_url": "https://github.com/stanford-oval/storm",
+      "repo": "https://github.com/stanford-oval/storm",
+      "local_doc": "source-evidence/docs/tools/storm.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/storm/"
+    },
+    "valsci-sciatlas": {
+      "category": "watch",
+      "borrow": "concepts/claims over scholarly corpora (watch/steal-ideas)",
+      "license": "open",
+      "docs_url": "https://github.com/p-v-o-s/pioneer-valley-open-science.github.com",
+      "repo": "https://github.com/Value-of-science/val-sci",
+      "local_doc": "source-evidence/docs/tools/valsci-sciatlas.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/valsci-sciatlas/"
+    },
+    "citevqa": {
+      "category": "watch",
+      "borrow": "citation-verification / visual QA research precedent",
+      "license": "open",
+      "docs_url": "https://github.com/opendatalab/CiteVQA",
+      "repo": "https://github.com/princeton-nlp/ScienceQA",
+      "local_doc": "source-evidence/docs/tools/citevqa.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/citevqa/"
+    }
+  }
+}

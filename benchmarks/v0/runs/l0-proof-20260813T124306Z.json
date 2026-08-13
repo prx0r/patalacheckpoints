@@ -1,0 +1,17 @@
+{
+  "run_id": "L0-PROOF-20260813T124306Z",
+  "benchmark_version": "v0",
+  "family": "PATALA-L0-PROOF",
+  "bench": "PĀṬALA-L0-PROOF",
+  "bench_version": "v0.1",
+  "framework": "inspect-ai==0.3.258",
+  "task": "l0_proof",
+  "execution_base_sha": "2e32b0d435082a44c6a316e0264f24fb013e895d",
+  "working_tree_dirty": true,
+  "date": "20260813T124306Z",
+  "dataset": {"kind": "NAT", "committed_l0_objects": 786},
+  "sut": "Agent 2 L0 worker / t1_extract, deterministic",
+  "metrics": {"roundtrip_pass_rate": 0.2659, "coverage_rate": 0.7779},
+  "finding": "L0 deterministic transform is NOT lossless across the registry: roundtrip_pass 0.266 (only 26.6% reconstruct source from fragments), coverage 0.778 (22% source tokens missing). Canonical kramasadbhava:v1 passes (3/3), but the broader svacchandatantra batch has coverage gaps.",
+  "notes": "Witness class D (deterministic, no ML). L0 inherits semantic quality from T1; this proof establishes the structural/roundtrip contract only. NOT a claim about translation correctness. review_status=NOT_HUMAN_REVIEWED. Does not gate Agent 2."
+}

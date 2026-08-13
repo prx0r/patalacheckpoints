@@ -42,7 +42,7 @@ def detect_source_format(text: str) -> str:
     if "[and]-" in text:
         return "AND_GLOSS"
     # raw Sanskrit: IAST diacritics OR Devanagari block, few English words
-    iast = len(re.findall(r"[āīūṛṝḷḹṃñṅśṣṭḍḥṁ]", text))
+    iast = len(re.findall(r"[āīūṛṝḷḹṃñṅśṣṭḍḥṁṇ]", text))
     deva = len(re.findall(r"[\u0900-\u097F]", text))
     if iast > 20 or deva > 20:
         return "RAW_SANSKRIT"

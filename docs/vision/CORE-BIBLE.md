@@ -52,8 +52,10 @@ as many media projections.**
 ## LAYER 2 — THE DERIVATION GRAPH (the spine)
 
 ```
-SANSKRIT → L0 PROOF → TRANSLATION → C1 COMMENTARY → THEMES → ARGUMENT → SYNTHESIS → WORKBENCH → API/MCP
+SOURCE → L0/L1 → L2 READ → L200 AUDIT → C1 COMMENTARY → THEMES → ARGUMENT → SYNTHESIS → WORKBENCH → API/MCP
                                    → MEDIA (Vision 09): essays / shorts / video / AI-teacher
+   (the canonical production stack — L200 is the proof-carrying audit seam between L2 and C1;
+    see docs/global/PATALA-GLOBAL-ARCHITECTURE.md, Plane 4A)
 ```
 
 Every higher node points downward; every node's status is honest (`DETERMINISTIC_FACT |

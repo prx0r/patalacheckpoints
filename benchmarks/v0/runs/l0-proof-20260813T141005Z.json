@@ -1,0 +1,17 @@
+{
+  "run_id": "L0-PROOF-20260813T141005Z",
+  "benchmark_version": "v0",
+  "family": "PATALA-L0-PROOF",
+  "bench": "PĀṬALA-L0-PROOF",
+  "bench_version": "v0.3",
+  "framework": "inspect-ai==0.3.258",
+  "task": "l0_proof",
+  "execution_base_sha": "b6dc60c6ce0a07b55a2468a4684db7afc9b1bb14",
+  "working_tree_dirty": true,
+  "date": "20260813T141005Z",
+  "dataset": {"kind": "NAT", "committed_l0_objects": 786, "superseded": 2},
+  "sut": "Agent 2 L0 worker, deterministic (witness D)",
+  "metrics": {"roundtrip_pass_rate": 0.511, "coverage_rate": 0.858},
+  "finding": "RE-CONFIRMED after Agent 2 Era C supersession: L0 content-loss finding persists. 384/786 objects drop content tokens (kāraṇam, brahmāṇi, śṛṇu, cāmuṇḍī...). Only 2 objects were superseded (kubjikamata v37/v55) - did not fix the brahmayamala/kubjika gap.",
+  "notes": "Deterministic proof, NO ML. L0 inherits semantic quality from T1. review_status=NOT_HUMAN_REVIEWED; does not gate Agent 2."
+}

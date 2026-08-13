@@ -1,0 +1,93 @@
+[
+  {
+    "crux_id": "pt:crux:manifestation-not-devoid-of-realization",
+    "proposition": "pt:prop:manifestation-not-devoid-of-realization",
+    "formulation": "There can be no conscious manifestation (prakāśa) devoid of a realization (vimarśa); the internal manifestation is the Lord because it has pratyavamarśa as its essence.",
+    "why_it_matters": "Utpaladeva's Pratyabhijñā (ĪPVV, commentary on ĪPK 1.8)",
+    "evidence_for": [
+      {
+        "author": "isabelle-ratie",
+        "relation": "DIRECT_SUPPORT",
+        "claim": "There can be no conscious manifestation (prakāśa) devoid of a realization (vimarśa); the internal manifestation is none other than the Lord because it has a realization (pratyavamarśa) as its essence.",
+        "quote": "there can be no [conscious] manifestation (prakāśa) devoid of a realization (vimarśa)",
+        "page": 179,
+        "independence": "PRIMARY_EDITION"
+      },
+      {
+        "author": "alexis-sanderson",
+        "relation": "DIRECT_SUPPORT",
+        "claim": "Sanderson reports (Cidvilāsastava) that Śiva and Śakti embody the self-manifest light of reality (prakāśa) and its innate power of creative ideation (vimarśa) as the unitary source.",
+        "quote": "embodying the self-manifest light of reality (prakasah) and its \ninnate power of creative ideation (vimarsah)",
+        "page": 1,
+        "independence": "INDEPENDENT_AUTHOR"
+      }
+    ],
+    "evidence_qualifying_or_against": [
+      {
+        "author": "alexis-sanderson",
+        "relation": "ALTERNATIVE_READING",
+        "claim": "Sanderson (on Tantrāloka 10.269) reports that in the Fourth state the Light of Consciousness is self-manifest; a distinct claim about manifestation than 'manifestation-not-devoid-of-realization'.",
+        "quote": "the Light of Consciousness is self-manifest and we cannot speak of an \nimmersion, except metaphorically",
+        "page": 1,
+        "independence": "INDEPENDENT_AUTHOR"
+      }
+    ],
+    "review_status": "NOT_HUMAN_REVIEWED",
+    "adjudication_question": "Does the supporting evidence license the formulation as stated, or does the qualifying evidence require a qualification?"
+  },
+  {
+    "crux_id": "pt:crux:liberation-is-conviction-of-identity-as-siva",
+    "proposition": "pt:prop:liberation-is-conviction-of-identity-as-siva",
+    "formulation": "Liberation is achieved by conviction of one's identity with Śiva; no external cause bestows it.",
+    "why_it_matters": "Abhinavagupta / Tantrāloka 15.42-43b, as reported by Sanderson",
+    "evidence_for": [
+      {
+        "author": "alexis-sanderson",
+        "relation": "DIRECT_SUPPORT",
+        "claim": "Sanderson states (quoting Tantrāloka 15.42-43b) that conviction of one's identity with Śiva is the means of liberation and that no external cause bestows it.",
+        "quote": "Conviction of \none's identity with Siva is the means; no external cause bestows liberation",
+        "page": 1,
+        "independence": "INDEPENDENT_AUTHOR"
+      },
+      {
+        "author": "isabelle-ratie",
+        "relation": "DIRECT_SUPPORT",
+        "claim": "According to Utpaladeva, liberation from the beginningless cycle of rebirths is nothing but the blissful 'recognition' (pratyabhijñā) of oneself as 'the Lord' (īśvara), that is, Śiva.",
+        "quote": "liberation from the beginningless cycle of rebirths (saṃsāra)",
+        "page": 3,
+        "independence": "INDEPENDENT_AUTHOR"
+      }
+    ],
+    "evidence_qualifying_or_against": [],
+    "review_status": "NOT_HUMAN_REVIEWED",
+    "adjudication_question": "Does the supporting evidence license the formulation as stated, or does the multi-author evidence require a qualification?"
+  },
+  {
+    "crux_id": "pt:crux:gnosis-is-the-means-of-liberation",
+    "proposition": "pt:prop:gnosis-is-the-means-of-liberation",
+    "formulation": "Inner conviction (a form of knowledge/gnosis), not ritual action per se, is the real means of liberation.",
+    "why_it_matters": "Abhinavagupta (Tantrāloka), as reported by Sanderson",
+    "evidence_for": [
+      {
+        "author": "alexis-sanderson",
+        "relation": "DIRECT_SUPPORT",
+        "claim": "Sanderson reports that the inner conviction of identity with Śiva, a form of knowledge, is the real means of liberation.",
+        "quote": "This \ninner conviction alone, a form of knowledge, is the real means of liberation",
+        "page": 1,
+        "independence": "INDEPENDENT_AUTHOR"
+      }
+    ],
+    "evidence_qualifying_or_against": [
+      {
+        "author": "alexis-sanderson",
+        "relation": "PARTIAL_SUPPORT",
+        "claim": "Sanderson notes that liberation through insight alone and recognition as a Guru without visible ceremonies 'were seen as exceptional' — qualifying the claim that gnosis alone is the means.",
+        "quote": "liberation through insight alone and recognition as a \nGuru without passing through visible ceremonies",
+        "page": 1,
+        "independence": "INDEPENDENT_AUTHOR"
+      }
+    ],
+    "review_status": "NOT_HUMAN_REVIEWED",
+    "adjudication_question": "Does the supporting evidence license the formulation as stated, or does the qualifying evidence require a qualification?"
+  }
+]

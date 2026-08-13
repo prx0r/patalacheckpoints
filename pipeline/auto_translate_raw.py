@@ -115,7 +115,7 @@ def _chunks(text: str, target: int = 1200) -> list[str]:
 
 def _is_sanskrit(text: str) -> bool:
     """Heuristic: does the text contain real Sanskrit (IAST diacritics), not English prose?"""
-    iast = len(re.findall(r"[āīūṛṝḷḹṃñṅśṣṭḍḥṁ]", text))
+    iast = len(re.findall(r"[āīūṛṝḷḹṃñṅśṣṭḍḥṁṇ]", text))
     english = len(re.findall(r"\b(the|and|of|is|in|to|a|for|with)\b", text.lower()))
     return iast > 5 and english < iast / 2
 
@@ -204,29 +204,65 @@ def run_work(work_id: str, max_verses: int) -> dict:
     if out_path.exists():
         for line in out_path.open(encoding="utf-8"):
             try:
-                done.add(json.loads(line)["source_sha256"])
+                rec = json.loads(line)
+                if rec.get("translation"):
+                    done.add(rec["source_sha256"])
             except Exception:
                 pass
 
     translated = 0
     skipped = 0
-    # bounded batches
-    B = int(os.environ.get("PATALA_BATCH", "6"))
+    # Batch sizing: FILL THE CONTEXT WINDOW per API call (not a fixed tiny batch).
+    #   - PATALA_CONTEXT:   model context length in tokens (default 1_000_000, deepseek-v4-flash).
+    #   - PATALA_BATCH_MAX: hard cap on verses per call (default 1000).
+    #   - PATALA_INPUT_FRAC: fraction of context reserved for INPUT; the rest is reserved for
+    #     the model's translation output (output tokens also count against the window).
+    # A batch accumulates untranslated verses until its estimated INPUT tokens approach
+    # `context * frac`, then one hermes call. Next iteration resumes where tokens ran out,
+    # so cadence becomes "one API call per full context" instead of every 6 verses.
+    context = int(os.environ.get("PATALA_CONTEXT", "1000000"))
+    batch_max = int(os.environ.get("PATALA_BATCH_MAX", "1000"))
+    input_frac = float(os.environ.get("PATALA_INPUT_FRAC", "0.5"))
+    input_budget = int(context * input_frac)
+    # Fixed prompt overhead (instruction + term packet) ~ tokens.
+    FIXED_OVERHEAD = 900
     with out_path.open("a", encoding="utf-8") as fh:
-        for start in range(0, len(verses), B):
+        i = 0
+        n_verses = len(verses)
+        while i < n_verses:
             _kill_stale_hermes()   # kill orphaned hermes before each batch (STALLS-PITFALLS)
-            batch = verses[start:start + B]
             batch_idx = []
             batch_verses = []
-            for i, v in enumerate(batch):
+            est_input = FIXED_OVERHEAD
+            while i < n_verses and len(batch_verses) < batch_max:
+                v = verses[i]
                 sha = hashlib.sha256(strip_verse_marker(v).encode()).hexdigest()
                 if sha in done:
+                    i += 1
                     skipped += 1
                     continue
+                # IAST Sanskrit ~≈1-1.5 tokens/char; add JSON framing + echo overhead.
+                est = int(len(v) * 1.5) + 40
+                if est_input + est > input_budget and batch_verses:
+                    break   # context nearly full → flush this batch
                 batch_idx.append(i)
                 batch_verses.append(v)
+                est_input += est
+                i += 1
             if not batch_verses:
-                continue
+                if i >= n_verses:
+                    break
+                # A single verse exceeds the whole input budget; force it so we never stall.
+                v = verses[i]
+                sha = hashlib.sha256(strip_verse_marker(v).encode()).hexdigest()
+                if sha not in done:
+                    batch_idx.append(i)
+                    batch_verses.append(v)
+                i += 1
+                if not batch_verses:
+                    skipped += 1
+                    continue
+            start = batch_idx[0]
             # Translate the batch. Verse-lines -> the skill engine (batch_translate →
             # model.chat → hermes -z, per-verse close). Long prose chunks -> a direct
             # hermes -z call per unit (no Vidyut tokenization needed).

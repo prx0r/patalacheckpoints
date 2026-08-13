@@ -1,266 +1,130 @@
-# AGENT 1 (ML) — NEXT STEPS (current execution, 2026-08-12 · REVISED)
+# AGENT 1 (ML) — NEXT STEPS (current execution, 2026-08-13 · REVISION 7 — SCHOLAR-CORPUS FOUNDATION)
 
-*This is the current near-term plan for the ML lane, replacing the previous build queue. Read
-`AGENTS.md`, `AGENT1-HANDOVER.md`, `INDEX.md`, `_ACTIVE/IR-REVIEW-FINDINGS.md` first. The diagnosis that
-shaped this plan: **Agent 1 has an epistemic bottleneck, not an engineering bottleneck.** More machine
-evaluation against machine-created targets does not move the epistemic state forward.*
+*The current near-term plan. **Read `handover/agent-1-ml/HANDOVER-2026-08-13.md` FIRST** — the full handover.
+This revision reflects the pivot: the ML vertical is frozen + peer-review-clean; the forward work is the
+**scholar-corpus foundation (S0)** — turning the on-disk published-scholar corpus into a provenance-addressable
+corroboration oracle by **borrowing mature open tools** and adding only the epistemic dependency graph. **Agent 1
+is no longer "frozen and done" — it now owns the source-evidence layer + the scholar oracle.***
 
----
-
-## 0. THE DIAGNOSIS (why this plan is short)
-
-Agent 1 currently produces objects that are authored by a machine, reviewed by a machine, and evaluated
-by machines. That is a **closed machine loop**:
-
-```
-M1 -> G_machine -> M2 -> metric against G_machine
-```
-
-That loop tells us how well one machine reproduces another machine's reconstruction. It does **not**
-establish philosophical correctness. Every additional neural layer just adds one more machine judging
-the last machine's output.
-
-**Two epistemic labels must never be blurred (this vocabulary applies to the whole project, not just
-Agent 1):**
-
-```
-ENGINEERING_VALIDATED  =  software behaves according to its specified machine target
-SCHOLARLY_VALIDATED    =  the target itself has crossed independent scholarly review
-```
-
-Until a human crosses the gate, everything is at most `ENGINEERING_VALIDATED`.
+> **The one-line pivot:** we do NOT need a live human reviewer — the published scholars we already own
+> (Sanderson/Ratié/Torella/Bäumer) are the scalable scholarly corroboration oracle. Build the substrate that
+> makes them addressable, borrowing tools, adding only the epistemic seam.
 
 ---
 
-## THE DOCTRINE OVER AGENT 1 (the decision rule)
+## WHERE WE ARE (the vertical is peer-review-clean relative to the current objects)
 
-> **When the missing oracle is human scholarly judgment, do not substitute another model. Either obtain
-> the judgment, or work only on claims whose truth can be established mechanically.**
-
-That gives Agent 1 exactly two legitimate modes right now:
+The full Pāṭala Review vertical is built, validated, and pushed on `origin/agent1-argument-layer-a1b` (all
+tests green):
 
 ```
-  ( Human-reviewed epistemic progress )
-  (          OR                       )
-  ( construction-verifiable engineering progress )
+source
+→ local arguments (ARG-GOLD-002/004)
+→ ContextualArgumentAudit (Nyāya gate ACTIVE)
+→ ArgumentSynthesis (SYN-IPVV-REFLEXION-CORE-001, canonical)
+→ monotone EO projection
+→ one readable essay + EssayPlan
+→ SentenceEvidenceAudit (+ 6 adversarial prose/paraphrase mutation classes)
+→ deterministic k-core structural hierarchy + Louvain stability ablation (P-019 v2)
 ```
 
-Everything else waits. This is the anti-theatre doctrine made operational.
+Commits: `0efc1df` (A.1) · `32083e6`+`d8b123b` (B) · `a2c4591`+`398958f` (C) · `b1fb034` (C.1) ·
+`6b19f2b`+`cfcd1c5`+`aef17dd` (C.1 review passes) · `7ea182c`+`76263d8` (k-core/Louvain).
+
+**The honest claim (narrow):** for one IPVV synthesis, Pāṭala produces a provenance-linked essay and
+deterministically catches specified epistemic-laundering mutations (strength inflation, authorship laundering,
+boundary erasure, rival laundering, warrant erasure, paraphrase expansion). NOT "Pāṭala writes reliable
+scholarly essays."
 
 ---
 
-## THE REVISED QUEUE (the whole plan)
+## THE ESSAY IS PEER-REVIEW-CLEAN (relative to the current objects)
 
-```
-0. FIX WORKTREES / RECONCILE COMMITS
-   ↓
-1. GET ≥ 1 ARGUMENT INDEPENDENTLY REVIEWED          (the CP4 critical path)
-   ↓
-2. BUILD PĀṬALA-FIDELITY SYNTHETIC CORRUPTION SUITE  (construction-verifiable)
-   ↓
-3. ESTABLISH DETERMINISTIC GRAPH BASELINE            (construction-verifiable)
-   ↓
-4. WAIT FOR / SUPPORT HUMAN GOLD REVIEW
-   ↓
-5. ONLY AFTER REVIEW (all currently parked):
-      extractor · external argument evaluator · semantic alignment experiments · retrieval experiments
-```
+Repeated adversarial review found increasingly subtle authority/semantic-representation mismatches, all
+corrected:
+- S001 EXPANSIVE-backed by the synthesis · S003/S004 conservative to their propositions (no neighbor-claim
+  leakage) · S005 reconstructed not authorial · S009 no longer strengthens G2-CONC / no "conclusion follows" ·
+  S010 UNRESOLVED (does not manufacture an unaudited structural result) · S007/S012 boundaries preserved.
 
-Steps 1–3 can proceed concurrently where operationally possible. Step 0 is a hard precondition.
+**The key finding frozen:** Pāṭala now distinguishes (a) metadata correctness, (b) semantic surface fidelity
+(`PARAPHRASE_EXPANSION / CLAIM_SURFACE_INFLATION`), and (c) `reconstructable argument ≠ structurally validated
+argument`. The remaining boundary: **semantic-relation labels are reviewer-assigned assertions, not
+independently machine-proven facts.** C.1's guard rejects *declared* unsupported expansion; it does not yet
+automatically establish that a declared `CONSERVATIVE_PARAPHRASE` is semantically correct.
 
----
+## k-CORE / LOUVAIN (P-019 v2)
 
-## STEP 0 — RESTORE A LEGITIMATE EXECUTION ENVIRONMENT
-
-> **Naming note:** this step is called **STEP 0**, NOT "P0". "P0" in this repo is already the frozen
-> **L0 source-integrity proof** (`verify_l0.py` P0, 63/63 lossless — Agent 2's, finished). Do not let the
-> two collide; the worktree step is operational, the L0-P0 proof is epistemic.
-
-First resolve the worktree/branch problem (Axiom 11 / INCIDENT-2026-08-12-02) and reconcile the Agent 1
-commits (`62cf778`, `263b1ec`, `44c2bd2`, `eb095ae`) onto the `agent1` branch in the Agent 1 worktree.
-
-Until that is done:
-
-```
-NO new experimental work
-NO benchmark mutations
-NO gold edits
-NO new model runs presented as canonical
-```
-
-This is operational rather than epistemic, but if lanes are meant to be isolated, violating that
-invalidates the project's own reproducibility discipline.
+- k-core = deterministic STRUCTURAL embeddedness; Louvain = heuristic modularity community; human adjudication
+  decides if any become themes. `k_core != theme`; no claim of philosophical centrality.
+- **Empirical finding:** on the actual 63-node IPVV C1 graph, Louvain is STABLE (11 communities across 20
+  seeds, 0 unstable boundaries, 187 robust co-clustering pairs). So the rationale for k-core is **deterministic
+  embeddedness + reproducible graph statistics, NOT because Louvain was empirically unstable here.**
 
 ---
 
-## 1. P1 — HUMAN REVIEW IS THE BLOCKER (the CP4 critical path)
+## THE FORWARD WORK (S0 — the scholar-corpus foundation)
 
-Make this explicit:
-
-```
-ARG-001..005
-MACHINE_PROPOSED / CANDIDATE
-        ↓
-independent Sanskrit/philosophy review
-        ↓
-at least one INDEPENDENT_REVIEWED argument
-        ↓
-only now does downstream model evaluation become meaningful
-```
-
-The review packet is rebuilt on a **primary-Sanskrit** basis (`benchmarks/v0/ARG-GOLD-REVIEW-PACKET-v2.md`
-+ machine packet `benchmarks/v0/review/ARG-GOLD-REVIEW-PACKET-v2.json`): every proposition now grounds
-directly to resolvable primary Sanskrit L0 spans, and L2 is never required for a decision — removing the
-derivational circularity MODEL-1 flagged. Acceptance gate: `experiments/check_review_packet.py`. So the
-job is to **stop engineering around the dependency and optimize the review transaction.** The deliverable
-is not another review-architecture document. It is:
+Do NOT reopen the frozen ML vertical (no C.2, no more clustering, no re-doing the argument layer). The new work is
+the source-evidence substrate + scholar oracle, per `source-evidence/docs/`:
 
 ```
-1 reviewer
-× 1 packet
-× 5 arguments
-× explicit rulings
+S0.0 freeze the contract (RawSource→BibliographicRecord→Witness→SourceSpan→SourceAssertion→CorroborationEvent→consumer)
+S0.1 external-tool pilot (GROBID/Zotero/Crossref/OpenAlex adapters + thin resolver; LIVE/RECORDED/UNAVAILABLE rule)
+S0.2 missing semantics (SourceAssertion + CorroborationEvent validators; adversarial tests)
+S0.3 product proof (one proposition resolves across bibliography/assistant/argument/site/education)
+S0.4 F1 corroboration experiment (false-positive-tested) → CorroborationBench → TantraFact
 ```
 
-And the first target can be **one clean argument** (ARG-002 v2) — the existing doctrine already says one
-independently reviewed argument is enough to begin the external-evaluator pilot.
-
-**The success metric is:**
-
-> `count(INDEPENDENT_REVIEWED argument golds) > 0`
-
-rather than *lines of CP4 code written*.
+**The immediate next step: the Inspect AI prototype** — port one existing benchmark + the laundering mutations
+into an Inspect task (the benchmark runtime). Then PaperQA2 → INCEpTION → Recogito → STORM → COAR Notify (doc) →
+Manubot → RAiD/credit (the ruthless 8-experiment order: each asks "does this delete a subsystem we planned to
+write?").
 
 ---
 
-## 2. P2 — BUILD PĀṬALA-FIDELITY NOW (the best build without human judgment)
+## THE NEXT MOVE — AGENT 2 / AUTONOMOUS FACTORY (shared infrastructure, in order)
 
-This is buildable today because the expected answer is generated **by construction**. Start from a
-known-good, structurally verified object:
-
-```
-SOURCE → L0 → alignment → vertical object
-```
-
-Apply deterministic mutations and assert the verifier flags each one.
-
-### Source integrity (expected: P0 MUST FAIL)
-```
-DROP_SPAN · DUPLICATE_SPAN · SHIFT_SPAN_START · SHIFT_SPAN_END · REORDER_TOKEN · INSERT_UNKNOWN_REGION
-```
-
-### L0 analysis (expected: relevant proof dimension must disagree / flag)
-```
-FLIP_LEMMA · CHANGE_CASE · CHANGE_NUMBER · CHANGE_GENDER · REPLACE_SURFACE
-```
-
-### Alignment (expected: alignment verifier detects corruption)
-```
-SHIFT_ANCHOR · REMOVE_ANCHOR · LINK_WRONG_TOKEN · SWAP_TWO_ANCHORS
-```
-
-### Dependency / provenance (expected: vertical integrity fails)
-```
-DELETE_GROUNDING_EDGE · POINT_TO_NONEXISTENT_REF · USE_STALE_PROOF · CHANGE_SOURCE_HASH
-```
-
-**The metric is verifier sensitivity to known injected error:**
+The coordinator's directive. Build the shared infra in this order, then the generic L0 controller:
 
 ```
-Sensitivity(V, E) = P( V(x ⊕ e) = FAIL  |  e )
+1. registry-derived per-passage idempotency
+2. single-writer lock
+3. Hermes process-group timeout/orphan cleanup
+4. stable passage_id + source-hash response binding
+5. bounded/adaptive batching
+6. lossless ASCII-avagraha support
+7. OCR → SOURCE_BLOCKED
+8. crash/resume + wrong-ID adversarial tests
+9. Sanskrit-only replay certificate
+10. small Kramasadbhāva unattended canary
 ```
 
-which lets us state, e.g., *"P0 detected 100/100 injected source-span corruptions"* — an empirical
-claim requiring **no semantic oracle**.
-
-### Boundary (keep these separate)
-- Synthetic fidelity fixtures establish: **the verifier detects error types we deliberately inject.**
-- They do NOT establish: **the verifier detects all naturally occurring errors.**
+**Do not build separate autonomous runners per layer.** Build the generic controller once at L0, prove it under
+failure, then reuse the same state machine with layer-specific skill + registry + validator contracts across the
+**canonical production stack**:
 
 ```
-SYNTHETIC_SENSITIVITY  ≠  REAL_WORLD_RECALL
+L0/L1 → L2 READ → L200 AUDIT → C1 → THEMES → ESSAYS → EDUCATION
 ```
-
-The latter eventually requires human gold.
+with every stage supplying its own contract/validator/certificate and every transition independently resumable,
+versioned, provenance-bound, fail-closed. **L200 is the future derivational grounding seam** for
+propositions/arguments: a Proposition should eventually ground Proposition → C1 InterpretiveAssertion /
+MaterialTranslationDecision → L2 reading span → L0/source spans, rather than jumping around L200. Do not retrofit
+Agent 1 for this now; wire it when Agent 2 makes L200 autonomous/canonical. At that point "autonomous translation"
+undersells it — it is an **autonomous scholarly compiler whose intermediate representations remain inspectable
+and corrigible at every layer.**
 
 ---
 
-## 3. P3 — ESTABLISH A DETERMINISTIC GRAPH BASELINE
+## GIT STATE (unchanged, critical)
 
-If `same inputs + same code + same parameters` do not produce `same output`, that is unnecessary
-epistemic noise. The requirement is stated carefully:
+- Canonical work on **`origin/agent1-argument-layer-a1b`**. `origin/agent1-argument-layer` still has the fork
+  (Agent 0 reconciliation — `handover/agent-1-ml/GIT-RECONCILIATION-2026-08-12.md`).
+- Local worktree on `/mnt/HC_Volume_106427611` is **unstable** (files/branch pointers periodically revert).
+  Treat the remote branch as authoritative; re-restore from it after any suspected revert.
 
-> **There must be at least one deterministic canonical baseline.**
+## GUARDRAILS (unchanged)
 
-Then later, once real theme gold exists:
-
-```
-k-core deterministic baseline  vs  Louvain  vs  Leiden  vs  semantic clustering
-```
-
-Don't assume determinism means *better* semantic clustering — but canonical infrastructure must be
-reproducible.
-
-**Required test (across separate processes/runs, not just identical calls in one interpreter):**
-
-```python
-assert hash(run(graph)) == hash(run(graph))
-```
-
----
-
-## 4. P4 — FREEZE THE SPECULATIVE MACHINERY
-
-Until the human review crosses the gate, explicitly park:
-
-```
-REAL ARGUMENT EXTRACTOR · DSPy optimization · HippoRAG · PPR retrieval ·
-cross-encoder semantic alignment · semantic microscope B–E · Nyāya evaluator expansion ·
-crux ML · argument ranking
-```
-
-Not because these are bad ideas. Because their evaluation currently reduces to
-`M1 → G_machine → M2 → metric against G_machine`, which does not establish philosophical correctness.
-
----
-
-## 5. ONE ADDITION — USE THE REVIEW BOTTLENECK TO DESIGN THE SCHOLAR PRODUCT
-
-The exact problem — *"I have five machine-proposed scholarly objects and need a human expert to
-adjudicate them efficiently"* — **is literally the prototype of Pāṭala Workbench / Review.** So
-instrument the human-review process:
-
-```
-minutes / argument
-questions that caused confusion
-evidence the reviewer needed but lacked
-number of revisions
-number of abstentions
-which machine assertions were easiest / hardest to assess
-```
-
-The reviewer is effectively the **first real product user**. Do not merely obtain gold — learn **what
-interface makes expert judgment cheap enough to scale.** That data may be worth more than another
-retrieval experiment.
-
----
-
-## 6. GUARDRAILS (unchanged, restated for this plan)
-
-1. Route everything through `benchmarks/v0/` + record a `BenchmarkRun`.
-2. Join on `Ref` IDs — never fuzzy.
-3. Do NOT hack viruddha into the frozen `nyayagate.py`.
-4. Do NOT build the parked machinery (P4) before review.
-5. **Git discipline:** work only in the Agent 1 worktree on branch `agent1`; stage only your explicit
-   paths + commit immediately; never force-push / rewrite another lane's commit.
-6. Update `CLAIMS.md` + `theatre_check.py` honestly; drop a `SESSION-<date>.md` at session end.
-
----
-
-## THE ONE-SENTENCE CARRY-FORWARD
-
-**Agent 1's bottleneck is epistemic, not engineering: get ≥ 1 argument independently reviewed (the
-success metric is `count(INDEPENDENT_REVIEWED) > 0`), build the construction-verifiable
-PĀṬALA-FIDELITY corruption suite and a deterministic graph baseline in parallel, and freeze all
-machine-eval-on-machine-gold machinery until the human gate crosses — using the review itself as the
-first prototype of the scholar product.**
+1. Route everything through `benchmarks/v0/` + record a `BenchmarkRun`. 2. Join on `Ref` IDs — never fuzzy.
+3. Do NOT hack viruddha into the frozen `nyayagate.py`. 4. Git discipline: stage your own paths, commit
+immediately, never force-push/rewrite another lane's commit. 5. Update `CLAIMS.md` + drop a `SESSION-<date>.md`.

@@ -1,0 +1,4 @@
+url: https://unpaywall.org
+fetched: 2026-08-12T21:52:33+00:00
+content-type: text/html; charset=UTF-8
+bytes: 1421

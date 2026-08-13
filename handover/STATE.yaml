@@ -1,5 +1,5 @@
-state_version: 21
-last_update: '2026-08-12T16:09:30'
+state_version: 23
+last_update: '2026-08-12T20:50:30'
 agent1:
   checkpoints:
     CP0:
@@ -21,24 +21,21 @@ agent1:
       updated_by: agent1
       ts: '2026-08-12 14:31:43'
     CP4:
-      status: PARTIAL
-      note: 'Session close: golds CANDIDATE, vertical resolves, theme map + reviews,
-        ASPIC pilot proxy, semantic-alignment harness built + baseline falsified (0/8).
-        Next: reconciliation to agent1/main, CP3 acceptance, cross-encoder alignment.
-        Full inventory BUILD-RECORD-2026-08-12.'
-      updated_by: agent1
-      ts: '2026-08-12 15:03:00'
+      status: FROZEN
+      note: Patala Review vertical DONE + peer-review-clean (synthesis -> EO -> essay
+        -> SentenceEvidenceAudit + k-core/Louvain P-019 v2) on origin/agent1-argument-layer-a1b;
+        Agent 1 frozen; next = Agent 2 autonomous factory
+      updated_by: agent
+      ts: '2026-08-12 20:50:30'
 agent2:
   checkpoints:
     CP1:
       status: PARTIAL
-      note: 'Session complete: RAW-L0 factory core built (raw_l0.py/agent3_batch/agent3_queue/l0_registry),
-        21-target+39-lead prioritized queue, executable-corrections review engine
-        (3A+3D), full sanskritree goldmine consolidated (TARGETS-INDEX + IMPORT-MANIFEST
-        + concepts.ts completed). Next: gloss/model transport + Sanskrit-only replay
-        benchmark + ingest not-yet-ingested primary texts.'
-      updated_by: agent2
-      ts: '2026-08-12 16:09:30'
+      note: RAW-L0 factory core + gloss transport built; next = Sanskrit-only replay
+        benchmark, then generic L0 controller reused across T1/R1/T2/R2/T3/T3.1/C1
+        (autonomous scholarly compiler)
+      updated_by: agent
+      ts: '2026-08-12 20:50:30'
 shared:
   CP0: DONE
   CP1: PARTIAL

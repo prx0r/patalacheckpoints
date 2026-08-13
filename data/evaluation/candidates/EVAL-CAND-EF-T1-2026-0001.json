@@ -1,0 +1,37 @@
+{
+  "type": "EVALUATION_CANDIDATE",
+  "evaluated_version": "t1-brahmayamala:v1-v2",
+  "old_version": "t1-brahmayamala:v1-v1",
+  "finding_ref": "EF-T1-2026-0001",
+  "layer": "T1",
+  "object_ref": "brahmayamala:v1",
+  "impact": {
+    "trigger": "EF-T1-2026-0001",
+    "old_version": "t1-brahmayamala:v1-v1",
+    "evaluated_version": "t1-brahmayamala:v1-v2",
+    "downstream_affected": [
+      {
+        "object": "brahmayamala:v1",
+        "layer": "L0",
+        "state": "SUPERSEDED",
+        "previous_version": "l0-brahmayamala:v1-v1"
+      },
+      {
+        "object": "brahmayamala:v1",
+        "layer": "L200",
+        "state": "NEED_REVIEW",
+        "previous_version": null
+      },
+      {
+        "object": "brahmayamala:v1",
+        "layer": "C1",
+        "state": "NEED_REVIEW",
+        "previous_version": null
+      }
+    ]
+  },
+  "emitted_at": "2026-08-13T19:00:53.626110+00:00",
+  "producer": {
+    "agent": "agent2"
+  }
+}

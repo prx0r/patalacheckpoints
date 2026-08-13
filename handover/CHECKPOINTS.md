@@ -123,13 +123,15 @@ interface BenchmarkRun {
 | **CP3 THEMES** | 3 of the 9 proposals genuinely adjudicated into `AcceptedTheme` (membership inspected, not clustering-asserted) | ML |
 | **CP4 ARGUMENT** | ARG-GOLD-001..010 real propositions; extractor tested blind against them; the vertical object "I claim X because C1 says / L2 renders / span is / proof says". **Current gate shape = the evidence-hierarchy + primary-Sanskrit packet** (`SCHOLARLY_CORROBORATED_PRELIMINARY` via `goldutil.validate_scholarly_corroboration`; proposition × evidence matrix; T/R/E/C/H/X adapter). **Target shape = the philosophical IR** (`machinelearning/_ACTIVE/ARGUMENT-IR-VISION.md`): every proposition carries a Commitment (who asserts) + derivational `derived_from`; a ResearchQuestion per argument; Attack vs Defeat split; three-level SemanticAlignment for comparative cases. **Built gold-first — the ontology is forced by the gold, not designed empty.** | **both converge** |
 
-**ACTIVE NOW (2026-08-12): CP4 is live.** All 5 golds (ARG-001..005) are built + consistent; the review
-packet is rebuilt on a **primary-Sanskrit basis**; the live CP4 path is the **corroboration campaign** —
-promoting propositions through the evidence-hierarchy (`MACHINE_PROPOSED → … → SCHOLARLY_CORROBORATED →
-INDEPENDENT_REVIEWED`) via the mechanical protocol, and building the proposition × evidence matrix.
-ARG-004's `G4-CRYSTAL` is the first `SCHOLARLY_CORROBORATED_PRELIMINARY` node. Success metric:
-`count(INDEPENDENT_REVIEWED) > 0`. See `handover/agent-1-ml/CHECKPOINTS-ML.md` §CP4 +
-`handover/agent-1-ml/INDEX.md`.
+**ACTIVE NOW (2026-08-12): Agent 1 is FROZEN — the Pāṭala Review vertical is DONE + peer-review-clean
+relative to the current objects** (`synthesis → EO → essay → SentenceEvidenceAudit` + k-core/Louvain P-019 v2),
+pushed on `origin/agent1-argument-layer-a1b`. CP4's real substrate (5 golds ARG-001..005) stands; the
+corroboration campaign is OPPORTUNISTIC (not a global gate). Success metric still `count(INDEPENDENT_REVIEWED)
+> 0` (unmet — a human has not adjudicated the objects). **The next move is Agent 2 / the autonomous factory**
+(shared infra: registry idempotency → single-writer lock → Hermes cleanup → stable passage_id+hash binding →
+bounded batching → ASCII-avagraha → OCR→SOURCE_BLOCKED → crash/resume + adversarial tests → Sanskrit-only
+replay certificate → a small Kramasadbhāva unattended canary; then a generic L0 controller reused across
+T1/R1/T2/R2/T3/T3.1/C1). See `handover/agent-1-ml/NEXT-STEPS.md` rev 6 + `handover/agent-1-ml/INDEX.md`.
 
 ---
 

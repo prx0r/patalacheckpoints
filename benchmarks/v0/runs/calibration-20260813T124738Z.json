@@ -1,0 +1,16 @@
+{
+  "run_id": "CALIBRATION-20260813T124738Z",
+  "benchmark_version": "v0",
+  "family": "PATALA-CALIBRATION",
+  "bench": "PĀṬALA-CALIBRATION",
+  "bench_version": "v0.1",
+  "framework": "inspect-ai==0.3.258",
+  "task": "calibration",
+  "execution_base_sha": "5c6781960de586c4fdb45c0d044540a4de794dd7",
+  "working_tree_dirty": true,
+  "date": "20260813T124738Z",
+  "dataset": {"kind": "DEV_CALIBRATION", "n": 20, "target_error": 0.05},
+  "sut": "risk_control_v1 (deterministic calibration)",
+  "metrics": {"threshold": 0.94, "calibration_risk": 0.0, "abstention_rate": 0.7},
+  "notes": "Risk-calibrated abstention policy. threshold 0.94 chosen from DEV calibration set; measured risk 0.0 among accepted; 70% abstained (OPEN). HONESTLY LABELED: DEV set is synthetic reference distribution, NOT real adjudication; replaced by a real DEV calibration set when confidence scores exist for real T1 objects. Calibration evidence object self-certified."
+}
