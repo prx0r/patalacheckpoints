@@ -109,12 +109,12 @@ A2-CP7  whole-work unattended run   🔶 Era A done; Era B scales to the whole c
 
 **Era B (Corpus Compiler) — current frontier:**
 ```
-A2-8   backlog scheduler       ▶ NEXT — advance all works through SOURCE→C1 automatically
-A2-9   multi-work execution    ▶ NEXT
-A2-10  resource/rate limiting
+A2-8   backlog scheduler       ✅ DONE (factory_scheduler, verified live)
+A2-9   multi-work execution    ✅ DONE (advances all works, one layer per pass)
+A2-10  resource/rate limiting  ✅ DONE (model-call budget + throttle)
 A2-11  durable failure/retry queues   ✅ DONE (factory_batch + test_failure_queue)
 A2-12  corpus progress dashboard      ✅ DONE (factory_status + test_factory_status)
-A2-13  unattended bulk translation
+A2-13  unattended bulk translation    ▶ IN PROGRESS (running across all 12 works, all layers)
 ```
 **Era C (Living rebuild engine)** — later: supersession propagation, dependency invalidation, targeted
 regeneration, ImpactReport integration, review-bundle generation.
