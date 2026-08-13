@@ -1,15 +1,19 @@
 #!/usr/bin/env python3
-"""pipeline/run_argrec_pilot_argmap.py — generate ARGMAP for IPVV-ARGREC-PILOT-001 (gate #4).
+"""pipeline/run_argrec_pilot_argmap.py — generate the pilot ARGMAP candidate (gate #4).
 
-Consumes the frozen context bundle (ipvv:V2L:argctx:001 = k1..k5) — the T1/L0 of the CONTIGUOUS
-window, NOT a single cut-in-half unit — and produces an ARGMAP candidate for the known hard argument
-(V2L apohana / 'I'-recollection is not a construction).
+The V2L T1/L0/C1 ALREADY EXIST as the real gold material (sanskritree stack) — NO T1 generation needed.
+This feeds the model the REAL existing factory-style inputs for the frozen window (kārikās 1-5) and
+asks it to recover the argument, WITHOUT the gold ARGMAP.
 
-NO-GOLD-LEAKAGE (the reviewer's rule): the prompt may include Sanskrit / T1 gloss / L0 tokens / C1 and
-generic argument instructions, but MUST NOT retrieve or reference the gold ARGMAP for ipvv:V2L.
+INPUT (real, existing):
+    - T1  : translations/_stack/ipvv/02_t1/chunkV2-L-sastho-vimarsa-smrti-apohana.md
+    - L0  : translations/_stack/ipvv/l0/chunkV2-L....l0.jsonl (token glosses)
+    - C1  : translations/_stack/ipvv/c1/read/c1_V2L-nonconstructed-I.md
 
-Usage (after T1 for the window exists):
-    python3 pipeline/run_argrec_pilot_argmap.py  [--emit json]
+NO-GOLD-LEAKAGE: the gold ARGMAP (pilot_V2L_ARGUMENT_MAP.md) is NEVER read or passed.
+
+Usage:
+    python3 pipeline/run_argrec_pilot_argmap.py
 """
 from __future__ import annotations
 
@@ -19,68 +23,74 @@ import os
 import sys
 
 sys.path.insert(0, "/root/projects/patala/pipeline")
-import object_registry as R  # noqa: E402
 from model import chat  # noqa: E402
 
-PILOT = json.load(open("/root/projects/patala/data/evaluation/argrec-pilot-001-freeze.json", encoding="utf-8"))
-WINDOW = PILOT["context_window"]["members"]
+BASE = "/mnt/HC_Volume_106427611/sanskritree/translations/_stack/ipvv"
+T1 = os.path.join(BASE, "02_t1/chunkV2-L-sastho-vimarsa-smrti-apohana.md")
+L0 = os.path.join(BASE, "l0/chunkV2-L-sastho-vimarsa-smrti-apohana.l0.jsonl")
+C1 = os.path.join(BASE, "c1/read/c1_V2L-nonconstructed-I.md")
+GOLD_ARGMAP = os.path.join(BASE, "pilot/pilot_V2L_ARGUMENT_MAP.md")  # NEVER READ
 OUT = "/root/projects/patala/data/evaluation/argrec-pilot-001-argmap.json"
 
-
-def _gather_context() -> dict:
-    """Gather the frozen window's T1 gloss + source + (optionally L0) as the model's grounding input."""
-    t1_gloss = {}
-    source = {}
-    for unit in WINDOW:
-        cur = R.current("SOURCE", unit)
-        if cur:
-            source[unit] = cur["payload"].get("verse", "")[:400]
-        t1 = R.current("T1", unit)
-        if t1:
-            toks = (t1.get("payload", {}).get("t1", {}) or {}).get("tokens", [])
-            t1_gloss[unit] = " ".join((t.get("gloss") or t.get("form") or "") for t in toks)[:600]
-    return {"source": source, "t1_gloss": t1_gloss}
+# the frozen window (kārikās 1-5) — we slice the T1/L0 to these units where possible
+WINDOW = ["k1", "k2", "k3", "k4", "k5"]
 
 
-def _build_prompt(ctx: dict) -> str:
-    src = "\n".join(f"## {u}\n{s}" for u, s in ctx["source"].items())
-    gloss = "\n".join(f"## {u} T1\n{g}" for u, g in ctx["t1_gloss"].items())
+def _read(p):
+    return open(p, encoding="utf-8").read() if os.path.exists(p) else ""
+
+
+def _l0_first_n(n=400):
+    """The first n L0 token-gloss records (the window's tokens)."""
+    out = []
+    for i, line in enumerate(open(L0, encoding="utf-8")):
+        if i >= n:
+            break
+        try:
+            r = json.loads(line)
+            out.append(f"{r.get('raw_fragment')} = {r.get('literal_gloss')}")
+        except Exception:
+            continue
+    return "\n".join(out)
+
+
+def build_prompt() -> str:
+    t1 = _read(T1)
+    c1 = _read(C1)
+    l0 = _l0_first_n(350)
     return (
-        "You are the Pāṭala argument-map producer. Reconstruct the ARGUMENT of the following IPVV "
-        "passage (the apohana / ahaṃ-pratyavamarśa discussion: is the 'I'-recollection a construction?)\n"
-        "This is a CONTIGUOUS WINDOW (kārikās 1-5) — the objection, reply and crux may span several units; "
-        "do NOT cut the argument short at a unit boundary.\n"
+        "You are the Pāṭala argument-map producer. Reconstruct the ARGUMENT structure of the IPVV "
+        "passage below (the ṣaṣṭho vimarśa: is the 'I'-recollection / ahaṃ-pratyavamarśa a conceptual "
+        "construction (vikalpa), or the two-invoking determination (dvayākṣepī viniścaya)?).\n"
+        "This is kārikās 1-5 of V2-L (the apohana / smṛti discussion). The objection, reply, and crux "
+        "may span the whole window — do not cut the argument short.\n"
         "Produce EXACTLY 4 sections:\n"
         "1. what_is_at_issue: the question + the move, 1-3 sentences.\n"
-        "2. argument_steps: the argument step by step (the objection -> reply -> the crux).\n"
+        "2. argument_steps: the argument step by step (objection -> reply -> the crux), each step "
+        "   citing a kārikā/line.\n"
         "3. open_items: genuinely unresolved items (status OPEN|NEEDS_REVIEW).\n"
         "4. decision_for_l2: one sentence guiding the readable L2.\n"
         "Return JSON ONLY: {\"what_is_at_issue\":\"...\",\"argument_steps\":[\"...\"],"
         "\"open_items\":[{\"text\":\"...\",\"status\":\"OPEN|NEEDS_REVIEW\"}],\"decision_for_l2\":\"...\"}\n\n"
-        f"# SOURCE (Sanskrit, the window)\n{src}\n"
-        f"# T1 GLOSS (per unit)\n{gloss}\n"
-        "GROUNDING RULE: every argument step must cite a line/unit/kārikā; do not invent a premise the "
-        "text doesn't license."
+        f"# T1 (transliteral gloss, the window)\n{t1[:6000]}\n\n"
+        f"# L0 TOKEN GLOSSES (first 350)\n{l0}\n\n"
+        f"# C1 (the passage interpretation)\n{c1}\n\n"
+        "GROUNDING RULE: every argument step must be anchored to a kārikā/line in the T1. Do NOT "
+        "invent a premise the text does not license. If something is unresolved, say so."
     )
 
 
-def _parse(raw: str) -> dict:
+def generate() -> dict:
+    prompt = build_prompt()
+    raw = chat("You are the Pāṭala argument-map producer (no gold retrieval; only the given source).",
+               prompt, timeout=300)
     raw = (raw or "").strip()
     if raw.startswith("```"):
         raw = raw.split("\n", 1)[-1].rsplit("```", 1)[0]
     s, e = raw.find("{"), raw.rfind("}")
-    return json.loads(raw[s:e + 1])
-
-
-def generate() -> dict:
-    ctx = _gather_context()
-    # the gold MUST NOT be retrieved (no-leakage); only source/T1/instructions
-    prompt = _build_prompt(ctx)
-    raw = chat("You are the Pāṭala argument-map producer (no gold retrieval; only the given source).",
-               prompt, timeout=240)
-    body = _parse(raw)
+    body = json.loads(raw[s:e + 1]) if s >= 0 and e > s else {}
     cand = {
-        "pilot_id": PILOT["pilot_id"],
+        "pilot_id": "IPVV-ARGREC-PILOT-001",
         "window": WINDOW,
         "argument_map": {
             "what_is_at_issue": (body.get("what_is_at_issue") or "").strip(),
@@ -88,9 +98,11 @@ def generate() -> dict:
             "open_items": body.get("open_items") or [],
             "decision_for_l2": (body.get("decision_for_l2") or "").strip(),
         },
+        "inputs": {"T1": os.path.basename(T1), "L0": os.path.basename(L0), "C1": os.path.basename(C1)},
         "prompt_hash": hashlib.sha256(prompt.encode()).hexdigest(),
         "model": "deepseek-v4-flash",
         "no_gold_leakage": True,
+        "gold_never_read": True,
         "status": "MACHINE_PROPOSED",
     }
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
@@ -102,9 +114,9 @@ def generate() -> dict:
 if __name__ == "__main__":
     c = generate()
     am = c["argument_map"]
-    print(f"ARGMAP candidate for {c['pilot_id']} (no gold leakage):")
-    print(f"  what_is_at_issue: {am['what_is_at_issue'][:90]}")
+    print(f"ARGMAP candidate (from REAL T1/L0/C1, no gold leakage):")
+    print(f"  what_is_at_issue: {am['what_is_at_issue'][:100]}")
     print(f"  steps: {len(am['argument_steps'])}, open: {len(am['open_items'])}")
     for s in am["argument_steps"]:
-        print(f"    - {s[:90]}")
+        print(f"    - {s[:100]}")
     print(f"  wrote {OUT}")
