@@ -22,19 +22,43 @@ we are doing **B (foundation) first, then C (one vertical)** once the substrate 
 
 ## 1. THE DB DECISION (locked)
 
-**Use PostgreSQL.** Grounded in your actual setup:
+**Use PostgreSQL.** Grounded in your actual setup + the Cloudflare edge-layer doc
+(`docs/vision/atlas/atlas-cloudflare-edge-layer.md`):
 
 | Choice | Verdict |
 |---|---|
-| **Postgres** | ✅ **Already running** in Docker (postgres:16 + postgres:17). ACID, JSONB for authority metadata, `pg_trgm` for Sanskrit fuzzy-title reconciliation, FTS. Mature MCP server. |
-| D1 (Cloudflare) | ❌ Wrong runtime — you're self-hosted (Next.js + Python factory), not Workers. |
+| **Postgres** | ✅ **Canonical.** ACID, JSONB for authority metadata, `pg_trgm` for Sanskrit fuzzy-title reconciliation, FTS. Already running in Docker (postgres:16/17). For production use **Neon** (managed Postgres) + **Cloudflare Hyperdrive** to accelerate it from Workers. Mature MCP server. |
+| **D1 (Cloudflare)** | ❌ **NOT the canonical Atlas DB.** Serverless, 10GB-per-db model — wrong fit for complex relations/constraints/JSONB/pg_trgm/FTS/large corpus. |
+| **Durable Objects** | ❌ Not the canonical Atlas DB. |
 | SQLite/JSON | 🡒 that's the **current** state (export format, not canonical). |
 | Neo4j / graph DB | 🡒 later. Postgres entity+relationship + NetworkX in-memory is enough. |
 | Timescale | 🡒 later (only if time-series analytics needed). |
+| **Vectorize** | candidate/semantic search only — **never canonical** retrieval. |
+| **Workflows** | ingestion utility only. **Workers AI** = projection utility only. |
 
-**Practical:** spin up a **dedicated `patala-atlas` Postgres** container (do NOT reuse temporal-postgresql
-or postiz-postgres — those belong to other apps). Postgres has a first-class **MCP server**, so the Atlas
-becomes MCP-queryable natively (`resolve_work`, `find_editions` …).
+### The two-layer reality (factory stays self-hosted)
+
+The key correction from the Cloudflare doc: **Cloudflare is the global delivery/edge layer around
+Pāṭala — NOT the canonical scholarly database.** The expensive intellectual work stays behind it:
+
+```text
+PUBLIC INTERNET → Cloudflare DNS/CDN
+   → Workers API (api.patala.org: auth, cache, OpenAlex grammar, content-negotiation)
+       ├→ Cloudflare Cache  (immutable objects: max-age forever)
+       ├→ Hyperdrive        (accelerate Neon/Postgres)
+       └→ R2                (artifacts, streamed)
+           → Queues          (web↔factory event transport)
+               → Hermes      (scholarly orchestration)
+                   → Agent 2 (factory) + Agent 1 (proof)  ← SELF-HOSTED, unchanged
+```
+
+So: **canonical data = Postgres (Neon in prod). Public API = Cloudflare Workers. Bytes = R2.
+Factory = Hermes + Agent2 self-hosted.** Do NOT move the factory to Workers.
+
+**Practical (dev):** spin up a **dedicated `patala-atlas` Postgres** container (do NOT reuse
+temporal-postgresql or postiz-postgres — those belong to other apps). Postgres has a first-class **MCP
+server**, so the Atlas becomes MCP-queryable natively (`resolve_work`, `find_editions` …). In production,
+Neon + Hyperdrive + Workers.
 
 ### The Atlas schema contract
 Use typed **Pydantic** models as the single schema source of truth:
@@ -66,6 +90,23 @@ PostgreSQL  = ENTITY TRUTH   (works, editions, relationships, authority, rights)
 R2          = ARTIFACT TRUTH (the exact bytes, content-addressed by SHA-256)
 EVENT LOG   = HISTORY TRUTH  (what changed / who / why)
 ```
+
+### The Cloudflare split (from `atlas-cloudflare-edge-layer.md`)
+
+Postgres holds **queryable text too** (titles, metadata, passage text, translations, propositions,
+relationships, indexes) — don't make every 500-char Sanskrit retrieval fetch an R2 object. R2 holds the
+**large/full artifacts** (full source files, TEI, PDF, scans, generated bundles, snapshots, audio/video).
+Workers access R2 via a binding (no S3 HTTP round-trip).
+
+**Four retrieval tiers** (the API latency strategy):
+```text
+Tier A  hot immutable object   → Cloudflare edge cache (no Worker/DB)
+Tier B  common dynamic lookup  → Worker → Hyperdrive → Postgres
+Tier C  big artifact           → Worker auth → R2 → streamed
+Tier D  semantic/context       → Worker → Postgres + Vectorize → compact bundle
+```
+Immutable versions (`/passages/PTPASS17/versions/6`) cache effectively forever
+(`max-age=31536000, immutable`); latest pointers get short caching.
 
 ### R2 bucket layout (four buckets, clear permissions)
 
@@ -127,6 +168,9 @@ A2-2   I2 R2 asset store         four buckets; put_asset/get_asset/verify_asset/
 A2-3   I4 read API v1            /works /editions /people /etexts /witnesses + /search;
                                  filter/search/select/sort/cursor (NOT group_by yet);
                                  Postgres FTS + pg_trgm (no Elasticsearch); OpenAPI spec.
+                                 In production: Cloudflare Worker + Hyperdrive + Cache + R2 binding.
+                                 Agent-native: /resolve /context /trace /evidence /compare + /bundle/{id}
+                                 (RAG packets as a first-class API product) + select= dehydration.
 
 [ VERTICAL — one complete object through the whole stack ]
 
