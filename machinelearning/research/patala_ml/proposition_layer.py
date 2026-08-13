@@ -38,6 +38,11 @@ _SCHEMA_DIR = os.path.join(_REPO_ROOT, "source-evidence", "schema")
 if _SCHEMA_DIR not in sys.path:
     sys.path.insert(0, _SCHEMA_DIR)
 from derived_scholarly_object import DerivedScholarlyObject, Authority  # noqa: E402
+try:  # the devpath7 typed contract (reconcile path) — optional, backward-compatible
+    from typed_scholarly_object import PropositionObject, PropositionContent, AuthorityVector
+    _HAS_TYPED = True
+except Exception:  # pragma: no cover
+    _HAS_TYPED = False
 
 # the honest commitment vocabulary (ARGUMENT-IR-VISION §5)
 COMMITMENTS = (
@@ -94,6 +99,34 @@ class Proposition:
             },
         )
         return dso
+
+    def to_typed(self) -> "PropositionObject | None":
+        """Reconcile to the devpath7 typed contract (Atlas PropositionContent).
+
+        Maps this Proposition onto the typed PropositionObject with the Atlas field shape
+        (formulation/subject/scope/modality/explicitness/speaker_ref/support_scope), with a vector
+        authority (§28). Returns None if the typed module is unavailable.
+        """
+        if not _HAS_TYPED:
+            return None
+        generation = "ENGINEERING_VALIDATED" if self.grounding else "MACHINE_PROPOSED"
+        return PropositionObject(
+            id=f"pt:proposition:{self.proposition_id}:v1",
+            object_id=self.proposition_id,
+            layer="PROPOSITION",
+            derived_from=self.source_refs,
+            source_refs=self.source_refs,
+            authority=AuthorityVector(generation=generation, evidence="MACHINE_PROPOSED"),
+            content=PropositionContent(
+                formulation=self.proposition_text,
+                explicitness={"EXPLICIT": "EXPLICIT", "RECONSTRUCTED": "RECONSTRUCTED",
+                              "IMPLICIT": "IMPLIED"}.get(self.explicitness, "EXPLICIT"),
+                speaker_ref=self.grounding.get("attributed_to") if self.grounding else None,
+                assumptions=[],
+                derived_from=self.derived_from,
+                scholarly_corroboration=self.scholarly_corroboration,
+            ),
+        )
 
     def emit(self) -> dict:
         dso = self.to_dso()

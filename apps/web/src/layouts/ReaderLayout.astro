@@ -1,0 +1,39 @@
+---
+// apps/web/src/layouts/ReaderLayout.astro
+// The reader shell. All reading content is server-rendered static HTML.
+interface Props {
+  title: string;
+  work?: string;
+}
+const { title, work } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · Pāṭala</title>
+    <meta name="description" content={`Pāṭala passage reader — ${work ?? title}`} />
+    <style is:global>
+      :root {
+        --font-reading: "Noto Serif", Georgia, serif;
+        --font-sanskrit: "Noto Serif Devanagari", "Noto Serif", serif;
+      }
+      body { font-family: var(--font-reading); line-height: 1.6; max-width: 42rem; margin: 0 auto; padding: 2rem 1rem; color: #1a1a1a; }
+      .sanskrit { font-family: var(--font-sanskrit); line-height: 1.75; font-size: 1.15rem; }
+      nav { margin-bottom: 2rem; }
+      nav a { color: #8b3528; text-decoration: none; margin-right: 1rem; }
+      .meta { color: #666; font-size: 0.9rem; margin-bottom: 1rem; }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Pāṭala</a>
+      {work && <a href={`/texts/${work}`}>{work}</a>}
+    </nav>
+    <main>
+      <h1>{title}</h1>
+      <slot />
+    </main>
+  </body>
+</html>
