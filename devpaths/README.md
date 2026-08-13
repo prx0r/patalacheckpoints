@@ -52,6 +52,20 @@ with the Atlas `PropositionContent` (tech-arch-v1 §27–31). The genuinely new 
 devpath10 → devpath11 → devpath12. All the unblocked routes in this order are now closed. devpath2/3
 (G2/ARGMAP on real Agent-2 output) remain the only blocked routes — the NAT harnesses are ready gates.
 
+**Branch note (peer-review verifiability):** the peer review (`docs/global/peer-review-goat.md`) could
+not independently verify the Agent-1 work because it inspects `origin/agent1-argument-layer-a1b`, which
+is a stale fork (146 commits behind `agent2`). The live Agent-1 epistemic + Atlas-NAT + synthesis work
+lives on **`origin/agent2`** (pushed). Reconcile the `a1b` fork onto the live line when Agent 0 does the
+branch merge — do not force-push between the diverged branches.
+
+**Peer-review actions (A1-Q1..Q6):**
+- A1-Q1 authority-inflation fix — DONE (resolver + ladders + test; `a96daee`)
+- A1-Q2 ATLAS-NAT-NATURAL-v1 (natural benchmark, false-promotion metric) — pending
+- A1-Q3 SYNTHESIS-NAT-NATURAL-v1 (real debates) — pending
+- A1-Q4 real G2 blind retest — blocked on Agent 2
+- A1-Q5 real ARGMAP whole-chain benchmark — blocked on Agent 2
+- A1-Q6 scholar challenge (one hard real object + a human scholar) — pending
+
 ---
 
 ## Status legend
