@@ -380,29 +380,19 @@ def t1_generator(layer: str, batch: list[dict]) -> list[dict]:
     for work_entries in by_work.values():
         sub: list[dict] = []
         sub_bytes = 0
-        work = work_entries[0]["object_id"].split(":")[0]
-        sessions = _load_sessions()
-        sid = sessions.get(work, "")   # "" = not open yet (first chunk seeds the persistent session)
 
         def flush() -> None:
-            nonlocal sub, sub_bytes, sid
+            nonlocal sub, sub_bytes
             if not sub:
                 return
             n_tokens = sum(len(e["tokens"]) for e in sub)
-            # write the batch to a file and tell hermes to READ it (small prompt -> no ARG_MAX, big batch)
+            work = sub[0]["object_id"].split(":")[0]
             bfile = _write_batch_file(work, sub)
             prompt = _build_file_prompt(bfile, len(sub), work)
             timeout = min(240 + int(n_tokens * 0.5), 900)
             try:
-                # persistent per-work session: first chunk creates it (retains the work's context),
-                # later chunks --resume so context does NOT reset between 50-verse batches.
                 raw = chat_agentic("You are the Pāṭala T1 translator (transliteral word-gloss).", prompt,
-                                   timeout=timeout, session=(sid or None), max_turns=10)
-                if not sid:
-                    sid = _discover_session_id()
-                    if sid:
-                        sessions[work] = sid
-                        _save_sessions(sessions)
+                                   timeout=timeout)
                 gloss_by_oid = _parse_batch(raw)
             except Exception as exc:
                 # fail-closed: only THIS call's verses, never the whole input
