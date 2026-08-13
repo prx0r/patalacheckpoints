@@ -33,7 +33,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
-ROOT = Path("/root/projects/patala")
+import os
+ROOT = Path(os.environ.get("PATALA_ROOT", "/root/projects/patala"))
 
 # ── authority ladder (shared vocabulary, per design doc) ─────────────────────────
 # Literal producer vocabulary (per peer review — authority inflation fix):

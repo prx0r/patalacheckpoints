@@ -49,7 +49,8 @@ def _parse_see_also(text: str) -> list[str]:
 def load_c1_nodes(c1dir: str | None = None) -> list[C1Node]:
     """Load the 63 C1 read/ files as nodes."""
     if c1dir is None:
-        c1dir = "/mnt/HC_Volume_106427611/sanskritree/translations/_stack/ipvv/c1/read"
+        c1dir = os.environ.get("PATALA_C1_DIR",
+                               "/mnt/HC_Volume_106427611/sanskritree/translations/_stack/ipvv/c1/read")
     nodes = []
     for f in sorted(glob.glob(os.path.join(c1dir, "c1_*.md"))):
         text = open(f, encoding="utf-8").read()

@@ -31,11 +31,11 @@ import json
 import os
 import re
 
-IPVV = "/mnt/HC_Volume_106427611/sanskritree/translations/_stack/ipvv"
+IPVV = os.environ.get("PATALA_IPVV_DIR", "/mnt/HC_Volume_106427611/sanskritree/translations/_stack/ipvv")
 L0_DIR = os.path.join(IPVV, "l0")
 C1_DIR = os.path.join(IPVV, "c1", "read")
 PILOT_DIR = os.path.join(IPVV, "pilot")
-PROOF_DIR = "/tmp/l0proof"
+PROOF_DIR = os.environ.get("PATALA_PROOF_DIR", "/tmp/l0proof")
 
 # typed edge relations + resolution levels (the GroundingLink vocabulary)
 RELATIONS = {"TEXTUALLY_GROUNDED_BY", "INTERPRETIVELY_DERIVED_FROM", "RENDERED_BY",
