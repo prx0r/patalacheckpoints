@@ -24,11 +24,69 @@ import hashlib
 import json
 import os
 import re
+import tempfile
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path("/root/projects/patala")
 REG_DIR = ROOT / "data/corpus/registries"
+
+# ── concurrency safety (the torn-write fix) ───────────────────────────────────
+# A canonical registry must NEVER depend on "hope nobody else appends during this write."
+# Every write path uses:
+#   1. a single-writer advisory lock (fcntl on the per-registry .lock file), so two processes
+#      cannot interleave a read-modify-write on the same registry;
+#   2. write-to-temp + fsync + atomic os.replace() for REWRITES (_save), so a crash mid-write can
+#      never leave a torn/corrupt file;
+#   3. append_event writes a single line to the event log; it takes the lock + fsyncs too.
+import fcntl  # POSIX (Linux); the factory runs on Linux.
+
+
+class _FileLock:
+    """Advisory single-writer lock around a registry file (blocks concurrent writers)."""
+
+    def __init__(self, path: Path):
+        self.path = Path(str(path) + ".lock")
+        self.fd = None
+
+    def __enter__(self):
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        self.fd = os.open(str(self.path), os.O_CREAT | os.O_RDWR, 0o644)
+        # block until the lock is free (a writer holds it for the duration of its write)
+        fcntl.flock(self.fd, fcntl.LOCK_EX)
+        return self
+
+    def __exit__(self, *exc):
+        if self.fd is not None:
+            try:
+                fcntl.flock(self.fd, fcntl.LOCK_UN)
+            finally:
+                os.close(self.fd)
+                self.fd = None
+        return False
+
+
+def _atomic_write(path: Path, data: str) -> None:
+    """Write data to path ATOMICALLY: temp file in the same dir + fsync + os.replace.
+
+    os.replace() is atomic on POSIX: a concurrent reader sees either the old or the new complete
+    file, never a torn middle state. This permanently fixes the source-registry corruption.
+    """
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, tmp = tempfile.mkstemp(dir=str(path.parent), prefix=path.name + ".", suffix=".tmp")
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as fh:
+            fh.write(data)
+            fh.flush()
+            os.fsync(fh.fileno())          # flush to disk before the rename
+        os.replace(tmp, str(path))          # atomic rename (POSIX)
+    finally:
+        if os.path.exists(tmp):
+            try:
+                os.unlink(tmp)
+            except OSError:
+                pass
 
 # The canonical layers in derivational order (the DAG spine).
 LAYERS = ["SOURCE", "T1", "ARGMAP", "L0", "L1L2", "L1", "L2", "L200", "C1", "THEME", "ARGUMENT", "SYNTHESIS", "ESSAY", "EDUCATION"]
@@ -127,8 +185,12 @@ def append_event(event: dict) -> dict:
         "event": event,
     }
     p.parent.mkdir(parents=True, exist_ok=True)
-    with p.open("a", encoding="utf-8") as fh:
-        fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
+    # single-writer lock + atomic append: a torn concurrent append can corrupt the hash chain
+    with _FileLock(p):
+        with open(p, "a", encoding="utf-8") as fh:
+            fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
+            fh.flush()
+            os.fsync(fh.fileno())
     return rec
 
 
@@ -175,11 +237,16 @@ def _load(layer: str) -> dict:
 
 
 def _save(layer: str, reg: dict) -> None:
+    """Rewrite a registry ATOMICALLY under a single-writer lock (never a torn file)."""
     REG_DIR.mkdir(parents=True, exist_ok=True)
-    with open(_path(layer), "w", encoding="utf-8") as fh:
-        for oid, versions in reg["objects"].items():
-            for v in versions:
-                fh.write(json.dumps(v, ensure_ascii=False) + "\n")
+    path = _path(layer)
+    lines = []
+    for oid, versions in reg["objects"].items():
+        for v in versions:
+            lines.append(json.dumps(v, ensure_ascii=False) + "\n")
+    data = "".join(lines)
+    with _FileLock(path):
+        _atomic_write(path, data)
 
 
 def input_hash(obj) -> str:
