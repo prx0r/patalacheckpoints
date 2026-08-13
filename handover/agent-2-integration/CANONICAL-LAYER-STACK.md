@@ -21,6 +21,19 @@ SOURCE → T1 → L0 → [argument map] → L2 → L200 → C1 → THEME → ESS
 2. **L2 (readable whole-passage prose) is the OUTPUT, not the input.** It is derived AFTER the
    transliteral layer, **guided by the argument map** (`pilot_*_ARGUMENT_MAP.md`).
 
+> **⚠️ NAMING DISAMBIGUATION (critical, do not confuse):** there are TWO different things historically
+> called "T1".
+> - **CANONICAL T1 (this stack, the IPVV definition) = the transliteral word-gloss** — the
+>   `[and]-GLOSS (IAST)` word/phrase-faithful gloss (e.g. `[and]-thus (evam)`). This is the floor, and
+>   L0 is its structured encoding. **THIS is the T1 in this stack.**
+> - **LEGACY "T1" (the retired `translate-work` skill + `auto_translate_raw.py` state machine
+>   `T1→R1→T2→R2→T3→C1`) = a "best constructive reading" / close translation.** That is a *different,
+>   earlier pipeline*; its "close translation" is the readable-English stage, which in THIS canonical
+>   stack corresponds to **L2** (the readable layer), not the canonical T1.
+> When reading any file, treat **T1 = transliteral word-gloss** (canonical). The legacy
+> `translate-work`/`auto_translate_raw` "close translation" is the L2-style readable layer, not this
+> stack's T1.
+
 ---
 
 ## 1. THE LAYERS — file type, source dir, dependency (verified)

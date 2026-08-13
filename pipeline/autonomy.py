@@ -118,6 +118,14 @@ try:
 except Exception as e:  # pragma: no cover
     print("L0 worker not wired:", e, file=sys.stderr)
 
+# Wire the T1 layer handler (A2-CP1: the transliteral word-gloss producer). T1 is the first
+# interpretive layer — the canonical [and]-GLOSS (IAST) form. Deterministic production gate.
+try:
+    from t1_worker import make_t1_handlers
+    LAYER_HANDLERS["T1"] = make_t1_handlers()
+except Exception as e:  # pragma: no cover
+    print("T1 worker not wired:", e, file=sys.stderr)
+
 # Wire the L200 audit compiler (partly deterministic + Task-2 validator).
 try:
     from l200_worker import make_l200_handlers

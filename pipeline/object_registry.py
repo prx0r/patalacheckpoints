@@ -24,11 +24,12 @@ ROOT = Path("/root/projects/patala")
 REG_DIR = ROOT / "data/corpus/registries"
 
 # The canonical layers in derivational order (the DAG spine).
-LAYERS = ["SOURCE", "L0", "L1L2", "L1", "L2", "L200", "C1", "THEME", "ARGUMENT", "SYNTHESIS", "ESSAY", "EDUCATION"]
+LAYERS = ["SOURCE", "T1", "L0", "L1L2", "L1", "L2", "L200", "C1", "THEME", "ARGUMENT", "SYNTHESIS", "ESSAY", "EDUCATION"]
 
 # Layer prerequisites (all must be committed before this layer is eligible).
 PREREQS: dict[str, list[str]] = {
-    "L0": [],
+    "T1": ["SOURCE"],
+    "L0": ["T1"],
     "L1L2": ["L0"],
     "L1": ["L0"],
     "L2": ["L1"],

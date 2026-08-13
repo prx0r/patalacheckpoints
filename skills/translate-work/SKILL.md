@@ -10,6 +10,13 @@ metadata:
     checkpoint: CP1 (the audited work stack, the source floor)
 ---
 
+> **⚠️ NAMING NOTE (2026-08-13):** this skill's stage name "T1" is the **LEGACY** meaning — a "best
+> constructive reading" (close English translation). In the **canonical layer stack**
+> (`handover/agent-2-integration/CANONICAL-LAYER-STACK.md`) the canonical **T1 = the transliteral
+> word-gloss** (`[and]-GLOSS (IAST)`), and this skill's "close translation" maps to the canonical **L2**
+> (readable) layer. This skill is the retired/earlier pipeline; the canonical stack is authoritative.
+> Do not use this skill's "T1" as the canonical T1.
+
 # Translate a Work (the audited stack)
 
 ## The core unit
