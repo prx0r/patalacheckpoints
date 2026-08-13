@@ -1,0 +1,25 @@
+{
+  "finding_id": "EF-ESSAY-2026-0001",
+  "schema_version": "EvaluationFinding-v1",
+  "object_ref": "ESSAY-IPVV-REFLEXION-CORE-001",
+  "evaluated_version": "ESSAY-IPVV-REFLEXION-CORE-001-v1",
+  "layer": "ESSAY",
+  "contract": "WHOLE-ESSAY-AUDIT-v1",
+  "evaluation_run_ref": "VERTICAL-1-WHOLE-ESSAY-AUDIT",
+  "dimension": "SOURCE_TRACEABILITY",
+  "result": "FAIL",
+  "failure_class": "UNSOURCED_LOAD_BEARING_SENTENCE",
+  "observed": "Load-bearing sentences S012 (the scope/boundary claim 'The step, even where it succeeds, is per-act: it does not establish...') and S013 (the Buddhist rival representation 'A Buddhist opponent can be reconstructed as holding that the determination establishes an external object...') carry NO claim_refs and NO source_refs in the SentenceEvidenceAudit.",
+  "expected_constraint": "Every LOAD_BEARING essay sentence must resolve to claim_refs (-> synthesis/argument/proposition) and source_refs (-> source span), so that load-bearing prose is traceable backward.",
+  "evidence_refs": [
+    "benchmarks/v0/review/VERTICAL-1-ESSAY-AUDIT.json",
+    "benchmarks/v0/review/ESSAY-IPVV-REFLEXION-CORE-001.audit.json"
+  ],
+  "recommended_action": "REGENERATE_AFTER_ESSAY_COMPILER_FIX",
+  "status": "OPEN",
+  "producer": {
+    "agent": "agent1",
+    "commit": "experiments/vertical1_essay_audit.py"
+  },
+  "note": "The scope/boundary claim (S012) and the rival representation (S013) are exactly the load-bearing sentences that MUST be traceable (A1-CONTINUE-v2 P8: unsupported claim rate, rival fidelity, scope inflation). The C.1 per-sentence audit passed (claim_supported=True) because it checks declared relations; the whole-essay audit adds that boundary + rival claims carry real refs. Fix belongs to the essay compiler (essay_compiler), not to the frozen essay."
+}
