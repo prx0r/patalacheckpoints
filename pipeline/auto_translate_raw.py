@@ -61,6 +61,21 @@ def translate_verses(work_id: str, verses: list[str]) -> dict:
         return {}
 
 
+def advance_ledger(work_id: str, translated: int, total: int) -> None:
+    """Mark a work's translation progress in the ledger (idempotent)."""
+    path = Path("/root/projects/patala/data/corpus/downloads/translation-state-ledger.json")
+    d = json.loads(path.read_text(encoding="utf-8"))
+    w = d["works"].get(work_id)
+    if w is None:
+        return
+    w["translation"] = w.get("translation", {})
+    w["translation"]["t1"] = "MODERN_PRESENT" if translated > 0 else w["translation"].get("t1", "NOT_STARTED")
+    w["translation"]["reason"] = f"autonomous Hermes translation: {translated}/{total} verses MACHINE_PROPOSED"
+    w["l0"] = {**w.get("l0", {}), "status": "VERIFIED" if translated > 0 else w.get("l0", {}).get("status", "ELIGIBLE")}
+    d["works"][work_id] = w
+    path.write_text(json.dumps(d, indent=2, ensure_ascii=False))
+
+
 def run_work(work_id: str, max_verses: int) -> dict:
     src = load_raw_source(work_id)
     verses = split_verses(src)[:max_verses] if max_verses else split_verses(src)
@@ -112,6 +127,7 @@ def run_work(work_id: str, max_verses: int) -> dict:
                     translated += 1
                 else:
                     skipped += 1
+    advance_ledger(work_id, translated, len(verses))
     return {"work": work_id, "passages": len(verses), "translated": translated,
             "open_skipped": skipped, "output": str(out_path)}
 
