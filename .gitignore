@@ -25,3 +25,12 @@ logs/
 apps/web/dist/
 apps/web/.astro/
 apps/web/src/env.d.ts
+
+# copyrighted scholar PDFs — must NOT be in the public repo (in-copyright academic works)
+data/corpus/sources/sivaqueue2/*.pdf
+data/corpus/sources/**/*.pdf
+
+# derived corpus registries (high-value derived data — keep out of public history)
+data/corpus/registries/*.jsonl
+data/corpus/downloads/*.json
+data/corpus/downloads/*.jsonl
