@@ -1,0 +1,15 @@
+{
+  "object_kind": "WHOLE_ESSAY_AUDIT",
+  "essay": "ESSAY-IPVV-REFLEXION-CORE-001",
+  "metrics": {
+    "THESIS_WARRANTED": true,
+    "ARGUMENT_BALANCE": true,
+    "CRUX_FIDELITY": true,
+    "CONCLUSION_STRENGTH": true,
+    "SOURCE_TRACEABILITY": false,
+    "sentence_claim_supported": true
+  },
+  "findings": [],
+  "verdict": "FAIL",
+  "review_status": "NOT_HUMAN_REVIEWED"
+}
