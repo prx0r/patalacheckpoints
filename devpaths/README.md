@@ -81,10 +81,13 @@ devpath13 ──► A1-CONTINUE-v2: QUALIFY THE SYSTEM, DO NOT EXPAND THE ONTOLO
                                                               STATUS: 🔄 IN PROGRESS (2026-08-13)
               full spec → `endgamebuild/devpath13-a1-continue-v2.md` (verbatim directive)
 
-  P0 ATLAS-NAT-NATURAL-v1  STATUS: ✅ CLOSED (2026-08-13) — 51 frozen natural cases, non-circular
-              evidence-derived evaluator; SYSTEM_FALSE_AUTHORITY_PROMOTION_RATE=0.216, detection
-              recall/precision=1.000, false-rejection=0.000; regression tests for the
-              MULTI_SOURCE_MATCHED inflation bug. Record: benchmarks/v0/runs/atlas-nat-natural-*.json
+  P0 ATLAS-NAT-NATURAL-v1  STATUS: ✅ QUALIFIED (2026-08-13) — 51 frozen natural cases, non-circular
+              evidence-derived evaluator; SYSTEM_FALSE_AUTHORITY_PROMOTION_RATE=0.216 (FIXTURE rate),
+              detection recall/precision=1.000, false-rejection=0.000.
+              PRODUCER-SIDE audit (repair loop): real resolver on the corpus emits 0.000 false
+              promotions (offline 0/69, online 0/10) — the 0.216 is the hypothetical-bad-producer
+              catch-rate, NOT the real producer rate. Real producer <0.05 target: ACCEPTED.
+              Record: benchmarks/v0/runs/atlas-producer-*.json + atlas-nat-natural-*.json
 
   P1 cross-lane Atlas audit  STATUS: ✅ CLOSED (2026-08-13) — audited Agent 2 resolver; found 3
               semantic-inflation findings (publication not rights-aware [SEVERE], factory keyed on

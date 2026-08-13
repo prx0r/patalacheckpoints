@@ -36,8 +36,8 @@ New here? Do not read the whole surface top-down. Follow the arc:
    walks the source tree further back (Vedic Rudra → Proto-Indo-Iranian → PIE → Indus).
 6. **`docs/vision/functionality/hermes-execution.md`** — the bridge from strategy to *execution*: which
    vision files the Hermes kernel operationalizes.
-7. **The lenses** — `docs/vision/functionality/README.md`, `docs/vision/scholars/README.md`,
-   `docs/vision/economics/README.md` — the same vision at Layer 4 (tools / people / value), to taste.
+  7. **The lenses** — `docs/vision/functionality/README.md`, `docs/vision/scholars/README.md`,
+     `docs/vision/economics/README.md` — the same vision at Layer 4 (tools / people / value), to taste.
 8. **The education lens** — `docs/vision/education/PATALA-EDUCATION-SYNTHESIS.md` (the current, most-complete
    statement, imported from R2) + `docs/vision/education/LEARNING_STRATEGY.md` (content strategy) +
    `docs/vision/education/EDUCATION_VISION.md` (graph-native teaching engine) + `docs/vision/education/sources/`
@@ -61,8 +61,17 @@ New here? Do not read the whole surface top-down. Follow the arc:
     `docs/vision/atlas/agent-optimization.md` (the agent product surface: discoverability, 7 MCP tools, token budgets, evals) +
     `docs/vision/functionality/research/2026-08-12/06_ATLAS/RESEARCH_AND_BUILD.md`
     (the endgame-build project). This is the current forward build — the foundation (B) before the vertical (C).
- 8. **Foundational deep-dives** — `docs/NORTHSTAR.md` (deepest strategy), `docs/foundationalideas.md`
-    (the passage-identity idea), `docs/positioningpartners.md` (positioning).
+  8. **Foundational deep-dives** — `docs/NORTHSTAR.md` (deepest strategy), `docs/foundationalideas.md`
+     (the passage-identity idea), `docs/positioningpartners.md` (positioning).
+
+> **Program guide (un-numbered, canonical):** `docs/vision/essayguide.md` — the essay/education/
+> review/external-tools research-program guide (`ESSAY-RESEARCH-v1`). Essay is not a text generator:
+> thesis selection, EssayArgumentGraph, literature positioning, contribution detection, rhetorical
+> compression, whole-document evaluation. Includes the education layers (skill ontology, misconception
+> graph, proof-of-understanding, transfer, progressive zoom), the PĀṬALA REVIEW platform, the five
+> external-tool classes, and the four program benchmarks (ESSAY-BENCH / EDU-BENCH / REVIEW-BENCH /
+> RESEARCH-TOOLS-BENCH). This is the roadmap for making Essay a first-class research science over the
+> same canonical graph.
 
 > Why step 4 before step 5? Vision 12/13 are the *current* product frame; Vision 11 is the *next*
 > corpus. Read the current frame first, then the expansion you will actually build toward.
@@ -89,6 +98,7 @@ New here? Do not read the whole surface top-down. Follow the arc:
 | **13** | `docs/vision/vision-13-product-portfolio-by-user-base.md` | **The Product Portfolio by User Base** — the cohesive product catalog aligning every vision doc to a surface: scholar (translation audit/rating, adversarial review, comparison, term audit, the PĀṬALA-IPVV benchmark, research compiler, workbench, bounties/credit) · consumer (Tantra Hub, atlas, learning, media) · contributor (manuscript, critical editions) · developer (API/MCP/protocol) · reviewer (queue, adjudication, credit). *(new)* |
 | **14** | `docs/vision/vision-14-manuscript-to-scholarly-asset.md` | **Manuscript → Machine-Readable Scholarly Asset** — "Muktabodha, but derived": every text becomes a Pāṭala-derived version (translated, tagged with school/period/lemmas, provenance-bearing, API-exposed). The granular quality ladder, manuscript auto-ingest (upload → label → route → process → expose), the read API, and reuse-first links to Muktabodha/GRETIL/IFP/EFEO. Mostly wraps the built factory — next steps are the read API + bibliography gap + ingest routing. *(new)* |
 | **15** | `docs/vision/vision-15-patala-atlas-sanskrit-research-graph.md` | **The Pāṭala Atlas — "OpenAlex for Sanskrit"** — promote the bibliography to the authoritative research graph the factory is downstream of. Models **textual transmission** (Work→Edition→Witness→Surrogate→Transcription→E-text→Source, kept distinct), reconciled lazily across NCC/NMM/NGMCP/GRETIL/SARIT/Muktabodha + library catalogs + IIIF. Layering: Atlas (identity/provenance) → Factory (transformation) → Epistemic Core (trust). Mostly formalizes the built bibliography+quality+catalog+registries; next steps are the identity distinction, reconciliation adapters, and the read API. *(new)* |
+| **PG** | `docs/vision/essayguide.md` | **The Essay Research Program (`ESSAY-RESEARCH-v1`)** — program guide, not a text generator. Essay = thesis selection, EssayArgumentGraph, literature positioning, contribution detection, rhetorical compression, whole-document evaluation. Education = skill ontology, misconception graph, proof-of-understanding, interactive manipulation, adaptive sequencing, transfer, progressive zoom. Plus the PĀṬALA REVIEW platform, the five external-tool classes, and the four program benchmarks (ESSAY-BENCH / EDU-BENCH / REVIEW-BENCH / RESEARCH-TOOLS-BENCH). |
 
 ---
 

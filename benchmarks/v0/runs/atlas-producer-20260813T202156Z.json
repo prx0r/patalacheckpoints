@@ -1,0 +1,14 @@
+{
+  "run_id": "ATLAS-PRODUCER-20260813T202156Z",
+  "bench": "PĀṬALA-ATLAS-PRODUCER-AUDIT",
+  "bench_version": "v0.1",
+  "net": false,
+  "n_works": 69,
+  "SYSTEM_FALSE_AUTHORITY_PROMOTION_RATE": 0.0,
+  "n_false_promotions": 0,
+  "acceptance_target": "<0.05",
+  "accepted": true,
+  "method": "run real resolver.resolve_work on the on-disk corpus; check every emitted relation against the honest-ceiling rules (never MULTI_SOURCE_MATCHED/EDITION_VERIFIED/MULTI_WITNESS/REDISTRIBUTABLE without evidence to license it); gates must not open on RIGHTS=UNKNOWN/DISCOVERABLE.",
+  "note": "This is the PRODUCER-side rate (what the resolver actually emits). It is distinct from the 0.216 FIXTURE rate in the 51-case natural benchmark, which measures how often a HYPOTHETICAL bad producer is caught (evaluator recall/precision=1.000).",
+  "review_status": "NOT_HUMAN_REVIEWED"
+}

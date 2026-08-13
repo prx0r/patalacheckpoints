@@ -37,6 +37,8 @@ stale ones as `[ARCHIVED]` so a new agent is never confused. If it's not here, i
 | **Global state checkpoint (2026-08-13, ELAD handover — timestamped, stale by design)** | `docs/global/GLOBAL-STATE-2026-08-13.md` | repo `docs/global/` |
 | **Pāṭala Global Architecture v0.1 (THE definitive architecture — the one answer to "what are we building?")** | `docs/global/PATALA-GLOBAL-ARCHITECTURE.md` | repo `docs/global/` |
 | **Global architectural files home (both agents read at orientation)** | `docs/global/README.md` | repo `docs/global/` |
+| **Global partnerships / integration-layer strategy ("OpenAlex for Sanskrit" — identity/crosswalk, 11 adapters, versioned assertions)** | `docs/global/globalpartnerships.md` | repo `docs/global/` |
+| **Global access/rights/ecosystem model ("open-reference, controlled-corpus" — 4 access layers, asymmetric openness, AI-extraction protection, public dossiers, social contract, crawler policy)** | `docs/global/globalaccess.md` | repo `docs/global/` |
 | **Pāṭala Review vertical (synthesis → EO → essay → SentenceEvidenceAudit — Agent 1, frozen)** | `machinelearning/_ACTIVE/CURRENT-STATE-ARGUMENT-LAYER.md` + `handover/agent-1-ml/NEXT-STEPS.md` (rev 6) | repo `machinelearning/` |
 | **P-019 v2 deterministic structural clustering (k-core) + Louvain stability ablation** | `benchmarks/v0/structural/{kcore-ipvv-c1-v0,louvain-stability-ipvv-c1-v0}.json` | repo `benchmarks/v0/structural/` |
 | **Agent 1 closeout checkpoint (red-team review of the vertical — 2026-08-13)** | `handover/agent-1-ml/AGENT1-CHECKPOINT-2026-08-13.md` | repo `handover/` |
@@ -73,6 +75,7 @@ stale ones as `[ARCHIVED]` so a new agent is never confused. If it's not here, i
 | **Vision 11 — Śiva Before Abhinava (genealogy corpus)** | `docs/vision/expansion/vision-11-siva-before-abhinava.md` | repo `docs/vision/expansion/` |
 | **Vision 12 — Multi-Surface Platform** | `docs/vision/vision-12-multi-surface-platform.md` | repo `docs/vision/` |
 | **Vision 13 — Product Portfolio (by user base)** | `docs/vision/vision-13-product-portfolio-by-user-base.md` | repo `docs/vision/` |
+| **Essay Research Program (ESSAY-RESEARCH-v1)** | `docs/vision/essayguide.md` | repo `docs/vision/` |
 | **Dual-agent track** | `machinelearning/DUAL_AGENT_TRACK.md` | repo `machinelearning/` |
 | **Context engineering** | `machinelearning/CONTEXT_ENGINEERING.md` | repo `machinelearning/` |
 | **Education layer (vision)** | `docs/vision/education/` | repo `docs/vision/` |
