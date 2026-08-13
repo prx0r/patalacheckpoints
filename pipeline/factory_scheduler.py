@@ -20,6 +20,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import time
 from pathlib import Path
 
 sys.path.insert(0, "/root/projects/patala/pipeline")
@@ -29,6 +30,8 @@ import factory_batch as FB
 import factory_status as FS
 
 LAYER_ORDER = ["T1", "ARGMAP", "L0", "L2", "L200", "C1"]
+# model-bound layers (need rate limiting); L0 is deterministic (no model)
+MODEL_LAYERS = {"T1", "ARGMAP", "L2", "L200", "C1"}
 
 
 def _registered_works() -> list[str]:
@@ -93,15 +96,20 @@ def _verse_from_runner(work_id: str, source_sha: str) -> str:
     return ""
 
 
-def scheduler_pass(work_ids: list[str], layers: list[str], per_layer: int) -> dict:
-    """One bounded pass over the works: advance each work's frontier by one layer."""
-    advanced, done, errors = 0, 0, []
+def scheduler_pass(work_ids: list[str], layers: list[str], per_layer: int,
+                   max_model_calls: int = 20, throttle_s: float = 0.0) -> dict:
+    """One bounded pass over the works: advance each work's frontier by one layer.
+
+    A2-10 (resource/rate limiting): model-bound layers are paced — a global budget of model calls per
+    pass (max_model_calls) + an optional throttle between model-bound batches (throttle_s) so the
+    factory doesn't starve the shared model API (the live runner) or hit rate limits. L0 (deterministic)
+    is never throttled."""
+    advanced, done, errors, model_calls = 0, 0, [], 0
     for wid in work_ids:
+        if model_calls >= max_model_calls:
+            break  # budget exhausted this pass — a later pass continues
         frontier = _frontier(wid)
-        if frontier is None:
-            done += 1  # fully advanced
-            continue
-        if frontier not in layers:
+        if frontier is None or frontier not in layers:
             done += 1
             continue
         inputs = _upstream_inputs(wid, frontier, per_layer)
@@ -115,9 +123,14 @@ def scheduler_pass(work_ids: list[str], layers: list[str], per_layer: int) -> di
             print(f"  {wid}: advanced {frontier} "
                   f"({len(r['committed'])} committed, {len(r['rejected'])} rejected, "
                   f"{n_retry} retryable)", flush=True)
+            if frontier in MODEL_LAYERS:
+                model_calls += len(inputs)
+                if throttle_s:
+                    time.sleep(throttle_s)
         except Exception as e:
             errors.append({"work": wid, "layer": frontier, "error": str(e)[:120]})
-    return {"works_scanned": len(work_ids), "advanced": advanced, "fully_done": done, "errors": errors}
+    return {"works_scanned": len(work_ids), "advanced": advanced, "fully_done": done,
+            "model_calls": model_calls, "errors": errors}
 
 
 def main() -> int:
@@ -126,16 +139,22 @@ def main() -> int:
     ap.add_argument("--per-layer", type=int, default=3, help="passages per layer per work per pass")
     ap.add_argument("--layers", default=",".join(LAYER_ORDER))
     ap.add_argument("--works", default=None, help="comma-separated work ids (else all)")
+    ap.add_argument("--max-model-calls", type=int, default=20,
+                    help="A2-10: global model-call budget per pass (rate limiting)")
+    ap.add_argument("--throttle", type=float, default=0.0,
+                    help="A2-10: seconds to sleep between model-bound batches")
     a = ap.parse_args()
     layers = [l.strip() for l in a.layers.split(",") if l.strip()]
 
     works = [w.strip() for w in a.works.split(",") if w.strip()] if a.works else _registered_works()
     if a.max_works:
         works = works[:a.max_works]
-    print(f"scheduler pass: works={len(works)} layers={layers} per-layer={a.per_layer}", flush=True)
-    r = scheduler_pass(works, layers, a.per_layer)
-    print(f"pass done: advanced={r['advanced']} fully_done={r['fully_done']} errors={len(r['errors'])}",
-          flush=True)
+    print(f"scheduler pass: works={len(works)} layers={layers} per-layer={a.per_layer} "
+          f"max-model-calls={a.max_model_calls} throttle={a.throttle}", flush=True)
+    r = scheduler_pass(works, layers, a.per_layer,
+                       max_model_calls=a.max_model_calls, throttle_s=a.throttle)
+    print(f"pass done: advanced={r['advanced']} fully_done={r['fully_done']} "
+          f"model_calls={r['model_calls']} errors={len(r['errors'])}", flush=True)
     for e in r["errors"]:
         print("  ERROR:", e, flush=True)
     return 0
