@@ -42,6 +42,9 @@ shared:
     why: "the project's own audit ledger (P-001..P-012) - check before you claim anything works"
 
 # ── B. THE PROJECT — VISION, HIGHEST LEVEL FIRST ───────────────────────────────
+  - id: hermes_calling
+    path: docs/global/HERMES-CALLING.md
+    why: "HOW TO CALL HERMES - the correct way (agentic 'hermes chat' with file tools + skills, NEVER blind 'hermes -z'). Read before any code that invokes Hermes. The -z path is why translation returned empty/non-JSON."
   - id: vision
     path: VISION_AND_NAVIGATION.md
     why: "the canonical north star: the ONE vision + the logical progression + the navigation (highest level)"

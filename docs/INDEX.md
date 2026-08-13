@@ -40,6 +40,7 @@ stale ones as `[ARCHIVED]` so a new agent is never confused. If it's not here, i
 | **Global architectural files home (both agents read at orientation)** | `docs/global/README.md` | repo `docs/global/` |
 | **Global partnerships / integration-layer strategy ("OpenAlex for Sanskrit" — identity/crosswalk, 11 adapters, versioned assertions)** | `docs/global/globalpartnerships.md` | repo `docs/global/` |
 | **Global access/rights/ecosystem model ("open-reference, controlled-corpus" — 4 access layers, asymmetric openness, AI-extraction protection, public dossiers, social contract, crawler policy)** | `docs/global/globalaccess.md` | repo `docs/global/` |
+| **How to call Hermes (agentic `hermes chat`, NOT blind `-z` — the correct invocation + why `-z` breaks)** | `docs/global/HERMES-CALLING.md` | repo `docs/global/` |
 | **Pāṭala Review vertical (synthesis → EO → essay → SentenceEvidenceAudit — Agent 1, frozen)** | `machinelearning/_ACTIVE/CURRENT-STATE-ARGUMENT-LAYER.md` + `handover/agent-1-ml/NEXT-STEPS.md` (rev 6) | repo `machinelearning/` |
 | **P-019 v2 deterministic structural clustering (k-core) + Louvain stability ablation** | `benchmarks/v0/structural/{kcore-ipvv-c1-v0,louvain-stability-ipvv-c1-v0}.json` | repo `benchmarks/v0/structural/` |
 | **Agent 1 closeout checkpoint (red-team review of the vertical — 2026-08-13)** | `handover/agent-1-ml/AGENT1-CHECKPOINT-2026-08-13.md` | repo `handover/` |
