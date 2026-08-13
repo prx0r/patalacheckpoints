@@ -25,19 +25,32 @@ devpath6 ──► G4: Human authority path + first UI               STATUS: ✅
 devpath7  ──► CANONICAL GRAPH CONTRACT (typed DSO + vector authority + reconcile my
               proposition layer -> Atlas PropositionContent)  STATUS: ✅ CLOSED (2026-08-13)
 devpath8  ──► SYNTHESIS CORE (ResearchQuestion / DebateFrame / Position / ArgumentSynthesis)
-                                                             STATUS: ⏳ READY (after devpath7)
-devpath9  ──► SYNTHESIS NAT (mutation suite)                  STATUS: ⏳ READY (after devpath8)
+                                                              STATUS: ✅ CLOSED (2026-08-13)
+devpath9  ──► SYNTHESIS NAT (mutation suite)                  STATUS: ✅ CLOSED (2026-08-13)
 devpath10 ──► ESSAY COMPILER (Synthesis -> EssayPlan -> EssayClaim)
-                                                             STATUS: ⏳ READY (after devpath9)
+                                                              STATUS: ✅ CLOSED (2026-08-13)
 devpath11 ──► EDUCATION COMPILER (Synthesis -> LearningClaim -> ...)
-                                                             STATUS: ⏳ READY (after devpath10)
+                                                              STATUS: ✅ CLOSED (2026-08-13)
 devpath12 ──► UNIVERSAL BUNDLE (materialize_context(target, profile); ReviewBundle=REVIEW)
-                                                             STATUS: ⏳ READY (after devpath11)
+                                                              STATUS: ✅ CLOSED (2026-08-13)
+```
+
+## The sequence (PHASE 3 — scholar external-tools layer: S0 / Atlas NAT)
+
+```
+S0-COMMIT  ──► source-evidence substrate canonicalized          STATUS: ✅ CLOSED (2026-08-13)
+ATLAS-NAT-v0 ─► source-reconciliation eval harness + multiaxis authority
+                                                              STATUS: ✅ CLOSED (2026-08-13)
+S0.1-PILOT ──► ugly-real-source chain through the adapters      STATUS: ✅ CLOSED (2026-08-13)
 ```
 
 **Key insight:** devpath7 is not "small" — it is the reconciliation of my devpath4 proposition layer
 with the Atlas `PropositionContent` (tech-arch-v1 §27–31). The genuinely new object is `ArgumentSynthesis`
 (devpath8), which exists nowhere yet.
+
+**A1-NEXT order (from the directive):** S0-COMMIT → ATLAS-NAT-v0 → S0.1-PILOT → devpath8 → devpath9 →
+devpath10 → devpath11 → devpath12. All the unblocked routes in this order are now closed. devpath2/3
+(G2/ARGMAP on real Agent-2 output) remain the only blocked routes — the NAT harnesses are ready gates.
 
 ---
 
@@ -72,4 +85,7 @@ with the Atlas `PropositionContent` (tech-arch-v1 §27–31). The genuinely new 
 - `devpaths/devpath4.md` — ✅ complete
 - `devpaths/devpath5.md` — ✅ complete
 - `devpaths/devpath6.md` — ✅ complete
+- `devpaths/devpath7.md` — ✅ complete
+- `devpaths/devpath8.md` — ✅ complete
+- `devpaths/s0-substrate.md` — ✅ complete (S0 + Atlas NAT + pilot)
 - `devpaths/agent1atlas-reaction.md` — my reaction notes on the Atlas convergence directive
