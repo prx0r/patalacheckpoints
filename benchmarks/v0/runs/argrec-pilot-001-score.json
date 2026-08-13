@@ -1,0 +1,67 @@
+{
+  "metrics": {
+    "case_id": "ipvv:V2L",
+    "proposition_precision": 0.0,
+    "proposition_recall": 0.0,
+    "speaker_accuracy": 0.0,
+    "commitment_accuracy": 1.0,
+    "inference_recall": 0.0,
+    "warrant_invention_rate": 0.0,
+    "unsupported_bridge_rate": 0.0,
+    "qualification_retention": 1.0,
+    "crux_recall": 0.0,
+    "open_question_preservation": 0.0
+  },
+  "catastrophic": [
+    "SPEAKER_COLLAPSE"
+  ],
+  "candidate": {
+    "pilot_id": "IPVV-ARGREC-PILOT-001",
+    "window": [
+      "k1",
+      "k2",
+      "k3",
+      "k4",
+      "k5"
+    ],
+    "argument_map": {
+      "what_is_at_issue": "Is the ahaṃ-pratyavamarśa ('I'-recollection) — luminous in nature (prakāśātmā) yet word-bodied (vāgvapus) — a conceptual construction (vikalpa), which would drag saṃsāric māyā-construction into the Lord, or is it the two-invoking determination (dvayākṣepī viniścaya) named in kārikā 1? The vimarśa must decide whether linguistic articulation (abhilāpayojanā) entails vikalpatva.",
+      "argument_steps": [
+        "OBJECTION (āśaṅkā, opening the vimarśa, before k.1): reflexive awareness was said to be 'the nature of manifestation, the vimarśa' (uktaṃ prāk, citing 1.5.11); joined with designation (abhilāpayojanā) it necessarily acquires construction-ness (vikalpatvam āpādayati), and vikalpatva is a saṃsārikamāyāpada — 'how would that be in the Lord (bhagavati)?'",
+        "REPLY (k.1 + vṛtti): 'nāsau vikalpaḥ sahyukto dvayākṣepī viniścayaḥ' — the 'I'-awareness of the body-and-rest-contraction-free, svātantrya-resting manifestation is not a vikalpa. Vikalpa is defined as yojanā of the mutually different (like jaggery/curd/pepper), kalpanā of the one under variety, or vicchedana of the suspected other-form entered into the pramātṛbuddhikośa (vṛtti on k.1); and 'here and everywhere there must necessarily be the that/not-that two-form (tadatadrūpadvayena) — otherwise what would be joined, what divided, what suspected?' A duality is the condition of every vikalpa/niścaya, and the pure 'I'-awareness is sah-yukta: joined with the manifestation itself, invoking no two.",
+        "CRUX (vṛtti on k.1): the word-body is not the organ-born audible word but śabdana itself ('vacanaṃ hi śabdanaṃ, na vāgindriyajanyaḥ śabda'): the reflexive awareness alone is the word-self on the knower's higher ground, the vāgindriya the instrument on the subtle ground, the audible word the object-form in the coarse state (establishment deferred to āgamādhikāra). Hence designation does not make self-awareness a construction; the vāgvapus clause of k.1 is only a pīṭhabandha for the later sūtras, the aśuddha 'I'-awareness — where vikalpatā does hold — is expressly deferred ('aśuddhasya tu vicāraḥ kariṣyate'), and what 'ātmani iti' excludes is the body-identified vimarśa (the vedyībhūta), not a substance separate from prakāśa."
+      ],
+      "open_items": [
+        {
+          "text": "The vikalpatā of the aśuddhāhaṃvimarśa and of anusandhāna is announced in the plan but explicitly deferred ('aśuddhasya tu vicāraḥ kariṣyate'); kārikās 2–3 lie outside this window, so the non-vikalpa verdict of k.1 must not be extended to the impure case.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The identification of the reflexive awareness with the subtle word-self (śabdātmā) on the knower's higher ground is stated but its establishment is deferred ('nirūpayiṣyate vitatya āgamādhikāre'); the paravāk objection ('yadi paravāk... na yuktam') is answered only by declaring k.1 a pīṭhabandha.",
+          "status": "OPEN"
+        },
+        {
+          "text": "The T1 chunk ends mid-sentence at 'abhilāpinī pratītiḥ' (the designating cognition); the vṛtti's treatment of designation and its relation to vikalpa is truncated and needs continuation from the source (M00021).",
+          "status": "OPEN"
+        },
+        {
+          "text": "Parsing of 'sahyukto dvayākṣepī viniścayaḥ' (k.1): the vṛtti glosses 'sahi' via negation of vikalpa ('pratiyoginiṣedhapūrvatvādeva niścayaśabdavācyatā') — whether dvayākṣepī names the duality-invoking character of vikalpa or its absence in the pure awareness needs confirmation against the Sanskrit.",
+          "status": "NEEDS_REVIEW"
+        },
+        {
+          "text": "The vṛtti's compound 'navadanāvalokisvātantryaviśrāntimayaḥ' (essence of prakāśa) carries an uncertain T1 gloss ('not-other-saying-looking-freedom-rest-made'); the reading affects the description of what the 'I'-awareness is awareness of.",
+          "status": "NEEDS_REVIEW"
+        }
+      ],
+      "decision_for_l2": "L2 should carry kārikā 1 as establishing that the ahaṃ-pratyavamarśa of the pure manifestation is a non-vikalpa determination (no dvaya invoked; niścaya-appellation via counterpart-negation), with the aśuddha 'I'-awareness case (k.2–3) and the śabdātmā identification (āgamādhikāra) flagged as deferred, not settled here."
+    },
+    "inputs": {
+      "T1": "chunkV2-L...apohana.md",
+      "L0": "chunkV2-L...l0.jsonl",
+      "C1": "c1_V2L-nonconstructed-I.md"
+    },
+    "model": "deepseek-v4-flash",
+    "no_gold_leakage": true,
+    "status": "MACHINE_PROPOSED"
+  }
+}
