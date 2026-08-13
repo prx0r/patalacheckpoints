@@ -65,17 +65,17 @@ Production reference: `handover/agent-2-integration/CURRENT-STATE.md`. Roadmap: 
 
 ## LOOSE THREADS / NOTES
 - **Era B (corpus compiler) in progress:**
-  - ✅ **A2-11 durable failure/retry queue** (`factory_batch` + `test_failure_queue`): a model failure is
-    recorded as retryable, neighbors are isolated, retries are idempotent + clear the queue (no infinite
-    retry). This is what prevents a fresh-work run from wedging on one hung model call.
-  - ✅ **A2-12 corpus progress dashboard** (`factory_status.py` + `test_factory_status`): the per-work
-    operational view (SOURCE/T1/ARGMAP/L0/L2/L200/C1 done-of + stale/retryable/source_blocked), read-only
-    from the registry — the "operational truth."
-  - ▶ Next: **A2-8/A2-9 backlog scheduler + multi-work execution**, A2-10 rate limiting, A2-13 unattended
-    bulk translation.
+  - ✅ **A2-11 durable failure/retry queue** (`factory_batch` + `test_failure_queue`)
+  - ✅ **A2-12 corpus progress dashboard** (`factory_status.py` + `test_factory_status`)
+  - ✅ **A2-8/A2-9 backlog scheduler + multi-work execution** (`factory_scheduler.py` +
+    `test_factory_scheduler`) — advances all registered works through SOURCE→C1 automatically, one
+    layer per work per pass. **Verified live: spandakarika T1 advanced 2/2 unattended via the scheduler.**
+  - ▶ Next: **A2-10 resource/rate limiting**, A2-13 unattended bulk translation, then Era C (rebuild engine).
 - Semantic correctness = Agent 1's evals lane (AlignScore/NLI), NOT Agent 2's.
 - Live runner (auto_translate_raw.py, pid 362890) still translating — untouched.
 
 ## THIS SESSION'S COMMITS (Era B)
 - `d84ea03` A2-11 durable failure/retry queue + isolation
 - `8aee600` A2-12 corpus progress dashboard
+- `6eea830` A2-8/A2-9 backlog scheduler + multi-work execution
+- `4f8c3b5` scheduler SOURCE-verse recovery (live spandakarika T1 2/2)
