@@ -225,23 +225,45 @@ def scheduler_pass(works: list[str], layers: list[str], per_layer: int = 2,
             batch.append(_job_input(k))
             consumed.add(k["object_id"])
             est_input += _est_tokens(k)
-        # produce+commit the batch in INDEPENDENT chunks (one API call per chunk, isolated failure)
+        # produce+commit the batch in INDEPENDENT chunks (one API call per chunk, isolated failure).
+        # PARALLEL MODEL CALLS: the agentic hermes call is the slow part and only reliably handles a
+        # few verses per call, so scale by running the generator (model call) for each chunk in
+        # PARALLEL (ThreadPoolExecutor), then commit all proposals SERIALLY in the main thread. This
+        # avoids both the single-call hang (small batches) and the registry write race (serial commits).
+        # FACTORY_PARALLEL = max concurrent hermes calls.
+        parallel = int(os.environ.get("FACTORY_PARALLEL", "4"))
+        tasks = []   # (layer, chunk)
         for start in range(0, len(batch), chunk_size):
             if model_calls >= max_model_calls:
                 break
             chunk = batch[start:start + chunk_size]
-            try:
-                r = FB._produce_layer(j["layer"], chunk, batch_size=len(chunk))
-                committed += r["committed"]
-                rejected += r["rejected"]
-                retryable += r.get("retryable", [])
-                if j["layer"] in MODEL_LAYERS:
-                    model_calls += 1   # one API call for this chunk
-                    if throttle_s:
-                        time.sleep(throttle_s)
-            except Exception as e:
-                rejected.append({"object_id": chunk[0]["object_id"], "layer": j["layer"],
-                                 "error": str(e)[:100]})
+            tasks.append((j["layer"], chunk))
+            if j["layer"] in MODEL_LAYERS:
+                model_calls += 1   # one API call reserved for this chunk
+        if not tasks:
+            continue
+        from concurrent.futures import ThreadPoolExecutor
+        gen_results = {}
+        with ThreadPoolExecutor(max_workers=max(1, parallel)) as ex:
+            fut_map = {ex.submit(FB._run_generator, layer, chunk): (layer, chunk)
+                       for layer, chunk in tasks}
+            for fut, (layer, chunk) in fut_map.items():
+                try:
+                    gen_results[(layer, id(chunk))] = fut.result()
+                except Exception as e:
+                    rejected.append({"object_id": chunk[0]["object_id"], "layer": layer,
+                                     "error": str(e)[:100]})
+        # commit serially (safe: no concurrent registry writes)
+        for layer, chunk in tasks:
+            proposals = gen_results.get((layer, id(chunk)))
+            if proposals is None:
+                continue
+            r = FB._commit_proposals(layer, chunk, proposals)
+            committed += r["committed"]
+            rejected += r["rejected"]
+            retryable += r["retryable"]
+            if throttle_s:
+                time.sleep(throttle_s)
 
     return {"eligible": len(jobs), "committed": len(committed),
             "deterministic": len(deterministic),

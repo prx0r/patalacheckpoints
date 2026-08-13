@@ -167,6 +167,48 @@ def _produce_layer(layer: str, inputs: list[dict], batch_size: int = 4) -> dict:
     return {"layer": layer, "committed": committed, "rejected": rejected, "retryable": retryable}
 
 
+def _run_generator(layer: str, batch: list[dict]) -> list[dict]:
+    """Run a layer's generator (the MODEL call) over a chunk — the slow, parallelizable step.
+
+    Split out of _produce_layer so the scheduler can run generators CONCURRENTLY (ThreadPoolExecutor)
+    and then commit serially (avoiding concurrent registry writes). Returns raw proposals."""
+    handler = A.LAYER_HANDLERS.get(layer)
+    if not handler:
+        return []
+    return handler["generator"](layer, batch)
+
+
+def _commit_proposals(layer: str, batch: list[dict], proposals: list[dict]) -> dict:
+    """Commit a chunk's proposals serially (validation -> immutable commit -> audit + failure queue)."""
+    committed, rejected, retryable = [], [], []
+    if not proposals:
+        # generator produced nothing cleanly -> the chunk is retryable (fail-closed)
+        for b in batch:
+            retryable.append({"object_id": b["object_id"], "layer": layer,
+                              "reason": "generation_failed (retryable)"})
+    for p in proposals:
+        r = _commit_proposal(layer, p)
+        oid = p.get("object_id")
+        ih = p.get("input_hash", "")
+        if "version" in r:
+            committed.append(r)
+            _audit({"event": "commit", "layer": layer, "object_id": oid,
+                    "input_hash": ih, "version": r["version"]})
+        elif r.get("rejected", "").startswith((
+                "t1_status:GENERATION_FAILED", "proposal_status:GENERATION_FAILED",
+                "c1_status:GENERATION_FAILED", "argmap_status:GENERATION_FAILED")):
+            retryable.append({"object_id": oid, "layer": layer,
+                              "reason": "generation_failed (retryable)"})
+            _audit({"event": "retryable", "layer": layer, "object_id": oid,
+                    "input_hash": ih, "reason": r["rejected"][:60]})
+        else:
+            rejected.append(r)
+            _audit({"event": "rejected", "layer": layer, "object_id": oid,
+                    "input_hash": ih, "reason": (r.get("rejected") or "")[:60]})
+    _record_failures(layer, retryable)
+    return {"committed": committed, "rejected": rejected, "retryable": retryable}
+
+
 FAILURE_QUEUE = Path("/root/projects/patala/data/corpus/downloads/factory-failure-queue.jsonl")
 
 
