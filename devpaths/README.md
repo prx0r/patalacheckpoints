@@ -152,6 +152,26 @@ devpath13 ──► A1-CONTINUE-v2: QUALIFY THE SYSTEM, DO NOT EXPAND THE ONTOLO
               is honestly marked OPEN. Authority at every node is MACHINE_PROPOSED/ENGINEERING_VALIDATED
               — no H witness, NOT_HUMAN_REVIEWED.
               → experiments/vertical1_certificate.py → benchmarks/v0/review/PATALA-VERTICAL-1-CERTIFICATE.json
+
+  VERTICAL-1 essay repair loop  STATUS: ✅ CLOSED (2026-08-13) — resolved EF-ESSAY-2026-0001 via v2
+              supersession (build_reflexion_essay_v2.py): S012 boundary now traceable (SYN-CONC-001 +
+              source spans), S013 unsourced rival demoted to EXPLANATORY, S011 warrant gets source spans.
+              Whole-essay audit enforces GLOBAL_TRACEABILITY; v2 blind-retest all True. Essay is now 13/13.
+              → VERTICAL-1-ESSAY-AUDIT / ESSAY-IPVV-REFLEXION-CORE-001.v2.audit.json
+
+  Education IR  STATUS: ✅ CLOSED (2026-08-13) — built the native education layer (education_ir.py):
+              LearningClaim / LearningSkill / LearningInteraction / MasteryEvidence + compile_interactions
+              with graph-derived distractors encoding the NAT misconception taxonomy (wrong answer ->
+              known epistemic neighbor). Compiled the real VERTICAL-1 argument into learn-VERTICAL-1
+              (5 interactions). test_education_ir.py all pass.
+
+  Annotation bridge  STATUS: ✅ CLOSED (2026-08-13) — source-evidence/annotation_bridge.py: export Pāṭala
+              spans/labels to a W3C-Web-Annotation project (INCEpTION/Recogito-compatible), import scholar
+              annotations back as immutable pt:ReviewEvents + PENDING gold proposals. Cheap-human-gold loop.
+
+  Era C (A2-18/19)  STATUS: ✅ CLOSED (2026-08-13) — A2-18 DependencyImpactReport over real production
+              objects (factory_rebuild.impact_report, same schema as review_engine); A2-19 ReviewBundle
+              materializes on real objects (full source→…→dependency_impact chain).
 ```
 
 ---
