@@ -133,6 +133,13 @@ try:
 except Exception as e:  # pragma: no cover
     print("L1/L2 workers not wired:", e, file=sys.stderr)
 
+# Wire the model-driven L1/L2 translation engine (GENERATE_TRANSLATION — the AI worker).
+try:
+    from l1_l2_translate import make_l1l2_handlers
+    LAYER_HANDLERS["L1L2"] = make_l1l2_handlers()
+except Exception as e:  # pragma: no cover
+    print("L1L2 translation worker not wired:", e, file=sys.stderr)
+
 
 def tick(layers: list[str] | None = None, max_batch: int = 8,
          dry_run: bool = False, inputs: dict[str, list[dict]] | None = None) -> dict:
