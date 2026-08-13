@@ -35,6 +35,12 @@ external-ID crosswalks, API-first, simple REST grammar, search as a disposable p
 metadata-first ingestion, bulk snapshots, open downloadable dataset. Its scale architecture
 (Elasticsearch cluster, huge ETL, hundreds-of-millions assumptions) is explicitly **not** what we copy.
 
+> **Access caveat (see `docs/atlas-contracts/access-policy.md`):** "open data infrastructure" applies to the
+> **discovery/index layer** (metadata, identifiers, previews, documentation, snapshots of metadata). The
+> **high-value derived substrate** (full translations, argument graph, bundles, bulk corpus) is a
+> **controlled asset** served through tiered, authenticated access — not indiscriminately crawlable.
+> **Public discovery ≠ public corpus.**
+
 ---
 
 ## 2. The three-layer position
