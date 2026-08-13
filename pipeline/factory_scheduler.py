@@ -143,8 +143,16 @@ def main() -> int:
                     help="A2-10: global model-call budget per pass (rate limiting)")
     ap.add_argument("--throttle", type=float, default=0.0,
                     help="A2-10: seconds to sleep between model-bound batches")
+    ap.add_argument("--retry", action="store_true",
+                    help="retry durable retryable failures for all works first (A2-11)")
     a = ap.parse_args()
     layers = [l.strip() for l in a.layers.split(",") if l.strip()]
+
+    if a.retry:
+        for L in layers:
+            n = FB._retry_failures("", L)
+            if n:
+                print(f"retried {n} {L} failure(s) from the queue", flush=True)
 
     works = [w.strip() for w in a.works.split(",") if w.strip()] if a.works else _registered_works()
     if a.max_works:
