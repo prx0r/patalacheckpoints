@@ -76,7 +76,7 @@ def strip_verse_marker(verse: str) -> str:
     the semantic Sanskrit (else '1/1' digits become UNKNOWN). The locator is preserved
     separately (it is the passage locator).
     """
-    m = re.search(r"[।|]{1,2}\s*([0-9/\s]+|[a-z/0-9 ]+)?\s*[।|]*$", verse.strip())
+    m = re.search(r"[।|]{1,2}\s*([0-9/\s._-]+|[A-Za-z/0-9 ._-]+)?\s*[।|]*$", verse.strip())
     if m and m.start() > 0:
         return verse[:m.start()].rstrip()
     return verse
