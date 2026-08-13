@@ -44,18 +44,18 @@ LAYERS = ["SOURCE", "T1", "ARGMAP", "L0", "L2", "L200", "C1",
 def _load_atlas() -> dict:
     """Parse data/atlas/*.ts BibliographyRecord entries -> {id: record}."""
     records = {}
-    for fn in ("bibliographySeed.ts", "audited.ts"):
+    for fn in ("bibliographySeed.ts", "audited.ts", "sivaqueueSeed.ts", "sivaqueue34Seed.ts"):
         p = ROOT / "data/atlas" / fn
         if not p.exists():
             continue
         text = p.read_text(encoding="utf-8")
-        # split into per-record blocks (each starts with '{' at a line, has id:"..."
-        for m in re.finditer(r"\{\s*id:\s*\"([a-z0-9-]+)\"", text):
+        # handle both 'id: "..."' and '"id": "..."' record forms
+        for m in re.finditer(r"\{\s*\"?id\"?\s*:\s*\"([a-z0-9-]+)\"", text):
             oid = m.group(1)
-            block = text[m.start():m.start() + 1200]
-            title = re.search(r'work:\s*"([^"]+)"', block)
-            status = re.search(r'translationStatus:\s*"([^"]+)"', block)
-            verified = re.search(r'verified:\s*(true|false)', block)
+            block = text[m.start():m.start() + 1600]
+            title = re.search(r'work:\s*"([^"]+)"', block) or re.search(r'"work":\s*"([^"]+)"', block)
+            status = re.search(r'translationStatus:\s*"([^"]+)"', block) or re.search(r'"translationStatus":\s*"([^"]+)"', block)
+            verified = re.search(r'verified:\s*(true|false)', block) or re.search(r'"verified":\s*(true|false)', block)
             records[oid] = {
                 "id": oid,
                 "title": title.group(1) if title else oid,
