@@ -36,13 +36,15 @@ def detect_source_format(text: str) -> str:
     """Classify a source text as AND_GLOSS or RAW_SANSKRIT.
 
     AND_GLOSS  has '[and]-GLOSS (IAST)' markers (extractable by the current extractor).
-    RAW_SANSKRIT is raw IAST verses (needs the source-Sanskrit L0 mode, not yet built).
+    RAW_SANSKRIT is raw Sanskrit verses — in IAST or Devanagari script — needing the
+    source-Sanskrit L0 mode (the factory's translation workers pass it to the model directly).
     """
     if "[and]-" in text:
         return "AND_GLOSS"
-    # raw Sanskrit: IAST diacritics + verse markers, few English words
+    # raw Sanskrit: IAST diacritics OR Devanagari block, few English words
     iast = len(re.findall(r"[āīūṛṝḷḹṃñṅśṣṭḍḥṁ]", text))
-    if iast > 20:
+    deva = len(re.findall(r"[\u0900-\u097F]", text))
+    if iast > 20 or deva > 20:
         return "RAW_SANSKRIT"
     return "UNKNOWN"
 
@@ -214,6 +216,28 @@ def discover_works() -> list[WorkState]:
                 break
         if not works[w].source_available:
             works[w].source_format = "UNKNOWN"
+
+    # 3b. on-disk sivaqueue/acquisition sources (data/corpus/sources/<wid>/<wid>.txt)
+    # These are the canonical addressable raw-Sanskrit texts the factory consumes
+    # (see acquire_sivaqueue_targets.py). Fall back to them when the mount map doesn't cover
+    # the work, so every downloaded source enters the ledger / queue automatically.
+    corpus_src = Path("/root/projects/patala/data/corpus/sources")
+    if corpus_src.exists():
+        for wid in sorted(os.listdir(corpus_src)):
+            src_file = corpus_src / wid / f"{wid}.txt"
+            if not src_file.is_file():
+                continue
+            if wid not in works:
+                works[wid] = WorkState(work_id=wid)
+            # keep an already-resolved mount source_ref (canonical); otherwise use the corpus file
+            if not works[wid].source_available:
+                works[wid].source_available = True
+                works[wid].source_ref = str(src_file)
+                try:
+                    txt = src_file.read_text(encoding="utf-8", errors="ignore")[:8000]
+                    works[wid].source_format = detect_source_format(txt)
+                except Exception:
+                    works[wid].source_format = "UNKNOWN"
 
     # 4. bibliography linkage (data/atlas)
     atlas_ids = set()

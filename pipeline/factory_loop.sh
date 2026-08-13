@@ -43,6 +43,9 @@ while true; do
     break
   fi
   echo "$(date '+%F %T') factory-loop: PASS $pass start" >> /tmp/opencode/factory-loop.log
+  # intake bridge: register any newly-translated work as SOURCE objects (grows the queue)
+  cd /root/projects/patala
+  python3 -u pipeline/register_sources.py >> /tmp/opencode/factory-loop.log 2>&1
   # retry durable failures first, then advance the backlog (DAG scheduler)
   cd /root/projects/patala
   out=$(python3 -u pipeline/factory_scheduler.py --retry \

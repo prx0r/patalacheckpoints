@@ -98,9 +98,26 @@ def append_event(event: dict) -> dict:
     prev = "genesis"
     p = _event_log_path()
     if p.exists():
-        for line in p.read_text(encoding="utf-8").splitlines():
-            if line.strip():
-                prev = json.loads(line).get("event_hash", prev)
+        # read only the LAST event line for prev_hash (O(1) tail, not a full-file scan).
+        # The buffer may START mid-line (when size > 8192); a partial first line must not
+        # abort the whole parse — so skip unparseable lines and keep the last good hash.
+        try:
+            with p.open("rb") as fh:
+                fh.seek(0, 2)
+                size = fh.tell()
+                if size:
+                    fh.seek(max(0, size - 65536), 0)
+                    tail = fh.read().decode("utf-8", errors="ignore")
+                    for line in tail.splitlines():
+                        line = line.strip()
+                        if not line:
+                            continue
+                        try:
+                            prev = json.loads(line).get("event_hash", prev)
+                        except Exception:
+                            continue
+        except Exception:
+            pass
     canonical = json.dumps(event, sort_keys=True, ensure_ascii=False)
     event_hash = hashlib.sha256((prev + canonical).encode("utf-8")).hexdigest()
     rec = {
@@ -226,6 +243,51 @@ def commit(layer: str, object_id: str, input_hash_val: str, created_by: str,
     append_event({"type": "OBJECT_CREATED", "layer": layer, "object_id": object_id,
                   "input_hash": input_hash_val, "version": version, "created_by": created_by})
     return rec
+
+
+def commit_batch(layer: str, entries: list[dict], created_by: str,
+                 status: str = GENERATED) -> list[dict]:
+    """Register many objects in ONE load/save (efficient bulk intake).
+
+    entries: [{"object_id", "input_hash", "payload"}]. Skips object_ids that already have a
+    committed current version. Returns the committed records. This is the efficient path for
+    bulk source registration (avoids a full registry rewrite per verse)."""
+    reg = _load(layer)
+    committed = []
+    events = []
+    for e in entries:
+        oid = e["object_id"]
+        vs = reg["objects"].get(oid, [])
+        prev = None
+        for v in vs:
+            if not v.get("superseded"):
+                prev = v["version"]
+        vnum = len(vs) + 1
+        version = f"{layer.lower()}-{oid}-v{vnum}"
+        rec = {
+            "layer": layer.upper(),
+            "object_id": oid,
+            "version": version,
+            "input_hash": e["input_hash"],
+            "input_refs": e.get("input_refs") or [],
+            "status": status,
+            "created_by": created_by,
+            "created_at": datetime.now(timezone.utc).isoformat(),
+            "supersedes": prev,
+            "superseded": False,
+            "payload": e.get("payload") or {},
+            "review_events": [],
+        }
+        vs.append(rec)
+        reg["objects"][oid] = vs
+        committed.append(rec)
+        events.append({"type": "OBJECT_CREATED", "layer": layer, "object_id": oid,
+                       "input_hash": e["input_hash"], "version": version, "created_by": created_by})
+    if committed:
+        _save(layer, reg)
+        for ev in events:
+            append_event(ev)
+    return committed
 
 
 def set_status(layer: str, object_id: str, version: str, status: str, actor: str) -> dict:
