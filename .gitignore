@@ -18,3 +18,7 @@ logs/
 
 # Atlas dev virtualenv + local env
 .venv-atlas/
+
+# local secrets (R2/Cloudflare credentials — NEVER commit)
+.env.local
+.r2-env
