@@ -32,37 +32,40 @@ def source_objects(work_id: str, source_text: str) -> list[dict]:
 
 
 def l0_generator(layer: str, batch: list[dict]) -> list[dict]:
-    """Real L0 for a bounded batch of source passages: deterministic + batch gloss -> proposals."""
+    """Real L0-A for a bounded batch: the DETERMINISTIC FLOOR, no model required.
+
+    RAW-L0 v1 = the deterministic philological floor: source + IDs + spans + tokens +
+    lemma/morphology (Vidyut) + honest AMBIGUOUS where Vidyut has no lemma. The gloss (L0-B
+    probabilistic enrichment) is OPTIONAL and is OFF by default — it must never gate, delay,
+    invalidate, or roll back canonical L0. Set PATALA_GLOSS_ENRICH=1 to attach glosses as
+    best-effort (retryable, never blocking) after the floor is produced.
+    """
     entries = []
     for i, b in enumerate(batch):
         records, _ = raw_l0_to_canonical(b["object_id"], b["verse"])
         tokens = [r["raw_fragment"] for r in records if r["raw_fragment"]]
         entries.append({"idx": i, "verse": b["verse"], "tokens": tokens, "records": records,
                         "passage_id": b["object_id"]})
+
+    # Optional L0-B gloss enrichment — only when explicitly enabled; failures never block.
     gloss_lookup = {}
-    glossable = [e for e in entries if e["tokens"]]
-    if glossable:
-        # derive the real work_id from the passage object_id (e.g. "kramasadbhava:v1" -> "kramasadbhava")
-        # so the term-context packet (sivaqueue target lookup) uses the correct work, not the layer name.
-        probe = next((e["passage_id"] for e in glossable if e["passage_id"]), "")
-        work_id = probe.split(":")[0] if ":" in probe else layer
-        # bound each model call: chunk the gloss into sub-batches (default 8) so one
-        # giant batch does not overload/stall the model (the autonomous-run lesson)
-        CHUNK = int(os.environ.get("PATALA_GLOSS_CHUNK", "8"))
-        for start in range(0, len(glossable), CHUNK):
-            for g in run_batch(glossable[start:start + CHUNK], work_id):
-                gloss_lookup[g["idx"]] = g["gloss_map"]
+    if os.environ.get("PATALA_GLOSS_ENRICH") == "1":
+        glossable = [e for e in entries if e["tokens"]]
+        if glossable:
+            probe = next((e["passage_id"] for e in glossable if e["passage_id"]), "")
+            work_id = probe.split(":")[0] if ":" in probe else layer
+            CHUNK = int(os.environ.get("PATALA_GLOSS_CHUNK", "8"))
+            try:
+                for start in range(0, len(glossable), CHUNK):
+                    for g in run_batch(glossable[start:start + CHUNK], work_id):
+                        gloss_lookup[g["idx"]] = g["gloss_map"]
+            except Exception:
+                gloss_lookup = {}   # enrichment failure never blocks canonical L0
+
     proposals = []
     for i, e in enumerate(entries):
-        gloss_map = gloss_lookup.get(i) or {t: {"literal": "", "compound": "", "supplied": False}
-                                            for t in e["tokens"]}
+        gloss_map = gloss_lookup.get(i) or {}
         recs = raw_l0(e["passage_id"], e["passage_id"], e["verse"], gloss_map)["records"]
-        # working RAW-L0: the DETERMINISTIC floor (Vidyut lemma + P0 lossless) commits; a token the
-        # model could not gloss is an HONEST ABSTENTION (AMBIGUOUS), never a fabricated gloss and never
-        # a whole-verse failure. This is 'miss + OPEN tolerated' per the doctrine.
-        for r in recs:
-            if r.get("status") == "PARSED" and not r.get("literal_gloss"):
-                r["status"] = "AMBIGUOUS"
         proposals.append({"object_id": e["passage_id"], "input_hash": batch[i]["input_hash"],
                           "verse": e["verse"], "records": recs})
     return proposals

@@ -64,6 +64,48 @@
 >
 > ---
 >
+> # RAW-L0 v1 = THE DETERMINISTIC FLOOR (gloss is NOT part of the gate) — CORRECTION
+>
+> **RAW→L0 v1 means autonomous production of the deterministic philological floor.** NO LLM call is
+> required to reach COMMIT:
+>
+> ```text
+> RAW SANSKRIT
+> ↓ stable passage ID
+> ↓ lossless normalized/source-bound Sanskrit
+> ↓ tokenization
+> ↓ lemma/morphology where deterministically available (Vidyut)
+> ↓ AMBIGUOUS / OPEN where not available
+> ↓ validator
+> ↓ COMMIT
+> ```
+>
+> The gloss is **optional asynchronous enrichment** and must **never** gate, delay, invalidate, or roll
+> back canonical L0:
+>
+> ```text
+> L0 committed
+>    ↓ optional L0 enrichment
+>    ↓ literal gloss / sense proposals
+> ```
+>
+> Layers:
+> ```text
+> L0-A  DETERMINISTIC FLOOR   source + IDs + spans + tokens + morphology → autonomous, fast, canonical
+> L0-B  PROBABILISTIC ENRICH  gloss + lexical proposals → optional, retryable, replaceable
+> L0-C  REVIEWED/RESOLVED     adjudicated lexical reading where needed
+> ```
+> `PARSED` requires a deterministic lemma (Vidyut); an empty gloss is valid canonical L0. **Glossing is a
+> separate checkpoint, not a prerequisite to RAW-L0 autonomy.**
+>
+> **Hard CP2 test:** give the controller raw Kramasadbhāva, leave it unattended → all valid deterministic
+> L0 objects commit; 3 genuine lacuna/source failures remain SOURCE_BLOCKED; kill/restart halfway then
+> resume; run again → 0 duplicate canonical objects; mutate one source → correct stale/supersession
+> behavior. If that passes: **AUTONOMOUS RAW→L0 v1**. Do not work on gloss quality, L200, or anything else
+> until that proof passes and is committed.
+>
+> ---
+>
 > # CHECKPOINT DOCTRINE
 >
 > Every checkpoint has four states:

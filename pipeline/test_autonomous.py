@@ -73,7 +73,7 @@ def main() -> int:
                 reg["works"].pop(wid, None)
                 json.dump(reg, open(REGISTRY_PATH, "w"), indent=2, ensure_ascii=False)
 
-    # ---- F10: validator allows honest AMBIGUOUS abstention (empty gloss); PARSED needs gloss ----
+    # ---- F10: L0-A deterministic floor — gloss is NEVER a commit gate; PARSED needs a lemma ----
     from validate_l0_spec import validate
     def _rec(status, lemma, gloss):
         return {"id": "k:v1:L1:T1", "chunk_id": "k:v1", "line_id": 1, "line_kind": "prose",
@@ -82,8 +82,12 @@ def main() -> int:
                 "lemma_iast": lemma, "literal_gloss": gloss, "quoted": False, "status": status}
     amb = validate([_rec("AMBIGUOUS", "", "")], chunk_text="abc")
     ok &= t("F10 AMBIGUOUS empty gloss passes (honest abstention)", amb["PASS"])
-    parsed = validate([_rec("PARSED", "abc", "")], chunk_text="abc")
-    ok &= t("F10 PARSED empty gloss still FAILS (no fabricated certainty)", not parsed["PASS"])
+    # PARSED with a deterministic lemma commits even with NO gloss (L0-A floor; gloss is L0-B)
+    parsed_nogloss = validate([_rec("PARSED", "aSarIra", "")], chunk_text="abc")
+    ok &= t("F10 PARSED lemma, empty gloss PASSES (gloss is not a commit gate)", parsed_nogloss["PASS"])
+    # PARSED with NO lemma still FAILS (fabricated PARSED — the anti-theatre rule)
+    parsed_nolemma = validate([_rec("PARSED", "", "")], chunk_text="abc")
+    ok &= t("F10 PARSED empty lemma still FAILS (no fabricated lemma)", not parsed_nolemma["PASS"])
 
     # ---- F11: l0_worker derives the real work_id for the gloss term packet ----
     from agent3_batch import split_verses

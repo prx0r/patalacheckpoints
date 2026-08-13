@@ -84,28 +84,19 @@ def _check_schema(record: dict) -> list[str]:
 
 
 def _check_abstention(record: dict) -> list[str]:
-    """A record may claim PARSED only with BOTH lemma+gloss; AMBIGUOUS when it has no clean lemma.
+    """L0-A (the deterministic floor) honesty rule.
 
-    This is the anti-cheat rule: the model cannot mark a token PARSED with a fabricated
-    lemma/gloss. AMBIGUOUS = the deterministic floor (source span + tokenization) is real, but
-    either the lemma is absent OR the generative gloss abstained. An empty gloss on AMBIGUOUS is
-    an HONEST ABSTENTION ('miss + OPEN tolerated'), NOT a failure: the deterministic Layer A
-    commits, Layer B (gloss) is best-effort enrichment and its absence never erases Layer A.
-    The richer IPVV ground truth (2561/2561 glossed) is the aspiration, not a hard gate here.
+    `PARSED` requires a deterministic lemma (Vidyut); `AMBIGUOUS` means Vidyut produced no
+    clean lemma. The GLOSS is NOT part of the floor: it is optional L0-B enrichment and must
+    never gate, delay, invalidate, or roll back a canonical L0 object. The anti-theatre rule
+    here is that a PARSED record must have a real lemma (never a fabricated one) — not that it
+    must have a gloss.
     """
     errs = []
     status = record["status"]
     lemma = (record.get("lemma_iast") or "").strip()
-    gloss = (record.get("literal_gloss") or "").strip()
-    if status == "PARSED":
-        if not lemma:
-            errs.append("PARSED record has empty lemma_iast (fabricated PARSED)")
-        if not gloss:
-            errs.append("PARSED record has empty literal_gloss (gloss is the point of the layer)")
-    elif status == "AMBIGUOUS":
-        # AMBIGUOUS = no clean lemma OR the model abstained on the gloss. An empty gloss is a
-        # legitimate abstention — the deterministic floor still commits. Do NOT require a gloss.
-        pass
+    if status == "PARSED" and not lemma:
+        errs.append("PARSED record has empty lemma_iast (fabricated PARSED)")
     return errs
 
 
@@ -118,13 +109,10 @@ def validate(records: list[dict], chunk_text: str | None = None,
         schema_errs = _check_schema(rec)
         abstention_errs = _check_abstention(rec)
         gloss = (rec.get("literal_gloss") or "").strip()
-        # gloss presence: non-empty unless FAILED or a legitimate AMBIGUOUS abstention.
-        # PARSED always requires a gloss (checked in _check_abstention too). AMBIGUOUS with an
-        # empty gloss is an honest abstention ('miss + OPEN tolerated') — the deterministic
-        # floor commits, the gloss is best-effort. Never a fabricated gloss.
+        # GLOSS IS NEVER A COMMIT GATE. The gloss is optional L0-B enrichment (a versioned
+        # enrichment object), not part of the deterministic L0-A floor. A record may carry an
+        # empty gloss and still be valid canonical L0. No gloss-based failure here.
         gloss_errs = []
-        if rec.get("status") not in ("FAILED", "AMBIGUOUS") and not gloss:
-            gloss_errs.append("literal_gloss empty on a non-FAILED/non-AMBIGUOUS record")
 
         ok = (not schema_errs) and (not abstention_errs) and (not gloss_errs)
         if not schema_errs:
