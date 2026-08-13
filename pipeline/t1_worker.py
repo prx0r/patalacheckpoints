@@ -160,11 +160,40 @@ def _assemble_t1(verse: str, segments: list[dict], gloss_map: dict) -> list[dict
     return out
 
 
-# Max assembled-prompt size for one model call, in bytes. model.py passes the prompt as a
-# command-line argument to `hermes -z`, so a prompt near the OS ARG_MAX (~2MB on Linux) fails with
-# `[Errno 7] Argument list too long`. 800KB leaves generous headroom for argv/env overhead while
-# still packing many verses per call.
-T1_MAX_BYTES = int(os.environ.get("PATALA_T1_MAX_BYTES", "800000"))
+# Max batch FILE size per model call, in bytes. The prompt only references the file path (hermes reads
+# it with its file tool), so this is a FILE size, not an argv limit — no ARG_MAX. Big batches allowed.
+T1_MAX_BYTES = int(os.environ.get("PATALA_T1_MAX_BYTES", "3000000"))
+T1_BATCH_DIR = Path(os.environ.get("PATALA_T1_BATCH_DIR",
+                                    "/root/projects/patala/data/corpus/downloads/t1-batches"))
+
+
+def _write_batch_file(work: str, entries: list[dict]) -> Path:
+    """Write a batch's verses to a JSONL file for hermes to READ (prompt stays small -> no ARG_MAX)."""
+    T1_BATCH_DIR.mkdir(parents=True, exist_ok=True)
+    path = T1_BATCH_DIR / f"{work}-{int(__import__('time').time() * 1000)}.jsonl"
+    with path.open("w", encoding="utf-8") as fh:
+        for e in entries:
+            fh.write(json.dumps({"object_id": e["object_id"], "verse": e["verse"]},
+                                ensure_ascii=False) + "\n")
+    return path
+
+
+def _build_file_prompt(path: Path, n: int, work: str) -> str:
+    """A SMALL prompt: point hermes at the batch file (it reads it), give the T1 format + term senses."""
+    return (
+        f"You are Patala's T1 translator. There are {n} Sanskrit verses for work '{work}' in the file "
+        f"at {path} (JSONL, one record per line, fields 'object_id' and 'verse').\n"
+        "Use your FILE TOOL to READ that file, then for EVERY verse produce the canonical T1 "
+        "transliteral gloss in the form `[and]-GLOSS (IAST)` per token.\n"
+        "SPECIALIST TERM SENSES: krama=sequence/order; sakti=power (Krama: Goddess/mantric power; "
+        "Trika: freedom of consciousness); vimarsa=reflexive awareness; prakasa=luminous consciousness; "
+        "spanda=pulse of consciousness; tattva=principle; isvara/mahesvara=the Lord.\n"
+        "The GLOSS is the plain literal English phrase (no '[and]-' prefix, no parentheses, no IAST). "
+        "Empty gloss only if genuinely unanalyzable (never fabricate).\n"
+        "Output JSON ONLY:\n{\"verses\": [{\"object_id\": \"<echoed>\", \"tokens\": "
+        "{\"<surface>\": {\"gloss\": \"<literal>\", \"quoted\": false}, ...}}]}\n"
+        "covering EVERY verse and EVERY token. Echo each object_id exactly.\n"
+    )
 
 
 def _block_bytes(e: dict) -> int:
@@ -320,9 +349,11 @@ def t1_generator(layer: str, batch: list[dict]) -> list[dict]:
             if not sub:
                 return
             n_tokens = sum(len(e["tokens"]) for e in sub)
-            prompt = _build_batch_prompt(sub)
-            # A2-10b size-aware timeout: scale with total batch size so big batches get enough time.
-            timeout = min(180 + int(n_tokens * 0.5), 600)
+            work = sub[0]["object_id"].split(":")[0]
+            # write the batch to a file and tell hermes to READ it (small prompt -> no ARG_MAX, big batch)
+            bfile = _write_batch_file(work, sub)
+            prompt = _build_file_prompt(bfile, len(sub), work)
+            timeout = min(240 + int(n_tokens * 0.5), 900)
             try:
                 raw = chat_agentic("You are the Pāṭala T1 translator (transliteral word-gloss).", prompt,
                                    timeout=timeout)
