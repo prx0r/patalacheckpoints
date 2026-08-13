@@ -42,6 +42,12 @@ New here? Do not read the whole surface top-down. Follow the arc:
    statement, imported from R2) + `docs/vision/education/LEARNING_STRATEGY.md` (content strategy) +
    `docs/vision/education/EDUCATION_VISION.md` (graph-native teaching engine) + `docs/vision/education/sources/`
    (raw imported design dialogue).
+9. **The source-resolution lens** — `docs/vision/source-resolution/source-resolver-design.md` — the
+   **federated edition/manuscript resolver**: Work → Edition → Witness → Surrogate → Transcription → E-text
+   → SOURCE, with the authority ladder (DISCOVERED → … → SCHOLAR_CONFIRMED), the Sanskrit-specific authority
+   stack (NCC, NMM/Pandulipi Patala, NGMCP, SARIT, GRETIL, Muktabodha) + book catalogs + IIIF, and the
+   reconciliation pattern (no automatic authority promotion). This is the layer *below* the factory that the
+   verification work (pipeline/verify_editions.py) and manuscript vision (Vision 14) build on.
 8. **Foundational deep-dives** — `docs/NORTHSTAR.md` (deepest strategy), `docs/foundationalideas.md`
    (the passage-identity idea), `docs/positioningpartners.md` (positioning).
 

@@ -194,6 +194,14 @@ We already have ~90% of this built:
 - **Provenance + integrity** — versioned registry, hash-chained event ledger
 - **Self-healing queue** — factory loop + auto-intake
 
+**The layer below the factory** (the missing one this vision needs): the **source resolver** —
+see `docs/vision/source-resolution/source-resolver-design.md`. It distinguishes Work → Edition →
+Witness → Surrogate → Transcription → E-text → SOURCE with an **authority ladder** (DISCOVERED → …
+→ SCHOLAR_CONFIRMED), using the Sanskrit-specific authority stack (NCC, NMM/Pandulipi, NGMCP, SARIT,
+GRETIL, Muktabodha) + book catalogs + IIIF — and never auto-promotes from fuzzy matching. The v1 of
+this is `pipeline/verify_editions.py` (archive.org + GRETIL attestations, recorded honestly as
+statements about evidence).
+
 What's missing is the **thin read API layer** over all of it (`patala_*` verbs / an HTTP read API),
 plus the **manuscript-ingest + routing step** (OCR + detection + label, built on the OCR pipeline idea
 we documented). So this vision is a **wrapper + API**, not a rewrite.
