@@ -142,6 +142,14 @@ devpath13 ──► A1-CONTINUE-v2: QUALIFY THE SYSTEM, DO NOT EXPAND THE ONTOLO
               conclusion → essay claim → learning interactions) is marked stale. The correction
               propagates semantically, not merely 'rebuilds'.
               → experiments/vertical1_correction.py → benchmarks/v0/review/VERTICAL-1-CORRECTION.json
+
+  P16 PATALA-VERTICAL-1 certificate  STATUS: ✅ CLOSED (2026-08-13) — assembled the certificate for the
+              complete chain (Atlas identity → T1/L0 → ARGMAP NAT → propositions → argument → crux →
+              ArgumentSynthesis → essay → education → ReviewBundle → ContextBundle → correction
+              propagation). 12/13 nodes certified; the full-essay SOURCE_TRACEABILITY gap (S012/S013)
+              is honestly marked OPEN. Authority at every node is MACHINE_PROPOSED/ENGINEERING_VALIDATED
+              — no H witness, NOT_HUMAN_REVIEWED.
+              → experiments/vertical1_certificate.py → benchmarks/v0/review/PATALA-VERTICAL-1-CERTIFICATE.json
 ```
 
 ---
