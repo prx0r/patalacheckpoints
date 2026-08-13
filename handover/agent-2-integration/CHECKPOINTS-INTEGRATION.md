@@ -101,9 +101,11 @@ USES_AS_PREMISE / USES_AS_WARRANT / ORGANIZES) · `DerivedState` · `ImpactRepor
 > **NEW NORTHSTAR:** Agent 1 solved the *algorithms* of the higher layers (theme clustering, argument,
 > essay, semantic alignment). Agent 2 wraps each in the **autonomous controller flow** — deterministic,
 > provenance-bound, layer-specific-validated — until the whole canonical stack is a **single autonomous
-> pipeline**. **Work LAYER BY LAYER**, each layer against its canonical spec + source files
-> (`translations/_stack/ipvv/specs/*`, the L200 8-section spec, the C1-SPEC, the argument maps). Perfect
-> L0 → commit → L1/L2 → commit → L200 → commit → C1 → commit → THEME → ESSAY → EDUCATION.
+> pipeline**. **THE CANONICAL LAYER STACK IS LOCKED: see `CANONICAL-LAYER-STACK.md`** (verified against
+> the actual IPVV files). **Work LAYER BY LAYER**, each layer against its canonical spec + source files
+> (`translations/_stack/ipvv/specs/*`, the L200 8-section spec, the C1-SPEC, the argument maps). The order:
+> `SOURCE → T1 → L0 → [argument map] → L2 → L200 → C1 → THEME → ESSAY → EDUCATION`. T1 = transliteral
+> word-gloss; L0 = structured token records from T1; argument map = lateral guide; L2 = readable prose.
 
 ```
 CP1 floor ✅ (63/63)  →  corpus state ✅ (ledger)  →  review engine ✅ (Phase 3A+3D)

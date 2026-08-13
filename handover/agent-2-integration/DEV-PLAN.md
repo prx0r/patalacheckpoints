@@ -8,14 +8,21 @@ those first.*
 > **THE NEW NORTHSTAR (2026-08-13):** Agent 1 solved the *algorithms* of the higher layers (theme
 > clustering, argument, essay, semantic alignment). Agent 2's job is now to wrap each layer in the
 > **autonomous controller flow** — producing deterministic, provenance-bound, layer-specific-validated
-> objects through the registry — until the whole canonical stack is a **single autonomous pipeline**:
+> objects through the registry — until the whole canonical stack is a **single autonomous pipeline**.
+> **THE CANONICAL LAYER STACK IS LOCKED: see `handover/agent-2-integration/CANONICAL-LAYER-STACK.md`**
+> (verified against the actual IPVV files — do not reorder/rename without updating that file). The order:
 > ```
-> SOURCE → L0/L1 → L2 → L200 → C1 → THEME → ESSAY → EDUCATION
+> SOURCE → T1 → L0 → [argument map] → L2 → L200 → C1 → THEME → ESSAY → EDUCATION
 > ```
+> **What each layer actually IS (verified):** `T1` = the **transliteral word-gloss** markdown (01_t1);
+> `L0` = **structured token records extracted from T1** (`t1_extract.py → l0/*.l0.jsonl`, same content,
+> machine form); the **argument map** (`pilot_*_ARGUMENT_MAP.md`) is a **lateral guide** that unlocks the
+> readable layer; `L2` = the **readable whole-passage prose** (derived AFTER the transliteral layer, guided
+> by the argument map); `L200` = the audit of how L2 was derived; `C1` = commentary.
 > **Hard rule: work LAYER BY LAYER** — each layer according to its canonical spec + source files
-> (`translations/_stack/ipvv/specs/*`, the L200 8-section spec, the C1-SPEC, the argument maps
-> `pilot_*_ARGUMENT_MAP.md`). Perfect L0 → commit → L1/L2 → commit → L200 → commit → C1 → commit →
-> THEME → ESSAY → EDUCATION. Do NOT skip ahead; do NOT build a layer whose upstream is not committed.
+> (`translations/_stack/ipvv/specs/*`, the L200 8-section spec, the C1-SPEC, the argument maps).
+> Perfect T1 → commit → L0 → commit → L2 → commit → L200 → commit → C1 → commit → THEME → ESSAY →
+> EDUCATION. Do NOT skip ahead; do NOT build a layer whose upstream is not committed.
 > **CP1 = a machine-learning-verified L0 (or T1/L1/R1 reading)** — the foundation everything below builds on.
 
 > **The governing rule:** *Nothing is "real" because code exists. It becomes real only when independent gold
