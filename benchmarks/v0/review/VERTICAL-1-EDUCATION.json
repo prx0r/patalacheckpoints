@@ -1,0 +1,170 @@
+{
+  "object_kind": "EDUCATION_VALIDATION",
+  "synthesis": "SYN-IPVV-REFLEXION-CORE-001",
+  "interactions": [
+    {
+      "skill": "SPEAKER_CLASSIFY",
+      "prompt": "\"The determination (adhyavasāya) establishes an external object.\" Who is committed to this?",
+      "options": [
+        {
+          "text": "the Buddhist opponent",
+          "correct": true
+        },
+        {
+          "text": "Abhinavagupta himself",
+          "distractor": "OBJECTION_AS_AUTHOR_VIEW"
+        },
+        {
+          "text": "an unresolved hypothetical reconstruction",
+          "distractor": "SPEAKER_COLLAPSE"
+        }
+      ],
+      "feedback": "This is the rival position the Śaiva is rejecting, not Abhinavagupta's own claim."
+    },
+    {
+      "skill": "PROPOSITION_IDENTIFY",
+      "prompt": "Which of these is Abhinavagupta's conclusion in the reflexion-core?",
+      "options": [
+        {
+          "text": "The cognition never establishes a thing outside itself.",
+          "correct": true
+        },
+        {
+          "text": "The cognition reaches out to and establishes an external.",
+          "distractor": "ARGUMENT_DIRECTION_REVERSAL"
+        },
+        {
+          "text": "All consciousness is one single universal self.",
+          "distractor": "SCOPE_INFLATION"
+        }
+      ],
+      "feedback": "The conclusion is that nothing is established outside self-luminous awareness; the universal-Self claim is explicitly NOT established here."
+    },
+    {
+      "skill": "PREMISE_ATTACH",
+      "prompt": "The conclusion (the determination establishes nothing external) depends on which premise?",
+      "options": [
+        {
+          "text": "An inert part cannot establish anything.",
+          "correct": true
+        },
+        {
+          "text": "The trees on the far bank rush against the current.",
+          "distractor": "GROUNDING_AS_INFERENCE"
+        },
+        {
+          "text": "Fire burns wood though inert.",
+          "distractor": "OPPONENT_AS_PREMISE"
+        }
+      ],
+      "feedback": "'Inertness blocks establishing' is the load-bearing premise; the fire-burning-wood line is the Buddhist's objection to it, not a Śaiva premise."
+    },
+    {
+      "skill": "WARRANT_RECONSTRUCT",
+      "prompt": "What warrants the step from 'the determination is inert/error-form' to 'nothing external is established'?",
+      "options": [
+        {
+          "text": "Establishing power belongs to self-luminous awareness (prakāśa), not to a thing that reaches a thing.",
+          "correct": true
+        },
+        {
+          "text": "The passage simply asserts it, so no warrant is needed.",
+          "distractor": "OPEN_AS_RESOLVED"
+        },
+        {
+          "text": "All external things are illusions.",
+          "distractor": "SCOPE_INFLATION"
+        }
+      ],
+      "feedback": "The warrant is the self-luminosity of the establishing act — and the audit marks it as RECONSTRUCTED/UNRESOLVED, not a settled fact."
+    },
+    {
+      "skill": "OPPONENT_ATTACK",
+      "prompt": "The Buddhist's 'as fire burns wood though inert' objection targets which Śaiva premise?",
+      "options": [
+        {
+          "text": "An inert thing cannot establish.",
+          "correct": true
+        },
+        {
+          "text": "The determination is error-form.",
+          "distractor": "GROUNDING_AS_INFERENCE"
+        },
+        {
+          "text": "Reflexivity is intrinsic to manifestation.",
+          "distractor": "CRUX_OMISSION"
+        }
+      ],
+      "feedback": "The fire analogy attacks the claim that inertness blocks establishing — it is the counterevidence (O3)."
+    },
+    {
+      "skill": "CRUX_IDENTIFY",
+      "prompt": "What is the smallest dispute on which the recognition conclusion turns?",
+      "options": [
+        {
+          "text": "Whether 'establishing' requires the self-luminous awareness itself, or an inert representation can establish.",
+          "correct": true
+        },
+        {
+          "text": "Whether the text is by Abhinavagupta.",
+          "distractor": "CRUX_OMISSION"
+        },
+        {
+          "text": "Whether Kālī is the supreme goddess.",
+          "distractor": "CRUX_OMISSION"
+        }
+      ],
+      "feedback": "The crux is the self-luminosity of the establishing act (CRUX-IPVV-001) — it stays OPEN, it is not settled."
+    },
+    {
+      "skill": "SOURCE_GROUND",
+      "prompt": "The claim 'the external is only drawn-to by the impression, never established' is grounded in which?",
+      "options": [
+        {
+          "text": "the reflexion-core passage of the IPVV (chunkM)",
+          "correct": true
+        },
+        {
+          "text": "the Buddhist's commentary",
+          "distractor": "SPEAKER_COLLAPSE"
+        },
+        {
+          "text": "a modern textbook summary",
+          "distractor": "GROUNDING_AS_INFERENCE"
+        }
+      ],
+      "feedback": "The claim traces to the IPVV reflexion-core passage and the C1 interpretation — not to the rival or to a textbook."
+    },
+    {
+      "skill": "TRANSLATION_REPAIR",
+      "prompt": "Which reading is faithful? \"The appearance is taken as external ...\"",
+      "options": [
+        {
+          "text": "... only for the slow-minded, in the illusion and the diseased-eye case.",
+          "correct": true
+        },
+        {
+          "text": "... always and for everyone, since externality is universal.",
+          "distractor": "QUALIFIER_DROP"
+        },
+        {
+          "text": "... and therefore no distinction is ever drawn anywhere.",
+          "distractor": "SCOPE_INFLATION"
+        }
+      ],
+      "feedback": "The source qualifies the outward-drawing as only for the slow-minded; the universal reading drops that qualification (QUALIFIER_DROP)."
+    }
+  ],
+  "audit": {
+    "EPISTEMIC_VALIDITY": {
+      "no_manufactured_consensus": true,
+      "consensus_distractor_not_correct": true
+    },
+    "PEDAGOGICAL_VALIDITY": {
+      "one_intelligible_task": true,
+      "distractors_encode_misconceptions": true
+    }
+  },
+  "verdict": "PASS",
+  "review_status": "NOT_HUMAN_REVIEWED"
+}

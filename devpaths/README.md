@@ -125,6 +125,15 @@ devpath13 ──► A1-CONTINUE-v2: QUALIFY THE SYSTEM, DO NOT EXPAND THE ONTOLO
               LOAD_BEARING but carry NO source/claim refs → SOURCE_TRACEABILITY=False. This is exactly
               the whole-essay gap P8 targets (boundary + rival claims must be traceable).
               → experiments/vertical1_essay_audit.py → benchmarks/v0/review/VERTICAL-1-ESSAY-AUDIT.json
+
+  P9 education validation  STATUS: ✅ CLOSED (2026-08-13) — derived 8 LearningInteractions from the
+              SAME VERTICAL-1 synthesis covering the directive §11 skills (speaker classify, proposition
+              identify, premise attach, warrant reconstruct, opponent attack, crux identify, source
+              ground, translation repair). Audited: EPISTEMIC_VALIDITY (no manufactured consensus;
+              consensus-distractor never correct) and PEDAGOGICAL_VALIDITY (one task, declared skill,
+              distractors encode the NAT failure taxonomy — OBJECTION_AS_AUTHOR_VIEW, QUALIFIER_DROP,
+              SCOPE_INFLATION, etc.). All PASS.
+              → experiments/vertical1_education.py → benchmarks/v0/review/VERTICAL-1-EDUCATION.json
 ```
 
 ---
