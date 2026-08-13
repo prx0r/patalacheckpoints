@@ -59,34 +59,32 @@ those first.*
 
 ## 0. THE HONEST STATE (what's real vs. hollow — from CLAIMS.md)
 
-> **Where we are (2026-08-13, end of session):** the canonical **T1 worker is BUILT** (A2-CP1 done) and
-> the **vertical factory runs end-to-end on a real verse** — kramasadbhava:v1 completed
-> `T1 → L0 → L2 → L200 → C1` through the controller (`factory_batch.py`), all committed with matching
-> provenance. T1 objects (v1, v100) committed; Agent 1's PĀṬALA-EVALS plane already evaluated them
-> (T1-NAT gloss_accuracy 1.000). L0/L2/L200/C1/THEME/ESSAY/EDUCATION have controller handlers + layer-
-> specific validators. **The next unsatisfied layer contract is A2-CP3 (argument map)** — the one
-> canonical layer without a worker yet.
+> **Where we are (2026-08-13, end of session):** **Era A (Factory Completion) is DONE.** All six canonical
+> layers (T1/L0/ARGMAP/L2/L200/C1) are AUTONOMOUSLY_PRODUCIBLE and **verified against the REAL IPVV
+> exemplars** (the `test_*_ipvv.py` suite). **Era B (Corpus Compiler) is underway**: A2-11 (durable
+> failure/retry queue) and A2-12 (corpus progress dashboard) are DONE. **The next frontier is A2-8/A2-9
+> (backlog scheduler + multi-work execution)** — the controller that advances all works through the
+> corpus automatically.
 
 | Asset | Status | Real? |
 |---|---|---|
-| **Controller shells** (`autonomy.py`) | L0/L1/L2/L200/C1/THEME/ESSAY/EDUCATION have handlers + layer-specific validators; T1 wired; deterministic vertical proof L0→…→C1 PASS | ✅ REAL (build 2026-08-13) |
-| **T1 worker (transliteral word-gloss)** (`t1_worker.py`) | **BUILT** — canonical `[and]-GLOSS (IAST)`, production gate, fail-closed; 2 real objects committed (v1, v100); Agent 1 evaluated (gloss_accuracy 1.000) | ✅ REAL (A2-CP1 done) |
-| **Batch factory driver** (`factory_batch.py`) | SOURCE→T1→L0→L2→L200→C1 batch production; kramasadbhava:v1 full chain committed | ✅ REAL (A2-CP2, A2-CP4/5/6, A2-CP7 partial) |
-| **L0 worker** (`l0_worker.py` + `raw_l0.py`) | deterministic RAW-L0 (MODE_B) schema-conformant + P0-lossless; validator accepts real IPVV exemplars | ✅ REAL |
-| **L1/L2 workers** (`l1_l2_worker.py`, `l1_l2_translate.py`) | provenance continuity + semantic-fidelity validators; model path produces fluent prose | ✅ REAL |
-| **L200 worker** (`l200_worker.py`) | constrained compiler (candidate→classifier, IGNORE default); 8-section audit | ✅ REAL |
-| **C1 worker** (`c1_worker.py`) | passage-local commentary per C1-SPEC; C1-SPEC §17 validator | ✅ REAL |
-| **Argument-map worker** | **NOT BUILT** — the next unsatisfied layer contract (A2-CP3) | ❌ TO BUILD |
-| **THEME/ESSAY/EDUCATION workers** | wired (structural validators) | ✅ REAL (built earlier) |
-| **P0 source floor** (`verify_l0.py`) | **63/63 LOSSLESS**, frozen | ✅ REAL (P-001 SUPPORTED) |
-| **P2/P4 witnesses** | Vidyut×Heritage calibrated (P-011); L0↔L2 align (P-013) | ✅ REAL (frozen witnesses) |
-| **Review engine** (`review_engine.py`) | append-only ReviewEvent → reducer → ImpactReport | ✅ REAL (23/23 tests — the moat) |
+| **Controller shells** (`autonomy.py`) | all layers have handlers + layer-specific validators; T1 + ARGMAP wired | ✅ REAL |
+| **T1 worker** (`t1_worker.py`) | canonical `[and]-GLOSS (IAST)`, verified vs IPVV gold, Agent-1 evaluated (gloss_accuracy 1.000) | ✅ REAL (A2-CP1) |
+| **L0 worker** (`raw_l0.py`) | deterministic floor, verified vs IPVV l0 exemplar (P0 lossless + token coverage) | ✅ REAL (A2-CP2) |
+| **ARGMAP worker** (`argument_map_worker.py`) | lateral guide, verified vs pilot_V2O_ARGUMENT_MAP (6/8 gold claims) | ✅ REAL (A2-CP3) |
+| **L2 worker** (`l1_l2_translate.py`) | readable prose, verified vs pilot_V2O_L2_read | ✅ REAL (A2-CP4) |
+| **L200 worker** (`l200_worker.py`) | constrained compiler, verified vs l200/V2O audit (MT taxonomy) | ✅ REAL (A2-CP5) |
+| **C1 worker** (`c1_worker.py`) | commentary, verified vs c1/read/V2O | ✅ REAL (A2-CP6) |
+| **Batch factory** (`factory_batch.py`) | SOURCE→C1 batch; registers SOURCE; A2-11 failure/retry queue + isolation | ✅ REAL |
+| **Progress dashboard** (`factory_status.py`) | per-work operational view (SOURCE/T1/.../C1 + stale/retryable) | ✅ REAL (A2-12) |
+| **THEME/ESSAY/EDUCATION** | wired (structural) — NOT Era-A targets (wait for Agent 1 contracts) | ⚠️ deferred |
+| **P0/P2/P4 + review engine** | frozen proofs + the moat | ✅ REAL |
 
-**The single highest-value real build (now):** **A2-CP3 = the argument-map producer** (the one canonical
-layer without a worker). Its input = committed SOURCE + T1/L0; output = the passage's argument structure
-(`pilot_*_ARGUMENT_MAP.md` shape: what is at issue, the plan/kārikās, the argument steps, OPEN items),
-production-gated. It is a lateral guide that unlocks L2 — the readable layer. Agent 2 builds the producer
-+ deterministic validation; Agent 1 evaluates the argument-map's structural/semantic fidelity.
+**The single highest-value real build (now):** **A2-8/A2-9 = the backlog scheduler + multi-work
+execution** — the controller that advances the whole corpus (all registered works) through SOURCE→C1
+automatically, one layer at a time, using the failure/retry queue + dashboard. This is what turns the
+factory into the autonomous corpus compiler (Era B exit: continuously turn a backlog into SOURCE→C1
+objects).
 
 ---
 
@@ -98,19 +96,28 @@ behind) builds the evals. **Agent 2's gate per layer is PRODUCTION only** — ca
 integrity + safe unattended production → `MACHINE_PROPOSED`, move on. Do NOT gate on Agent-1's benchmark.
 
 ```
-A2-CP1  SOURCE → T1      the transliteral word-gloss producer  ✅ DONE (v1, v100 committed; Agent 1 evaluated)
-A2-CP2  T1 → L0          deterministic structured encode of T1  ✅ DONE (v1, v100 committed)
-A2-CP3  → argument map   the passage's argument structure      ▶ CURRENT FRONTIER (NOT BUILT)
-A2-CP4  → L2             readable translation                  ✅ DONE (v1 committed)
-A2-CP5  → L200           constrained audit (MT/IA split)       ✅ DONE (v1 committed)
-A2-CP6  → C1             passage-local commentary              ✅ DONE (v1 committed)
-A2-CP7  whole-work unattended run through C1   🔶 PARTIAL — v1 chain PROVEN; scale to the full work next
+A2-CP1  SOURCE → T1      ✅ DONE (v1, v100 committed; Agent 1 evaluated)
+A2-CP2  T1 → L0          ✅ DONE (verified vs IPVV l0 exemplar)
+A2-CP3  → argument map   ✅ DONE (verified vs pilot_V2O_ARGUMENT_MAP)
+A2-CP4  → L2             ✅ DONE (verified vs pilot_V2O_L2_read)
+A2-CP5  → L200           ✅ DONE (verified vs l200/V2O audit)
+A2-CP6  → C1             ✅ DONE (verified vs c1/read/V2O)
+A2-CP7  whole-work unattended run   🔶 Era A done; Era B scales to the whole corpus
 ```
 
-**Immediate next build: A2-CP3 = the argument-map producer** — the one canonical layer without a worker.
-Input = committed SOURCE + T1/L0; output = the passage's argument structure (what is at issue, the
-plan/kārikās, the argument steps, OPEN items — the `pilot_*_ARGUMENT_MAP.md` shape). Production-gated.
-Then A2-CP7: scale the batch driver to the whole work unattended.
+**Era A (Factory Completion) is DONE.** All six layers AUTONOMOUSLY_PRODUCIBLE + IPVV-verified.
+
+**Era B (Corpus Compiler) — current frontier:**
+```
+A2-8   backlog scheduler       ▶ NEXT — advance all works through SOURCE→C1 automatically
+A2-9   multi-work execution    ▶ NEXT
+A2-10  resource/rate limiting
+A2-11  durable failure/retry queues   ✅ DONE (factory_batch + test_failure_queue)
+A2-12  corpus progress dashboard      ✅ DONE (factory_status + test_factory_status)
+A2-13  unattended bulk translation
+```
+**Era C (Living rebuild engine)** — later: supersession propagation, dependency invalidation, targeted
+regeneration, ImpactReport integration, review-bundle generation.
 
 **Do NOT start THEME/ESSAY/EDUCATION yet** — they wait until the factory through C1 is proven. Each
 layer's worker + deterministic validator against its canonical spec + source files
