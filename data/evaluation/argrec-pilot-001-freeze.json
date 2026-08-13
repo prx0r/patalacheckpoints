@@ -1,0 +1,63 @@
+{
+  "pilot_id": "IPVV-ARGREC-PILOT-001",
+  "passage": "ipvv:V2L",
+  "known_hard_argument": "V2L apohana / ahaṃ-pratyavamarśa: the 'I'-recollection is NOT a construction (vikalpa); it is the two-throwing (dvayākṣepī) self-grasp",
+  "gold_ref": "pt:passage:ipvv:V2L (independent gold — must NOT be fed to the generator)",
+  "context_window": {
+    "argctx": "ipvv:V2L:argctx:001",
+    "members": [
+      "ipvv:V2L:k1",
+      "ipvv:V2L:k2",
+      "ipvv:V2L:k3",
+      "ipvv:V2L:k4",
+      "ipvv:V2L:k5"
+    ],
+    "members_contiguous": true,
+    "membership_from_registry": true
+  },
+  "source_hashes": {
+    "ipvv:V2L:k1": {
+      "input_hash": "991f5c4ed20e22be5f8a43981ef721effadd1dc8dbc1e306057d70bb602de208",
+      "status": "RAW_SANSKRIT"
+    },
+    "ipvv:V2L:k2": {
+      "input_hash": "3acc4518a2a8b9f25bea2b4c394c8ff3429268394ce02f13246f9cdf154628dc",
+      "status": "RAW_SANSKRIT"
+    },
+    "ipvv:V2L:k3": {
+      "input_hash": "f2ed503f61d57d1be761112f6cd92f14d3955c3bc7d4c4fb1a84afd1b0c2220a",
+      "status": "RAW_SANSKRIT"
+    },
+    "ipvv:V2L:k4": {
+      "input_hash": "2553a003bef20d5ef9ce0696a7603b88327d1ed98101842db6225efb53151013",
+      "status": "RAW_SANSKRIT"
+    },
+    "ipvv:V2L:k5": {
+      "input_hash": "e806b8cfd457c222ca9f9b2857095604cfa2e018b16707f83b6c4cfa316d3519",
+      "status": "RAW_SANSKRIT"
+    }
+  },
+  "generation_inputs": {
+    "allowed": [
+      "Sanskrit",
+      "T1",
+      "L0",
+      "C1",
+      "generic argument instructions"
+    ],
+    "forbidden": [
+      "the gold ARGMAP for ipvv:V2L (NO GOLD LEAKAGE)"
+    ]
+  },
+  "worker": {
+    "sha": null,
+    "prompt_hash": null,
+    "model": null
+  },
+  "scoring": "ARGUMENT-RECOVERY-BENCH-v1 (blind) on the frozen gold for ipvv:V2L",
+  "catastrophic_metrics": [
+    "UNSUPPORTED_BRIDGE_RATE",
+    "SPEAKER_COLLAPSE_RATE"
+  ],
+  "frozen_at": "2026-08-13"
+}

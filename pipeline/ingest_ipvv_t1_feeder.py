@@ -85,29 +85,80 @@ def _kārikā_chunks(text: str, max_chars: int = 1200) -> list[str]:
     return [u for u in units if len(u) > 80]
 
 
-def prepare(passage_locator: str | None = None) -> dict:
-    """Register IPVV passage Sanskrit as SOURCE objects (idempotent), chunked into kārikā units."""
+def prepare(passage_locator: str | None = None, ctx_window: int = 5) -> dict:
+    """Register IPVV passage Sanskrit as SOURCE objects (idempotent), chunked into kārikā units.
+
+    TWO IDS (the reviewer's design — never conflate the processing unit with the semantic unit):
+      translation unit   ipvv:V2:k17          — the narrow, deterministic unit T1 consumes
+      argument context   ipvv:V2:argctx:004   — a CONTIGUOUS bundle [k15..k19] ARGMAP may consume,
+                                                because an objection/qualification/inference often
+                                                spans several local units.
+
+    Segmentation provenance is recorded explicitly (unit_id, parent_passage, source range,
+    segmentation_method, semantic_boundary_claim=NONE) so a machine-created chunk boundary never
+    implies "this is one philosophical unit."
+    """
     passages = _passages()
     if passage_locator:
         norm = passage_locator.replace("-", "").lower()
         passages = [p for p in passages if norm in p["locator"].replace("-", "").lower()]
     registered = 0
     chunks_total = 0
+    argctx_total = 0
     for p in passages:
         # locator like 'chunkV2-L-sastho...' -> passage tag 'V2L'
         m = re.match(r".*?(V\d+)[-]?([A-Z]+)", p["locator"])
         base = (m.group(1) + (m.group(2) if m.group(2) else "")) if m else p["locator"].replace("chunk", "").split("-")[0]
         chunks = _kārikā_chunks(p["sanskrit"])
+        # ── pass 1: register each translation unit + its segmentation provenance ──
+        seg = []
+        offset = 0
         for i, chunk in enumerate(chunks, 1):
             oid = f"ipvv:{base}:k{i}"
             if R.current("SOURCE", oid):
                 continue
             h = _sha256(chunk)
             R.commit("SOURCE", oid, h, created_by="ipvv-t1-feeder", status="RAW_SANSKRIT",
-                     payload={"verse": chunk, "source_text": chunk})
+                     payload={"verse": chunk, "source_text": chunk,
+                              "segmentation": {
+                                  "unit_id": oid,
+                                  "parent_passage": f"ipvv:{base}",
+                                  "source_start": offset,
+                                  "source_end": offset + len(chunk),
+                                  "segmentation_method": "paragraph+length (<=1200 chars)",
+                                  "semantic_boundary_claim": "NONE",  # a processing unit, NOT a claim of semantic unity
+                              }})
+            seg.append(oid)
+            offset += len(chunk)
             registered += 1
             chunks_total += 1
-    return {"passages": len(passages), "chunks_registered": registered, "chunks_total": chunks_total}
+        # ── pass 2: build OVERLAPPING argument-context windows (the semantic unit) ──
+        all_units = [f"ipvv:{base}:k{i}" for i in range(1, len(chunks) + 1)]
+        ctx_no = 0
+        for start in range(0, len(all_units), ctx_window):
+            window = all_units[start:start + ctx_window]
+            if len(window) < 2:
+                continue
+            ctx_no += 1
+            ctx_id = f"ipvv:{base}:argctx:{ctx_no:03d}"
+            if R.current("ARGUMENT", ctx_id):
+                continue
+            # the context bundle: membership is explicit + contiguous + MAY overlap windows
+            R.commit("ARGUMENT", ctx_id, _sha256(json.dumps({"members": window, "passage": f"ipvv:{base}"})),
+                     created_by="ipvv-t1-feeder", status="ARGUMENT_CONTEXT",
+                     payload={
+                         "kind": "ArgumentContext",
+                         "passage": f"ipvv:{base}",
+                         "members": window,
+                         "members_contiguous": True,
+                         "semantic_boundary_claim": "NONE",
+                         "note": ("ARGMAP may consume this CONTIGUOUS BUNDLE (not just one k*) so an "
+                                  "objection/qualification/inference spanning several local units is "
+                                  "not cut in half before the model sees it."),
+                     })
+            argctx_total += 1
+    return {"passages": len(passages), "chunks_registered": registered, "chunks_total": chunks_total,
+            "argctx_registered": argctx_total}
 
 
 def main() -> int:
@@ -119,8 +170,8 @@ def main() -> int:
         r = prepare(a.passage)
         print(f"IPVV -> factory ARGMAP path prepared: {r['passages']} passages, "
               f"{r['chunks_registered']} kārikā SOURCE units registered "
-              f"(total {r['chunks_total']})")
-        print("Next (Agent 2 / factory run): T1 worker on ipvv:V*:k* -> ARGMAP generator.")
+              f"(total {r['chunks_total']}), {r['argctx_registered']} argument contexts")
+        print("Next (Agent 2 / factory run): T1 on ipvv:V*:k* -> ARGMAP on the contiguous argctx bundle.")
         return 0
     ap.print_help()
     return 1
