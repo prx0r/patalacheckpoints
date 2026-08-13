@@ -129,11 +129,59 @@ def regenerate(object_id: str, per_layer: int = 3, dry_run: bool = False) -> dic
     return {"object": object_id, "rebuilt": rebuilt}
 
 
+def impact_report(object_id: str) -> dict:
+    """A2-18 DependencyImpactReport over REAL production registry objects.
+
+    Produces the same schema as review_engine.impact_report() so scholar review of a production
+    object yields a consistent impact view:
+        {review, target, directly_affected, potentially_affected, unaffected,
+         historical_version_retained, layers, note}
+
+    directly_affected = every downstream layer's object for this passage that is now STALE/
+    SUPERSEDED (i.e. what invalidate() marked), reported as {object, type, state}.
+    This is the product-facing 'what does a correction change' over the real corpus.
+    """
+    layer = _layer_of(object_id)
+    passage = _passage_id(object_id)
+    if not layer:
+        return {"error": f"cannot determine layer of {object_id}", "target": object_id}
+
+    direct = []
+    potential = []
+    for down in DOWNSTREAM.get(layer, []):
+        cur = R.current(down, passage)
+        if cur:
+            # it exists -> a correction upstream makes it a candidate for NEED_REVIEW
+            direct.append({"object": f"{down.lower()}-{passage}", "type": "DEPENDS_ON",
+                           "state": "NEED_REVIEW"})
+        else:
+            potential.append({"object": f"{down.lower()}-{passage}", "type": "DERIVED",
+                              "state": "NOT_PRODUCED"})
+    return {
+        "kind": "DependencyImpactReport",
+        "review": None,                       # no ReviewEvent fired; this is the rebuild's impact view
+        "target": object_id,
+        "layer": layer,
+        "passage": passage,
+        "directly_affected": direct,
+        "potentially_affected": potential,
+        "unaffected": [],                     # the rebuild only touches this passage's downstream
+        "historical_version_retained": True,  # supersession preserves the old version (never overwrite)
+        "layers": sorted(DOWNSTREAM.get(layer, [])),
+        "note": "A2-18: correction to this object invalidates exactly the downstream layers for the "
+                "same passage; nothing else in the corpus moves.",
+    }
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--object", required=True, help="the changed object id, e.g. t1-kramasadbhava:v1-v3")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--impact", action="store_true", help="emit the A2-18 DependencyImpactReport only")
     a = ap.parse_args()
+    if a.impact:
+        print("IMPACT:", impact_report(a.object), flush=True)
+        return 0
     inv = invalidate(a.object)
     print("INVALIDATE:", inv, flush=True)
     if not a.dry_run:
