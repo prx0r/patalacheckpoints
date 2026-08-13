@@ -1,6 +1,7 @@
 # DEVPATH 6 — G4: Human authority path + first UI
 
-**Status: ⏳ READY (after devpath5)**
+**Status: ✅ CLOSED (2026-08-13)**
+**Commit:** ReviewBundle materializer (pipeline/review_bundle.py)
 
 ---
 
@@ -59,3 +60,39 @@ refresh → then start the Translation Audit UI.
 - `endgamebuild/SPEC-G3-HUMAN-AUTHORITY-PATH.md` (a1b) · `source-evidence/schema/contracts_human_authority.py`
   · `source-evidence/schema/derived_scholarly_object.py` · `docs/vision/vision-06-adversarial-review.md`
   · `vision-07-new-scholar.md` · `vision-12-multi-surface-platform.md`.
+
+## Work completed
+
+`pipeline/review_bundle.py`:
+- `materialize_bundle(target, ...)` — the read-only `ReviewBundle-v1` for one exact object (target
+  ref/version/hash + source/t1/l0/l2/l200 + proof + evidence + scholarship + dependency_impact +
+  review_actions).
+- `build_review_event()` — one scholar's scoped judgment on the exact target (R2: evidence, not
+  mutation).
+- `simulate_correction()` — zero-write impact for "show me exactly what my objection changes".
+- `promotion_event()` — the mechanical authority transition, explicitly justified.
+- `run_human_authority_path()` — the full loop (ReviewEvent → simulated ImpactReport → status) with
+  R1/R2/R3 enforced: machine can never promote; a review never mutates its target; authority is a
+  vector, ceiling derived.
+
+`pipeline/test_review_bundle.py` — 18 checks (bundle materialization, R1/R2/R3, zero-write
+simulation, DISPUTE flips dependency impact → downstream NEED_REVIEW). All pass.
+
+## Acceptance / verification
+
+| Check | Result |
+|---|---|
+| `test_review_bundle.py` | 18/18 PASS |
+| review engine regression | 23/23 PASS |
+
+## Honest boundary
+
+- This is the Agent-1 review-validity/authority side of G4. Agent 2 supplies exact versions +
+  ImpactReport + regeneration. The materializer is deterministic + read-only (never mutates the
+  object). The first UI (one screen, TD-81) is built over this bundle — the materializer is the
+  API contract that UI consumes.
+
+## Files
+
+- `pipeline/review_bundle.py` (new)
+- `pipeline/test_review_bundle.py` (new)

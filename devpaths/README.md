@@ -14,7 +14,7 @@ devpath2 ──► G2: close the T1/L0 correction loop              STATUS: ⛔ 
 devpath3 ──► G3A: ARGMAP NAT on real Agent 2 output           STATUS: ⛔ BLOCKED (needs real ARGMAP batch)
 devpath4 ──► G3B: Proposition core                             STATUS: ✅ CLOSED (2026-08-13)
 devpath5 ──► G3C: Crux + arguments + Nyāya-profile             STATUS: ✅ CLOSED (2026-08-13)
-devpath6 ──► G4: Human authority path + first UI               STATUS: 🔄 IN PROGRESS
+devpath6 ──► G4: Human authority path + first UI               STATUS: ✅ CLOSED (2026-08-13)
 ```
 
 ---
@@ -47,4 +47,4 @@ devpath6 ──► G4: Human authority path + first UI               STATUS: �
 - `devpaths/devpath3.md` — blocked (G3A ARGMAP NAT on real output)
 - `devpaths/devpath4.md` — ✅ complete
 - `devpaths/devpath5.md` — ✅ complete
-- `devpaths/devpath6.md` — human authority path + first UI (in progress)
+- `devpaths/devpath6.md` — ✅ complete
