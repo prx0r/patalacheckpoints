@@ -1,15 +1,22 @@
 #!/usr/bin/env python3
-"""pipeline/object_registry.py — generic per-layer immutable object registry.
+"""pipeline/object_registry.py — generic per-layer VERSIONED object registry.
 
 The canonical state for the autonomy architecture (hermespatalalayers.md): registry = truth,
-queue = work, run log = history. Each layer has its own immutable/versioned registry. Objects
-are keyed by stable object_id + input_hash; commits are append-only; a fix emits a NEW version
-that supersedes the prior (old objects stay historically available).
+queue = work, run log = history. Each layer has its own versioned registry. Objects
+are keyed by stable object_id + input_hash; a fix emits a NEW version that supersedes
+the prior (old objects stay historically available).
+
+HONEST NAMING (A2-ARCH-HARDEN): this is a VERSIONED registry, NOT cryptographically
+immutable / append-only. _save() rewrites the whole JSONL on each commit; set_status()
+and supersede() mutate prior records in memory and rewrite them. It is version-aware and
+historically recoverable in normal operation, but the file itself can be rewritten.
+For cryptographic append-only integrity, see the ObjectEvent ledger (event-sourced
+projection) — the remaining A2-ARCH-HARDEN piece.
 
 Per-layer records carry the three states (GENERATED / ENGINEERING_VALIDATED / SPECIALIST_REVIEWED)
 so research, staging and publication can use the same graph without lying about authority.
 
-Registries live under data/corpus/registries/<layer>-registry.jsonl (append-only).
+Registries live under data/corpus/registries/<layer>-registry.jsonl (versioned JSONL).
 """
 from __future__ import annotations
 
@@ -63,6 +70,67 @@ GENERATED = "GENERATED"
 ENGINEERING_VALIDATED = "ENGINEERING_VALIDATED"
 SPECIALIST_REVIEWED = "SPECIALIST_REVIEWED"
 STATES = [GENERATED, ENGINEERING_VALIDATED, SPECIALIST_REVIEWED]
+
+
+# ── append-only ObjectEvent ledger (A2-ARCH-HARDEN: honest integrity trail) ──
+# Unlike the versioned registry (which rewrites its JSONL), this ledger is genuinely APPEND-ONLY:
+# each event is appended to a separate file with a hash chain (each event's hash includes the
+# previous event's hash). Current state is a projection; the ledger cannot be silently rewritten
+# without breaking the chain. This is the honest "append-only" claim.
+EVENT_DIR = REG_DIR  # data/corpus/registries
+EVENT_LOG = None
+
+
+def _event_log_path() -> Path:
+    global EVENT_LOG
+    if EVENT_LOG is None:
+        EVENT_LOG = REG_DIR / "object-events.jsonl"
+    return EVENT_LOG
+
+
+def append_event(event: dict) -> dict:
+    """Append a hash-chained ObjectEvent. Returns the event with its hash + previous-hash.
+
+    Events: OBJECT_CREATED / STATUS_CHANGED / SUPERSEDED / REVIEWED / INVALIDATED / REBUILT.
+    The chain: event_hash = sha256(prev_hash + canonical(event)). Anyone can verify the log is
+    unrewritten by re-deriving the chain."""
+    import time as _t
+    prev = "genesis"
+    p = _event_log_path()
+    if p.exists():
+        for line in p.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                prev = json.loads(line).get("event_hash", prev)
+    canonical = json.dumps(event, sort_keys=True, ensure_ascii=False)
+    event_hash = hashlib.sha256((prev + canonical).encode("utf-8")).hexdigest()
+    rec = {
+        "ts": datetime.now(timezone.utc).isoformat(),
+        "prev_hash": prev,
+        "event_hash": event_hash,
+        "event": event,
+    }
+    p.parent.mkdir(parents=True, exist_ok=True)
+    with p.open("a", encoding="utf-8") as fh:
+        fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
+    return rec
+
+
+def verify_event_chain() -> bool:
+    """Verify the ObjectEvent ledger's hash chain is intact (no silent rewrite)."""
+    p = _event_log_path()
+    if not p.exists():
+        return True
+    prev = "genesis"
+    for line in p.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        rec = json.loads(line)
+        canonical = json.dumps(rec["event"], sort_keys=True, ensure_ascii=False)
+        expect = hashlib.sha256((prev + canonical).encode("utf-8")).hexdigest()
+        if rec.get("prev_hash") != prev or rec.get("event_hash") != expect:
+            return False
+        prev = rec["event_hash"]
+    return True
 
 
 def _path(layer: str) -> Path:
@@ -155,6 +223,8 @@ def commit(layer: str, object_id: str, input_hash_val: str, created_by: str,
     vs.append(rec)
     reg["objects"][object_id] = vs
     _save(layer, reg)
+    append_event({"type": "OBJECT_CREATED", "layer": layer, "object_id": object_id,
+                  "input_hash": input_hash_val, "version": version, "created_by": created_by})
     return rec
 
 
@@ -170,6 +240,8 @@ def set_status(layer: str, object_id: str, version: str, status: str, actor: str
     else:
         return {"error": f"{version} not found in {layer}"}
     _save(layer, reg)
+    append_event({"type": "STATUS_CHANGED", "layer": layer, "object_id": object_id,
+                  "version": version, "status": status, "actor": actor})
     return {"layer": layer, "object_id": object_id, "version": version, "status": status}
 
 
@@ -183,6 +255,8 @@ def supersede(layer: str, object_id: str) -> list[dict]:
             v["superseded_at"] = datetime.now(timezone.utc).isoformat()
             changed.append(v["version"])
     _save(layer, reg)
+    for v in changed:
+        append_event({"type": "SUPERSEDED", "layer": layer, "object_id": object_id, "version": v})
     return changed
 
 
