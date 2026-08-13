@@ -66,7 +66,7 @@ def main() -> int:
 
     # supersession / cascading stale (after L2 is committed)
     R.supersede("L1", oid)
-    ok &= t("supersession: L1 current marked stale", R.current("L1", oid)["superseded"] is True)
+    ok &= t("supersession: L1 has no current version (stale)", R.current("L1", oid) is None)
     ok &= t("supersession: L1 no longer idempotent-committed (superseded)",
             not R.is_committed("L1", oid, ih))
     ok &= t("supersession: L2 now blocked because its prereq L1 is stale",

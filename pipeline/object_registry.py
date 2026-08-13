@@ -97,7 +97,8 @@ def current(layer: str, object_id: str) -> dict | None:
     for v in reversed(vs):
         if not v.get("superseded"):
             return v
-    return vs[-1] if vs else None
+    # every version superseded -> no current version (Era C: an invalidated object has no current)
+    return None
 
 
 def is_committed(layer: str, object_id: str, input_hash_val: str) -> bool:

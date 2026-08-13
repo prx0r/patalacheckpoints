@@ -85,7 +85,7 @@ def main() -> int:
     R.commit("ASSERTION", "A1", "h1", created_by="cert", status=R.GENERATED)
     R.commit("CORROBORATION", "C1", "h1", created_by="cert")
     R.supersede("ASSERTION", "A1")
-    ok &= t("10 assertion superseded", R.current("ASSERTION", "A1")["superseded"] is True)
+    ok &= t("10 assertion superseded", R.current("ASSERTION", "A1") is None)
 
     print("\n" + ("ALL PASS" if ok else "SOME FAILED"))
     return 0 if ok else 1
