@@ -12,7 +12,8 @@ TRUST`. Agent 2 builds the canonical SOURCE→C1→(higher) factory; Agent 1 ind
 
 | Doc | Why |
 |---|---|
-| **`CURRENT-STATE.md`** | the current operational state + honest limitations (Era A done, Era B running, Era C started) |
+| **`HANDOVER-2026-08-13-LATE-SESSION.md`** | **the latest handover** — full current state + live systems + next work (READ THIS first) |
+| **`CURRENT-STATE.md`** | the current operational state + honest limitations (Era A done, Era B done, Era C started) |
 | **`DEV-PLAN.md`** | the canonical execution plan (Era A/B/C + the checkpoint ladder) |
 | **`CANONICAL-LAYER-STACK.md`** | the LOCKED layer order + file types + dependency (do not reorder/rename) |
 | **`ORIENTATION.md`** | the process workflow (the full context chain + gates) |
