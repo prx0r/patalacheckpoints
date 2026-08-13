@@ -176,19 +176,32 @@ def resolve_work(wid: str, net: bool = True) -> dict:
 def _gate(evidence: dict, kind: str) -> bool:
     """Explicit predicates — never a scalar rank.
 
-    Authority-inflation fix: INTERNAL_IDENTITY_BOUND (a crosswalk mapping) and
-    EXTERNAL_CANDIDATE_FOUND (one external search hit) are NOT publication-grade. Only genuine
-    corroboration (MULTI_SOURCE_MATCHED / COPY_INSPECTED / EDITION_VERIFIED) qualifies.
+    Authority-inflation fix (A1-Q1 + devpath13 P1 audit):
+      - INTERNAL_IDENTITY_BOUND (crosswalk) / EXTERNAL_CANDIDATE_FOUND (single hit) are NOT
+        publication-grade. Only genuine corroboration qualifies.
+      - EVERY gate must be RIGHTS-aware: a candidate with RIGHTS=UNKNOWN or RIGHTS=DISCOVERABLE
+        (searchable-only) must NOT open `factory` or `publication`, no matter how strong the
+        edition/identity evidence is. This closes the P1 audit finding (resolver opened publication
+        on a rights-UNKNOWN candidate).
+      - `factory` requires a usable (copy-inspected / verified) edition, not just a high work identity.
     """
     wid = evidence.get("WORK_IDENTITY", {}).get("relation", "DISCOVERED")
     ed = evidence.get("EDITION_IDENTITY", {}).get("relation", "DISCOVERED")
+    rights = evidence.get("RIGHTS", {}).get("relation", "UNKNOWN")
+
+    # rights ladder: DISCOVERABLE=searchable-only; processing allowed; redistributable; open license
+    rights_usable = rights in ("PROCESSING_ALLOWED", "REDISTRIBUTABLE", "OPEN_LICENSE")
+    rights_publishable = rights in ("REDISTRIBUTABLE", "OPEN_LICENSE")
+
     if kind == "factory":
-        return wid in ("CATALOG_MATCHED", "MULTI_SOURCE_MATCHED")
+        # usable as a translation source: a real edition + processing rights (never rights-UNKNOWN)
+        return ed in ("MULTI_SOURCE_MATCHED", "COPY_INSPECTED", "EDITION_VERIFIED") and rights_usable
     if kind == "publication":
-        # a single archive hit / internal mapping must NOT open publication
-        return ed in ("MULTI_SOURCE_MATCHED", "COPY_INSPECTED", "EDITION_VERIFIED")
+        # publishable only with redistributable rights AND a genuinely verified/copy-inspected edition
+        return rights_publishable and ed in ("COPY_INSPECTED", "EDITION_VERIFIED")
     if kind == "scholar":
-        return wid in ("MULTI_SOURCE_MATCHED",) or ed in ("EDITION_VERIFIED", "TEXT_DERIVATION_VERIFIED")
+        # a positively identified work (for review); scholar review does not require publication rights
+        return wid in ("CATALOG_MATCHED", "MULTI_SOURCE_MATCHED") or ed in ("COPY_INSPECTED", "EDITION_VERIFIED")
     return False
 
 

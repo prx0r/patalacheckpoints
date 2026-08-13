@@ -70,9 +70,48 @@ def main() -> int:
     ok &= t("unresolved dimensions stay OPEN (no provenance theatre)",
             all(cand["authority"][d]["relation"] in ("OPEN", "DISCOVERED") for d in ("ETEXT_DERIVATION", "WITNESS_LINKAGE", "DATE_PRECISION", "RIGHTS")))
 
-    print("")
-    print("RESULT: " + ("ALL PASS" if ok else "FAILURES"))
+    # ── devpath13 P1 audit: gate semantics must be RIGHTS-aware and dimension-consistent ──
+    # (closes the cross-lane audit finding: the resolver opened `publication` on a RIGHTS=UNKNOWN
+    #  candidate; and `factory` on a WORK-high but edition-weak candidate.)
+    ok &= _test_gates()
     return 0 if ok else 1
+
+
+def _test_gates() -> bool:
+    """P1 cross-lane audit: gate predicates must never inflate authority."""
+    from patala_core.atlas.resolver import _gate
+    ok = True
+    base = {"WORK_IDENTITY": {"relation": "MULTI_SOURCE_MATCHED"},
+            "AUTHOR_IDENTITY": {"relation": "MULTI_SOURCE_CONFIRMED"},
+            "EDITION_IDENTITY": {"relation": "EDITION_VERIFIED"},
+            "ETEXT_DERIVATION": {"relation": "TRANSCRIPTION_VERIFIED"},
+            "WITNESS_LINKAGE": {"relation": "MULTI_WITNESS"},
+            "DATE_PRECISION": {"relation": "c.995"},
+            "RIGHTS": {"relation": "UNKNOWN"}}
+    # publication must NOT open when rights are UNKNOWN or DISCOVERABLE, regardless of edition
+    for rights in ("UNKNOWN", "DISCOVERABLE"):
+        ev = {**base, "RIGHTS": {"relation": rights}}
+        ok &= t(f"publication closed when RIGHTS={rights} (P1 audit)",
+                _gate(ev, "publication") is False, f"pub={_gate(ev,'publication')}")
+        ok &= t(f"factory closed when RIGHTS={rights} (P1 audit)",
+                _gate(ev, "factory") is False, f"fac={_gate(ev,'factory')}")
+    # publication opens only with redistributable/open rights AND a verified/copy-inspected edition
+    for rights, expect in (("PROCESSING_ALLOWED", False), ("REDISTRIBUTABLE", True), ("OPEN_LICENSE", True)):
+        ev = {**base, "RIGHTS": {"relation": rights}}
+        got = _gate(ev, "publication")
+        ok &= t(f"publication={rights} -> {expect} (P1 audit)",
+                got is expect, f"pub={got}")
+    # factory needs a usable edition + processing rights, never rights-UNKNOWN
+    ev_weak_ed = {**base, "EDITION_IDENTITY": {"relation": "EXTERNAL_CANDIDATE_FOUND"}, "RIGHTS": {"relation": "PROCESSING_ALLOWED"}}
+    ok &= t("factory closed on weak (candidate) edition (P1 audit)",
+            _gate(ev_weak_ed, "factory") is False, f"fac={_gate(ev_weak_ed,'factory')}")
+    ev_ok = {**base, "RIGHTS": {"relation": "PROCESSING_ALLOWED"}}
+    ok &= t("factory opens with verified edition + processing rights (P1 audit)",
+            _gate(ev_ok, "factory") is True)
+    # scholar review does not require publication rights (a reviewable identified work)
+    ok &= t("scholar review allowed without publication rights (P1 audit)",
+            _gate(base, "scholar") is True)
+    return ok
 
 
 if __name__ == "__main__":

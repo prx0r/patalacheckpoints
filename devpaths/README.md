@@ -81,6 +81,11 @@ devpath13 ──► A1-CONTINUE-v2: QUALIFY THE SYSTEM, DO NOT EXPAND THE ONTOLO
               evidence-derived evaluator; SYSTEM_FALSE_AUTHORITY_PROMOTION_RATE=0.216, detection
               recall/precision=1.000, false-rejection=0.000; regression tests for the
               MULTI_SOURCE_MATCHED inflation bug. Record: benchmarks/v0/runs/atlas-nat-natural-*.json
+
+  P1 cross-lane Atlas audit  STATUS: ✅ CLOSED (2026-08-13) — audited Agent 2 resolver; found 3
+              semantic-inflation findings (publication not rights-aware [SEVERE], factory keyed on
+              work-identity not edition, single-ladder vocab across heterogeneous dims). Fixed _gate
+              to be rights-aware + dimension-consistent; P1 regression tests pass. → devpath13-p1-atlas-audit.md
 ```
 
 ---
