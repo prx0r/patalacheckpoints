@@ -198,6 +198,23 @@ try:
 except Exception as e:  # pragma: no cover
     print("EDUCATION worker not wired:", e, file=sys.stderr)
 
+# Wire the ARGUMENT worker (CANONICAL-GRAPH-1 P3) — the epistemic crown. Derives propositions +
+# cruxes from an eligible ARGMAP via the crux engine. HARD GATE: ARGMAP eligible + propositions
+# traceable + no unsupported bridge, else DEPENDENCY_BLOCKED (never the generic fallback).
+try:
+    from epistemic_worker import make_argument_handlers
+    LAYER_HANDLERS["ARGUMENT"] = make_argument_handlers()
+except Exception as e:  # pragma: no cover
+    print("ARGUMENT worker not wired:", e, file=sys.stderr)
+
+# Wire the SYNTHESIS worker (CANONICAL-GRAPH-1 P3) — ArgumentSynthesis from Arguments[] + Cruxes[].
+# HARD GATE: never resolve an open dispute merely because synthesis is requested.
+try:
+    from epistemic_worker import make_synthesis_handlers
+    LAYER_HANDLERS["SYNTHESIS"] = make_synthesis_handlers()
+except Exception as e:  # pragma: no cover
+    print("SYNTHESIS worker not wired:", e, file=sys.stderr)
+
 
 def tick(layers: list[str] | None = None, max_batch: int = 8,
          dry_run: bool = False, inputs: dict[str, list[dict]] | None = None) -> dict:
