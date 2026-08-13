@@ -12,8 +12,8 @@ close. The sequence comes from `endgamebuild/HANDOVER-TO-NEW-AGENT.md` (the a1b 
 devpath1 ──► wire Nyāya gate + build ARGMAP NAT harness        STATUS: ✅ CLOSED (2026-08-13)
 devpath2 ──► G2: close the T1/L0 correction loop              STATUS: ⛔ BLOCKED (needs Agent 2 factory_rebuild)
 devpath3 ──► G3A: ARGMAP NAT on real Agent 2 output           STATUS: ⛔ BLOCKED (needs real ARGMAP batch)
-devpath4 ──► G3B: Proposition core                             STATUS: ⏳ READY
-devpath5 ──► G3C: Crux + arguments + Nyāya-profile             STATUS: ⏳ READY (after devpath4)
+devpath4 ──► G3B: Proposition core                             STATUS: ✅ CLOSED (2026-08-13)
+devpath5 ──► G3C: Crux + arguments + Nyāya-profile             STATUS: 🔄 IN PROGRESS
 devpath6 ──► G4: Human authority path + first UI               STATUS: ⏳ READY (after devpath5)
 ```
 
@@ -45,6 +45,6 @@ devpath6 ──► G4: Human authority path + first UI               STATUS: ⏳
 - `devpaths/devpath1.md` — ✅ complete
 - `devpaths/devpath2.md` — blocked (G2 correction loop)
 - `devpaths/devpath3.md` — blocked (G3A ARGMAP NAT on real output)
-- `devpaths/devpath4.md` — proposition core
-- `devpaths/devpath5.md` — crux + arguments + Nyāya-profile
+- `devpaths/devpath4.md` — ✅ complete
+- `devpaths/devpath5.md` — crux + arguments + Nyāya-profile (in progress)
 - `devpaths/devpath6.md` — human authority path + first UI
