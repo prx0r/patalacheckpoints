@@ -58,6 +58,23 @@ shared:
     path: machinelearning/_ACTIVE/dualagentvision-ADAPTED.md
     why: "the vision mapped onto our ACTUAL infra (per-checkpoint real state)"
 
+# ── B2. CURRENT-STATE ORIENTATION (read the timestamped snapshot EARLY, before the flat map) ──
+  - id: global_state_2026_08_13
+    path: docs/global/GLOBAL-STATE-2026-08-13.md
+    why: "TIMESTAMPED GLOBAL CHECKPOINT (2026-08-13, ELAD handover) - read FIRST as the orientation snapshot: the big picture, permanent epistemic discipline, the architecture, falsifications to preserve, and the CURRENT DIRECTION (source-evidence S0 + scholar oracle + evaluation plane). STALE BY DESIGN - a timestamped snapshot; later docs supersede it."
+  - id: global_architecture
+    path: docs/global/PATALA-GLOBAL-ARCHITECTURE.md
+    why: "THE DEFINITIVE ARCHITECTURE (Pāṭala Global Architecture v0.1) - the ONE answer to 'what are we actually building?': seven planes, the constitutional rule (higher layers may depend on lower, lower never acquires authority from above), the native epistemic ontology (SourceAssertion/EvidenceUse/CorroborationEvent/Proposition/Commitment/DebateFrame/Argument/Attack/Crux/ArgumentSynthesis/ReviewEvent/ImpactReport), the three DAGs (epistemic/derivation/execution), the object namespace, the benchmark family, the skill contract, the four proof tracks, the what-not-to-build list. Every vision doc points down to this."
+  - id: agent1_current_state
+    path: handover/agent-1-ml/NEXT-STEPS.md
+    why: "Agent 1's CURRENT state (revision 7): the ML vertical is frozen + peer-review-clean; the forward work is the scholar-corpus foundation (S0) - the on-disk published scholars become the corroboration oracle (no live reviewer needed); Agent 1 owns the source-evidence layer. Read the HANDOVER-2026-08-13.md for the full handover."
+  - id: source_evidence_substrate
+    path: source-evidence/docs/reuse-first-stack.md
+    why: "the S0 source-evidence substrate doctrine: borrow mature open systems (GROBID/Zotero/OpenAlex/OpenCitations/RO-Crate/ORKG/OpenReview); Patala owns only the thin resolver + SourceAssertion + CorroborationEvent. The scholar corpus becomes the corroboration oracle once it is a provenance-addressable evidence corpus."
+  - id: source_evidence_schema
+    path: source-evidence/docs/scholar-layer-schema-stack.md
+    why: "the Patala Source Evidence Profile v0 — compose FaBiO/PROV-O/Web Annotation/CiTO/RO-Crate/IIIF; the epistemic objects are Patala-native."
+
 # ── C. THE MAP — WHERE EVERYTHING LIVES ────────────────────────────────────────
   - id: docs_index
     path: docs/INDEX.md
@@ -94,6 +111,9 @@ agents:
     - id: orientation
       path: handover/agent-1-ml/ORIENTATION.md
       why: "THIS process workflow you are executing right now"
+    - id: handover_2026_08_13
+      path: handover/agent-1-ml/HANDOVER-2026-08-13.md
+      why: "THE CURRENT HANDOVER (2026-08-13): the ML vertical is frozen + peer-review-clean; the forward work is the scholar-corpus foundation (S0) — turn the on-disk published-scholar corpus into a provenance-addressable corroboration oracle by borrowing mature open tools and adding only the epistemic dependency graph. Start with the Inspect AI prototype."
     - id: ml_readme
       path: machinelearning/README.md
       why: "the ML workspace home: ACTIVE vs ARCHIVED, the doctrine order, the enforcement tool"
@@ -205,5 +225,5 @@ agents:
       path: docs/P3_EDITORIAL_REVIEW.md
       why: "the P3 lexical-gold editorial review: 0/21 promoted (circular without real Sanskrit context); red flags + review states - the honesty record"
     - id: index
-      path: handover/agent-2-integration/INDEX.md
-      why: "THE MOST RECENT HANDOVER - the living current-state pointer for the L0 lane (P0 done, P2 calibrated, P3 gold v0, P4 alignment next)"
+      path: handover/agent-2-integration/README.md
+      why: "THE MOST RECENT HANDOVER - the clean index of the Agent-2 lane (factory reference, overnight pack, build records, current state)."

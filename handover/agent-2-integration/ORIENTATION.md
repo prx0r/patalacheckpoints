@@ -166,7 +166,7 @@ cross P1–P4 gates.
 ## PHASE 2 — YOUR HANDOVER & SESSION (what THIS lane learned)
 
 ### Step 2.0 — Read your working context
-**Read `handover/agent-2-integration/INDEX.md`** (your current-state pointer) and
+**Read `handover/agent-2-integration/README.md`** (your clean lane index + current-state pointer) and
 `handover/agent-2-integration/CHECKPOINTS-INTEGRATION.md` (your concrete CP1 sequence).
 
 **🟢 GATE 2.0** — *Read* `/mnt/HC_Volume_106427611/sanskritree/translations/_stack/ipvv/IPVV-KNOWLEDGE-CORE.md`
