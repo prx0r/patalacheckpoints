@@ -96,7 +96,8 @@ STEP 9 — THE MEDIA LAYER + CROSS-TRADITION ENGINE (Vision 09)
 3. **`endgamebuild/INFRA-INVENTORY.md`** — **WHAT EXISTS / WHERE / DON'T REBUILD.** The consolidated
    map of all built infra (schemas, factory, ML engines, eval plane, external tools, Atlas, API).
    **Read this before writing code** — if it's listed, extend it, not rebuild it.
-4. **`THE_COMPANION.md`** (sanskritree) — the full-system technical onboarding.
+4. **`endgamebuild/PROGRESS.md`** — the one-page current state (proven / building / next milestones).
+5. **`THE_COMPANION.md`** (sanskritree) — the full-system technical onboarding.
 
 > **Then, to see the whole vision as one zoomable map:** `docs/vision/CORE-BIBLE.md` — one vision
 > chunked into 6 layers (sentence → paragraph → derivation graph → checkpoints → domain lenses →

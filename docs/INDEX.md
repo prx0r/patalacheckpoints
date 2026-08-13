@@ -25,6 +25,8 @@ stale ones as `[ARCHIVED]` so a new agent is never confused. If it's not here, i
 | **Agent system (who + tracked progress)** | `handover/SYSTEM.md` (template `agent0` → live instances) + `handover/flow.py status` | repo `handover/` |
 | **Vision + navigation (START HERE)** | `VISION_AND_NAVIGATION.md` | repo root |
 | **Infra inventory (WHAT EXISTS — read before building)** | `endgamebuild/INFRA-INVENTORY.md` | repo `endgamebuild/` |
+| **Progress map (current state, what's next)** | `endgamebuild/PROGRESS.md` | repo `endgamebuild/` |
+| **Session build record (what was built)** | `endgamebuild/SESSION-BUILD-RECORD-2026-08-13.md` | repo `endgamebuild/` |
 | **THE CORE BIBLE (top-level vision map)** | `docs/vision/CORE-BIBLE.md` | repo `docs/vision/` |
 | **Full-system onboarding** | `THE_COMPANION.md` | sanskritree `_stack/ipvv/specs/` |
 | **Handover folder (both lanes — README first)** | `handover/README.md` | repo `handover/` |
