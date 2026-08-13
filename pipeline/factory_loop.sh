@@ -32,18 +32,26 @@ LAYERS="T1,ARGMAP,L0,L2,L200,C1"
 
 echo "$(date '+%F %T') factory-loop: starting (per_layer=$PER_LAYER model_calls=$MODEL_CALLS throttle=$THROTTLE sleep=$SLEEP_S max_passes=$MAX_PASSES)" >> /tmp/opencode/factory-loop.log
 pass=0
+model_total=0
 while true; do
   pass=$((pass+1))
   if [ "$MAX_PASSES" -gt 0 ] && [ "$pass" -gt "$MAX_PASSES" ]; then
-    echo "$(date '+%F %T') factory-loop: reached max_passes=$MAX_PASSES; exiting" >> /tmp/opencode/factory-loop.log
+    echo "$(date '+%F %T') factory-loop: reached max_passes=$MAX_PASSES; emitting certificate" >> /tmp/opencode/factory-loop.log
+    cd /root/projects/patala
+    python3 -u pipeline/factory_certificate.py --passes "$pass" --model-calls "$model_total" \
+      >> /tmp/opencode/factory-certificate.log 2>&1
     break
   fi
   echo "$(date '+%F %T') factory-loop: PASS $pass start" >> /tmp/opencode/factory-loop.log
-  # retry durable failures first, then advance the backlog
+  # retry durable failures first, then advance the backlog (DAG scheduler)
   cd /root/projects/patala
-  python3 -u pipeline/factory_scheduler.py --retry \
+  out=$(python3 -u pipeline/factory_scheduler.py --retry \
     --per-layer "$PER_LAYER" --max-model-calls "$MODEL_CALLS" --throttle "$THROTTLE" \
-    --layers "$LAYERS" >> /tmp/opencode/factory-loop.log 2>&1
+    --layers "$LAYERS" 2>&1)
+  echo "$out" >> /tmp/opencode/factory-loop.log
+  mc=$(echo "$out" | grep -o '"model_calls": [0-9]*' | grep -o '[0-9]*' | tail -1)
+  [ -n "$mc" ] && model_total=$((model_total + mc))
   echo "$(date '+%F %T') factory-loop: PASS $pass done; sleeping ${SLEEP_S}s" >> /tmp/opencode/factory-loop.log
   sleep "$SLEEP_S"
 done
+
