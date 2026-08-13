@@ -23,6 +23,13 @@ source for the integration lane.*
 > **AUTONOMY BUILD RECORD: `handover/agent-2-integration/BUILD-RECORD-2026-08-12-AUTONOMY.md`** — the full
 > inventory + results of the autonomous translation factory build (controller, registry, certificates,
 > live L200 benchmark). **Read this for the current autonomous-factory state.**
+> **CURRENT STATE (READ FIRST): `handover/agent-2-integration/SESSION-2026-08-13.md`** — **WE GOT IT RUNNING**:
+> the autonomous translation factory is live. Hermes (`hermes -z`) translates the full 73-work RAW_SANSKRIT
+> queue to MACHINE_PROPOSED English, unattended + watchdog-survivable. Driver =
+> `pipeline/auto_translate_raw.py`, engine = `pipeline/batch_translate.py` → `model.chat` → `hermes -z`.
+> Watchdog = `pipeline/watchdog_auto_translate.sh` (cron every 5 min, PATH-fixed). Progress:
+> `/tmp/opencode/auto-translate.log` + `data/corpus/downloads/translations/`. The 3 unblocking fixes:
+> (1) gloss off the L0 commit gate, (2) generative stage = Hermes not a stub, (3) watchdog PATH bug.
 > **CURRENT STATE (READ FIRST): `handover/agent-2-integration/PROGRESS-AUTONOMOUS-2026-08-12.md`** — what is
 > VERIFIED / CLOSE-unverified / STILL-NEEDED + the file map + the agent-1 scholarly-oracle handover
 > location + the background-run working practice.
