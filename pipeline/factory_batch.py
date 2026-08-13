@@ -103,31 +103,108 @@ def _commit_proposal(layer: str, p: dict) -> dict:
 
 
 def _produce_layer(layer: str, inputs: list[dict], batch_size: int = 4) -> dict:
-    """Run a layer's worker over the inputs (bounded), commit each valid proposal."""
+    """Run a layer's worker over the inputs (bounded), commit each valid proposal.
+
+    A2-11 (Era B): durable failure/retry queues + per-batch isolation.
+      - each batch is produced+committed independently (a hung/failed batch never blocks the next)
+      - permanent rejections (validator rejection) are recorded as-is
+      - transient failures (generator exception / model failure) are recorded in the work's
+        RETRYABLE failure queue so the next pass can retry them (idempotency prevents dupes)
+    """
     handler = A.LAYER_HANDLERS.get(layer)
     if not handler:
         return {"layer": layer, "error": "no handler"}
-    committed, rejected = [], []
+    committed, rejected, retryable = [], [], []
     for start in range(0, len(inputs), batch_size):
         batch = inputs[start:start + batch_size]
         try:
             proposals = handler["generator"](layer, batch)
         except Exception as e:
-            rejected.append({"batch": start, "error": str(e)[:120]})
+            # transient (e.g. model timeout) -> retryable, don't block neighbors
+            for b in batch:
+                retryable.append({"object_id": b["object_id"], "layer": layer,
+                                  "reason": str(e)[:120]})
             continue
         for p in proposals:
             r = _commit_proposal(layer, p)
-            (committed if "version" in r else rejected).append(r)
-    return {"layer": layer, "committed": committed, "rejected": rejected}
+            if "version" in r:
+                committed.append(r)
+            elif "rejected" in r and r["rejected"].startswith("t1_status:GENERATION_FAILED"):
+                retryable.append({"object_id": p.get("object_id"), "layer": layer,
+                                  "reason": "generation_failed (retryable)"})
+            elif "rejected" in r and r["rejected"].startswith("proposal_status:GENERATION_FAILED"):
+                retryable.append({"object_id": p.get("object_id"), "layer": layer,
+                                  "reason": "generation_failed (retryable)"})
+            elif "rejected" in r and r["rejected"].startswith("c1_status:GENERATION_FAILED"):
+                retryable.append({"object_id": p.get("object_id"), "layer": layer,
+                                  "reason": "generation_failed (retryable)"})
+            elif "rejected" in r and r["rejected"].startswith("argmap_status:GENERATION_FAILED"):
+                retryable.append({"object_id": p.get("object_id"), "layer": layer,
+                                  "reason": "generation_failed (retryable)"})
+            else:
+                rejected.append(r)
+    _record_failures(layer, retryable)
+    return {"layer": layer, "committed": committed, "rejected": rejected, "retryable": retryable}
+
+
+FAILURE_QUEUE = Path("/root/projects/patala/data/corpus/downloads/factory-failure-queue.jsonl")
+
+
+def _record_failures(layer: str, retryable: list[dict]) -> None:
+    """Append retryable failures to the durable queue (the next pass retries them)."""
+    if not retryable:
+        return
+    FAILURE_QUEUE.parent.mkdir(parents=True, exist_ok=True)
+    with FAILURE_QUEUE.open("a", encoding="utf-8") as fh:
+        for f in retryable:
+            fh.write(json.dumps({**f, "ts": __import__("time").strftime('%Y-%m-%dT%H:%M:%S')},
+                                ensure_ascii=False) + "\n")
+
+
+def _retry_failures(work_id: str, layer: str) -> int:
+    """Retry retryable failures for a work+layer from the durable queue. Returns # retried.
+
+    Idempotency (registry input-hash) prevents duplicate commits on retry."""
+    if not FAILURE_QUEUE.exists():
+        return 0
+    lines = FAILURE_QUEUE.read_text(encoding="utf-8").splitlines()
+    keep, retry = [], []
+    for line in lines:
+        try:
+            f = json.loads(line)
+        except Exception:
+            continue
+        if f.get("layer") == layer and f.get("object_id", "").startswith(work_id):
+            retry.append(f)
+        else:
+            keep.append(line)
+    if not retry:
+        return 0
+    inputs = [{"object_id": f["object_id"],
+               "input_hash": (R.current(layer, f["object_id"]) or {}).get("input_hash", "")}
+              for f in retry]
+    r = _produce_layer(layer, inputs)
+    # remove retried (regardless of outcome — a permanent reject is recorded, not looped forever)
+    FAILURE_QUEUE.write_text("\n".join(keep) + ("\n" if keep else ""), encoding="utf-8")
+    return len(retry)
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--work", default="kramasadbhava")
     ap.add_argument("--count", type=int, default=3)
-    ap.add_argument("--layers", default="T1,L0,L2,L200,C1")
+    ap.add_argument("--layers", default="T1,ARGMAP,L0,L2,L200,C1")
+    ap.add_argument("--retry", action="store_true",
+                    help="retry durable retryable failures for this work before producing")
     a = ap.parse_args()
     layers = [l.strip() for l in a.layers.split(",") if l.strip()]
+
+    # retry durable failures first (A2-11: durable failure/retry queue)
+    if a.retry:
+        for L in layers:
+            n = _retry_failures(a.work, L)
+            if n:
+                print(f"retried {n} {L} failure(s) from the queue", flush=True)
 
     # register SOURCE if not present, then recover the verse-text inputs
     _register_source(a.work, a.count)
@@ -140,7 +217,8 @@ def main() -> int:
     # T1: produce from SOURCE directly (verses)
     if "T1" in layers:
         r = _produce_layer("T1", srcs)
-        print(f"T1: {len(r['committed'])} committed, {len(r['rejected'])} rejected", flush=True)
+        print(f"T1: {len(r['committed'])} committed, {len(r['rejected'])} rejected, "
+              f"{len(r.get('retryable',[]))} retryable", flush=True)
         for c in r["committed"][:3]:
             print("   ", c["object_id"], c["version"], flush=True)
 
@@ -150,7 +228,8 @@ def main() -> int:
                   if not vs[-1].get("superseded") and oid.startswith(a.work)][:a.count]
         r = _produce_layer("ARGMAP", [{"object_id": o, "input_hash": R.current("T1", o)["input_hash"]}
                                       for o in t1_ids])
-        print(f"ARGMAP: {len(r['committed'])} committed, {len(r['rejected'])} rejected", flush=True)
+        print(f"ARGMAP: {len(r['committed'])} committed, {len(r['rejected'])} rejected, "
+              f"{len(r.get('retryable',[]))} retryable", flush=True)
 
     # L0: consume committed T1 (or fall back to source verses via the L0 handler)
     if "L0" in layers:
