@@ -54,12 +54,15 @@ def _segment(verse: str) -> list[dict]:
     the canonical `[and]-GLOSS (IAST)` form AND the source verse text (which is IAST). Falls back to
     IAST-token regex splitting if Vidyut is unavailable.
     """
-    # the IAST tokens actually present in the source verse (the ground truth surfaces)
-    iast_tokens = re.findall(IAST_TOKEN, verse)
+    # the IAST tokens actually present in the source verse (the ground truth surfaces).
+    # Strip any verse locator (e.g. '||1/1') first — it is structural, not Sanskrit.
+    from raw_l0 import strip_verse_marker
+    clean = strip_verse_marker(verse) if verse else verse
+    iast_tokens = re.findall(IAST_TOKEN, clean)
     try:
         from raw_l0 import vidyut_tokens
         from vidyut.lipi import transliterate, Scheme
-        toks = vidyut_tokens(verse)
+        toks = vidyut_tokens(clean)
         # transliterate each SLP1 surface -> IAST; pair with the source IAST token by position where
         # counts align (Vidyut segments the same words as the source IAST stream).
         out = []
