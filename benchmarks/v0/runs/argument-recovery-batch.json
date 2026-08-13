@@ -1,0 +1,404 @@
+{
+  "aggregate": {
+    "batch": "IPVV ARGUMENT-RECOVERY (50 real golds vs gold-as-candidate)",
+    "cases_scored": 49,
+    "avg_prop_precision": 0.9611,
+    "avg_prop_recall": 0.6126,
+    "avg_crux_recall": 0.9796,
+    "avg_contradiction_rate": 0.0034
+  },
+  "per_case": [
+    {
+      "case": "ipvv:V1A",
+      "prop_precision": 1.0,
+      "prop_recall": 0.6667,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V1B",
+      "prop_precision": 1.0,
+      "prop_recall": 0.3333,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V1C",
+      "prop_precision": 1.0,
+      "prop_recall": 0.6667,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V1D",
+      "prop_precision": 1.0,
+      "prop_recall": 1.0,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V1E",
+      "prop_precision": 1.0,
+      "prop_recall": 0.6667,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V1F",
+      "prop_precision": 1.0,
+      "prop_recall": 0.3333,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V1G",
+      "prop_precision": 1.0,
+      "prop_recall": 0.5,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V1H",
+      "prop_precision": 1.0,
+      "prop_recall": 0.6667,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V1I",
+      "prop_precision": 1.0,
+      "prop_recall": 0.3333,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V1J",
+      "prop_precision": 1.0,
+      "prop_recall": 0.6667,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V1K",
+      "prop_precision": 1.0,
+      "prop_recall": 0.3333,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V1L",
+      "prop_precision": 1.0,
+      "prop_recall": 0.3333,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V1M",
+      "prop_precision": 1.0,
+      "prop_recall": 0.3333,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V1N",
+      "prop_precision": 1.0,
+      "prop_recall": 0.6667,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V2A",
+      "prop_precision": 1.0,
+      "prop_recall": 0.75,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V2B",
+      "prop_precision": 1.0,
+      "prop_recall": 0.6667,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V2C",
+      "prop_precision": 1.0,
+      "prop_recall": 0.6667,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V2D",
+      "prop_precision": 1.0,
+      "prop_recall": 0.5,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V2E",
+      "prop_precision": 1.0,
+      "prop_recall": 0.6667,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V2F",
+      "prop_precision": 1.0,
+      "prop_recall": 0.6667,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V2G",
+      "prop_precision": 1.0,
+      "prop_recall": 0.5,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V2H",
+      "prop_precision": 1.0,
+      "prop_recall": 0.3333,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V2I",
+      "prop_precision": 1.0,
+      "prop_recall": 0.6667,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V2J",
+      "prop_precision": 1.0,
+      "prop_recall": 0.3333,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V2K",
+      "prop_precision": 1.0,
+      "prop_recall": 0.3333,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V2L",
+      "prop_precision": 1.0,
+      "prop_recall": 0.75,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V2M",
+      "prop_precision": 1.0,
+      "prop_recall": 0.3333,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V2N",
+      "prop_precision": 1.0,
+      "prop_recall": 0.6667,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V2O",
+      "prop_precision": 1.0,
+      "prop_recall": 0.5,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V2P",
+      "prop_precision": 1.0,
+      "prop_recall": 0.5,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V2Q",
+      "prop_precision": 1.0,
+      "prop_recall": 0.3333,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V2R",
+      "prop_precision": 1.0,
+      "prop_recall": 0.3333,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V2S",
+      "prop_precision": 1.0,
+      "prop_recall": 0.75,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V3A",
+      "prop_precision": 1.0,
+      "prop_recall": 0.6,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V3B",
+      "prop_precision": 0.0,
+      "prop_recall": 0.0,
+      "crux_recall": 0.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V3C",
+      "prop_precision": 1.0,
+      "prop_recall": 0.75,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V3D",
+      "prop_precision": 1.0,
+      "prop_recall": 1.0,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V3E",
+      "prop_precision": 0.8571,
+      "prop_recall": 1.0,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V3F",
+      "prop_precision": 1.0,
+      "prop_recall": 0.6667,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V3G",
+      "prop_precision": 1.0,
+      "prop_recall": 0.6667,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V3H",
+      "prop_precision": 1.0,
+      "prop_recall": 0.8333,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V3I",
+      "prop_precision": 1.0,
+      "prop_recall": 0.75,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V3J",
+      "prop_precision": 0.8571,
+      "prop_recall": 1.0,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V3K",
+      "prop_precision": 1.0,
+      "prop_recall": 0.5,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V3L",
+      "prop_precision": 1.0,
+      "prop_recall": 0.8333,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V3M",
+      "prop_precision": 0.8571,
+      "prop_recall": 1.0,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.1667,
+      "catastrophic": "BRIDGE/CONTRADICT"
+    },
+    {
+      "case": "ipvv:V3N",
+      "prop_precision": 0.6667,
+      "prop_recall": 1.0,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V3O",
+      "prop_precision": 0.8571,
+      "prop_recall": 1.0,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    },
+    {
+      "case": "ipvv:V3P",
+      "prop_precision": 1.0,
+      "prop_recall": 0.6667,
+      "crux_recall": 1.0,
+      "contradiction_rate": 0.0,
+      "catastrophic": ""
+    }
+  ]
+}
