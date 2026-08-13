@@ -113,7 +113,7 @@ def _priority_for(status: str, urls: list[str]) -> tuple[str, str]:
 def _translation_signal(wid: str) -> dict:
     """Determine English-coverage + copyright status from the atlas."""
     rec = None
-    for fn in ("audited.ts", "bibliographySeed.ts", "sivaqueueSeed.ts", "sivaqueue34Seed.ts"):
+    for fn in ("audited.ts", "bibliographySeed.ts", "sivaqueueSeed.ts", "sivaqueue34Seed.ts", "sivaqueueGapSeed.ts"):
         p = ROOT / "data/atlas" / fn
         if not p.exists():
             continue
@@ -186,12 +186,12 @@ def main() -> int:
         ids = set()
         if SOURCES.exists():
             ids |= {d.name for d in SOURCES.iterdir() if d.is_dir()}
-        for fn in ("sivaqueueSeed.ts", "sivaqueue34Seed.ts", "bibliographySeed.ts", "audited.ts"):
+        for fn in ("sivaqueueSeed.ts", "sivaqueue34Seed.ts", "sivaqueueGapSeed.ts", "bibliographySeed.ts", "audited.ts"):
             p = ROOT / "data/atlas" / fn
             if p.exists():
                 txt = p.read_text(encoding="utf-8")
-                ids |= set(re.findall(r'\{"id"\s*:\s*"([a-z0-9-]+)"', txt))
-                ids |= set(re.findall(r'id\s*:\s*"([a-z0-9_-]+)"', txt))
+                ids |= set(re.findall(r'\{"id"\s*:\s*"([A-Za-z0-9_-]+)"', txt))
+                ids |= set(re.findall(r'id\s*:\s*"([A-Za-z0-9_-]+)"', txt))
         recs = [analyze(w) for w in sorted(ids)]
         cache_path.write_text(json.dumps(recs, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
         print(f"wrote {cache_path} with {len(recs)} works")
@@ -204,12 +204,12 @@ def main() -> int:
         ids = set()
         if SOURCES.exists():
             ids |= {d.name for d in SOURCES.iterdir() if d.is_dir()}
-        for fn in ("sivaqueueSeed.ts", "sivaqueue34Seed.ts", "bibliographySeed.ts", "audited.ts"):
+        for fn in ("sivaqueueSeed.ts", "sivaqueue34Seed.ts", "sivaqueueGapSeed.ts", "bibliographySeed.ts", "audited.ts"):
             p = ROOT / "data/atlas" / fn
             if p.exists():
                 txt = p.read_text(encoding="utf-8")
-                ids |= set(re.findall(r'\{"id"\s*:\s*"([a-z0-9-]+)"', txt))
-                ids |= set(re.findall(r'id\s*:\s*"([a-z0-9_-]+)"', txt))
+                ids |= set(re.findall(r'\{"id"\s*:\s*"([A-Za-z0-9_-]+)"', txt))
+                ids |= set(re.findall(r'id\s*:\s*"([A-Za-z0-9_-]+)"', txt))
         recs = sorted((analyze(w) for w in ids), key=lambda r: {"HIGH": 0, "MEDIUM": 1, "LOW": 2}.get(r.get("priority", "LOW")))
     else:
         print("usage: --work <id> | --all | --write-cache")

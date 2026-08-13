@@ -241,10 +241,10 @@ def discover_works() -> list[WorkState]:
 
     # 4. bibliography linkage (data/atlas)
     atlas_ids = set()
-    for af in ("audited.ts", "bibliographySeed.ts", "sivaqueueSeed.ts", "sivaqueue34Seed.ts"):
+    for af in ("audited.ts", "bibliographySeed.ts", "sivaqueueSeed.ts", "sivaqueue34Seed.ts", "sivaqueueGapSeed.ts"):
         p = Path("/root/projects/patala/data/atlas") / af
         if p.exists():
-            atlas_ids |= set(re.findall(r'"?id"?\s*:\s*"([a-z0-9-]+)"', p.read_text()))
+            atlas_ids |= set(re.findall(r'"?id"?\s*:\s*"([A-Za-z0-9_-]+)"', p.read_text()))
     for w, s in works.items():
         # normalize: devipancasataka ~ kalikulapancasatika etc. handled by bibliography
         s.bibliographic_id = w if w in atlas_ids else None

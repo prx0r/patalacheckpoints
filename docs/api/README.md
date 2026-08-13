@@ -69,6 +69,8 @@ That's the whole philosophy: **find a thing → read it → pull its evidence.**
 | `GET /api/health` | Operational status + dataset version |
 | `GET /api/stats` | Corpus credibility signals (raw counts) |
 | `GET /api/corpus/state` | **The translation-state ledger** — per-work source/translation/L0/proof/review state + NEXT_VALID_ACTION + agent3 eligibility (the corpus control plane; Agent 2's core object) |
+| `GET /api/factory/quality` | **The live translation-ready signal** — per-work CLEAN / READY / PRIORITY fingerprint (on-disk Sanskrit usable? in ledger + queue? copyright-aware translation value?). `?work=<id>` for one, no param for all, `?priority=HIGH\|MEDIUM\|LOW` to filter. Powered by `pipeline/source_ready.py` |
+| `GET /api/factory/status` | **Factory run state** — per-layer object counts in the canonical registry + the A-H/A-L certificates (how far SOURCE→C1 production has gone) |
 | `GET /api/texts` | The bibliography (the "WHAT EXISTS?" spine) |
 | `GET /api/resources` | The external-resource federation register (typed + tradition-tagged) |
 | `GET /api/texts/{id}` | One full bibliography record |
@@ -91,6 +93,33 @@ That's the whole philosophy: **find a thing → read it → pull its evidence.**
 | `POST /api/resolve/work` | Candidate work identity (machine proposal) |
 
 **Full machine-readable contract:** `docs/openapi.yaml` (OpenAPI 3.0.3).
+
+---
+
+## The translation-ready signal (`/api/factory/quality`)
+
+The factory computes a granular per-work quality fingerprint — the same one used to route texts
+through the pipeline. Every work is scored on three axes:
+
+| Field | Meaning |
+|---|---|
+| `clean` | Is the on-disk Sanskrit actually usable? (IAST/Devanagari density, size; not an OCR-mess or English-only file) |
+| `ready` | Is it registered? (in the ledger as RAW_SANSKRIT **and** has committed SOURCE objects the factory can process) |
+| `priority` | Copyright-aware translation value — **HIGH** (no English, or English under copyright → translate your own to publish) / **MEDIUM** (public-domain English exists) / **LOW** (unclear — verify) |
+| `english` | The atlas translation coverage (`none` / `partial` / `complete`) |
+| `next_action` | The ledger's next valid transition (e.g. `BUILD_L0_SOURCE_MODE`) |
+
+```bash
+# one work
+curl http://localhost:3000/api/factory/quality?work=tantraloka
+# everything, highest value first
+curl "http://localhost:3000/api/factory/quality?priority=HIGH"
+```
+
+The rationale behind `priority`: an existing **copyrighted** English translation (e.g. Dyczkowski's
+Tantrāloka) cannot be republished on your site — so a Pāṭala-native translation is the high-value
+target, even though "complete English exists." Public-domain English (Keith, Ganguli, Whitney) can be
+linked instead, so those are MEDIUM. This is what decides where the factory spends its budget.
 
 ---
 

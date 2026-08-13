@@ -44,13 +44,13 @@ LAYERS = ["SOURCE", "T1", "ARGMAP", "L0", "L2", "L200", "C1",
 def _load_atlas() -> dict:
     """Parse data/atlas/*.ts BibliographyRecord entries -> {id: record}."""
     records = {}
-    for fn in ("bibliographySeed.ts", "audited.ts", "sivaqueueSeed.ts", "sivaqueue34Seed.ts"):
+    for fn in ("bibliographySeed.ts", "audited.ts", "sivaqueueSeed.ts", "sivaqueue34Seed.ts", "sivaqueueGapSeed.ts"):
         p = ROOT / "data/atlas" / fn
         if not p.exists():
             continue
         text = p.read_text(encoding="utf-8")
         # handle both 'id: "..."' and '"id": "..."' record forms
-        for m in re.finditer(r"\{\s*\"?id\"?\s*:\s*\"([a-z0-9-]+)\"", text):
+        for m in re.finditer(r"\{\s*\"?id\"?\s*:\s*\"([A-Za-z0-9_-]+)\"", text):
             oid = m.group(1)
             block = text[m.start():m.start() + 1600]
             title = re.search(r'work:\s*"([^"]+)"', block) or re.search(r'"work":\s*"([^"]+)"', block)
