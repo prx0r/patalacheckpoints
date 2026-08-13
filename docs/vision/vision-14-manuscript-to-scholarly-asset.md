@@ -18,7 +18,40 @@ The mental model that unlocks it: **"Muktabodha, but derived."** Muktabodha give
 Pāṭala gives you *processed, verified, enriched* texts — every one with its school, time period,
 lemmas, argument structure, and provenance, all machine-readable and API-exposed.
 
----
+### The deeper frame: a canonical machine-reference layer
+
+Pāṭala is not just a Sanskrit tool — it is heading toward being the **canonical machine-readable
+reference layer for the Śaiva textual tradition first, then Vedic, then Greek**. This is not a hope;
+it is structurally true of the architecture:
+
+```text
+              UNIVERSAL PĀṬALA CORE (language-agnostic)
+                         │
+       ┌─────────────────┼─────────────────┐
+       │                 │                 │
+ SanskritCompiler    GreekCompiler     PaliCompiler
+       │                 │                 │
+       ▼                 ▼                 ▼
+      T1                T1                T1
+       └─────────────────┼─────────────────┘
+                         ▼
+       L0 → ARGMAP → L2 → L200 → C1 → THEME → ESSAY → epistemic graph
+```
+
+The layer stack (SOURCE→T1→L0→ARGMAP→L2→L200→C1) is **language-agnostic by design**: only the
+front-end compiler (segmentation, morphology, lemmatisation, technical lexicon) is Sanskrit-specific.
+L0 is the portable boundary — once a text reaches L0, the rest of Pāṭala need not know whether it
+originated in Sanskrit, Greek, or Pāli. (This is the GlossLM argument, imported as a vision doc:
+*"every language-specific compiler must emit a standardized semantic/philological intermediate
+representation"* — not "every tradition needs its own entire Pāṭala stack".)
+
+So the vision is precise: **Śaiva/Sanskrit is the proving ground that hardens the universal kernel;
+the same factory then consumes Vedic and Greek with language-specific front-ends, all feeding one
+canonical machine-readable reference layer exposed through the same API.** That is the moat — not
+"we have Sanskrit text" (many do), but "we hold the *derived, verified, enriched* reference state
+across the whole tradition, machine-readable and queryable."
+
+
 
 ## 2. WHAT "A PĀṬALA VERSION OF A TEXT" MEANS
 

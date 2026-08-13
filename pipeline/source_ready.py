@@ -176,7 +176,26 @@ def main() -> int:
     ap.add_argument("--work", default=None)
     ap.add_argument("--all", action="store_true")
     ap.add_argument("--json", action="store_true")
+    ap.add_argument("--write-cache", action="store_true",
+                    help="compute the full signal once and save to data/corpus/source-ready.json for the API")
     a = ap.parse_args()
+
+    if a.write_cache:
+        cache_path = ROOT / "data/corpus/source-ready.json"
+        # all on-disk works + all atlas works (so new seeds show even without source)
+        ids = set()
+        if SOURCES.exists():
+            ids |= {d.name for d in SOURCES.iterdir() if d.is_dir()}
+        for fn in ("sivaqueueSeed.ts", "sivaqueue34Seed.ts", "bibliographySeed.ts", "audited.ts"):
+            p = ROOT / "data/atlas" / fn
+            if p.exists():
+                txt = p.read_text(encoding="utf-8")
+                ids |= set(re.findall(r'\{"id"\s*:\s*"([a-z0-9-]+)"', txt))
+                ids |= set(re.findall(r'id\s*:\s*"([a-z0-9_-]+)"', txt))
+        recs = [analyze(w) for w in sorted(ids)]
+        cache_path.write_text(json.dumps(recs, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
+        print(f"wrote {cache_path} with {len(recs)} works")
+        return 0
 
     if a.work:
         recs = [analyze(a.work)]
@@ -193,7 +212,7 @@ def main() -> int:
                 ids |= set(re.findall(r'id\s*:\s*"([a-z0-9_-]+)"', txt))
         recs = sorted((analyze(w) for w in ids), key=lambda r: {"HIGH": 0, "MEDIUM": 1, "LOW": 2}.get(r.get("priority", "LOW")))
     else:
-        print("usage: --work <id> | --all")
+        print("usage: --work <id> | --all | --write-cache")
         return 1
 
     if a.json:
