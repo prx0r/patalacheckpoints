@@ -13,6 +13,7 @@ store derives from one graph.*
 | `LAYER-MAPPING.md` | the complete clean map of every layer: new name · mechanism (real files/modules) · process notes · what it needs · relations · vision docs · checkpoints · honest-state table · priority map |
 | `MODULES.md` | the reusable module inventory — every module tagged `[REUSE]`/`[PARTIAL]`/`[GOLD-IPVV]`/`[NEW]`, the full Sanskrit→Education lifecycle, the scholar products, the verification plane, and the list of what does NOT exist yet |
 | `CURRENT-TO-VISION.md` | THE SYNTHESIS — for every mechanism (kernel, ledger, factory, review, atlas, site, TranslationProof, ML engines, prima materia): current state · vision state · why · how · integration · gap. The build order emerges from the gaps. |
+| `GROUND-UP-PLAN.md` | the ground-up build: thesis → positioning/economics (scope) → harvest (PANDiT/Muktabodha → R2 → SOURCE) → refine layer-by-layer (IPVV as gold) → converge one truth → the 16 product "plants" → the pushing content engine → scholar products. The refinery mental model + the ordered build steps. |
 | `strategy/` | the NON-technical strategic view: thesis, ecosystem position, partnerships, economics, funding, go-to-market, product doctrine, first-product decision, organisation |
 | `goated/` | the curated index of Pāṭala's best standalone documents (the philosophy-engine set, the epistemic/truth set, the retrieval/agentic set, the global/architecture set, the Hermes set, the strategy/product set, the vision set) — with a "read only ten" short list |
 
