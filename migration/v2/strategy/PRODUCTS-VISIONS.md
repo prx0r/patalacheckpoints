@@ -172,6 +172,113 @@ reason it exists) · **VISION** (the doc(s) it emerges from).
 
 ---
 
+## THE COMPLETE VISION → PRODUCT INTEGRATION (all 49 vision docs + the global set)
+
+Every vision doc in Pāṭala feeds at least one product (or the substrate a product needs). This is the
+**exhaustive** mapping — each vision doc → the product(s) it shapes → and the reason. It integrates the
+global visions (`PATALA-GLOBAL-ARCHITECTURE`, `globalpartnerships`, `globalaccess`, `globalgoal`) and
+every numbered/expansion/organism/education/atlas vision.
+
+### THE GLOBAL VISIONS (the one-graph spine that all products serve)
+
+| Global vision | What it mandates | Products it feeds |
+|---|---|---|
+| `PATALA-GLOBAL-ARCHITECTURE.md` | ONE graph, many interfaces; every product is a projection of the same scholarly core | **all 16** — none is a separate system |
+| `globalgoal.md` | the versioned scholarly graph is canonical; packets are compiled read-models | Research Packet, Context Bundle, Essay, Lesson (all read-models) |
+| `globalpartnerships.md` | "OpenAlex for Sanskrit"; connect, don't replace | the identity/resolve backbone under every product |
+| `globalaccess.md` | Open-Reference, Controlled-Corpus; publicly discoverable, privately deep | which products are public vs controlled (Reading public; Audit/Benchmark controlled) |
+| `globalplan.md` | current state → full platform | the build order for all products |
+| `globalglobal.md` | **ARCHIVED redirect** | — |
+
+### THE FOUNDATION VISIONS (category A)
+
+| Vision | Products it feeds | How |
+|---|---|---|
+| `CORE-BIBLE.md` | all | the "one vision, 6 zoom levels" doctrine — every product is a zoom level |
+| `endgame1.md` (translation laboratory) | Reading, TranslationProof | the translation pipeline as the first product |
+| `endgame2.md` (Tantra Hub) | Reading, Passage, Search | the living-bibliography reader |
+| `endgame3.md` (one infra, several interfaces) | all | the multi-interface doctrine |
+| `endgame4.md` (economic thesis) | Scholar Attestation, Research Packet, Benchmark | the scarce-assets economics decides what's monetizable |
+| `endgame5year.md` (2026-2031) | all | the strategic window |
+| `NORTHSTAR.md` | all | the authority/provenance layer — the why of every product |
+| `foundationalideas.md` | Passage, Reading | passage/text identity as the anchor |
+
+### THE SCHOLAR VISIONS (category B → the scholar products)
+
+| Vision | Products it feeds | How |
+|---|---|---|
+| `vision-06-adversarial-review.md` | **Review, Audit, Argument, Claim, Crux, Synthesis** | the research-compiler diagnostics; auditable criticism; dependency/impact |
+| `vision-07-new-scholar.md` | **Essay, Research Packet, Scholar Attestation, Reading** | essay = a rendering of the graph; "AI proposes, scholar adjudicates"; forkable scholarship |
+| `scholars/README.md` | Scholar Attestation, Review | who the contributors are |
+
+### THE ECONOMICS VISIONS (category C → the business products)
+
+| Vision | Products it feeds | How |
+|---|---|---|
+| `vision-08-scholar-economics.md` | **Scholar Attestation, Review, Audit, Research Packet** | paid adjudication + ORCID/CRediT/DOI + ownership; makes scholar work monetizable |
+| `vision-10-market-entry-and-partnerships.md` | all (go-to-market) | the pilots (Gold Corpus Lab, annotation sprints) seed the products |
+| `economics/README.md` | Attestation, Benchmark, Audit | the scarce-assets thesis; what's defensible |
+
+### THE MEDIA & ORGANISM VISIONS (category D → the organism + media products)
+
+| Vision | Products it feeds | How |
+|---|---|---|
+| `vision-09-media-and-cross-tradition.md` | **Essay, Education, Comparison, Video** | render once, reproduce everywhere; core truth → many media projections |
+| `organism/patalaorganism.md` | **Education, Reading, Lesson** | the two first-class graphs (epistemic + human understanding) |
+| `organism/consumerorganism.md` | **Education, Reading** | consumer-as-probe; questions reveal missing graph |
+| `organism/consumerorganismtech.md` | Education, Lesson | event stream → graph projections |
+| `organism/organism_meh.md` | Education, Lesson | adaptive learning (KST/BKT) |
+| `organism/patalaorganismvisions.md` | all | longitudinal user graph |
+
+### THE PLATFORM VISIONS (category E → the surfaces)
+
+| Vision | Products it feeds | How |
+|---|---|---|
+| `vision-12-multi-surface-platform.md` | all (the 5 surfaces) | one core, five permission-scoped surfaces |
+| `vision-13-product-portfolio-by-user-base.md` | the 16-product catalog | the product doctrine itself |
+| `ENDGAME_SITE_SPEC.md` | Reading, Passage, Search | the Tantra Reader site |
+
+### THE EXPANSION VISIONS (category F → the corpus that feeds everything)
+
+| Vision | Products it feeds | How |
+|---|---|---|
+| `expansion/vision-11-siva-before-abhinava.md` | all (new corpus) | the Śaiva genealogy as the next corpus → more Reading/Argument/Comparison |
+| `...-prehistory.md` | all | the deep source tree |
+| `...-corpus-manifest.md` | all | the corpus manifest |
+| `expansion/README.md` | all | the expansion lens |
+
+### THE ATLAS VISIONS (category G → the identity backbone)
+
+| Vision | Products it feeds | How |
+|---|---|---|
+| `vision-14-manuscript-to-scholarly-asset.md` | **Passage workbench, Reading, Comparison** | manuscript → machine-readable scholarly asset |
+| `vision-15-patala-atlas-sanskrit-research-graph.md` | all (identity) | "OpenAlex for Sanskrit" — the resolve backbone |
+| `source-resolution/source-resolver-design.md` | Passage, Reading, Resolve | the federated resolver |
+| `atlas/technical-architecture-v1.md` | all (substrate) | the Authority Graph + schema |
+| `atlas/atlas-engineering-blueprint.md` | all | Postgres=R2=event-log storage |
+| `atlas/atlas-cloudflare-edge-layer.md` | all | the edge read plane |
+| `atlas/atlas-performance.md` | all | compute-on-write, immutable = cacheable |
+| `atlas/agent-optimization.md` | **Context Bundle, Search** | the agent product surface |
+
+### THE EDUCATION VISIONS (category H → the education products)
+
+| Vision | Products it feeds | How |
+|---|---|---|
+| `essayguide.md` | **Essay** | the Essay Research Program (ESSAY-RESEARCH-v1) |
+| `education/PATALA-EDUCATION-SYNTHESIS.md` | **Lesson, Education, Essay** | the 4 native education objects (LearningClaim/Skill/Interaction/MasteryEvidence); progressive epistemic zoom |
+| `education/LEARNING_STRATEGY.md` | Lesson, Education | research-once/distill-repeatedly |
+| `education/EDUCATION_VISION.md` | Lesson, Education | the graph-native teaching engine |
+| `education/sources/` | Lesson, Education | the imported design docs |
+
+### THE FUNCTIONALITY VISIONS (the execution layer)
+
+| Vision | Products it feeds | How |
+|---|---|---|
+| `functionality/hermes-execution.md` | Context Bundle, all (via Hermes) | the vision × Hermes execution map |
+| `functionality/research/2026-08-12/*` | Factory, Benchmark, Audit, Review, Workbench | the product research-and-build packs |
+
+---
+
 ## HOW THE PRODUCTS LINK TOGETHER (the dependency web)
 
 ```text
