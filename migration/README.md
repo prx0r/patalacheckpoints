@@ -1,28 +1,43 @@
-# migration/ — high-level migration plans & scripts
+# migration/ — the coordination + blueprint (organized)
 
-*Holding area for cross-cutting migration work: data/byte migrations between the R2 data lake,
-`sanskritree`, `research-library`, and the Pāṭala factory registry; schema/migration scripts; and
-one-shot transformations that don't belong in `pipeline/` or `ingestion/`.*
+*2026-08-14 · status: ORGANIZED · this folder holds (1) the **current blueprint** (v3), (2) the
+**archived blueprint** (v2, superseded), and (3) the **shared coordination** with agentgraph (the
+two-sided build). Read the READMEs in each. If you are a new agent: go to `v3/README.md` (the current
+design + proofs) then `shared/README.md` (the live two-sided build directives).*
 
-## What's here
+---
 
-| Path | What it is |
-|---|---|
-| `v2/` | **the Pāṭala v2 blueprint** — the coherent-system spec (strategy, architecture, layer/mapping, modules, current→vision, ground-up plan, goated docs). This is where the future lives. |
-| `mixxii` | the systems review (imported from R2) — the epistemic-wind-tunnel analysis that shaped v2 |
+## THE CLEAN STRUCTURE
 
-**If you are a new agent, go to `v2/README.md` and follow its reading hierarchy** (strategy WHY → architecture WHAT → ground-truth maps → current→vision → build plan).
+| Path | What it is | Status |
+|---|---|---|
+| **`v3/`** | the CURRENT blueprint — the organism (17→37 kernels, 16 products, the build spec, verified proofs, live tests) | ✅ CURRENT |
+| **`shared/`** | the two-sided coordination with agentgraph — role separation, handoff queue, the build-directive set, the shared goal, the critical audits | 🟡 LIVE COORDINATION |
+| **`v2/`** | the ORIGINAL blueprint (design/proposed) — superseded by v3 | 🔴 ARCHIVED |
+| **`mixxii`** | the systems review (imported from R2) that shaped v2/v3 | reference |
 
-## Purpose
+---
 
-Anything that **moves, transforms, or reconciles existing state** (rather than building new
-machinery) lives here. Think: R2 Bronze snapshots → factory registry, sibling-repo gold → canonical
-objects, Postgres atlas backfills, registry integrity repair.
+## THE ONE-LINE (what each is for)
 
-## Layout conventions
+> **v3 = what Pāṭala is now (the proven organism + tests). shared = what we're building with agentgraph
+> (the two-sided coordination + build directives). v2 = the earlier design it all grew from (archived).**
 
-- One subfolder (or file) per migration, self-contained.
-- Every migration carries a `README.md` stating: source → target, idempotency, dry-run flag,
-  rollback, and how to verify the result.
-- Prefer `--dry-run` by default; only write state when told.
-- Reference the R2 credentials in the gitignored `.r2-env` (never commit secrets).
+---
+
+## READING ORDER (for a new agent)
+
+1. **`v3/README.md`** — the current blueprint: the organism, the 16 products, the verified proofs (run the
+   tests), the honest state.
+2. **`shared/README.md`** — the coordination: who does what (agentgraph vs agentpatala), the handoff queue,
+   the build-directive set (BUILD-*.md), the shared goal, the critical audits.
+3. **`v2/README.md`** — (archived) the earlier design, for context only.
+
+---
+
+## WHAT THE MAIN DOCS TREE IS
+
+The **canonical `docs/` tree** (process/, layers/, vision/, global/, corpus/, api/) is the operational
+documentation. This `migration/` folder is the **design/coordination** layer — the blueprint (v3), the
+archive (v2), and the shared build directives (shared/). They complement each other: `docs/` is the
+running system; `migration/` is the plan + the coordination.

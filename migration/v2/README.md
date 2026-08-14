@@ -1,5 +1,10 @@
 # migration/v2 — the Pāṭala v2 coherent-system spec
 
+> ## 🔴 ARCHIVED / SUPERSEDED
+> **This is the v2 design blueprint (proposed/speculative). It is SUPERSEDED by `migration/v3/` — the
+> current, proven organism. Read `v3/README.md` first. This folder is kept for history/context only.**
+
+
 *The canonical blueprint for a clean, clear, agent-usable Pāṭala. The scholarship pipeline stays; the
 names get clear, the layers get codified, and every store derives from one graph.*
 

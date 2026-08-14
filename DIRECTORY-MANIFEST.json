@@ -289,6 +289,14 @@
       "layer": "00",
       "class": "ORGANIZATIONAL",
       "note": "high-level migration plans & one-shot scripts (R2/lake, sibling-repo gold, registry, atlas backfills)"
+    },
+    {
+      "dir": "web/",
+      "name": "web",
+      "role": "code",
+      "layer": "10",
+      "class": "CANONICAL",
+      "note": "the Astro static site (the read plane over the compiled patala data projections)"
     }
   ]
 }

@@ -56,7 +56,7 @@ synthesis) → COMMENTARIAL → VERIFICATION → REVIEW → ORGANISM(Q) → SURF
 | `data/` | the corpus + atlas data (bibliography, passages, published) | = **data** | content |
 | `docs/` | documentation | = **docs** | knowledge |
 | `endgamebuild/` | the audit + health + inventory + progress | = **audit** | — |
-| `migration/` | high-level migration plans & one-shot scripts (R2/lake, sibling-repo gold, registry, atlas backfills) | = **migration** | 00 |
+| `migration/` | the blueprint + coordination: `v3/` (current organism + proofs) · `shared/` (two-sided build directives with agentgraph) · `v2/` (archived) | = **migration** | 00 |
 | `handover/` | cross-agent coordination + build records | = **handover** | history |
 | `skills/` | the Hermes skill pack source of truth (synced 1:1 to the `patala` profile) | = **skill-pack** | 12 |
 | `examples/` | executable API examples ("executable truth"), 01-07 + run_all.sh | = **examples** | 10 |
