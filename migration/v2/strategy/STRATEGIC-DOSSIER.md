@@ -149,6 +149,10 @@ community growth · institutional support (grants, partnerships).
 **One scholarly core, five permission-scoped surfaces** (Vision 12). Products are projections of the
 SAME graph + MCP + review engine — never separate systems.
 
+> **The canonical product list (16 products, 4 families) is formalized in `PRODUCTS.md`** — the
+> user-facing productization, with each product mapped to artifact + checkpoint + v2 layer + vision +
+> reuse module. This section is the surface-level summary.
+
 | Surface | User | Products |
 |---|---|---|
 | **CONSUMER** | learners, practitioners, readers | Tantra Hub · reader · atlas graph · learning/courses · media (shorts/video/AI-teacher) |
