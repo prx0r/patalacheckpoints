@@ -21,6 +21,7 @@ v3  the ORGANISM (v2 + proven kernels + production floor + 6 expansions, assembl
 | `LAYERS.yaml` | the codified layer contract — v2's LAYERS.yaml fully specced for v3: every layer maps to a PROVEN kernel (ip-graph lib/) + its exact external tool + the honest v3 status (PROVEN / PROVEN-MECHANISM / NEEDS-BUILD) + the 10 cross-cutting kernel layers + the build targets |
 | `PRODUCTS.md` | the 16 products fully specced — each with its proven mechanism (`lib/`), the verifiable proof, the exact external tool, and the build path. 13/16 proven |
 | `MECHANISMS.md` | the actual machinery: the 5 load-bearing mechanisms (epistemic ceiling invariant, human publication gate, DAG staleness, anti-groupthink review, education/organism moat) + the 7 algorithms (PathRAG/HippoRAG/KG2Code) + the 17 kernel invariants + the 8 laws + the 6 frontiers + the honest state + the roadmap |
+| `STRUCTURES.md` | the definitive structural reference: the 11 structures Pāṭala definitely needs (authority graph+Atlas, epistemic envelope, event ledger+reducer, derivation DAG+staleness, review panel+CiteCheck, transformation registry, projection compiler, production organism, bibliography, terminology, timeline) + the completeness validation (v2→v3) + the build targets |
 
 ## The v2 → v3 coverage map (everything from v2 is explained in v3)
 

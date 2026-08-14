@@ -330,6 +330,22 @@ layers:
 
 # -- The cross-cutting kernel layers (from the ip-graph LAYERS.yaml) --
 kernel_layers:
+  - id: transformation_registry
+    status: NEEDS-BUILD            # the v2 'real unlock' — present in v2, was missing in v3, now added
+    kernel: (the @transformation registry — one source for every transformation)
+    proof: (drives scheduling/staleness/validation/MCP/docs/UI from one place)
+    doc: |
+      THE TRANSFORMATION REGISTRY (v2 SPEC §3 — 'the real unlock'). Rather than scattered
+      build_essay.py / build_questions.py scripts, represent every transformation once:
+        @transformation("reconstruct_proposition")
+        class ReconstructProposition:
+            input = Tokenization        output = Proposition
+            invalidates = [Argument, Synthesis, Essay, Lesson]
+            preserves   = [evidence, generation]
+            requires    = ["review:independent_advanceable"]
+            verifier    = [proposition_schema, scope_check, modality_check]
+      The SAME registry drives scheduling, staleness, validation, MCP, docs, and UI provenance.
+      This was present in v2, MISSING in v3 — now restored.
   - id: review
     status: PROVEN
     kernel: lib/review.py + lib/scholar_review.py
@@ -399,7 +415,9 @@ authority_semantics: |
 # -- The build targets (the honest to-do, from the v3 graduation test) --
 build_targets:
   graduation_test: one IPVV claim through the whole stack on real evidence, then mutate source + watch the organism react
-  needs_build: [tokenization, commentary, essay_projection]
+  needs_build: [tokenization, commentary, essay_projection, transformation_registry]
   gap_e: signed human attestation (C2PA/ORCID)
   gold_ingest: register the 63 L200 + 63 C1 IPVV golds with derivation edges
+  ledger_to_postgres: the reducer writes Postgres from events (kill the four-truths problem — v2 [NEW] item)
+  site_read_path: stop reading .ts seeds; read compiled objects (v2 [NEW] item — 33/43 routes read .ts, 0 hit Postgres)
   expansions: [E1 marketplace, E2 co-evolving organism, E3 what-if, E4 question-growth, E5 self-proving, E6 enquiry-discovery]
