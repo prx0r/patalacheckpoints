@@ -12,6 +12,7 @@ store derives from one graph.*
 | `LAYERS.yaml` | the machine-readable codified layer contract (the spine of v2) — every layer: clear name, legacy code, position, requires/produces, transformation, authority, doc |
 | `LAYER-MAPPING.md` | the complete clean map of every layer: new name · mechanism (real files/modules) · process notes · what it needs · relations · vision docs · checkpoints · honest-state table · priority map |
 | `MODULES.md` | the reusable module inventory — every module tagged `[REUSE]`/`[PARTIAL]`/`[GOLD-IPVV]`/`[NEW]`, the full Sanskrit→Education lifecycle, the scholar products, the verification plane, and the list of what does NOT exist yet |
+| `strategy/` | the NON-technical strategic view: thesis, ecosystem position, partnerships, economics, funding, go-to-market, product doctrine, first-product decision, organisation |
 
 ## The core idea (one line)
 
