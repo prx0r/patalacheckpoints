@@ -1,6 +1,6 @@
 # LAYER 01 — INGESTION
 
-*Part of the `globalglobal.md` spine. Turns external sources into canonical objects.*
+*Part of the `NAVIGATION.md` layer map (the master tree / spine). Turns external sources into canonical objects.*
 
 ## 1. What it is
 The intake engine: converts external sources (PANDiT, GRETIL, SARIT, Muktabodha, papers, Wikidata,

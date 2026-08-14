@@ -3,7 +3,7 @@
 > **STATUS: PARTIAL — argument/crux/synthesis compilers + golds EXIST; 0 essay/education objects (the upper projections are design)** (derived live state — see `docs_state.py`)
 
 
-*Part of the `globalglobal.md` spine. The Pāṭala-native epistemic engines — the moat nobody else has.*
+*Part of the `NAVIGATION.md` layer map (the master tree / spine). The Pāṭala-native epistemic engines — the moat nobody else has.*
 
 ## 1. What it is
 The engines that turn canonical passages into propositions → arguments → cruxes → synthesis, then into

@@ -46,14 +46,14 @@ content, and the site renders it.*
 - [`nextdev2.md`](nextdev2.md) — the forward plan (reader-is-the-product, school pages, C1 engine, scaling the corpus).
 
 ### The corpus & status
-- [`PROGRESS_2026-08-10.md`](PROGRESS_2026-08-10.md) — the API/hub progress.
-- [`PIPELINE_PROGRESS_2026-08-10.md`](PIPELINE_PROGRESS_2026-08-10.md) — the pipeline/stack progress.
+- [`PROGRESS_2026-08-10.md`](_archive/PROGRESS_2026-08-10.md) — the API/hub progress (archived).
+- [`PIPELINE_PROGRESS_2026-08-10.md`](_archive/PIPELINE_PROGRESS_2026-08-10.md) — the pipeline/stack progress (archived).
 - [`CHECKPOINTS.md`](CHECKPOINTS.md) · [`PROCESS_NOTES.md`](PROCESS_NOTES.md) · [`DEV_PLAN.md`](DEV_PLAN.md) — the milestones/plan.
 - [`CHANGELOG.md`](CHANGELOG.md) — API / data / scholarly changes.
 
 ### The strategy
 - [`NORTHSTAR.md`](NORTHSTAR.md) · [`nextdev.md`](nextdev.md) · [`endgame1..5year.md`](endgame2.md) — the vision.
-- [`../PROCESS_NOTES.md`](../PROCESS_NOTES.md) · [`../HANDOVER.md`](../HANDOVER.md) — current state + handover.
+- [`PROCESS_NOTES.md`](PROCESS_NOTES.md) · [`../HANDOVER.md`](../HANDOVER.md) — current state + handover.
 
 ### The strategy — corpus-side (the consolidated goldmine, now in `docs/corpus/`)
 The corpus acquisition/translation goldmine was consolidated out of `sanskritree/corpus/targets/` into

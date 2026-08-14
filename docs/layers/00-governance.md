@@ -1,6 +1,6 @@
 # LAYER 00 — GOVERNANCE & RULES
 
-*Part of the `globalglobal.md` spine. The constitution every layer obeys.*
+*Part of the `NAVIGATION.md` layer map (the master tree / spine). The constitution every layer obeys.*
 
 ## 1. What it is
 The governing layer: the anti-theatre doctrine, the operating axioms, and the authority ladder that

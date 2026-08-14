@@ -3,7 +3,7 @@
 > **STATUS: PARTIAL — Tier-1 truth (registry/review/events) is REAL; projection/staleness/MCP/queue are pending** (derived live state — see `docs_state.py`)
 
 
-*Part of the `globalglobal.md` spine. THE complete live system: how Hermes agents, coding agents,
+*Part of the `NAVIGATION.md` layer map (the master tree / spine). THE complete live system: how Hermes agents, coding agents,
 Pāṭala state, and the docs stay in sync so nothing goes stale. This is the CANONICAL spec for the
 7 pieces that close the loop. Read this before building any orchestration or state-projection code.
 Peer-reviewed against the Gas Town / Gas City / Beads / Beads-Rust / Beads-Viewer / Agetor / Mozzie /
@@ -54,7 +54,7 @@ TIER 2 — PROJECTION (regenerated, NEVER hand-edited)
    STATE.yaml            → becomes a projection, not an orchestration DB [TO DEMOTE]
         ↓  renders
 TIER 3 — PRESENTATION (the docs)
-   docs/layers/NN-*.md   ·  NAVIGATION.md  ·  globalglobal.md
+   docs/layers/NN-*.md   ·  NAVIGATION.md  ·  the canonical docs
 ```
 
 ## 2b. THE FIVE KINDS OF STATE (they must never substitute for each other)

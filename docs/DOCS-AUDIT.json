@@ -4,7 +4,7 @@
   "note": "Machine-verifiable classification of every loose .md file in docs/. Every file is CANONICAL (trust it), ARCHIVE (superseded history), or PART_OF (cluster with a canonical sibling). This lets an agent instantly know what to trust without moving files or breaking references.",
   "status_legend": {
     "CANONICAL": "the current doc to trust for this concern (named in docs/INDEX.md or the layer/process docs)",
-    "ARCHIVE": "superseded history — kept for reference, do not follow as current",
+    "ARCHIVE": "superseded history \u2014 kept for reference, do not follow as current",
     "PART_OF": "belongs to a cluster with one canonical; the canonical is named"
   },
   "files": [
@@ -71,17 +71,17 @@
     {
       "file": "TRANSLATION_SCHEMA.md",
       "status": "PART_OF",
-      "role": "the schema — part of the translation cluster, canonical = TRANSLATION_PROTOCOL"
+      "role": "the schema \u2014 part of the translation cluster, canonical = TRANSLATION_PROTOCOL"
     },
     {
       "file": "TRANSLATION_SKILL.md",
       "status": "PART_OF",
-      "role": "compiled from PROTOCOL — part of translation cluster"
+      "role": "compiled from PROTOCOL \u2014 part of translation cluster"
     },
     {
       "file": "TRANSLATION_SKILL_SPEC.md",
       "status": "PART_OF",
-      "role": "spec — part of translation cluster, canonical = TRANSLATION_PROTOCOL"
+      "role": "spec \u2014 part of translation cluster, canonical = TRANSLATION_PROTOCOL"
     },
     {
       "file": "BUILD_NOTES_AUTONOMY.md",
@@ -166,27 +166,27 @@
     {
       "file": "endgame1.md",
       "status": "CANONICAL",
-      "role": "Vision 01 — translation laboratory"
+      "role": "Vision 01 \u2014 translation laboratory"
     },
     {
       "file": "endgame2.md",
       "status": "CANONICAL",
-      "role": "Vision 02 — Tantra Hub"
+      "role": "Vision 02 \u2014 Tantra Hub"
     },
     {
       "file": "endgame3.md",
       "status": "CANONICAL",
-      "role": "Vision 03 — one infra many surfaces"
+      "role": "Vision 03 \u2014 one infra many surfaces"
     },
     {
       "file": "endgame4.md",
       "status": "CANONICAL",
-      "role": "Vision 04 — economic thesis"
+      "role": "Vision 04 \u2014 economic thesis"
     },
     {
       "file": "endgame5year.md",
       "status": "CANONICAL",
-      "role": "Vision 05 — strategic window"
+      "role": "Vision 05 \u2014 strategic window"
     },
     {
       "file": "ENDGAME_SITE_SPEC.md",
@@ -297,6 +297,16 @@
       "file": "PEER_REVIEW_REDTEAM.md",
       "status": "ARCHIVE",
       "role": "old peer-review red-team, superseded by endgamebuild/PROJECT-AUDIT + vision-06"
+    },
+    {
+      "file": "global/globalglobal.md",
+      "status": "ARCHIVE",
+      "role": "redirect stub \u2192 NAVIGATION.md (the master tree/spine)"
+    },
+    {
+      "file": "process/SITE-WIDE-ORGANIZATION.md",
+      "status": "ARCHIVE",
+      "role": "redirect stub \u2192 NAVIGATION.md (the sites/surfaces map)"
     }
   ]
 }

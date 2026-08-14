@@ -42,9 +42,9 @@ history is in `handover/sessions/` (timestamped session notes).*
 
 - **71 RAW-EN works** (patala `downloads/translations/`) = the LIVE factory input → `register_sources.py`
   commits them as SOURCE → they advance through the DAG.
-- **141 old-batch T1 + 11 T3 finals** (sanskritree) = ARCHIVED format, converted by `import_sanskritree.py`
+- **141 old-batch T1 + 11 T3 finals** (sibling `sanskritree/` repo) = ARCHIVED format, converted by `import_sanskritree.py`
   (provenance `sanskritree-import`).
-- **IPVV gold layers** (63 L200 audits, 63 C1, T1 golds) = the primary scholarly evidence (`IPVV-BUILD.md`).
+- **IPVV gold layers** (63 L200 audits, 63 C1, 63 T1 golds — all in the sibling `sanskritree/translations/_stack/ipvv/`) = the primary scholarly evidence (`IPVV-BUILD.md`).
 
 ## 4. THE CANONICAL INDEXES (the "what exists" reference)
 

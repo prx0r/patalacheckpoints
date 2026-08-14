@@ -14,7 +14,7 @@ reference — the executable surface of Pāṭala, complementing `DATA-ASSETS-IN
 
 The canonical source of truth for the Hermes skills (synced 1:1 to `~/.hermes/profiles/patala/skills/`).
 
-**Top-level skills (10):**
+**Top-level skills (9):**
 | Skill | What it does |
 |---|---|
 | `translate-passage` | the full T1→R1→T2→R2→T3→T3.1→C1 passage flow |
@@ -26,9 +26,8 @@ The canonical source of truth for the Hermes skills (synced 1:1 to `~/.hermes/pr
 | `write-commentary` | C1 commentary generation |
 | `use-api` | API/MCP interaction (curl against `/api`) |
 | `push-text` | pushing text downstream |
-| `validate` / `push` | (validation + push) |
 
-**The nested autonomous-layer bundle (`autonomous-layer/patala-autonomous-layer-skills/skills/`, 9):**
+**The nested autonomous-layer bundle (`autonomous-layer/patala-autonomous-layer-skills/skills/`, 10):**
 | Skill | Layer |
 |---|---|
 | `patala-l0` · `patala-l1` · `patala-l2` · `patala-l200` · `patala-c1` · `patala-theme` · `patala-essay` · `patala-education` | the per-layer autonomous skills |

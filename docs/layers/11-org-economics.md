@@ -3,7 +3,7 @@
 > **STATUS: DESIGN — credit/market/partnership strategy is aspirational, not built** (derived live state — see `docs_state.py`)
 
 
-*Part of the `globalglobal.md` spine. The human + economic structure: agents, Hermes, scholars, money.*
+*Part of the `NAVIGATION.md` layer map (the master tree / spine). The human + economic structure: agents, Hermes, scholars, money.*
 
 ## 1. What it is
 The organizational + economic layer: who the agents are, how Hermes runs the work, how scholars are
@@ -45,4 +45,4 @@ deep = controlled corpus (`globalaccess.md`).
 - `docs/vision/vision-08-scholar-economics.md` — scholar economics + credit.
 - `docs/vision/vision-10-market-entry-and-partnerships.md` — go-to-market.
 - `docs/endgame4.md` · `docs/endgame5year.md` — economics + strategic window.
-- `docs/global/globalglobal.md` — this spine.
+- `NAVIGATION.md` — the master tree / spine / resolver.

@@ -61,7 +61,7 @@ def _live_state() -> dict:
                 },
                 "note": "SOURCE->C1->THEME->ARGUMENT real; SYNTHESIS/ESSAY/EDUCATION are 0 (not built)",
             },
-            "04_evidence": {"status": "BUILT", "note": "contracts + 62 tools documented + eval plane"},
+            "04_evidence": {"status": "BUILT", "note": "contracts + 69 tools documented + eval plane"},
             "05_research": {"status": "PARTIAL", "note": "argument/crux/synthesis compilers + golds exist; 0 essay/education objects"},
             "06_commentarial": {"status": "DESIGN", "note": "paper->ScholarContributionPacket is design only"},
             "07_verification": {"status": "BUILT", "note": "Inspect eval plane + 10 self-tests"},

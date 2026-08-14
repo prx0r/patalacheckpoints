@@ -3,7 +3,7 @@
 > **STATUS: PARTIAL — the 22-table Postgres + resolver + API are REAL; the read API + reconciliation adapters are pending** (derived live state — see `docs_state.py`)
 
 
-*Part of the `globalglobal.md` spine. The canonical scholarly graph — the immutable reference.*
+*Part of the `NAVIGATION.md` layer map (the master tree / spine). The canonical scholarly graph — the immutable reference.*
 
 ## 1. What it is
 The canonical authority graph: what exists and how it relates. The single source of truth both sites +

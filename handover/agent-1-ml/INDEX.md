@@ -67,7 +67,7 @@ interpretations, disagreements and cruxes — while preserving exactly where int
 - **Role:** ML + eval + retrieval + the research story.
 - **Owns:** `machinelearning/` (doctrine, benchmark, DEVPLAN, experiments), the curriculum, statistical
   rigor, leakage rules.
-- **THE GOVERNING RULE (read `AGENTS.md` + `machinelearning/AGENTS-DOCTRINE.md` FIRST):**
+- **THE GOVERNING RULE (read `AGENTS.md` + `machinelearning/_ACTIVE/AGENTS-DOCTRINE.md` FIRST):**
   *nothing is real because code exists; it's real only when independent gold + blind eval + metric +
   human adjudication show it.* A tested schema ≠ a result. Route everything through the frozen benchmark.
 - **Rule (frozen):** no INFER model is adopted until it beats a baseline on a fixed held-out set.
@@ -189,8 +189,8 @@ not SCHOLARLY_VALIDATED) · present `reference_resolution=EXACT` as semantic ent
 
 ### The governing doctrine (read first)
 - `AGENTS.md` (repo root) — auto-loaded; the ONE RULE + read-order.
-- `machinelearning/AGENTS-DOCTRINE.md` — the master anti-theatre rule.
-- `machinelearning/CLAIMS.md` — the project's self-audit ledger (P-001..P-008).
+- `machinelearning/_ACTIVE/AGENTS-DOCTRINE.md` — the master anti-theatre rule.
+- `machinelearning/_ACTIVE/CLAIMS.md` — the project's self-audit ledger (P-001..P-008).
 - `machinelearning/COMPONENT-CONTRACTS.md` — the 9-field anti-theatre contracts.
 - `machinelearning/AGENT1-HANDOVER.md` — the working doctrine (axioms, errors, tone).
 - `machinelearning/theatre_check.py` — the mechanical gate (run before claiming "done").

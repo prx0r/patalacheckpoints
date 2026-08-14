@@ -1,6 +1,6 @@
 # LAYER 07 — VERIFICATION PLANE
 
-*Part of the `globalglobal.md` spine. External methods test Pāṭala; they never define Pāṭala truth.*
+*Part of the `NAVIGATION.md` layer map (the master tree / spine). External methods test Pāṭala; they never define Pāṭala truth.*
 
 ## 1. What it is
 The two-plane architecture: a PRODUCTION COMPILER + a VERIFICATION PLANE that tests every object from

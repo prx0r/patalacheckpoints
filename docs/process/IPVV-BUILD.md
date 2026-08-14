@@ -45,8 +45,8 @@ SOURCE  (M00020/21/22 + Torella's IPK)
 | L2 READs + argument maps | `pilot/pilot_*_{L2_read,ARGUMENT_MAP}.md` | 108 | real |
 | **L200 audits** | `l200/` | **63** | **real — 3 canonical models (V2-O/V3-B/V3-C) + 8 hand-authored + 52 standardized, all `editor-reviewed`** |
 | **C1 read commentaries** | `c1/read/` | **63** | real |
-| **C1 source records** | `c1/source/` | 10 | real (53 more to generate) |
-| C1 essay-material (legacy) | `c1/_essay-material-legacy/` | 10 | preserved as essay assets, NOT C1 |
+| **C1 source records** | `c1/source/` | 63 | real |
+| C1 essay-material (legacy) | `c1/_essay-material-legacy/` | 11 | preserved as essay assets, NOT C1 |
 
 **The L200 proof layer** (`l200/`): 8 sections per chunk (IDENTIFICATION / PUBLISHED READING /
 DERIVATION MAP / MATERIAL TRANSLATION DECISIONS / INTERPRETIVE ASSERTIONS / SOURCE LAYER /

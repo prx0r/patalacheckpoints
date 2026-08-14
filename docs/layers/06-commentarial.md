@@ -1,6 +1,6 @@
 # LAYER 06 — COMMENTARIAL GRAPH (secondary scholarship)
 
-*Part of the `globalglobal.md` spine. Turns papers into a computable commentary layer.*
+*Part of the `NAVIGATION.md` layer map (the master tree / spine). Turns papers into a computable commentary layer.*
 
 ## 1. What it is
 The secondary-scholarship layer: turns thousands of papers (Ratié, Torella, Dyczkowski, Sanderson) into
@@ -38,5 +38,5 @@ saved prose.
 
 ## 7. Docs
 - `docs/process/06-commentarial-graph.md` — the detailed layer guide.
-- `docs/global/globalglobal.md` — the spine.
+- `NAVIGATION.md` — the master tree / spine / resolver.
 - `docs/process/githubclones.md` — SocraticKG, ORKG, blogengine (Research Object), geometricengine.

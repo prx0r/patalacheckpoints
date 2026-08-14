@@ -75,10 +75,15 @@ proven?" reference.*
 
 ## 6. THE IPVV GOLD (the scholarly corpus — see `IPVV-BUILD.md`)
 
-- **T1 golden chunks**: 63 (`01_t1/` + `02_t1/`)
-- **L200 audits**: 63 (3 canonical models + 8 hand-authored + 52 standardized, all editor-reviewed)
-- **C1 commentaries**: 63 read + 10 source records
-- **The essay library**: 22 essays (`research-library/recognition/`)
+*All counts below resolve to files in the sibling `sanskritree/` repo
+(`/root/projects/sanskritree/translations/_stack/ipvv/`) and `research-library/`
+(`/root/projects/research-library/recognition/`), NOT in this repo. See
+`RECONCILIATION.md` §THE REPOS WE DEPEND ON for the traceable repo→path map.*
+
+- **T1 golden chunks**: 63 (`sanskritree translations/_stack/ipvv/01_t1/` + `02_t1/`)
+- **L200 audits**: 63 (`sanskritree translations/_stack/ipvv/l200/` — 3 canonical models + 8 hand-authored + 52 standardized, all editor-reviewed)
+- **C1 commentaries**: 63 read + 63 source records (`sanskritree translations/_stack/ipvv/c1/read/` + `c1/source/`)
+- **The essay library**: 22 essays (`research-library/recognition/ESSAY-*.md`)
 
 ---
 

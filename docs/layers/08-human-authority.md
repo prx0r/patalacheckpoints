@@ -3,7 +3,7 @@
 > **STATUS: PARTIAL — ReviewEvent ledger + review_engine are REAL; the scholar workbench UI is pending** (derived live state — see `docs_state.py`)
 
 
-*Part of the `globalglobal.md` spine. The human layer — review, adjudication, supersession.*
+*Part of the `NAVIGATION.md` layer map (the master tree / spine). The human layer — review, adjudication, supersession.*
 
 ## 1. What it is
 The human-authority layer: scholars review, adjudicate, and promote objects. The four human objects
@@ -38,7 +38,7 @@ dependency logic lives in Pāṭala, not Hermes.
 - Tests: `test_review_engine`, `test_review_bundle`, `test_scholarly_oracle`.
 
 ## 7. Docs
-- `docs/process/README.md` (Layer 8 section) + `globalglobal.md`.
+- `docs/process/README.md` (Layer 8 section) + `NAVIGATION.md` (the master tree).
 - `docs/global/globalgoal.md` + `agent1atlas.md` — the human-authority layer (E).
 - `docs/vision/vision-06-adversarial-review.md` — Pāṭala Review.
 - `docs/vision/vision-07-new-scholar.md` — the scholar workbench.

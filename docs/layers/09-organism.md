@@ -1,6 +1,6 @@
 # LAYER 09 — ORGANISM (the human understanding graph)
 
-*Part of the `globalglobal.md` spine. The second first-class graph — user questions/confusions/beliefs.*
+*Part of the `NAVIGATION.md` layer map (the master tree / spine). The second first-class graph — user questions/confusions/beliefs.*
 
 ## 1. What it is
 The human-understanding graph: treats user interaction as structured epistemic data (not chat logs).

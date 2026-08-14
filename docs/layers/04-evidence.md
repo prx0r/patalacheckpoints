@@ -1,6 +1,6 @@
 # LAYER 04 — EVIDENCE (the contracts + adapters + evals)
 
-*Part of the `globalglobal.md` spine. The scholarly-evidence substrate holding the graph together.*
+*Part of the `NAVIGATION.md` layer map (the master tree / spine). The scholarly-evidence substrate holding the graph together.*
 
 ## 1. What it is
 The typed contracts, external adapters, and evaluation plane that every layer obeys. The

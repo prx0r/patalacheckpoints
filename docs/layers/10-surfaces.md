@@ -3,7 +3,7 @@
 > **STATUS: PARTIAL — app/ + mcp/ + openpatala are REAL; the Scholar/Contributor/Reviewer surfaces are pending** (derived live state — see `docs_state.py`)
 
 
-*Part of the `globalglobal.md` spine. The renderings of the one canonical graph.*
+*Part of the `NAVIGATION.md` layer map (the master tree / spine). The renderings of the one canonical graph.*
 
 ## 1. What it is
 The product surfaces: the sites, APIs, MCP, and products that render the one canonical graph for

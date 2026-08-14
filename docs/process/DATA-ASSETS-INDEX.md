@@ -9,6 +9,10 @@ results) — this is the *data*, not the proofs.*
 > the corpus, the targets, the registries, the site model. An agent should read this before querying or
 > building data systems.
 
+> **Not all data lives in this repo.** The scholarly gold + essay assets live in sibling repos —
+> `sanskritree/` (the IPVV gold stack: T1/L0/L200/C1) and `research-library/` (the 22 essays). See
+> `RECONCILIATION.md` §THE REPOS WE DEPEND ON for the repo→layer→asset map.
+
 ---
 
 ## 1. THE CORPUS TARGETS SYSTEM (the acquisition goldmine) — `docs/corpus/TARGETS-INDEX.md`

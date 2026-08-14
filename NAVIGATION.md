@@ -6,14 +6,14 @@ layer · canonical ref · implementation · key docs · how to run · how to use
 name it, find it here and trace it to its layer.*
 
 **How to use this:** pick a column (Surface / Layer / Data / Script) → read its row → the row gives you
-the canonical ref + implementation path + docs + run command + Hermes usage. Everything points back to a
-layer in `docs/global/globalglobal.md`.
+the canonical ref + implementation path + docs + run command + Hermes usage. Everything resolves to a
+layer (this file IS the master spine + resolver; the deep per-layer detail is in `docs/layers/`).
 
 ---
 
 ## 0. THE LAYER MAP (the spine everything hangs on)
 
-`docs/global/globalglobal.md` is the tree. `docs/layers/` has one deep page per layer (what/purpose/
+This file IS the master tree. `docs/layers/` has one deep page per layer (what/purpose/
 tools/data/processes/impls/docs). The layers:
 
 ```
@@ -182,18 +182,19 @@ hermes --profile patala -z "<prompt>"     # one-shot (blind — only for pure te
 ## 7. THE DOCS TREE (where knowledge lives)
 
 ```
-docs/global/globalglobal.md        ← THE SPINE (the tree) — start here
+NAVIGATION.md                     ← THIS FILE — THE MASTER TREE + SPINE + RESOLVER (start here; §0b is the code map)
 docs/vision/CATEGORIES.md          ← the 8 vision categories, each mapped to a Layer
 docs/vision/REVIEWS.md             ← the canonical review index (every doc: name/contribution/layer/status)
 docs/process/IPVV-BUILD.md         ← the complete IPVV build index (scholarly layers + factory + golds + tests)
 docs/layers/                       ← one deep page per layer (what/purpose/tools/data/processes/impls/docs)
 docs/process/README.md             ← the process index (01-09 + external-tools + githubclones + reconciliation)
-docs/process/SITE-WIDE-ORGANIZATION.md  ← the full repo map
+docs/process/SITE-WIDE-ORGANIZATION.md  ← the sites/surfaces map (redirect → NAVIGATION)
 docs/global/                       ← thesis, architecture, partnerships, state
 docs/vision/                       ← CORE-BIBLE + 13 visions + organism + scholars/education
 endgamebuild/                      ← inventory + audit + progress (health)
-SPINE.md                           ← every code dir in plain words
-source-evidence/docs/tools/INDEX.md ← all 62 external tools + status
+SPINE.md                           ← redirect → NAVIGATION §0b (every code dir in plain words)
+source-evidence/docs/tools/INDEX.md ← all 69 external tools + status
+docs/process/RECONCILIATION.md     ← the layer-by-layer built-vs-borrowed map (incl. the repos we depend on)
 ```
 
 ---
@@ -202,5 +203,6 @@ source-evidence/docs/tools/INDEX.md ← all 62 external tools + status
 
 > Name anything in Pāṭala (a page, an API, a data file, a script, a doc) → find it in this index →
 > it resolves to: its LAYER, its canonical ref, its implementation path, its key docs, how to run it,
-> and how to drive it with Hermes. The spine is `docs/global/globalglobal.md`; the deep detail per layer
-> is `docs/layers/`; this file is the resolver that connects everything.
+> and how to drive it with Hermes. This file is the master tree, spine, and resolver; the deep detail
+> per layer is `docs/layers/`; external asset repos (research-library, sanskritree) are mapped in
+> `docs/process/RECONCILIATION.md` §repos.

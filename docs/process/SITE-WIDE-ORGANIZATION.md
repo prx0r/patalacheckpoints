@@ -1,3 +1,4 @@
+> **ARCHIVED / SUPERSEDED — redirect stub.**
 # SITE-WIDE ORGANIZATION — (folded into NAVIGATION)
 
 *This file's content is now **consolidated into `NAVIGATION.md`** — the master index. The layers,

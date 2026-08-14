@@ -19,9 +19,9 @@ to their lane. Read top to bottom; then follow the specialization gate for your 
 | # | Doc | Why |
 |---|---|---|
 | 0 | `../AGENTS.md` | THE ONE RULE + the enforcement gate (auto-loaded; read first) |
-| 0b | `../machinelearning/AGENTS-DOCTRINE.md` | the master doctrine: 3 categories, 9-field contract, epistemic labels, banned words, abstention, human adjudication |
+| 0b | `../machinelearning/_ACTIVE/AGENTS-DOCTRINE.md` | the master doctrine: 3 categories, 9-field contract, epistemic labels, banned words, abstention, human adjudication |
 | 0c | `../machinelearning/theatre_check.py` | run `python3 machinelearning/theatre_check.py --status` — the honest component status |
-| 0d | `../machinelearning/CLAIMS.md` | the project's own audit ledger (P-001…P-008) — check before claiming anything works |
+| 0d | `../machinelearning/_ACTIVE/CLAIMS.md` | the project's own audit ledger (P-001…P-008) — check before claiming anything works |
 
 ## STAGE 1 — THE VISION (what we're building)
 
@@ -104,7 +104,7 @@ JOIN ON (the contractual boundary — never fuzzy):
 | `machinelearning/DEVPLAN.md` | the ML dev plan |
 | `machinelearning/BENCHMARK_HANDOVER.md` | the benchmark seed |
 | `machinelearning/COMPONENT-CONTRACTS.md` | the anti-theatre 9-field contract per component |
-| `machinelearning/CLAIMS.md` | the audit ledger (both lanes maintain) |
+| `machinelearning/_ACTIVE/CLAIMS.md` | the audit ledger (both lanes maintain) |
 
 ---
 

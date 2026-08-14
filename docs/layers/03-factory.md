@@ -3,7 +3,7 @@
 > **STATUS: PARTIAL — SOURCE→C1→THEME→ARGUMENT is REAL (32k source objects); SYNTHESIS/ESSAY/EDUCATION are 0 (not built)** (derived live state — see `docs_state.py`)
 
 
-*Part of the `globalglobal.md` spine. The compiler that turns committed sources into canonical objects.*
+*Part of the `NAVIGATION.md` layer map (the master tree / spine). The compiler that turns committed sources into canonical objects.*
 
 ## 1. What it is
 The autonomous corpus compiler: advances a committed SOURCE through a DAG of deterministic workers to

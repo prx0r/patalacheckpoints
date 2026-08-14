@@ -76,3 +76,24 @@ what we already built.**
 3. **Wire the partially-built** (ARGUMENT/SYNTHESIS workers, THEME/ESSAY/EDUCATION loop, 3 Hermes profiles).
 4. **Use the external repos only where Pāṭala has NOT built it:** media (Remotion/OpenMontage),
    learner model (pyBKT/adaptive-kg), temporal graph (Graphiti), manuscripts (Mirador).
+
+---
+
+## THE REPOS WE DEPEND ON (trace every asset to its source repo)
+
+Pāṭala's canonical data and scholarly assets are **not all inside this repo** — several live in sibling
+repos. This is the one place that maps **repo → what it holds → which Layer(s) consume it → how to
+reach it**, so nothing is an unlocatable "claimed count."
+
+| Repo (path) | What it holds | Consumed by Layer(s) | How it reaches Pāṭala |
+|---|---|---|---|
+| **`patala`** (this repo) | the factory (`pipeline/`), `object_registry`, Postgres atlas, `app/`+`mcp/` surfaces, the canonical docs | all | n/a — this is home |
+| **`sanskritree`** (`/root/projects/sanskritree/`) | the old-batch translation corpus: **141 T1** (`translations/01_t1_working/`), **11 T3 finals** (`05_t3_final/`), and the **IPVV scholarly gold stack** `translations/_stack/ipvv/` → **63 T1 golden chunks** (`01_t1/`+`02_t1/`), **~63 L200 audits** (`l200/`), **63 C1 read + 63 C1 source** (`c1/read/`,`c1/source/`) | 02 Atlas, 03 Factory, 04 Evidence, 05 Research | `pipeline/import_sanskritree.py` (provenance `sanskritree-import` / `sanskritree-old-batch`); R2 Bronze snapshots |
+| **`research-library`** (`/root/projects/research-library/`) | the scholarship + essays library: **22 `ESSAY-*.md`** (`recognition/`), books, c1s, primary/scholarship/ratie chapters, comparative models | 05 Research, 06 Commentarial, 09 Organism | read directly from the sibling repo; essays feed the synthesis/education layer |
+
+**Rules for referencing these counts:** a number like "63 C1" or "22 essays" is only traceable when the
+`<repo>/<path>` is named alongside it. If you cite a count, name its repo + path (as in
+`GOLD-EVIDENCE-INDEX.md` / `IPVV-BUILD.md`). The `sanskritree` and `research-library` repos are **sibling
+git repos, not vendored here** — their data is external by design (bytes live in R2; the gold files are
+the hand-authored source of truth).
+

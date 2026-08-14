@@ -9,7 +9,7 @@
    you what exists, what's real, and what to continue.**
 2. **`AGENTS.md`** — the GOVERNING rule: the anti-theatre doctrine (a tested schema ≠ a result; only
    independent gold + blind eval + metric + human adjudication makes something real). Also read
-   `machinelearning/AGENTS-DOCTRINE.md` + `machinelearning/CLAIMS.md` + run
+   `machinelearning/_ACTIVE/AGENTS-DOCTRINE.md` + `machinelearning/_ACTIVE/CLAIMS.md` + run
    `python3 machinelearning/theatre_check.py --status`. **Read this before ANY build.**
 3. **`NAVIGATION.md`** — the MASTER INDEX: resolve ANYTHING (site surface, API, data file, script, doc)
    to its layer + canonical ref + implementation + docs + run command + Hermes usage. Read this to

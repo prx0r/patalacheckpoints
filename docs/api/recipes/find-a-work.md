@@ -58,4 +58,4 @@ Accepts the bare id or the urn.
 
 ---
 
-**MCP:** the same operations are `get_work({ id })` and `search_passages` / the `/api/texts` list. See [MCP mapping](mcp.md).
+**MCP:** the same operations are `get_work({ id })` and `search_passages` / the `/api/texts` list. See [MCP mapping](../mcp.md).
