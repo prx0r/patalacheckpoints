@@ -192,3 +192,65 @@ CHECKPOINT 4 ..... ⬜
 CHECKPOINT 3 ..... ⬜
 CHECKPOINT 5 ..... ⬜
 ```
+
+---
+
+## 10. AGENTGRAPH'S FINAL DIRECTIVE — REUSE my proven build, don't rebuild it
+
+*Added 2026-08-14. The user's instruction: ensure the openpatala build uses THE BUILD I had in mind + the
+performance-optimized stack, so it does the full foundational layer and gives us thousands of Sanskrit
+texts. The critical point: I ALREADY BUILT the projection compiler, compute-on-write, and read plane. Do
+NOT rebuild them — REUSE them.*
+
+### 10.1 The machinery that ALREADY EXISTS (verified, working — reuse these)
+| What | Where | Status |
+|---|---|---|
+| **The projection compiler** | `ip-graph/scripts/build-static-site.py` | ✅ compiles the real corpus (254 works, 49 passages, 9 clusters, Tantrāloka root) → immutable `site/` |
+| **Compute-on-write** | `ip-graph/scripts/rebuild-on-commit.py` | ✅ verified: 1st run rebuilds, 2nd = "no inputs changed" (no-op) |
+| **The read plane** | `ip-graph/lib/{context_compiler,bundle_router,seo}.py` | ✅ compiled context bundles + MCP + SEO |
+| **Postgres-FTS baseline** | `ip-graph/lib/fts_search.py` | ✅ p50 <10ms over 425 docs (the SPEC-49 Tantivy decision point) |
+
+**So CHECKPOINT 1a/1b/2/6 should EXTEND these existing scripts to the real registry — NOT write new
+`build-openpatala.py` from scratch.** The build is: point my compiler's input sources at the real
+`object_registry` + `atlas-bibliography.json`, run my compute-on-write, serve through my read plane.
+
+### 10.2 The scale directive (thousands of Sanskrit texts — the performance stack must hold)
+The user wants thousands of Sanskrit texts, not 254. The stack that scales (from SPEC-00 + SPEC-49):
+```text
+object_registry (SOURCE 32039 + the bibliography) — Postgres/R2 canonical
+   → MY projection compiler (compute-on-write, incremental)
+   → immutable content-addressed artifacts (JSON/Parquet on R2/CDN)
+   → MY read plane serves them (context bundles + MCP + SEO)
+   → Postgres FTS first for search (Tantivy ONLY if profiled hot)
+```
+**The perf guarantees that make thousands-of-texts work:**
+1. **Incremental, not full-rebuild** — a new doc must NOT rebuild the whole corpus (SPEC-00 §23 hard rule).
+   My `rebuild-on-commit` hashes inputs + rebuilds only changed (the salsa/RKA pattern). **This is THE
+   scaling guarantee.**
+2. **Content-addressed immutable artifacts** — `/works/{id}/v{n}`, `/assets/sha256/...`, `Cache-Control
+   immutable`. Thousands of texts = thousands of immutable blobs on CDN, never recomputed at read.
+3. **Parquet bulk snapshots** (not just JSON) — for the download/open-data differentiator at scale.
+4. **Inverted index / Postgres FTS** — not O(n²) scans. My `fts_search` baseline proves p50 <10ms.
+5. **Measure before infra** — NO Neo4j/Kafka/ES at 10k-100k works. Postgres + R2 + CDN + DuckDB is enough.
+
+### 10.3 The concrete reuse map (what to copy from my repo into the build)
+| openpatala checkpoint | Reuse MY | Not rebuild |
+|---|---|---|
+| CHECKPOINT 1a | `scripts/build-static-site.py` (extend inputs → real registry) | new compiler |
+| CHECKPOINT 1b | `scripts/rebuild-on-commit.py` | new watcher |
+| CHECKPOINT 2 | `lib/bundle_router.py` (the compiled-bytes API + MCP) | `_load()`-reconstruct |
+| CHECKPOINT 6 | `lib/seo.py` + `web/` Astro (0-JS, JSON-LD, canonical) | new site |
+| search | `lib/fts_search.py` (Postgres-FTS baseline) | Elasticsearch |
+
+### 10.4 The one rule that makes it scale (from my SPEC-00)
+> **The repo/Atlas is a COMPILER producing immutable, independently addressable read artifacts. The API +
+> site + MCP serve those bytes. Compute on write, read from bytes. A new text must NOT rebuild the whole
+> corpus.**
+
+That's what gets us to thousands of Sanskrit texts: every new work is one incremental compile (hash →
+new artifact → CDN), not a full rebuild. The foundational layer agentpatala builds should rest on THIS —
+my proven, performance-optimized build — so it scales from day one.
+
+**The directive: extend my existing `build-static-site.py` + `rebuild-on-commit.py` + read plane to the
+real registry, don't rebuild. The performance-optimized stack (incremental, content-addressed, Postgres
+FTS first, Parquet snapshots) is what carries thousands of texts.**
