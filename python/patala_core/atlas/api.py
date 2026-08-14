@@ -216,3 +216,36 @@ def openpatala_layer(layer: str):
         raise HTTPException(404, {"error": {"code": "LAYER_NOT_FOUND", "message": f"no compiled layer {layer}",
                                              "retryable": False}})
     return {"data": rec, "provenance": {"surface": "live-registry", "served": "compiled-bytes"}}
+
+
+@app.get("/resolve")
+def resolve_work(
+    title: str = Query(...),
+    author: str | None = None,
+    provider: str = "openalex",
+):
+    """CP4 — the identity crosswalk ("who/what is this"): resolve a work against the modern
+    scholarship graph (OpenAlex / Crossref) + ORCID/ROR for people/institutions. Live, additive.
+
+    Design: crosswalk = identity EVIDENCE, not scholarly correctness. Returns RESOLVED / NOT_FOUND /
+    UNAVAILABLE with the provider id — the Atlas never claims a crosswalk hit is the canonical work.
+    """
+    try:
+        import sys as _sys
+        from pathlib import Path as _Path
+        _root = _Path(__file__).resolve().parents[3]  # /root/projects/patala (atlas->core->python->root)
+        _adapters = str(_root / "source-evidence" / "production" / "adapters")
+        if _adapters not in _sys.path:
+            _sys.path.insert(0, _adapters)
+        from metadata_resolver import resolve_openalex, resolve_crossref
+    except Exception as _e:  # noqa: BLE001
+        raise HTTPException(500, {"error": {"code": "CROSSWALK_UNAVAILABLE",
+                                             "message": f"metadata_resolver not importable: {_e}",
+                                             "retryable": False}})
+    fn = resolve_openalex if provider == "openalex" else resolve_crossref
+    try:
+        r = fn(title, author)
+    except Exception as e:  # noqa: BLE001
+        return {"data": {"status": "UNAVAILABLE", "provider": provider, "error": str(e)},
+                "provenance": {"surface": "identity-crosswalk", "live": True}}
+    return {"data": r, "provenance": {"surface": "identity-crosswalk", "live": True, "provider": provider}}
