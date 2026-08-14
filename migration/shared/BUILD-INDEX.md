@@ -27,6 +27,7 @@ OG patala. Each BUILD-* file is self-contained and points at actual files.*
 | `BUILD-CP4-ARGUMENT.md` | the argument frontier (CP4, where lanes converge) — the philosophical IR + engines ip-graph lacks | `machinelearning/research/patala_ml/{argument,crux_engine,nyayagate,aspic_adapter,aifgraph,proposition_layer,builders,gold002..005}.py` · `machinelearning/_ACTIVE/ARGUMENT-IR-VISION.md` · `pipeline/ingest_ipvv_argmap_golds.py` |
 | `BUILD-FACTORY-COORDINATION.md` | the modern scheduler (`next_action`) driving the full chain T1→…→EDUCATION, gated by Nyāya + Bayesian + ARG golds | `docs/FACTORY.md` · `pipeline/factory_scheduler.py` · ip-graph `lib/next_action.py` · `machinelearning/research/patala_ml/{nyayagate,strength,gold002..005}.py` |
 | `BUILD-GATE-INFRA.md` | the gate infrastructure + the endgamebuild health survey (what's OPEN/FIXED, for agentgraph review) | `source-evidence/evals/patala/tasks/*` (NAT, argument_recovery, atlas_qa) · the 5 golds · `endgamebuild/{INFRA-INVENTORY,PROJECT-AUDIT}.md` · ip-graph `lib/{integrity_gate,evidence_ledger,verification_ensemble}.py` |
+| **`BUILD-OPENPATALA.md`** | **the OpenAlex-for-Sanskrit product build (CONFIRMED) — wiring plan + checkpoints** | `openpatala/` · `python/patala_core/atlas/{api,adapter,migrate,resolver}.py` · `pipeline/object_registry.py` · `ingestion/adapters/{pandit,gretil,sarit}.py` · ip-graph `lib/{source_registry,evidence_ledger,context_compiler,bundle_router,seo}.py` |
 | `WHAT-TO-BUILD.md` | the overall architecture + the 4 build links | (the master summary) |
 
 ---

@@ -12,7 +12,7 @@ who does what, what's handed off, and what the goal is.*
 | `HANDOFF-QUEUE.md` | the live integration status of every kernel (agentgraph's 37 → agentpatala's 10 integrated) |
 | `AGENTS-AGENTPATALA.md` | my (agentpatala's) role contract in this collaboration |
 | **`BUILD-INDEX.md`** | **the master build-directive map** — every gap → the real OG patala files |
-| `BUILD-*.md` (12 files) | the per-area build directives: ingestion-harvest, bibliography-identity, factory, hermes-orchestration, translation-state, contracts-convergence, cp4-argument, factory-coordination, gate-infra, wire-hermes-generation, agent-system-recovery |
+| `BUILD-*.md` (13 files) | the per-area build directives: ingestion-harvest, bibliography-identity, factory, hermes-orchestration, translation-state, contracts-convergence, cp4-argument, factory-coordination, gate-infra, wire-hermes-generation, agent-system-recovery, **openpatala** |
 | `CRITICAL-AUDIT-IPGRAPH.md` | the honest executed review of ip-graph (what's real vs theater) |
 | `PEER-REVIEW-IPGRAPH-NAV.md` | the handover peer-review (where ip-graph beats my framing + the insane build ideas) |
 
