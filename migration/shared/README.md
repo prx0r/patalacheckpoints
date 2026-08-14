@@ -14,6 +14,7 @@ who does what, what's handed off, and what the goal is.*
 | **`BUILD-INDEX.md`** | **the master build-directive map** — every gap → the real OG patala files |
 | `BUILD-*.md` (13 files) | the per-area build directives: ingestion-harvest, bibliography-identity, factory, hermes-orchestration, translation-state, contracts-convergence, cp4-argument, factory-coordination, gate-infra, wire-hermes-generation, agent-system-recovery, **openpatala** |
 | **`OPENPATALA-RUN-VALIDATE.md`** | **how the OpenPatala build works + how it's validated (the run/verify reference, reproducible)** |
+| **`OPENPATALA-BUILD-REVIEW.md`** | **the full build review (AWAITING PEER REVIEW): what's built, the performance-doctrine audit, the tests, the open items** |
 | `PROPOSAL-OPENPATALA-SUBPROJECT.md` | the confirmed OpenPatala proposal (§7 yes + §8 perf contract + §10 reuse directive) |
 | `CRITICAL-AUDIT-IPGRAPH.md` | the honest executed review of ip-graph (what's real vs theater) |
 | `PEER-REVIEW-IPGRAPH-NAV.md` | the handover peer-review (where ip-graph beats my framing + the insane build ideas) |
