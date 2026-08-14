@@ -37,7 +37,11 @@ supporting substrate (Layers 00–04).
   `contracts/CANONICAL-DAG.yaml` (dependency truth)
 - PROCESS → the ONE RULE: nothing is real without task + gold + reproducible eval. The gate prints
   honest per-component status.
-- VISION → `CORE-BIBLE.md` (the vision canon) · all layers (0-12) · **CP0**
+- VISION → **A (Foundations)**: `CORE-BIBLE.md` (the vision canon — one vision, 6 zoomable layers) ·
+  `NORTHSTAR.md` (deepest strategy) · `endgame1..5year.md` (Vision 01-05 origin arc: translation lab /
+  Tantra Hub / one scholarly infra / economic thesis / 2026-2031 window) · `foundationalideas.md`
+  (passage/text identity as the anchor) · `vision/CATEGORIES.md` (the 8-category taxonomy) ·
+  `vision/INDEX.md` · `vision/REVIEWS.md` · all layers (0-12) · **CP0**
 
 ---
 
@@ -64,7 +68,12 @@ supporting substrate (Layers 00–04).
   `.ts` directly; Postgres becomes the compiled projection of the ledger, and `.ts`/`.json` become
   exports. **Today's reality:** site reads `.ts`; DB is a separate island (verified).
 - RELATES → resolves **Source** identity; provides the authority backbone every layer's objects point to.
-- VISION → `vision-15-patala-atlas-sanskrit-research-graph.md` · `vision-14-manuscript-to-scholarly-asset.md` · **CP1, CP12**
+- VISION → **G (Atlas/Identity)**: `vision-15-patala-atlas-sanskrit-research-graph.md` (OpenAlex-for-
+  Sanskrit) · `vision-14-manuscript-to-scholarly-asset.md` · `vision/source-resolution/source-resolver-
+  design.md` (federated resolver) · the Atlas engineering set: `vision/atlas/technical-architecture-v1.md`,
+  `atlas-engineering-blueprint.md` (Postgres=R2=event-log, I1–I6), `atlas-cloudflare-edge-layer.md`,
+  `atlas-performance.md` (compute-on-write / immutable=cacheable), `atlas/agent-optimization.md` ·
+  `docs/foundationalideas.md` (passage/text identity as the anchor) · **CP1, CP12**
 
 ### Layer 03 — Factory / Compiler (v1 Layer 03, stays, becomes "the compiler")
 
@@ -77,7 +86,10 @@ supporting substrate (Layers 00–04).
   deterministic) → events → reducer → state. **v2 change:** this becomes the reactive compiler driven
   by the transformation registry + derivation graph; staleness = the same traversal.
 - RELATES → owns the whole spine; **Review/Adjudication** and **Scholar Attestation** are its gates.
-- VISION → `PATALA-V2-SPEC.md` §3 (transformation registry / projection DAG) · **CP0–CP9**
+- VISION → **F (Expansion/Corpus, intake)**: `vision/expansion/vision-11-siva-before-abhinava.md` (Śaiva
+  genealogy as the next major corpus) · `...-prehistory.md` (deep source tree) · `...-corpus-manifest.md` ·
+  `endgame1.md` (Vision 01 — the translation laboratory) · `PATALA-V2-SPEC.md` §3 (transformation registry /
+  projection DAG) · **CP0–CP9, CP12 (cross-corpus)**
 
 ### Layer 04 — Evidence (v1 Layer 04, stays)
 
@@ -257,7 +269,10 @@ derivable from the graph.
   contradicts-premise). **LESSON=0 honest.**
 - NEEDS → Essay (+ Argument/Theme so distractors are real).
 - RELATES → a product surface; consumes the whole graph.
-- VISION → education as compiled epistemic projections · **CP6**
+- VISION → **H (Education/Research-Program)**: `vision/education/PATALA-EDUCATION-SYNTHESIS.md` (the 4
+  native education objects: LearningClaim/Skill/Interaction/MasteryEvidence) · `LEARNING_STRATEGY.md`
+  (research-once/distill-repeatedly) · `EDUCATION_VISION.md` (graph-native teaching engine) ·
+  `essayguide.md` (the Essay Research Program) · education as compiled epistemic projections · **CP6**
 
 ---
 
@@ -273,7 +288,9 @@ derivable from the graph.
 - PROCESS → attestation attaches a ReviewEvent to a granular object (a finding, a TranslationProof, a
   crux decision). The downstream impact is computed via the derivation graph.
 - RELATES → the human gate over the whole spine.
-- VISION → `vision-07`, `vision-06` · **CP8 (ADVERSARIAL REVIEW)**
+- VISION → **B (Scholars)**: `vision-07-new-scholar.md` (workbench, perspective collector, structured
+  inquiry) · `vision-06-adversarial-review.md` (the research-compiler diagnostics) ·
+  `scholars/README.md` (who the contributors are) · **CP8 (ADVERSARIAL REVIEW)**
 
 ### Layer 09 — Organism / Human-Understanding Graph (v1 Layer 09, DESIGN)
 
@@ -282,7 +299,11 @@ derivable from the graph.
 - MECHANISM → `docs/vision/organism/` · `docs/process/09-organism.md` · candidate substrate Engram
 - PROCESS → DESIGN only. The Q-moat variable.
 - RELATES → feeds back into Review/Lesson product iteration.
-- VISION → the human-understanding graph · **CP10, CP12**
+- VISION → **D (Media & Organism)**: `vision-09-media-and-cross-tradition.md` (media layer + cross-
+  tradition engine) · `organism/patalaorganism.md` (two first-class graphs) ·
+  `organism/patalaorganismvisions.md` (longitudinal user graph) · `organism/consumerorganism.md`
+  (consumer-as-probe) · `organism/consumerorganismtech.md` (event stream → graph projections) ·
+  `organism/organism_meh.md` (adaptive learning, KST/BKT) · **CP10, CP12**
 
 ### Layer 10 — Surfaces / Products (v1 Layer 10, stays)
 
@@ -291,17 +312,23 @@ derivable from the graph.
 - MECHANISM → `app/` (Next.js) · `app/api/` (43 routes) · `mcp/index.mjs` (29 tools) · `openpatala/` ·
   `docs-site/` · skills · **v2 change:** read compiled R2 artifacts, not `.ts` seeds.
 - RELATES → every layer's compiled output; Hermes sits above a thin MCP (8 verbs).
-- VISION → `vision-12-multi-surface-platform.md` · `vision-13-product-portfolio-by-user-base.md` ·
-  `vision-09-media-and-cross-tradition.md` · **CP9 (API/MCP)**
+- VISION → **E (Platform & Product)**: `vision-12-multi-surface-platform.md` (one core, five permission-
+  scoped surfaces) · `vision-13-product-portfolio-by-user-base.md` (product catalog) ·
+  `ENDGAME_SITE_SPEC.md` (the Tantra Reader site) · `endgame2.md` (Vision 02 — the Tantra Hub) ·
+  **F/D media**: `vision-09-media-and-cross-tradition.md` · **functionality**: `vision/functionality/
+  hermes-execution.md` (vision × Hermes execution → Layer 12) · **CP9 (API/MCP)**
 
 ### Layer 11 — Org / Economics (v1 Layer 11, DESIGN)
 
 ▸ **Org/Economics** — paid adjudication, credit (ORCID/CRediT/DOI), partnerships, the Scholar Compact.
 
 - MECHANISM → `vision-08-scholar-economics.md` · `vision-10-market-entry-and-partnerships.md` ·
-  `docs/positioningpartners.md` · `docs/global/globalpartnerships.md`
+  `docs/positioningpartners.md` · `docs/global/globalpartnerships.md` · `vision/economics/README.md`
 - RELATES → the incentives that make scholar attestation sustainable.
-- VISION → `vision-08`, `vision-10` · **CP11 (ECONOMIC)**
+- VISION → **C (Economics)**: `vision-08-scholar-economics.md` (paid adjudication, ORCID/CRediT/DOI,
+  ownership) · `vision-10-market-entry-and-partnerships.md` (BHU, funding, pilots, IP) ·
+  `economics/README.md` (scarce assets, flywheel) · `endgame4.md` (Vision 04 — the economic thesis) ·
+  `endgame5year.md` (Vision 05 — 2026-2031 window) · **CP11 (ECONOMIC)**
 
 ### Layer 12 — Live System (v1 Layer 12, PARTIAL) — the orchestration glue
 
@@ -312,7 +339,8 @@ coding-agent contract.
   `pipeline/autonomy.py` · `~/.hermes/profiles/patala/` · `pipeline/model.py` (Hermes invocation)
 - PROCESS → Pāṭala decides, Hermes executes, Pāṭala reduces. Hermes is the executor, not truth.
 - RELATES → ties everything together; the compiler becomes reactive.
-- VISION → the 7 pieces · **CP9, CP10, CP12**
+- VISION → **functionality**: `vision/functionality/hermes-execution.md` (vision × Hermes execution map)
+  · `vision/functionality/README.md` (tools + machinery + interfaces) · the 7 pieces · **CP9, CP10, CP12**
 
 ---
 
@@ -369,6 +397,29 @@ drift. Today it is hand-compiled for review.*
    layers into real (gated) ones.
 6. **Scholar attestation to granular objects** — Phase 4.
 7. **MCP 8-verb thin adapter + performance** — Phase 5.
+
+---
+
+## VISION → LAYER → CATEGORY CROSS-REFERENCE (all 49 vision docs)
+
+The canonical 8-category taxonomy (`docs/vision/CATEGORIES.md`) mapped onto the v2 layers. Every vision
+doc resolves to a category AND a layer — nothing in the vision is unmapped.
+
+| Category | Focus | Layer(s) | Vision docs (all mapped) |
+|---|---|---|---|
+| **A Foundations** | core vision + origin arc | 00, 02, 03, 10, 11 | `CORE-BIBLE` · `NORTHSTAR` · `endgame1..5year` · `foundationalideas` · `positioningpartners` · `vision/CATEGORIES` · `vision/INDEX` · `vision/REVIEWS` |
+| **B Scholars** | review + workbench, the human layer | 08 | `vision-06-adversarial-review` · `vision-07-new-scholar` · `vision/scholars/README` |
+| **C Economics** | incentives + market + sustainability | 11 | `vision-08-scholar-economics` · `vision-10-market-entry-and-partnerships` · `vision/economics/README` |
+| **D Media & Organism** | media layer + human-understanding graph | 09 | `vision-09-media-and-cross-tradition` · `vision/organism/{patalaorganism,patalaorganismvisions,consumerorganism,consumerorganismtech,organism_meh}` |
+| **E Platform & Product** | multi-surface + product portfolio | 10 | `vision-12-multi-surface-platform` · `vision-13-product-portfolio-by-user-base` · `ENDGAME_SITE_SPEC` |
+| **F Expansion / Corpus** | Śiva-before-Abhinava + cross-tradition intake | 03 | `vision/expansion/vision-11-siva-before-abhinava{-prehistory,-corpus-manifest}` · `vision/expansion/README` |
+| **G Atlas / Identity** | research graph + manuscripts + source-resolution | 02 | `vision-14-manuscript-to-scholarly-asset` · `vision-15-patala-atlas-sanskrit-research-graph` · `vision/source-resolution/source-resolver-design` · `vision/atlas/{technical-architecture-v1,atlas-engineering-blueprint,atlas-cloudflare-edge-layer,atlas-performance,agent-optimization}` |
+| **H Education / Research-Program** | essay + learning + program guides | 05, 09 | `essayguide` · `vision/education/{PATALA-EDUCATION-SYNTHESIS,LEARNING_STRATEGY,EDUCATION_VISION,sources}` · `vision/functionality/README` |
+| *(cross-cut)* | vision × Hermes execution | 12 | `vision/functionality/hermes-execution.md` |
+
+**Completeness check:** every file under `docs/vision/` (root `.md` + the `atlas/ economics/ education/
+expansion/ functionality/ organism/ scholars/ source-resolution/` subdirs) is listed above and assigned
+to a category + layer. None is orphaned.
 
 ---
 
