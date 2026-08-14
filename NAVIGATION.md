@@ -174,7 +174,8 @@ hermes --profile patala -z "<prompt>"     # one-shot (blind — only for pure te
 - **Operating axioms (from AGENTS.md):** never sleep to wait · background via `nohup`/`setsid` ·
   kill by PID never `pkill` · external sources → R2 · reuse don't rebuild · respect licenses.
 - The patala profile's `MEMORY.md` holds these axioms so Hermes follows them too.
-- Model: if `-z` says "Model not supported", pass `-m deepseek-v4-flash` or set `HERMES_MODEL`.
+- Model: the correct invocation is `hermes -z "<prompt>" -m deepseek-v4-flash --provider opencode-go`
+  (pass BOTH model and provider explicitly — `HERMES_MODEL` alone fails). `pipeline/model.py` already does this.
 
 ---
 
