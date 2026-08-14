@@ -1,0 +1,49 @@
+---
+// Layout.astro — the 0-JS semantic base layout (performance-optimized reading pages)
+interface Props {
+  title: string;
+  description?: string;
+  jsonLd?: object;
+}
+const { title, description = "Pāṭala — the canonical scholarly graph for Sanskrit", jsonLd } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={Astro.url.pathname} />
+  <meta name="generator" content={Astro.generator} />
+  <style>
+    :root { --ink:#1a1a2e; --accent:#5b4bc4; --muted:#666; --bg:#faf9ff; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Georgia,serif; color:var(--ink); background:var(--bg); line-height:1.6; }
+    header { padding:1.5rem 2rem; border-bottom:1px solid #e4e0f5; }
+    nav a { margin-right:1.2rem; color:var(--accent); text-decoration:none; font-family:system-ui,sans-serif; }
+    main { max-width:900px; margin:2rem auto; padding:0 1.5rem; }
+    h1 { font-size:2rem; }
+    .ceiling { color:var(--muted); font-family:system-ui,sans-serif; font-size:.85rem; }
+    ul { list-style:none; padding:0; }
+    li { margin:.4rem 0; }
+    a { color:var(--accent); }
+    footer { margin-top:3rem; padding:1rem 2rem; border-top:1px solid #e4e0f5; color:var(--muted); font-family:system-ui,sans-serif; font-size:.85rem; }
+  </style>
+  {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/">Pāṭala</a>
+      <a href="/bibliography/">Bibliography</a>
+      <a href="/themes/">Themes</a>
+      <a href="/passages/">Passages</a>
+    </nav>
+  </header>
+  <main>
+    <slot />
+  </main>
+  <footer>Pāṭala — the canonical scholarly graph, compiled to a static site. 0-JS reading.</footer>
+</body>
+</html>

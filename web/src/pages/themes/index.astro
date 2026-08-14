@@ -1,0 +1,21 @@
+---
+// themes/index.astro — the 9 IPVV theme clusters
+import Layout from '../../layouts/Layout.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+const ROOT = '/root/projects/patala/web';
+const cl = JSON.parse(fs.readFileSync(path.join(ROOT, 'static', 'clusters.json'), 'utf-8'));
+const clusters = (cl.clusters || []).slice().sort((a, b) => (b.size || 0) - (a.size || 0));
+---
+<Layout title="Pāṭala — the theme clusters" description="The IPVV theme clusters." jsonLd={{ "@context":"https://schema.org","@type":"CollectionPage", name:"Pāṭala Themes" }}>
+  <h1>The Theme Clusters</h1>
+  <p><strong>{clusters.length}</strong> clusters discovered across the IPVV commentaries. Each is a clustering, not a verdict.</p>
+  <ul>
+    {clusters.map(c => (
+      <li>
+        <strong>Cluster {c.cluster_id}</strong> <span class="ceiling">({c.size} passages, coherence {c.coherence?.toFixed?.(2) ?? c.coherence})</span>
+        {c.member_c1_ids?.length ? <span class="ceiling"> — {c.member_c1_ids.slice(0, 5).join(', ')}{c.member_c1_ids.length > 5 ? '…' : ''}</span> : ''}
+      </li>
+    ))}
+  </ul>
+</Layout>

@@ -47,6 +47,32 @@ agentpatala) + the **NOT-BUILT gaps** assigned to me:
 
 ## MY DEV PLAN (depth over breadth — agentgraph's lane)
 
+### P0 — THE MONA LISA: Tantrāloka from scratch, as the canonical full-stack test
+Pick ONE great target and run the ENTIRE organism on it end-to-end — the graduation test at corpus scale.
+**Tantrāloka (Abhinavagupta)** is the pick: it's the deepest, most load-bearing Śaiva work, it connects
+directly to Abhinavagupta + recognition (the IPVV's sibling), and we have BOTH the Sanskrit root AND the
+Dyczkowski translation for later validation.
+
+**The sources (already on disk):**
+- **Sanskrit root**: `/root/projects/tantraloka/texts-original/gretil_tantraloka.txt` (17,684 lines, the
+  Kashmir Series 1918-38 edition via GRETIL/Takashima, clean `AbhT_1.1` kārikā refs + Jayaratha's Viveka).
+- **English reference for validation**: `/root/projects/tantraloka/texts-original/tantraloka-vol{1..11}-dyczkowski.txt`
+  (all 11 volumes of Dyczkowski's translation).
+
+**The canonical test (agentgraph's lane — build the machinery):**
+1. **Ingest the root** → SOURCE → L0 token floor (vidyut) → TranslationProof → Commentary → Argument.
+2. **Translate a flagship āhnika from scratch** (e.g. Āhnika 1, the upāyas — reflexivity, prakāśa/vimarśa,
+   the three means, recognition) using our kernels — NOT reading Dyczkowski.
+3. **Compile the products** → context bundles → Astro pages → MCP → the full read plane.
+4. **Then validate against Dyczkowski** (the comparison, GEM 5.1 three-version method): where our
+   from-scratch translation agrees with Dyczkowski = hard core; where it differs = the interpretation
+   space the commentary must adjudicate.
+
+**Why Tantrāloka over a sivaqueue target:** it's the intellectual apex (Abhinavagupta's magnum opus), it
+has the deepest existing pushing material (`research-library/recognition/pushing-tantraloka/`, 30+
+LOGICVID sessions), and it connects the whole organism to recognition (the thesis). The IPVV graduation
+proved the mechanism on ONE claim; Tantrāloka proves it on a real, large, philosophically-loaded text.
+
 ### P1 — close the NOT-BUILT gaps assigned to me (the highest value for the organism)
 1. **`misconception.py` — the repair cascade** (the biggest gap in the shared queue). Build the kernel
    that closes the co-evolving loop: `MisconceptionLikelihood = f(cluster_size, persistence, ambiguity_signal,

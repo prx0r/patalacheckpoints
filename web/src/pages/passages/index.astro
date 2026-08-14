@@ -1,0 +1,22 @@
+---
+// passages/index.astro — the 49 published IPVV passages (the reading corpus)
+import Layout from '../../layouts/Layout.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+const ROOT = '/root/projects/patala/web';
+const pg = JSON.parse(fs.readFileSync(path.join(ROOT, 'static', 'passages.json'), 'utf-8'));
+const passages = pg.passages || [];
+---
+<Layout title="Pāṭala — the IPVV passages" description="The 49 published IPVV reading passages." jsonLd={{ "@context":"https://schema.org","@type":"CollectionPage", name:"Pāṭala Passages" }}>
+  <h1>The IPVV Passages</h1>
+  <p><strong>{passages.length}</strong> published passages from the Īśvarapratyabhijñāvivṛtivimarśinī, each with its reading and commentary.</p>
+  <ul>
+    {passages.map(p => (
+      <li>
+        <a href={`/passages/${p.id.split(':').pop()}/`}><strong>{p.chunk}</strong></a>
+        {p.has_c1 ? <span class="ceiling"> (with commentary)</span> : ''}
+        {p.reading ? <p>{p.reading}</p> : ''}
+      </li>
+    ))}
+  </ul>
+</Layout>

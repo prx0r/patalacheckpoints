@@ -1,0 +1,15 @@
+{
+  "name": "patala-og-web",
+  "version": "1.0.0",
+  "description": "Pāṭala — the OG patala static site over the real corpus (bibliography, clusters, IPVV passages)",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "node ../../web/build_static_patala.py 2>/dev/null || python3 web/build_static_patala.py; astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  }
+}

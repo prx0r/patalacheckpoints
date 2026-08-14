@@ -1,0 +1,25 @@
+---
+// index.astro — the OG patala home page, reading the compiled real-data manifest
+import Layout from '../layouts/Layout.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+
+const ROOT = '/root/projects/patala/web';
+const manifestPath = path.join(ROOT, 'static', 'index.json');
+const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+const { works, clusters, passages, terms } = manifest.counts;
+---
+<Layout
+  title="Pāṭala — the canonical scholarly graph for Sanskrit"
+  description="The canonical scholarly graph for Sanskrit: 254 works, themes, and IPVV passages, compiled to a static 0-JS site."
+  jsonLd={{ "@context":"https://schema.org", "@type":"WebSite", name:"Pāṭala", description:"The canonical scholarly graph for Sanskrit" }}
+>
+  <h1>Pāṭala — the canonical scholarly graph for Sanskrit</h1>
+  <p>The real corpus, compiled to a static site. <strong>{works}</strong> works · <strong>{clusters}</strong> themes · <strong>{passages}</strong> IPVV passages. Every page is 0-JS, semantically marked up, and carries its epistemic state honestly.</p>
+  <h2>Explore</h2>
+  <ul>
+    <li><a href="/bibliography/"><strong>{works}</strong> works</a> <span class="ceiling">the 254-work bibliography</span></li>
+    <li><a href="/themes/"><strong>{clusters}</strong> themes</a> <span class="ceiling">the IPVV theme clusters</span></li>
+    <li><a href="/passages/"><strong>{passages}</strong> passages</a> <span class="ceiling">the published IPVV reading corpus</span></li>
+  </ul>
+</Layout>
