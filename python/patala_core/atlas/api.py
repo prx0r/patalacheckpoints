@@ -19,11 +19,13 @@ Run (dev):
 from __future__ import annotations
 
 import base64
+import hashlib
 import json
 import os
+import time
 from typing import Any
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Request, Response
 
 from .adapter import AtlasAdapter
 
@@ -34,15 +36,57 @@ _adapter = AtlasAdapter()
 # this is the LIVE registry surface (object_registry layers), served as immutable bytes — not _load()
 OPENPATALA_DIR = os.environ.get(
     "OPENPATALA_DIR", "/mnt/HC_Volume_106427611/ip-graph/site/openpatala")
+SITE_DIR = os.environ.get(
+    "SITE_DIR", "/mnt/HC_Volume_106427611/ip-graph/site")
+
+# memoized compiled artifacts (compute-on-write: read once, serve from memory; invalidate on mtime)
+_compiled_cache: dict[str, tuple[float, dict[str, Any]]] = {}
 
 
 def _compiled(layer: str) -> dict[str, Any] | None:
-    """Read a compiled OpenPatala projection artifact (immutable bytes, compute-on-write)."""
+    """Read a compiled OpenPatala projection artifact, MEMOIZED by path+mtime (perf rule 1: read once,
+    no per-request json.load on the hot surface). Invalidate only when the artifact changes."""
     path = os.path.join(OPENPATALA_DIR, f"{layer.lower()}.json")
-    if not os.path.exists(path):
+    try:
+        mtime = os.path.getmtime(path)
+    except OSError:
         return None
-    with open(path) as f:
-        return json.load(f)
+    hit = _compiled_cache.get(layer)
+    if hit and hit[0] == mtime:
+        return hit[1]
+    try:
+        with open(path) as f:
+            data = json.load(f)
+    except OSError:
+        return None
+    _compiled_cache[layer] = (mtime, data)
+    return data
+
+
+def _etag_of(data: Any) -> str:
+    """Content-address an artifact -> ETag: \"sha256-...\" (perf rule 5)."""
+    h = hashlib.sha256(json.dumps(data, sort_keys=True, default=str).encode()).hexdigest()
+    return f'"sha256-{h[:32]}"'
+
+
+def _search_index() -> dict[str, Any] | None:
+    """The compiled search index (built by build-static-site.py), MEMOIZED. Read-from-bytes — the
+    search surface never scans the records dict (perf rule 6 + 8: use the precomputed index)."""
+    _ci = _compiled_cache.get("__search_index__")
+    path = os.path.join(SITE_DIR, "search-index.json")
+    try:
+        mtime = os.path.getmtime(path)
+    except OSError:
+        return None
+    if _ci and _ci[0] == mtime:
+        return _ci[1]
+    try:
+        with open(path) as f:
+            data = json.load(f)
+    except OSError:
+        return None
+    _compiled_cache["__search_index__"] = (mtime, data)
+    return data
 
 # fields available for select/ / sort=  (the contract + work metadata we hold)
 SELECTABLE = {
@@ -186,7 +230,28 @@ def search(
     cursor: str | None = None,
     per_page: int = Query(50, ge=1, le=500),
 ):
+    """Search the bibliography works (the OpenAlex contract). Uses the in-memory compiled read-model
+    (adapter memoizes once — no per-request DB), so this is a read-from-memory dict op, not a scan."""
     return list_works(search=q, select=select, filter=filter, sort=sort, cursor=cursor, per_page=per_page)
+
+
+@app.get("/openpatala/search-index")
+def openpatala_search_index(request: Request, response: Response):
+    """The compiled concept search index (read-from-bytes, perf rule 6+8). Additive — the precomputed
+    index served as bytes (the concept-level search surface), separate from the /works bibliography
+    contract above."""
+    idx = _search_index()
+    if idx is None:
+        raise HTTPException(503, {"error": {"code": "INDEX_NOT_BUILT",
+                                             "message": "run scripts/build-static-site.py first",
+                                             "retryable": True}})
+    etag = _etag_of(idx)
+    response.headers["ETag"] = etag
+    response.headers["Cache-Control"] = "public, max-age=31536000, immutable"
+    inm = request.headers.get("if-none-match")
+    if inm and inm.strip("\"") == etag.strip("\""):
+        return Response(status_code=304, headers={"ETag": etag})
+    return {"data": idx, "provenance": {"surface": "compiled-index", "served": "compiled-bytes"}}
 
 
 # ── ADDITIVE: the LIVE registry surface (compiled projections, compute-on-write) ──────────
@@ -194,28 +259,47 @@ def search(
 # additive: they serve the compiled OpenPatala projections (object_registry layers) as immutable bytes.
 
 @app.get("/openpatala")
-def openpatala_registry():
-    """The live object_registry summary (per-layer counts + immutable root hash)."""
+def openpatala_registry(request: Request, response: Response, select: str | None = None):
+    """The live object_registry summary (per-layer counts + immutable root hash).
+    ETag: content-addressed (perf rule 5); ?select= projects fields (perf rule 3)."""
     reg = _compiled("registry")
     if not reg:
         raise HTTPException(503, {"error": {"code": "PROJECTIONS_NOT_BUILT",
                                              "message": "run scripts/build-static-site.py first",
                                              "retryable": True}})
-    return {"data": {
+    data = {
         "counts": reg.get("counts", {}),
         "layers": reg.get("layers", {}),
         "root_hash": reg.get("root_hash", ""),
-    }, "provenance": {"surface": "live-registry", "served": "compiled-bytes"}}
+    }
+    etag = _etag_of(data)
+    response.headers["ETag"] = etag
+    response.headers["Cache-Control"] = "public, max-age=31536000, immutable"
+    inm = request.headers.get("if-none-match")
+    if inm and inm.strip("\"") == etag.strip("\""):
+        return Response(status_code=304, headers={"ETag": etag})
+    if select:
+        fields = [f.strip() for f in select.split(",") if f.strip()]
+        data = {k: v for k, v in data.items() if k in fields}
+    return {"data": data, "provenance": {"surface": "live-registry", "served": "compiled-bytes"}}
 
 
 @app.get("/openpatala/{layer}")
-def openpatala_layer(layer: str):
-    """One compiled layer projection (e.g. /openpatala/l0 -> the L0 count artifact)."""
+def openpatala_layer(layer: str, request: Request, response: Response, select: str | None = None):
+    """One compiled layer projection (e.g. /openpatala/l0 -> the L0 count artifact).
+    ETag + 304 (perf rule 5); ?select= projection (perf rule 3)."""
     rec = _compiled(layer)
     if not rec:
         raise HTTPException(404, {"error": {"code": "LAYER_NOT_FOUND", "message": f"no compiled layer {layer}",
                                              "retryable": False}})
-    return {"data": rec, "provenance": {"surface": "live-registry", "served": "compiled-bytes"}}
+    data = rec if not select else {k: v for k, v in rec.items() if k in select.split(",")}
+    etag = _etag_of(rec)
+    response.headers["ETag"] = etag
+    response.headers["Cache-Control"] = "public, max-age=31536000, immutable"
+    inm = request.headers.get("if-none-match")
+    if inm and inm.strip("\"") == etag.strip("\""):
+        return Response(status_code=304, headers={"ETag": etag})
+    return {"data": data, "provenance": {"surface": "live-registry", "served": "compiled-bytes"}}
 
 
 @app.get("/resolve")
