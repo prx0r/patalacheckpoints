@@ -1,0 +1,583 @@
+{
+  "experiment": "PATALA.GRAPH.LOUVAIN_STABILITY.v0",
+  "representation": "see_also_1.0+key_term_0.5xjaccard_min0.3_nobody (frozen, same as k-core)",
+  "k_core_graph_hash": "96f6623cd5963e98f9191c3ae6065d9f637dbf509696db6def7410dd0dfcadec",
+  "louvain": {
+    "seeds": 20,
+    "n_communities_min": 11,
+    "n_communities_max": 11,
+    "n_communities_set": [
+      11
+    ]
+  },
+  "pairwise_co_membership_stability": {
+    "runs": 20,
+    "n_robust_pairs": 187,
+    "n_unstable_pairs": 0,
+    "n_separate_pairs": 0,
+    "robust": [
+      [
+        "V1-k1.1-kathamcit",
+        "V1-purvapaksa-k1.2.7-citsvarupam",
+        1.0
+      ],
+      [
+        "V1-k1.1-kathamcit",
+        "V1-purvapaksa-opening",
+        1.0
+      ],
+      [
+        "V1-k1.1-kathamcit",
+        "V1-upoddhata-k11-karta",
+        1.0
+      ],
+      [
+        "V1-k1.1-kathamcit",
+        "V1-upoddhata-k9-10-sambandha",
+        1.0
+      ],
+      [
+        "V1-k1.1-kathamcit",
+        "V1-upoddhata-mangala",
+        1.0
+      ],
+      [
+        "V1-k1.1-kathamcit",
+        "V1A-svatyandya",
+        1.0
+      ],
+      [
+        "V1-k1.1-kathamcit",
+        "V1B-eligibility",
+        1.0
+      ],
+      [
+        "V1-k1.1-kathamcit",
+        "V1F-upoddhata-opponents",
+        1.0
+      ],
+      [
+        "V1-k1.1-kathamcit",
+        "V1G-cognition-refuted",
+        1.0
+      ],
+      [
+        "V1-k1.1-kathamcit",
+        "V1I-action-refuted",
+        1.0
+      ],
+      [
+        "V1-k1.1-kathamcit",
+        "V1J-agent-constructed",
+        1.0
+      ],
+      [
+        "V1-k1.3-atmaiva",
+        "V1-purvapaksa-smrtibhranti-sankaranandana",
+        1.0
+      ],
+      [
+        "V1-k1.3-atmaiva",
+        "V1-upoddhata-k3-memory",
+        1.0
+      ],
+      [
+        "V1-k1.3-atmaiva",
+        "V1C-svatma",
+        1.0
+      ],
+      [
+        "V1-k1.3-atmaiva",
+        "V1D-memory-eternal-knower",
+        1.0
+      ],
+      [
+        "V1-k1.3-atmaiva",
+        "V1E-foregrounding",
+        1.0
+      ],
+      [
+        "V1-k1.3-atmaiva",
+        "V2A-memory-lords-power",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-k1.2.7-citsvarupam",
+        "V1-purvapaksa-opening",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-k1.2.7-citsvarupam",
+        "V1-upoddhata-k11-karta",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-k1.2.7-citsvarupam",
+        "V1-upoddhata-k9-10-sambandha",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-k1.2.7-citsvarupam",
+        "V1-upoddhata-mangala",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-k1.2.7-citsvarupam",
+        "V1A-svatyandya",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-k1.2.7-citsvarupam",
+        "V1B-eligibility",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-k1.2.7-citsvarupam",
+        "V1F-upoddhata-opponents",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-k1.2.7-citsvarupam",
+        "V1G-cognition-refuted",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-k1.2.7-citsvarupam",
+        "V1I-action-refuted",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-k1.2.7-citsvarupam",
+        "V1J-agent-constructed",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-opening",
+        "V1-upoddhata-k11-karta",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-opening",
+        "V1-upoddhata-k9-10-sambandha",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-opening",
+        "V1-upoddhata-mangala",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-opening",
+        "V1A-svatyandya",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-opening",
+        "V1B-eligibility",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-opening",
+        "V1F-upoddhata-opponents",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-opening",
+        "V1G-cognition-refuted",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-opening",
+        "V1I-action-refuted",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-opening",
+        "V1J-agent-constructed",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-smrtibhranti-sankaranandana",
+        "V1-upoddhata-k3-memory",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-smrtibhranti-sankaranandana",
+        "V1C-svatma",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-smrtibhranti-sankaranandana",
+        "V1D-memory-eternal-knower",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-smrtibhranti-sankaranandana",
+        "V1E-foregrounding",
+        1.0
+      ]
+    ],
+    "unstable": [],
+    "separate_count": 0
+  },
+  "insertion_order_stability": {
+    "runs": 3,
+    "n_robust_pairs": 197,
+    "n_unstable_pairs": 0,
+    "n_separate_pairs": 0,
+    "robust": [
+      [
+        "V1-k1.1-kathamcit",
+        "V1-purvapaksa-k1.2.7-citsvarupam",
+        1.0
+      ],
+      [
+        "V1-k1.1-kathamcit",
+        "V1-purvapaksa-opening",
+        1.0
+      ],
+      [
+        "V1-k1.1-kathamcit",
+        "V1-upoddhata-k11-karta",
+        1.0
+      ],
+      [
+        "V1-k1.1-kathamcit",
+        "V1-upoddhata-k9-10-sambandha",
+        1.0
+      ],
+      [
+        "V1-k1.1-kathamcit",
+        "V1-upoddhata-mangala",
+        1.0
+      ],
+      [
+        "V1-k1.1-kathamcit",
+        "V1A-svatyandya",
+        1.0
+      ],
+      [
+        "V1-k1.1-kathamcit",
+        "V1B-eligibility",
+        1.0
+      ],
+      [
+        "V1-k1.1-kathamcit",
+        "V1F-upoddhata-opponents",
+        1.0
+      ],
+      [
+        "V1-k1.1-kathamcit",
+        "V1G-cognition-refuted",
+        1.0
+      ],
+      [
+        "V1-k1.1-kathamcit",
+        "V1I-action-refuted",
+        1.0
+      ],
+      [
+        "V1-k1.1-kathamcit",
+        "V1J-agent-constructed",
+        1.0
+      ],
+      [
+        "V1-k1.3-atmaiva",
+        "V1-purvapaksa-smrtibhranti-sankaranandana",
+        1.0
+      ],
+      [
+        "V1-k1.3-atmaiva",
+        "V1-upoddhata-k3-memory",
+        1.0
+      ],
+      [
+        "V1-k1.3-atmaiva",
+        "V1C-svatma",
+        1.0
+      ],
+      [
+        "V1-k1.3-atmaiva",
+        "V1D-memory-eternal-knower",
+        1.0
+      ],
+      [
+        "V1-k1.3-atmaiva",
+        "V1E-foregrounding",
+        1.0
+      ],
+      [
+        "V1-k1.3-atmaiva",
+        "V2A-memory-lords-power",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-k1.2.7-citsvarupam",
+        "V1-purvapaksa-opening",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-k1.2.7-citsvarupam",
+        "V1-upoddhata-k11-karta",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-k1.2.7-citsvarupam",
+        "V1-upoddhata-k9-10-sambandha",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-k1.2.7-citsvarupam",
+        "V1-upoddhata-mangala",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-k1.2.7-citsvarupam",
+        "V1A-svatyandya",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-k1.2.7-citsvarupam",
+        "V1B-eligibility",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-k1.2.7-citsvarupam",
+        "V1F-upoddhata-opponents",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-k1.2.7-citsvarupam",
+        "V1G-cognition-refuted",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-k1.2.7-citsvarupam",
+        "V1I-action-refuted",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-k1.2.7-citsvarupam",
+        "V1J-agent-constructed",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-opening",
+        "V1-upoddhata-k11-karta",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-opening",
+        "V1-upoddhata-k9-10-sambandha",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-opening",
+        "V1-upoddhata-mangala",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-opening",
+        "V1A-svatyandya",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-opening",
+        "V1B-eligibility",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-opening",
+        "V1F-upoddhata-opponents",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-opening",
+        "V1G-cognition-refuted",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-opening",
+        "V1I-action-refuted",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-opening",
+        "V1J-agent-constructed",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-smrtibhranti-sankaranandana",
+        "V1-upoddhata-k3-memory",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-smrtibhranti-sankaranandana",
+        "V1C-svatma",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-smrtibhranti-sankaranandana",
+        "V1D-memory-eternal-knower",
+        1.0
+      ],
+      [
+        "V1-purvapaksa-smrtibhranti-sankaranandana",
+        "V1E-foregrounding",
+        1.0
+      ]
+    ],
+    "unstable": [],
+    "separate_count": 0
+  },
+  "k_core_x_louvain_contingency": {
+    "0": {
+      "members": [
+        "V1-k1.1-kathamcit",
+        "V1-purvapaksa-k1.2.7-citsvarupam",
+        "V1-purvapaksa-opening",
+        "V1-upoddhata-k11-karta",
+        "V1-upoddhata-k9-10-sambandha",
+        "V1-upoddhata-mangala",
+        "V1A-svatyandya",
+        "V1B-eligibility",
+        "V1F-upoddhata-opponents",
+        "V1G-cognition-refuted",
+        "V1I-action-refuted",
+        "V1J-agent-constructed"
+      ],
+      "core_distribution": {
+        "3": 3,
+        "2": 8,
+        "1": 1
+      }
+    },
+    "1": {
+      "members": [
+        "V1-k1.2-drstapi",
+        "V1-k1.3-atmaiva",
+        "V1-purvapaksa-smrtibhranti-sankaranandana",
+        "V1-upoddhata-k1-2-ahampratiti",
+        "V1-upoddhata-k3-memory",
+        "V1C-svatma",
+        "V1D-memory-eternal-knower",
+        "V1E-foregrounding",
+        "V2A-memory-lords-power"
+      ],
+      "core_distribution": {
+        "2": 2,
+        "3": 6,
+        "1": 1
+      }
+    },
+    "2": {
+      "members": [
+        "V1-k1.4-1.5-buddhipurva",
+        "V1-upoddhata-k6-k8-caitanyamajada",
+        "V1K-siddhanta-svasamvid",
+        "V1L-yogipratyaksa",
+        "V1M-determination",
+        "V2B-pastness-svasamvitti",
+        "V2C-ajadapramatr",
+        "V2D-jnanasakti",
+        "V2E-external-inferred",
+        "V2F-other-minds",
+        "V2G-dream-inversion"
+      ],
+      "core_distribution": {
+        "2": 2,
+        "3": 8,
+        "1": 1
+      }
+    },
+    "3": {
+      "members": [
+        "V1-upoddhata-k4-5-antargadu",
+        "V2H-vimarsa-paravak",
+        "V2I-sphuratta",
+        "V2J-samskara",
+        "V2K-vacakasphota"
+      ],
+      "core_distribution": {
+        "1": 1,
+        "2": 4
+      }
+    },
+    "4": {
+      "members": [
+        "V1H-enjoyment-reflection"
+      ],
+      "core_distribution": {
+        "0": 1
+      }
+    },
+    "5": {
+      "members": [
+        "V1N-close-mahesvara",
+        "V2L-nonconstructed-I",
+        "V2N-inner-appearance",
+        "V2O-orderless-support",
+        "V2P-pramatr-vyapara",
+        "V2Q-omniscient",
+        "V2R-mahesvarya",
+        "V2S-unity-mahesvarya"
+      ],
+      "core_distribution": {
+        "2": 8
+      }
+    },
+    "6": {
+      "members": [
+        "V2M-descent-states",
+        "V3C-one-light",
+        "V3D-synthesis",
+        "V3E-error",
+        "V3I-difference-real",
+        "V3J-agama-sivatattva",
+        "V3K-kancukas",
+        "V3L-knowers-malas",
+        "V3M-states"
+      ],
+      "core_distribution": {
+        "2": 9
+      }
+    },
+    "7": {
+      "members": [
+        "V3A-timeless-order"
+      ],
+      "core_distribution": {
+        "0": 1
+      }
+    },
+    "8": {
+      "members": [
+        "V3B-bhedabheda"
+      ],
+      "core_distribution": {
+        "0": 1
+      }
+    },
+    "10": {
+      "members": [
+        "V3F-grace",
+        "V3N-one-lord-many",
+        "V3O-bond-liberation",
+        "V3P-lover-union"
+      ],
+      "core_distribution": {
+        "2": 4
+      }
+    },
+    "9": {
+      "members": [
+        "V3G-causality",
+        "V3H-inference-across-knowers"
+      ],
+      "core_distribution": {
+        "1": 2
+      }
+    }
+  },
+  "note": "k-core = STRUCTURAL embeddedness (deterministic). Louvain = modularity heuristic; S(u,v) unstable (~0.5) pairs mark modularity-degenerate boundaries to compare against the k-shell structure. Neither is a theme; none of this claims philosophical centrality."
+}

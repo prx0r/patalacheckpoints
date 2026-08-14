@@ -1,0 +1,2254 @@
+{
+  "verses": [
+    {
+      "object_id": "kramasadbhava:v477",
+      "tokens": {
+        "manonmanaḥ": {
+          "gloss": "mind-without-mind",
+          "quoted": false
+        },
+        "kakaikavalya": {
+          "gloss": "one-alone",
+          "quoted": false
+        },
+        "padaṃ": {
+          "gloss": "position/state",
+          "quoted": false
+        },
+        "yugamamataḥ": {
+          "gloss": "pair-from-thought",
+          "quoted": false
+        },
+        "param": {
+          "gloss": "higher",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "kevalaṃ": {
+          "gloss": "only/alone",
+          "quoted": false
+        },
+        "ca": {
+          "gloss": "and",
+          "quoted": false
+        },
+        "tadoddhṛtya": {
+          "gloss": "having-raised-that",
+          "quoted": false
+        },
+        "nirvāṇe": {
+          "gloss": "in-extinction",
+          "quoted": false
+        },
+        "tathā": {
+          "gloss": "thus",
+          "quoted": false
+        },
+        "cito": {
+          "gloss": "conscious",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v462",
+      "tokens": {
+        "saptādaśeti": {
+          "gloss": "seventeen-thus",
+          "quoted": false
+        },
+        "vikhyātā": {
+          "gloss": "renowned",
+          "quoted": false
+        },
+        "akṣarārthānuyāyinī": {
+          "gloss": "letter-meaning-follower",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "asyāḥ": {
+          "gloss": "of-this",
+          "quoted": false
+        },
+        "svarūpaṃ": {
+          "gloss": "own-form",
+          "quoted": false
+        },
+        "tu": {
+          "gloss": "but/and",
+          "quoted": false
+        },
+        "bhāvajña": {
+          "gloss": "o-knower-of-beings",
+          "quoted": false
+        },
+        "jñātvā": {
+          "gloss": "having-known",
+          "quoted": false
+        },
+        "vākye": {
+          "gloss": "in-speech",
+          "quoted": false
+        },
+        "yojayet": {
+          "gloss": "one-should-join",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v191",
+      "tokens": {
+        "pūjanīyāstu": {
+          "gloss": "to-be-worshipped-indeed",
+          "quoted": false
+        },
+        "vai": {
+          "gloss": "indeed",
+          "quoted": false
+        },
+        "nityaṃ": {
+          "gloss": "always",
+          "quoted": false
+        },
+        "vīradravyaistu": {
+          "gloss": "with-heroic-substances-indeed",
+          "quoted": false
+        },
+        "tāḥ": {
+          "gloss": "those",
+          "quoted": false
+        },
+        "sadā": {
+          "gloss": "always",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "advayācārabhāvena": {
+          "gloss": "with-non-dual-conduct-attitude",
+          "quoted": false
+        },
+        "vīrācāreṇa": {
+          "gloss": "with-heroic-conduct",
+          "quoted": false
+        },
+        "bhairava": {
+          "gloss": "o-bhairava",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v502",
+      "tokens": {
+        "śrībhairava": {
+          "gloss": "lord-bhairava",
+          "quoted": false
+        },
+        "uvāca": {
+          "gloss": "said",
+          "quoted": false
+        },
+        "śrutaṃ": {
+          "gloss": "heard",
+          "quoted": false
+        },
+        "me": {
+          "gloss": "to-me",
+          "quoted": false
+        },
+        "tava": {
+          "gloss": "your",
+          "quoted": false
+        },
+        "vaktrābjāt": {
+          "gloss": "from-lotus-mouth",
+          "quoted": false
+        },
+        "siddhānāṃ": {
+          "gloss": "of-accomplished-ones",
+          "quoted": false
+        },
+        "bodhaśālinām": {
+          "gloss": "of-those-endowed-with-awakening",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "yoginīnāṃ": {
+          "gloss": "of-yoginīs",
+          "quoted": false
+        },
+        "yathārthatvaṃ": {
+          "gloss": "true-nature",
+          "quoted": false
+        },
+        "vidyā": {
+          "gloss": "knowledge/mantra-goddess",
+          "quoted": false
+        },
+        "sarvārthadeśakī": {
+          "gloss": "pointing-out-all-meanings",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v172",
+      "tokens": {
+        "galatālukamadhyasthā": {
+          "gloss": "situated-in-the-middle-of-palate-and-throat",
+          "quoted": false
+        },
+        "antaḥ": {
+          "gloss": "within",
+          "quoted": false
+        },
+        "yāti": {
+          "gloss": "goes",
+          "quoted": false
+        },
+        "parā": {
+          "gloss": "supreme",
+          "quoted": false
+        },
+        "citiḥ": {
+          "gloss": "consciousness",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "tena": {
+          "gloss": "by-that",
+          "quoted": false
+        },
+        "mārgeṇa": {
+          "gloss": "by-path",
+          "quoted": false
+        },
+        "sā": {
+          "gloss": "that",
+          "quoted": false
+        },
+        "raśmiḥ": {
+          "gloss": "ray",
+          "quoted": false
+        },
+        "śaktirūpā": {
+          "gloss": "having-power-form",
+          "quoted": false
+        },
+        "khamāgatā": {
+          "gloss": "come-to-ether",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v571",
+      "tokens": {
+        "madyapānaratāḥ": {
+          "gloss": "delighting-in-wine-drinking",
+          "quoted": false
+        },
+        "kecicchavahastāstathāparāḥ": {
+          "gloss": "some-with-corpses-in-hand-and-others",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "antamālādhalāścānya": {
+          "gloss": "wearing-garlands-of-ends-and-another",
+          "quoted": false
+        },
+        "vaśābhaktyāstathāparāḥ": {
+          "gloss": "with-submissive-devotion-and-others",
+          "quoted": false
+        },
+        "maṃjārudhirapūrṇāṃ": {
+          "gloss": "maṃjārudhirapūrṇāṃ",
+          "quoted": false
+        },
+        "tu": {
+          "gloss": "but/and",
+          "quoted": false
+        },
+        "asthiyuktaṃ": {
+          "gloss": "together-with-bones",
+          "quoted": false
+        },
+        "bhīṣaṇam": {
+          "gloss": "terrifying",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v299",
+      "tokens": {
+        "yena": {
+          "gloss": "by-which",
+          "quoted": false
+        },
+        "vijñātamātreṇa": {
+          "gloss": "by-mere-knowing",
+          "quoted": false
+        },
+        "bhavāmi": {
+          "gloss": "I-become",
+          "quoted": false
+        },
+        "kramabhājanaḥ": {
+          "gloss": "recipient-of-the-sequence",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "ke": {
+          "gloss": "who",
+          "quoted": false
+        },
+        "siddhāstasya": {
+          "gloss": "accomplished-ones-of-that",
+          "quoted": false
+        },
+        "tattvasya": {
+          "gloss": "of-the-principle",
+          "quoted": false
+        },
+        "pāramparyavyavasthitāḥ": {
+          "gloss": "established-in-lineage",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v166",
+      "tokens": {
+        "madanti": {
+          "gloss": "they-rejoice",
+          "quoted": false
+        },
+        "sarvathā": {
+          "gloss": "in-every-way",
+          "quoted": false
+        },
+        "devyaḥ": {
+          "gloss": "goddesses",
+          "quoted": false
+        },
+        "khacakrapadadarśitāḥ": {
+          "gloss": "shown-the-positions-of-the-space-wheel",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "śrībhairava": {
+          "gloss": "lord-bhairava",
+          "quoted": false
+        },
+        "uvāca": {
+          "gloss": "said",
+          "quoted": false
+        },
+        "śrutā": {
+          "gloss": "heard",
+          "quoted": false
+        },
+        "etāvad": {
+          "gloss": "so-much",
+          "quoted": false
+        },
+        "vaktrābjād": {
+          "gloss": "from-lotus-mouth",
+          "quoted": false
+        },
+        "melāpe": {
+          "gloss": "in-assembly",
+          "quoted": false
+        },
+        "militā": {
+          "gloss": "gathered",
+          "quoted": false
+        },
+        "yathā": {
+          "gloss": "as",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v200",
+      "tokens": {
+        "yadetat": {
+          "gloss": "that-which",
+          "quoted": false
+        },
+        "kathitaṃ": {
+          "gloss": "spoken",
+          "quoted": false
+        },
+        "tattvaṃ": {
+          "gloss": "principle",
+          "quoted": false
+        },
+        "tena": {
+          "gloss": "by-that",
+          "quoted": false
+        },
+        "snehena": {
+          "gloss": "with-affection",
+          "quoted": false
+        },
+        "bhairava": {
+          "gloss": "o-bhairava",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "tat": {
+          "gloss": "that",
+          "quoted": false
+        },
+        "tu": {
+          "gloss": "but/and",
+          "quoted": false
+        },
+        "jñānaṃ": {
+          "gloss": "knowledge",
+          "quoted": false
+        },
+        "mahādīptaṃ": {
+          "gloss": "greatly-blazing",
+          "quoted": false
+        },
+        "sarvajñāneṣu": {
+          "gloss": "among-all-knowledges",
+          "quoted": false
+        },
+        "cottamam": {
+          "gloss": "and-highest",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v362",
+      "tokens": {
+        "arāsu": {
+          "gloss": "in-spokes",
+          "quoted": false
+        },
+        "vinyaset": {
+          "gloss": "one-should-place",
+          "quoted": false
+        },
+        "prājña": {
+          "gloss": "o-wise-one",
+          "quoted": false
+        },
+        "saumyarūpāvibodhataḥ": {
+          "gloss": "from-awakening-of-peaceful-form",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "tatastu": {
+          "gloss": "then-indeed",
+          "quoted": false
+        },
+        "sthiticakrasya": {
+          "gloss": "of-the-maintenance-wheel",
+          "quoted": false
+        },
+        "varṇānyanyāni": {
+          "gloss": "other-letters",
+          "quoted": false
+        },
+        "ṣoḍaśa": {
+          "gloss": "sixteen",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v212",
+      "tokens": {
+        "kaḥ": {
+          "gloss": "who",
+          "quoted": false
+        },
+        "kramaḥ": {
+          "gloss": "sequence/order",
+          "quoted": false
+        },
+        "kiṃ": {
+          "gloss": "what",
+          "quoted": false
+        },
+        "kramasyāsya": {
+          "gloss": "of-this-sequence",
+          "quoted": false
+        },
+        "jñeyaṃ": {
+          "gloss": "object-of-knowledge",
+          "quoted": false
+        },
+        "jñānaṃ": {
+          "gloss": "knowledge",
+          "quoted": false
+        },
+        "tu": {
+          "gloss": "but/and",
+          "quoted": false
+        },
+        "bhavet": {
+          "gloss": "would-be",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "ke": {
+          "gloss": "who",
+          "quoted": false
+        },
+        "siddhāstasya": {
+          "gloss": "accomplished-ones-of-that",
+          "quoted": false
+        },
+        "tattvasya": {
+          "gloss": "of-the-principle",
+          "quoted": false
+        },
+        "kramavijñānabhāvagāḥ": {
+          "gloss": "going-to-the-state-of-sequence-knowledge",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v225",
+      "tokens": {
+        "mukhapāraṃparāgataṃ": {
+          "gloss": "gone-by-oral-lineage",
+          "quoted": false
+        },
+        "mukhānmukhagataṃ": {
+          "gloss": "gone-from-mouth-to-mouth",
+          "quoted": false
+        },
+        "sadā": {
+          "gloss": "always",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "mukhāmukhapadau": {
+          "gloss": "the-face-to-face-and-not-face-positions",
+          "quoted": false
+        },
+        "hīnaṃ": {
+          "gloss": "abandoned",
+          "quoted": false
+        },
+        "saṃmukhaṃ": {
+          "gloss": "face-to-face",
+          "quoted": false
+        },
+        "tu": {
+          "gloss": "but/and",
+          "quoted": false
+        },
+        "adhomukham": {
+          "gloss": "face-down",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v2",
+      "tokens": {
+        "tasmiṃ": {
+          "gloss": "in-that",
+          "quoted": false
+        },
+        "cakre": {
+          "gloss": "in-wheel",
+          "quoted": false
+        },
+        "mahāghore": {
+          "gloss": "in-very-terrible",
+          "quoted": false
+        },
+        "mahāmātṛbhiḥ": {
+          "gloss": "by-great-mothers",
+          "quoted": false
+        },
+        "saṃkule": {
+          "gloss": "crowded",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "svavimarśadaśanibhā": {
+          "gloss": "resembling-the-mirror-of-own-reflexive-awareness",
+          "quoted": false
+        },
+        "*": {
+          "gloss": "*",
+          "quoted": true
+        },
+        "*(?)": {
+          "gloss": "*(?)",
+          "quoted": true
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v535",
+      "tokens": {
+        "puṣpadhūpopahāraiśca": {
+          "gloss": "and-with-offerings-of-flowers-and-incense",
+          "quoted": false
+        },
+        "lepanaiśca": {
+          "gloss": "and-with-anointings",
+          "quoted": false
+        },
+        "sudīpakaiḥ": {
+          "gloss": "with-good-lamps",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "tatastu": {
+          "gloss": "then-indeed",
+          "quoted": false
+        },
+        "devadeveśa": {
+          "gloss": "lord-of-gods",
+          "quoted": false
+        },
+        "samayārthaprapūjaniaḥ": {
+          "gloss": "worshipful-for-the-meaning-of-the-pact",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v387",
+      "tokens": {
+        "aṣṭamasyāvavasthaṃ": {
+          "gloss": "state-of-the-eighth",
+          "quoted": false
+        },
+        "tu": {
+          "gloss": "but/and",
+          "quoted": false
+        },
+        "sthitikāranasaṃyutam": {
+          "gloss": "endowed-with-the-cause-of-maintenance",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "navamena": {
+          "gloss": "by-the-ninth",
+          "quoted": false
+        },
+        "śirākrāntaṃ": {
+          "gloss": "transcended-by-the-head",
+          "quoted": false
+        },
+        "varṇamidaṃ": {
+          "gloss": "this-letter",
+          "quoted": false
+        },
+        "dvitīyakam": {
+          "gloss": "second",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v562",
+      "tokens": {
+        "mahāsiddhaiśca": {
+          "gloss": "and-with-great-accomplished-ones",
+          "quoted": false
+        },
+        "yakṣaiśca": {
+          "gloss": "and-with-yakṣas",
+          "quoted": false
+        },
+        "kinnarairākṣasaistathā": {
+          "gloss": "and-with-kinnaras-and-rākṣasas",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "vetālai": {
+          "gloss": "with-vetālas",
+          "quoted": false
+        },
+        "bhūtasaṃghaiśca": {
+          "gloss": "and-with-crowds-of-beings",
+          "quoted": false
+        },
+        "piśācai": {
+          "gloss": "with-piśācas",
+          "quoted": false
+        },
+        "brahmarākṣasaiḥ": {
+          "gloss": "with-brahmarākṣasas",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v417",
+      "tokens": {
+        "astraṃ": {
+          "gloss": "weapon",
+          "quoted": false
+        },
+        "tu": {
+          "gloss": "but/and",
+          "quoted": false
+        },
+        "kālisaṃjñā": {
+          "gloss": "named-kāli",
+          "quoted": false
+        },
+        "*?": {
+          "gloss": "*?",
+          "quoted": true
+        },
+        "kṣetrapālamataḥ": {
+          "gloss": "beyond-the-field-protector",
+          "quoted": false
+        },
+        "param": {
+          "gloss": "higher",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "tato": {
+          "gloss": "then",
+          "quoted": false
+        },
+        "divyāmadivyāṃ": {
+          "gloss": "divine-and-non-divine",
+          "quoted": false
+        },
+        "ca": {
+          "gloss": "and",
+          "quoted": false
+        },
+        "mānavīṃ": {
+          "gloss": "human",
+          "quoted": false
+        },
+        "gurusantatim": {
+          "gloss": "guru-lineage",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v278",
+      "tokens": {
+        "tatastu": {
+          "gloss": "then-indeed",
+          "quoted": false
+        },
+        "bhāsācakrasya": {
+          "gloss": "of-the-wheel-of-luminosity",
+          "quoted": false
+        },
+        "ārūḍhā": {
+          "gloss": "ascended",
+          "quoted": false
+        },
+        "sarvatomukhī": {
+          "gloss": "facing-everywhere",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "dvāda": {
+          "gloss": "twelve",
+          "quoted": false
+        },
+        "śānāṃ": {
+          "gloss": "of-them",
+          "quoted": false
+        },
+        "tu": {
+          "gloss": "but/and",
+          "quoted": false
+        },
+        "kalāntaṃ": {
+          "gloss": "ending-in-a-digit",
+          "quoted": false
+        },
+        "vai": {
+          "gloss": "indeed",
+          "quoted": false
+        },
+        "dvidhā": {
+          "gloss": "in-two-ways",
+          "quoted": false
+        },
+        "cidbhā": {
+          "gloss": "consciousness-being",
+          "quoted": false
+        },
+        "taraṅgiṇī": {
+          "gloss": "wave",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v398",
+      "tokens": {
+        "yena": {
+          "gloss": "by-which",
+          "quoted": false
+        },
+        "pūjitamātreṇa": {
+          "gloss": "by-mere-worship",
+          "quoted": false
+        },
+        "sṛṣṭisthitilayaṃkaram": {
+          "gloss": "causing-creation-maintenance-and-dissolution",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "bhāvāmi": {
+          "gloss": "I-become",
+          "quoted": false
+        },
+        "sarvabhāvānāṃ": {
+          "gloss": "of-all-beings",
+          "quoted": false
+        },
+        "tad": {
+          "gloss": "that",
+          "quoted": false
+        },
+        "brūhi": {
+          "gloss": "tell",
+          "quoted": false
+        },
+        "vṛdatāṃvarai": {
+          "gloss": "vṛdatāṃvarai",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v379",
+      "tokens": {
+        "eṣā": {
+          "gloss": "this",
+          "quoted": false
+        },
+        "vidyā": {
+          "gloss": "knowledge/mantra-goddess",
+          "quoted": false
+        },
+        "tu": {
+          "gloss": "but/and",
+          "quoted": false
+        },
+        "mūrtināṃ": {
+          "gloss": "of-embodied-ones",
+          "quoted": false
+        },
+        "sarvasvaṃ": {
+          "gloss": "the-whole",
+          "quoted": false
+        },
+        "kālikākrame": {
+          "gloss": "in-the-kāli-sequence",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "tataḥ": {
+          "gloss": "then",
+          "quoted": false
+        },
+        "saṃjñā": {
+          "gloss": "name",
+          "quoted": false
+        },
+        "prakartavyā": {
+          "gloss": "should-be-made",
+          "quoted": false
+        },
+        "guruṇocchinnakarmaṇā": {
+          "gloss": "guruṇocchinnakarmaṇā",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v220",
+      "tokens": {
+        "kathayasva": {
+          "gloss": "relate",
+          "quoted": false
+        },
+        "prasādena": {
+          "gloss": "by-favor",
+          "quoted": false
+        },
+        "kramasadbhāvamuttamam": {
+          "gloss": "supreme-true-nature-of-the-sequence",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "yena": {
+          "gloss": "by-which",
+          "quoted": false
+        },
+        "jñātena": {
+          "gloss": "by-knowing",
+          "quoted": false
+        },
+        "vai": {
+          "gloss": "indeed",
+          "quoted": false
+        },
+        "samyak": {
+          "gloss": "correctly",
+          "quoted": false
+        },
+        "svasvarūpatayā": {
+          "gloss": "as-one's-own-form",
+          "quoted": false
+        },
+        "sthitaḥ": {
+          "gloss": "situated",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v120",
+      "tokens": {
+        "tatrasthā": {
+          "gloss": "situated-there",
+          "quoted": false
+        },
+        "paramā": {
+          "gloss": "higher",
+          "quoted": false
+        },
+        "raudrā": {
+          "gloss": "fierce",
+          "quoted": false
+        },
+        "mantrabhūmistu": {
+          "gloss": "mantrabhūmistu",
+          "quoted": false
+        },
+        "sā": {
+          "gloss": "that",
+          "quoted": false
+        },
+        "viduḥ": {
+          "gloss": "they-know",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "rāvajñā": {
+          "gloss": "knowing-sound",
+          "quoted": false
+        },
+        "rāvagārāvā": {
+          "gloss": "sound-and-non-sound",
+          "quoted": false
+        },
+        "rāvasthā": {
+          "gloss": "abiding-in-sound",
+          "quoted": false
+        },
+        "rāvadā": {
+          "gloss": "giving-sound",
+          "quoted": false
+        },
+        "sadā": {
+          "gloss": "always",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v138",
+      "tokens": {
+        "tritattvabhāvakī": {
+          "gloss": "making-the-three-principles",
+          "quoted": false
+        },
+        "yā": {
+          "gloss": "which",
+          "quoted": false
+        },
+        "tu": {
+          "gloss": "but/and",
+          "quoted": false
+        },
+        "mantrabhūmistu": {
+          "gloss": "mantrabhūmistu",
+          "quoted": false
+        },
+        "sā": {
+          "gloss": "that",
+          "quoted": false
+        },
+        "viduḥ": {
+          "gloss": "they-know",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "yasyā": {
+          "gloss": "yasyā",
+          "quoted": false
+        },
+        "nāsti": {
+          "gloss": "is-not",
+          "quoted": false
+        },
+        "paraṃ": {
+          "gloss": "supreme",
+          "quoted": false
+        },
+        "jñānaṃ": {
+          "gloss": "knowledge",
+          "quoted": false
+        },
+        "yatra": {
+          "gloss": "where",
+          "quoted": false
+        },
+        "jñeyaṃ": {
+          "gloss": "object-of-knowledge",
+          "quoted": false
+        },
+        "parāparam": {
+          "gloss": "supreme-and-non-supreme",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v57",
+      "tokens": {
+        "saṃyamaniyamaiścaiva": {
+          "gloss": "and-with-restraints-and-restrictions",
+          "quoted": false
+        },
+        "nirmuktaṃ": {
+          "gloss": "liberated",
+          "quoted": false
+        },
+        "tattvato": {
+          "gloss": "principle",
+          "quoted": false
+        },
+        "mahat": {
+          "gloss": "great",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v343",
+      "tokens": {
+        "śūdrī": {
+          "gloss": "śūdra-woman",
+          "quoted": false
+        },
+        "vaiśyā": {
+          "gloss": "vaiśya-woman",
+          "quoted": false
+        },
+        "tathā": {
+          "gloss": "thus",
+          "quoted": false
+        },
+        "veśyā": {
+          "gloss": "courtesan",
+          "quoted": false
+        },
+        "dhāvakī": {
+          "gloss": "washerwoman",
+          "quoted": false
+        },
+        "nartakī": {
+          "gloss": "dancer",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v341",
+      "tokens": {
+        "cakrākārāḥ": {
+          "gloss": "having-wheel-shapes",
+          "quoted": false
+        },
+        "stutāḥ": {
+          "gloss": "praised",
+          "quoted": false
+        },
+        "sarvā": {
+          "gloss": "all",
+          "quoted": false
+        },
+        "bodhapāna": {
+          "gloss": "awakening-drinking",
+          "quoted": false
+        },
+        "ratākulāḥ": {
+          "gloss": "delighted-and-agitated",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "tatrasthāḥ": {
+          "gloss": "situated-there",
+          "quoted": false
+        },
+        "parayā": {
+          "gloss": "by-supreme",
+          "quoted": false
+        },
+        "bhaktyā": {
+          "gloss": "by-devotion",
+          "quoted": false
+        },
+        "māyāvad": {
+          "gloss": "like-māyā",
+          "quoted": false
+        },
+        "yāstu": {
+          "gloss": "who-indeed",
+          "quoted": false
+        },
+        "nityaśaḥ": {
+          "gloss": "constantly",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v469",
+      "tokens": {
+        "ādau": {
+          "gloss": "at-first",
+          "quoted": false
+        },
+        "tu": {
+          "gloss": "but/and",
+          "quoted": false
+        },
+        "svakramaḥ": {
+          "gloss": "own-sequence",
+          "quoted": false
+        },
+        "pūjyastato": {
+          "gloss": "to-be-worshipped-then",
+          "quoted": false
+        },
+        "vidyāṃ": {
+          "gloss": "knowledge",
+          "quoted": false
+        },
+        "samuddharet": {
+          "gloss": "one-should-extract",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "saṃhāracakradeveśa": {
+          "gloss": "o-lord-of-the-dissolution-wheel",
+          "quoted": false
+        },
+        "trayodaśamamārgataḥ": {
+          "gloss": "from-the-thirteenth-path",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v54",
+      "tokens": {
+        "sthānaniketakairmuktaṃ": {
+          "gloss": "freed-from-houses-and-dwellings",
+          "quoted": false
+        },
+        "nakṣatraiśca": {
+          "gloss": "and-with-lunar-mansions",
+          "quoted": false
+        },
+        "grahaistathā": {
+          "gloss": "and-with-planets",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v118",
+      "tokens": {
+        "kuṃdayāgavibhāgeṣu": {
+          "gloss": "in-sections-of-kuṇḍa-sacrifice",
+          "quoted": false
+        },
+        "(?)": {
+          "gloss": "(?)",
+          "quoted": true
+        },
+        "yoginīnāṃ": {
+          "gloss": "of-yoginīs",
+          "quoted": false
+        },
+        "tu": {
+          "gloss": "but/and",
+          "quoted": false
+        },
+        "sarvataḥ": {
+          "gloss": "from-everywhere",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "tacchṛṇuṣva": {
+          "gloss": "hear-that",
+          "quoted": false
+        },
+        "samāsena": {
+          "gloss": "briefly",
+          "quoted": false
+        },
+        "bhavabandhanisūdana": {
+          "gloss": "o-destroyer-of-worldly-bondage",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v518",
+      "tokens": {
+        "sṛṣṭisthaṃ": {
+          "gloss": "situated-in-creation",
+          "quoted": false
+        },
+        "saptamaṃ": {
+          "gloss": "seventh",
+          "quoted": false
+        },
+        "yad": {
+          "gloss": "which",
+          "quoted": false
+        },
+        "vai": {
+          "gloss": "indeed",
+          "quoted": false
+        },
+        "saṃhārādaṣṭasaṃyutam": {
+          "gloss": "endowed-with-dissolution-and-eight",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "navamaṃ": {
+          "gloss": "ninth",
+          "quoted": false
+        },
+        "taṃ": {
+          "gloss": "that",
+          "quoted": false
+        },
+        "vijāniyād": {
+          "gloss": "one-should-know",
+          "quoted": false
+        },
+        "daśamaṃ": {
+          "gloss": "tenth",
+          "quoted": false
+        },
+        "tvadhunā": {
+          "gloss": "and-now",
+          "quoted": false
+        },
+        "śṛṇu": {
+          "gloss": "hear",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v67",
+      "tokens": {
+        "prathamaḥ": {
+          "gloss": "first",
+          "quoted": false
+        },
+        "paṭalaḥ": {
+          "gloss": "chapter",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v188",
+      "tokens": {
+        "śivaśaktyā": {
+          "gloss": "by-śiva-power",
+          "quoted": false
+        },
+        "hyasāvānāṃ": {
+          "gloss": "indeed-of-these",
+          "quoted": false
+        },
+        "varvaśelaspaṭītu": {
+          "gloss": "varvaśela-spaṭīka",
+          "quoted": false
+        },
+        "yā": {
+          "gloss": "which",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "?": {
+          "gloss": "?",
+          "quoted": true
+        },
+        "tṛtīyāṃ": {
+          "gloss": "third",
+          "quoted": false
+        },
+        "laharīṃ": {
+          "gloss": "wave",
+          "quoted": false
+        },
+        "viddhi": {
+          "gloss": "know",
+          "quoted": false
+        },
+        "śāṃbhavī": {
+          "gloss": "pertaining-to-śambhu",
+          "quoted": false
+        },
+        "kālabhakṣakī": {
+          "gloss": "devouring-time",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v338",
+      "tokens": {
+        "athavā": {
+          "gloss": "or",
+          "quoted": false
+        },
+        "yatra": {
+          "gloss": "where",
+          "quoted": false
+        },
+        "yatrecchā": {
+          "gloss": "wherever-desire",
+          "quoted": false
+        },
+        "mānasī": {
+          "gloss": "mental",
+          "quoted": false
+        },
+        "bhavate'aa": {
+          "gloss": "becomes",
+          "quoted": false
+        },
+        "calā": {
+          "gloss": "moving",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "tatra": {
+          "gloss": "there",
+          "quoted": false
+        },
+        "prakartavyaṃ": {
+          "gloss": "should-be-done",
+          "quoted": false
+        },
+        "mantroddhāraṃ": {
+          "gloss": "extraction-of-mantra",
+          "quoted": false
+        },
+        "svakāmataḥ": {
+          "gloss": "according-to-one's-own-desire",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v247",
+      "tokens": {
+        "saṃhārakaraṇodyuktā": {
+          "gloss": "engaged-in-causing-dissolution",
+          "quoted": false
+        },
+        "bhāvenānena": {
+          "gloss": "by-this-attitude",
+          "quoted": false
+        },
+        "sarvataḥ": {
+          "gloss": "from-everywhere",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "vidyārūpā": {
+          "gloss": "having-knowledge-form",
+          "quoted": false
+        },
+        "tu": {
+          "gloss": "but/and",
+          "quoted": false
+        },
+        "ṣaṣṭhyantā": {
+          "gloss": "ending-in-the-sixth-case",
+          "quoted": false
+        },
+        "kālīkā": {
+          "gloss": "kālī-like",
+          "quoted": false
+        },
+        "kanahehu": {
+          "gloss": "kanahehu",
+          "quoted": false
+        },
+        "-u": {
+          "gloss": "-u",
+          "quoted": true
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v250",
+      "tokens": {
+        "na": {
+          "gloss": "not",
+          "quoted": false
+        },
+        "sā": {
+          "gloss": "that",
+          "quoted": false
+        },
+        "ekā": {
+          "gloss": "one",
+          "quoted": false
+        },
+        "anekā": {
+          "gloss": "not-one",
+          "quoted": false
+        },
+        "vā": {
+          "gloss": "or",
+          "quoted": false
+        },
+        "parā": {
+          "gloss": "supreme",
+          "quoted": false
+        },
+        "divyā": {
+          "gloss": "divine",
+          "quoted": false
+        },
+        "yaśasvinī": {
+          "gloss": "glorious",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "punaḥ": {
+          "gloss": "again",
+          "quoted": false
+        },
+        "saṃvīkṣā": {
+          "gloss": "review/seeing",
+          "quoted": false
+        },
+        "dharmatvaṃ": {
+          "gloss": "state-of-dharma",
+          "quoted": false
+        },
+        "gṛhṇante": {
+          "gloss": "they-take",
+          "quoted": false
+        },
+        "tusva": {
+          "gloss": "tusva",
+          "quoted": false
+        },
+        "līlayā": {
+          "gloss": "with-sport",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v550",
+      "tokens": {
+        "caturdaśena": {
+          "gloss": "by-the-fourteenth",
+          "quoted": false
+        },
+        "cākrāntaṃ": {
+          "gloss": "and-transcended",
+          "quoted": false
+        },
+        "sṛṣṭisthaṃ": {
+          "gloss": "situated-in-creation",
+          "quoted": false
+        },
+        "dvādaśayutam": {
+          "gloss": "endowed-with-twelve",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "etat": {
+          "gloss": "this",
+          "quoted": false
+        },
+        "piṇḍākṣaraṃ": {
+          "gloss": "syllable-mass",
+          "quoted": false
+        },
+        "yojyaṃ": {
+          "gloss": "to-be-joined",
+          "quoted": false
+        },
+        "vyomānte": {
+          "gloss": "in-the-end-of-space",
+          "quoted": false
+        },
+        "padakaṃ": {
+          "gloss": "foot/marker",
+          "quoted": false
+        },
+        "tataḥ": {
+          "gloss": "then",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v397",
+      "tokens": {
+        "teṣāṃ": {
+          "gloss": "of-them",
+          "quoted": false
+        },
+        "madhyāt": {
+          "gloss": "from-the-middle",
+          "quoted": false
+        },
+        "kramāṇāṃ": {
+          "gloss": "of-sequences",
+          "quoted": false
+        },
+        "tu": {
+          "gloss": "but/and",
+          "quoted": false
+        },
+        "ādau": {
+          "gloss": "at-first",
+          "quoted": false
+        },
+        "pūjyastu": {
+          "gloss": "to-be-worshipped-and",
+          "quoted": false
+        },
+        "kaḥ": {
+          "gloss": "who",
+          "quoted": false
+        },
+        "kramaḥ": {
+          "gloss": "sequence/order",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "tat": {
+          "gloss": "that",
+          "quoted": false
+        },
+        "me": {
+          "gloss": "to-me",
+          "quoted": false
+        },
+        "kathaya": {
+          "gloss": "tell",
+          "quoted": false
+        },
+        "suśroṇi": {
+          "gloss": "o-beautiful-hipped",
+          "quoted": false
+        },
+        "vistareṇa": {
+          "gloss": "in-detail",
+          "quoted": false
+        },
+        "yathāvidhiḥ": {
+          "gloss": "according-to-rule",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v323",
+      "tokens": {
+        "kā": {
+          "gloss": "who/which",
+          "quoted": false
+        },
+        "guhyā": {
+          "gloss": "secret",
+          "quoted": false
+        },
+        "devadeveśi": {
+          "gloss": "o-goddess-lord-of-gods",
+          "quoted": false
+        },
+        "yayā": {
+          "gloss": "by-which",
+          "quoted": false
+        },
+        "pūjyāstu": {
+          "gloss": "to-be-worshipped-indeed",
+          "quoted": false
+        },
+        "tāḥ": {
+          "gloss": "those",
+          "quoted": false
+        },
+        "śivāḥ": {
+          "gloss": "auspicious-ones",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "siddhaiḥ": {
+          "gloss": "by-accomplished-ones",
+          "quoted": false
+        },
+        "saha": {
+          "gloss": "with",
+          "quoted": false
+        },
+        "yathārthatve": {
+          "gloss": "in-truth",
+          "quoted": false
+        },
+        "parārūpāśca": {
+          "gloss": "and-having-supreme-forms",
+          "quoted": false
+        },
+        "mūrtayaḥ": {
+          "gloss": "embodied-forms",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v99",
+      "tokens": {
+        "ṣaṭbhāgena": {
+          "gloss": "by-a-sixth-part",
+          "quoted": false
+        },
+        "ṣaḍārāntā": {
+          "gloss": "ending-in-six-spokes",
+          "quoted": false
+        },
+        "tātītā": {
+          "gloss": "tātītā",
+          "quoted": false
+        },
+        "śiśivaṃ": {
+          "gloss": "śiśiva",
+          "quoted": false
+        },
+        "dhuta": {
+          "gloss": "shaken",
+          "quoted": false
+        },
+        "(?)": {
+          "gloss": "(?)",
+          "quoted": true
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v237",
+      "tokens": {
+        "sṛṣṭikramaṃ": {
+          "gloss": "creation-sequence",
+          "quoted": false
+        },
+        "tu": {
+          "gloss": "but/and",
+          "quoted": false
+        },
+        "prathamaṃ": {
+          "gloss": "first",
+          "quoted": false
+        },
+        "anantaraṃ": {
+          "gloss": "following",
+          "quoted": false
+        },
+        "dvitīyakam": {
+          "gloss": "second",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "saṃhāraṃ": {
+          "gloss": "dissolution",
+          "quoted": false
+        },
+        "tṛtīyaṃ": {
+          "gloss": "third",
+          "quoted": false
+        },
+        "syādanākhyeyaṃ": {
+          "gloss": "may-be-unspeakable",
+          "quoted": false
+        },
+        "caturthakam": {
+          "gloss": "fourth",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v269",
+      "tokens": {
+        "āśūnyagāgatā": {
+          "gloss": "āśūnyagāgatā",
+          "quoted": false
+        },
+        "nityaṃ": {
+          "gloss": "always",
+          "quoted": false
+        },
+        "sarvagrasanalālasā": {
+          "gloss": "eager-to-seize-all",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "amadhye": {
+          "gloss": "amadhye",
+          "quoted": false
+        },
+        "tatsvabhāvena": {
+          "gloss": "by-that-own-nature",
+          "quoted": false
+        },
+        "rūpasaṃgrasanākulā": {
+          "gloss": "agitated-by-devouring-forms",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v321",
+      "tokens": {
+        "siddhāśca": {
+          "gloss": "and-accomplished-ones",
+          "quoted": false
+        },
+        "parameśāni": {
+          "gloss": "o-supreme-lady",
+          "quoted": false
+        },
+        "tvatprasādāvatāritāḥ": {
+          "gloss": "descended-through-your-favor",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "pāramparyakramāyātā": {
+          "gloss": "come-by-lineage-sequence",
+          "quoted": false
+        },
+        "mukhāmukhayane": {
+          "gloss": "in-face-and-non-face-going",
+          "quoted": false
+        },
+        "sthitāḥ": {
+          "gloss": "situated",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v106",
+      "tokens": {
+        "khaṇḍajñānena": {
+          "gloss": "by-fragmentary-knowledge",
+          "quoted": false
+        },
+        "sā": {
+          "gloss": "that",
+          "quoted": false
+        },
+        "devī": {
+          "gloss": "goddess",
+          "quoted": false
+        },
+        "khaṇḍacakraikatāṃ": {
+          "gloss": "oneness-of-the-fragment-wheel",
+          "quoted": false
+        },
+        "gatā": {
+          "gloss": "gone",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "bhāsvarairdivasairyuktā": {
+          "gloss": "endowed-with-radiant-days",
+          "quoted": false
+        },
+        "(?)": {
+          "gloss": "(?)",
+          "quoted": true
+        },
+        "śikhā": {
+          "gloss": "flame/crest",
+          "quoted": false
+        },
+        "bhargasya": {
+          "gloss": "of-splendor",
+          "quoted": false
+        },
+        "cottamā": {
+          "gloss": "and-highest",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v178",
+      "tokens": {
+        "amānā": {
+          "gloss": "without-honor",
+          "quoted": false
+        },
+        "mānanīyā": {
+          "gloss": "to-be-honored",
+          "quoted": false
+        },
+        "ca": {
+          "gloss": "and",
+          "quoted": false
+        },
+        "śivabhūtā": {
+          "gloss": "become-śiva",
+          "quoted": false
+        },
+        "parā": {
+          "gloss": "supreme",
+          "quoted": false
+        },
+        "kalā": {
+          "gloss": "digit/portion",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "tena": {
+          "gloss": "by-that",
+          "quoted": false
+        },
+        "mārgeṇa": {
+          "gloss": "by-path",
+          "quoted": false
+        },
+        "sā": {
+          "gloss": "that",
+          "quoted": false
+        },
+        "raśmiḥ": {
+          "gloss": "ray",
+          "quoted": false
+        },
+        "śaktirūpā": {
+          "gloss": "having-power-form",
+          "quoted": false
+        },
+        "khamāgatā": {
+          "gloss": "come-to-ether",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v386",
+      "tokens": {
+        "etad": {
+          "gloss": "this",
+          "quoted": false
+        },
+        "varṇaṃ": {
+          "gloss": "letter",
+          "quoted": false
+        },
+        "mahākālaṃ": {
+          "gloss": "great-time/death",
+          "quoted": false
+        },
+        "prathamaṃ": {
+          "gloss": "first",
+          "quoted": false
+        },
+        "sarvakāmadam": {
+          "gloss": "granting-all-desires",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "sṛṣṭicakrasya": {
+          "gloss": "of-creation-wheel",
+          "quoted": false
+        },
+        "yad": {
+          "gloss": "which",
+          "quoted": false
+        },
+        "bhavanāśanam": {
+          "gloss": "destroying-existence",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v109",
+      "tokens": {
+        "2/?": {
+          "gloss": "2/?",
+          "quoted": true
+        },
+        "ghrātā": {
+          "gloss": "smelled",
+          "quoted": false
+        },
+        "vinirmuktā": {
+          "gloss": "released",
+          "quoted": false
+        },
+        "jñānena": {
+          "gloss": "by-knowledge",
+          "quoted": false
+        },
+        "samatāṃ": {
+          "gloss": "to-equality",
+          "quoted": false
+        },
+        "gatā": {
+          "gloss": "gone",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "?": {
+          "gloss": "?",
+          "quoted": true
+        },
+        "pañcānāṃ": {
+          "gloss": "of-five",
+          "quoted": false
+        },
+        "svasvabhāvānāṃ": {
+          "gloss": "of-their-own-natures",
+          "quoted": false
+        },
+        "tridhāmā": {
+          "gloss": "having-three-abodes",
+          "quoted": false
+        },
+        "sā": {
+          "gloss": "that",
+          "quoted": false
+        },
+        "vyavasthitā": {
+          "gloss": "established",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v218",
+      "tokens": {
+        "yena": {
+          "gloss": "by-which",
+          "quoted": false
+        },
+        "vijñātamātreṇa": {
+          "gloss": "by-mere-knowing",
+          "quoted": false
+        },
+        "bhāvāmi": {
+          "gloss": "I-become",
+          "quoted": false
+        },
+        "kramabhājanaḥ": {
+          "gloss": "recipient-of-the-sequence",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "anugrahaṃ": {
+          "gloss": "favor",
+          "quoted": false
+        },
+        "kuru": {
+          "gloss": "do",
+          "quoted": false
+        },
+        "me": {
+          "gloss": "to-me",
+          "quoted": false
+        },
+        "devi": {
+          "gloss": "o-goddess",
+          "quoted": false
+        },
+        "siddhapāraṃparāyatam": {
+          "gloss": "derived-from-siddha-lineage",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v373",
+      "tokens": {
+        "mūrtināṃ": {
+          "gloss": "of-embodied-ones",
+          "quoted": false
+        },
+        "vyomagā": {
+          "gloss": "sky-going",
+          "quoted": false
+        },
+        "nātha": {
+          "gloss": "o-lord",
+          "quoted": false
+        },
+        "yathānyāyaṃkramagatāḥ": {
+          "gloss": "gone-according-to-proper-sequence",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "sṛṣṭicakrasya": {
+          "gloss": "of-creation-wheel",
+          "quoted": false
+        },
+        "yad": {
+          "gloss": "which",
+          "quoted": false
+        },
+        "varṇaṃ": {
+          "gloss": "letter",
+          "quoted": false
+        },
+        "prathamaṃ": {
+          "gloss": "first",
+          "quoted": false
+        },
+        "śaktirūpakam": {
+          "gloss": "having-power-form",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v66",
+      "tokens": {
+        "catuḥṣaṣṭistu": {
+          "gloss": "and-sixty-four",
+          "quoted": false
+        },
+        "yoginyo": {
+          "gloss": "yoginīs",
+          "quoted": false
+        },
+        "mahārthapadagarvitāḥ": {
+          "gloss": "proud-of-the-great-meaning-position",
+          "quoted": false
+        }
+      }
+    },
+    {
+      "object_id": "kramasadbhava:v165",
+      "tokens": {
+        "pūjyā": {
+          "gloss": "to-be-worshipped",
+          "quoted": false
+        },
+        "vandyāḥ": {
+          "gloss": "to-be-saluted",
+          "quoted": false
+        },
+        "prayatnena": {
+          "gloss": "with-effort",
+          "quoted": false
+        },
+        "gurūddiṣṭena": {
+          "gloss": "as-pointed-out-by-the-guru",
+          "quoted": false
+        },
+        "(gurudṛṣṭena)": {
+          "gloss": "(gurudṛṣṭena)",
+          "quoted": false
+        },
+        "karmaṇā": {
+          "gloss": "by-action",
+          "quoted": false
+        },
+        "|": {
+          "gloss": "|",
+          "quoted": true
+        },
+        "pūjanīyaṃ": {
+          "gloss": "to-be-worshipped",
+          "quoted": false
+        },
+        "paraṃ": {
+          "gloss": "supreme",
+          "quoted": false
+        },
+        "divyaṃ": {
+          "gloss": "divine",
+          "quoted": false
+        },
+        "malāpaṃ": {
+          "gloss": "without-impurity",
+          "quoted": false
+        },
+        "sarvajantuṣu": {
+          "gloss": "among-all-creatures",
+          "quoted": false
+        }
+      }
+    }
+  ]
+}

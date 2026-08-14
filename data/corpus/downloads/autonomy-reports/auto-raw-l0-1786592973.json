@@ -1,0 +1,32 @@
+{
+  "ts": "2026-08-13T03:49:33",
+  "total_wall_s": 4.6,
+  "works": [
+    {
+      "work": "kubjikamata",
+      "passages": 10,
+      "committed": 7,
+      "blocked": 0,
+      "failed": 3,
+      "wall_s": 2.0
+    },
+    {
+      "work": "netratantra",
+      "passages": 10,
+      "committed": 3,
+      "blocked": 0,
+      "failed": 1,
+      "wall_s": 0.4
+    },
+    {
+      "work": "svacchandatantra",
+      "passages": 10,
+      "committed": 3,
+      "blocked": 0,
+      "failed": 1,
+      "wall_s": 0.4
+    }
+  ],
+  "committed_total": 13,
+  "blocked_total": 0
+}

@@ -1,0 +1,16 @@
+{
+  "run_id": "autonomy-1786592715",
+  "ts": "2026-08-13T03:45:15.634554+00:00",
+  "layers": {
+    "L0": {
+      "eligible": 93,
+      "committed": 91,
+      "failed": 2
+    }
+  },
+  "committed": 91,
+  "skipped": 0,
+  "failed": 2,
+  "review_required": 0,
+  "stale": 0
+}

@@ -1,0 +1,40 @@
+{
+  "ts": "2026-08-13T04:01:07",
+  "total_wall_s": 31.1,
+  "works": [
+    {
+      "work": "kubjikamata",
+      "passages": 55,
+      "committed": 5,
+      "blocked": 0,
+      "failed": 43,
+      "wall_s": 3.5
+    },
+    {
+      "work": "netratantra",
+      "passages": 100,
+      "committed": 53,
+      "blocked": 0,
+      "failed": 12,
+      "wall_s": 6.8
+    },
+    {
+      "work": "svacchandatantra",
+      "passages": 100,
+      "committed": 43,
+      "blocked": 0,
+      "failed": 10,
+      "wall_s": 6.1
+    },
+    {
+      "work": "tantraloka",
+      "passages": 0,
+      "committed": 0,
+      "blocked": 0,
+      "failed": 0,
+      "wall_s": 0.0
+    }
+  ],
+  "committed_total": 101,
+  "blocked_total": 0
+}

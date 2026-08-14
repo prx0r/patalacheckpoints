@@ -1,6 +1,135 @@
 {
   "note": "Agent 2 translation-state ledger. The control plane for Agent 3. Next action per work = NEXT_VALID_ACTION.",
   "works": {
+    "aghorasiva_ashtaprakarana_corpus": {
+      "work_id": "aghorasiva_ashtaprakarana_corpus",
+      "bibliographic_id": null,
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/aghorasiva_ashtaprakarana_corpus/aghorasiva_ashtaprakarana_corpus.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "aghorasiva_tattvaprakasika": {
+      "work_id": "aghorasiva_tattvaprakasika",
+      "bibliographic_id": null,
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/aghorasiva_tattvaprakasika/aghorasiva_tattvaprakasika.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "aghorasiva_tattvasamgrahalaghutika": {
+      "work_id": "aghorasiva_tattvasamgrahalaghutika",
+      "bibliographic_id": null,
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/aghorasiva_tattvasamgrahalaghutika/aghorasiva_tattvasamgrahalaghutika.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "aghorasivas_ullekhini_on_ratnatraya": {
+      "work_id": "aghorasivas_ullekhini_on_ratnatraya",
+      "bibliographic_id": null,
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/aghorasivas_ullekhini_on_ratnatraya/aghorasivas_ullekhini_on_ratnatraya.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/1 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
     "ajadapramatrsiddhi": {
       "work_id": "ajadapramatrsiddhi",
       "bibliographic_id": null,
@@ -63,6 +192,138 @@
         "reason": "MISSING_SOURCE"
       }
     },
+    "anonymous_ratnatrayapariksavyakhya": {
+      "work_id": "anonymous_ratnatrayapariksavyakhya",
+      "bibliographic_id": null,
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/anonymous_ratnatrayapariksavyakhya/anonymous_ratnatrayapariksavyakhya.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/1 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "atharvasiraupanisad": {
+      "work_id": "atharvasiraupanisad",
+      "bibliographic_id": "atharvasiraupanisad",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/atharvasiraupanisad/atharvasiraupanisad.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/1 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "bhagavadgita_sarvatobhadra": {
+      "work_id": "bhagavadgita_sarvatobhadra",
+      "bibliographic_id": null,
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/bhagavadgita_sarvatobhadra/bhagavadgita_sarvatobhadra.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "bhavopahara": {
+      "work_id": "bhavopahara",
+      "bibliographic_id": "bhavopahara",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/bhavopahara/bhavopahara.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/1 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
     "brahmayamala": {
       "work_id": "brahmayamala",
       "bibliographic_id": "brahmayamala",
@@ -75,7 +336,8 @@
       "translation": {
         "t1": "NOT_STARTED",
         "l2": "NOT_STARTED",
-        "c1": "NOT_STARTED"
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
       },
       "l0": {
         "status": "NOT_STARTED",
@@ -107,7 +369,8 @@
       "translation": {
         "t1": "NOT_STARTED",
         "l2": "NOT_STARTED",
-        "c1": "NOT_STARTED"
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
       },
       "l0": {
         "status": "NOT_STARTED",
@@ -158,6 +421,105 @@
         "reason": "MISSING_SOURCE"
       }
     },
+    "devikalottaragama": {
+      "work_id": "devikalottaragama",
+      "bibliographic_id": "devikalottaragama",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/devikalottaragama/devikalottaragama.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "MODERN_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/87 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "VERIFIED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "dvisatikalottara": {
+      "work_id": "dvisatikalottara",
+      "bibliographic_id": "dvisatikalottara",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/dvisatikalottara/dvisatikalottara.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "MODERN_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "VERIFIED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "ganakarika": {
+      "work_id": "ganakarika",
+      "bibliographic_id": "ganakarika",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/ganakarika/ganakarika.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "MODERN_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "VERIFIED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
     "ipvv": {
       "work_id": "ipvv",
       "bibliographic_id": null,
@@ -189,6 +551,72 @@
         "reason": "L0_VALID -> GENERATE_TRANSLATION"
       }
     },
+    "isanasivagurudevapaddhati": {
+      "work_id": "isanasivagurudevapaddhati",
+      "bibliographic_id": "isanasivagurudevapaddhati",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/isanasivagurudevapaddhati/isanasivagurudevapaddhati.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "MODERN_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "VERIFIED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "janmamaranavicara": {
+      "work_id": "janmamaranavicara",
+      "bibliographic_id": "janmamaranavicara",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/janmamaranavicara/janmamaranavicara.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
     "jnanakarika": {
       "work_id": "jnanakarika",
       "bibliographic_id": "jnanakarika",
@@ -218,6 +646,72 @@
         "action": "ACQUIRE_SOURCE",
         "eligible_for_agent3": false,
         "reason": "MISSING_SOURCE"
+      }
+    },
+    "jnanaratnavali": {
+      "work_id": "jnanaratnavali",
+      "bibliographic_id": "jnanaratnavali",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/jnanaratnavali/jnanaratnavali.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "kaivalyaupanisad": {
+      "work_id": "kaivalyaupanisad",
+      "bibliographic_id": "kaivalyaupanisad",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/kaivalyaupanisad/kaivalyaupanisad.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "MODERN_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/27 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "VERIFIED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
       }
     },
     "kakacandeshvarimata": {
@@ -280,6 +774,39 @@
         "action": "ACQUIRE_SOURCE",
         "eligible_for_agent3": false,
         "reason": "MISSING_SOURCE"
+      }
+    },
+    "kalikapurana": {
+      "work_id": "kalikapurana",
+      "bibliographic_id": "kalikapurana",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/kalikapurana/kalikapurana.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
       }
     },
     "kalikarahasya": {
@@ -406,19 +933,53 @@
         "reason": "MISSING_SOURCE"
       }
     },
+    "kausitakibrahmana": {
+      "work_id": "kausitakibrahmana",
+      "bibliographic_id": "kausitakibrahmana",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/kausitakibrahmana/kausitakibrahmana.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "MODERN_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/2 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "VERIFIED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
     "kiranatantra": {
       "work_id": "kiranatantra",
       "bibliographic_id": "kiranatantra",
       "source": {
-        "available": false,
-        "format": "UNKNOWN",
-        "source_ref": null,
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/kiranatantra/kiranatantra.txt",
         "edition_ref": null
       },
       "translation": {
         "t1": "NOT_STARTED",
         "l2": "NOT_STARTED",
-        "c1": "NOT_STARTED"
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/1 verses MACHINE_PROPOSED"
       },
       "l0": {
         "status": "NOT_STARTED",
@@ -432,9 +993,10 @@
       },
       "provenance": null,
       "next_action": {
-        "action": "ACQUIRE_SOURCE",
+        "action": "BUILD_L0_SOURCE_MODE",
         "eligible_for_agent3": false,
-        "reason": "MISSING_SOURCE"
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
       }
     },
     "kjn": {
@@ -442,7 +1004,7 @@
       "bibliographic_id": null,
       "source": {
         "available": true,
-        "format": "UNKNOWN",
+        "format": "RAW_SANSKRIT",
         "source_ref": "/mnt/HC_Volume_106427611/sanskritree/sources/round2/bagchi_kjn_1934.txt",
         "edition_ref": null
       },
@@ -463,9 +1025,10 @@
       },
       "provenance": null,
       "next_action": {
-        "action": "CLASSIFY_SOURCE",
+        "action": "BUILD_L0_SOURCE_MODE",
         "eligible_for_agent3": false,
-        "reason": "UNKNOWN_SOURCE_FORMAT UNKNOWN"
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
       }
     },
     "kramasadbhava": {
@@ -480,18 +1043,45 @@
       "translation": {
         "t1": "LEGACY_PRESENT",
         "l2": "NOT_STARTED",
-        "c1": "LEGACY_PRESENT"
+        "c1": "LEGACY_PRESENT",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
       },
       "l0": {
-        "status": "ELIGIBLE",
-        "reason": "RAW-L0 batch generated canonical MACHINE_PROPOSED L0 (agent3_batch)",
-        "progress": {
-          "kramasadbhava": {
-            "completed": 9,
-            "total": 10
-          }
-        },
-        "version": "v3"
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "kriyakramadyotika": {
+      "work_id": "kriyakramadyotika",
+      "bibliographic_id": "kriyakramadyotika",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/kriyakramadyotika/kriyakramadyotika.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "MODERN_PRESENT",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "VERIFIED",
+        "reason": null
       },
       "proof": {
         "status": "NONE"
@@ -517,12 +1107,13 @@
         "edition_ref": null
       },
       "translation": {
-        "t1": "LEGACY_PRESENT",
+        "t1": "MODERN_PRESENT",
         "l2": "LEGACY_PRESENT",
-        "c1": "LEGACY_PRESENT"
+        "c1": "LEGACY_PRESENT",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
       },
       "l0": {
-        "status": "NOT_STARTED",
+        "status": "VERIFIED",
         "reason": null
       },
       "proof": {
@@ -613,7 +1204,8 @@
       "translation": {
         "t1": "LEGACY_PRESENT",
         "l2": "NOT_STARTED",
-        "c1": "NOT_STARTED"
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/55 verses MACHINE_PROPOSED"
       },
       "l0": {
         "status": "NOT_STARTED",
@@ -800,7 +1392,74 @@
       "translation": {
         "t1": "LEGACY_PRESENT",
         "l2": "NOT_STARTED",
-        "c1": "LEGACY_PRESENT"
+        "c1": "LEGACY_PRESENT",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "kurmapurana": {
+      "work_id": "kurmapurana",
+      "bibliographic_id": "kurmapurana",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/kurmapurana/kurmapurana.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/1 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "lingapurana": {
+      "work_id": "lingapurana",
+      "bibliographic_id": "lingapurana",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/lingapurana/lingapurana.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/1 verses MACHINE_PROPOSED"
       },
       "l0": {
         "status": "NOT_STARTED",
@@ -863,7 +1522,8 @@
       "translation": {
         "t1": "LEGACY_PRESENT",
         "l2": "NOT_STARTED",
-        "c1": "LEGACY_PRESENT"
+        "c1": "LEGACY_PRESENT",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
       },
       "l0": {
         "status": "NOT_STARTED",
@@ -945,6 +1605,72 @@
         "reason": "MISSING_SOURCE"
       }
     },
+    "maitrayanisamhita": {
+      "work_id": "maitrayanisamhita",
+      "bibliographic_id": "maitrayanisamhita",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/maitrayanisamhita/maitrayanisamhita.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/140 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "makutottara": {
+      "work_id": "makutottara",
+      "bibliographic_id": "makutottara",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/makutottara/makutottara.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
     "malinivijayottara": {
       "work_id": "malinivijayottara",
       "bibliographic_id": "malinivijayottara",
@@ -952,6 +1678,268 @@
         "available": true,
         "format": "RAW_SANSKRIT",
         "source_ref": "/mnt/HC_Volume_106427611/sanskritree/sources/muktabodha-lib/mAlinIvijayottaratantra-M00160-IAST.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "matangaparamesvara": {
+      "work_id": "matangaparamesvara",
+      "bibliographic_id": "matangaparamesvara",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/matangaparamesvara/matangaparamesvara.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "matrkabhedatantra": {
+      "work_id": "matrkabhedatantra",
+      "bibliographic_id": "matrkabhedatantra",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/matrkabhedatantra/matrkabhedatantra.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/499 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "mohacudottara": {
+      "work_id": "mohacudottara",
+      "bibliographic_id": "mohacudottara",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/mohacudottara/mohacudottara.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "moksakarika": {
+      "work_id": "moksakarika",
+      "bibliographic_id": "moksakarika",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/moksakarika/moksakarika.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "mrgendratantra": {
+      "work_id": "mrgendratantra",
+      "bibliographic_id": "mrgendratantra",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/mrgendratantra/mrgendratantra.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "mukuta_makutagama": {
+      "work_id": "mukuta_makutagama",
+      "bibliographic_id": null,
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/mukuta_makutagama/mukuta_makutagama.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "nadakarika": {
+      "work_id": "nadakarika",
+      "bibliographic_id": "nadakarika",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/nadakarika/nadakarika.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/49 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "naresvarapariksa": {
+      "work_id": "naresvarapariksa",
+      "bibliographic_id": "naresvarapariksa",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/naresvarapariksa/naresvarapariksa.txt",
         "edition_ref": null
       },
       "translation": {
@@ -989,7 +1977,41 @@
       "translation": {
         "t1": "NOT_STARTED",
         "l2": "NOT_STARTED",
-        "c1": "NOT_STARTED"
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "netratantroddyota": {
+      "work_id": "netratantroddyota",
+      "bibliographic_id": "netratantroddyota",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/netratantroddyota/netratantroddyota.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
       },
       "l0": {
         "status": "NOT_STARTED",
@@ -1071,6 +2093,72 @@
         "reason": "MISSING_SOURCE"
       }
     },
+    "pancarthabhasya_kaundinya": {
+      "work_id": "pancarthabhasya_kaundinya",
+      "bibliographic_id": null,
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/pancarthabhasya_kaundinya/pancarthabhasya_kaundinya.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/1 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "pancavimsabrahmana": {
+      "work_id": "pancavimsabrahmana",
+      "bibliographic_id": "pancavimsabrahmana",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/pancavimsabrahmana/pancavimsabrahmana.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/7 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
     "pascimamnaya": {
       "work_id": "pascimamnaya",
       "bibliographic_id": null,
@@ -1102,19 +2190,20 @@
         "reason": "MISSING_SOURCE"
       }
     },
-    "sivasutra": {
-      "work_id": "sivasutra",
-      "bibliographic_id": "sivasutra",
+    "pauskaraparamesvara": {
+      "work_id": "pauskaraparamesvara",
+      "bibliographic_id": "pauskaraparamesvara",
       "source": {
-        "available": false,
-        "format": "UNKNOWN",
-        "source_ref": null,
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/pauskaraparamesvara/pauskaraparamesvara.txt",
         "edition_ref": null
       },
       "translation": {
-        "t1": "LEGACY_PRESENT",
-        "l2": "LEGACY_PRESENT",
-        "c1": "LEGACY_PRESENT"
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
       },
       "l0": {
         "status": "NOT_STARTED",
@@ -1128,9 +2217,799 @@
       },
       "provenance": null,
       "next_action": {
-        "action": "ACQUIRE_SOURCE",
+        "action": "BUILD_L0_SOURCE_MODE",
         "eligible_for_agent3": false,
-        "reason": "MISSING_SOURCE"
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "pingalamata": {
+      "work_id": "pingalamata",
+      "bibliographic_id": "pingalamata",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/pingalamata/pingalamata.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "pratisThakriyadipika": {
+      "work_id": "pratisThakriyadipika",
+      "bibliographic_id": null,
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/pratisThakriyadipika/pratisThakriyadipika.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "pratisThalaksanasara": {
+      "work_id": "pratisThalaksanasara",
+      "bibliographic_id": null,
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/pratisThalaksanasara/pratisThalaksanasara.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "pratisThaparamesvara": {
+      "work_id": "pratisThaparamesvara",
+      "bibliographic_id": null,
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/pratisThaparamesvara/pratisThaparamesvara.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "pratisthalaksanasarasamuccaya": {
+      "work_id": "pratisthalaksanasarasamuccaya",
+      "bibliographic_id": "pratisthalaksanasarasamuccaya",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/pratisthalaksanasarasamuccaya/pratisthalaksanasarasamuccaya.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "prayascittasamuccaya_hridayasiva": {
+      "work_id": "prayascittasamuccaya_hridayasiva",
+      "bibliographic_id": null,
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/prayascittasamuccaya_hridayasiva/prayascittasamuccaya_hridayasiva.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "ramakantha_matangavrtti": {
+      "work_id": "ramakantha_matangavrtti",
+      "bibliographic_id": null,
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/ramakantha_matangavrtti/ramakantha_matangavrtti.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "ramakantha_moksakarikavrtti": {
+      "work_id": "ramakantha_moksakarikavrtti",
+      "bibliographic_id": null,
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/ramakantha_moksakarikavrtti/ramakantha_moksakarikavrtti.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "ratnatrayapariksa_srikantha": {
+      "work_id": "ratnatrayapariksa_srikantha",
+      "bibliographic_id": null,
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/ratnatrayapariksa_srikantha/ratnatrayapariksa_srikantha.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "ratnatrayapariksa_vyakhya": {
+      "work_id": "ratnatrayapariksa_vyakhya",
+      "bibliographic_id": null,
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/ratnatrayapariksa_vyakhya/ratnatrayapariksa_vyakhya.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "sankhayanaaranyaka": {
+      "work_id": "sankhayanaaranyaka",
+      "bibliographic_id": "sankhayanaaranyaka",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/sankhayanaaranyaka/sankhayanaaranyaka.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "sardhatrisatikalottara": {
+      "work_id": "sardhatrisatikalottara",
+      "bibliographic_id": "sardhatrisatikalottara",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/sardhatrisatikalottara/sardhatrisatikalottara.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/334 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "sarvajnanottara": {
+      "work_id": "sarvajnanottara",
+      "bibliographic_id": "sarvajnanottara",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/sarvajnanottara/sarvajnanottara.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "satsahasrakalottara": {
+      "work_id": "satsahasrakalottara",
+      "bibliographic_id": "satsahasrakalottara",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/satsahasrakalottara/satsahasrakalottara.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "siddhantadipika_ramanatha": {
+      "work_id": "siddhantadipika_ramanatha",
+      "bibliographic_id": null,
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/siddhantadipika_ramanatha/siddhantadipika_ramanatha.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "siddhantasara": {
+      "work_id": "siddhantasara",
+      "bibliographic_id": "siddhantasara",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/siddhantasara/siddhantasara.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "siddhantasarapaddhati": {
+      "work_id": "siddhantasarapaddhati",
+      "bibliographic_id": "siddhantasarapaddhati",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/siddhantasarapaddhati/siddhantasarapaddhati.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "siddhantasaravali": {
+      "work_id": "siddhantasaravali",
+      "bibliographic_id": "siddhantasaravali",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/siddhantasaravali/siddhantasaravali.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "siraupanisad": {
+      "work_id": "siraupanisad",
+      "bibliographic_id": "siraupanisad",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/siraupanisad/siraupanisad.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/1 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "sivadharmasastra": {
+      "work_id": "sivadharmasastra",
+      "bibliographic_id": "sivadharmasastra",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/sivadharmasastra/sivadharmasastra.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "sivadharmottara": {
+      "work_id": "sivadharmottara",
+      "bibliographic_id": "sivadharmottara",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/sivadharmottara/sivadharmottara.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "sivadrsti": {
+      "work_id": "sivadrsti",
+      "bibliographic_id": "sivadrsti",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/sivadrsti/sivadrsti.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/72 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "sivasutra": {
+      "work_id": "sivasutra",
+      "bibliographic_id": "sivasutra",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/sivasutra/sivasutra.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "LEGACY_PRESENT",
+        "l2": "LEGACY_PRESENT",
+        "c1": "LEGACY_PRESENT",
+        "reason": "autonomous Hermes translation: 0/1 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "sivaupanisad": {
+      "work_id": "sivaupanisad",
+      "bibliographic_id": "sivaupanisad",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/sivaupanisad/sivaupanisad.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/1 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
       }
     },
     "spanda": {
@@ -1176,7 +3055,74 @@
       "translation": {
         "t1": "NOT_STARTED",
         "l2": "NOT_STARTED",
-        "c1": "NOT_STARTED"
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "spandapradipika": {
+      "work_id": "spandapradipika",
+      "bibliographic_id": "spandapradipika",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/spandapradipika/spandapradipika.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "suksmasvayambhuva": {
+      "work_id": "suksmasvayambhuva",
+      "bibliographic_id": "suksmasvayambhuva",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/suksmasvayambhuva/suksmasvayambhuva.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
       },
       "l0": {
         "status": "NOT_STARTED",
@@ -1208,7 +3154,41 @@
       "translation": {
         "t1": "NOT_STARTED",
         "l2": "NOT_STARTED",
-        "c1": "NOT_STARTED"
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "svacchandodyota": {
+      "work_id": "svacchandodyota",
+      "bibliographic_id": "svacchandodyota",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/svacchandodyota/svacchandodyota.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
       },
       "l0": {
         "status": "NOT_STARTED",
@@ -1322,6 +3302,105 @@
         "reason": "MISSING_SOURCE"
       }
     },
+    "tattvaprakasa_bhojadeva": {
+      "work_id": "tattvaprakasa_bhojadeva",
+      "bibliographic_id": null,
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/tattvaprakasa_bhojadeva/tattvaprakasa_bhojadeva.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "tattvasamgraha_sadyojyotis": {
+      "work_id": "tattvasamgraha_sadyojyotis",
+      "bibliographic_id": null,
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/tattvasamgraha_sadyojyotis/tattvasamgraha_sadyojyotis.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "tattvatrayanirnaya": {
+      "work_id": "tattvatrayanirnaya",
+      "bibliographic_id": "tattvatrayanirnaya",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/tattvatrayanirnaya/tattvatrayanirnaya.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/67 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
     "ten": {
       "work_id": "ten",
       "bibliographic_id": null,
@@ -1382,6 +3461,105 @@
         "action": "ACQUIRE_SOURCE",
         "eligible_for_agent3": false,
         "reason": "MISSING_SOURCE"
+      }
+    },
+    "vatulanathasutra": {
+      "work_id": "vatulanathasutra",
+      "bibliographic_id": "vatulanathasutra",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/vatulanathasutra/vatulanathasutra.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/31 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "vimalavati": {
+      "work_id": "vimalavati",
+      "bibliographic_id": "vimalavati",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/vimalavati/vimalavati.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/100 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
+      }
+    },
+    "visvaksenasamhita": {
+      "work_id": "visvaksenasamhita",
+      "bibliographic_id": "visvaksenasamhita",
+      "source": {
+        "available": true,
+        "format": "RAW_SANSKRIT",
+        "source_ref": "/root/projects/patala/data/corpus/sources/visvaksenasamhita/visvaksenasamhita.txt",
+        "edition_ref": null
+      },
+      "translation": {
+        "t1": "NOT_STARTED",
+        "l2": "NOT_STARTED",
+        "c1": "NOT_STARTED",
+        "reason": "autonomous Hermes translation: 0/33 verses MACHINE_PROPOSED"
+      },
+      "l0": {
+        "status": "NOT_STARTED",
+        "reason": null
+      },
+      "proof": {
+        "status": "NONE"
+      },
+      "review": {
+        "status": "UNREVIEWED"
+      },
+      "provenance": null,
+      "next_action": {
+        "action": "BUILD_L0_SOURCE_MODE",
+        "eligible_for_agent3": false,
+        "reason": "RAW_SANSKRIT_L0_MODE_REQUIRED",
+        "blocked": true
       }
     },
     "yogini": {

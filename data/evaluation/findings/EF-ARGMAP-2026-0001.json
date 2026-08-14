@@ -1,0 +1,25 @@
+{
+  "finding_id": "EF-ARGMAP-2026-0001",
+  "schema_version": "EvaluationFinding-v1",
+  "object_ref": "ipvv:V3M",
+  "evaluated_version": "argmap-ipvv:V3M-v1",
+  "layer": "ARGMAP",
+  "contract": "ARGMAP-SHAPE-v1",
+  "evaluation_run_ref": "CANONICAL-GRAPH-1-P6",
+  "dimension": "INFERENCE_GROUNDING",
+  "result": "FAIL",
+  "failure_class": "UNSUPPORTED_INFERENCE",
+  "observed": "argmap-ipvv:V3M-v1 argument step 1 ('the emptiness, the I-ness-word...') carries an inference cue but no line/kārikā grounding anchor. The step was truncated at the kārikā split, so its textual citation (line range) is in a separate chunk and the grounding cue is lost.",
+  "expected_constraint": "every argument step that asserts an inference must cite a line/kārikā/sūtra anchor so it is textually grounded (not an invented bridge).",
+  "evidence_refs": [
+    "data/corpus/registries/argmap-registry.jsonl (ipvv:V3M)",
+    "source-evidence/evals/patala/tasks/argmap_eval.py"
+  ],
+  "recommended_action": "REGENERATE_AFTER_INGESTER_FIX",
+  "status": "OPEN",
+  "producer": {
+    "agent": "agent2",
+    "commit": "pipeline/ingest_ipvv_argmap_golds.py (kārikā-split truncation)"
+  },
+  "note": "A real live defect, not stale test drift: the V3M gold was split on 'Kārikā N' markers and the opening pre-kārikā analysis was truncated before its line citation. The fix belongs to the ingester's kārikā-split (preserve the citation in the step), then regenerate a successor V3M and blind-retest. Per the reviewer: candidate preserved -> finding -> producer fix -> successor -> blind retest."
+}

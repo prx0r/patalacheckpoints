@@ -1,0 +1,30 @@
+{
+  "ts": "2026-08-13T04:39:52",
+  "loops": 1,
+  "total_wall_s": 2103.6,
+  "committed_total": 12,
+  "failed_total": 0,
+  "works": [
+    {
+      "work": "kramasadbhava",
+      "eligible": 96,
+      "committed": 12,
+      "failed": 0,
+      "wall_s": 1841.7
+    },
+    {
+      "work": "spandakarika",
+      "eligible": 5,
+      "committed": 0,
+      "failed": 0,
+      "wall_s": 134.0
+    },
+    {
+      "work": "kubjika",
+      "eligible": 5,
+      "committed": 0,
+      "failed": 0,
+      "wall_s": 127.8
+    }
+  ]
+}

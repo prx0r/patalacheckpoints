@@ -1,0 +1,88 @@
+{
+  "ts": "2026-08-13T03:46:28",
+  "total_wall_s": 81.8,
+  "works": [
+    {
+      "work": "brahmayamala",
+      "passages": 100,
+      "committed": 99,
+      "blocked": 1,
+      "failed": 0,
+      "wall_s": 2.4
+    },
+    {
+      "work": "cidgagana",
+      "passages": 100,
+      "committed": 100,
+      "blocked": 0,
+      "failed": 0,
+      "wall_s": 3.1
+    },
+    {
+      "work": "kramasadbhava",
+      "passages": 100,
+      "committed": 91,
+      "blocked": 2,
+      "failed": 2,
+      "wall_s": 4.2
+    },
+    {
+      "work": "kubjikamata",
+      "passages": 55,
+      "committed": 2,
+      "blocked": 0,
+      "failed": 53,
+      "wall_s": 1.0
+    },
+    {
+      "work": "kulasara",
+      "passages": 100,
+      "committed": 97,
+      "blocked": 3,
+      "failed": 0,
+      "wall_s": 6.1
+    },
+    {
+      "work": "mahanayaprakasha",
+      "passages": 100,
+      "committed": 94,
+      "blocked": 0,
+      "failed": 6,
+      "wall_s": 7.7
+    },
+    {
+      "work": "malinivijayottara",
+      "passages": 100,
+      "committed": 100,
+      "blocked": 0,
+      "failed": 0,
+      "wall_s": 9.7
+    },
+    {
+      "work": "netratantra",
+      "passages": 100,
+      "committed": 32,
+      "blocked": 0,
+      "failed": 68,
+      "wall_s": 6.0
+    },
+    {
+      "work": "svacchandatantra",
+      "passages": 100,
+      "committed": 44,
+      "blocked": 0,
+      "failed": 56,
+      "wall_s": 6.9
+    },
+    {
+      "work": "tantraloka",
+      "passages": 0,
+      "committed": 0,
+      "blocked": 0,
+      "failed": 0,
+      "wall_s": 0.0
+    }
+  ],
+  "committed_total": 659,
+  "blocked_total": 6
+}

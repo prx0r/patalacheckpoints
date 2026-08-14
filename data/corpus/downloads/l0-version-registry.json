@@ -44,9 +44,22 @@
           "supersedes": "v3",
           "n_records": 6,
           "n_verses": 1
+        },
+        {
+          "version": "v5",
+          "sha256": "fa2137e0a48d4986",
+          "committed_by": "seed-test",
+          "committed_at": "2026-08-12T20:38:42.622917+00:00",
+          "status": "MACHINE_PROPOSED",
+          "supersedes": "v4",
+          "n_records": 1,
+          "n_verses": 0,
+          "passage_ids": [
+            "kramasadbhava:v1"
+          ]
         }
       ],
-      "current": "v4"
+      "current": "v5"
     }
   }
 }

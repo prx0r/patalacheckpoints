@@ -1,0 +1,1094 @@
+{
+  "method": "K_CORE",
+  "deterministic": true,
+  "detector_id": "PATALA.GRAPH.STRUCTURAL_K_CORE.v1",
+  "representation_version": "see_also_1.0+key_term_0.5xjaccard_min0.3_nobody",
+  "graph_hash": "96f6623cd5963e98f9191c3ae6065d9f637dbf509696db6def7410dd0dfcadec",
+  "core_distribution": {
+    "0": 3,
+    "1": 6,
+    "2": 37,
+    "3": 17
+  },
+  "max_core": 3,
+  "levels": [
+    {
+      "level": 1,
+      "n_nodes": 60,
+      "components": [
+        [
+          "V1-k1.1-kathamcit",
+          "V1-k1.2-drstapi",
+          "V1-k1.3-atmaiva",
+          "V1-k1.4-1.5-buddhipurva",
+          "V1-purvapaksa-k1.2.7-citsvarupam",
+          "V1-purvapaksa-opening",
+          "V1-purvapaksa-smrtibhranti-sankaranandana",
+          "V1-upoddhata-k1-2-ahampratiti",
+          "V1-upoddhata-k11-karta",
+          "V1-upoddhata-k3-memory",
+          "V1-upoddhata-k4-5-antargadu",
+          "V1-upoddhata-k6-k8-caitanyamajada",
+          "V1-upoddhata-k9-10-sambandha",
+          "V1-upoddhata-mangala",
+          "V1A-svatyandya",
+          "V1B-eligibility",
+          "V1C-svatma",
+          "V1D-memory-eternal-knower",
+          "V1E-foregrounding",
+          "V1F-upoddhata-opponents",
+          "V1G-cognition-refuted",
+          "V1I-action-refuted",
+          "V1J-agent-constructed",
+          "V1K-siddhanta-svasamvid",
+          "V1L-yogipratyaksa",
+          "V1M-determination",
+          "V1N-close-mahesvara",
+          "V2A-memory-lords-power",
+          "V2B-pastness-svasamvitti",
+          "V2C-ajadapramatr",
+          "V2D-jnanasakti",
+          "V2E-external-inferred",
+          "V2F-other-minds",
+          "V2G-dream-inversion",
+          "V2H-vimarsa-paravak",
+          "V2I-sphuratta",
+          "V2J-samskara",
+          "V2K-vacakasphota",
+          "V2L-nonconstructed-I",
+          "V2M-descent-states",
+          "V2N-inner-appearance",
+          "V2O-orderless-support",
+          "V2P-pramatr-vyapara",
+          "V2Q-omniscient",
+          "V2R-mahesvarya",
+          "V2S-unity-mahesvarya",
+          "V3C-one-light",
+          "V3D-synthesis",
+          "V3E-error",
+          "V3F-grace",
+          "V3I-difference-real",
+          "V3J-agama-sivatattva",
+          "V3K-kancukas",
+          "V3L-knowers-malas",
+          "V3M-states",
+          "V3N-one-lord-many",
+          "V3O-bond-liberation",
+          "V3P-lover-union"
+        ],
+        [
+          "V3G-causality",
+          "V3H-inference-across-knowers"
+        ]
+      ]
+    },
+    {
+      "level": 2,
+      "n_nodes": 54,
+      "components": [
+        [
+          "V1-k1.1-kathamcit",
+          "V1-k1.2-drstapi",
+          "V1-k1.3-atmaiva",
+          "V1-k1.4-1.5-buddhipurva",
+          "V1-purvapaksa-k1.2.7-citsvarupam",
+          "V1-purvapaksa-opening",
+          "V1-upoddhata-k1-2-ahampratiti",
+          "V1-upoddhata-k11-karta",
+          "V1-upoddhata-k3-memory",
+          "V1-upoddhata-k6-k8-caitanyamajada",
+          "V1-upoddhata-mangala",
+          "V1A-svatyandya",
+          "V1B-eligibility",
+          "V1C-svatma",
+          "V1D-memory-eternal-knower",
+          "V1E-foregrounding",
+          "V1F-upoddhata-opponents",
+          "V1G-cognition-refuted",
+          "V1I-action-refuted",
+          "V1J-agent-constructed",
+          "V1K-siddhanta-svasamvid",
+          "V1L-yogipratyaksa",
+          "V1M-determination",
+          "V1N-close-mahesvara",
+          "V2A-memory-lords-power",
+          "V2B-pastness-svasamvitti",
+          "V2C-ajadapramatr",
+          "V2D-jnanasakti",
+          "V2E-external-inferred",
+          "V2F-other-minds",
+          "V2H-vimarsa-paravak",
+          "V2I-sphuratta",
+          "V2J-samskara",
+          "V2K-vacakasphota",
+          "V2L-nonconstructed-I",
+          "V2M-descent-states",
+          "V2N-inner-appearance",
+          "V2O-orderless-support",
+          "V2P-pramatr-vyapara",
+          "V2Q-omniscient",
+          "V2R-mahesvarya",
+          "V2S-unity-mahesvarya",
+          "V3C-one-light",
+          "V3D-synthesis",
+          "V3E-error",
+          "V3F-grace",
+          "V3I-difference-real",
+          "V3J-agama-sivatattva",
+          "V3K-kancukas",
+          "V3L-knowers-malas",
+          "V3M-states",
+          "V3N-one-lord-many",
+          "V3O-bond-liberation",
+          "V3P-lover-union"
+        ]
+      ]
+    },
+    {
+      "level": 3,
+      "n_nodes": 17,
+      "components": [
+        [
+          "V1-k1.1-kathamcit",
+          "V1-k1.3-atmaiva",
+          "V1-upoddhata-k3-memory",
+          "V1A-svatyandya",
+          "V1B-eligibility",
+          "V1C-svatma",
+          "V1D-memory-eternal-knower",
+          "V1E-foregrounding",
+          "V1K-siddhanta-svasamvid",
+          "V1L-yogipratyaksa",
+          "V1M-determination",
+          "V2A-memory-lords-power",
+          "V2B-pastness-svasamvitti",
+          "V2C-ajadapramatr",
+          "V2D-jnanasakti",
+          "V2E-external-inferred",
+          "V2F-other-minds"
+        ]
+      ]
+    }
+  ],
+  "core_numbers": {
+    "V1-k1.1-kathamcit": {
+      "core_number": 3,
+      "shell": 3,
+      "component_id": 0,
+      "structural_role": "CORE"
+    },
+    "V1-k1.2-drstapi": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V1-k1.3-atmaiva": {
+      "core_number": 3,
+      "shell": 3,
+      "component_id": 0,
+      "structural_role": "CORE"
+    },
+    "V1-k1.4-1.5-buddhipurva": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V1-purvapaksa-k1.2.7-citsvarupam": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V1-purvapaksa-opening": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V1-purvapaksa-smrtibhranti-sankaranandana": {
+      "core_number": 1,
+      "shell": 1,
+      "component_id": 0,
+      "structural_role": "PERIPHERAL"
+    },
+    "V1-upoddhata-k1-2-ahampratiti": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V1-upoddhata-k11-karta": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V1-upoddhata-k3-memory": {
+      "core_number": 3,
+      "shell": 3,
+      "component_id": 0,
+      "structural_role": "CORE"
+    },
+    "V1-upoddhata-k4-5-antargadu": {
+      "core_number": 1,
+      "shell": 1,
+      "component_id": 0,
+      "structural_role": "PERIPHERAL"
+    },
+    "V1-upoddhata-k6-k8-caitanyamajada": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V1-upoddhata-k9-10-sambandha": {
+      "core_number": 1,
+      "shell": 1,
+      "component_id": 0,
+      "structural_role": "PERIPHERAL"
+    },
+    "V1-upoddhata-mangala": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V1A-svatyandya": {
+      "core_number": 3,
+      "shell": 3,
+      "component_id": 0,
+      "structural_role": "CORE"
+    },
+    "V1B-eligibility": {
+      "core_number": 3,
+      "shell": 3,
+      "component_id": 0,
+      "structural_role": "CORE"
+    },
+    "V1C-svatma": {
+      "core_number": 3,
+      "shell": 3,
+      "component_id": 0,
+      "structural_role": "CORE"
+    },
+    "V1D-memory-eternal-knower": {
+      "core_number": 3,
+      "shell": 3,
+      "component_id": 0,
+      "structural_role": "CORE"
+    },
+    "V1E-foregrounding": {
+      "core_number": 3,
+      "shell": 3,
+      "component_id": 0,
+      "structural_role": "CORE"
+    },
+    "V1F-upoddhata-opponents": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V1G-cognition-refuted": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V1H-enjoyment-reflection": {
+      "core_number": 0,
+      "shell": 0,
+      "component_id": 1,
+      "structural_role": "CORE"
+    },
+    "V1I-action-refuted": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V1J-agent-constructed": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V1K-siddhanta-svasamvid": {
+      "core_number": 3,
+      "shell": 3,
+      "component_id": 0,
+      "structural_role": "CORE"
+    },
+    "V1L-yogipratyaksa": {
+      "core_number": 3,
+      "shell": 3,
+      "component_id": 0,
+      "structural_role": "CORE"
+    },
+    "V1M-determination": {
+      "core_number": 3,
+      "shell": 3,
+      "component_id": 0,
+      "structural_role": "CORE"
+    },
+    "V1N-close-mahesvara": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V2A-memory-lords-power": {
+      "core_number": 3,
+      "shell": 3,
+      "component_id": 0,
+      "structural_role": "CORE"
+    },
+    "V2B-pastness-svasamvitti": {
+      "core_number": 3,
+      "shell": 3,
+      "component_id": 0,
+      "structural_role": "CORE"
+    },
+    "V2C-ajadapramatr": {
+      "core_number": 3,
+      "shell": 3,
+      "component_id": 0,
+      "structural_role": "CORE"
+    },
+    "V2D-jnanasakti": {
+      "core_number": 3,
+      "shell": 3,
+      "component_id": 0,
+      "structural_role": "CORE"
+    },
+    "V2E-external-inferred": {
+      "core_number": 3,
+      "shell": 3,
+      "component_id": 0,
+      "structural_role": "CORE"
+    },
+    "V2F-other-minds": {
+      "core_number": 3,
+      "shell": 3,
+      "component_id": 0,
+      "structural_role": "CORE"
+    },
+    "V2G-dream-inversion": {
+      "core_number": 1,
+      "shell": 1,
+      "component_id": 0,
+      "structural_role": "PERIPHERAL"
+    },
+    "V2H-vimarsa-paravak": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V2I-sphuratta": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V2J-samskara": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V2K-vacakasphota": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V2L-nonconstructed-I": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V2M-descent-states": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V2N-inner-appearance": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V2O-orderless-support": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V2P-pramatr-vyapara": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V2Q-omniscient": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V2R-mahesvarya": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V2S-unity-mahesvarya": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V3A-timeless-order": {
+      "core_number": 0,
+      "shell": 0,
+      "component_id": 2,
+      "structural_role": "CORE"
+    },
+    "V3B-bhedabheda": {
+      "core_number": 0,
+      "shell": 0,
+      "component_id": 3,
+      "structural_role": "CORE"
+    },
+    "V3C-one-light": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V3D-synthesis": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V3E-error": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V3F-grace": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V3G-causality": {
+      "core_number": 1,
+      "shell": 1,
+      "component_id": 4,
+      "structural_role": "CORE"
+    },
+    "V3H-inference-across-knowers": {
+      "core_number": 1,
+      "shell": 1,
+      "component_id": 4,
+      "structural_role": "CORE"
+    },
+    "V3I-difference-real": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V3J-agama-sivatattva": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V3K-kancukas": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V3L-knowers-malas": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V3M-states": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V3N-one-lord-many": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V3O-bond-liberation": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    },
+    "V3P-lover-union": {
+      "core_number": 2,
+      "shell": 2,
+      "component_id": 0,
+      "structural_role": "SHELL"
+    }
+  },
+  "edge_evidence": [
+    {
+      "a": "V1-k1.1-kathamcit",
+      "b": "V1A-svatyandya",
+      "type": "see_also",
+      "weight": 2.0
+    },
+    {
+      "a": "V1-k1.1-kathamcit",
+      "b": "V1B-eligibility",
+      "type": "see_also",
+      "weight": 1.0
+    },
+    {
+      "a": "V1-k1.1-kathamcit",
+      "b": "V1E-foregrounding",
+      "type": "see_also",
+      "weight": 1.0
+    },
+    {
+      "a": "V1-k1.1-kathamcit",
+      "b": "V2D-jnanasakti",
+      "type": "see_also",
+      "weight": 1.0
+    },
+    {
+      "a": "V1-k1.3-atmaiva",
+      "b": "V1C-svatma",
+      "type": "see_also",
+      "weight": 2.0
+    },
+    {
+      "a": "V1-k1.3-atmaiva",
+      "b": "V1D-memory-eternal-knower",
+      "type": "see_also",
+      "weight": 1.0
+    },
+    {
+      "a": "V1-k1.3-atmaiva",
+      "b": "V1E-foregrounding",
+      "type": "see_also",
+      "weight": 1.0
+    },
+    {
+      "a": "V1-k1.3-atmaiva",
+      "b": "V2A-memory-lords-power",
+      "type": "see_also",
+      "weight": 1.0
+    },
+    {
+      "a": "V1-upoddhata-k3-memory",
+      "b": "V1D-memory-eternal-knower",
+      "type": "see_also",
+      "weight": 1.0
+    },
+    {
+      "a": "V1-upoddhata-k3-memory",
+      "b": "V2A-memory-lords-power",
+      "type": "see_also",
+      "weight": 1.0
+    },
+    {
+      "a": "V1-upoddhata-k3-memory",
+      "b": "V2F-other-minds",
+      "type": "see_also",
+      "weight": 1.0
+    },
+    {
+      "a": "V1A-svatyandya",
+      "b": "V1B-eligibility",
+      "type": "see_also",
+      "weight": 2.0
+    },
+    {
+      "a": "V1A-svatyandya",
+      "b": "V1C-svatma",
+      "type": "see_also",
+      "weight": 1.0
+    },
+    {
+      "a": "V1B-eligibility",
+      "b": "V2F-other-minds",
+      "type": "see_also",
+      "weight": 1.0
+    },
+    {
+      "a": "V1C-svatma",
+      "b": "V1E-foregrounding",
+      "type": "see_also",
+      "weight": 1.0
+    },
+    {
+      "a": "V1C-svatma",
+      "b": "V2F-other-minds",
+      "type": "see_also",
+      "weight": 1.0
+    },
+    {
+      "a": "V1D-memory-eternal-knower",
+      "b": "V1E-foregrounding",
+      "type": "see_also",
+      "weight": 1.0
+    },
+    {
+      "a": "V1D-memory-eternal-knower",
+      "b": "V2A-memory-lords-power",
+      "type": "see_also",
+      "weight": 1.0
+    },
+    {
+      "a": "V1D-memory-eternal-knower",
+      "b": "V2F-other-minds",
+      "type": "see_also",
+      "weight": 1.0
+    },
+    {
+      "a": "V1E-foregrounding",
+      "b": "V2D-jnanasakti",
+      "type": "see_also",
+      "weight": 1.0
+    },
+    {
+      "a": "V1K-siddhanta-svasamvid",
+      "b": "V1L-yogipratyaksa",
+      "type": "see_also",
+      "weight": 1.0
+    },
+    {
+      "a": "V1K-siddhanta-svasamvid",
+      "b": "V1M-determination",
+      "type": "see_also",
+      "weight": 1.0
+    },
+    {
+      "a": "V1K-siddhanta-svasamvid",
+      "b": "V2C-ajadapramatr",
+      "type": "see_also",
+      "weight": 1.0
+    },
+    {
+      "a": "V1K-siddhanta-svasamvid",
+      "b": "V2F-other-minds",
+      "type": "see_also",
+      "weight": 1.0
+    },
+    {
+      "a": "V1L-yogipratyaksa",
+      "b": "V2B-pastness-svasamvitti",
+      "type": "see_also",
+      "weight": 2.0
+    },
+    {
+      "a": "V1L-yogipratyaksa",
+      "b": "V2C-ajadapramatr",
+      "type": "see_also",
+      "weight": 2.0
+    },
+    {
+      "a": "V1L-yogipratyaksa",
+      "b": "V2F-other-minds",
+      "type": "see_also",
+      "weight": 2.0
+    },
+    {
+      "a": "V1M-determination",
+      "b": "V2E-external-inferred",
+      "type": "see_also",
+      "weight": 1.0
+    },
+    {
+      "a": "V1M-determination",
+      "b": "V2F-other-minds",
+      "type": "see_also",
+      "weight": 1.0
+    },
+    {
+      "a": "V2A-memory-lords-power",
+      "b": "V2B-pastness-svasamvitti",
+      "type": "see_also",
+      "weight": 2.0
+    },
+    {
+      "a": "V2B-pastness-svasamvitti",
+      "b": "V2C-ajadapramatr",
+      "type": "see_also",
+      "weight": 2.0
+    },
+    {
+      "a": "V2C-ajadapramatr",
+      "b": "V2F-other-minds",
+      "type": "see_also",
+      "weight": 1.0
+    },
+    {
+      "a": "V2D-jnanasakti",
+      "b": "V2E-external-inferred",
+      "type": "see_also",
+      "weight": 2.0
+    },
+    {
+      "a": "V2E-external-inferred",
+      "b": "V2F-other-minds",
+      "type": "see_also",
+      "weight": 1.0
+    }
+  ],
+  "note": "k-core is a STRUCTURAL FACT (embeddedness); it is NOT a theme. It is a proposal, not an AcceptedTheme. Do not infer 'high core_number => philosophically central'.",
+  "louvain_baseline": {
+    "method": "LOUVAIN",
+    "seed": 42,
+    "status": "OK",
+    "communities": {
+      "0": [
+        "V1-k1.1-kathamcit",
+        "V1-purvapaksa-k1.2.7-citsvarupam",
+        "V1-purvapaksa-opening",
+        "V1-upoddhata-k11-karta",
+        "V1-upoddhata-k9-10-sambandha",
+        "V1-upoddhata-mangala",
+        "V1A-svatyandya",
+        "V1B-eligibility",
+        "V1F-upoddhata-opponents",
+        "V1G-cognition-refuted",
+        "V1I-action-refuted",
+        "V1J-agent-constructed"
+      ],
+      "1": [
+        "V1-k1.2-drstapi",
+        "V1-k1.3-atmaiva",
+        "V1-purvapaksa-smrtibhranti-sankaranandana",
+        "V1-upoddhata-k1-2-ahampratiti",
+        "V1-upoddhata-k3-memory",
+        "V1C-svatma",
+        "V1D-memory-eternal-knower",
+        "V1E-foregrounding",
+        "V2A-memory-lords-power"
+      ],
+      "2": [
+        "V1-k1.4-1.5-buddhipurva",
+        "V1-upoddhata-k6-k8-caitanyamajada",
+        "V1K-siddhanta-svasamvid",
+        "V1L-yogipratyaksa",
+        "V1M-determination",
+        "V2B-pastness-svasamvitti",
+        "V2C-ajadapramatr",
+        "V2D-jnanasakti",
+        "V2E-external-inferred",
+        "V2F-other-minds",
+        "V2G-dream-inversion"
+      ],
+      "3": [
+        "V1-upoddhata-k4-5-antargadu",
+        "V2H-vimarsa-paravak",
+        "V2I-sphuratta",
+        "V2J-samskara",
+        "V2K-vacakasphota"
+      ],
+      "4": [
+        "V1H-enjoyment-reflection"
+      ],
+      "5": [
+        "V1N-close-mahesvara",
+        "V2L-nonconstructed-I",
+        "V2N-inner-appearance",
+        "V2O-orderless-support",
+        "V2P-pramatr-vyapara",
+        "V2Q-omniscient",
+        "V2R-mahesvarya",
+        "V2S-unity-mahesvarya"
+      ],
+      "6": [
+        "V2M-descent-states",
+        "V3C-one-light",
+        "V3D-synthesis",
+        "V3E-error",
+        "V3I-difference-real",
+        "V3J-agama-sivatattva",
+        "V3K-kancukas",
+        "V3L-knowers-malas",
+        "V3M-states"
+      ],
+      "7": [
+        "V3A-timeless-order"
+      ],
+      "8": [
+        "V3B-bhedabheda"
+      ],
+      "10": [
+        "V3F-grace",
+        "V3N-one-lord-many",
+        "V3O-bond-liberation",
+        "V3P-lover-union"
+      ],
+      "9": [
+        "V3G-causality",
+        "V3H-inference-across-knowers"
+      ]
+    }
+  },
+  "comparison": {
+    "method_note": "k-core = STRUCTURAL embeddedness (deterministic fact); Louvain = modularity community (heuristic). Both are PROPOSALS; compare, do not conflate with theme.",
+    "k_core": {
+      "max_core": 3,
+      "core_distribution": {
+        "0": 3,
+        "1": 6,
+        "2": 37,
+        "3": 17
+      },
+      "top_core_c1s": [
+        "V1-k1.1-kathamcit",
+        "V1-k1.3-atmaiva",
+        "V1-upoddhata-k3-memory",
+        "V1A-svatyandya",
+        "V1B-eligibility",
+        "V1C-svatma",
+        "V1D-memory-eternal-knower",
+        "V1E-foregrounding",
+        "V1H-enjoyment-reflection",
+        "V1K-siddhanta-svasamvid",
+        "V1L-yogipratyaksa",
+        "V1M-determination",
+        "V2A-memory-lords-power",
+        "V2B-pastness-svasamvitti",
+        "V2C-ajadapramatr",
+        "V2D-jnanasakti",
+        "V2E-external-inferred",
+        "V2F-other-minds",
+        "V3A-timeless-order",
+        "V3B-bhedabheda",
+        "V3G-causality",
+        "V3H-inference-across-knowers"
+      ],
+      "n_shells": 3
+    },
+    "louvain": {
+      "n_communities": 11,
+      "status": "OK",
+      "communities": {
+        "0": [
+          "V1-k1.1-kathamcit",
+          "V1-purvapaksa-k1.2.7-citsvarupam",
+          "V1-purvapaksa-opening",
+          "V1-upoddhata-k11-karta",
+          "V1-upoddhata-k9-10-sambandha",
+          "V1-upoddhata-mangala",
+          "V1A-svatyandya",
+          "V1B-eligibility",
+          "V1F-upoddhata-opponents",
+          "V1G-cognition-refuted",
+          "V1I-action-refuted",
+          "V1J-agent-constructed"
+        ],
+        "1": [
+          "V1-k1.2-drstapi",
+          "V1-k1.3-atmaiva",
+          "V1-purvapaksa-smrtibhranti-sankaranandana",
+          "V1-upoddhata-k1-2-ahampratiti",
+          "V1-upoddhata-k3-memory",
+          "V1C-svatma",
+          "V1D-memory-eternal-knower",
+          "V1E-foregrounding",
+          "V2A-memory-lords-power"
+        ],
+        "2": [
+          "V1-k1.4-1.5-buddhipurva",
+          "V1-upoddhata-k6-k8-caitanyamajada",
+          "V1K-siddhanta-svasamvid",
+          "V1L-yogipratyaksa",
+          "V1M-determination",
+          "V2B-pastness-svasamvitti",
+          "V2C-ajadapramatr",
+          "V2D-jnanasakti",
+          "V2E-external-inferred",
+          "V2F-other-minds",
+          "V2G-dream-inversion"
+        ],
+        "3": [
+          "V1-upoddhata-k4-5-antargadu",
+          "V2H-vimarsa-paravak",
+          "V2I-sphuratta",
+          "V2J-samskara",
+          "V2K-vacakasphota"
+        ],
+        "4": [
+          "V1H-enjoyment-reflection"
+        ],
+        "5": [
+          "V1N-close-mahesvara",
+          "V2L-nonconstructed-I",
+          "V2N-inner-appearance",
+          "V2O-orderless-support",
+          "V2P-pramatr-vyapara",
+          "V2Q-omniscient",
+          "V2R-mahesvarya",
+          "V2S-unity-mahesvarya"
+        ],
+        "6": [
+          "V2M-descent-states",
+          "V3C-one-light",
+          "V3D-synthesis",
+          "V3E-error",
+          "V3I-difference-real",
+          "V3J-agama-sivatattva",
+          "V3K-kancukas",
+          "V3L-knowers-malas",
+          "V3M-states"
+        ],
+        "7": [
+          "V3A-timeless-order"
+        ],
+        "8": [
+          "V3B-bhedabheda"
+        ],
+        "10": [
+          "V3F-grace",
+          "V3N-one-lord-many",
+          "V3O-bond-liberation",
+          "V3P-lover-union"
+        ],
+        "9": [
+          "V3G-causality",
+          "V3H-inference-across-knowers"
+        ]
+      }
+    },
+    "synthesis": {
+      "which_c1s_are_most_densely_embedded": [
+        "V1-k1.1-kathamcit",
+        "V1-k1.3-atmaiva",
+        "V1-upoddhata-k3-memory",
+        "V1A-svatyandya",
+        "V1B-eligibility",
+        "V1C-svatma",
+        "V1D-memory-eternal-knower",
+        "V1E-foregrounding",
+        "V1H-enjoyment-reflection",
+        "V1K-siddhanta-svasamvid",
+        "V1L-yogipratyaksa",
+        "V1M-determination",
+        "V2A-memory-lords-power",
+        "V2B-pastness-svasamvitti",
+        "V2C-ajadapramatr",
+        "V2D-jnanasakti",
+        "V2E-external-inferred",
+        "V2F-other-minds",
+        "V3A-timeless-order",
+        "V3B-bhedabheda",
+        "V3G-causality",
+        "V3H-inference-across-knowers"
+      ],
+      "which_louvain_communities_exist": [
+        [
+          "V1-k1.1-kathamcit",
+          "V1-purvapaksa-k1.2.7-citsvarupam",
+          "V1-purvapaksa-opening",
+          "V1-upoddhata-k11-karta",
+          "V1-upoddhata-k9-10-sambandha",
+          "V1-upoddhata-mangala",
+          "V1A-svatyandya",
+          "V1B-eligibility",
+          "V1F-upoddhata-opponents",
+          "V1G-cognition-refuted",
+          "V1I-action-refuted",
+          "V1J-agent-constructed"
+        ],
+        [
+          "V1-k1.2-drstapi",
+          "V1-k1.3-atmaiva",
+          "V1-purvapaksa-smrtibhranti-sankaranandana",
+          "V1-upoddhata-k1-2-ahampratiti",
+          "V1-upoddhata-k3-memory",
+          "V1C-svatma",
+          "V1D-memory-eternal-knower",
+          "V1E-foregrounding",
+          "V2A-memory-lords-power"
+        ],
+        [
+          "V1-k1.4-1.5-buddhipurva",
+          "V1-upoddhata-k6-k8-caitanyamajada",
+          "V1K-siddhanta-svasamvid",
+          "V1L-yogipratyaksa",
+          "V1M-determination",
+          "V2B-pastness-svasamvitti",
+          "V2C-ajadapramatr",
+          "V2D-jnanasakti",
+          "V2E-external-inferred",
+          "V2F-other-minds",
+          "V2G-dream-inversion"
+        ],
+        [
+          "V1-upoddhata-k4-5-antargadu",
+          "V2H-vimarsa-paravak",
+          "V2I-sphuratta",
+          "V2J-samskara",
+          "V2K-vacakasphota"
+        ],
+        [
+          "V1H-enjoyment-reflection"
+        ],
+        [
+          "V1N-close-mahesvara",
+          "V2L-nonconstructed-I",
+          "V2N-inner-appearance",
+          "V2O-orderless-support",
+          "V2P-pramatr-vyapara",
+          "V2Q-omniscient",
+          "V2R-mahesvarya",
+          "V2S-unity-mahesvarya"
+        ],
+        [
+          "V2M-descent-states",
+          "V3C-one-light",
+          "V3D-synthesis",
+          "V3E-error",
+          "V3I-difference-real",
+          "V3J-agama-sivatattva",
+          "V3K-kancukas",
+          "V3L-knowers-malas",
+          "V3M-states"
+        ],
+        [
+          "V3A-timeless-order"
+        ],
+        [
+          "V3B-bhedabheda"
+        ],
+        [
+          "V3F-grace",
+          "V3N-one-lord-many",
+          "V3O-bond-liberation",
+          "V3P-lover-union"
+        ],
+        [
+          "V3G-causality",
+          "V3H-inference-across-knowers"
+        ]
+      ],
+      "note": "Cross-check which k-core shells and Louvain communities overlap; the overlap is an inspection aid only. High core_number == density under representation R, NOT 'philosophically central'."
+    }
+  }
+}

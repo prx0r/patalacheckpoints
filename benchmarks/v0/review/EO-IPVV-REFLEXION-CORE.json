@@ -92,9 +92,56 @@
   },
   "render_ceiling": "UNRESOLVED",
   "render_rule": "When render_ceiling == UNRESOLVED, the renderer must QUALIFY / represent alternatives / ABSTAIN \u2014 never render as settled fact. Structural outcomes are NOT_AUDITED until a real contextual audit exists.",
+  "patala_epistemics": {
+    "render_ceiling": "UNRESOLVED",
+    "structural_audit_state": "INCOMPLETE",
+    "projection_policy": "MONOTONE_NO_STRENGTHENING",
+    "source_synthesis": {
+      "synthesis_id": "SYN-IPVV-REFLEXION-CORE-001",
+      "synthesis_epistemic_ceiling": "UNRESOLVED",
+      "synthesis_structural_audit_state": "INCOMPLETE"
+    }
+  },
+  "boundary": {
+    "does_not_establish": [
+      "the universal Self (one Lord)",
+      "all manifestation is one consciousness",
+      "consciousness is fundamental simpliciter"
+    ],
+    "crux_ids": [
+      "CRUX-REFLEXION-INERT",
+      "CRUX-SYNTHESIS-UNIVERSAL"
+    ]
+  },
+  "candidates": [
+    {
+      "candidate_id": "cand:siddhanta-reflexivity-intrinsic",
+      "name": "Reflexivity belongs intrinsically to manifestation",
+      "tradition": "pratyabhijna",
+      "proponent": "Abhinavagupta",
+      "position": "Reflexivity (vimar\u015ba) belongs intrinsically to manifestation: the 'I'-reflexive awareness is not a conceptual construction, and what makes the light conscious is its self-awareness in the act of manifesting.",
+      "source_ids": [
+        "ARG-GOLD-002:G2-CONC",
+        "ARG-GOLD-004:G4-CONC"
+      ],
+      "status": "live",
+      "patala_status": "RECONSTRUCTED_SUPPORTED"
+    },
+    {
+      "candidate_id": "cand:buddhist-adhyavasaya-unsourced",
+      "name": "The determination establishes externality (unsourced opponent)",
+      "tradition": "buddhist_pramana",
+      "proponent": "the Buddhist (fallback)",
+      "position": "The determination (adhyavas\u0101ya) establishes an external object.",
+      "source_ids": [],
+      "status": "UNSOURCED_RECONSTRUCTION",
+      "patala_status": "UNSOURCED_RECONSTRUCTION"
+    }
+  ],
   "provenance": {
     "parent_ros": [],
     "parent_synthesis": "SYN-IPVV-REFLEXION-CORE-001",
+    "projection_of": "SYN-IPVV-REFLEXION-CORE-001",
     "created_by": "agent1",
     "last_updated": "2026-08-12"
   }

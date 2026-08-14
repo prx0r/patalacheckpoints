@@ -1,0 +1,2 @@
+{"event": "NIGHT_START", "config": {"max_verses": 8, "max_works": 2, "rounds": 0, "consec_fail_limit": 3, "sleep": 30}, "ts": "2026-08-12T20:19:08.523886+00:00"}
+{"event": "WORK_START", "work_id": "cidgagana", "ts": "2026-08-12T20:19:08.524565+00:00"}

@@ -1,0 +1,910 @@
+{
+  "schema": "patala:scholar:sanderson:v1",
+  "compiled": "2026-08-12",
+  "scholar": "Alexis G.J.S. Sanderson",
+  "note": "Verified against the official 1983-2019 Sanderson bibliography (in the Brill Festschrift, OA). direct=true = scriptable non-Academia URL. Academia items need login/session; author-site (alexissanderson.com) URLs are dead — do not use.",
+  "works": [
+    {
+      "key": "how_public_saivism",
+      "title": "How Public Was Śaivism?",
+      "year": 2019,
+      "type": "article",
+      "tradition": [
+        "Śaiva"
+      ],
+      "priority": 14,
+      "url": "https://austriaca.at/0xc1aa5572%200x003b1dd8.pdf",
+      "direct": true,
+      "note": "Open-access publisher PDF (Austriaca)",
+      "downloaded": true,
+      "downloaded_file": "how_public_was_saivism_2019.pdf",
+      "download_status": "downloaded"
+    },
+    {
+      "key": "tolerance_exclusivity",
+      "title": "Tolerance, Exclusivity, Inclusivity, and Persecution in Indian Religion During the Early Mediaeval Period",
+      "year": 2015,
+      "type": "chapter",
+      "tradition": [
+        "Śaiva",
+        "Buddhist"
+      ],
+      "priority": null,
+      "url": "https://www.academia.edu/19702882/Tolerance_Exclusivity_Inclusivity_and_Persecution_in_Indian_Religion_During_the_Early_Mediaeval_Period_In_Honoris_Causa_Essays_in_Honour_of_Aveek_Sarkar_edited_with_a_foreword_by_John_Makinson_Allen_Lane_2015_pp_155_224",
+      "direct": false,
+      "downloaded": true,
+      "downloaded_file": "academia_bundles/consolidated/Tolerance_Exclusivity_Inclusivity_and_Pe.pdf",
+      "download_status": "downloaded",
+      "note": " Acquired via Academia bundle (R2 2026-08-12)."
+    },
+    {
+      "key": "saiva_literature",
+      "title": "The Śaiva Literature",
+      "year": 2014,
+      "type": "article",
+      "tradition": [
+        "Śaiva"
+      ],
+      "priority": 1,
+      "url": "https://www.academia.edu/9140449/The_%C5%9Aaiva_Literature_Journal_of_Indological_Studies_Kyoto_Nos_24_and_25_2012_2013_2014_pp_1_113",
+      "direct": false,
+      "note": "ESSENTIAL; duplicate upload exists, keep one Acquired via Academia bundle (R2 2026-08-12).",
+      "downloaded": true,
+      "downloaded_file": "academia_bundles/consolidated/The_Saiva_Literature_Journal_of_Indologi.pdf",
+      "download_status": "downloaded"
+    },
+    {
+      "key": "impact_inscriptions",
+      "title": "The Impact of Inscriptions on the Interpretation of Early Śaiva Literature",
+      "year": 2013,
+      "type": "article",
+      "tradition": [
+        "Śaiva"
+      ],
+      "priority": null,
+      "url": "https://www.academia.edu/6077814/The_Impact_of_Inscriptions_on_the_Interpretation_of_Early_%C5%9Aaiva_Literature_Indo_Iranian_Journal_56_2013_pp_211_244",
+      "direct": false,
+      "downloaded": false,
+      "downloaded_file": null,
+      "download_status": "manual_academia"
+    },
+    {
+      "key": "ritual_oneself_others",
+      "title": "Ritual for Oneself and Ritual for Others",
+      "year": 2010,
+      "type": "chapter",
+      "tradition": [
+        "Śaiva"
+      ],
+      "priority": null,
+      "url": "https://www.academia.edu/6078430/Ritual_for_Oneself_and_Ritual_for_Others_In_Ritual_Dynamics_and_the_Science_of_Ritual_vol_II_Body_Performance_Agency_and_Experience_edited_by_Angelos_Chaniotis_et_al_Wiesbaden_Harrassowitz_Verlag_2010",
+      "direct": false,
+      "downloaded": true,
+      "downloaded_file": "academia_bundles/consolidated/Ritual_for_Oneself_and_Ritual_for_Others.pdf",
+      "download_status": "downloaded",
+      "note": " Acquired via Academia bundle (R2 2026-08-12)."
+    },
+    {
+      "key": "saiva_age",
+      "title": "The Śaiva Age: The Rise and Dominance of Śaivism during the Early Medieval Period",
+      "year": 2009,
+      "type": "chapter",
+      "tradition": [
+        "Śaiva"
+      ],
+      "priority": 2,
+      "url": "https://zenodo.org/records/4395629",
+      "direct": true,
+      "note": "Zenodo standalone; also in GenesisDevelopmentOfTantra.pdf pp41-350",
+      "downloaded": true,
+      "downloaded_file": "saiva_age_2009.pdf",
+      "download_status": "downloaded"
+    },
+    {
+      "key": "atharvavedins_tantric",
+      "title": "Atharvavedins in Tantric Territory",
+      "year": 2007,
+      "type": "chapter",
+      "tradition": [
+        "Vedic",
+        "Tantra"
+      ],
+      "priority": 5,
+      "url": "https://www.anuttaratrika.com/DOWNLOAD/eng/Atharvavedins_in_tantric_territory_sanderson.pdf",
+      "direct": true,
+      "downloaded": true,
+      "downloaded_file": "atharvavedins_tantric_territory.pdf",
+      "download_status": "downloaded",
+      "extra_files": []
+    },
+    {
+      "key": "saiva_exegesis_kashmir",
+      "title": "The Śaiva Exegesis of Kashmir",
+      "year": 2007,
+      "type": "chapter",
+      "tradition": [
+        "Kashmirian",
+        "Trika",
+        "Krama"
+      ],
+      "priority": 3,
+      "url": "https://archive.org/details/zcux_the-saiva-exegesis-of-kashmir.-in-melang-tantra-books",
+      "direct": true,
+      "note": "duplicate with front matter exists; keep one",
+      "downloaded": true,
+      "downloaded_file": "saiva_exegesis_kashmir.pdf",
+      "download_status": "downloaded",
+      "extra_files": [
+        "saiva_exegesis_kashmir.txt"
+      ]
+    },
+    {
+      "key": "lakshman_joo",
+      "title": "Swami Lakshman Joo and His Place in the Kashmirian Śaiva Tradition",
+      "year": 2007,
+      "type": "chapter",
+      "tradition": [
+        "Kashmirian"
+      ],
+      "priority": null,
+      "url": "https://archive.org/details/abhinavagupta-upaladeva-and-tantraloka-pdfs",
+      "direct": true,
+      "downloaded": true,
+      "downloaded_file": "lakshman_joo_kashmirian_saiva_tradition.pdf",
+      "download_status": "downloaded",
+      "extra_files": []
+    },
+    {
+      "key": "date_sadyojyotis",
+      "title": "The Date of Sadyojyotis and Bṛhaspati",
+      "year": 2006,
+      "type": "article",
+      "tradition": [
+        "Śaiva Siddhānta"
+      ],
+      "priority": null,
+      "url": "https://www.academia.edu/6077874/The_Date_of_Sadyojyotis_and_Brhaspati_In_Cracow_Indological_Studies_8_2006_pp_39_91",
+      "direct": false,
+      "downloaded": true,
+      "downloaded_file": "academia_bundles/consolidated/The_Date_of_Sadyojyotis_and_Brhaspati_In.pdf",
+      "download_status": "downloaded",
+      "note": " Acquired via Academia bundle (R2 2026-08-12)."
+    },
+    {
+      "key": "lakulas",
+      "title": "The Lākulas: New Evidence of a System Intermediate between Pāñcārthika Pāśupatism and Āgamic Śaivism",
+      "year": 2006,
+      "type": "lecture",
+      "tradition": [
+        "Pāśupata",
+        "Śaiva"
+      ],
+      "priority": 11,
+      "url": "https://www.academia.edu/6102200/_The_L%C4%81kulas_New_evidence_of_a_system_intermediate_between_P%C4%81%C3%B1c%C4%81rthika_P%C4%81%C5%9Bupatism_and_%C4%80gamic_%C5%9Aaivism_Ramalinga_Reddy_Memorial_Lectures_1997_In_The_Indian_Philosophical_Annual_24_2006_pp_143_217",
+      "direct": false,
+      "downloaded": true,
+      "downloaded_file": "academia_bundles/consolidated/The_Lakulas_New_evidence_of_a_system_in.pdf",
+      "download_status": "downloaded",
+      "note": " Acquired via Academia bundle (R2 2026-08-12)."
+    },
+    {
+      "key": "tantrasara_commentary",
+      "title": "A Commentary on the Opening Verses of the Tantrasāra of Abhinavagupta",
+      "year": 2005,
+      "type": "chapter",
+      "tradition": [
+        "Trika",
+        "Abhinavagupta"
+      ],
+      "priority": 8,
+      "url": "https://anuttaratrika.com/DOWNLOAD/eng/commentary_on_the%20opening_verses_of_Tantasara_sanderson.pdf",
+      "direct": true,
+      "downloaded": true,
+      "downloaded_file": "commentary_tantrasara_opening.pdf",
+      "download_status": "downloaded",
+      "extra_files": []
+    },
+    {
+      "key": "religion_state",
+      "title": "Religion and the State: Śaiva Officiants in the Territory of the King's Brahmanical Chaplain",
+      "year": 2004,
+      "type": "article",
+      "tradition": [
+        "Śaiva"
+      ],
+      "priority": 13,
+      "url": "https://www.academia.edu/2705872/Religion_and_the_State_%C5%9Aaiva_Officiants_in_the_Territory_of_the_King_s_Brahmanical_Chaplain_Indo_Iranian_Journal_47_2004_pp_229_300",
+      "direct": false,
+      "alt_url": "https://link.springer.com/article/10.1007/s10783-005-2927-y",
+      "downloaded": true,
+      "downloaded_file": "academia_bundles/consolidated/Religion_and_the_State_Saiva_Officiants.pdf",
+      "download_status": "downloaded",
+      "note": " Acquired via Academia bundle (R2 2026-08-12)."
+    },
+    {
+      "key": "saiva_kmers",
+      "title": "The Śaiva Religion among the Khmers, Part I",
+      "year": 2003,
+      "type": "article",
+      "tradition": [
+        "Śaiva",
+        "Southeast Asia"
+      ],
+      "priority": null,
+      "url": "https://www.persee.fr/doc/befeo_0336-1519_2003_num_90_1_3617",
+      "direct": true,
+      "downloaded": false,
+      "downloaded_file": null,
+      "download_status": "failed_or_manual"
+    },
+    {
+      "key": "kubjikamata_remarks",
+      "title": "Remarks on the Text of the Kubjikāmatatantra",
+      "year": 2002,
+      "type": "review",
+      "tradition": [
+        "Kubjikā",
+        "Kaula"
+      ],
+      "priority": null,
+      "url": "",
+      "direct": false,
+      "note": "author-site URL dead; source from Academia when available Acquired via Academia bundle (R2 2026-08-12).",
+      "downloaded": true,
+      "downloaded_file": "academia_bundles/consolidated/Remarks_on_the_Text_of_the_Kubjikamatata.pdf",
+      "download_status": "downloaded"
+    },
+    {
+      "key": "history_textual_criticism",
+      "title": "History through Textual Criticism in the Study of Śaivism, the Pañcarātra and the Buddhist Yoginītantras",
+      "year": 2001,
+      "type": "article",
+      "tradition": [
+        "Śaiva",
+        "Pañcarātra",
+        "Buddhist"
+      ],
+      "priority": 12,
+      "url": "",
+      "direct": false,
+      "note": "author-site URL dead Acquired via Academia bundle (R2 2026-08-12).",
+      "downloaded": true,
+      "downloaded_file": "academia_bundles/consolidated/History_through_Textual_Criticism_in_the.pdf",
+      "download_status": "downloaded"
+    },
+    {
+      "key": "meaning_tantric_ritual",
+      "title": "Meaning in Tantric Ritual",
+      "year": 1995,
+      "type": "chapter",
+      "tradition": [
+        "Tantra"
+      ],
+      "priority": 6,
+      "url": "https://anuttaratrika.com/DOWNLOAD/eng/meaning_in_tantric_ritual_sanderson.pdf",
+      "direct": true,
+      "downloaded": true,
+      "downloaded_file": "meaning_tantric_ritual.pdf",
+      "download_status": "downloaded",
+      "extra_files": []
+    },
+    {
+      "key": "vajrayana_origin",
+      "title": "Vajrayāna: Origin and Function",
+      "year": 1995,
+      "type": "chapter",
+      "tradition": [
+        "Buddhist"
+      ],
+      "priority": null,
+      "url": "https://www.academia.edu/6209920/Vajray%C4%81na_Origin_and_Function_In_Buddhism_into_the_Year_2000_International_Conference_Proceedings_Bangkok_and_Los_Angeles_Dhammak%C4%81ya_Foundation_1995_pp_89_102",
+      "direct": false,
+      "downloaded": false,
+      "downloaded_file": null,
+      "download_status": "manual_academia"
+    },
+    {
+      "key": "sarvastivada_critics",
+      "title": "The Sarvāstivāda and its Critics: Anātmavāda and the Theory of Karma",
+      "year": 1995,
+      "type": "chapter",
+      "tradition": [
+        "Buddhist",
+        "Sarvāstivāda"
+      ],
+      "priority": null,
+      "url": "https://www.academia.edu/9293428/_The_Sarv%C4%81stiv%C4%81da_and_its_Critics_An%C4%81tmav%C4%81da_and_the_Theory_of_Karma_In_Buddhism_into_the_Year_2000_International_Conference_Proceedings_Bangkok_and_Los_Angeles_Dhammak%C4%81ya_Foundation_1995_pp_33_48",
+      "direct": false,
+      "note": "Buddhist but useful for Pratyabhijñā/Buddhist interlocutor graph",
+      "downloaded": false,
+      "downloaded_file": null,
+      "download_status": "manual_academia"
+    },
+    {
+      "key": "doctrine_malinivijayottara",
+      "title": "The Doctrine of the Mālinīvijayottaratantra",
+      "year": 1992,
+      "type": "chapter",
+      "tradition": [
+        "Trika",
+        "Abhinavagupta"
+      ],
+      "priority": 7,
+      "url": "https://anuttaratrika.com/DOWNLOAD/eng/malinivijayottaratantra_sanderson.pdf",
+      "direct": true,
+      "downloaded": true,
+      "downloaded_file": "doctrine_malinivijayottaratantra.pdf",
+      "download_status": "downloaded",
+      "extra_files": []
+    },
+    {
+      "key": "visualization_trika",
+      "title": "The Visualization of the Deities of the Trika",
+      "year": 1990,
+      "type": "chapter",
+      "tradition": [
+        "Trika"
+      ],
+      "priority": 15,
+      "url": "https://anuttaratrika.com/DOWNLOAD/eng/visualization_of_the_deities_of_the_trika_sanderson.pdf",
+      "direct": true,
+      "downloaded": true,
+      "downloaded_file": "visualization_trika.pdf",
+      "download_status": "downloaded",
+      "extra_files": []
+    },
+    {
+      "key": "saivism_tantric_traditions",
+      "title": "Śaivism and the Tantric Traditions",
+      "year": 1988,
+      "type": "chapter",
+      "tradition": [
+        "Śaiva",
+        "Tantra"
+      ],
+      "priority": 9,
+      "url": "https://www.academia.edu/6255658/_%C5%9Aaivism_and_the_Tantric_Traditions_In_The_Worlds_Religions_edited_by_S_Sutherland_et_al_London_Routledge_and_Kegan_Paul_1988_pp_660_704_Reprinted_in_The_Worlds_Religions_The_Religions_of_Asia_edited_by_F_Hardy_London_Routledge_and_Kegan_Paul_1990_pp_128_72",
+      "direct": true,
+      "downloaded": true,
+      "downloaded_file": "shaivism_tantric_traditions_mirror.pdf",
+      "download_status": "downloaded",
+      "extra_files": [
+        "shaivism_tantric_traditions_angkor.pdf",
+        "vishvasa_shaivism_and_tantric_traditions.txt"
+      ]
+    },
+    {
+      "key": "mandala_agamic_identity",
+      "title": "Mandala and Āgamic Identity in the Trika of Kashmir",
+      "year": 1986,
+      "type": "chapter",
+      "tradition": [
+        "Trika",
+        "Kashmir"
+      ],
+      "priority": 16,
+      "url": "https://www.anuttaratrika.com/DOWNLOAD/eng/Mandala_and_agamic_identity_in_tne_Trika_of_Kashmir.pdf",
+      "direct": true,
+      "downloaded": true,
+      "downloaded_file": "mandala_agamic_identity.pdf",
+      "download_status": "downloaded",
+      "extra_files": []
+    },
+    {
+      "key": "purity_power",
+      "title": "Purity and Power among the Brāhmans of Kashmir",
+      "year": 1985,
+      "type": "chapter",
+      "tradition": [
+        "Kashmirian"
+      ],
+      "priority": null,
+      "url": "",
+      "direct": false,
+      "note": "no clean OA PDF found; Scribd only",
+      "downloaded": false,
+      "downloaded_file": null,
+      "download_status": "manual"
+    },
+    {
+      "key": "tantric_saivism_ephe",
+      "title": "Tantric Śaivism — summary of 24 EPHE lectures",
+      "year": 1991,
+      "type": "lecture",
+      "tradition": [
+        "Śaiva"
+      ],
+      "priority": null,
+      "url": "https://www.academia.edu/6312650/Tantric_%C5%9Aaivism_an_unpublished_summary_of_24_lectures_delivered_at_the_%C3%89cole_Pratique_des_Hautes_%C3%89tudes_Section_5_Paris_from_April_to_June_1991",
+      "direct": false,
+      "downloaded": true,
+      "downloaded_file": "academia_bundles/consolidated/Tantric_Saivism_an_unpublished_summary_o.pdf",
+      "download_status": "downloaded",
+      "note": " Acquired via Academia bundle (R2 2026-08-12)."
+    },
+    {
+      "key": "saivism_brahmanism",
+      "title": "Śaivism and Brahmanism (125pp handouts)",
+      "year": 2012,
+      "type": "lecture",
+      "tradition": [
+        "Śaiva",
+        "Brahmanism"
+      ],
+      "priority": 4,
+      "url": "https://www.academia.edu/6388859/%C5%9Aaivism_and_Brahmanism_Handouts_for_lectures_February_to_March_2012_All_Souls_College_Oxford_125_pp",
+      "direct": false,
+      "note": "unpublished, high value Acquired via Academia bundle (R2 2026-08-12).",
+      "downloaded": true,
+      "downloaded_file": "academia_bundles/consolidated/Saivism_and_Brahmanism_Handouts_for_lect.pdf",
+      "download_status": "downloaded"
+    },
+    {
+      "key": "yoga_saivism",
+      "title": "Yoga in Śaivism: The Yoga Section of the Mṛgendratantra (annotated translation)",
+      "year": 1999,
+      "type": "draft",
+      "tradition": [
+        "Śaiva Siddhānta",
+        "Yoga"
+      ],
+      "priority": 19,
+      "url": "https://www.academia.edu/6629447/Yoga_in_%C5%9Aaivism_The_Yoga_Section_of_the_M%E1%B9%9Bgendratantra_An_Annotated_Translation_of_the_Text_with_the_Commentary_of_Bha%E1%B9%AD%E1%B9%ADa_N%C4%81r%C4%81ya%E1%B9%87aka%E1%B9%87%E1%B9%ADha_Unpublished_draft_1999_",
+      "direct": false,
+      "downloaded": true,
+      "downloaded_file": "academia_bundles/consolidated/Yoga_in_Saivism_The_Yoga_Section_of_the.pdf",
+      "download_status": "downloaded",
+      "note": " Acquired via Academia bundle (R2 2026-08-12)."
+    },
+    {
+      "key": "yoga_of_dying",
+      "title": "The Yoga of Dying (5 lectures)",
+      "year": 2004,
+      "type": "lecture",
+      "tradition": [
+        "Śaiva",
+        "Yoga"
+      ],
+      "priority": 20,
+      "url": "https://www.academia.edu/6388608/The_Yoga_of_Dying_5_Handouts_for_5_lectures_October_12_2004_November_9_2004_All_Souls_Oxford_",
+      "direct": false,
+      "note": "duplicate 50pp upload; keep one Acquired via R2 upload (2026-08-12).",
+      "downloaded": true,
+      "downloaded_file": "academia_bundles/consolidated/yoga_of_dying_handouts.pdf",
+      "download_status": "downloaded"
+    },
+    {
+      "key": "tantric_rebirth_buddhism",
+      "title": "The Tantric Rebirth of Indian Buddhism under Śākta-Śaiva Influence",
+      "year": 2015,
+      "type": "lecture",
+      "tradition": [
+        "Śaiva",
+        "Buddhist"
+      ],
+      "priority": 17,
+      "url": "https://www.academia.edu/16319964/Handout_for_the_lecture_The_Tantric_Rebirth_of_Indian_Buddhism_under_%C5%9A%C4%81kta_%C5%9Aaiva_Influence_during_the_7th_to_11th_centuries_delivered_on_September_29_2015_in_the_panel_Cross_cultural_and_Cross_religious_Encounters_in_Historical_Context_in_the_Tsukuba_Global_Science_Week_2015",
+      "direct": false,
+      "downloaded": false,
+      "downloaded_file": null,
+      "download_status": "manual_academia"
+    },
+    {
+      "key": "progress_since_1988",
+      "title": "Progress since 'Śaivism and the Tantric Traditions'",
+      "year": 2015,
+      "type": "lecture",
+      "tradition": [
+        "Śaiva"
+      ],
+      "priority": 18,
+      "url": "https://www.academia.edu/11880472/Progress_since_%C5%9Aaivism_and_the_Tantric_Traditions_Sanderson_1988_Keynote_Address_at_the_end_of_the_Symposium_%C5%9Aaivism_and_the_Tantric_Traditions_University_of_Toronto_March_26_28_2015_Handout",
+      "direct": false,
+      "downloaded": false,
+      "downloaded_file": null,
+      "download_status": "manual_academia"
+    },
+    {
+      "key": "outline_brahmanism",
+      "title": "An Outline of Brahmanism (ca. 900 CE)",
+      "year": 1993,
+      "type": "lecture",
+      "tradition": [
+        "Brahmanism"
+      ],
+      "priority": null,
+      "url": "https://www.academia.edu/10343481/An_Outline_of_Brahmanism_ca_900_C_E_Lectures_delivered_in_All_Souls_College_in_1993",
+      "direct": false,
+      "downloaded": true,
+      "downloaded_file": "academia_bundles/consolidated/An_Outline_of_Brahmanism_ca_900_C_E_Lect.pdf",
+      "download_status": "downloaded",
+      "note": " Acquired via Academia bundle (R2 2026-08-12)."
+    },
+    {
+      "key": "smarta_saktism_lalitatrisati",
+      "title": "The Smārta Śāktism of South India: Lalitātriśatīstotra",
+      "year": null,
+      "type": "edition",
+      "tradition": [
+        "Śākta",
+        "Śrīvidyā"
+      ],
+      "priority": null,
+      "url": "https://www.academia.edu/34452056/The_Sm%C4%81rta_%C5%9A%C4%81ktism_of_South_India_Lalit%C4%81tri%C5%9Bat%C4%ABstotra_edited_with_a_brief_introduction_an_annotated_English_translation_and_an_appendix_containing_the_N%C4%81m%C4%81val%C4%AB",
+      "direct": false,
+      "downloaded": true,
+      "downloaded_file": "academia_bundles/consolidated/The_Smarta_Saktism_of_South_India_Lalita.pdf",
+      "download_status": "downloaded",
+      "note": " Acquired via Academia bundle (R2 2026-08-12)."
+    },
+    {
+      "key": "sakta_transformation",
+      "title": "The Śākta Transformation of Śaivism (WSC 2018 keynote)",
+      "year": 2018,
+      "type": "lecture",
+      "tradition": [
+        "Śākta",
+        "Kaula",
+        "Krama"
+      ],
+      "priority": 10,
+      "url": "https://www.academia.edu/37198020/The_%C5%9A%C4%81kta_Transformation_of_%C5%9Aaivism_Keynote_Lecture_Handout_WSC_Vancouver_2018_pdf",
+      "direct": false,
+      "note": "search title on profile Acquired via Academia bundle (R2 2026-08-12).",
+      "downloaded": true,
+      "downloaded_file": "academia_bundles/consolidated/The_Sakta_Transformation_of_Saivism_Keyn.pdf",
+      "download_status": "downloaded"
+    },
+    {
+      "key": "trairupyam",
+      "title": "The Meaning of the Term Trairūpyam in the Buddhist Pramāṇa Literature",
+      "year": 2022,
+      "type": "chapter",
+      "tradition": [
+        "Buddhist",
+        "Pramāṇa",
+        "Pratyabhijñā"
+      ],
+      "priority": null,
+      "url": "https://oxford.academia.edu/AlexisSanderson",
+      "direct": false,
+      "note": "Essays in Honour of Raffaele Torella (2022)",
+      "downloaded": false,
+      "downloaded_file": null,
+      "download_status": "manual_academia"
+    },
+    {
+      "key": "festschrift_saivism_tantric_traditions",
+      "title": "Śaivism and the Tantric Traditions: Essays in Honour of Alexis G.J.S. Sanderson (Festschrift, OA)",
+      "year": 2020,
+      "type": "book",
+      "tradition": [
+        "Śaiva"
+      ],
+      "priority": null,
+      "url": "https://uplopen.com/books/13512/files/b94d24a7-eb03-4bb5-9996-125fc779e23a.pdf",
+      "direct": true,
+      "alt_url": "https://archive.org/details/oapen-20.500.12657-42543",
+      "note": "Full text (deduped); incl. official Sanderson bibliography 1983-2019. Also PDF: festschrift_SaivismAndTheTantricTraditions.pdf",
+      "downloaded": true,
+      "downloaded_file": "Saivism_and_the_Tantric_Traditions_Festschrift_fulltext.txt",
+      "download_status": "downloaded"
+    },
+    {
+      "key": "saiva_strategies_acceptance",
+      "title": "Śaiva Strategies of Acceptance",
+      "year": 2015,
+      "type": "lecture",
+      "tradition": [
+        "Śaiva",
+        "Buddhist"
+      ],
+      "priority": null,
+      "url": "https://www.academia.edu/15916066/Handout_for_lecture_%C5%9Aaiva_Strategies_of_Acceptance_Annual_JAIBS_Conference_Koyasan_September_20_2015",
+      "direct": false,
+      "downloaded": true,
+      "download_status": "downloaded",
+      "downloaded_file": "academia_bundles/consolidated/Handout_for_lecture_Saiva_Strategies_of.pdf",
+      "note": " Acquired via Academia bundle (R2 2026-08-12)."
+    },
+    {
+      "key": "royal_initiation_consecration",
+      "title": "Royal Initiation and Consecration in the Śaiva Mantramārga and Some Esoteric Buddhist Parallels",
+      "year": 2012,
+      "type": "lecture",
+      "tradition": [
+        "Śaiva",
+        "Buddhist",
+        "Mantramārga"
+      ],
+      "priority": null,
+      "url": "https://www.academia.edu/13003091/Royal_Initiation_and_Consecration_in_the_%C5%9Aaiva_Mantram%C4%81rga_and_Some_Esoteric_Buddhist_Parallels_Keynote_address_at_the_International_Symposium_Consecration_Initiation_and_Consecration_Rituals_in_Ancient_and_Medieval_India_23_December_2012_Kyoto_University_Handout_16_pp",
+      "direct": false,
+      "downloaded": true,
+      "download_status": "downloaded",
+      "downloaded_file": "academia_bundles/consolidated/Royal_Initiation_and_Consecration_in_the.pdf",
+      "note": " Acquired via Academia bundle (R2 2026-08-12)."
+    },
+    {
+      "key": "sakta_weather_nagas",
+      "title": "Śākta Procedures for Weather Control and other Supernatural Effects through Power over Nāgas (Jayadrathayāmala Gāruḍika)",
+      "year": null,
+      "type": "lecture",
+      "tradition": [
+        "Śākta",
+        "Kaula",
+        "Jayadrathayāmala"
+      ],
+      "priority": null,
+      "url": "https://www.academia.edu/10689989/%C5%9A%C4%81kta_Procedures_for_Weather_Control_and_other_Supernatural_Effects_through_Power_over_N%C4%81gas_G%C4%81ru%E1%B8%8Dika_Passages_in_the_Jayadrathay%C4%81mala",
+      "direct": false,
+      "downloaded": false,
+      "download_status": "manual_academia",
+      "downloaded_file": null
+    },
+    {
+      "key": "history_hinduism_kashmir_hamburg",
+      "title": "The History of Hinduism in Kashmir",
+      "year": 2010,
+      "type": "lecture",
+      "tradition": [
+        "Kashmirian"
+      ],
+      "priority": null,
+      "url": "https://www.academia.edu/6149365/Handout_17_April_2010_Hamburg_The_Department_and_Indian_and_Tibetan_Studies_University_of_Hamburg_The_History_of_Hinduism_in_Kashmir",
+      "direct": false,
+      "downloaded": false,
+      "download_status": "manual_academia",
+      "downloaded_file": null
+    },
+    {
+      "key": "hinduism_of_kashmir",
+      "title": "The Hinduism of Kashmir (Brill Encyclopedia of Hinduism vol.1, entry 'Kashmir')",
+      "year": 2009,
+      "type": "chapter",
+      "tradition": [
+        "Kashmirian"
+      ],
+      "priority": null,
+      "url": "https://www.academia.edu/6095071/The_Hinduism_of_Kashmir_Published_as_the_entry_Kashmir_in_Brills_Encyclopedia_of_Hinduism_Volume_One_Regions_Pilgrimage_Deities_edited_by_Knut_A_Jacobsen_Leiden_and_Boston_Brill_2009_Handbuch_der_Orientalistik_Zweite_Abteilung_Indien_vol_22_pp_99_126",
+      "direct": false,
+      "downloaded": true,
+      "download_status": "downloaded",
+      "downloaded_file": "brills_encyclopedia_hinduism_vol1.pdf",
+      "note": " Acquired via Academia bundle (R2 2026-08-12). In Brill's Encyclopedia of Hinduism vol. I (Jacobsen), pp.99-126.",
+      "extra_files": []
+    },
+    {
+      "key": "saiva_texts",
+      "title": "Śaiva Texts (Brill's Encyclopedia of Hinduism vol.6, pp.10-42)",
+      "year": 2014,
+      "type": "chapter",
+      "tradition": [
+        "Śaiva"
+      ],
+      "priority": null,
+      "url": "https://www.academia.edu/9624249/%C5%9Aaiva_Texts_Brills_Encyclopedia_of_Hinduism_vol_6_pp_10_42_2014",
+      "direct": false,
+      "downloaded": true,
+      "download_status": "downloaded",
+      "downloaded_file": "academia_bundles/consolidated/Saiva_Texts_Brills_Encyclopedia_of_Hindu.pdf",
+      "note": " Acquired via Academia bundle (R2 2026-08-12)."
+    },
+    {
+      "title": "Genesis and Development of Tantrism (source vol.; Śaiva Age pp41-350)",
+      "year": 2009,
+      "type": "book",
+      "tradition": [
+        "Tantra"
+      ],
+      "priority": null,
+      "url": "https://archive.org/details/GenesisAndDevelopmentOfTantra",
+      "direct": true,
+      "key": "saiva_age_genesis_volume",
+      "downloaded": true,
+      "download_status": "downloaded",
+      "downloaded_file": "GenesisDevelopmentOfTantra.pdf",
+      "extra_files": [
+        "genesis_dev_tantra_text.txt"
+      ]
+    },
+    {
+      "title": "The Encyclopedia of Religion (1987) — Sanderson entries: Krama Śaivism, Trika Śaivism, Śaivism in Kashmir, Abhinavagupta",
+      "year": 1987,
+      "type": "chapter",
+      "tradition": [
+        "Kashmirian",
+        "Trika",
+        "Krama"
+      ],
+      "priority": null,
+      "url": "https://archive.org/details/encyclopediaofre00macm",
+      "direct": true,
+      "key": "encyclopedia_religion_1987",
+      "downloaded": true,
+      "download_status": "downloaded",
+      "downloaded_file": "encyclopedia_of_religion_1987.txt",
+      "extra_files": []
+    },
+    {
+      "title": "Śaivism and the Tantric Traditions (machine-readable mirror)",
+      "year": 1988,
+      "type": "chapter",
+      "tradition": [
+        "Śaiva",
+        "Tantra"
+      ],
+      "priority": 9,
+      "url": "https://vishvasa.github.io/AgamaH_shaivaH/meta/articles/sanderson/tAntric-traditions/",
+      "direct": true,
+      "key": "saivism_tantric_traditions_text",
+      "downloaded": true,
+      "download_status": "downloaded",
+      "downloaded_file": "vishvasa_shaivism_and_tantric_traditions.txt",
+      "extra_files": []
+    },
+    {
+      "title": "The Śaiva Age (machine-readable mirror)",
+      "year": 2009,
+      "type": "chapter",
+      "tradition": [
+        "Śaiva"
+      ],
+      "priority": 2,
+      "url": "https://vishvasa.github.io/AgamaH_shaivaH/meta/articles/sanderson/shaiva-age/",
+      "direct": true,
+      "key": "saiva_age_vishvasa",
+      "downloaded": true,
+      "download_status": "downloaded",
+      "downloaded_file": "vishvasa_shaiva_age.txt",
+      "extra_files": []
+    },
+    {
+      "key": "saivism_tantric_traditions_mirror",
+      "title": "Śaivism and the Tantric Traditions",
+      "year": null,
+      "type": "chapter",
+      "tradition": [
+        "Śaiva",
+        "Tantra"
+      ],
+      "priority": 9,
+      "url": "https://anuttaratrika.com/DOWNLOAD/eng/Shaivism_and_tantric_traditions_Sanderson.pdf",
+      "direct": true,
+      "downloaded": true,
+      "download_status": "downloaded",
+      "downloaded_file": "shaivism_tantric_traditions_mirror.pdf",
+      "extra_files": [
+        "shaivism_tantric_traditions_angkor.pdf"
+      ]
+    },
+    {
+      "key": "saiva_exegesis_kashmir_brunner",
+      "title": "The Śaiva Exegesis of Kashmir (Brunner source volume; pp231-442 + biblio 551-582)",
+      "year": null,
+      "type": "chapter",
+      "tradition": [
+        "Kashmirian",
+        "Trika",
+        "Krama"
+      ],
+      "priority": 3,
+      "url": "https://archive.org/details/tantric-studies-in-memory-of-helene-brunner-2007",
+      "direct": true,
+      "downloaded": true,
+      "download_status": "downloaded",
+      "downloaded_file": "saiva_exegesis_kashmir_brunner_volume.pdf",
+      "extra_files": [
+        "saiva_exegesis_kashmir_brunner_volume.txt"
+      ]
+    },
+    {
+      "key": "vol_tantra_pushpanjali",
+      "title": "Tantra Pushpanjali: Tantric Traditions and Philosophy of Kashmir — Studies in Memory of Pandit H.N. Chakravarty (Hamsa Stainton, ed.)",
+      "year": null,
+      "type": "volume",
+      "tradition": [
+        "Kashmirian",
+        "Tantra",
+        "Netra"
+      ],
+      "priority": null,
+      "url": "https://archive.org/details/tantrapushpanjalistudiesinmemoryofpandith.n.chakravartyhamsastainton",
+      "direct": true,
+      "downloaded": true,
+      "download_status": "downloaded",
+      "downloaded_file": "volumes/tantra_pushpanjali.txt",
+      "extra_files": [],
+      "note": "Whole-volume text; cross-refs Sanderson Śaiva Exegesis, Religion and the State, Mālinīvijayottara, Vasudeva."
+    },
+    {
+      "key": "vol_samvidullasa",
+      "title": "Saṃvidullāsa: Manifestations of Divine Consciousness (Swami Lakshman Joo; ed. Bettina Bäumer)",
+      "year": null,
+      "type": "volume",
+      "tradition": [
+        "Kashmirian",
+        "Trika"
+      ],
+      "priority": null,
+      "url": "https://archive.org/details/SamvidullasaManifestationsOfDivineConsciousnessSwamiLakshmanJooBettinaBummer",
+      "direct": true,
+      "downloaded": true,
+      "download_status": "downloaded",
+      "downloaded_file": "volumes/samvidullasa.txt",
+      "extra_files": [],
+      "note": "Contains Sanderson 'Swami Lakshman Joo and His Place in the Kashmirian Śaiva Tradition' pp.93-126."
+    },
+    {
+      "key": "dharmakirti_salvific_initiation",
+      "title": "Dharmakīrti on the Role of Salvific Initiation",
+      "year": null,
+      "type": "article",
+      "tradition": [
+        "Buddhist",
+        "Dharmakīrti"
+      ],
+      "priority": null,
+      "url": "R2 academia bundle",
+      "direct": false,
+      "downloaded": true,
+      "download_status": "downloaded",
+      "downloaded_file": "academia_bundles/consolidated/Dharmakirti_on_the_Role_of_Salvific_Init.pdf",
+      "extra_files": []
+    },
+    {
+      "key": "pleasure_emotions_tantric_saivism",
+      "title": "Pleasure and the Emotions in Tantric Śaivism",
+      "year": null,
+      "type": "article",
+      "tradition": [
+        "Tantra",
+        "Aesthetics"
+      ],
+      "priority": null,
+      "url": "R2 academia bundle",
+      "direct": false,
+      "downloaded": true,
+      "download_status": "downloaded",
+      "downloaded_file": "academia_bundles/consolidated/Pleasure_and_the_Emotions_in_Tantric_Sai.pdf",
+      "extra_files": []
+    },
+    {
+      "key": "to_enter_merge",
+      "title": "To Enter, to be Entered, to Merge: The Role of Ritual ...",
+      "year": null,
+      "type": "article",
+      "tradition": [
+        "Tantra",
+        "Ritual"
+      ],
+      "priority": null,
+      "url": "R2 academia bundle",
+      "direct": false,
+      "downloaded": true,
+      "download_status": "downloaded",
+      "downloaded_file": "academia_bundles/consolidated/To_Enter_to_be_entered_to_merge_The_role.pdf",
+      "extra_files": []
+    },
+    {
+      "key": "vol_brills_enc_hinduism_vol1",
+      "title": "Brill's Encyclopedia of Hinduism, Vol. I: Regions, Pilgrimage, Deities (ed. Knut A. Jacobsen)",
+      "year": 2009,
+      "type": "volume",
+      "tradition": [
+        "Hindu"
+      ],
+      "priority": null,
+      "url": "R2 upload (Anna's Archive)",
+      "direct": false,
+      "downloaded": true,
+      "download_status": "downloaded",
+      "downloaded_file": "brills_encyclopedia_hinduism_vol1.pdf",
+      "extra_files": [],
+      "note": "564pp; contains Sanderson 'The Hinduism of Kashmir' pp.99-126."
+    }
+  ],
+  "n_works": 53,
+  "n_downloaded": 43,
+  "n_manual": 8
+}

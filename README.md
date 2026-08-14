@@ -8,6 +8,9 @@
    independent gold + blind eval + metric + human adjudication makes something real). Also read
    `machinelearning/AGENTS-DOCTRINE.md` + `machinelearning/CLAIMS.md` + run
    `python3 machinelearning/theatre_check.py --status`. **Read this before ANY build.**
+0b. **`docs/process/README.md`** — the end-to-end infra reference (ingestion → atlas → factory → R2).
+   **Read this before writing any infra code** — if a piece is listed as REUSABLE, extend it, don't
+   redefine it. Layer guides: `docs/process/{01-ingestion,02-atlas,03-factory,04-r2-storage}.md`.
 1. **`VISION_AND_NAVIGATION.md`** — THE vision + logical progression + navigation.
 2. **`docs/INDEX.md`** — the canonical docs index (the ONE source of truth per concern; archived
    stale handovers are in `handover/archive/`).

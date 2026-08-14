@@ -1,0 +1,32 @@
+{
+  "ts": "2026-08-13T03:45:01",
+  "total_wall_s": 1.5,
+  "works": [
+    {
+      "work": "kramasadbhava",
+      "passages": 5,
+      "committed": 0,
+      "blocked": 1,
+      "failed": 0,
+      "wall_s": 0.0
+    },
+    {
+      "work": "spandakarika",
+      "passages": 5,
+      "committed": 5,
+      "blocked": 0,
+      "failed": 0,
+      "wall_s": 1.4
+    },
+    {
+      "work": "kubjika",
+      "passages": 5,
+      "committed": 5,
+      "blocked": 0,
+      "failed": 0,
+      "wall_s": 0.0
+    }
+  ],
+  "committed_total": 10,
+  "blocked_total": 1
+}

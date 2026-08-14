@@ -22,6 +22,12 @@ stale ones as `[ARCHIVED]` so a new agent is never confused. If it's not here, i
 | Concern | Canonical doc | Where |
 |---|---|---|
 | **Onboarding (START HERE — single on-ramp, all agents)** | `onboarding/README.md` | repo `onboarding/` |
+| **End-to-end infra process (ingestion→atlas→factory→R2 — READ before writing infra code)** | `docs/process/README.md` | repo `docs/process/` |
+| **Ingestion layer (intake/reconcile/persist)** | `docs/process/01-ingestion.md` | repo `docs/process/` |
+| **Atlas layer (canonical graph + Postgres + read API)** | `docs/process/02-atlas.md` | repo `docs/process/` |
+| **Factory layer (DAG/registry/ledger/scheduler)** | `docs/process/03-factory.md` | repo `docs/process/` |
+| **R2 storage (immutable data lake + Bronze snapshots)** | `docs/process/04-r2-storage.md` | repo `docs/process/` |
+| **App/API/MCP/sites (read surfaces)** | `docs/process/05-app-api-sites.md` | repo `docs/process/` |
 | **Agent system (who + tracked progress)** | `handover/SYSTEM.md` (template `agent0` → live instances) + `handover/flow.py status` | repo `handover/` |
 | **Vision + navigation (START HERE)** | `VISION_AND_NAVIGATION.md` | repo root |
 | **Infra inventory (WHAT EXISTS — read before building)** | `endgamebuild/INFRA-INVENTORY.md` | repo `endgamebuild/` |

@@ -1,0 +1,13 @@
+{
+  "checkpoint": "CP2 AUTONOMOUS RAW-L0 v1",
+  "work": "kramasadbhava",
+  "attempted": 6,
+  "committed": 5,
+  "failed": 1,
+  "wall_s": 145.4,
+  "records_committed": 23,
+  "parsed": 0,
+  "ambiguous": 23,
+  "glossed": 0,
+  "ts": "2026-08-13T03:34:32.827238+00:00"
+}
