@@ -279,6 +279,35 @@ every numbered/expansion/organism/education/atlas vision.
 
 ---
 
+## THE EXTERNAL GROUNDING PER PRODUCT (what supports each product externally)
+
+Each product's design is validated against external literature + GitHub repos. This is what makes the
+product doctrine the FINAL version — no product is invented in a vacuum. See `EXTERNAL-EVIDENCE.md` for
+the full layer-level grounding and the research caches in `docs-cache/`.
+
+| Product | External grounding | Pinch / Own |
+|---|---|---|
+| **1. Reading / Translation** | the translation flow spec (three-version model) · the IPVV gold | **OWN** (the prose) |
+| **2. TranslationProof** | **MITRA** (1.74M S↔T↔C parallel pairs as independent witnesses) · **MQM** (error taxonomy) · the 63 gold audits | **OWN** (the proof vector is NOVEL) |
+| **3. Passage workbench** | **Mirador 4** + TextOverlay (IIIF manuscript viewing) · **Recogito** (annotation UX) · `source-resolver-design.md` | **PINCH** the viewer/annotator; OWN the workbench |
+| **4. Claim** | `docs/api/concepts/epistemic-model.md` (the status rules) · RARR/RefChecker (claim checking) | **OWN** (the semantics) |
+| **5. Argument** | **ASPIC+/py-aspic** · **AIF/oAMF** · `PHILOSOPHY-ENGINE-ARGUMENT-UNDER-INTERPRETATION.md` | **PINCH** engines; **OWN** the IR |
+| **6. Crux** | `crux_engine.py` · the 51 ARGMAP golds | **OWN** (the primitive) |
+| **7. Review** | **Vouch** (proposal→validation→review→accept) · `review_engine.py` | **PINCH** the pattern; OWN the reducer |
+| **8. Scholar Attestation** | ORCID/CRediT/DOI · **Vouch** | **PINCH** the credit standard |
+| **9. Research Packet** | `retrieval.py`/`pushing.py` · the comparative questionnaire | **OWN** |
+| **10. Synthesis** | `synthesis_core.py` | **OWN** |
+| **11. Essay** | **OpenMontage** (agentic research→script→assets) · the 22 gold essays | **PINCH** the media layer; OWN the essay |
+| **12. Education** | **pyBKT** · **Dialogue-KT** · **OATutor** · **OpenTutor** · **adaptive-knowledge-graph** (the GOLD for interfaces) | **PINCH** the learner model + interfaces |
+| **13. Comparison** | `7-FOLD-COMPARATIVE-MODEL` · `SPEC_COMPARATIVE_PUSHING` · the prior RETIRED attempt (learn from it) | **OWN** |
+| **14. Audit** | **MQM** (error taxonomy) · RARR/RefChecker · the eval plane | **PINCH** the taxonomies |
+| **15. Dataset / Benchmark** | the 5 golds · `wmt-mqm` · the NAT evals | **OWN** |
+| **16. Agent Context Bundle** | `SPEC-00` (agent bundles) · the MCP thin adapter | **OWN** |
+
+**Sources:** `EXTERNAL-EVIDENCE.md` · `ecosystem-15planes.md` · `githubclones.md` · the `docs-cache/` research.
+
+---
+
 ## HOW THE PRODUCTS LINK TOGETHER (the dependency web)
 
 ```text

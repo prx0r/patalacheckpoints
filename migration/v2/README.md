@@ -39,13 +39,17 @@ LEVEL 5  The great prose         goated/  (read when you want the depth)
 - The rename map, the kernel, the transformation registry, the stores, the execution model, the 3
   planes, the build sequence. This is the *shape* of v2.
 
-### Step 3 — the ground truth: `LAYERS.yaml` + `LAYER-MAPPING.md` + `MODULES.md`
+### Step 3 — the ground truth: `LAYERS.yaml` + `LAYER-MAPPING.md` + `MODULES.md` + `EXTERNAL-EVIDENCE.md`
 - `LAYERS.yaml` — the machine contract (12 layers, 12 transformations) — the spine.
 - `LAYER-MAPPING.md` — every layer → name · mechanism (real files) · process · needs · relations ·
   vision · checkpoint.
 - `MODULES.md` — every reusable module tagged `[REUSE]`/`[PARTIAL]`/`[GOLD-IPVV]`/`[NEW]` + the full
   lifecycle + the `[NEW]` gaps list.
-- **Read these when you need to DO something** — they point at the actual machinery.
+- `EXTERNAL-EVIDENCE.md` — every layer grounded in external literature + GitHub repos (what to pinch vs
+  own; the moat list). **This is what makes migration the FINAL version** — no design is invented in a vacuum.
+- `EXTERNAL-REPOS.md` — the COMPLETE external repository map (every repo → layer/product · status),
+  incl. the deep translation subsystem (fojin, MITRA, Mitrasamgraha, ByT5, COMET) and the "don't build" boundary.
+- **Read these when you need to DO something** — they point at the actual machinery + the external support.
 
 ### Step 4 — the synthesis: `CURRENT-TO-VISION.md`
 - For every mechanism: current state → vision state · why · how · integration · gap. **The build order
@@ -72,6 +76,8 @@ LEVEL 5  The great prose         goated/  (read when you want the depth)
 | `LAYER-MAPPING.md` | 3 | every layer → mechanism/process/vision/checkpoint | navigating a layer |
 | `MODULES.md` | 3 | every module tagged + lifecycle + [NEW] gaps | what to reuse / build |
 | `CURRENT-TO-VISION.md` | 4 | current → vision · why · how · gap; build order | deciding what's next |
+| `EXTERNAL-EVIDENCE.md` | 3 | every layer grounded in external literature + GitHub repos (what to pinch vs own); the moat list; the complete clone/pinch list | validating a layer's design |
+| `EXTERNAL-REPOS.md` | 3 | the COMPLETE external repository map (every repo → layer/product · what to pinch · status) — incl. the deep translation subsystem (fojin, MITRA, Mitrasamgraha, ByT5, COMET) and the "don't build" boundary | finding what's already solved |
 | `GROUND-UP-PLAN.md` | 4 | the bottom-up build (harvest → refine → products) | the plan |
 | `goated/README.md` | 5 | the best standalone prose (curated index) | depth |
 
