@@ -23,6 +23,7 @@ v3  the ORGANISM (v2 + proven kernels + production floor + 6 expansions, assembl
 | `MECHANISMS.md` | the actual machinery: the 5 load-bearing mechanisms (epistemic ceiling invariant, human publication gate, DAG staleness, anti-groupthink review, education/organism moat) + the 7 algorithms (PathRAG/HippoRAG/KG2Code) + the 17 kernel invariants + the 8 laws + the 6 frontiers + the honest state + the roadmap |
 | `STRUCTURES.md` | the definitive structural reference: the 11 structures Pāṭala definitely needs (authority graph+Atlas, epistemic envelope, event ledger+reducer, derivation DAG+staleness, review panel+CiteCheck, transformation registry, projection compiler, production organism, bibliography, terminology, timeline) + the completeness validation (v2→v3) + the build targets |
 | `PATALA-NATIVE-MACHINERY.md` | the actual Pāṭala-built domain code v3 was missing (reconciliation engine, 5 golds, canonical-DAG, factory loop, eval plane, ORCID crosswalks, atlas QA, argumentation IR, factory certificates, bibliography seeds) — v3 = lab's proven generic kernels + Pāṭala's domain machinery |
+| `LEGACY-GEMS.md` | the genius ideas excavated from the old/global docs (markguidance, canonical_reference_map, leapfrog, globalnext, endgame5) — the T/R/E/C/H/X status tags, the 12-question enquiry scaffold, the dialect-genealogy corpus ladder, the concordance-first principle, the three-place geographic node, the 11-identity adapters, the patala_* MCP verbs, the Tantrakośa/IKS org mapping |
 
 ## The v2 → v3 coverage map (everything from v2 is explained in v3)
 
