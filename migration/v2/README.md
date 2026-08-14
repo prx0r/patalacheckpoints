@@ -79,6 +79,7 @@ LEVEL 5  The great prose         goated/  (read when you want the depth)
 | `EXTERNAL-EVIDENCE.md` | 3 | every layer grounded in external literature + GitHub repos (what to pinch vs own); the moat list; the complete clone/pinch list | validating a layer's design |
 | `EXTERNAL-REPOS.md` | 3 | the COMPLETE external repository map (every repo → layer/product · what to pinch · status) — incl. the deep translation subsystem (fojin, MITRA, Mitrasamgraha, ByT5, COMET) and the "don't build" boundary | finding what's already solved |
 | `GROUND-UP-PLAN.md` | 4 | the bottom-up build (harvest → refine → products) | the plan |
+| `CONVERGENCE-OCHEMA.md` | 4 | the convergence map: Pāṭala ↔ the Ochema Workstation (.meta) — the render engine, writer, publish layer, and source organiser are ALREADY BUILT (DO NOT REBUILD); Pāṭala owns the epistemic gate | the convergence |
 | `GEMS.md` | 5 | the distilled insights per layer (the "aha" layer) — each gem: the insight · why · detailed note | thinking |
 | `renderr.md` | 5 | the Renderio insight (imported from R2) — the Pāṭala → Library → Renderio three-way split + the 2026 video frontier | media layer |
 | `goated/README.md` | 5 | the best standalone prose (curated index) | depth |
