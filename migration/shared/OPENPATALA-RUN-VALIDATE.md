@@ -66,13 +66,25 @@ python3 -m ingestion.run_r2_ingestion --all --dry-run   # report only (no writes
 python3 -m ingestion.run_r2_ingestion --all --commit    # commit SOURCE objects (idempotent)
 ```
 
-### 3.2 Rebuild the compiled site projections (compute-on-write)
+### 3.2 Make the harvest factory-runnable (verse extraction → <work>.jsonl)
+```bash
+cd /root/projects/patala
+python3 pipeline/harvest_to_factory.py --source GRETIL --dry-run   # extract verses, no write
+python3 pipeline/harvest_to_factory.py --all                       # GRETIL+SARIT+MUKTABODHA → <work>.jsonl
+# (676 GRETIL + 64 SARIT + 402 MUKTABODHA works → ~1.7M verses)
+python3 pipeline/register_harvest_sources.py --dry-run             # report new SOURCE entries
+python3 pipeline/register_harvest_sources.py                       # batch-register (chunked, background-safe)
+```
+The factory reads each work's verse text from `<work>.jsonl` (matching `source_sha256` to the SOURCE
+`input_hash`); once registered, the work advances through T1→L0→L200→C1.
+
+### 3.3 Rebuild the compiled site projections (compute-on-write)
 ```bash
 cd /mnt/HC_Volume_106427611/ip-graph
 python3 scripts/rebuild-on-commit.py    # 1st rebuilds; 2nd = "no inputs changed" (no-op)
 ```
 
-### 3.3 Build the open-data release snapshot + upload to R2
+### 3.4 Build the open-data release snapshot + upload to R2
 ```bash
 cd /root/projects/patala
 python3 pipeline/build_release_snapshot.py --dry-run   # build, no upload
@@ -80,7 +92,7 @@ python3 pipeline/build_release_snapshot.py            # build + upload to R2 rel
 # (needs R2_ACCESS_KEY_ID + R2_SECRET_ACCESS_KEY in env)
 ```
 
-### 3.4 Run the OpenAlex-grammar API
+### 3.5 Run the OpenAlex-grammar API
 ```bash
 cd /root/projects/patala/python
 python3 -m uvicorn patala_core.atlas.api:app --port 8787
@@ -169,6 +181,8 @@ curl -s "localhost:8787/resolve?title=Tantraloka&author=Abhinavagupta" | python3
 |---|---|
 | `ingestion/run_r2_ingestion.py` | the R2 full-file ingestion runner (GRETIL/SARIT TEI + MUKTABODHA/PANDIT adapters) |
 | `ingestion/adapters/muktabodha.py` | the Muktabodha adapter (new this build) |
+| `pipeline/harvest_to_factory.py` | the verse extractor: R2 TEI/IAST snapshots → `<work>.jsonl` (factory-runnable) |
+| `pipeline/register_harvest_sources.py` | the chunked batch registration of harvest verses as SOURCE objects |
 | `pipeline/build_release_snapshot.py` | the open-data release exporter (JSONL + Parquet → R2) |
 | `python/patala_core/atlas/api.py` | the OpenAlex-grammar API + additive `/openpatala` + `/resolve` |
 | `/mnt/HC_Volume_106427611/ip-graph/scripts/build-static-site.py` | the projection compiler (registry → artifacts + work pages) |
