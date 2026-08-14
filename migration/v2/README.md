@@ -1,21 +1,81 @@
 # migration/v2 — the Pāṭala v2 coherent-system spec
 
-*Proposal (draft for review) for a clean, clear, agent-usable rebuild of the plumbing — not the
-scholarship. The scholarship pipeline stays; the names get clear, the layers get codified, and every
-store derives from one graph.*
+*The canonical blueprint for a clean, clear, agent-usable Pāṭala. The scholarship pipeline stays; the
+names get clear, the layers get codified, and every store derives from one graph.*
 
-## Files
+---
 
-| File | What it is |
-|---|---|
-| `PATALA-V2-SPEC.md` | the full proposal: rename map, kernel, transformation registry, stores, execution model, repo layout, build sequence |
-| `LAYERS.yaml` | the machine-readable codified layer contract (the spine of v2) — every layer: clear name, legacy code, position, requires/produces, transformation, authority, doc |
-| `LAYER-MAPPING.md` | the complete clean map of every layer: new name · mechanism (real files/modules) · process notes · what it needs · relations · vision docs · checkpoints · honest-state table · priority map |
-| `MODULES.md` | the reusable module inventory — every module tagged `[REUSE]`/`[PARTIAL]`/`[GOLD-IPVV]`/`[NEW]`, the full Sanskrit→Education lifecycle, the scholar products, the verification plane, and the list of what does NOT exist yet |
-| `CURRENT-TO-VISION.md` | THE SYNTHESIS — for every mechanism (kernel, ledger, factory, review, atlas, site, TranslationProof, ML engines, prima materia): current state · vision state · why · how · integration · gap. The build order emerges from the gaps. |
-| `GROUND-UP-PLAN.md` | the ground-up build: thesis → positioning/economics (scope) → harvest (PANDiT/Muktabodha → R2 → SOURCE) → refine layer-by-layer (IPVV as gold) → converge one truth → the 16 product "plants" → the pushing content engine → scholar products. The refinery mental model + the ordered build steps. |
-| `strategy/` | the NON-technical strategic view: thesis, ecosystem position, partnerships, economics, funding, go-to-market, product doctrine, first-product decision, organisation |
-| `goated/` | the curated index of Pāṭala's best standalone documents (the philosophy-engine set, the epistemic/truth set, the retrieval/agentic set, the global/architecture set, the Hermes set, the strategy/product set, the vision set) — with a "read only ten" short list |
+## THE HIERARCHY — how migration/v2 is organised
+
+There are **four concentric layers** of the v2 package. Read them in this order — each unlocks the next.
+
+```text
+LEVEL 0  WHY we exist            migration/README.md  +  strategy/
+LEVEL 1  WHAT the system IS      PATALA-V2-SPEC.md    (the architecture)
+LEVEL 2  WHAT exists / maps to   LAYERS.yaml · LAYER-MAPPING.md · MODULES.md
+LEVEL 3  CURRENT → VISION        CURRENT-TO-VISION.md (the synthesis + build order)
+LEVEL 4  HOW to build            GROUND-UP-PLAN.md
+LEVEL 5  The great prose         goated/  (read when you want the depth)
+```
+
+---
+
+## HOW A NEW AGENT SHOULD FIRST READ IT (the exact order)
+
+**Read these in order. Skipping one means you miss the context it unlocks.**
+
+### Step 0 — orientation: `migration/README.md` then `strategy/README.md`
+- `migration/README.md` — what the whole `migration/` folder is for.
+- `strategy/README.md` — the two sub-docs it contains.
+
+### Step 1 — the WHY (strategy): `strategy/STRATEGIC-DOSSIER.md`
+- The thesis, ecosystem position, economics, partnerships. **This narrows the scope** — it tells you
+  what Pāṭala is and is NOT, which decides everything downstream.
+- Then `strategy/PRODUCTS.md` (the 16-product catalog) + `strategy/PRODUCTS-VISIONS.md` (implemented vs
+  visionary, each product ↔ its vision).
+- **Do this first:** you can't judge the architecture until you know what Pāṭala is for.
+
+### Step 2 — the architecture: `PATALA-V2-SPEC.md`
+- The rename map, the kernel, the transformation registry, the stores, the execution model, the 3
+  planes, the build sequence. This is the *shape* of v2.
+
+### Step 3 — the ground truth: `LAYERS.yaml` + `LAYER-MAPPING.md` + `MODULES.md`
+- `LAYERS.yaml` — the machine contract (12 layers, 12 transformations) — the spine.
+- `LAYER-MAPPING.md` — every layer → name · mechanism (real files) · process · needs · relations ·
+  vision · checkpoint.
+- `MODULES.md` — every reusable module tagged `[REUSE]`/`[PARTIAL]`/`[GOLD-IPVV]`/`[NEW]` + the full
+  lifecycle + the `[NEW]` gaps list.
+- **Read these when you need to DO something** — they point at the actual machinery.
+
+### Step 4 — the synthesis: `CURRENT-TO-VISION.md`
+- For every mechanism: current state → vision state · why · how · integration · gap. **The build order
+  emerges from the gaps here.** This is the honest "what's real vs what v2 will be."
+
+### Step 5 — the plan: `GROUND-UP-PLAN.md`
+- The literal bottom-up build (thesis → scope → harvest → transform → products). The refinery model.
+
+### Step 6 — the depth (optional): `goated/README.md`
+- The curated best standalone documents (philosophy-engine set, doctrine, IPVV/prima-materia, global
+  architecture, Hermes, strategy, vision). Read when you want the full intellectual depth.
+
+---
+
+## THE FILE MAP (quick reference)
+
+| File | Level | What it is | Read when |
+|---|---|---|---|
+| `strategy/STRATEGIC-DOSSIER.md` | 1 | thesis · ecosystem · economics · partnerships · go-to-market | orienting (what Pāṭala IS) |
+| `strategy/PRODUCTS.md` | 1 | the 16-product catalog (artifact + checkpoint + layer + vision) | productizing |
+| `strategy/PRODUCTS-VISIONS.md` | 1 | implemented vs visionary + every vision → product | knowing what's real |
+| `PATALA-V2-SPEC.md` | 2 | the architecture (rename, kernel, registry, stores, 3 planes) | the shape of v2 |
+| `LAYERS.yaml` | 3 | the machine contract (12 layers, 12 transformations) | the spine |
+| `LAYER-MAPPING.md` | 3 | every layer → mechanism/process/vision/checkpoint | navigating a layer |
+| `MODULES.md` | 3 | every module tagged + lifecycle + [NEW] gaps | what to reuse / build |
+| `CURRENT-TO-VISION.md` | 4 | current → vision · why · how · gap; build order | deciding what's next |
+| `GROUND-UP-PLAN.md` | 4 | the bottom-up build (harvest → refine → products) | the plan |
+| `goated/README.md` | 5 | the best standalone prose (curated index) | depth |
+
+---
 
 ## The core idea (one line)
 
@@ -42,8 +102,8 @@ FinalProof → Commentary`.
 
 ## Next concrete step (recommended)
 
-1. Get a real reviewer (human or agent) to react to `PATALA-V2-SPEC.md` — especially the rename map
-   and the authority semantics (the anti-theatre parts are the ones worth the most scrutiny).
-2. Generate the full `LAYERS.yaml` contract and wire `docs_state.py` to render `CURRENT_STATE.md` from
-   it. That single artifact is the spine of v2 and the natural first build.
-3. Do NOT implement the kernel / projection-compiler until the rename + codify phase is real.
+1. Read `CURRENT-TO-VISION.md` for the build order that falls out of the gaps.
+2. The single highest-value next build: **the L200 + C1 gold ingest** (63+63 golds → registry with
+   derivation edges) — it makes the TranslationProof moat real and unblocks Synthesis/Essay/Lesson.
+   Follow the proven `ingest_ipvv_argmap_golds.py` pattern.
+3. Do NOT implement the kernel / projection-compiler until the gold is real.

@@ -4,6 +4,15 @@
 `sanskritree`, `research-library`, and the Pāṭala factory registry; schema/migration scripts; and
 one-shot transformations that don't belong in `pipeline/` or `ingestion/`.*
 
+## What's here
+
+| Path | What it is |
+|---|---|
+| `v2/` | **the Pāṭala v2 blueprint** — the coherent-system spec (strategy, architecture, layer/mapping, modules, current→vision, ground-up plan, goated docs). This is where the future lives. |
+| `mixxii` | the systems review (imported from R2) — the epistemic-wind-tunnel analysis that shaped v2 |
+
+**If you are a new agent, go to `v2/README.md` and follow its reading hierarchy** (strategy WHY → architecture WHAT → ground-truth maps → current→vision → build plan).
+
 ## Purpose
 
 Anything that **moves, transforms, or reconciles existing state** (rather than building new
