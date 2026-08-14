@@ -82,8 +82,8 @@ SCHEMA DIVERGENCE (flagged, not fixed): ReviewEvent/Authority/Proposition (SCHEM
 ## 7. THE SESSION ARCHIVE
 
 Session-by-session history is in **`handover/sessions/`** (timestamped session notes). The most recent is
-`2026-08-14-canonical-organization-session.md`. Read the session note for the full rationale; this file is
-the stable current-state.
+`2026-08-14-two-sided-build-and-reorg.md` (the two-sided build with agentgraph + the doc reorg). Read the
+session note for the full rationale; this file is the stable current-state.
 
 ---
 
