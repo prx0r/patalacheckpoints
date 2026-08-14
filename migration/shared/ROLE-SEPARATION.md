@@ -85,6 +85,7 @@ when I've run it on real Pāṭala data. Nothing is "production" until it passes
 |---|---|
 | `ROLE-SEPARATION.md` | this contract — who does what, the handoff, the promotion rule |
 | `HANDOFF-QUEUE.md` | the live list of kernels + their integration status (updated by both sides) |
+| `DEV-PLAN-AGENTGRAPH.md` | **agentgraph's frontier dev plan** (their lane: build misconception.py, live TranslationProof auditors, context paging) |
 
 **The rule:** both sides update `HANDOFF-QUEUE.md` — AGENTGRAPH when a kernel is proven, AGENTPATALA when it's
 integrated. This folder is the single coordination truth.

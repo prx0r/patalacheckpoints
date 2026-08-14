@@ -102,13 +102,17 @@
 
 | Gap | Which side | Why |
 |---|---|---|
-| `misconception.py` repair cascade | **AGENTGRAPH** (new kernel) | the flywheel's closing edge (misconception→source-repair) |
+| `misconception.py` repair cascade | **AGENTGRAPH** (new kernel) | the flywheel's closing edge (misconception→source-repair) — **P1 in agentgraph's plan** |
 | Corpus-wide IPVV graduation | **AGENTPATALA** | only ONE claim proven end-to-end, not a full pass |
 | Commentary + live Tokenization + Essay projection | **AGENTPATALA** (wire + test) | the 3 v3 needs-build products |
-| Live TranslationProof auditors (xCOMET/MQM) | AGENTGRAPH (integrate) | the full proof product |
+| Live TranslationProof auditors (xCOMET/MQM) | AGENTGRAPH (integrate) | the full proof product — **P1 in agentgraph's plan** |
 | Signed attestation (gap E) | AGENTPATALA (wire C2PA/ORCID) | before public marketplace |
 | The Scholar Workbench UI (vision-07) | AGENTPATALA | the human surface |
-| Context paging (gap A) | AGENTGRAPH or AGENTPATALA | the retrieval gap |
+| Context paging (gap A) | AGENTGRAPH or AGENTPATALA | the retrieval gap — **P2 in agentgraph's plan** |
+
+**Agentgraph's frontier plan** → `DEV-PLAN-AGENTGRAPH.md` (in this shared folder). Their P1: build
+`misconception.py` + live TranslationProof auditors. P2: context paging + promote the 6 L09 mechanism-only
+kernels to real-data.
 
 ---
 
