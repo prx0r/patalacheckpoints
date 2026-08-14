@@ -42,3 +42,9 @@ data/corpus/sources/ramakantha_matangavrtti/
 
 # scratch T1 gloss experiments
 /tmp_t1/
+# the OG patala static site build artifacts
+web/node_modules/
+web/dist/
+web/static/
+web/.astro/
+web/package-lock.json
