@@ -10,6 +10,7 @@ store derives from one graph.*
 |---|---|
 | `PATALA-V2-SPEC.md` | the full proposal: rename map, kernel, transformation registry, stores, execution model, repo layout, build sequence |
 | `LAYERS.yaml` | the machine-readable codified layer contract (the spine of v2) — every layer: clear name, legacy code, position, requires/produces, transformation, authority, doc |
+| `LAYER-MAPPING.md` | the complete clean map of every layer: new name · mechanism (real files/modules) · process notes · what it needs · relations · vision docs · checkpoints · honest-state table · priority map |
 
 ## The core idea (one line)
 
