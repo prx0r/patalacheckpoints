@@ -1,0 +1,3711 @@
+
+I reviewed both as one architecture rather than as isolated repos:
+
+* [https://github.com/prx0r/fuck-off](https://github.com/prx0r/fuck-off)
+* [https://github.com/prx0r/patalacheckpoints](https://github.com/prx0r/patalacheckpoints)
+
+The important conclusion is that **`fuck-off` has accidentally become the experimental systems-research branch Pāṭala badly needed**. It is no longer merely research notes. It now contains working prototypes for several pieces that `patalacheckpoints` still describes as missing.
+
+But there is also a serious danger: if you keep independently evolving both, you will reproduce the exact schema-divergence problem Pāṭala is already suffering from.
+
+# 1. What the two repos actually are
+
+`patalacheckpoints` is the **domain organism**.
+
+It contains the real Sanskrit/translation/research assets, IPVV evidence, factory, evaluation doctrine, human authority concepts, APIs, skills, source-evidence machinery, scholarly objects, and product surface. Its handover describes Pāṭala correctly as:
+
+> a small epistemic kernel + compiler, made frontier by proof-carrying objects, industry-aligned adapters, the Scholar Attestation Vertical, and the Q-moat organism.
+
+That is still the right center of gravity.
+
+`fuck-off`, despite the name, has become something quite different:
+
+> scraped corpus → evidence graph → epistemic kernel → review reducer → staleness engine → graph reasoning → signed state → reactive projections → generalization experiments.
+
+Its own navigation now describes reusable kernels for epistemics, review, staleness, executable graph query and graph retrieval, sitting below a layered architecture.
+
+So I would model them as:
+
+```text
+PATALA
+domain + canonical scholarly schemas + datasets + products
+                         ▲
+                         │ promotes proven abstractions
+                         │
+FUCK-OFF
+epistemic-systems laboratory / proving ground
+```
+
+**Do not merge the repos wholesale.**
+
+The separation is useful.
+
+What you need is a disciplined **promotion boundary**.
+
+---
+
+# 2. `fuck-off` is producing unusually high-value results
+
+There is a qualitative difference between the recent `fuck-off` work and earlier architectural brainstorming.
+
+You're testing abstractions against actual corpora.
+
+That matters enormously.
+
+The experiment report tested:
+
+* herdr-style deterministic review reducers
+* RKA-style staleness blast radius
+* Kappa-style support/contradiction grounding
+* nano-graphrag deterministic serialization
+
+and then combined the first three into a single epistemic pipeline.
+
+That is exactly the right experimental methodology.
+
+Instead of:
+
+```text
+read cool repo
+→ write architecture document
+→ add another abstraction
+```
+
+you have:
+
+```text
+read cool repo
+→ extract primitive
+→ implement tiny version
+→ run against real corpus
+→ observe behavior
+→ decide whether primitive deserves promotion
+```
+
+**Keep doing this.**
+
+It's probably the best development process you've used on Pāṭala so far.
+
+---
+
+# 3. The biggest discovery: one graph can perform several jobs
+
+This idea appears repeatedly across the experiments and I think it is genuinely important.
+
+You currently think of several systems as separate:
+
+```text
+dependency graph
+staleness graph
+incremental build graph
+argument derivation graph
+retrieval graph
+review queue
+agent work graph
+```
+
+But a large portion of them are projections over one underlying derivation structure.
+
+Suppose:
+
+```text
+source
+  ↓
+passage
+  ↓
+translation
+  ↓
+proposition
+  ↓
+argument
+  ↓
+synthesis
+  ↓
+essay
+  ↓
+education
+```
+
+And every edge means something like:
+
+```text
+B materially depends_on A
+```
+
+Then that same edge supports:
+
+### Compilation
+
+```text
+changed(A)
+→ rebuild(descendants(A))
+```
+
+### Staleness
+
+```text
+invalidated(A)
+→ mark_stale(descendants(A))
+```
+
+### Explanation
+
+```text
+why(B)?
+→ ancestors(B)
+```
+
+### Agent scheduling
+
+```text
+ready(B)?
+→ all required parents valid
+```
+
+### Blast-radius analysis
+
+```text
+what breaks if A changes?
+→ descendants(A)
+```
+
+### Provenance
+
+```text
+where did B come from?
+→ derivation path to SOURCE
+```
+
+### Retrieval
+
+```text
+give relevant context around B
+→ bounded traversal
+```
+
+That convergence is more important than most individual technologies you've collected.
+
+Your `staleness.py` already captures the simplest version: invert the canonical DAG and propagate changes transitively.
+
+That abstraction deserves to become central.
+
+---
+
+# 4. But don't copy `fuck-off/lib` blindly
+
+This is where my review becomes much more critical.
+
+The ideas are strong.
+
+Some of the implementations are still experimental prototypes and **must not become canonical Pāṭala code as-is.**
+
+There are several subtle but important problems.
+
+## Problem A — `Authority.ceiling()` is semantically wrong
+
+This jumped out immediately.
+
+`lib/epistemic.py` says authority is four-dimensional:
+
+```text
+generation
+evidence
+review
+publication
+```
+
+Good.
+
+Then:
+
+```python
+def ceiling(self):
+    ...
+    return max(ranks)
+```
+
+This destroys the reason for having a vector.
+
+For example, conceptually:
+
+```text
+generation = machine
+evidence = machine
+review = none
+publication = public
+```
+
+must **not** become epistemically stronger merely because it is public.
+
+Yet taking a numerical `max()` over incomparable axes creates exactly that class of issue.
+
+Similarly:
+
+```text
+FORMALLY_CHECKED
+SCHOLARLY_CORROBORATED
+INDEPENDENTLY_REVIEWED
+```
+
+are not positions on one universal scalar ladder.
+
+They establish different things.
+
+You were right earlier with the non-aggregate philosophy.
+
+Canonical Pāṭala should use:
+
+```text
+AuthorityVector {
+    generation
+    evidence
+    review
+    publication
+}
+```
+
+with partial-order comparison:
+
+[
+A \preceq B
+\iff
+\forall_i,; A_i \leq B_i
+]
+
+not:
+
+[
+authority(A) = \max_i A_i
+]
+
+This is a **major canonicalization requirement**.
+
+---
+
+# 5. There is an even more serious anti-theatre violation
+
+Look at these defaults:
+
+```python
+TYPE_DEFAULTS = {
+    "work": {
+        "epistemic_ceiling": "SCHOLARLY_CORROBORATED",
+        ...
+    },
+    "passage": {
+        "epistemic_ceiling": "SCHOLARLY_CORROBORATED",
+        ...
+    },
+}
+```
+
+A thing does not become scholarly corroborated because its object type is `work`.
+
+This conflicts directly with Pāṭala's strongest doctrine.
+
+Pāṭala's README says:
+
+> a tested schema ≠ a result; only independent gold + blind eval + metric + human adjudication makes something real.
+
+Therefore:
+
+```text
+object TYPE
+≠
+epistemic STATE
+```
+
+Canonical default should probably be:
+
+```text
+SOURCE object:
+    provenance_verified = true/false
+
+epistemic claim:
+    MACHINE_PROPOSED initially
+
+review:
+    independently advanced
+```
+
+A source can be authentically a scholarly publication without every proposition reconstructed from it becoming `SCHOLARLY_CORROBORATED`.
+
+This distinction is foundational.
+
+---
+
+# 6. `check_invariant()` currently does nothing
+
+`EpistemicEnvelope.check_invariant()` says:
+
+```python
+def check_invariant(self) -> bool:
+    ...
+    return True
+```
+
+That's fine inside an experiment.
+
+But it means the most important invariant is currently documentary rather than local executable truth.
+
+You need something more like:
+
+```text
+validate_projection(child, parents):
+
+    for dimension in authority_dimensions:
+        assert child.authority[dimension]
+               <= allowed_projection(parents, dimension)
+
+    assert derivation_policy(child.type, parents)
+```
+
+And importantly, not all transformations preserve every axis.
+
+Example:
+
+```text
+scholar-reviewed Sanskrit passage
+        ↓ machine translation
+```
+
+The translation does **not** inherit scholarly review.
+
+Similarly:
+
+```text
+adjudicated proposition
+        ↓ machine-generated multiple-choice question
+```
+
+The proposition's evidential authority may constrain the question's content, but the pedagogical quality of the question remains unreviewed.
+
+This is where Pāṭala can become unusually sophisticated.
+
+---
+
+# 7. `review.py` contains the right architectural primitive
+
+The actual shape of this is good.
+
+You have:
+
+```text
+state
++
+event/evidence
+→ deterministic reducer
+→ next state
+```
+
+rather than agents directly setting status.
+
+That should absolutely survive.
+
+This is one of the most important architectures in the entire system.
+
+Agents should never be allowed to do:
+
+```python
+object.status = "VERIFIED"
+```
+
+Instead:
+
+```text
+Agent produces ReviewEvent
+       ↓
+event appended
+       ↓
+Reducer
+       ↓
+state calculated deterministically
+```
+
+The canonical pattern should be:
+
+```text
+OBJECT
+immutable identity/content revision
+
+EVENT LOG
+append-only observations/actions
+
+REDUCER
+deterministic current-state computation
+
+PROJECTION
+materialized current state
+
+GATE
+predicate permitting next transition
+```
+
+This is where herdr + Arcan + your own factory converge.
+
+---
+
+# 8. But `review.py` also proves why prototypes must stay prototypes
+
+Current API:
+
+```python
+reducer(
+    state,
+    evidence_ok: bool,
+    human_approves: bool
+)
+```
+
+`evidence_ok: bool` is far too lossy.
+
+You spent months building a system specifically to avoid:
+
+```text
+quality = true
+confidence = .94
+```
+
+Canonical reducer inputs should therefore be typed events:
+
+```text
+EvidenceAttached
+SourceVerified
+TranslationAuditCompleted
+ContradictionRaised
+FindingOpened
+FindingResolved
+IndependentReviewSubmitted
+AdjudicationRecorded
+DependencyInvalidated
+ArtifactSuperseded
+```
+
+And the reducer decides what those events imply.
+
+Agents should submit **claims about state**, not state itself.
+
+That distinction is fundamental.
+
+---
+
+# 9. The Pāṭala schema audit confirms the real enemy
+
+This may be the most important file in `patalacheckpoints` right now.
+
+You have **four `ReviewEvent` definitions**, three authority models, four proposition models and two diverged generations of the scholarly-object Pydantic model.
+
+That's not merely cleanup debt.
+
+It's architectural risk.
+
+If agents cannot resolve:
+
+```text
+What is a Proposition?
+What is ReviewEvent?
+What is Authority?
+```
+
+then every downstream capability becomes fragile.
+
+And adding:
+
+```text
+fuck-off/lib/epistemic.py
+fuck-off/lib/review.py
+```
+
+as another implementation would make it worse.
+
+So the next major operation should **not** be copying features.
+
+It should be establishing the canonical kernel.
+
+---
+
+# 10. I would freeze exactly ~8 canonical primitives
+
+Do not canonicalize 40 models.
+
+Canonicalize a tiny kernel.
+
+Something approximately like:
+
+```text
+ObjectRef
+Revision
+Derivation
+EvidenceUse
+AuthorityVector
+ReviewEvent
+Finding
+ProjectionState
+```
+
+Everything else can be domain-specific.
+
+I'd go further and say this should become its own internal package:
+
+```text
+patala_kernel/
+    identity.py
+    derivation.py
+    authority.py
+    events.py
+    reducers.py
+    gates.py
+    staleness.py
+```
+
+Not:
+
+```text
+translation_engine authority
+research authority
+source-evidence authority
+ML authority
+review authority
+agent authority
+```
+
+Every subsystem imports the kernel.
+
+---
+
+# 11. The canonical object model I think you're converging toward
+
+Something like:
+
+```text
+                    ┌───────────────┐
+                    │ CanonicalObject│
+                    └───────┬───────┘
+                            │
+                 immutable revision
+                            │
+               ┌────────────▼────────────┐
+               │      Derivation         │
+               │ parents + operation     │
+               └────────────┬────────────┘
+                            │
+               ┌────────────▼────────────┐
+               │     EvidenceUses        │
+               └────────────┬────────────┘
+                            │
+               ┌────────────▼────────────┐
+               │    AuthorityVector      │
+               └────────────┬────────────┘
+                            │
+      ┌─────────────────────▼────────────────────┐
+      │          append-only ObjectEvents         │
+      └─────────────────────┬────────────────────┘
+                            │
+                     deterministic
+                        reducer
+                            │
+                  ┌─────────▼─────────┐
+                  │ ProjectionState   │
+                  └─────────┬─────────┘
+                            │
+                           gate
+                            │
+                            ▼
+                    next derivation
+```
+
+That is the **Pāṭala kernel**.
+
+Translation, arguments, essays, education, scholar review and publication all become applications of it.
+
+---
+
+# 12. `TranslationProof` is directionally excellent
+
+This is one of the better things in `fuck-off`.
+
+It explicitly rejects a single aggregate quality score and preserves dimensions like:
+
+* source coverage
+* grounding
+* morphology
+* syntax
+* negation
+* modality
+* terminology
+* semantic entailment
+* XCOMET
+* parallel witness
+* human review
+
+This matches what Pāṭala should be.
+
+The central insight:
+
+[
+TranslationQuality \neq \sum_i w_i q_i
+]
+
+Instead:
+
+```text
+TranslationProof =
+vector of independently inspectable obligations
+```
+
+Yes.
+
+That is much more defensible.
+
+And this is potentially a real piece of proprietary conceptual infrastructure.
+
+---
+
+# 13. But `TranslationProof.publication_gate()` has a bug in philosophy
+
+The code blocks on:
+
+```text
+FAIL
+CONFLICT
+certain WARNs
+missing human adjudication
+```
+
+Fine.
+
+But numeric metrics such as:
+
+```text
+coverage = 0.73
+xcomet = 0.82
+```
+
+don't appear to have explicit hard thresholds in the shown gate.
+
+More fundamentally:
+
+**the proof shouldn't itself decide policy.**
+
+Separate:
+
+```text
+TranslationProof
+```
+
+from:
+
+```text
+PublicationPolicy
+```
+
+Because different surfaces may have different requirements.
+
+For example:
+
+```text
+private experiment:
+human review not required
+
+machine draft:
+requires coverage >= 0.98
+
+public machine translation:
+requires negation PASS + source coverage...
+
+scholar edition:
+requires independent reviewer
+
+canonical edition:
+requires adjudication
+```
+
+So:
+
+```text
+proof = facts
+policy = requirements
+gate = evaluate(proof, policy)
+```
+
+That makes the system vastly more reusable.
+
+---
+
+# 14. Your compile-on-write direction is exactly right
+
+`SPEC-00` is probably the strongest infrastructure document in the experimental repo.
+
+Its governing model is:
+
+```text
+WRITE SIDE
+expensive / expressive / dynamic
+
+          ↓
+
+canonical store
+
+          ↓
+
+projection compiler
+
+          ↓
+
+READ SIDE
+stupid / immutable / cached
+```
+
+I strongly agree.
+
+For Pāṭala this is much better than making Postgres reconstruct every ontology, argument, translation and scholar state at request time.
+
+Think:
+
+```text
+CANONICAL OBJECTS
+      ↓
+compile
+      ↓
+/work/...json
+/passage/...json
+/argument/...json
+/proof/...json
+/course/...json
+/agent-bundle/...json
+/page/...html
+```
+
+Then Cloudflare is basically distributing compiled knowledge.
+
+That's elegant and scales extremely well.
+
+---
+
+# 15. This also answers your Rust question from earlier
+
+Do **not** rewrite Pāṭala in Rust.
+
+The repo itself has now converged on the same answer.
+
+Use Rust where profiling shows a genuinely expensive deterministic kernel.
+
+Otherwise:
+
+```text
+Python
+ingestion
+research
+NLP
+ML
+factory
+schema tooling
+offline compilation
+
+Postgres
+canonical transactional store
+
+Parquet/DuckDB
+bulk analytics
+
+R2
+immutable artifacts
+
+TypeScript/Astro/Workers
+edge/public surfaces
+
+Rust
+optional hot deterministic kernels
+```
+
+Your architecture makes request-time language speed far less important because most read paths become:
+
+```text
+HTTP
+→ CDN
+→ bytes
+```
+
+rather than:
+
+```text
+HTTP
+→ application
+→ reasoning graph
+→ DB
+→ reconstruction
+```
+
+---
+
+# 16. `fuck-off` has also found your killer systems concept: reactive scholarship
+
+One recent commit is particularly interesting:
+
+```text
+source retraction
+→ 5/5 prose units stale
+```
+
+That is where this project stops looking like "a Sanskrit website."
+
+Imagine:
+
+A scholar changes one interpretation of:
+
+```text
+IPVV 1.5.11
+```
+
+Pāṭala immediately knows:
+
+```text
+7 translations depend on it
+3 propositions use it
+2 arguments depend on them
+1 synthesis is affected
+4 essay paragraphs are now stale
+2 educational questions no longer have valid answer proofs
+1 video script cites the affected synthesis
+```
+
+That is insane in the useful sense.
+
+Traditional scholarship is mostly:
+
+```text
+publication → static PDF → forgotten dependencies
+```
+
+Pāṭala can become:
+
+```text
+scholarly knowledge with dependency-aware reactive compilation
+```
+
+I think that is one of your strongest differentiators.
+
+---
+
+# 17. And it connects directly to the education layer
+
+This is why your education idea is stronger than "make Brilliant for philosophy."
+
+Suppose a question is:
+
+```text
+Which claim would Utpaladeva have to reject?
+```
+
+Its correct answer has a proof path:
+
+```text
+SOURCE
+→ translation
+→ proposition
+→ inference
+→ incompatibility
+→ answer
+```
+
+If the proposition becomes stale:
+
+```text
+question.stale = true
+```
+
+automatically.
+
+Therefore educational exercises become **compiled epistemic projections**.
+
+That's far more interesting than ordinary generated quizzes.
+
+You can prove why:
+
+```text
+A = correct
+B = attractive but contradicts premise P3
+C = scope error
+D = confusion of epistemic and metaphysical necessity
+```
+
+The distractors themselves can correspond to identifiable reasoning errors.
+
+That is real "understanding as proof."
+
+---
+
+# 18. The argument system should adopt the same architecture
+
+I would stop treating argument objects as merely another data model.
+
+An argument should be an executable derivation object.
+
+For example:
+
+```text
+Argument {
+    premises: [P1, P2, P3]
+    inference: I1
+    conclusion: C
+    defeaters: [...]
+    dependencies: [...]
+}
+```
+
+Then a verifier produces:
+
+```text
+ArgumentCheck {
+    structurally_valid
+    evidence_complete
+    scope_consistent
+    modality_consistent
+    contradiction_status
+}
+```
+
+And your existing reasoning discipline becomes machine-enforceable:
+
+```text
+validity ≠ soundness
+```
+
+The graph should represent that distinction.
+
+---
+
+# 19. One major missing primitive: `Crux`
+
+Your experiments are already converging toward this but I would elevate it into the core.
+
+A disagreement is not merely:
+
+```text
+A conflicts_with B
+```
+
+You want:
+
+```text
+Crux {
+    proposition
+    alternatives
+    decisive_evidence
+    downstream_arguments
+    current_status
+}
+```
+
+Then:
+
+```text
+What would change our mind?
+```
+
+becomes executable.
+
+That allows Pāṭala to do something most argument-map software does badly:
+
+**represent the minimum unresolved proposition on which downstream conclusions actually turn.**
+
+This is central for:
+
+* philosophy
+* peer review
+* translation disagreements
+* comparative traditions
+* scientific debates
+* educational questions
+
+---
+
+# 20. Another missing primitive: explicit `Transformation`
+
+Don't encode derivation merely as generic `derived_from`.
+
+The operation matters.
+
+You need:
+
+```text
+SOURCE
+--segment-->
+PASSAGE
+
+PASSAGE
+--translate-->
+TRANSLATION
+
+TRANSLATION
+--reconstruct-->
+PROPOSITION
+
+PROPOSITIONS
+--infer-->
+ARGUMENT
+
+ARGUMENTS
+--synthesize-->
+SYNTHESIS
+
+SYNTHESIS
+--render-->
+ESSAY
+
+ARGUMENT
+--pedagogical_compile-->
+QUESTION
+```
+
+Then each transformation has its own authority propagation rules.
+
+This is much more powerful.
+
+Formally:
+
+[
+O_{n+1}=T(O_n,\theta)
+]
+
+and:
+
+[
+A(O_{n+1})
+\preceq
+P_T(A(O_n))
+]
+
+where (P_T) is the authority-preservation policy of transformation (T).
+
+That is far better than universal "child ceiling ≤ parent ceiling."
+
+---
+
+# 21. A transformation registry becomes a huge architectural unlock
+
+Imagine:
+
+```python
+@transformation("translate")
+class Translate:
+    input = Passage
+    output = Translation
+    invalidates = [...]
+    preserves = [...]
+    requires = [...]
+    verifier = [...]
+```
+
+Then the same registry drives:
+
+```text
+agent permissions
+factory scheduling
+staleness
+recompilation
+validation
+MCP verbs
+documentation
+UI provenance
+```
+
+This gets very close to executable epistemology.
+
+---
+
+# 22. The agent architecture should be event-driven, not agent-driven
+
+Your old architecture naturally became:
+
+```text
+Agent 1
+Agent 2
+Agent 3
+```
+
+Pāṭala's handover has already made the correct correction:
+
+> progress is tracked per-layer, not per-agent.
+
+Push that further.
+
+Agents should be workers.
+
+The work is canonical.
+
+Instead of:
+
+```text
+Agent1 is working on translation
+```
+
+store:
+
+```text
+Task:
+    transformation = translate
+    input = passage:X
+    policy = translation-v2
+```
+
+Then:
+
+```text
+Run:
+    task = ...
+    worker = Hermes/Qwen/Claude/human
+    started
+    completed
+
+Event:
+    TranslationProposed(...)
+```
+
+This is basically Task ≠ Run ≠ Event.
+
+Exactly the abstraction you were researching from Agetor.
+
+---
+
+# 23. Recommended canonical execution model
+
+I'd settle on:
+
+```text
+OBJECT
+what exists
+
+TRANSFORMATION
+what can happen to objects
+
+TASK
+requested transformation
+
+RUN
+one execution attempt
+
+EVENT
+immutable fact emitted during/after run
+
+REDUCER
+derives current state
+
+GATE
+decides eligibility
+
+ARTIFACT
+compiled output
+
+DEPENDENCY
+connects upstream/downstream state
+```
+
+This is enough to express almost everything Pāṭala needs.
+
+And critically, it is small.
+
+---
+
+# 24. How I would reorganize the relationship between these repos
+
+Keep:
+
+### `patalacheckpoints`
+
+Canonical Pāṭala organism.
+
+Contains:
+
+```text
+domains/
+schemas/
+factory/
+products/
+adapters/
+evals/
+surfaces/
+```
+
+### `fuck-off`
+
+Rename eventually if useful, but conceptually:
+
+```text
+patala-lab
+```
+
+Contains:
+
+```text
+experiments/
+third_party/
+papers/
+benchmarks/
+prototypes/
+results/
+```
+
+Every experiment must produce something like:
+
+```yaml
+experiment: herdr-reducer
+hypothesis: reducer improves review-state determinism
+dataset: doyle-v1
+result: pass
+limitations:
+promotion_candidate: true
+canonical_target: patala_kernel/reducer
+```
+
+Then migration happens deliberately.
+
+---
+
+# 25. I would create a formal promotion gate
+
+This is the piece missing between the repos.
+
+Something like:
+
+```text
+EXPERIMENT
+    ↓
+works on toy data?
+    ↓
+works on real Doyle corpus?
+    ↓
+works on SciFact?
+    ↓
+works on Sanskrit/IPVV?
+    ↓
+mutation-tested?
+    ↓
+schema-compatible?
+    ↓
+does not duplicate canonical primitive?
+    ↓
+PROMOTE
+```
+
+You already started domain generalization with SciFact and another philosophical corpus according to the recent commit history.
+
+That's excellent.
+
+But the final test should be Pāṭala's gold data.
+
+---
+
+# 26. Your recent commit sequence shows a genuine architectural convergence
+
+The `fuck-off` commits over about an hour are revealing.
+
+You moved through:
+
+```text
+third-party review/staleness experiments
+↓
+PathRAG / HippoRAG / KG2Code
+↓
+Pāṭala future mapping
+↓
+13-layer frontier mapping
+↓
+promoted kernels
+↓
+TranslationProof
+↓
+ScholarReview
+↓
+schema compiler
+↓
+provenance
+↓
+crux compiler
+↓
+mutation testing
+↓
+Merkle state
+↓
+reactive essays
+↓
+temporal truth
+↓
+SciFact generalization
+↓
+Verified Epistemic OS
+```
+
+That is not random accumulation anymore.
+
+Everything is converging onto approximately five ideas:
+
+```text
+1. immutable evidence-bearing objects
+2. explicit derivation/dependency graph
+3. event + reducer state transitions
+4. authority-aware promotion gates
+5. compilation of downstream projections
+```
+
+**Those five things are the system.**
+
+Most other technologies are implementation details.
+
+---
+
+# 27. Things I would demote
+
+There are some ideas I would actively prevent from becoming architectural centerpieces.
+
+### GraphRAG itself
+
+Useful retrieval substrate.
+
+Not moat.
+
+### HippoRAG
+
+Interesting retrieval experiment.
+
+Not architecture.
+
+### PathRAG
+
+Potentially useful bounded-context algorithm.
+
+Still replaceable.
+
+### Graphiti
+
+Useful patterns for temporal knowledge.
+
+Don't let it define your canonical schema.
+
+### nanopublications
+
+Excellent output/interoperability format.
+
+Do not restructure Pāṭala around RDF.
+
+### Stencila
+
+Excellent adapter/schema inspiration.
+
+Again: adapter outward.
+
+### AIF
+
+Good argument export/interchange.
+
+Pāṭala's canonical argument model should remain richer.
+
+### Loom
+
+Excellent agent work substrate inspiration.
+
+Do not rebuild Pāṭala around somebody else's work-task ontology.
+
+The moat is the composition.
+
+---
+
+# 28. Things I would promote aggressively
+
+These are architectural primitives.
+
+**Tier S**
+
+```text
+content-addressed immutable revisions
+explicit derivations
+typed transformations
+append-only events
+deterministic reducers
+authority vector
+dependency staleness
+projection compiler
+proof-carrying outputs
+```
+
+**Tier A**
+
+```text
+crux objects
+review findings
+scholar attestations
+TranslationProof
+mutation testing
+signed/Merkle manifests
+Task ≠ Run
+reactive educational objects
+```
+
+**Tier B**
+
+```text
+PathRAG
+KG2Code
+Graphiti temporal edges
+nanopub exports
+AIF exports
+Stencila exports
+CTS
+TEI
+```
+
+That hierarchy prevents shiny-library architecture.
+
+---
+
+# 29. `patalacheckpoints` itself is healthier than it looks
+
+One thing I want to correct from earlier reviews: the repo's problem is no longer lack of vision.
+
+The top-level organization has improved enormously.
+
+The handover now clearly distinguishes:
+
+```text
+REAL + TESTED
+DATA
+DESIGN
+ARCHIVED
+SCHEMA DIVERGENCE
+```
+
+and explicitly lists the proven core:
+
+```text
+SOURCE→T1→L0→L200
+5 golds
+Nyāya gate
+certificates
+NAT
+43 routes
+19 skills
+```
+
+while refusing to pretend SYNTHESIS/ESSAY/EDUCATION exist.
+
+That honesty is important.
+
+The project is becoming governable.
+
+---
+
+# 30. But the top priority in `HANDOVER.md` is now slightly outdated
+
+It says:
+
+```text
+1. Layer 12 Pieces 1-4
+2. Scholar Attestation
+3. SYNTHESIS/ESSAY/EDUCATION
+...
+```
+
+Given what `fuck-off` has now proven, I'd change the execution order.
+
+## New Piece 0 — Canonical kernel convergence
+
+Before more Layer 12.
+
+Unify:
+
+```text
+ReviewEvent
+AuthorityVector
+Proposition
+CanonicalObjectRef
+Derivation
+```
+
+and kill duplicated definitions.
+
+Otherwise every Layer-12 capability embeds drift.
+
+---
+
+# 31. My revised build sequence
+
+One list, because this is the part I'd actually execute:
+
+1. **Freeze `patala_kernel.v1`.** Resolve the existing `ReviewEvent`, Authority and Proposition schema divergence flagged by `SCHEMA-AUDIT.json`.
+
+2. **Define Transformation explicitly.** Add transformation type, parent object revisions, parameters, tool/model/version, output revision, and authority-preservation policy.
+
+3. **Bring in event sourcing.** No direct semantic status mutation. Task/Run emits events; reducer calculates state.
+
+4. **Promote the staleness walker.** The `fuck-off` implementation is small and conceptually right; rewrite it against object-level dependencies instead of merely layer-level dependencies.
+
+5. **Promote the deterministic review reducer.** But replace `evidence_ok: bool` with typed events and canonical Findings.
+
+6. **Repair Authority semantics.** No `max(axis)` scalar. Use vector/partial-order semantics and transformation-specific propagation.
+
+7. **Implement content-addressed revisions + Merkle manifest.** Every scholarly state becomes reproducible.
+
+8. **Build the projection compiler.** Canonical DB → immutable R2 bundles/pages/API objects. `SPEC-00` is the right architecture.
+
+9. **Run the whole kernel on IPVV.** One passage should traverse SOURCE → translation proof → proposition → argument → review → synthesis.
+
+10. **Then build Scholar Attestation.** A scholar should attest to granular objects, findings or transformations—not "approve the project."
+
+11. **Then enable SYNTHESIS.** It should be a compiled projection over adjudicated/qualified argument objects.
+
+12. **Then ESSAY.** Every sentence should retain dependency links.
+
+13. **Then EDUCATION.** Every correct answer and distractor should be derivable from the same graph.
+
+14. **Then MCP/API.** Expose primitives like `explain`, `why`, `dependencies`, `cruxes`, `stale`, `review`, `attest`, `compile`.
+
+15. **Only then optimize hot paths.** Rust only where measurements justify it.
+
+---
+
+# 32. What the end product really is
+
+I would now describe Pāṭala much more precisely than "knowledge graph" or "scholarly platform."
+
+It is becoming a:
+
+# **proof-carrying scholarly compiler**
+
+Input:
+
+```text
+sources
+editions
+translations
+scholarship
+human judgements
+```
+
+Intermediate representation:
+
+```text
+immutable scholarly objects
++
+evidence
++
+derivations
++
+arguments
++
+authority
++
+reviews
++
+cruxes
+```
+
+Compiler:
+
+```text
+dependency-aware
+epistemically gated
+incremental
+reactive
+```
+
+Outputs:
+
+```text
+translations
+critical apparatus
+argument maps
+research packets
+papers
+essays
+courses
+questions
+videos
+APIs
+agent bundles
+benchmarks
+```
+
+And crucially:
+
+```text
+every output retains a machine-traversable proof path
+back to its evidence and review history
+```
+
+That is a much stronger framing than "AI for Sanskrit."
+
+---
+
+# 33. The strongest moat is becoming clearer
+
+It's not your LLM.
+
+It's not Sanskrit OCR.
+
+It's not GraphRAG.
+
+It's not even the corpus by itself.
+
+The moat becomes the growing accumulation of:
+
+[
+M =
+O \times D \times R \times H \times A
+]
+
+where:
+
+```text
+O = canonical scholarly objects
+D = derivation/provenance graph
+R = reviewed judgements
+H = historical correction/revision graph
+A = adoption through identifiers/interfaces
+```
+
+Once thousands of claims, translations, argument steps and educational objects refer to canonical Pāṭala IDs and scholar attestations, copying the raw texts doesn't reproduce the organism.
+
+---
+
+# 34. The most important thing not to do now
+
+Do **not** respond to the `fuck-off` discoveries by adding another architecture layer to Pāṭala.
+
+You have enough architecture.
+
+The dangerous pattern would be:
+
+```text
+new idea
+→ new schema
+→ new package
+→ new state model
+→ new docs
+```
+
+Instead:
+
+```text
+new idea
+→ experiment
+→ falsify
+→ compare to canonical primitive
+→ either discard
+→ or improve primitive
+```
+
+`fuck-off` should remain the place where abstractions are allowed to die.
+
+Pāṭala should be the place where only survivors are allowed in.
+
+---
+
+## Bottom line
+
+`patalacheckpoints` is the actual organism.
+
+`fuck-off` has become its **epistemic wind tunnel**.
+
+That is an excellent architecture **provided you establish a strict promotion gate now**.
+
+The single highest-value next move is not another frontier repo search. It is:
+
+> **Converge `ReviewEvent`, Authority, Proposition, Derivation and Object identity into one tiny `patala_kernel`, then port the successful `fuck-off` reducer + staleness + proof experiments onto the IPVV without introducing any new competing schemas.**
+
+If that works, the rest of Pāṭala—translation, argumentation, scholar review, essays, education, agent coordination—starts collapsing onto one extremely coherent substrate rather than remaining a collection of impressive subsystems.
+
+
+Hermes has **not** been superseded, but its role should be demoted from “the orchestrator of Pāṭala” to **the default execution runtime for Pāṭala tasks**.
+
+That distinction matters.
+
+Hermes is currently very good at the mechanical agent-runtime layer: isolated subagents, parallel delegation, tool execution, MCP, skills, persistent memory/session recall, cron, provider/model switching, and trajectory export. Its own architecture centers on an `AIAgent` loop that handles prompts, tool dispatch, retries, provider failover, compression, child agents, and execution budgets. ([Hermes Agent][1])
+
+But after what `fuck-off` has uncovered, **Pāṭala itself should own orchestration semantics.**
+
+The architecture I would now build is:
+
+```text
+                    PĀṬALA CONTROL PLANE
+                 ──────────────────────────
+
+                   Canonical Object Graph
+                           │
+                    Transformation DAG
+                           │
+                    Dependency / State
+                           │
+              ┌────────────▼────────────┐
+              │      TASK COMPILER      │
+              │                         │
+              │ what needs doing?       │
+              │ why?                    │
+              │ prerequisites?          │
+              │ acceptance gate?        │
+              └────────────┬────────────┘
+                           │
+                    executable Task
+                           │
+          ┌────────────────┼────────────────┐
+          ▼                ▼                ▼
+       Hermes          deterministic      humans
+       runtime             jobs           scholars
+          │
+      subagents
+      tools/MCP
+      skills
+      models
+          │
+          ▼
+         RUN
+          │
+          ▼
+       EVENTS
+          │
+          ▼
+   deterministic reducer
+          │
+          ▼
+       new state
+          │
+        staleness
+          │
+       next tasks
+```
+
+So:
+
+> **Hermes executes. Pāṭala decides.**
+
+That is the cleanest formulation.
+
+## Why I would definitely keep Hermes
+
+Hermes matches a surprisingly large portion of what you need operationally.
+
+Its subagent system gives fresh isolated contexts, inherited tools, parallel batches and nested orchestration. ([Hermes Agent][2]) Its skills system uses progressive disclosure rather than stuffing every workflow into every context, and the skill format is portable rather than fundamentally Hermes-specific. ([Hermes Agent][3])
+
+And MCP is exactly where your Pāṭala API should connect. Hermes' own docs describe MCP as an adapter layer where **Hermes remains the agent and external systems contribute tools**. ([Hermes Agent][4])
+
+That gives you:
+
+```text
+Hermes
+  ├── GitHub
+  ├── shell
+  ├── browser/research
+  ├── arXiv skill
+  ├── coding skills
+  └── Pāṭala MCP
+          ├── resolve_object
+          ├── get_dependencies
+          ├── get_evidence
+          ├── claim_task
+          ├── submit_event
+          ├── run_verifier
+          ├── inspect_crux
+          └── request_review
+```
+
+That's excellent.
+
+And crucially, Hermes is MIT-licensed and relatively replaceable. ([Hermes Agent][1])
+
+That's exactly what you want from an execution substrate.
+
+---
+
+# What we have superseded
+
+We've superseded **Hermes-as-project-manager**.
+
+Previously the mental model was roughly:
+
+```text
+Hermes coordinator
+    ↓
+Agent 1
+Agent 2
+Agent 3
+    ↓
+they read markdown
+    ↓
+decide what project state means
+    ↓
+edit files
+```
+
+I would kill that model.
+
+It gives the LLM too much authority over canonical state.
+
+Instead:
+
+```text
+Pāṭala:
+"This task is READY."
+
+Task {
+    transformation: RECONSTRUCT_PROPOSITION
+    inputs: [...]
+    policy: proposition-v3
+    required_capabilities: [...]
+    acceptance_tests: [...]
+}
+```
+
+Hermes receives that.
+
+It can then decide:
+
+```text
+I'll delegate Sanskrit analysis to worker A,
+argument consistency to worker B,
+and source checking to worker C.
+```
+
+Fine.
+
+But Hermes cannot decide:
+
+```text
+therefore proposition X is canonical
+```
+
+It returns:
+
+```text
+RunResult
+Events[]
+Artifacts[]
+```
+
+Then the **Pāṭala reducer/verifiers** decide what happened.
+
+That is a massive architectural improvement.
+
+---
+
+# The three layers should be brutally separated
+
+I think your final infra should explicitly distinguish:
+
+### 1. Pāṭala kernel — truth/state
+
+Your code.
+
+Very small.
+
+```text
+identity
+revision
+derivation
+authority
+events
+reducers
+gates
+staleness
+task state
+```
+
+This is sacred.
+
+No agent framework should define these semantics.
+
+### 2. Pāṭala scheduler/compiler — work
+
+Also yours.
+
+```text
+object changed
+→ determine stale descendants
+→ determine required transformations
+→ construct Tasks
+→ choose executable dependency order
+```
+
+This is what I would call the **orchestrator**, if we keep that word.
+
+It's deterministic wherever possible.
+
+### 3. Hermes — execution
+
+Replaceable worker runtime.
+
+```text
+Task
+→ reason
+→ tools
+→ skills
+→ delegate
+→ generate result/events
+```
+
+Hermes is really good here.
+
+---
+
+# In fact, don't make one “master Hermes agent”
+
+I think this was another assumption we've superseded.
+
+Use Hermes more like Kubernetes for cognition.
+
+Pāṭala asks for capabilities:
+
+```text
+task.requires:
+    - sanskrit_analysis
+    - textual_comparison
+```
+
+Then configuration decides:
+
+```text
+profile: sanskrit-scholar
+model: X
+skills:
+  - sanskrit-morphology
+  - patala-translation
+mcp:
+  - patala
+  - corpus
+```
+
+Another:
+
+```text
+profile: adversarial-reviewer
+model: Y
+skills:
+  - argument-audit
+  - citation-check
+```
+
+Another:
+
+```text
+profile: coding-worker
+model: Z
+skills:
+  - github
+  - test-driven-development
+```
+
+Hermes supports external skill directories, which makes keeping these skills **inside the Pāṭala repository** straightforward rather than coupling them to `~/.hermes`. ([Hermes Agent][3])
+
+So I would have:
+
+```text
+patala/
+├── kernel/
+├── schemas/
+├── factory/
+├── orchestration/
+│   ├── tasks/
+│   ├── reducers/
+│   ├── scheduler/
+│   └── policies/
+│
+├── agents/
+│   ├── profiles/
+│   │   ├── translator.yaml
+│   │   ├── reviewer.yaml
+│   │   ├── researcher.yaml
+│   │   └── coder.yaml
+│   │
+│   └── skills/
+│       ├── translation-proof/
+│       ├── argument-audit/
+│       ├── scholar-review/
+│       └── corpus-ingest/
+│
+├── mcp/
+│   └── patala/
+│
+├── adapters/
+│   └── hermes/
+│
+└── experiments/
+```
+
+That organization gets you very close to the final clean extraction later.
+
+---
+
+# Hermes `delegate_task` still has a valuable place
+
+Don't reimplement its subagent mechanics.
+
+Hermes already handles the fiddly stuff:
+
+* isolated contexts;
+* concurrent workers;
+* child-agent budgets;
+* inherited tools;
+* nested orchestrators;
+* cancellation;
+* model/provider switching. ([Hermes Agent][2])
+
+So a Pāṭala Task could be relatively large:
+
+```text
+TASK: adversarially review ARG-0019
+```
+
+Then within that single Run Hermes can spawn:
+
+```text
+worker A → source fidelity
+worker B → formal validity
+worker C → strongest defeater
+```
+
+Its optional subagent-development workflow even uses fresh subagents and separate spec/quality review passes, which is close to patterns we independently converged upon. ([Hermes Agent][5])
+
+That's useful machinery.
+
+Just don't confuse **Hermes' internal delegation graph** with **Pāṭala's canonical dependency graph**.
+
+The former disappears after a run.
+
+The latter is scholarship.
+
+---
+
+# The same applies to Hermes memory
+
+Hermes has persistent memory/session recall. ([Hermes Agent][6])
+
+Useful for:
+
+```text
+"This compiler has this weird CLI quirk."
+"Tom prefers this build process."
+"This repository lives here."
+```
+
+Not acceptable for:
+
+```text
+"IPVV 1.5.11 establishes proposition P."
+```
+
+That belongs in Pāṭala.
+
+So:
+
+```text
+Hermes memory
+= ergonomic operational memory
+
+Pāṭala graph
+= canonical epistemic memory
+```
+
+Never blur those.
+
+---
+
+# Same thing with Hermes cron
+
+Nice for:
+
+```text
+run nightly corpus discovery
+check Crossref updates
+check broken URLs
+run dependency audits
+```
+
+Hermes already supports scheduled automations. ([Hermes Agent][1])
+
+But the resulting changes should arrive as:
+
+```text
+ExternalChangeDetected
+SourceCandidateFound
+SourceUnavailable
+```
+
+and enter Pāṭala normally.
+
+Cron does not mutate truth.
+
+---
+
+# I would also avoid hard-coding Hermes everywhere
+
+Build this tiny abstraction:
+
+```python
+class AgentRuntime:
+    run(task: Task) -> RunResult
+```
+
+Then:
+
+```text
+HermesRuntime
+LocalModelRuntime
+OpenAIAgentRuntime
+HumanRuntime
+DeterministicRuntime
+```
+
+Pāṭala knows none of their internals.
+
+Something like:
+
+```text
+Task
+ │
+ ▼
+RuntimeRouter
+ │
+ ├── deterministic → Python/Rust worker
+ │
+ ├── research      → Hermes
+ │
+ ├── review        → Hermes profile
+ │
+ └── adjudication  → human
+```
+
+That makes Hermes **default but replaceable**.
+
+This is important because agent runtimes are moving insanely quickly.
+
+Your scholarly state needs to live for decades.
+
+---
+
+# And this answers the eventual Rust question
+
+Your instinct to **keep everything in Pāṭala while the ontology is still evolving** is right.
+
+Do not prematurely extract.
+
+Something like:
+
+```text
+2026 now
+
+Pāṭala monorepo
+    ↓
+discover real abstractions
+    ↓
+stabilize contracts
+    ↓
+run IPVV end-to-end
+    ↓
+run several other domains
+    ↓
+profile actual bottlenecks
+    ↓
+extract
+```
+
+Eventually you might get:
+
+```text
+patala-kernel          Rust
+patala-compiler        Rust/Python
+patala-schemas         generated JSON Schema
+patala-python          Python bindings
+patala-ts              TS bindings
+patala-mcp             Rust/TS
+patala-scholarship     domain package
+```
+
+But **only after the contracts stop moving**.
+
+Right now rewriting things like `ReviewEvent` into Rust would just immortalize schema mistakes faster.
+
+---
+
+# One change I'd make immediately to the current repo merge
+
+I wouldn't literally merge the `fuck-off` directory tree wholesale.
+
+Bring it under:
+
+```text
+patala/
+  research/
+    lab/
+```
+
+or:
+
+```text
+experiments/frontier/
+```
+
+with three statuses:
+
+```text
+PROBE
+PROVEN
+PROMOTED
+```
+
+Then every experimental implementation gets metadata:
+
+```yaml
+id: rka-staleness
+status: PROVEN
+tested_on:
+  - doyle
+  - scifact
+canonical_candidate:
+  kernel: orchestration/staleness
+limitations:
+  - currently layer-level
+  - needs object-level dependencies
+```
+
+When promoted:
+
+```text
+experiments/frontier/rka-staleness
+              │
+              │ informs
+              ▼
+patala/kernel/staleness.py
+```
+
+But production code never imports `experiments/`.
+
+That's a clean merge without losing the incredible speed you're getting from the lab.
+
+---
+
+# The final agentic architecture
+
+This is what I think you have converged on:
+
+```text
+                         USER / SCHOLAR
+                              │
+                              ▼
+                        PĀṬALA SURFACE
+                              │
+                              ▼
+┌──────────────────────────────────────────────────────────┐
+│                    PĀṬALA KERNEL                         │
+│                                                          │
+│ Objects · Revisions · Evidence · Authority · Derivations │
+│ Events · Reducers · Findings · Cruxes · Gates            │
+└─────────────────────────────┬────────────────────────────┘
+                              │
+                              ▼
+┌──────────────────────────────────────────────────────────┐
+│                 REACTIVE FACTORY                         │
+│                                                          │
+│ dependency graph                                         │
+│ staleness                                                │
+│ incremental compilation                                  │
+│ task generation                                          │
+│ readiness predicates                                     │
+└─────────────────────────────┬────────────────────────────┘
+                              │
+                         READY TASKS
+                              │
+                              ▼
+┌──────────────────────────────────────────────────────────┐
+│                    RUNTIME ROUTER                         │
+│                                                          │
+│ deterministic job | Hermes | human | future runtime      │
+└───────────────┬──────────────────────────┬───────────────┘
+                │                          │
+                ▼                          ▼
+             HERMES                    SCHOLAR
+                │
+      skills / tools / MCP
+      model routing
+      delegate_task
+      parallel workers
+                │
+                ▼
+           RUN RESULT
+                │
+        events + artifacts
+                │
+                ▼
+          PĀṬALA REDUCER
+                │
+                ▼
+             STATE
+                │
+              compile
+                ▼
+┌──────────────────────────────────────────────────────────┐
+│                  IMMUTABLE OUTPUTS                       │
+│                                                          │
+│ pages · APIs · proofs · arguments · essays · education   │
+│ agent bundles · datasets · benchmarks                    │
+└──────────────────────────────────────────────────────────┘
+```
+
+That's the one.
+
+**Hermes remains extremely useful. It just isn't Pāṭala's brain anymore.**
+
+Pāṭala's deterministic graph/factory is the orchestrator.
+
+Hermes is the **general-purpose cognitive executor sitting underneath it**.
+
+That separation is actually better for Hermes too: you can exploit all of its rapid improvements—new models, skills, tools, delegation methods—without allowing any of those changes to alter what Pāṭala means by evidence, state, review, or truth. ([Hermes Agent][1])
+
+[1]: https://hermes-agent.nousresearch.com/docs/?utm_source=chatgpt.com "Hermes Agent Documentation | Hermes Agent"
+[2]: https://hermes-agent.nousresearch.com/docs/user-guide/features/delegation/?utm_source=chatgpt.com "Subagent Delegation | Hermes Agent"
+[3]: https://hermes-agent.nousresearch.com/docs/user-guide/features/skills?utm_source=chatgpt.com "Skills System | Hermes Agent"
+[4]: https://hermes-agent.nousresearch.com/docs/guides/use-mcp-with-hermes/?utm_source=chatgpt.com "Use MCP with Hermes | Hermes Agent"
+[5]: https://hermes-agent.nousresearch.com/docs/user-guide/skills/optional/software-development/software-development-subagent-driven-development?utm_source=chatgpt.com "Subagent Driven Development — Execute plans via delegate_task subagents (2-stage review) | Hermes Agent"
+[6]: https://hermes-agent.nousresearch.com/docs/user-guide/features/tools/?utm_source=chatgpt.com "Tools & Toolsets | Hermes Agent"
+
+Yes. After reviewing the performance doctrine, `SPEC-00`, and the staleness/performance spec, I think there is now a sufficiently coherent architecture to call **the final target stack**.
+
+The central design choice is more important than any framework:
+
+> **Pāṭala is a compiler, not a request-time knowledge application.**
+
+Expensive scholarship happens on the write side. The system incrementally compiles that state into immutable artifacts optimized separately for humans, agents, search, analytics, and interoperability. The normal read path should therefore be approximately `request → edge cache → bytes`, exactly as the performance doctrine states.
+
+Cloudflare's current infrastructure strongly supports this: matching static assets can be served without invoking Worker code at all, while Worker-first execution can be restricted to dynamic routes such as `/api/*`. ([Cloudflare Docs][1])
+
+# 1. The final architecture
+
+```text
+                              PĀṬALA
+
+ ┌──────────────────────────────────────────────────────────────────┐
+ │                         WRITE PLANE                              │
+ │                                                                  │
+ │ Sources → ingest → parse → normalize → enrich → review → derive │
+ │              Python / Hermes / scholars / deterministic tools   │
+ └──────────────────────────────┬───────────────────────────────────┘
+                                │ events
+                                ▼
+ ┌──────────────────────────────────────────────────────────────────┐
+ │                     PĀṬALA KERNEL                               │
+ │                                                                  │
+ │ IDs · Revisions · Objects · Evidence · Derivations              │
+ │ Authority · Events · Reducers · Findings · Gates · Cruxes       │
+ └──────────────────────────────┬───────────────────────────────────┘
+                                │
+                                ▼
+ ┌──────────────────────────────────────────────────────────────────┐
+ │                CANONICAL TRANSACTIONAL STATE                     │
+ │                                                                  │
+ │                         PostgreSQL                               │
+ │ objects · events · dependencies · reviews · aliases · tasks     │
+ └──────────────────────────────┬───────────────────────────────────┘
+                                │
+                     dependency / projection DAG
+                                │
+                                ▼
+ ┌──────────────────────────────────────────────────────────────────┐
+ │                    REACTIVE COMPILER                             │
+ │                                                                  │
+ │ hashes → staleness → affected subtree → incremental rebuild     │
+ │                                                                  │
+ │ Python + SQL + DuckDB + Polars                                  │
+ │ Rust only for measured hot kernels                              │
+ └──────────────────────────────┬───────────────────────────────────┘
+                                │
+          ┌─────────────────────┼──────────────────────┐
+          ▼                     ▼                      ▼
+        HTML               compact JSON          Parquet/Zstd
+      Markdown             agent bundles         graph exports
+      JSON-LD              evidence packs        TEI/nanopubs
+          │                     │                      │
+          └─────────────────────┼──────────────────────┘
+                                ▼
+ ┌──────────────────────────────────────────────────────────────────┐
+ │                     IMMUTABLE ARTIFACT STORE                     │
+ │                                                                  │
+ │                  Cloudflare R2 + SHA-256                         │
+ │                  manifests + versioned objects                   │
+ └──────────────────────────────┬───────────────────────────────────┘
+                                │
+                                ▼
+ ┌──────────────────────────────────────────────────────────────────┐
+ │                        EDGE READ PLANE                            │
+ │                                                                  │
+ │               Cloudflare CDN / Static Assets                     │
+ │                                                                  │
+ │     human HTML      JSON/API       MCP       datasets            │
+ └───────────────┬────────────┬─────────────┬───────────────────────┘
+                 │            │             │
+                 ▼            ▼             ▼
+              HUMAN         AGENT         HERMES
+```
+
+This takes the strongest proposition in `SPEC-00` literally: **write side rich and expensive; read side stupid and immutable.**
+
+---
+
+# 2. The formal technology stack
+
+I'd freeze the target stack roughly as follows.
+
+| Concern                     | Final default                                                      |
+| --------------------------- | ------------------------------------------------------------------ |
+| Canonical database          | **PostgreSQL**                                                     |
+| Production Postgres hosting | **Neon initially**                                                 |
+| Canonical blobs             | **Cloudflare R2**                                                  |
+| Content identity            | **SHA-256**                                                        |
+| Event/state kernel          | **Python initially**, tiny portable contracts                      |
+| Factory/orchestration       | **Python**                                                         |
+| Agent execution             | **Hermes adapter**                                                 |
+| Analytical compilation      | **DuckDB + Polars + SQL**                                          |
+| Web                         | **Astro**                                                          |
+| Interactive UI              | **Preact islands**                                                 |
+| Edge/API                    | **Cloudflare Workers + TypeScript**                                |
+| Dynamic DB bridge           | **Hyperdrive**                                                     |
+| API validation              | Generated JSON Schema + TypeBox/Zod-style edge bindings            |
+| MCP                         | **thin Streamable-HTTP adapter over same query layer**             |
+| Search v1                   | **Postgres FTS + pg_trgm**                                         |
+| Semantic retrieval          | secondary embedding index                                          |
+| Search v2                   | **Tantivy only if profiling demands it**                           |
+| Bulk publication            | **Parquet + Zstd**                                                 |
+| Streaming export            | **NDJSON**                                                         |
+| Interop                     | CTS / TEI / AIF / nanopub / PROV adapters                          |
+| Trust                       | content hashes + Merkle manifests + signatures                     |
+| CI                          | tests + schema validation + epistemic checks + performance budgets |
+| Rust                        | **only stabilized, measured deterministic kernels**                |
+
+That is almost exactly where the performance files converge.
+
+---
+
+# 3. PostgreSQL is the canonical truth store
+
+But this requires a subtle distinction.
+
+**Postgres is canonical transactional state. It is not the normal public read layer.**
+
+Store things such as:
+
+```text
+objects
+object_revisions
+works
+passages
+entities
+relations
+
+evidence_uses
+derivations
+dependencies
+
+events
+review_findings
+attestations
+authority_state
+
+tasks
+runs
+artifacts
+aliases
+```
+
+The performance spec correctly argues that giant `corpus.jsonl` and giant `graph.json` files should become **exports**, not canonical databases.
+
+The graph itself therefore lives relationally:
+
+```text
+subject
+predicate
+object
+```
+
+plus evidence and provenance.
+
+From that you compile:
+
+```text
+graph.json
+GraphML
+Parquet
+Cytoscape
+adjacency packs
+visualization tiles
+agent bundles
+```
+
+This is much cleaner than letting one serialization become your ontology.
+
+---
+
+# 4. R2 becomes the compiled knowledge filesystem
+
+This is one of the highest-leverage pieces.
+
+Everything immutable goes into R2:
+
+```text
+/source/sha256/...
+/artifacts/sha256/...
+
+/works/IPVV/v17/...
+/passages/IPVV-1.5.11/v8/...
+/arguments/ARG-019/v4/...
+/proofs/TRP-123/v9/...
+/bundles/ARG-019/v4/8000.json
+```
+
+The content files themselves can be addressed by SHA-256:
+
+```text
+sha256:e6844f...
+```
+
+while friendly IDs resolve to them.
+
+That gives you simultaneously:
+
+* deduplication;
+* immutable caches;
+* deterministic ETags;
+* reproducibility;
+* provenance;
+* cheap invalidation;
+* history;
+* signed manifests.
+
+Those benefits are explicitly identified in `SPEC-00`.
+
+The database might therefore contain:
+
+```text
+artifact
+──────────────────────────────
+logical_id
+revision
+content_hash
+media_type
+r2_key
+byte_size
+token_count
+created_from
+```
+
+That `token_count` field becomes surprisingly useful for agents.
+
+---
+
+# 5. The real secret weapon: the projection DAG
+
+This is probably the single most important infrastructure abstraction.
+
+Don't have miscellaneous scripts such as:
+
+```text
+build_graph.py
+build_essay.py
+build_questions.py
+```
+
+that independently decide what to rebuild.
+
+Represent the transformations.
+
+```text
+SOURCE
+  │
+  └──extract──► PASSAGE
+                  │
+                  ├──translate──► TRANSLATION
+                  │                  │
+                  │                  └──audit──► TRANSLATION_PROOF
+                  │
+                  └──reconstruct──► PROPOSITION
+                                       │
+                                       └──infer──► ARGUMENT
+                                                     │
+                         ┌───────────────────────────┼─────────┐
+                         ▼                           ▼         ▼
+                     SYNTHESIS                    CRUX      REVIEW
+                         │
+                         ▼
+                       ESSAY
+                         │
+                         ├──► HTML
+                         ├──► agent bundle
+                         └──► EDUCATION
+```
+
+Every projection records:
+
+```text
+input hashes
+transformation version
+configuration version
+output hash
+```
+
+`SPEC-00` already identifies exactly this projection-DAG pattern.
+
+Then:
+
+```text
+hash(inputs + transformation + config)
+```
+
+is essentially your cache key.
+
+If it hasn't changed:
+
+```text
+DO NOTHING
+```
+
+---
+
+# 6. Performance and staleness become the same system
+
+This is one of the best conclusions in the `fuck-off` research.
+
+The staleness spec says the dependency graph is simultaneously:
+
+1. the correctness graph;
+2. the staleness propagator;
+3. the incremental rebuild scheduler;
+4. part of the retrieval structure.
+
+Example:
+
+```text
+IPVV passage P
+   ↓
+translation T
+   ↓
+proposition C
+   ↓
+argument A
+   ↓
+essay E
+   ↓
+question Q
+```
+
+Scholar corrects `P`.
+
+Pāṭala does:
+
+```text
+hash(P) changed
+
+descendants(P)
+→ T
+→ C
+→ A
+→ E
+→ Q
+```
+
+But importantly it doesn't necessarily rebuild everything immediately.
+
+It computes:
+
+```text
+STALE:
+T C A E Q
+```
+
+Then rebuild priority can be:
+
+```text
+T → C → A → E/Q
+```
+
+Anything unrelated remains untouched.
+
+That's how 100 documents and 10 million passages can use essentially the same architecture.
+
+---
+
+# 7. This is why I would NOT use Kafka/Airflow/Dagster initially
+
+Pāṭala's DAG is unusually deterministic and domain-specific.
+
+You already possess the information:
+
+```text
+what changed
+what depends on it
+how to rebuild it
+what hash is expected
+```
+
+A small custom incremental compiler is therefore likely more valuable than importing a gigantic generic workflow scheduler.
+
+Use Cloudflare Queues or a simple durable work queue for distribution where necessary.
+
+But the **dependency semantics live in Pāṭala**, not in Airflow.
+
+This matches `SPEC-00`, which explicitly says you may not need Dagster/Airflow for the projection DAG.
+
+---
+
+# 8. Humans become extremely fast because most of the site isn't an application
+
+This is where Astro makes sense.
+
+A page such as:
+
+```text
+/texts/ipvv
+/passages/ipvv-1.5.11
+/people/abhinavagupta
+/concepts/pratyabhijna
+/arguments/ARG019
+```
+
+should usually already exist as:
+
+```text
+HTML bytes
+```
+
+Not:
+
+```text
+browser
+→ JS
+→ API
+→ Worker
+→ DB
+→ graph query
+→ JSON
+→ React
+→ render
+```
+
+Instead:
+
+```text
+browser
+    ↓
+nearest Cloudflare edge
+    ↓
+already generated HTML
+```
+
+Cloudflare currently supports asset-first routing: if the file exists as a static asset, it is served without invoking Worker code. ([Cloudflare Docs][1])
+
+So a normal reading route becomes close to CDN performance.
+
+### JavaScript only where interaction genuinely exists
+
+```text
+GraphExplorer
+ArgumentMap
+Search
+Compare
+Timeline
+TranslationWorkbench
+ReviewUI
+```
+
+Those can be Preact islands.
+
+Everything else:
+
+```text
+semantic HTML
+CSS
+```
+
+The repo's performance budget rightly proposes ordinary content routes approaching **0 KB JS**.
+
+---
+
+# 9. Agents need a different projection from humans
+
+This is critical.
+
+Humans want:
+
+```text
+beautiful page
+narrative ordering
+links
+visual hierarchy
+```
+
+Agents want:
+
+```text
+minimal tokens
+canonical IDs
+evidence
+relations
+authority
+dependencies
+```
+
+So you compile both from the same object.
+
+Example:
+
+```text
+/argument/ARG019
+```
+
+Human HTML.
+
+And:
+
+```text
+/api/v1/argument/ARG019?view=compact
+```
+
+Maybe:
+
+```json
+{
+  "id": "ARG019",
+  "status": "reviewed",
+  "conclusion": "PROP442",
+  "premises": ["PROP81", "PROP102"],
+  "defeaters": ["DEF8"],
+  "cruxes": ["CRUX3"],
+  "evidence": ["P:IPVV:1.5.11"],
+  "authority": {...},
+  "revision": 7
+}
+```
+
+No decorative prose.
+
+---
+
+# 10. But we can do better: compiled agent bundles
+
+This is perhaps **the best performance idea in SPEC-00**.
+
+Normally an agent might do:
+
+```text
+get(argument)
+get(premises)
+get(evidence)
+get(authority)
+get(defeaters)
+get(crux)
+get(neighbors)
+```
+
+That's seven network round trips and seven tool decisions.
+
+Instead:
+
+```text
+context(
+    id="ARG019",
+    budget=8000
+)
+```
+
+One call.
+
+The compiler has already generated:
+
+```text
+ARG019/
+    compact-2k.json
+    context-8k.json
+    context-32k.json
+```
+
+This agent-bundle design is explicitly proposed in `SPEC-00`.
+
+I'd formalize three budget tiers:
+
+```text
+micro      ~1–2k tokens
+standard   ~8k
+deep       ~32k
+```
+
+Each bundle has deterministic priority ordering.
+
+For arguments:
+
+```text
+1 conclusion
+2 premises
+3 cruxes
+4 strongest evidence
+5 strongest defeater
+6 authority
+7 provenance
+8 nearby context until budget exhausted
+```
+
+Now agent retrieval becomes almost like CPU cache design.
+
+---
+
+# 11. The ultimate agent performance goal
+
+Not:
+
+```text
+fast API
+```
+
+but:
+
+> **minimum reasoning steps between intent and sufficient evidence.**
+
+A 10 ms API that requires 17 tool calls can be worse than a 100 ms API requiring one.
+
+So I would establish these budgets:
+
+```text
+ordinary object resolution      1 tool call
+context retrieval               1 tool call
+evidence trace                  1 tool call
+comparison                      1 tool call
+dependency explanation          1 tool call
+```
+
+`SPEC-00` already defines essentially this requirement: one agent question ≈ one request, default depth ≤2 and bounded response sizes.
+
+---
+
+# 12. MCP should therefore be tiny
+
+Do **not** expose 100 Pāṭala MCP tools.
+
+Your earlier Pāṭala already drifted toward dozens of routes/tools. The compiled architecture means you can collapse the public agent interface dramatically.
+
+Something like:
+
+```text
+resolve()
+search()
+get()
+context()
+trace()
+compare()
+query()
+submit()
+```
+
+Potentially eight tools.
+
+`context` might do:
+
+```text
+context(
+    ids=["ARG019"],
+    include=[
+        "premises",
+        "evidence",
+        "cruxes",
+        "defeaters"
+    ],
+    depth=1,
+    token_budget=8000
+)
+```
+
+And `query()` exposes the deterministic KG2Code-style language.
+
+MCP becomes an **adapter**, not another knowledge subsystem, which is exactly what `SPEC-00` recommends.
+
+---
+
+# 13. Hermes sits above this extremely thin interface
+
+This connects to the previous architecture.
+
+Hermes should not crawl the Pāṭala repository trying to reconstruct project state.
+
+Instead:
+
+```text
+Pāṭala task
+    ↓
+Hermes
+    ↓
+context(ARG019, budget=8000)
+    ↓
+one ready-made evidence packet
+```
+
+For a translation task:
+
+```text
+task bundle =
+    source passage
+    morphology
+    nearby passages
+    terminology history
+    parallels
+    known issues
+    target schema
+    acceptance policy
+```
+
+One initial context operation.
+
+Hermes then uses its skills/tools/subagents for cognition.
+
+This will make agents dramatically better **even without better models**, because you remove retrieval uncertainty and context assembly overhead.
+
+---
+
+# 14. Dynamic requests: Workers + Hyperdrive, but only when necessary
+
+There still are genuinely dynamic operations:
+
+```text
+/search
+/review
+/auth
+/user workspace
+/admin
+/task claiming
+/submit event
+/adjudicate
+/rare graph query
+```
+
+These hit a Cloudflare Worker.
+
+Then potentially:
+
+```text
+Worker
+→ Hyperdrive
+→ PostgreSQL
+```
+
+Hyperdrive currently provides connection pooling for databases behind Workers and caches eligible read queries. ([Cloudflare Docs][2])
+
+Cloudflare notes that placing compute near the database can materially reduce per-query latency when a Worker performs multiple DB calls. ([Cloudflare Docs][3])
+
+But this should be the **cold/dynamic path**.
+
+Not:
+
+```text
+GET /texts/ipvv
+→ database
+```
+
+That's the architecture mistake we're avoiding.
+
+---
+
+# 15. Be careful with Hyperdrive caching
+
+One update I'd make to the `fuck-off` performance doctrine:
+
+Hyperdrive's query cache is useful, but it currently does **not automatically invalidate cached SELECT results when writes occur**. ([Cloudflare Docs][2])
+
+Therefore split dynamic reads conceptually:
+
+```text
+CACHEABLE
+search results
+public metadata
+dashboards
+non-critical discovery
+
+FRESH
+review decisions
+permissions
+task claims
+newly submitted events
+adjudication
+read-after-write state
+```
+
+Cloudflare explicitly recommends a separate cache-disabled Hyperdrive configuration for freshness-sensitive reads. ([Cloudflare Docs][2])
+
+So I would run:
+
+```text
+HYPERDRIVE_CACHED
+HYPERDRIVE_FRESH
+```
+
+This is much cleaner.
+
+---
+
+# 16. Search should remain boring
+
+Do not install Elasticsearch because "search system."
+
+Start:
+
+```text
+Postgres FTS
++
+pg_trgm
+```
+
+Then a secondary semantic retrieval system:
+
+```text
+embedding(passages)
+```
+
+But maintain:
+
+[
+\text{vector similarity} \neq \text{knowledge relation}
+]
+
+Embeddings help discover.
+
+They do not alter canonical graph truth.
+
+If search eventually becomes measurably hot:
+
+```text
+Rust + Tantivy
+```
+
+becomes attractive.
+
+Exactly as the performance docs recommend.
+
+---
+
+# 17. DuckDB + Parquet are massively useful here
+
+Your canonical mutable state remains Postgres.
+
+But compiling/analyzing huge scholarly datasets is a different workload.
+
+For:
+
+```text
+10 million passages
+all evidence edges
+benchmark analysis
+bulk graph transformations
+translation statistics
+```
+
+write Parquet.
+
+Then DuckDB can query it efficiently offline.
+
+Conceptually:
+
+```text
+POSTGRES
+live truth
+
+R2
+immutable objects
+
+PARQUET
+bulk analytical truth snapshot
+```
+
+Don't make Postgres serve every analytical job.
+
+And don't make JSONL your analytics format.
+
+`SPEC-00` explicitly recommends Parquet + Zstd for serious bulk publication.
+
+---
+
+# 18. Repo organization I would actually converge onto
+
+Now that you're merging the lab back into Pāṭala, I'd aim for this:
+
+```text
+patala/
+│
+├── kernel/
+│   ├── identity/
+│   ├── objects/
+│   ├── derivation/
+│   ├── authority/
+│   ├── events/
+│   ├── reducers/
+│   ├── gates/
+│   └── staleness/
+│
+├── schemas/
+│   ├── source/
+│   ├── translation/
+│   ├── proposition/
+│   ├── argument/
+│   ├── review/
+│   ├── education/
+│   └── generated/
+│
+├── factory/
+│   ├── dag/
+│   ├── compiler/
+│   ├── projections/
+│   ├── invalidation/
+│   ├── queue/
+│   └── publish/
+│
+├── pipelines/
+│   ├── ingest/
+│   ├── extract/
+│   ├── sanskrit/
+│   ├── translation/
+│   ├── arguments/
+│   ├── research/
+│   ├── synthesis/
+│   └── education/
+│
+├── agents/
+│   ├── runtime/
+│   ├── hermes/
+│   ├── profiles/
+│   └── skills/
+│
+├── retrieval/
+│   ├── search/
+│   ├── graph/
+│   ├── bundles/
+│   └── query/
+│
+├── apps/
+│   ├── web/             Astro
+│   ├── api/             Worker
+│   ├── mcp/             thin adapter
+│   └── review/
+│
+├── storage/
+│   ├── postgres/
+│   ├── r2/
+│   └── migrations/
+│
+├── analytics/
+│   ├── duckdb/
+│   ├── parquet/
+│   └── benchmarks/
+│
+├── interoperability/
+│   ├── tei/
+│   ├── cts/
+│   ├── aif/
+│   ├── nanopub/
+│   └── prov/
+│
+├── experiments/
+│   └── frontier/
+│       ├── PROBE/
+│       ├── PROVEN/
+│       └── archived/
+│
+├── docs/
+│   ├── architecture/
+│   ├── contracts/
+│   ├── domains/
+│   ├── operations/
+│   └── decisions/
+│
+└── tests/
+    ├── schema/
+    ├── epistemic/
+    ├── provenance/
+    ├── compiler/
+    ├── integration/
+    └── performance/
+```
+
+**Production code never imports from `experiments/`.**
+
+An experiment gets promoted by rewriting it against stable kernel contracts.
+
+---
+
+# 19. Docs should also be compiled
+
+This is another place you can dramatically reduce the clunkiness of old Pāṭala.
+
+Don't maintain 19 documents that each independently say:
+
+```text
+Layer 3 is PARTIAL
+```
+
+Canonical machine state:
+
+```text
+architecture/manifest.yaml
+schemas
+task graph
+test results
+benchmark results
+```
+
+Then generate:
+
+```text
+CURRENT_STATE.md
+NAVIGATION.md
+FEATURES.md
+SCHEMA_STATUS.md
+AGENT_HANDOVER.md
+```
+
+from it.
+
+That applies the exact same architecture to documentation:
+
+> **docs become projections of state.**
+
+Human-readable docs remain excellent, but contradictory status documents become much harder to produce.
+
+---
+
+# 20. The performance CI should be brutal
+
+I would establish explicit budgets.
+
+### Human reading
+
+```text
+ordinary page JS              0 KB target
+interactive page JS           bounded island only
+compressed HTML               <100 KB typical
+CLS                           ~0
+cached page origin work       0
+```
+
+The existing performance spec proposes essentially these bounds.
+
+### Agent
+
+```text
+resolve                  1 request
+context                  1 request
+compare                  1 request
+trace                    1 request
+
+default context          <= 4k tokens
+standard deep context    <= 8k
+graph depth              <= 2 default
+```
+
+### Factory
+
+```text
+changing one passage MUST NOT rebuild one work
+changing one work MUST NOT rebuild entire corpus
+```
+
+And CI should verify this.
+
+For a fixture graph:
+
+```text
+mutate node P23
+expected invalidated = {T23,C23,A4,E2,Q6,Q7}
+actual invalidated   = ...
+```
+
+Mismatch = test failure.
+
+---
+
+# 21. Benchmark correctness and speed together
+
+This is crucial.
+
+A fast wrong graph is useless.
+
+For every hot path:
+
+```text
+latency
+bytes
+tokens
+cache hit rate
+DB calls
+objects traversed
+```
+
+plus:
+
+```text
+evidence fidelity
+staleness correctness
+authority preservation
+trace completeness
+```
+
+Your performance and epistemics should never become separate departments.
+
+`SPEC-13` gets this exactly right: the same dependency graph supplies both correctness and incremental performance.
+
+---
+
+# 22. Deployment topology
+
+I would keep production surprisingly simple.
+
+```text
+                     CLOUDFLARE
+
+       ┌────────────────────────────────┐
+       │ Workers Static Assets / CDN    │
+       │                                │
+       │ HTML                           │
+       │ compiled JSON                  │
+       │ CSS/assets                     │
+       └───────────────┬────────────────┘
+                       │ misses/dynamic
+                       ▼
+              Cloudflare Worker
+                /api /mcp /search
+                       │
+            ┌──────────┴──────────┐
+            │                     │
+            ▼                     ▼
+           R2              Hyperdrive
+                                  │
+                                  ▼
+                              Neon PG
+```
+
+And separately:
+
+```text
+FACTORY COMPUTE
+
+local / VPS / CI / task workers
+       │
+       ├─ Python
+       ├─ Hermes
+       ├─ DuckDB
+       └─ future Rust kernels
+               │
+               ▼
+             PG/R2
+```
+
+The factory does **not need to live at the edge**.
+
+It's asynchronous work.
+
+---
+
+# 23. Why this becomes extremely cheap
+
+The architecture shifts cost from:
+
+[
+C \propto \text{number of reads}
+]
+
+toward:
+
+[
+C \propto \text{number of meaningful changes}
+]
+
+Suppose one scholarly synthesis costs enormous compute to create.
+
+You pay once:
+
+```text
+research
+LLMs
+review
+compilation
+```
+
+Then one million people/agents can read:
+
+```text
+the same immutable bytes
+```
+
+mostly through CDN caches.
+
+This is basically perfect for scholarship because scholarly content changes comparatively slowly but can be read indefinitely.
+
+The performance doctrine phrases it extremely well:
+
+> scholarly work happens asynchronously once; reading it should be nearly free forever.
+
+---
+
+# 24. Why it becomes lightning fast for humans
+
+Because:
+
+```text
+no DB
+no SSR
+no API waterfall
+no giant React hydration
+no graph reconstruction
+```
+
+for normal reading.
+
+The hot path is:
+
+```text
+URL
+↓
+nearest edge
+↓
+HTML bytes
+```
+
+Cloudflare confirms static assets are globally cached and served without Worker invocation by default when an asset matches. ([Cloudflare Docs][4])
+
+That's difficult to beat architecturally.
+
+---
+
+# 25. Why it becomes lightning fast for agents
+
+Even more interestingly, agent speed isn't primarily compute latency.
+
+You're reducing:
+
+```text
+round trips
+tool decisions
+retrieval uncertainty
+context duplication
+token count
+LLM reasoning needed to assemble state
+```
+
+Instead of:
+
+```text
+agent
+→ search
+→ inspect 10 results
+→ fetch graph
+→ fetch evidence
+→ fetch reviews
+→ reconstruct dependencies
+```
+
+you give:
+
+```text
+context(ARG019, 8000)
+```
+
+and return a **compiled epistemic cache line**.
+
+That's what I would actually call these internally:
+
+> **agent cache lines**
+
+Precompiled bundles optimized for model consumption.
+
+That could become one of Pāṭala's best pieces of infrastructure.
+
+---
+
+# 26. And this gives us a clean future Rust boundary
+
+Once the architecture stabilizes, profile.
+
+Maybe you discover:
+
+```text
+Unicode normalization        21%
+token-budget compiler        17%
+graph invalidation           2%
+JSON serialization           28%
+search indexing              32%
+```
+
+Then extract exactly the expensive deterministic bits.
+
+Potential future:
+
+```text
+patala-core        Rust
+patala-ids         Rust
+patala-compiler    Rust
+patala-search      Tantivy/Rust
+
+Python bindings
+TS/WASM bindings
+```
+
+But most scholarly transformations can remain Python indefinitely.
+
+The current performance spec is correct that rewriting filesystem/LLM/database orchestration in Rust won't magically make the overall system fast.
+
+The **architecture** gives you the speed first.
+
+Rust becomes optimization, not salvation.
+
+---
+
+# 27. The final formal Pāṭala model
+
+I would now make these three planes explicit in every architecture document:
+
+```text
+┌──────────────────────────────────────────────┐
+│                TRUTH PLANE                   │
+│                                              │
+│ objects / evidence / events / authority      │
+│ PostgreSQL + Pāṭala Kernel                   │
+└──────────────────────────────────────────────┘
+                      │
+                      ▼
+┌──────────────────────────────────────────────┐
+│               COMPILE PLANE                  │
+│                                              │
+│ dependencies / hashes / staleness / tasks    │
+│ Python + Hermes + DuckDB + optional Rust     │
+└──────────────────────────────────────────────┘
+                      │
+                      ▼
+┌──────────────────────────────────────────────┐
+│                 READ PLANE                   │
+│                                              │
+│ immutable HTML / JSON / bundles / Parquet    │
+│ R2 + Cloudflare CDN + thin Workers/MCP       │
+└──────────────────────────────────────────────┘
+```
+
+And one governing law for each:
+
+```text
+TRUTH PLANE
+Nothing becomes true because an agent says so.
+
+COMPILE PLANE
+Nothing recomputes unless its dependencies changed.
+
+READ PLANE
+Nothing computes at request time if bytes could already exist.
+```
+
+That is the architecture.
+
+Everything we've found in `fuck-off`—staleness propagation, deterministic reducers, compiled bundles, content addressing, incremental projection DAGs, KG2Code, agent context budgets—slots naturally into those three planes instead of becoming another collection of disconnected technology experiments.
+
+And I think that is sufficiently coherent now that **I would stop researching basic infrastructure alternatives and start building toward this exact target inside Pāṭala**. The remaining research should be narrow benchmarking of individual replaceable kernels, not further redesign of the system.
+
+[1]: https://developers.cloudflare.com/workers/static-assets/routing/worker-script/?utm_source=chatgpt.com "Worker script · Cloudflare Workers docs"
+[2]: https://developers.cloudflare.com/hyperdrive/concepts/query-caching/?utm_source=chatgpt.com "Query caching · Cloudflare Hyperdrive docs"
+[3]: https://developers.cloudflare.com/hyperdrive/reference/faq/?utm_source=chatgpt.com "FAQ · Cloudflare Hyperdrive docs"
+[4]: https://developers.cloudflare.com/workers/static-assets/?utm_source=chatgpt.com "Static Assets · Cloudflare Workers docs"
+
