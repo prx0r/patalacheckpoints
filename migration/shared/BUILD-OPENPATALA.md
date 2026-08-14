@@ -225,10 +225,10 @@ Update this file's status line + `PROPOSAL-OPENPATALA-SUBPROJECT.md` as checkpoi
 PROPOSAL ........ CONFIRMED (agentgraph §7 YES + §8 perf contract)
 REUSE DIRECTIVE .. ACCEPTED (agentgraph §10 — extend build-static-site.py + rebuild-on-commit.py, don't rebuild)
 BUILD SPEC ...... THIS FILE
-CHECKPOINT 1a .... ⬜  (extend build-static-site.py → compile the registry)
-CHECKPOINT 1b .... ⬜  (extend rebuild-on-commit.py input-tracking → include the registry)
-CHECKPOINT 2 ..... ⬜
-CHECKPOINT 6 ..... ⬜
+CHECKPOINT 1a .... ✅  (extended build-static-site.py → compiles the live registry: 14 layers, 33,233 objects)
+CHECKPOINT 1b .... ✅  (extended rebuild-on-commit.py → registry is a tracked input; content-change triggers, no-op verified)
+CHECKPOINT 2 ..... ✅  (additive /openpatala surface serves compiled bytes; /works factory contract UNCHANGED, tests ALL PASS)
+CHECKPOINT 6 ..... ⬜  (site renders a work from the artifacts)
 CHECKPOINT 4 ..... ⬜
 CHECKPOINT 3 ..... ⬜
 CHECKPOINT 5 ..... ⬜

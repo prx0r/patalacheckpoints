@@ -19,6 +19,8 @@ Run (dev):
 from __future__ import annotations
 
 import base64
+import json
+import os
 from typing import Any
 
 from fastapi import FastAPI, HTTPException, Query
@@ -27,6 +29,20 @@ from .adapter import AtlasAdapter
 
 app = FastAPI(title="Pāṭala Atlas", version="0.1", description="Pāṭala Authority Graph read API")
 _adapter = AtlasAdapter()
+
+# the compiled OpenPatala projections (compute-on-write artifacts served by build-static-site.py)
+# this is the LIVE registry surface (object_registry layers), served as immutable bytes — not _load()
+OPENPATALA_DIR = os.environ.get(
+    "OPENPATALA_DIR", "/mnt/HC_Volume_106427611/ip-graph/site/openpatala")
+
+
+def _compiled(layer: str) -> dict[str, Any] | None:
+    """Read a compiled OpenPatala projection artifact (immutable bytes, compute-on-write)."""
+    path = os.path.join(OPENPATALA_DIR, f"{layer.lower()}.json")
+    if not os.path.exists(path):
+        return None
+    with open(path) as f:
+        return json.load(f)
 
 # fields available for select/ / sort=  (the contract + work metadata we hold)
 SELECTABLE = {
@@ -171,3 +187,32 @@ def search(
     per_page: int = Query(50, ge=1, le=500),
 ):
     return list_works(search=q, select=select, filter=filter, sort=sort, cursor=cursor, per_page=per_page)
+
+
+# ── ADDITIVE: the LIVE registry surface (compiled projections, compute-on-write) ──────────
+# The existing /works contract above is UNCHANGED (the factory depends on it). These endpoints are
+# additive: they serve the compiled OpenPatala projections (object_registry layers) as immutable bytes.
+
+@app.get("/openpatala")
+def openpatala_registry():
+    """The live object_registry summary (per-layer counts + immutable root hash)."""
+    reg = _compiled("registry")
+    if not reg:
+        raise HTTPException(503, {"error": {"code": "PROJECTIONS_NOT_BUILT",
+                                             "message": "run scripts/build-static-site.py first",
+                                             "retryable": True}})
+    return {"data": {
+        "counts": reg.get("counts", {}),
+        "layers": reg.get("layers", {}),
+        "root_hash": reg.get("root_hash", ""),
+    }, "provenance": {"surface": "live-registry", "served": "compiled-bytes"}}
+
+
+@app.get("/openpatala/{layer}")
+def openpatala_layer(layer: str):
+    """One compiled layer projection (e.g. /openpatala/l0 -> the L0 count artifact)."""
+    rec = _compiled(layer)
+    if not rec:
+        raise HTTPException(404, {"error": {"code": "LAYER_NOT_FOUND", "message": f"no compiled layer {layer}",
+                                             "retryable": False}})
+    return {"data": rec, "provenance": {"surface": "live-registry", "served": "compiled-bytes"}}
