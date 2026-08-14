@@ -126,13 +126,17 @@ relationship=9 (the rich scholarship graph IS persisted; the audit §4 "never wr
 - `07-ml-epistemic-core.md` — propositions → arguments → cruxes → synthesis → essay/education (the moat)
 - `08-verification-plane.md` — external methods test Pāṭala (Inspect + atomic verifiers + metamorphic + abstention)
 - `09-organism.md` — the Human Understanding Graph + consumer-as-probe (the Q moat variable)
-- `external-tools.md` — the borrowed-infrastructure status board (62 tools, 6 adapter contracts)
+- `external-tools.md` — the borrowed-infrastructure status board (69 tools, 6 adapter contracts)
 - `githubclones.md` — repos to clone/raid for reusable machinery (researcher-built projects)
 - `RECONCILIATION.md` — per-layer: what Pāṭala built vs. external repos to borrow vs. remaining agentic work
 - `VISION-CHECKPOINT-MAP.md` — vision category → global-plan phase → CP checkpoint → agent → buildable gate
 - `INDUSTRY-ALIGNMENT.md` — our homegrown stack → formal standards (T1→IGT, L0→TEI+CTS, L200→TranslationProof-NOVEL, MQM, xAIF, RO-Crate)
 - `FRONTIER-MAP.md` — every layer's best-version, why, and how to build it (the capstone)
 - `GOLD-EVIDENCE-INDEX.md` — everything certified/gold/frozen/proven (what Pāṭala has actually verified)
+- `DATA-ASSETS-INDEX.md` — the real machine-readable data (corpus targets, registries, bibliography, site data)
+- `INTERFACES-INDEX.md` — everything callable (19 Hermes skills, 43 API routes, MCP tools, 7 examples)
+- `EVALS-BENCHMARKS-INDEX.md` — the real evaluation plane (frozen golds, NAT tests, review packets)
+- `IPVV-BUILD.md` — the complete IPVV build (scholarly layers + factory impl + golds + tests + results)
 
 > **Note:** the ML/research lane (Agent 1: arguments, cruxes, synthesis, essay, education — the
 > `machinelearning/research/patala_ml/` engines) is the epistemic upper layer, now covered by

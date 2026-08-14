@@ -140,7 +140,7 @@ related:        # docs it links to
 ## Layer 04 — Evidence
 **Vision:** the contracts + adapters + eval plane (reuse-first, Pāṭala owns the epistemic seam).
 **Docs:** `functionality/README.md`, `source-evidence/docs/reuse-first-stack.md`, `external-tools.md`.
-**Built:** contracts, 62 tools documented, eval plane. **BUILT.**
+**Built:** contracts, 69 tools documented, eval plane. **BUILT.**
 
 ## Layer 05 — Research / Epistemic Core (MOAT)
 **Vision:** propositions → arguments → cruxes → synthesis → essay/education; the ArgumentSynthesis convergence.
@@ -189,7 +189,7 @@ related:        # docs it links to
 1. **Resolve a doc** → its `layer`, `status`, `contribution`, `related` from the tables above.
 2. **Resolve a layer** → the per-layer synthesis section lists which docs build it + its overall vision.
 3. **Decide build vs borrow** → cross-check `docs/process/RECONCILIATION.md` (built vs borrowed vs agentic)
-   and `docs/process/external-tools.md` (the 62 tools).
+   and `docs/process/external-tools.md` (the 69 tools).
 4. **The status column is the honesty check** — `ASPIRATIONAL` means design, not built.
 
 ---

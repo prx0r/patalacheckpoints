@@ -20,7 +20,7 @@ Inspect AI (benchmark runtime). See `docs/process/external-tools.md`.
 - Contracts: `source-evidence/schema/` (external_record, derived_scholarly_object, source_evidence_profile,
   contracts_human_authority, text_fingerprint).
 - Evals: `source-evidence/evals/` (Inspect tasks, NAT tests, golds).
-- Tool registry: `source-evidence/docs/tools/MANIFEST.json` (62 tools + status).
+- Tool registry: `source-evidence/docs/tools/MANIFEST.json` (69 tools + status).
 
 ## 5. Processes
 ```
@@ -41,7 +41,7 @@ additions.
 - Tests: the 10 eval self-tests.
 
 ## 7. Docs
-- `docs/process/external-tools.md` — the status board (62 tools, 6 adapter contracts).
+- `docs/process/external-tools.md` — the status board (69 tools, 6 adapter contracts).
 - `docs/process/08-verification-plane.md` — the test-from-outside layer.
 - `docs/process/githubclones.md` — researcher repos to raid.
 - `docs/global/globalpartnerships.md` — the integration/identity strategy.

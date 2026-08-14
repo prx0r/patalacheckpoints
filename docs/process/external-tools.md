@@ -17,7 +17,7 @@ don't rebuild it — adopt it when the layer needs it.
 > foundational infrastructure than it feels like. ~6 adapter contracts let ~40 projects pour data into
 > the same epistemic machine.
 
-## 2. Integration status (62 tools, 2026-08-14)
+## 2. Integration status (69 tools, 2026-08-14)
 
 | Status | Count | Meaning |
 |---|---|---|
@@ -25,7 +25,7 @@ don't rebuild it — adopt it when the layer needs it.
 | **WIRED** | 2 | a working adapter exists |
 | **PARTIAL** | 2 | a stub / half-wired |
 | **DOCS_ONLY** | 20 | documented, no live code |
-| **PLANNED** | 21 | identified for adoption, not started |
+| **PLANNED** | 38 | identified for adoption, not started |
 | **WATCH** | 3 | audited as prior-art, not adopted |
 | **NOT_USED** | 2 | documented but intentionally not used |
 

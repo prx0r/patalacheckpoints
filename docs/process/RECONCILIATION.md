@@ -19,7 +19,7 @@ answer to "have we already built this ourselves?" — for the epistemic core, **
 | **01 Ingestion** | `ingestion/` (SourceAsserter, AtlasWriter, SnapshotStore, 8 adapters), R2 Bronze | Docling (+MCP), GROBID, Zotero Translation Server, S2ORC doc2json (normalization) | — (built) |
 | **02 Atlas** | Postgres 22-table schema, resolver, API, crosswalk, deterministic UUID | OpenAlex/Crossref (identity) | — (built) |
 | **03 Factory** | workers (t1-l200-c1), `object_registry` (versioned + event ledger), scheduler, DAG | Hermes kanban/cron/worktree (execution) | wire the live `factory_loop` + the 3 Hermes profiles |
-| **04 Evidence** | contracts (external_record, derived_scholarly_object, source_evidence_profile), 62 tools documented | (already documented in `external-tools.md`) | — (built) |
+| **04 Evidence** | contracts (external_record, derived_scholarly_object, source_evidence_profile), 69 tools documented | (already documented in `external-tools.md`) | — (built) |
 | **05 Research (MOAT)** | propositions/arguments/cruxes/synthesis, essay/education compilers, golds | DSPy (optimize extraction vs gold), AIF/xAIF adapters | ARGUMENT/SYNTHESIS real workers (declared but empty) |
 | **06 Commentarial** | design only (`06-commentarial-graph.md`) | **Vouch** (review-gate — we have this), SocraticKG (QA-extraction), Docling (substrate), instagraph/seventeen-centuries (KG candidates) | the paper→ScholarContributionPacket compiler |
 | **07 Verification** | eval plane (Inspect, NAT, golds), the 10 self-tests | RARR/RefChecker/GraphCheck (claim checking) | — (built) |
