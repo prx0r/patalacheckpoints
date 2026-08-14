@@ -62,16 +62,16 @@ The ip-graph lab's 17 kernels ARE the v3 kernel. Reuse, never rebuild.
 
 | Kernel (lib/) | What it does | Proof | Verdict |
 |---|---|---|---|
-| `epistemic.py` | envelope + 4-axis authority + invariant | kernel-suite | PROVEN |
-| `schema.py` | single-source schema compiler | kernel-suite | PROVEN |
+| `epistemic.py` | envelope + 4-axis authority + invariant | validate-kernels | PROVEN |
+| `schema.py` | single-source schema compiler | validate-kernels | PROVEN |
 | `review.py` | herdr reducer (promotion gate) | layer03-05 | PROVEN |
-| `scholar_review.py` | adversarial panel + cross-review + citecheck | kernel-suite | PROVEN |
+| `scholar_review.py` | adversarial panel + cross-review + citecheck | validate-kernels | PROVEN |
 | `staleness.py` | RKA blast-radius + rebuild order | layer03-05 | PROVEN |
-| `query.py` | KG2Code executable graph queries | kernel-suite | PROVEN |
-| `retrieval.py` | PathRAG + HippoRAG | kernel-suite, layer10 | PROVEN |
+| `query.py` | KG2Code executable graph queries | validate-kernels | PROVEN |
+| `retrieval.py` | PathRAG + HippoRAG | validate-kernels, layer10 | PROVEN |
 | **`translation.py`** | **TranslationProof (the moat, non-aggregate)** | **validate-products** | **PROVEN** |
-| `certificate.py` | Certification Weight (compounding) | kernel-suite | PROVEN |
-| `discovery.py` | Research Value Score | kernel-suite | PROVEN |
+| `certificate.py` | Certification Weight (compounding) | validate-kernels | PROVEN |
+| `discovery.py` | Research Value Score | validate-kernels | PROVEN |
 | `education.py` | LearningClaim + interaction compiler | education-organism | PROVEN-MECH |
 | `organism.py` | UserKnowledgeState + MisconceptionGraph | education-organism | PROVEN-MECH |
 | `organism_loop.py` | consumer→research machine | organism-loop | PROVEN-MECH |

@@ -147,7 +147,7 @@ layers:
     requires: [source, tokenization]
     produces: [translation]
     kernel: lib/discovery.py + lib/query.py
-    proof: kernel-suite
+    proof: validate-kernels
     transformation:
       operation: outline_argument
       verifier: outline covers the passage's moves
@@ -359,24 +359,24 @@ kernel_layers:
   - id: schema
     status: PROVEN
     kernel: lib/schema.py
-    proof: kernel-suite
+    proof: validate-kernels
     external_tools: [Stencila, C2PA]
     doc: single-source schema compiler — kills the divergence
   - id: retrieval
     status: PROVEN
     kernel: lib/retrieval.py + lib/query.py
-    proof: layer10, kernel-suite
+    proof: layer10, validate-kernels
     external_tools: [PathRAG, HippoRAG]
     doc: retrieval + KG2Code executable queries
   - id: certificate
     status: PROVEN
     kernel: lib/certificate.py
-    proof: kernel-suite (Certification Weight)
+    proof: validate-kernels (Certification Weight)
     doc: the compounding marketplace mechanism (expansion E1)
   - id: discovery
     status: PROVEN
     kernel: lib/discovery.py
-    proof: kernel-suite (Research Value Score)
+    proof: validate-kernels (Research Value Score)
     doc: the What-If Machine (expansion E3)
   - id: education
     status: PROVEN-MECHANISM

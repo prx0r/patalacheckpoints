@@ -87,7 +87,7 @@ Underneath: API · MCP · Context Bundles · Datasets.
 ### 5. Argument — ✅ PROVEN
 - **Artifact:** `Argument` (AIF Info/Inference/Conflict)
 - **Mechanism:** `lib/review.py` + `lib/scholar_review.py`
-- **Proof:** `validate-layer03-05.py` + `kernel-suite.py`
+- **Proof:** `validate-layer03-05.py` + `scripts/validate-kernels.py`
 - **External:** ASPIC+ · AIF/xAIF · IAM (verification); the IR is Pāṭala-owned
 - **Build:** scale the working argument exemplar to real IPVV arguments.
 
@@ -101,7 +101,7 @@ Underneath: API · MCP · Context Bundles · Datasets.
 - **Artifact:** ReviewEvent
 - **Mechanism:** `lib/scholar_review.py` — adversarial panel + cross-review + CiteCheck phantom
   detection + review-bias robustness (37.1% finding)
-- **Proof:** `kernel-suite.py` PROVEN
+- **Proof:** `scripts/validate-kernels.py` PROVEN
 - **Build:** add signed ReviewEvents (review is evidence about a target, never mutating it).
 
 ### 8. Scholar Attestation — ⚠️ PROVEN-MECHANISM (needs signed auth — gap E)
@@ -115,7 +115,7 @@ Underneath: API · MCP · Context Bundles · Datasets.
 ### 9. Research Packet — ✅ PROVEN
 - **Artifact:** ResearchPacket (the scholarly equivalent of a proof state)
 - **Mechanism:** `lib/retrieval.py` (PathRAG/HippoRAG) + `lib/query.py`
-- **Proof:** `validate-layer10.py` + `kernel-suite.py` (HippoRAG hub-bias finding documented)
+- **Proof:** `validate-layer10.py` + `scripts/validate-kernels.py` (HippoRAG hub-bias finding documented)
 - **Build:** the question→search-plan→evidence-packet flow (from paper-qa reference).
 
 ### 10. Synthesis — ⚠️ PROVEN-MECHANISM
@@ -177,7 +177,7 @@ Underneath: API · MCP · Context Bundles · Datasets.
 | 4 | Claim | PROVEN | validate-stack |
 | 5 | Argument | PROVEN | layer03-05 |
 | 6 | Crux | PROVEN | crux-compiler |
-| 7 | Review | PROVEN | kernel-suite |
+| 7 | Review | PROVEN | validate-kernels |
 | 8 | Scholar Attestation | PROVEN-MECH (gap E) | validate-agent-delivery |
 | 9 | Research Packet | PROVEN | layer10 |
 | 10 | Synthesis | PROVEN-MECH | validate-evolve |
