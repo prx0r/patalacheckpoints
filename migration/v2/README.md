@@ -13,6 +13,7 @@ store derives from one graph.*
 | `LAYER-MAPPING.md` | the complete clean map of every layer: new name · mechanism (real files/modules) · process notes · what it needs · relations · vision docs · checkpoints · honest-state table · priority map |
 | `MODULES.md` | the reusable module inventory — every module tagged `[REUSE]`/`[PARTIAL]`/`[GOLD-IPVV]`/`[NEW]`, the full Sanskrit→Education lifecycle, the scholar products, the verification plane, and the list of what does NOT exist yet |
 | `strategy/` | the NON-technical strategic view: thesis, ecosystem position, partnerships, economics, funding, go-to-market, product doctrine, first-product decision, organisation |
+| `goated/` | the curated index of Pāṭala's best standalone documents (the philosophy-engine set, the epistemic/truth set, the retrieval/agentic set, the global/architecture set, the Hermes set, the strategy/product set, the vision set) — with a "read only ten" short list |
 
 ## The core idea (one line)
 
