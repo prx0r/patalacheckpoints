@@ -1,3 +1,5 @@
+> **ARCHIVED / SUPERSEDED** — kept for history only. Do NOT follow as current. See `docs/INDEX.md` + `docs/DOCS-AUDIT.json` for the canonical doc for this concern.
+
 # Tantra Hub — Build Checkpoints
 
 *A running log of validated milestones. Each checkpoint = a target that is **functioning, validated, and integrated into the API** — nothing is "done" until the API can serve it. The API/MCP is a loose surface that grows as we build useful things, not a rigid pre-spec.*

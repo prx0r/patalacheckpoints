@@ -1,0 +1,298 @@
+{
+  "$schema": "patala.vision-manifest.v1",
+  "updated": "2026-08-14",
+  "note": "Machine-verifiable registry of every vision doc: distinct role, accurate name, layer, status, and consolidation status. Every file must have EXACTLY ONE distinct role — no two files may serve the same purpose. This is the anti-redundancy check.",
+  "categories": [
+    "foundations",
+    "scholars",
+    "economics",
+    "media_organism",
+    "platform_product",
+    "expansion",
+    "atlas_identity",
+    "education_program"
+  ],
+  "docs": [
+    {
+      "file": "CORE-BIBLE.md",
+      "name": "VisionCanon_OneVision_6Layers",
+      "role": "THE one-vision map (6 zoom layers)",
+      "category": "foundations",
+      "layer": "all",
+      "status": "PARTIAL"
+    },
+    {
+      "file": "vision-09-media-and-cross-tradition.md",
+      "name": "MediaProjectionAndCrossTraditionEngine",
+      "role": "media renderers + cross-tradition engine",
+      "category": "media_organism",
+      "layer": "09",
+      "status": "ASPIRATIONAL"
+    },
+    {
+      "file": "organism/patalaorganism.md",
+      "name": "OrganismThesis_TwoGraphs",
+      "role": "organism thesis: epistemic x human-understanding graphs, Q moat",
+      "category": "media_organism",
+      "layer": "09",
+      "status": "ASPIRATIONAL"
+    },
+    {
+      "file": "organism/patalaorganismvisions.md",
+      "name": "OrganismScale_Trajectories",
+      "role": "scale: trajectories, empirical pedagogy, domain packs",
+      "category": "media_organism",
+      "layer": "09",
+      "status": "ASPIRATIONAL"
+    },
+    {
+      "file": "organism/consumerorganism.md",
+      "name": "ConsumerAsProbe_GapEngine",
+      "role": "consumer-as-probe, the Gap object, falsification",
+      "category": "media_organism",
+      "layer": "09",
+      "status": "ASPIRATIONAL"
+    },
+    {
+      "file": "organism/consumerorganismtech.md",
+      "name": "OrganismEngineering_EventLedgerProjections",
+      "role": "engineering blueprint: immutable ledger -> graph projections",
+      "category": "media_organism",
+      "layer": "09",
+      "status": "ASPIRATIONAL"
+    },
+    {
+      "file": "organism/organism_meh.md",
+      "name": "AdaptiveLearning_KST_KnowledgeTracing",
+      "role": "learner-model theory: KST, BKT, graph-KT, bandit",
+      "category": "media_organism",
+      "layer": "09",
+      "status": "ASPIRATIONAL"
+    },
+    {
+      "file": "education/PATALA-EDUCATION-SYNTHESIS.md",
+      "name": "EducationCanonical_GraphNativeTutoring",
+      "role": "CANONICAL education: graph-native tutoring, 4 native objects",
+      "category": "education_program",
+      "layer": "05",
+      "status": "ASPIRATIONAL"
+    },
+    {
+      "file": "education/LEARNING_STRATEGY.md",
+      "name": "LearningContentStrategy_KnowledgePacket",
+      "role": "content strategy: research once, structure once, distill repeatedly",
+      "category": "education_program",
+      "layer": "05",
+      "status": "ASPIRATIONAL"
+    },
+    {
+      "file": "education/EDUCATION_VISION.md",
+      "name": "GraphNativeTeachingEngine",
+      "role": "the graph (not LLM) selects the teaching move",
+      "category": "education_program",
+      "layer": "05",
+      "status": "ASPIRATIONAL"
+    },
+    {
+      "file": "essayguide.md",
+      "name": "EssayResearchProgramGuide",
+      "role": "essay/review/education program guide + 4 benchmarks",
+      "category": "education_program",
+      "layer": "05",
+      "status": "ASPIRATIONAL"
+    },
+    {
+      "file": "vision-06-adversarial-review.md",
+      "name": "PatalaReview_AdversarialReviewService",
+      "role": "the review platform + research compiler (17 products)",
+      "category": "scholars",
+      "layer": "07",
+      "status": "ASPIRATIONAL"
+    },
+    {
+      "file": "vision-07-new-scholar.md",
+      "name": "NewScholar_StructuredInquiry",
+      "role": "scholar workbench, perspective collector, research-graph scholarship",
+      "category": "scholars",
+      "layer": "08",
+      "status": "ASPIRATIONAL"
+    },
+    {
+      "file": "scholars/README.md",
+      "name": "ScholarsLens",
+      "role": "scholars = engine not audience (index/lens)",
+      "category": "scholars",
+      "layer": "08",
+      "status": "INDEX"
+    },
+    {
+      "file": "vision-08-scholar-economics.md",
+      "name": "ScholarIncentivesEconomics",
+      "role": "paid adjudication, credit via ORCID/CRediT/DOI",
+      "category": "economics",
+      "layer": "11",
+      "status": "ASPIRATIONAL"
+    },
+    {
+      "file": "vision-10-market-entry-and-partnerships.md",
+      "name": "MarketEntryPartnerships",
+      "role": "BHU anchor, funding map, pilot GTM",
+      "category": "economics",
+      "layer": "11",
+      "status": "ASPIRATIONAL"
+    },
+    {
+      "file": "economics/README.md",
+      "name": "EconomicsLens",
+      "role": "scarce assets, moat stack, flywheel (index/lens)",
+      "category": "economics",
+      "layer": "11",
+      "status": "INDEX"
+    },
+    {
+      "file": "vision-12-multi-surface-platform.md",
+      "name": "MultiSurfacePlatform",
+      "role": "one core, five permission-scoped surfaces",
+      "category": "platform_product",
+      "layer": "10",
+      "status": "PARTIAL"
+    },
+    {
+      "file": "vision-13-product-portfolio-by-user-base.md",
+      "name": "ProductPortfolio_ByUserBase",
+      "role": "benchmark=authority / audit=product; product catalog",
+      "category": "platform_product",
+      "layer": "10",
+      "status": "ASPIRATIONAL"
+    },
+    {
+      "file": "vision-14-manuscript-to-scholarly-asset.md",
+      "name": "ManuscriptToScholarlyAsset",
+      "role": "quality fingerprint, derived-vs-input, auto-ingest",
+      "category": "atlas_identity",
+      "layer": "02",
+      "status": "PARTIAL"
+    },
+    {
+      "file": "vision-15-patala-atlas-sanskrit-research-graph.md",
+      "name": "PatalaAtlas_OpenAlexForSanskrit",
+      "role": "textual-transmission spine, identity distinction",
+      "category": "atlas_identity",
+      "layer": "02",
+      "status": "PARTIAL"
+    },
+    {
+      "file": "source-resolution/source-resolver-design.md",
+      "name": "SourceResolver_FederatedReconciliation",
+      "role": "federated edition/manuscript reconciliation engine",
+      "category": "atlas_identity",
+      "layer": "02",
+      "status": "ASPIRATIONAL"
+    },
+    {
+      "file": "expansion/vision-11-siva-before-abhinava.md",
+      "name": "SivaBeforeAbhinava_Genealogy",
+      "role": "braided-history of Saiva ideas, six corpora + three graphs",
+      "category": "expansion",
+      "layer": "03",
+      "status": "ASPIRATIONAL"
+    },
+    {
+      "file": "expansion/vision-11-siva-before-abhinava-prehistory.md",
+      "name": "SivaBeforeAbhinava_PrehistoryDeepTree",
+      "role": "evidence ladder, Rgveda+Avesta, Indus hypothesis boundary",
+      "category": "expansion",
+      "layer": "03",
+      "status": "ASPIRATIONAL"
+    },
+    {
+      "file": "expansion/vision-11-siva-before-abhinava-corpus-manifest.md",
+      "name": "SivaCorpusAcquisitionManifest",
+      "role": "open/legal sources, Tier 0-3 build order, download manifest",
+      "category": "expansion",
+      "layer": "01",
+      "status": "PARTIAL"
+    },
+    {
+      "file": "atlas/technical-architecture-v1.md",
+      "name": "TechnicalArchitectureV1_AuthorityGraph",
+      "role": "freeze the Authority Graph + physical stack + 3 P0 fixes",
+      "category": "atlas_identity",
+      "layer": "02",
+      "status": "PARTIAL"
+    },
+    {
+      "file": "atlas/atlas-engineering-blueprint.md",
+      "name": "AtlasEngineeringBlueprint_BoringSubstrate",
+      "role": "copy OpenAlex product not scale; Postgres/R2/event-log; I1-I6",
+      "category": "atlas_identity",
+      "layer": "02",
+      "status": "ASPIRATIONAL"
+    },
+    {
+      "file": "atlas/atlas-cloudflare-edge-layer.md",
+      "name": "AtlasCloudflareEdgeLayer",
+      "role": "Cloudflare = front door not canonical DB; agent-native API",
+      "category": "atlas_identity",
+      "layer": "10",
+      "status": "ASPIRATIONAL"
+    },
+    {
+      "file": "atlas/atlas-performance.md",
+      "name": "AtlasPerformanceDoctrine_Lightning",
+      "role": "compute-on-write, immutable-is-cacheable, 6 laws",
+      "category": "atlas_identity",
+      "layer": "10",
+      "status": "ASPIRATIONAL"
+    },
+    {
+      "file": "atlas/agent-optimization.md",
+      "name": "AgentOptimization_AgentProductSurface",
+      "role": "one-question=one-call, two-tier MCP, agent usability",
+      "category": "atlas_identity",
+      "layer": "10",
+      "status": "ASPIRATIONAL"
+    },
+    {
+      "file": "functionality/hermes-execution.md",
+      "name": "VisionxHermesExecutionMap",
+      "role": "strategy -> execution kernel map; Hermes = replaceable",
+      "category": "education_program",
+      "layer": "12",
+      "status": "PARTIAL"
+    },
+    {
+      "file": "functionality/README.md",
+      "name": "FunctionalityLens",
+      "role": "projection taxonomy: machinery vs interfaces vs foundations (index/lens)",
+      "category": "education_program",
+      "layer": "04",
+      "status": "INDEX"
+    },
+    {
+      "file": "expansion/README.md",
+      "name": "ExpansionLens",
+      "role": "cross-corpus expansion index (lens)",
+      "category": "expansion",
+      "layer": "03",
+      "status": "INDEX"
+    }
+  ],
+  "consolidation_notes": [
+    {
+      "cluster": "organism",
+      "finding": "consumerorganismtech + organism_meh both survey Graphiti/pyBKT/pyKT/OATutor/OpenTutor/GRKT/GKT",
+      "action": "KEEP both (engineering vs learner-theory are distinct roles) but EXTRACT the shared tool-survey into docs/process/external-tools.md (already canonical); the organism docs should reference it, not re-list it"
+    },
+    {
+      "cluster": "education",
+      "finding": "EDUCATION_VISION + LEARNING_STRATEGY + PATALA-EDUCATION-SYNTHESIS all mention knowledge-packet/prerequisite",
+      "action": "KEEP all 3 (canonical / content-strategy / teaching-engine are distinct) but PATALA-EDUCATION-SYNTHESIS is THE canonical one; the other two reference it"
+    },
+    {
+      "cluster": "indices",
+      "finding": "CATEGORIES.md + INDEX.md + REVIEWS.md + VISION-MANIFEST.json all describe the vision collection",
+      "action": "DISTINCT roles: CATEGORIES=taxonomy, INDEX=narrative guide, REVIEWS=agent-resolvable review, MANIFEST=machine registry. All 4 serve different purposes - KEEP all"
+    }
+  ]
+}

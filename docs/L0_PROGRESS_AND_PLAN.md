@@ -1,3 +1,5 @@
+> **ARCHIVED / SUPERSEDED** — kept for history only. Do NOT follow as current. See `docs/INDEX.md` + `docs/DOCS-AUDIT.json` for the canonical doc for this concern.
+
 # WHERE WE ARE & THE PLAN — what we're building and why
 
 *2026-08-12. A plain-language map so anyone (including us) can see what the L0 work is for and what's

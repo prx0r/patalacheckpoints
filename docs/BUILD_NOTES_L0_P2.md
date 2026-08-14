@@ -1,3 +1,5 @@
+> **ARCHIVED / SUPERSEDED** — kept for history only. Do NOT follow as current. See `docs/INDEX.md` + `docs/DOCS-AUDIT.json` for the canonical doc for this concern.
+
 # BUILD NOTES — L0 P2: Vidyut morphology witness + proof-semantics separation
 
 *2026-08-12. Agent L0. This note records: (1) the standalone Vidyut P2 witness

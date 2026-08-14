@@ -139,3 +139,7 @@ NOT YET       scaled argument discovery · scholar acceptance · pedagogical eff
 `globalaccess.md` (open-reference / controlled-corpus), `PATALA-GLOBAL-ARCHITECTURE.md` (the seven
 planes), and `docs/vision/essayguide.md` (the essay/education/review programs) are the detail layers.
 Read those next; all point down to this.*
+
+> **The master navigation** — resolve anything (layer, surface, data, script) to its canonical ref,
+> implementation, docs, and Hermes usage — is `NAVIGATION.md` (repo root). The deep per-layer pages are
+> `docs/layers/`. This file is the thesis they hang on.

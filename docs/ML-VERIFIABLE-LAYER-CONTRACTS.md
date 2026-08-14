@@ -1,3 +1,5 @@
+> **ARCHIVED / SUPERSEDED** — kept for history only. Do NOT follow as current. See `docs/INDEX.md` + `docs/DOCS-AUDIT.json` for the canonical doc for this concern.
+
 # ML-VERIFIABLE LAYER CONTRACTS — when a layer is "done correctly" (BRAINSTORM 2026-08-13)
 
 *The goal: for each layer of the canonical stack, define a **machine-verifiable contract** — a set of

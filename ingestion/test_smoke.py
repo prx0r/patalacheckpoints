@@ -38,9 +38,9 @@ def check(name: str, cond: bool, detail: str = ""):
 def main() -> int:
     print("== 1. PanditAdapter emits ExternalRecords (raw boundary, license firewall) ==")
     csv_data = (
-        "id,title,author,shelfmark\n"
-        "pandit:91821,Mālinīvijayottaratantra,,\n"
-        "pandit:91822,Tantrāloka,Abhinavagupta,\n"
+        "Content type,ID,Title,Authors (person)\n"
+        "Work,91821,Mālinīvijayottaratantra,\n"
+        "Work,91822,Tantrāloka,Abhinavagupta\n"
     )
     tmp = ROOT / "tmp_t1" / "pandit_smoke.csv"
     tmp.parent.mkdir(parents=True, exist_ok=True)

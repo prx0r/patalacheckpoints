@@ -1,3 +1,5 @@
+> **ARCHIVED / SUPERSEDED** — kept for history only. Do NOT follow as current. See `docs/INDEX.md` + `docs/DOCS-AUDIT.json` for the canonical doc for this concern.
+
 Yes. I did a broad pass and there is enough material here to make the **Resources** section a serious product in its own right.
 
 The key is not to make it a dumb links page. Give every resource a type:

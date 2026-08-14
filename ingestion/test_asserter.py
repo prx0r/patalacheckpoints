@@ -40,10 +40,10 @@ def main() -> int:
     csv_path = ROOT / "tmp_t1" / "pandit_asserter.csv"
     csv_path.parent.mkdir(parents=True, exist_ok=True)
     csv_path.write_text(
-        "id,title,author,shelfmark\n"
-        "pandit:9001,Mālinīvijayottaratantra,,\n"
-        "pandit:9002,Tantrāloka,Abhinavagupta,\n"
-        "pandit:9003,Some Unknown Text,Unknown Scholar,\n",
+        "Content type,ID,Title,Authors (person)\n"
+        "Work,9001,Mālinīvijayottaratantra,\n"
+        "Work,9002,Tantrāloka,Abhinavagupta\n"
+        "Work,9003,Some Unknown Text,Unknown Scholar\n",
         encoding="utf-8")
 
     print("== 0. stable deterministic uuid (canonical identity rule) ==")

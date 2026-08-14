@@ -22,12 +22,34 @@ stale ones as `[ARCHIVED]` so a new agent is never confused. If it's not here, i
 | Concern | Canonical doc | Where |
 |---|---|---|
 | **Onboarding (START HERE — single on-ramp, all agents)** | `onboarding/README.md` | repo `onboarding/` |
+| **THE TOP-LEVEL HANDOVER (complete state: layers ACTIVE/ARCHIVED, translation asset, indexes, next steps)** | `HANDOVER.md` | repo root |
+| **THE MASTER NAVIGATION (resolve ANYTHING: surface/layer/data/script → canonical ref + impl + docs + run + Hermes)** | `NAVIGATION.md` | repo root |
+| **Directory manifest (every top-level folder → role/layer/class — machine-verifiable)** | `DIRECTORY-MANIFEST.json` + `check_directory_manifest.py` | repo root |
+| **Docs audit (classifies every loose docs/ file: CANONICAL / ARCHIVE / PART_OF — machine-verifiable)** | `docs/DOCS-AUDIT.json` + `docs/check_docs_audit.py` | repo `docs/` |
 | **End-to-end infra process (ingestion→atlas→factory→R2 — READ before writing infra code)** | `docs/process/README.md` | repo `docs/process/` |
+| **Layer deep-pages (00 governance → 11 org/economics — each: what/purpose/tools/data/processes/impls/docs)** | `docs/layers/` | repo `docs/layers/` |
 | **Ingestion layer (intake/reconcile/persist)** | `docs/process/01-ingestion.md` | repo `docs/process/` |
 | **Atlas layer (canonical graph + Postgres + read API)** | `docs/process/02-atlas.md` | repo `docs/process/` |
 | **Factory layer (DAG/registry/ledger/scheduler)** | `docs/process/03-factory.md` | repo `docs/process/` |
 | **R2 storage (immutable data lake + Bronze snapshots)** | `docs/process/04-r2-storage.md` | repo `docs/process/` |
 | **App/API/MCP/sites (read surfaces)** | `docs/process/05-app-api-sites.md` | repo `docs/process/` |
+| **Commentarial graph (secondary scholarship → essays/education)** | `docs/process/06-commentarial-graph.md` | repo `docs/process/` |
+| **Vision category index (8 distinct categories → each maps to a Layer)** | `docs/vision/CATEGORIES.md` | repo `docs/vision/` |
+| **Vision canonical review index (every doc → name/contribution/layer/status — agent-resolvable)** | `docs/vision/REVIEWS.md` | repo `docs/vision/` |
+| **Vision machine-verifiable manifest (one distinct role/name/file per doc; anti-redundancy check)** | `docs/vision/VISION-MANIFEST.json` + `check_manifest.py` | repo `docs/vision/` |
+| **ML epistemic core (propositions→arguments→synthesis→essay/education — the moat)** | `docs/process/07-ml-epistemic-core.md` | repo `docs/process/` |
+| **External tools & borrowed infra (status board + 6 adapter contracts)** | `docs/process/external-tools.md` | repo `docs/process/` |
+| **Layer-by-layer reconciliation (built vs borrowed vs agentic)** | `docs/process/RECONCILIATION.md` | repo `docs/process/` |
+| **Global vision → chunks → layers map (one vision, 10 chunks, each lands on one Layer — deterministic)** | `docs/process/VISION-CHECKPOINT-MAP.md` (+ `VISION-CHUNKS.json`) | repo `docs/process/` |
+| **Industry-alignment map (our stack → formal standards: T1→IGT, L0→TEI+CTS, L200→TranslationProof-NOVEL)** | `docs/process/INDUSTRY-ALIGNMENT.md` | repo `docs/process/` |
+| **Frontier map (every layer's best-version, why, and how to build it — the capstone)** | `docs/process/FRONTIER-MAP.md` | repo `docs/process/` |
+| **The IPVV build (complete index: scholarly layers + factory impl + golds + tests + results)** | `docs/process/IPVV-BUILD.md` | repo `docs/process/` |
+| **Gold & evidence index (everything certified/gold/frozen/proven — what's actually real)** | `docs/process/GOLD-EVIDENCE-INDEX.md` | repo `docs/process/` |
+| **Data assets index (the real machine-readable data: corpus targets, registries, bibliography, site data)** | `docs/process/DATA-ASSETS-INDEX.md` | repo `docs/process/` |
+| **Interfaces index (everything callable: 19 Hermes skills, 43 API routes, MCP tools, 7 examples)** | `docs/process/INTERFACES-INDEX.md` | repo `docs/process/` |
+| **Evals & benchmarks index (the real evaluation plane: frozen golds, NAT tests, review packets)** | `docs/process/EVALS-BENCHMARKS-INDEX.md` | repo `docs/process/` |
+| **External-tool machine registry** | `source-evidence/docs/tools/MANIFEST.json` (+ `MANIFEST.schema.json`) | repo `source-evidence/` |
+| **GitHub repos to clone/raid (researcher-built, reusable machinery)** | `docs/process/githubclones.md` | repo `docs/process/` |
 | **Agent system (who + tracked progress)** | `handover/SYSTEM.md` (template `agent0` → live instances) + `handover/flow.py status` | repo `handover/` |
 | **Vision + navigation (START HERE)** | `VISION_AND_NAVIGATION.md` | repo root |
 | **Infra inventory (WHAT EXISTS — read before building)** | `endgamebuild/INFRA-INVENTORY.md` | repo `endgamebuild/` |

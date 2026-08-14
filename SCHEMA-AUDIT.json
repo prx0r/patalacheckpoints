@@ -1,0 +1,29 @@
+{
+  "$schema": "patala.schema-audit.v1",
+  "updated": "2026-08-14",
+  "note": "Probe-driven audit of diverged/duplicated CODE definitions across the filebase. Docs are clean (3 validators pass); this is the CODE-schema layer. Every concept flagged here has multiple diverged definitions an agent cannot reliably resolve. Consolidation is a code change (risky) — flagged, not auto-done.",
+  "concepts": [
+    {"concept": "ReviewEvent", "definitions": [
+      {"file": "pipeline/review_engine.py", "line": 72, "kind": "dataclass-operational", "imported_by": ["review_bundle.py", "test_review_engine.py"]},
+      {"file": "source-evidence/schema/contracts_human_authority.py", "line": 59, "kind": "typed-dataclass", "imported_by": ["review_bundle.py"]},
+      {"file": "source-evidence/schema/typed_scholarly_object.py", "line": 129, "kind": "pydantic", "imported_by": ["proposition_layer.py"]},
+      {"file": "python/patala_core/objects.py", "line": 133, "kind": "pydantic", "imported_by": ["patala_core"]}
+    ], "issue": "4 diverged definitions; review_bundle imports 2 of them. AGENT CANNOT KNOW WHICH IS CANONICAL.", "canonical_target": "source-evidence/schema/contracts_human_authority.py (the typed contract); others should import it"},
+    {"concept": "Authority / AuthorityVector / epistemic_ceiling", "definitions": [
+      {"file": "source-evidence/schema/derived_scholarly_object.py", "line": 51, "kind": "Authority dataclass"},
+      {"file": "source-evidence/schema/typed_scholarly_object.py", "line": 18, "kind": "AuthorityVector pydantic"},
+      {"file": "python/patala_core/authority.py", "line": 1, "kind": "Authority"}
+    ], "issue": "3 authority models; the audit P0 fix (AuthorityVector vs scalar epistemic_ceiling) is only partially applied. DIVERGED.", "canonical_target": "source-evidence/schema/derived_scholarly_object.py Authority (4-axis) + typed AuthorityVector for Pydantic; reconcile"},
+    {"concept": "Proposition", "definitions": [
+      {"file": "machinelearning/research/patala_ml/proposition_layer.py", "kind": "domain"},
+      {"file": "source-evidence/production/core.py", "kind": "production"},
+      {"file": "source-evidence/schema/typed_scholarly_object.py", "kind": "pydantic"},
+      {"file": "python/patala_core/objects.py", "kind": "pydantic"}
+    ], "issue": "4 Proposition models across domain/production/schema. Pydantic pair diverged.", "canonical_target": "to be determined (needs the Agent1/Atlas convergence contract — devpath7)"},
+    {"concept": "Pydantic scholarly-object model", "definitions": [
+      {"file": "source-evidence/schema/typed_scholarly_object.py", "lines": 245, "kind": "pydantic (CanonicalObjectRef/AuthorityVector/ObjectEvent)"},
+      {"file": "python/patala_core/objects.py", "lines": 224, "kind": "pydantic (Scope/Modality/GroundingLinkObject/ReviewProposal)"}
+    ], "issue": "near-identical file, ~20-line drift — two generations of the same idea. SILENT SCHEMA DRIFT (the audit's exact warning).", "canonical_target": "merge into ONE pydantic module"}
+  ],
+  "action": "These are CODE consolidations (risky, break imports). Do NOT auto-merge. Each needs a deliberate convergence (devpath7 canonical-object contract) then import-refactor. For now, this manifest makes the divergence VISIBLE and agent-resolvable."
+}

@@ -1,3 +1,5 @@
+> **ARCHIVED / SUPERSEDED** — kept for history only. Do NOT follow as current. See `docs/INDEX.md` + `docs/DOCS-AUDIT.json` for the canonical doc for this concern.
+
 # nextdev2 — Pāṭala Development Plan (forward)
 
 *2026-08-10. The forward-looking plan consolidating everything this session established.

@@ -1,12 +1,11 @@
 # PĀṬALA PROCESS — THE END-TO-END REFERENCE (Ingestion → Atlas → Factory)
 
-*This is the canonical "how it all links" guide. It is the fixed reference for the permanent
-infrastructure — the thing to read BEFORE writing any code, so you don't rebuild what exists.
-If a piece is listed here as REUSABLE, extend it; do not redefine it.*
+*This is the process/ how-to index — the REUSABLE INVENTORY (don't rebuild) + the known gaps. It
+complements `NAVIGATION.md` (resolve anything → layer/impl/docs/run/Hermes). Read `NAVIGATION.md` first
+for orientation; read this before writing infra code so you don't rebuild what exists.*
 
-**Read order:** this index → `docs/process/01-ingestion.md` → `docs/process/02-atlas.md` →
-`docs/process/03-factory.md` → `docs/process/04-r2-storage.md` → `docs/process/05-app-api-sites.md`.
-Each is self-contained and links to the others.
+**Read order:** `NAVIGATION.md` (master index) → `docs/process/01-ingestion.md` → `02-atlas.md` →
+`03-factory.md` → `04-r2-storage.md` → `05-app-api-sites.md`. Each is self-contained and links to the others.
 
 ---
 
@@ -123,8 +122,19 @@ relationship=9 (the rich scholarship graph IS persisted; the audit §4 "never wr
 - `03-factory.md` — the DAG, registry, ledger, scheduler
 - `04-r2-storage.md` — the immutable data lake + the Bronze snapshot flow
 - `05-app-api-sites.md` — the read surfaces (app, APIs, MCP, both sites)
+- `06-commentarial-graph.md` — secondary scholarship → living interpretation (ScholarPositions, Questions, essays)
+- `07-ml-epistemic-core.md` — propositions → arguments → cruxes → synthesis → essay/education (the moat)
+- `08-verification-plane.md` — external methods test Pāṭala (Inspect + atomic verifiers + metamorphic + abstention)
+- `09-organism.md` — the Human Understanding Graph + consumer-as-probe (the Q moat variable)
+- `external-tools.md` — the borrowed-infrastructure status board (62 tools, 6 adapter contracts)
+- `githubclones.md` — repos to clone/raid for reusable machinery (researcher-built projects)
+- `RECONCILIATION.md` — per-layer: what Pāṭala built vs. external repos to borrow vs. remaining agentic work
+- `VISION-CHECKPOINT-MAP.md` — vision category → global-plan phase → CP checkpoint → agent → buildable gate
+- `INDUSTRY-ALIGNMENT.md` — our homegrown stack → formal standards (T1→IGT, L0→TEI+CTS, L200→TranslationProof-NOVEL, MQM, xAIF, RO-Crate)
+- `FRONTIER-MAP.md` — every layer's best-version, why, and how to build it (the capstone)
+- `GOLD-EVIDENCE-INDEX.md` — everything certified/gold/frozen/proven (what Pāṭala has actually verified)
 
 > **Note:** the ML/research lane (Agent 1: arguments, cruxes, synthesis, essay, education — the
-> `machinelearning/research/patala_ml/` engines) is NOT covered in these process guides. It is the
-> epistemic upper layer; see `docs/vision/essayguide.md`, `docs/process`-adjacent
-> `endgamebuild/INFRA-INVENTORY.md` §3, and `handover/agent-1-ml/` for that lane.
+> `machinelearning/research/patala_ml/` engines) is the epistemic upper layer, now covered by
+> `07-ml-epistemic-core.md`. For deeper detail see `docs/vision/essayguide.md`,
+> `endgamebuild/INFRA-INVENTORY.md` §3, and `handover/agent-1-ml/`.

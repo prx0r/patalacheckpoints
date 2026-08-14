@@ -1,3 +1,5 @@
+> **ARCHIVED / SUPERSEDED** — kept for history only. Do NOT follow as current. See `docs/INDEX.md` + `docs/DOCS-AUDIT.json` for the canonical doc for this concern.
+
 # AGENT 2 — NEXT DEV (the production-grade autonomous corpus compiler)
 
 *2026-08-13. The definitive long-horizon roadmap for Agent 2. The culmination is NOT "a bunch of

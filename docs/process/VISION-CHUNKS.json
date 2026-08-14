@@ -1,0 +1,20 @@
+{
+  "$schema": "patala.vision-chunks.v1",
+  "updated": "2026-08-14",
+  "global_vision": "computable scholarly tradition: one evidence graph from Sanskrit source to scholarship to understanding; every claim resolves to its source; machines propose, scholars certify",
+  "note": "One global vision -> 10 distinct chunks -> each chunk lands deterministically on ONE Layer. Progress is tracked PER-LAYER in the layer page's current-state slot (via handover/STATE.yaml). No agent-centric framing; the layer is the deterministic anchor.",
+  "chunks": [
+    {"chunk": 1, "name": "Foundations",    "layer": "00", "doc": "docs/layers/00-governance.md",   "category": "A"},
+    {"chunk": 2, "name": "The Corpus",     "layer": "01", "doc": "docs/layers/01-ingestion.md",   "category": "F"},
+    {"chunk": 3, "name": "The Atlas",      "layer": "02", "doc": "docs/layers/02-atlas.md",       "category": "G"},
+    {"chunk": 4, "name": "The Factory",    "layer": "03", "doc": "docs/layers/03-factory.md",     "category": "A"},
+    {"chunk": 5, "name": "The Epistemic",  "layer": "05", "doc": "docs/layers/05-research.md",    "category": "H"},
+    {"chunk": 6, "name": "The Scholars",   "layer": "08", "doc": "docs/layers/08-human-authority.md", "category": "B"},
+    {"chunk": 7, "name": "The Organism",   "layer": "09", "doc": "docs/layers/09-organism.md",    "category": "D"},
+    {"chunk": 8, "name": "The Surfaces",   "layer": "10", "doc": "docs/layers/10-surfaces.md",    "category": "E"},
+    {"chunk": 9, "name": "The Economics",  "layer": "11", "doc": "docs/layers/11-org-economics.md", "category": "C"},
+    {"chunk": 10, "name": "The Live System", "layer": "12", "doc": "docs/layers/12-live-system.md", "category": "all"}
+  ],
+  "deterministic": true,
+  "cross_cutting": "Layers 04 (Evidence), 06 (Commentarial), 07 (Verification) are cross-cutting substrates that serve every chunk, not standalone chunks."
+}

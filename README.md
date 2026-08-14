@@ -4,21 +4,27 @@
 
 ## For a new agent — read these first (in order)
 
-0. **`AGENTS.md`** — the GOVERNING rule: the anti-theatre doctrine (a tested schema ≠ a result; only
+1. **`HANDOVER.md`** — the COMPLETE STATE: every layer assigned (ACTIVE/ARCHIVED), how to use the
+   existing translation asset, the canonical indexes, and the priority list. **Read this FIRST — it tells
+   you what exists, what's real, and what to continue.**
+2. **`AGENTS.md`** — the GOVERNING rule: the anti-theatre doctrine (a tested schema ≠ a result; only
    independent gold + blind eval + metric + human adjudication makes something real). Also read
    `machinelearning/AGENTS-DOCTRINE.md` + `machinelearning/CLAIMS.md` + run
    `python3 machinelearning/theatre_check.py --status`. **Read this before ANY build.**
-0b. **`docs/process/README.md`** — the end-to-end infra reference (ingestion → atlas → factory → R2).
+3. **`NAVIGATION.md`** — the MASTER INDEX: resolve ANYTHING (site surface, API, data file, script, doc)
+   to its layer + canonical ref + implementation + docs + run command + Hermes usage. Read this to
+   navigate the whole project. (Its §0b is the code map — every dir in plain words.)
+4. **`docs/process/README.md`** — the end-to-end infra reference (ingestion → atlas → factory → R2).
    **Read this before writing any infra code** — if a piece is listed as REUSABLE, extend it, don't
    redefine it. Layer guides: `docs/process/{01-ingestion,02-atlas,03-factory,04-r2-storage}.md`.
-1. **`VISION_AND_NAVIGATION.md`** — THE vision + logical progression + navigation.
-2. **`docs/INDEX.md`** — the canonical docs index (the ONE source of truth per concern; archived
+5. **`VISION_AND_NAVIGATION.md`** — THE vision + logical progression + navigation.
+6. **`docs/INDEX.md`** — the canonical docs index (the ONE source of truth per concern; archived
    stale handovers are in `handover/archive/`).
-3. **`handover/README.md`** — the coordination folder for both lanes (Agent 1 ML / Agent 2 integration);
+7. **`handover/README.md`** — the coordination folder for both lanes (Agent 1 ML / Agent 2 integration);
    current state per lane lives in `handover/agent-1-ml/INDEX.md` and `handover/agent-2-integration/INDEX.md`.
-4. **`machinelearning/MLUSEINPATALA.md`** — the frozen ML strategy.
-5. **`docs/CHANGELOG.md`** — the API/data/scholarly changelog.
-6. **`../docs/endgame2.md`** — the spec (the Tantra Hub vision, the machine-facing plan, the
+8. **`machinelearning/MLUSEINPATALA.md`** — the frozen ML strategy.
+9. **`docs/CHANGELOG.md`** — the API/data/scholarly changelog.
+10. **`../docs/endgame2.md`** — the spec (the Tantra Hub vision, the machine-facing plan, the
    FoJin-comparison). Also `../docs/endgame1.md` and `../corpus/learning/ENDGAME_SITE_SPEC.md`.
 
 > The full-system onboarding (how the whole scholarly factory works) is `THE_COMPANION.md` in

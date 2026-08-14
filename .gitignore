@@ -34,6 +34,11 @@ data/corpus/sources/**/*.pdf
 data/corpus/registries/*.jsonl
 data/corpus/downloads/*.json
 data/corpus/downloads/*.jsonl
+# large generated translation/source outputs (reproducible — keep out of the checkpoint push)
+data/corpus/downloads/translations/*.jsonl
+data/corpus/sources/matangaparamesvara/
+data/corpus/sources/philosophy-encyclopedia/
+data/corpus/sources/ramakantha_matangavrtti/
 
 # scratch T1 gloss experiments
 /tmp_t1/

@@ -1,3 +1,5 @@
+> **ARCHIVED / SUPERSEDED** — kept for history only. Do NOT follow as current. See `docs/INDEX.md` + `docs/DOCS-AUDIT.json` for the canonical doc for this concern.
+
 # AGENT 3 — POTENTIAL (translation factory worker) — brainstorm + peer review
 
 *2026-08-13. This captures: (1) the case for Agent 3 as a hardcoded factory worker (organisational),

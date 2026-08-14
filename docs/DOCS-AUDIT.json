@@ -1,0 +1,302 @@
+{
+  "$schema": "patala.docs-audit.v1",
+  "updated": "2026-08-14",
+  "note": "Machine-verifiable classification of every loose .md file in docs/. Every file is CANONICAL (trust it), ARCHIVE (superseded history), or PART_OF (cluster with a canonical sibling). This lets an agent instantly know what to trust without moving files or breaking references.",
+  "status_legend": {
+    "CANONICAL": "the current doc to trust for this concern (named in docs/INDEX.md or the layer/process docs)",
+    "ARCHIVE": "superseded history — kept for reference, do not follow as current",
+    "PART_OF": "belongs to a cluster with one canonical; the canonical is named"
+  },
+  "files": [
+    {
+      "file": "INDEX.md",
+      "status": "CANONICAL",
+      "role": "the flat canonical map (one source of truth per concern)"
+    },
+    {
+      "file": "README.md",
+      "status": "CANONICAL",
+      "role": "the docs readme"
+    },
+    {
+      "file": "CHANGELOG.md",
+      "status": "CANONICAL",
+      "role": "the API/data/scholarly changelog"
+    },
+    {
+      "file": "STYLE_GUIDE.md",
+      "status": "CANONICAL",
+      "role": "writing style guide"
+    },
+    {
+      "file": "AGENT2-ATLAS-FOUNDATION-PLAN.md",
+      "status": "CANONICAL",
+      "role": "the Atlas foundation plan (B-first)"
+    },
+    {
+      "file": "AGENT2-NEXT-DEVPLAN.md",
+      "status": "ARCHIVE",
+      "role": "superseded by AGENT2-ATLAS-FOUNDATION-PLAN + globalplan"
+    },
+    {
+      "file": "AGENT2-SELF-EXECUTING-DEVPLAN.md",
+      "status": "ARCHIVE",
+      "role": "superseded by AGENT2-ATLAS-FOUNDATION-PLAN"
+    },
+    {
+      "file": "agent2nextdev.md",
+      "status": "ARCHIVE",
+      "role": "old agent-2 dev notes"
+    },
+    {
+      "file": "nextdev.md",
+      "status": "ARCHIVE",
+      "role": "the original formal-primitives plan (1545 lines, history)"
+    },
+    {
+      "file": "nextdev2.md",
+      "status": "ARCHIVE",
+      "role": "old dev plan"
+    },
+    {
+      "file": "DEV_PLAN.md",
+      "status": "ARCHIVE",
+      "role": "self-marked ARCHIVED (superseded by PROCESS_NOTES/CHECKPOINTS)"
+    },
+    {
+      "file": "TRANSLATION_PROTOCOL.md",
+      "status": "CANONICAL",
+      "role": "the translation protocol (canonical in INDEX)"
+    },
+    {
+      "file": "TRANSLATION_SCHEMA.md",
+      "status": "PART_OF",
+      "role": "the schema — part of the translation cluster, canonical = TRANSLATION_PROTOCOL"
+    },
+    {
+      "file": "TRANSLATION_SKILL.md",
+      "status": "PART_OF",
+      "role": "compiled from PROTOCOL — part of translation cluster"
+    },
+    {
+      "file": "TRANSLATION_SKILL_SPEC.md",
+      "status": "PART_OF",
+      "role": "spec — part of translation cluster, canonical = TRANSLATION_PROTOCOL"
+    },
+    {
+      "file": "BUILD_NOTES_AUTONOMY.md",
+      "status": "ARCHIVE",
+      "role": "build history, superseded by endgamebuild/PROGRESS"
+    },
+    {
+      "file": "BUILD_NOTES_L0_P0.md",
+      "status": "ARCHIVE",
+      "role": "build history"
+    },
+    {
+      "file": "BUILD_NOTES_L0_P2.md",
+      "status": "ARCHIVE",
+      "role": "build history"
+    },
+    {
+      "file": "BUILD_NOTES_S0_1.md",
+      "status": "ARCHIVE",
+      "role": "build history"
+    },
+    {
+      "file": "PROCESS_NOTES.md",
+      "status": "CANONICAL",
+      "role": "process notes (named canonical in INDEX)"
+    },
+    {
+      "file": "SOURCE-PROCESS-OVERNIGHT.md",
+      "status": "ARCHIVE",
+      "role": "old overnight process"
+    },
+    {
+      "file": "P2-ENSEMBLE.md",
+      "status": "ARCHIVE",
+      "role": "old P2 ensemble spec"
+    },
+    {
+      "file": "P2_REVIEW_PROTOCOL.md",
+      "status": "ARCHIVE",
+      "role": "superseded by REVIEW_PROTOCOL + vision-06"
+    },
+    {
+      "file": "P3_EDITORIAL_REVIEW.md",
+      "status": "ARCHIVE",
+      "role": "old editorial review spec"
+    },
+    {
+      "file": "P4_ALIGNMENT_SPEC.md",
+      "status": "ARCHIVE",
+      "role": "old alignment spec"
+    },
+    {
+      "file": "REVIEW_PROTOCOL.md",
+      "status": "ARCHIVE",
+      "role": "superseded by vision-06 + review_engine"
+    },
+    {
+      "file": "FACTORY.md",
+      "status": "CANONICAL",
+      "role": "the factory reference"
+    },
+    {
+      "file": "EVIDENCE_POLICY.md",
+      "status": "CANONICAL",
+      "role": "the evidence policy"
+    },
+    {
+      "file": "HERMES-ORCHESTRATION-REVIEW.md",
+      "status": "CANONICAL",
+      "role": "the Hermes orchestration review"
+    },
+    {
+      "file": "GAPS.md",
+      "status": "ARCHIVE",
+      "role": "old gaps, superseded by PROJECT-AUDIT"
+    },
+    {
+      "file": "CHECKPOINTS.md",
+      "status": "ARCHIVE",
+      "role": "old checkpoint notes, superseded by handover/CHECKPOINTS.md"
+    },
+    {
+      "file": "endgame1.md",
+      "status": "CANONICAL",
+      "role": "Vision 01 — translation laboratory"
+    },
+    {
+      "file": "endgame2.md",
+      "status": "CANONICAL",
+      "role": "Vision 02 — Tantra Hub"
+    },
+    {
+      "file": "endgame3.md",
+      "status": "CANONICAL",
+      "role": "Vision 03 — one infra many surfaces"
+    },
+    {
+      "file": "endgame4.md",
+      "status": "CANONICAL",
+      "role": "Vision 04 — economic thesis"
+    },
+    {
+      "file": "endgame5year.md",
+      "status": "CANONICAL",
+      "role": "Vision 05 — strategic window"
+    },
+    {
+      "file": "ENDGAME_SITE_SPEC.md",
+      "status": "CANONICAL",
+      "role": "the Tantra reader site spec"
+    },
+    {
+      "file": "NORTHSTAR.md",
+      "status": "CANONICAL",
+      "role": "the deepest strategy"
+    },
+    {
+      "file": "foundationalideas.md",
+      "status": "CANONICAL",
+      "role": "passage-identity idea"
+    },
+    {
+      "file": "positioningpartners.md",
+      "status": "CANONICAL",
+      "role": "positioning + partners"
+    },
+    {
+      "file": "PATALA_REF.md",
+      "status": "CANONICAL",
+      "role": "the Patala reference"
+    },
+    {
+      "file": "SCHOLARLY_GRAPH.md",
+      "status": "CANONICAL",
+      "role": "the scholarly graph reference"
+    },
+    {
+      "file": "PHASE1_IPVV_CORPUS_PROCESS_NOTES.md",
+      "status": "CANONICAL",
+      "role": "IPVV corpus process notes (named canonical)"
+    },
+    {
+      "file": "PIPELINE_SOURCE_MANUAL.md",
+      "status": "CANONICAL",
+      "role": "the source pipeline manual"
+    },
+    {
+      "file": "CORPUS_MANIFEST.md",
+      "status": "CANONICAL",
+      "role": "the corpus manifest"
+    },
+    {
+      "file": "agent3potential.md",
+      "status": "ARCHIVE",
+      "role": "old agent-3 case, superseded by hermes/AGENT3"
+    },
+    {
+      "file": "L0_PROGRESS_AND_PLAN.md",
+      "status": "ARCHIVE",
+      "role": "old L0 progress"
+    },
+    {
+      "file": "L0_REVIEW_OLDSANSKRITREE_ENGINE.md",
+      "status": "ARCHIVE",
+      "role": "old review"
+    },
+    {
+      "file": "ML-L0-SEMANTIC-EQUIVALENCE-PROPOSAL.md",
+      "status": "ARCHIVE",
+      "role": "old ML proposal"
+    },
+    {
+      "file": "ML-VERIFIABLE-LAYER-CONTRACTS.md",
+      "status": "ARCHIVE",
+      "role": "old ML contracts"
+    },
+    {
+      "file": "PROOF_T1_kramasadbhava.md",
+      "status": "ARCHIVE",
+      "role": "old proof"
+    },
+    {
+      "file": "RESOURCES_SEED.md",
+      "status": "ARCHIVE",
+      "role": "old seed"
+    },
+    {
+      "file": "seed60.md",
+      "status": "ARCHIVE",
+      "role": "old 60-seed"
+    },
+    {
+      "file": "STACKED_ARTIFACT_SPEC.md",
+      "status": "ARCHIVE",
+      "role": "old stacked-artifact spec"
+    },
+    {
+      "file": "GOLD-STANDARD-MECHANISMS-AND-DATAFLOW.md",
+      "status": "ARCHIVE",
+      "role": "old gold-standard spec"
+    },
+    {
+      "file": "AUDIT_2026-08-12.md",
+      "status": "ARCHIVE",
+      "role": "old audit, superseded by endgamebuild/PROJECT-AUDIT"
+    },
+    {
+      "file": "AUTONOMOUS_TRANSLATION_FACTORY.md",
+      "status": "ARCHIVE",
+      "role": "old autonomy spec"
+    },
+    {
+      "file": "PEER_REVIEW_REDTEAM.md",
+      "status": "ARCHIVE",
+      "role": "old peer-review red-team, superseded by endgamebuild/PROJECT-AUDIT + vision-06"
+    }
+  ]
+}

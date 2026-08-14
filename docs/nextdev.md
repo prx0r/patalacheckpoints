@@ -1,3 +1,5 @@
+> **ARCHIVED / SUPERSEDED** — kept for history only. Do NOT follow as current. See `docs/INDEX.md` + `docs/DOCS-AUDIT.json` for the canonical doc for this concern.
+
 Yes. The right move now is to define a **small number of formal primitives** that everything else hangs off. Not giant schemas. Not fifty entity types. Just enough structure that every important claim can be traced, reviewed, reversed, and extended later.
 
 I’d build Tantrakośa around **six core systems**.

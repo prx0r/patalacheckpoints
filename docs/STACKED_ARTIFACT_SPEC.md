@@ -1,3 +1,5 @@
+> **ARCHIVED / SUPERSEDED** — kept for history only. Do NOT follow as current. See `docs/INDEX.md` + `docs/DOCS-AUDIT.json` for the canonical doc for this concern.
+
 # The Per-Work Stacked Artifact — Spec
 
 *2026-08-10. Consolidates the audit-chain principles already specced across the project

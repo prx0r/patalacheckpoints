@@ -1,3 +1,5 @@
+> **ARCHIVED / SUPERSEDED** — kept for history only. Do NOT follow as current. See `docs/INDEX.md` + `docs/DOCS-AUDIT.json` for the canonical doc for this concern.
+
 # PĀṬALA GOLD-STANDARD MECHANISMS + FULL DATA FLOW (HIGH-LEVEL SPEC)
 
 *2026-08-13 · The high-scale view of what we already have: the gold-standard mechanisms (proven,

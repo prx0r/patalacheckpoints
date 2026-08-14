@@ -1,3 +1,5 @@
+> **ARCHIVED / SUPERSEDED** — kept for history only. Do NOT follow as current. See `docs/INDEX.md` + `docs/DOCS-AUDIT.json` for the canonical doc for this concern.
+
 # L0 REVIEW — the old sanskritree translation engine: reusable pieces
 
 *2026-08-12. Agent L0. Reviewed the pre-DeepSeek translation engine at

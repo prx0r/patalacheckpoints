@@ -1,3 +1,5 @@
+> **ARCHIVED / SUPERSEDED** — kept for history only. Do NOT follow as current. See `docs/INDEX.md` + `docs/DOCS-AUDIT.json` for the canonical doc for this concern.
+
 # SPEC PROPOSAL — ML Semantic-Equivalence Harness for L0 (RAW-Sanskrit → IPVV-Exemplar)
 
 *2026-08-13 · Agent 2 (integration/L0 lane) · status: PROPOSAL (for external-agent review + web research)

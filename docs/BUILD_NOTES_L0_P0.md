@@ -1,3 +1,5 @@
+> **ARCHIVED / SUPERSEDED** — kept for history only. Do NOT follow as current. See `docs/INDEX.md` + `docs/DOCS-AUDIT.json` for the canonical doc for this concern.
+
 # BUILD NOTES — L0 P0 proof harness (verify_l0.py) + extractor repairs
 
 *2026-08-12. Agent 2 (integration). This session's L0 work: repaired the coordinate model, built the

@@ -4,6 +4,17 @@
 strategic picture. This index is the single gate for "what is the vision" — add any new vision doc
 here and in `docs/INDEX.md`.*
 
+> **For the clean CATEGORY taxonomy (8 distinct categories, each mapped to a Layer), see
+> `docs/vision/CATEGORIES.md`.** This index is the fuller reference; CATEGORIES.md is the organized view.
+>
+> **For the CANONICAL REVIEW INDEX (every vision doc → proper name · contribution · layer · build status,
+> machine-parseable for an agent), see `docs/vision/REVIEWS.md`.** That is the agent-resolvable reference;
+> this INDEX is the narrative guide.
+>
+> **For the MACHINE-VERIFIABLE manifest (every doc → one distinct role/name/file; the anti-redundancy
+> check), see `docs/vision/VISION-MANIFEST.json` + `docs/vision/check_manifest.py`.** Run
+> `python3 docs/vision/check_manifest.py` to verify no two vision docs share a role.
+
 ---
 
 ## How to read this
@@ -30,7 +41,7 @@ New here? Do not read the whole surface top-down. Follow the arc:
    (Vision 06–10) — the scholar-facing product: review, workbench, incentives, media, market entry.
 4. **`docs/vision/vision-12-multi-surface-platform.md`** + **`docs/vision/vision-13-product-portfolio-by-user-base.md`**
    (Vision 12–13) — how it all re-renders as one core into role-based surfaces and a product catalog.
-5. **`docs/vision/vision-11-siva-before-abhinava.md`** (Vision 11, but read here) — the *next* corpus
+5. **`docs/vision/expansion/vision-11-siva-before-abhinava.md`** (Vision 11, but read here) — the *next* corpus
    expansion: the Śaiva genealogy. It connects forward into the IPVV work you're already doing.
    Its **deep-prehistory companion** (`docs/vision/expansion/vision-11-siva-before-abhinava-prehistory.md`)
    walks the source tree further back (Vedic Rudra → Proto-Indo-Iranian → PIE → Indus).
@@ -228,6 +239,20 @@ judgment changes.*
 | `docs/vision/education/EDUCATION_VISION.md` | The graph-native teaching engine vision — the graph selects the teaching move; every lesson is a path through the graph. |
 | `docs/vision/education/PATALA-EDUCATION-SYNTHESIS.md` | **Pāṭala Education — cross-lane synthesis** (imported from R2) — the one-line definition, the 4 native education objects (LearningClaim/Skill/Interaction/MasteryEvidence), the interaction compiler, the counterfactual/crux primitive, the tech stack, and the first prototype. The current, most-complete statement of the education vision. |
 | `docs/vision/education/sources/` | Raw imported education design docs (01–05) — the original dialogue exports (educationn/2/main/global + greeek-GlossLM) preserved byte-for-byte. |
+
+## The organism vision (Pāṭala as a living system — the Human Understanding Graph)
+
+*Imported 2026-08-14 from the `sanskritree` R2 bucket. Pāṭala as organism: the consumer app becomes a
+sensor for what humans fail to understand, feeding the epistemic graph back. The `Q` in the moat
+equation. Synthesis guide: `docs/process/09-organism.md`.*
+
+| Doc | Focus |
+|---|---|
+| `docs/vision/organism/patalaorganism.md` | The core organism thesis: two first-class graphs (epistemic + human understanding), knowledge states, explanation gaps, scholar bounties, the demand-driven chain. |
+| `docs/vision/organism/patalaorganismvisions.md` | The scale: longitudinal user graph, personalized conceptual maps, latent audiences, cross-domain behavior. |
+| `docs/vision/organism/consumerorganism.md` | The consumer-as-probe thesis: questions reveal what the graph is missing; consumer interaction as a second measurement layer. |
+| `docs/vision/organism/consumerorganismtech.md` | The engineering: immutable event stream → graph projections (Graphiti temporal graph, pyBKT learner model). |
+| `docs/vision/organism/organism_meh.md` | The adaptive-learning architecture: Knowledge Space Theory, outer fringe, BKT vs modern KT (pyKT). |
 
 ---
 

@@ -1,3 +1,5 @@
+> **ARCHIVED / SUPERSEDED** — kept for history only. Do NOT follow as current. See `docs/INDEX.md` + `docs/DOCS-AUDIT.json` for the canonical doc for this concern.
+
 # P2 ENSEMBLE — Vidyut × Heritage morphology validation (CP1)
 
 *2026-08-12. Agent L0. An INDEPENDENT INSTRUMENT CALIBRATION experiment — NOT "another parser in the

@@ -1,3 +1,5 @@
+> **ARCHIVED / SUPERSEDED** — kept for history only. Do NOT follow as current. See `docs/INDEX.md` + `docs/DOCS-AUDIT.json` for the canonical doc for this concern.
+
 # BUILD NOTES — the generic autonomy controller (2026-08-12)
 
 Per `hermespatalalayers.md` + `hermespatala-architecture-review.md`. The autonomous factory is now a

@@ -107,9 +107,11 @@ VISION_AND_NAVIGATION.md → docs/INDEX.md → docs/vision/CORE-BIBLE.md
 | **Continuous semantic QA on Atlas** (P5) | ✅ DONE — `atlas_qa_audit.py` (authority-inflation/completeness/rights audit) |
 
 **Flagged for review:**
-- ⚠️ **Hermes model-config bug**: `model.py` sets `HERMES_MODEL` env (→ "Model not supported"); the
-  config uses provider `opencode-go` (not `deepseek`). Blocks the LLM-judge path + any factory model
-  call that overrides the model. The pilot's T1/ARGMAP worked via config default.
+- ✅ **Hermes model-config bug — FIXED (2026-08-14)**: `model.py` previously set only `HERMES_MODEL`
+  (→ "HTTP 401: Model not supported"); the config provider is `opencode-go`. Now `_hermes_call` and
+  `chat_agentic` pass `-m deepseek-v4-flash --provider opencode-go` explicitly (matching the verified
+  working invocation). Verified: `chat()` and `chat_agentic()` both return real model output. No longer
+  blocks the LLM-judge path or factory model calls.
 - ⚠️ **Atlas bibliography thin**: `atlas-bibliography.json` (254 recs) is 1/8 ATLAS-100 fields
   complete (all flagged by the P5 audit); the rich `audited.ts` (Trika-10) has full depth. ATLAS-100
   needs the rich fields backfilled from the TS bibliography.

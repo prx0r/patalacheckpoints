@@ -1,3 +1,5 @@
+> **ARCHIVED / SUPERSEDED** — kept for history only. Do NOT follow as current. See `docs/INDEX.md` + `docs/DOCS-AUDIT.json` for the canonical doc.
+
 # Pipeline Peer Review — Red-Team Response
 
 *2026-08-10. The translation pipeline was red-teamed against FoJin, SuttaCentral/

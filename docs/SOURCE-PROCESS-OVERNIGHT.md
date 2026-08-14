@@ -1,3 +1,5 @@
+> **ARCHIVED / SUPERSEDED** — kept for history only. Do NOT follow as current. See `docs/INDEX.md` + `docs/DOCS-AUDIT.json` for the canonical doc for this concern.
+
 # PĀṬALA AUTONOMOUS FACTORY — FULL SOURCE PROCESS (what happens when you run overnight)
 
 *2026-08-13. This is the complete, code-accurate trace of what the system does when you run

@@ -80,11 +80,17 @@ def _hermes_call(prompt: str, model: str = DEFAULT_MODEL, timeout: int = 120, _r
         timeout = int(os.environ.get("HERMES_TIMEOUT", "0"))
     env = dict(os.environ)
     env.setdefault("HERMES_MODEL", model)
+    # The `-z` one-shot must pass the model AND provider EXPLICITLY — config.yaml's provider
+    # (opencode-go) is not picked up by `-z` for this model, causing "Provider 'deepseek' set in
+    # config.yaml but no API key" / "HTTP 401: Model not supported" on every call. Match the
+    # verified working invocation:
+    #   hermes -z "<prompt>" -m deepseek-v4-flash --provider opencode-go
+    provider = os.environ.get("HERMES_PROVIDER", "opencode-go")
     last = None
     for attempt in range(_retries + 1):
         proc = None
         try:
-            cmd = [HERMES_BIN, "-z", prompt]
+            cmd = [HERMES_BIN, "-z", prompt, "-m", model, "--provider", provider]
             if session:
                 cmd += ["--resume", session]
             proc = subprocess.Popen(
@@ -154,8 +160,9 @@ def chat_agentic(system: str, user: str, skills: str = "", max_turns: int = 8,
     """
     import subprocess
     prompt = f"{system}\n\n{user}"
+    provider = os.environ.get("HERMES_PROVIDER", "opencode-go")
     cmd = [HERMES_BIN, "chat", "-Q", "-q", prompt, "--yolo",
-           "--max-turns", str(max_turns)]
+           "--max-turns", str(max_turns), "-m", DEFAULT_MODEL, "--provider", provider]
     if skills:
         cmd += ["--skills", skills]
     if session:

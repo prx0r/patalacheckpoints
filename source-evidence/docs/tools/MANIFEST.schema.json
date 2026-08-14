@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://patala.local/source-evidence/docs/tools/MANIFEST.schema.json",
-  "title": "Pāṭala S0.1 External-Tool Manifest",
-  "description": "Machine-readable registry of the mature open infrastructure Pāṭala borrows (reuse-first doctrine). Validates source-evidence/docs/tools/MANIFEST.json.",
+  "title": "Pāṭala External-Tool Manifest",
+  "description": "Machine-readable registry of the mature open infrastructure Pāṭala borrows (reuse-first doctrine). Validates source-evidence/docs/tools/MANIFEST.json. Each entry names what Pāṭala borrows, the license, docs, repository, INTEGRATION STATUS, and where in the code it is actually used.",
   "type": "object",
   "required": ["about", "category_order", "tools"],
   "additionalProperties": false,
@@ -17,24 +17,36 @@
     },
     "tools": {
       "type": "object",
-      "additionalProperties": {
-        "$ref": "#/$defs/tool"
-      }
+      "additionalProperties": { "$ref": "#/$defs/tool" }
     }
   },
   "$defs": {
     "tool": {
       "type": "object",
-      "required": ["category", "borrow", "license", "docs_url", "repo", "local_doc", "docs_cache"],
+      "required": ["category", "borrow", "license", "docs_url", "repo", "local_doc", "docs_cache", "status"],
       "additionalProperties": false,
       "properties": {
-        "category": { "type": "string", "enum": ["parsing", "bibliography", "retrieval", "annotation", "evaluation", "workflow", "packaging", "assistant", "watch"] },
+        "category": {
+          "type": "string",
+          "enum": ["parsing", "bibliography", "retrieval", "annotation", "evaluation", "workflow", "packaging", "assistant", "watch", "linguistic", "lexical", "ontology", "identity", "argument", "publishing"]
+        },
         "borrow": { "type": "string" },
         "license": { "type": "string" },
         "docs_url": { "type": "string", "format": "uri" },
         "repo": { "type": "string", "format": "uri" },
         "local_doc": { "type": "string" },
-        "docs_cache": { "type": "string" }
+        "docs_cache": { "type": "string" },
+        "status": {
+          "type": "string",
+          "enum": ["INTEGRATED", "WIRED", "PARTIAL", "DOCS_ONLY", "PLANNED", "WATCH", "NOT_USED"],
+          "description": "INTEGRATED = in production code path, tested. WIRED = a working adapter exists. PARTIAL = partially wired / a stub. DOCS_ONLY = documented, no code. PLANNED = identified, not started. WATCH = audited as prior-art, not adopted. NOT_USED = documented but intentionally not used."
+        },
+        "used_in": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Concrete code paths (file:line or module) where this tool is used. Empty = not wired."
+        },
+        "notes": { "type": "string" }
       }
     }
   }

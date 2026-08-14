@@ -1,7 +1,7 @@
 {
   "$schema": "./MANIFEST.schema.json",
-  "about": "Pāṭala S0.1 external-tool registry. Each entry names what Pāṭala borrows, the license, the canonical docs URL (for offline download into docs-cache/), and the repository. Pāṭala owns only the epistemic graph; every tool here is borrowed. See docs-cache/<slug>/ for locally-downloaded documentation.",
-  "updated": "2026-08-12",
+  "about": "Pāṭala external-tool registry (reuse-first doctrine). Every tool Pāṭala borrows: what it borrows, license, docs, repo, INTEGRATION STATUS, and where in code it is actually used. Pāṭala owns only the epistemic graph; every tool here is borrowed. status: INTEGRATED (production+tested) / WIRED (working adapter) / PARTIAL (stub) / DOCS_ONLY (no code) / PLANNED / NOT_USED.",
+  "updated": "2026-08-14",
   "category_order": [
     "parsing",
     "bibliography",
@@ -11,26 +11,41 @@
     "workflow",
     "packaging",
     "assistant",
-    "watch"
+    "watch",
+    "linguistic",
+    "lexical",
+    "ontology",
+    "identity",
+    "argument",
+    "publishing"
   ],
   "tools": {
     "grobid": {
       "category": "parsing",
-      "borrow": "PDF → structured scholarly text (TEI, references, citation contexts, sections, coordinates)",
+      "borrow": "PDF → structured scholarly text (TEI, references, citation contexts, sections)",
       "license": "Apache-2.0",
       "docs_url": "https://grobid.readthedocs.io",
       "repo": "https://github.com/kermitt2/grobid",
       "local_doc": "source-evidence/docs/tools/grobid.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/grobid/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/grobid/",
+      "status": "PARTIAL",
+      "used_in": [
+        "source-evidence/production/adapters/grobid_live.py",
+        "source-evidence/production/adapters/scholar_document.py"
+      ],
+      "notes": "GrobidLiveAdapter is the real live integration; scholar_document.GrobidAdapter.parse() is a placeholder (two classes). GROBID not installed in this env → ExistingTextAdapter fallback."
     },
     "docling": {
       "category": "parsing",
-      "borrow": "general docs (DOCX/EPUB/HTML/audio/…) → normalized witness",
+      "borrow": "general docs (DOCX/EPUB/HTML) → normalized witness",
       "license": "MIT",
       "docs_url": "https://github.com/docling-project/docling",
       "repo": "https://github.com/docling-project/docling",
       "local_doc": "source-evidence/docs/tools/docling.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/docling/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/docling/",
+      "status": "DOCS_ONLY",
+      "used_in": [],
+      "notes": "Documented as a fallback in scholar_document.py but no live docling call."
     },
     "anystyle": {
       "category": "parsing",
@@ -39,16 +54,22 @@
       "docs_url": "https://anystyle.io",
       "repo": "https://github.com/inukshuk/anystyle",
       "local_doc": "source-evidence/docs/tools/anystyle.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/anystyle/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/anystyle/",
+      "status": "DOCS_ONLY",
+      "used_in": [],
+      "notes": ""
     },
     "zotero": {
       "category": "bibliography",
-      "borrow": "bibliography CRUD, citations, `since=` sync, CSL/BibTeX/TEI export",
+      "borrow": "bibliography CRUD, citations, since= sync, CSL/BibTeX/TEI export",
       "license": "free client/API",
       "docs_url": "https://www.zotero.org/support/dev/web_api/v3/basics",
       "repo": "https://github.com/zotero",
       "local_doc": "source-evidence/docs/tools/zotero.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/zotero/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/zotero/",
+      "status": "DOCS_ONLY",
+      "used_in": [],
+      "notes": "Named in scholarly_oracle docstrings only; no live import. Bibliography lives in data/atlas/*.ts + atlas-bibliography.json."
     },
     "crossref": {
       "category": "bibliography",
@@ -57,88 +78,124 @@
       "docs_url": "https://api.crossref.org",
       "repo": "https://gitlab.com/crossref",
       "local_doc": "source-evidence/docs/tools/crossref.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/crossref/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/crossref/",
+      "status": "WIRED",
+      "used_in": [
+        "source-evidence/production/adapters/metadata_resolver.py:resolve_crossref"
+      ],
+      "notes": "Metadata resolution adapter is live. Reviewer DOI registration not built."
     },
     "openalex": {
       "category": "bibliography",
       "borrow": "works/authors/venues/concepts enrichment",
-      "license": "CC0/MIT",
-      "docs_url": "https://docs.openalex.org",
-      "repo": "https://github.com/ourresearch/openalex",
+      "license": "CC0",
+      "docs_url": "https://developers.openalex.org",
+      "repo": "https://github.com/ourresearch/openalex-docs",
       "local_doc": "source-evidence/docs/tools/openalex.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/openalex/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/openalex/",
+      "status": "WIRED",
+      "used_in": [
+        "source-evidence/production/adapters/metadata_resolver.py:resolve_openalex"
+      ],
+      "notes": "Metadata resolution adapter is live. Bulk snapshot (330GB) intentionally not downloaded."
     },
     "opencitations": {
       "category": "bibliography",
-      "borrow": "citation graph + disambiguation",
-      "license": "CC0/ODC",
+      "borrow": "citation graph + disambiguation (independence / SOURCE_ECHO)",
+      "license": "CC0",
       "docs_url": "https://opencitations.net",
       "repo": "https://github.com/opencitations",
       "local_doc": "source-evidence/docs/tools/opencitations.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/opencitations/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/opencitations/",
+      "status": "PARTIAL",
+      "used_in": [
+        "source-evidence/production/adapters/opencitations.py"
+      ],
+      "notes": "Adapter exists; _same_author() hard-wired UNKNOWN (open issue)."
     },
     "unpaywall": {
       "category": "bibliography",
       "borrow": "OA full-text discovery",
-      "license": "CC0",
+      "license": "free with API key",
       "docs_url": "https://unpaywall.org",
       "repo": "https://github.com/ourresearch/unpaywall",
       "local_doc": "source-evidence/docs/tools/unpaywall.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/unpaywall/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/unpaywall/",
+      "status": "DOCS_ONLY",
+      "used_in": [],
+      "notes": ""
     },
     "raid": {
       "category": "bibliography",
-      "borrow": "research-activity identifier (binds contributors/orgs/outputs/PIDs)",
-      "license": "open",
-      "docs_url": "https://www.raid.org",
+      "borrow": "research-activity identifier (binds contributors/orgs/outputs)",
+      "license": "CC0",
+      "docs_url": "https://raid.org.au",
       "repo": "https://github.com/au-research/raid-metadata",
       "local_doc": "source-evidence/docs/tools/raid.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/raid/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/raid/",
+      "status": "DOCS_ONLY",
+      "used_in": [],
+      "notes": ""
     },
     "tantivy": {
       "category": "retrieval",
       "borrow": "local BM25 full-text (lexical baseline)",
       "license": "MIT",
-      "docs_url": "https://docs.rs/tantivy",
+      "docs_url": "https://github.com/quickwit-oss/tantivy",
       "repo": "https://github.com/quickwit-oss/tantivy",
       "local_doc": "source-evidence/docs/tools/tantivy.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/tantivy/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/tantivy/",
+      "status": "NOT_USED",
+      "used_in": [],
+      "notes": "Search v2 later; Postgres FTS/pg_trgm first (search v1)."
     },
     "paperqa": {
       "category": "retrieval",
-      "borrow": "Scholar Assistant RAG + metadata clients (Crossref/OpenAlex/Unpaywall)",
-      "license": "Apache-2.0",
-      "docs_url": "https://github.com/future-house/paper-qa",
-      "repo": "https://github.com/future-house/paper-qa",
+      "borrow": "Scholar Assistant RAG + metadata clients",
+      "license": "BSD-3-Clause",
+      "docs_url": "https://github.com/Future-House/paper-qa",
+      "repo": "https://github.com/Future-House/paper-qa",
       "local_doc": "source-evidence/docs/tools/paperqa.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/paperqa/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/paperqa/",
+      "status": "DOCS_ONLY",
+      "used_in": [],
+      "notes": ""
     },
     "scirrag": {
       "category": "retrieval",
       "borrow": "query decomposition, citation-graph expansion, gap detection",
-      "license": "open",
-      "docs_url": "https://github.com/yale-nlp/SciRAG",
-      "repo": "https://github.com/yale-nlp/SciRAG",
+      "license": "MIT",
+      "docs_url": "https://github.com/rashidrao-pk/scirrag",
+      "repo": "https://github.com/rashidrao-pk/scirrag",
       "local_doc": "source-evidence/docs/tools/scirrag.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/scirrag/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/scirrag/",
+      "status": "DOCS_ONLY",
+      "used_in": [],
+      "notes": ""
     },
     "s2orc": {
       "category": "retrieval",
       "borrow": "full-text corpus of 100M+ OA papers (source of GROBID XML)",
-      "license": "CC0 (corpus)",
+      "license": "ODC-BY",
       "docs_url": "https://github.com/allenai/s2orc",
       "repo": "https://github.com/allenai/s2orc",
       "local_doc": "source-evidence/docs/tools/s2orc.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/s2orc/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/s2orc/",
+      "status": "NOT_USED",
+      "used_in": [],
+      "notes": "Modern-paper coverage for Sanskrit ~0%; don't invest (audit §Open)."
     },
     "crag": {
       "category": "retrieval",
       "borrow": "corrective RAG (retriever + grader) pattern",
       "license": "MIT",
-      "docs_url": "https://github.com/langchain-ai/langgraph",
-      "repo": "https://github.com/langchain-ai/langgraph",
+      "docs_url": "https://github.com/HuskyInSalt/CRAG",
+      "repo": "https://github.com/HuskyInSalt/CRAG",
       "local_doc": "source-evidence/docs/tools/crag.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/crag/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/crag/",
+      "status": "DOCS_ONLY",
+      "used_in": [],
+      "notes": ""
     },
     "inception": {
       "category": "annotation",
@@ -147,79 +204,111 @@
       "docs_url": "https://inception-project.github.io",
       "repo": "https://github.com/inception-project/inception",
       "local_doc": "source-evidence/docs/tools/inception.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/inception/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/inception/",
+      "status": "DOCS_ONLY",
+      "used_in": [
+        "source-evidence/evals/patala/tasks/annotation_bridge.py"
+      ],
+      "notes": "annotation_bridge.py handles W3C export/import round-trip; live INCEpTION service not run."
     },
     "recogito": {
       "category": "annotation",
-      "borrow": "native Workbench/Review annotation UI (W3C Web Annotation)",
-      "license": "BSD",
+      "borrow": "Workbench/Review annotation UI (W3C Web Annotation)",
+      "license": "BSD-3-Clause",
       "docs_url": "https://recogito.github.io",
-      "repo": "https://github.com/recogito/text-annotator-js",
+      "repo": "https://github.com/recogito",
       "local_doc": "source-evidence/docs/tools/recogito.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/recogito/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/recogito/",
+      "status": "DOCS_ONLY",
+      "used_in": [],
+      "notes": ""
     },
     "hypothesis": {
       "category": "annotation",
       "borrow": "inline public annotation (→ ReviewProposal)",
-      "license": "BSD client",
-      "docs_url": "https://h.readthedocs.io",
-      "repo": "https://github.com/hypothesis/client",
+      "license": "BSD-3-Clause",
+      "docs_url": "https://web.hypothes.is",
+      "repo": "https://github.com/hypothesis",
       "local_doc": "source-evidence/docs/tools/hypothesis.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/hypothesis/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/hypothesis/",
+      "status": "DOCS_ONLY",
+      "used_in": [],
+      "notes": ""
     },
     "inspect": {
       "category": "evaluation",
-      "borrow": "THE benchmark runtime (datasets/agents/scorers/scanners/EvalLog/viewer)",
+      "borrow": "THE benchmark runtime (datasets/agents/scorers/scanners/EvalLog)",
       "license": "MIT",
-      "docs_url": "https://inspect.aisi.org.uk",
+      "docs_url": "https://inspect.ai-safety-institute.org.uk",
       "repo": "https://github.com/UKGovernmentBEIS/inspect_ai",
       "local_doc": "source-evidence/docs/tools/inspect.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/inspect/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/inspect/",
+      "status": "INTEGRATED",
+      "used_in": [
+        "source-evidence/evals/",
+        "source-evidence/evals/inspect_arglaundry_nat.py"
+      ],
+      "notes": "The benchmark runtime for the eval plane (PāṭalaQA, TantraFact, ArgumentBench, etc.)."
     },
     "orkg": {
       "category": "annotation",
       "borrow": "scholarly KG patterns (precedent/interop, NOT backend)",
-      "license": "open",
+      "license": "CC0",
       "docs_url": "https://orkg.org",
-      "repo": "https://gitlab.com/TIBHannover/orkg",
+      "repo": "https://github.com/OpenResearchInstitute/orkg",
       "local_doc": "source-evidence/docs/tools/orkg.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/orkg/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/orkg/",
+      "status": "DOCS_ONLY",
+      "used_in": [],
+      "notes": ""
     },
     "ro-crate": {
       "category": "packaging",
       "borrow": "portable corpus/benchmark packaging",
       "license": "Apache-2.0",
-      "docs_url": "https://www.researchobject.org/ro-crate/",
-      "repo": "https://github.com/ResearchObject/ro-crate-py",
+      "docs_url": "https://www.researchobject.org/ro-crate",
+      "repo": "https://github.com/ResearchObject/ro-crate",
       "local_doc": "source-evidence/docs/tools/ro-crate.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/ro-crate/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/ro-crate/",
+      "status": "DOCS_ONLY",
+      "used_in": [],
+      "notes": ""
     },
     "openreview": {
       "category": "workflow",
       "borrow": "review/submission workflow (with Kotahi/Janeway/PubPub)",
       "license": "MIT",
-      "docs_url": "https://docs.openreview.net",
-      "repo": "https://github.com/openreview/openreview-api",
+      "docs_url": "https://openreview.net",
+      "repo": "https://github.com/openreview/openreview-py",
       "local_doc": "source-evidence/docs/tools/openreview.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/openreview/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/openreview/",
+      "status": "DOCS_ONLY",
+      "used_in": [],
+      "notes": ""
     },
     "coar-notify": {
       "category": "workflow",
       "borrow": "peer-review federation protocol (Pāṭala as a review service)",
-      "license": "open",
-      "docs_url": "https://github.com/coar-notify/coarnotifypy",
-      "repo": "https://github.com/COAR-Notify/notify",
+      "license": "CC0",
+      "docs_url": "https://www.coar-repositories.org/notify",
+      "repo": "https://github.com/COAR-Notify",
       "local_doc": "source-evidence/docs/tools/coar-notify.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/coar-notify/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/coar-notify/",
+      "status": "DOCS_ONLY",
+      "used_in": [],
+      "notes": ""
     },
     "manubot": {
       "category": "workflow",
       "borrow": "forkable Git-versioned scholarly essays (Vision 07)",
-      "license": "open",
+      "license": "BSD-3-Clause",
       "docs_url": "https://manubot.org",
       "repo": "https://github.com/manubot/manubot",
       "local_doc": "source-evidence/docs/tools/manubot.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/manubot/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/manubot/",
+      "status": "DOCS_ONLY",
+      "used_in": [],
+      "notes": ""
     },
     "storm": {
       "category": "assistant",
@@ -228,25 +317,552 @@
       "docs_url": "https://github.com/stanford-oval/storm",
       "repo": "https://github.com/stanford-oval/storm",
       "local_doc": "source-evidence/docs/tools/storm.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/storm/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/storm/",
+      "status": "DOCS_ONLY",
+      "used_in": [],
+      "notes": ""
     },
     "valsci-sciatlas": {
       "category": "watch",
       "borrow": "concepts/claims over scholarly corpora (watch/steal-ideas)",
-      "license": "open",
-      "docs_url": "https://github.com/p-v-o-s/pioneer-valley-open-science.github.com",
-      "repo": "https://github.com/Value-of-science/val-sci",
+      "license": "MIT",
+      "docs_url": "https://github.com/valscience/sciatlas",
+      "repo": "https://github.com/valscience/sciatlas",
       "local_doc": "source-evidence/docs/tools/valsci-sciatlas.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/valsci-sciatlas/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/valsci-sciatlas/",
+      "status": "DOCS_ONLY",
+      "used_in": [],
+      "notes": ""
     },
     "citevqa": {
       "category": "watch",
       "borrow": "citation-verification / visual QA research precedent",
-      "license": "open",
-      "docs_url": "https://github.com/opendatalab/CiteVQA",
-      "repo": "https://github.com/princeton-nlp/ScienceQA",
+      "license": "research",
+      "docs_url": "https://github.com/eluv-io/elv-citevqa",
+      "repo": "https://github.com/eluv-io/elv-citevqa",
       "local_doc": "source-evidence/docs/tools/citevqa.md",
-      "docs_cache": "source-evidence/docs/tools/docs-cache/citevqa/"
+      "docs_cache": "source-evidence/docs/tools/docs-cache/citevqa/",
+      "status": "DOCS_ONLY",
+      "used_in": [],
+      "notes": ""
+    },
+    "vidyut": {
+      "category": "linguistic",
+      "borrow": "Sanskrit linguistic engine: segmentation (cheda), morphology (prakriya), inflection (kosha), transliteration (lipi), sandhi, meter (chandas)",
+      "license": "Apache-2.0",
+      "docs_url": "https://github.com/ambuda-org/vidyut",
+      "repo": "https://github.com/ambuda-org/vidyut",
+      "local_doc": "source-evidence/docs/tools/vidyut.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/vidyut/",
+      "status": "INTEGRATED",
+      "used_in": [
+        "pipeline/agentic_gloss.py"
+      ],
+      "notes": "S-tier. The deterministic tokenizer/segmenter/lemmatizer for passage linguistic enrichment. Should become the canonical SanskritLinguisticAdapter (derived annotations, never L0 edits)."
+    },
+    "ambuda-dcs": {
+      "category": "linguistic",
+      "borrow": "sanitized DCS dataset: 650k+ annotated Sanskrit sentences / ~250 texts → corpus-grounded linguistic priors",
+      "license": "varies (Hellwig data)",
+      "docs_url": "https://github.com/ambuda-org/dcs",
+      "repo": "https://github.com/ambuda-org/dcs",
+      "local_doc": "source-evidence/docs/tools/ambuda-dcs.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/ambuda-dcs/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "S-tier dataset: how a surface form is analyzed across actual texts → translation confidence, segmentation, lemma disambiguation, education."
+    },
+    "dcs-sh-alignment": {
+      "category": "linguistic",
+      "borrow": "align DCS annotations ↔ Sanskrit Heritage analyses (and VedaWeb/Samsaadhanii) → consensus/uncertainty layer",
+      "license": "MIT",
+      "docs_url": "https://github.com/SriramKrishnan8/dcs_sh_alignment",
+      "repo": "https://github.com/SriramKrishnan8/dcs_sh_alignment",
+      "local_doc": "source-evidence/docs/tools/dcs-sh-alignment.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/dcs-sh-alignment/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "Model Token → Analysis[DCS/Heritage/VedaWeb/Samsaadhanii] agreement/disagreement → confidence."
+    },
+    "csl-orig": {
+      "category": "lexical",
+      "borrow": "canonical git-tracked source for 45 dictionary collections (MW, PWG, PWK, Grassmann, Apte) → lexical evidence graph",
+      "license": "varies (mostly public domain)",
+      "docs_url": "https://github.com/sanskrit-lexicon/csl-orig",
+      "repo": "https://github.com/sanskrit-lexicon/csl-orig",
+      "local_doc": "source-evidence/docs/tools/csl-orig.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/csl-orig/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "TERM layer: śakti → MW/PWG/PWK/AP90/GRA + tantric corpus occurrences + semantic trajectory."
+    },
+    "csl-standards": {
+      "category": "lexical",
+      "borrow": "TEI / OntoLex / FrAC / RDF / SHACL crosswalks for dictionary lineage, source records, attestations, evidence classes",
+      "license": "varies",
+      "docs_url": "https://github.com/sanskrit-lexicon/csl-standards",
+      "repo": "https://github.com/sanskrit-lexicon/csl-standards",
+      "local_doc": "source-evidence/docs/tools/csl-standards.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/csl-standards/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "DO NOT copy their ontology wholesale; create patala↔CSL/OntoLex/FrAC crosswalks. Validates rich-native-first + standards-adapters-outward."
+    },
+    "sanskrit-util": {
+      "category": "linguistic",
+      "borrow": "shared SLP1/IAST/Devanagari normalization + transliteration",
+      "license": "varies",
+      "docs_url": "https://github.com/sanskrit-lexicon/sanskrit-util",
+      "repo": "https://github.com/sanskrit-lexicon/sanskrit-util",
+      "local_doc": "source-evidence/docs/tools/sanskrit-util.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/sanskrit-util/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "Don't proliferate Pāṭala-specific transliteration; reuse + Vidyut lipi + Aksharamukha fallback."
+    },
+    "aksharamukha": {
+      "category": "linguistic",
+      "borrow": "120 scripts + 21 romanization systems (Grantha, Śāradā, Newa, Bengali, Devanagari, IAST, ISO15919…)",
+      "license": "MIT",
+      "docs_url": "https://github.com/virtualvinodh/aksharamukha",
+      "repo": "https://github.com/virtualvinodh/aksharamukha",
+      "local_doc": "source-evidence/docs/tools/aksharamukha.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/aksharamukha/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "Broad script-interop fallback once manuscripts (Grantha/Śāradā) appear. Vidyut lipi covers core IAST first."
+    },
+    "buda-owl-schema": {
+      "category": "ontology",
+      "borrow": "BDRC Buddhist Digital Ontology: Person/Work/Instance/Place/Role/Event/Binding/Script/Collection (RDF, JSON-LD, SKOS)",
+      "license": "CC0",
+      "docs_url": "https://github.com/buda-base/owl-schema",
+      "repo": "https://github.com/buda-base/owl-schema",
+      "local_doc": "source-evidence/docs/tools/buda-owl-schema.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/buda-owl-schema/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "ADAPTER/reference for Person/Work/Instance semantics (esp. PANDiT layer), NOT canonical. Native: Argument/Claim/EvidenceUse/Crux/Adjudication stay ours."
+    },
+    "buda-rdf-editor": {
+      "category": "annotation",
+      "borrow": "SHACL-driven RDF scholar editor (React) + jena-stable-turtle deterministic serialization",
+      "license": "varies",
+      "docs_url": "https://github.com/buda-base/rdf-document-editor",
+      "repo": "https://github.com/buda-base/rdf-document-editor",
+      "local_doc": "source-evidence/docs/tools/buda-rdf-editor.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/buda-rdf-editor/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "Study how schemas → safe scholarly edit forms. Steal deterministic-Turtle → meaningful Git diffs principle."
+    },
+    "inception-recommender": {
+      "category": "annotation",
+      "borrow": "external recommender API: AI suggests annotations → scholar accepts/modifies/rejects → gold",
+      "license": "Apache-2.0",
+      "docs_url": "https://github.com/inception-project/inception-external-recommender",
+      "repo": "https://github.com/inception-project/inception-external-recommender",
+      "local_doc": "source-evidence/docs/tools/inception-recommender.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/inception-recommender/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "Maps exactly to AI-candidate → scholar-interface → review-event → gold. Internal gold construction."
+    },
+    "argdown": {
+      "category": "argument",
+      "borrow": "human-readable argument syntax → visual argument maps (premise/conclusion, relations)",
+      "license": "MIT",
+      "docs_url": "https://github.com/christianvoigt/argdown",
+      "repo": "https://github.com/christianvoigt/argdown",
+      "local_doc": "source-evidence/docs/tools/argdown.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/argdown/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "Pāṭala Argument JSON → Argdown adapter → editable scholar notation → SVG/map. argdown-cotgen for education reconstruction (never epistemic truth)."
+    },
+    "nanopub": {
+      "category": "publishing",
+      "borrow": "nanopublication protocol: publish Pāṭala Assertions as machine-addressable, signed, queryable objects",
+      "license": "varies (protocol)",
+      "docs_url": "https://nanopub.net",
+      "repo": "https://github.com/Nanopublication",
+      "local_doc": "source-evidence/docs/tools/nanopub.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/nanopub/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "A publication protocol, NOT our epistemology. Native rich Assertion → publish() → nanopublication."
+    },
+    "vedaweb-tekst": {
+      "category": "retrieval",
+      "borrow": "VedaWeb/Tekst info architecture: text/token/annotation/lexical-link/metrical/search-facet/corpus-position",
+      "license": "varies",
+      "docs_url": "https://github.com/VedaWebProject/vedaweb-legacy",
+      "repo": "https://github.com/VedaWebProject",
+      "local_doc": "source-evidence/docs/tools/vedaweb-tekst.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/vedaweb-tekst/",
+      "status": "WATCH",
+      "used_in": [],
+      "notes": "Raid information architecture patterns, not foundation."
+    },
+    "tei-publisher": {
+      "category": "packaging",
+      "borrow": "turn TEI data + templates into scholarly publication interfaces",
+      "license": "GPL",
+      "docs_url": "https://github.com/eeditiones/tei-publisher-app",
+      "repo": "https://github.com/eeditiones/tei-publisher-app",
+      "local_doc": "source-evidence/docs/tools/tei-publisher.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/tei-publisher/",
+      "status": "DOCS_ONLY",
+      "used_in": [],
+      "notes": "Adapter for archival scholarly-edition export; SARIT used related infra."
+    },
+    "sangrahaka": {
+      "category": "annotation",
+      "borrow": "distributed knowledge-graph annotation + querying (Flask/Neo4j), Sanskrit+CL+KG intersection",
+      "license": "varies",
+      "docs_url": "https://github.com/hrishikeshrt",
+      "repo": "https://github.com/hrishikeshrt",
+      "local_doc": "source-evidence/docs/tools/sangrahaka.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/sangrahaka/",
+      "status": "WATCH",
+      "used_in": [],
+      "notes": "A-tier audit: prior art for human→knowledge-graph annotation workflow. NOT a Neo4j migration."
+    },
+    "pramana-nlp": {
+      "category": "watch",
+      "borrow": "archived Sanskrit philosophy corpus + metadata + NLP experiments (Tyler Neill)",
+      "license": "varies",
+      "docs_url": "https://github.com/tylergneill/pramana-nlp",
+      "repo": "https://github.com/tylergneill/pramana-nlp",
+      "local_doc": "source-evidence/docs/tools/pramana-nlp.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/pramana-nlp/",
+      "status": "WATCH",
+      "used_in": [],
+      "notes": "Dedicated audit: philosophy corpus text lists, preprocessing, identifiers — closer to our domain than generic Sanskrit NLP."
+    },
+    "marker": {
+      "category": "parsing",
+      "borrow": "documents → Markdown/JSON/chunks/HTML (difficult PDFs, schema-guided extraction)",
+      "license": "GPL-3.0/Model-license",
+      "docs_url": "https://github.com/datalab-to/marker",
+      "repo": "https://github.com/datalab-to/marker",
+      "local_doc": "source-evidence/docs/tools/marker.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/marker/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "Strong fallback parser; license caution for commercial reuse — not the irreplaceable core."
+    },
+    "nougat": {
+      "category": "parsing",
+      "borrow": "academic-document parsing, equations/tables (OCR fallback)",
+      "license": "CC-BY-NC-4.0",
+      "docs_url": "https://github.com/facebookresearch/nougat",
+      "repo": "https://github.com/facebookresearch/nougat",
+      "local_doc": "source-evidence/docs/tools/nougat.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/nougat/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "Fallback for math/table-heavy PDFs; lower priority for humanities."
+    },
+    "s2orc-doc2json": {
+      "category": "parsing",
+      "borrow": "PDF→GROBID→TEI→structured scholarly JSON (RawDocument/StructuredDocument/BibliographyEntry/CitationMention/BodySpan/Section)",
+      "license": "Apache-2.0",
+      "docs_url": "https://github.com/allenai/s2orc-doc2json",
+      "repo": "https://github.com/allenai/s2orc-doc2json",
+      "local_doc": "source-evidence/docs/tools/s2orc-doc2json.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/s2orc-doc2json/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "Schema reference for the paper-normalization layer."
+    },
+    "socratickg": {
+      "category": "retrieval",
+      "borrow": "QA-mediated knowledge-graph construction: doc→5W1H self-contained QA→atomic facts→KG",
+      "license": "Apache-2.0",
+      "docs_url": "https://github.com/LABA-SNU/SocraticKG",
+      "repo": "https://github.com/LABA-SNU/SocraticKG",
+      "local_doc": "source-evidence/docs/tools/socratickg.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/socratickg/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "Replace generic 5W1H with Pāṭala scholarly-interrogator questions (06-commentarial-graph)."
+    },
+    "dspy": {
+      "category": "retrieval",
+      "borrow": "typed extraction programs with measurable outputs (optimize against gold)",
+      "license": "MIT",
+      "docs_url": "https://github.com/stanfordnlp/dspy",
+      "repo": "https://github.com/stanfordnlp/dspy",
+      "local_doc": "source-evidence/docs/tools/dspy.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/dspy/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "Path from prompt pipeline → measured program → optimized program."
+    },
+    "refchecker": {
+      "category": "evaluation",
+      "borrow": "atomic claim decomposition + fidelity check against reference material",
+      "license": "Apache-2.0",
+      "docs_url": "https://github.com/amazon-science/RefChecker",
+      "repo": "https://github.com/amazon-science/RefChecker",
+      "local_doc": "source-evidence/docs/tools/refchecker.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/refchecker/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "Essay/video renderer verification: SUPPORTED/QUALIFIED/UNSUPPORTED per proposition."
+    },
+    "ciber": {
+      "category": "retrieval",
+      "borrow": "deliberate refutation retrieval (both corroborating + refuting evidence)",
+      "license": "research",
+      "docs_url": "https://arxiv.org/abs/2503.07937",
+      "repo": "",
+      "local_doc": "source-evidence/docs/tools/ciber.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/ciber/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "Native Pāṭala behavior: SUPPORT/QUALIFICATION/REFUTATION queries (anti self-confirm)."
+    },
+    "graphcheck": {
+      "category": "evaluation",
+      "borrow": "graph-vs-graph relational drift detection for long-form text",
+      "license": "research",
+      "docs_url": "https://github.com/Yingjian-Chen/GraphCheck",
+      "repo": "https://github.com/Yingjian-Chen/GraphCheck",
+      "local_doc": "source-evidence/docs/tools/graphcheck.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/graphcheck/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "Canonical-graph vs script-graph relationship fidelity (documentary verification)."
+    },
+    "claimcheck": {
+      "category": "evaluation",
+      "borrow": "link review weaknesses to the claims they dispute; critique type/validity/objectivity",
+      "license": "research",
+      "docs_url": "https://arxiv.org/abs/2503.21717",
+      "repo": "",
+      "local_doc": "source-evidence/docs/tools/claimcheck.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/claimcheck/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "Scholar-review objections: target_claim/type/objection/source_support, MACHINE_PROPOSED."
+    },
+    "rarr": {
+      "category": "retrieval",
+      "borrow": "generated claim → question → retrieve evidence → assess agreement → revise",
+      "license": "Apache-2.0",
+      "docs_url": "https://github.com/anthonywchen/RARR",
+      "repo": "https://github.com/anthonywchen/RARR",
+      "local_doc": "source-evidence/docs/tools/rarr.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/rarr/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "Rewrite unsupported output; evidence universe = trusted Pāṭala corpus, not web."
+    },
+    "alignscore": {
+      "category": "evaluation",
+      "borrow": "cheap semantic entailment/consistency witness (NLI/QA/paraphrase/fact-verification) — cheap verifier before LLM critic",
+      "license": "MIT",
+      "docs_url": "https://github.com/yizhongw/AlignScore",
+      "repo": "https://github.com/yizhongw/AlignScore",
+      "local_doc": "source-evidence/docs/tools/alignscore.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/alignscore/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "Optional local semantic witness in the verification plane; route borderline → LLM critic → human."
+    },
+    "factscore": {
+      "category": "evaluation",
+      "borrow": "atomic factual precision: decompose output into atomic facts, measure fraction supported by trusted source",
+      "license": "MIT",
+      "docs_url": "https://github.com/shmsw25/FActScore",
+      "repo": "https://github.com/shmsw25/FActScore",
+      "local_doc": "source-evidence/docs/tools/factscore.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/factscore/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "L2-License/C1-License/Essay-License share one atomic-support evaluator; trusted source = Pāṭala upstream objects, not Wikipedia."
+    },
+    "glosslm": {
+      "category": "linguistic",
+      "borrow": "450k IGT examples / 1800 languages for automatic gloss generation — the T1 benchmark paradigm",
+      "license": "Apache-2.0 (model page)",
+      "docs_url": "https://huggingface.co/GlossLM",
+      "repo": "",
+      "local_doc": "source-evidence/docs/tools/glosslm.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/glosslm/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "Benchmark T1 against the IGT glossing paradigm (segmentation F1 + gloss accuracy + lexical-sense), not BLEU."
+    },
+    "byt5-sanskrit": {
+      "category": "linguistic",
+      "borrow": "Sanskrit word segmentation + lemmatization + morphosyntactic tagging + Vedic dependency parsing + OCR post-correction",
+      "license": "UNKNOWN (HF page unclear)",
+      "docs_url": "https://huggingface.co/",
+      "repo": "",
+      "local_doc": "source-evidence/docs/tools/byt5-sanskrit.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/byt5-sanskrit/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "Learned linguistic witness alongside Vidyut/Heritage; do NOT treat weights as redistribution-cleared yet."
+    },
+    "structeval": {
+      "category": "evaluation",
+      "borrow": "structured-output evaluation methodology (borrow, probably no runtime)",
+      "license": "Apache-2.0",
+      "docs_url": "https://github.com/princeton-nlp/StructEval",
+      "repo": "https://github.com/princeton-nlp/StructEval",
+      "local_doc": "source-evidence/docs/tools/structeval.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/structeval/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "Borrow methodology only; integrate via Inspect."
+    },
+    "conformal-prediction": {
+      "category": "evaluation",
+      "borrow": "calibrated abstention / risk control (conformal prediction, CIC) — calibrated OPEN instead of false confidence",
+      "license": "research method",
+      "docs_url": "",
+      "repo": "",
+      "local_doc": "source-evidence/docs/tools/conformal-prediction.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/conformal-prediction/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "Implement small native calibration layer in Pāṭala contracts."
+    },
+    "metamorphic-testing": {
+      "category": "evaluation",
+      "borrow": "metamorphic/mutation testing — invariant-preserving perturbations of inputs",
+      "license": "research method",
+      "docs_url": "",
+      "repo": "",
+      "local_doc": "source-evidence/docs/tools/metamorphic-testing.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/metamorphic-testing/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "Implement natively in Pāṭala contracts (perturbation/crux machinery already exists)."
+    },
+    "graphiti": {
+      "category": "retrieval",
+      "borrow": "temporal user graph: incremental episodes→graph, provenance + validity periods, semantic+keyword+graph retrieval, MCP-ready",
+      "license": "Apache-2.0",
+      "docs_url": "https://github.com/getzep/graphiti",
+      "repo": "https://github.com/getzep/graphiti",
+      "local_doc": "source-evidence/docs/tools/graphiti.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/graphiti/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "The temporal user graph for the organism layer (09-organism). Never lets projections decide truth."
+    },
+    "pybkt": {
+      "category": "evaluation",
+      "borrow": "Bayesian Knowledge Tracing — the v1 learner-state model (formal, calibrated)",
+      "license": "MIT",
+      "docs_url": "https://github.com/CAHLR/pyBKT",
+      "repo": "https://github.com/CAHLR/pyBKT",
+      "local_doc": "source-evidence/docs/tools/pybkt.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/pybkt/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "First formal learner-state model for the organism layer; benchmark vs pyKT later."
+    },
+    "pykt": {
+      "category": "evaluation",
+      "borrow": "modern Knowledge Tracing benchmarks (GKT, GRKT, etc.) to compare against BKT",
+      "license": "varies",
+      "docs_url": "https://github.com/pykt-team/pykt-toolkit",
+      "repo": "https://github.com/pykt-team/pykt-toolkit",
+      "local_doc": "source-evidence/docs/tools/pykt.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/pykt/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "Benchmark learner models, not marry BKT."
+    },
+    "mitrasamgraha": {
+      "category": "evaluation",
+      "borrow": "391k Sanskrit-EN bitext + post-corrected gold - the Patala Translation Benchmark + error-family validators (compound/scope/negation loss)",
+      "license": "research",
+      "docs_url": "https://arxiv.org/abs/2601.07314",
+      "repo": "",
+      "local_doc": "source-evidence/docs/tools/mitrasamgraha.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/mitrasamgraha/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "INGEST now - discover error families, not just train on it"
+    },
+    "mitra-parallel": {
+      "category": "linguistic",
+      "borrow": "1.74M Sanskrit/Tibetan/Chinese parallel pairs + domain models - cross-source translation verification (S/T/C as independent checks)",
+      "license": "research",
+      "docs_url": "https://arxiv.org/abs/2601.06400",
+      "repo": "https://github.com/dharmamitra/mitra-parallel",
+      "local_doc": "source-evidence/docs/tools/mitra-parallel.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/mitra-parallel/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "cross-source verification"
+    },
+    "indicTrans2": {
+      "category": "linguistic",
+      "borrow": "baseline Indic translation model (NOT scholarly); the human-audit pipeline in IndicLLMSuite is worth stealing",
+      "license": "MIT",
+      "docs_url": "https://github.com/AI4Bharat/IndicTrans2",
+      "repo": "https://github.com/AI4Bharat/IndicTrans2",
+      "local_doc": "source-evidence/docs/tools/indicTrans2.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/indicTrans2/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "baseline + audit pipeline"
+    },
+    "awesome-align": {
+      "category": "linguistic",
+      "borrow": "word/span alignment between source and translation",
+      "license": "MIT",
+      "docs_url": "https://github.com/neulab/awesome-align",
+      "repo": "https://github.com/neulab/awesome-align",
+      "local_doc": "source-evidence/docs/tools/awesome-align.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/awesome-align/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "alignment for the TranslationProof object"
+    },
+    "bertalign": {
+      "category": "linguistic",
+      "borrow": "sentence alignment",
+      "license": "MIT",
+      "docs_url": "https://github.com/bfsujason/bertalign",
+      "repo": "https://github.com/bfsujason/bertalign",
+      "local_doc": "source-evidence/docs/tools/bertalign.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/bertalign/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "sentence alignment"
+    },
+    "xCOMET": {
+      "category": "evaluation",
+      "borrow": "general MT evaluation (the audit frontier)",
+      "license": "Apache-2.0",
+      "docs_url": "https://github.com/Unbabel/COMET",
+      "repo": "https://github.com/Unbabel/COMET",
+      "local_doc": "source-evidence/docs/tools/xCOMET.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/xCOMET/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "study only"
+    },
+    "mt-metrics-eval": {
+      "category": "evaluation",
+      "borrow": "MetricX-25 + GemSpanEval + the MT metrics harness - do not build from scratch",
+      "license": "Apache-2.0",
+      "docs_url": "https://github.com/google-research/mt-metrics-eval",
+      "repo": "https://github.com/google-research/mt-metrics-eval",
+      "local_doc": "source-evidence/docs/tools/mt-metrics-eval.md",
+      "docs_cache": "source-evidence/docs/tools/docs-cache/mt-metrics-eval/",
+      "status": "PLANNED",
+      "used_in": [],
+      "notes": "reuse the harness"
     }
   }
 }

@@ -1,3 +1,5 @@
+> **ARCHIVED / SUPERSEDED** — kept for history only. Do NOT follow as current. See `docs/INDEX.md` + `docs/DOCS-AUDIT.json` for the canonical doc for this concern.
+
 # AGENT 2 — SELF-EXECUTING DEV PLAN (ordered by fragility: least fragile first)
 
 *2026-08-13. The dev plan for Agent 2 to build the Pāṭala Atlas foundation, ordered so that **every

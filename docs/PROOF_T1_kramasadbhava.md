@@ -1,3 +1,5 @@
+> **ARCHIVED / SUPERSEDED** — kept for history only. Do NOT follow as current. See `docs/INDEX.md` + `docs/DOCS-AUDIT.json` for the canonical doc for this concern.
+
 # Proof — T1 in the Pāṭala house schema (Kramasadbhāva 1.8–1.12)
 
 *2026-08-10. The Checkpoint-4 proof chapter: does a translation produced under the frozen contract emit reusable structured data, not just prose? This demonstrates the machine schema for the Kramasadbhāva **maṅgala** (the homage to Mahākālī), produced by retrieving evidence through the MCP and following `TRANSLATION_SKILL.md` + `STYLE_GUIDE.md`. Source: the segmented passage corpus (Dyczkowski ed., NGMPP A 209/23).*

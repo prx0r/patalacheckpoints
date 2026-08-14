@@ -1,3 +1,5 @@
+> **ARCHIVED / SUPERSEDED** — kept for history only. Do NOT follow as current. See `docs/INDEX.md` + `docs/DOCS-AUDIT.json` for the canonical doc for this concern.
+
 OK ITS important we dont overengineer anything here like api and mcp is just loose exposition of useful things as we build them out not rigid strict shit Yes. Below is the **remaining 60-text seed bibliography**, using the same richer standard as the Trika 10: translation coverage, best English/non-English editions I could verify, Sanskrit source, and useful scholarship/resource links.
 
 I’ve also corrected the original seed where the audit found better information. Treat **“No complete EN located”** as the public-facing status unless a complete translation is explicitly verified.

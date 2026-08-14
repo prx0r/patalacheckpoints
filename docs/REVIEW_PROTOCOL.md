@@ -1,3 +1,5 @@
+> **ARCHIVED / SUPERSEDED** — kept for history only. Do NOT follow as current. See `docs/INDEX.md` + `docs/DOCS-AUDIT.json` for the canonical doc for this concern.
+
 # Pāṭala Review Protocol
 
 *2026-08-10. The workflow: pipeline stages, the independent-first-pass rule, review events, and how term proposals are promoted. Policy in `STYLE_GUIDE.md` + `EVIDENCE_POLICY.md`; data shape in `TRANSLATION_SCHEMA.md`.*

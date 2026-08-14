@@ -1,3 +1,5 @@
+> **ARCHIVED / SUPERSEDED** — kept for history only. Do NOT follow as current. See `docs/INDEX.md` + `docs/DOCS-AUDIT.json` for the canonical doc for this concern.
+
 # Pāṭala — Implementation vs Vision: Gaps & Opportunities
 
 *2026-08-12. A point-by-point comparison of the live Pāṭala implementation against the vision docs

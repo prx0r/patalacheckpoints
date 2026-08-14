@@ -1,3 +1,5 @@
+> **ARCHIVED / SUPERSEDED** — kept for history only. Do NOT follow as current. See `docs/INDEX.md` + `docs/DOCS-AUDIT.json` for the canonical doc for this concern.
+
 # P4 ALIGNMENT — task definition (the meaningful L0↔L2 benchmark)
 
 *2026-08-12. Defines what P4 (CP1, Agent 2 / L0 lane) actually measures, BEFORE building. Written because the
