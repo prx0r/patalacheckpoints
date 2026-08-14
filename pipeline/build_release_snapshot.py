@@ -38,23 +38,43 @@ def _sha(b: bytes) -> str:
 
 
 def build_works():
-    """Export the SOURCE registry -> list of work records (id, title, author, source, provenance)."""
+    """Export the SOURCE registry -> list of work records (id, title, author, source, provenance).
+
+    Title resolution (honest):
+      - harvest metadata objects (gretil:/muktabodha:/pandit:/sarit:) carry a real `title` in the payload
+      - factory verse objects (brahmayamala:v59) have an empty payload — their title is the WORK id
+        (the part before the verse suffix), so we derive it rather than mirroring the verse id.
+    """
     import object_registry as R
     src = R._load("SOURCE")["objects"]
     works = []
     for oid, versions in src.items():
-        # the latest version's payload
-        v = versions if isinstance(versions, dict) else {}
+        # versions is a LIST of version records (the current/latest is the last)
+        if isinstance(versions, list):
+            v = versions[-1] if versions else {}
+        else:
+            v = versions if isinstance(versions, dict) else {}
         payload = v.get("payload", {}) if isinstance(v, dict) else {}
-        if isinstance(payload, dict) and "payload" in payload:
-            payload = payload["payload"]
+        # NOTE: the top-level payload carries title/source/author/provenance. Do NOT descend into a
+        # nested 'payload' key (that's the raw ExternalRecord with no title). Only unwrap if the
+        # top-level is empty but a nested dict holds the fields.
+        if isinstance(payload, dict) and not payload.get("title") and isinstance(payload.get("payload"), dict):
+            nested = payload["payload"]
+            if nested.get("title") or nested.get("source"):
+                payload = nested
         title = payload.get("title") if isinstance(payload, dict) else ""
         author = payload.get("author", "") if isinstance(payload, dict) else ""
         source = payload.get("source", "") if isinstance(payload, dict) else ""
         prov = payload.get("provenance", {}) if isinstance(payload, dict) else {}
+        # harvest metadata has a real title; else derive from the work id
+        if not title:
+            # brahmayamala:v59 -> brahmayamala (the work), strip the :vN verse suffix
+            work = oid.split(":v")[0] if ":v" in oid else oid
+            title = work
         works.append({
             "id": oid,
-            "title": title or oid,
+            "title": title,
+            "work": (oid.split(":v")[0] if ":v" in oid else oid),
             "author": author,
             "source": source,
             "license": prov.get("license", ""),
