@@ -79,3 +79,35 @@ The `migration/` folder had sprawled to 75 files (v2 + v3 + shared) with overlap
 - **The factory + the two-sided build work** (full-system test 11/11 on a real untranslated work).
 - **The known gaps**: the static-vs-live read surface, the 6 divergent contracts, the `-z` misuse, the
   CP4 argument frontier, the corpus-wide graduation (only one work run end-to-end, not the full queue).
+
+---
+
+## 5. THE AUTONOMOUS FACTORY — IT'S REAL, IT RAN, HERE'S HOW TO RESTART
+
+**The autonomous factory EXISTS and WORKS** (verified):
+- **The machinery**: `pipeline/start_overnight.sh` (one-command launcher) · `factory_loop.sh` (the
+  repeat-loop driver) · `factory_loop_watchdog.sh` (cron restart) · `factory_scheduler.py` (the DAG
+  pass) · `factory_batch.py` (per-layer + audit) · `object_registry.py` (the ledger).
+- **It RAN today** (last run 10:47-10:56, audit ledger has 6,577 entries). It registered the
+  Sārdhatriśatikālottarāgama as SOURCE, ran the Hermes T1 worker, and **committed 8 real Stk T1 objects**
+  to the registry (T1 went 306→314). The audit shows the commits at 19:28-19:30.
+- **It is NOT currently running** (cron watchdogs = 0, no live process).
+
+### The real registry state (verified)
+```
+SOURCE: 32039 · T1: 314 (incl. 8 Stk) · L0: 791 · ARGMAP: 50 · L2: 3 · L200: 5 · C1: 3 · THEME: 1
+```
+
+### How to restart it (for the next agent)
+```bash
+bash pipeline/start_overnight.sh start      # starts the factory loop + live RAW→EN runner + installs cron watchdogs
+bash pipeline/start_overnight.sh status     # are they alive?
+tail -f /tmp/opencode/factory-loop.log      # the live factory log
+python3 pipeline/factory_certificate.py     # the integrity cert (PASS = clean)
+```
+
+### The honest caveat
+The factory ran T1 on 8 Stk verses and committed them — but it has NOT advanced Stk through L0/L2/L200/C1
+yet (those are 0 for Stk). The full chain on one work is the corpus-wide graduation. The factory is real;
+the continuous full-chain run is the next build (`BUILD-FACTORY-COORDINATION.md` — drive it with
+`next_action`).
