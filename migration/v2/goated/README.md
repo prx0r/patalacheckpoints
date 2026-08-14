@@ -88,6 +88,59 @@ most important and most defensible capability. Read these first.
 
 ---
 
+## TIER 8 — THE IPVV AS PRIMA MATERIA + THE RESEARCH-LIBRARY / PUSHING SET
+
+*The greatest documents live in the SIBLING repos, not just `patalacheckpoints`. These are the
+"prima materia" — the deep intellectual extraction from IPVV (and Tantrāloka) that the whole system
+exists to carry. This is where "extract interesting things from a text" and the education layer
+actually get their raw material. Paths are relative to `/root/projects/research-library/`.*
+
+### 8.1 The prima materia (IPVV as the gold standard raw material)
+
+| Doc | What it is | Why it's goated |
+|---|---|---|
+| `pushing/_source/PUSHING-IPVV.md` | **The working scaffold for hounding the IPVV.** Maps all 3 volumes (jñāna/kriyā/āgama/tattva adhikāras), the vimarśas, the nanu→āha dialectical skeleton, and the session log (which mines resolve which cruxes). | The definition of "prima materia" — the map of how the IPVV is mined. |
+| `IPK-AT-THE-FOUNDATION.md` | The root text: Utpaladeva's ĪPK (Torella ed.), the spine everything reconstructs. | **Critical fact:** Utpaladeva, not Abhinavagupta, is the real innovator — camatkāra is HIS concept. |
+| `recognition/IPVV-PLAIN-ENGLISH-BRIDGE.md` | Turns the hyper-literal T1 chunks into readable prose (per kārikā: literal / plain English / the point / scholar connection). | The exact bridge between the gold corpus and a reader — directly feeds the reading + education products. |
+| `recognition/IPVV-PROGRESS-TRACKER.md` | The progress tracker for the IPVV mine. | How the prima materia is tracked. |
+| `recognition/IPVV-AUTHORITY-DEEPDIVE.md` | The authority deep-dive. | The epistemic side of the mine. |
+| `sanskritree/translations/_stack/ipvv/IPVV_FREESTYLE_LESSONS.md` | The freestyle lessons (the METHOD). | The method that produced the gold. |
+
+### 8.2 The Pushing method (how to extract interesting things from a text)
+
+| Doc | What it is | Why it's goated |
+|---|---|---|
+| `pushing/PUSHING_GUIDE.md` | **The complete reusable Logicvid/Pushing method.** "Hound the text with why, force its OWN reasoning out." Two loops (decomposition + question-growth), three reliability levels, how to turn pushes into auditable truth-packets. | The single best "how to deeply read a text" document. |
+| `pushing/_source/PUSHING-TANTRALOKA.md` | The same method applied to the Tantrāloka — the Q1 reflexivity chain worked in full. | A worked example of the extraction. |
+| `pushing/AUTONOMOUS_PUSHING_AGENT_SPEC.md` | The self-contained instruction for an agent told "create a pushing file for <source>." Precondition: engineer the question-asking context first. | Makes the deep-reading method **autonomous** — an agent can run it. |
+| `pushing/SPEC_COMPARATIVE_PUSHING.md` | The agnostic cross-text protocol: ask every text the same core question-shapes (mechanism-gap, crux, subversion, quantifier, register) → build a question×text matrix. | **The comparison + "unanswered is data" machinery.** |
+| `pushing/DESIGN_LAYERED_COMPARATIVE_QUESTIONNAIRE.md` | The tradition-agnostic layered questionnaire (agnostic core L0 + tradition modules). | **The education connection:** this is how any tradition becomes a deep, comparable set of questions. |
+| `pushing/QUESTIONNAIRE_REAL_DNA.md` | The real question-shapes the Logicvids actually use. | The DNA behind the questionnaire. |
+| `recognition/pushing-tantraloka/LOGICVID-session-*.md` (30+) | The worked sessions (e.g. Q1-reflexivity, karma-time-freedom, hardest-objections). | The living transcripts of the extraction — read one to see the method in action. |
+
+### 8.3 The essay / education gold (the output the mining feeds)
+
+| Doc | What it is | Why it's goated |
+|---|---|---|
+| `recognition/ESSAY-*.md` (22) | The gold essays (ESSAY-IPVV-VS-TANTRALOKA, ESSAY-RASA-IPVV-ABHINAVABHARATI, ESSAY-ADVAITA-IPVV, etc.) | The sentence-sourced essay gold — the direct input to the Essay + Education products. |
+| `COMMENTARY-STAGE1-ANGLE-MAP.md` | The commentary angle map (Ratié-engine, reflexivity dialectic/synthesis). | The structural map for building commentary. |
+| `CONCORDANCE-Ratie-IPK-Solms.md` | The Ratié / IPK / Solms concordance. | The cross-scholar index — the extraction's backbone. |
+| `5-STAGE-LENS-ACROSS-SCHOOLS.md` + `7-FOLD-COMPARATIVE-MODEL.md` | The comparative models. | The tradition-specialized layer the questionnaire plugs in. |
+| `recognition/IPVV-PROGRESS-TRACKER.md` | the IPVV mine progress. | tracking the prima materia. |
+
+### 8.4 Why this matters for the whole system
+
+- **IPVV is the prima materia** — the one corpus where every layer (Source→TranslationProof→
+  Commentary→Argument→Essay) has real hand-authored gold. It is the training ground for the whole v2.
+- **Pushing is the extraction engine** — the method that turns "a text" into claims, cruxes, and
+  auditable truth-packets. It is the *content-generation* side of the education product ("Understanding
+  Check" questions come from the cruxes pushed out of a text).
+- **The layered questionnaire is the education bridge** — a tradition-agnostic core means any text
+  (Buddhist, Greek, Nyāya, Advaita) can become deep questions, so Pāṭala grows beyond Tantra without
+  losing the Śaiva depth.
+
+---
+
 ## THE SHORT LIST (if you read only ten)
 
 The ten documents that together explain Pāṭala at full depth:
@@ -102,6 +155,10 @@ The ten documents that together explain Pāṭala at full depth:
 8. `vision-08-scholar-economics.md` — paid adjudication, not free cleanup
 9. `FIRST_PRODUCT_DECISION.md` — Translation Audit + IPVV Benchmark + Autonomous Factory
 10. `RETRIEVAL-NEUROSYNTHETIC-VISION.md` — the semantic microscope (the future)
+
+**The two to add if you want the intellectual depth (the prima materia + the method):**
+11. `research-library/pushing/_source/PUSHING-IPVV.md` — the IPVV prima-materia scaffold
+12. `research-library/pushing/PUSHING_GUIDE.md` — the deep-reading extraction method
 
 ---
 
