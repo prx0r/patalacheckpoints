@@ -19,6 +19,68 @@ kernel: verified_epistemic_os   # the 17 proven kernels (ip-graph lib/): epistem
 
 layers:
 
+  - id: identity
+    name: Atlas / Identity
+    legacy: (Layer 02)
+    position: 0
+    status: PROVEN (in patala) / NOT in lab
+    requires: []
+    produces: [source, term, timeline]
+    kernel: python/patala_core/atlas/ (migrate · resolver · adapter · api)   # patala, not lab
+    proof: test_resolver (22) · test_api (9) · test_adapter (6)
+    external_tools: [CTS, Zotero, Crossref, OpenAlex, OpenCitations, RO-Crate, VIAF, Wikidata]
+    transformation:
+      operation: resolve_identity
+      verifier: per-dimension authority + rights-aware gates
+    authority:
+      preserves: [generation, evidence]
+      default_generation: external
+    doc: |
+      The Pāṭala AUTHORITY GRAPH — the identity backbone: works, people, traditions, authority
+      evidence, manuscripts. The Atlas is the human/API SURFACE over this graph (254-work
+      bibliography: atlas-bibliography.json). Every object in every other layer references a
+      canonical ID resolved here. GAP: v3 must not drop this layer — it exists in patala
+      (patala_core/atlas/), not in the lab.
+
+  - id: term
+    name: Terminology / Lemma
+    legacy: (Layer 02)
+    position: 0
+    status: BUILT (in patala)
+    requires: [identity]
+    produces: [translation, lesson]
+    kernel: data/corpus/terms.ts + trajectories.ts (patala)
+    proof: /api/terms/[lemma]/history (lemma-through-time)
+    external_tools: [darshana-temporal-analysis, text-fabric]
+    transformation:
+      operation: track_term
+      verifier: diachronic sense-trajectory, curated not mechanical
+    authority:
+      preserves: [evidence]
+      default_generation: machine
+    doc: |
+      The lemma-through-time layer: diachronic sense-trajectories (terms.ts, trajectories.ts,
+      /api/terms/:lemma/history). GAP: v3 must not drop this — it exists in patala, not the lab.
+
+  - id: timeline
+    name: Timeline
+    legacy: (Layer 02)
+    position: 0
+    status: BUILT (in patala)
+    requires: [identity]
+    produces: [reading, lesson]
+    kernel: data/atlas/historyTimeline.json (patala)
+    proof: /api/history/timeline
+    transformation:
+      operation: render_timeline
+      verifier: chronological school/tradition map (from vision-11 prehistory)
+    authority:
+      preserves: [evidence]
+      default_generation: external
+    doc: |
+      The school/tradition chronology (historyTimeline.json). GAP: v3 must not drop this — exists
+      in patala.
+
   - id: source
     name: Source
     legacy: SOURCE

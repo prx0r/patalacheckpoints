@@ -11,15 +11,44 @@ mechanism (51/51 experiments pass); 3 need building (Essay, Commentary, Tokeniza
 
 ## THE 4 FAMILIES (the site hierarchy — unchanged from v2)
 
-**Texts** (Reading · Translation · Translation Proof · Compare Translations · Term Audit)
+**Texts** (Reading · Translation · Translation Proof · Compare Translations · Term Audit · **Atlas/Identity**)
 **Arguments** (Claim · Argument · Crux · Comparison · Synthesis)
 **Scholar** (Research Packet · Review · Scholar Attestation · Audit · Benchmark)
 **Learn** (Essay · Explainer · Argument Map · Understanding Checks · Course)
 Underneath: API · MCP · Context Bundles · Datasets.
 
+**The missing products v2 had that v3 must carry (the Atlas/Identity family):**
+- **Atlas / Identity** — the authority graph (254 works) + the human/API surface; every object's canonical ID. Built in patala (`patala_core/atlas/`), NOT in the lab.
+- **Bibliography / Discovery** — the 254-work bibliography + Zotero/Crossref/OpenAlex/OpenCitations discovery.
+- **Terminology / Lemma-through-time** — `trajectories.ts`, `/api/terms/:lemma/history`.
+- **Timeline** — `historyTimeline.json`, `/api/history/timeline`.
+
 ---
 
 ## THE 16 PRODUCTS — FULLY SPECCED
+
+### 0. Atlas / Identity — ✅ PROVEN (in patala; NOT in lab — the v3 gap to carry)
+- **Artifact:** the Pāṭala Authority Graph + its human/API surface (the Atlas)
+- **Mechanism:** `python/patala_core/atlas/` (migrate · resolver · adapter · api) — per-dimension
+  authority + rights-aware gates; the 254-work bibliography (`atlas-bibliography.json`)
+- **Proof:** test_resolver (22) · test_api (9) · test_adapter (6)
+- **External:** CTS (identity) · Zotero/Crossref/OpenAlex/OpenCitations (discovery) · RO-Crate (packaging)
+- **Build:** the authority graph is the identity backbone EVERY other product references. **v3 must not
+  drop this — it exists in patala, not the lab. Wire it as the resolve layer under every product.**
+
+### 0b. Terminology / Lemma-through-time — ✅ PROVEN (in patala)
+- **Artifact:** lemma → diachronic sense-trajectory
+- **Mechanism:** `data/corpus/trajectories.ts` + `terms.ts`; `/api/terms/:lemma/history`
+- **Proof:** the lemma-history route serves real trajectories
+- **External:** darshana-temporal-analysis · text-fabric
+- **Build:** the terminology layer feeds Translation (term consistency) + Lesson (distractors).
+
+### 0c. Timeline — ✅ PROVEN (in patala)
+- **Artifact:** the school/tradition chronology
+- **Mechanism:** `data/atlas/historyTimeline.json`; `/api/history/timeline`
+- **Proof:** the timeline route serves the map
+
+---
 
 ### 1. Translation — ✅ PROVEN (needs IPVV data)
 - **Artifact:** `TranslationRevision`
