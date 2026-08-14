@@ -20,8 +20,7 @@ v3  the ORGANISM (v2 + proven kernels + production floor + 6 expansions, assembl
 | `V3-BUILD-SPEC.md` | the EXACT build spec: every mechanism, its exact external tool, and the exact stack — the master architecture (Postgres + R2 + projection compiler + CDN), the 8 mechanisms, the per-product external-tool map, the from-scratch build (STEP 0-8), the build targets |
 | `LAYERS.yaml` | the codified layer contract — v2's LAYERS.yaml fully specced for v3: every layer maps to a PROVEN kernel (ip-graph lib/) + its exact external tool + the honest v3 status (PROVEN / PROVEN-MECHANISM / NEEDS-BUILD) + the 10 cross-cutting kernel layers + the build targets |
 | `PRODUCTS.md` | the 16 products fully specced — each with its proven mechanism (`lib/`), the verifiable proof, the exact external tool, and the build path. 13/16 proven |
-| `LAYERS.yaml` | the codified layer contract — v2's LAYERS.yaml fully specced for v3: every layer maps to a PROVEN kernel (ip-graph lib/) + its exact external tool + the honest v3 status (PROVEN / PROVEN-MECHANISM / NEEDS-BUILD) + the 10 cross-cutting kernel layers + the build targets |
-| `PRODUCTS.md` | the 16 products fully specced — each with its proven mechanism (`lib/`), the verifiable proof, the exact external tool, and the build path. 13/16 proven |
+| `MECHANISMS.md` | the actual machinery: the 5 load-bearing mechanisms (epistemic ceiling invariant, human publication gate, DAG staleness, anti-groupthink review, education/organism moat) + the 7 algorithms (PathRAG/HippoRAG/KG2Code) + the 17 kernel invariants + the 8 laws + the 6 frontiers + the honest state + the roadmap |
 
 ## The v2 → v3 coverage map (everything from v2 is explained in v3)
 
