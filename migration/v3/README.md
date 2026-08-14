@@ -17,6 +17,7 @@ v3  the ORGANISM (v2 + proven kernels + production floor + 6 expansions, assembl
 | File | What it is |
 |---|---|
 | `PATALA-V3-ORGANISM.md` | the organism: 5 organ-systems (nervous/skeleton/digestive/reproductive/sensory), the 17 proven kernels, the final layer contract, the 16 products + 6 expansions, the production organism (.meta), the graduation test, the 3 governing laws |
+| `V3-BUILD-SPEC.md` | the EXACT build spec: every mechanism, its exact external tool, and the exact stack — the master architecture (Postgres + R2 + projection compiler + CDN), the 8 mechanisms, the per-product external-tool map, the from-scratch build (STEP 0-8), the build targets |
 
 ## The three truths (what makes v3 final)
 
