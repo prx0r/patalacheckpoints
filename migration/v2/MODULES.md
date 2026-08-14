@@ -187,7 +187,79 @@ with **Review/Adjudication** operating throughout. Everything from **Synthesis (
 
 ---
 
-## 5. THE SCHOLAR PRODUCTS (the human-facing outputs)
+## 5. ORIGINAL CONCEPTS & INFRA — ALL RELEVANT FILES REFERENCED
+
+The "original" Pāṭala ideas (lemma-through-time, the timeline, external tools, translation proofs)
+are not aspirational — they have a real start. This is the complete file reference for each, so an
+agent can go straight to the code/data.
+
+### 5.1 Lemma-through-time (diachronic sense-trajectories) — IMPLEMENTED
+
+| File | What it is |
+|---|---|
+| `data/corpus/trajectories.ts` (349 ln) | the curated historical-sense trajectories (the "lemma through time" data) |
+| `data/corpus/terms.ts` (74 ln) | the term/lemma records |
+| `data/corpus/passages.ts` | the passage records the terms reference |
+| `data/terms.json` | the compiled terms data |
+| `data/term_proposals.jsonl` | machine/curated term-sense proposals (the reviewable layer) |
+| `app/api/terms/route.ts` | list terms |
+| `app/api/terms/[lemma]/history/route.ts` | **the diachronic trajectory** (per-lemma sense-through-time) |
+| `app/api/terms/[lemma]/senses/route.ts` | the senses of a lemma |
+| `app/api/terms/[lemma]/occurrences/route.ts` | the occurrence counts |
+| `docs/api/concepts/epistemic-model.md` | the status rules these assertions obey (proposed ≠ accepted) |
+
+**Status:** built + serving. Trajectories are CURATED projections (not auto-derived from the graph) —
+honest per the docstring. v2 direction: make them compiled projections once the graph is real.
+
+### 5.2 The timeline (school/tradition chronology) — IMPLEMENTED
+
+| File | What it is |
+|---|---|
+| `data/atlas/historyTimeline.json` (13KB) | the chronological school/tradition map (from the Śiva-before-Abhinava genealogy) |
+| `app/api/history/timeline/route.ts` | serves the timeline |
+| `docs/vision/expansion/vision-11-siva-before-abhinava-prehistory.md` | the source genealogy it's built from |
+
+### 5.3 External tools & adapters — the honest split (6/69 wired)
+
+| File | What it is | Status |
+|---|---|---|
+| `source-evidence/docs/tools/MANIFEST.json` | the 69-tool registry (INTEGRATED/WIRED/PARTIAL/DOCS_ONLY/PLANNED) | the source of truth |
+| `source-evidence/docs/tools/INDEX.md` | the tool index | |
+| `source-evidence/production/adapters/grobid_live.py` | GROBID (real) | PARTIAL |
+| `source-evidence/production/adapters/metadata_resolver.py` | Crossref + OpenAlex (real) | WIRED |
+| `source-evidence/production/adapters/opencitations.py` | OpenCitations (real) | PARTIAL |
+| `source-evidence/production/adapters/identity_crosswalk.py` | ORCID/ROR name-variant crosswalks (real) | WIRED |
+| `source-evidence/production/adapters/scholar_document.py` | scholar-doc parse (placeholder parse — see audit) | PARTIAL |
+| `ingestion/adapters/{pandit,sarit,gretil,csalt,viaf,wikidata,ngmcp,iiif}.py` | the 8 real ingestion adapters | REUSE |
+| `docs/process/external-tools.md` | the status board | |
+| *(20 DOCS_ONLY: docling, anystyle, zotero, inception, recogito, hypothesis, ro-crate, ...)* | documentation only, no code | DOCS_ONLY |
+| *(38 PLANNED)* | identified, not started | PLANNED |
+
+**Honest reading:** the Sanskrit-relevant tooling (vidyut, the ingest adapters, crossref/openalex) is
+REAL. Most borrowed tools are docs. The `vidyut` SanskritLinguisticAdapter is INTEGRATED.
+
+### 5.4 TranslationProof (the moat) — machinery + gold exist; proofs not yet in the registry
+
+| File | What it is |
+|---|---|
+| `pipeline/l200_worker.py` | the 8-section proof generator |
+| `pipeline/certificate_l200.py` | the proof-layer integrity certificate |
+| `pipeline/benchmark_l200_live.py` | live L200 benchmark |
+| `source-evidence/evals/inspect_l200.py` | the L200 inspector |
+| `source-evidence/evals/inspect_l200_nat.py` · `inspect_l200_detector_nat.py` | the L200 NAT evals |
+| `pipeline/test_l200_ipvv.py` · `test_l200_v2o.py` | the L200 tests |
+| **sibling `sanskritree/translations/_stack/ipvv/l200/` (66 files / 63 audits)** | the hand-authored gold proofs |
+| **sibling `sanskritree/.../c1/read/` (63) + `c1/source/` (63)** | the C1 gold records |
+| `pipeline/review_bundle.py` | the only current consumer of `TranslationProof` |
+| `migration/v2/LAYERS.yaml` §5 + `PATALA-V2-SPEC.md` §5 | the vector-of-obligations spec |
+
+**The gap (verified):** registry has L200=5, C1=3. The 63 golds live in the sibling repo, never
+registered. The moat's machinery + gold are complete; the proofs just aren't IN Pāṭala yet. The
+**L200+C1 bulk-ingest** closes this and is the single highest-leverage v2 move.
+
+---
+
+## 6. THE SCHOLAR PRODUCTS (the human-facing outputs)
 
 These are the products a scholar (and the public) actually consume. Each is a **compiled projection**
 of the graph — not a separate system.
@@ -215,7 +287,7 @@ Scholar reviews a granular object (a finding / a proof / a crux decision)
 
 ---
 
-## 6. VERIFICATION / EVAL PLANE (how anything is proven real)
+## 7. VERIFICATION / EVAL PLANE (how anything is proven real)
 
 The anti-theatre gate. Every `[REUSE]` claim above must be backed by one of these.
 
@@ -232,7 +304,7 @@ The anti-theatre gate. Every `[REUSE]` claim above must be backed by one of thes
 
 ---
 
-## 7. WHAT DOES NOT EXIST YET (the v2 `[NEW]` list)
+## 8. WHAT DOES NOT EXIST YET (the v2 `[NEW]` list)
 
 These are the genuine gaps — everything else is reusable.
 
