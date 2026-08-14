@@ -22,6 +22,7 @@ v3  the ORGANISM (v2 + proven kernels + production floor + 6 expansions, assembl
 | `PRODUCTS.md` | the 16 products fully specced — each with its proven mechanism (`lib/`), the verifiable proof, the exact external tool, and the build path. 13/16 proven |
 | `MECHANISMS.md` | the actual machinery: the 5 load-bearing mechanisms (epistemic ceiling invariant, human publication gate, DAG staleness, anti-groupthink review, education/organism moat) + the 7 algorithms (PathRAG/HippoRAG/KG2Code) + the 17 kernel invariants + the 8 laws + the 6 frontiers + the honest state + the roadmap |
 | `STRUCTURES.md` | the definitive structural reference: the 11 structures Pāṭala definitely needs (authority graph+Atlas, epistemic envelope, event ledger+reducer, derivation DAG+staleness, review panel+CiteCheck, transformation registry, projection compiler, production organism, bibliography, terminology, timeline) + the completeness validation (v2→v3) + the build targets |
+| `PATALA-NATIVE-MACHINERY.md` | the actual Pāṭala-built domain code v3 was missing (reconciliation engine, 5 golds, canonical-DAG, factory loop, eval plane, ORCID crosswalks, atlas QA, argumentation IR, factory certificates, bibliography seeds) — v3 = lab's proven generic kernels + Pāṭala's domain machinery |
 
 ## The v2 → v3 coverage map (everything from v2 is explained in v3)
 
