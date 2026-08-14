@@ -176,9 +176,14 @@ curl -s "localhost:8787/resolve?title=Tantraloka&author=Abhinavagupta" | python3
    loads the WHOLE registry JSONL (now ~172MB) into memory and rewrites it per call. Bulk-registering the
    ~1M extracted harvest verses OOM-killed the process (2.1GB RSS) after +100k were committed (SOURCE
    47k→147k). This is an architectural limit, NOT a bug in the extractor. The committed subset is intact
-   and idempotent-safe. **The scaled approach:** either (a) a streaming/append-only registry writer that
-   does NOT load the whole file, or (b) register per-work (memory-bounded) via `_register_source`, or
-   (c) move verse-level SOURCE to the Atlas Postgres (the designed canonical layer for entity truth).
+   and idempotent-safe. **The scaled approach:** (a) a streaming/append-only registry writer that does NOT
+   load the whole file, or (b) register per-work (memory-bounded) via `_register_source`, or (c) move
+   verse-level SOURCE to the Atlas Postgres (the designed canonical layer for entity truth).
+6. **The process is clean at representative scale — NOT a blind 1M batch.** The design intent is clean,
+   verifiable production: register works in a streaming/per-work manner, verify each advances the DAG,
+   and let the factory + the other agent's organism drive continuous production. The ~100k verse SOURCE
+   objects committed are intact + factory-runnable (verified: `_source_objects` resolves real GRETIL verse
+   text). Full 1M-verse registration should use the streaming writer (follow-up), not one big commit.
 
 ---
 
