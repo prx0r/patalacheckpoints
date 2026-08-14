@@ -1,7 +1,7 @@
 {
   "$schema": "patala.directory-manifest.v1",
   "updated": "2026-08-14",
-  "note": "Machine-verifiable classification of every top-level folder. Every folder resolves to: role, clean name, Layer, canonical/archive/coordination/scratch, and where an agent finds it. This is the deterministic map of the codebase — the physical folder names stay (renaming breaks ~20k imports); this is the trusted translation layer.",
+  "note": "Machine-verifiable classification of every top-level folder. Every folder resolves to: role, clean name, Layer, canonical/archive/coordination/scratch, and where an agent finds it. This is the deterministic map of the codebase \u2014 the physical folder names stay (renaming breaks ~20k imports); this is the trusted translation layer.",
   "role_legend": {
     "code": "production code (the spine)",
     "docs": "documentation / knowledge",
@@ -13,43 +13,282 @@
   },
   "class_legend": {
     "CANONICAL": "the current source of truth for its role",
-    "ARCHIVE": "superseded history — marked, do not follow",
+    "ARCHIVE": "superseded history \u2014 marked, do not follow",
     "COORDINATION": "live agent tracking (delegates authority to handover/)",
     "SCRATCH": "temporary, gitignored"
   },
   "folders": [
-    {"dir": "pipeline/", "name": "factory", "role": "code", "layer": "03", "class": "CANONICAL", "note": "the compiler: workers, scheduler, object_registry + event ledger, DAG"},
-    {"dir": "python/", "name": "atlas", "role": "code", "layer": "02", "class": "CANONICAL", "note": "patala_core/atlas: Postgres schema, resolver, API"},
-    {"dir": "machinelearning/", "name": "research", "role": "code", "layer": "05", "class": "CANONICAL", "note": "the epistemic engines (argument/crux/synthesis/essay/education) + .venv (2.1G bulk)"},
-    {"dir": "source-evidence/", "name": "evidence", "role": "code", "layer": "04/07", "class": "CANONICAL", "note": "contracts + adapters + eval plane"},
-    {"dir": "ingestion/", "name": "ingestion", "role": "code", "layer": "01", "class": "CANONICAL", "note": "intake: SourceAsserter, AtlasWriter, R2 snapshots, 8 adapters"},
-    {"dir": "infra/", "name": "storage", "role": "code", "layer": "02", "class": "CANONICAL", "note": "r2_assets.py (content-addressed R2)"},
-    {"dir": "contracts/", "name": "dag", "role": "code", "layer": "00/03", "class": "CANONICAL", "note": "CANONICAL-DAG.yaml"},
-    {"dir": "migrations/", "name": "db-migrations", "role": "code", "layer": "02", "class": "CANONICAL", "note": "Alembic Postgres migrations"},
-    {"dir": "app/", "name": "web", "role": "code", "layer": "10", "class": "CANONICAL", "note": "Next.js site"},
-    {"dir": "apps/", "name": "astro-web", "role": "code", "layer": "10", "class": "CANONICAL", "note": "Astro static reader shell"},
-    {"dir": "mcp/", "name": "mcp", "role": "code", "layer": "10", "class": "CANONICAL", "note": "MCP server (20 tools)"},
-    {"dir": "lib/", "name": "web-lib", "role": "code", "layer": "10", "class": "CANONICAL", "note": "TS helpers (atlas.ts, verify.ts, etc.)"},
-    {"dir": "components/", "name": "web-components", "role": "code", "layer": "10", "class": "CANONICAL", "note": "ReactFlow atlas graph components"},
-    {"dir": "openpatala/", "name": "atlas-build", "role": "code", "layer": "02", "class": "CANONICAL", "note": "the Atlas build ('OpenAlex for Sanskrit')"},
-    {"dir": "data/", "name": "data", "role": "assets", "layer": "content", "class": "CANONICAL", "note": "corpus + atlas + published + registries"},
-    {"dir": "benchmarks/", "name": "benchmarks", "role": "assets", "layer": "07", "class": "CANONICAL", "note": "gold + eval data"},
-    {"dir": "factory-certificates/", "name": "certificates", "role": "assets", "layer": "07", "class": "CANONICAL", "note": "L0/L200 certificates"},
-    {"dir": "logs/", "name": "logs", "role": "assets", "layer": "none", "class": "CANONICAL", "note": "runtime logs (regenerated)"},
-    {"dir": "skills/", "name": "skill-pack", "role": "skill", "layer": "12", "class": "CANONICAL", "note": "Hermes skill pack source of truth (synced 1:1 to ~/.hermes/profiles/patala/skills/)"},
-    {"dir": "examples/", "name": "examples", "role": "example", "layer": "10", "class": "CANONICAL", "note": "executable API examples ('executable truth'), 01-07 + run_all.sh"},
-    {"dir": "tests/", "name": "tests", "role": "code", "layer": "07", "class": "CANONICAL", "note": "tests"},
-    {"dir": "docs/", "name": "docs", "role": "docs", "layer": "knowledge", "class": "CANONICAL", "note": "the knowledge layer (classified by DOCS-AUDIT.json)"},
-    {"dir": "handover/", "name": "handover", "role": "coordination", "layer": "none", "class": "CANONICAL", "note": "authoritative agent coordination + build records"},
-    {"dir": "live/", "name": "live", "role": "coordination", "layer": "none", "class": "COORDINATION", "note": "fast live agent session state (delegates authority to handover/)"},
-    {"dir": "endgamebuild/", "name": "audit", "role": "docs", "layer": "none", "class": "CANONICAL", "note": "audit + inventory + progress + health"},
-    {"dir": "onboarding/", "name": "onboarding", "role": "docs", "layer": "00", "class": "CANONICAL", "note": "the single on-ramp"},
-    {"dir": "devpaths/", "name": "devpaths", "role": "coordination", "layer": "05", "class": "COORDINATION", "note": "Agent-1 devpath execution log (completed = archive, blocked = roadmap)"},
-    {"dir": "ai/", "name": "ai-research", "role": "docs", "layer": "05", "class": "ARCHIVE", "note": "one-off deep-research essays (argumentation-IR survey, AI-vision) — NOT wired into docs spine; reference only"},
-    {"dir": "docs-site/", "name": "docs-site", "role": "code", "layer": "10", "class": "CANONICAL", "note": "docs.patala.org site generator"},
-    {"dir": "scripts/", "name": "scripts", "role": "code", "layer": "03", "class": "CANONICAL", "note": "utility scripts"},
-    {"dir": "experiments/", "name": "experiments", "role": "code", "layer": "05", "class": "ARCHIVE", "note": "57 scripts; ~12 dead-ends, ~8 validators (audit-flagged)"},
-    {"dir": "translations/", "name": "translations", "role": "assets", "layer": "03", "class": "CANONICAL", "note": "translation outputs"},
-    {"dir": "tmp_t1/", "name": "tmp-scratch", "role": "scratch", "layer": "none", "class": "SCRATCH", "note": "temporary, gitignored scratch (tests recreate their fixtures)"}
+    {
+      "dir": "pipeline/",
+      "name": "factory",
+      "role": "code",
+      "layer": "03",
+      "class": "CANONICAL",
+      "note": "the compiler: workers, scheduler, object_registry + event ledger, DAG"
+    },
+    {
+      "dir": "python/",
+      "name": "atlas",
+      "role": "code",
+      "layer": "02",
+      "class": "CANONICAL",
+      "note": "patala_core/atlas: Postgres schema, resolver, API"
+    },
+    {
+      "dir": "machinelearning/",
+      "name": "research",
+      "role": "code",
+      "layer": "05",
+      "class": "CANONICAL",
+      "note": "the epistemic engines (argument/crux/synthesis/essay/education) + .venv (2.1G bulk)"
+    },
+    {
+      "dir": "source-evidence/",
+      "name": "evidence",
+      "role": "code",
+      "layer": "04/07",
+      "class": "CANONICAL",
+      "note": "contracts + adapters + eval plane"
+    },
+    {
+      "dir": "ingestion/",
+      "name": "ingestion",
+      "role": "code",
+      "layer": "01",
+      "class": "CANONICAL",
+      "note": "intake: SourceAsserter, AtlasWriter, R2 snapshots, 8 adapters"
+    },
+    {
+      "dir": "infra/",
+      "name": "storage",
+      "role": "code",
+      "layer": "02",
+      "class": "CANONICAL",
+      "note": "r2_assets.py (content-addressed R2)"
+    },
+    {
+      "dir": "contracts/",
+      "name": "dag",
+      "role": "code",
+      "layer": "00/03",
+      "class": "CANONICAL",
+      "note": "CANONICAL-DAG.yaml"
+    },
+    {
+      "dir": "migrations/",
+      "name": "db-migrations",
+      "role": "code",
+      "layer": "02",
+      "class": "CANONICAL",
+      "note": "Alembic Postgres migrations"
+    },
+    {
+      "dir": "app/",
+      "name": "web",
+      "role": "code",
+      "layer": "10",
+      "class": "CANONICAL",
+      "note": "Next.js site"
+    },
+    {
+      "dir": "apps/",
+      "name": "astro-web",
+      "role": "code",
+      "layer": "10",
+      "class": "CANONICAL",
+      "note": "Astro static reader shell"
+    },
+    {
+      "dir": "mcp/",
+      "name": "mcp",
+      "role": "code",
+      "layer": "10",
+      "class": "CANONICAL",
+      "note": "MCP server (20 tools)"
+    },
+    {
+      "dir": "lib/",
+      "name": "web-lib",
+      "role": "code",
+      "layer": "10",
+      "class": "CANONICAL",
+      "note": "TS helpers (atlas.ts, verify.ts, etc.)"
+    },
+    {
+      "dir": "components/",
+      "name": "web-components",
+      "role": "code",
+      "layer": "10",
+      "class": "CANONICAL",
+      "note": "ReactFlow atlas graph components"
+    },
+    {
+      "dir": "openpatala/",
+      "name": "atlas-build",
+      "role": "code",
+      "layer": "02",
+      "class": "CANONICAL",
+      "note": "the Atlas build ('OpenAlex for Sanskrit')"
+    },
+    {
+      "dir": "data/",
+      "name": "data",
+      "role": "assets",
+      "layer": "content",
+      "class": "CANONICAL",
+      "note": "corpus + atlas + published + registries"
+    },
+    {
+      "dir": "benchmarks/",
+      "name": "benchmarks",
+      "role": "assets",
+      "layer": "07",
+      "class": "CANONICAL",
+      "note": "gold + eval data"
+    },
+    {
+      "dir": "factory-certificates/",
+      "name": "certificates",
+      "role": "assets",
+      "layer": "07",
+      "class": "CANONICAL",
+      "note": "L0/L200 certificates"
+    },
+    {
+      "dir": "logs/",
+      "name": "logs",
+      "role": "assets",
+      "layer": "none",
+      "class": "CANONICAL",
+      "note": "runtime logs (regenerated)"
+    },
+    {
+      "dir": "skills/",
+      "name": "skill-pack",
+      "role": "skill",
+      "layer": "12",
+      "class": "CANONICAL",
+      "note": "Hermes skill pack source of truth (synced 1:1 to ~/.hermes/profiles/patala/skills/)"
+    },
+    {
+      "dir": "examples/",
+      "name": "examples",
+      "role": "example",
+      "layer": "10",
+      "class": "CANONICAL",
+      "note": "executable API examples ('executable truth'), 01-07 + run_all.sh"
+    },
+    {
+      "dir": "tests/",
+      "name": "tests",
+      "role": "code",
+      "layer": "07",
+      "class": "CANONICAL",
+      "note": "tests"
+    },
+    {
+      "dir": "docs/",
+      "name": "docs",
+      "role": "docs",
+      "layer": "knowledge",
+      "class": "CANONICAL",
+      "note": "the knowledge layer (classified by DOCS-AUDIT.json)"
+    },
+    {
+      "dir": "handover/",
+      "name": "handover",
+      "role": "coordination",
+      "layer": "none",
+      "class": "CANONICAL",
+      "note": "authoritative agent coordination + build records"
+    },
+    {
+      "dir": "live/",
+      "name": "live",
+      "role": "coordination",
+      "layer": "none",
+      "class": "COORDINATION",
+      "note": "fast live agent session state (delegates authority to handover/)"
+    },
+    {
+      "dir": "endgamebuild/",
+      "name": "audit",
+      "role": "docs",
+      "layer": "none",
+      "class": "CANONICAL",
+      "note": "audit + inventory + progress + health"
+    },
+    {
+      "dir": "onboarding/",
+      "name": "onboarding",
+      "role": "docs",
+      "layer": "00",
+      "class": "CANONICAL",
+      "note": "the single on-ramp"
+    },
+    {
+      "dir": "devpaths/",
+      "name": "devpaths",
+      "role": "coordination",
+      "layer": "05",
+      "class": "COORDINATION",
+      "note": "Agent-1 devpath execution log (completed = archive, blocked = roadmap)"
+    },
+    {
+      "dir": "ai/",
+      "name": "ai-research",
+      "role": "docs",
+      "layer": "05",
+      "class": "ARCHIVE",
+      "note": "one-off deep-research essays (argumentation-IR survey, AI-vision) \u2014 NOT wired into docs spine; reference only"
+    },
+    {
+      "dir": "docs-site/",
+      "name": "docs-site",
+      "role": "code",
+      "layer": "10",
+      "class": "CANONICAL",
+      "note": "docs.patala.org site generator"
+    },
+    {
+      "dir": "scripts/",
+      "name": "scripts",
+      "role": "code",
+      "layer": "03",
+      "class": "CANONICAL",
+      "note": "utility scripts"
+    },
+    {
+      "dir": "experiments/",
+      "name": "experiments",
+      "role": "code",
+      "layer": "05",
+      "class": "ARCHIVE",
+      "note": "57 scripts; ~12 dead-ends, ~8 validators (audit-flagged)"
+    },
+    {
+      "dir": "translations/",
+      "name": "translations",
+      "role": "assets",
+      "layer": "03",
+      "class": "CANONICAL",
+      "note": "translation outputs"
+    },
+    {
+      "dir": "tmp_t1/",
+      "name": "tmp-scratch",
+      "role": "scratch",
+      "layer": "none",
+      "class": "SCRATCH",
+      "note": "temporary, gitignored scratch (tests recreate their fixtures)"
+    },
+    {
+      "dir": "migration/",
+      "name": "migration",
+      "role": "ops",
+      "layer": "00",
+      "class": "ORGANIZATIONAL",
+      "note": "high-level migration plans & one-shot scripts (R2/lake, sibling-repo gold, registry, atlas backfills)"
+    }
   ]
 }

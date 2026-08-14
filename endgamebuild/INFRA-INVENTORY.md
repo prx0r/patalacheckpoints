@@ -62,7 +62,7 @@ external-tool integrations, and the REAL gaps. **If it's listed here, do not reb
 
 ## 5. EXTERNAL TOOLS — **all documented, few integrated** (the real gap)
 
-26 tools documented in `source-evidence/docs/tools/` (+ `MANIFEST.json` + offline `docs-cache/`):
+69 tools documented in `source-evidence/docs/tools/` (+ `MANIFEST.json` + offline `docs-cache/`):
 
 | State | Tools |
 |---|---|
@@ -81,7 +81,7 @@ external-tool integrations, and the REAL gaps. **If it's listed here, do not reb
 
 ## 7. THE APP / API / MCP
 
-- `app/api/` — 50+ routes (works, texts, passages, manuscripts, search, verify/*, resolve, themes, education, journey, recommend, context, stats, term-proposals, crosswalks)
+- `app/api/` — 43 routes (works, texts, passages, manuscripts, search, verify/*, resolve, themes, education, journey, recommend, context, stats, term-proposals, crosswalks)
 - `mcp/` — MCP server (`index.mjs`)
 - `lib/`, `components/`, `docs-site/`, `openpatala/`
 

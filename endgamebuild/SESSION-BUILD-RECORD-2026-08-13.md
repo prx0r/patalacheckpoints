@@ -81,7 +81,7 @@ The directive: QUALIFY the system, do not expand the ontology. Force the existin
 
 | Commit | Deliverable |
 |---|---|
-| `b5e8a8b` | **The Pāṭala Thesis** (`docs/global/README.md`) — what Pāṭala is (authority graph + reconciliation engine), is not, the one contribution, the integration posture (borrow 26 tools, own the evidence seam), the authority ladder, the products, the honest proven state. Wired into `docs/INDEX.md`. + `SESSION-BUILD-RECORD-2026-08-13.md`. |
+| `b5e8a8b` | **The Pāṭala Thesis** (`docs/global/README.md`) — what Pāṭala is (authority graph + reconciliation engine), is not, the one contribution, the integration posture (borrow 69 tools, own the evidence seam), the authority ladder, the products, the honest proven state. Wired into `docs/INDEX.md`. + `SESSION-BUILD-RECORD-2026-08-13.md`. |
 
 ## Phase 9 — ATLAS-100 (the main project now)
 

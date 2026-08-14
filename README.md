@@ -22,7 +22,7 @@
    stale handovers are in `handover/archive/`).
 7. **`handover/README.md`** — the coordination folder for both lanes (Agent 1 ML / Agent 2 integration);
    current state per lane lives in `handover/agent-1-ml/INDEX.md` and `handover/agent-2-integration/INDEX.md`.
-8. **`machinelearning/MLUSEINPATALA.md`** — the frozen ML strategy.
+8. **`machinelearning/_ACTIVE/MLUSEINPATALA.md`** — the frozen ML strategy.
 9. **`docs/CHANGELOG.md`** — the API/data/scholarly changelog.
 10. **`../docs/endgame2.md`** — the spec (the Tantra Hub vision, the machine-facing plan, the
    FoJin-comparison). Also `../docs/endgame1.md` and `../corpus/learning/ENDGAME_SITE_SPEC.md`.

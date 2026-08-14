@@ -16,7 +16,7 @@ current state, then propose a concrete plan for the next phase.*
 - **The six primitives + scholarly graph** are built and linted (Identity/Assertion/
   Evidence/Provenance/Review/Rights; Work/Witness/Passage/SourceSpan/Person/Term/Sense/
   Resource + annotations).
-- **API/MCP**: 19 routes, 13 MCP tools, 84/84 tests, OpenAPI, docs-site nav.
+- **API/MCP**: 43 routes, 29 MCP tools, 84/84 tests, OpenAPI, docs-site nav.
 - **Corpus**: 7 works segmented; 1 work (kramasadbhava) translation-ready (derived).
 - **Strategic reset**: Pāṭala is provenance + adjudication infrastructure, not a
   translation factory. Hermes owns model plumbing. The moat = evidence-backed scholarly

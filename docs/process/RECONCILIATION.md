@@ -37,11 +37,11 @@ answer to "have we already built this ourselves?" — for the epistemic core, **
 - ReviewEvent ledger + impact propagation (`review_engine.py`) — **the Vouch equivalent, done better**
 - Versioned objects + immutable versions + event ledger (`object_registry.py`)
 - Epistemic contracts (all of `source-evidence/schema/`)
-- The 62 external tools documented + the eval plane
+- The 69 external tools documented + the eval plane
 
 ### ⚠️ PARTIALLY BUILT (needs wiring, not greenfield)
-- ARGUMENT/SYNTHESIS workers (declared in DAG, 0 objects)
-- THEME/ESSAY/EDUCATION reachable via the live factory loop
+- ARGUMENT/SYNTHESIS workers wired (`autonomy.py` `make_argument/synthesis_handlers`) but 0 objects produced
+- THEME/ESSAY/EDUCATION workers exist (`theme/essay/education_worker.py`) but are NOT in the live factory loop (`factory_loop.sh` runs T1..C1 only) — objects stay 0
 - The 3 Hermes profiles (only `patala` exists)
 - STATE.yaml → projection (currently hand-maintained)
 

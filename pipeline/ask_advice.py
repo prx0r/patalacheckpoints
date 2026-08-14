@@ -19,7 +19,7 @@ READ FIRST:
 
 CONTEXT: Pāṭala's automated translation pipeline works (T1→R1→T2→R2→T3 via a durable
 state machine, model shelling to Hermes). C1/commentary is done by the user's main model,
-NOT machine-generated. The six primitives + scholarly graph are built. 19 API routes, 13
+NOT machine-generated. The six primitives + scholarly graph are built. 43 API routes, 29
 MCP tools, 84 tests pass. 7 works segmented; 1 work (kramasadbhava) translation-ready.
 Milestone A1 proven (Kramasadbhāva 1.8 full adjudication loop). The strategic reset:
 Pāṭala = provenance + adjudication infrastructure, not a translation factory.

@@ -15,7 +15,7 @@ state of the whole project — what works, what's broken, what's dead, and the p
 | ML/research engines | ✅ SOLID (all import; 39/41 tests pass) | 2 stale-test failures |
 | Source-evidence/external-tools | ✅ SOLID (schema+adapters+evals) | 10/10 eval self-tests PASS |
 | Atlas | ✅ FUNCTIONAL (thin contract green; Postgres reachable) | 3/3 suites PASS |
-| App/API/MCP/data | ✅ RICH (42 routes, 20 MCP tools) | static, no dev-server run |
+| App/API/MCP/data | ✅ RICH (43 routes, 29 MCP tools) | static, no dev-server run |
 
 **Overall: the project is healthy and green at its core.** The failures found are stale-data/test-drift
 and live-data-integrity debt, not broken architecture. The real gaps are: unwired high layers,
@@ -76,7 +76,7 @@ hard-coded machine paths.
 - `source-evidence/docs/tools/inspect-api/` — empty dir.
 
 ### External-tools gap (confirmed)
-- **26 tools documented** in MANIFEST.json + docs-cache, but **only 6 have code integration** (grobid, docling, crossref, openalex, opencitations, inspect). **20 are docs-only** (zotero, paperqa, inception, recogito, etc.).
+- **69 tools documented** in MANIFEST.json + docs-cache, but **only ~4 have code integration** (grobid, docling, crossref, openalex, opencitations, inspect). **20 are docs-only** (zotero, paperqa, inception, recogito, etc.).
 
 ## 4. ATLAS AUDIT
 

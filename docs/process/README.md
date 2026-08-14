@@ -102,10 +102,10 @@ relationship=9 (the rich scholarship graph IS persisted; the audit §4 "never wr
 ### Source-evidence / external-tools (audit §3)
 14. `scholar_document.py:164` `GrobidAdapter.parse()` is a placeholder (two GROBID classes).
 15. `opencitations.py` `_same_author()` hard-wired UNKNOWN.
-16. **26 tools documented, only 6 integrated** (grobid, docling, crossref, openalex, opencitations, inspect); 20 docs-only.
+16. **69 tools documented; only 4 integrated/wired** (grobid, docling, crossref, openalex, opencitations, inspect etc.); 20 docs-only, 38 planned.
 
 ### Factory (audit §1)
-17. **ARGUMENT / SYNTHESIS have NO real worker** — DAG ends at C1; `autonomy.LAYER_HANDLERS` falls back to a stub.
+17. **ARGUMENT / SYNTHESIS workers wired but 0 objects** — real handlers exist (`autonomy.py` `make_argument/synthesis_handlers`) but have produced no committed objects yet.
 18. **THEME/ESSAY/EDUCATION not reachable via live `factory_loop.sh`** (runs only T1..C1) — needs a deliberate production rewire.
 19. **Live-registry integrity debt:** `factory_certificate` reports 789 bad hashes, 119 conflicts, 19 duplicates (live-data debt, not a cert-logic bug).
 20. **L1/L1L2 duplication** — two competing providers, bare L1 not in DAG.

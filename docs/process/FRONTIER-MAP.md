@@ -126,7 +126,7 @@ explain + FSRS + receipts-not-enthusiasm**, and UNKNOWN as a first-class object.
 
 ## LAYER 10 — SURFACES ✅→PARTIAL
 
-**Now:** app/ (Next.js), mcp/, openpatala, Astro. 42 API routes, 20 MCP tools.
+**Now:** app/ (Next.js), mcp/, openpatala, Astro. 43 API routes, 29 MCP tools.
 **Tools/repos:** Mirador 4 (+TextOverlay) (manuscripts) · Remotion/OpenMontage (media) · Postiz (distribution) ·
 Datasette (read plane) · RO-Crate (export) · DTS (text API) · IIIF.
 **Frontier best-version:** the surfaces are **projections over one canonical graph** (Vision 12), with the
