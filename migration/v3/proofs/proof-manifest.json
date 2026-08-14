@@ -1,0 +1,43 @@
+{
+  "schema": "patala.v3.proof-manifest",
+  "generated_at": "2026-08-14",
+  "method": "verified by execution, not documentation (fresh Vākyapadīya 1.1, no gold)",
+  "proofs": {
+    "translate_passage": {
+      "what": "the COMPLETE translation (T1 + Close + Reading + Commentary + 11-dim Proof) in ONE Hermes call",
+      "result": "WORKS on a fresh verse",
+      "run": "python3 migration/v3/translate_passage.py \"anādinidhanam brahma śabdatattvaṃ yad akṣaram\"",
+      "detail": "T1 gloss (5 terms) + close + reading + commentary (correctly explains śabdādvaita, vivarta, the akṣara pun) + proof dims 11, gate BLOCKED (honest)"
+    },
+    "test_products_integration": {
+      "what": "every product on a fresh text via Hermes + isolated lab kernels",
+      "result": "11 WORKS / 0 PARTIAL / 0 BROKEN",
+      "run": "python3 migration/v3/test_products_integration.py",
+      "detail": "Translation, TranslationProof, Claim, Argument, Crux, Review, ScholarAttestation, Education, DatasetBenchmark, AgentContextBundle, Essay all WORKS"
+    },
+    "test_multisubject": {
+      "what": "the kernels generalize across IPVV + Doyle + Ratié",
+      "result": "20/20 passed (IPVV 9/9, Doyle 7/7, Ratié 4/4)",
+      "run": "python3 migration/v3/test_multisubject.py",
+      "detail": "the same kernels (epistemic, review, staleness, education, essay_ingest) work on 3 genuinely different subjects"
+    },
+    "vertical_v2a": {
+      "what": "one IPVV chunk raw → essay (the vertical)",
+      "result": "12/12 passed",
+      "run": "python3 migration/v3/vertical_v2a.py",
+      "detail": "raw (Torella IPK) → T1 → L0 → ARGMAP → L2 → L200 → C1 → mined graph → review → stale → education → essay"
+    },
+    "build_products": {
+      "what": "all 16 products built + verified on the real V2-A claim",
+      "result": "18/18 passed",
+      "run": "python3 migration/v3/build_products.py",
+      "detail": "Texts, Arguments, Scholar, Learn families all verified independently (not trusting the assembly status)"
+    }
+  },
+  "known_issues": [
+    "Pāṭala pipeline/schema.py and lab lib/schema.py collide on the name 'schema' — run in separate processes (the tests do)",
+    "TranslationProof live auditors (xCOMET/MQM) not installed — container + gold audits testable",
+    "Three-version flow (R1/T2/R2 workers) is gold-only, not automated"
+  ],
+  "summary": "The system genuinely works on fresh Sanskrit material: complete translation, all products, and the full vertical are verified by execution."
+}
