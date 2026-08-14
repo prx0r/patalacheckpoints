@@ -1,0 +1,301 @@
+# PĀṬALA V2 — LAYERS.yaml (the codified layer contract)
+#
+# PROPOSAL v0.1 · single source of truth for every layer in the vertical spine.
+# Every layer: id (clear name) · legacy (v1 code) · position · status (derived, never hand-set) ·
+# requires · produces · transformation (operation + tool + verifier) · authority (preservation policy) ·
+# doc.
+#
+# status is a PROJECTION of object_registry counts, not a hand-written claim. It is filled at render
+# time from the live registry (like docs_state.py) — do not hand-edit status here.
+#
+# authority.axis: which AuthorityVector axes this transformation PRESERVES into its output.
+#   axes: generation · evidence · review · publication
+#   If an axis is NOT listed as preserved, it is NOT inherited (defaults to machine-proposed).
+
+version: 0.1
+kernel: patala_kernel        # identity · derivation · authority · events · reducers · gates · staleness · projection
+
+layers:
+
+  - id: source
+    legacy: SOURCE
+    name: Source
+    position: 0
+    status: BUILT
+    requires: []
+    produces: [tokenization, argument_outline]
+    transformation:
+      operation: ingest
+      tool: ingestion/asserter + R2 SnapshotStore
+      verifier: source_fingerprint (incipit/explicit/ngram/MinHash)
+    authority:
+      preserves: [generation]
+      default_generation: external
+    doc: |
+      Raw text as ingested. Bronze snapshot on R2 under source/ingestion/<SRC>/snapshots/.
+      A source is a publication, not an epistemic verdict.
+
+  - id: draft_translation
+    legacy: T1
+    name: DraftTranslation
+    position: 1
+    status: BUILT
+    requires: [source]
+    produces: [tokenization]
+    transformation:
+      operation: draft_translate
+      tool: t1_worker (Hermes/model) + import_sanskritree for the old batch
+      verifier: gloss_precision, losslessness, no_duplicates
+    authority:
+      preserves: [generation]
+      default_generation: machine
+    doc: |
+      Working draft translation of one passage. First machine-readable scholarly object.
+      Does NOT inherit source's review/publication authority.
+
+  - id: tokenization
+    legacy: L0
+    name: Tokenization
+    position: 2
+    status: BUILT
+    requires: [draft_translation]
+    produces: [translation, argument_outline]
+    transformation:
+      operation: tokenize
+      tool: l0_worker
+      verifier: token↔verse binding, no dupes, deterministic
+    authority:
+      preserves: [generation, evidence]
+      default_generation: machine
+    doc: |
+      Structured token records derived from the draft. The token floor everything above builds on.
+
+  - id: argument_outline
+    legacy: ARGMAP
+    name: ArgumentOutline
+    position: 3
+    status: BUILT
+    requires: [source, tokenization]
+    produces: [translation]
+    transformation:
+      operation: outline_argument
+      tool: argument_map_worker
+      verifier: outline covers the passage's moves; structured 4 sections
+    authority:
+      preserves: [generation]
+      default_generation: machine
+    doc: |
+      LATERAL guide (not a DAG child of translation): what argument is at issue, the steps, the
+      unresolved points, the decision for the translation. Names it an OUTLINE, not a map.
+
+  - id: translation
+    legacy: L2
+    name: Translation
+    position: 4
+    status: BUILT
+    requires: [tokenization, argument_outline]
+    produces: [translation_proof]
+    transformation:
+      operation: render_translation
+      tool: l1_l2_worker
+      verifier: prose fidelity to token floor, guided by outline
+    authority:
+      preserves: [generation, evidence]
+      default_generation: machine
+    doc: |
+      The readable prose translation of a passage, guided by the ArgumentOutline over the token floor.
+      Micro-stage aliases: T2=alternative reading, T3=final, R1=draft review, R2=adjudication.
+
+  - id: translation_proof
+    legacy: L200
+    name: TranslationProof
+    position: 5
+    status: BUILT
+    requires: [translation]
+    produces: [commentary]
+    transformation:
+      operation: prove_translation
+      tool: l200_worker
+      verifier: 8-section audit (IDENTIFICATION / PUBLISHED READING / DERIVATION MAP / MATERIAL
+                TRANSLATION DECISIONS / INTERPRETIVE ASSERTIONS / SOURCE LAYER / CROSS-REFERENCES /
+                REVIEW STATE); decision types SUPPLIED·REFERENT_SUPPLY·STRUCTURAL_CONNECTIVE·LEXICAL·GRAMMATICAL
+    authority:
+      preserves: [generation, evidence]
+      default_generation: machine
+    doc: |
+      The proof of HOW each reading was derived. A VECTOR of independently inspectable obligations,
+      never a scalar score. The moat. See PATALA-V2-SPEC.md §5.
+
+  - id: commentary
+    legacy: C1
+    name: Commentary
+    position: 6
+    status: PARTIAL
+    requires: [translation_proof]
+    produces: [theme, argument]
+    transformation:
+      operation: commentate
+      tool: c1_worker
+      verifier: 100–450 words, passage-local, two reps (structured + continuous), no essays-as-evidence,
+                no modern comparison, no PARALLELS inside
+    authority:
+      preserves: [evidence]
+      default_generation: machine
+    doc: |
+      Compact passage-local commentary. Same object whether reached via the micro-stage flow or the spine.
+
+  - id: theme
+    legacy: THEME
+    name: Theme
+    position: 7
+    status: PARTIAL
+    requires: [commentary]
+    produces: [synthesis]
+    transformation:
+      operation: discover_theme
+      tool: theme_worker (theme_discovery, kcore, cluster)
+      verifier: cluster coherence
+    authority:
+      preserves: [evidence]
+      default_generation: machine
+    doc: |
+      Themes/clusters discovered across commentaries. A clustering, not a verdict.
+
+  - id: argument
+    legacy: ARGUMENT
+    name: Argument
+    position: 7
+    status: PARTIAL
+    requires: [commentary]
+    produces: [synthesis, lesson]
+    transformation:
+      operation: reconstruct_argument
+      tool: epistemic_worker (make_argument_handlers)
+      verifier: structural_validity, evidence_complete, scope_consistent, modality_consistent,
+                contradiction_status
+    authority:
+      preserves: [evidence]
+      default_generation: machine
+      notes: validity ≠ soundness; the graph must represent the distinction
+    doc: |
+      Propositions → argument → cruxes. An executable derivation object with premises/inference/
+      conclusion/defeaters/dependencies. Crux = the minimum unresolved proposition downstream
+      conclusions turn on.
+
+  - id: synthesis
+    legacy: SYNTHESIS
+    name: Synthesis
+    position: 8
+    status: EMPTY
+    requires: [argument, theme]
+    produces: [essay]
+    transformation:
+      operation: synthesize
+      tool: epistemic_worker (make_synthesis_handlers)
+      verifier: derivation-complete over adjudicated/qualified argument objects; 0 objects until inputs real
+    authority:
+      preserves: [evidence]
+      default_generation: machine
+    doc: |
+      Converged synthesis over arguments + themes. A compiled projection — only built when its
+      arguments are qualified. SYNTHESIS=0 is the honest state until then.
+
+  - id: essay
+    legacy: ESSAY
+    name: Essay
+    position: 9
+    status: EMPTY
+    requires: [synthesis]
+    produces: [lesson]
+    transformation:
+      operation: render_essay
+      tool: essay_worker
+      verifier: every sentence has a dependency link back into the graph
+    authority:
+      preserves: [evidence]
+      default_generation: machine
+    doc: |
+      Essay whose every sentence retains a machine-traversable proof path to evidence/review.
+
+  - id: lesson
+    legacy: EDUCATION
+    name: Lesson
+    position: 10
+    status: EMPTY
+    requires: [essay]
+    produces: []
+    transformation:
+      operation: compile_lesson
+      tool: education_worker
+      verifier: each correct answer AND distractor derivable from the same graph (proof path)
+    authority:
+      preserves: [evidence]
+      default_generation: machine
+    doc: |
+      Questions + distractors as compiled epistemic projections. A distractor corresponds to an
+      identifiable reasoning error (scope / epistemic-vs-metaphysical confusion / attractive-but-
+      contradicts-premise).
+
+# -- The three planes (governing law per plane) --
+planes:
+  truth:    Nothing becomes true because an agent says so.      [Postgres + kernel]
+  compile:  Nothing recomputes unless its dependencies changed. [Python + Hermes + DuckDB]
+  read:     Nothing computes at request time if bytes could exist. [R2 + CDN + thin Workers/MCP]
+
+# -- Authority axes --
+authority_axes: [generation, evidence, review, publication]
+authority_semantics: |
+  A ⪯ B ⟺ ∀i. A_i ≤ B_i            (partial order)
+  authority(X) ≠ max_i X_i          (never a scalar max)
+  object TYPE ≠ epistemic STATE     (a Source is not SCHOLARLY_CORROBORATED by type)
+
+# -- Transformation registry seed (see PATALA-V2-SPEC.md §3) --
+transformations:
+  - name: ingest
+    input: null
+    output: source
+    verifier: source_fingerprint
+  - name: draft_translate
+    input: source
+    output: draft_translation
+    verifier: gloss_precision
+  - name: tokenize
+    input: draft_translation
+    output: tokenization
+    verifier: token_binding
+  - name: outline_argument
+    input: [source, tokenization]
+    output: argument_outline
+    verifier: outline_coverage
+  - name: render_translation
+    input: [tokenization, argument_outline]
+    output: translation
+    verifier: prose_fidelity
+  - name: prove_translation
+    input: translation
+    output: translation_proof
+    verifier: 8_section_audit
+  - name: commentate
+    input: translation_proof
+    output: commentary
+    verifier: compact_passage_local
+  - name: discover_theme
+    input: commentary
+    output: theme
+    verifier: cluster_coherence
+  - name: reconstruct_argument
+    input: commentary
+    output: argument
+    verifier: structural+scope+modality
+  - name: synthesize
+    input: [argument, theme]
+    output: synthesis
+    verifier: derivation_complete
+  - name: render_essay
+    input: synthesis
+    output: essay
+    verifier: sentence_dependency
+  - name: compile_lesson
+    input: essay
+    output: lesson
+    verifier: answer_distractor_provable
