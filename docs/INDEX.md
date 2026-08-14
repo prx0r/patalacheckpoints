@@ -24,6 +24,8 @@ stale ones as `[ARCHIVED]` so a new agent is never confused. If it's not here, i
 | **Onboarding (START HERE — single on-ramp, all agents)** | `onboarding/README.md` | repo `onboarding/` |
 | **THE TOP-LEVEL HANDOVER (complete state: layers ACTIVE/ARCHIVED, translation asset, indexes, next steps)** | `HANDOVER.md` | repo root |
 | **THE MASTER NAVIGATION (resolve ANYTHING: surface/layer/data/script → canonical ref + impl + docs + run + Hermes)** | `NAVIGATION.md` | repo root |
+| **The current blueprint (the organism: 17→37 kernels, 16 products, build spec, verified proofs + live tests)** | `migration/v3/README.md` | repo `migration/v3/` |
+| **The two-sided build coordination with agentgraph (role separation, handoff queue, the BUILD-* directive set, the shared goal, the audits)** | `migration/shared/README.md` | repo `migration/shared/` |
 | **Directory manifest (every top-level folder → role/layer/class — machine-verifiable)** | `DIRECTORY-MANIFEST.json` + `check_directory_manifest.py` | repo root |
 | **Docs audit (classifies every loose docs/ file: CANONICAL / ARCHIVE / PART_OF — machine-verifiable)** | `docs/DOCS-AUDIT.json` + `docs/check_docs_audit.py` | repo `docs/` |
 | **End-to-end infra process (ingestion→atlas→factory→R2 — READ before writing infra code)** | `docs/process/README.md` | repo `docs/process/` |

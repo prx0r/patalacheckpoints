@@ -41,6 +41,9 @@ STEP 4  VISION_AND_NAVIGATION.md     the vision + logical progression.
 STEP 5  docs/INDEX.md                the flat canonical map (one source of truth per concern).
 STEP 6  docs/global/README.md        the THESIS (what Pāṭala is).
 STEP 7  docs/global/PATALA-GLOBAL-ARCHITECTURE.md   the 7-plane north star.
+
+STEP 8  migration/v3/README.md       the CURRENT BLUEPRINT (the organism + proofs) — the design layer.
+STEP 9  migration/shared/README.md   the COORDINATION with agentgraph (build directives + shared goal).
 ```
 
 **Before building anything, ALSO read the layer you're touching:** `docs/layers/NN-<layer>.md`
