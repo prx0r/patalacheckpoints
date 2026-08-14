@@ -161,7 +161,7 @@ curl -s "localhost:8787/resolve?title=Tantraloka&author=Abhinavagupta" | python3
 ## 5. THE KNOWN LIMITS (honest — do NOT overclaim)
 
 1. **The first 2000 work pages are verse-based SOURCE objects** (kalikapurana:v116 etc.); the harvested
-   works (muktabodha/GRETIL) come after in the registry. The API + registry serve all 47,102; the
+   works (muktabodha/GRETIL) come after in the registry. The API + registry serve all SOURCE objects; the
    static page set is bounded at 2000 to stay fast (the rest is API-only).
 2. **The reconciliation engine's gold threshold needs a rich canonical set** (title + author). The thin
    bibliography only has id/title; the rich set is ~6 entries. So the ingestion registers the e-texts
@@ -172,6 +172,13 @@ curl -s "localhost:8787/resolve?title=Tantraloka&author=Abhinavagupta" | python3
    Postgres are the next layer (not this build).
 4. **10 pre-existing T1 certificate issues** (missing upstream SOURCE refs) are NOT from this build —
    they were committed before; untouched.
+5. **The object_registry cannot scale to 1M verse-level SOURCE objects in one process.** `commit_batch`
+   loads the WHOLE registry JSONL (now ~172MB) into memory and rewrites it per call. Bulk-registering the
+   ~1M extracted harvest verses OOM-killed the process (2.1GB RSS) after +100k were committed (SOURCE
+   47k→147k). This is an architectural limit, NOT a bug in the extractor. The committed subset is intact
+   and idempotent-safe. **The scaled approach:** either (a) a streaming/append-only registry writer that
+   does NOT load the whole file, or (b) register per-work (memory-bounded) via `_register_source`, or
+   (c) move verse-level SOURCE to the Atlas Postgres (the designed canonical layer for entity truth).
 
 ---
 
