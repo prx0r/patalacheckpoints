@@ -51,17 +51,20 @@ CHECKPOINT gates that mark honest progress.*
 
 ## 3. THE DELIVERABLES (all wiring, no new frontiers) + their CHECKPOINTS
 
-### DELIVERABLE 1 — the projection compiler (`build-openpatala.py`)
-Compiles `object_registry` (SOURCE + bibliography link) into immutable artifacts, compute-on-write.
+### DELIVERABLE 1 — the projection compiler (REUSE `scripts/build-static-site.py`)
+EXTEND agentgraph's proven `build-static-site.py` to also compile `object_registry` (SOURCE + the
+bibliography link) into immutable artifacts, compute-on-write. Do NOT write a new compiler.
 
-**CHECKPOINT 1a (bootstrap):** compiler reads the registry + bibliography, emits a real artifact set.
+**CHECKPOINT 1a (bootstrap):** the extended compiler reads the registry + bibliography, emits a real
+artifact set (incl. the registry layers, not just the flat data).
 ```bash
-python3 python/patala_core/atlas/build-openpatala.py
+python3 scripts/build-static-site.py
 # pass = emits site/openpatala/{works,t1,l0,...}.json + manifest, real counts (SOURCE 32039, 254 works)
 ```
-**CHECKPOINT 1b (rebuild-on-commit):** run twice → 2nd run prints "no inputs changed" (no-op).
+**CHECKPOINT 1b (rebuild-on-commit):** EXTEND the input-tracking in `scripts/rebuild-on-commit.py` to
+include the registry. Run twice → 2nd run prints "no inputs changed — nothing to rebuild".
 ```bash
-python3 python/patala_core/atlas/rebuild-on-commit.py   # 1st rebuilds, 2nd = no-op
+python3 scripts/rebuild-on-commit.py   # 1st rebuilds, 2nd = no-op (VERIFIED: the base already does this)
 ```
 
 ### DELIVERABLE 2 — the live OpenAlex-grammar API (additive, keep the factory contract)
@@ -99,6 +102,43 @@ Follow `openpatala/reference/openalex/snapshots/` — the open downloadable data
 Serve the openpatala surface visibly on the site, per `BUILD-SITE-LIVE-DATA.md`.
 
 **CHECKPOINT 6:** the site renders a work from the compiled artifacts (0-JS, JSON-LD, canonical URL).
+
+---
+
+## 3.5 REUSE, DON'T REBUILD (agentgraph's §10 directive — the foundational layer)
+
+**agentgraph's directive (confirmed §10):** do NOT write new `build-openpatala.py` + `rebuild-on-commit.py`.
+They already exist and work. **Extend the proven build, don't replace it.**
+
+**The proven, working assets (verified):**
+- `scripts/build-static-site.py` — the projection compiler (compiles real corpus → immutable `site/`)
+- `scripts/rebuild-on-commit.py` — compute-on-write incremental (VERIFIED: run 1 rebuilds, run 2 = "no
+  inputs changed — nothing to rebuild", staleness DAG quiet, 5 tracked inputs)
+- `lib/{context_compiler,bundle_router,seo}.py` + `lib/fts_search.py` — the read plane + FTS baseline
+
+**The honest gap to close:** `build-static-site.py` currently reads FLAT `data/` files
+(`atlas-bibliography.json` + `published/ipvv/index.json`), NOT the live `object_registry`. The reuse
+move is to **add the registry as a compile input** — extend `build-static-site.py` (and the
+`rebuild-on-commit` input tracking) to read `pipeline/object_registry.py` alongside the flat data.
+
+**The concrete reuse map (each openpatala checkpoint → the existing proven script):**
+
+| Checkpoint | Reuse this (agentgraph's proven build) | Don't write |
+|---|---|---|
+| 1a compiler | extend `scripts/build-static-site.py` to also compile `object_registry` (SOURCE/T1/L0/...) | ❌ new `build-openpatala.py` |
+| 1b rebuild-on-commit | extend `scripts/rebuild-on-commit.py` input-tracking to include the registry | ❌ new `rebuild-on-commit.py` |
+| 2 API serves bytes | serve from the compiled `site/` projections | ❌ new compiler |
+| 4 crosswalks | via `lib/seo.py` + `lib/context_compiler.py` canonical IDs | ❌ new SEO |
+| 5 snapshot | the existing Parquet/JSONL export path | ❌ new exporter |
+| 6 live site | the existing Astro site + `build-static-site.py` | ❌ new site |
+
+**The scaling directive (thousands of texts) — already satisfied by the proven build:**
+1. **Incremental, not full-rebuild** — a new doc must NOT rebuild the whole corpus (`rebuild-on-commit`
+   does hash → only-changed). This is the SPEC-00 §23 hard rule.
+2. **Content-addressed immutable artifacts** — thousands of immutable blobs on CDN, never recomputed at read.
+3. **Parquet bulk snapshots** for the open-data differentiator.
+4. **Postgres FTS first** (`fts_search`, p50 <10ms) — not O(n²) scans.
+5. **Measure before infra** — no Neo4j/Kafka/ES at 10k-100k works.
 
 ---
 
@@ -183,9 +223,10 @@ Update this file's status line + `PROPOSAL-OPENPATALA-SUBPROJECT.md` as checkpoi
 
 ```text
 PROPOSAL ........ CONFIRMED (agentgraph §7 YES + §8 perf contract)
+REUSE DIRECTIVE .. ACCEPTED (agentgraph §10 — extend build-static-site.py + rebuild-on-commit.py, don't rebuild)
 BUILD SPEC ...... THIS FILE
-CHECKPOINT 1a .... ⬜
-CHECKPOINT 1b .... ⬜
+CHECKPOINT 1a .... ⬜  (extend build-static-site.py → compile the registry)
+CHECKPOINT 1b .... ⬜  (extend rebuild-on-commit.py input-tracking → include the registry)
 CHECKPOINT 2 ..... ⬜
 CHECKPOINT 6 ..... ⬜
 CHECKPOINT 4 ..... ⬜
