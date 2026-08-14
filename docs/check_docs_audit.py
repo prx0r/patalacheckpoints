@@ -6,6 +6,8 @@ The anti-theatre / anti-redundancy check for the loose docs in docs/:
   2. no duplicate file paths
   3. every ARCHIVE file should carry a visible "ARCHIVED/SUPERSEDED" marker so agents don't follow it
   4. every loose .md in docs/ (top-level) is accounted for in the audit
+  5. every .md anywhere under docs/ (incl. subdirs) is either in the audit or in an owned-dir cluster
+     (layers/vision/process/api/ontology/content/ml/corpus/global/atlas-contracts/_archive)
 
 Run: python3 docs/check_docs_audit.py
 """
@@ -60,12 +62,35 @@ def main() -> int:
     if unaccounted:
         errors.append(f"LOOSE .md NOT in audit: {unaccounted}")
 
+    # 5. every .md ANYWHERE under docs/ (incl. subdirs) is accounted for
+    #    (fixes the gap where docs/corpus, docs/global, docs/layers, etc. were invisible)
+    all_md = sorted(
+        str(p.relative_to(DOCS))
+        for p in DOCS.rglob("*.md")
+        if p.is_file() and "node_modules" not in str(p) and ".venv" not in str(p) and ".next" not in str(p)
+    )
+    # canonical dirs that own their .md files and need no audit row
+    OWNED_DIRS = {"layers", "vision", "process", "api", "ontology", "content", "ml", "corpus", "global",
+                  "atlas-contracts", "_archive"}
+    unaccounted_sub = []
+    for rel in all_md:
+        if rel in audited:
+            continue
+        toplevel = rel.split("/", 1)[0]
+        if toplevel in OWNED_DIRS:
+            continue  # owned by a canonical index/manifest elsewhere
+        unaccounted_sub.append(rel)
+    if unaccounted_sub:
+        errors.append(f"docs/ subdir .md NOT in audit (and not in an OWNED_DIRS cluster): {unaccounted_sub}")
+
+
     from collections import Counter as _C
     print("status distribution:", dict(_C(f["status"] for f in files)))
     print("all files exist ✓" if not missing else "files: ✗")
     print("file paths unique ✓" if not dup else "paths: ✗")
     print("archive files marked ✓" if not unmarked else f"archive markers: {unmarked}")
     print("all loose docs accounted ✓" if not unaccounted else f"unaccounted: {unaccounted}")
+    print("all subdir docs accounted ✓" if not unaccounted_sub else f"subdir unaccounted: {unaccounted_sub}")
 
     if errors:
         print("\nFAILURES:")

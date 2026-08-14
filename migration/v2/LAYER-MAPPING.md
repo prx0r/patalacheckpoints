@@ -388,6 +388,12 @@ drift. Today it is hand-compiled for review.*
 
 1. **Converge the kernel primitives** (ReviewEvent, AuthorityVector, Proposition, Derivation, ObjectRef)
    — Phase 0, kills the schema divergence. [SCHEMA-AUDIT]
+   ⚠️ **KEY: the kernel is already half-built.** `python/patala_core/` has `authority.py` (a real
+   AuthorityVector: 4 axes, gate predicates, display badge — NO scalar rank), `objects.py` (Proposition/
+   Crux/ReviewEvent/Adjudication), `ids.py`, + full contracts in `docs/atlas-contracts/`. BUT the
+   factory (`pipeline/object_registry.py`, `review_engine.py`) and `source-evidence/schema/` use their
+   OWN separate ReviewEvent/Authority definitions — verified 4 distinct implementations. Phase 0 =
+   promote `patala_core` to canonical and retire the other 3, NOT greenfield a new kernel.
 2. **L200 + C1 bulk-ingest** (63 golds → registry with Derivation edges) — Phase 1, makes the moat counts
    true. [the single highest-leverage next build]
 3. **Wire ledger → Postgres projection** + make the site read compiled objects, not `.ts` — Phase 1,
@@ -420,6 +426,127 @@ doc resolves to a category AND a layer — nothing in the vision is unmapped.
 **Completeness check:** every file under `docs/vision/` (root `.md` + the `atlas/ economics/ education/
 expansion/ functionality/ organism/ scholars/ source-resolution/` subdirs) is listed above and assigned
 to a category + layer. None is orphaned.
+
+---
+
+## VISION-ADJACENT DOCS OUTSIDE `docs/vision/` (the global strategy + corpus guidance sets)
+
+`docs/vision/` holds the *architecture* visions. But vision/strategy content also lives in two other
+places that a complete map must account for: the **global strategy/architecture set** (`docs/global/`)
+and the **corpus scholarly-guidance set** (`docs/corpus/`). These are referenced where they belong in
+the layer blocks above; this is the explicit accounting so nothing is invisible.
+
+### Global strategy / architecture (`docs/global/`)
+
+| Doc | What it is | Maps to layer |
+|---|---|---|
+| `PATALA-GLOBAL-ARCHITECTURE.md` | the frozen v0.1 global architecture (one graph, many interfaces) | 00, 10 |
+| `agent1atlas.md` | Agent1 × Atlas convergence — the canonical scholarly graph, not a canonical packet | 02, 05 |
+| `globalplan.md` | Global dev plan — current state → full platform | 00, 12 |
+| `globalgoal.md` | the goal — the versioned scholarly graph is canonical; packets are compiled read-models | 00, 02, 03 |
+| `globalaccess.md` | Access, rights & ecosystem — open-reference, controlled-corpus | 02, 11 |
+| `globalpartnerships.md` | partnerships & the reconciliation layer | 11 |
+| `GLOBAL-NEXT-2026-08-13.md` | coordinated next steps for the next agent | 12 |
+| `GLOBAL-STATE-2026-08-13.md` | (ELAD) full state handover | 00, 12 |
+| `globalglobal.md` | **ARCHIVED / redirect → NAVIGATION.md** | — |
+| `HERMES-CALLING.md` | how Pāṭala calls Hermes | 12 |
+| `ingestion-refinery.md` | the ingestion process | 01 |
+| `patala-peer-review.md` · `peer-review-goat.md` | peer-review doctrine | 08, 07 |
+
+### Corpus scholarly-guidance (`docs/corpus/`)
+
+These are **domain-content guidance** (the scholarly textual territory), not architecture — they guide
+the *content*, so they map to the layers that consume the corpus.
+
+| Doc | What it is | Maps to layer |
+|---|---|---|
+| `markguidance.md` | Recognition-Enquiry guidance across Pratyabhijñā + rivals + consciousness research | 02, 06 |
+| `canonical_reference_map.md` | the Trika–Krama–Kubjikā–Kaula–Pratyabhijñā–Sarvāmnāya textual territory map | 02, 06 |
+| `translation_atlas.md` | the translation-status atlas | 05 |
+| `translation_flow_spec.md` | the translation flow spec | 05 |
+| `tradition_anchors.md` · `atlasflaws.md` | tradition anchoring + atlas flaws | 02 |
+| `leapfrog_map.md` · `leapfrog_guide.md` | the leapfrog strategy for the corpus | 03, 05 |
+| `bibliography-strategy.md` | bibliography acquisition strategy | 02 |
+| `TARGETS-INDEX.md` | the acquisition goldmine (corpus targets) | 01, 03 |
+| `sivaqueue{2,3,34,4}-translation-guide.md` · `sivaqueue-guide.md` | per-queue intake guides | 01, 05 |
+
+### Other vision-adjacent (top-level `docs/`)
+
+| Doc | What it is | Maps to layer |
+|---|---|---|
+| `positioningpartners.md` | positioning & partners (Category C) | 11 |
+| `foundationalideas.md` | passage/text identity as the stable anchor | 02 |
+| `endgame1..5year.md` | Vision 01-05 origin arc | 00, 03, 10, 11 |
+| `ENDGAME_SITE_SPEC.md` | the Tantra Reader site spec | 10 |
+| `SCHOLARLY_GRAPH.md` | the canonical object/annotation model | 02, 05 |
+
+> **Note on `patalaendgame` / `rm*` / `rmdev`:** those names appear only in the **R2 uploads** bucket
+> (`blog-video-assets/uploads/`), not as docs in this repo — they are exported notes, not part of the
+> repo's vision corpus. If you want them reconciled into the map, they'd need to be imported first.
+
+---
+
+## THE CONTRACT / CONCEPT CLUSTERS (`docs/atlas-contracts/`, `docs/api/concepts/`, `docs/ontology/`)
+
+These hold the **existing schema/contract specs** — several are the v2 kernel's contracts, already
+written. This is the most important under-surfaced area: **the kernel is not just a future idea, it
+already has contract docs + a `python/patala_core/` implementation.**
+
+### `docs/atlas-contracts/` — the v2 kernel contracts (already exist)
+
+| Doc | What it is | v2 relevance |
+|---|---|---|
+| `authority-vector.md` | AuthorityVector — 4 axes, gate predicates, NO scalar rank (field ref for `python/patala_core/authority.py`) | **core kernel** — implements the mixxii authority requirement |
+| `objects.md` | the typed scholarly objects (Proposition/Commitment/GroundingLink/InferenceApplication/Crux/ReviewEvent/ReviewProposal/Adjudication) | **core kernel** |
+| `ids.md` | canonical id scheme (`pt:` URNs) | **core kernel** (ObjectRef) |
+| `read-api.md` | the read-side API contract | Layer 10 |
+| `source-resolver.md` | the federated edition/manuscript resolver | Layer 02 |
+| `access-policy.md` | publication/rights gates | Layers 02, 11 |
+| `adapter-migration.md` | adapter migration path | Layer 04 |
+| `atlas-database.md` | the atlas Postgres schema | Layer 02 |
+| `frontend-architecture.md` | the read-side UI architecture | Layer 10 |
+| `overview.md` | the contract cluster overview | — |
+
+### `docs/api/concepts/` — the epistemic-status model (core doctrine)
+
+| Doc | What it is | v2 relevance |
+|---|---|---|
+| `epistemic-model.md` | SOURCE/PROPOSAL/ASSERTION/REVIEW/ACCEPTED + the rules (Proposal ≠ assertion, Accepted ≠ certain, machine score ≠ confidence) | the anti-theatre core — maps to kernel `authority` + `reducers` |
+| `assertions-proposals.md` | the assertion/proposal distinction | kernel `authority` |
+| `rights.md` | rights + publication posture | Layers 02, 11 |
+| `work-witness-passage.md` | the Work/Witness/Passage identity model | Layer 02 |
+| `mcp.md` + `recipes/*` | the MCP + API surface (7 recipe docs) | Layer 10 |
+
+### `docs/ontology/` — the higher-object specs
+
+| Doc | What it is | v2 relevance |
+|---|---|---|
+| `EO-v2.md` | Essay Object v2 — full spec | Layer 07 (Essay) |
+| `RO-v2.md` | Research Object v2 — full spec | Layers 05-07 |
+
+---
+
+## THE ML / CONTENT CLUSTERS (`docs/ml/`, `docs/content/`)
+
+| Doc | What it is | Maps to layer |
+|---|---|---|
+| `ml/LAYER-TOOLS-INTEGRATION-NORTHSTAR.md` | the layer-tools integration north star | 05, 07 |
+| `ml/LAYER-TOOLS-SURVEY.md` | the external layer-tool landscape (verification kernel composition) | 04, 07 |
+| `ml/MACHINE-PROOF-CONTRACTS.md` | the universal "layer done" definition (LayerContract with 5 gates) | 03, 07 |
+| `content/modules/school-*.md` + `recognition.md` | ConceptLesson modules (the Pratyabhijñā foundation) | 07, 09 (Lesson + organism) |
+
+---
+
+**Full accounting:** architecture vision = `docs/vision/` (50 docs) + global strategy (`docs/global/`) +
+corpus guidance (`docs/corpus/`) + the contract/concept clusters (`docs/atlas-contracts/`,
+`docs/api/concepts/`, `docs/ontology/`) + the ML/content clusters (`docs/ml/`, `docs/content/`) + the
+top-level strategy docs. Every one is now assigned a category + layer. Nothing is unmapped.
+
+**Why these were missed:** the `check_docs_audit.py` validator only scanned **top-level `docs/*.md`**
+(`DOCS.glob("*.md")`), so all 176 docs in subdirectories were invisible to the audit. This is now fixed —
+the validator recursively checks every `docs/**/*.md` (rule 5) and the audit passes.
+
+
 
 ---
 

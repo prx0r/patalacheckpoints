@@ -351,7 +351,13 @@ Phase 1 — **Close the seams** (make counts true)
   5. L200/C1 bulk-ingest: register the 63 real golds as canonical objects with `Derivation` edges.
 
 Phase 2 — **Kernel + transformation registry**
-  6. Extract `patala_kernel` (identity/derivation/authority/events/reducers/gates/staleness).
+  6. **Promote the existing `python/patala_core/` to canonical.** The AuthorityVector (`authority.py`),
+     typed objects (`objects.py`), and ids (`ids.py`) + the `docs/atlas-contracts/` contracts ALREADY
+     exist. Phase 2 is NOT greenfield — it is convergence: make `patala_core` the one ReviewEvent/
+     Authority/Proposition/Derivation definition and retire the 3 parallel ones in
+     `pipeline/object_registry.py` + `pipeline/review_engine.py` + `source-evidence/schema/`
+     (verified: 4 distinct ReviewEvent/Authority implementations). Then add what's missing:
+     derivation edges, reducers, gates, staleness.
   7. Build the transformation registry (§3) and the projection DAG.
   8. Implement staleness over object-level dependencies.
 
