@@ -15,6 +15,12 @@ v2  the blueprint (clear names, codified layers, 16 products, external grounding
 v3  the ORGANISM (v2 + proven kernels + production floor + verified testing)
 ```
 
+## THE MASTER KNOWLEDGE (new agents — start here after HANDOVER + AGENTS)
+
+**`MASTER-KNOWLEDGE.md`** is the one-stop fast-context file: the two-sided build (agentpatala ↔ agentgraph),
+the confirmed OpenPāṭala proposal + performance contract, the verified test reality, the peer-review
+findings (incl. the `factory_pool.py` bootstrap bug), and the priority order. Read it before going deep.
+
 ## THE THREE TRUTHS (what makes it final)
 
 1. **Pāṭala decides what can responsibly be said.** (the epistemic gate)
