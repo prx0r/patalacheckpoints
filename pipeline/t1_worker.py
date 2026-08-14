@@ -160,9 +160,11 @@ def _assemble_t1(verse: str, segments: list[dict], gloss_map: dict) -> list[dict
     return out
 
 
-# Max batch FILE size per model call, in bytes. The prompt only references the file path (hermes reads
-# it with its file tool), so this is a FILE size, not an argv limit — no ARG_MAX. Big batches allowed.
-T1_MAX_BYTES = int(os.environ.get("PATALA_T1_MAX_BYTES", "3000000"))
+# Max assembled-prompt size for one model call, in bytes. The prompt is passed as a command-line arg
+# to `hermes chat -q` (model.py), so it must stay well under the OS ARG_MAX (~2MB on Linux) or it
+# fails `[Errno 7] Argument list too long`. 1.2MB leaves headroom for argv/env. This is what reliably
+# produces glosses (inline prompt works; agentic file-reading timed out).
+T1_MAX_BYTES = int(os.environ.get("PATALA_T1_MAX_BYTES", "1200000"))
 T1_BATCH_DIR = Path(os.environ.get("PATALA_T1_BATCH_DIR",
                                     "/root/projects/patala/data/corpus/downloads/t1-batches"))
 
@@ -386,9 +388,7 @@ def t1_generator(layer: str, batch: list[dict]) -> list[dict]:
             if not sub:
                 return
             n_tokens = sum(len(e["tokens"]) for e in sub)
-            work = sub[0]["object_id"].split(":")[0]
-            bfile = _write_batch_file(work, sub)
-            prompt = _build_file_prompt(bfile, len(sub), work)
+            prompt = _build_batch_prompt(sub)
             timeout = min(240 + int(n_tokens * 0.5), 900)
             try:
                 raw = chat_agentic("You are the Pāṭala T1 translator (transliteral word-gloss).", prompt,
