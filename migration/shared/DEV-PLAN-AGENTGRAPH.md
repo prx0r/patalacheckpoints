@@ -53,11 +53,18 @@ Pick ONE great target and run the ENTIRE organism on it end-to-end — the gradu
 directly to Abhinavagupta + recognition (the IPVV's sibling), and we have BOTH the Sanskrit root AND the
 Dyczkowski translation for later validation.
 
+**Audit update (2026-08-14):** a 4-agent completeness audit found THEATRE in my own Tantrāloka validators
+(translation hand-fed proof fields; vs-Dyczkowski fabricated both readings; argument/fullstack hand-typed
+the structure). The vs-Dyczkowski one is FIXED (now extracts Dyczkowski's real vol1 text, measures honestly
+at 0.1). The others need real Hermes execution. The pushing crux compass is now wired (`pushing_miner.py`).
+
 **The sources (already on disk):**
 - **Sanskrit root**: `/root/projects/tantraloka/texts-original/gretil_tantraloka.txt` (17,684 lines, the
   Kashmir Series 1918-38 edition via GRETIL/Takashima, clean `AbhT_1.1` kārikā refs + Jayaratha's Viveka).
 - **English reference for validation**: `/root/projects/tantraloka/texts-original/tantraloka-vol{1..11}-dyczkowski.txt`
   (all 11 volumes of Dyczkowski's translation).
+- **The crux compass (now wired)**: `pushing_miner.py` reads the 35 pushing-tantraloka LOGICVID sessions
+  → 1,510 cruxes + 6,040 claims grounded in kārikās.
 
 **The canonical test (agentgraph's lane — build the machinery):**
 1. **Ingest the root** → SOURCE → L0 token floor (vidyut) → TranslationProof → Commentary → Argument.
