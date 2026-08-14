@@ -1,0 +1,343 @@
+# PĀṬALA V3 — LAYERS.yaml (the final, proven layer contract)
+#
+# The v2 layer contract (clear names, requires/produces, authority) fully specced for v3: every layer
+# now ALSO maps to a PROVEN kernel (ip-graph lib/) + its exact external tool + the honest v3 status
+# (PROVEN / PROVEN-MECHANISM / NEEDS-BUILD). This is the authoritative layer spec — v2 was the design;
+# v3 is the design grounded in what actually works (51/51 experiments pass).
+#
+# status legend:
+#   PROVEN           mechanism validated on real data
+#   PROVEN-MECHANISM mechanism validated on synthetic/stand-in data, not yet integrated
+#   NEEDS-BUILD      not built (the handoff agent's targets)
+#
+# authority.axis: which AuthorityVector axes a transformation PRESERVES (generation·evidence·review·publication).
+
+version: 1.0
+kernel: verified_epistemic_os   # the 17 proven kernels (ip-graph lib/): epistemic · review · staleness ·
+                                # schema · evolve · agent_delivery · query · retrieval · translation ·
+                                # certificate · discovery · education · organism · organism_loop · pedagogy
+
+layers:
+
+  - id: source
+    name: Source
+    legacy: SOURCE
+    position: 0
+    status: PROVEN
+    requires: []
+    produces: [tokenization, argument_outline]
+    kernel: (corpus)
+    proof: validate-dag
+    external_tools: [CTS, Text-Fabric, SARIT, Kraken, Docling, GROBID]
+    transformation:
+      operation: ingest
+      verifier: source_fingerprint (incipit/explicit/ngram/MinHash)
+    authority:
+      preserves: [generation]
+      default_generation: external
+    doc: |
+      Raw text as ingested, Bronze on R2. A source is a publication, not an epistemic verdict.
+      The exact harvest: Kraken (OCR) / Docling (normalise) / GROBID (metadata) / CTS (identity) /
+      Text-Fabric (slot model) / SARIT (TEI target).
+
+  - id: draft_translation
+    name: DraftTranslation
+    legacy: T1
+    position: 1
+    status: PROVEN
+    requires: [source]
+    produces: [tokenization]
+    kernel: lib/translation.py
+    proof: validate-products
+    external_tools: [Vidyut, ByT5-Sanskrit, Sanskrit Heritage]
+    transformation:
+      operation: draft_translate
+      verifier: gloss_precision, losslessness, no_duplicates
+    authority:
+      preserves: [generation]
+      default_generation: machine
+    doc: |
+      Working draft translation. Proof generators: ByT5-Sanskrit, Sanskrit Heritage, Vidyut, skrutable.
+
+  - id: tokenization
+    name: Tokenization
+    legacy: L0
+    position: 2
+    status: NEEDS-BUILD
+    requires: [draft_translation]
+    produces: [translation, argument_outline]
+    kernel: (build)            # the L0 token floor
+    external_tools: [Text-Fabric, Vidyut]
+    transformation:
+      operation: tokenize
+      verifier: token↔verse binding, no dupes, deterministic
+    authority:
+      preserves: [generation, evidence]
+      default_generation: machine
+    doc: |
+      The token floor. NEEDS-BUILD — use Text-Fabric's slot model (the proven L0 substrate) + Vidyut.
+
+  - id: argument_outline
+    name: ArgumentOutline
+    legacy: ARGMAP
+    position: 3
+    status: PROVEN
+    requires: [source, tokenization]
+    produces: [translation]
+    kernel: lib/discovery.py + lib/query.py
+    proof: kernel-suite
+    transformation:
+      operation: outline_argument
+      verifier: outline covers the passage's moves
+    authority:
+      preserves: [generation]
+      default_generation: machine
+    doc: |
+      The lateral guide: what is at issue, the steps, the unresolved points, the decision. Proven.
+
+  - id: translation
+    name: Translation
+    legacy: L2
+    position: 4
+    status: PROVEN
+    requires: [tokenization, argument_outline]
+    produces: [translation_proof]
+    kernel: lib/translation.py
+    proof: validate-products
+    transformation:
+      operation: render_translation
+      verifier: prose fidelity to the token floor, guided by the outline
+    authority:
+      preserves: [generation, evidence]
+      default_generation: machine
+    doc: |
+      The readable prose translation. Micro-stage aliases: T2=alternative, T3=final, R1=review, R2=adjudication.
+
+  - id: translation_proof
+    name: TranslationProof
+    legacy: L200
+    position: 5
+    status: PROVEN                      # THE MOAT
+    requires: [translation]
+    produces: [commentary]
+    kernel: lib/translation.py
+    proof: validate-products
+    external_tools: [xCOMET, GemSpanEval, OTTAWA, MQM, entailment, term-consistency]
+    transformation:
+      operation: prove_translation
+      verifier: non-aggregate vector; gate BLOCKS on any failing hard dimension
+    authority:
+      preserves: [generation, evidence]
+      default_generation: machine
+    doc: |
+      THE MOAT — a VECTOR of independently inspectable obligations, never a scalar score. Proof
+      generators: ByT5/Sanskrit-Heritage/Vidyut. Auditors (intentionally redundant): xCOMET,
+      GemSpanEval, OTTAWA, MQM, entailment, term-consistency. Gate: BLOCKED unless all hard dims PASS,
+      reason is dimension-specific (PARALLEL_WITNESS_CONFLICT), never a mushy score.
+
+  - id: commentary
+    name: Commentary
+    legacy: C1
+    position: 6
+    status: NEEDS-BUILD
+    requires: [translation_proof]
+    produces: [theme, argument]
+    kernel: (build)
+    transformation:
+      operation: commentate
+      verifier: 100-450 words, passage-local, no essays-as-evidence
+    authority:
+      preserves: [evidence]
+      default_generation: machine
+    doc: |
+      Compact passage-local commentary. NEEDS-BUILD (the handoff agent's target).
+
+  - id: theme
+    name: Theme
+    legacy: THEME
+    position: 7
+    status: PROVEN-MECHANISM
+    requires: [commentary]
+    produces: [synthesis]
+    kernel: lib/staleness.py + lib/evolve.py
+    proof: communities, evolve
+    transformation:
+      operation: discover_theme
+      verifier: cluster coherence
+    authority:
+      preserves: [evidence]
+      default_generation: machine
+    doc: |
+      Themes/clusters across commentaries. Proven as a mechanism.
+
+  - id: argument
+    name: Argument
+    legacy: ARGUMENT
+    position: 7
+    status: PROVEN
+    requires: [commentary]
+    produces: [synthesis, lesson]
+    kernel: lib/review.py + lib/scholar_review.py
+    proof: layer03-05, cross-review, review-bias
+    external_tools: [ASPIC+, AIF/xAIF, IAM]
+    transformation:
+      operation: reconstruct_argument
+      verifier: structural_validity, evidence_complete, scope_consistent, modality_consistent
+    authority:
+      preserves: [evidence]
+      default_generation: machine
+      notes: validity ≠ soundness; the graph represents the distinction
+    doc: |
+      Propositions → argument → cruxes. Executable derivation object. Own the IR, borrow the engines
+      (ASPIC+/AIF/IAM verify; the historically-grounded IR is Patala's).
+
+  - id: synthesis
+    name: Synthesis
+    legacy: SYNTHESIS
+    position: 8
+    status: PROVEN-MECHANISM
+    requires: [argument, theme]
+    produces: [essay]
+    kernel: lib/evolve.py
+    proof: evolve (MAP-Elites)
+    transformation:
+      operation: synthesize
+      verifier: derivation-complete over qualified argument objects
+    authority:
+      preserves: [evidence]
+      default_generation: machine
+    doc: |
+      Converged synthesis. Proven as a mechanism (MAP-Elites); needs real inputs to be real.
+
+  - id: essay
+    name: Essay
+    legacy: ESSAY
+    position: 9
+    status: "NEEDS-BUILD (mechanism: experiment-reactive-essay proven)"
+    requires: [synthesis]
+    produces: [lesson]
+    kernel: (build the projection) + .meta/workengestation
+    transformation:
+      operation: render_essay
+      verifier: every sentence has a dependency link back into the graph
+    authority:
+      preserves: [evidence]
+      default_generation: machine
+    doc: |
+      Sentence-sourced essay. The reactive-essay mechanism is proven; the projection needs build.
+      The .meta workengestation already writes essays (13) — wire verified content to it.
+
+  - id: lesson
+    name: Lesson
+    legacy: EDUCATION
+    position: 10
+    status: PROVEN-MECHANISM
+    requires: [essay]
+    produces: []
+    kernel: lib/education.py + lib/pedagogy.py
+    proof: education-organism, pedagogy
+    external_tools: [pyBKT, Dialogue-KT, FSRS, adaptive-knowledge-graph]
+    transformation:
+      operation: compile_lesson
+      verifier: each correct answer AND distractor derivable from the graph
+    authority:
+      preserves: [evidence]
+      default_generation: machine
+    doc: |
+      Questions + distractors as compiled epistemic projections. Proven as a mechanism. Learner model
+      borrowed (pyBKT/Dialogue-KT/FSRS); the interfaces from adaptive-knowledge-graph (GOLD).
+
+  - id: scholar_attestation
+    name: ScholarAttestation
+    legacy: (Layer 08)
+    position: 11
+    status: PROVEN-MECHANISM (needs signed auth)
+    requires: [review]
+    produces: []
+    kernel: lib/agent_delivery.py
+    proof: validate-agent-delivery
+    external_tools: [ORCID, CRediT, DOI, C2PA]
+    transformation:
+      operation: attest
+      verifier: signed, granular, citable
+    authority:
+      preserves: [review, publication]
+      default_generation: editorial
+    doc: |
+      Scholar attests to a granular object (not "the project"). Gap E: needs signed attestation (C2PA).
+
+# -- The cross-cutting kernel layers (from the ip-graph LAYERS.yaml) --
+kernel_layers:
+  - id: review
+    status: PROVEN
+    kernel: lib/review.py + lib/scholar_review.py
+    proof: layer03-05, cross-review
+    doc: herdr reducer + adversarial panel + CiteCheck (the immune system)
+  - id: staleness
+    status: PROVEN
+    kernel: lib/staleness.py
+    proof: layer03-05 (RKA blast-radius)
+    doc: dependency-driven invalidation + rebuild order
+  - id: schema
+    status: PROVEN
+    kernel: lib/schema.py
+    proof: kernel-suite
+    external_tools: [Stencila, C2PA]
+    doc: single-source schema compiler — kills the divergence
+  - id: retrieval
+    status: PROVEN
+    kernel: lib/retrieval.py + lib/query.py
+    proof: layer10, kernel-suite
+    external_tools: [PathRAG, HippoRAG]
+    doc: retrieval + KG2Code executable queries
+  - id: certificate
+    status: PROVEN
+    kernel: lib/certificate.py
+    proof: kernel-suite (Certification Weight)
+    doc: the compounding marketplace mechanism (expansion E1)
+  - id: discovery
+    status: PROVEN
+    kernel: lib/discovery.py
+    proof: kernel-suite (Research Value Score)
+    doc: the What-If Machine (expansion E3)
+  - id: education
+    status: PROVEN-MECHANISM
+    kernel: lib/education.py + lib/pedagogy.py
+    proof: education-organism, pedagogy
+    doc: LearningClaim + adaptive pedagogy
+  - id: organism
+    status: PROVEN-MECHANISM
+    kernel: lib/organism.py + lib/organism_loop.py
+    proof: education-organism, organism-loop
+    doc: consumer-as-probe (expansion E2)
+  - id: evolve
+    status: PROVEN-MECHANISM
+    kernel: lib/evolve.py
+    proof: evolve (MAP-Elites)
+    doc: evolution loop
+  - id: agent_delivery
+    status: PROVEN-MECHANISM
+    kernel: lib/agent_delivery.py
+    proof: validate-agent-delivery
+    doc: task contract + context routing + human gate (needs signed auth — gap E)
+
+# -- The three planes (governing law per plane) --
+planes:
+  truth:    Nothing becomes true because an agent says so.      [Postgres + kernel]
+  compile:  Nothing recomputes unless its dependencies changed. [Python + Hermes + DuckDB]
+  read:     Nothing computes at request time if bytes could exist. [R2 + CDN + thin Workers/MCP]
+
+# -- Authority axes --
+authority_axes: [generation, evidence, review, publication]
+authority_semantics: |
+  A ⪯ B ⟺ ∀i. A_i ≤ B_i            (partial order)
+  authority(X) ≠ max_i X_i          (never a scalar max)
+  object TYPE ≠ epistemic STATE     (a Source is not SCHOLARLY_CORROBORATED by type)
+
+# -- The build targets (the honest to-do, from the v3 graduation test) --
+build_targets:
+  graduation_test: one IPVV claim through the whole stack on real evidence, then mutate source + watch the organism react
+  needs_build: [tokenization, commentary, essay_projection]
+  gap_e: signed human attestation (C2PA/ORCID)
+  gold_ingest: register the 63 L200 + 63 C1 IPVV golds with derivation edges
+  expansions: [E1 marketplace, E2 co-evolving organism, E3 what-if, E4 question-growth, E5 self-proving, E6 enquiry-discovery]
