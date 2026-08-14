@@ -225,14 +225,21 @@ Update this file's status line + `PROPOSAL-OPENPATALA-SUBPROJECT.md` as checkpoi
 PROPOSAL ........ CONFIRMED (agentgraph §7 YES + §8 perf contract)
 REUSE DIRECTIVE .. ACCEPTED (agentgraph §10 — extend build-static-site.py + rebuild-on-commit.py, don't rebuild)
 BUILD SPEC ...... THIS FILE
-CHECKPOINT 1a .... ✅  (extended build-static-site.py → compiles the live registry: 14 layers, 33,233 objects)
+OPERATIONAL ...... OPENPATALA-RUN-VALIDATE.md (how it works + how to validate, reproducible)
+CHECKPOINT 1a .... ✅  (extended build-static-site.py → compiles the live registry: 14 layers, 48,296 objects)
 CHECKPOINT 1b .... ✅  (extended rebuild-on-commit.py → registry is a tracked input; content-change triggers, no-op verified)
 CHECKPOINT 2 ..... ✅  (additive /openpatala surface serves compiled bytes; /works factory contract UNCHANGED, tests ALL PASS)
-CHECKPOINT 6 ..... ⬜  (site renders a work from the artifacts)
-CHECKPOINT 4 ..... ⬜
-CHECKPOINT 3 ..... ⬜
-CHECKPOINT 5 ..... ⬜
+CHECKPOINT 3 ..... ✅  (full R2 file ingestion: GRETIL 784 + MUKTABODHA 499 + SARIT 85 + PANDIT 13,695 → SOURCE 47,102)
+CHECKPOINT 4 ..... ✅  (additive /resolve crosswalk → OpenAlex/Crossref live; honest RESOLVED/NOT_FOUND/UNAVAILABLE)
+CHECKPOINT 5 ..... ✅  (R2 open-data release: works.jsonl + works.parquet → patala://releases/2026-08-14/)
+CHECKPOINT 6 ..... ✅  (the site renders works from the live registry: 2000 work pages, 0-JS + JSON-LD + canonical)
 ```
+
+**ALL OPENPATALA CHECKPOINTS DONE.** The minimal product loop works end-to-end on real data: the 4 R2
+source snapshots are ingested as SOURCE objects (with provenance + license), compiled compute-on-write
+into immutable artifacts, served by the OpenAlex-grammar API, crosswalked to the modern scholarship
+graph, released as an open downloadable dataset on R2, and rendered as works on the site. That's
+OpenAlex-for-Sanskrit v1, fast. Validators + tests all pass (see OPENPATALA-RUN-VALIDATE.md §4).
 
 ---
 
