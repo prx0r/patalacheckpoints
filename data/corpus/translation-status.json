@@ -1,0 +1,3187 @@
+{
+  "parakhyatantra": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Dominic Goodall",
+        "coverage": "surviving text",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "A",
+        "url": "https://www.ifpindia.org/bookstore/ci98/"
+      }
+    ],
+    "statusLabel": "Complete English translation (for the surviving text)",
+    "copyrightHint": "IN_COPYRIGHT",
+    "has_english": true,
+    "english_urls": [
+      "https://www.ifpindia.org/bookstore/ci98/"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "mrgendragama": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "S. P. Sabharathnam",
+        "coverage": "Vidyā (early chapters)",
+        "complete": false,
+        "type": "traditional",
+        "tier": "B",
+        "url": "https://www.himalayanacademy.com/saivite-scriptures/"
+      },
+      {
+        "language": "fr",
+        "translator": "Michel Hulin",
+        "coverage": "Vidyā/Yoga",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "A",
+        "url": ""
+      },
+      {
+        "language": "fr",
+        "translator": "Hélène Brunner et al.",
+        "coverage": "Kriyā/Caryā",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "A",
+        "url": ""
+      }
+    ],
+    "statusLabel": "No single complete scholarly English located; substantial/complete French across sections",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://www.himalayanacademy.com/saivite-scriptures/"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "kiranatantra": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Dominic Goodall",
+        "coverage": "opening of Vidyāpāda (dissertation)",
+        "complete": false,
+        "type": "scholarly",
+        "tier": "A",
+        "url": "https://openlibrary.org/works/OL37074151W/"
+      },
+      {
+        "language": "it",
+        "translator": "Maria Pia Vivanti",
+        "coverage": "entire Vidyāpāda",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "A",
+        "url": "https://books.openedition.org/ifp/1911?lang=en"
+      }
+    ],
+    "statusLabel": "Partial English; complete Italian Vidyāpāda",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://openlibrary.org/works/OL37074151W/"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "rauravagama": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "fr",
+        "translator": "Bruno Dagens & Marie-Luce Barazer-Billoret",
+        "coverage": "complete",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "A",
+        "url": "https://www.ifpindia.org/bookstore/?page=3&tags=Sanskrit_studies"
+      },
+      {
+        "language": "en",
+        "translator": "S. P. Sabharathnam",
+        "coverage": "excerpts",
+        "complete": false,
+        "type": "traditional",
+        "tier": "B",
+        "url": "https://www.himalayanacademy.com/saivite-scriptures/category/scripture/agamas/"
+      }
+    ],
+    "statusLabel": "No complete scholarly English located; complete French (2 vols)",
+    "copyrightHint": "IN_COPYRIGHT",
+    "has_english": true,
+    "english_urls": [
+      "https://www.himalayanacademy.com/saivite-scriptures/category/scripture/agamas/"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "ajitagama": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "N. R. Bhatt / Filliozat",
+        "coverage": "complete",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "A",
+        "url": "https://ignca.gov.in/ajitmahatantram-the-great-tantra-of-ajita/"
+      }
+    ],
+    "statusLabel": "Complete English translation (5-volume annotated edition)",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://ignca.gov.in/ajitmahatantram-the-great-tantra-of-ajita/"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "matangaparmesvaragama": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "",
+        "coverage": "Vidyāpāda",
+        "complete": false,
+        "type": "traditional",
+        "tier": "C",
+        "url": "https://www.himalayanacademy.com/"
+      }
+    ],
+    "statusLabel": "No complete edition verified; partial English (Vidyāpāda)",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://www.himalayanacademy.com/"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "kamikagama": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "S. P. Sabharathnam",
+        "coverage": "Pūrva + selected Uttara chapters",
+        "complete": false,
+        "type": "traditional",
+        "tier": "B",
+        "url": "https://www.himalayanacademy.com/books/kamika-agama-purva-pada-part-one/"
+      }
+    ],
+    "statusLabel": "Large English portions available; do not claim complete across every recension",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://www.himalayanacademy.com/books/kamika-agama-purva-pada-part-one/"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "pauskaragama": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "S. P. Sabharathnam",
+        "coverage": "Vidyāpāda (10 chs.)",
+        "complete": true,
+        "type": "traditional",
+        "tier": "B",
+        "url": "https://www.himalayanacademy.com/books/pauskara-agama-vidya-pada/"
+      }
+    ],
+    "statusLabel": "Complete English Vidyāpāda; whole-Āgama completeness not established",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://www.himalayanacademy.com/books/pauskara-agama-vidya-pada/"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "sarvajnanottara": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "S. P. Sabharathnam",
+        "coverage": "Vidyā/Yoga",
+        "complete": false,
+        "type": "traditional",
+        "tier": "B",
+        "url": "https://www.himalayanacademy.com/books/sarvajnanottara-agama-yoga-pada/"
+      }
+    ],
+    "statusLabel": "English Vidyā/Yoga material available; whole tradition not marked complete",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://www.himalayanacademy.com/books/sarvajnanottara-agama-yoga-pada/"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "sardhatrisatikalottara": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "brahmayamala": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Shaman Hatley",
+        "coverage": "chs. 1, 2, 55, 73, 99",
+        "complete": false,
+        "type": "scholarly",
+        "tier": "A",
+        "url": ""
+      }
+    ],
+    "statusLabel": "Partial scholarly English (selected chapters); no complete translation",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "siddhayogesvarimata": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Judit Törzsök",
+        "coverage": "selected chapters",
+        "complete": false,
+        "type": "scholarly",
+        "tier": "A",
+        "url": "https://ephe.academia.edu/JuditTorzsok/Thesis%20Chapters"
+      }
+    ],
+    "statusLabel": "Selected chapters translated; no complete translation",
+    "copyrightHint": "PUBLIC_DOMAIN",
+    "has_english": true,
+    "english_urls": [
+      "https://ephe.academia.edu/JuditTorzsok/Thesis%20Chapters"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "svacchandatantra": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "William Arraj",
+        "coverage": "selected portions + Kṣemarāja's Uddyota",
+        "complete": false,
+        "type": "scholarly",
+        "tier": "A",
+        "url": "https://www.wisdomlib.org/hinduism/book/svacchandatantra-history-and-structure"
+      }
+    ],
+    "statusLabel": "Substantial partial English (root + Uddyota selections); no complete translation",
+    "copyrightHint": "PUBLIC_DOMAIN",
+    "has_english": true,
+    "english_urls": [
+      "https://www.wisdomlib.org/hinduism/book/svacchandatantra-history-and-structure"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "netratantra": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Gavin Flood & Wernicke-Olesen",
+        "coverage": "chs. 1–8",
+        "complete": false,
+        "type": "scholarly",
+        "tier": "A",
+        "url": "https://www.routledge.com/Tantra-in-Medieval-India-and-Nepal-An-annotated-edition-and-translation-of-The-Teaching-of-the-Lord-of-Immortality-the-Netra-Tantra-Chapters-1-8/Flood-Wernicke-Olesen/p/book/9780367709600"
+      }
+    ],
+    "statusLabel": "Chapters 1–8 English forthcoming (Nov 2026); no complete 22-chapter translation",
+    "copyrightHint": "PUBLIC_DOMAIN",
+    "has_english": true,
+    "english_urls": [
+      "https://www.routledge.com/Tantra-in-Medieval-India-and-Nepal-An-annotated-edition-and-translation-of-The-Teaching-of-the-Lord-of-Immortality-the-Netra-Tantra-Chapters-1-8/Flood-Wernicke-Olesen/p/book/9780367709600"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "jayadrathayamala": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete English translation; excerpts scattered in scholarship",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "trisirobhairava": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "Fragmentary; no complete surviving public text located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "nisvasaguhyasutra": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Goodall et al.",
+        "coverage": "Mūlasūtra/Uttarasūtra/Nayasūtra",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "A",
+        "url": "https://publications.efeo.fr/en/livres/828_the-ni-v-satattvasa-hit--the-earliest-surviving-aiva-tantra"
+      },
+      {
+        "language": "en",
+        "translator": "Goodall",
+        "coverage": "Niśvāsamukhatattvasaṃhitā",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "A",
+        "url": "https://ifpindia.org/bookstore/ci145/"
+      }
+    ],
+    "statusLabel": "Mūla/Uttara/Naya + Mukha translated; Guhyasūtra large unfinished portion",
+    "copyrightHint": "IN_COPYRIGHT",
+    "has_english": true,
+    "english_urls": [
+      "https://publications.efeo.fr/en/livres/828_the-ni-v-satattvasa-hit--the-earliest-surviving-aiva-tantra",
+      "https://ifpindia.org/bookstore/ci145/"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "kularatnamala": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "Lost/fragmentary transmission; no complete English",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "kaulajnananirnaya": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Michael Magee",
+        "coverage": "complete",
+        "complete": true,
+        "type": "independent",
+        "tier": "B",
+        "url": "https://ci.nii.ac.jp/ncid/BA58155866"
+      }
+    ],
+    "statusLabel": "Complete English translation",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://ci.nii.ac.jp/ncid/BA58155866"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "kularnavatantra": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Ram Kumar Rai",
+        "coverage": "complete",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "B",
+        "url": "https://buddhism.lib.ntu.edu.tw/search/search_detail.jsp?seq=379337"
+      },
+      {
+        "language": "en",
+        "translator": "S. C. Banerji",
+        "coverage": "complete",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "C",
+        "url": "https://sourcelibrary.org/book/kularnava-tantra-traditional"
+      },
+      {
+        "language": "en",
+        "translator": "M. P. Pandit",
+        "coverage": "partial/free readings",
+        "complete": false,
+        "type": "independent",
+        "tier": "C",
+        "url": "https://www.motilalbanarsidass.com/products/kularnava-tantra-text-and-readings"
+      }
+    ],
+    "statusLabel": "Multiple complete English translations (Rai; Banerji)",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://buddhism.lib.ntu.edu.tw/search/search_detail.jsp?seq=379337",
+      "https://sourcelibrary.org/book/kularnava-tantra-traditional",
+      "https://www.motilalbanarsidass.com/products/kularnava-tantra-text-and-readings"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "timirodghatana": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "yogapithakramodaya": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "kulasara": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "akulaviratantra": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "",
+        "coverage": "extensive summary/rendering",
+        "complete": false,
+        "type": "independent",
+        "tier": "C",
+        "url": "https://shivashakti.com/akulavira"
+      }
+    ],
+    "statusLabel": "English summary/partial rendering; no full formal English edition",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://shivashakti.com/akulavira"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "kulanandatantra": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "jnanakarika": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "kulapancasika": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "Unpublished; no complete English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "urmikaularnava": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "kramasadbhava": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "",
+        "coverage": "line-by-line working",
+        "complete": false,
+        "type": "independent",
+        "tier": "C",
+        "url": "https://mahanaya.org/en/scriptures/kramasadbhavah/"
+      }
+    ],
+    "statusLabel": "Online English working translation; no major published critical English edition located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://mahanaya.org/en/scriptures/kramasadbhavah/"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "mahanayaprakasha": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "",
+        "coverage": "online working",
+        "complete": false,
+        "type": "independent",
+        "tier": "C",
+        "url": "https://mahanaya.org/en/scriptures/mahanayaprakasah/"
+      }
+    ],
+    "statusLabel": "Online English working translation; formal critical English publication not established",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://mahanaya.org/en/scriptures/mahanayaprakasah/"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "mahanayaprakasha-arnasimha": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "",
+        "coverage": "online",
+        "complete": false,
+        "type": "independent",
+        "tier": "C",
+        "url": "https://mahanaya.org/en/scriptures/"
+      }
+    ],
+    "statusLabel": "Online English resource; published critical complete English not located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://mahanaya.org/en/scriptures/"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "devipancasataka": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "",
+        "coverage": "scholarly excerpts",
+        "complete": false,
+        "type": "scholarly",
+        "tier": "A",
+        "url": "https://link.springer.com/article/10.1007/s10781-021-09488-9"
+      }
+    ],
+    "statusLabel": "Scholarly excerpts; no complete English",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://link.springer.com/article/10.1007/s10781-021-09488-9"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "kramastotra": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "",
+        "coverage": "complete online",
+        "complete": false,
+        "type": "independent",
+        "tier": "C",
+        "url": "https://mahanaya.org/en/scriptures/"
+      }
+    ],
+    "statusLabel": "Complete online English; published critical English not located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://mahanaya.org/en/scriptures/"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "kalikastotra": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "",
+        "coverage": "online",
+        "complete": false,
+        "type": "independent",
+        "tier": "C",
+        "url": "https://mahanaya.org/en/scriptures/"
+      }
+    ],
+    "statusLabel": "Online English; no published critical English established",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://mahanaya.org/en/scriptures/"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "kramavilasastotra": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "Unpublished; no complete English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "cidgaganacandrika": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "",
+        "coverage": "study/excerpts",
+        "complete": false,
+        "type": "scholarly",
+        "tier": "C",
+        "url": "https://www.wisdomlib.org/hinduism/book/cidgaganacandrika-study"
+      }
+    ],
+    "statusLabel": "English study/excerpts; no direct complete scholarly translation verified",
+    "copyrightHint": "PUBLIC_DOMAIN",
+    "has_english": true,
+    "english_urls": [
+      "https://www.wisdomlib.org/hinduism/book/cidgaganacandrika-study"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "kaulasutra": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete English translation; work reported in progress",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "maharthamanjari": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Satya Prakash Singh & Swami Maheshvarananda",
+        "coverage": "complete",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "B",
+        "url": "https://pdfcoffee.com/mahartha-manjari-mahesvaranandapdf-pdf-free.html"
+      },
+      {
+        "language": "fr",
+        "translator": "Lilian Silburn",
+        "coverage": "complete root + Parimala extracts",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "A",
+        "url": "https://catalogue.bnf.fr/ark%3A/12148/cb361527611.public"
+      },
+      {
+        "language": "en",
+        "translator": "",
+        "coverage": "online",
+        "complete": false,
+        "type": "independent",
+        "tier": "C",
+        "url": "https://mahanaya.org/en/scriptures/maharthamanjari/"
+      }
+    ],
+    "statusLabel": "Complete English + French translation",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://pdfcoffee.com/mahartha-manjari-mahesvaranandapdf-pdf-free.html",
+      "https://mahanaya.org/en/scriptures/maharthamanjari/"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "kubjikamata": {
+    "translationStatus": "partial",
+    "translations": [],
+    "statusLabel": "Many scholarly excerpts; no complete English translation",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "laghvikamnaya": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete English; manuscript acquisition target",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "satsahasrasamhita": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "shrimatottara": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "kularatnoddyota": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "cincinimatasarasamuccaya": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "manthanabhairava": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Mark Dyczkowski",
+        "coverage": "Kumārikākhaṇḍa (all 69 chs.)",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "A",
+        "url": "https://openlibrary.org/books/OL23920185M/Manth%C4%81nabhairavatantram_Kum%C4%81rik%C4%81kha%E1%B9%87%E1%B8%8Da%E1%B8%A5"
+      }
+    ],
+    "statusLabel": "Complete scholarly English for the Kumārikākhaṇḍa; whole Tantra not completely translated",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://openlibrary.org/books/OL23920185M/Manth%C4%81nabhairavatantram_Kum%C4%81rik%C4%81kha%E1%B9%87%E1%B8%8Da%E1%B8%A5"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "kalanalatantra": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "maharahasyasampradaya": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete English translation located (newly digitized 2026)",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "pascimarcanapaddhati": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete English translation located (newly digitized 2026)",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "sivadrsti": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "John Nemec",
+        "coverage": "large portion",
+        "complete": false,
+        "type": "scholarly",
+        "tier": "A",
+        "url": "https://books.google.com/books/about/The_Ubiquitous_Siva.html?id=GweFnybyP4gC"
+      }
+    ],
+    "statusLabel": "Large scholarly portion translated, not the entire surviving work",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://books.google.com/books/about/The_Ubiquitous_Siva.html?id=GweFnybyP4gC"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "sivadrstivrtti": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete English translation (commentary)",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "isvarapratyabhijnakarika": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Raffaele Torella",
+        "coverage": "complete (kārikās + Vṛtti)",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "A",
+        "url": "https://iris.uniroma1.it/handle/11573/155566"
+      }
+    ],
+    "statusLabel": "Complete scholarly English translation (kārikās + Vṛtti)",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://iris.uniroma1.it/handle/11573/155566"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "isvarapratyabhijnavivrtti": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Raffaele Torella",
+        "coverage": "recovered portions (article by article)",
+        "complete": false,
+        "type": "scholarly",
+        "tier": "A",
+        "url": "https://iris.uniroma1.it/handle/11573/161745"
+      }
+    ],
+    "statusLabel": "Fragmentary work; recovered portion only partially translated",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://iris.uniroma1.it/handle/11573/161745"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "isvarapratyabhijnavimarsini": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "K. C. Pandey",
+        "coverage": "complete",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "B",
+        "url": "https://books.google.com/books/about/Bh%C4%81skar%C4%AB_An_English_translation_of_the.html?id=TLq46-v1ry0C"
+      }
+    ],
+    "statusLabel": "Complete English translation",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://books.google.com/books/about/Bh%C4%81skar%C4%AB_An_English_translation_of_the.html?id=TLq46-v1ry0C"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "isvarapratyabhijnavivrtivimarsini": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete English translation",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "pratyabhijnahrdaya": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Jaideva Singh",
+        "coverage": "complete",
+        "complete": true,
+        "type": "traditional",
+        "tier": "A",
+        "url": "https://www.motilalbanarsidass.com/products/pratyabhijnahrdayam-the-secret-of-self-recognition-sanskrit-text-with-english-translation-notes-and-introduction"
+      }
+    ],
+    "statusLabel": "Multiple complete English translations",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://www.motilalbanarsidass.com/products/pratyabhijnahrdayam-the-secret-of-self-recognition-sanskrit-text-with-english-translation-notes-and-introduction"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "sivastotravali": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Lakshman Joo & Bettina Bäumer",
+        "coverage": "20 hymns (exposition)",
+        "complete": true,
+        "type": "traditional",
+        "tier": "B",
+        "url": "https://www.motilalbanarsidass.com/products/sivastotravali-of-utpaladeva-with-cd"
+      }
+    ],
+    "statusLabel": "English exposition/translation available (20 hymns)",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://www.motilalbanarsidass.com/products/sivastotravali-of-utpaladeva-with-cd"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "sivastotravalivivrti": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "",
+        "coverage": "substantial traditional commentary/exposition",
+        "complete": false,
+        "type": "traditional",
+        "tier": "B",
+        "url": "https://dkprintworld.com/product/sivastotravali-of-utpaladeva/"
+      }
+    ],
+    "statusLabel": "English exposition exists; exact commentary coverage needs object-level separation",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://dkprintworld.com/product/sivastotravali-of-utpaladeva/"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "paramarthasara": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Bansat-Boudon & Tripathi",
+        "coverage": "complete (root + Yogarāja commentary)",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "A",
+        "url": "https://www.routledge.com/Routledge-Studies-in-Tantric-Traditions/book-series/RSTT"
+      }
+    ],
+    "statusLabel": "Complete scholarly English translation",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "https://www.routledge.com/Routledge-Studies-in-Tantric-Traditions/book-series/RSTT"
+    ],
+    "source_seed": "bibliographySeed.ts"
+  },
+  "sivaqueue2_kriyakandakramavali": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_somashambhupaddhativyakhya": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_siddhantasamuccaya": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_siddhantarahasyasara": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_sataratnasamgraha": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_sataratnollekhanii": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_siddhantaprakasika": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_tattvaratnavali": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_siddhantasekhara": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_mrgendrapaddhati": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_mrgendrapaddhatitika": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_prasadapaddhati": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_pratisthasarapaddhati": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_sisyasamskarapaddhati": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_kaladiksapaddhati": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_agnikaryapaddhati": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_sivanirvanapaddhati": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_gurupustika": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_svacchandabhairavapujapaddhati": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_svacchandadevarcanavidhi": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_apratihatamahadiksasutippanaka": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_amrtevarapujana": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_amrtevarapujagnikaryavidhana": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_amrtasuryapujavidhi": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_amrtabhairavarcanavidhi": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_amrtisabhairavabhattarakahnikavidhi": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_amrtasuryarcanavidhi": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_devitantrasadbhavasara": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_matrsadbhava": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_tantrarajatantravatarastotra": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_urdhvamnayapavitrarohanadamanarohanapaddhati": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_paratrisikalaghuvrttivimarsini": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_paratrisikatatparyadipika": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_anuttarasamvidarcanacarca": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_pararcanakrama": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_parakramavasana": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_paramasivadvaitakalpalatika": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_anandakalpavalli": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_parapujaprayoga": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_maharthamulasamketasutra": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_anuttaraprakasapancasika": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_parapravesika": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_svarupavimarsini": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_naganandasutravivarana": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_anuttarapaddhati": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_padyavahini": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_saivakalpadruma": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_sivavakyavali": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_saivamanasollasa": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_saivasarvasvasara": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_kamikagama": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_yogajagama": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_cintyagama": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_ajitagama": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_diptagama": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_suksmagama": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_amsumadagama": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_suprabhedagama": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_vijayagama": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_analagama": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_viraagama": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_vimalagama": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_bimbagama": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_prodigitagama": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_lalitagama": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_siddhagama": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_santanagama": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_sarvoktagama": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_karanagama": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_makutagama": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_candrajnanagama": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_sarvajnanottara2": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_mrgendratantra2": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_kiranatantra2": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_brhatkalottara2": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_jnanassiddhyagama": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_cidambaresvaranityapujasutra": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_citsabhesotsavasutra": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_pauskarabhasya": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_kriyasara": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_anubhavasutra": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_maritontadarya_siddhantashikhamani": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_lingadharanacandrika": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_pancaratna": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_pancaratna_commentary": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_pramathaganapaddhati": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_anadivirasaivacarasamgraha": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_virasaivacarasroddharabhasya": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_viramaheswaracarasamgraha": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_virasaivasiddhantottarakaumudi": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_vivekacintamani": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_sivadvaitanirnaya": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_vedantasarvasvasivadarpana": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_sivarcanacandrika": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_saivagamaparibhasamanjari": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_atmarthapujapaddhati": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_diksadarsa": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_asaucadipika": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_sivanityapujapaddhati": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivaqueue2_sivatandavatantratika": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "bhagavadgita_sarvatobhadra": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "bhavopahara": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "dvisatikalottara": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "ganakarika": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "isanasivagurudevapaddhati": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "janmamaranavicara": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "jnanaratnavali": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "kalikapurana": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "kriyakramadyotika": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "makutottara": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "mohacudottara": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "moksakarika": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "mrgendratantra": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "nadakarika": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "netratantroddyota": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "pancarthabhasya_kaundinya": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "pauskaraparamesvara": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "pingalamata": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "pratisthalaksanasarasamuccaya": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "prayascittasamuccaya_hridayasiva": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "ratnatrayapariksa_srikantha": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "satsahasrakalottara": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "siddhantadipika_ramanatha": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "siddhantasarapaddhati": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "siddhantasaravali": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivadharmasastra": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "sivadharmottara": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "spandapradipika": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "suksmasvayambhuva": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "svacchandodyota": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "tattvaprakasa_bhojadeva": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "tattvasamgraha_sadyojyotis": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "tattvatrayanirnaya": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "vatulanathasutra": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "vimalavati": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueSeed.ts"
+  },
+  "maitrayanisamhita": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "kathakasamhita": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "kapisthalakathasamhita": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "taittiriyabrahmana": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "kausitakibrahmana": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "A. B. Keith",
+        "coverage": "complete (Aitareya + Kauṣītaki)",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "C",
+        "url": "https://archive.org/details/rigvedabrahmana00keitgoog"
+      }
+    ],
+    "statusLabel": "Complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "PUBLIC_DOMAIN",
+    "has_english": true,
+    "english_urls": [
+      "https://archive.org/details/rigvedabrahmana00keitgoog"
+    ],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "gopathabrahmana": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Hukam Chand Patyal",
+        "coverage": "complete",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "D",
+        "url": ""
+      }
+    ],
+    "statusLabel": "Complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "pancavimsabrahmana": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Willem Caland",
+        "coverage": "complete",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "C",
+        "url": "https://archive.org/details/pancavimsabrahma032052mbp"
+      },
+      {
+        "language": "en",
+        "translator": "Willem Caland",
+        "coverage": "complete",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "C",
+        "url": "https://www.wisdomlib.org/hinduism/book/panchavimsha-brahmana-english-translation"
+      }
+    ],
+    "statusLabel": "Complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "PUBLIC_DOMAIN",
+    "has_english": true,
+    "english_urls": [
+      "https://archive.org/details/pancavimsabrahma032052mbp",
+      "https://www.wisdomlib.org/hinduism/book/panchavimsha-brahmana-english-translation"
+    ],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "jaiminiyabrahmana": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "jaiminiyaupanisadbrahmana": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Hanns Oertel",
+        "coverage": "complete",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "C",
+        "url": ""
+      }
+    ],
+    "statusLabel": "Complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "sankhayanaaranyaka": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "aitareyaaranyaka": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "A. B. Keith",
+        "coverage": "complete",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "C",
+        "url": ""
+      }
+    ],
+    "statusLabel": "Complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "maitriupanisad": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Max Müller",
+        "coverage": "complete",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "C",
+        "url": "https://archive.sacred-texts.com/hin/sbe15/sbe15113.htm"
+      }
+    ],
+    "statusLabel": "Complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "PUBLIC_DOMAIN",
+    "has_english": true,
+    "english_urls": [
+      "https://archive.sacred-texts.com/hin/sbe15/sbe15113.htm"
+    ],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "kathaupanisad": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Max Müller",
+        "coverage": "complete",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "C",
+        "url": "https://archive.org/details/p2upanishads00mluoft"
+      }
+    ],
+    "statusLabel": "Complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "PUBLIC_DOMAIN",
+    "has_english": true,
+    "english_urls": [
+      "https://archive.org/details/p2upanishads00mluoft"
+    ],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "mahanarayanaupanisad": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "atharvasiraupanisad": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "kaivalyaupanisad": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Alladi Mahadeva Sastri",
+        "coverage": "complete",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "C",
+        "url": "https://archive.org/details/amritabindukaiva00mahauoft"
+      },
+      {
+        "language": "en",
+        "translator": "",
+        "coverage": "complete",
+        "complete": true,
+        "type": "independent",
+        "tier": "C",
+        "url": "https://upasanayoga.org/KaivU.htm"
+      }
+    ],
+    "statusLabel": "Complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "PUBLIC_DOMAIN",
+    "has_english": true,
+    "english_urls": [
+      "https://archive.org/details/amritabindukaiva00mahauoft",
+      "https://upasanayoga.org/KaivU.htm"
+    ],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "sivaupanisad": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "svetasvataraupanisad": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "mahabharata": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "K. M. Ganguli",
+        "coverage": "complete",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "C",
+        "url": "https://archive.org/details/mahabharataofkri04calcuoft"
+      }
+    ],
+    "statusLabel": "Complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "PUBLIC_DOMAIN",
+    "has_english": true,
+    "english_urls": [
+      "https://archive.org/details/mahabharataofkri04calcuoft"
+    ],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "vayupurana": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "",
+        "coverage": "complete (2 vols)",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "C",
+        "url": "https://archive.org/download/in.ernet.dli.2015.110236/2015.110236.The-Vayu-Purana-Part-2_text.pdf"
+      }
+    ],
+    "statusLabel": "Complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "PUBLIC_DOMAIN",
+    "has_english": true,
+    "english_urls": [
+      "https://archive.org/download/in.ernet.dli.2015.110236/2015.110236.The-Vayu-Purana-Part-2_text.pdf"
+    ],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "lingapurana": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "J. L. Shastri",
+        "coverage": "complete (2 parts)",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "C",
+        "url": "https://archive.org/details/LingaPuranaJ.L.ShastriPart1"
+      }
+    ],
+    "statusLabel": "Complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "PUBLIC_DOMAIN",
+    "has_english": true,
+    "english_urls": [
+      "https://archive.org/details/LingaPuranaJ.L.ShastriPart1"
+    ],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "kurmapurana": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Anand Swarup Gupta",
+        "coverage": "complete",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "C",
+        "url": "https://archive.org/details/kurmapuranaTRkashirajtrust1972"
+      }
+    ],
+    "statusLabel": "Complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "PUBLIC_DOMAIN",
+    "has_english": true,
+    "english_urls": [
+      "https://archive.org/details/kurmapuranaTRkashirajtrust1972"
+    ],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "skandapurana": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "pasupatasutra": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "sivadharma": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Peter Bisschop",
+        "coverage": "chapter 6",
+        "complete": false,
+        "type": "scholarly",
+        "tier": "C",
+        "url": ""
+      },
+      {
+        "language": "en",
+        "translator": "",
+        "coverage": "chapters 10–11",
+        "complete": false,
+        "type": "scholarly",
+        "tier": "C",
+        "url": ""
+      }
+    ],
+    "statusLabel": "Partial scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "nisvasatattvasamhita": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "",
+        "coverage": "critical ed. with annotated translation",
+        "complete": false,
+        "type": "scholarly",
+        "tier": "C",
+        "url": "https://publications.efeo.fr/en/livres/828_the-ni-v-satattvasa-hit--the-earliest-surviving-aiva-tantra"
+      }
+    ],
+    "statusLabel": "Partial scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "IN_COPYRIGHT",
+    "has_english": true,
+    "english_urls": [
+      "https://publications.efeo.fr/en/livres/828_the-ni-v-satattvasa-hit--the-earliest-surviving-aiva-tantra"
+    ],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "nisvasamukhatattvasamhita": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "",
+        "coverage": "critical ed. with annotated translation",
+        "complete": false,
+        "type": "scholarly",
+        "tier": "C",
+        "url": "https://ifpindia.org/bookstore/ci145/"
+      }
+    ],
+    "statusLabel": "Partial scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "IN_COPYRIGHT",
+    "has_english": true,
+    "english_urls": [
+      "https://ifpindia.org/bookstore/ci145/"
+    ],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "atharvavedasaunaka": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Whitney & Lanman",
+        "coverage": "complete (2 vols)",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "C",
+        "url": "https://archive.org/details/atharvavedasamhi01whituoft"
+      },
+      {
+        "language": "en",
+        "translator": "Ralph T. H. Griffith",
+        "coverage": "complete",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "C",
+        "url": "https://sacred-texts.com/hin/av/"
+      }
+    ],
+    "statusLabel": "Complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "PUBLIC_DOMAIN",
+    "has_english": true,
+    "english_urls": [
+      "https://archive.org/details/atharvavedasamhi01whituoft",
+      "https://sacred-texts.com/hin/av/"
+    ],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "atharvavedapaippalada": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "satapathabrahmana": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Julius Eggeling",
+        "coverage": "complete",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "C",
+        "url": ""
+      }
+    ],
+    "statusLabel": "Complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "satarudriya": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueue34Seed.ts"
+  },
+  "matangaparamesvara": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueGapSeed.ts"
+  },
+  "ramakantha_matangavrtti": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueGapSeed.ts"
+  },
+  "naresvarapariksa": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueGapSeed.ts"
+  },
+  "siddhantasara": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueGapSeed.ts"
+  },
+  "aghorasiva_ashtaprakarana_corpus": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueGapSeed.ts"
+  },
+  "aghorasiva_tattvaprakasika": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueGapSeed.ts"
+  },
+  "aghorasiva_tattvasamgrahalaghutika": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueGapSeed.ts"
+  },
+  "ratnatrayapariksa_vyakhya": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueGapSeed.ts"
+  },
+  "aghorasivas_ullekhini_on_ratnatraya": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueGapSeed.ts"
+  },
+  "anonymous_ratnatrayapariksavyakhya": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueGapSeed.ts"
+  },
+  "mukuta_makutagama": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueGapSeed.ts"
+  },
+  "devikalottaragama": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueGapSeed.ts"
+  },
+  "matrkabhedatantra": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueGapSeed.ts"
+  },
+  "visvaksenasamhita": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueGapSeed.ts"
+  },
+  "siraupanisad": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueGapSeed.ts"
+  },
+  "pratisThakriyadipika": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueGapSeed.ts"
+  },
+  "pratisThalaksanasara": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueGapSeed.ts"
+  },
+  "pratisThaparamesvara": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueGapSeed.ts"
+  },
+  "ramakantha_moksakarikavrtti": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "No complete scholarly English translation located as of 2026-08-13",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "sivaqueueGapSeed.ts"
+  },
+  "malinivijayottara": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Somadeva Vasudeva",
+        "coverage": "chs. 1–4, 7, 12–17",
+        "complete": false,
+        "type": "scholarly",
+        "tier": "A",
+        "url": "http://www.ifpindia.org/bookstore/ci97/"
+      }
+    ],
+    "statusLabel": "Partial English (scholarly: chs. 1–4, 7, 12–17); no complete scholarly English located",
+    "copyrightHint": "IN_COPYRIGHT",
+    "has_english": true,
+    "english_urls": [
+      "http://www.ifpindia.org/bookstore/ci97/"
+    ],
+    "source_seed": "audited.ts"
+  },
+  "vijnanabhairava": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Jaideva Singh",
+        "coverage": "complete",
+        "complete": true,
+        "type": "traditional",
+        "tier": "A",
+        "url": "http://www.motilalbanarsidass.com/products/vijnanabhairava-or-divine-consciousness-a-treasury-of-112-types-of-yoga-1"
+      },
+      {
+        "language": "en",
+        "translator": "Bettina Bäumer",
+        "coverage": "complete",
+        "complete": true,
+        "type": "traditional",
+        "tier": "A",
+        "url": "http://books.google.com/books?id=lqRGxgEACAAJ"
+      },
+      {
+        "language": "fr",
+        "translator": "Lilian Silburn",
+        "coverage": "complete",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "A",
+        "url": ""
+      }
+    ],
+    "statusLabel": "Complete English translation, multiple (Singh; Bäumer); complete French (Silburn)",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "http://www.motilalbanarsidass.com/products/vijnanabhairava-or-divine-consciousness-a-treasury-of-112-types-of-yoga-1",
+      "http://books.google.com/books?id=lqRGxgEACAAJ"
+    ],
+    "source_seed": "audited.ts"
+  },
+  "paratrisika": {
+    "translationStatus": "partial",
+    "translations": [],
+    "statusLabel": "Root often studied via the Vivaraṇa; see the Vivaraṇa record for complete English",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "audited.ts"
+  },
+  "paratrisikavivarana": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Jaideva Singh",
+        "coverage": "complete",
+        "complete": true,
+        "type": "traditional",
+        "tier": "A",
+        "url": "http://www.motilalbanarsidass.com/products/para-trisika-vivarana-of-abhinavagupta-the-secret-of-tantric-mysticism"
+      },
+      {
+        "language": "it",
+        "translator": "Raniero Gnoli",
+        "coverage": "complete",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "",
+        "url": ""
+      }
+    ],
+    "statusLabel": "Complete English (Singh); Italian (Gnoli)",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "http://www.motilalbanarsidass.com/products/para-trisika-vivarana-of-abhinavagupta-the-secret-of-tantric-mysticism"
+    ],
+    "source_seed": "audited.ts"
+  },
+  "tantraloka": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Mark Dyczkowski",
+        "coverage": "complete",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "D",
+        "url": "http://www.anuttaratrikakula.org/tantraloka-translation/"
+      },
+      {
+        "language": "en",
+        "translator": "Satya Prakash Singh / Swami Maheshvarananda",
+        "coverage": "complete",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "C",
+        "url": "http://www.wisdomlib.org/hinduism/book/tantraloka-sanskrit-text"
+      }
+    ],
+    "statusLabel": "Complete English root × at least 2; complete English with Jayaratha (Dyczkowski)",
+    "copyrightHint": "IN_COPYRIGHT",
+    "has_english": true,
+    "english_urls": [
+      "http://www.anuttaratrikakula.org/tantraloka-translation/",
+      "http://www.wisdomlib.org/hinduism/book/tantraloka-sanskrit-text"
+    ],
+    "source_seed": "audited.ts"
+  },
+  "tantrasara": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "H. N. Chakravarty",
+        "coverage": "complete",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "A",
+        "url": "http://www.indicabooks.com/product/tantrasara-of-abhinavagupta-copy/"
+      }
+    ],
+    "statusLabel": "Complete English (Chakravarty)",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "http://www.indicabooks.com/product/tantrasara-of-abhinavagupta-copy/"
+    ],
+    "source_seed": "audited.ts"
+  },
+  "malinislokavarttika": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Jürgen Hanneder",
+        "coverage": "1.1–1.399",
+        "complete": false,
+        "type": "scholarly",
+        "tier": "A",
+        "url": "http://philpapers.org/rec/HANAPO"
+      }
+    ],
+    "statusLabel": "Partial English: 1.1–1.399 scholarly (Hanneder); remainder no complete English located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "http://philpapers.org/rec/HANAPO"
+    ],
+    "source_seed": "audited.ts"
+  },
+  "tantrasadbhava": {
+    "translationStatus": "partial",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Junglan Bang",
+        "coverage": "chs. 1, part of 3, 9, 18, 28",
+        "complete": false,
+        "type": "scholarly",
+        "tier": "A",
+        "url": "http://ediss.sub.uni-hamburg.de/handle/ediss/9642"
+      }
+    ],
+    "statusLabel": "Partial English (open scholarly: selected chapters, CC BY); no complete English located",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "http://ediss.sub.uni-hamburg.de/handle/ediss/9642"
+    ],
+    "source_seed": "audited.ts"
+  },
+  "sivasutra": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Jaideva Singh",
+        "coverage": "complete (sūtras + Vimarśinī)",
+        "complete": true,
+        "type": "traditional",
+        "tier": "A",
+        "url": "http://www.motilalbanarsidass.com/products/siva-sutras-the-yoga-of-supreme-identity-jaideva-singh"
+      },
+      {
+        "language": "en",
+        "translator": "Swami Lakshman Joo",
+        "coverage": "complete",
+        "complete": true,
+        "type": "traditional",
+        "tier": "A",
+        "url": "http://books.google.com/books?id=XIPXAAAAMAAJ"
+      },
+      {
+        "language": "en",
+        "translator": "Subhash Kak",
+        "coverage": "complete",
+        "complete": true,
+        "type": "independent",
+        "tier": "D",
+        "url": "http://sanskritdocuments.org/doc_shiva/shivasuutra.html"
+      }
+    ],
+    "statusLabel": "Complete English, multiple (Singh; Lakshman Joo; Kak-independent)",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "http://www.motilalbanarsidass.com/products/siva-sutras-the-yoga-of-supreme-identity-jaideva-singh",
+      "http://books.google.com/books?id=XIPXAAAAMAAJ",
+      "http://sanskritdocuments.org/doc_shiva/shivasuutra.html"
+    ],
+    "source_seed": "audited.ts"
+  },
+  "spandakarika": {
+    "translationStatus": "complete",
+    "translations": [
+      {
+        "language": "en",
+        "translator": "Jaideva Singh",
+        "coverage": "complete",
+        "complete": true,
+        "type": "traditional",
+        "tier": "A",
+        "url": "http://wellcomecollection.org/works/manv6j64"
+      },
+      {
+        "language": "en",
+        "translator": "Mark Dyczkowski",
+        "coverage": "interpretive/translation",
+        "complete": true,
+        "type": "scholarly",
+        "tier": "A",
+        "url": ""
+      }
+    ],
+    "statusLabel": "Complete English, multiple (Singh; Dyczkowski), incl. the Kṣemarāja commentary",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": true,
+    "english_urls": [
+      "http://wellcomecollection.org/works/manv6j64"
+    ],
+    "source_seed": "audited.ts"
+  },
+  "paratrisikalaghuvrtti": {
+    "translationStatus": "none",
+    "translations": [],
+    "statusLabel": "Complete translation status not yet established — needs a dedicated bibliographic hunt",
+    "copyrightHint": "UNDETERMINED",
+    "has_english": false,
+    "english_urls": [],
+    "source_seed": "audited.ts"
+  }
+}

@@ -37,6 +37,7 @@ if str(ROOT / "pipeline") not in sys.path:
 
 import source_ready as SR  # noqa: E402
 import object_registry as R  # noqa: E402
+import translation_status as TS  # noqa: E402
 
 try:
     import corpus_state as CS  # noqa: E402
@@ -143,13 +144,27 @@ def _acquired_ids() -> set:
 
 
 def _priority_signal(wid: str) -> tuple[str, str]:
-    """T5 — copyright-aware priority (source_ready._priority_for) + translation_targets."""
+    """T5 — copyright-aware priority (source_ready._priority_for) + translation_targets.
+
+    Now TRANSPARENT: the priority reason cites the materialized English-translation existence/location
+    (from translation_status) instead of silently re-parsing the TS seeds.
+    """
+    t = TS.load().get(wid, {})
+    en = t.get("has_english")
     try:
         rec = SR.analyze(wid)
         pri = rec.get("priority", "LOW")
-        return pri, rec.get("why", "source_ready signal")
+        why = rec.get("why", "source_ready signal")
     except Exception:
-        return "LOW", "no source_ready signal"
+        pri, why = "LOW", "no source_ready signal"
+    # make the reason transparent about translation existence + location
+    if en:
+        urls = t.get("english_urls", [])
+        loc = f" @ {urls[0]}" if urls else ""
+        why = f"{why}; has_english({t.get('translationStatus')}){loc}"
+    else:
+        why = f"{why}; no_english({t.get('translationStatus') or 'none'})"
+    return pri, why
 
 
 def _tag(wid: str, clean: bool, fmt: str, identity: str, pri: str, meta: dict) -> str:
@@ -226,10 +241,20 @@ def assess(wid: str) -> dict:
     tag = _tag(wid, clean, fmt, identity, pri, meta)
     route = _route(state, fmt, identity)
 
+    # the materialized translation-existence + location (the organizational gap fix)
+    trans = TS.load().get(wid, {})
+    translation = {
+        "translationStatus": trans.get("translationStatus", "none"),
+        "has_english": trans.get("has_english", False),
+        "english_urls": trans.get("english_urls", []),
+        "copyrightHint": trans.get("copyrightHint", "UNKNOWN"),
+    }
+
     return {
         "work": wid,
         "tag": tag, "state": state, "format": fmt, "verse": verse,
         "identity": identity, "priority": pri, "route": route,
+        "translation": translation,
         "meta": {k: meta.get(k) for k in ("period", "tradition", "genre", "translation_status",
                                           "source", "acquisition_status") if k in meta},
         "signals": {
@@ -253,8 +278,10 @@ def assess_all() -> list[dict]:
 
 
 def render(rec: dict) -> str:
+    tr = rec.get("translation", {})
+    en = "EN" if tr.get("has_english") else "no-EN"
     return (f"[{rec['priority']:<6}] {rec['state']:<13} {rec['format']:<12} "
-            f"{rec['identity']:<10} {rec['tag']:<18} {rec['work']:<36} → {rec['route']}")
+            f"{rec['identity']:<10} {en:<6} {rec['tag']:<18} {rec['work']:<34} → {rec['route']}")
 
 
 def main() -> int:
