@@ -25,6 +25,7 @@ from pathlib import Path
 ROOT = Path(str(Path(__file__).resolve().parents[1]))
 CACHE = ROOT / "data" / "corpus" / "model-prices.json"
 OPENROUTER_MODELS = "https://openrouter.ai/api/v1/models"
+MODELS_DEV = "https://models.dev/models.json"
 
 
 def _get_json(url: str, timeout: int = 30):
@@ -40,6 +41,30 @@ def _price_field(pricing: dict, key: str) -> float:
         return float((pricing or {}).get(key, "0") or 0)
     except (TypeError, ValueError):
         return 0.0
+
+
+def fetch_models_dev() -> dict:
+    """The models.dev machine-readable price+capability DB (the reference's 'poll this first')."""
+    d = _get_json(MODELS_DEV)
+    out = {}
+    for mid, rec in d.items():
+        price = rec.get("pricing", {}) or {}
+        in_ = float(price.get("input", price.get("input_cost_per_mtok")) or 0)
+        out_c = float(price.get("output", price.get("output_cost_per_mtok")) or 0)
+        cache = float(price.get("cache_read") or 0)
+        lim = rec.get("limit")
+        out[mid] = {
+            # models.dev gives per-M tokens → convert to per-token (match OpenRouter's per-token)
+            "prompt_per_token": in_ / 1e6,
+            "completion_per_token": out_c / 1e6,
+            "cache_read_per_token": cache / 1e6,
+            "context_length": lim.get("context") if isinstance(lim, dict) else None,
+            "reasoning": bool(rec.get("reasoning")),
+            "tool_call": bool(rec.get("tool_call")),
+            "open_weights": bool(rec.get("open_weights")),
+            "source": "models.dev",
+        }
+    return out
 
 
 def fetch_prices() -> dict:
@@ -58,15 +83,25 @@ def fetch_prices() -> dict:
 
 
 def refresh_cache() -> dict:
-    """Compute-on-write: fetch live prices + write the cache + provenance."""
-    prices = fetch_prices()
+    """Compute-on-write: fetch live prices (models.dev primary, OpenRouter fallback) + cache + provenance."""
+    merged = {}
+    # models.dev is the reference's recommended primary (capabilities + pricing across providers)
+    try:
+        merged.update(fetch_models_dev())
+    except Exception as _e:
+        pass
+    # OpenRouter adds live per-token prices for models models.dev misses (and is our router's live source)
+    try:
+        merged.update(fetch_prices())
+    except Exception as _e:
+        pass
     cache = {
         "schema": "patala.model-catalog.v1",
-        "provider": "openrouter",
+        "provider": "models.dev+openrouter",
         "fetched_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-        "count": len(prices),
-        "models": prices,
-        "note": "live per-token prices from OpenRouter /models; paired with real usage tokens for true cost",
+        "count": len(merged),
+        "models": merged,
+        "note": "live per-token prices from models.dev (primary) + OpenRouter (fallback); paired with real usage tokens for true cost",
     }
     CACHE.parent.mkdir(parents=True, exist_ok=True)
     CACHE.write_text(json.dumps(cache, indent=1), encoding="utf-8")
