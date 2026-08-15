@@ -1,0 +1,3077 @@
+[
+  {
+    "work": "sarvajnanottara",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "P",
+      "source": "muktabodha",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "593 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "only partial English — own translation fills the gap"
+    },
+    "sanskrit_chars": 20213
+  },
+  {
+    "work": "pancarthabhasya_kaundinya",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "c. 4th–5th/6th c.",
+      "tradition": "Pāśupata",
+      "genre": "commentary",
+      "translation_status": "P",
+      "source": "gretil",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "1 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 269
+  },
+  {
+    "work": "sivadrsti",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {
+      "period": "c. 9th c.",
+      "tradition": "Pratyabhijñā",
+      "genre": "philosophical text",
+      "translation_status": "P",
+      "source": "muktabodha",
+      "acquisition_status": "on_disk_unregistered"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (deva)",
+      "verse": "432 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "only partial English — own translation fills the gap"
+    },
+    "sanskrit_chars": 5118
+  },
+  {
+    "work": "maitrayanisamhita",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {},
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "132 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 127791
+  },
+  {
+    "work": "siddhantasaravali",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "BLOCKED",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "12th",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U",
+      "source": "muktabodha",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 11064
+  },
+  {
+    "work": "malinivijayottara",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "RECOVERABLE",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {},
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "committed SOURCE but empty verse — recovery (P0)",
+      "identity": "registry identity, single source",
+      "priority": "English exists but under copyright — translate your own to publish"
+    },
+    "sanskrit_chars": 17465
+  },
+  {
+    "work": "jnanaratnavali",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "c. 12th",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "200 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 103252
+  },
+  {
+    "work": "sivaupanisad",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {},
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "1 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 9346
+  },
+  {
+    "work": "ganakarika",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "early Pāśupata",
+      "tradition": "Pāśupata",
+      "genre": "kārikā",
+      "translation_status": "U?",
+      "source": "muktabodha",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "75 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 14621
+  },
+  {
+    "work": "nisvasaguhyasutra",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "early Mantramārga",
+      "tradition": "early Mantramārga",
+      "genre": "tantra/scripture",
+      "translation_status": "U",
+      "source": "ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "English exists but under copyright — translate your own to publish"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "bhagavadgita_sarvatobhadra",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "c. 10th c. (Kashmir)",
+      "tradition": "Kashmirian Śaiva Siddhānta",
+      "genre": "commentary",
+      "translation_status": "U?",
+      "source": "shaivism.net",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "93 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 61305
+  },
+  {
+    "work": "suksmasvayambhuva",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U",
+      "source": "muktabodha",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "600 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 47590
+  },
+  {
+    "work": "aghorasiva_tattvaprakasika",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {
+      "period": "12th c.",
+      "tradition": "Aṣṭaprakaraṇa",
+      "genre": "commentary",
+      "translation_status": "U?",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "on_disk_unregistered"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (deva)",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 796906
+  },
+  {
+    "work": "visvaksenasamhita",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {},
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "66 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 58968
+  },
+  {
+    "work": "moksakarika",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "early Siddhānta",
+      "tradition": "Aṣṭaprakaraṇa",
+      "genre": "kārikā",
+      "translation_status": "P",
+      "source": "vishvasa",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "200 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 8882
+  },
+  {
+    "work": "aghorasivas_ullekhini_on_ratnatraya",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {},
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "1 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 667
+  },
+  {
+    "work": "prayascittasamuccaya_hridayasiva",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "before 1157 MS",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U",
+      "source": "ifpindia",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "100 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 23056
+  },
+  {
+    "work": "siraupanisad",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {},
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "1 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 1271
+  },
+  {
+    "work": "ratnatrayapariksa_vyakhya",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {
+      "period": "medieval Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "vṛtti/commentary",
+      "translation_status": "P",
+      "source": "springer",
+      "acquisition_status": "on_disk_unregistered"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (deva)",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 796906
+  },
+  {
+    "work": "ratnatrayapariksa_srikantha",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "medieval Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "doctrinal treatise",
+      "translation_status": "P",
+      "source": "springer",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "100 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 13832
+  },
+  {
+    "work": "kriyakramadyotika",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "12th",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U",
+      "source": "vishvasa",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "85 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 37181
+  },
+  {
+    "work": "naresvarapariksa",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {
+      "period": "early Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "commentary",
+      "translation_status": "U",
+      "source": "vishvasa",
+      "acquisition_status": "on_disk_unregistered"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (deva)",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 198876
+  },
+  {
+    "work": "pratisThakriyadipika",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {},
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "85 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 62871
+  },
+  {
+    "work": "pingalamata",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "early Mantramārga adjacency",
+      "tradition": "early Mantramārga",
+      "genre": "tantra/scripture",
+      "translation_status": "P",
+      "source": "ifpindia",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "100 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 58764
+  },
+  {
+    "work": "tattvasamgraha_sadyojyotis",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "early Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "commentary",
+      "translation_status": "EN_GAP",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "100 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 7631
+  },
+  {
+    "work": "mrgendratantra",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "early Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "P",
+      "source": "ifpindia",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "30 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 68323
+  },
+  {
+    "work": "janmamaranavicara",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "medieval",
+      "tradition": "Kashmirian Śaiva Siddhānta",
+      "genre": "doctrinal treatise",
+      "translation_status": "U",
+      "source": "muktabodha",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "200 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 3725
+  },
+  {
+    "work": "siddhantasarapaddhati",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "early 11th",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "600 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 24144
+  },
+  {
+    "work": "siddhantasara",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {},
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "600 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 11064
+  },
+  {
+    "work": "anonymous_ratnatrayapariksavyakhya",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {},
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "1 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 667
+  },
+  {
+    "work": "pratisThaparamesvara",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {},
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "21 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 62871
+  },
+  {
+    "work": "isanasivagurudevapaddhati",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "c. 12th",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "P",
+      "source": "muktabodha",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "100 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 252182
+  },
+  {
+    "work": "sankhayanaaranyaka",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {},
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "100 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 12228
+  },
+  {
+    "work": "sardhatrisatikalottara",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "early medieval",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U",
+      "source": "muktabodha",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "184 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 4769
+  },
+  {
+    "work": "tattvaprakasa_bhojadeva",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "11th c.",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "doctrinal treatise",
+      "translation_status": "EN_GAP",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "100 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 89443
+  },
+  {
+    "work": "pratisThalaksanasara",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {},
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "230 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 62871
+  },
+  {
+    "work": "vatulanathasutra",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "medieval",
+      "tradition": "Kaula/Nātha",
+      "genre": "sūtra",
+      "translation_status": "U?",
+      "source": "muktabodha",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "154 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 2299
+  },
+  {
+    "work": "sivadharmasastra",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "c. 5th–7th",
+      "tradition": "Śivadharma",
+      "genre": "doctrinal treatise",
+      "translation_status": "P",
+      "source": "shivadharmaproject",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "594 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 21252
+  },
+  {
+    "work": "vimalavati",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "82 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 42466
+  },
+  {
+    "work": "devikalottaragama",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {},
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "34 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 1159
+  },
+  {
+    "work": "atharvasiraupanisad",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {},
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "1 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 1289
+  },
+  {
+    "work": "spandapradipika",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "early medieval",
+      "tradition": "Spanda",
+      "genre": "commentary",
+      "translation_status": "U?",
+      "source": "muktabodha",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "588 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 9406
+  },
+  {
+    "work": "siddhantadipika_ramanatha",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "11th c.",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "100 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 11064
+  },
+  {
+    "work": "makutottara",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "early Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U?",
+      "source": "vishvasa",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "97 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 1632
+  },
+  {
+    "work": "kalikapurana",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "c. 10th–11th",
+      "tradition": "Purāṇic Śaiva",
+      "genre": "purāṇa",
+      "translation_status": "P",
+      "source": "shivadharmaproject",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "200 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 132734
+  },
+  {
+    "work": "mohacudottara",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "P",
+      "source": "ifpindia",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "84 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 17652
+  },
+  {
+    "work": "kiranatantra",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "P",
+      "source": "vishvasa",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "2 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "only partial English — own translation fills the gap"
+    },
+    "sanskrit_chars": 2192
+  },
+  {
+    "work": "bhavopahara",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "medieval",
+      "tradition": "Kaula/Nātha",
+      "genre": "kārikā",
+      "translation_status": "U?",
+      "source": "shaivism.net",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "2 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 766
+  },
+  {
+    "work": "dvisatikalottara",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "early Kālottara family",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U",
+      "source": "muktabodha",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "200 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 14997
+  },
+  {
+    "work": "pratisthalaksanasarasamuccaya",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "100 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 62871
+  },
+  {
+    "work": "ramakantha_matangavrtti",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "c. 10th c. (Kashmir)",
+      "tradition": "Kashmirian Śaiva Siddhānta",
+      "genre": "vṛtti/commentary",
+      "translation_status": "P",
+      "source": "muktabodha",
+      "acquisition_status": "on_disk_unregistered"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "sivadharmottara",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "early medieval",
+      "tradition": "Śivadharma",
+      "genre": "doctrinal treatise",
+      "translation_status": "U",
+      "source": "shivadharmaproject",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "600 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 21161
+  },
+  {
+    "work": "ramakantha_moksakarikavrtti",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {
+      "period": "c. 10th c. (Kashmir)",
+      "tradition": "Aṣṭaprakaraṇa",
+      "genre": "vṛtti/commentary",
+      "translation_status": "U?",
+      "source": "vishvasa",
+      "acquisition_status": "on_disk_unregistered"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (deva)",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 796906
+  },
+  {
+    "work": "tattvatrayanirnaya",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "early Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "commentary",
+      "translation_status": "EN_GAP",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "402 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 2548
+  },
+  {
+    "work": "kaulasutra",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "medieval",
+      "tradition": "Kaula",
+      "genre": "sūtra",
+      "translation_status": "U?",
+      "source": "muktabodha",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "mukuta_makutagama",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U?",
+      "source": "muktabodha",
+      "acquisition_status": "on_disk_unregistered"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (deva)",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 175351
+  },
+  {
+    "work": "satsahasrakalottara",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "early medieval",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U?",
+      "source": "vishvasa",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "699 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 36640
+  },
+  {
+    "work": "aghorasiva_tattvasamgrahalaghutika",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {
+      "period": "12th c.",
+      "tradition": "Aṣṭaprakaraṇa",
+      "genre": "commentary",
+      "translation_status": "U?",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "on_disk_unregistered"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (deva)",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 796906
+  },
+  {
+    "work": "pauskaraparamesvara",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U?",
+      "source": "muktabodha",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "200 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 91953
+  },
+  {
+    "work": "matangaparamesvara",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "P",
+      "source": "muktabodha",
+      "acquisition_status": "on_disk_unregistered"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "netratantroddyota",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "c. 11th c.",
+      "tradition": "Kashmirian Śaiva Siddhānta",
+      "genre": "commentary",
+      "translation_status": "P",
+      "source": "muktabodha",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "199 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 55350
+  },
+  {
+    "work": "svacchandodyota",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "c. 11th c.",
+      "tradition": "Kashmirian Śaiva Siddhānta",
+      "genre": "commentary",
+      "translation_status": "P",
+      "source": "muktabodha",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "600 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 43398
+  },
+  {
+    "work": "matrkabhedatantra",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {},
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "435 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 8088
+  },
+  {
+    "work": "aghorasiva_ashtaprakarana_corpus",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "HIGH",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {
+      "period": "12th c.",
+      "tradition": "Aṣṭaprakaraṇa",
+      "genre": "commentary",
+      "translation_status": "P",
+      "source": "vishvasa",
+      "acquisition_status": "on_disk_unregistered"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (deva)",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 796906
+  },
+  {
+    "work": "nadakarika",
+    "tag": "TIER1",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "EXACT",
+    "priority": "HIGH",
+    "route": "NORMALIZE → SOURCE → QUEUE → TRANSLATE",
+    "meta": {
+      "period": "early Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "kārikā",
+      "translation_status": "EN_GAP",
+      "source": "muktabodha",
+      "acquisition_status": "acquired"
+    },
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "98 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "no English translation found — own translation fills the gap"
+    },
+    "sanskrit_chars": 1715
+  },
+  {
+    "work": "kaivalyaupanisad",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "UNRESOLVED",
+    "priority": "MEDIUM",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {},
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "27 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "complete English exists — check copyright; own translation still valuable for publishing"
+    },
+    "sanskrit_chars": 512
+  },
+  {
+    "work": "pancavimsabrahmana",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "UNRESOLVED",
+    "priority": "MEDIUM",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {},
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "6 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "complete English exists — check copyright; own translation still valuable for publishing"
+    },
+    "sanskrit_chars": 45217
+  },
+  {
+    "work": "kurmapurana",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "UNRESOLVED",
+    "priority": "MEDIUM",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {},
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "1 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "complete English exists — check copyright; own translation still valuable for publishing"
+    },
+    "sanskrit_chars": 44361
+  },
+  {
+    "work": "kausitakibrahmana",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "UNRESOLVED",
+    "priority": "MEDIUM",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {},
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "2 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "complete English exists — check copyright; own translation still valuable for publishing"
+    },
+    "sanskrit_chars": 34440
+  },
+  {
+    "work": "lingapurana",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "UNRESOLVED",
+    "priority": "MEDIUM",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {},
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "5 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "complete English exists — check copyright; own translation still valuable for publishing"
+    },
+    "sanskrit_chars": 37039
+  },
+  {
+    "work": "sivasutra",
+    "tag": "IDENTITY_PENDING",
+    "state": "CLEAN_ETEXT",
+    "format": "RAW_SANSKRIT",
+    "verse": "PRESENT",
+    "identity": "UNRESOLVED",
+    "priority": "MEDIUM",
+    "route": "SCHOLAR_QUEUE (manual review)",
+    "meta": {},
+    "signals": {
+      "clean": "looks like clean Sanskrit",
+      "format": "raw Sanskrit (iast)",
+      "verse": "471 committed SOURCE with verse",
+      "identity": "registry identity, single source",
+      "priority": "complete English exists — check copyright; own translation still valuable for publishing"
+    },
+    "sanskrit_chars": 5839
+  },
+  {
+    "work": "sthapanadipika",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "yaksiniparamesvara",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "paramesvaragama",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "early Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U?",
+      "source": "muktabodha",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "kriyasamgrahapaddhati",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "before 1091/92 witness",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "brhaddharmapurana",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "later Purāṇic",
+      "tradition": "Purāṇic Śaiva",
+      "genre": "purāṇa",
+      "translation_status": "P",
+      "source": "shivadharmaproject",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "skandapurana_early",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "c. 6th–7th",
+      "tradition": "Purāṇic Śaiva",
+      "genre": "purāṇa",
+      "translation_status": "P",
+      "source": "sarit",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "saptasatikalottara",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "early medieval",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U",
+      "source": "muktabodha",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "vrsasarasamgraha",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "early medieval",
+      "tradition": "Śivadharma",
+      "genre": "doctrinal treatise",
+      "translation_status": "P",
+      "source": "shivadharmaproject",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "sivotsavapaddhati",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "ullekhini_ratnatrayapariksa",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "medieval Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "commentary",
+      "translation_status": "P",
+      "source": "springer",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "ramakantha_sardhatrisatikalottaravrtti",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "c. 10th c. (Kashmir)",
+      "tradition": "Kashmirian Śaiva Siddhānta",
+      "genre": "vṛtti/commentary",
+      "translation_status": "U?",
+      "source": "muktabodha",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "sivalingapratisthavidhi",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "umottarasamvada",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "early medieval",
+      "tradition": "Śivadharma",
+      "genre": "doctrinal treatise",
+      "translation_status": "U",
+      "source": "shivadharmaproject",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "dharmaputrika",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "early medieval",
+      "tradition": "Śivadharma",
+      "genre": "doctrinal treatise",
+      "translation_status": "U",
+      "source": "shivadharmaproject",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "umamahesvarasamvada",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "early medieval",
+      "tradition": "Śivadharma",
+      "genre": "doctrinal treatise",
+      "translation_status": "U",
+      "source": "shivadharmaproject",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "nityakriyanusandhana",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "before/completed c. 937/8",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "pararthanityapujavidhi",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "vedic-reference",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {},
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "lalitavistara_sivadharma",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "early medieval",
+      "tradition": "Śivadharma",
+      "genre": "doctrinal treatise",
+      "translation_status": "U",
+      "source": "shivadharmaproject",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "sripratisthavidhi",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "svayambhuvasutrasamgraha",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "P",
+      "source": "muktabodha",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "ekamrapurana",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "early-medieval Purāṇic",
+      "tradition": "Purāṇic Śaiva",
+      "genre": "purāṇa",
+      "translation_status": "P",
+      "source": "shivadharmaproject",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "samskaravidhi",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "early medieval",
+      "tradition": "Pāśupata",
+      "genre": "ritual manual",
+      "translation_status": "P",
+      "source": "muktabodha",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "sivadharmottaravivarana",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "medieval",
+      "tradition": "Śivadharma",
+      "genre": "commentary",
+      "translation_status": "U?",
+      "source": "shivadharmaproject",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "saivasiddhantadipika",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "medieval Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "doctrinal treatise",
+      "translation_status": "U?",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "nityadisangrahapaddhati",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "philosophy-encyclopedia",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {},
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "isanasivacaryapaddhati",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "kriyadipika_jnanasivacarya",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "medieval Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "pratisthaparamesvara",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U?",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "ramakantha_kiravavrtti_7_12",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "c. 10th c. (Kashmir)",
+      "tradition": "Kashmirian Śaiva Siddhānta",
+      "genre": "vṛtti/commentary",
+      "translation_status": "U",
+      "source": "ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "sarvagamapramanyopanyasa",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "c. 10th c. (Kashmir)",
+      "tradition": "Kashmirian Śaiva Siddhānta",
+      "genre": "doctrinal treatise",
+      "translation_status": "P",
+      "source": "muktabodha",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "devipurana",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "early-medieval",
+      "tradition": "Purāṇic Śaiva",
+      "genre": "purāṇa",
+      "translation_status": "P",
+      "source": "shivadharmaproject",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "devyamata",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "P",
+      "source": "ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "ratnatika_ganakarika",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "early-medieval Pāśupata",
+      "tradition": "Pāśupata",
+      "genre": "commentary",
+      "translation_status": "U?",
+      "source": "muktabodha",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "hamsaparamesvara",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U?",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "aghorasivacaryapujanukramani",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "rauravasutrasamgraha",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U",
+      "source": "muktabodha",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "balalayavidhi",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "haracaritacintamani",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "12th c., earlier traditions preserved",
+      "tradition": "Purāṇic Śaiva",
+      "genre": "purāṇa",
+      "translation_status": "P",
+      "source": "shivadharmaproject",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "sivadharmasamgraha",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "early medieval",
+      "tradition": "Śivadharma",
+      "genre": "doctrinal treatise",
+      "translation_status": "P",
+      "source": "shivadharmaproject",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "mayasamgraha",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "P",
+      "source": "ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "sivadharmasastravivarana",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "medieval, commenting early corpus",
+      "tradition": "Śivadharma",
+      "genre": "commentary",
+      "translation_status": "U?",
+      "source": "shivadharmaproject",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "sanderson",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {},
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "saivasiddhanta_pujapaddhati",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "sahasragama",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "early Siddhānta",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "U?",
+      "source": "muktabodha",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "utpaladeva_sivadrstivrtti",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "c. 9th–10th c.",
+      "tradition": "Pratyabhijñā",
+      "genre": "vṛtti/commentary",
+      "translation_status": "P",
+      "source": "muktabodha",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "rauragama",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "early Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "EN_GAP",
+      "source": "ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "brhatkalottara",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "early medieval",
+      "tradition": "early Siddhānta",
+      "genre": "tantra/scripture",
+      "translation_status": "P",
+      "source": "ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "sarvamatopanyasa",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "medieval Siddhānta",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "doctrinal treatise",
+      "translation_status": "U?",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "pratisthakriyadipika",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "medieval",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "sivaqueue2",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {},
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "naimittikakriyanusandhana",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "c. 10th",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U?",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  },
+  {
+    "work": "natarajapaddhati",
+    "tag": "NO_SOURCE",
+    "state": "NO_SOURCE",
+    "format": "UNKNOWN",
+    "verse": "BLOCKED",
+    "identity": "UNRESOLVED",
+    "priority": "LOW",
+    "route": "ACQUIRE (choose adapter) → re-ingest",
+    "meta": {
+      "period": "1058",
+      "tradition": "Śaiva Siddhānta",
+      "genre": "ritual manual",
+      "translation_status": "U",
+      "source": "digitalcollections.ifpindia",
+      "acquisition_status": "missing"
+    },
+    "signals": {
+      "clean": "no on-disk source",
+      "format": "no on-disk source",
+      "verse": "no committed SOURCE verse",
+      "identity": "registry identity, single source",
+      "priority": "no atlas record — check manually"
+    },
+    "sanskrit_chars": 0
+  }
+]
