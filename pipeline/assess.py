@@ -259,11 +259,25 @@ def assess(wid: str) -> dict:
         "copyrightHint": trans.get("copyrightHint", "UNKNOWN"),
     }
 
+    # the ingestion-ROI projection (from project_translation.py): cost/time to translate this work.
+    projection = None
+    try:
+        from project_translation import project
+        p = project(work_id=wid)
+        if p["rows"]:
+            r = p["rows"][0]
+            projection = {"verses": r["verses"], "calls": r["calls"], "hours": r["hours"],
+                          "cost_miss_usd": r["cost_miss_usd"], "cost_hit_usd": r["cost_hit_usd"],
+                          "model": p["model"]}
+    except Exception:
+        projection = None
+
     return {
         "work": wid,
         "tag": tag, "state": state, "format": fmt, "verse": verse,
         "identity": identity, "priority": pri, "route": route,
         "translation": translation,
+        "projection": projection,
         "meta": {k: meta.get(k) for k in ("period", "tradition", "genre", "translation_status",
                                           "source", "acquisition_status") if k in meta},
         "signals": {
