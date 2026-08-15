@@ -79,6 +79,40 @@ def resolve_openalex(title: str, author: str | None = None) -> dict:
         "venue": (((r.get("primary_location") or {}).get("source") or {}).get("display_name")
                   or None),
         "cited_by": r.get("cited_by_count"),
+        # the translation/edition "where it lives" signals (added for the availability finder):
+        "oa_status": (r.get("open_access") or {}).get("oa_status"),
+        "is_oa": (r.get("open_access") or {}).get("is_oa"),
+        "oa_url": (r.get("open_access") or {}).get("oa_url"),
+        "best_oa_url": ((r.get("best_oa_location") or {}).get("landing_page_url")
+                        or ((r.get("best_oa_location") or {}).get("pdf_url"))),
+        "locations": [{"url": loc.get("landing_page_url") or loc.get("pdf_url"),
+                       "is_oa": loc.get("is_oa"),
+                       "source": (loc.get("source") or {}).get("display_name")}
+                      for loc in (r.get("locations") or []) if (loc.get("landing_page_url") or loc.get("pdf_url"))],
+        "fetched_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+    }
+
+
+def resolve_unpaywall(doi: str) -> dict:
+    """Resolve OA locations for a DOI via Unpaywall. Needs email (no anonymous access)."""
+    if not doi:
+        return {"provider": "unpaywall", "status": "NO_DOI",
+                "fetched_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
+    clean = doi.replace("https://doi.org/", "").replace("http://dx.doi.org/", "")
+    data, err = _get_json(
+        f"https://api.unpaywall.org/v2/{urllib.parse.quote(clean)}",
+        {"email": "dev@patala.local"})
+    if err or not data:
+        return {"provider": "unpaywall", "status": "UNAVAILABLE", "error": err,
+                "fetched_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
+    return {
+        "provider": "unpaywall", "status": "RESOLVED" if data.get("is_oa") else "NOT_OA",
+        "doi": data.get("doi"), "is_oa": data.get("is_oa"),
+        "best_oa_url": (data.get("best_oa_location") or {}).get("url_for_pdf")
+                       or (data.get("best_oa_location") or {}).get("url"),
+        "oa_locations": [{"url": loc.get("url"), "url_for_pdf": loc.get("url_for_pdf"),
+                          "version": loc.get("version"), "license": loc.get("license")}
+                         for loc in (data.get("oa_locations") or [])],
         "fetched_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
     }
 
@@ -92,6 +126,10 @@ def resolve(title: str, author: str | None = None, year: int | None = None,
             resolutions.append(resolve_crossref(title, author, year))
         elif p == "openalex":
             resolutions.append(resolve_openalex(title, author))
+        elif p == "unpaywall":
+            # unpaywall needs a DOI; resolve openalex first to get one
+            oa = next((r for r in resolutions if r.get("provider") == "openalex"), None)
+            resolutions.append(resolve_unpaywall((oa or {}).get("doi")))
         time.sleep(0.3)  # polite rate-limiting between providers
     resolved = [r for r in resolutions if r.get("status") == "RESOLVED"]
     return {
