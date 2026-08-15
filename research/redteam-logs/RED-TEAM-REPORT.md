@@ -82,6 +82,17 @@ PROBABLE. The `author_sim ≥ 0.7` clause can't pass with empty authors even at 
 3. **`reconcile`**: `title_sim==1.0` + empty authors → PROBABLE — kills Finding 3.
 4. **`_select`**: warn/400 on an unknown select field (minor).
 
+## STATUS (2026-08-15 — ALL FIXED + VERIFIED)
+
+| Finding | Fix | Verified |
+|---|---|---|
+| **1** clean-signal gap | density-ratio 0.05 in `source_ready._clean_signal` (calibrated: real 0.13-0.15, garbage 0.003) | ✅ garbage → clean=False "low Sanskrit density ratio"; real files still pass |
+| **2** format false-positive | density gate in `assess._detect_format` | ✅ garbage → UNKNOWN "likely OCR-mess"; real → RAW_SANSKRIT |
+| **3** reconciliation POSSIBLE-vs-PROBABLE | identical title + empty authors → PROBABLE | ✅ Śiva Sūtra/Siva Sutra → PROBABLE |
+| **minor** silent `{}` on bad select | `_select` surfaces `warnings[]` in provenance | ✅ /works?select=bad → warnings field |
+
+Regression: translation_availability 11/11 PASS; all real files still CLEAN/RAW_SANSKRIT.
+
 ---
 
 *This is the raw red-team result. 2 real vulnerabilities (clean-signal gap + format false-positive) and
