@@ -5,12 +5,14 @@ Covers the autonomous THEME → ESSAY → EDUCATION chain (the upper half of the
 with model calls stubbed so the test is deterministic + fail-fast:
   THEME:      hybrid-graph clustering of committed C1s -> ThemeProposal (every member resolves,
               overlapping allowed, MACHINE_PROPOSED, boundary present)
-  ESSAY:      drafts from a committed THEME -> SentenceEvidenceAudit gates (fail-closed on
-              certainty-inflation / boundary-erasure / orphan sentences)
+  ESSAY:      reactive essay from a committed ENGINEERING_VALIDATED SYNTHESIS -> the
+              deterministic essay_validator gates (fail-closed on fabricated depends_on ids,
+              missing proof paths, boundary-erasure, unqualified inputs)
   EDUCATION:  distills the committed ESSAY -> concise, no overreach, derived-from-essay
 
 Requires the ML venv (python-louvain + networkx): run with
   machinelearning/research/.venv/bin/python pipeline/test_theme_essay_education.py
+(or /root/venv/bin/python with PYTHONPATH set — see the run note at the bottom).
 """
 from __future__ import annotations
 
@@ -19,8 +21,9 @@ import sys
 import tempfile
 from pathlib import Path
 
-sys.path.insert(0, "/root/projects/patala/pipeline")
-sys.path.insert(0, "/root/projects/patala/machinelearning/research")
+sys.path.insert(0, "/root/patalacheckpoints/pipeline")
+sys.path.insert(0, "/root/patalacheckpoints/machinelearning/research")
+sys.path.insert(0, "/root/fuck-off/lib")
 
 import object_registry as R
 import theme_worker as TW
@@ -29,7 +32,7 @@ import education_worker as ED
 
 
 def t(name, cond, detail=""):
-    print(("PASS" if bool(cond) else "FAIL"), "-", name, (f" [{detail}]" if detail else ""))
+    print(("PASS" if bool(cond) else "FAIL") + " - " + name, (f" [{detail}]" if detail else ""))
     return bool(cond)
 
 
@@ -42,19 +45,83 @@ def _fake_c1(oid: str, term: str, summary: str) -> dict:
             "c1_status": "MACHINE_PROPOSED"}
 
 
+def _fake_argument(c1_oid: str) -> dict:
+    return {
+        "argument": {
+            "argument_id": f"arg:{c1_oid}",
+            "conclusion": {"text": f"The verse establishes the support of the powers ({c1_oid}).",
+                           "source": c1_oid},
+            "premises": [{"id": f"{c1_oid}__P1", "text": "The passage establishes the support.",
+                          "role": "supporting_premise"}],
+            "inference": "The support is established.",
+            "counterargument": "One might object.",
+            "crux": {"load_bearing_premise": 1, "why": "It supplies the support."},
+            "key_terms": [{"term": "pratibhā", "meaning": "x"}],
+            "uncertain": [], "boundary": "local only",
+        },
+        "argument_status": "MACHINE_PROPOSED",
+        "derived_by": "model (gateway_exec)",
+    }
+
+
+def _fake_synthesis(c1_oid: str, arg_oid: str, theme_oid: str, c1_ids: list[str]) -> dict:
+    return {
+        "synthesis": {
+            "object_id": f"{arg_oid}__synth",
+            "text": "The members jointly establish the local support of the powers.",
+            "crux": {"what": "The load-bearing commitment is the support.",
+                     "why": "Removing it leaves the inputs without a determinate support."},
+            "unresolved": "Nothing further is resolved here.",
+            "method": "MODEL_DERIVED_FROM_ARGUMENT_THEME_C1",
+            "source_text": {"argument_id": arg_oid, "theme_id": theme_oid, "c1_id": c1_oid},
+            "converges_on": sorted(c1_ids),
+            "does_not_claim": "essay-level thesis / cross-tradition / modern application",
+            "key_terms": [{"term": "pratibhā", "meaning": "x"}],
+            "uncertain": [], "boundary": "local only",
+        },
+        "synthesis_status": "MACHINE_PROPOSED",
+        "derived_by": "model (gateway_exec)",
+    }
+
+
+def _valid_essay_json(synth_oid: str, arg_oid: str, c1_oid: str) -> dict:
+    return {
+        "title": "The Support of the Powers",
+        "sections": [
+            {"id": "sec1", "heading": "The Established Support",
+             "paragraphs": [
+                 {"text": "The synthesis establishes the local support of the powers.",
+                  "depends_on": [synth_oid, arg_oid, c1_oid]},
+             ]},
+            {"id": "sec2", "heading": "Scope",
+             "paragraphs": [
+                 {"text": "The claim is bounded to the local support.",
+                  "depends_on": [synth_oid, c1_oid]},
+             ]},
+        ],
+        "conclusion": "The verse establishes the local support of the powers.",
+    }
+
+
 def main() -> int:
     ok = True
     R.REG_DIR = Path(tempfile.mkdtemp())
+    c1_ids = ["kramasadbhava:v1", "kramasadbhava:v3", "kramasadbhava:v4"]
 
-    # seed 3 committed C1s that share a term (pratibhā) -> one theme
-    for i in (1, 3, 4):
-        c1 = _fake_c1(f"kramasadbhava:v{i}", "pratibhā",
-                      "The verse establishes the support of the powers.")
-        R.commit("C1", f"kramasadbhava:v{i}", f"kramasadbhava:v{i}", created_by="test", payload=c1)
+    # seed committed C1s + ENGINEERING_VALIDATED ARGUMENTs (the THEME/ESSAY floors)
+    for oid in c1_ids:
+        R.commit("C1", oid, oid, created_by="test",
+                 payload=_fake_c1(oid, "pratibhā", "The verse establishes the support of the powers."))
+    arg_oids = []
+    for oid in c1_ids:
+        rec = R.commit("ARGUMENT", f"{oid}__arg", oid, created_by="test",
+                       payload=_fake_argument(oid), input_refs=[oid])
+        R.set_status("ARGUMENT", rec["object_id"], rec["version"], R.ENGINEERING_VALIDATED,
+                     actor="test::gate")
+        arg_oids.append(rec["object_id"])
 
     print("=== THEME: hybrid clustering of committed C1s ===")
-    props = TW.theme_generator("THEME", [{"object_id": o} for o in
-                                         ("kramasadbhava:v1", "kramasadbhava:v3", "kramasadbhava:v4")])
+    props = TW.theme_generator("THEME", [{"object_id": o} for o in c1_ids])
     ok &= t("THEME generator produced ≥1 proposal", len(props) >= 1, f"{len(props)}")
     if props:
         p = props[0]
@@ -68,50 +135,49 @@ def main() -> int:
                 bool(p["theme"].get("boundary", {}).get("included_because")))
         vok, why = TW.theme_validator("THEME", p)
         ok &= t("THEME validator passes", vok, why)
-        # commit the theme for the essay test
         for p_ in props:
             R.commit("THEME", p_["object_id"], p_["input_hash"], created_by="test",
                      payload={"theme": p_["theme"], "theme_status": p_["theme_status"]})
+    theme_oid = "kramasadbhava__theme_1"
 
     print()
-    print("=== ESSAY: drafts from committed THEME + SentenceEvidenceAudit gate ===")
-    EW.chat = lambda system, prompt, **kw: json.dumps({
-        "title": "The Support of the Powers",
-        "sentences": [
-            {"text": "The powers knowledge memory removal are established.",
-             "claim_ids": ["TH-1-M1"], "provenance_relation": "PARAPHRASE"},
-            {"text": "A power needs a support, the maheśvara.",
-             "claim_ids": ["TH-1-M2"], "provenance_relation": "PARAPHRASE"},
-            {"text": "The pratibhā is the flashing with an order-less support.",
-             "claim_ids": ["TH-1-M3"], "provenance_relation": "PARAPHRASE"},
-        ]})
-    themes = [oid for oid, vs in R._load("THEME")["objects"].items() if not vs[-1].get("superseded")]
-    batch = [{"object_id": t} for t in themes] + \
-            [{"object_id": o} for o in ("kramasadbhava:v1", "kramasadbhava:v3", "kramasadbhava:v4")]
-    eprops = EW.essay_generator("ESSAY", batch)
-    ok &= t("ESSAY generator produced a proposal", len(eprops) == 1, f"{len(eprops)}")
+    print("=== ESSAY: reactive essay from a committed ENGINEERING_VALIDATED SYNTHESIS ===")
+    # commit an ENGINEERING_VALIDATED SYNTHESIS (DAG: ESSAY requires [SYNTHESIS])
+    synth_oids = []
+    for c1_oid, arg_oid in zip(c1_ids, arg_oids):
+        payload = _fake_synthesis(c1_oid, arg_oid, theme_oid, c1_ids)
+        rec = R.commit("SYNTHESIS", f"{arg_oid}__synth",
+                       R.input_hash({"argument": R.current("ARGUMENT", arg_oid)["payload"],
+                                     "theme": R.current("THEME", theme_oid)["payload"]}),
+                       created_by="test", payload=payload, input_refs=[arg_oid, theme_oid])
+        R.set_status("SYNTHESIS", rec["object_id"], rec["version"], R.ENGINEERING_VALIDATED,
+                     actor="test::gate")
+        synth_oids.append(rec["object_id"])
+    EW.generate_json = lambda system, user, **kw: _valid_essay_json(synth_oids[0], arg_oids[0], c1_ids[0])
+    eprops = EW.essay_generator("ESSAY", [{"object_id": o} for o in synth_oids])
+    ok &= t("ESSAY generator produced a proposal per qualified synthesis", len(eprops) == len(synth_oids), f"{len(eprops)}")
     if eprops:
         p = eprops[0]
         ok &= t("ESSAY status MACHINE_PROPOSED", p["essay_status"] == "MACHINE_PROPOSED")
-        ok &= t("ESSAY has claims + sentences", bool(p["essay"]["claims"]) and bool(p["essay"]["sentences"]))
-        ok &= t("SentenceEvidenceAudit passed", p.get("_audit_ok") is True)
+        ok &= t("ESSAY has sections + depends_on proof paths",
+                len(p["essay"]["sections"]) >= 2
+                and all(sec["paragraphs"] and all(par.get("depends_on") for par in sec["paragraphs"])
+                        for sec in p["essay"]["sections"]))
         vok, why = EW.essay_validator("ESSAY", p)
         ok &= t("ESSAY validator passes", vok, why)
         # commit the essay for the education test
-        R.commit("ESSAY", p["object_id"], p["input_hash"], created_by="test",
-                 payload={"essay": p["essay"], "essay_status": p["essay_status"],
-                          "_audit_ok": p["_audit_ok"]})
+        rec = R.commit("ESSAY", p["object_id"], p["input_hash"], created_by="test",
+                       payload={"essay": p["essay"], "essay_status": p["essay_status"],
+                                "derived_by": p["derived_by"]}, input_refs=p["input_refs"])
+        ok &= t("ESSAY committed (GENERATED first)", rec["status"] == R.GENERATED)
 
-    # fail-closed: an essay that overclaims must be rejected by the audit
-    from patala_ml.essay import Essay, plan_hash
-    from patala_ml.essaysentence import EssaySentence
-    from patala_ml.essayverify import verify_essay
-    bad = Essay("e-bad", "p", "h", "t", "bad",
-                claims=[{"id": "TH-1-M1", "role": "claim", "text": "x",
-                         "boundary": "does not by itself establish the universal Self"}])
-    bad.add_sentence(EssaySentence("s1", "This proves consciousness is the one universal Self.",
-                                   claim_ids=["TH-1-M1"], provenance_relation="PARAPHRASE"))
-    ok &= t("verify_essay rejects certainty-inflation + boundary-erasure", verify_essay(bad)["ok"] is False)
+    # fail-closed: an essay with a fabricated depends_on id must be rejected
+    import copy as _copy
+    if eprops:
+        fab = _copy.deepcopy(eprops[0])
+        fab["essay"]["sections"][0]["paragraphs"][0]["depends_on"] = ["kramasadbhava:v99__arg__synth"]
+        ok &= t("essay_validator rejects fabricated depends_on id",
+                EW.essay_validator("ESSAY", fab)[0] is False)
 
     print()
     print("=== EDUCATION: distills the committed ESSAY, no overreach ===")
