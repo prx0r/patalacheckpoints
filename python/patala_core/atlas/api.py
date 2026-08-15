@@ -211,6 +211,109 @@ def get_work(work_id: str, select: str | None = None):
     return {"data": _select(rec, select) or _dehydrate(rec), "provenance": {"api_version": "1.0"}}
 
 
+# ── translation-availability (the product, additive, read-from-bytes) ──────────
+_TA_CACHE: tuple[float, dict] | None = None
+_TA_PATH = os.path.join(
+    os.environ.get("PATALA_ROOT", "/root/patalacheckpoints"),
+    "data", "corpus", "translation-availability.json")
+
+
+def _translation_index() -> dict | None:
+    """The compiled translation-availability index, MEMOIZED by mtime (compute-on-write, rule 1/8)."""
+    global _TA_CACHE
+    try:
+        mtime = os.path.getmtime(_TA_PATH)
+    except OSError:
+        return None
+    if _TA_CACHE and _TA_CACHE[0] == mtime:
+        return _TA_CACHE[1]
+    try:
+        with open(_TA_PATH) as f:
+            data = json.load(f)
+    except OSError:
+        return None
+    _TA_CACHE = (mtime, data)
+    return data
+
+
+@app.get("/works/{work_id}/translations")
+def work_translations(work_id: str, request: Request, response: Response):
+    """The translation-availability record for one work: which translations exist (full/partial/missing),
+    languages, urls, copyright, factory state, and live-located copies. Serves the COMPILED bytes with
+    ETag→304 (perf rules 8/9) — the live APIs ran at build time, never per-request."""
+    idx = _translation_index()
+    if idx is None:
+        raise HTTPException(503, {"error": {"code": "INDEX_NOT_BUILT",
+                                            "message": "run pipeline/build_translation_index.py first",
+                                            "retryable": True}})
+    rec = idx.get("works", {}).get(work_id)
+    if not rec:
+        # resolve by substring (id or title containment), like /works/{id}
+        for wid, r in idx.get("works", {}).items():
+            if work_id in wid or (r.get("work", "") and work_id in r["work"]):
+                rec = r
+                break
+    if not rec:
+        raise HTTPException(404, {"error": {"code": "OBJECT_NOT_FOUND", "message": f"no translation record {work_id}",
+                                             "suggestion": "use /translations?search=...", "retryable": False}})
+    etag = _etag_of(rec)
+    response.headers["ETag"] = etag
+    response.headers["Cache-Control"] = "public, max-age=31536000, immutable"
+    inm = request.headers.get("if-none-match")
+    if inm and inm.strip("\"") == etag.strip("\""):
+        return Response(status_code=304, headers={"ETag": etag})
+    return {"data": rec, "provenance": {"api_version": "1.0", "surface": "translation-availability",
+                                        "served": "compiled-bytes"}}
+
+
+@app.get("/translations")
+def list_translations(request: Request, response: Response, search: str | None = None,
+                      filter: str | None = None, per_page: int = Query(50, ge=1, le=500),
+                      cursor: str | None = None):
+    """List translation-availability across works. OpenAlex-style search/filter over the compiled index
+    (read-from-memory, no per-request API). filter: coverage:full|partial|none, has_english:true|false,
+    missing:true|false. ETag→304 on the compiled index."""
+    idx = _translation_index()
+    if idx is None:
+        raise HTTPException(503, {"error": {"code": "INDEX_NOT_BUILT", "message": "run the build step first",
+                                            "retryable": True}})
+    works = idx.get("works", {})
+    recs = []
+    for wid, r in works.items():
+        if search and search.lower() not in f"{wid} {r.get('work','')}".lower():
+            continue
+        if filter:
+            ok = True
+            for clause in filter.split(","):
+                k, _, v = clause.partition(":")
+                if k == "coverage" and r.get("coverage") != v:
+                    ok = False
+                elif k == "has_english" and str(r.get("has_english")).lower() != v.lower():
+                    ok = False
+                elif k == "missing" and str(r.get("missing")).lower() != v.lower():
+                    ok = False
+            if not ok:
+                continue
+        recs.append({"work": wid, "coverage": r.get("coverage"), "has_english": r.get("has_english"),
+                     "missing": r.get("missing"), "languages": r.get("languages", [])})
+    offset = 0
+    if cursor:
+        try:
+            offset = int(base64.b64decode(cursor).decode())
+        except Exception:
+            raise HTTPException(400, "invalid cursor")
+    page = recs[offset:offset + per_page]
+    next_cursor = base64.b64encode(str(offset + len(page)).encode()).decode() if offset + len(page) < len(recs) else None
+    # ETag on the whole index (not per page) so recompiles change it
+    etag = _etag_of({"works": len(works)})
+    response.headers["ETag"] = etag
+    inm = request.headers.get("if-none-match")
+    if inm and inm.strip("\"") == etag.strip("\""):
+        return Response(status_code=304, headers={"ETag": etag})
+    return {"count": len(page), "total": len(recs), "next_cursor": next_cursor, "translations": page,
+            "provenance": {"api_version": "1.0", "surface": "translation-availability", "served": "compiled-bytes"}}
+
+
 @app.get("/editions")
 def list_editions(filter: str | None = None, select: str | None = None):
     """Editions are not yet populated (work table only); return a count placeholder per the contract."""
