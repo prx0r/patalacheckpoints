@@ -1,0 +1,21 @@
+{
+  "schema": "patala.model-quality.v1",
+  "source": "IndicParam (arXiv 2512.00333) zero-shot MCQ, 13,207 UGC-NET questions",
+  "metric": "sanskrit_accuracy_percent (and sanskrit_english_percent)",
+  "fetched_at": "2026-08-15",
+  "note": "The quality floor for the model router. A model below MIN_TRANSLATION_QUALITY should only get simple verses; a hard/rare verse must go to a quality-floor model. OpenRouter-model-name → score. Unknown models default to a conservative score.",
+  "min_translation_quality": 40.0,
+  "models": {
+    "gemini-2.5": { "sanskrit": 72.4, "sanskrit_english": 80.3, "tier": "premium" },
+    "gpt-5": { "sanskrit": 54.8, "sanskrit_english": 64.6, "tier": "premium" },
+    "deepseek-3.2": { "sanskrit": 51.3, "sanskrit_english": 61.4, "tier": "strong" },
+    "claude-4.5": { "sanskrit": 47.8, "sanskrit_english": 58.1, "tier": "premium" },
+    "llama-4-scout": { "sanskrit": 44.0, "sanskrit_english": 48.7, "tier": "open-mid" },
+    "llama-3.3-70b": { "sanskrit": 41.7, "sanskrit_english": 51.6, "tier": "open-mid" },
+    "qwen3-32b": { "sanskrit": 39.2, "sanskrit_english": 48.6, "tier": "open-small" },
+    "gpt-oss-120b": { "sanskrit": 40.2, "sanskrit_english": 48.1, "tier": "open-mid" },
+    "qwen3-flash": { "sanskrit": 30.0, "sanskrit_english": 31.0, "tier": "open-small", "note": "flash-class small model ~28-34% band" },
+    "deepseek-v4-flash": { "sanskrit": 32.0, "sanskrit_english": 34.0, "tier": "open-small", "note": "flash-class, assumed in the <8B weak band" },
+    "unknown_default": { "sanskrit": 25.0, "sanskrit_english": 25.0, "tier": "unknown", "note": "conservative default for unmeasured models" }
+  }
+}
