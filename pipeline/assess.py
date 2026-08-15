@@ -101,7 +101,16 @@ def _detect_format(wid: str) -> tuple[str, str]:
         return "AND_GLOSS", "has [and]-GLOSS apparatus markers"
     scheme = _scheme(txt)
     if scheme in ("deva", "iast"):
-        return "RAW_SANSKRIT", f"raw Sanskrit ({scheme})"
+        # red-team fix (FINDING 2): require a minimum Sanskrit density before declaring
+        # RAW_SANSKRIT. A stray diacritic in noise isn't a Sanskrit source. Real e-texts
+        # run 0.13-0.15; the red-team garbage was 0.003. 0.05 cleanly separates.
+        iast = len(re.findall(r"[āīūṛṝḷḹṃñṅśṣṭḍḥṁṇ]", txt))
+        deva = len(re.findall(r"[\u0900-\u097F]", txt))
+        sanskrit = iast + deva
+        density = sanskrit / len(txt) if txt else 0.0
+        if density < 0.05:
+            return "UNKNOWN", f"indeterminate script ({scheme}, density {density:.3f} — likely OCR-mess)"
+        return "RAW_SANSKRIT", f"raw Sanskrit ({scheme}, density {density:.3f})"
     if scheme in ("itrans", "hk", "velthuis"):
         return "UNKNOWN", f"machine-readable but {scheme} transliteration — normalize first"
     return "UNKNOWN", f"indeterminate script ({scheme or 'none'})"

@@ -100,15 +100,19 @@ def _load() -> dict[str, dict]:
     return _adapter.load()
 
 
-def _select(rec: dict, select: str | None) -> dict:
+def _select(rec: dict, select: str | None) -> tuple[dict, list[str]]:
+    """Return (selected rec, unknown_fields). Unknown select fields are surfaced, not silently dropped."""
     if not select:
-        return rec
+        return rec, []
     fields = [f.strip() for f in select.split(",") if f.strip()]
     out = {}
+    unknown = []
     for f in fields:
         if f in rec:
             out[f] = rec[f]
-    return out
+        else:
+            unknown.append(f)
+    return out, unknown
 
 
 def _dehydrate(rec: dict) -> dict:
@@ -186,13 +190,16 @@ def list_works(
             raise HTTPException(400, "invalid cursor")
     page = recs[offset:offset + per_page]
     next_cursor = base64.b64encode(str(offset + len(page)).encode()).decode() if offset + len(page) < len(recs) else None
+    _sel = [_select(r, select) for r in page]
+    _unknown = sorted({u for _, us in _sel for u in us})
 
     return {
         "count": len(page),
         "total": len(recs),
         "next_cursor": next_cursor,
-        "works": [_select(r, select) for r in page],
-        "provenance": {"api_version": "1.0", "backend": _adapter.using_postgres() and "postgres" or "legacy"},
+        "works": [s for s, _ in _sel],
+        "provenance": {"api_version": "1.0", "backend": _adapter.using_postgres() and "postgres" or "legacy",
+                       **({"warnings": [f"unknown select field: {u}" for u in _unknown]} if _unknown else {})},
     }
 
 
@@ -208,7 +215,9 @@ def get_work(work_id: str, select: str | None = None):
     if not rec:
         raise HTTPException(404, {"error": {"code": "OBJECT_NOT_FOUND", "message": f"no work {work_id}",
                                              "suggestion": "use /search?search=...", "retryable": False}})
-    return {"data": _select(rec, select) or _dehydrate(rec), "provenance": {"api_version": "1.0"}}
+    _sel, _unknown = _select(rec, select)
+    return {"data": _sel or _dehydrate(rec), "provenance": {"api_version": "1.0",
+            **({"warnings": [f"unknown select field: {u}" for u in _unknown]} if _unknown else {})}}
 
 
 # ── translation-availability (the product, additive, read-from-bytes) ──────────

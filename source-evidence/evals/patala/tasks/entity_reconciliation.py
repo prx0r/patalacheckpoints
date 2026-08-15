@@ -84,6 +84,12 @@ def reconcile(record_a: dict, record_b: dict, candidates: list[dict] | None = No
     elif title_sim >= 0.7 and author_sim >= 0.7:
         status = "PROBABLE"
         reasons = ["high title + author agreement"]
+    # red-team fix (FINDING 3): identical normalized title + both authors unknown →
+    # PROBABLE (not just POSSIBLE). An exact title match is strong evidence even without
+    # an author; the old rule required author_sim>=0.7 which can't pass when authors are empty.
+    elif title_sim >= 1.0 and (not author_a and not author_b):
+        status = "PROBABLE"
+        reasons = ["identical normalized title; authors unknown"]
     # POSSIBLE: shared title or shared shelfmark
     elif title_sim >= 0.4 or shelf_same:
         status = "POSSIBLE"

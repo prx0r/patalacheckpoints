@@ -30,7 +30,7 @@ import re
 import sys
 from pathlib import Path
 
-ROOT = Path("/root/projects/patala")
+ROOT = Path(str(Path(__file__).resolve().parents[1]))
 sys.path.insert(0, str(ROOT / "pipeline"))
 
 import object_registry as R
@@ -68,12 +68,19 @@ def _clean_signal(wid: str) -> dict:
     # verse/passage markers
     verses = sum(1 for l in lines if re.search(r"[।|]{1,2}", l) or re.search(r"\d", l))
     size = len(txt)
+    # red-team fix (FINDING 1): density ratio catches low-Sanskrit files of ANY size.
+    # Calibrated: real IAST e-texts run 0.13-0.15 density (diacritics are ~14% of chars);
+    # the red-team garbage was 0.003. Threshold 0.05 cleanly separates them while
+    # letting real prose-heavy editions pass.
+    density = sanskrit_chars / size if size else 0.0
     if sanskrit_chars == 0:
         clean, reason = False, "no Sanskrit chars (not IAST/Devanagari — maybe OCR-mess or English)"
     elif sanskrit_chars < 50 and size > 2000:
         clean, reason = False, f"very low Sanskrit density ({sanskrit_chars} chars)"
     elif size < 1000:
         clean, reason = False, f"too small ({size} chars)"
+    elif density < 0.05:
+        clean, reason = False, f"low Sanskrit density ratio ({density:.3f}, {sanskrit_chars}/{size} chars)"
     else:
         clean, reason = True, "looks like clean Sanskrit"
     return {"on_disk": True, "size": size, "iast": iast, "devanagari": deva,
