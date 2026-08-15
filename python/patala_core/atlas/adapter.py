@@ -24,7 +24,7 @@ from pathlib import Path
 from typing import Protocol
 
 import os
-ROOT = Path(os.environ.get("PATALA_ROOT", "/root/projects/patala"))
+ROOT = Path(os.environ.get("PATALA_ROOT", "/root/patalacheckpoints"))
 DEFAULT_DB_URL = os.environ.get("PATALA_DB_URL",
                                "postgresql+psycopg2://patala:patala_atlas_pw@localhost:5433/patala_atlas")
 ATLAS_FILES = ("audited.ts", "bibliographySeed.ts", "sivaqueueSeed.ts", "sivaqueue34Seed.ts", "sivaqueueGapSeed.ts")

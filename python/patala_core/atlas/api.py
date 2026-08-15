@@ -34,10 +34,11 @@ _adapter = AtlasAdapter()
 
 # the compiled OpenPatala projections (compute-on-write artifacts served by build-static-site.py)
 # this is the LIVE registry surface (object_registry layers), served as immutable bytes — not _load()
+# NOTE: these used to default to a /mnt mount; on this box the compiled site is under /root/smellycock/site
 OPENPATALA_DIR = os.environ.get(
-    "OPENPATALA_DIR", "/mnt/HC_Volume_106427611/ip-graph/site/openpatala")
+    "OPENPATALA_DIR", "/root/smellycock/site/openpatala")
 SITE_DIR = os.environ.get(
-    "SITE_DIR", "/mnt/HC_Volume_106427611/ip-graph/site")
+    "SITE_DIR", "/root/smellycock/site")
 
 # memoized compiled artifacts (compute-on-write: read once, serve from memory; invalidate on mtime)
 _compiled_cache: dict[str, tuple[float, dict[str, Any]]] = {}
@@ -317,7 +318,7 @@ def resolve_work(
     try:
         import sys as _sys
         from pathlib import Path as _Path
-        _root = _Path(__file__).resolve().parents[3]  # /root/projects/patala (atlas->core->python->root)
+        _root = _Path(__file__).resolve().parents[3]  # patala_core->atlas->python->repo root
         _adapters = str(_root / "source-evidence" / "production" / "adapters")
         if _adapters not in _sys.path:
             _sys.path.insert(0, _adapters)
