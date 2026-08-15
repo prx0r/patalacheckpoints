@@ -76,8 +76,8 @@ def resolve_openalex(title: str, author: str | None = None) -> dict:
         "title": r.get("title"),
         "authors": [a["author"]["display_name"] for a in r.get("authorships", []) if a.get("author")],
         "year": r.get("publication_year"),
-        "venue": (r.get("primary_location") or {}).get("source", {}).get("display_name")
-                 if r.get("primary_location") else None,
+        "venue": (((r.get("primary_location") or {}).get("source") or {}).get("display_name")
+                  or None),
         "cited_by": r.get("cited_by_count"),
         "fetched_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
     }

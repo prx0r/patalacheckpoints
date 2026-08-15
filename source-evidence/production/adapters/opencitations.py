@@ -105,8 +105,45 @@ def _norm_id(s: str) -> str:
     return (s or "").strip().lower()
 
 
-def _same_author(author: str, oc: dict) -> bool:
-    return False  # author-matching across the citation graph needs the meta layer; honest UNKNOWN here
+def _resolve_author(doi: str, timeout: int = 15) -> set:
+    """Resolve the author names of a DOI via Crossref (the honest way to classify SAME_AUTHOR).
+
+    The citation graph carries only DOIs, not authors, so SAME_AUTHOR requires the metadata layer.
+    Returns a set of normalized author names, or empty if unreachable (honest OPEN, never guessed).
+    """
+    if not doi:
+        return set()
+    try:
+        req = urllib.request.Request(
+            f"https://api.crossref.org/works/{urllib.parse.quote(doi.strip())}",
+            headers={"User-Agent": "patala-atlas/0.1 (scholarly research)"})
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            data = json.load(r)
+        authors = data.get("message", {}).get("author", [])
+        return {f"{a.get('given','')} {a.get('family','')}".strip().lower()
+                for a in authors if a.get("family")}
+    except Exception:
+        return set()
+
+
+def _same_author(author: str, oc: dict, sources: list[dict] | None = None) -> bool:
+    """True if `author` (a corroborating source's author) matches the target work's author.
+
+    Resolves the target's DOI metadata via Crossref to get its real authors, then compares.
+    If the target has no DOI or Crossref is unreachable, returns False (honest UNKNOWN -> treated
+    as not-same, i.e. not fabricated as same).
+    """
+    if not author:
+        return False
+    # the target work: sources carry the corroborators; the target is the one NOT in sources
+    # (the function is called per corroborating source, with oc being the citation graph).
+    target_doi = oc.get("work_id", "")
+    if not target_doi or target_doi.startswith("pt:"):
+        return False
+    target_authors = _resolve_author(target_doi)
+    if not target_authors:
+        return False
+    return author.strip().lower() in target_authors
 
 
 if __name__ == "__main__":

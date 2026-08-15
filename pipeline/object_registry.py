@@ -29,7 +29,7 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-ROOT = Path("/root/projects/patala")
+ROOT = Path(__file__).resolve().parents[1]
 REG_DIR = ROOT / "data/corpus/registries"
 
 # ── concurrency safety (the torn-write fix) ───────────────────────────────────
