@@ -73,6 +73,11 @@ def _clean_signal(wid: str) -> dict:
     # the red-team garbage was 0.003. Threshold 0.05 cleanly separates them while
     # letting real prose-heavy editions pass.
     density = sanskrit_chars / size if size else 0.0
+    # round-2 red-team fix: word-validity signal for Devanagari — garbage-Devanagari OCR
+    # has high density but few real Sanskrit particles/words. Use MULTI-CHAR words only
+    # (single-char particles like च/न appear in random Devanagari by chance).
+    _COMMON = ("नाम", "शिव", "देव", "सर्व", "तत्र", "यथा", "भवति", "अथर्व", "विष्णु", "हरि", "कृष्ण", "राम", "गीता", "वेद")
+    word_hits = sum(1 for w in _COMMON if w in txt)
     if sanskrit_chars == 0:
         clean, reason = False, "no Sanskrit chars (not IAST/Devanagari — maybe OCR-mess or English)"
     elif sanskrit_chars < 50 and size > 2000:
@@ -81,6 +86,8 @@ def _clean_signal(wid: str) -> dict:
         clean, reason = False, f"too small ({size} chars)"
     elif density < 0.05:
         clean, reason = False, f"low Sanskrit density ratio ({density:.3f}, {sanskrit_chars}/{size} chars)"
+    elif deva and word_hits == 0:
+        clean, reason = False, f"Devanagari but no common Sanskrit words found ({word_hits}/{len(_COMMON)}) — likely OCR-mess"
     else:
         clean, reason = True, "looks like clean Sanskrit"
     return {"on_disk": True, "size": size, "iast": iast, "devanagari": deva,
