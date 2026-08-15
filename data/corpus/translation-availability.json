@@ -1,0 +1,5762 @@
+{
+ "count": 254,
+ "works": {
+  "parakhyatantra": {
+   "work": "parakhyatantra",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Dominic Goodall",
+     "coverage": "surviving text",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "https://www.ifpindia.org/bookstore/ci98/",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "IN_COPYRIGHT",
+   "english_urls": [
+    "https://www.ifpindia.org/bookstore/ci98/"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "mrgendragama": {
+   "work": "mrgendragama",
+   "has_english": true,
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "S. P. Sabharathnam",
+     "coverage": "Vidyā (early chapters)",
+     "complete": false,
+     "type": "traditional",
+     "tier": "B",
+     "url": "https://www.himalayanacademy.com/saivite-scriptures/",
+     "found_live": false,
+     "source": "curated"
+    },
+    {
+     "language": "fr",
+     "translator": "Michel Hulin",
+     "coverage": "Vidyā/Yoga",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "",
+     "found_live": false,
+     "source": "curated"
+    },
+    {
+     "language": "fr",
+     "translator": "Hélène Brunner et al.",
+     "coverage": "Kriyā/Caryā",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://www.himalayanacademy.com/saivite-scriptures/"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "kiranatantra": {
+   "work": "kiranatantra",
+   "has_english": true,
+   "languages": [
+    "en",
+    "it"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Dominic Goodall",
+     "coverage": "opening of Vidyāpāda (dissertation)",
+     "complete": false,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "https://openlibrary.org/works/OL37074151W/",
+     "found_live": false,
+     "source": "curated"
+    },
+    {
+     "language": "it",
+     "translator": "Maria Pia Vivanti",
+     "coverage": "entire Vidyāpāda",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "https://books.openedition.org/ifp/1911?lang=en",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://openlibrary.org/works/OL37074151W/"
+   ],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "rauravagama": {
+   "work": "rauravagama",
+   "has_english": true,
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "fr",
+     "translator": "Bruno Dagens & Marie-Luce Barazer-Billoret",
+     "coverage": "complete",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "https://www.ifpindia.org/bookstore/?page=3&tags=Sanskrit_studies",
+     "found_live": false,
+     "source": "curated"
+    },
+    {
+     "language": "en",
+     "translator": "S. P. Sabharathnam",
+     "coverage": "excerpts",
+     "complete": false,
+     "type": "traditional",
+     "tier": "B",
+     "url": "https://www.himalayanacademy.com/saivite-scriptures/category/scripture/agamas/",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "IN_COPYRIGHT",
+   "english_urls": [
+    "https://www.himalayanacademy.com/saivite-scriptures/category/scripture/agamas/"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "ajitagama": {
+   "work": "ajitagama",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "N. R. Bhatt / Filliozat",
+     "coverage": "complete",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "https://ignca.gov.in/ajitmahatantram-the-great-tantra-of-ajita/",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://ignca.gov.in/ajitmahatantram-the-great-tantra-of-ajita/"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "matangaparmesvaragama": {
+   "work": "matangaparmesvaragama",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "",
+     "coverage": "Vidyāpāda",
+     "complete": false,
+     "type": "traditional",
+     "tier": "C",
+     "url": "https://www.himalayanacademy.com/",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://www.himalayanacademy.com/"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "kamikagama": {
+   "work": "kamikagama",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "S. P. Sabharathnam",
+     "coverage": "Pūrva + selected Uttara chapters",
+     "complete": false,
+     "type": "traditional",
+     "tier": "B",
+     "url": "https://www.himalayanacademy.com/books/kamika-agama-purva-pada-part-one/",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://www.himalayanacademy.com/books/kamika-agama-purva-pada-part-one/"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "pauskaragama": {
+   "work": "pauskaragama",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "S. P. Sabharathnam",
+     "coverage": "Vidyāpāda (10 chs.)",
+     "complete": true,
+     "type": "traditional",
+     "tier": "B",
+     "url": "https://www.himalayanacademy.com/books/pauskara-agama-vidya-pada/",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://www.himalayanacademy.com/books/pauskara-agama-vidya-pada/"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sarvajnanottara": {
+   "work": "sarvajnanottara",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "S. P. Sabharathnam",
+     "coverage": "Vidyā/Yoga",
+     "complete": false,
+     "type": "traditional",
+     "tier": "B",
+     "url": "https://www.himalayanacademy.com/books/sarvajnanottara-agama-yoga-pada/",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://www.himalayanacademy.com/books/sarvajnanottara-agama-yoga-pada/"
+   ],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sardhatrisatikalottara": {
+   "work": "sardhatrisatikalottara",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "brahmayamala": {
+   "work": "brahmayamala",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Shaman Hatley",
+     "coverage": "chs. 1, 2, 55, 73, 99",
+     "complete": false,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "siddhayogesvarimata": {
+   "work": "siddhayogesvarimata",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Judit Törzsök",
+     "coverage": "selected chapters",
+     "complete": false,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "https://ephe.academia.edu/JuditTorzsok/Thesis%20Chapters",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "PUBLIC_DOMAIN",
+   "english_urls": [
+    "https://ephe.academia.edu/JuditTorzsok/Thesis%20Chapters"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "svacchandatantra": {
+   "work": "svacchandatantra",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "William Arraj",
+     "coverage": "selected portions + Kṣemarāja's Uddyota",
+     "complete": false,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "https://www.wisdomlib.org/hinduism/book/svacchandatantra-history-and-structure",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "PUBLIC_DOMAIN",
+   "english_urls": [
+    "https://www.wisdomlib.org/hinduism/book/svacchandatantra-history-and-structure"
+   ],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "netratantra": {
+   "work": "netratantra",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Gavin Flood & Wernicke-Olesen",
+     "coverage": "chs. 1–8",
+     "complete": false,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "https://www.routledge.com/Tantra-in-Medieval-India-and-Nepal-An-annotated-edition-and-translation-of-The-Teaching-of-the-Lord-of-Immortality-the-Netra-Tantra-Chapters-1-8/Flood-Wernicke-Olesen/p/book/9780367709600",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "PUBLIC_DOMAIN",
+   "english_urls": [
+    "https://www.routledge.com/Tantra-in-Medieval-India-and-Nepal-An-annotated-edition-and-translation-of-The-Teaching-of-the-Lord-of-Immortality-the-Netra-Tantra-Chapters-1-8/Flood-Wernicke-Olesen/p/book/9780367709600"
+   ],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "jayadrathayamala": {
+   "work": "jayadrathayamala",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "trisirobhairava": {
+   "work": "trisirobhairava",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "nisvasaguhyasutra": {
+   "work": "nisvasaguhyasutra",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Goodall et al.",
+     "coverage": "Mūlasūtra/Uttarasūtra/Nayasūtra",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "https://publications.efeo.fr/en/livres/828_the-ni-v-satattvasa-hit--the-earliest-surviving-aiva-tantra",
+     "found_live": false,
+     "source": "curated"
+    },
+    {
+     "language": "en",
+     "translator": "Goodall",
+     "coverage": "Niśvāsamukhatattvasaṃhitā",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "https://ifpindia.org/bookstore/ci145/",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "IN_COPYRIGHT",
+   "english_urls": [
+    "https://publications.efeo.fr/en/livres/828_the-ni-v-satattvasa-hit--the-earliest-surviving-aiva-tantra",
+    "https://ifpindia.org/bookstore/ci145/"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "kularatnamala": {
+   "work": "kularatnamala",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "kaulajnananirnaya": {
+   "work": "kaulajnananirnaya",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Michael Magee",
+     "coverage": "complete",
+     "complete": true,
+     "type": "independent",
+     "tier": "B",
+     "url": "https://ci.nii.ac.jp/ncid/BA58155866",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://ci.nii.ac.jp/ncid/BA58155866"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "kularnavatantra": {
+   "work": "kularnavatantra",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Ram Kumar Rai",
+     "coverage": "complete",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "B",
+     "url": "https://buddhism.lib.ntu.edu.tw/search/search_detail.jsp?seq=379337",
+     "found_live": false,
+     "source": "curated"
+    },
+    {
+     "language": "en",
+     "translator": "S. C. Banerji",
+     "coverage": "complete",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "C",
+     "url": "https://sourcelibrary.org/book/kularnava-tantra-traditional",
+     "found_live": false,
+     "source": "curated"
+    },
+    {
+     "language": "en",
+     "translator": "M. P. Pandit",
+     "coverage": "partial/free readings",
+     "complete": false,
+     "type": "independent",
+     "tier": "C",
+     "url": "https://www.motilalbanarsidass.com/products/kularnava-tantra-text-and-readings",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://buddhism.lib.ntu.edu.tw/search/search_detail.jsp?seq=379337",
+    "https://sourcelibrary.org/book/kularnava-tantra-traditional",
+    "https://www.motilalbanarsidass.com/products/kularnava-tantra-text-and-readings"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "timirodghatana": {
+   "work": "timirodghatana",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "LEGACY_PRESENT",
+    "l2": "NOT_STARTED",
+    "c1": "LEGACY_PRESENT",
+    "next_action": "ACQUIRE_SOURCE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "yogapithakramodaya": {
+   "work": "yogapithakramodaya",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "kulasara": {
+   "work": "kulasara",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "LEGACY_PRESENT",
+    "l2": "NOT_STARTED",
+    "c1": "LEGACY_PRESENT",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "akulaviratantra": {
+   "work": "akulaviratantra",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "",
+     "coverage": "extensive summary/rendering",
+     "complete": false,
+     "type": "independent",
+     "tier": "C",
+     "url": "https://shivashakti.com/akulavira",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://shivashakti.com/akulavira"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "kulanandatantra": {
+   "work": "kulanandatantra",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "jnanakarika": {
+   "work": "jnanakarika",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "LEGACY_PRESENT",
+    "l2": "LEGACY_PRESENT",
+    "c1": "LEGACY_PRESENT",
+    "next_action": "ACQUIRE_SOURCE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "kulapancasika": {
+   "work": "kulapancasika",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "urmikaularnava": {
+   "work": "urmikaularnava",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "kramasadbhava": {
+   "work": "kramasadbhava",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "",
+     "coverage": "line-by-line working",
+     "complete": false,
+     "type": "independent",
+     "tier": "C",
+     "url": "https://mahanaya.org/en/scriptures/kramasadbhavah/",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://mahanaya.org/en/scriptures/kramasadbhavah/"
+   ],
+   "factory": {
+    "t1": "LEGACY_PRESENT",
+    "l2": "NOT_STARTED",
+    "c1": "LEGACY_PRESENT",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "mahanayaprakasha": {
+   "work": "mahanayaprakasha",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "",
+     "coverage": "online working",
+     "complete": false,
+     "type": "independent",
+     "tier": "C",
+     "url": "https://mahanaya.org/en/scriptures/mahanayaprakasah/",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://mahanaya.org/en/scriptures/mahanayaprakasah/"
+   ],
+   "factory": {
+    "t1": "LEGACY_PRESENT",
+    "l2": "NOT_STARTED",
+    "c1": "LEGACY_PRESENT",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "mahanayaprakasha-arnasimha": {
+   "work": "mahanayaprakasha-arnasimha",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "",
+     "coverage": "online",
+     "complete": false,
+     "type": "independent",
+     "tier": "C",
+     "url": "https://mahanaya.org/en/scriptures/",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://mahanaya.org/en/scriptures/"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "devipancasataka": {
+   "work": "devipancasataka",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "",
+     "coverage": "scholarly excerpts",
+     "complete": false,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "https://link.springer.com/article/10.1007/s10781-021-09488-9",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://link.springer.com/article/10.1007/s10781-021-09488-9"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "kramastotra": {
+   "work": "kramastotra",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "",
+     "coverage": "complete online",
+     "complete": false,
+     "type": "independent",
+     "tier": "C",
+     "url": "https://mahanaya.org/en/scriptures/",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://mahanaya.org/en/scriptures/"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "kalikastotra": {
+   "work": "kalikastotra",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "",
+     "coverage": "online",
+     "complete": false,
+     "type": "independent",
+     "tier": "C",
+     "url": "https://mahanaya.org/en/scriptures/",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://mahanaya.org/en/scriptures/"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "kramavilasastotra": {
+   "work": "kramavilasastotra",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "cidgaganacandrika": {
+   "work": "cidgaganacandrika",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "",
+     "coverage": "study/excerpts",
+     "complete": false,
+     "type": "scholarly",
+     "tier": "C",
+     "url": "https://www.wisdomlib.org/hinduism/book/cidgaganacandrika-study",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "PUBLIC_DOMAIN",
+   "english_urls": [
+    "https://www.wisdomlib.org/hinduism/book/cidgaganacandrika-study"
+   ],
+   "factory": {
+    "t1": "LEGACY_PRESENT",
+    "l2": "NOT_STARTED",
+    "c1": "LEGACY_PRESENT",
+    "next_action": "ACQUIRE_SOURCE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "kaulasutra": {
+   "work": "kaulasutra",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "maharthamanjari": {
+   "work": "maharthamanjari",
+   "has_english": true,
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Satya Prakash Singh & Swami Maheshvarananda",
+     "coverage": "complete",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "B",
+     "url": "https://pdfcoffee.com/mahartha-manjari-mahesvaranandapdf-pdf-free.html",
+     "found_live": false,
+     "source": "curated"
+    },
+    {
+     "language": "fr",
+     "translator": "Lilian Silburn",
+     "coverage": "complete root + Parimala extracts",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "https://catalogue.bnf.fr/ark%3A/12148/cb361527611.public",
+     "found_live": false,
+     "source": "curated"
+    },
+    {
+     "language": "en",
+     "translator": "",
+     "coverage": "online",
+     "complete": false,
+     "type": "independent",
+     "tier": "C",
+     "url": "https://mahanaya.org/en/scriptures/maharthamanjari/",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://pdfcoffee.com/mahartha-manjari-mahesvaranandapdf-pdf-free.html",
+    "https://mahanaya.org/en/scriptures/maharthamanjari/"
+   ],
+   "factory": {
+    "t1": "LEGACY_PRESENT",
+    "l2": "PARTIAL",
+    "c1": "LEGACY_PRESENT",
+    "next_action": "ACQUIRE_SOURCE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "kubjikamata": {
+   "work": "kubjikamata",
+   "has_english": false,
+   "languages": [],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "LEGACY_PRESENT",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "laghvikamnaya": {
+   "work": "laghvikamnaya",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "satsahasrasamhita": {
+   "work": "satsahasrasamhita",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "shrimatottara": {
+   "work": "shrimatottara",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "kularatnoddyota": {
+   "work": "kularatnoddyota",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "cincinimatasarasamuccaya": {
+   "work": "cincinimatasarasamuccaya",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "manthanabhairava": {
+   "work": "manthanabhairava",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Mark Dyczkowski",
+     "coverage": "Kumārikākhaṇḍa (all 69 chs.)",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "https://openlibrary.org/books/OL23920185M/Manth%C4%81nabhairavatantram_Kum%C4%81rik%C4%81kha%E1%B9%87%E1%B8%8Da%E1%B8%A5",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://openlibrary.org/books/OL23920185M/Manth%C4%81nabhairavatantram_Kum%C4%81rik%C4%81kha%E1%B9%87%E1%B8%8Da%E1%B8%A5"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "kalanalatantra": {
+   "work": "kalanalatantra",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "LEGACY_PRESENT",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "ACQUIRE_SOURCE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "maharahasyasampradaya": {
+   "work": "maharahasyasampradaya",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "LEGACY_PRESENT",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "ACQUIRE_SOURCE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "pascimarcanapaddhati": {
+   "work": "pascimarcanapaddhati",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivadrsti": {
+   "work": "sivadrsti",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "John Nemec",
+     "coverage": "large portion",
+     "complete": false,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "https://books.google.com/books/about/The_Ubiquitous_Siva.html?id=GweFnybyP4gC",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://books.google.com/books/about/The_Ubiquitous_Siva.html?id=GweFnybyP4gC"
+   ],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivadrstivrtti": {
+   "work": "sivadrstivrtti",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "isvarapratyabhijnakarika": {
+   "work": "isvarapratyabhijnakarika",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Raffaele Torella",
+     "coverage": "complete (kārikās + Vṛtti)",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "https://iris.uniroma1.it/handle/11573/155566",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://iris.uniroma1.it/handle/11573/155566"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "isvarapratyabhijnavivrtti": {
+   "work": "isvarapratyabhijnavivrtti",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Raffaele Torella",
+     "coverage": "recovered portions (article by article)",
+     "complete": false,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "https://iris.uniroma1.it/handle/11573/161745",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://iris.uniroma1.it/handle/11573/161745"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "isvarapratyabhijnavimarsini": {
+   "work": "isvarapratyabhijnavimarsini",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "K. C. Pandey",
+     "coverage": "complete",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "B",
+     "url": "https://books.google.com/books/about/Bh%C4%81skar%C4%AB_An_English_translation_of_the.html?id=TLq46-v1ry0C",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://books.google.com/books/about/Bh%C4%81skar%C4%AB_An_English_translation_of_the.html?id=TLq46-v1ry0C"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "isvarapratyabhijnavivrtivimarsini": {
+   "work": "isvarapratyabhijnavivrtivimarsini",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "pratyabhijnahrdaya": {
+   "work": "pratyabhijnahrdaya",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Jaideva Singh",
+     "coverage": "complete",
+     "complete": true,
+     "type": "traditional",
+     "tier": "A",
+     "url": "https://www.motilalbanarsidass.com/products/pratyabhijnahrdayam-the-secret-of-self-recognition-sanskrit-text-with-english-translation-notes-and-introduction",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://www.motilalbanarsidass.com/products/pratyabhijnahrdayam-the-secret-of-self-recognition-sanskrit-text-with-english-translation-notes-and-introduction"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivastotravali": {
+   "work": "sivastotravali",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Lakshman Joo & Bettina Bäumer",
+     "coverage": "20 hymns (exposition)",
+     "complete": true,
+     "type": "traditional",
+     "tier": "B",
+     "url": "https://www.motilalbanarsidass.com/products/sivastotravali-of-utpaladeva-with-cd",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://www.motilalbanarsidass.com/products/sivastotravali-of-utpaladeva-with-cd"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivastotravalivivrti": {
+   "work": "sivastotravalivivrti",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "",
+     "coverage": "substantial traditional commentary/exposition",
+     "complete": false,
+     "type": "traditional",
+     "tier": "B",
+     "url": "https://dkprintworld.com/product/sivastotravali-of-utpaladeva/",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://dkprintworld.com/product/sivastotravali-of-utpaladeva/"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "paramarthasara": {
+   "work": "paramarthasara",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Bansat-Boudon & Tripathi",
+     "coverage": "complete (root + Yogarāja commentary)",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "https://www.routledge.com/Routledge-Studies-in-Tantric-Traditions/book-series/RSTT",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "https://www.routledge.com/Routledge-Studies-in-Tantric-Traditions/book-series/RSTT"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_kriyakandakramavali": {
+   "work": "sivaqueue2_kriyakandakramavali",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_somashambhupaddhativyakhya": {
+   "work": "sivaqueue2_somashambhupaddhativyakhya",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_siddhantasamuccaya": {
+   "work": "sivaqueue2_siddhantasamuccaya",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_siddhantarahasyasara": {
+   "work": "sivaqueue2_siddhantarahasyasara",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_sataratnasamgraha": {
+   "work": "sivaqueue2_sataratnasamgraha",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_sataratnollekhanii": {
+   "work": "sivaqueue2_sataratnollekhanii",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_siddhantaprakasika": {
+   "work": "sivaqueue2_siddhantaprakasika",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_tattvaratnavali": {
+   "work": "sivaqueue2_tattvaratnavali",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_siddhantasekhara": {
+   "work": "sivaqueue2_siddhantasekhara",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_mrgendrapaddhati": {
+   "work": "sivaqueue2_mrgendrapaddhati",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_mrgendrapaddhatitika": {
+   "work": "sivaqueue2_mrgendrapaddhatitika",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_prasadapaddhati": {
+   "work": "sivaqueue2_prasadapaddhati",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_pratisthasarapaddhati": {
+   "work": "sivaqueue2_pratisthasarapaddhati",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_sisyasamskarapaddhati": {
+   "work": "sivaqueue2_sisyasamskarapaddhati",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_kaladiksapaddhati": {
+   "work": "sivaqueue2_kaladiksapaddhati",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_agnikaryapaddhati": {
+   "work": "sivaqueue2_agnikaryapaddhati",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_sivanirvanapaddhati": {
+   "work": "sivaqueue2_sivanirvanapaddhati",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_gurupustika": {
+   "work": "sivaqueue2_gurupustika",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_svacchandabhairavapujapaddhati": {
+   "work": "sivaqueue2_svacchandabhairavapujapaddhati",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_svacchandadevarcanavidhi": {
+   "work": "sivaqueue2_svacchandadevarcanavidhi",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_apratihatamahadiksasutippanaka": {
+   "work": "sivaqueue2_apratihatamahadiksasutippanaka",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_amrtevarapujana": {
+   "work": "sivaqueue2_amrtevarapujana",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_amrtevarapujagnikaryavidhana": {
+   "work": "sivaqueue2_amrtevarapujagnikaryavidhana",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_amrtasuryapujavidhi": {
+   "work": "sivaqueue2_amrtasuryapujavidhi",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_amrtabhairavarcanavidhi": {
+   "work": "sivaqueue2_amrtabhairavarcanavidhi",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_amrtisabhairavabhattarakahnikavidhi": {
+   "work": "sivaqueue2_amrtisabhairavabhattarakahnikavidhi",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_amrtasuryarcanavidhi": {
+   "work": "sivaqueue2_amrtasuryarcanavidhi",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_devitantrasadbhavasara": {
+   "work": "sivaqueue2_devitantrasadbhavasara",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_matrsadbhava": {
+   "work": "sivaqueue2_matrsadbhava",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_tantrarajatantravatarastotra": {
+   "work": "sivaqueue2_tantrarajatantravatarastotra",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_urdhvamnayapavitrarohanadamanarohanapaddhati": {
+   "work": "sivaqueue2_urdhvamnayapavitrarohanadamanarohanapaddhati",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_paratrisikalaghuvrttivimarsini": {
+   "work": "sivaqueue2_paratrisikalaghuvrttivimarsini",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_paratrisikatatparyadipika": {
+   "work": "sivaqueue2_paratrisikatatparyadipika",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_anuttarasamvidarcanacarca": {
+   "work": "sivaqueue2_anuttarasamvidarcanacarca",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_pararcanakrama": {
+   "work": "sivaqueue2_pararcanakrama",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_parakramavasana": {
+   "work": "sivaqueue2_parakramavasana",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_paramasivadvaitakalpalatika": {
+   "work": "sivaqueue2_paramasivadvaitakalpalatika",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_anandakalpavalli": {
+   "work": "sivaqueue2_anandakalpavalli",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_parapujaprayoga": {
+   "work": "sivaqueue2_parapujaprayoga",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_maharthamulasamketasutra": {
+   "work": "sivaqueue2_maharthamulasamketasutra",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_anuttaraprakasapancasika": {
+   "work": "sivaqueue2_anuttaraprakasapancasika",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_parapravesika": {
+   "work": "sivaqueue2_parapravesika",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_svarupavimarsini": {
+   "work": "sivaqueue2_svarupavimarsini",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_naganandasutravivarana": {
+   "work": "sivaqueue2_naganandasutravivarana",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_anuttarapaddhati": {
+   "work": "sivaqueue2_anuttarapaddhati",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_padyavahini": {
+   "work": "sivaqueue2_padyavahini",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_saivakalpadruma": {
+   "work": "sivaqueue2_saivakalpadruma",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_sivavakyavali": {
+   "work": "sivaqueue2_sivavakyavali",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_saivamanasollasa": {
+   "work": "sivaqueue2_saivamanasollasa",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_saivasarvasvasara": {
+   "work": "sivaqueue2_saivasarvasvasara",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_kamikagama": {
+   "work": "sivaqueue2_kamikagama",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_yogajagama": {
+   "work": "sivaqueue2_yogajagama",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_cintyagama": {
+   "work": "sivaqueue2_cintyagama",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_ajitagama": {
+   "work": "sivaqueue2_ajitagama",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_diptagama": {
+   "work": "sivaqueue2_diptagama",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_suksmagama": {
+   "work": "sivaqueue2_suksmagama",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_amsumadagama": {
+   "work": "sivaqueue2_amsumadagama",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_suprabhedagama": {
+   "work": "sivaqueue2_suprabhedagama",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_vijayagama": {
+   "work": "sivaqueue2_vijayagama",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_analagama": {
+   "work": "sivaqueue2_analagama",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_viraagama": {
+   "work": "sivaqueue2_viraagama",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_vimalagama": {
+   "work": "sivaqueue2_vimalagama",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_bimbagama": {
+   "work": "sivaqueue2_bimbagama",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_prodigitagama": {
+   "work": "sivaqueue2_prodigitagama",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_lalitagama": {
+   "work": "sivaqueue2_lalitagama",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_siddhagama": {
+   "work": "sivaqueue2_siddhagama",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_santanagama": {
+   "work": "sivaqueue2_santanagama",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_sarvoktagama": {
+   "work": "sivaqueue2_sarvoktagama",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_karanagama": {
+   "work": "sivaqueue2_karanagama",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_makutagama": {
+   "work": "sivaqueue2_makutagama",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_candrajnanagama": {
+   "work": "sivaqueue2_candrajnanagama",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_sarvajnanottara2": {
+   "work": "sivaqueue2_sarvajnanottara2",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_mrgendratantra2": {
+   "work": "sivaqueue2_mrgendratantra2",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_kiranatantra2": {
+   "work": "sivaqueue2_kiranatantra2",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_brhatkalottara2": {
+   "work": "sivaqueue2_brhatkalottara2",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_jnanassiddhyagama": {
+   "work": "sivaqueue2_jnanassiddhyagama",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_cidambaresvaranityapujasutra": {
+   "work": "sivaqueue2_cidambaresvaranityapujasutra",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_citsabhesotsavasutra": {
+   "work": "sivaqueue2_citsabhesotsavasutra",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_pauskarabhasya": {
+   "work": "sivaqueue2_pauskarabhasya",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_kriyasara": {
+   "work": "sivaqueue2_kriyasara",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_anubhavasutra": {
+   "work": "sivaqueue2_anubhavasutra",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_maritontadarya_siddhantashikhamani": {
+   "work": "sivaqueue2_maritontadarya_siddhantashikhamani",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_lingadharanacandrika": {
+   "work": "sivaqueue2_lingadharanacandrika",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_pancaratna": {
+   "work": "sivaqueue2_pancaratna",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_pancaratna_commentary": {
+   "work": "sivaqueue2_pancaratna_commentary",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_pramathaganapaddhati": {
+   "work": "sivaqueue2_pramathaganapaddhati",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_anadivirasaivacarasamgraha": {
+   "work": "sivaqueue2_anadivirasaivacarasamgraha",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_virasaivacarasroddharabhasya": {
+   "work": "sivaqueue2_virasaivacarasroddharabhasya",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_viramaheswaracarasamgraha": {
+   "work": "sivaqueue2_viramaheswaracarasamgraha",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_virasaivasiddhantottarakaumudi": {
+   "work": "sivaqueue2_virasaivasiddhantottarakaumudi",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_vivekacintamani": {
+   "work": "sivaqueue2_vivekacintamani",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_sivadvaitanirnaya": {
+   "work": "sivaqueue2_sivadvaitanirnaya",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_vedantasarvasvasivadarpana": {
+   "work": "sivaqueue2_vedantasarvasvasivadarpana",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_sivarcanacandrika": {
+   "work": "sivaqueue2_sivarcanacandrika",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_saivagamaparibhasamanjari": {
+   "work": "sivaqueue2_saivagamaparibhasamanjari",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_atmarthapujapaddhati": {
+   "work": "sivaqueue2_atmarthapujapaddhati",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_diksadarsa": {
+   "work": "sivaqueue2_diksadarsa",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_asaucadipika": {
+   "work": "sivaqueue2_asaucadipika",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_sivanityapujapaddhati": {
+   "work": "sivaqueue2_sivanityapujapaddhati",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaqueue2_sivatandavatantratika": {
+   "work": "sivaqueue2_sivatandavatantratika",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "bhagavadgita_sarvatobhadra": {
+   "work": "bhagavadgita_sarvatobhadra",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "bhavopahara": {
+   "work": "bhavopahara",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "dvisatikalottara": {
+   "work": "dvisatikalottara",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "MODERN_PRESENT",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "ganakarika": {
+   "work": "ganakarika",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "MODERN_PRESENT",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "isanasivagurudevapaddhati": {
+   "work": "isanasivagurudevapaddhati",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "MODERN_PRESENT",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "janmamaranavicara": {
+   "work": "janmamaranavicara",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "jnanaratnavali": {
+   "work": "jnanaratnavali",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "kalikapurana": {
+   "work": "kalikapurana",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "kriyakramadyotika": {
+   "work": "kriyakramadyotika",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "MODERN_PRESENT",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "makutottara": {
+   "work": "makutottara",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "mohacudottara": {
+   "work": "mohacudottara",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "moksakarika": {
+   "work": "moksakarika",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "mrgendratantra": {
+   "work": "mrgendratantra",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "nadakarika": {
+   "work": "nadakarika",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "netratantroddyota": {
+   "work": "netratantroddyota",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "pancarthabhasya_kaundinya": {
+   "work": "pancarthabhasya_kaundinya",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "pauskaraparamesvara": {
+   "work": "pauskaraparamesvara",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "pingalamata": {
+   "work": "pingalamata",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "pratisthalaksanasarasamuccaya": {
+   "work": "pratisthalaksanasarasamuccaya",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "prayascittasamuccaya_hridayasiva": {
+   "work": "prayascittasamuccaya_hridayasiva",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "ratnatrayapariksa_srikantha": {
+   "work": "ratnatrayapariksa_srikantha",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "satsahasrakalottara": {
+   "work": "satsahasrakalottara",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "siddhantadipika_ramanatha": {
+   "work": "siddhantadipika_ramanatha",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "siddhantasarapaddhati": {
+   "work": "siddhantasarapaddhati",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "siddhantasaravali": {
+   "work": "siddhantasaravali",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivadharmasastra": {
+   "work": "sivadharmasastra",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivadharmottara": {
+   "work": "sivadharmottara",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "spandapradipika": {
+   "work": "spandapradipika",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "suksmasvayambhuva": {
+   "work": "suksmasvayambhuva",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "svacchandodyota": {
+   "work": "svacchandodyota",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "tattvaprakasa_bhojadeva": {
+   "work": "tattvaprakasa_bhojadeva",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "tattvasamgraha_sadyojyotis": {
+   "work": "tattvasamgraha_sadyojyotis",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "tattvatrayanirnaya": {
+   "work": "tattvatrayanirnaya",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "vatulanathasutra": {
+   "work": "vatulanathasutra",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "vimalavati": {
+   "work": "vimalavati",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "maitrayanisamhita": {
+   "work": "maitrayanisamhita",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "kathakasamhita": {
+   "work": "kathakasamhita",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "kapisthalakathasamhita": {
+   "work": "kapisthalakathasamhita",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "taittiriyabrahmana": {
+   "work": "taittiriyabrahmana",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "kausitakibrahmana": {
+   "work": "kausitakibrahmana",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "A. B. Keith",
+     "coverage": "complete (Aitareya + Kauṣītaki)",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "C",
+     "url": "https://archive.org/details/rigvedabrahmana00keitgoog",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "PUBLIC_DOMAIN",
+   "english_urls": [
+    "https://archive.org/details/rigvedabrahmana00keitgoog"
+   ],
+   "factory": {
+    "t1": "MODERN_PRESENT",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "gopathabrahmana": {
+   "work": "gopathabrahmana",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Hukam Chand Patyal",
+     "coverage": "complete",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "D",
+     "url": "",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "pancavimsabrahmana": {
+   "work": "pancavimsabrahmana",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Willem Caland",
+     "coverage": "complete",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "C",
+     "url": "https://archive.org/details/pancavimsabrahma032052mbp",
+     "found_live": false,
+     "source": "curated"
+    },
+    {
+     "language": "en",
+     "translator": "Willem Caland",
+     "coverage": "complete",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "C",
+     "url": "https://www.wisdomlib.org/hinduism/book/panchavimsha-brahmana-english-translation",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "PUBLIC_DOMAIN",
+   "english_urls": [
+    "https://archive.org/details/pancavimsabrahma032052mbp",
+    "https://www.wisdomlib.org/hinduism/book/panchavimsha-brahmana-english-translation"
+   ],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "jaiminiyabrahmana": {
+   "work": "jaiminiyabrahmana",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "jaiminiyaupanisadbrahmana": {
+   "work": "jaiminiyaupanisadbrahmana",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Hanns Oertel",
+     "coverage": "complete",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "C",
+     "url": "",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sankhayanaaranyaka": {
+   "work": "sankhayanaaranyaka",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "aitareyaaranyaka": {
+   "work": "aitareyaaranyaka",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "A. B. Keith",
+     "coverage": "complete",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "C",
+     "url": "",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "maitriupanisad": {
+   "work": "maitriupanisad",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Max Müller",
+     "coverage": "complete",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "C",
+     "url": "https://archive.sacred-texts.com/hin/sbe15/sbe15113.htm",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "PUBLIC_DOMAIN",
+   "english_urls": [
+    "https://archive.sacred-texts.com/hin/sbe15/sbe15113.htm"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "kathaupanisad": {
+   "work": "kathaupanisad",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Max Müller",
+     "coverage": "complete",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "C",
+     "url": "https://archive.org/details/p2upanishads00mluoft",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "PUBLIC_DOMAIN",
+   "english_urls": [
+    "https://archive.org/details/p2upanishads00mluoft"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "mahanarayanaupanisad": {
+   "work": "mahanarayanaupanisad",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "atharvasiraupanisad": {
+   "work": "atharvasiraupanisad",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "kaivalyaupanisad": {
+   "work": "kaivalyaupanisad",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Alladi Mahadeva Sastri",
+     "coverage": "complete",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "C",
+     "url": "https://archive.org/details/amritabindukaiva00mahauoft",
+     "found_live": false,
+     "source": "curated"
+    },
+    {
+     "language": "en",
+     "translator": "",
+     "coverage": "complete",
+     "complete": true,
+     "type": "independent",
+     "tier": "C",
+     "url": "https://upasanayoga.org/KaivU.htm",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "PUBLIC_DOMAIN",
+   "english_urls": [
+    "https://archive.org/details/amritabindukaiva00mahauoft",
+    "https://upasanayoga.org/KaivU.htm"
+   ],
+   "factory": {
+    "t1": "MODERN_PRESENT",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivaupanisad": {
+   "work": "sivaupanisad",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "svetasvataraupanisad": {
+   "work": "svetasvataraupanisad",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "mahabharata": {
+   "work": "mahabharata",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "K. M. Ganguli",
+     "coverage": "complete",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "C",
+     "url": "https://archive.org/details/mahabharataofkri04calcuoft",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "PUBLIC_DOMAIN",
+   "english_urls": [
+    "https://archive.org/details/mahabharataofkri04calcuoft"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "vayupurana": {
+   "work": "vayupurana",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "",
+     "coverage": "complete (2 vols)",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "C",
+     "url": "https://archive.org/download/in.ernet.dli.2015.110236/2015.110236.The-Vayu-Purana-Part-2_text.pdf",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "PUBLIC_DOMAIN",
+   "english_urls": [
+    "https://archive.org/download/in.ernet.dli.2015.110236/2015.110236.The-Vayu-Purana-Part-2_text.pdf"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "lingapurana": {
+   "work": "lingapurana",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "J. L. Shastri",
+     "coverage": "complete (2 parts)",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "C",
+     "url": "https://archive.org/details/LingaPuranaJ.L.ShastriPart1",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "PUBLIC_DOMAIN",
+   "english_urls": [
+    "https://archive.org/details/LingaPuranaJ.L.ShastriPart1"
+   ],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "kurmapurana": {
+   "work": "kurmapurana",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Anand Swarup Gupta",
+     "coverage": "complete",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "C",
+     "url": "https://archive.org/details/kurmapuranaTRkashirajtrust1972",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "PUBLIC_DOMAIN",
+   "english_urls": [
+    "https://archive.org/details/kurmapuranaTRkashirajtrust1972"
+   ],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "skandapurana": {
+   "work": "skandapurana",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "pasupatasutra": {
+   "work": "pasupatasutra",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivadharma": {
+   "work": "sivadharma",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Peter Bisschop",
+     "coverage": "chapter 6",
+     "complete": false,
+     "type": "scholarly",
+     "tier": "C",
+     "url": "",
+     "found_live": false,
+     "source": "curated"
+    },
+    {
+     "language": "en",
+     "translator": "",
+     "coverage": "chapters 10–11",
+     "complete": false,
+     "type": "scholarly",
+     "tier": "C",
+     "url": "",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "nisvasatattvasamhita": {
+   "work": "nisvasatattvasamhita",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "",
+     "coverage": "critical ed. with annotated translation",
+     "complete": false,
+     "type": "scholarly",
+     "tier": "C",
+     "url": "https://publications.efeo.fr/en/livres/828_the-ni-v-satattvasa-hit--the-earliest-surviving-aiva-tantra",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "IN_COPYRIGHT",
+   "english_urls": [
+    "https://publications.efeo.fr/en/livres/828_the-ni-v-satattvasa-hit--the-earliest-surviving-aiva-tantra"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "nisvasamukhatattvasamhita": {
+   "work": "nisvasamukhatattvasamhita",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "",
+     "coverage": "critical ed. with annotated translation",
+     "complete": false,
+     "type": "scholarly",
+     "tier": "C",
+     "url": "https://ifpindia.org/bookstore/ci145/",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "IN_COPYRIGHT",
+   "english_urls": [
+    "https://ifpindia.org/bookstore/ci145/"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "atharvavedasaunaka": {
+   "work": "atharvavedasaunaka",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Whitney & Lanman",
+     "coverage": "complete (2 vols)",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "C",
+     "url": "https://archive.org/details/atharvavedasamhi01whituoft",
+     "found_live": false,
+     "source": "curated"
+    },
+    {
+     "language": "en",
+     "translator": "Ralph T. H. Griffith",
+     "coverage": "complete",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "C",
+     "url": "https://sacred-texts.com/hin/av/",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "PUBLIC_DOMAIN",
+   "english_urls": [
+    "https://archive.org/details/atharvavedasamhi01whituoft",
+    "https://sacred-texts.com/hin/av/"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "atharvavedapaippalada": {
+   "work": "atharvavedapaippalada",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "satapathabrahmana": {
+   "work": "satapathabrahmana",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Julius Eggeling",
+     "coverage": "complete",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "C",
+     "url": "",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "satarudriya": {
+   "work": "satarudriya",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "matangaparamesvara": {
+   "work": "matangaparamesvara",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "ramakantha_matangavrtti": {
+   "work": "ramakantha_matangavrtti",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "naresvarapariksa": {
+   "work": "naresvarapariksa",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "siddhantasara": {
+   "work": "siddhantasara",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "aghorasiva_ashtaprakarana_corpus": {
+   "work": "aghorasiva_ashtaprakarana_corpus",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "aghorasiva_tattvaprakasika": {
+   "work": "aghorasiva_tattvaprakasika",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "aghorasiva_tattvasamgrahalaghutika": {
+   "work": "aghorasiva_tattvasamgrahalaghutika",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "ratnatrayapariksa_vyakhya": {
+   "work": "ratnatrayapariksa_vyakhya",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "aghorasivas_ullekhini_on_ratnatraya": {
+   "work": "aghorasivas_ullekhini_on_ratnatraya",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "anonymous_ratnatrayapariksavyakhya": {
+   "work": "anonymous_ratnatrayapariksavyakhya",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "mukuta_makutagama": {
+   "work": "mukuta_makutagama",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "devikalottaragama": {
+   "work": "devikalottaragama",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "MODERN_PRESENT",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "matrkabhedatantra": {
+   "work": "matrkabhedatantra",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "visvaksenasamhita": {
+   "work": "visvaksenasamhita",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "siraupanisad": {
+   "work": "siraupanisad",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "pratisThakriyadipika": {
+   "work": "pratisThakriyadipika",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "pratisThalaksanasara": {
+   "work": "pratisThalaksanasara",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "pratisThaparamesvara": {
+   "work": "pratisThaparamesvara",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "ramakantha_moksakarikavrtti": {
+   "work": "ramakantha_moksakarikavrtti",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "malinivijayottara": {
+   "work": "malinivijayottara",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Somadeva Vasudeva",
+     "coverage": "chs. 1–4, 7, 12–17",
+     "complete": false,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "http://www.ifpindia.org/bookstore/ci97/",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "IN_COPYRIGHT",
+   "english_urls": [
+    "http://www.ifpindia.org/bookstore/ci97/"
+   ],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "vijnanabhairava": {
+   "work": "vijnanabhairava",
+   "has_english": true,
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Jaideva Singh",
+     "coverage": "complete",
+     "complete": true,
+     "type": "traditional",
+     "tier": "A",
+     "url": "http://www.motilalbanarsidass.com/products/vijnanabhairava-or-divine-consciousness-a-treasury-of-112-types-of-yoga-1",
+     "found_live": false,
+     "source": "curated"
+    },
+    {
+     "language": "en",
+     "translator": "Bettina Bäumer",
+     "coverage": "complete",
+     "complete": true,
+     "type": "traditional",
+     "tier": "A",
+     "url": "http://books.google.com/books?id=lqRGxgEACAAJ",
+     "found_live": false,
+     "source": "curated"
+    },
+    {
+     "language": "fr",
+     "translator": "Lilian Silburn",
+     "coverage": "complete",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "http://www.motilalbanarsidass.com/products/vijnanabhairava-or-divine-consciousness-a-treasury-of-112-types-of-yoga-1",
+    "http://books.google.com/books?id=lqRGxgEACAAJ"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "paratrisika": {
+   "work": "paratrisika",
+   "has_english": false,
+   "languages": [],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "paratrisikavivarana": {
+   "work": "paratrisikavivarana",
+   "has_english": true,
+   "languages": [
+    "en",
+    "it"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Jaideva Singh",
+     "coverage": "complete",
+     "complete": true,
+     "type": "traditional",
+     "tier": "A",
+     "url": "http://www.motilalbanarsidass.com/products/para-trisika-vivarana-of-abhinavagupta-the-secret-of-tantric-mysticism",
+     "found_live": false,
+     "source": "curated"
+    },
+    {
+     "language": "it",
+     "translator": "Raniero Gnoli",
+     "coverage": "complete",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "",
+     "url": "",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "http://www.motilalbanarsidass.com/products/para-trisika-vivarana-of-abhinavagupta-the-secret-of-tantric-mysticism"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "tantraloka": {
+   "work": "tantraloka",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Mark Dyczkowski",
+     "coverage": "complete",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "D",
+     "url": "http://www.anuttaratrikakula.org/tantraloka-translation/",
+     "found_live": false,
+     "source": "curated"
+    },
+    {
+     "language": "en",
+     "translator": "Satya Prakash Singh / Swami Maheshvarananda",
+     "coverage": "complete",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "C",
+     "url": "http://www.wisdomlib.org/hinduism/book/tantraloka-sanskrit-text",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "IN_COPYRIGHT",
+   "english_urls": [
+    "http://www.anuttaratrikakula.org/tantraloka-translation/",
+    "http://www.wisdomlib.org/hinduism/book/tantraloka-sanskrit-text"
+   ],
+   "factory": {
+    "t1": "LEGACY_PRESENT",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "tantrasara": {
+   "work": "tantrasara",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "H. N. Chakravarty",
+     "coverage": "complete",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "http://www.indicabooks.com/product/tantrasara-of-abhinavagupta-copy/",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "http://www.indicabooks.com/product/tantrasara-of-abhinavagupta-copy/"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "malinislokavarttika": {
+   "work": "malinislokavarttika",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Jürgen Hanneder",
+     "coverage": "1.1–1.399",
+     "complete": false,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "http://philpapers.org/rec/HANAPO",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "http://philpapers.org/rec/HANAPO"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "tantrasadbhava": {
+   "work": "tantrasadbhava",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "partial",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Junglan Bang",
+     "coverage": "chs. 1, part of 3, 9, 18, 28",
+     "complete": false,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "http://ediss.sub.uni-hamburg.de/handle/ediss/9642",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "http://ediss.sub.uni-hamburg.de/handle/ediss/9642"
+   ],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "sivasutra": {
+   "work": "sivasutra",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Jaideva Singh",
+     "coverage": "complete (sūtras + Vimarśinī)",
+     "complete": true,
+     "type": "traditional",
+     "tier": "A",
+     "url": "http://www.motilalbanarsidass.com/products/siva-sutras-the-yoga-of-supreme-identity-jaideva-singh",
+     "found_live": false,
+     "source": "curated"
+    },
+    {
+     "language": "en",
+     "translator": "Swami Lakshman Joo",
+     "coverage": "complete",
+     "complete": true,
+     "type": "traditional",
+     "tier": "A",
+     "url": "http://books.google.com/books?id=XIPXAAAAMAAJ",
+     "found_live": false,
+     "source": "curated"
+    },
+    {
+     "language": "en",
+     "translator": "Subhash Kak",
+     "coverage": "complete",
+     "complete": true,
+     "type": "independent",
+     "tier": "D",
+     "url": "http://sanskritdocuments.org/doc_shiva/shivasuutra.html",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "http://www.motilalbanarsidass.com/products/siva-sutras-the-yoga-of-supreme-identity-jaideva-singh",
+    "http://books.google.com/books?id=XIPXAAAAMAAJ",
+    "http://sanskritdocuments.org/doc_shiva/shivasuutra.html"
+   ],
+   "factory": {
+    "t1": "LEGACY_PRESENT",
+    "l2": "LEGACY_PRESENT",
+    "c1": "LEGACY_PRESENT",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "spandakarika": {
+   "work": "spandakarika",
+   "has_english": true,
+   "languages": [
+    "en"
+   ],
+   "coverage": "full",
+   "missing": false,
+   "translations": [
+    {
+     "language": "en",
+     "translator": "Jaideva Singh",
+     "coverage": "complete",
+     "complete": true,
+     "type": "traditional",
+     "tier": "A",
+     "url": "http://wellcomecollection.org/works/manv6j64",
+     "found_live": false,
+     "source": "curated"
+    },
+    {
+     "language": "en",
+     "translator": "Mark Dyczkowski",
+     "coverage": "interpretive/translation",
+     "complete": true,
+     "type": "scholarly",
+     "tier": "A",
+     "url": "",
+     "found_live": false,
+     "source": "curated"
+    }
+   ],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [
+    "http://wellcomecollection.org/works/manv6j64"
+   ],
+   "factory": {
+    "t1": "NOT_STARTED",
+    "l2": "NOT_STARTED",
+    "c1": "NOT_STARTED",
+    "next_action": "BUILD_L0_SOURCE_MODE"
+   },
+   "live_checked": true,
+   "live_note": ""
+  },
+  "paratrisikalaghuvrtti": {
+   "work": "paratrisikalaghuvrtti",
+   "has_english": false,
+   "languages": [],
+   "coverage": "none",
+   "missing": true,
+   "translations": [],
+   "copyright_hint": "UNDETERMINED",
+   "english_urls": [],
+   "factory": {
+    "t1": "UNKNOWN",
+    "l2": "UNKNOWN",
+    "c1": "UNKNOWN",
+    "next_action": null
+   },
+   "live_checked": true,
+   "live_note": ""
+  }
+ }
+}
