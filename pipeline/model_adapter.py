@@ -31,6 +31,19 @@ class ModelResult:
     latency_ms: int = 0
     model: str = ""
     raw: Any = None
+    # the real usage (for live cost via model_catalog) — captured from the completion response
+    prompt_tokens: int = 0
+    completion_tokens: int = 0
+    cached_tokens: int = 0
+
+    def cost(self, provider: str = "openrouter") -> Optional[float]:
+        """Live cost from real tokens × the aggregator price (None if no price found)."""
+        try:
+            from model_catalog import live_cost
+            c = live_cost(self.model, self.prompt_tokens, self.completion_tokens, self.cached_tokens)
+            return c.get("cost_usd") if c.get("found_price") else None
+        except Exception:
+            return None
 
 
 class ModelAdapter:
@@ -81,7 +94,15 @@ class DirectModelAdapter(ModelAdapter):
                               {"role": "user", "content": prompt}],
                     temperature=0.2, max_tokens=4000, timeout=timeout)
                 content = r.choices[0].message.content or ""
-                return ModelResult(content=content, latency_ms=int((time.time() - t0) * 1000), model=model)
+                # capture real usage for live cost (the aggregator returns token counts)
+                usage = getattr(r, "usage", None)
+                pt = getattr(usage, "prompt_tokens", 0) or 0
+                ct = getattr(usage, "completion_tokens", 0) or 0
+                details = getattr(usage, "prompt_tokens_details", None) or {}
+                cached = getattr(details, "cached_tokens", 0) or 0
+                return ModelResult(content=content, latency_ms=int((time.time() - t0) * 1000),
+                                   model=model, raw=r,
+                                   prompt_tokens=pt, completion_tokens=ct, cached_tokens=cached)
             except Exception as e:
                 last = str(e)[:200]
                 time.sleep(2)

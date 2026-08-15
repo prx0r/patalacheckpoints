@@ -57,23 +57,51 @@ def verse_counts(work_id: str | None = None) -> dict[str, int]:
 
 def project(work_id: str | None = None, model: str = "deepseek-v4-flash",
             batch: int = 1, parallel: int = 1) -> dict:
-    """Project cost/time/calls for one work or the whole corpus."""
+    """Project cost/time/calls for one work or the whole corpus.
+
+    Cost uses LIVE prices from the aggregator (model_catalog, compute-on-write) when available,
+    falling back to the measured per-verse defaults. Time/calls stay from the measured per-verse model.
+    """
     if model not in MODELS:
-        raise ValueError(f"unknown model {model}; known: {list(MODELS)}")
-    m = MODELS[model]
+        # allow a live-catalog model even if not in our defaults (cost live, time default)
+        try:
+            from model_catalog import price_for
+            if price_for(model) is None:
+                raise ValueError(f"unknown model {model}")
+        except Exception:
+            raise ValueError(f"unknown model {model}; known: {list(MODELS)}")
+    m = MODELS.get(model, MODELS["deepseek-v4-flash"])
+    # live per-token prices (None-safe): cost per verse estimated on ~15k-in/5k-out chars
+    live_pt = live_completion = live_cache = None
+    try:
+        from model_catalog import price_for
+        p = price_for(model)
+        if p:
+            live_pt, live_completion, live_cache = p["prompt_per_token"], p["completion_per_token"], p["cache_read_per_token"]
+    except Exception:
+        pass
     counts = verse_counts(work_id)
     rows = []
     for wid, verses in sorted(counts.items(), key=lambda x: -x[1]):
         calls = verses * m["calls_per_verse"]
-        # batch reduces calls (batched verses per model call); parallel reduces wall-clock
         eff_calls = calls / batch
         hours = (verses * m["per_verse_time_s"] / batch / parallel) / 3600
-        cost_miss = verses * m["per_verse_cost_miss"]
-        cost_hit = verses * m["per_verse_cost_hit"]
+        # live cost if we have aggregator prices (assume ~15k prompt / 5k completion tokens per verse,
+        # 0 cached for the miss estimate; cache-hit uses the cache-read price on the full prompt)
+        if live_pt is not None:
+            prompt_tok = verses * 15000
+            comp_tok = verses * 5000
+            # miss: all prompt fresh; hit: all prompt cached at the cache-read price
+            cost_miss = prompt_tok * live_pt + comp_tok * live_completion
+            cost_hit = prompt_tok * live_cache + comp_tok * live_completion
+        else:
+            cost_miss = verses * m["per_verse_cost_miss"]
+            cost_hit = verses * m["per_verse_cost_hit"]
         rows.append({"work": wid, "verses": verses, "calls": int(round(eff_calls)),
                      "hours": round(hours, 1),
                      "cost_miss_usd": round(cost_miss, 4), "cost_hit_usd": round(cost_hit, 4)})
     total_verses = sum(r["verses"] for r in rows)
+    live_pricing = live_pt is not None
     return {
         "model": model, "batch": batch, "parallel": parallel,
         "works": len(rows), "total_verses": total_verses,
@@ -82,7 +110,9 @@ def project(work_id: str | None = None, model: str = "deepseek-v4-flash",
         "total_cost_miss_usd": round(sum(r["cost_miss_usd"] for r in rows), 4),
         "total_cost_hit_usd": round(sum(r["cost_hit_usd"] for r in rows), 4),
         "rows": rows,
-        "note": "per-verse model defaults from infra-deepdive/13 (measured); cost is the DeepSeek reference, not the provider's actual bill",
+        "pricing_source": "live-openrouter" if live_pricing else "hardcoded-defaults",
+        "note": "cost uses LIVE per-token prices from OpenRouter (compute-on-write) when available; "
+                "time/calls from the measured per-verse model",
     }
 
 
@@ -102,7 +132,8 @@ def render(p: dict) -> str:
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--work", default=None, help="project one work (else the whole corpus)")
-    ap.add_argument("--model", default="deepseek-v4-flash", choices=list(MODELS))
+    ap.add_argument("--model", default="deepseek-v4-flash",
+                    help="model id (a known default or any live OpenRouter model id, e.g. qwen/qwen3.7-plus)")
     ap.add_argument("--batch", type=int, default=1, help="verses per model call")
     ap.add_argument("--parallel", type=int, default=1, help="parallel works")
     ap.add_argument("--json", action="store_true")
