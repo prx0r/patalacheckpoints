@@ -8,7 +8,9 @@ with model calls stubbed so the test is deterministic + fail-fast:
   ESSAY:      reactive essay from a committed ENGINEERING_VALIDATED SYNTHESIS -> the
               deterministic essay_validator gates (fail-closed on fabricated depends_on ids,
               missing proof paths, boundary-erasure, unqualified inputs)
-  EDUCATION:  distills the committed ESSAY -> concise, no overreach, derived-from-essay
+  EDUCATION:  derives LearningClaims (mastery question + wrong-answer->known-neighbor)
+              from the committed ESSAY -> gated, proof paths real, no overreach on the
+              true side (wrong_answer is deliberately false and never lexicon-gated)
 
 Requires the ML venv (python-louvain + networkx): run with
   machinelearning/research/.venv/bin/python pipeline/test_theme_essay_education.py
@@ -170,6 +172,10 @@ def main() -> int:
                        payload={"essay": p["essay"], "essay_status": p["essay_status"],
                                 "derived_by": p["derived_by"]}, input_refs=p["input_refs"])
         ok &= t("ESSAY committed (GENERATED first)", rec["status"] == R.GENERATED)
+        # promote the committed essay to the qualified floor so EDUCATION (DAG: requires
+        # ENGINEERING_VALIDATED ESSAY) can derive from it
+        R.set_status("ESSAY", rec["object_id"], rec["version"], R.ENGINEERING_VALIDATED,
+                     actor="test::gate")
 
     # fail-closed: an essay with a fabricated depends_on id must be rejected
     import copy as _copy
@@ -180,24 +186,44 @@ def main() -> int:
                 EW.essay_validator("ESSAY", fab)[0] is False)
 
     print()
-    print("=== EDUCATION: distills the committed ESSAY, no overreach ===")
-    ED.chat = lambda system, prompt, **kw: json.dumps({
-        "title": "The Support of the Powers", "summary": "The powers need a support, the Lord.",
-        "key_points": ["Powers are established.", "They rest in the maheśvara."],
-        "essay_id": "x", "status": "MACHINE_PROPOSED"})
-    essays = [oid for oid, vs in R._load("ESSAY")["objects"].items() if not vs[-1].get("superseded")]
+    print("=== EDUCATION: LearningClaims from the committed ESSAY, no overreach ===")
+    # the committed essay object (from the essay test above) is the qualified input
+    essays = [oid for oid, vs in R._load("ESSAY")["objects"].items()
+              if R.current("ESSAY", oid)]
+    essay_oid = essays[0] if essays else ""
+    ED.generate_json = lambda system, user, **kw: {
+        "learning_claims": [
+            {"claim_id": "lc-support", "question": "What does the essay establish about the flashing?",
+             "expected": "The flashing has an order-less support, the great Lord.",
+             "wrong_answer": "The flashing is the order itself.",
+             "maps_to": "the flashing as the order itself",
+             "depends_on": [synth_oids[0], essay_oid]},
+            {"claim_id": "lc-boundary", "question": "What is the scope of the support claim?",
+             "expected": "The support is local, not every claim about the universal Self.",
+             "wrong_answer": "It establishes every claim about the universal Self.",
+             "maps_to": "the universal-Self inflation",
+             "depends_on": [essay_oid, c1_ids[0]]},
+        ]}
     dprops = ED.education_generator("EDUCATION", [{"object_id": e} for e in essays])
     ok &= t("EDUCATION generator produced a proposal", len(dprops) >= 1, f"{len(dprops)}")
     if dprops:
         p = dprops[0]
-        ok &= t("EDUCATION derived from a committed essay", bool(R.current("ESSAY", p.get("_source_essay", ""))))
+        ok &= t("EDUCATION derived from a committed essay",
+                bool(R.current("ESSAY", p.get("input_refs", [""])[0])))
         ok &= t("EDUCATION validator passes", ED.education_validator("EDUCATION", p)[0])
-    # fail-closed: overreach rejected
-    bad_prop = {"education_status": "MACHINE_PROPOSED",
-                "education": {"summary": "this proves the one Self is everywhere",
-                              "key_points": []}, "_source_essay": essays[0] if essays else ""}
-    ok &= t("EDUCATION validator rejects overreach",
-            ED.education_validator("EDUCATION", bad_prop)[0] is False)
+        # fail-closed: overreach on the TRUE side rejected
+        import copy as _copy
+        bad = _copy.deepcopy(p)
+        bad["education"]["learning_claims"][0]["expected"] = "This proves the one Self is everywhere."
+        ok &= t("EDUCATION validator rejects overreach on the true side",
+                ED.education_validator("EDUCATION", bad)[0] is False)
+    # fail-closed: a wrong_answer that equals the expected is not a wrong answer
+    if dprops:
+        import copy as _copy2
+        bad2 = _copy2.deepcopy(dprops[0])
+        bad2["education"]["learning_claims"][0]["wrong_answer"] = bad2["education"]["learning_claims"][0]["expected"]
+        ok &= t("EDUCATION validator rejects wrong_answer equal to expected",
+                ED.education_validator("EDUCATION", bad2)[0] is False)
 
     print("\n" + ("THEME/ESSAY/EDUCATION ALL PASS" if ok else "SOME FAIL"))
     return 0 if ok else 1
