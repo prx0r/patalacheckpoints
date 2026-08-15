@@ -48,10 +48,17 @@ def fetch_models_dev() -> dict:
     d = _get_json(MODELS_DEV)
     out = {}
     for mid, rec in d.items():
-        price = rec.get("pricing", {}) or {}
+        price = rec.get("pricing")
+        if not isinstance(price, dict):
+            # red-team fix: a model with NO price (pricing=null) must NOT produce $0 (which silently
+            # breaks cost) — skip it for pricing so it can't shadow a real OpenRouter price.
+            continue
         in_ = float(price.get("input", price.get("input_cost_per_mtok")) or 0)
         out_c = float(price.get("output", price.get("output_cost_per_mtok")) or 0)
         cache = float(price.get("cache_read") or 0)
+        # red-team fix: skip zero-price entries too (free/promo or unlisted) — they'd report $0 cost
+        if in_ == 0 and out_c == 0:
+            continue
         lim = rec.get("limit")
         out[mid] = {
             # models.dev gives per-M tokens → convert to per-token (match OpenRouter's per-token)
@@ -126,10 +133,15 @@ def price_for(model_id: str) -> dict | None:
         return models[model_id]
     # fuzzy: e.g. "deepseek-v4-flash" matches "deepseek/deepseek-v4-flash-latest"
     base = model_id.split("/")[-1].lower()
+    candidates = []
     for mid, rec in models.items():
         if base in mid.lower() or mid.lower().split("/")[-1] in base:
-            return rec
-    return None
+            candidates.append(rec)
+    if not candidates:
+        return None
+    # red-team fix: prefer a candidate with a REAL (non-zero) price — a $0 entry must not win
+    priced = [c for c in candidates if (c.get("prompt_per_token") or 0) > 0]
+    return (priced[0] if priced else candidates[0])
 
 
 def live_cost(model_id: str, prompt_tokens: int, completion_tokens: int,
