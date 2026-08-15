@@ -1,6 +1,0 @@
-RED TEAM TEST 2 — malformed files (PASS = handled correctly)
-T2a EMPTY file     → clean=False "no Sanskrit chars"        ✅ correct
-T2b BINARY (5KB)   → clean=False "no Sanskrit chars"        ✅ correct
-T2c UTF-8 BOM      → clean=True, RAW_SANSKRIT (iast 500)    ✅ correct (BOM handled)
-VERDICT: malformed files handled correctly. The ONLY gap is the low-density
-  file in the 1000-2000 byte band (test 1a).
