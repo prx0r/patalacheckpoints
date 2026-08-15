@@ -608,6 +608,18 @@ function products(verb, args = {}) {
       engine = "scholar_vertical/engine.py";
       cliArgs = [args.decision ?? "ACCEPT"];
       break;
+    case "collation":
+      engine = "collation/engine.py";
+      cliArgs = [args.op ?? "demo"];
+      break;
+    case "translation_studio":
+      engine = "translation_studio/engine.py";
+      cliArgs = [args.passage_id ?? "", args.register ?? ""];
+      break;
+    case "guard":
+      engine = "guard/engine.py";
+      cliArgs = [];
+      break;
     default:
       throw new Error(`no engine for verb ${verb}`);
   }
@@ -859,6 +871,36 @@ server.tool(
   { decision: z.enum(["ACCEPT", "REVISE", "REJECT", "ABSTAIN"]).optional() },
   async ({ decision }) => {
     const r = products("scholar_vertical", { decision });
+    return { content: [{ type: "text", text: JSON.stringify(r, null, 2) }] };
+  },
+);
+
+server.tool(
+  "patala_collation",
+  "The critical-edition collation (Saktumiva process): N witness texts -> a variant apparatus (which siglum reads what at each locus).",
+  { op: z.enum(["demo"]).optional() },
+  async ({ op }) => {
+    const r = products("collation", { op });
+    return { content: [{ type: "text", text: JSON.stringify(r, null, 2) }] };
+  },
+);
+
+server.tool(
+  "patala_translation_studio",
+  "The translation studio: render ONE passage in multiple registers (TECHNICAL/EXPANDED/CONDENSED/GEN_Z/ARGUMENT_DEPTH) from the same proof graph, with vertical fidelity. Controlled compression, never a new translation.",
+  { passage_id: z.string().optional(), register: z.enum(["TECHNICAL", "EXPANDED", "CONDENSED", "GEN_Z", "ARGUMENT_DEPTH"]).optional() },
+  async ({ passage_id, register }) => {
+    const r = products("translation_studio", { passage_id, register });
+    return { content: [{ type: "text", text: JSON.stringify(r, null, 2) }] };
+  },
+);
+
+server.tool(
+  "patala_verify_quote",
+  "The serve-time guard: verify quoted passages in an answer against retrieved sources (a fabricated quote is downgraded, never served verbatim) + whitelist every citation (a hallucinated work:locus is corrected/stripped). The enforcement of the UNANCHORED->reject rule at serve time.",
+  {},
+  async () => {
+    const r = products("guard", {});
     return { content: [{ type: "text", text: JSON.stringify(r, null, 2) }] };
   },
 );
