@@ -13,7 +13,7 @@ import sys
 import tempfile
 from pathlib import Path
 
-sys.path.insert(0, "/root/projects/patala/pipeline")
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "pipeline"))
 import source_ready as S
 
 

@@ -221,7 +221,7 @@ def discover_works() -> list[WorkState]:
     # These are the canonical addressable raw-Sanskrit texts the factory consumes
     # (see acquire_sivaqueue_targets.py). Fall back to them when the mount map doesn't cover
     # the work, so every downloaded source enters the ledger / queue automatically.
-    corpus_src = Path("/root/projects/patala/data/corpus/sources")
+    corpus_src = Path(__file__).resolve().parents[1] / "data/corpus/sources"
     if corpus_src.exists():
         for wid in sorted(os.listdir(corpus_src)):
             src_file = corpus_src / wid / f"{wid}.txt"
@@ -242,7 +242,7 @@ def discover_works() -> list[WorkState]:
     # 4. bibliography linkage (data/atlas)
     atlas_ids = set()
     for af in ("audited.ts", "bibliographySeed.ts", "sivaqueueSeed.ts", "sivaqueue34Seed.ts", "sivaqueueGapSeed.ts"):
-        p = Path("/root/projects/patala/data/atlas") / af
+        p = Path(__file__).resolve().parents[1] / "data/atlas" / af
         if p.exists():
             atlas_ids |= set(re.findall(r'"?id"?\s*:\s*"([A-Za-z0-9_-]+)"', p.read_text()))
     for w, s in works.items():
@@ -262,7 +262,7 @@ def ledger_json() -> dict:
 
 if __name__ == "__main__":
     import sys
-    out = "/root/projects/patala/data/corpus/downloads/translation-state-ledger.json"
+    out = str(Path(__file__).resolve().parents[1] / "data/corpus/downloads/translation-state-ledger.json")
     data = ledger_json()
     with open(out, "w", encoding="utf-8") as fh:
         json.dump(data, fh, indent=2, ensure_ascii=False)

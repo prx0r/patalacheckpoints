@@ -9,7 +9,7 @@ Checks:
   5. the ledger runs end-to-end on the real mount + serializes valid JSON
   6. invariant: the output contract is stable (no work has an empty/invalid action)
 
-Run: cd /root/projects/patala && python3 pipeline/test_corpus_state.py
+Run: cd /root/patalacheckpoints && python3 pipeline/test_corpus_state.py
 """
 import json
 import os
